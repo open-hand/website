@@ -4,12 +4,15 @@
 <section class="bar background-white">
     <div class="container">
         {{ range $index, $element := sort .Site.Data.features "weight" }}
-		{{ if eq (mod $index 2) 0 }}
+		{{ if eq (mod $index 3) 0 }}
 		<div class="col-md-12">
             <div class="row">
 		{{ end }}
-				<div class="col-md-6">
-                    <div class="target-box box-simple-features">
+				<div class="col-md-4">
+                    <div class="box-simple box-simple-features">
+                        <div class="icon">
+                            <img src="{{ .Site.BaseURL }}img/{{.icon}}" class="filled-img" />
+                        </div>
                         <h3>{{ $element.name }}</h3>
                         <p>{{ $element.description | markdownify }}</p>
                     </div>
