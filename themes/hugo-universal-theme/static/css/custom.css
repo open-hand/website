@@ -128,5 +128,47 @@ a.calendar:hover{
   margin-top: 20px;
 }
 
+.abstract {
+	border-bottom: 2px solid #eee;
+}
 
-		
+.filled-img {
+	width: 100%;
+}
+
+.box-simple-features {
+	padding-left: 50px;
+	padding-right: 50px;
+}
+
+.box-simple .icon{
+	color: #fff !important;
+	border-color: #fff !important;
+}
+
+.container {
+	max-width: 1000px;
+}
+
+.target-box {
+
+}
+
+.target-box h3 {
+	font-weight: 600;
+	font-size: 20px;
+  text-transform: uppercase;
+	line-height: 1.5;
+  color: darkblue;
+  letter-spacing: 0.08em;
+}
+
+.target-box p {
+	color: #999999;
+	text-overflow: -o-ellipsis-lastline;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+}
