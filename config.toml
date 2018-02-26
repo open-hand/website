@@ -102,8 +102,8 @@ paginate = 10
     # Google Maps API key (if not set will default to not passing a key.)
     googleMapsApiKey = "AIzaSyCFhtWLJcE30xOAjcbSFi-0fnoVmQZPb1Y"
 
-    # Style options: default (light-blue), blue, green, marsala, pink, red, turquoise, violet
-    style = "green"
+    # Style options: default (light-blue), blue, green, marsala, pink, red, turquoise, violet,choerodon
+    style = "choerodon"
 
     # Since this template is static, the contact form uses www.formspree.io as a
     # proxy. The form makes a POST request to their servers to send the actual
