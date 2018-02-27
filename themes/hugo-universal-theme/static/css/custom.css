@@ -145,8 +145,8 @@ a.calendar:hover{
 }
 
 .abstract img {
-	position: absolute;
-  transform: translateY(25%);
+	/*position: absolute;*/
+  /*transform: translateY(25%);*/
 }
 
 .box-simple {
