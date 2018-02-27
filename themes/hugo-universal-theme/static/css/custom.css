@@ -128,7 +128,9 @@ a.calendar:hover{
   margin-top: 20px;
 }
 
-.abstract {
+.abstract-p {
+	font-size: 16px;
+	line-height: 1.5em;
 }
 
 .filled-img {
@@ -144,8 +146,8 @@ a.calendar:hover{
 }
 
 .box-simple .icon{
-	color: #fff !important;
-	border-color: #fff !important;
+	color: transparent !important;
+	border: none !important;
 }
 
 .container {
@@ -156,8 +158,8 @@ a.calendar:hover{
 }
 
 .target-box h3 {
-	font-weight: 600;
-	font-size: 20px;
+	font-weight: 500;
+	font-size: 18px;
   text-transform: uppercase;
 	line-height: 1.5;
   color: #3073E6;
