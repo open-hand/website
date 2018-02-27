@@ -1752,7 +1752,7 @@ fieldset[disabled] .btn-template-primary.active {
 .bar {
   position: relative;
   background: #c27baa;
-  padding: 60px 0;
+  padding: 30px 0;
 }
 .bar.background-pentagon {
   background: url('../img/texture-bw.png') center center repeat;
@@ -2506,7 +2506,7 @@ fieldset[disabled] .btn-template-primary.active {
 }
 #footer {
   background: #555555;
-  padding: 50px 0;
+  padding: 30px 0 20px 0;
   color: #999999;
 }
 #footer h1,
