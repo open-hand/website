@@ -1,4 +1,4 @@
 weight: 1
-name: "混合云融合"
+name: "Horizontal scaling"
 icon: "features_pic1.png"
-description: "I am content 1,I am content 1,I am content 1,I am content 1,I am content 1,I am content 1,I am content 1,I am content 1,"
+description: "Scale your application up and down with a simple command, with a UI, or automatically based on CPU usage."
