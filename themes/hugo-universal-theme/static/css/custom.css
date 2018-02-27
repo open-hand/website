@@ -129,15 +129,17 @@ a.calendar:hover{
 }
 
 .abstract {
-	border-bottom: 2px solid #eee;
 }
 
 .filled-img {
 	width: 100%;
 }
 
-.box-simple-features {
+.box-simple-features-left {
 	padding-left: 50px;
+}
+
+.box-simple-features-right {
 	padding-right: 50px;
 }
 
@@ -150,8 +152,7 @@ a.calendar:hover{
 	max-width: 1000px;
 }
 
-.target-box {
-
+.target-box-row {
 }
 
 .target-box h3 {
@@ -159,7 +160,7 @@ a.calendar:hover{
 	font-size: 20px;
   text-transform: uppercase;
 	line-height: 1.5;
-  color: darkblue;
+  color: #3073E6;
   letter-spacing: 0.08em;
 }
 
