@@ -192,3 +192,7 @@ a.calendar:hover{
 	-webkit-line-clamp: 3;
 	-webkit-box-orient: vertical;
 }
+
+.fileds-line {
+	margin-bottom: 50px;
+}
