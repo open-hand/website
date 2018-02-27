@@ -306,7 +306,6 @@ ul.list-style-none {
 }
 .navbar ul.nav > li > a {
   text-transform: uppercase;
-  text-decoration: underline;
   font-weight: bold;
   letter-spacing: 0.08em;
   border-top: solid 5px transparent;
@@ -1143,7 +1142,6 @@ fieldset[disabled] .btn-template-primary.active {
 }
 .home-carousel {
   position: relative;
-  background: url('../img/photogrid.jpg') center center repeat;
   background-size: cover;
   -webkit-transition: all 0.2s ease-out;
   -moz-transition: all 0.2s ease-out;
@@ -1160,8 +1158,8 @@ fieldset[disabled] .btn-template-primary.active {
   filter: alpha(opacity=90);
 }
 .home-carousel .owl-carousel {
-  padding-top: 60px;
-  padding-bottom: 20px;
+  padding-top: 48px;
+  padding-bottom: 16px;
 }
 .home-carousel .owl-theme .owl-controls .owl-page span {
   background: #666;
@@ -1180,8 +1178,10 @@ fieldset[disabled] .btn-template-primary.active {
 @media (min-width: 992px) {
   .home-carousel .right {
     text-align: right;
+    width: 80%;
   }
 }
+
 .home-carousel h1,
 .home-carousel h2,
 .home-carousel h3,
@@ -1190,26 +1190,26 @@ fieldset[disabled] .btn-template-primary.active {
   color: #fff;
 }
 .home-carousel h1 {
-  font-weight: 700;
+  font-weight: 560;
   text-transform: uppercase;
-  font-size: 46px;
+  font-size: 37px;
   letter-spacing: 0.08em;
 }
 @media (max-width: 991px) {
   .home-carousel h1 {
-    font-size: 36px;
+    font-size: 29px;
   }
 }
 .home-carousel h2 {
-  font-weight: 700;
+  font-weight: 560;
   text-transform: uppercase;
-  font-size: 40px;
+  font-size: 32px;
   letter-spacing: 0.08em;
 }
 .home-carousel ul,
 .home-carousel p {
-  font-size: 18px;
-  font-weight: 700;
+  font-size: 14px;
+  font-weight: 560;
   padding: 0;
   text-transform: uppercase;
   letter-spacing: 0.10em;
@@ -1217,11 +1217,11 @@ fieldset[disabled] .btn-template-primary.active {
 @media (max-width: 991px) {
   .home-carousel ul,
   .home-carousel p {
-    font-size: 14px;
+    font-size: 11px;
   }
 }
 .home-carousel ul li {
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 .customers {
   padding: 0;
@@ -1752,7 +1752,7 @@ fieldset[disabled] .btn-template-primary.active {
 .bar {
   position: relative;
   background: #5CC2F2;
-  padding: 60px 0;
+  padding: 30px 0;
 }
 .bar.background-pentagon {
   background: url('../img/texture-bw.png') center center repeat;
@@ -3075,7 +3075,7 @@ fieldset[disabled] .btn-template-primary.active {
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
   color: #555555;
-  background-color: #eca1a1;
+  background-color: #B2E7FB;
 }
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,

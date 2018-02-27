@@ -195,18 +195,13 @@ paginate = 10
     # All clients are defined in their own files. You can find example items
     # at 'exampleSite/data/clients'.
     # For more informtion take a look at the README.
-    title = "Our Clients"
-    subtitle = ""
+    title = "案例"
+    subtitle = "案例"
 
 [params.recent_posts]
     enable = true
     title = "From our blog"
     subtitle = "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo."
-
-[[languages.zh.menu.main]]
-    name = "主页"
-    url  = "/"
-    weight = 1
 
 [[languages.zh.menu.main]]
     name = "新闻"
@@ -224,19 +219,19 @@ paginate = 10
     weight = 4
 
 [[languages.zh.menu.main]]
-    name = "学习示例"
-    url  = "/cases_studies/"
+    name = "案例"
+    url  = "/case-studies/"
     weight = 5
 
 [[languages.zh.menu.main]]
-    name = "论坛"
+    name = "开源社区"
     url  = "https://github.com/choerodon/choerodon"
     weight = 6
     post = "external"
     icon = true
 
 [[languages.zh.menu.main]]
-    name = "源代码"
+    name = "Github"
     url  = "https://github.com/choerodon/choerodon"
     weight = 7
     post = "external"
