@@ -1,23 +1,25 @@
-{{ if isset .Site.Params "features" }}
-{{ if .Site.Params.features.enable }}
-{{ if gt (len .Site.Data.features) 0 }}
+{{ if isset .Site.Params "targets" }}
+{{ if .Site.Params.targets.enable }}
+{{ if gt (len .Site.Data.targets) 0 }}
 <section class="bar background-white">
     <div class="container">
-        {{ range $index, $element := sort .Site.Data.features "weight" }}
-		{{ if eq (mod $index 3) 0 }}
+        {{ range $index, $element := sort .Site.Data.targets "weight" }}
+		{{ if eq (mod $index 2) 0 }}
 		<div class="col-md-12">
-            <div class="row">
+            <div class="row target-box-row">
 		{{ end }}
-				<div class="col-md-4">
-                    <div class="box-simple box-simple-features">
-                        <div class="icon">
-                            <img src="{{ .Site.BaseURL }}img/{{.icon}}" class="filled-img" />
-                        </div>
+				<div class="col-md-6">
+                    {{ if eq (mod $index 2) 0 }}
+                        <div class="target-box box-simple-features-right">
+                    {{ end }}
+                    {{ if eq (mod $index 2) 1 }}
+                        <div class="target-box box-simple-features-left">
+                    {{ end }}
                         <h3>{{ $element.name }}</h3>
                         <p>{{ $element.description | markdownify }}</p>
                     </div>
                 </div>
-		{{ if or (eq (mod $index 3) 2) (eq $index (sub (len $.Site.Data.features) 1 )) }}
+		{{ if  (eq (mod $index 2) 1)  }}
 			</div>
 		</div>
 		{{ end }}

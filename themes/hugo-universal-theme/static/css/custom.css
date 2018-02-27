@@ -6,7 +6,7 @@
 }
 
 .box-simple {
-  min-height: 230px;
+  /*min-height: 230px;*/
 }
 
 .light-text{
@@ -128,42 +128,62 @@ a.calendar:hover{
   margin-top: 20px;
 }
 
-.abstract {
-	border-bottom: 2px solid #eee;
+.abstract h3 {
+	font-size: 28px;
+	line-height: 36px;
+  font-weight: 400;
+}
+
+.abstract-p {
+	font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.1px;
 }
 
 .filled-img {
 	width: 100%;
 }
 
-.box-simple-features {
+.abstract img {
+	position: absolute;
+  transform: translateY(25%);
+}
+
+.box-simple {
+	margin-bottom: 0 !important;
+}
+
+.box-simple-features-left {
 	padding-left: 50px;
+}
+
+.box-simple-features-right {
 	padding-right: 50px;
 }
 
 .box-simple .icon{
-	color: #fff !important;
-	border-color: #fff !important;
+	color: transparent !important;
+	border: none !important;
 }
 
 .container {
 	max-width: 1000px;
 }
 
-.target-box {
-
+.target-box-row {
 }
 
 .target-box h3 {
-	font-weight: 600;
-	font-size: 20px;
-  text-transform: uppercase;
-	line-height: 1.5;
-  color: darkblue;
-  letter-spacing: 0.08em;
+	font-weight: 400;
+	font-size: 24px;
+	line-height: normal;
+  color: #3073E6;
 }
 
 .target-box p {
+	font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.1px;
 	color: #999999;
 	text-overflow: -o-ellipsis-lastline;
 	overflow: hidden;
