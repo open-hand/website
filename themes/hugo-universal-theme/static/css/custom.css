@@ -145,8 +145,8 @@ a.calendar:hover{
 }
 
 .abstract img {
-	position: absolute;
-  transform: translateY(25%);
+	/*position: absolute;*/
+  /*transform: translateY(25%);*/
 }
 
 .box-simple {
@@ -191,4 +191,8 @@ a.calendar:hover{
 	display: -webkit-box;
 	-webkit-line-clamp: 3;
 	-webkit-box-orient: vertical;
+}
+
+.fileds-line {
+	margin-bottom: 50px;
 }

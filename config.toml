@@ -180,6 +180,12 @@ paginate = 10
     # at 'exampleSite/data/targets'.
     # For more informtion take a look at the README.
 
+[params.fileds]
+    enable = true
+    # All features are defined in their own files. You can find example items
+    # at 'exampleSite/data/fileds'.
+    # For more informtion take a look at the README.
+
 [params.testimonials]
     enable = true
     # All testimonials are defined in their own files. You can find example items
