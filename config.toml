@@ -230,7 +230,7 @@ paginate = 10
     icon = true
 
 [[languages.zh.menu.main]]
-    name = "源代码"
+    name = "Github"
     url  = "https://github.com/choerodon/choerodon"
     weight = 7
     post = "external"

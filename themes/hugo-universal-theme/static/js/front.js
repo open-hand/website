@@ -81,7 +81,7 @@ function sliderHomepage () {
     // var owl = $('#slider')
 
     $('#slider').owlCarousel({
-      autoPlay: 3000,
+      autoPlay: 7000,
       items: 4,
       itemsDesktopSmall: [900, 3],
       itemsTablet: [600, 3],
@@ -131,9 +131,13 @@ function sliders () {
       addClassActive: true,
       afterInit: function () {
         // animationsSlider()
+        var background = "url("+$('.item','.owl-item.active').attr("data-background")+") center center no-repeat"
+        $(".home-carousel").css("background",background)
       },
       afterMove: function () {
         // animationsSlider()
+        var background = "url("+$('.item','.owl-item.active').attr("data-background")+") center center no-repeat"
+        $(".home-carousel").css("background",background)
       }
     })
   }
