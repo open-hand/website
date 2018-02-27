@@ -1,4 +1,4 @@
 weight: 1
-name: "Horizontal scaling"
+name: "混合云融合"
 icon: "features_pic1.png"
-description: "Scale your application up and down with a simple command, with a UI, or automatically based on CPU usage."
+description: "混合云融合服务组件基于Kubernetes来管理多云环境下的容器集群，使用Docker对应用程序打包、实例化和运行。"
