@@ -2,6 +2,7 @@
 title: Ancestry Case Study
 date: "2015-10-10T13:07:31+02:00"
 tags: ["ipsum"]
+type: "case-studies"
 categories: ["lorem"]
 banner: "img/banners/banner-5.jpg"
 ---

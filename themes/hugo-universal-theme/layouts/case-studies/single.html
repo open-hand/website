@@ -25,8 +25,19 @@
                     <div class="col-md-12">
 
                         <div id="post-content">
-                          {{ .Content }}
+                         {{ .Content }}
                         </div>
+
+                        {{ range .Data.Pages}}
+                        <section class="post">
+                            <div class="row">
+                                <div class="col-md-12">
+                                 <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+                                  {{ .Content}}
+                                </div>
+                            </div>
+                        </section>
+                        {{ end }}      
                         <!-- /#post-content -->
 
                     </div>
