@@ -197,16 +197,26 @@ a.calendar:hover{
 	margin-bottom: 50px;
 }
 
-.navbar-affixed-top.affix-top {
+/*.navbar-affixed-top.navbar-index.affix-top {
 	position: fixed;
     z-index: 9999;
     width: 100%;
 }
 
-.navbar-affixed-top.affix-top .navbar-default {
+.navbar-affixed-topn.navbar-index.affix-top .navbar-default {
     background-color: transparent !important;
 }
 
-.navbar-affixed-top {
+.navbar-affixed-top.navbar-index {
 	top: 0 !important;
+}*/
+
+.img-center {
+	text-align: center;
+	padding: 50px;
+}
+
+.img-center img {
+	max-width: 500px;
+	height: auto;
 }
