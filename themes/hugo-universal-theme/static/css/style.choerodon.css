@@ -3703,10 +3703,6 @@ a.list-group-item.active > .badge,
   }
 }
 
-/* .home-template .site-header:after {
-  display: none
-} */
-
 @media (max-width:650px) {
   .post-feed {
       padding-top: 5vw
@@ -3715,38 +3711,3 @@ a.list-group-item.active > .badge,
       margin: 0 20px 5vw
   }
 }
-
-/* @media (min-width: 900px) {
-  .ctsingle .post-feed {
-      margin-top: -70px;
-      padding-top: 0;    
-  } 
-  .ctsingle .site-nav {
-      position: relative;
-      top: -70px;
-  }    
-}
-
-@media (min-width: 795px) {  
-  .ctsingle .post-feed p {
-      font-size: 1.8rem;
-      line-height: 1.55em;
-  }
-} */
-
-.error-template .post-feed {
-  padding-top: 0
-}
-/* 
-@media (min-width:900px) {
-  .author-template .post-feed,
-  .home-template .post-feed,
-  .tag-template .post-feed {
-      margin-top: -70px;
-      padding-top: 0
-  }
-  .home-template .site-nav {
-      position: relative;
-      top: -70px
-  }
-} */
