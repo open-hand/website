@@ -5,6 +5,7 @@ tags: ["ipsum"]
 type: "case-studies"
 categories: ["lorem"]
 banner: "/img/case_studies/haufegroup_logo_feature.png"
+summary: 吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱
 ---
 
 <div class="banner1">

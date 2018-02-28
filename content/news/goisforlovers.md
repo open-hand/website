@@ -14,7 +14,7 @@ categories = [
     "golang",
 ]
 nomenu = "main"
-image= "img/writing.jpg"
+image = "img/banners/banner-1.jpg"
 +++
 
 Hugo uses the excellent [go][] [html/template][gohtmltemplate] library for

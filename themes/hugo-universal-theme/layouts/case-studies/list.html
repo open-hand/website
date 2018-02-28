@@ -30,9 +30,9 @@
                                 {{ else }}
                                 <img src="{{ .Site.BaseURL}}img/placeholder.png" class="img-responsive" alt="">
                                 {{ end }}
-                                <p class="quote">{{ .Summary }}</p>
+                                <p class="quote" style="height:80%">{{ .Params.summary }}</p>
                                 <!--<p class="attrib">—  Martin Danielsson, Solution Architect at Haufe Group</p>-->
-                                <a href="/case-studies/haufegroup/">Read about Haufe Group</a>
+                                <a href="{{ .Permalink }}">Read about Haufe Group</a>
                             </div>
 
                             {{ end }}

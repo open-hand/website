@@ -7,7 +7,7 @@ nomenu:
 prev: /tutorials/mathjax
 title: Migrate to Hugo from Jekyll
 noweight: 10
-image: img/team.jpg
+image: "img/banners/banner-1.jpg"
 ---
 
 ## Move static content to `static`
