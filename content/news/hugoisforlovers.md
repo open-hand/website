@@ -14,6 +14,7 @@ categories = [
 ]
 nomenu = "main"
 image= "img/banners/banner-1.jpg"
+type = "news"
 +++
 
 ## Step 1. Install Hugo
