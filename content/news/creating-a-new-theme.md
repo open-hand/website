@@ -9,7 +9,7 @@ next: /tutorials/github-pages-blog
 prev: /tutorials/automated-deployments
 title: Creating a New Theme
 weight: 10
-image: img/welcome.jpg
+image: "img/banners/banner-1.jpg"
 authorAvatar: hugo-logo.png
 ---
 

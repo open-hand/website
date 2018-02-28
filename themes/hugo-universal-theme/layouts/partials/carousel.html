@@ -1,26 +1,11 @@
-{{ if isset .Site.Params "carousel" }}
-{{ if .Site.Params.carousel.enable }}
-{{ if gt (len .Site.Data.carousel) 0 }}
 <section class="no-mb">
-    <div class="home-carousel">
-        <div class="dark-mask"></div>
+    <div class="home-carousel-temp" style="background: url({{$.Site.BaseURL}}img/temp.jpg) no-repeat center top;">
         <div class="container">
-            <div class="homepage owl-carousel">
-                {{ range sort .Site.Data.carousel "weight" }}
-                <div class="item" data-background="{{ .image }}">
-                    <div class="row">
-                        <div class="col-sm-5 right">
-                            <h1>{{ .title }}</h1>
-                            {{ .description | safeHTML }}
-                        </div>
-                    </div>
-                </div>
-                {{ end }}
+            <div class="home-carousel-temp-font">
+                <h3>整合策略<span>INTEGRATED STRATEGY</span></h3>
+                <p>多渠道整合，专注效果营销，使得利润最大化</p>
+                <p class="font-gray">Muti-channel intergration,and focus on marketing,making the profit maximization.</p>
             </div>
-            <!-- /.project owl-slider -->
         </div>
     </div>
 </section>
-{{ end }}
-{{ end }}
-{{ end }}

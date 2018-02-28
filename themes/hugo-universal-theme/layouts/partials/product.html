@@ -1,0 +1,29 @@
+{{ if isset .Site.Params "rounds" }}
+{{ if .Site.Params.rounds.enable }}
+{{ if gt (len .Site.Data.rounds) 0 }}
+<section class="bar background-round no-mb row">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-6 img-box">
+                    <img src="{{ .Site.BaseURL }}img/product.jpg" />
+                </div>
+                <div class="col-md-5 col-md-offset-1">
+                {{ range $index, $element := sort .Site.Data.rounds "weight" }}
+                    <div class="product-li">
+                        <div class="product-icon"></div>
+                        <div class="product-box">
+                            <h3 class="product-title">{{ $element.name }}</h3>
+                            <p class="product-content">{{ $element.description | markdownify }}</p>
+                        </div>
+                    </div>
+                {{ end }}
+                </div>
+        </div>
+        </div>
+    </div>
+</section>
+{{ end }}
+{{ end }}
+{{ end }}
+

@@ -208,6 +208,12 @@ paginate = 10
     link_url = "#"
     link_text = "Check other homepages"
 
+[params.rounds]
+    enable = true
+    # All features are defined in their own files. You can find example items
+    # at 'exampleSite/data/rounds'.
+    # For more informtion take a look at the README.
+
 [params.clients]
     enable = true
     # All clients are defined in their own files. You can find example items
