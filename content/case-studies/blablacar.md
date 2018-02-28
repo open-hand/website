@@ -4,11 +4,11 @@ date: "2015-10-10T13:07:31+02:00"
 tags: ["ipsum"]
 type: "case-studies"
 categories: ["lorem"]
-banner: "img/banners/banner-5.jpg"
+banner: "/img/case_studies/haufegroup_logo_feature.png"
 ---
 
 <div class="banner1">
-  <h1> CASE STUDY:<img src="/images/blablacar_logo.png" class="header_logo"><br> <div class="subhead">Turning to Containerization to Support Millions of Rideshares</div></h1>
+  <h1> CASE STUDY:<img src="img/case_studies/blablacar_logo.png" class="header_logo"><br> <div class="subhead">Turning to Containerization to Support Millions of Rideshares</div></h1>
 
 </div>
 
