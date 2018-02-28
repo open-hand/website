@@ -4,11 +4,11 @@ date: "2015-10-10T13:07:31+02:00"
 tags: ["ipsum"]
 type: "case-studies"
 categories: ["lorem"]
-banner: "img/banners/banner-5.jpg"
+banner: "/img/case_studies/blackrock.png"
 ---
 
 <div class="banner1">
-  <h1> CASE STUDY: <img src="/images/blackrock_logo.png" class="header_logo"><br>
+  <h1> CASE STUDY: <img src="img/blackrock_logo.png" class="header_logo"><br>
     <div class="subhead">Rolling Out Kubernetes in Production in 100 Days</div>
   </h1>
 

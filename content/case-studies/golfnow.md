@@ -4,11 +4,11 @@ date: "2015-10-10T13:07:31+02:00"
 tags: ["ipsum"]
 type: "case-studies"
 categories: ["lorem"]
-banner: "img/banners/banner-5.jpg"
+banner: "/img/case_studies/haufegroup_logo_feature.png"
 ---
 
 <div class="banner1">
-  <h1>CASE STUDY: <img src="/images/golfnow_logo.png" width="20%" style="margin-bottom:-6px"><br>
+  <h1>CASE STUDY: <img src="img/golfnow_logo.png" width="20%" style="margin-bottom:-6px"><br>
     <div class="subhead">Saving Time and Money with Cloud Native Infrastructure</div>
   </h1>
 </div>
