@@ -196,3 +196,17 @@ a.calendar:hover{
 .fileds-line {
 	margin-bottom: 50px;
 }
+
+.navbar-affixed-top.affix-top {
+	position: fixed;
+    z-index: 9999;
+    width: 100%;
+}
+
+.navbar-affixed-top.affix-top .navbar-default {
+    background-color: transparent !important;
+}
+
+.navbar-affixed-top {
+	top: 0 !important;
+}
