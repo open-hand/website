@@ -18,87 +18,41 @@
         <div id="content">
             <div class="container">
                 <div class="row">
+                    <div class="col-md-12">
 
-                    <div class="col-md-12" id="blog-listing-medium">
-
-                        {{range $index,$element := sort (.Paginator 3).Pages "Date" "desc"}}
-                        {{ if eq (mod $index 2) 1 }}
-                        <section class="post">
-                            <div class="row">
-                                <div class="col-md-4">
-                                  <div class="image">
-                                      <a href="{{ .Permalink }}">
-                                          {{ if .Params.banner }}
-                                          <img src="{{ .Site.BaseURL}}{{ .Params.banner }}" class="img-responsive" alt="">
-                                          {{ else }}
-                                          <img src="{{ .Site.BaseURL}}img/placeholder.png" class="img-responsive" alt="">
-                                          {{ end }}
-                                      </a>
-                                  </div>
-                                </div>
-                                <div class="col-md-8">
-                                    <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-                                    <div class="clearfix">
-                                        <p class="author-category">
-                                          {{ if isset .Params "author" }}
-                                          {{ i18n "authorBy" }} <a href="#">{{ .Params.author }}</a>
-                                          {{ end }}
-                                          {{ if isset .Params "categories" }}
-                                          {{ if gt (len .Params.categories) 0 }}
-                                          in <a href="{{ $.Site.BaseURL }}categories/{{ index .Params.categories 0 | urlize | lower }}">{{ index .Params.categories 0 }}</a>
-                                          {{ end }}
-                                          {{ end }}
-
-                                        </p>
-                                        <p class="date-comments">
-                                            <a href="{{ .Permalink }}"><i class="fa fa-calendar-o"></i> {{ .Date.Format .Site.Params.date_format }}</a>
-                                        </p>
-                                    </div>
-                                    <p class="intro">{{ .Summary }}</p>
-                                    <p class="read-more"><a href="{{ .Permalink }}" class="btn btn-template-main">{{ i18n "continueReading" }}</a>
-                                    </p>
-                                </div>
+                        {{ $paginator := .Paginate (where .Data.Pages "Type" "news") }}
+                        {{ range $paginator.Pages }}
+                        
+                        <article class="post-card post"> 
+                            {{if .Params.image}}
+                            <a class="post-card-image-link" href="{{ .Permalink }}">
+                              <div class="post-card-image" style="background-image: url({{.Params.image | absURL}})"></div>
+                            </a>
+                            {{end}}
+                        
+                            <div class="post-card-content">
+                              <a class="post-card-content-link" href="{{ .Permalink }}">
+                                  <header class="post-card-header">
+                                      {{if .Params.tags }}<span class="post-card-tags">{{ range $index, $tag := .Params.tags }}
+                                      #{{$tag}} {{end}} </span>
+                                      {{ end }}
+                                      <h2 class="post-card-title">{{.Title}}</h2>
+                                  </header>
+                                  <section class="post-card-excerpt">
+                                      {{ if .Description }} 
+                                        <p>{{ .Description | markdownify }}</p>
+                                      {{else}}
+                                        <p>{{ .Summary | plainify | safeHTML }}{{ if .Truncated }} ... {{end}} </p>
+                                      {{end}}
+                                  </section>
+                              </a>
+                        
+                              <footer class="post-card-meta">
+                                  <img class="author-profile-image" src="{{ (.Params.authorAvatar | default .Site.Params.authorAvatar) | absURL}}" alt="Author" />
+                                  <span class="post-card-author"><a href="/">{{.Params.author | default .Site.Params.author}}</a></span>
+                              </footer>
                             </div>
-                        </section>
-                        {{ else }}
-                        <section class="post">
-                            <div class="row">
-                               <div class="col-md-8">
-                                    <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-                                    <div class="clearfix">
-                                        <p class="author-category">
-                                          {{ if isset .Params "author" }}
-                                          {{ i18n "authorBy" }} <a href="#">{{ .Params.author }}</a>
-                                          {{ end }}
-                                          {{ if isset .Params "categories" }}
-                                          {{ if gt (len .Params.categories) 0 }}
-                                          in <a href="{{ $.Site.BaseURL }}categories/{{ index .Params.categories 0 | urlize | lower }}">{{ index .Params.categories 0 }}</a>
-                                          {{ end }}
-                                          {{ end }}
-
-                                        </p>
-                                        <p class="date-comments">
-                                            <a href="{{ .Permalink }}"><i class="fa fa-calendar-o"></i> {{ .Date.Format .Site.Params.date_format }}</a>
-                                        </p>
-                                    </div>
-                                    <p class="intro">{{ .Summary }}</p>
-                                    <p class="read-more"><a href="{{ .Permalink }}" class="btn btn-template-main">{{ i18n "continueReading" }}</a>
-                                    </p>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="image">
-                                        <a href="{{ .Permalink }}">
-                                            {{ if .Params.banner }}
-                                            <img src="{{ .Site.BaseURL}}{{ .Params.banner }}" class="img-responsive" alt="">
-                                            {{ else }}
-                                            <img src="{{ .Site.BaseURL}}img/placeholder.png" class="img-responsive" alt="">
-                                            {{ end }}
-                                        </a>
-                                    </div>
-                                  </div>
-                            </div>
-                        </section>
-                        {{ end }}
+                        </article>
                         {{ end }}
 
                         <ul class="pager">
@@ -117,7 +71,7 @@
                     </div>
 
                 </div>
-                <!-- /.row -->
+                <!-- /.post-feed -->
             </div>
             <!-- /.container -->
         </div>
