@@ -5,10 +5,11 @@ tags: ["ipsum"]
 type: "case-studies"
 categories: ["lorem"]
 banner: "/img/case_studies/blablacar-logo.png"
+summary: 吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱
 ---
 
 <div class="banner1">
-  <h1>CASE STUDY: <img src="img/box_logo.png" width="10%" style="margin-bottom:-6px"><br>
+  <h1>CASE STUDY: <img src="/img/case_studies/box_logo.png" width="10%" style="margin-bottom:-6px"><br>
     <div class="subhead">An Early Adopter Envisions
       a New Cloud Platform</div>
   </h1>

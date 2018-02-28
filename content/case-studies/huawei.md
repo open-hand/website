@@ -5,6 +5,7 @@ tags: ["ipsum"]
 type: "case-studies"
 categories: ["lorem"]
 banner: "/img/case_studies/haufegroup_logo_feature.png"
+summary: 吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱
 ---
 <div class="banner1">
   <h1> CASE STUDY:<img src="/img/case_studies/huawei_logo.png" class="header_logo"><br> <div class="subhead">Embracing Cloud Native as a User – and a Vendor</div></h1>
