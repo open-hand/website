@@ -1,0 +1,6 @@
+weight: 2
+horizontal: 0
+vertical: 30
+name: "混合云融合"
+icon: "features_pic1.png"
+description: "混合云融合服务组件基于Kubernetes来管理多云环境下的容器集群，使用Docker对应用程序打包、实例化和运行。"
