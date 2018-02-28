@@ -4,11 +4,11 @@ date: "2015-10-10T13:07:31+02:00"
 tags: ["ipsum"]
 type: "case-studies"
 categories: ["lorem"]
-banner: "img/banners/banner-5.jpg"
+banner: "/img/case_studies/haufegroup_logo_feature.png"
 ---
 
 <div class="banner1">
-  <h1>CASE STUDY: <img src="/images/buffer.png" width="18%" style="margin-bottom:-5px;margin-left:10px;"><br>
+  <h1>CASE STUDY: <img src="img/buffer.png" width="18%" style="margin-bottom:-5px;margin-left:10px;"><br>
   <div class="subhead">Making Deployments Easy for a Small, Distributed Team</div>
 </h1>
 </div>
