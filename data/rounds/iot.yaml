@@ -1,6 +1,6 @@
 weight: 4
 horizontal: 15
 vertical: 165
-name: "物联网 IoT"
+name: "持续发布管理"
 icon: "features_pic3.png"
-description: "I am content 3,I am content 3,I am content 3,I am content 3,I am content 3,I am content 3,I am content 3,I am content 3,"
+description: "灰度发布方案"

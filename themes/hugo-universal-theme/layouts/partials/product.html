@@ -11,7 +11,9 @@
                 <div class="col-md-5 col-md-offset-1">
                 {{ range $index, $element := sort .Site.Data.rounds "weight" }}
                     <div class="product-li">
-                        <div class="product-icon"></div>
+                        <div class="product-icon">
+                            <img src="{{ .Site.BaseURL }}img/product_icon.jpg" />
+                        </div>
                         <div class="product-box">
                             <h3 class="product-title">{{ $element.name }}</h3>
                             <p class="product-content">{{ $element.description | markdownify }}</p>

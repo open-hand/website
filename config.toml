@@ -203,10 +203,10 @@ paginate = 10
 [params.see_more]
     enable = true
     icon = "fa fa-file-code-o"
-    title = "Do you want to see more?"
-    subtitle = "We have prepared for you more than 40 different HTML pages, including 5 variations of homepage."
+    title = "想了解更多吗？"
+    subtitle = "我们为您准备了许多案例，包括几个完整的网站。"
     link_url = "#"
-    link_text = "Check other homepages"
+    link_text = "去看看"
 
 [params.rounds]
     enable = true

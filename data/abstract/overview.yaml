@@ -1,4 +1,4 @@
 weight: 1
 title: "46 HTML pages full of features"
 description: <h3><a href="https://en.wikipedia.org/wiki/Choerodon">Choerodon</a>是一个开源系统，是基于<a href="https://kubernetes.io/">Kubernetes</a>的企业级容器PaaS平台，包含DevOps套件、应用服务套件、数据服务、智能洞察开发流程和运营管理，并且完全支持混合云部署。</h3><p class="">以DevOps、微服务和云原生为核心理念，帮助传统企业提高业务敏捷度和加速交付节奏，为用户提供企业级应用集成、交付、运营一站式基础平台，助力实现数字化转型。</p>
-image: "img/abstract-pic.png"
+image: "img/abstract.png"
