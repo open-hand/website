@@ -4,124 +4,66 @@ date: "2015-10-10T13:07:31+02:00"
 tags: ["ipsum"]
 type: "case-studies"
 categories: ["lorem"]
-banner: "/img/case_studies/haufegroup_logo_feature.png"
-summary: 吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱
+banner: "/img/case_studies/golfnow_logo.png"
+summary: 中国共产党第九次全国代表大会于１９６９年４月１日─２４日在北京举行。出席大会的代表１５１２人，代表全国２２００万党员。由于当时各地党组织处于瘫痪状态，无法正常进行代表的选举
 ---
-
-<div class="banner1">
-  <h1>CASE STUDY: <img src="/img/case_studies/golfnow_logo.png" width="20%" style="margin-bottom:-6px"><br>
-    <div class="subhead">Saving Time and Money with Cloud Native Infrastructure</div>
-  </h1>
-</div>
-
-<div class="details">
-    Company&nbsp;<b>GolfNow</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Location&nbsp;<b>Orlando, Florida</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Industry&nbsp;<b>Golf Industry Technology and Services Provider</b>
-</div>
-
 <hr>
-
 <section class="section1">
-  <div class="cols">
-    <div class="col1">
+<div class="cols">
+<div class="col1">
 
-    <h2>Challenge</h2>
-      A member of the <a href="http://www.nbcunicareers.com/our-businesses/nbc-sports-group">NBC Sports Group</a>, <a href="https://www.golfnow.com/">GolfNow</a> is the golf industry’s technology and services leader, managing 10 different products, as well as the largest e-commerce tee time marketplace in the world. As its business began expanding rapidly and globally, GolfNow’s monolithic application became problematic. "We kept growing our infrastructure vertically rather than horizontally, and the cost of doing business became problematic," says Sheriff Mohamed, GolfNow’s Director, Architecture. "We wanted the ability to more easily expand globally."
-      <br>
-  </div>
+<h2>挑战</h2>
+一个幽灵，共产主义的幽灵，在欧洲大陆徘徊。为了对这个幽灵进行神圣的围剿，旧欧洲的一切势力，教皇和沙皇、梅特涅和基佐、法国的激进派和德国的警察，都联合起来了。
+有哪一个反对党不被它的当政的敌人骂为共产党呢？又有哪一个反对党不拿共产主义这个罪名去回敬更进步的反对党人和自己的反动敌人呢？
+从这一事实中可以得出两个结论：
+共产主义已经被欧洲的一切势力公认为一种势力；
+现在是共产党人向全世界公开说明自己的观点、自己的目的、自己的意图并且拿党自己的宣言来反驳关于共产主义幽灵的神话的时候了。
+在过去的各个历史时代，我们几乎到处都可以看到社会完全划分为各个不同的等级，看到社会地位分成的多种多样的层次。在古罗马，有贵族、骑士、平民、奴隶，在中世纪，有封建主、臣仆、行会师傅、帮工、农奴，而且几乎在每一个阶级内部又有一些特殊的阶层。
+从封建社会的灭亡中产生出来的现代资产阶级社会并没有消灭阶级对立。它只是用新的阶级、新的压迫条件、新的斗争形式代替了旧的。
+<br>
+</div>
 
-  <div class="col2">
-    <h2>Solution</h2>
-      Turning to microservices and containerization, GolfNow began moving its applications and databases from third-party services to its own clusters running on <a href="https://www.docker.com/">Docker</a> and <a href="http://kubernetes.io/">Kubernetes.</a><br><br>
-
-    <h2>Impact</h2>
-      The results were immediate. While maintaining the same capacity—and beyond, during peak periods—GolfNow saw its infrastructure costs for the first application virtually cut in half.
-    </div>
-  </div>
+<div class="col2">
+  <h2>方案</h2>
+ 至今一切社会的历史都是阶级斗争的历史。
+ 自由民和奴隶、贵族和平民、领主和农奴、行会师傅和帮工，一句话，压迫者和被压迫者，始终处于相互对立的地位，进行不断的、有时隐蔽有时公开的斗争，而每一次斗争的结局是整个社会受到革命改造或者斗争的各阶级同归于尽
+<br>
+<h2>影响</h2>
+ 资产阶级在它已经取得了统治的地方把一切封建的、宗法的和田园诗般的关系都破坏了。它无情地斩断了把人们束缚于天然尊长的形形色色的封建羁绊，它使人和人之间除了赤裸裸的利害关系，除了冷酷无情的“现金交易”，就再也没有任何别的联系了。它把宗教虔诚、骑士热忱、小市民伤感这些情感的神圣发作，淹没在利己主义打算的冰水之中。它把人的尊严变成了交换价值
+</div>
+</div>
 </section>
 
-
-<div class="banner2">
-  <div class="banner2text">
-      "With our growth we obviously needed to expand our infrastructure, and we kept growing vertically rather than horizontally. We were basically wasting money and doubling the cost of our infrastructure."<br><br><span style="font-size:15px;letter-spacing:0.08em">- SHERIFF MOHAMED, DIRECTOR, ARCHITECTURE AT GOLFNOW</span>
+<div class="banner2" style="margin-top:30%">
+  <div class="banner2text" style="padding-top:10px;padding-bottom:10px;color:white;background-color:#666666;text-align:center;padding-left:20%;padding-right:20%;font-size:24px" >
+    资产阶级，由于开拓了世界市场，使一切国家的生产和消费都成为世界性的了。使反动派大为惋惜的是，资产阶级挖掉了工业脚下的民族基础。古老的民族工业被消灭了，并且每天都还在被消灭。它们被新的工业排挤掉了，新的工业的建立已经成为一切文明民族的生命攸关的问题；
   </div>
 </div>
 
-<section class="section2">
-  <div class="fullcol">
-      <h2>It’s not every day that you can say you’ve slashed an operating expense by half.</h2>
-
-      But Sheriff Mohamed and Josh Chandler did just that when they helped lead their company, <a href="https://www.golfnow.com/">GolfNow</a>, on a journey from a monolithic to a containerized, cloud native infrastructure managed by Kubernetes.
-      <br> <br>
-      A top-performing business within the NBC Sports Group, GolfNow is a technology and services company with the largest tee time marketplace in the world. GolfNow serves 5 million active golfers across 10 different products. In recent years, the business had grown so fast that the infrastructure supporting their giant monolithic application (written in C#.NET and backed by SQL Server database management system) could not keep up. "With our growth we obviously needed to expand our infrastructure, and we kept growing vertically rather than horizontally," says Sheriff, GolfNow’s Director, Architecture. "Our costs were growing exponentially. And on top of that, we had to build a Disaster Recovery (DR) environment, which then meant we’d have to copy exactly what we had in our original data center to another data center that was just the standby. We were basically wasting money and doubling the cost of our infrastructure."
-      <br> <br>
-      In moving just the first of GolfNow’s important applications—a booking engine for golf courses and B2B marketing platform—from third-party services to their own Kubernetes environment, "our bill went down drastically," says Sheriff.
-      <br> <br>
-      The path to those stellar results began in late 2014. In order to support GolfNow’s global growth, the team decided that the company needed to have multiple data centers and the ability to quickly and easily re-route traffic as needed. "From there we knew that we needed to go in a direction of breaking things apart, microservices, and containerization," says Sheriff. "At the time we were trying to get away from <a href="https://www.microsoft.com/net">C#.NET</a> and <a href="https://www.microsoft.com/en-cy/sql-server/sql-server-2016">SQL Server</a> since it didn’t run very well on Linux, where everything container was running smoothly."
-      <br> <br>
-      To that end, the team shifted to working with <a href="https://nodejs.org/">Node.js</a>, the open-source, cross-platform JavaScript runtime environment for developing tools and applications, and <a href="https://www.mongodb.com/">MongoDB</a>, the open-source database program. At the time, <a href="https://www.docker.com/">Docker</a>, the platform for deploying applications in containers, was still new. But once the team began experimenting with it, Sheriff says, "we realized that was the way we wanted to go, especially since that’s the way the industry is heading."
-  </div>
+<section class="section2" style="margin-top:4%;margin-bottom:4%;padding-left:20px;padding-right:20px">
+<div class="fullcol" style="margin-left:10%;margin-right:11%">
+   美洲的发现、绕过非洲的航行，给新兴的资产阶级开辟了新天地。东印度和中国的市场、美洲的殖民化、对殖民地的贸易、交换手段和一般的商品的增加，使商业、航海业和工业空前高涨，因而使正在崩溃的封建社会内部的革命因素迅速发展。
+   以前那种封建的或行会的工业经营方式已经不能满足随着新市场的出现而增加的需求了。工场手工业代替了这种经营方式。行会师傅被工业的中间等级排挤掉了；各种行业组织之间的分工随着各个作坊内部的分工的出现而消失了。
+   但是，市场总是在扩大，需求总是在增加。甚至工场手工业也不再能满足需要了。于是，蒸汽和机器引起了工业生产的革命。现代大工业代替了工场手工业；工业中的百万富翁，一支一支产业大军的首领，现代资产者，代替了工业的中间等级。
+   大工业建立了由美洲的发现所准备好的世界市场。世界市场使商业、航海业和陆路交通得到了巨大的发展。这种发展又反过来促进了工业的扩展，同时，随着工业、商业、航海业和铁路的扩展，资产阶级也在同一程度上得到发展，增加自己的资本，把中世纪遗留下来的一切阶级都排挤到后面去。
+</div>
 </section>
 
-<div class="banner3">
-  <div class="banner3text">
-    "The team migrated the rest of the application into their Kubernetes cluster. And the impact was immediate: On top of cutting monthly costs by a large percentage, says Sheriff, 'Running at the same capacity and during our peak time, we were able to horizontally grow. Since we were using our VMs more efficiently with containers, we didn’t have to pay extra money at all.'"
+<div class="banner3" >
+  <div class="banner3text" style="padding-top:10px;padding-bottom:10px;color:white;background:url('/img/case_studies/CaseStudy_huawei_banner3.jpg');text-align:center;padding-left:20%;padding-right:20%;font-size:24px">
+由此可见，现代资产阶级本身是一个长期发展过程的产物，是生产方式和交换方式的一系列变革的产物。
+但是，市场总是在扩大，需求总是在增加。甚至工场手工业也不再能满足需要了。于是，蒸汽和机器引起了工业生产的革命。现代大工业代替了工场手工业；工业中的百万富翁，一支一支产业大军的首领，现代资产者，代替了工业的中间等级。
+   大工业建立了由美洲的发现所准备好的世界市场。世界市场使商业、
   </div>
 </div>
 
-<section class="section3">
-  <div class="fullcol">
-    GolfNow’s dev team ran an "internal, low-key" proof of concept and were won over. "We really liked how easy it was to be able to pass containers around to each other and have them up and running in no time, exactly the way it was running on my machine," says Sheriff. "Because that is always the biggest gripe that Ops has with developers, right? ‘It worked on my machine!’ But then we started getting to the point of, ‘How do we make sure that these things stay up and running?’" <br><br>
-    That led the team on a quest to find the right orchestration system for the company’s needs. Sheriff says the first few options they tried were either too heavy or "didn’t feel quite right." In late summer 2015, they discovered the just-released <a href="http://kubernetes.io/">Kubernetes</a>, which Sheriff immediately liked for its ease of use. "We did another proof of concept," he says, "and Kubernetes won because of the fact that the community backing was there, built on top of what Google had already done."
-    <br><br>
-    But before they could go with Kubernetes, <a href="http://www.nbc.com/">NBC</a>, GolfNow’s parent company, also asked them to comparison shop with another company. Sheriff and his team liked the competing company’s platform user interface, but didn’t like that its platform would not allow containers to run natively on Docker. With no clear decision in sight, Sheriff’s VP at GolfNow, Steve McElwee, set up a three-month trial during which a GolfNow team (consisting of Sheriff and Josh, who’s now Lead Architect, Open Platforms) would build out a Kubernetes environment, and a large NBC team would build out one with the other company’s platform.
-    <br><br>
-    "We spun up the cluster and we tried to get everything to run the way we wanted it to run," Sheriff says. "The biggest thing that we took away from it is that not only did we want our applications to run within Kubernetes and Docker, we also wanted our databases to run there. We literally wanted our entire infrastructure to run within Kubernetes."
-    <br><br>
-    At the time there was nothing in the community to help them get Kafka and MongoDB clusters running within a Kubernetes and Docker environment, so Sheriff and Josh figured it out on their own, taking a full month to get it right. "Everything started rolling from there," Sheriff says. "We were able to get all our applications connected, and we finished our side of the proof of concept a month in advance. My VP was like, ‘Alright, it’s over. Kubernetes wins.’"
-    <br><br>
-    The next step, beginning in January 2016, was getting everything working in production. The team focused first on one application that was already written in Node.js and MongoDB. A booking engine for golf courses and B2B marketing platform, the application was already going in the microservice direction but wasn’t quite finished yet. At the time, it was running in <a href="https://devcenter.heroku.com/articles/mongohq">Heroku Compose</a> and other third-party services—resulting in a large monthly bill.
-
-  </div>
+<section class="section3" style="margin-top:4%;margin-bottom:4%;padding-left:20px;padding-right:20px">
+<div class="fullcol" style="margin-left:10%;margin-right:11%">
+  资产阶级抹去了一切向来受人尊崇和令人敬畏的职业的神圣光环。它把医生、律师、教士、诗人和学者变成了它出钱招雇的雇佣劳动者。
+  资产阶级撕下了罩在家庭关系上的温情脉脉的面纱，把这种关系变成了纯粹的金钱关系。
+  资产阶级揭示了，在中世纪深受反动派称许的那种人力的野蛮使用，是以极端怠惰作为相应补充的。它第一个证明了，人的活动能够取得什么样的成就。它创造了完全不同于埃及金字塔、罗马水道和哥特式教堂的奇迹；它完成了完全不同于民族大迁徙和十字军东征的远征。
+资产阶级除非对生产工具，从而对生产关系，从而对全部社会关系不断地进行革命，否则就不能生存下去。反之，原封不动地保持旧的生产方式，却是过去的一切工业阶级生存的首要条件。生产的不断变革，一切社会状况不停的动荡，永远的不安定和变动，这就是资产阶级时代不同于过去一切时代的地方。一切固定的僵化的关系以及与之相适应的素被尊崇的观念和见解都被消除了，一切新形成的关系等不到固定下来就陈旧了。一切等级的和固定的东西都烟消云散了，一切神圣的东西都被亵渎了。人们终于不得不用冷静的眼光来看他们的生活地位、他们的相互关系。
+<br><br>
+</div>
 </section>
 
-  <div class="banner4">
-    <div class="banner4text">
-    "'The time I spent actually moving the applications was under 30 seconds! We can move data centers in just incredible amounts of time. If you haven’t come from the Kubernetes world you wouldn’t believe me.' Sheriff puts it in these terms: 'Before Kubernetes I wasn’t sleeping at night, literally. I was woken up all the time, because things were down. After Kubernetes, I’ve been sleeping at night.'"
-    </div>
-  </div>
-
-<section class="section4">
-  <div class="fullcol">
-    "The goal was to take all of that out and put it within this new platform we’ve created with Kubernetes on <a href="https://cloud.google.com/compute/">Google Compute Engine (GCE)</a>," says Sheriff. "So we ended up building piece by piece, in parallel, what was out in Heroku and Compose, in our Kubernetes cluster. Then, literally, just switched configs in the background. So in Heroku we had the app running hitting a Compose database. We’d take the config, change it and make it hit the database that was running in our cluster."
-    <br><br>
-    Using this procedure, they were able to migrate piecemeal, without any downtime. The first migration was done during off hours, but to test the limits, the team migrated the second database in the middle of the day, when lots of users were running the application. "We did it," Sheriff says, "and again it was successful. Nobody noticed."
-    <br><br>
-    After three weeks of monitoring to make sure everything was running stable, the team migrated the rest of the application into their Kubernetes cluster. And the impact was immediate: On top of cutting monthly costs by a large percentage, says Sheriff, "Running at the same capacity and during our peak time, we were able to horizontally grow. Since we were using our VMs more efficiently with containers, we didn’t have to pay extra money at all."
-    <br><br>
-    Not only were they saving money, but they were also saving time. "I had a meeting this morning about migrating some applications from one cluster to another," says Josh. "I spent about 2 hours explaining the process. The time I spent actually moving the applications was under 30 seconds! We can move data centers in just incredible amounts of time. If you haven’t come from the Kubernetes world you wouldn’t believe me." Sheriff puts it in these terms: "Before Kubernetes I wasn’t sleeping at night, literally. I was woken up all the time, because things were down. After Kubernetes, I’ve been sleeping at night."
-    <br><br>
-    A small percentage of the applications on GolfNow have been migrated over to the Kubernetes environment. "Our Core Team is rewriting a lot of the .NET applications into <a href="https://www.microsoft.com/net/core">.NET Core</a> [which is compatible with Linux and Docker] so that we can run them within containers," says Sheriff.
-    <br><br>
-    Looking ahead, Sheriff and his team want to spend 2017 continuing to build a whole platform around Kubernetes with <a href="https://github.com/drone/drone">Drone</a>, an open-source continuous delivery platform, to make it more developer-centric. "Now they’re able to manage configuration, they’re able to manage their deployments and things like that, making all these subteams that are now creating all these microservices, be self sufficient," he says. "So it can pull us away from applications and allow us to just make sure the cluster is running and healthy, and then actually migrate that over to our Ops team."
-
-  </div>
-</section>
-
-  <div class="banner5">
-    <div class="banner5text">
-    "Having gone from complete newbies to production-ready in three months, the GolfNow team is eager to encourage other companies to follow their lead. 'This is The Six Million Dollar Man of the cloud right now,' adds Josh. 'Just try it out, watch it happen. I feel like the proof is in the pudding when you look at these kinds of application stacks. They’re faster, they’re more resilient.'"
-    </div>
-  </div>
-
-<section class="section5">
-  <div class="fullcol">
-    And long-term, Sheriff has an even bigger goal for getting more people into the Kubernetes fold. "We’re actually trying to make this platform generic enough so that any of our sister companies can use it if they wish," he says. "Most definitely I think it can be used as a model. I think the way we migrated into it, the way we built it out, are all ways that I think other companies can learn from, and should not be afraid of."
-    <br><br>
-    The GolfNow team is also giving back to the Kubernetes community by open-sourcing a bot framework that Josh built. "We noticed that the dashboard user interface is actually moving a lot faster than when we started," says Sheriff. "However we realized what we needed was something that’s more of a bot that really helps us administer Kubernetes as a whole through Slack." Josh explains: "With the Kubernetes-Slack integration, you can essentially hook into a cluster and the issue commands and edit configurations. We’ve tried to simplify the security configuration as much as possible. We hope this will be our major thank you to Kubernetes, for everything you’ve given us."
-    <br><br>
-    Having gone from complete newbies to production-ready in three months, the GolfNow team is eager to encourage other companies to follow their lead. The lessons they’ve learned: "You’ve got to have buy-in from your boss," says Sheriff. "Another big deal is having two to three people dedicated to this type of endeavor. You can’t have people who are half in, half out." And if you don’t have buy-in from the get go, proving it out will get you there.
-    <br><br>
-    "This is The Six Million Dollar Man of the cloud right now," adds Josh. "Just try it out, watch it happen. I feel like the proof is in the pudding when you look at these kinds of application stacks. They’re faster, they’re more resilient."
-
-  </div>
-</section>

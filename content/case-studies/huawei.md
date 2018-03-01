@@ -4,100 +4,66 @@ date: "2015-10-10T13:07:31+02:00"
 tags: ["ipsum"]
 type: "case-studies"
 categories: ["lorem"]
-banner: "/img/case_studies/haufegroup_logo_feature.png"
-summary: 吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱
+banner: "/img/case_studies/huawei.png"
+summary: 中国共产党第九次全国代表大会于１９６９年４月１日─２４日在北京举行。出席大会的代表１５１２人，代表全国２２００万党员。由于当时各地党组织处于瘫痪状态，无法正常进行代表的选举
 ---
-<div class="banner1">
-  <h1> CASE STUDY:<img src="/img/case_studies/huawei_logo.png" class="header_logo"><br> <div class="subhead">Embracing Cloud Native as a User – and a Vendor</div></h1>
-
-</div>
-
-<div class="details">
-    Company &nbsp;<b>Huawei</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Location &nbsp;<b>Shenzhen, China</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Industry &nbsp;<b>Telecommunications Equipment</b>
-</div>
-
 <hr>
-
 <section class="section1">
-
 <div class="cols">
-  <div class="col1">
-    <h2>Challenge</h2>
-        A multinational company that’s the largest telecommunications equipment manufacturer in the world, Huawei has more than 180,000 employees. In order to support its fast business development around the globe, <a href="http://www.huawei.com/">Huawei</a> has eight data centers for its internal I.T. department, which have been running 800+ applications in 100K+ VMs to serve these 180,000 users. With the rapid increase of new applications, the cost and efficiency of management and deployment of VM-based apps all became critical challenges for business agility. "It’s very much a distributed system so we found that managing all of the tasks in a more consistent way is always a challenge," says Peixin Hou, the company’s Chief Software Architect and Community Director for Open Source. "We wanted to move into a more agile and decent practice."
-      </div>
+<div class="col1">
+
+<h2>挑战</h2>
+一个幽灵，共产主义的幽灵，在欧洲大陆徘徊。为了对这个幽灵进行神圣的围剿，旧欧洲的一切势力，教皇和沙皇、梅特涅和基佐、法国的激进派和德国的警察，都联合起来了。
+有哪一个反对党不被它的当政的敌人骂为共产党呢？又有哪一个反对党不拿共产主义这个罪名去回敬更进步的反对党人和自己的反动敌人呢？
+从这一事实中可以得出两个结论：
+共产主义已经被欧洲的一切势力公认为一种势力；
+现在是共产党人向全世界公开说明自己的观点、自己的目的、自己的意图并且拿党自己的宣言来反驳关于共产主义幽灵的神话的时候了。
+在过去的各个历史时代，我们几乎到处都可以看到社会完全划分为各个不同的等级，看到社会地位分成的多种多样的层次。在古罗马，有贵族、骑士、平民、奴隶，在中世纪，有封建主、臣仆、行会师傅、帮工、农奴，而且几乎在每一个阶级内部又有一些特殊的阶层。
+从封建社会的灭亡中产生出来的现代资产阶级社会并没有消灭阶级对立。它只是用新的阶级、新的压迫条件、新的斗争形式代替了旧的。
+<br>
+</div>
 
 <div class="col2">
-  <h2>Solution</h2>
-      After deciding to use container technology, Huawei began moving the internal I.T. department’s applications to run on <a href="http://kubernetes.io/">Kubernetes</a>. So far, about 30 percent of these applications have been transferred to cloud native.
+  <h2>方案</h2>
+ 至今一切社会的历史都是阶级斗争的历史。
+ 自由民和奴隶、贵族和平民、领主和农奴、行会师傅和帮工，一句话，压迫者和被压迫者，始终处于相互对立的地位，进行不断的、有时隐蔽有时公开的斗争，而每一次斗争的结局是整个社会受到革命改造或者斗争的各阶级同归于尽
 <br>
-<br>
-<h2>Impact</h2>
-      "By the end of 2016, Huawei’s internal I.T. department managed more than 4,000 nodes with tens of thousands containers using a Kubernetes-based Platform as a Service (PaaS) solution," says Hou. "The global deployment cycles decreased from a week to minutes, and the efficiency of application delivery has been improved 10 fold." For the bottom line, he says, "We also see significant operating expense spending cut, in some circumstances 20-30 percent, which we think is very helpful for our business." Given the results Huawei has had internally – and the demand it is seeing externally – the company has also built the technologies into <a href="http://developer.huawei.com/ict/en/site-paas">FusionStage™</a>, the PaaS solution it offers its customers.
+<h2>影响</h2>
+ 资产阶级在它已经取得了统治的地方把一切封建的、宗法的和田园诗般的关系都破坏了。它无情地斩断了把人们束缚于天然尊长的形形色色的封建羁绊，它使人和人之间除了赤裸裸的利害关系，除了冷酷无情的“现金交易”，就再也没有任何别的联系了。它把宗教虔诚、骑士热忱、小市民伤感这些情感的神圣发作，淹没在利己主义打算的冰水之中。它把人的尊严变成了交换价值
 </div>
-
 </div>
-
 </section>
 
-<div class="banner2">
-  <div class="banner2text">
-    "If you’re a vendor, in order to convince your customer, you should use it yourself. Luckily because Huawei has a lot of employees, we can demonstrate the scale of cloud we can build using this technology."<br style="height:25px"><span style="font-size:14px;letter-spacing:2px;text-transform:uppercase;margin-top:5% !important;"><br>- Peixin Hou, chief software architect and community director for open source</span>
+<div class="banner2" style="margin-top:30%">
+  <div class="banner2text" style="padding-top:10px;padding-bottom:10px;color:white;background-color:#666666;text-align:center;padding-left:20%;padding-right:20%;font-size:24px" >
+    资产阶级，由于开拓了世界市场，使一切国家的生产和消费都成为世界性的了。使反动派大为惋惜的是，资产阶级挖掉了工业脚下的民族基础。古老的民族工业被消灭了，并且每天都还在被消灭。它们被新的工业排挤掉了，新的工业的建立已经成为一切文明民族的生命攸关的问题；
   </div>
 </div>
 
-<section class="section2">
-
-<div class="fullcol">
-      Huawei’s Kubernetes journey began with one developer.
-    Over two years ago, one of the engineers employed by the networking and telecommunications giant became interested in <a href="http://kubernetes.io/">Kubernetes</a>, the technology for managing application containers across clusters of hosts, and started contributing to its open source community. As the technology developed and the community grew, he kept telling his managers about it.<br><br>
-    And as fate would have it, at the same time, Huawei was looking for a better orchestration system for its internal enterprise I.T. department, which supports every business flow processing. "We have more than 180,000 employees worldwide, and a complicated internal procedure, so probably every week this department needs to develop some new applications," says Peixin Hou, Huawei’s Chief Software Architect and Community Director for Open Source. "Very often our I.T. departments need to launch tens of thousands of containers, with tasks running across thousands of nodes across the world. It’s very much a distributed system, so we found that managing all of the tasks in a more consistent way is always a challenge."<br><br>
-    In the past, Huawei had used virtual machines to encapsulate applications, but "every time when we start a VM," Hou says, "whether because it’s a new service or because it was a service that was shut down because of some abnormal node functioning, it takes a lot of time."  Huawei turned to containerization, so the timing was right to try Kubernetes. It took a year to adopt that engineer’s suggestion – the process "is not overnight," says Hou – but once in use, he says, "Kubernetes basically solved most of our problems. Before, the time of deployment took about a week, now it only takes minutes. The developers are happy. That department is also quite happy."<br><br>
-    Hou sees great benefits to the company that come with using this technology: "Kubernetes brings agility, scale-out capability, and DevOps practice to the cloud-based applications," he says. "It provides us with the ability to customize the scheduling architecture, which makes possible the affinity between container tasks that gives greater efficiency. It supports multiple container formats. It has extensive support for various container networking solutions and container storage."
+<section class="section2" style="margin-top:4%;margin-bottom:4%;padding-left:20px;padding-right:20px">
+<div class="fullcol" style="margin-left:10%;margin-right:11%">
+   美洲的发现、绕过非洲的航行，给新兴的资产阶级开辟了新天地。东印度和中国的市场、美洲的殖民化、对殖民地的贸易、交换手段和一般的商品的增加，使商业、航海业和工业空前高涨，因而使正在崩溃的封建社会内部的革命因素迅速发展。
+   以前那种封建的或行会的工业经营方式已经不能满足随着新市场的出现而增加的需求了。工场手工业代替了这种经营方式。行会师傅被工业的中间等级排挤掉了；各种行业组织之间的分工随着各个作坊内部的分工的出现而消失了。
+   但是，市场总是在扩大，需求总是在增加。甚至工场手工业也不再能满足需要了。于是，蒸汽和机器引起了工业生产的革命。现代大工业代替了工场手工业；工业中的百万富翁，一支一支产业大军的首领，现代资产者，代替了工业的中间等级。
+   大工业建立了由美洲的发现所准备好的世界市场。世界市场使商业、航海业和陆路交通得到了巨大的发展。这种发展又反过来促进了工业的扩展，同时，随着工业、商业、航海业和铁路的扩展，资产阶级也在同一程度上得到发展，增加自己的资本，把中世纪遗留下来的一切阶级都排挤到后面去。
 </div>
 </section>
 
-<div class="banner3">
-  <div class="banner3text">
-    "Kubernetes basically solved most of our problems. Before, the time of deployment took about a week, now it only takes minutes. The developers are happy. That department is also quite happy."
+<div class="banner3" >
+  <div class="banner3text" style="padding-top:10px;padding-bottom:10px;color:white;background:url('/img/case_studies/CaseStudy_huawei_banner3.jpg');text-align:center;padding-left:20%;padding-right:20%;font-size:24px">
+由此可见，现代资产阶级本身是一个长期发展过程的产物，是生产方式和交换方式的一系列变革的产物。
+但是，市场总是在扩大，需求总是在增加。甚至工场手工业也不再能满足需要了。于是，蒸汽和机器引起了工业生产的革命。现代大工业代替了工场手工业；工业中的百万富翁，一支一支产业大军的首领，现代资产者，代替了工业的中间等级。
+   大工业建立了由美洲的发现所准备好的世界市场。世界市场使商业、
   </div>
 </div>
 
-<section class="section3">
-<div class="fullcol">
-      And not least of all, there’s an impact on the bottom line. Says Hou: "We also see significant operating expense spending cut in some circumstances 20-30 percent, which is very helpful for our business."<br><br>
-    Pleased with those initial results, and seeing a demand for cloud native technologies from its customers, Huawei doubled down on Kubernetes. In the spring of 2016, the company became not only a user but also a vendor.<br><br>
-    "We built the Kubernetes technologies into our solutions," says Hou, referring to Huawei’s <a href="http://developer.huawei.com/ict/en/site-paas">FusionStage™</a> PaaS offering. "Our customers, from very big telecommunications operators to banks, love the idea of cloud native. They like Kubernetes technology. But they need to spend a lot of time to decompose their applications to turn them into microservice architecture, and as a solution provider, we help them. We’ve started to work with some Chinese banks, and we see a lot of interest from our customers like <a href="http://www.chinamobileltd.com/">China Mobile</a> and <a href="https://www.telekom.com/en">Deutsche Telekom</a>."<br><br>
-    "If you’re just a user, you’re just a user," adds Hou. "But if you’re a vendor, in order to even convince your customers, you should use it yourself. Luckily because Huawei has a lot of employees, we can demonstrate the scale of cloud we can build using this technology. We provide customer wisdom." While Huawei has its own private cloud, many of its customers run cross-cloud applications using Huawei’s solutions. It’s a big selling point that most of the public cloud providers now support Kubernetes. "This makes the cross-cloud transition much easier than with other solutions," says Hou.<br><br>
+<section class="section3" style="margin-top:4%;margin-bottom:4%;padding-left:20px;padding-right:20px">
+<div class="fullcol" style="margin-left:10%;margin-right:11%">
+  资产阶级抹去了一切向来受人尊崇和令人敬畏的职业的神圣光环。它把医生、律师、教士、诗人和学者变成了它出钱招雇的雇佣劳动者。
+  资产阶级撕下了罩在家庭关系上的温情脉脉的面纱，把这种关系变成了纯粹的金钱关系。
+  资产阶级揭示了，在中世纪深受反动派称许的那种人力的野蛮使用，是以极端怠惰作为相应补充的。它第一个证明了，人的活动能够取得什么样的成就。它创造了完全不同于埃及金字塔、罗马水道和哥特式教堂的奇迹；它完成了完全不同于民族大迁徙和十字军东征的远征。
+资产阶级除非对生产工具，从而对生产关系，从而对全部社会关系不断地进行革命，否则就不能生存下去。反之，原封不动地保持旧的生产方式，却是过去的一切工业阶级生存的首要条件。生产的不断变革，一切社会状况不停的动荡，永远的不安定和变动，这就是资产阶级时代不同于过去一切时代的地方。一切固定的僵化的关系以及与之相适应的素被尊崇的观念和见解都被消除了，一切新形成的关系等不到固定下来就陈旧了。一切等级的和固定的东西都烟消云散了，一切神圣的东西都被亵渎了。人们终于不得不用冷静的眼光来看他们的生活地位、他们的相互关系。
+<br><br>
 </div>
 </section>
 
-<div class="banner4">
-  <div class="banner4text">
-    "Our customers, from very big telecommunications operators to banks, love the idea of cloud native. They like Kubernetes technology. But they need to spend a lot of time to decompose their applications to turn them into microservice architecture, and as a solution provider, we help them."
-  </div>
-</div>
-
-<section class="section4">
-<div class="fullcol">
-  Within Huawei itself, once his team completes the transition of the internal business procedure department to Kubernetes, Hou is looking to convince more departments to move over to the cloud native development cycle and practice. "We have a lot of software developers, so we will provide them with our platform as a service solution, our own product," he says. "We would like to see significant cuts in their iteration cycle."<br><br>
-    Having overseen the initial move to Kubernetes at Huawei, Hou has advice for other companies considering the technology: "When you start to design the architecture of your application, think about cloud native, think about microservice architecture from the beginning," he says. "I think you will benefit from that."<br><br>
-  But if you already have legacy applications, "start from some microservice-friendly part of those applications first, parts that are relatively easy to be decomposed into simpler pieces and are relatively lightweight," Hou says. "Don’t think from day one that within how many days I want to move the whole architecture, or move everything into microservices. Don’t put that as a kind of target. You should do it in a gradual manner. And I would say for legacy applications, not every piece would be suitable for microservice architecture. No need to force it."<br><br>
-  After all, as enthusiastic as Hou is about Kubernetes at Huawei, he estimates that "in the next 10 years, maybe 80 percent of the workload can be distributed, can be run on the cloud native environments. There’s still 20 percent that’s not, but it’s fine. If we can make 80 percent of our workload really be cloud native, to have agility, it’s a much better world at the end of the day."
-
-</div>
-</section>
-
-<div class="banner5">
-  <div class="banner5text">
-    "In the next 10 years, maybe 80 percent of the workload can be distributed, can be run on the cloud native environments. There’s still 20 percent that’s not, but it’s fine. If we can make 80 percent of our workload really be cloud native, to have agility, it’s a much better world at the end of the day."
-
-  </div>
-</div>
-<section class="section5">
-<div class="fullcol">
-  In the nearer future, Hou is looking forward to new features that are being developed around Kubernetes, not least of all the ones that Huawei is contributing to. Huawei engineers have worked on the federation feature (which puts multiple Kubernetes clusters in a single framework to be managed seamlessly), scheduling, container networking and storage, and a just-announced technology called <a href="http://containerops.org/">Container Ops</a>, which is a DevOps pipeline engine. "This will put every DevOps job into a container," he explains. "And then this container mechanism is running using Kubernetes, but is also used to test Kubernetes. With that mechanism, we can make the containerized DevOps jobs be created, shared and managed much more easily than before."<br><br>
-  Still, Hou sees this technology as only halfway to its full potential. First and foremost, he’d like to expand the scale it can orchestrate, which is important for supersized companies like Huawei –  as well as some of its customers.<br><br>
-  Hou proudly notes that two years after that first Huawei engineer became a contributor to and evangelist for Kubernetes, Huawei is now a top contributor to the community. "We’ve learned that the more you contribute to the community," he says, "the more you get back."
-
-</div>
-</section>
