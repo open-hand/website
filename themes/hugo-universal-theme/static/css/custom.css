@@ -29,7 +29,7 @@
 }
 
 #footer-nav a{
-  font-size: 24px;
+  font-size: 18px;
   font-family: "Roboto", sans-serif;
   margin-left: 30px;
   margin-bottom: 20px;
@@ -37,9 +37,18 @@
   font-weight: 300;
 }
 
+#footer-nav a:first-child {
+	margin-left: 0;
+}
+
 #footer-nav a:hover{
  text-decoration: none;
  color:#fff
+}
+
+.social {
+	display: flex;
+	justify-content: center;
 }
 
 .social a{
@@ -129,13 +138,13 @@ a.calendar:hover{
 }
 
 .abstract h3 {
-	font-size: 20px;
+	font-size: 18px;
 	line-height: 30px;
   font-weight: 400;
 }
 
 .abstract-p {
-	font-size: 16px;
+	font-size: 14px;
   line-height: 24px;
   letter-spacing: 0.1px;
 }
@@ -175,13 +184,14 @@ a.calendar:hover{
 
 .target-box h3 {
 	font-weight: 400;
-	font-size: 24px;
+	font-size: 18px;
 	line-height: normal;
   color: #3073E6;
+	margin-bottom: 10px;
 }
 
 .target-box p {
-	font-size: 16px;
+	font-size: 14px;
   line-height: 24px;
   letter-spacing: 0.1px;
 	color: #999999;
@@ -275,12 +285,12 @@ a.calendar:hover{
 }
 
 .round-block h3 {
-	font-size: 16px;
+	font-size: 18px;
 	margin-bottom: 10px !important;
 }
 
 .round-block p {
-	font-size: 12px;
+	font-size: 14px;
 }
 
 .right-align {
