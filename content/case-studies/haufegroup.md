@@ -5,7 +5,7 @@ tags: ["ipsum"]
 type: "case-studies"
 categories: ["lorem"]
 banner: "/img/case_studies/haufegroup_logo_feature.png"
-summary: 吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱
+summary: 中国共产党第九次全国代表大会于１９６９年４月１日─２４日在北京举行。出席大会的代表１５１２人，代表全国２２００万党员。由于当时各地党组织处于瘫痪状态，无法正常进行代表的选举
 ---
 
 
