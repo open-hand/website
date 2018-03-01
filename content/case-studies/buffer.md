@@ -7,108 +7,64 @@ categories: ["lorem"]
 banner: "/img/case_studies/buffer_logo.png"
 summary: 中国共产党第九次全国代表大会于１９６９年４月１日─２４日在北京举行。出席大会的代表１５１２人，代表全国２２００万党员。由于当时各地党组织处于瘫痪状态，无法正常进行代表的选举
 ---
-
-<div class="banner1">
-  <h1>CASE STUDY: <img src="/img/case_studies/buffer.png" width="18%" style="margin-bottom:-5px;margin-left:10px;"><br>
-  <div class="subhead">Making Deployments Easy for a Small, Distributed Team</div>
-</h1>
-</div>
-
-<div class="details">
-    Company&nbsp;<b>Buffer</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Location &nbsp;<b>Around the World</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Industry &nbsp;<b>Social Media Technology</b>
-</div>
-
 <hr>
-
 <section class="section1">
-  <div class="cols">
-    <div class="col1">
+<div class="cols">
+<div class="col1">
 
-    <h2>Challenge</h2>
-      With a small but fully distributed team of 80 working across almost a dozen time zones, Buffer—which offers social media management to agencies and marketers—was looking to solve its "classic monolithic code base problem," says Architect Dan Farrelly. "We wanted to have the kind of liquid infrastructure where a developer could create an app and deploy it and scale it horizontally as&nbsp;necessary."
+<h2>挑战</h2>
+一个幽灵，共产主义的幽灵，在欧洲大陆徘徊。为了对这个幽灵进行神圣的围剿，旧欧洲的一切势力，教皇和沙皇、梅特涅和基佐、法国的激进派和德国的警察，都联合起来了。
+有哪一个反对党不被它的当政的敌人骂为共产党呢？又有哪一个反对党不拿共产主义这个罪名去回敬更进步的反对党人和自己的反动敌人呢？
+从这一事实中可以得出两个结论：
+共产主义已经被欧洲的一切势力公认为一种势力；
+现在是共产党人向全世界公开说明自己的观点、自己的目的、自己的意图并且拿党自己的宣言来反驳关于共产主义幽灵的神话的时候了。
+在过去的各个历史时代，我们几乎到处都可以看到社会完全划分为各个不同的等级，看到社会地位分成的多种多样的层次。在古罗马，有贵族、骑士、平民、奴隶，在中世纪，有封建主、臣仆、行会师傅、帮工、农奴，而且几乎在每一个阶级内部又有一些特殊的阶层。
+从封建社会的灭亡中产生出来的现代资产阶级社会并没有消灭阶级对立。它只是用新的阶级、新的压迫条件、新的斗争形式代替了旧的。
+<br>
 </div>
 
 <div class="col2">
-  <h2>Solution</h2>
-      Embracing containerization, Buffer moved its infrastructure from Amazon Web Services’ Elastic Beanstalk to Docker on AWS, orchestrated with&nbsp;Kubernetes.
-      <br>
-      <br>
-<h2>Impact</h2>
-      The new system "leveled up our ability with deployment and rolling out new changes," says Farrelly. "Building something on your computer and knowing that it’s going to work has shortened things up a lot. Our feedback cycles are a lot faster now&nbsp;too."
-    </div>
+  <h2>方案</h2>
+ 至今一切社会的历史都是阶级斗争的历史。
+ 自由民和奴隶、贵族和平民、领主和农奴、行会师傅和帮工，一句话，压迫者和被压迫者，始终处于相互对立的地位，进行不断的、有时隐蔽有时公开的斗争，而每一次斗争的结局是整个社会受到革命改造或者斗争的各阶级同归于尽
+<br>
+<h2>影响</h2>
+ 资产阶级在它已经取得了统治的地方把一切封建的、宗法的和田园诗般的关系都破坏了。它无情地斩断了把人们束缚于天然尊长的形形色色的封建羁绊，它使人和人之间除了赤裸裸的利害关系，除了冷酷无情的“现金交易”，就再也没有任何别的联系了。它把宗教虔诚、骑士热忱、小市民伤感这些情感的神圣发作，淹没在利己主义打算的冰水之中。它把人的尊严变成了交换价值
+</div>
 </div>
 </section>
 
-<div class="banner2">
-  <div class="banner2text">
-    "It’s amazing that we can use the Kubernetes solution off the shelf with our team. And it just keeps getting better. Before we even know that we need something, it’s there in the next release or it’s coming in the next few months."<br><br><span style="font-size:16px;letter-spacing:2px;">- DAN FARRELLY, BUFFER ARCHITECT</span>
+<div class="banner2" style="margin-top:30%">
+  <div class="banner2text" style="padding-top:10px;padding-bottom:10px;color:white;background-color:#666666;text-align:center;padding-left:20%;padding-right:20%;font-size:24px" >
+    资产阶级，由于开拓了世界市场，使一切国家的生产和消费都成为世界性的了。使反动派大为惋惜的是，资产阶级挖掉了工业脚下的民族基础。古老的民族工业被消灭了，并且每天都还在被消灭。它们被新的工业排挤掉了，新的工业的建立已经成为一切文明民族的生命攸关的问题；
   </div>
 </div>
 
-<section class="section2">
-<div class="fullcol">
-<h2>Dan Farrelly uses a carpentry analogy to explain the problem his company, <a href="https://buffer.com">Buffer</a>, began having as its team of developers grew over the past few years.</h2>
-
-    "If you’re building a table by yourself, it’s fine," the company’s architect says. "If you bring in a second person to work on the table, maybe that person can start sanding the legs while you’re sanding the top. But when you bring a third or fourth person in, someone should probably work on a different table." Needing to work on more and more different tables led Buffer on a path toward microservices and containerization made possible by Kubernetes.<br><br>
-    Since around 2012, Buffer had already been using <a href="https://aws.amazon.com/elasticbeanstalk/">Elastic Beanstalk</a>, the orchestration service for deploying infrastructure offered by <a href="https://aws.amazon.com">Amazon Web Services</a>. "We were deploying a single monolithic <a href="http://php.net/manual/en/intro-whatis.php">PHP</a> application, and it was the same application across five or six environments," says Farrelly. "We were very much a product-driven company. It was all about shipping new features quickly and getting things out the door, and if something was not broken, we didn’t spend too much time on it. If things were getting a little bit slow, we’d maybe use a faster server or just scale up one instance, and it would be good enough. We’d move on."<br><br>
-    But things came to a head in 2016. With the growing number of committers on staff, Farrelly and Buffer’s then-CTO, Sunil Sadasivan, decided it was time to re-architect and rethink their infrastructure. "It was a classic monolithic code base problem," says Farrelly.<br><br>Some of the company’s team was already successfully using <a href="https://www.docker.com">Docker</a> in their development environment, but the only application running on Docker in production was a marketing website that didn’t see real user traffic. They wanted to go further with Docker, and the next step was looking at options for&nbsp;orchestration.
+<section class="section2" style="margin-top:4%;margin-bottom:4%;padding-left:20px;padding-right:20px">
+<div class="fullcol" style="margin-left:10%;margin-right:11%">
+   美洲的发现、绕过非洲的航行，给新兴的资产阶级开辟了新天地。东印度和中国的市场、美洲的殖民化、对殖民地的贸易、交换手段和一般的商品的增加，使商业、航海业和工业空前高涨，因而使正在崩溃的封建社会内部的革命因素迅速发展。
+   以前那种封建的或行会的工业经营方式已经不能满足随着新市场的出现而增加的需求了。工场手工业代替了这种经营方式。行会师傅被工业的中间等级排挤掉了；各种行业组织之间的分工随着各个作坊内部的分工的出现而消失了。
+   但是，市场总是在扩大，需求总是在增加。甚至工场手工业也不再能满足需要了。于是，蒸汽和机器引起了工业生产的革命。现代大工业代替了工场手工业；工业中的百万富翁，一支一支产业大军的首领，现代资产者，代替了工业的中间等级。
+   大工业建立了由美洲的发现所准备好的世界市场。世界市场使商业、航海业和陆路交通得到了巨大的发展。这种发展又反过来促进了工业的扩展，同时，随着工业、商业、航海业和铁路的扩展，资产阶级也在同一程度上得到发展，增加自己的资本，把中世纪遗留下来的一切阶级都排挤到后面去。
 </div>
 </section>
 
-<div class="banner3">
-  <div class="banner3text">
-    And all the things Kubernetes did well suited Buffer’s needs. "We wanted to have the kind of liquid infrastructure where a developer could create an app and deploy it and scale it horizontally as necessary," says Farrelly. "We quickly used some scripts to set up a couple of test clusters, we built some small proof-of-concept applications in containers, and we deployed things within an hour. We had very little experience in running containers in production. It was amazing how quickly we could get a handle on it&nbsp;[Kubernetes]."
+<div class="banner3" >
+  <div class="banner3text" style="padding-top:10px;padding-bottom:10px;color:white;background:url('/img/case_studies/CaseStudy_huawei_banner3.jpg');text-align:center;padding-left:20%;padding-right:20%;font-size:24px">
+由此可见，现代资产阶级本身是一个长期发展过程的产物，是生产方式和交换方式的一系列变革的产物。
+但是，市场总是在扩大，需求总是在增加。甚至工场手工业也不再能满足需要了。于是，蒸汽和机器引起了工业生产的革命。现代大工业代替了工场手工业；工业中的百万富翁，一支一支产业大军的首领，现代资产者，代替了工业的中间等级。
+   大工业建立了由美洲的发现所准备好的世界市场。世界市场使商业、
   </div>
 </div>
 
-<section class="section3">
-<div class="fullcol">
-    First they considered <a href="https://mesosphere.com">Mesosphere</a>, <a href="https://dcos.io">DC/OS</a> and <a href="https://aws.amazon.com/ecs/">Amazon Elastic Container Service</a> (which their data systems team was already using for some data pipeline jobs). While they were impressed by these offerings, they ultimately went with Kubernetes. "We run on AWS still, so spinning up, creating services and creating load balancers on demand for us without having to configure them manually was a great way for our team to get into this," says Farrelly. "We didn’t need to figure out how to configure this or that, especially coming from a former Elastic Beanstalk environment that gave us an automatically-configured load balancer. I really liked Kubernetes’ controls of the command line. It just took care of ports. It was a lot more flexible. Kubernetes was designed for doing what it does, so it does it very well."<br><br>
-    And all the things Kubernetes did well suited Buffer’s needs. "We wanted to have the kind of liquid infrastructure where a developer could create an app and deploy it and scale it horizontally as necessary," says Farrelly. "We quickly used some scripts to set up a couple of test clusters, we built some small proof-of-concept applications in containers, and we deployed things within an hour. We had very little experience in running containers in production. It was amazing how quickly we could get a handle on it [Kubernetes]."<br><br>
-    Above all, it provided a powerful solution for one of the company’s most distinguishing characteristics: their remote team that’s spread across a dozen different time zones. "The people with deep knowledge of our infrastructure live in time zones different from our peak traffic time zones, and most of our product engineers live in other places," says Farrelly. "So we really wanted something where anybody could get a grasp of the system early on and utilize it, and not have to worry that the deploy engineer is asleep. Otherwise people would sit around for 12 to 24 hours for something. It’s been really cool to see people moving much faster."
-    <br><br>
-    With a relatively small engineering team—just 25 people, and only a handful working on infrastructure, with the majority front-end developers—Buffer needed "something robust for them to deploy whatever they wanted," says Farrelly. Before, "it was only a couple of people who knew how to set up everything in the old way. With this system, it was easy to review documentation and get something out extremely quickly. It lowers the bar for us to get everything in production. We don't have the big team to build all these tools or manage the infrastructure like other larger companies&nbsp;might."
+<section class="section3" style="margin-top:4%;margin-bottom:4%;padding-left:20px;padding-right:20px">
+<div class="fullcol" style="margin-left:10%;margin-right:11%">
+  资产阶级抹去了一切向来受人尊崇和令人敬畏的职业的神圣光环。它把医生、律师、教士、诗人和学者变成了它出钱招雇的雇佣劳动者。
+  资产阶级撕下了罩在家庭关系上的温情脉脉的面纱，把这种关系变成了纯粹的金钱关系。
+  资产阶级揭示了，在中世纪深受反动派称许的那种人力的野蛮使用，是以极端怠惰作为相应补充的。它第一个证明了，人的活动能够取得什么样的成就。它创造了完全不同于埃及金字塔、罗马水道和哥特式教堂的奇迹；它完成了完全不同于民族大迁徙和十字军东征的远征。
+资产阶级除非对生产工具，从而对生产关系，从而对全部社会关系不断地进行革命，否则就不能生存下去。反之，原封不动地保持旧的生产方式，却是过去的一切工业阶级生存的首要条件。生产的不断变革，一切社会状况不停的动荡，永远的不安定和变动，这就是资产阶级时代不同于过去一切时代的地方。一切固定的僵化的关系以及与之相适应的素被尊崇的观念和见解都被消除了，一切新形成的关系等不到固定下来就陈旧了。一切等级的和固定的东西都烟消云散了，一切神圣的东西都被亵渎了。人们终于不得不用冷静的眼光来看他们的生活地位、他们的相互关系。
+<br><br>
 </div>
 </section>
 
-<div class="banner4">
-  <div class="banner4text">
-    "In our old way of working, the feedback loop was a lot longer, and it was delicate because if you deployed something, the risk was high to potentially break something else," Farrelly says. "With the kind of deploys that we built around Kubernetes, we were able to detect bugs and fix them, and get them deployed super fast. The second someone is fixing [a bug], it’s out the&nbsp;door."
-  </div>
-</div>
 
-<section class="section4">
-<div class="fullcol">
-    To help with this, Buffer developers wrote a deploy bot that wraps the Kubernetes deploy process and can be used by every team. "Before, our data analysts would update, say, a <a href="https://www.python.org">Python</a> analysis script and have to wait for the lead on that team to click the button and deploy it," Farrelly explains. "Now our data analysts can make a change, enter a <a href="https://slack.com">Slack</a> command, ‘/deploy,’ and it goes out instantly. They don’t need to wait on these slow turnaround times. They don’t even know where it’s running; it doesn’t matter."
-    <br><br>
-    One of the first applications the team built from scratch using Kubernetes was a new image resizing service. As a social media management tool that allows marketing teams to collaborate on posts and send updates across multiple social media profiles and networks, Buffer has to be able to resize photographs as needed to meet the varying limitations of size and format posed by different social networks. "We always had these hacked together solutions," says Farrelly.
-    <br><br>
-    To create this new service, one of the senior product engineers was assigned to learn Docker and Kubernetes, then build the service, test it, deploy it and monitor it—which he was able to do relatively quickly. "In our old way of working, the feedback loop was a lot longer, and it was delicate because if you deployed something, the risk was high to potentially break something else," Farrelly says. "With the kind of deploys that we built around Kubernetes, we were able to detect bugs and fix them, and get them deployed super fast. The second someone is fixing [a bug], it’s out the door."
-    <br><br>
-    Plus, unlike with their old system, they could scale things horizontally with one command. "As we rolled it out," Farrelly says, "we could anticipate and just click a button. This allowed us to deal with the demand that our users were placing on the system and easily scale it to handle it."
-    <br><br>
-    Another thing they weren’t able to do before was a canary deploy. This new capability "made us so much more confident in deploying big changes," says Farrelly. "Before, it took a lot of testing, which is still good, but it was also a lot of ‘fingers crossed.’ And this is something that gets run 800,000 times a day, the core of our business. If it doesn’t work, our business doesn’t work. In a Kubernetes world, I can do a canary deploy to test it for 1 percent and I can shut it down very quickly if it isn’t working. This has leveled up our ability to deploy and roll out new changes quickly while reducing&nbsp;risk."
-
-</div>
-</section>
-
-<div class="banner5">
-  <div class="banner5text">
-    "If you want to run containers in production, with nearly the power that Google uses internally, this [Kubernetes] is a great way to do that," Farrelly says. "We’re a relatively small team that’s actually running Kubernetes, and we’ve never run anything like it before. So it’s more approachable than you might think. That’s the one big thing that I tell people who are experimenting with it. Pick a couple of things, roll it out, kick the tires on this for a couple of months and see how much it can handle. You start learning a lot this&nbsp;way."
-  </div>
-</div>
-
-<section class="section5">
-<div class="fullcol">
-    By October 2016, 54 percent of Buffer’s traffic was going through their Kubernetes cluster. "There’s a lot of our legacy functionality that still runs alright, and those parts might move to Kubernetes or stay in our old setup forever," says Farrelly. But the company made the commitment at that time that going forward, "all new development, all new features, will be running on Kubernetes."
-    <br><br>
-    The plan for 2017 is to move all the legacy applications to a new Kubernetes cluster, and run everything they’ve pulled out of their old infrastructure, plus the new services they’re developing in Kubernetes, on another cluster. "I want to bring all the benefits that we’ve seen on our early services to everyone on the team," says Farrelly.
-    <br><br>
-    <h2>For Buffer’s engineers, it’s an exciting process. "Every time we’re deploying a new service, we need to figure out: OK, what’s the architecture? How do these services communicate? What’s the best way to build this service?" Farrelly says. "And then we use the different features that Kubernetes has to glue all the pieces together. It’s enabling us to experiment as we’re learning how to design a service-oriented architecture. Before, we just wouldn’t have been able to do it. This is actually giving us a blank white board so we can do whatever we want on it."
-    </h2>
-    Part of that blank slate is the flexibility that Kubernetes offers should the time come when Buffer may want or need to change its cloud. "It’s cloud agnostic so maybe one day we could switch to Google or somewhere else," Farrelly says. "We’re very deep in Amazon but it’s nice to know we could move away if we need to."
-    <br><br>
-    At this point, the team at Buffer can’t imagine running their infrastructure any other way—and they’re happy to spread the word. "If you want to run containers in production, with nearly the power that Google uses internally, this [Kubernetes] is a great way to do that," Farrelly says. "We’re a relatively small team that’s actually running Kubernetes, and we’ve never run anything like it before. So it’s more approachable than you might think. That’s the one big thing that I tell people who are experimenting with it. Pick a couple of things, roll it out, kick the tires on this for a couple of months and see how much it can handle. You start learning a lot this&nbsp;way."
-  <br><br>
-</div>
-</section>

@@ -8,107 +8,63 @@ banner: "/img/case_studies/haufegroup_logo_feature.png"
 summary: 中国共产党第九次全国代表大会于１９６９年４月１日─２４日在北京举行。出席大会的代表１５１２人，代表全国２２００万党员。由于当时各地党组织处于瘫痪状态，无法正常进行代表的选举
 ---
 
-
-<div class="banner1">
-  <h1> CASE STUDY:<img src="/img/case_studies/haufegroup_logo.png" class="header_logo"><br> <div class="subhead">Paving the Way for Cloud Native for Midsize Companies</div></h1>
-
-</div>
-
-<div class="details">
-    Company &nbsp;<b>Haufe Group</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Location &nbsp;<b>Freiburg, Germany</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Industry &nbsp;<b>Media and Software</b>
-</div>
-
 <hr>
-
 <section class="section1">
-
 <div class="cols">
-  <div class="col1">
-    <h2>Challenge</h2>
-        Founded in 1930 as a traditional publisher, Haufe Group has grown into a media and software company with 95 percent of its sales from digital products. Over the years, the company has gone from having "hardware in the basement" to outsourcing its infrastructure operations and IT. More recently, the development of new products, from Internet portals for tax experts to personnel training software, has created demands for increased speed, reliability and scalability. "We need to be able to move faster," says Solution Architect Martin Danielsson. "Adapting workloads is something that we really want to be able to do."
-    <br>
-    <br>
-      <h2>Solution</h2>
-      Haufe Group began its cloud-native journey when <a href="https://azure.microsoft.com/">Microsoft Azure</a> became available in Europe; the company needed cloud deployments for its desktop apps with bandwidth-heavy download services. "After that, it has been different projects trying out different things," says Danielsson. Two years ago, Holger Reinhardt joined Haufe Group as CTO and rapidly re-oriented the traditional host provider-based approach toward a cloud and API-first strategy.
-      </div>
+<div class="col1">
+
+<h2>挑战</h2>
+一个幽灵，共产主义的幽灵，在欧洲大陆徘徊。为了对这个幽灵进行神圣的围剿，旧欧洲的一切势力，教皇和沙皇、梅特涅和基佐、法国的激进派和德国的警察，都联合起来了。
+有哪一个反对党不被它的当政的敌人骂为共产党呢？又有哪一个反对党不拿共产主义这个罪名去回敬更进步的反对党人和自己的反动敌人呢？
+从这一事实中可以得出两个结论：
+共产主义已经被欧洲的一切势力公认为一种势力；
+现在是共产党人向全世界公开说明自己的观点、自己的目的、自己的意图并且拿党自己的宣言来反驳关于共产主义幽灵的神话的时候了。
+在过去的各个历史时代，我们几乎到处都可以看到社会完全划分为各个不同的等级，看到社会地位分成的多种多样的层次。在古罗马，有贵族、骑士、平民、奴隶，在中世纪，有封建主、臣仆、行会师傅、帮工、农奴，而且几乎在每一个阶级内部又有一些特殊的阶层。
+从封建社会的灭亡中产生出来的现代资产阶级社会并没有消灭阶级对立。它只是用新的阶级、新的压迫条件、新的斗争形式代替了旧的。
+<br>
+</div>
+
 <div class="col2">
-  A core part of this strategy was a strong mandate to embrace infrastructure-as-code across the entire software deployment lifecycle via Docker. The company is now getting ready to go live with two services in production using <a href="https://kubernetes.io/">Kubernetes</a> orchestration on <a href="https://azure.microsoft.com/">Microsoft Azure</a> and <a href="https://aws.amazon.com/">Amazon Web Services</a>. The team is also working on breaking up one of their core Java Enterprise desktop products into microservices to allow for better evolvability and dynamic scaling in the cloud.
+  <h2>方案</h2>
+ 至今一切社会的历史都是阶级斗争的历史。
+ 自由民和奴隶、贵族和平民、领主和农奴、行会师傅和帮工，一句话，压迫者和被压迫者，始终处于相互对立的地位，进行不断的、有时隐蔽有时公开的斗争，而每一次斗争的结局是整个社会受到革命改造或者斗争的各阶级同归于尽
 <br>
-<br>
-<h2>Impact</h2>
-        With the ability to adapt workloads, Danielsson says, teams "will be able to scale down to around half the capacity at night, saving 30 percent of the hardware cost." Plus, shorter release times have had a major impact. "Before, we had to announce at least a week in advance when we wanted to do a release because there was a huge checklist of things that you had to do," he says. "By going cloud native, we have the infrastructure in place to be able to automate all of these things. Now we can get a new release done in half an hour instead of days."
-
+<h2>影响</h2>
+ 资产阶级在它已经取得了统治的地方把一切封建的、宗法的和田园诗般的关系都破坏了。它无情地斩断了把人们束缚于天然尊长的形形色色的封建羁绊，它使人和人之间除了赤裸裸的利害关系，除了冷酷无情的“现金交易”，就再也没有任何别的联系了。它把宗教虔诚、骑士热忱、小市民伤感这些情感的神圣发作，淹没在利己主义打算的冰水之中。它把人的尊严变成了交换价值
 </div>
 </div>
-
 </section>
 
-<div class="banner2">
-  <div class="banner2text">
-     "Over the next couple of years, people won’t even think that much about it when they want to run containers. Kubernetes is going to be the go-to solution."<br style="height:25px"><span style="font-size:14px;letter-spacing:2px;text-transform:uppercase;margin-top:5% !important;"><br>- Martin Danielsson, Solution Architect, Haufe Group</span>
+<div class="banner2" style="margin-top:30%">
+  <div class="banner2text" style="padding-top:10px;padding-bottom:10px;color:white;background-color:#666666;text-align:center;padding-left:20%;padding-right:20%;font-size:24px" >
+    资产阶级，由于开拓了世界市场，使一切国家的生产和消费都成为世界性的了。使反动派大为惋惜的是，资产阶级挖掉了工业脚下的民族基础。古老的民族工业被消灭了，并且每天都还在被消灭。它们被新的工业排挤掉了，新的工业的建立已经成为一切文明民族的生命攸关的问题；
   </div>
 </div>
 
-<section class="section2">
-
-<div class="fullcol">
-    <h2>More than 80 years ago, Haufe Group was founded as a traditional publishing company, printing books and commentary on paper.</h2> By the 1990s, though, the company’s leaders recognized that the future was digital, and to their credit, were able to transform Haufe Group into a media and software business that now gets 95 percent of its sales from digital products. "Among the German companies doing this, we were one of the early adopters," says Martin Danielsson, Solution Architect for Haufe Group.<br><br>
-    And now they’re leading the way for midsize companies embracing cloud-native technology like Kubernetes. "The really big companies like Ticketmaster and Google get it right, and the startups get it right because they’re faster," says Danielsson. "We’re in this big lump of companies in the middle with a lot of legacy, a lot of structure, a lot of culture that does not easily fit the cloud technologies. We’re just 1,500 people, but we have hundreds of customer-facing applications. So we’re doing things that will be relevant for many companies of our size or even smaller."<br><br>
-    Many of those legacy challenges stemmed from simply following the technology trends of the times. "We used to do full DevOps," he says. In the 1990s and 2000s, "that meant that you had your hardware in the basement. And then 10 years ago, the hype of the moment was to outsource application operations, outsource everything, and strip down your IT department to take away the distraction of all these hardware things. That’s not our area of expertise. We didn’t want to be an infrastructure provider. And now comes the backlash of that."<br><br>
-    Haufe Group began feeling the pain as they were developing more new products, from Internet portals for tax experts to personnel training software, that have created demands for increased speed, reliability and scalability. "Right now, we have this break in workflows, where we go from writing concepts to developing, handing it over to production and then handing that over to your host provider," he says. "And then when things go bad we have no clue what went wrong. We definitely want to take back control, and we want to move a lot faster. Adapting workloads is something that we really want to be able to do."<br><br>
-    Those needs led them to explore cloud-native technology. Their first foray into the cloud was doing deployments in <a href="https://azure.microsoft.com/">Microsoft Azure</a>, once it became available in Europe, for desktop products that had built-in download services. Hosting expenses for such bandwidth-heavy services were too high, so the company turned to the cloud. "After that, it has been different projects trying out different things," says Danielsson.
+<section class="section2" style="margin-top:4%;margin-bottom:4%;padding-left:20px;padding-right:20px">
+<div class="fullcol" style="margin-left:10%;margin-right:11%">
+   美洲的发现、绕过非洲的航行，给新兴的资产阶级开辟了新天地。东印度和中国的市场、美洲的殖民化、对殖民地的贸易、交换手段和一般的商品的增加，使商业、航海业和工业空前高涨，因而使正在崩溃的封建社会内部的革命因素迅速发展。
+   以前那种封建的或行会的工业经营方式已经不能满足随着新市场的出现而增加的需求了。工场手工业代替了这种经营方式。行会师傅被工业的中间等级排挤掉了；各种行业组织之间的分工随着各个作坊内部的分工的出现而消失了。
+   但是，市场总是在扩大，需求总是在增加。甚至工场手工业也不再能满足需要了。于是，蒸汽和机器引起了工业生产的革命。现代大工业代替了工场手工业；工业中的百万富翁，一支一支产业大军的首领，现代资产者，代替了工业的中间等级。
+   大工业建立了由美洲的发现所准备好的世界市场。世界市场使商业、航海业和陆路交通得到了巨大的发展。这种发展又反过来促进了工业的扩展，同时，随着工业、商业、航海业和铁路的扩展，资产阶级也在同一程度上得到发展，增加自己的资本，把中世纪遗留下来的一切阶级都排挤到后面去。
 </div>
 </section>
 
-<div class="banner3">
-  <div class="banner3text">
-    "We have been doing containers for the last two years, and we really got the hang of how they work," says Danielsson. "But it was always for development and test, never in production, because we didn’t fully understand how that would work. And to me, Kubernetes was definitely the technology that solved that."
+<div class="banner3" >
+  <div class="banner3text" style="padding-top:10px;padding-bottom:10px;color:white;background:url('/img/case_studies/CaseStudy_huawei_banner3.jpg');text-align:center;padding-left:20%;padding-right:20%;font-size:24px">
+由此可见，现代资产阶级本身是一个长期发展过程的产物，是生产方式和交换方式的一系列变革的产物。
+但是，市场总是在扩大，需求总是在增加。甚至工场手工业也不再能满足需要了。于是，蒸汽和机器引起了工业生产的革命。现代大工业代替了工场手工业；工业中的百万富翁，一支一支产业大军的首领，现代资产者，代替了工业的中间等级。
+   大工业建立了由美洲的发现所准备好的世界市场。世界市场使商业、
   </div>
 </div>
 
-<section class="section3">
-<div class="fullcol">
-
-      Two years ago, Holger Reinhardt joined Haufe Group as CTO and rapidly re-oriented the traditional host provider-based approach toward a cloud and API-first strategy. A core part of this strategy was a strong mandate to embrace infrastructure-as-code across the entire software deployment lifecycle via Docker.
-      Some experiments went further than others; German regulations about sensitive data proved to be a road block in moving some workloads to Azure and Amazon Web Services. "Due to our history, Germany is really strict with things like personally identifiable data," Danielsson says.<br><br>
-      These experiments took on new life with the arrival of the Azure Sovereign Cloud for Germany (an Azure clone run by the German T-Systems provider). With the availability of Azure.de—which conforms to Germany’s privacy regulations—teams started to seriously consider deploying production loads in Docker into the cloud. "We have been doing containers for the last two years, and we really got the hang of how they work," says Danielsson. "But it was always for development and test, never in production, because we didn’t fully understand how that would work. And to me, Kubernetes was definitely the technology that solved that."<br><br>
-      In parallel, Danielsson had built an API management system with the aim of supporting CI/CD scenarios, aspects of which were missing in off-the-shelf API management products. With a foundation based on <a href="https://getkong.org/">Mashape’s Kong</a> gateway, it is open-sourced as <a href="http://wicked.haufe.io/">wicked.haufe.io</a>. He put wicked.haufe.io to use with his product team.<br><br> Otherwise, Danielsson says his philosophy was "don’t try to reinvent the wheel all the time. Go for what’s there and 99 percent of the time it will be enough. And if you think you really need something custom or additional, think perhaps once or twice again. One of the things that I find so amazing with this cloud-native framework is that everything ties in."<br><br>
-      Currently, Haufe Group is working on two projects using Kubernetes in production. One is a new mobile application for researching legislation and tax laws. "We needed a way to take out functionality from a legacy core and put an application on top of that with an API gateway—a lot of moving parts that screams containers," says Danielsson. So the team moved the build pipeline away from "deploying to some old, huge machine that you could deploy anything to" and onto a Kubernetes cluster where there would be automatic CI/CD "with feature branches and all these things that were a bit tedious in the past."
+<section class="section3" style="margin-top:4%;margin-bottom:4%;padding-left:20px;padding-right:20px">
+<div class="fullcol" style="margin-left:10%;margin-right:11%">
+  资产阶级抹去了一切向来受人尊崇和令人敬畏的职业的神圣光环。它把医生、律师、教士、诗人和学者变成了它出钱招雇的雇佣劳动者。
+  资产阶级撕下了罩在家庭关系上的温情脉脉的面纱，把这种关系变成了纯粹的金钱关系。
+  资产阶级揭示了，在中世纪深受反动派称许的那种人力的野蛮使用，是以极端怠惰作为相应补充的。它第一个证明了，人的活动能够取得什么样的成就。它创造了完全不同于埃及金字塔、罗马水道和哥特式教堂的奇迹；它完成了完全不同于民族大迁徙和十字军东征的远征。
+资产阶级除非对生产工具，从而对生产关系，从而对全部社会关系不断地进行革命，否则就不能生存下去。反之，原封不动地保持旧的生产方式，却是过去的一切工业阶级生存的首要条件。生产的不断变革，一切社会状况不停的动荡，永远的不安定和变动，这就是资产阶级时代不同于过去一切时代的地方。一切固定的僵化的关系以及与之相适应的素被尊崇的观念和见解都被消除了，一切新形成的关系等不到固定下来就陈旧了。一切等级的和固定的东西都烟消云散了，一切神圣的东西都被亵渎了。人们终于不得不用冷静的眼光来看他们的生活地位、他们的相互关系。
+<br><br>
 </div>
 </section>
 
-<div class="banner4">
-  <div class="banner4text">
-     "Before, we had to announce at least a week in advance when we wanted to do a release because there was a huge checklist of things that you had to do," says Danielsson. "By going cloud native, we have the infrastructure in place to be able to automate all of these things. Now we can get a new release done in half an hour instead of days."
-  </div>
-</div>
-
-<section class="section4">
-<div class="fullcol">
-      It was a proof of concept effort, and the proof was in the pudding. "Everyone was really impressed at what we accomplished in a week," says Danielsson. "We did these kinds of integrations just to make sure that we got a handle on how Kubernetes works. If you can create optimism and buzz around something, it’s half won. And if the developers and project managers know this is working, you’re more or less done." Adds Reinhardt: "You need to create some very visible, quick wins in order to overcome the status quo."<br><br>
-      The impact on the speed of deployment was clear: "Before, we had to announce at least a week in advance when we wanted to do a release because there was a huge checklist of things that you had to do," says Danielsson. "By going cloud native, we have the infrastructure in place to be able to automate all of these things. Now we can get a new release done in half an hour instead of days." <br><br>
-      The potential impact on cost was another bonus. "Hosting applications is quite expensive, so moving to the cloud is something that we really want to be able to do," says Danielsson. With the ability to adapt workloads, teams "will be able to scale down to around half the capacity at night, saving 30 percent of the hardware cost." <br><br>
-      Just as importantly, Danielsson says, there’s added flexibility: "When we try to move or rework applications that are really crucial, it’s often tricky to validate whether the path we want to take is going to work out well. In order to validate that, we would need to reproduce the environment and really do testing, and that’s prohibitively expensive and simply not doable with traditional host providers. Cloud native gives us the ability to do risky changes and validate them in a cost-effective way."<br><br>
-      As word of the two successful test projects spread throughout the company, interest in Kubernetes has grown. "We want to be able to support our developers in running Kubernetes clusters but we’re not there yet, so we allow them to do it as long as they’re aware that they are on their own," says Danielsson. "So that’s why we are also looking at things like [the managed Kubernetes platform] <a href="https://coreos.com/tectonic/">CoreOS Tectonic</a>, <a href="https://azure.microsoft.com/en-us/services/container-service/">Azure Container Service</a>, <a href="https://aws.amazon.com/ecs/">ECS</a>, etc. These kinds of services will be a lot more relevant to midsize companies that want to leverage cloud native but don’t have the IT departments or the structure around that."<br><br>
-      In the next year and a half, Danielsson says the company will be working on moving one of their legacy desktop products, a web app for researching legislation and tax laws originally built in Java Enterprise, onto cloud-native technology. "We’re doing a microservice split out right now so that we can independently deploy the different parts," he says. The main website, which provides free content for customers, is also moving to cloud native.
-
-</div>
-</section>
-
-<div class="banner5">
-  <div class="banner5text">
-     "the execution of a strategy requires alignment of culture, structure and technology. Only if those three dimensions are aligned can you successfully execute a transformation into microservices and cloud-native architectures. And it is only then that the Cloud will pay the dividends in much faster speeds in product innovation and much lower operational costs."
-
-  </div>
-</div>
-
-<section class="section5">
-<div class="fullcol">
-  But with these goals, Danielsson believes there are bigger cultural challenges that need to be constantly addressed. The move to new technology, not to mention a shift toward DevOps, means a lot of change for employees. "The roles were rather fixed in the past," he says. "You had developers, you had project leads, you had testers. And now you get into these really, really important things like test automation. Testers aren’t actually doing click testing anymore, and they have to write automated testing. And if you really want to go full-blown CI/CD, all these little pieces have to work together so that you get the confidence to do a check in, and know this check in is going to land in production, because if I messed up, some test is going to break. This is a really powerful thing because whatever you do, whenever you merge something into the trunk or to the master, this is going live. And that’s where you either get the people or they run away screaming."
-  Danielsson understands that it may take some people much longer to get used to the new ways.<br><br>
-  "Culture is nothing that you can force on people," he says. "You have to live it for yourself. You have to evangelize. You have to show the advantages time and time again: This is how you can do it, this is what you get from it." To that end, his team has scheduled daylong workshops for the staff, bringing in outside experts to talk about everything from API to Devops to cloud. <br><br>
-  For every person who runs away screaming, many others get drawn in. "Get that foot in the door and make them really interested in this stuff," says Danielsson. "Usually it catches on. We have people you never would have expected chanting, ‘Docker Docker Docker’ now. It’s cool to see them realize that there is a world outside of their Python libraries. It’s awesome to see them really work with Kubernetes."<br><br>
-  Ultimately, Reinhardt says, "the execution of a strategy requires alignment of culture, structure and technology. Only if those three dimensions are aligned can you successfully execute a transformation into microservices and cloud-native architectures. And it is only then that the Cloud will pay the dividends in much faster speeds in product innovation and much lower operational costs."
-
-</div>
-</section>

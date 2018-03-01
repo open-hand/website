@@ -7,108 +7,63 @@ categories: ["lorem"]
 banner: "/img/case_studies/blackrock.png"
 summary: 中国共产党第九次全国代表大会于１９６９年４月１日─２４日在北京举行。出席大会的代表１５１２人，代表全国２２００万党员。由于当时各地党组织处于瘫痪状态，无法正常进行代表的选举
 ---
-
-<div class="banner1">
-  <h1> CASE STUDY: <img src="/img/blackrock_logo.png" class="header_logo"><br>
-    <div class="subhead">Rolling Out Kubernetes in Production in 100 Days</div>
-  </h1>
-
-</div>
-
-<div class="details">
-    Company &nbsp;<b>BlackRock</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Location &nbsp;<b>New York, NY</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Industry &nbsp;<b>Financial Services</b>
-</div>
-
 <hr>
-
 <section class="section1">
-
 <div class="cols">
-  <div class="col1">
-    <h2>Challenge</h2>
-        The world’s largest asset manager, <a href="https://www.blackrock.com/investing">BlackRock</a> operates a very controlled static deployment scheme, which has allowed for scalability over the years. But in their data science division, there was a need for more dynamic access to resources. "We want to be able to give every investor access to data science, meaning <a href="https://www.python.org">Python</a> notebooks, or even something much more advanced, like a MapReduce engine based on <a href="https://spark.apache.org">Spark</a>," says Michael Francis, a Managing Director in BlackRock’s  Product Group, which runs the company’s investment management platform. "Managing complex Python installations on users’ desktops is really hard because everyone ends up with slightly different environments. We have existing environments that do these things, but we needed to make it real, expansive and scaleable. Being able to spin that up on demand, tear it down, make that much more dynamic, became a critical thought process for us. It’s not so much that we had to solve our main core production problem, it’s how do we extend that? How do we evolve?"
-      </div>
+<div class="col1">
+
+<h2>挑战</h2>
+一个幽灵，共产主义的幽灵，在欧洲大陆徘徊。为了对这个幽灵进行神圣的围剿，旧欧洲的一切势力，教皇和沙皇、梅特涅和基佐、法国的激进派和德国的警察，都联合起来了。
+有哪一个反对党不被它的当政的敌人骂为共产党呢？又有哪一个反对党不拿共产主义这个罪名去回敬更进步的反对党人和自己的反动敌人呢？
+从这一事实中可以得出两个结论：
+共产主义已经被欧洲的一切势力公认为一种势力；
+现在是共产党人向全世界公开说明自己的观点、自己的目的、自己的意图并且拿党自己的宣言来反驳关于共产主义幽灵的神话的时候了。
+在过去的各个历史时代，我们几乎到处都可以看到社会完全划分为各个不同的等级，看到社会地位分成的多种多样的层次。在古罗马，有贵族、骑士、平民、奴隶，在中世纪，有封建主、臣仆、行会师傅、帮工、农奴，而且几乎在每一个阶级内部又有一些特殊的阶层。
+从封建社会的灭亡中产生出来的现代资产阶级社会并没有消灭阶级对立。它只是用新的阶级、新的压迫条件、新的斗争形式代替了旧的。
+<br>
+</div>
 
 <div class="col2">
-  <h2>Solution</h2>
-    Drawing from what they learned during a pilot done last year using <a href="https://www.docker.com">Docker</a> environments, Francis put together a cross-sectional team of 20 to build an investor research web app using <a href="https://kubernetes.io">Kubernetes</a> with the goal of getting it into production within one quarter.
+  <h2>方案</h2>
+ 至今一切社会的历史都是阶级斗争的历史。
+ 自由民和奴隶、贵族和平民、领主和农奴、行会师傅和帮工，一句话，压迫者和被压迫者，始终处于相互对立的地位，进行不断的、有时隐蔽有时公开的斗争，而每一次斗争的结局是整个社会受到革命改造或者斗争的各阶级同归于尽
+<br>
+<h2>影响</h2>
+ 资产阶级在它已经取得了统治的地方把一切封建的、宗法的和田园诗般的关系都破坏了。它无情地斩断了把人们束缚于天然尊长的形形色色的封建羁绊，它使人和人之间除了赤裸裸的利害关系，除了冷酷无情的“现金交易”，就再也没有任何别的联系了。它把宗教虔诚、骑士热忱、小市民伤感这些情感的神圣发作，淹没在利己主义打算的冰水之中。它把人的尊严变成了交换价值
+</div>
+</div>
+</section>
+
+<div class="banner2" style="margin-top:30%">
+  <div class="banner2text" style="padding-top:10px;padding-bottom:10px;color:white;background-color:#666666;text-align:center;padding-left:20%;padding-right:20%;font-size:24px" >
+    资产阶级，由于开拓了世界市场，使一切国家的生产和消费都成为世界性的了。使反动派大为惋惜的是，资产阶级挖掉了工业脚下的民族基础。古老的民族工业被消灭了，并且每天都还在被消灭。它们被新的工业排挤掉了，新的工业的建立已经成为一切文明民族的生命攸关的问题；
+  </div>
+</div>
+
+<section class="section2" style="margin-top:4%;margin-bottom:4%;padding-left:20px;padding-right:20px">
+<div class="fullcol" style="margin-left:10%;margin-right:11%">
+   美洲的发现、绕过非洲的航行，给新兴的资产阶级开辟了新天地。东印度和中国的市场、美洲的殖民化、对殖民地的贸易、交换手段和一般的商品的增加，使商业、航海业和工业空前高涨，因而使正在崩溃的封建社会内部的革命因素迅速发展。
+   以前那种封建的或行会的工业经营方式已经不能满足随着新市场的出现而增加的需求了。工场手工业代替了这种经营方式。行会师傅被工业的中间等级排挤掉了；各种行业组织之间的分工随着各个作坊内部的分工的出现而消失了。
+   但是，市场总是在扩大，需求总是在增加。甚至工场手工业也不再能满足需要了。于是，蒸汽和机器引起了工业生产的革命。现代大工业代替了工场手工业；工业中的百万富翁，一支一支产业大军的首领，现代资产者，代替了工业的中间等级。
+   大工业建立了由美洲的发现所准备好的世界市场。世界市场使商业、航海业和陆路交通得到了巨大的发展。这种发展又反过来促进了工业的扩展，同时，随着工业、商业、航海业和铁路的扩展，资产阶级也在同一程度上得到发展，增加自己的资本，把中世纪遗留下来的一切阶级都排挤到后面去。
+</div>
+</section>
+
+<div class="banner3" >
+  <div class="banner3text" style="padding-top:10px;padding-bottom:10px;color:white;background:url('/img/case_studies/CaseStudy_huawei_banner3.jpg');text-align:center;padding-left:20%;padding-right:20%;font-size:24px">
+由此可见，现代资产阶级本身是一个长期发展过程的产物，是生产方式和交换方式的一系列变革的产物。
+但是，市场总是在扩大，需求总是在增加。甚至工场手工业也不再能满足需要了。于是，蒸汽和机器引起了工业生产的革命。现代大工业代替了工场手工业；工业中的百万富翁，一支一支产业大军的首领，现代资产者，代替了工业的中间等级。
+   大工业建立了由美洲的发现所准备好的世界市场。世界市场使商业、
+  </div>
+</div>
+
+<section class="section3" style="margin-top:4%;margin-bottom:4%;padding-left:20px;padding-right:20px">
+<div class="fullcol" style="margin-left:10%;margin-right:11%">
+  资产阶级抹去了一切向来受人尊崇和令人敬畏的职业的神圣光环。它把医生、律师、教士、诗人和学者变成了它出钱招雇的雇佣劳动者。
+  资产阶级撕下了罩在家庭关系上的温情脉脉的面纱，把这种关系变成了纯粹的金钱关系。
+  资产阶级揭示了，在中世纪深受反动派称许的那种人力的野蛮使用，是以极端怠惰作为相应补充的。它第一个证明了，人的活动能够取得什么样的成就。它创造了完全不同于埃及金字塔、罗马水道和哥特式教堂的奇迹；它完成了完全不同于民族大迁徙和十字军东征的远征。
+资产阶级除非对生产工具，从而对生产关系，从而对全部社会关系不断地进行革命，否则就不能生存下去。反之，原封不动地保持旧的生产方式，却是过去的一切工业阶级生存的首要条件。生产的不断变革，一切社会状况不停的动荡，永远的不安定和变动，这就是资产阶级时代不同于过去一切时代的地方。一切固定的僵化的关系以及与之相适应的素被尊崇的观念和见解都被消除了，一切新形成的关系等不到固定下来就陈旧了。一切等级的和固定的东西都烟消云散了，一切神圣的东西都被亵渎了。人们终于不得不用冷静的眼光来看他们的生活地位、他们的相互关系。
 <br><br>
-<h2>Impact</h2>
-        "Our goal was: How do you give people tools rapidly without having to install them on their desktop?" says Francis. And the team hit the goal within 100 days. Francis is pleased with the results and says, "We’re going to use this infrastructure for lots of other application workloads as time goes on. It’s not just data science; it’s this style of application that needs the dynamism. But I think we’re 6-12 months away from making a [large scale] decision. We need to gain experience of running the system in production, we need to understand failure modes and how best to manage operational issues. What’s interesting is that just having this technology there is changing the way our developers are starting to think about their future development."
-
-</div>
-</div>
-
-</section>
-
-<div class="banner2">
-  <div class="banner2text">
-    "My message to other enterprises like us is you can actually integrate Kubernetes into an existing, well-orchestrated machinery. You don’t have to throw out everything you do. And using Kubernetes made a complex problem significantly easier."<br style="height:25px"><span style="font-size:14px;letter-spacing:2px;text-transform:uppercase;margin-top:5% !important;"><br>- Michael Francis, Managing Director, BlackRock</span>
-  </div>
-</div>
-
-<section class="section2">
-
-<div class="fullcol">
-  One of the management objectives for BlackRock’s  Product Group employees in 2017 was to "build cool stuff." Led by Managing Director Michael Francis, a cross-sectional group of 20 did just that: They rolled out a full production Kubernetes environment and released a new investor research web app on it. In 100 days.<br><br>
-  For a company that’s the world’s largest asset manager, "just equipment procurement can take 100 days sometimes, let alone from inception to delivery," says Karl Wieman, a Senior System Administrator. "It was an aggressive schedule. But it moved the dial."
-  In fact, the project achieved two goals: It solved a business problem (creating the needed web app) as well as provided real-world, in-production experience with Kubernetes, a cloud-native technology that the company was eager to explore. "It’s not so much that we had to solve our main core production problem, it’s how do we extend that? How do we evolve?" says Francis. The ultimate success of this project, beyond delivering the app, lies in the fact that "we’ve managed to integrate a radically new thought process into a controlled infrastructure that we didn’t want to change."<br><br>
-  After all, in its three decades of existence, BlackRock has "a very well-established environment for managing our compute resources," says Francis. "We manage large cluster processes on machines, so we do a lot of orchestration and management for our main production processes in a way that’s very cloudish in concept. We’re able to manage them in a very controlled, static deployment scheme, and that has given us a huge amount of scalability."<br><br>
-  Though that works well for the core production, the company has found that some data science workloads require more dynamic access to resources. "It’s a very bursty process," says Francis, who is head of data for the company’s Aladdin investment management platform division.<br><br>
-  Aladdin, which connects the people, information and technology needed for money management in real time, is used internally and is also sold as a platform to other asset managers and insurance companies. "We want to be able to give every investor access to data science, meaning <a href="https://www.python.org">Python</a> notebooks, or even something much more advanced, like a MapReduce engine based on <a href="https://spark.apache.org">Spark</a>," says Francis. But "managing complex Python installations on users’ desktops is really hard because everyone ends up with slightly different environments. Docker allows us to flatten that environment."
 </div>
 </section>
 
-<div class="banner3">
-  <div class="banner3text">
-    "We manage large cluster processes on machines, so we do a lot of orchestration and management for our main production processes in a way that’s very cloudish in concept. We’re able to manage them in a very controlled, static deployment scheme, and that has given us a huge amount of scalability."
-  </div>
-</div>
-
-<section class="section3">
-<div class="fullcol">
-  Still, challenges remain. "If you have a shared cluster, you get this storming herd problem where everyone wants to do the same thing at the same time," says Francis. "You could put limits on it, but you’d have to build an infrastructure to define limits for our processes, and the Python notebooks weren’t really designed for that. We have existing environments that do these things, but we needed to make it real, expansive, and scaleable. Being able to spin that up on demand, tear it down, and make that much more dynamic, became a critical thought process for us."<br><br>
-  Made up of managers from technology, infrastructure, production operations, development and information security, Francis’s team was able to look at the problem holistically and come up with a solution that made sense for BlackRock. "Our initial straw man was that we were going to build everything using <a href="https://www.ansible.com">Ansible</a> and run it all using some completely different distributed environment," says Francis. "That would have been absolutely the wrong thing to do. Had we gone off on our own as the dev team and developed this solution, it would have been a very different product. And it would have been very expensive. We would not have gone down the route of running under our existing orchestration system. Because we don’t understand it. These guys [in operations and infrastructure] understand it. Having the multidisciplinary team allowed us to get to the right solutions and that actually meant we didn’t build anywhere near the amount we thought we were going to end up building."<br><br>
-  In search of a solution in which they could manage usage on a user-by-user level, Francis’s team gravitated to Red Hat’s <a href="https://www.openshift.com">OpenShift</a> Kubernetes offering. The company had already experimented with other cloud-native environments, but the team liked that Kubernetes was open source, and "we felt the winds were blowing in the direction of Kubernetes long term," says Francis. "Typically we make technology choices that we believe are going to be here in 5-10 years’ time, in some form. And right now, in this space, Kubernetes feels like the one that’s going to be there." Adds Uri Morris, Vice President of Production Operations: "When you see that the non-Google committers to Kubernetes overtook the Google committers, that’s an indicator of the momentum."<br><br>
-  Once that decision was made, the major challenge was figuring out how to make Kubernetes work within BlackRock’s existing framework. "It’s about understanding how we can operate, manage and support a platform like this, in addition to tacking it onto our existing technology platform," says Project Manager Michael Maskallis. "All the controls we have in place, the change management process, the software development lifecycle, onboarding processes we go through—how can we do all these things?"<br><br>
-  The first (anticipated) speed bump was working around issues behind BlackRock’s corporate firewalls. "One of our challenges is there are no firewalls in most open source software," says Francis. "So almost all install scripts fail in some bizarre way, and pulling down packages doesn’t necessarily work." The team ran into these types of problems using <a href="https://kubernetes.io/docs/getting-started-guides/minikube/">Minikube</a> and did a few small pushes back to the open source project.
-
-
-</div>
-</section>
-
-<div class="banner4">
-  <div class="banner4text">
-    "Typically we make technology choices that we believe are going to be here in 5-10 years’ time, in some form. And right now, in this space, Kubernetes feels like the one that’s going to be there."
-  </div>
-</div>
-
-<section class="section4">
-<div class="fullcol">
-  There were also questions about service discovery. "You can think of Aladdin as a cloud of services with APIs between them that allows us to build applications rapidly," says Francis. "It’s all on a proprietary message bus, which gives us all sorts of advantages but at the same time, how does that play in a third party [platform]?"<br><br>
-  Another issue they had to navigate was that in BlackRock’s existing system, the messaging protocol has different instances in the different development, test and production environments. While Kubernetes enables a more DevOps-style model, it didn’t make sense for BlackRock. "I think what we are very proud of is that the ability for us to push into production is still incredibly rapid in this [new] infrastructure, but we have the control points in place, and we didn’t have to disrupt everything," says Francis. "A lot of the cost of this development was thinking how best to leverage our internal tools. So it was less costly than we actually thought it was going to be."<br><br>
-  The project leveraged tools associated with the messaging bus, for example. "The way that the Kubernetes cluster will talk to our internal messaging platform is through a gateway program, and this gateway program already has built-in checks and throttles," says Morris. "We can use them to control and potentially throttle the requests coming in from Kubernetes’s very elastic infrastructure to the production infrastructure. We’ll continue to go in that direction. It enables us to scale as we need to from the operational perspective."<br><br>
-  The solution also had to be complementary with BlackRock’s centralized operational support team structure. "The core infrastructure components of Kubernetes are hooked into our existing orchestration framework, which means that anyone in our support team has both control and visibility to the cluster using the existing operational tools," Morris explains. "That means that I don’t need to hire more people."<br><br>
-  With those points established, the team created a procedure for the project: "We rolled this out first to a development environment, then moved on to a testing environment and then eventually to two production environments, in that sequential order," says Maskallis. "That drove a lot of our learning curve. We have all these moving parts, the software components on the infrastructure side, the software components with Kubernetes directly, the interconnectivity with the rest of the environment that we operate here at BlackRock, and how we connect all these pieces. If we came across issues, we fixed them, and then moved on to the different environments to replicate that until we eventually ended up in our production environment where this particular cluster is supposed to live."<br><br>
-  The team had weekly one-hour working sessions with all the members (who are located around the world) participating, and smaller breakout or deep-dive meetings focusing on specific technical details. Possible solutions would be reported back to the group and debated the following week. "I think what made it a successful experiment was people had to work to learn, and they shared their experiences with others," says Vice President and Software Developer Fouad Semaan. Then, Francis says, "We gave our engineers the space to do what they’re good at. This hasn’t been top-down."
-
-
-</div>
-</section>
-
-<div class="banner5">
-  <div class="banner5text">
-    "The core infrastructure components of Kubernetes are hooked into our existing orchestration framework, which means that anyone in our support team has both control and visibility to the cluster using the existing operational tools. That means that I don’t need to hire more people."
-
-  </div>
-</div>
-
-<section class="section5">
-<div class="fullcol">
-  They were led by one key axiom: To stay focused and avoid scope creep. This meant that they wouldn’t use features that weren’t in the core of Kubernetes and Docker. But if there was a real need, they’d build the features themselves. Luckily, Francis says, "Because of the rapidity of the development, a lot of things we thought we would have to build ourselves have been rolled into the core product. [The package manager<a href="https://helm.sh"> Helm</a> is one example]. People have similar problems."<br><br>
-  By the end of the 100 days, the app was up and running for internal BlackRock users. The initial capacity of 30 users was hit within hours, and quickly increased to 150. "People were immediately all over it," says Francis. In the next phase of this project, they are planning to scale up the cluster to have more capacity.<br><br>
-  Even more importantly, they now have in-production experience with Kubernetes that they can continue to build on—and a complete framework for rolling out new applications. "We’re going to use this infrastructure for lots of other application workloads as time goes on. It’s not just data science; it’s this style of application that needs the dynamism," says Francis. "Is it the right place to move our core production processes onto? It might be. We’re not at a point where we can say yes or no, but we felt that having real production experience with something like Kubernetes at some form and scale would allow us to understand that. I think we’re 6-12 months away from making a [large scale] decision. We need to gain experience of running the system in production, we need to understand failure modes and how best to manage operational issues."<br><br>
-  For other big companies considering a project like this, Francis says commitment and dedication are key: "We got the signoff from [senior management] from day one, with the commitment that we were able to get the right people. If I had to isolate what makes something complex like this succeed, I would say senior hands-on people who can actually drive it make a huge difference." With that in place, he adds, "My message to other enterprises like us is you can actually integrate Kubernetes into an existing, well-orchestrated machinery. You don’t have to throw out everything you do. And using Kubernetes made a complex problem significantly easier."
-
-</div>
-</section>

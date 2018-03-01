@@ -7,107 +7,63 @@ categories: ["lorem"]
 banner: "/img/case_studies/box_logo.png"
 summary: 中国共产党第九次全国代表大会于１９６９年４月１日─２４日在北京举行。出席大会的代表１５１２人，代表全国２２００万党员。由于当时各地党组织处于瘫痪状态，无法正常进行代表的选举
 ---
-
-<div class="banner1">
-  <h1>CASE STUDY: <img src="/img/case_studies/box_logo.png" width="10%" style="margin-bottom:-6px"><br>
-    <div class="subhead">An Early Adopter Envisions
-      a New Cloud Platform</div>
-  </h1>
-</div>
-
-
-<div class="details">
-    Company &nbsp;<b>Box</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Location &nbsp;<b>Redwood City, California</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Industry &nbsp;<b>Technology</b>
-</div>
-
 <hr>
-
 <section class="section1">
-
 <div class="cols">
-  <div class="col1">
+<div class="col1">
 
-      <h2>Challenge</h2>
-        Founded in 2005, the enterprise content management company allows its more than 50 million users to manage content in the cloud. <a href="https://www.box.com/home">Box</a> was built primarily with bare metal inside the company’s own data centers, with a monolithic PHP code base. As the company was expanding globally, it needed to focus on "how we run our workload across many different cloud infrastructures from bare metal to public cloud," says Sam Ghods, Cofounder and Services Architect of Box. "It’s been a huge challenge because of different clouds, especially bare metal, have very different interfaces."
-        <br>
-  </div>
+<h2>挑战</h2>
+一个幽灵，共产主义的幽灵，在欧洲大陆徘徊。为了对这个幽灵进行神圣的围剿，旧欧洲的一切势力，教皇和沙皇、梅特涅和基佐、法国的激进派和德国的警察，都联合起来了。
+有哪一个反对党不被它的当政的敌人骂为共产党呢？又有哪一个反对党不拿共产主义这个罪名去回敬更进步的反对党人和自己的反动敌人呢？
+从这一事实中可以得出两个结论：
+共产主义已经被欧洲的一切势力公认为一种势力；
+现在是共产党人向全世界公开说明自己的观点、自己的目的、自己的意图并且拿党自己的宣言来反驳关于共产主义幽灵的神话的时候了。
+在过去的各个历史时代，我们几乎到处都可以看到社会完全划分为各个不同的等级，看到社会地位分成的多种多样的层次。在古罗马，有贵族、骑士、平民、奴隶，在中世纪，有封建主、臣仆、行会师傅、帮工、农奴，而且几乎在每一个阶级内部又有一些特殊的阶层。
+从封建社会的灭亡中产生出来的现代资产阶级社会并没有消灭阶级对立。它只是用新的阶级、新的压迫条件、新的斗争形式代替了旧的。
+<br>
+</div>
 
-  <div class="col2">
-    <h2>Solution</h2>
-      Over the past couple of years, Box has been decomposing its infrastructure into microservices, and became an early adopter of, as well as contributor to, <a href="http://kubernetes.io/">Kubernetes</a> container orchestration. Kubernetes, Ghods says, has allowed Box’s developers to "target a universal set of concepts that are portable across all clouds."<br><br>
+<div class="col2">
+  <h2>方案</h2>
+ 至今一切社会的历史都是阶级斗争的历史。
+ 自由民和奴隶、贵族和平民、领主和农奴、行会师傅和帮工，一句话，压迫者和被压迫者，始终处于相互对立的地位，进行不断的、有时隐蔽有时公开的斗争，而每一次斗争的结局是整个社会受到革命改造或者斗争的各阶级同归于尽
+<br>
+<h2>影响</h2>
+ 资产阶级在它已经取得了统治的地方把一切封建的、宗法的和田园诗般的关系都破坏了。它无情地斩断了把人们束缚于天然尊长的形形色色的封建羁绊，它使人和人之间除了赤裸裸的利害关系，除了冷酷无情的“现金交易”，就再也没有任何别的联系了。它把宗教虔诚、骑士热忱、小市民伤感这些情感的神圣发作，淹没在利己主义打算的冰水之中。它把人的尊严变成了交换价值
+</div>
+</div>
+</section>
 
-    <h2>Impact</h2>
-      "Before Kubernetes," Ghods says, "our infrastructure was so antiquated it was taking us more than six months to deploy a new microservice. Today, a new microservice takes less than five days to deploy. And we’re working on getting it to an hour."
+<div class="banner2" style="margin-top:30%">
+  <div class="banner2text" style="padding-top:10px;padding-bottom:10px;color:white;background-color:#666666;text-align:center;padding-left:20%;padding-right:20%;font-size:24px" >
+    资产阶级，由于开拓了世界市场，使一切国家的生产和消费都成为世界性的了。使反动派大为惋惜的是，资产阶级挖掉了工业脚下的民族基础。古老的民族工业被消灭了，并且每天都还在被消灭。它们被新的工业排挤掉了，新的工业的建立已经成为一切文明民族的生命攸关的问题；
   </div>
 </div>
 
+<section class="section2" style="margin-top:4%;margin-bottom:4%;padding-left:20px;padding-right:20px">
+<div class="fullcol" style="margin-left:10%;margin-right:11%">
+   美洲的发现、绕过非洲的航行，给新兴的资产阶级开辟了新天地。东印度和中国的市场、美洲的殖民化、对殖民地的贸易、交换手段和一般的商品的增加，使商业、航海业和工业空前高涨，因而使正在崩溃的封建社会内部的革命因素迅速发展。
+   以前那种封建的或行会的工业经营方式已经不能满足随着新市场的出现而增加的需求了。工场手工业代替了这种经营方式。行会师傅被工业的中间等级排挤掉了；各种行业组织之间的分工随着各个作坊内部的分工的出现而消失了。
+   但是，市场总是在扩大，需求总是在增加。甚至工场手工业也不再能满足需要了。于是，蒸汽和机器引起了工业生产的革命。现代大工业代替了工场手工业；工业中的百万富翁，一支一支产业大军的首领，现代资产者，代替了工业的中间等级。
+   大工业建立了由美洲的发现所准备好的世界市场。世界市场使商业、航海业和陆路交通得到了巨大的发展。这种发展又反过来促进了工业的扩展，同时，随着工业、商业、航海业和铁路的扩展，资产阶级也在同一程度上得到发展，增加自己的资本，把中世纪遗留下来的一切阶级都排挤到后面去。
+</div>
 </section>
 
-<div class="banner2">
-  <div class="banner2text">
-      "We looked at a lot of different options, but Kubernetes really stood out....the fact that on day one it was designed to run on bare metal just as well as Google Cloud meant that we could actually migrate to it inside of our data centers, and then use those same tools and concepts to run across public cloud providers as&nbsp;well."<br><br><span style="font-size:15px;letter-spacing:0.08em">- SAM GHOUDS, CO-FOUNDER AND SERVICES ARCHITECT OF BOX</span>
+<div class="banner3" >
+  <div class="banner3text" style="padding-top:10px;padding-bottom:10px;color:white;background:url('/img/case_studies/CaseStudy_huawei_banner3.jpg');text-align:center;padding-left:20%;padding-right:20%;font-size:24px">
+由此可见，现代资产阶级本身是一个长期发展过程的产物，是生产方式和交换方式的一系列变革的产物。
+但是，市场总是在扩大，需求总是在增加。甚至工场手工业也不再能满足需要了。于是，蒸汽和机器引起了工业生产的革命。现代大工业代替了工场手工业；工业中的百万富翁，一支一支产业大军的首领，现代资产者，代替了工业的中间等级。
+   大工业建立了由美洲的发现所准备好的世界市场。世界市场使商业、
   </div>
 </div>
 
-<section class="section2">
-
-  <div class="fullcol">
-      <h2>In the summer of 2014, Box was feeling the pain of a decade’s worth of hardware and software infrastructure that wasn’t keeping up with the company’s needs.</h2>
-
-      A platform that allows its more than 50 million users (including governments and big businesses like <a href="https://www.ge.com/">General Electric</a>) to manage and share content in the cloud, Box was originally a <a href="http://php.net/">PHP</a> monolith of millions of lines of code built exclusively with bare metal inside of its own data centers. It had already begun to slowly chip away at the monolith, decomposing it into microservices. And "as we’ve been expanding into regions around the globe, and as the public cloud wars have been heating up, we’ve been focusing a lot more on figuring out how we run our workload across many different environments and many different cloud infrastructure providers," says Box Cofounder and Services Architect Sam Ghods. "It’s been a huge challenge thus far because of all these different providers, especially bare metal, have very different interfaces and ways in which you work with them."<br><br>
-      Box’s cloud native journey accelerated that June, when Ghods attended <a href="https://www.docker.com/events/dockercon">DockerCon</a>. The company had come to the realization that it could no longer run its applications only off bare metal, and was researching containerizing with Docker, virtualizing with OpenStack, and supporting public cloud.<br><br>
-      At that conference, Google announced the release of its Kubernetes container management system, and Ghods was won over. "We looked at a lot of different options, but Kubernetes really stood out, especially because of the incredibly strong team of <a href="https://research.google.com/pubs/pub43438.html">Borg</a> veterans and the vision of having a completely infrastructure-agnostic way of being able to run cloud software," he says, referencing Google’s internal container orchestrator Borg. "The fact that on day one it was designed to run on bare metal just as well as <a href="https://cloud.google.com/">Google Cloud</a> meant that we could actually migrate to it inside of our data centers, and then use those same tools and concepts to run across public cloud providers as well."<br><br>
-      Another plus: Ghods liked that <a href="https://kubernetes.io/">Kubernetes</a> has a universal set of API objects like pod, service, replica set and deployment object, which created a consistent surface to build tooling against. "Even PaaS layers like <a href="https://www.openshift.com/">OpenShift</a> or <a href="http://deis.io/">Deis</a> that build on top of Kubernetes still treat those objects as first-class principles," he says. "We were excited about having these abstractions shared across the entire ecosystem, which would result in a lot more momentum than we saw in other potential solutions."<br><br>
-      Box deployed Kubernetes in a cluster in a production data center just six months later. Kubernetes was then still pre-beta, on version 0.11. They started small: The very first thing Ghods’s team ran on Kubernetes was a Box API checker that confirms Box is up. "That was just to write and deploy some software to get the whole pipeline functioning," he says. Next came some daemons that process jobs, which was "nice and safe because if they experienced any interruptions, we wouldn’t fail synchronous incoming requests from customers."
-
-  </div>
-</section>
-
-<div class="banner3">
-  <div class="banner3text">
-    "As we’ve been expanding into regions around the globe, and as the public cloud wars have been heating up, we’ve been focusing a lot more on figuring out how we [can have Kubernetes help] run our workload across many different environments and many different cloud infrastructure providers."
-  </div>
+<section class="section3" style="margin-top:4%;margin-bottom:4%;padding-left:20px;padding-right:20px">
+<div class="fullcol" style="margin-left:10%;margin-right:11%">
+  资产阶级抹去了一切向来受人尊崇和令人敬畏的职业的神圣光环。它把医生、律师、教士、诗人和学者变成了它出钱招雇的雇佣劳动者。
+  资产阶级撕下了罩在家庭关系上的温情脉脉的面纱，把这种关系变成了纯粹的金钱关系。
+  资产阶级揭示了，在中世纪深受反动派称许的那种人力的野蛮使用，是以极端怠惰作为相应补充的。它第一个证明了，人的活动能够取得什么样的成就。它创造了完全不同于埃及金字塔、罗马水道和哥特式教堂的奇迹；它完成了完全不同于民族大迁徙和十字军东征的远征。
+资产阶级除非对生产工具，从而对生产关系，从而对全部社会关系不断地进行革命，否则就不能生存下去。反之，原封不动地保持旧的生产方式，却是过去的一切工业阶级生存的首要条件。生产的不断变革，一切社会状况不停的动荡，永远的不安定和变动，这就是资产阶级时代不同于过去一切时代的地方。一切固定的僵化的关系以及与之相适应的素被尊崇的观念和见解都被消除了，一切新形成的关系等不到固定下来就陈旧了。一切等级的和固定的东西都烟消云散了，一切神圣的东西都被亵渎了。人们终于不得不用冷静的眼光来看他们的生活地位、他们的相互关系。
+<br><br>
 </div>
-
-<section class="section3">
-  <div class="fullcol">
-    The first live service, which the team could route to and ask for information, was launched a few months later. At that point, Ghods says, "We were comfortable with the stability of the Kubernetes cluster. We started to port some services over, then we would increase the cluster size and port a few more, and that’s ended up to about 100 servers in each data center that are dedicated purely to Kubernetes. And that’s going to be expanding a lot over the next 12 months, probably too many hundreds if not thousands."<br><br>
-    While observing teams who began to use Kubernetes for their microservices, "we immediately saw an uptick in the number of microservices being released," Ghods&nbsp;notes. "There was clearly a pent-up demand for a better way of building software through microservices, and the increase in agility helped our developers be more productive and make better architectural choices."
-    <br><br><div class="quote">"There was clearly a pent-up demand for a better way of building software through microservices, and the increase in agility helped our developers be more productive and make better architectural choices."</div><br>
-    Ghods reflects that as early adopters, Box had a different journey from what companies experience now. "We were definitely lock step with waiting for certain things to stabilize or features to get released," he says. "In the early days we were doing a lot of contributions [to components such as kubectl apply] and waiting for Kubernetes to release each of them, and then we’d upgrade, contribute more, and go back and forth several times. The entire project took about 18 months from our first real deployment on Kubernetes to having general availability. If we did that exact same thing today, it would probably be no more than six."<br><br>
-    In any case, Box didn’t have to make too many modifications to Kubernetes for it to work for the company. "The vast majority of the work our team has done to implement Kubernetes at Box has been making it work inside of our existing (and often legacy) infrastructure," says Ghods, "such as upgrading our base operating system from RHEL6 to RHEL7 or integrating it into <a href="https://www.nagios.org/">Nagios</a>, our monitoring infrastructure. But overall Kubernetes has been remarkably flexible with fitting into many of our constraints, and we’ve been running it very successfully on our bare metal infrastructure."<br><br>
-    Perhaps the bigger challenge for Box was a cultural one. "Kubernetes, and cloud native in general, represents a pretty big paradigm shift, and it’s not very incremental," Ghods says. "We’re essentially making this pitch that Kubernetes is going to solve everything because it does things the right way and everything is just suddenly better. But it’s important to keep in mind that it’s not nearly as proven as many other solutions out there. You can’t say how long this or that company took to do it because there just aren’t that many yet. Our team had to really fight for resources because our project was a bit of a moonshot."
-  </div>
 </section>
 
-  <div class="banner4">
-    <div class="banner4text">
-    "The vast majority of the work our team has done to implement Kubernetes at Box has been making it work inside of our existing [and often legacy] infrastructure....overall Kubernetes has been remarkably flexible with fitting into many of our constraints, and we’ve been running it very successfully on our bare metal infrastructure."
-    </div>
-  </div>
-
-<section class="section4">
-  <div class="fullcol">
-    Having learned from experience, Ghods offers these two pieces of advice for companies going through similar challenges:
-    <h2>1. Deliver early and often.</h2> Service discovery was a huge problem for Box, and the team had to decide whether to build an interim solution or wait for Kubernetes to natively satisfy Box’s unique requirements. After much debate, "we just started focusing on delivering something that works, and then dealing with potentially migrating to a more native solution later," Ghods says. "The above-all-else target for the team should always be to serve real production use cases on the infrastructure, no matter how trivial. This helps keep the momentum going both for the team itself and for the organizational perception of the project." </br></br>
-    <h2>2. Keep an open mind about what your company has to abstract away from developers and what it&nbsp;doesn’t.</h2> Early on, the team built an abstraction on top of Docker files to help ensure that images had the right security updates.
-    This turned out to be superfluous work, since container images are considered immutable and you can easily scan them post-build to ensure they do not contain vulnerabilities. Because managing infrastructure through containerization is such a discontinuous leap, it’s better to start by interacting directly with the native tools and learning their unique advantages and caveats. An abstraction should be built only after a practical need for it arises.</br></br>
-    In the end, the impact has been powerful. "Before Kubernetes," Ghods says, "our infrastructure was so antiquated it was taking us more than six months to deploy a new microservice. Now a new microservice takes less than five days to deploy. And we’re working on getting it to an hour. Granted, much of that six months was due to how broken our systems were, but bare metal is intrinsically a difficult platform to support unless you have a system like Kubernetes to help manage&nbsp;it."</br></br>
-    By Ghods’s estimate, Box is still several years away from his goal of being a 90-plus percent Kubernetes shop. "We’re very far along on having a mission-critical, stable Kubernetes deployment that provides a lot of value," he says. "Right now about five percent of all of our compute runs on Kubernetes, and I think in the next six months we’ll likely be between 20 to 50 percent. We’re working hard on enabling all stateless service use cases, and shift our focus to stateful services after&nbsp;that."
-  </div>
-</section>
-
-  <div class="banner5">
-    <div class="banner5text">
-    "Ghods predicts that Kubernetes has the opportunity to be the new cloud platform. '...because it’s a never-before-seen level of automation and intelligence surrounding infrastructure that is portable and agnostic to every way you can run your infrastructure.'"
-    </div>
-  </div>
-
-<section class="section5">
-  <div class="fullcol">
-    In fact, that’s what he envisions across the industry: Ghods predicts that Kubernetes has the opportunity to be the new cloud platform. Kubernetes provides an API consistent across different cloud platforms including bare metal, and "I don’t think people have seen the full potential of what’s possible when you can program against one single interface," he says. "The same way <a href="https://aws.amazon.com/">AWS</a> changed infrastructure so that you don’t have to think about servers or cabinets or networking equipment anymore, Kubernetes enables you to focus exclusively on the containers that you’re running, which is pretty exciting. That’s the vision."</br></br>
-    Ghods points to projects that are already in development or recently released for Kubernetes as a cloud platform: cluster federation, the Dashboard UI, and <a href="https://coreos.com/">CoreOS</a>’s etcd operator. "I honestly believe it’s the most exciting thing I’ve seen in cloud infrastructure," he says, "because it’s a never-before-seen level of automation and intelligence surrounding infrastructure that is portable and agnostic to every way you can run your infrastructure."</br></br>
-    Box, with its early decision to use bare metal, embarked on its Kubernetes journey out of necessity. But Ghods says that even if companies don’t have to be agnostic about cloud providers today, Kubernetes may soon become the industry standard, as more and more tooling and extensions are built around the API.</br></br>
-    "The same way it doesn’t make sense to deviate from Linux because it’s such a standard," Ghods says, "I think Kubernetes is going down the same path. It is still early days—the documentation still needs work and the user experience for writing and publishing specs to the Kubernetes clusters is still rough. When you’re on the cutting edge you can expect to bleed a little. But the bottom line is, this is where the industry is going. Three to five years from now it’s really going to be shocking if you run your infrastructure any other way."
-  </div>
-</section>
