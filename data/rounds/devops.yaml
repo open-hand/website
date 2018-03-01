@@ -1,6 +1,6 @@
 weight: 3
 horizontal: 15
 vertical: 165
-name: "DevOps套件"
+name: "开发管理"
 icon: "features_pic2.png"
-description: "DevOps套件为交付团队提供了混合云下的持续交付流水线，帮助加速产品的交付速度和频率；缩短和增强运营环境的信息反馈，促进各团队的沟通、协作与整合的文化。"
+description: "代码及分支管理：Gitflow分支模型，持续集成管理，代码质量管理"
