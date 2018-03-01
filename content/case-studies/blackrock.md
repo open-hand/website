@@ -5,10 +5,11 @@ tags: ["ipsum"]
 type: "case-studies"
 categories: ["lorem"]
 banner: "/img/case_studies/blackrock.png"
+summary: 吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱
 ---
 
 <div class="banner1">
-  <h1> CASE STUDY: <img src="img/blackrock_logo.png" class="header_logo"><br>
+  <h1> CASE STUDY: <img src="/img/blackrock_logo.png" class="header_logo"><br>
     <div class="subhead">Rolling Out Kubernetes in Production in 100 Days</div>
   </h1>
 
