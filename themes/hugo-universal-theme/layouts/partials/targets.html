@@ -3,27 +3,33 @@
 {{ if gt (len .Site.Data.targets) 0 }}
 <section class="bar background-white">
     <div class="container">
-        {{ range $index, $element := sort .Site.Data.targets "weight" }}
-		{{ if eq (mod $index 2) 0 }}
-		<div class="col-md-12">
-            <div class="row target-box-row">
-		{{ end }}
-				<div class="col-md-6">
-                    {{ if eq (mod $index 2) 0 }}
-                        <div class="target-box box-simple-features-right">
-                    {{ end }}
-                    {{ if eq (mod $index 2) 1 }}
-                        <div class="target-box box-simple-features-left">
-                    {{ end }}
-                        <h3>{{ $element.name }}</h3>
-                        <p>{{ $element.description | markdownify }}</p>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="heading text-center">
+                    <h2>{{ .Site.Params.targets.title }}</h2>
+                </div>
+                {{ range $index, $element := sort .Site.Data.targets "weight" }}
+                {{ if eq (mod $index 2) 0 }}
+                <div class="col-md-12">
+                    <div class="row target-box-row">
+                {{ end }}
+                        <div class="col-md-6">
+                            {{ if eq (mod $index 2) 0 }}
+                                <div class="target-box box-simple-features-right">
+                            {{ else }}
+                                <div class="target-box box-simple-features-left">
+                            {{ end }}
+                                <h3>{{ $element.name }}</h3>
+                                <p>{{ $element.description | markdownify }}</p>
+                            </div>
+                        </div>
+                {{ if  (eq (mod $index 2) 1)  }}
                     </div>
                 </div>
-		{{ if  (eq (mod $index 2) 1)  }}
-			</div>
-		</div>
-		{{ end }}
-        {{ end }}
+                {{ end }}
+                {{ end }}
+            </div>
+        </div>
     </div>
 </section>
 {{ end }}

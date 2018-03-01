@@ -185,6 +185,8 @@ paginate = 10
     # All features are defined in their own files. You can find example items
     # at 'exampleSite/data/targets'.
     # For more informtion take a look at the README.
+    title = "组成"
+    subtitle = "组成"
 
 [params.fileds]
     enable = true
@@ -213,6 +215,8 @@ paginate = 10
     # All features are defined in their own files. You can find example items
     # at 'exampleSite/data/rounds'.
     # For more informtion take a look at the README.
+    title = "特点"
+    subtitle = "特点"
 
 [params.clients]
     enable = true
