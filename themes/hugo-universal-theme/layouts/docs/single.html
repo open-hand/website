@@ -16,11 +16,28 @@
         {{ partial "breadcrumbs.html" . }}
 
         <div id="content">
-            <div class="container">
+            <div class="docs">
 
                 <div class="row">
+                    <!-- *** LEFT COLUMN ***
+                    _________________________________________________________ -->
 
-                    <!-- *** LEFT COLUMN *** -->
+                    <div class="col-md-3">
+                        <div class="row">
+                        <div class="docs-menu">
+                        <!-- *** MENUS AND WIDGETS *** -->
+
+                        {{ partial "docsnav.html" . }}
+
+                        <!-- *** MENUS AND FILTERS END *** -->
+                    </div>
+                        </div>
+                    </div>
+                    <!-- /.col-md-3 -->
+    
+                    <!-- *** LEFT COLUMN END *** -->
+
+                    <!-- *** RIGHT COLUMN *** -->
 
                     <div class="col-md-9" id="blog-post">
 
@@ -38,21 +55,6 @@
 
                     </div>
                     <!-- /#blog-post -->
-
-                    <!-- *** LEFT COLUMN END *** -->
-
-                    <!-- *** RIGHT COLUMN *** -->
-
-                    <div class="col-md-3">
-
-                        <!-- *** MENUS AND WIDGETS *** -->
-
-                        {{ partial "sidebar.html" . }}
-
-                        <!-- *** MENUS AND FILTERS END *** -->
-
-                    </div>
-                    <!-- /.col-md-3 -->
 
                     <!-- *** RIGHT COLUMN END *** -->
 

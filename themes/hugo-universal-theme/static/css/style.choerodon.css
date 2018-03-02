@@ -3811,3 +3811,9 @@ a.list-group-item.active > .badge,
 .docs-menu > li:first-child > div:first-child i{
   display:none;
 }
+
+/* pre */
+
+ pre{
+   background: #282c34;
+ }
