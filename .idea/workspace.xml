@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="60118d17-56b6-4108-b83d-8652d2fed6ad" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/hugo-universal-theme/layouts/case-studies/list.html" afterPath="$PROJECT_DIR$/themes/hugo-universal-theme/layouts/case-studies/list.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/hugo-universal-theme/layouts/partials/head.html" afterPath="$PROJECT_DIR$/themes/hugo-universal-theme/layouts/partials/head.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/hugo-universal-theme/static/css/style.choerodon.css" afterPath="$PROJECT_DIR$/themes/hugo-universal-theme/static/css/style.choerodon.css" />
-    </list>
+    <list default="true" id="60118d17-56b6-4108-b83d-8652d2fed6ad" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,8 +15,8 @@
       <file leaf-file-name="list.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/themes/hugo-universal-theme/layouts/case-studies/list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-96">
-              <caret line="80" column="72" lean-forward="true" selection-start-line="80" selection-start-column="72" selection-end-line="80" selection-end-column="72" />
+            <state relative-caret-position="145">
+              <caret line="23" column="50" lean-forward="true" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#0;n#main#0;n#section#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -880,15 +875,15 @@
       <workItem from="1519696928145" duration="32318000" />
       <workItem from="1519801625459" duration="5000" />
       <workItem from="1519801676700" duration="13224000" />
-      <workItem from="1519872713873" duration="26461000" />
+      <workItem from="1519872713873" duration="27018000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72008000" />
+    <option name="totallyTimeSpent" value="72565000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1328,8 +1323,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/themes/hugo-universal-theme/layouts/case-studies/list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-96">
-          <caret line="80" column="72" lean-forward="true" selection-start-line="80" selection-start-column="72" selection-end-line="80" selection-end-column="72" />
+        <state relative-caret-position="145">
+          <caret line="23" column="50" lean-forward="true" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#0;n#main#0;n#section#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
