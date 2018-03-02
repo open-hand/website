@@ -185,6 +185,8 @@ paginate = 10
     # All features are defined in their own files. You can find example items
     # at 'exampleSite/data/targets'.
     # For more informtion take a look at the README.
+    title = "组成"
+    subtitle = "组成"
 
 [params.fileds]
     enable = true
@@ -203,16 +205,18 @@ paginate = 10
 [params.see_more]
     enable = true
     icon = "fa fa-file-code-o"
-    title = "Do you want to see more?"
-    subtitle = "We have prepared for you more than 40 different HTML pages, including 5 variations of homepage."
+    title = "想了解更多吗？"
+    subtitle = "我们为您准备了许多案例，包括几个完整的网站。"
     link_url = "#"
-    link_text = "Check other homepages"
+    link_text = "去看看"
 
 [params.rounds]
     enable = true
     # All features are defined in their own files. You can find example items
     # at 'exampleSite/data/rounds'.
     # For more informtion take a look at the README.
+    title = "特点"
+    subtitle = "特点"
 
 [params.clients]
     enable = true
