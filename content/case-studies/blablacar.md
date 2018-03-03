@@ -4,99 +4,68 @@ date: "2015-10-10T13:07:31+02:00"
 tags: ["ipsum"]
 type: "case-studies"
 categories: ["lorem"]
-banner: "/img/case_studies/haufegroup_logo_feature.png"
-summary: 吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱
+banner: "/img/case_studies/blablacar-logo.png"
+summary: 中国共产党第九次全国代表大会于１９６９年４月１日─２４日在北京举行。出席大会的代表１５１２人，代表全国２２００万党员。由于当时各地党组织处于瘫痪状态，无法正常进行代表的选举
 ---
 
-<div class="banner1">
-  <h1> CASE STUDY:<img src="/img/case_studies/blablacar_logo.png" class="header_logo"><br> <div class="subhead">Turning to Containerization to Support Millions of Rideshares</div></h1>
-
-</div>
-
-<div class="details">
-    Company &nbsp;<b>BlaBlaCar</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Location &nbsp;<b>Paris, France</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Industry &nbsp;<b>Ridesharing Company</b>
-</div>
-
 <hr>
-
 <section class="section1">
 <div class="cols">
-  <div class="col1">
-    <h2>Challenge</h2>
-        The world’s largest long-distance carpooling community, <a href="https://www.blablacar.com/">BlaBlaCar</a>, connects 40 million members across 22 countries. The company has been experiencing exponential growth since 2012 and needed its infrastructure to keep up. "When you’re thinking about doubling the number of servers, you start thinking, ‘What should I do to be more efficient?’" says Simon Lallemand, Infrastructure Engineer at BlaBlaCar. "The answer is not to hire more and more people just to deal with the servers and installation." The team knew they had to scale the platform, but wanted to stay on their own bare metal servers.
-    <br>
-    <br>
-      <h2>Solution</h2>
-        Opting not to shift to cloud virtualization or use a private cloud on their own servers, the BlaBlaCar team became early adopters of containerization, using the CoreOs runtime <a href="https://coreos.com/rkt">rkt</a>, initially deployed using <a href="https://coreos.com/fleet/docs/latest/launching-containers-fleet.html">fleet</a> cluster manager. Last year, the company switched to <a href="http://kubernetes.io/">Kubernetes</a> orchestration, and now also uses <a href="https://prometheus.io/">Prometheus</a> for monitoring.
-      </div>
+<div class="col1">
+
+<h2>挑战</h2>
+一个幽灵，共产主义的幽灵，在欧洲大陆徘徊。为了对这个幽灵进行神圣的围剿，旧欧洲的一切势力，教皇和沙皇、梅特涅和基佐、法国的激进派和德国的警察，都联合起来了。
+有哪一个反对党不被它的当政的敌人骂为共产党呢？又有哪一个反对党不拿共产主义这个罪名去回敬更进步的反对党人和自己的反动敌人呢？
+从这一事实中可以得出两个结论：
+共产主义已经被欧洲的一切势力公认为一种势力；
+现在是共产党人向全世界公开说明自己的观点、自己的目的、自己的意图并且拿党自己的宣言来反驳关于共产主义幽灵的神话的时候了。
+在过去的各个历史时代，我们几乎到处都可以看到社会完全划分为各个不同的等级，看到社会地位分成的多种多样的层次。在古罗马，有贵族、骑士、平民、奴隶，在中世纪，有封建主、臣仆、行会师傅、帮工、农奴，而且几乎在每一个阶级内部又有一些特殊的阶层。
+从封建社会的灭亡中产生出来的现代资产阶级社会并没有消灭阶级对立。它只是用新的阶级、新的压迫条件、新的斗争形式代替了旧的。
+<br>
+</div>
 
 <div class="col2">
-<h2>Impact</h2>
-        "Before using containers, it would take sometimes a day, sometimes two, just to create a new service," says Lallemand. "With all the tooling that we made around the containers, copying a new service now is a matter of minutes. It’s really a huge gain. We are better at capacity planning in our data center because we have fewer constraints due to this abstraction between the services and the hardware we run on. For the developers, it also means they can focus only on the features that they’re developing, and not on the infrastructure."
+  <h2>方案</h2>
+ 至今一切社会的历史都是阶级斗争的历史。
+ 自由民和奴隶、贵族和平民、领主和农奴、行会师傅和帮工，一句话，压迫者和被压迫者，始终处于相互对立的地位，进行不断的、有时隐蔽有时公开的斗争，而每一次斗争的结局是整个社会受到革命改造或者斗争的各阶级同归于尽
+<br>
+<h2>影响</h2>
+ 资产阶级在它已经取得了统治的地方把一切封建的、宗法的和田园诗般的关系都破坏了。它无情地斩断了把人们束缚于天然尊长的形形色色的封建羁绊，它使人和人之间除了赤裸裸的利害关系，除了冷酷无情的“现金交易”，就再也没有任何别的联系了。它把宗教虔诚、骑士热忱、小市民伤感这些情感的神圣发作，淹没在利己主义打算的冰水之中。它把人的尊严变成了交换价值
 </div>
 </div>
 </section>
 
-<div class="banner2">
-  <div class="banner2text">
-    "When you’re switching to this cloud-native model and running everything in containers, you have to make sure that at any moment you can reboot without any downtime and without losing traffic. [With Kubernetes] our infrastructure is much more resilient and we have better availability than before."<br style="height:25px"><span style="font-size:14px;letter-spacing:2px;text-transform:uppercase;margin-top:5% !important;"><br>- Simon Lallemand, Infrastructure Engineer at BlaBlaCar</span>
+<div class="banner2" style="margin-top:30%">
+  <div class="banner2text" style="padding-top:10px;padding-bottom:10px;color:white;background-color:#666666;text-align:center;padding-left:20%;padding-right:20%;font-size:24px" >
+    资产阶级，由于开拓了世界市场，使一切国家的生产和消费都成为世界性的了。使反动派大为惋惜的是，资产阶级挖掉了工业脚下的民族基础。古老的民族工业被消灭了，并且每天都还在被消灭。它们被新的工业排挤掉了，新的工业的建立已经成为一切文明民族的生命攸关的问题；
   </div>
 </div>
 
-<section class="section2">
-<div class="fullcol">
-  <h2>For the 40 million users of <a href="https://www.blablacar.com/">BlaBlaCar</a>, it’s easy to find strangers headed in the same direction to share rides and costs. You can even choose how much "bla bla" chatter you want from a long-distance ride mate.</h2>
-  Behind the scenes, though, the infrastructure was falling woefully behind the rider community’s exponential growth. Founded in 2006, the company hit its current stride around 2012. "Our infrastructure was very traditional," says Infrastructure Engineer Simon Lallemand, who began working at the company in 2014. "In the beginning, it was a bit chaotic because we had to [grow] fast. But then comes the time when you have to design things to make it manageable."<br><br>
-  By 2015, the company had about 50 bare metal servers. The team was using a <a href="https://www.mysql.com/">MySQL</a> database and <a href="http://php.net/">PHP</a>, but, Lallemand says, "it was a very static way." They also utilized the configuration management system, <a href="https://www.chef.io/chef/">Chef</a>, but had little automation in its process. "When you’re thinking about doubling the number of servers, you start thinking, ‘What should I do to be more efficient?’" says Lallemand. "The answer is not to hire more and more people just to deal with the servers and installation."<br><br>
-  Instead, BlaBlaCar began its cloud-native journey but wasn’t sure which route to take. "We could either decide to go into cloud virtualization or even use a private cloud on our own servers," says Lallemand. "But going into the cloud meant we had to make a lot of changes in our application work, and we were just not ready to make the switch from on premise to the cloud." They wanted to keep the great performance they got on bare metal, so they didn’t want to go to virtualization on premise.<br><br>
-  The solution: containerization. This was early 2015 and containers were still relatively new. "It was a bold move at the time," says Lallemand. "We decided that the next servers that we would buy in the new data center would all be the same model, so we could outsource the maintenance of the servers. And we decided to go with containers and with <a href="https://coreos.com/">CoreOS</a> Container Linux as an abstraction for this hardware. It seemed future-proof to go with containers because we could see what companies were already doing with containers."
+<section class="section2" style="margin-top:4%;margin-bottom:4%;padding-left:20px;padding-right:20px">
+<div class="fullcol" style="margin-left:10%;margin-right:11%">
+   美洲的发现、绕过非洲的航行，给新兴的资产阶级开辟了新天地。东印度和中国的市场、美洲的殖民化、对殖民地的贸易、交换手段和一般的商品的增加，使商业、航海业和工业空前高涨，因而使正在崩溃的封建社会内部的革命因素迅速发展。
+   以前那种封建的或行会的工业经营方式已经不能满足随着新市场的出现而增加的需求了。工场手工业代替了这种经营方式。行会师傅被工业的中间等级排挤掉了；各种行业组织之间的分工随着各个作坊内部的分工的出现而消失了。
+   但是，市场总是在扩大，需求总是在增加。甚至工场手工业也不再能满足需要了。于是，蒸汽和机器引起了工业生产的革命。现代大工业代替了工场手工业；工业中的百万富翁，一支一支产业大军的首领，现代资产者，代替了工业的中间等级。
+   大工业建立了由美洲的发现所准备好的世界市场。世界市场使商业、航海业和陆路交通得到了巨大的发展。这种发展又反过来促进了工业的扩展，同时，随着工业、商业、航海业和铁路的扩展，资产阶级也在同一程度上得到发展，增加自己的资本，把中世纪遗留下来的一切阶级都排挤到后面去。
 </div>
 </section>
 
-<div class="banner3">
-  <div class="banner3text">
-    "With all the tooling that we made around the containers, copying a new service is a matter of minutes. It’s a huge gain. For the developers, it means they can focus only on the features that they’re developing and not on the infrastructure or the hour they would test their code, or the hour that it would get deployed."
+<div class="banner3" >
+  <div class="banner3text" style="padding-top:10px;padding-bottom:10px;color:white;background:url('/img/case_studies/CaseStudy_huawei_banner3.jpg');text-align:center;padding-left:20%;padding-right:20%;font-size:24px">
+由此可见，现代资产阶级本身是一个长期发展过程的产物，是生产方式和交换方式的一系列变革的产物。
+但是，市场总是在扩大，需求总是在增加。甚至工场手工业也不再能满足需要了。于是，蒸汽和机器引起了工业生产的革命。现代大工业代替了工场手工业；工业中的百万富翁，一支一支产业大军的首领，现代资产者，代替了工业的中间等级。
+   大工业建立了由美洲的发现所准备好的世界市场。世界市场使商业、
   </div>
 </div>
 
-<section class="section3">
-<div class="fullcol">
-    Next, they needed to choose a runtime for the containers, but "there were very few deployments in production at that time," says Lallemand. They experimented with <a href="https://www.docker.com/">Docker</a> but decided to go with <a href="https://coreos.com/rkt">rkt</a>. Lallemand explains that for BlaBlaCar, it was "much simpler to integrate things that are on rkt." At the time,  the project was still pre-v1.0, so "we could speak with the developers of rkt and give them feedback. It was an advantage." Plus, he notes, rkt was very stable, even at this early stage.<br><br>
-    Once those decisions were made that summer, the company came up with a plan for implementation. First, they formed a task force to create a workflow that would be tested by three of the 10 members on Lallemand’s team. But they took care to run regular workshops with all 10 members to make sure everyone was on board. "When you’re focused on your product sometimes you forget if it’s really user friendly, whether other people can manage to create containers too," Lallemand says. "So we did a lot of iterations to find a good workflow."<br><br>
-    After establishing the workflow, Lallemand says with a smile that "we had this strange idea that we should try the most difficult thing first. Because if it works, it will work for everything." So the first project the team decided to containerize was the database. "Nobody did that at the time, and there were really no existing tools for what we wanted to do, including building container images," he says. So the team created their own tools, such as <a href="https://github.com/blablacar/dgr">dgr</a>, which builds container images so that the whole team has a common framework to build on the same images with the same standards. They also revamped the service-discovery tools <a href="https://github.com/airbnb/nerve">Nerve</a> and <a href="http://airbnb.io/projects/synapse/">Synapse</a>; their versions, <a href="https://github.com/blablacar/go-nerve">Go-Nerve</a> and <a href="https://github.com/blablacar/go-synapse">Go-Synapse</a>, were written in Go and built to be more efficient and include new features. All of these tools were open-sourced.<br><br>
-    At the same time, the company was working to migrate its entire platform to containers with a deadline set for Christmas 2015. With all the work being done in parallel, BlaBlaCar was able to get about 80 percent of its production into containers by its deadline with live traffic running on containers during December. (It’s now at 100 percent.) "It’s a really busy time for traffic," says Lallemand. "We knew that by using those new servers with containers, it would help us handle the traffic."<br><br>
-    In the middle of that peak season for carpooling, everything worked well. "The biggest impact that we had was for the deployment of new services," says Lallemand. "Before using containers, we had to first deploy a new server and create configurations with Chef. It would take sometimes a day, sometimes two, just to create a new service. And with all the tooling that we made around the containers, copying a new service is a matter of minutes. So it’s really a huge gain. For the developers, it means they can focus only on the features that they’re developing and not on the infrastructure or the hour they would test their code, or the hour that it would get deployed."
+<section class="section3" style="margin-top:4%;margin-bottom:4%;padding-left:20px;padding-right:20px">
+<div class="fullcol" style="margin-left:10%;margin-right:11%">
+  资产阶级抹去了一切向来受人尊崇和令人敬畏的职业的神圣光环。它把医生、律师、教士、诗人和学者变成了它出钱招雇的雇佣劳动者。
+  资产阶级撕下了罩在家庭关系上的温情脉脉的面纱，把这种关系变成了纯粹的金钱关系。
+  资产阶级揭示了，在中世纪深受反动派称许的那种人力的野蛮使用，是以极端怠惰作为相应补充的。它第一个证明了，人的活动能够取得什么样的成就。它创造了完全不同于埃及金字塔、罗马水道和哥特式教堂的奇迹；它完成了完全不同于民族大迁徙和十字军东征的远征。
+资产阶级除非对生产工具，从而对生产关系，从而对全部社会关系不断地进行革命，否则就不能生存下去。反之，原封不动地保持旧的生产方式，却是过去的一切工业阶级生存的首要条件。生产的不断变革，一切社会状况不停的动荡，永远的不安定和变动，这就是资产阶级时代不同于过去一切时代的地方。一切固定的僵化的关系以及与之相适应的素被尊崇的观念和见解都被消除了，一切新形成的关系等不到固定下来就陈旧了。一切等级的和固定的东西都烟消云散了，一切神圣的东西都被亵渎了。人们终于不得不用冷静的眼光来看他们的生活地位、他们的相互关系。
+<br><br>
 </div>
 </section>
 
-<div class="banner4">
-  <div class="banner4text">
-    "We realized that there was a really strong community around it [Kubernetes], which meant we would not have to maintain a lot of tools of our own," says Lallemand. "It was better if we could contribute to some bigger project like Kubernetes."
-  </div>
-</div>
 
-<section class="section4">
-<div class="fullcol">
-    In order to meet their self-imposed deadline, one of the decisions they made was to not do any "orchestration magic" for containers in the first production alignment. Instead, they used the basic <a href="https://coreos.com/fleet/docs/latest/launching-containers-fleet.html">fleet</a> tool from CoreOS to deploy their containers. (They did build a tool called <a href="https://github.com/blablacar/ggn">GGN</a>, which they’ve open-sourced, to make it more manageable for their system engineers to use.)<br><br>
-    Still, the team knew that they’d want more orchestration. "Our tool was doing a pretty good job, but at some point you want to give more autonomy to the developer team," Lallemand says. "We also realized that we don’t want to be the single point of contact for developers when they want to launch new services." By the summer of 2016, they found their answer in <a href="http://kubernetes.io/">Kubernetes</a>, which had just begun supporting rkt implementation.<br><br>
-    After discussing their needs with their contacts at CoreOS and Google, they were convinced that Kubernetes would work for BlaBlaCar. "We realized that there was a really strong community around it, which meant we would not have to maintain a lot of tools of our own," says Lallemand. "It was better if we could contribute to some bigger project like Kubernetes." They also started using <a href="https://prometheus.io/">Prometheus</a>, as they were looking for "service-oriented monitoring that could be updated nightly." Production on Kubernetes began in December 2016. "We like to do crazy stuff around Christmas," he adds with a laugh.<br><br>
-    BlaBlaCar now has about 3,000 pods, with 1200 of them running on Kubernetes. Lallemand leads a "foundations team" of 25 members who take care of the networks, databases and systems for about 100 developers. There have been some challenges getting to this point. "The rkt implementation is still not 100 percent finished," Lallemand points out. "It’s really good, but there are some features still missing. We have questions about how we do things with stateful services, like databases. We know how we will be migrating some of the services; some of the others are a bit more complicated to deal with. But the Kubernetes community is making a lot of progress on that part."<br><br>
-    The team is particularly happy that they’re now able to plan capacity better in the company’s data center. "We have fewer constraints since we have this abstraction between the services and the hardware we run on," says Lallemand. "If we lose a server because there’s a hardware problem on it, we just move the containers onto another server. It’s much more efficient. We do that by just changing a line in the configuration file. And with Kubernetes, it should be automatic, so we would have nothing to do."
-</div>
-</section>
-
-<div class="banner5">
-  <div class="banner5text">
-    "If we lose a server because there’s a hardware problem on it, we just move the containers onto another server. It’s much more efficient. We do that by just changing a line in the configuration file. With Kubernetes, it should be automatic, so we would have nothing to do."
-  </div>
-</div>
-
-<section class="section5">
-<div class="fullcol">
-    And these advances ultimately trickle down to BlaBlaCar’s users. "We have improved availability overall on our website," says Lallemand. "When you’re switching to this cloud-native model with running everything in containers, you have to make sure that you can at any moment reboot a server or a data container without any downtime, without losing traffic. So now our infrastructure is much more resilient and we have better availability than before."<br><br>
-    Within BlaBlaCar’s technology department, the cloud-native journey has created some profound changes. Lallemand thinks that the regular meetings during the conception stage and the training sessions during implementation helped. "After that everybody took part in the migration process," he says. "Then we split the organization into different ‘tribes’—teams that gather developers, product managers, data analysts, all the different jobs, to work on a specific part of the product. Before, they were organized by function. The idea is to give all these tribes access to the infrastructure directly in a self-service way without having to ask. These people are really autonomous. They have responsibility of that part of the product, and they can make decisions faster." <br><br>
-    This DevOps transformation turned out to be a positive one for the company’s staffers. "The team was very excited about the DevOps transformation because it was new, and we were working to make things more reliable, more future-proof," says Lallemand. "We like doing things that very few people are doing, other than the internet giants." <br><br>
-    With these changes already making an impact, BlaBlaCar is looking to split up more and more of its application into services. "I don’t say microservices because they’re not so micro," Lallemand says. "If we can split the responsibilities between the development teams, it would be easier to manage and more reliable, because we can easily add and remove services if one fails. You can handle it easily, instead of adding a big monolith that we still have." <br><br>
-    When Lallemand speaks to other European companies curious about what BlaBlaCar has done with its infrastructure, he tells them to come along for the ride. "I tell them that it’s such a pleasure to deal with the infrastructure that we have today compared to what we had before," he says. "They just need to keep in mind their real motive, whether it’s flexibility in development or reliability or so on, and then go step by step towards reaching those objectives. That’s what we’ve done. It’s important not to do technology for the sake of technology. Do it for a purpose. Our focus was on helping the developers."
-</div>
-</section>

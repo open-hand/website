@@ -384,3 +384,13 @@ $(window).resize(function () {
     windowWidth = newWindowWidth
   }
 })
+
+
+// docsmenu
+jQuery(document).ready(function() {
+  jQuery('.category-icon').on('click', function() {
+      $( this ).toggleClass("fa-caret-down fa-caret-right") ;
+      $( this ).parent().parent().children('ul').toggle() ;
+      return false;
+  });
+});
