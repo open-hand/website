@@ -334,3 +334,196 @@ a.calendar:hover{
 .right-align {
 	text-align: right;
 }*/
+
+/*docs start*/
+.docs-link-noDirection{
+	text-decoration:none !important;
+}
+.docs-title-h1{
+	font: 300 34px/40px Roboto,sans-serif;
+	font-size: 32px;
+	margin-top: 0;
+	color: #444;
+    line-height: initial;
+	letter-spacing: -.01em;
+	margin-bottom: .67em;
+}
+.docs-title-h2{
+	font: 300 24px/32px Roboto,sans-serif;
+	font-size: 28px;
+    font-weight: 400;
+	letter-spacing: -.01em;
+	margin: 40px 0 20px;
+    padding-bottom: 3px;
+	color:#4A5960;
+}
+.docs-title-h3{
+	font: 400 18px/32px Roboto,sans-serif;
+    margin: 32px 0 16px;
+	font-size: 20px;
+    padding: 5px 0 7px 54px;
+    font-weight: 400;
+    color: #70808a;
+}
+.docs-title-h4{
+	font: 400 20px/32px Roboto,sans-serif;
+    margin: 0 0 16px 0;
+	font-size: 20px;
+    font-weight: 400;
+}
+.docs-border{
+	border-bottom: 2px solid #f0f0f0;
+}
+.docs-instruction-border{
+	padding-bottom: 32px;
+	padding-top: 16px;
+}
+.docs-section-border{
+	padding-bottom: 40px;
+}
+.docs-p{
+	padding: 0;
+	font-size: 16px;
+}
+.docs-p-marginTop16{
+	margin-top: 16px;
+}
+.docs-p-marginBottom16{
+	margin-bottom: 16px;
+}
+.docs-p-marginBottom40{
+	margin-bottom: 40px;
+}
+.docs-marginBottom80{
+	margin-bottom: 80px;
+}
+.hover-card {
+    background: #fff;
+    border-radius: 2px;
+    box-shadow: 0 2px 2px rgba(0,0,0,.24), 0 0 2px rgba(0,0,0,.12);
+    cursor: pointer;
+    display: block;
+    letter-spacing: .01em;
+    margin: 0 0 16px 0;
+    padding: 16px;
+    position: relative;
+    text-decoration: none;
+    transition: all .3s;
+}
+.hover-card:hover {
+    box-shadow: 0 4px 4px rgba(1,67,163,.24), 0 0 4px rgba(1,67,163,.12), 0 6px 18px rgba(43,133,231,.12);
+    transform: translate3d(0,-2px,0);
+}
+.hover-card:hover h3{
+	color: #2B85E7;
+}
+.hover-card .gray {
+    background: #78909C;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    left: 0px;
+    padding: 26px 0;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 88px;
+}
+.hover-card .text {
+    margin-left: 88px;
+}
+.hover-card .hover-card-title,.hover-card h3 {
+    color: #526E7A;
+    font-size: 20px;
+	line-height: 24px;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    text-align: left;
+    text-overflow: ellipsis;
+    text-transform: none;
+    transition: all .4s;
+    white-space: nowrap;
+	font-weight: 400;
+}
+.hover-card p {
+    color: #2B85E7;
+    font-size: 11px;
+    text-transform: uppercase;
+	line-height: 24px;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    text-align: left;
+    text-overflow: ellipsis;
+    text-transform: none;
+    transition: all .4s;
+    white-space: nowrap;
+	letter-spacing: -.01em;
+}
+.iot{
+	background: url('https://cloud.google.com/images/products/iot/iot_2x.png') no-repeat 0 6px/32px;
+}
+.docs-ul{
+	margin: 0 15px;
+    min-height: 133px;
+	list-style: disc outside;
+	padding-left: 40px;
+}
+.docs-li{
+	margin: 8px 0;
+	list-style: none;
+    border-top: 1px #eee solid;
+    padding: 2px 0 0 0;
+}
+.docs-a-inLi{
+	color:#039be5
+}
+.docs-card{
+	min-height: 286px;
+	box-shadow: 0 2px 2px rgba(0,0,0,.24), 0 0 2px rgba(0,0,0,.12);
+    margin-bottom: 64px;
+	padding: 16px;
+	margin-right: 8px;
+}
+.docs-p-inCard{
+	margin: 0 0 14px 0;
+    padding: 0;
+    font-size: 13px;
+}
+.docs-link-inCard{
+	font-size: 12px;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+.docs-button{
+	border: none;
+    border-radius: 2px;
+    box-sizing: border-box;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+    height: auto;
+    letter-spacing: .01em;
+    line-height: 48px;
+    overflow: hidden;
+    padding: 0 48px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: box-shadow .3s,background-color .3s,color .3s,transform .3s;
+	background: #4A5960;
+    box-shadow: none;
+    color: #fff;
+}
+.docs-section-center{
+	text-align: center;
+}
+.docs-update{
+	border-top: 1px solid #ebebeb;
+    clear: both;
+    color: #757575;
+    font: italic 13px/20px Roboto,sans-serif;
+    margin-top: 16px;
+}
+/*docs end*/
