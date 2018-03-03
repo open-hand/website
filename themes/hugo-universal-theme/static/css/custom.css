@@ -145,6 +145,10 @@ a.calendar:hover{
 	max-width: 1000px;
 }
 
+.nav-container{
+	max-width: 1170px;
+}
+
 .img-limit {
 	max-width: 100%;
 }
@@ -246,8 +250,7 @@ a.calendar:hover{
 }
 
 .home-carousel-temp-font {
-	margin-top: 130px;
-	color:'#fff';
+	margin-top: 60px;
 }
 
 .home-carousel-temp-font h3 {
@@ -278,6 +281,22 @@ a.calendar:hover{
 	background-color: #fafafa;
 }
 
+.carousel-box-flex{
+	display: flex;
+	justify-content: center;
+}
+
+.carousel-button{
+	text-align: center;
+	margin-top:40px;
+}
+.carousel-marginTop-5{
+	margin-top: -5px;
+}
+.navbar-affixed-top.affix-top{
+	box-shadow: 0 0 5px #cccccc;
+	margin-bottom: 5px;
+}
 /*.fileds-line {
 	margin-bottom: 50px;
 }*/
@@ -341,7 +360,7 @@ a.calendar:hover{
 }
 .docs-title-h1{
 	font: 300 34px/40px Roboto,sans-serif;
-	font-size: 32px;
+	font-size: 34px;
 	margin-top: 0;
 	color: #444;
     line-height: initial;
@@ -350,8 +369,8 @@ a.calendar:hover{
 }
 .docs-title-h2{
 	font: 300 24px/32px Roboto,sans-serif;
-	font-size: 28px;
-    font-weight: 400;
+	font-size: 24px;
+    font-weight: 300;
 	letter-spacing: -.01em;
 	margin: 40px 0 20px;
     padding-bottom: 3px;
