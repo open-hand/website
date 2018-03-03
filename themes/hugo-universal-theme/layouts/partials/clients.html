@@ -1,6 +1,4 @@
-{{ if isset .Site.Params "clients" }}
-{{ if .Site.Params.clients.enable }}
-{{ if gt (len .Site.Data.clients) 0 }}
+{{ if isset .Site.Params "clients" }} {{ if .Site.Params.clients.enable }} {{ if gt (len .Site.Data.clients) 0 }}
 <section class="bar background-gray no-mb">
     <div class="container">
         <div class="row">
@@ -17,12 +15,10 @@
                     {{ range .Site.Data.clients }}
                     <li class="item" title="{{ .name }}">
                         {{ if .url }}
-                          <a href="{{ .url }}" target="_blank">
+                        <a href="{{ .url }}" target="_blank">
                             <img src="{{ .image }}" alt="{{ .name }}" class="img-responsive" />
-                          </a>
-                        {{ else }}
-                          <img src="{{ .image }}" alt="{{ .name }}" class="img-responsive" />
-                        {{ end }}
+                          </a> {{ else }}
+                        <img src="{{ .image }}" alt="{{ .name }}" class="img-responsive" /> {{ end }}
                     </li>
                     {{ end }}
                 </ul>
@@ -31,6 +27,4 @@
         </div>
     </div>
 </section>
-{{ end }}
-{{ end }}
-{{ end }}
+{{ end }} {{ end }} {{ end }}

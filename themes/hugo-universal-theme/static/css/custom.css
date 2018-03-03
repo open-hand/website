@@ -137,49 +137,27 @@ a.calendar:hover{
   margin-top: 20px;
 }
 
-.abstract h3 {
-	font-size: 18px;
-	line-height: 30px;
-  font-weight: 400;
-}
 
-.abstract-p {
-	font-size: 14px;
-  line-height: 24px;
-  letter-spacing: 0.1px;
-}
 
-.filled-img {
-	width: 100%;
-}
 
-.abstract img {
-	/*position: absolute;*/
-  /*transform: translateY(25%);*/
-}
-
-.box-simple {
-	margin-bottom: 0 !important;
-}
-
-.box-simple-features-left {
-	padding-left: 50px;
-}
-
-.box-simple-features-right {
-	padding-right: 50px;
-}
-
-.box-simple .icon{
-	color: transparent !important;
-	border: none !important;
-}
 
 .container {
 	max-width: 1000px;
 }
 
-.target-box-row {
+.img-limit {
+	max-width: 100%;
+}
+
+.abstract-section h3 {
+	font-size: 18px;
+	line-height: 30px;
+  font-weight: 400;
+}
+
+.box-simple .icon{
+	color: transparent !important;
+	border: none !important;
 }
 
 .target-box h3 {
@@ -203,37 +181,68 @@ a.calendar:hover{
 	-webkit-box-orient: vertical;
 }
 
-.fileds-line {
-	margin-bottom: 50px;
+@media (min-width: 768px){
+	.box-simple-features-left {
+	padding-left: 50px;
+	}
+
+	.box-simple-features-right {
+		padding-right: 50px;
+	}
 }
 
-/*.navbar-affixed-top.navbar-index.affix-top {
-	position: fixed;
-    z-index: 9999;
-    width: 100%;
+
+.img-vcenter{
+	transform: translateY(80px);
 }
 
-.navbar-affixed-topn.navbar-index.affix-top .navbar-default {
-    background-color: transparent !important;
+.product-li {
+	margin-top: 30px;
+	height: 65px;
 }
 
-.navbar-affixed-top.navbar-index {
-	top: 0 !important;
-}*/
-
-.img-center {
-	text-align: center;
-	padding: 50px;
+.product-icon {
+	width:65px;
+	height: 65px;
+	border-radius: 32.5px;
+	background-color: lightblue;
+	float: left;
 }
 
-.img-center img {
-	max-width: 500px;
-	height: auto;
+.product-box {
+	margin-left: 80px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 65px;
+}
+
+.product-title{
+	font-size: 18px;
+  color: #00a0e9;
+  font-weight: normal;
+	margin-top: 6px;
+	margin-bottom: 0;
+}
+
+.product-content {
+	font-size: 14px;
+  color: #888;
+  float: left;
+  line-height: 24px;
+  margin-top: 7px;
+
+	text-overflow: -o-ellipsis-lastline;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
 }
 
 .home-carousel-temp {
 	height: 360px;
-	/*background: url(/asl/Public/Uploads/583cfc098c340.jpg) no-repeat center top;*/
+	background-color: #555555 !important;
 }
 
 .home-carousel-temp-font {
@@ -265,7 +274,39 @@ a.calendar:hover{
 	color:#eee;
 }
 
-.round {
+.background-round {
+	background-color: #fafafa;
+}
+
+/*.fileds-line {
+	margin-bottom: 50px;
+}*/
+
+/*.navbar-affixed-top.navbar-index.affix-top {
+	position: fixed;
+    z-index: 9999;
+    width: 100%;
+}
+
+.navbar-affixed-topn.navbar-index.affix-top .navbar-default {
+    background-color: transparent !important;
+}
+
+.navbar-affixed-top.navbar-index {
+	top: 0 !important;
+}*/
+
+/*.img-center {
+	text-align: center;
+	padding: 50px;
+}
+
+.img-center img {
+	max-width: 500px;
+	height: auto;
+}*/
+
+/*.round {
 	position: relative;
 	min-height: 420px;
 }
@@ -273,13 +314,10 @@ a.calendar:hover{
 .round img {
 	max-width: 100%;
 	height: auto;
-}
+}*/
 
-.background-round {
-	background-color: #fafafa;
-}
 
-.round-block {
+/*.round-block {
 	width:250px;
 	position:absolute;
 }
@@ -295,53 +333,4 @@ a.calendar:hover{
 
 .right-align {
 	text-align: right;
-}
-.img-box img{
-	max-width: 100%;
-	height: auto;
-}
-
-.product-li {
-	margin-top: 30px;
-	height: 65px;
-}
-
-.product-icon {
-	width:65px;
-	height: 65px;
-	border-radius: 32.5px;
-	background-color: lightblue;
-	float: left;
-}
-
-.product-box {
-	margin-left: 80px;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	height: 65px;
-}
-
-.product-title{
-	font-size: 18px;
-  color: #00a0e9;
-  font-weight: normal;
-  margin-right: 100px;
-	margin-top: 6px;
-	margin-bottom: 0;
-}
-
-.product-content {
-	font-size: 14px;
-  color: #888;
-  float: left;
-  line-height: 24px;
-  margin-top: 7px;
-
-	text-overflow: -o-ellipsis-lastline;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	display: -webkit-box;
-	-webkit-line-clamp: 1;
-	-webkit-box-orient: vertical;
-}
+}*/
