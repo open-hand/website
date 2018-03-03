@@ -11,9 +11,9 @@
                 {{ range $index, $element := sort .Site.Data.targets "weight" }}
                 {{ if eq (mod $index 2) 0 }}
                 <div class="col-md-12">
-                    <div class="row target-box-row">
+                    <div class="row">
                 {{ end }}
-                        <div class="col-md-6">
+                        <div class="col-md-6 col-sm-6 col-sm-12">
                             {{ if eq (mod $index 2) 0 }}
                                 <div class="target-box box-simple-features-right">
                             {{ else }}

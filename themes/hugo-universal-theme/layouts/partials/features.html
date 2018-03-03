@@ -1,4 +1,3 @@
-
 {{ if isset .Site.Params "features" }}
 {{ if .Site.Params.features.enable }}
 {{ if gt (len .Site.Data.features) 0 }}
@@ -10,9 +9,9 @@
             <div class="row">
 		{{ end }}
 				<div class="col-md-4">
-                    <div class="box-simple box-simple-features">
+                    <div class="box-simple box-simple-features no-mb">
                         <div class="icon">
-                            <img src="{{ .Site.BaseURL }}img/{{.icon}}" class="filled-img" />
+                            <img src="{{ .Site.BaseURL }}img/{{.icon}}" class="img-limit" />
                         </div>
                         <h3>{{ $element.name }}</h3>
                         <p>{{ $element.description | markdownify }}</p>
