@@ -1,7 +1,7 @@
 +++
 title = "部署区"
 description = ""
-weight = 1
+weight = 2
 +++
 
 ## Requirements

@@ -1,7 +1,7 @@
 +++
 title = "组件安装文档"
 description = ""
-weight = 1
+weight = 3
 +++
 
 ## Requirements

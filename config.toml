@@ -2,7 +2,8 @@ baseurl = "https://choerodon.io"
 title = "choerodon"
 theme = "hugo-universal-theme"
 # themesDir = "../.."
-languageCode = "en-us"
+#languageCode = "en-us"
+languageCode = "zh-cn"
 # Site language. Available translations in the theme's `/i18n` directory.
 defaultContentLanguage = "zh"
 # Enable comments by entering your Disqus shortname
