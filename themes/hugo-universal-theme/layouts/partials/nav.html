@@ -18,19 +18,30 @@
             </div>
             <!--/.navbar-header -->
 
+            {{ $.Scratch.Set "title" "/" }}
+            {{ $.Scratch.Add "title" .Section }}
+            {{ $.Scratch.Add "title" "/" }}
             <div class="navbar-collapse collapse" id="navigation">
                 <ul class="nav navbar-nav navbar-right">
                   {{ range .Site.Menus.main }}
                   <li class="dropdown">
                     {{ if .HasChildren }}
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ .Name }} <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ .Name }} <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                       {{ range .Children }}
                         <li><a href="{{ .URL }}">{{ .Name }}</a></li>
                       {{ end }}
                     </ul>
                     {{ else }}
-                    <a href="{{ .URL }}">{{ .Name }}</a>
+                    {{ if eq .URL ($.Scratch.Get "title") }}
+                        <a  href="{{ .URL }}">
+                            <div class="active-page">
+                            {{ .Name }}
+                            </div>
+                        </a>
+                        {{ else }}
+                        <a href="{{ .URL }}">{{ .Name }}</a>
+                    {{ end }}
                     {{ end  }}
                   </li>
                   {{ end }}

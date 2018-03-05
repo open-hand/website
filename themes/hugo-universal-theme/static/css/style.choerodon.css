@@ -3712,12 +3712,6 @@ a.list-group-item.active > .badge,
   }
 }
 
-<<<<<<< HEAD
-
-
-
-
-=======
 /* docsmenu */
 
 .docs-menu ul {
@@ -3823,4 +3817,9 @@ a.list-group-item.active > .badge,
  pre{
    background: #282c34;
  }
->>>>>>> 32c6a0b4e4824cf1470be8789053a5112f2360b1
+ 
+.active-page{
+  text-decoration: none;
+  border-bottom: 2px solid;
+  padding-bottom: 5px !important;
+}
