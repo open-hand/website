@@ -22,7 +22,13 @@
         {{- if ne $numberOfPages 0 }} haschildren{{end}}
         ">
       <div>
-      <a href="{{ .RelPermalink}}">{{safeHTML .Params.Pre}}{{.Title}}{{safeHTML .Params.Post}}</a>
+        {{if eq .Title "docs"}}
+        {{else}}
+        {{- if ne $numberOfPages 0 }}
+        <a class="category" href="javascript:void(0)">{{safeHTML  .Params.Pre}}{{.Title}}{{safeHTML .Params.Post}}</a>
+        {{else}}
+        <a href="{{ .RelPermalink}}">{{safeHTML  .Params.Pre}}{{.Title}}{{safeHTML .Params.Post}}</a>
+        {{end}}
         {{- if ne $numberOfPages 0 }}
           {{- if or (.IsAncestor $currentNode) (.Params.alwaysopen) }}
             <i class="fa fa-caret-down fa-lg category-icon"></i>
@@ -30,7 +36,7 @@
             <i class="fa fa-caret-right fa-lg category-icon"></i>
           {{- end}}
         {{- end}}
-
+        {{end}}
       </div>
       {{- if ne $numberOfPages 0 }}
         <ul>

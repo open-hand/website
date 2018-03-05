@@ -3713,7 +3713,11 @@ a.list-group-item.active > .badge,
 }
 
 /* docsmenu */
-
+.docs-menu{
+  /* padding-left: 2rem !important; */
+  border: 1px ;
+  padding-left: 40px;
+}
 .docs-menu ul {
   display: none; }
 .docs-menu .dd-item.alwaysopen > ul {
@@ -3735,10 +3739,11 @@ a.list-group-item.active > .badge,
      .docs-menu ul {
       display: none; }
      .docs-menu > .dd-item {
-      margin: 0.5rem 0px 0.5rem 20px; }
+      /* margin: 0.5rem 0px 0.5rem 20px;  */
+    }
      .docs-menu .dd-item {
       margin-top: 5px;
-      padding-left: 2px;
+      /* padding-left: 2px; */
       list-style: none;
       font-size: 13px; }
       .docs-menu .dd-item  ul{
@@ -3774,39 +3779,42 @@ a.list-group-item.active > .badge,
           order: 2;
           padding: 0 0rem;
           text-decoration: none; }
-        .docs-menu .dd-item div a:hover, .docs-menu .dd-item div a:focus, .docs-menu .dd-item div a:active {
-            border-radius: .2rem;
-            padding: 0 0rem; }
         .docs-menu .dd-item div i.category-icon:active,
         .docs-menu .dd-item div i.category-icon:focus,
         .docs-menu .dd-item div i.category-icon:hover {
           background-color: #eee;
           border-radius: .2rem;
           padding: 0 0rem; }
-        .docs-menu > li {
-          padding-left: 2rem !important; }
 
 .docs {
   padding-right: 100px;
 }
 .docs-menu a {
   font-size: 14px;
-  color: #000;
 }
 .docs-menu a:hover{
   color: #5CC2F2;
 }
 .docs-menu .category-icon{
   font-size: 20px;
-  color: #5CC2F2;
+  color: black;
 }
-.docs-menu > li:first-child > div:first-child a{
-  font-size: 24px;
+
+.docs-menu> li >ul>  li> div:first-child  a{
+  font-size: 100%;
   border-left: 3px solid #5CC2F2;
   padding: 10px;
   padding-left: 16px;
-  font-weight: 600;
+  font-weight: 400;
   color: #5CC2F2;
+
+  background-color: rgba(0,0,0,.03);
+  border-bottom: 1px solid rgba(0,0,0,.125);
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: .25rem 
+}
+.docs-menu> li >ul>  li> div:first-child  i{
+  display: none !important;
 }
 .docs-menu > li:first-child > div:first-child i{
   display:none;

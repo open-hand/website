@@ -393,4 +393,8 @@ jQuery(document).ready(function() {
       $( this ).parent().parent().children('ul').toggle() ;
       return false;
   });
+  jQuery('.category').on('click', function() {
+    $( this ).parent().parent().children('ul').toggle() ;
+    return false;
+});
 });
