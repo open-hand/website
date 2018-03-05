@@ -1,8 +1,7 @@
 +++
-title = "Getting started"
+title = "所需组件"
 description = ""
-weight = 1
-alwaysopen = true
+weight = 4
 +++
 
 ## Requirements
