@@ -13,49 +13,40 @@
 
         </header>
 
-        <div id="content">
-            <div class="blog">
-                <div class="row">
-                    <!-- *** RIGHT COLUMN *** -->
+        <div id="content" class="blog row">
+                <!-- *** LEFT COLUMN *** -->
 
-                    <div class="col-md-9" id="blog-post">
+                <div class="col-md-9" id="blog-post">
 
-                        <p class="text-muted text-uppercase mb-small text-right">{{ if .Params.author }}{{ i18n "authorBy" }} <a href="#">{{ .Params.author }}</a> | {{ end }}{{ .Date.Format .Site.Params.date_format }}</p>
+                    <p class="text-muted text-uppercase mb-small text-right">{{ if .Params.author }}{{ i18n "authorBy" }} <a href="#">{{ .Params.author }}</a> | {{ end }}{{ .Date.Format .Site.Params.date_format }}</p>
 
-                        <div id="post-content">
-                          {{ .Content }}
-                        </div>
-                        <!-- /#post-content -->
-                        <!-- {{ if .Site.DisqusShortname }}
-                        <div id="comments">
-                            {{ template "_internal/disqus.html" . }}
-                        </div>
-                        {{ end }} -->
-
+                    <div id="post-content">
+                        {{ .Content }}
                     </div>
-                    <!-- /#blog-post -->
-
-                    <!-- *** RIGHT COLUMN END *** -->
-                    <!-- *** LEFT COLUMN ***
-                    _________________________________________________________ -->
-
-                    <div class="col-md-3">
-                        <div class="blog-menu">
-                        <!-- *** MENUS AND WIDGETS *** -->
-
-                        {{ partial "blognav.html" . }}
-
-                        <!-- *** MENUS AND FILTERS END *** -->
-                        </div>
+                    <!-- /#post-content -->
+                    <!-- {{ if .Site.DisqusShortname }}
+                    <div id="comments">
+                        {{ template "_internal/disqus.html" . }}
                     </div>
-                    <!-- /.col-md-3 -->
-        
-                    <!-- *** LEFT COLUMN END *** -->
+                    {{ end }} -->
 
                 </div>
-                <!-- /.row -->
+                <!-- /#blog-post -->
 
-            </div>
+                <!-- *** LEFT COLUMN END *** -->
+                <!-- *** RIGHT COLUMN ***
+                _________________________________________________________ -->
+
+                <div class="col-md-3 blog-menu">
+                    <!-- *** MENUS AND WIDGETS *** -->
+
+                    {{ partial "blognav.html" . }}
+
+                    <!-- *** MENUS AND FILTERS END *** -->
+                </div>
+                <!-- /.col-md-3 -->
+
+                <!-- *** RIGHT COLUMN END *** -->
             <!-- /.container -->
         </div>
         <!-- /#content -->

@@ -3713,6 +3713,10 @@ a.list-group-item.active > .badge,
 }
 
 /* docsmenu */
+.docs {
+  padding-right: 100px;
+  display: flex;
+}
 .docs-menu{
   border: 1px ;
   padding-left: 40px;
@@ -3779,9 +3783,6 @@ a.list-group-item.active > .badge,
           border-radius: .2rem;
           padding: 0 0rem; }
 
-.docs {
-  padding-right: 100px;
-}
 .docs-menu a {
   font-size: 14px;
 }
