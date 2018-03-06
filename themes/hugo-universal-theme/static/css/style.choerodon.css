@@ -3714,9 +3714,9 @@ a.list-group-item.active > .badge,
 
 /* docsmenu */
 .docs-menu{
-  /* padding-left: 2rem !important; */
   border: 1px ;
   padding-left: 40px;
+  padding-right: 40px;
 }
 .docs-menu ul {
   display: none; }
@@ -3738,17 +3738,10 @@ a.list-group-item.active > .badge,
       margin-left: 1rem; }
      .docs-menu ul {
       display: none; }
-     .docs-menu > .dd-item {
-      /* margin: 0.5rem 0px 0.5rem 20px;  */
-    }
      .docs-menu .dd-item {
       margin-top: 5px;
-      /* padding-left: 2px; */
       list-style: none;
       font-size: 13px; }
-      .docs-menu .dd-item  ul{
-        padding-left: 1rem;
-      }
        .docs-menu .dd-item.alwaysopen > ul {
         display: block; }
        .docs-menu .dd-item.parent > ul {
