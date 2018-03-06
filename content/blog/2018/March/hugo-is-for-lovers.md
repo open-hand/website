@@ -1,9 +1,6 @@
 +++
 title = "Hugo is for lovers"
-date = "2015-08-03T13:39:46+02:00"
-tags = ["hugo"]
-categories = ["pseudo"]
-banner = "img/banners/banner-3.jpg"
+date = "2018-03-03T13:39:46+02:00"
 +++
 
 ## Step 1. Install Hugo

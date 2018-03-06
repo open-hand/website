@@ -13,14 +13,10 @@
 
         </header>
 
-        {{ partial "breadcrumbs.html" . }}
-
         <div id="content">
-            <div class="container">
-
+            <div class="blog">
                 <div class="row">
-
-                    <!-- *** LEFT COLUMN *** -->
+                    <!-- *** RIGHT COLUMN *** -->
 
                     <div class="col-md-9" id="blog-post">
 
@@ -30,31 +26,31 @@
                           {{ .Content }}
                         </div>
                         <!-- /#post-content -->
-                        {{ if .Site.DisqusShortname }}
+                        <!-- {{ if .Site.DisqusShortname }}
                         <div id="comments">
                             {{ template "_internal/disqus.html" . }}
                         </div>
-                        {{ end }}
+                        {{ end }} -->
 
                     </div>
                     <!-- /#blog-post -->
 
-                    <!-- *** LEFT COLUMN END *** -->
-
-                    <!-- *** RIGHT COLUMN *** -->
+                    <!-- *** RIGHT COLUMN END *** -->
+                    <!-- *** LEFT COLUMN ***
+                    _________________________________________________________ -->
 
                     <div class="col-md-3">
-
+                        <div class="blog-menu">
                         <!-- *** MENUS AND WIDGETS *** -->
 
-                        {{ partial "sidebar.html" . }}
+                        {{ partial "blognav.html" . }}
 
                         <!-- *** MENUS AND FILTERS END *** -->
-
+                        </div>
                     </div>
                     <!-- /.col-md-3 -->
-
-                    <!-- *** RIGHT COLUMN END *** -->
+        
+                    <!-- *** LEFT COLUMN END *** -->
 
                 </div>
                 <!-- /.row -->

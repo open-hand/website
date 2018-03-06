@@ -3824,3 +3824,70 @@ a.list-group-item.active > .badge,
   border-bottom: 2px solid;
   padding-bottom: 5px !important;
 }
+
+/* blog nav */
+/* 布局 */
+.blog{
+  padding-left: 200px;
+  padding-right: 200px;
+  padding-top: 30px;
+}
+/* 默认闭合 */
+.blog-menu ul {
+  display: none; 
+  padding-left: 20px;
+}
+.blog-menu .dd-item.alwaysopen > ul {
+display: block; 
+}
+.blog-menu .dd-item.parent > ul {
+display: block; 
+}
+.blog-menu .dd-item.active > ul {
+display: block; 
+}
+
+.blog-menu .dd-item {
+margin-top: 5px;
+list-style: none;
+font-size: 13px; 
+}
+
+.blog-menu .dd-item.active > div {
+color: black;
+}
+.blog-menu .dd-item div {
+display: flex;
+flex-direction: row; 
+}
+.blog-menu .dd-item div i.category-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  order: 1;
+  width: 20px;
+  cursor: pointer; 
+}
+.blog-menu .dd-item div a {
+  display: flex;
+  flex: 1;
+  order: 2;
+  padding: 0 0rem;
+  text-decoration: none; 
+}
+
+.blog-menu a {
+  font-size: 14px;
+}
+.blog-menu a:hover{
+  text-decoration: underline;
+}
+
+.blog-menu .category-icon{
+  font-size: 20px;
+  color: black;
+}
+
+.blog-menu .date{
+  color: black;
+}
