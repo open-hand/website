@@ -1,55 +1,50 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}">
+<html lang="{{ .Site.LanguageCode }}" class="fixed-docs">
 
-  {{ partial "head.html" . }}
-
-  <body>
-
-    <div id="all">
-
-        <header>
+    {{ partial "head.html" . }}
+    <header>
 
         {{ partial "nav.html" . }}
 
-        </header>
-
+    </header>
+  <body class="fixed-docs">
+    <div id="fixed-docs">
         <div id="content" class="docs">
-                    <!-- *** LEFT COLUMN ***
-                    _________________________________________________________ -->
+            <!-- *** LEFT COLUMN ***
+            _________________________________________________________ -->
 
-                    <div class="col-md-3 docs-menu">
-                        <!-- *** MENUS AND WIDGETS *** -->
+            <div class="col-md-3 docs-menu">
+                <!-- *** MENUS AND WIDGETS *** -->
 
-                        {{ partial "docsnav.html" . }}
+                {{ partial "docsnav.html" . }}
 
-                        <!-- *** MENUS AND FILTERS END *** -->
-                    </div>
-                    <!-- /.col-md-3 -->
-    
-                    <!-- *** LEFT COLUMN END *** -->
+                <!-- *** MENUS AND FILTERS END *** -->
+            </div>
+            <!-- /.col-md-3 -->
 
-                    <!-- *** RIGHT COLUMN *** -->
+            <!-- *** LEFT COLUMN END *** -->
 
-                    <div class="col-md-9" id="blog-post">
+            <!-- *** RIGHT COLUMN *** -->
 
-                        <p class="text-muted text-uppercase mb-small text-right">{{ if .Params.author }}{{ i18n "authorBy" }} <a href="#">{{ .Params.author }}</a> | {{ end }}{{ .Date.Format .Site.Params.date_format }}</p>
+            <div class="col-md-9 docs-post" id="blog-post">
 
-                        <div id="post-content">
-                          {{ .Content }}
-                        </div>
-                        <!-- /#post-content -->
-                        <!-- {{ if .Site.DisqusShortname }}
-                        <div id="comments">
-                            {{ template "_internal/disqus.html" . }}
-                        </div>
-                        {{ end }} -->
+                <p class="text-muted text-uppercase mb-small text-right">{{ if .Params.author }}{{ i18n "authorBy" }} <a href="#">{{ .Params.author }}</a> | {{ end }}{{ .Date.Format .Site.Params.date_format }}</p>
 
-                    </div>
-                    <!-- /#blog-post -->
+                <div id="post-content">
+                    {{ .Content }}
+                </div>
+                <!-- /#post-content -->
+                <!-- {{ if .Site.DisqusShortname }}
+                <div id="comments">
+                    {{ template "_internal/disqus.html" . }}
+                </div>
+                {{ end }} -->
 
-                    <!-- *** RIGHT COLUMN END *** -->
+            </div>
+            <!-- /#blog-post -->
 
-                <!-- /.row -->
+            <!-- *** RIGHT COLUMN END *** -->
+
             <!-- /.container -->
         </div>
         <!-- /#content -->

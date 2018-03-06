@@ -475,11 +475,12 @@ ul.list-style-none {
 .navbar-affixed-top {
   top: -32px;
 }
-.navbar-affixed-top.affix-top {
+/* 导航栏不浮动样式 */
+/* .navbar-affixed-top.affix-top {
   -webkit-transition: all 0.5s ease-out;
   -moz-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
-}
+} */
 .navbar-affixed-top.affix {
   position: fixed;
   width: 100%;
@@ -3716,13 +3717,22 @@ a.list-group-item.active > .badge,
 .docs {
   padding-right: 100px;
   display: flex;
+  
 }
 .docs-menu{
   border: 1px ;
   padding-left: 40px;
   padding-right: 40px;
 }
+/* 浮动 */
+body.fixed-docs { height:100%; overflow:hidden; position:relative;} 
+html.fixed-docs { height:100%; overflow:hidden;} 
+.docs-menu { position:absolute;width: 20%; height:50%; overflow:scroll;} 
+#fixed-docs { height:100%; overflow:auto;} 
+.docs-post{margin-left: 300px;}
+
 .docs-menu ul {
+  padding-left: 10px;
   display: none; }
 .docs-menu .dd-item.alwaysopen > ul {
   display: block; }
@@ -3891,4 +3901,8 @@ flex-direction: row;
 
 .blog-menu .date{
   color: black;
+}
+
+#content{
+  margin-top: 74px;
 }
