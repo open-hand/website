@@ -394,6 +394,7 @@ jQuery(document).ready(function() {
       return false;
   });
   jQuery('.category').on('click', function() {
+    $( this ).nextAll("i:first").toggleClass("fa-caret-down fa-caret-right"); 
     $( this ).parent().parent().children('ul').toggle() ;
     return false;
 });
