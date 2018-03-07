@@ -3992,3 +3992,17 @@ box-shadow:1px 1px 1px 1px lightgrey;
   margin:5px;
 display: inline-block;
 }
+
+/* 文章表格 */
+#post-content table{
+  width: 100%;
+}
+#post-content th{
+  border: 1px solid rgba(170,170,170,.3);
+  background-color:  #e5e5e5;
+  padding: 5px 10px;
+}
+#post-content td{
+  border: 1px solid rgba(170,170,170,.3);
+  padding: 5px 10px;
+}
