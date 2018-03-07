@@ -4006,3 +4006,8 @@ display: inline-block;
   border: 1px solid rgba(170,170,170,.3);
   padding: 5px 10px;
 }
+
+/* 文章图片 */
+#post-content img{
+  width: 100%;
+  }
