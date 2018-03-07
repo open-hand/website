@@ -3824,10 +3824,9 @@ html.fixed-docs { height:100%; overflow:hidden;}
   display:none;
 }
 
-/* pre */
-
+/* 代码高亮样式调整 */
  pre{
-   background: #282c34;
+   padding: 0px;
  }
  
 .active-page{
