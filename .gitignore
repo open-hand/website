@@ -1,1 +1,3 @@
 public/
+# system ignore
+.DS_Store
