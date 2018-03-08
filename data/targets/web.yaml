@@ -1,4 +1,4 @@
-weight: 4
+weight: 3
 name: "Web应用服务"
 icon: "features_pic3.png"
 description: "Web应用服务组件提供了基于MVC应用的开发和运营管理的环境，为开发人员提供了专注于业务逻辑实现的开发和测试的环境；同时为运营人员提供Web应用发布和监控环境。"
