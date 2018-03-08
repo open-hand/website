@@ -1,6 +1,6 @@
 baseurl = "https://choerodon.io"
 title = "choerodon"
-theme = "hugo-universal-theme"
+theme = "hugo-choerodon-theme"
 # themesDir = "../.."
 #languageCode = "en-us"
 languageCode = "zh-cn"
