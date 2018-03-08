@@ -1,8 +1,6 @@
 {{- $currentNode := . }}
-{{- range .Site.Home.Sections.ByWeight}}
-{{- if eq .Title "docs"}}
+{{- range  where .Site.Home.Sections.ByWeight "Type" "docs"}}
 {{- template "section-tree-nav" dict "sect" . "currentnode" $currentNode}}
-{{- end}}
 {{- end }}
 
 <!-- templates -->
@@ -14,7 +12,6 @@
     {{- $numberOfPages := (add (len .Pages) (len .Sections)) }}
     {{- safeHTML .Params.head}}
     
-
     <li data-nav-id="{{.URL}}" class="dd-item
         {{- if .IsAncestor $currentNode}} parent{{end}}
         {{- if eq .URL $currentNode.URL}} active{{end}}

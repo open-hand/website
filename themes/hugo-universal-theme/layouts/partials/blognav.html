@@ -1,8 +1,6 @@
 {{- $currentNode := . }}
-{{- range .Site.Home.Sections.ByDate}}
-{{- if eq .Title "blogs"}}
+{{- range where .Site.Home.Sections.ByDate "Type" "blog"}}
 {{- template "section-blog-tree-nav" dict "sect" . "currentnode" $currentNode}}
-{{- end}}
 {{- end }}
 
 <!-- templates -->
