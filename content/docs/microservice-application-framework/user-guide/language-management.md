@@ -1,83 +1,48 @@
 +++
-title = "语言管理"
-description = ""
-weight = 8
+title = "用户层"
+weight = 4
 +++
 
-HUGO **v0.32** minimum required to use this theme
+# IV 用户层
 
-The following steps are here to help you initialize your new website. If you don’t know Hugo at all, we strongly suggest you to train by following this [great documentation for beginners](https://gohugo.io/overview/quickstart/).
-<!--more-->
+###1.用户信息维护
 
-## Installation
+- 不可更改项：
+    - 用户名：用户名可用于登陆，一旦创建，不可修改
+    - 组织：用户所属组织用户本人不可变更
 
-We assume that all changes to Hugo content and customizations are going to be tracked by git (GitHub, Bitbucket etc.). Develop locally, build on remote system.
+- 可更改项：
+    - 昵称：用户的别称
+    - 邮箱：填写真实正确的邮箱，可用于登陆、密码找回
+    - 语言：系统界面显示的语言
+    - 时区：系统所有与时间有关的操作根据选择的时区进行转换
 
-Before start real work:
+### 2.密码更改
 
-1. Initialize Hugo
-2. Install DocDock theme
-3. Configure DocDock and Hugo
+- 密码更改要符合系统密码策略
+- LDAP用户不能在本系统更改密码，只能在LDAP访问的系统中实现密码的更改
+- 更改密码需要输入原始密码
+- 更改密码需要确定新密码 
 
-### Prepare empty Hugo site
+### 3. 授权
 
-Create empty directory, which will be root of your Hugo project. Navigate there and let Hugo to create minimal required directory structure:
-```
-$ hugo new site .
-```
-AFTER that, initialize this as git directory where to track further changes
-```
-$ git init
-```
+- 用户可以通过调用接口创建自己的token
+- 可创建、删除、详情查看、编辑、搜索授权
 
-Next, there are at least three ways to install DocDock (first recommended):
+![授权管理](http://upload-images.jianshu.io/upload_images/7452984-2339b05d67c3c4e2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-1. **As git submodule**
-2. As git clone
-3. As direct copy (from ZIP)
+#### 3.1 创建授权
 
-Navigate to your themes folder in your Hugo site and use perform one of following scenarios.
+- 名称
+    - 具有唯一性
 
-### 1. Install DocDock as git submodule
+- 过期时间
+    - token的失效时间
+    - 无法选择当前时间之前的
 
-DocDock will be added like a dependency repo to original project. When using CI tools like Netlify, Jenkins etc., submodule method is required, or you will get `theme not found` issues. Same applies when building site on remote server trough SSH.
+![创建授权](http://upload-images.jianshu.io/upload_images/7452984-39c3baeed9923834.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-If submodule is no-go, use 3rd option.
+#### 3.2 其他操作
 
-On your root of Hugo execute:
-
-```
-$ git submodule add https://github.com/vjeantet/hugo-theme-docdock.git themes/docdock
-```
-Next initialize submodule for parent git repo:
-
-```
-$ git submodule init
-$ git submodule update
-```
-
-Now you are ready to add content and customize looks. Do not change any file inside theme directory.
-
-If you want to freeze changes to DocDock theme itself and use still submodules, fork private copy of DocDock and use that as submodule. When you are ready to update theme, just pull changes from origin to your private fork.
-
-### 2. Install DocDock simply as git clone
-
-This method results that files are checked out locally, but won't be visible from parent git repo. Probably you will build site locally with `hugo` command and use result from `public/` on your own.
-
-```
-$ git clone https://github.com/vjeantet/hugo-theme-docdock.git themes/docdock
-```
-
-
-### 3. Install DocDock from ZIP
-
-All files from theme will be tracked inside parent repo, to update it, have to override files in theme. [ download following zip](https://github.com/vjeantet/hugo-theme-docdock/archive/master.zip) and extract inside `themes/`.
-
-```
-https://github.com/vjeantet/hugo-theme-docdock/archive/master.zip
-```
-Name of theme in next step will be `hugo-theme-docdock-master`, can rename as you wish.
-
-## Configuration
-
-[Follow instructions here]
+- **删除：**可删除token数据
+- **编辑：**可修改token的过期时间，不可修改token名称

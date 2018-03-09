@@ -1,55 +1,339 @@
 +++
-title = "客户端管理"
-description = ""
-weight = 1
-type = "docs"
+title = "组织层"
+weight = 2
 +++
 
-When building the website, you can set a theme by using `--theme` option. We suggest you to edit your configuration file and set the theme by default. Example with `config.toml` format.
-<!--more-->
+# II 组织层
 
-Import sample config from sample site to Hugo root:
+- 选中顶部导航栏的【组织/项目】选项
 
-```
-$ cp themes/docdock/exampleSite/config.toml .
-```
+![导航栏-组织层](http://upload-images.jianshu.io/upload_images/7452984-3f60b5cc0c03e003.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-Change following `config.toml` line as needed, depending on method above:
-```
-theme = "<hugo-theme-docdock-dir-name>"
-```
-Comment out following line, so default `themes/` will be used:
+- 弹出组织/项目列表的弹窗
+    - 在下拉菜单中选择一个组织，组织/项目列表则变为被选组织与该组织下的所有项目
+    - 鼠标右键双击组织/项目列表的第一项-组织项，则进入该组织
 
-```
-# themesdir = "../.."
-```
+![组织/项目菜单-组织](http://upload-images.jianshu.io/upload_images/7452984-0301cf5c466f0534.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+## 一、用户服务
+
+### 1.用户
+
+- 管理平台用户
+- 可创建、删除、查看详情、编辑、搜索、启用/禁用、解锁、管理是否为LDAP用户
+
+#### 1.1 创建用户
+
+**必填项：**
+
+- 用户名：
+    - 具有唯一性
+    - 可用于登陆，角色分配
+    
+- 昵称：
+    - 用户的别名
+    - 例如，‘张三’在公司的工号为‘01’，可将这个用户的用户名设为‘01’，因为具有唯一性，用于登陆，这个用户的昵称则可设为‘张三’，便于识别
+
+- 组织名称：
+    - 用户所在的组织
+    - 当前默认所有用户都属于运营组织
+
+- 密码、确认密码：
+    - 用户登陆系统所需的密码
+    - 两次密码输入要一致
+    - 密码的设置要符合密码策略
+    - 当用户是LDAP用户时，前端设置的密码无效
+
+- 邮箱：
+    - 具有唯一性
+    - 用户要填写真实有效的邮箱
+    - 邮箱可用于登陆、找回密码
+
+**选填项：**
+
+- 语言:默认为English
+- 是否启用：未启用用户时，用户为未激活状态，不可登陆系统
+- 是否为LDAP用户（使用公司统一认证登陆密码进行登陆）：为LDAP用户时，密码为公司系统中存储的密码，在页面前端填入的密码无效；用户本人修改密码时，只能通过公司系统修改，在平台前端修改无效，且不能在平台使用忘记密码功能
+
+![创建用户](http://upload-images.jianshu.io/upload_images/7452984-de2d307b6c540681.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
-## Activate search
+#### 1.2 其他操作
 
-If not already present, add the follow lines to the `config.toml` file.
+- **详情：**查看用户创建时所填信息
 
-```toml
-[outputs]
-home = [ "HTML", "RSS", "JSON"]
-```
+- **编辑：**更改用户信息，信息更改无误后，点击’保存’生效
+
+- **删除：**删除用户数据
+
+- **搜索：**
+    - 不选择属性，根据输入值进行全局搜索
+    - 选择一个属性：用户名、昵称、认证来源（LDAP用户/非LDAP用户）、语言、是否启用（启用/未启用）、是否锁住（锁住/未锁住），输入相应的属性值进行搜索
+
+- **启用/停用：**
+    - 启用时，用户状态为启用，可登陆平台进行权限内的操作
+    - 停用时，用户状态为未启用，用户变为未激活状态，无法登陆系统
+
+- **解锁：**
+    - 当用户多次输错密码被锁住无法登陆时，则出现解锁选项
+    - 解锁后该用户则可登陆平台进行操作
+
+### 2.项目
+
+- 管理项目列表
+- 可创建、编辑、搜索、启用/停用项目
+
+#### 2.1 创建项目
+
+**必填项：**
+
+- 项目编码：
+    - 具有唯一性
+    - 不能包含大写字母、中文、特殊字符
+
+- 项目名称：
+    - 具有唯一性
+    - 项目名称长度限定为4-30字符
+
+![创建项目](http://upload-images.jianshu.io/upload_images/7452984-79b23f9d4b183af7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
-LUNRJS search index file will be generated on content changes.
+#### 2.2 其他操作
 
-#### (Bonus)
-Create empty file `.gitkeep` inside `public/` and add following to `.gitignore`.  This way it will keep repo smaller and won't bring build result files and errors to remote checkout places:
-```
-/public/*
-!/public/.gitkeep
-```
+- **编辑：**项目代码一旦创建,不可编辑，只可编辑项目名称
 
-### Preview site
-```
-$ hugo server
-```
-to browse site on http://localhost:1313
+- **搜索：**
+    - 不选择属性，根据输入值进行全局搜索
+    - 选择一个属性：项目ID（创建后自动生成）、项目编码、项目名称，输入相应的属性值进行搜索
 
-## Your website's content
+- 启用/停用：项目停用后，项目信息仍在项目列表中，但是不可应用该项目或进入该项目进行操作
 
-Find out how to [create]() and [organize your content]() quickly and intuitively.
+ >**注：**项目一旦创建，不可删除
+
+### 3.用户组
+
+- 将用户分组统一进行管理
+- 可创建、删除、编辑、搜索用户组，可在用户组内添加、删除用户
+
+#### 3.1 创建用户组
+
+- **必填项：**
+
+- 用户组编码
+    - 具有唯一性
+
+- 用户组名：填写用户组的名称
+- 用户组描述：附加的对用户组的描述信息
+
+![创建用户组](http://upload-images.jianshu.io/upload_images/7452984-e188faba149189e2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+#### 3.2 其他操作
+
+- **删除：**删除会删除用户组信息及与用户组关联的数据
+- **编辑：**不可编辑用户组编码，可编辑用户组名、用户组描述
+- **搜索：**
+    - 不选择属性，根据输入值进行全局搜索
+    - 选择一个属性：组ID(创建用户组时默认生成)、组编码、组名、描述，输入相应的属性值进行搜索
+
+- **管理用户组用户**
+    - 添加用户：选中添加用户选项后，进入到系统全用户列表，根据搜索条件查找用户进行勾选添加
+
+     ![添加用户组用户-1](http://upload-images.jianshu.io/upload_images/7452984-b80b34ecf349f3cc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+    ![添加用户组用-2](http://upload-images.jianshu.io/upload_images/7452984-aa5c05d3ff9416b4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+    - 删除用户：展开用户组，出现该用户组的用户列表，可直接进行删除操作
+
+    ![删除用户组用户](http://upload-images.jianshu.io/upload_images/7452984-7a9e3b4bff70bf2d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+### 4.客户端
+
+- 与服务器相对应，为客户提供本地服务的程序，即第三方应用程序
+- 可创建、删除、编辑、详情查看、搜索客户端
+
+#### 4.1 创建客户端
+
+**必填项：**
+
+- 客户端名称
+    - 具有唯一性
+
+- 密钥：使用客户端的密码。例如用户登陆需要用户名和密码，密钥相当于密码
+
+- 授权类型：客户端必须得到用户的授权（authorization grant），才能获得令牌（access token），进而凭令牌获取本平台资源。下面提供了五种授权方式：
+    - password：密码模式，用户向客户端提供自己的用户名和密码。客户端使用这些信息，向"服务商提供商"索要授权
+    - implicit：简化模式，不通过第三方应用程序的服务器，直接在浏览器中向认证服务器申请令牌，跳过了"授权码"这个步骤，因此得名。所有步骤在浏览器中完成，令牌对访问者是可见的，且客户端不需要认证
+    - client_credentials：客户端模式，客户端以自己的名义，而不是以用户的名义，向"服务提供商"进行认证。严格地说，客户端模式并不属于OAuth框架所要解决的问题。在这种模式中，用户直接向客户端注册，客户端以自己的名义要求"服务提供商"提供服务，其实不存在授权问题
+    - authorization_code：授权码模式，是功能最完整、流程最严密的授权模式。它的特点就是通过客户端的后台服务器，与"服务提供商"的认证服务器进行互动
+    - refresh_token：表示早前收到的更新令牌，如果用户访问的时候，客户端的"访问令牌"已经过期，则需要使用"更新令牌"申请一个新的访问令牌
+
+**选填项：**
+
+- 访问授权超时：access_token_validity,assecc token的有效时间
+- 授权超时：refresh_token_validity,refresh token的有效时间
+- 重定向地址：用户的登陆后从登陆界面跳转的地址
+- 附加信息：用json格式添加客户端的附加信息。如{ "description": "string"，"name": "string"}
+
+![创建客户端](http://upload-images.jianshu.io/upload_images/7452984-545b9733a9e0a68d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+#### 4.2 其他操作
+
+- **详情：**可查看创建客户端时所填的信息
+- **编辑：**
+    - 客户端ID在创建客户端后自动生成，不可编辑
+    - 除客户端ID外，其他属性都可编辑
+- **删除：**可删除客户端信息
+
+### 5.LDAP
+
+- 轻量目录访问协议
+- 可更新LDAP信息
+
+#### 5.1 更新LDAP
+
+**必填项：**
+
+- LDAP名称：通过应用LDAP访问LDAP 目录服务器中注册的用户、群组条目，方便统一管理用户的密码登陆方式
+
+**选填项：**
+
+- 服务器地址：LDAP要访问的服务器地址
+- LDAP属性名：要访问的数据的名称
+- 加密方式
+    - SSL
+    - TSL
+    - STARTTLS
+- 基础DN：获取数据的路径
+- 描述：对该LDAP得附加信息
+
+### 6.密码策略
+
+- 规定密码强度规则，即密码必须符合的规则；规定密码使用规则
+- 可更新密码策略
+
+**登陆安全策略**：使用密码登陆时的规则
+
+- 是否开启密码输错锁定：勾选后，密码输错锁定策略将生效
+    - 最大输错次数：密码输错次数超过填写的最大输错次数后，该用户将会被锁定，无法登陆系统
+    - 密码输错锁定时间（秒）：用户被锁定后，经过输入的密码输错锁定时间（秒）后，系统自动将该用户解锁，该用户可重新进行输入密码登入系统的操作
+
+    ![密码输错锁定规则](http://upload-images.jianshu.io/upload_images/7452984-f9c58750eeabf134.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+- 是否下线其他设备：勾选后，只允许用户登陆一台设备，若登陆其他设备，自动将上一台设备的登陆状态下线
+
+- 密码失效时长（秒）：密码有效期，若超过这个有效期，需重新设置密码
+
+- 输错次数：若超过填入的输错次数，则出现验证码验证
+
+
+**密码安全策略**：密码创建或更改时需要满足的规则
+
+- 是否开启密码检查：勾选后，密码检查规则将生效
+    - 最小密码长度：设置密码时，密码长度不能小于填入的最小密码长度
+    - 最少小写字母数：密码中至少应包含的小写字母数
+    - 最少大写字母数：密码中至少应包含的大写字母数
+    - 最少特殊字符数：密码中至少应包含的特殊字符数
+    - 密码正则：定义针对给定文本检查的匹配模式，通过填入特定的正则表达式来制定密码规则
+    - 是否密码不可与账号相同：勾选后，密码不能和用户名相同
+   - 最大近期密码数：与最近n次密码不能相同。例：若填入数值为3，则表示不能与最近3次历史密码相同
+
+![密码策略](http://upload-images.jianshu.io/upload_images/7452984-4bb3e8fdc6b5a553.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+
+### 7.角色分配(组织层)
+
+- 管理成员（类型：用户/服务）角色
+- 可对成员分配、删除、更改、查看（按成员/角色）角色
+- 所有系统用户初始都被分配了默认的【运营组织】的【组织查看者】的角色
+
+#### 7.1 角色分配（组织层）可选角色
+
+- 用户服务
+    - 用户服务组织管理员：**组织层**可进入单个组织界面（默认为运营组织）且有组织层【用户服务】所有功能权限-可管理用户、项目、用户组、客户端、LDAP、密码策略、角色分配（组织层）；**项目层**可进入所有项目的单个项目界面，具有项目层【用户服务】所有功能权限-可角色分配（项目层）
+    - 用户服务组织维护者
+    - 用户服务项目管理员：**组织层**只有【项目】项目管理功能权限；**项目层**具有【用户服务】所有功能权限-可角色分配（项目层）
+    - 组织查看者：**组织层**只可进入单个组织界面（默认为运营组织）而无任何功能权限
+    - 项目查看者：**组织层**可进入【项目】项目管理界面查看项目列表而无操作权限；**项目层**可进入所有项目的单个项目界面而无任何功能权限
+
+- 部署管理
+    - 部署管理员：**组织层**可进入单个组织界面（默认为运营组织）且有组织层【部署管理】所有功能权限-可资源管理、网关管理、域名管理、服务管理、服务部署、部署详情（阶段及日志）、设置自动部署
+
+- 运营监控
+    - 运营监控查看者：全流程信息监控查看。**组织层**可进入单个组织界面（默认为运营组织）且有组织层【智能监控】所有功能权限-性能监控、模板控制、指标控制
+
+- 移动管理
+    - 移动开发管理员：**组织层**可进入单个组织界面（默认为运营组织）且有组织层【移动管理】所有功能权限-APP管理、模块管理
+
+- 文件管理
+    - 文件管理员：有文件上传下载接口的权限
+
+- 系统
+    - 框架服务组织管理员
+
+- 自定义角色
+    - 在全局层具有角色管理的用户在创建组织层角色后，该角色将会在自定义角色中显示
+    - 例如：定义了一个组织层角色-项目创建者，该角色权限如下。用户被分配项目创建者角色后，**组织层**可进入单个组织界面（默认为运营组织）且有组织层【用户服务】的【项目】、【用户】、【用户组】功能权限，和组织层【开发管理】的【环境】功能权限
+
+权限名称 | 权限描述| 权限层级
+--- | --- | ---
+hap-user-service.password-policy.queryOrganization | 查询目标组织密码策略 | organization
+hap-devops-service.environment.listEnvironment | 查询全部环境信息 | organization
+hap-devops-service.environment.createEnvironment | 创建环境 | organization
+hap-devops-service.environment.checkEnvironmentByName | 检查环境名是否可用 | organization
+hap-devops-service.environment.listEnvironmentByPageSize | 分页查询环境信息 | organization
+hap-devops-service.environment.getEnvironmentByEnvironmentId | 环境管理详情 | organization
+hap-devops-service.environment.updateEnvironment | 更新环境 | organization
+hap-devops-service.environment.deleteEnvironmentByEnvironmentId | 删除环境 | organization
+hap-devops-service.project.checkProject | 校验项目code,name是否重复 | organization
+hap-user-service.project.select | 分页查询项目 | organization
+hap-user-service.project.create | 添加项目，organization id不需要，强制当前用户所属organization | organization
+hap-user-service.project.checkProjectCode | checkProjectCode | organization
+hap-user-service.project.queryOrganizationProject | 根据组织id查询项目 | organization
+hap-user-service.user.select | 分页查询 | organization
+hap-user-service.user.create | 新增用户 | organization
+hap-user-service.user.query | 根据删除组织下所有用户 | organization
+hap-user-service.user.updateUser | 通过用户id查询用户 | organization
+hap-user-service.organization.query | 根据组织id查询组织 | organization
+hap-user-service.role.selectOrganizationRole | 查询可分配组织角色列表 | organization
+hap-user-service.project.update | 根据id修改项目信息，只能修改自己组织项目 | organization
+
+#### 7.2 分配、更改角色
+
+- **分配角色：**
+
+- （1）点击【添加】
+
+![分配角色](http://upload-images.jianshu.io/upload_images/7452984-fc92f13893fc02ed.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+- （2）输入成员（用户：用户名），选择角色
+
+![分配角色](http://upload-images.jianshu.io/upload_images/7452984-c43d0380bac74a02.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+- **更改角色分配：**
+- 点击角色名，出现下图列表即可继续角色更改
+
+![更改角色](http://upload-images.jianshu.io/upload_images/7452984-78919a153893ca9f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+- **注意：**
+    - 对已存在在角色分配列表里的成员，若进行【添加】操作会报错（因为【添加】操作是对没有被分配过角色的成员进行的），而应在更新操作中进行角色的更改
+
+![已被分配角色的成员无法进行添加操作](http://upload-images.jianshu.io/upload_images/7452984-4b190b602e41cca0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+![已被分配角色的成员只能进行更改操作](http://upload-images.jianshu.io/upload_images/7452984-53f0d20fc0579b29.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+#### 7.3 其他操作
+
+- **删除角色分配：**可删除角色分配列表中的数据
+
+![删除角色分配](http://upload-images.jianshu.io/upload_images/7452984-461a980646cb33f7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+- **查看角色分配：**可按成员/角色方式查看
+
+![角色分配查看方式](http://upload-images.jianshu.io/upload_images/7452984-653fe60c446b6a99.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+- **搜索角色分配：**可根据搜索条件查找角色分配列表的数据项
+    - 不选择属性，根据输入值进行全局搜素
+    - 选择一个属性：类型（用户/服务）、成员、昵称，输入相应属性值进行模糊搜索
