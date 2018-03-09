@@ -3,4 +3,4 @@ horizontal: 0
 vertical: 30
 name: "敏捷管理"
 icon: "features_pic1.png"
-description: "用户故事，用户故事地图，敏捷迭代冲刺，迭代冲刺管理，看板管理"
+description: "Choerodon采用Scrum来管理需求和计划执行，包括用户故事地图，ISSUE管理，迭代管理和电子看板等。PO可以通过用户故事地图收集系统用户的需求，并做发布计划，然后使用迭代管理计划冲刺，电子看板可以可视化整个冲刺的执行情况。"
