@@ -1,0 +1,3 @@
+[submodule "themes/hugo-choerodon-theme"]
+	path = themes/hugo-choerodon-theme
+	url = https://rdc.hand-china.com/gitlab/choerodon/hugo-choerodon-theme.git

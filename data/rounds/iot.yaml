@@ -3,4 +3,5 @@ horizontal: 15
 vertical: 165
 name: "持续发布管理"
 icon: "features_pic3.png"
-description: "灰度发布方案"
+description: "在应用PaaS环境，Choerodon通过Gitlab CI/CD产生软件应用的版本，例如2.0.3，Choerodon将2.0.3发布到生产PaaS环境，然后在生产PaaS环境部署应用版本，同时也可以进行灰度发布。
+"

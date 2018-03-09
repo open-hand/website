@@ -2,5 +2,4 @@ weight: 1
 horizontal: 0
 vertical: 30
 name: "应用构建"
-icon: "features_pic3.png"
-description: "应用开发平台，应用运行平台，应用PaaS平台"
+description: "我们可以方便的通过Choerodon开发构建微服务、Web前端、移动、普通应用和Java库，并且Choerodon的用户可以利用Choerodon 微服务开发框架构建微服务和Web前端应用。同时，支持用户将现有的应用迁移到Choerodon。"
