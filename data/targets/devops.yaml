@@ -1,4 +1,4 @@
 weight: 2
 name: "应用持续部署"
-icon: "features_pic2.png"
+icon: "img/continuous-deployment.png"
 description: "平台实现快速、可视化自动部署功能。支持对应用的快速、可视化部署。用户仅需在界面中选择相应的版本，点击部署按钮，即可完成整个应用的安装或者升级。通过gitlab CI/CD，可实现应用的持续集成和全自动化升级，同时支持一键回滚和恢复发布功能。"

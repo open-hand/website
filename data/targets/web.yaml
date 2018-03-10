@@ -1,4 +1,4 @@
 weight: 3
 name: "应用弹性伸缩"
-icon: "features_pic3.png"
+icon: "img/elastic-scaling.png"
 description: "构建具有需求预测和容器按需供给能力的弹性伸缩子系统，具有基于应用的负载和资源情况进行弹性伸缩能力，以应对互联网用户高并发的特点，应对流量冲击。其中，包括容器弹性伸缩、物理机弹性伸缩功能。"
