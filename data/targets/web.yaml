@@ -1,4 +1,4 @@
-weight: 4
-name: "Web应用服务"
-icon: "features_pic3.png"
-description: "Web应用服务组件提供了基于MVC应用的开发和运营管理的环境，为开发人员提供了专注于业务逻辑实现的开发和测试的环境；同时为运营人员提供Web应用发布和监控环境。"
+weight: 3
+name: "应用弹性伸缩"
+icon: "img/elastic-scaling.png"
+description: "构建具有需求预测和容器按需供给能力的弹性伸缩子系统，具有基于应用的负载和资源情况进行弹性伸缩能力，以应对互联网用户高并发的特点，应对流量冲击。其中，包括容器弹性伸缩、物理机弹性伸缩功能。"

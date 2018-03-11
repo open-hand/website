@@ -1,8 +1,9 @@
 baseurl = "https://choerodon.io"
 title = "choerodon"
-theme = "hugo-universal-theme"
+theme = "hugo-choerodon-theme"
 # themesDir = "../.."
-languageCode = "en-us"
+#languageCode = "en-us"
+languageCode = "zh-cn"
 # Site language. Available translations in the theme's `/i18n` directory.
 defaultContentLanguage = "zh"
 # Enable comments by entering your Disqus shortname
@@ -97,9 +98,6 @@ paginate = 10
     author = "DevCows"
     defaultKeywords = ["devows", "hugo", "go"]
     defaultDescription = "Site template made by devcows using hugo"
-
-    # Google Maps API key (if not set will default to not passing a key.)
-    googleMapsApiKey = "AIzaSyCFhtWLJcE30xOAjcbSFi-0fnoVmQZPb1Y"
 
     # Style options: default (light-blue), blue, green, marsala, pink, red, turquoise, violet,choerodon
     style = "choerodon"
@@ -204,7 +202,7 @@ paginate = 10
 
 [params.see_more]
     enable = true
-    icon = "fa fa-file-code-o"
+    icon = "fa fa-caret-right fa-lg"
     title = "想了解更多吗？"
     subtitle = "我们为您准备了许多案例，包括几个完整的网站。"
     link_url = "#"
@@ -249,18 +247,25 @@ paginate = 10
     weight = 5
 
 [[languages.zh.menu.main]]
-    name = "开源社区"
+    name = "社区"
     url  = "https://github.com/choerodon/choerodon"
     weight = 6
-    post = "external"
-    icon = true
 
 [[languages.zh.menu.main]]
     name = "Github"
     url  = "https://github.com/choerodon/choerodon"
     weight = 7
-    post = "external"
-    icon = true
+
+[[languages.zh.menu.main]]
+    name = "英文"
+    url  = ""
+    weight = 8
+
+[[languages.zh.menu.main]]
+    name = "快速开始"
+    url  = ""
+    weight = 9
+    post = true
 
 [languages.zh.testimonials]
 title  = "客户评价"
