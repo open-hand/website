@@ -18,6 +18,7 @@ banner = "img/banners/banner-1.jpg"
      ```
      git clone https://rdc.hand-china.com/gitlab/rdc_hip/devops-install-docs.git
      ```
+     
 ## 前置准备
 
  > 进入`devops-install-docs/devops/middleware/sonarqube`目录，下文我们将以此目录进行讲解。

@@ -16,9 +16,10 @@ banner = "img/banners/banner-1.jpg"
      ```
      git clone https://rdc.hand-china.com/gitlab/rdc_hip/devops-install-docs.git
      ```
+     
 ## 前置准备
 
- ### 获取Runner注册Token
+### 获取Runner注册Token
 
   > 此教程注册的Runner属性为共享，若需注册私有Runner，Token请在Git项目仓库`Settings -> CI/CD`菜单中获取
 
@@ -26,7 +27,7 @@ banner = "img/banners/banner-1.jpg"
 
 ## 注册Runner
 
- ### 方式1
+### 方式1
   ```
   docker run -it --rm --entrypoint=bash   registry.saas.hand-china.com/tools/gitlab-runner:alpine-v10.1.0
   
@@ -37,7 +38,7 @@ banner = "img/banners/banner-1.jpg"
   ```
   ![WX20180120-201422@2x.png](https://i.loli.net/2018/01/20/5a63374918e2b.png)
  
- ### 方式2
+### 方式2
 
   ```
   docker run -it --rm registry.saas.hand-china.com/tools/gitlab-runner:alpine-v10.1.0   register
