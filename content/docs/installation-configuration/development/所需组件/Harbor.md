@@ -20,6 +20,7 @@ banner = "img/banners/banner-1.jpg"
      ```
      git clone https://rdc.hand-china.com/gitlab/rdc_hip/devops-install-docs.git
      ```
+
 ## 使用外部数据库
 
  > 如果使用自带数据库请忽略此步骤。
@@ -38,9 +39,10 @@ banner = "img/banners/banner-1.jpg"
  1. 将`devops-install-docs/devops/harbor/registry.sql`文件内容放到数据库执行初始化表结构。
 
 ## 部署Harbor
-
- ### 生成配置
+### 生成配置
+ 
   > 进入`devops-install-docs/devops/harbor`目录，下文我们将以此目录进行讲解。搭建后若使用https进行访问，请先阅读[访问](#访问)。
+  
   1. 修改`harbor.cfg`的参数配置，主要包括harbor的访问地址  (hostname),harbor的管理员密码(harbor_admin_password)和其他配置,参考配置如下:
       > 其他参数如果不清楚其用法请不要修改
   
@@ -71,7 +73,7 @@ banner = "img/banners/banner-1.jpg"
   
   - **注意:** 如果使用已有数据库实例，则不需要修改storage.pv.yaml的配置，并且在后面的部署操作中，有关mysql的部署操作请全部忽略。
 
- ### 开始部署
+### 开始部署
   1. 创建命名空间harbor：
   
       ```
@@ -113,7 +115,7 @@ banner = "img/banners/banner-1.jpg"
 
 ## 访问
 
- ### 使用HTTP进行访问
+### 使用HTTP进行访问
   1. 请直接部署ingress
   
       ```
@@ -143,8 +145,8 @@ banner = "img/banners/banner-1.jpg"
       systemctl daemon-reload && systemctl restart docker
       ```
  
- ### 使用HTTPS进行访问(以下方式二选一)
-  #### 使用[kube-lego](https://github.com/jetstack/kube-lego)申请证书
+### 使用HTTPS进行访问(以下方式二选一)
+#### 使用[kube-lego](https://github.com/jetstack/kube-lego)申请证书
   
    - 如果集群中部署了[kube-lego](https://github.com/jetstack/kube-lego)申请证书,请编辑   `ingress.yaml`，添加`secretName`属性到spce.tls.hosts中。[kube-lego]   (https://github.com/jetstack/kube-lego)会自动申请证书，部署成功后就可使用https进行访问了。
    
@@ -172,7 +174,7 @@ banner = "img/banners/banner-1.jpg"
        kubectl apply -f kubernetes/ingress.yaml -n harbor
        ```
   
-  #### 手动申请证书
+#### 手动申请证书
   
    > 如果单纯的在ingress这里配置一个可信任证书的secret是不行的。在docker的操作时registry会进行证书校验， 也就是说ingress这配置的证书要与registry.cm.yaml里配置的能够匹配，否则就会报错。
    
@@ -230,34 +232,32 @@ banner = "img/banners/banner-1.jpg"
        ```
        # 参数 --key 后指定证书私钥的路径
        # 参数 --cert 后指定证书的路径
-       kubectl create secret tls harbor-cert --key privkey.pem --cert fullchain.pem -n    harbor
+       kubectl create secret tls harbor-cert --key privkey.pem --cert fullchain.pem -n harbor
        ```
    
    - 修改ingress配置，添加secretName属性值:
-   
-       ```
-       kubectl edit ingress harbor -n harbor
-   
-       # 参考示例如下
-       ...
-       rules:
-       - host: example.choerodon.com
-           http:
-           paths:
-           - backend:
-               serviceName: ui
-               servicePort: 80
-               path: /
-           - backend:
-               serviceName: registry
-               servicePort: repo
-               path: /v2
-           - backend:
-               serviceName: ui
-               servicePort: 80
-               path: /service
-       tls:
-       - hosts:
-           - example.choerodon.com
-           secretName: harbor-cert
-       ```
+
+
+        kubectl edit ingress harbor -n harbor
+        # 参考示例如下
+        ...
+        rules:
+        - host: example.choerodon.com
+            http:
+            paths:
+            - backend:
+                serviceName: ui
+                servicePort: 80
+                path: /
+            - backend:
+                serviceName: registry
+                servicePort: repo
+                path: /v2
+            - backend:
+                serviceName: ui
+                servicePort: 80
+                path: /service
+        tls:
+        - hosts:
+            - example.choerodon.com
+            secretName: harbor-cert
