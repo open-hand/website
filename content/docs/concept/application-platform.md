@@ -1,7 +1,7 @@
 +++
 title = "应用运行平台"
 description = ""
-weight = 4
+weight = 5
 +++
 
 HUGO **v0.32** minimum required to use this theme
