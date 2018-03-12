@@ -5,51 +5,118 @@ weight = 2
 type = "docs"
 +++
 
-When building the website, you can set a theme by using `--theme` option. We suggest you to edit your configuration file and set the theme by default. Example with `config.toml` format.
-<!--more-->
+# 快速入门
 
-Import sample config from sample site to Hugo root:
+## 1 新建服务
 
-```
-$ cp themes/docdock/exampleSite/config.toml .
-```
+- **菜单层次**：项目层
+- **菜单路径**：开发管理 > 服务
 
-Change following `config.toml` line as needed, depending on method above:
-```
-theme = "<hugo-theme-docdock-dir-name>"
-```
-Comment out following line, so default `themes/` will be used:
+1. 点击`创建`按钮。
 
-```
-# themesdir = "../.."
-```
+    ![](./assets/微服务后端/服务创建.png)
 
+1. 输入 “服务编码” 、 “服务名称” 、以及 “服务组” ，并选择相应服务类型，点击 `创建` 按钮。
 
-## Activate search
+    - 服务编码只能包含字母、数字、_、.、破折号和空格并且不能包含大写字母
 
-If not already present, add the follow lines to the `config.toml` file.
+    - 服务组输入不能包含中文或大写字母,不能以'.'开头或结尾
 
-```toml
-[outputs]
-home = [ "HTML", "RSS", "JSON"]
-```
+        ![](./assets/微服务后端/服务创建信息.png)
 
+1. 新建服务 “webservice0310” 已在服务管理列表中。
 
-LUNRJS search index file will be generated on content changes.
+    ![](./assets/微服务后端/开发区服务列表.png)
 
-#### (Bonus)
-Create empty file `.gitkeep` inside `public/` and add following to `.gitignore`.  This way it will keep repo smaller and won't bring build result files and errors to remote checkout places:
-```
-/public/*
-!/public/.gitkeep
-```
+1. gitlab已自动创建好对应服务类型的代码库 “webservice0310” 。点击 `仓库地址` ，可以查看该服务在gitlab的代码仓库。
 
-### Preview site
-```
-$ hugo server
-```
-to browse site on http://localhost:1313
+    ![](./assets/微服务后端/仓库地址.png)
 
-## Your website's content
+## 2 生成服务版本
 
-Find out how to [create]() and [organize your content]() quickly and intuitively.
+- **菜单层次**：项目层
+- **菜单路径**：开发管理 > 服务 > 详情
+
+> 代码提交的历史记录，每提交一次修改后的代码，对应生成一个新的版本。
+
+1. 进入服务详情后， 查看服务CI pipeline的完成情况，只有CI各个阶段跑成功了才会生成一条服务版本信息。
+
+    ![](./assets/微服务后端/流水线.png)
+
+1. 查看服务版本信息。
+
+    ![](./assets/微服务后端/开发区服务版本.png)
+
+## 3 服务发布。
+
+- **菜单层次**：项目层
+- **菜单路径**：开发管理 > 发布
+
+> 面向发布管理员，提供服务发布至不同环境的功能，向目标环境传输部署文件，同时附带服务版本信息以便追踪。 
+
+1. 点击 `发布` 。
+
+    ![](./assets/微服务后端/发布.png)
+
+1. 关键字搜索或直接从从下拉列表中选择部署文件发布的环境，已发布的环境不能重新发布。发布的环境需要先在组织层配置。
+
+    ![](./assets/微服务后端/发布环境.png)
+
+    注：[环境配置](https://github.com/choerodon/choerodon)
+
+1. 该服务部署文件已成功发布在某个环境。
+
+    ![](./assets/微服务后端/已发布环境信息.png)
+
+1. 设置服务 “自动发布”，下一次生成的服务版本会自动发布到已配置的环境。[自动发布配置](https://github.com/choerodon/choerodon)
+
+## 4 新建资源
+
+1. 定义部署时需要使用的资源。[资源配置](https://github.com/choerodon/choerodon)
+
+## 5 网关管理
+
+1. 为所选的微服务将网关信息注册至微服务管理服务。[网关配置](https://github.com/choerodon/choerodon)
+
+## 6 服务部署
+
+- **菜单层次**：组织层
+- **菜单路径**：部署管理 > 服务
+
+>提供可视化、一键式部署服务，支持并行部署和流水线无缝集成，实现部署环境标准化和部署过程自动化。
+
+1. 点击 `部署管理`  ，点击 `服务` ，查看服务列表。
+
+    ![](./assets/微服务后端/运行区服务列表.png)
+
+1. 点击`详情`。
+
+    ![](./assets/微服务后端/详情.png)
+
+1. 查看该服务版本信息。
+
+    ![](./assets/微服务后端/运行区服务版本.png)
+
+1. 在服务列表中找到要部署的服务，点击`详情`，例如"webservice0310"。
+
+    ![](./assets/微服务后端/运行区服务列表1.png)
+
+1. 选择发布的版本，点击`部署服务`。
+
+    ![](./assets/微服务后端/服务部署.png) 
+
+1. 进行资源选择，点击`部署`。
+
+    ![](./assets/微服务后端/部署信息.png) 
+
+    注：服务第一次部署需要自己手动填写资源，再次部署页面会显示上一次部署选择的资源。选择资源一定要谨慎，选择错误严重会导致数据库数据丢失。
+
+1. 点击`详情`，可在运行中查看正在部署/运行的版本，以及对容器数量进行调整。
+
+    ![](./assets/微服务后端/运行的版本.png)
+
+    > 注：可用容器数量、当前容器数量、期望容器数量都为1时，代表该服务已经部署好了。期望容器数量的加减实际是对k8s的pod数量的加减，例如期望容器数量为2，代表k8s启动了2个pod，其中一个挂了，还能保证程序正常使用，目前期望容器数量不可为0。
+
+1. 用于保障系统稳定，验证某服务版本是否正常使用，验证正常后再转为正式部署。[灰度部署配置](https://github.com/choerodon/choerodon)
+
+1. **部署管理员**可以设置“自动部署”，设置了自动部署，服务版本发布了不再需要手动部署。[自动部署配置](https://github.com/choerodon/choerodon)
