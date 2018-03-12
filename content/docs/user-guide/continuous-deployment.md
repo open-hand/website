@@ -228,3 +228,4 @@
 点击 `运行历史` ，查看部署失败或部署停止的服务版本。
 
   ![](\./assets/continuous-deployment/运行历史.png)
+
