@@ -1,10 +1,8 @@
 ---
-title: GolfNow Case Study
+title: China Mobile Case Study
 date: "2015-10-10T13:07:31+02:00"
-tags: ["ipsum"]
 type: "case-studies"
-categories: ["lorem"]
-banner: "/img/case_studies/golfnow_logo.png"
+banner: "img/clients/customer-2.jpg"
 summary: 中国共产党第九次全国代表大会于１９６９年４月１日─２４日在北京举行。出席大会的代表１５１２人，代表全国２２００万党员。由于当时各地党组织处于瘫痪状态，无法正常进行代表的选举
 ---
 <hr>

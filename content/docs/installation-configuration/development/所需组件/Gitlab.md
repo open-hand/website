@@ -16,8 +16,9 @@ banner = "img/banners/banner-1.jpg"
      ```
      git clone https://rdc.hand-china.com/gitlab/rdc_hip/devops-install-docs.git
      ```
+
 ## 前置准备
- ### 构建镜像
+### 构建镜像
 
   > 在使用mysql作为gitlab的数据库时,需要自行安装mysql的依赖和驱动包，使用postgresql则无需构建镜像。进入`devops-install-docs/devops/gitlab-ce`目录，下文我们将以此目录进行讲解。
   
@@ -25,7 +26,7 @@ banner = "img/banners/banner-1.jpg"
   # 在镜像仓库中已有也可直接pull
   docker build -t registry.saas.hand-china.com/tools/gitlab-ce:10.2.0-hand -f .
   ```
-  
+
   - 镜像构建完成后可以使用以下环境变量配置自动备份
   
      参数 | 描述
@@ -39,7 +40,7 @@ banner = "img/banners/banner-1.jpg"
  
     通过ConfigMap将gitlab.rb文件挂载到`/opt/hand/devops/etc/gitlab.rb`，运行镜像时就会加载此配置 文件。
 
- ### 创建数据库
+### 创建数据库
 
   - 登录到数据库创建gitlab用户及数据库:
   
@@ -53,7 +54,7 @@ banner = "img/banners/banner-1.jpg"
   FLUSH PRIVILEGES;
   ```
 
- ### 资源调整（若集群各节点资源充足可跳过此步）
+### 资源调整（若集群各节点资源充足可跳过此步）
 
   > 由于gitlab运行需要大量的资源并且要保证其稳定性,不受到其他pod的影响,这里专们调整一台节点部署,这里我们选择了node5(4c16g)
   
@@ -117,8 +118,7 @@ banner = "img/banners/banner-1.jpg"
   ```
 
 ## 部署
-
- ### Redis
+### Redis
   - 部署Redis
   ```
   # 首先创建namespaces gitlab:
@@ -126,7 +126,7 @@ banner = "img/banners/banner-1.jpg"
   kubectl apply -f redis/ -n gitlab
   ```
 
- ### gitlab
+### gitlab
 
   - 修改`gitlab/ingress.yml`文件中的host地址，ip地址访问请忽略：
 
