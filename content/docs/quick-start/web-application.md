@@ -29,7 +29,7 @@ weight = 3
 
 1. gitlab已自动创建好对应服务类型的代码库 “application0307” 。点击 `仓库地址` ，可以查看该服务在gitlab的代码仓库。
 
-    ![](./assets/Web应用/仓库地址.png)
+    ![](./assets/Web应用/仓库地址.png) 
 
 1. 上传普通应用代码到新建的gitlab仓库。
 
@@ -128,3 +128,4 @@ weight = 3
 1. 用于保障系统稳定，验证某服务版本是否正常使用，验证正常后再转为正式部署。[灰度部署配置](https://github.com/choerodon/choerodon)
 
 1. **部署管理员**可以设置“自动部署”，设置了自动部署，服务版本发布了不再需要手动部署。[自动部署配置](https://github.com/choerodon/choerodon)
+
