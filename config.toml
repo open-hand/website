@@ -253,14 +253,9 @@ paginate = 10
     weight = 7
 
 [[languages.zh.menu.main]]
-    name = "英文"
-    url  = ""
-    weight = 8
-
-[[languages.zh.menu.main]]
     name = "快速开始"
     url  = ""
-    weight = 9
+    weight = 8
     post = true
 
 [languages.zh.testimonials]
