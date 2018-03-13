@@ -44,17 +44,13 @@ paginate = 10
 
 [[languages.en.menu.main]]
     name = "Community"
-    url  = "https://github.com/choerodon/choerodon"
+    url  = "/community/"
     weight = 6
-    post = "external"
-    icon = true
 
 [[languages.en.menu.main]]
     name = "Github"
     url  = "https://github.com/choerodon/choerodon"
     weight = 7
-    post = "external"
-    icon = true
 
 #[[menu.main]]
 #    name = "FAQ"
@@ -248,7 +244,7 @@ paginate = 10
 
 [[languages.zh.menu.main]]
     name = "社区"
-    url  = "https://github.com/choerodon/choerodon"
+    url  = "/community/"
     weight = 6
 
 [[languages.zh.menu.main]]

@@ -55,7 +55,7 @@ summary: 部署周期从数周减少到几分钟，应用交付的效率提高�
   </div>
 </section>
 
-<div class="banner3" style="background:url(/case-studies/img/hand.jpg)">
+<div class="banner3" style="background:url(/case-studies/img/crland.jpg)">
   <div class="banner3=text">
     <p>
     部署周期从数周减少到几分钟，应用交付的效率提高了10倍。重要的运营支出减少，有些情况下为20-30％，这对华润置地的业务非常有帮助，节省了很多时间， 开发人员很开心有这样的转变。
