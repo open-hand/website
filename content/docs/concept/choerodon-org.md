@@ -1,7 +1,7 @@
 +++
-title = "应用开发平台"
+title = "组织"
 description = ""
-weight = 4
+weight = 3
 +++
 
 HUGO **v0.32** minimum required to use this theme

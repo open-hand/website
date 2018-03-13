@@ -1,7 +1,7 @@
 +++
-title = "系统安全管理"
+title = "安全管理"
 description = ""
-weight = 6
+weight = 5
 +++
 
 HUGO **v0.32** minimum required to use this theme
