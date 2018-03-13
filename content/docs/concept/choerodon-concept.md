@@ -4,80 +4,68 @@ description = ""
 weight = 1
 +++
 
-HUGO **v0.32** minimum required to use this theme
+### 概述
+- - -
 
-The following steps are here to help you initialize your new website. If you don’t know Hugo at all, we strongly suggest you to train by following this [great documentation for beginners](https://gohugo.io/overview/quickstart/).
-<!--more-->
+Choerodon（译：“猪齿鱼”）是一个开源的系统，是基于Kubernetes的企业级数字化服务平台，通过提供DevOps、微服务、容器等能力来帮助企业构建云原生PaaS平台和加速数字化转型。您可以通过Choerodon系统提供的DevOps生产线完成开发流程的管理和监控，需求的管理、代码测试和质量管控、版本控制、持续部署（能够实现一键部署），以及运行环境（开发环境、测试环境、正式环境）的管理和监控等。
 
-## Installation
+Choerodon使用Kubernetes来管理和部署服务。关于Kubernetes，请参考[Kubernetes](https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/) 概览。
 
-We assume that all changes to Hugo content and customizations are going to be tracked by git (GitHub, Bitbucket etc.). Develop locally, build on remote system.
+同时，Choerodon使用Spring Cloud作为微服务分布式系统，并且Choerodon还使用Spring Boot进行了通用性模块的封装，例如组织管理、用户管理、权限管理等；前端使用React作为开发组件。关于Choerodon的开发请参考 [Cloud Framework](/docs/microservice-application-framework) 开发。
 
-Before start real work:
+有关Choerodon组件的详细概念信息，请参阅我们的其他概念指南。
 
-1. Initialize Hugo
-2. Install DocDock theme
-3. Configure DocDock and Hugo
+### 为什么要使用Choerodon？
+- - -
 
-### Prepare empty Hugo site
+Choerodon解决了开发人员和运维人员面临的许多挑战。随着企业或者组织业务模式不断的互联网化，尤其是对于一些有软件研发能力的公司或者组织，如何有效的应对开发和运维之间的关系，提高IT部门的总体运作效率，以支撑业务的快速发展，已成为了我们面临的重大挑战。
 
-Create empty directory, which will be root of your Hugo project. Navigate there and let Hugo to create minimal required directory structure:
-```
-$ hugo new site .
-```
-AFTER that, initialize this as git directory where to track further changes
-```
-$ git init
-```
+同时，现代企业或者组织对于软件系统的需求，也在随着互联网和大数据等新技术的进步在悄然发生变化，尤其是在数字化转型的思潮中，企业或者组织要求：
 
-Next, there are at least three ways to install DocDock (first recommended):
+- **零宕机**
 
-1. **As git submodule**
-2. As git clone
-3. As direct copy (from ZIP)
+    部署松耦合的组件，通过冗余来避免故障，零停机的情况下完成升级
 
-Navigate to your themes folder in your Hugo site and use perform one of following scenarios.
+- **极短反馈周期**
 
-### 1. Install DocDock as git submodule
+    经常发布代码，缩短反馈回路，降低风险
 
-DocDock will be added like a dependency repo to original project. When using CI tools like Netlify, Jenkins etc., submodule method is required, or you will get `theme not found` issues. Same applies when building site on remote server trough SSH.
+- **移动和多设备**
 
-If submodule is no-go, use 3rd option.
+    充分利用移动设备，用户能够在多种设备使用，系统能够适应扩展的需求
 
-On your root of Hugo execute:
+- **设备互联**
 
-```
-$ git submodule add https://github.com/vjeantet/hugo-theme-docdock.git themes/docdock
-```
-Next initialize submodule for parent git repo:
+    互联网连接的设备导致数据量剧增和要求“边缘”的计算能力，需要新的软件设计和实践
 
-```
-$ git submodule init
-$ git submodule update
-```
+- **数据驱动**
 
-Now you are ready to add content and customize looks. Do not change any file inside theme directory.
-
-If you want to freeze changes to DocDock theme itself and use still submodules, fork private copy of DocDock and use that as submodule. When you are ready to update theme, just pull changes from origin to your private fork.
-
-### 2. Install DocDock simply as git clone
-
-This method results that files are checked out locally, but won't be visible from parent git repo. Probably you will build site locally with `hugo` command and use result from `public/` on your own.
-
-```
-$ git clone https://github.com/vjeantet/hugo-theme-docdock.git themes/docdock
-```
+    使用数据，通过更智能的应用向客户提供极致的体验和更高的价值
 
 
-### 3. Install DocDock from ZIP
+Choerodon可以有效的帮助企业或者组织提升IT效能。Choerodon采用DevOps的原则和流程来管理软件的开发和运维。Choerodon可以有效提高软件交付的质量（比如，提高可用性，提高变更成功率，减少故障，等等），加快产品推向市场（比如，缩短开发周期时间和更高的部署频率），并且提高组织的有效性（比如，将时间花在价值增加活动中，减少浪费，同时交付更多的价值至客户手中）。
 
-All files from theme will be tracked inside parent repo, to update it, have to override files in theme. [ download following zip](https://github.com/vjeantet/hugo-theme-docdock/archive/master.zip) and extract inside `themes/`.
+Choerodon是将服务和应用构建在Kubernetes上，后端服务使用Spring Boot开发，前端使用React开发。Choerodon分为两类环境，即应用PaaS环境和产品PaaS环境，应用PaaS环境为主要软件开发区，包括应用构建、敏捷管理、开发管理和持续发布管理等核心功能；产品PaaS环境主要软件运行区，包括测试环境、用户集成测试环境、正式环境等，用户可以根据自身需求定义。
 
-```
-https://github.com/vjeantet/hugo-theme-docdock/archive/master.zip
-```
-Name of theme in next step will be `hugo-theme-docdock-master`, can rename as you wish.
+以下是对Choerodon关键特性说明：
 
-## Configuration
+- **应用构建**
 
-[Follow instructions here]
+    我们可以方便的通过Choerodon开发构建微服务、Web前端、移动、普通应用和Java库。
+
+- **敏捷管理**
+
+    Choerodon采用Scrum来管理需求和计划执行，包括用户故事地图，ISSUE管理，冲刺管理和电子看板。
+
+- **开发管理**
+
+    Choerodon使用gitlab管理代码，包括代码托管、分支管理（Gitflow分支模型），根据服务类型提供持续集成的流水线模板，开发人员也可以根据需要进行定制化修改，以及代码质量管理等。
+
+- **持续发布管理**
+
+    在应用PaaS环境，Choerodon通过Gitlab CI/CD产生软件应用的版本，例如2.0.3，Choerodon将2.0.3发布到生产PaaS环境，然后在生产PaaS环境部署应用版本，同时也可以进行灰度发布。
+
+- **运营管理**
+
+    Choerodon提供一整套完整的监控工具来监控PaaS平台，监控主要包含开发类指标、日志和微服务调用链三类信息。
+
