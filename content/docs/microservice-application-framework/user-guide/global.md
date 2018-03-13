@@ -7,7 +7,7 @@ weight = 1
 
 选中顶部导航栏的【管理】选项，即可进入全局层
 
-![全局层](http://upload-images.jianshu.io/upload_images/7452984-f38b006f961ca8f0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![全局层](./images/I_1.png)
 
 
 
@@ -18,7 +18,7 @@ weight = 1
 - 所有服务的列表
 - 可根据搜索条件查询服务
 
-![服务](http://upload-images.jianshu.io/upload_images/7452984-9d0b35052491750d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![服务](./images/1_1.png)
 
 #### 1.1 搜索服务
 
@@ -31,7 +31,7 @@ weight = 1
 - 可根据搜索条件查询权限
 - 根据角色层级（全局层/组织层/项目层）、服务、类型；或根据输入值进行搜索
 
-![权限](http://upload-images.jianshu.io/upload_images/7452984-59964f439471d26c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![权限](./images/2_1.png)
 
 #### 2.1 搜索权限
 
@@ -44,7 +44,7 @@ weight = 1
 - 权限的集合
 - 可创建、根据所选角色创建、删除、编辑、停用/启用、查看详情、根据搜索条件查询角色
 
-![角色](http://upload-images.jianshu.io/upload_images/7452984-3d75e78e73f3c44a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![角色](./images/3_1.png)
 
 #### 3.1 创建角色
 
@@ -58,7 +58,7 @@ weight = 1
 
 - 权限：全局层与组织层/项目层不可共存，组织层与项目层权限可共存。选择权限时，如果对于功能所需的权限不清楚，可以使用导航栏右上角的调试功能来查看
 
-![image.png](http://upload-images.jianshu.io/upload_images/7452984-28c56091d813a7bc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](./images/3.1_1.png)
 
 
 **选填项：**
@@ -71,7 +71,7 @@ weight = 1
 
 - 是否启用：勾选后，角色可以被应用到角色分配中
 
-![创建角色](http://upload-images.jianshu.io/upload_images/7452984-c71f6585536d6359.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![创建角色](./images/3.1_2.png)
 
 
 
@@ -93,7 +93,7 @@ weight = 1
 - 侧边栏/菜单栏
 - 可创建、配置菜单栏 
 
-![菜单配置](http://upload-images.jianshu.io/upload_images/7452984-292e19b1faa7d6af.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![菜单配置](./images/4_1.png)
 
 #### 4.1 菜单配置
 
@@ -105,7 +105,7 @@ weight = 1
 - （3）点击[将所选菜单项添加至菜单结构]
 - （4）在菜单展示页将出现刚刚添加的目录/菜单，可拖动进行位置顺序调节
 
-![菜单配置流程](http://upload-images.jianshu.io/upload_images/7452984-573b6571f4f02c54.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![菜单配置流程](./images/4.1_1.png)
 
 #### 4.2 添加目录
 
@@ -125,7 +125,7 @@ weight = 1
     - （4）点击添加按钮
     - （5）弹出弹窗，点击确认
 
-![添加目录图标流程](http://upload-images.jianshu.io/upload_images/7452984-cbab412c511232d3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![添加目录图标流程](./images/4.2_1.png)
 
 **后继操作：**
 
@@ -133,7 +133,7 @@ weight = 1
 - 长按鼠标右键，可对该目录进行位置拖动
 - 注：只有目录下有菜单时，该目录才在菜单栏显示；否则该目录在菜单栏不显示 
 
-![添加目录后](http://upload-images.jianshu.io/upload_images/7452984-b29a0096b48de5aa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![添加目录后](./images/4.2_2.png)
 
 #### 4.3 其他操作
 
@@ -141,7 +141,7 @@ weight = 1
 - **详情：**在菜单配置页可查看菜单详情（目录不可）
 - **编辑：**在菜单展示页可编辑目录（菜单不可）
 
-![其他操作](http://upload-images.jianshu.io/upload_images/7452984-46df5fb66f83548a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![其他操作](./images/4.3_1.png)
 
 
 ### 5.角色分配（全局层）
@@ -174,34 +174,34 @@ weight = 1
 
 - （1）点击【添加】
 
-![分配角色](http://upload-images.jianshu.io/upload_images/7452984-fc92f13893fc02ed.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![分配角色](./images/5.2_1.png)
 
 - （2）输入成员（用户：用户名），选择角色
 
-![分配角色](http://upload-images.jianshu.io/upload_images/7452984-c43d0380bac74a02.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![分配角色](./images/5.2_2.png)
 
 - **更改角色分配：**
 - 点击角色名，出现下图列表即可继续角色更改
 
-![更改角色](http://upload-images.jianshu.io/upload_images/7452984-78919a153893ca9f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![更改角色](./images/5.2_3.png)
 
 - **注意：**
 
     - 对已存在在角色分配列表里的成员，若进行【添加】操作会报错（因为【添加】操作是对没有被分配过角色的成员进行的），而应在更新操作中进行角色的更改
 
-![已被分配角色的成员无法进行添加操作](http://upload-images.jianshu.io/upload_images/7452984-4b190b602e41cca0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![已被分配角色的成员无法进行添加操作](./images/5.2_4.png)
 
-![已被分配角色的成员只能进行更改操作](http://upload-images.jianshu.io/upload_images/7452984-53f0d20fc0579b29.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![已被分配角色的成员只能进行更改操作](./images/5.2_5.png)
 
 #### 5.3 其他操作
 
 - **删除角色分配：**可删除角色分配列表中的数据
 
-![删除角色分配](http://upload-images.jianshu.io/upload_images/7452984-461a980646cb33f7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![删除角色分配](./images/5.3_1.png)
 
 - **查看角色分配：**可按成员/角色方式查看
 
-![角色分配查看方式](http://upload-images.jianshu.io/upload_images/7452984-653fe60c446b6a99.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![角色分配查看方式](./images/5.3_2.png)
 
 - **搜索角色分配：**可根据搜索条件查找角色分配列表的数据项
     - 不选择属性，根据输入值进行全局搜素
