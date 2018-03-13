@@ -1,5 +1,5 @@
 +++
-title = "Choerodon 使用的开源组件"
+title = "使用的开源组件"
 description = ""
 weight = 3
 +++

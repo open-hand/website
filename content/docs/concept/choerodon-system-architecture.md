@@ -1,5 +1,5 @@
 +++
-title = "Choerodon 系统架构"
+title = "系统架构"
 description = ""
 weight = 2
 type = "docs"

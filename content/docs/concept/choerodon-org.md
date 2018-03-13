@@ -1,83 +1,39 @@
 +++
-title = "组织"
+title = "组织层次"
 description = ""
 weight = 3
 +++
 
-HUGO **v0.32** minimum required to use this theme
+### 组织层次
+---
 
-The following steps are here to help you initialize your new website. If you don’t know Hugo at all, we strongly suggest you to train by following this [great documentation for beginners](https://gohugo.io/overview/quickstart/).
-<!--more-->
+Choerodon中有三层组织层次，即全局层、组织层和项目层。Choerodon使用三层组织结构来管理用户、权限、项目、环境资源、菜单，以及其他系统资源和功能。Choerodon这样的设计其实是借用的SaaS组织管理概念，主要是Choerodon应用开发框架为了满足用户SaaS化的需求而设计的，在Choerodon的应用开发和运营管理中使用的不多。
 
-## Installation
+下面我们将从如下几个方面来阐述Choerodon的组织层次：
 
-We assume that all changes to Hugo content and customizations are going to be tracked by git (GitHub, Bitbucket etc.). Develop locally, build on remote system.
+- [全局层](#全局层)
+- [组织层](#组织层)
+    - [运营组织](#运营组织)
+- [项目层](#项目层)
 
-Before start real work:
+### 全局层
+---
+Choerodon的全局层中包含了系统的一些基本设置，例如组织管理、菜单管理、全局角色管理等。另外，在全局层还可以查看Choerodon系统中的服务和权限分配等。
 
-1. Initialize Hugo
-2. Install DocDock theme
-3. Configure DocDock and Hugo
+全局层可以包含多个组织，例如运营组织。
 
-### Prepare empty Hugo site
+### 组织层
+---
 
-Create empty directory, which will be root of your Hugo project. Navigate there and let Hugo to create minimal required directory structure:
-```
-$ hugo new site .
-```
-AFTER that, initialize this as git directory where to track further changes
-```
-$ git init
-```
+Choerodon使用组织来管理用户、权限、项目、环境资源，以及其它系统资源和功能。在系统中有一个默认的组织**运营组织**，目前Choerodon中所有的服务、功能和资源都定义在整个组织下面。举个例子，有一个零售公司，想通过Choerodon搭建一个基于微服务的数字化服务平台，此平台涵盖了从门店、零售到库存等整个供应链的管理，需要开发门店管理服务、零售服务、支付服务、库存服务、商品服务等，此时我们可以整个公司看做一个组织，将数字服务平台中包含的所有服务放在这个组织下。当然，如何以项目的形式开发，我们将在项目层中说明。
 
-Next, there are at least three ways to install DocDock (first recommended):
+一个组织可以包含多个项目，例如智能监控。
 
-1. **As git submodule**
-2. As git clone
-3. As direct copy (from ZIP)
+#### 运营组织
 
-Navigate to your themes folder in your Hugo site and use perform one of following scenarios.
+运营组织是Choerodon自带的缺省组织，Choerodon平台上所有的基础服务全部放在次组织下面。例如，用户服务、权限服务、看板服务、Gitlab服务等。
 
-### 1. Install DocDock as git submodule
+### 项目层
+---
 
-DocDock will be added like a dependency repo to original project. When using CI tools like Netlify, Jenkins etc., submodule method is required, or you will get `theme not found` issues. Same applies when building site on remote server trough SSH.
-
-If submodule is no-go, use 3rd option.
-
-On your root of Hugo execute:
-
-```
-$ git submodule add https://github.com/vjeantet/hugo-theme-docdock.git themes/docdock
-```
-Next initialize submodule for parent git repo:
-
-```
-$ git submodule init
-$ git submodule update
-```
-
-Now you are ready to add content and customize looks. Do not change any file inside theme directory.
-
-If you want to freeze changes to DocDock theme itself and use still submodules, fork private copy of DocDock and use that as submodule. When you are ready to update theme, just pull changes from origin to your private fork.
-
-### 2. Install DocDock simply as git clone
-
-This method results that files are checked out locally, but won't be visible from parent git repo. Probably you will build site locally with `hugo` command and use result from `public/` on your own.
-
-```
-$ git clone https://github.com/vjeantet/hugo-theme-docdock.git themes/docdock
-```
-
-
-### 3. Install DocDock from ZIP
-
-All files from theme will be tracked inside parent repo, to update it, have to override files in theme. [ download following zip](https://github.com/vjeantet/hugo-theme-docdock/archive/master.zip) and extract inside `themes/`.
-
-```
-https://github.com/vjeantet/hugo-theme-docdock/archive/master.zip
-```
-Name of theme in next step will be `hugo-theme-docdock-master`, can rename as you wish.
-
-## Configuration
-
-[Follow instructions here]
+Choerodon通过项目来管理软件的开发，项目属于组织，在
