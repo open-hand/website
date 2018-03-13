@@ -7,14 +7,14 @@ weight = 3
 
 - 选中顶部导航栏的【组织/项目】选项
 
-![image.png](http://upload-images.jianshu.io/upload_images/7452984-3f60b5cc0c03e003.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](./images/III_1.png)
 
 - 弹出组织/项目列表的弹窗
     - 在下拉菜单中选择一个组织，组织/项目列表则变为被选组织与该组织下的所有项目
     - 项目过多时，可在搜索框中对项目名进行模糊搜索
     - 鼠标右键双击组织/项目列表的项目选项，则进入该项目
 
-![image.png](http://upload-images.jianshu.io/upload_images/7452984-08a1f23716d4c9f6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](./images/III_2.png)
 
 
     
@@ -51,33 +51,33 @@ weight = 3
 
 - （1）点击【添加】
 
-![分配角色](http://upload-images.jianshu.io/upload_images/7452984-fc92f13893fc02ed.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![分配角色](./images/3-1.2_1.png)
 
 - （2）输入成员（用户：用户名），选择角色
 
-![分配角色](http://upload-images.jianshu.io/upload_images/7452984-c43d0380bac74a02.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![分配角色](./images/3-1.2_2.png)
 
 - **更改角色分配：**
 - 点击角色名，出现下图列表即可继续角色更改
 
-![更改角色](http://upload-images.jianshu.io/upload_images/7452984-78919a153893ca9f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![更改角色](./images/3-1.2_3.png)
 
 - **注意：**
     - 对已存在在角色分配列表里的成员，若进行【添加】操作会报错（因为【添加】操作是对没有被分配过角色的成员进行的），而应在更新操作中进行角色的更改
 
-![已被分配角色的成员无法进行添加操作](http://upload-images.jianshu.io/upload_images/7452984-4b190b602e41cca0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![已被分配角色的成员无法进行添加操作](./images/3-1.2_4.png)
 
-![已被分配角色的成员只能进行更改操作](http://upload-images.jianshu.io/upload_images/7452984-53f0d20fc0579b29.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![已被分配角色的成员只能进行更改操作](./images/3-1.2_5.png)
 
 #### 1.3 其他操作
 
 - **删除角色分配：**可删除角色分配列表中的数据
 
-![删除角色分配](http://upload-images.jianshu.io/upload_images/7452984-461a980646cb33f7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![删除角色分配](./images/3-1.3_1.png)
 
 - **查看角色分配：**可按成员/角色方式查看
 
-![角色分配查看方式](http://upload-images.jianshu.io/upload_images/7452984-653fe60c446b6a99.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![角色分配查看方式](./images/3-1.3_2.png)
 
 - **搜索角色分配：**可根据搜索条件查找角色分配列表的数据项
     - 不选择属性，根据输入值进行全局搜素

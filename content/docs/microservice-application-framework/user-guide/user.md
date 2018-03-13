@@ -5,7 +5,7 @@ weight = 4
 
 # IV 用户层
 
-###1.用户信息维护
+### 1.用户信息维护
 
 - 不可更改项：
     - 用户名：用户名可用于登陆，一旦创建，不可修改
@@ -29,7 +29,7 @@ weight = 4
 - 用户可以通过调用接口创建自己的token
 - 可创建、删除、详情查看、编辑、搜索授权
 
-![授权管理](http://upload-images.jianshu.io/upload_images/7452984-2339b05d67c3c4e2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![授权管理](./images/4-3_1.png)
 
 #### 3.1 创建授权
 
@@ -40,7 +40,7 @@ weight = 4
     - token的失效时间
     - 无法选择当前时间之前的
 
-![创建授权](http://upload-images.jianshu.io/upload_images/7452984-39c3baeed9923834.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![创建授权](./images/4-3.1_1.png)
 
 #### 3.2 其他操作
 
