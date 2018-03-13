@@ -13,6 +13,9 @@ summary: 部署周期从数周减少到几分钟，应用交付的效率提高�
     <div class="col-md-12 nav-text">Choerodon是一个开源系统，是基于Kubernetes的企业级容器PaaS平台，包含DevOps套件、应用服务套件、数据服务、智能洞察开发流程和运营管理，并且完全支持混合云部署。</div>
   </div>
 </div>
+<div id="scenario">
+<div class="container" >公司 <b>华润置地</b> &nbsp;&nbsp;&nbsp;地点 <b>深圳,中国</b> &nbsp;&nbsp;&nbsp;行业 <b>电信设备</b></div>
+</div>
   <div class="cols">
     <div class="col1">
       <h2>挑战</h2>
@@ -55,7 +58,7 @@ summary: 部署周期从数周减少到几分钟，应用交付的效率提高�
   </div>
 </section>
 
-<div class="banner3" style="background:url(/case-studies/img/hand.jpg)">
+<div class="banner3" style="background:url(/case-studies/img/crland.jpg)">
   <div class="banner3=text">
     <p>
     部署周期从数周减少到几分钟，应用交付的效率提高了10倍。重要的运营支出减少，有些情况下为20-30％，这对华润置地的业务非常有帮助，节省了很多时间， 开发人员很开心有这样的转变。
