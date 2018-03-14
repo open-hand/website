@@ -1,7 +1,7 @@
 +++
 title = "Gitlab Runner"
 description = ""
-weight = 3
+weight = 2
 banner = "img/banners/banner-1.jpg"
 +++
 

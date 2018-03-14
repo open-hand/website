@@ -2,7 +2,7 @@
 +++
 title = "SonarQube"
 description = ""
-weight = 3
+weight = 4
 banner = "img/banners/banner-1.jpg"
 +++
 

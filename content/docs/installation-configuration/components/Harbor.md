@@ -1,7 +1,7 @@
 +++
 title = "Harbor"
 description = ""
-weight = 1
+weight = 3
 banner = "img/banners/banner-1.jpg"
 +++
 
