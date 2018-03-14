@@ -1,5 +1,5 @@
 +++
-title = "开发区安装指南"
+title = "开发区安装"
 description = ""
 weight = 2
 banner = "img/banners/banner-1.jpg"

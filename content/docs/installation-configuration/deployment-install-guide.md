@@ -1,5 +1,5 @@
 +++
-title = "运行区安装指南"
+title = "运行区安装"
 description = ""
 weight = 3
 banner = "img/banners/banner-1.jpg"
