@@ -80,8 +80,8 @@ weight = 1
    项目创建者 | hap-user-service.project.queryOrganizationProject | 根据组织id查询项目 | organization
    项目创建者 | hap-user-service.user.select | 分页查询 | organization
    项目创建者 | hap-user-service.user.create | 新增用户 | organization
-   项目创建者 | hap-user-service.user.query | 根据删除组织下所有用户 | organization
-   项目创建者 | hap-user-service.user.updateUser | 通过用户id查询用户 | organization
+   项目创建者 | hap-user-service.user.query | 通过用户id查询用户 | organization
+   项目创建者 | hap-user-service.user.updateUser | 根据id修改用户 | organization
    项目创建者 | hap-user-service.organization.query | 根据组织id查询组织 | organization
    项目创建者 | hap-user-service.role.selectOrganizationRole | 查询可分配组织角色列表 | organization
    项目创建者 | hap-user-service.project.update | 根据id修改项目信息，只能修改自己组织项目 | organization
