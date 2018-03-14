@@ -1,85 +1,52 @@
 +++
-title = "角色"
+title = "角色控制访问权限(RBAC)"
 description = ""
 weight = 3
 +++
 
-### Choerodon 采用角色控制访问权限(RBAC)
+### Choerodon 角色控制访问权限(RBAC)
 
-HUGO **v0.32** minimum required to use this theme
+## 概览
 
-The following steps are here to help you initialize your new website. If you don’t know Hugo at all, we strongly suggest you to train by following this [great documentation for beginners](https://gohugo.io/overview/quickstart/).
-<!--more-->
+Choerodon 的对资源的管理是基于角色控制的，并从组织层、项目层和用户层对角色进行划分。包含如下的特点：
 
-## Installation
+* 基于角色的权限访问控制。
+* 基于组织层、项目层和用户层的三层权限体系。
+* 自定义角色创建和绑定。
 
-We assume that all changes to Hugo content and customizations are going to be tracked by git (GitHub, Bitbucket etc.). Develop locally, build on remote system.
+## 架构
 
-Before start real work:
+下图介绍了Choerodon RBAC的架构。
 
-1. Initialize Hugo
-2. Install DocDock theme
-3. Configure DocDock and Hugo
+![权限](/img/docs/security/permission.png)
 
-### Prepare empty Hugo site
+## 工作流
 
-Create empty directory, which will be root of your Hugo project. Navigate there and let Hugo to create minimal required directory structure:
-```
-$ hugo new site .
-```
-AFTER that, initialize this as git directory where to track further changes
-```
-$ git init
-```
+下图介绍了RBAC的流程图。
 
-Next, there are at least three ways to install DocDock (first recommended):
+![权限流程图](/img/docs/security/permission_flow.png)
 
-1. **As git submodule**
-2. As git clone
-3. As direct copy (from ZIP)
+## 组成
 
-Navigate to your themes folder in your Hugo site and use perform one of following scenarios.
+Choerodon RBAC 包含资源、角色、用户。同时包含资源与角色的关联，角色与用户的关联。
 
-### 1. Install DocDock as git submodule
+### 资源
 
-DocDock will be added like a dependency repo to original project. When using CI tools like Netlify, Jenkins etc., submodule method is required, or you will get `theme not found` issues. Same applies when building site on remote server trough SSH.
+* Choerodon 遵循`REST` 原则，视`HTTP-based REST API` 为一个或一组资源。
+* 对资源的引用和操作则视为权限。
+* 权限的级别对应全局、组织、项目。
 
-If submodule is no-go, use 3rd option.
+### 角色
 
-On your root of Hugo execute:
+角色是资源的超集。
 
-```
-$ git submodule add https://github.com/vjeantet/hugo-theme-docdock.git themes/docdock
-```
-Next initialize submodule for parent git repo:
+* 角色的级别对应为全局、组织、项目。
+* 角色和资源之间通过RBAC 关联起来。
+* 一个角色严格遵循只能访问所属资源的原则。
+* 角色支持自定义角色，通过标签将角色和第三方系统进行关联。
 
-```
-$ git submodule init
-$ git submodule update
-```
+### 用户
 
-Now you are ready to add content and customize looks. Do not change any file inside theme directory.
+用户是资源的实际使用者。
 
-If you want to freeze changes to DocDock theme itself and use still submodules, fork private copy of DocDock and use that as submodule. When you are ready to update theme, just pull changes from origin to your private fork.
-
-### 2. Install DocDock simply as git clone
-
-This method results that files are checked out locally, but won't be visible from parent git repo. Probably you will build site locally with `hugo` command and use result from `public/` on your own.
-
-```
-$ git clone https://github.com/vjeantet/hugo-theme-docdock.git themes/docdock
-```
-
-
-### 3. Install DocDock from ZIP
-
-All files from theme will be tracked inside parent repo, to update it, have to override files in theme. [ download following zip](https://github.com/vjeantet/hugo-theme-docdock/archive/master.zip) and extract inside `themes/`.
-
-```
-https://github.com/vjeantet/hugo-theme-docdock/archive/master.zip
-```
-Name of theme in next step will be `hugo-theme-docdock-master`, can rename as you wish.
-
-## Configuration
-
-[Follow instructions here]
+* 用户和角色之间通过RBAC 关联起来。

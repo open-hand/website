@@ -1,5 +1,5 @@
 +++
-title = " Choerodon 认证体系"
+title = "认证体系"
 description = ""
 weight = 2
 +++
