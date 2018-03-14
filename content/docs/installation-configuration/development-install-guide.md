@@ -43,6 +43,18 @@ banner = "img/banners/banner-1.jpg"
     移动前端	|	com.hand.mobile 	|	mobile-front 	|	1.0.0
 
 ## 运行环境
+
+### 硬件需求
+#### 存储
+存储空间的大小主要取决于你将存储的docker image，Gitlab所存储的Git仓库以及使用文件服务时上传的文件大小。但是你应该考虑多留一些空间用来存储备份。
+除此之外你还可以挂在一个支持NFS的分卷，比如NAS、 SAN、AWS、EBS。
+
+#### CPU
+将所有服务运行起来，一定要注意当前集群内至少有16C可用。
+
+#### 内存
+安装使用Choerodon开发区所有应用需要至少50GB可用内存(RAM + Swap)! 由于操作系统和其他正在运行的应用也会使用内存, 所以安装Choerodon开发区前一定要注意当前集群内至少有70GB的可用内存. 少于70GB内存会导致在部署后Pod一直处于等待状态或者在使用中出现各种诡异的问题。
+
 Kubernetes v1.8.5  
 
 > 搭建Devops平台时，默认已经搭建好K8S集群，若未搭建请[移步K8S集群搭建](https://rdc.hand-china.com/gitlab/rdc_hip/kubeadm-ansible)
