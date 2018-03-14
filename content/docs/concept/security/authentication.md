@@ -1,85 +1,54 @@
 +++
-title = "认证"
+title = " Choerodon 认证体系"
 description = ""
 weight = 2
 +++
 
-### Choerodon 采用角色控制访问权限(RBAC)
+### Choerodon 认证体系
 
-HUGO **v0.32** minimum required to use this theme
+## 概览
 
-The following steps are here to help you initialize your new website. If you don’t know Hugo at all, we strongly suggest you to train by following this [great documentation for beginners](https://gohugo.io/overview/quickstart/).
-<!--more-->
+身份验证的目的是增强微服务和保证微服务之间的通信安全。他主要负责如下功能：
 
-## Installation
+* 提供给网关一个统一的认证入口。
+* 提供微服务通信的统一的用户session保证。
+* 提供token管理系统，用来生成token，存储token， 撤销token。
 
-We assume that all changes to Hugo content and customizations are going to be tracked by git (GitHub, Bitbucket etc.). Develop locally, build on remote system.
+## 架构
 
-Before start real work:
+下图介绍了Choerodon 认证体系的架构。
 
-1. Initialize Hugo
-2. Install DocDock theme
-3. Configure DocDock and Hugo
+![架构](/img/docs/security/architecture.png)
 
-### Prepare empty Hugo site
+## 组成
 
-Create empty directory, which will be root of your Hugo project. Navigate there and let Hugo to create minimal required directory structure:
-```
-$ hugo new site .
-```
-AFTER that, initialize this as git directory where to track further changes
-```
-$ git init
-```
+### 认证服务器
 
-Next, there are at least three ways to install DocDock (first recommended):
+认证服务器，即专门用来处理认证的服务器。
 
-1. **As git submodule**
-2. As git clone
-3. As direct copy (from ZIP)
+### 资源服务器
 
-Navigate to your themes folder in your Hugo site and use perform one of following scenarios.
+资源服务器，即存放用户生成的资源的服务器。它与认证服务器，可以是同一台服务器，也可以是不同的服务器。
 
-### 1. Install DocDock as git submodule
+在Choerodon 中，资源服务器主要指系统中的一个个微服务。
 
-DocDock will be added like a dependency repo to original project. When using CI tools like Netlify, Jenkins etc., submodule method is required, or you will get `theme not found` issues. Same applies when building site on remote server trough SSH.
+## 工作流
 
-If submodule is no-go, use 3rd option.
+认证流程包含三个阶段， 授权阶段，鉴权阶段和使用阶段。
 
-On your root of Hugo execute:
+### 授权阶段
 
-```
-$ git submodule add https://github.com/vjeantet/hugo-theme-docdock.git themes/docdock
-```
-Next initialize submodule for parent git repo:
+1. 资源拥有者根据用户名和密码，调用授权服务器。
+2. 授权服务器校验用户名和密码，生成对应的token返回给客户端，并将token存储下来，用于之后的鉴权。
+3. 客户端将token存储在本地，用于之后每次请求的鉴权。
 
-```
-$ git submodule init
-$ git submodule update
-```
+### 鉴权阶段
 
-Now you are ready to add content and customize looks. Do not change any file inside theme directory.
+1. 客户端根据本地的token请求资源。
+2. 网关将根据token去授权服务器鉴权。
+3. 授权服务器将网关传来的token 和存储的token 进行对比，来确定本次操作是否是合法的。
 
-If you want to freeze changes to DocDock theme itself and use still submodules, fork private copy of DocDock and use that as submodule. When you are ready to update theme, just pull changes from origin to your private fork.
+### 使用阶段
 
-### 2. Install DocDock simply as git clone
-
-This method results that files are checked out locally, but won't be visible from parent git repo. Probably you will build site locally with `hugo` command and use result from `public/` on your own.
-
-```
-$ git clone https://github.com/vjeantet/hugo-theme-docdock.git themes/docdock
-```
-
-
-### 3. Install DocDock from ZIP
-
-All files from theme will be tracked inside parent repo, to update it, have to override files in theme. [ download following zip](https://github.com/vjeantet/hugo-theme-docdock/archive/master.zip) and extract inside `themes/`.
-
-```
-https://github.com/vjeantet/hugo-theme-docdock/archive/master.zip
-```
-Name of theme in next step will be `hugo-theme-docdock-master`, can rename as you wish.
-
-## Configuration
-
-[Follow instructions here]
+1. 鉴权通过，网关将token转化成包含用户信息的JWT token，并将JWT token 传给资源服务器。
+2. 资源服务器根据JWT token 解析成用户信息，执行资源操作。
