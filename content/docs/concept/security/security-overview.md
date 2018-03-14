@@ -1,8 +1,13 @@
 +++
-title = "安全管理"
+title = "概览"
 description = ""
-weight = 5
+weight = 1
 +++
+
+### 安全
+---
+
+介绍Choerodon的授权和认证功能。
 
 HUGO **v0.32** minimum required to use this theme
 
