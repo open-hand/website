@@ -3,29 +3,93 @@ title = "docs"
 description = ""
 +++
 
-# Hugo docDock theme
-[Hugo-theme-docdock ](https://github.com/vjeantet/hugo-theme-docdock) is a theme for Hugo, a fast and modern static website engine written in Go. Hugo is often used for blogs, **this theme is fully designed for documentati.**
+### 欢迎
+---
 
-This theme is a partial porting of the [Learn theme of matcornic ](https://github.com/matcornic/hugo-theme-learn). and its default style "flex" comes from [facette.io](https://github.com/facette)'s documentation.
+Choerodon的文档两部分组成，其一是Choerodon 企业级数字化服务平台；其二是Choerodon微服务应用框架。Choerodon 文档将详细介绍Choerodon 企业级数字化服务平台的架构、安装、配置、部署，以及如何使用等，并且介绍Choerodon微服务应用框架的架构、组件、开发、部署等。
 
-## Main features
-
-
-Style "Flex" (default)
+关于Choerodon的介绍，请参考Choerodon概览。
 
 
-Style "Original"
+### 了解和学习Choerodon 企业级数字化服务平台
+---
+
+Choerodon 企业级数字化服务平台提供一整套DevOps的最佳实践，从计划、编程、构建、测试、发布与运营等。
+
+#### 快速入门
+- 开发一个微服务前端
+- 开发一个微服务后端
+- 开发一个Web应用
+- 开发一个移动应用
+- 从用户故事到运营监控
+
+#### 安装与配置
+- 概述
+- 开发区
+- 运行区以及多运行区
+- 配置
+- 迁移
+- .deploy.yml文件说明
+- .gitlab-ci.yml文件说明
+- Dockerfile文件说明
 
 
-## Contribute to this documentation
-Feel free to update this content, just click the **Edit this page** link displayed on top right of each page, and pullrequest it
-Your modification will be deployed automatically when merged.
+#### 功能说明
+- 系统配置(IAM)
+- 敏捷管理
+- 持续集成
+- 持续部署
+
+#### 开发监控
+- 概述
+- Hygieia
+
+#### 运营监控
+- 概述
+- 主机
+- 服务
+- 前端
+- 调用链
+- 基础组件
+- 业务监控
+- 预警
+
+### 了解和学习Choerodon 微服务应用框架
+---
+
+Choerodon 微服务应用框架是基于多年企业应用服务的经验，面向微服务架构思想和分布式应用架构研发的分布式应用开发平台，以满足应用微服务化和混合云IT架构分布式应用的开发。
+
+#### 快速入门
+
+- 开发一个微服务前端
+- 开发一个微服务后端
+
+#### 开发手册
+
+- 后端开发
+- 前端开发1.1
+- 前端开发1.0
+- 后端环境部署
+- 前端项目部署
+- 前端开发1.2
+
+#### 功能说明
+
+- 概述
+- 客户端管理
+- 用户管理
+- 组织管理
+- 角色管理
+- LDAP 管理
+- 授权管理
+- 代码管理
+- 语言管理
+
+#### 最佳实践
+
+- 开发规范
+- 命名规范
+- 测试
 
 
-## Documentation website
-This current documentation has been statically generated with Hugo with a simple command : `hugo -t docdock` -- source code is [available here at GitHub](https://github.com/vjeantet/hugo-theme-docDock)
-
-Automatically published and hosted thanks to [Netlify](https://www.netlify.com/).
-
-Read more about [Automated HUGO deployments with Netlify](https://www.netlify.com/blog/2015/07/30/hosting-hugo-on-netlifyinsanely-fast-deploys/)
 
