@@ -1,13 +1,39 @@
 +++
-title = "安装指南"
+title = "运行区安装指南"
 description = ""
-weight = 2
+weight = 3
 banner = "img/banners/banner-1.jpg"
 +++
 
-# 部署区安装指南
+# 运行区安装指南
 
-> 本文以CentOS为例进行讲解。
+- 当前Choerodon运行区各服务版本信息如下
+
+    服务名	|服务组	|	服务代码	|	版本号
+    ---	|---	|	---	|	---
+    注册服务	|	com.hand.hapcloud	|	hap-register-server 	|	1.2.0
+    管理服务	|	com.hand.hapcloud	|	hap-manager-service 	|	1.2.0
+    配置服务	|	com.hand.hapcloud	|	hap-config-server	|	1.2.0
+    用户服务	|	com.hand.hapcloud	|	hap-user-service 	|	1.2.11
+    授权服务	|	com.hand.hapcloud	|	hap-oauth-server 	|	1.2.1
+    网关服务	|	com.hand.hapcloud	|	hap-api-gateway 	|	1.2.2
+    消息服务	|	com.hand.hapcloud	|	hap-event-store-service 	|	1.2.1
+    框架服务	|	com.hand.hapcloud	|	hap-framework-service	|	1.2.1
+    用户管理服务	|	com.hand.hapcloud	|	hap-user-admin-service  	|	1.2.0
+    K8S消息收集	|	com.hand.devops 	|	k8s-informer 	|	V0.1.1
+    K8S服务	|	com.hand.devops 	|	devops-kubernetes-service	|	1.1.0
+    文件服务	|	com.hand.devops 	|	hap-file-service 	|	1.1.0
+    部署服务	|	com.hand.devops 	|	devops-deploy-service	|	1.1.6
+    数据整合服务	|	com.hand.insight 	|	data-intergration-service	|	1.0.0
+    数据提供服务	|	com.hand.insight 	|	data-provide-service 	|	1.0.1
+    数据操作服务	|	com.hand.insight	|	data-operation-service 	|	1.0.0
+    移动服务	|	com.hand.mobile 	|	mobile-cloud-service 	|	1.0.0
+    框架前端	|	com.hand.hapcloud	|	hapcloud-front  	|	1.2.2
+    开发前端	|	com.hand.devops 	|	devops-front 	|	1.1.3
+    部署前端	|	com.hand.devops 	|	deploy-front 	|	1.1.5
+    洞察前端	|	com.hand.insight 	|	analysis-insight-front  	|	1.0.0
+    监控前端	|	com.hand.insight 	|	monitor-front	|	1.0.0
+    移动前端	|	com.hand.mobile 	|	mobile-front 	|	1.0.0
 
 ## 运行环境
 Kubernetes v1.8.5
@@ -55,18 +81,8 @@ Harbor(可选) | 1.1.1
     ```
     ansible-playbook -i  inventory/hosts -e @inventory/vars.yml dev-resource.yml
     ```
-1. 部署监控
-    - 在`vars.yml`定义监控参数，并在指定的节点创建目录`/etc/monitoring/alertmanager/data`，并赋777权限。执行以下命令开始搭建。
-
-    ```
-    ansible-playbook -i  inventory/hosts -e @inventory/vars.yml monitoring.yml
-    ```
-1. 部署日志
-    - 在`vars.yml`定义日志参数，并在指定的节点创建目录`/etc/logging/es-data`，授予777权限，执行以下命令开始搭建。
-
-    ```
-    ansible-playbook -i  inventory/hosts -e @inventory/vars.yml logging.yml
-    ```
+1. 手动部署监控[参考链接](../components/监控)
+1. 手动部署日志[参考链接](../components/日志)
 1. 创建部署区所需数据库
     - 若使用容器运行的mysql，可以参照以下命令进入容器创建数据库
 
