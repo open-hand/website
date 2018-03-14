@@ -6,9 +6,14 @@ description = ""
 ### 欢迎
 ---
 
-Choerodon的文档两部分组成，其一是Choerodon 企业级数字化服务平台；其二是Choerodon微服务应用框架。Choerodon 文档将详细介绍Choerodon 企业级数字化服务平台的架构、安装、配置、部署，以及如何使用等，并且介绍Choerodon微服务应用框架的架构、组件、开发、部署等。
+Choerodon猪齿鱼是一个开源企业服务平台，是基于Kubernetes的容器编排和管理能力，整合DevOps工具链、微服务和移动应用框架，来帮助企业实现敏捷化的应用交付和自动化的运营管理，并提供IoT、支付、数据、智能洞察、企业应用市场等业务组件，来帮助企业聚焦于业务，加速数字化转型。
 
-关于Choerodon的介绍，请参考Choerodon概览。
+Choerodon的文档两部分组成，即
+
+- Choerodon 企业级数字化服务平台
+- Choerodon微服务应用框架
+
+Choerodon 文档将详细介绍Choerodon 企业级数字化服务平台的架构、安装、配置、部署，以及如何使用等，并且介绍Choerodon微服务应用框架的架构、组件、开发、部署等。
 
 
 ### 了解和学习Choerodon 企业级数字化服务平台
@@ -45,11 +50,11 @@ Choerodon 企业级数字化服务平台提供一整套DevOps的最佳实践，�
 
 #### 功能说明
 
-- [01 - 系统配置]
-- [02 - 敏捷管理]
-- [03 - 持续集成]
-- [04 - 持续部署]
-- [05 - 洞察监控]
+- [01 - 系统配置](./user-guide/system-configuration)
+- [02 - 敏捷管理](./user-guide/scrum)
+- [03 - 持续集成](./user-guide/continuous-integration)
+- [04 - 持续部署](./user-guide/continuous-deployment)
+- [05 - 洞察监控](./user-guide/洞察监控)
 
 ### 了解和学习Choerodon 微服务应用框架
 ---
@@ -58,15 +63,15 @@ Choerodon 微服务应用框架是基于多年企业应用服务的经验，面�
 
 #### 快速入门
 
-- 01 - 开发一个微服务前端
-- 02 - 开发一个微服务后端
+- [01 - 开发一个微服务前端](./microservice-application-framework/quick-start/microservice-front)
+- [02 - 开发一个微服务后端](./microservice-application-framework/quick-start/microservice-backend)
 
 #### 开发手册
 
-- 01 - 后端开发
-- 02 - 前端开发
-- 03 - 后端环境部署
-- 04 - 前端项目部署
+- [01 - 后端开发](./microservice-application-framework/development-guide/)
+- [02 - 前端开发](./microservice-application-framework/development-guide)
+- [03 - 后端环境部署](./microservice-application-framework/development-guide)
+- [04 - 前端项目部署](./microservice-application-framework/development-guide)
 
 #### 功能说明
 
