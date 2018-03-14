@@ -2,3 +2,4 @@ weight: 3
 name: "新浪微博"
 icon: "img/socials/sina.jpg"
 description: "获取最新的新闻和动态"
+url: "https://weibo.com/choerodon"

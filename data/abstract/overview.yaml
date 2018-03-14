@@ -1,4 +1,4 @@
 weight: 1
 title: ""
-description: <h3><a href="https://en.wikipedia.org/wiki/Choerodon">Choerodon</a>是一个开源系统，是基于<a href="https://kubernetes.io/">Kubernetes</a>的企业级容器PaaS平台，包含DevOps套件、应用服务套件、数据服务、智能洞察开发流程和运营管理，并且完全支持混合云部署。</h3><p>以DevOps、微服务和云原生为核心理念，帮助传统企业提高业务敏捷度和加速交付节奏，为用户提供企业级应用集成、交付、运营一站式基础平台，助力实现数字化转型。</p>
+description: <h3><a href="https://en.wikipedia.org/wiki/Choerodon">Choerodon猪齿鱼</a>是一个开源企业服务平台，是基于<a href="https://kubernetes.io/">Kubernetes</a>的容器编排和管理能力，整合DevOps工具链、微服务和移动应用框架，来帮助企业实现敏捷化的应用交付和自动化的运营管理，并提供IoT、支付、数据、智能洞察、企业应用市场等业务组件，来帮助企业聚焦于业务，加速数字化转型。</h3><p>Choerodon猪齿鱼建立在多家大型企业应用实践的经验基础上，结合社区最佳的创意和实践。</p>
 image: "img/paas.png"
