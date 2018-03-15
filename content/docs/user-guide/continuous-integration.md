@@ -65,35 +65,35 @@ weight = 4
 
  1. 点击 `创建` 按钮。
 
-    ![](../assets/持续集成/创建服务.png)
+    ![](../assets/continuous-integration/创建服务.png)
 
  1. 输入 “服务编码” 、 “服务名称” 、以及 “服务组” ，并选择相应服务类型，点击 `创建` 按钮。
 
-    ![](../assets/持续集成/服务创建.png)
+    ![](../assets/continuous-integration/服务创建.png)
 
  1. 新建服务 “微服务0201” 已在服务管理列表中。
 
-    ![](../assets/持续集成/服务创建示意.png)
+    ![](../assets/continuous-integration/服务创建示意.png)
 
  1. gitlab已自动创建好对应服务类型的代码库 “webservice” 。点击 `仓库地址` ，可以查看该服务在gitlab的代码仓库。
 
-    ![](../assets/持续集成/仓库地址.png)
+    ![](../assets/continuous-integration/仓库地址.png)
 
-    ![](../assets/持续集成/gitlab仓库.png)
+    ![](../assets/continuous-integration/gitlab仓库.png)
 
 ### 停用/启用服务
 
  点击 `停用`，如： “微服务0201” 已停用，服务详情不可查看。 
 
-  ![](../assets/持续集成/停用服务.png)
+  ![](../assets/continuous-integration/停用服务.png)
 
-  ![](../assets/持续集成/停用服务示意.png)
+  ![](../assets/continuous-integration/停用服务示意.png)
 
  点击 `启用` ，如： “微服务0201” 已启用，可对该服务进行相关操作。
 
-  ![](../assets/持续集成/启用服务.png)
+  ![](../assets/continuous-integration/启用服务.png)
 
-  ![](../assets/持续集成/启用服务示意.png)
+  ![](../assets/continuous-integration/启用服务示意.png)
 
 <h2 id="2">分支管理</h2>
   
@@ -248,18 +248,18 @@ weight = 4
 
  1. 进入服务详情后，点击 `流水线` 页签。
 
-    ![](../assets/持续集成/流水线.png)
+    ![](../assets/continuous-integration/流水线.png)
 
  1. 查看服务CI pipeline的完成情况。
 
-    ![](../assets/持续集成/pipeline.png)
+    ![](../assets/continuous-integration/pipeline.png)
 
     注：版本命名方式：合并至develop：develop. + 年月日时分秒。
 
     Tag生成：版本号（三位号码，如：1.1.0。release修改前两位，hotfix修改第三位）。
     提交：每次提交代码的操作，自动生成Commit ID，由于字数多，平时多取前八位。
 
-    ![](../assets/持续集成/自动生成Commit.png)
+    ![](../assets/continuous-integration/自动生成Commit.png)
 
 <h2 id="4">服务版本</h2>
  
@@ -273,11 +273,11 @@ weight = 4
 
  1. 进入服务详情后，点击 `服务版本` 页签。
 
-    ![](../assets/持续集成/服务版本.png)
+    ![](../assets/continuous-integration/服务版本.png)
 
  1. 查看服务版本信息。
 
-    ![](../assets/持续集成/服务版本信息.png)
+    ![](../assets/continuous-integration/服务版本信息.png)
 
 <h2 id="5">代码质量</h2>
 
@@ -301,19 +301,19 @@ weight = 4
 
  1. 点击 `发布` 。
 
-    ![](../assets/服务发布/点击服务发布.png)
+    ![](../assets/continuous-integration/点击服务发布.png)
 
  1. 关键字搜索或直接从从下拉列表中选择部署文件发布的环境。
 
-    ![](../assets/服务发布/选择部署文件发布的环境.png)
+    ![](../assets/continuous-integration/选择部署文件发布的环境.png)
 
  1. 点击 `保存` 。
 
-    ![](../assets/服务发布/服务发布.png)
+    ![](../assets/continuous-integration/服务发布.png)
 
  1. 该服务部署文件已成功发布在开发或正式环境。
 
-    ![](../assets/服务发布/成功发布.png)
+    ![](../assets/continuous-integration/成功发布.png)
 
 ### 自动发布
 
@@ -325,14 +325,14 @@ weight = 4
 
   1. **项目所有者**可以勾选“是否自动发布” 。
 
-      ![](../assets/服务发布/自动发布.png)
+      ![](../assets/continuous-integration/自动发布.png)
 
   2. 在弹框中选择一个或多个环境。
 
-      ![](../assets/服务发布/选择一个或多个环境.png)
+      ![](../assets/continuous-integration/选择一个或多个环境.png)
 
   3. 点击 `保存` ，版本生成会自动发布部署文件至所选环境。
 
-      ![](../assets/服务发布/自动发布部署文件.png)
+      ![](../assets/continuous-integration/自动发布部署文件.png)
 
       >注：建议自动发布仅配置使用于开发/测试环境，而正式环境建议在UAT环境测试通过后进行手动发布。
