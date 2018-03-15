@@ -62,7 +62,7 @@ git config --global user.email "Your Email"
 
 ### Docker配置
 
-![](./images/dockerConfig1.png)
+![](../images/dockerConfig1.png)
 
 ## IntelliJ IDEA 安装配置
 

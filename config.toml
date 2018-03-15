@@ -10,7 +10,7 @@ defaultContentLanguage = "zh"
 disqusShortname = "devcows"
 # Enable Google Analytics by entering your tracking code
 googleAnalytics = ""
-
+prettyurls=true
 # Define the number of posts per page
 paginate = 10
 
@@ -133,7 +133,7 @@ paginate = 10
     longitude = "-77.028333"
 
 [Permalinks]
-    blog = "/blog/:year/:month/:day/:filename/"
+    blog = "/:sections/:slug"
 
 # Enable or disable top bar with social icons
 [params.topbar]
