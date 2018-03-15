@@ -1,7 +1,7 @@
 +++
 title = "持续部署"
 description = ""
-weight = 3
+weight = 4
 +++
 
 # 持续部署
@@ -183,11 +183,11 @@ weight = 3
  1. 点击`详情`，查看服务部署阶段和详情信息。
 
     ![](../assets/continuous-deployment/点击运行中详情.png)
-
+    
     ![](../assets/continuous-deployment/查看服务部署阶段.png)
 
     注：不同服务类型，部署阶段不同。
-
+    
     ![](../assets/continuous-deployment/服务部署阶段详情.png)
 
 ### 查看容器组列表

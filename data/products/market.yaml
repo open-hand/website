@@ -3,5 +3,4 @@ horizontal: 110
 vertical: 285
 name: "微服务"
 icon: "features_pic3.png"
-description: "Choerodon采用Spring Cloud作为微服务架构，容器为微服务提供的轻量级、面向应用的虚拟化运行环境和理想载体，并以Kubernetes作为容器编排工具，无缝结合微服务与容器技术
-。"
+description: "Choerodon采用Spring Cloud作为微服务架构，容器为微服务提供的轻量级、面向应用的虚拟化运行环境和理想载体，并以Kubernetes作为容器编排工具，无缝结合微服务与容器技术"
