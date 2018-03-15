@@ -6,9 +6,7 @@ weight = 3
 
 # Web应用
 
-  Web应用程序是一种可以通过Web访问的应用程序，目前仅支持以Java技术开发的Web应用。以DevOps平台为基础，将开发好的Java Web应用持续集成、持续部署、持续发布等一系列操作实现自动化。
-
-  本页面将介绍Java Web应用如何新建到部署等流程操作。使用本页面，你可以了解：
+  本页面介绍了以DevOps平台为基础，将Web应用从新建到部署等流程操作。使用本页面，你可以了解：
 
    - [新建服务](#1)
    - [服务版本](#2)
@@ -76,21 +74,21 @@ weight = 3
 
     ![](./assets/Web应用/选择环境.png)
 
-    注：[环境配置](https://github.com/choerodon/choerodon)
+    注：[环境配置](../system-configuration#5)
 
 1. 该服务部署文件已成功发布在某个环境。
 
     ![](./assets/Web应用/发布信息查看.png)
 
-1. 设置服务 “自动发布”，下一次生成的服务版本会自动发布到已配置的环境。[自动发布配置](https://github.com/choerodon/choerodon)
+1. 设置服务 “自动发布”，下一次生成的服务版本会自动发布到已配置的环境。[自动发布配置](../continuous-integration#6)
 
 <h2 id="4">新建资源</h2>
 
-1. 定义部署时需要使用的资源。[资源配置](https://github.com/choerodon/choerodon)
+1. 定义部署时需要使用的资源。[资源配置](../continuous-deployment#1)
 
 <h2 id="5">域名管理</h2>
 
-1. 目前**Web前端**及**Web应用**需配置域名，若不配置域名，不能进行外网访问该前端，只能查看系统提供的pod ip。[域名配置](https://github.com/choerodon/choerodon)
+1. 目前**Web前端**及**Web应用**需配置域名，若不配置域名，不能进行外网访问该前端，只能查看系统提供的pod ip。[域名配置](../continuous-deployment#3)
 
 <h2 id="6">服务部署</h2>
 
@@ -139,7 +137,7 @@ weight = 3
 
     ![](./assets/Web应用/页面访问.png)
 
-1. 用于保障系统稳定，验证某服务版本是否正常使用，验证正常后再转为正式部署。[灰度部署配置](https://github.com/choerodon/choerodon)
+1. 用于保障系统稳定，验证某服务版本是否正常使用，验证正常后再转为正式部署。[灰度部署配置](../continuous-deployment#4)
 
-1. **部署管理员**可以设置“自动部署”，设置了自动部署，服务版本发布了不再需要手动部署。[自动部署配置](https://github.com/choerodon/choerodon)
+1. **部署管理员**可以设置“自动部署”，设置了自动部署，服务版本发布了不再需要手动部署。[自动部署配置](../continuous-deployment#4)
 
