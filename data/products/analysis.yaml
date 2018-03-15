@@ -2,4 +2,4 @@ weight: 1
 horizontal: 0
 vertical: 30
 name: "应用弹性伸缩"
-description: "我们可以方便的通过Choerodon开发构建微服务、Web前端、移动、普通应用和Java库，并且Choerodon的用户可以利用Choerodon 微服务开发框架构建微服务和Web前端应用。同时，支持用户将现有的应用迁移到Choerodon。"
+description: "构建具有需求预测和容器按需供给能力的弹性伸缩系统，具有基于应用的负载和资源情况进行弹性伸缩能力，以应对未来用户高并发的趋势，应对流量冲击。其中，包括容器弹性伸缩、物理机弹性伸缩功能。"
