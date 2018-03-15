@@ -10,7 +10,7 @@ defaultContentLanguage = "zh"
 disqusShortname = "devcows"
 # Enable Google Analytics by entering your tracking code
 googleAnalytics = ""
-
+prettyurls=true
 # Define the number of posts per page
 paginate = 10
 
@@ -132,8 +132,8 @@ paginate = 10
     latitude = "-12.043333"
     longitude = "-77.028333"
 
-[Permalinks]
-    blog = "/blog/:year/:month/:day/:filename/"
+#[Permalinks]
+#    blog = "/:sections/:slug"
 
 # Enable or disable top bar with social icons
 [params.topbar]
@@ -200,8 +200,8 @@ paginate = 10
     enable = true
     icon = "fa fa-caret-right fa-lg"
     title = "想了解更多吗？"
-    subtitle = "我们为您准备了许多案例，包括几个完整的网站。"
-    link_url = "#"
+    subtitle = "我们为您准备了许多案例"
+    link_url = "/case-studies/"
     link_text = "去看看"
 
 [params.rounds]
@@ -262,7 +262,7 @@ paginate = 10
 
 [[languages.zh.menu.main]]
     name = "快速开始"
-    url  = ""
+    url  = "/docs/"
     weight = 8
     post = true
 

@@ -3,5 +3,4 @@ horizontal: 110
 vertical: 285
 name: "业务服务组件"
 icon: "features_pic3.png"
-description: "Choerodon提供一整套完整的监控工具来监控PaaS平台，在软件交付生产的各个环节建立数据收集和度量，使得团队能够根据交付过程当中的瓶颈做出必要的改进，监控主要包含开发类指标、日志和微服务调用链三类信息。
-"
+description: "Choerodon不仅提供基础的PaaS能力，而且还封装了IoT、支付、数据、智能洞察、企业应用市场等业务能力，帮助企业更加快捷高效地构建应用服务"

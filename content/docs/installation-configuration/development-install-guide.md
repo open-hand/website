@@ -59,7 +59,7 @@ Kubernetes v1.8.5
 
 > 搭建Devops平台时，默认已经搭建好K8S集群，若未搭建请[移步K8S集群搭建](https://rdc.hand-china.com/gitlab/rdc_hip/kubeadm-ansible)
 
-## 依赖组件
+## 依赖组件
  名称| 版本
  ---|---
  Gitlab| 10.2.0
