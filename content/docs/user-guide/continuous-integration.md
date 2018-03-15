@@ -1,7 +1,7 @@
 +++
 title = "持续集成"
 description = ""
-weight = 4
+weight = 3
 +++
 
 # 持续集成
@@ -119,25 +119,25 @@ weight = 4
  
  分支使用流程包括四个部分：新建分支、拉下分支至本地开发、开发完提交代码/解决冲突、结束分支。
 
- ![GitFlow 使用流程](../assets/持续集成/GitFlow使用流程.png)
+ ![GitFlow 使用流程](../assets/continuous-integration/GitFlow使用流程.png)
 
 ### 新建分支
 
  1. 点击`创建Feature`/`创建Release`/`创建Hotfix`按钮，创建对应分支。
 
-    ![创建 Feature 示意](../assets/持续集成/创建Feature.png)
-
-    ![创建 Release/Hotfix 分支按钮示意](../assets/持续集成/创建Release.png)
+    ![创建 Feature 示意](../assets/continuous-integration/创建Feature.png)
+    
+    ![创建 Release/Hotfix 分支按钮示意](../assets/continuous-integration/创建Release.png)
 
  1. 输入`Issue`编码或版本号。点击`保存`按钮。
     
     `Feature`/`Hotfix` 分支创建时输入`Issue`编码作为分支名。
      
-    ![输入 issue 编码示意图](../assets/持续集成/输入Issue.png)
+    ![输入 issue 编码示意图](../assets/continuous-integration/输入Issue.png)
    
     `Release` 分支创建时会自动生成下一个版本号，也可以手动输入需要的版本号。（版本号由三个数字组成，中间以小数点间隔。如：`1.1.0`。`Release` 版本号默认为末位清零，中间一位进一）。
 
-    ![Release 分支版本号示意](../assets/持续集成/分支版本号示意.png)
+    ![Release 分支版本号示意](../assets/continuous-integration/分支版本号示意.png)
 
 ### 结束分支
  
