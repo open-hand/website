@@ -5,8 +5,9 @@ weight = 2
 type = "docs"
 +++
 
-### 系统架构
 ---
+### 系统架构
+
 Choerodon采用Spring Cloud作为微服务架构，本文介绍Spring Cloud微服务架构的概念并描述了Spring Cloud的功能，然后介绍基于Spring Cloud的各个组件搭建Choerodon的微服务整体架构，并对总体架构进行了设计和说明。
 
 将从如下几个方面介绍：
@@ -25,8 +26,9 @@ Choerodon采用Spring Cloud作为微服务架构，本文介绍Spring Cloud微�
     - [服务监控](#服务监控)
     - [调用链追踪](#调用链追踪)
 
-### 企业级系统服务架构演进
 ---
+### 企业级系统服务架构演进
+
 
 #### 单体应用
 
@@ -63,9 +65,9 @@ Choerodon采用Spring Cloud作为微服务架构，本文介绍Spring Cloud微�
 
 ![](/img/docs/concept/system-infrastructure-increment.png)
 
-
-### Choerodon 微服务架构
 ---
+### Choerodon 微服务架构
+
 
 Choerodon 是基于Spring Cloud构建的微服务系统。构件一套完整的微服务架构需要考虑许多问题，包括API Gateway、服务间调用、服务发现、服务容错、服务部署、数据调用等。基于Spring Cloud构建微服务架构可以通过自动配置和绑定Spring环境和其他Spring编程模型来实现微服务。采用Spring Boot应用程序提供的集成功能，通过几个简单的注释，开发人员可以快速配置和启用应用程序中的常见功能模块，并使用久经考验的Netflix组件构建大型分布式系统。 提供的微服务功能模块包括服务发现（Eureka），断路器（Hystrix），智能路由（Zuul）和客户端负载均衡（Ribbon）等。下图显示了采用Spring Cloud系列平台构建的微服务整体架构。
 
