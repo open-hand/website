@@ -3,5 +3,4 @@ horizontal: 110
 vertical: 285
 name: "业务服务组件"
 icon: "features_pic3.png"
-description: "Choerodon不仅提供基础的PaaS能力，而且还封装了IoT、支付、数据、智能洞察、企业应用市场等业务能力，帮助企业更加快捷高效地构建应用服务。
-"
+description: "Choerodon不仅提供基础的PaaS能力，而且还封装了IoT、支付、数据、智能洞察、企业应用市场等业务能力，帮助企业更加快捷高效地构建应用服务"
