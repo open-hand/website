@@ -1,7 +1,7 @@
 weight: 4
 horizontal: 15
 vertical: 165
-name: "智能洞察（DevOps相关数据可视化，运营监控）"
+name: "智能洞察"
 icon: "features_pic3.png"
-description: "在应用PaaS环境，Choerodon通过Gitlab CI/CD产生软件应用的版本，例如2.0.3，Choerodon将2.0.3发布到生产PaaS环境，然后在生产PaaS环境部署应用版本，同时也可以进行灰度发布。
+description: "Choerodon提供一整套完整的监控工具，在软件交付生产的各个环节建立数据收集和度量，使得团队能够根据交付过程当中的瓶颈做出必要的改进，监控主要包含开发类指标、日志和微服务调用链三类信息。
 "

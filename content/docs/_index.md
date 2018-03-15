@@ -10,8 +10,8 @@ Choerodon猪齿鱼是一个开源企业服务平台，是基于Kubernetes的容�
 
 Choerodon的文档两部分组成，即
 
-- Choerodon 企业级数字化服务平台
-- Choerodon微服务应用框架
+- **Choerodon 企业级数字化服务平台**
+- **Choerodon微服务应用框架**
 
 Choerodon 文档将详细介绍Choerodon 企业级数字化服务平台的架构、安装、配置、部署，以及如何使用等，并且介绍Choerodon微服务应用框架的架构、组件、开发、部署等。
 

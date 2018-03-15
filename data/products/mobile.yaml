@@ -3,5 +3,5 @@ horizontal: 110
 vertical: 285
 name: "移动应用"
 icon: "features_pic3.png"
-description: "Choerodon可以统一管理系统的API，允许从现有数据和服务创建和管理API。并将安全性、流量管理、接口转换、编排和路由功能添加到API中。同时，监控来自各个应用程序的流量，为业务提供洞察和运营指标等，开发者和应用程序提供注册、API文档、社区交流管理和API货币化相关功能
+description: "内置模块化、可配置化的移动应用开发框架，同时支持iOS和Android两大平台，能够进行方便快捷的热更新和自更新，并支持移动端多版本管理机制
 。"
