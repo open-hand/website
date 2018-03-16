@@ -1,4 +1,4 @@
-baseurl = "https://choerodon.io"
+baseurl = "http://35.229.102.205/"
 title = "choerodon"
 theme = "hugo-choerodon-theme"
 # themesDir = "../.."
@@ -119,7 +119,7 @@ paginate = 10
     # Format dates with Go's time formatting
     date_format = "January 2, 2006"
 
-    logo = "img/logo.png"
+    logo = "/img/logo.png"
     address = """<p><strong>Universal Ltd.</strong>
         <br>13/25 New Avenue
         <br>Newtown upon River
