@@ -15,7 +15,7 @@ weight = 3
    - [域名管理](#5)
    - [服务部署](#6)
 
-   在操作之前保证[系统配置](../system-configuration)已经配置完全。
+   在操作之前保证[系统配置](../../user-guide/system-configuration)已经配置完全。
 
 <h2 id="1">新建服务</h2>
 
@@ -24,7 +24,7 @@ weight = 3
 
 1. 点击`创建`按钮。
 
-    ![](./assets/Web应用/服务创建.png) 
+    ![](../assets/web-application/服务创建.png) 
 
 1. 输入 “服务编码” 、 “服务名称” 、以及 “服务组” ，并选择相应服务类型，点击 `创建` 按钮。
 
@@ -32,15 +32,15 @@ weight = 3
 
     b. 服务组输入不能包含中文或大写字母,不能以'.'开头或结尾
 
-    ![](./assets/Web应用/服务创建数据填写.png) 
+    ![](../assets/web-application/服务创建数据填写.png) 
 
 1. 新建服务 “application0307” 已在服务管理列表中。
 
-    ![](./assets/Web应用/服务列表.png)
+    ![](../assets/web-application/服务列表.png)
 
 1. gitlab已自动创建好对应服务类型的代码库 “application0307” 。点击 `仓库地址` ，可以查看该服务在gitlab的代码仓库。
 
-    ![](./assets/Web应用/仓库地址.png) 
+    ![](../assets/web-application/仓库地址.png) 
 
 1. 上传Web应用代码到新建的gitlab仓库。
 
@@ -53,11 +53,11 @@ weight = 3
 
 1. 查看流水线信息。进入服务详情后， 查看服务CI pipeline的完成情况，只有CI各个阶段跑成功了才会生成一条服务版本信息。
 
-    ![](./assets/Web应用/流水线.png)
+    ![](../assets/web-application/流水线.png)
 
 1. 查看服务版本信息。
 
-    ![](./assets/Web应用/服务版本.png)
+    ![](../assets/web-application/服务版本.png)
 
 <h2 id="3">服务发布</h2>
 
@@ -68,27 +68,27 @@ weight = 3
 
 1. 点击 `发布` 。
 
-    ![](./assets/Web应用/发布.png)
+    ![](../assets/web-application/发布.png)
 
 1. 关键字搜索或直接从从下拉列表中选择部署文件发布的环境，已发布的环境不能重新发布。发布的环境需要先在组织层配置。
 
-    ![](./assets/Web应用/选择环境.png)
+    ![](../assets/web-application/选择环境.png)
 
-    注：[环境配置](../system-configuration#5)
+    注：[环境配置](../../user-guide/system-configuration#5)
 
 1. 该服务部署文件已成功发布在某个环境。
 
-    ![](./assets/Web应用/发布信息查看.png)
+    ![](../assets/web-application/发布信息查看.png)
 
-1. 设置服务 “自动发布”，下一次生成的服务版本会自动发布到已配置的环境。[自动发布配置](../continuous-integration#6)
+1. 设置服务 “自动发布”，下一次生成的服务版本会自动发布到已配置的环境。[自动发布配置](../../user-guide/continuous-integration#6)
 
 <h2 id="4">新建资源</h2>
 
-1. 定义部署时需要使用的资源。[资源配置](../continuous-deployment#1)
+1. 定义部署时需要使用的资源。[资源配置](../../user-guide/continuous-deployment#1)
 
 <h2 id="5">域名管理</h2>
 
-1. 目前**Web前端**及**Web应用**需配置域名，若不配置域名，不能进行外网访问该前端，只能查看系统提供的pod ip。[域名配置](../continuous-deployment#3)
+1. 目前**Web前端**及**Web应用**需配置域名，若不配置域名，不能进行外网访问该前端，只能查看系统提供的pod ip。[域名配置](../../user-guide/continuous-deployment#3)
 
 <h2 id="6">服务部署</h2>
 
@@ -99,45 +99,45 @@ weight = 3
 
 1. 点击 `部署管理`  ，点击 `服务` ，查看服务列表。
 
-    ![](./assets/Web应用/运行区服务列表.png)
+    ![](../assets/web-application/运行区服务列表.png)
 
 1. 点击`详情`。
 
-    ![](./assets/Web应用/服务详情.png)
+    ![](../assets/web-application/服务详情.png)
 
 1. 查看该服务版本信息。
 
-    ![](./assets/Web应用/服务版本1.png)
+    ![](../assets/web-application/服务版本1.png)
 
 1. 在服务列表中找到要部署的服务，点击`详情`，例如"yshap180306"。
 
-    ![](./assets/Web应用/要部署的服务.png)
+    ![](../assets/web-application/要部署的服务.png)
 
 1. 选择发布的版本，点击`部署服务`。
 
-    ![](./assets/Web应用/运行区服务版本.png)
+    ![](../assets/web-application/运行区服务版本.png)
 
 1. 进行资源选择，点击`部署`。
 
-    ![](./assets/Web应用/服务部署.png)
+    ![](../assets/web-application/服务部署.png)
 
     注：服务第一次部署需要自己手动填写资源，再次部署页面会显示上一次部署选择的资源。选择资源一定要谨慎，选择错误严重会导致数据库数据丢失。
 
 1. 点击`详情`，可在运行中查看正在部署/运行的版本，以及对容器数量进行调整。
 
-    ![](./assets/Web应用/服务运行.png)
+    ![](../assets/web-application/服务运行.png)
 
     注：可用容器数量、当前容器数量、期望容器数量都为1时，代表该服务已经部署好了。期望容器数量的加减实际是对kubernetes的pod数量的加减，例如期望容器数量为2，代表kubernetes启动了2个pod，其中一个挂了，还能保证程序正常使用，目前期望容器数量不可为0。
 
 1. 点击`详情`，查看服务`部署阶段`，点击`部署`阶段，点击域名地址访问。
 
-    ![](./assets/Web应用/域名查看.png)
+    ![](../assets/web-application/域名查看.png)
 
     > 注：如果没有配置域名，此处显示的是IP地址。
 
-    ![](./assets/Web应用/页面访问.png)
+    ![](../assets/web-application/页面访问.png)
 
-1. 用于保障系统稳定，验证某服务版本是否正常使用，验证正常后再转为正式部署。[灰度部署配置](../continuous-deployment#4)
+1. 用于保障系统稳定，验证某服务版本是否正常使用，验证正常后再转为正式部署。[灰度部署配置](../../user-guide/continuous-deployment#4)
 
-1. **部署管理员**可以设置“自动部署”，设置了自动部署，服务版本发布了不再需要手动部署。[自动部署配置](../continuous-deployment#4)
+1. **部署管理员**可以设置“自动部署”，设置了自动部署，服务版本发布了不再需要手动部署。[自动部署配置](../../user-guide/continuous-deployment#4)
 
