@@ -354,5 +354,354 @@ weight = 1
 ### 删除用户组
 
    点击 `删除` ，删除当前用户组。
+    ![](../assets/system-configuration/删除用户组.png)
 
-   ![](../assets/system-configuration/删除用户组.png)
+
+
+
+
+
++++
+title = "Configuration"
+description = ""
+weight = 1
++++
+
+# Configuration
+  
+  This chapter introduces the system configuration that needs to be performed before the user uses system functions, for the user doing operations, such as [Scrum management] (../scrum), [Continuous-integration] (../continuous-integration), [Continuous-deployment] (../continuous-deployment). The system configuration is completed by the platform administrator, project creator, project owner, and other high authority roles. Each module contains its conceptual definition, main functions, and other considerations. Through this page, you can learn about these things, as follows：
+
+   - [Role Management](#1)
+   - [User Management](#2)
+   - [Role Assignment](#3)
+   - [Project Management](#4)
+   - [Environment Management](#5)
+   - [User group Management](#6)
+
+
+<h2 id="1">Role Management</h2>
+  
+  A role is a set of permissions. When the user performs certain operations, the system checks whether the user has the corresponding rights in the role. Therefore, the role needs to be set according to actual use. After assigning a role to a user, the user has the corresponding operation authority. This module will detail how to manage the role.  
+  - **Menu hierarchy**：Organization Layout
+  - **Menu path**：Management > Role
+  - **Default role **：Platform Administrator
+
+### Create Role
+
+   1. Click `Create` ，and then input “Name”, “Role code”, finally set it whether to enable and to editable.
+
+      ![](../assets/系统配置/添加权限.png)
+
+   1. Click `Add permission`，select the appropriate permissions required, and click `Confirm` to create the permissions. 
+      ![](../assets/系统配置/确定权限.png)
+
+      Note：[API Permission list]()
+
+### The permission of roles configuration.
+
+   1. For existing roles, click `Edit`, or click `Edit` from the details interface.
+
+      ![](../assets/系统配置/编辑角色.png)
+
+1.	Modify the information of role, as well as permissions, Click `add permission`.
+
+      ![](../assets/系统配置/修改添加权限.png)
+
+   1. Add or delete permissions, click `OK`.
+
+      ![](../assets/系统配置/确定修改权限.png)
+
+### Disable or enable roles
+ 
+   Click `Disable`, this role will not be assigned to the users.
+
+   Click `Enable`, this role could be assigned to the appropriate user.
+
+   ![](../assets/系统配置/停用角色.png)
+
+### The instructions for adding permissions to a role
+   
+   Note: The permission list of existing roles needed manual configuration.
+   
+   Role name | Permission name | Permission description | Permission layout
+   --- | --- | --- | ---
+   Project creator | hap-user-service.password-policy.queryOrganization | Query the password policy of target organization | organization
+   Project creator | hap-devops-service.environment.listEnvironment Query the information of all environment | organization
+   Project creator | hap-devops-service.environment.createEnvironment | Create environment | organization
+   Project creator | hap-devops-service.environment.checkEnvironmentByName | Query whether the environment name is available | organization
+   Project creator | hap-devops-service.environment.listEnvironmentByPageSize | Paging query environment’s information | organization
+   Project creator | hap-devops-service.environment.getEnvironmentByEnvironmentId | Query the detail information of environment | organization
+   Project creator | hap-devops-service.environment.updateEnvironment | Update environment | organization
+   Project creator | hap-devops-service.environment.deleteEnvironmentByEnvironmentId | Delete environment | organization
+   Project creator | hap-devops-service.project.checkProject | Query Project code and whether name is unique | organization
+   Project creator | hap-user-service.project.select | Paging query project | organization
+   Project creator | hap-user-service.project.create | Add project, an organization and force current user to belong organization | organization
+   Project creator | hap-user-service.project.checkProjectCode | checkProjectCode | organization
+   Project creator | hap-user-service.project.queryOrganizationProject | Query the project according to the organization id | organization
+   Project creator | hap-user-service.user.select | Paging to query | organization
+   Project creator | hap-user-service.user.create | Add new users | organization
+   Project creator | hap-user-service.user.query | Delete all users according ID| organization
+   Project creator | hap-user-service.user.updateUser | Query the user according to the user id | organization
+   Project creator | hap-user-service.organization.query | Query organization according to the organization id | organization
+   Project creator | hap-user-service.role.selectOrganizationRole | Query the list of organization roles assignable | organization
+   Project creator | hap-user-service.project.update | According to ID to modify the project information, it only can modify the project of its own organization. | organization
+   Project Owner | hap-user-service.project.query | According to ID to query the project information, it only can query the project of its own organization. | project
+   Project Owner | hap-user-service.member-role-project.select | Query the project member roles | project
+   Project Owner | hap-user-service.member-role-project.create | Create new member roles in the project layout | project
+   Project Owner | hap-user-service.member-role-project.update | Update the member roles in the project layout | project
+   Project Owner | hap-user-service.member-role-project.createSingle | Create new member roles in the project layout | project
+   Project Owner | hap-user-service.member-role-project.delete | Delete the member roles in the project layout | project
+   Project Owner | hap-user-service.role.selectProjectRole | 	Query the list of the project role assignable | project
+   Project Owner | hap-user-service.role.selectProjectRoleGroupByService |Query the list of the project role assignable (Group on the results to base itself on service) | project
+   Source code manager | hap-user-service.project.query | Query the project according to Id, you only can query the project of your own organization. | project
+   Project member | hap-user-service.project.query | Query project according to the Id, you only can query the project of your own organization. | project
+   Kanban owner | hap-user-service.project.query | Query project according to the Id, you only can query the project of your own organization.| project
+   Kanban member | hap-user-service.project.query | Query project according to the Id, you only can query the project of your own organization. | project
+  Development monitor | hap-user-service.project.query | Query project according to the Id, you only can query the project of your own organization. | project
+   Deployment monitor | hap-user-service.groups.select | Query Group | organization
+   Deployment monitor | hap-user-service.groups.create | Create Group | organization
+   Deployment monitor | hap-user-service.groups.query | Query Group | organization
+   Deployment monitor | hap-user-service.groups.update | Update Group | organization
+   Deployment monitor | hap-user-service.groups.delete | Delete Group | organization
+   Deployment monitor | hap-user-service.user-groups.insertUserGroups | Create userGroups | organization
+   Deployment monitor | hap-user-service.user-groups.delete | Delete userGroups | organization
+
+<h2 id="2">User management</h2>
+  
+  This module provides the functions of user management, such as creating new users and maintaining user information. Users can also be imported in bulk by other systems.
+
+  - **Menu hierarchy**：Organization Layout
+  - **Menu path**：IAM > User Management
+  - **Default role**：Platform administrator, Project creator
+
+### Create the new user
+
+   1. Click `Create`.
+
+      ![](../assets/系统配置/创建用户.png)
+
+   1. Enter the information of user, and then click `create` to accomplish the creation.
+
+      ![](../assets/系统配置/填写信息创建用户.png)
+
+   1. The new user “ZhangSan” has already in the user list，gitlab automatically generate the same user "Zhang San".
+
+      ![](../assets/系统配置/新用户创建成功.png)
+
+### View the detail of user
+
+   1. Click `Detail`, enter into the user detail interface.
+      ![](../assets/系统配置/点击用户详情.png)
+
+   1. View the information
+
+      ![](../assets/系统配置/用户详细信息.png)
+
+### Edit the users’ information
+
+   1. Click `Edit`, enter into the	user’s compile interface. It is another way enter into the user’s compile interface that click the edit button in the user’s detail interface.
+
+      ![](../assets/系统配置/点击用户编辑.png)
+  
+   1. Modify the users’ information, and click `Save`, so the user’s information can be completely modified.
+
+
+      ![](../assets/系统配置/保存用户信息编辑.png)
+
+### Delete users
+
+   1. Click `Delete`.
+
+      ![](../assets/系统配置/点击删除用户.png)
+
+   1. Click `Delete` again, and the user can be delete successfully.
+
+      ![](../assets/系统配置/确认删除用户.png)
+
+<h2 id="3">Role Assignment </h2>
+  
+  Role Assignment offer the authority management to the platform administrator and the Project Owner, for the purpose of having appropriate authority about using resource. It not only can add the members and assign roles to them, but also adjust the role of existing member. Note: You need to select the corresponding organization or project before entering the role assignment. And the role control range is different.
+
+  - **Menu hierarchy**：Organization Layout/Project Layout
+  - **Menu path**：IAM > Role Assignment
+  - **Default role**：Platform Administrator, Project Owner 
+
+### Add up roles
+
+   1. If the assignment user is not in the `Organization/Project`, you should click the `add` and add up the role.
+
+      ![](../assets/系统配置/添加角色.png)
+
+      For example: When the user “25777” does not belong to “演示项目0131”, and then you should click the `Add`, input the user’s name and assign the authority of users.
+
+      ![](../assets/系统配置/添加成员.png)
+
+   1. If the client has existed in the list of role management, you should click the ▼ sign, and then you should select one or a batch of roles to assign.	
+
+      ![](../assets/系统配置/分配成员角色.png)
+
+  For example, after create a new user, the platform will auto assign a role of “organizational viewer”. If the user exist in the list of role management, you can assign a role to them directly, click `Save`, finishing the modification of role.
+      ![](../assets/系统配置/创建完成示例.png)
+
+      ![](../assets/系统配置/保存角色分配.png)
+
+   _tips：You can input the name or nickname of the user in the search bar, then enter. Then you get the user.   
+   ![](../assets/系统配置/搜索用户.png)
+
+Note：** The list of Role permission **
+  
+  The following table shows the common roles and corresponding functions used by the platform
+
+   Role | permission | Layout
+--- | --- | ---
+  Platform Administrator |Menu Management, Role Management, User Management (initialize import), Role Assignment (Global Layout) and all functions excerpt for Service Release | System layout
+  Project creator | User Management, Project Management, Environment Management, User group Management| Organization Layout
+  Development monitor| Resource Management, Gateway Management, Domain name Management, Service Management, Service Deployment, Deployment details (Stages and logs), Auto Deploy | Organization Layout
+  Project Owner | Role Assignment (Under all services) Service Creation, Service Detail, Branch Management, Service Version, Code quality, Service Release, Auto release | Project Layout
+  Source code administrator | Service Creation, Service details, Branch Management, Service Version, Code quality Check, Service Release | Project Layout
+  Project Members | Service detail, Branch Management, Service Version, Code quality, Service Release | Project Layout
+  Kanban Project Owner | Story Management, Sprint Management, Tasks and bugs| Project Layout
+  Kanban members | Story Management, Sprit Management, Task and bugs | Project Layout
+  Deployment monitoring viewer| Full process information monitoring and viewing.| Project Layout
+### Delete Role
+
+   1. Click `Delete`.
+
+      ![](../assets/系统配置/点击删除角色.png)
+
+   1. Click `Delete`, and the user no longer belong to the Organization/Project.
+
+      ![](../assets/系统配置/删除角色.png)
+
+<h2 id="4">Project Management </h2>
+
+  In accordance with the case of the enterprise products’ R&D, it should split the group. We suggest that you should treat a scrum project management team as a project unit. Meanwhile, the project management should offer the function of project operation. 
+  - **Menu hierarchy**：Organization Layout
+  - **Menu path**：IAM > Project
+  - **Default role**：Platform Administrator、Project owner
+
+### Create a new project
+
+   1. Click `Create`.
+
+      ![](../assets/系统配置/创建项目.png)
+
+   1. Enter “Project Number” 和 “Project name”, and click `Create`.
+
+      ![](../assets/系统配置/输入项目信息创建项目.png)
+
+   1. “演示0131” has already in the project management list, and gitlab will automatically generate the corresponding the group “演示0131”.
+
+      ![](../assets/系统配置/新创建项目示意.png)
+
+### Edit the information of project.
+
+   1. Click `Edit`, and then enter into the interface of editing project.
+
+      ![](../assets/系统配置/编辑项目信息.png)
+
+   1. Modify `Project Name`, and click `Save`.
+
+      ![](../assets/系统配置/保存项目信息.png)
+
+### Disable /enable Project
+
+  Click `Disable`, and after it is blocked up, the other operation of the project cannot be in process.
+
+  ![](../assets/系统配置/禁用项目.png)
+
+  Click `Enable`, the project can recover to the normal use after enable it.
+
+
+  ![](../assets/系统配置/启用项目.png)
+
+<h2 id="5">Environment Management </h2>
+  
+  It is used by platform administrator and Project creator, configure the environment message according to the different usage.	It is not only create environment and delete environment, but also can edit and modify the environment detail information. 
+  
+  Platform administrators and project creators can manage the environmental information of an organization from the organization layout, and these environments inherit from all the projects under the organization. The project owner can manage the environmental information of a project from the project layout. And these are created by the project layer. Source code administrators, project members can only be view in the list of environments that available for the project from the project level (including those created on this project and inherited by the organization).
+  
+  Common environment: Test environment, UAT environment and production environment, etc.
+
+  - **Menu hierarchy**：Administration / project Layout
+  - **Menu path**：Development management > Environment
+  - **Default role**：Platform Administrator, Project Creator, Project Owner, Source Code Administrator, Project Member
+
+### Create environment
+
+   1. Click `create`.
+
+      ![](../assets/系统配置/创建环境.png)
+
+   1. Enter “environment name”, “environment URL”, “environment token”, Click `Test connection`. If the environment URL and the token are correct, it will hint the “Success for connection”; if it hint the “loss for connection”, please modify the correct environment ID or secret password, and then click `create`.
+
+      ![](../assets/系统配置/测试环境链接.png)
+
+### Edit the information of environment
+
+   1. Click `Edit`, and then enter into the edit interface.
+
+      ![](../assets/系统配置/点击编辑环境.png)
+
+   1. Modify the environment information, such as the name of environment, and then click `Save`.
+      ![](../assets/系统配置/保存环境修改.png)
+
+   1. Modify the “Environment Name” has done.
+
+      ![](../assets/系统配置/环境修改完成.png)
+
+### Disable/Enable environment
+
+   1. Click `Disable`. Environment “Charlietest” has been blocked up, and after blocked up, the environment will be unavailable.
+      ![](../assets/系统配置/停用环境.png)
+
+      ![](../assets/系统配置/环境被停用.png)
+
+   1. The environment of the “Charlietest” has been enable, after enable it, the environment is available. 
+
+      ![](../assets/系统配置/启用环境.png)
+
+      ![](../assets/系统配置/环境被启用.png)
+
+### Delete environment
+
+   1. Click `Delete`.
+      ![](../assets/系统配置/删除环境.png)
+
+   1. After verified, click `Delete`.
+
+      ![](../assets/系统配置/确认删除环境.png)
+
+<h2 id="6"> User group management </h2>
+
+  The user group is a combination of different groups of users, mainly used to select individual user groups for test verification during grayscale deployment. User group management includes users who create, edit, delete user groups, and manage the user groups. 
+
+  - **Menu hierarchy**：Administration Layout
+  - **Menu path**：User management > User Group
+  - **Default role**：Platform administrator, deployment manager
+
+### Edit User Group
+
+   1. Click `edit`.
+
+      ![](../assets/系统配置/编辑用户组.png)
+
+   1.  For modifying the information of User groups, click `edit`.
+
+      ![](../assets/系统配置/修改用户组.png)
+
+### Add users on the User group
+
+   1. Click `Add user`.
+
+      ![](../assets/系统配置/用户组添加用户.png)
+
+   1. Click `Add`, and select users needed to add. If you need to delete a user, uncheck it.
+      ![](../assets/系统配置/用户组勾选用户.png)
+
+### Delete the user group
+
+   Click `Delete`, and delete existing User group.
+
+   ![](../assets/系统配置/删除用户组.png)
+

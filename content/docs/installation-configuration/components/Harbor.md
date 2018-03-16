@@ -5,7 +5,22 @@ weight = 3
 banner = "img/banners/banner-1.jpg"
 +++
 
-## 搭建所需镜像及文件
+## Harbor 安装
+
+介绍 Harbor 的安装和配置，Choerodon 使用 Harbor 作为私有镜像库。
+
+- <font>[安装所需镜像及文件](#安装所需镜像及文件)</font>
+- <font>[使用外部数据库](#使用外部数据库)</font>
+- <font>[安装Harbor](#安装harbor)</font>
+    - <font>[生成配置](#生成配置)</font>
+    - <font>[开始安装](#开始安装)</font>
+- <font>[访问](#访问)</font>
+    - <font>[使用HTTP进行访问](#使用http进行访问)</font>
+    - <font>[使用HTTP进行访问](#使用http进行访问)</font>
+    - <font>[使用HTTPS进行访问](#使用https进行访问)</font>
+
+--- 
+## 安装所需镜像及文件
  - 镜像列表 
 
      ```
@@ -20,7 +35,7 @@ banner = "img/banners/banner-1.jpg"
      ```
      git clone https://rdc.hand-china.com/gitlab/rdc_hip/devops-install-docs.git
      ```
-
+---
 ## 使用外部数据库
 
  > 如果使用自带数据库请忽略此步骤。
@@ -38,7 +53,8 @@ banner = "img/banners/banner-1.jpg"
  
  1. 将`devops-install-docs/devops/harbor/registry.sql`文件内容放到数据库执行初始化表结构。
 
-## 部署Harbor
+---
+## 安装Harbor
 ### 生成配置
  
   > 进入`devops-install-docs/devops/harbor`目录，下文我们将以此目录进行讲解。搭建后若使用https进行访问，请先阅读[访问](#访问)。
@@ -73,7 +89,7 @@ banner = "img/banners/banner-1.jpg"
   
   - **注意:** 如果使用已有数据库实例，则不需要修改storage.pv.yaml的配置，并且在后面的部署操作中，有关mysql的部署操作请全部忽略。
 
-### 开始部署
+### 开始安装
   1. 创建命名空间harbor：
   
       ```
@@ -112,7 +128,7 @@ banner = "img/banners/banner-1.jpg"
       ```
       kubectl get po -n harbor
       ```
-
+---
 ## 访问
 
 ### 使用HTTP进行访问
@@ -145,7 +161,7 @@ banner = "img/banners/banner-1.jpg"
       systemctl daemon-reload && systemctl restart docker
       ```
  
-### 使用HTTPS进行访问(以下方式二选一)
+### 使用HTTPS进行访问
 #### 使用[kube-lego](https://github.com/jetstack/kube-lego)申请证书
   
    - 如果集群中部署了[kube-lego](https://github.com/jetstack/kube-lego)申请证书,请编辑   `ingress.yaml`，添加`secretName`属性到spce.tls.hosts中。[kube-lego]   (https://github.com/jetstack/kube-lego)会自动申请证书，部署成功后就可使用https进行访问了。
