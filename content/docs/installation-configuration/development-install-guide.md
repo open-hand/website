@@ -127,7 +127,7 @@ Kubernetes v1.8.5
 1. 手动部署Gitlab，等Devops所有服务部署后再配置oauth授权(Mysql 5.6需要转表)[参考链接](../components/gitlab)
 
     > 搭建完成Gitlab完成后创建一个名为`template`的Public Group，将`http://git.choerodon.com.cn/template`库中所有的仓科克隆并推送到新搭建的Gitlab仓库中,注意这个git库也应是public的，这样开发服务才能正常使用。
-1. 手动部署Gitlab Runner[参考链接](../components/gitlab-runer)
+1. 手动部署Gitlab Runner[参考链接](../components/gitlab-runner)
 1. 配置SonarQube[参考链接](../components/sonarqube)
 1. 手动部署监控[参考链接](../components/监控)
 1. 手动部署日志[参考链接](../components/日志)
