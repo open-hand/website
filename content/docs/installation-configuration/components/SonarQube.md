@@ -6,7 +6,19 @@ weight = 4
 banner = "img/banners/banner-1.jpg"
 +++
 
-## 搭建所需镜像及文件
+## SonarQube 安装
+
+介绍 SonarQube 的安装和配置，Choerodon 使用 SonarQube 作为代码质量的检查工具。
+
+- <font>[安装所需镜像及文件](#安装所需镜像及文件)</font>
+- <font>[前置准备](#前置准备)</font>
+- <font>[安装](#安装)</font>
+- <font>[集成Gitlab](#集成gitlab)</font>
+    - <font>[网络好](#网络好)</font>
+    - <font>[网络不好](#网络不好)</font>
+
+--- 
+## 安装所需镜像及文件
  - 镜像列表 
 
      ```
@@ -18,20 +30,21 @@ banner = "img/banners/banner-1.jpg"
      ```
      git clone https://rdc.hand-china.com/gitlab/rdc_hip/devops-install-docs.git
      ```
-     
+---   
 ## 前置准备
 
  > 进入`devops-install-docs/devops/middleware/sonarqube`目录，下文我们将以此目录进行讲解。
  - 修改各目录下pv.yml的nfs地址和路径
 
-## 部署
+---
+## 安装
 
  ```
  # pv修改后再自行以下命令
  kubectl apply -f postgresql/ -n tools
  kubectl apply -f sonarqube/ -n tools
  ```
-
+---
 ## 集成Gitlab
 
 ### 网络好
