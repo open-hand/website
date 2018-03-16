@@ -5,6 +5,20 @@ weight = 2
 banner = "img/banners/banner-1.jpg"
 +++
 
+## Gitlab-Runner 安装
+
+介绍 Gitlab-Runner 的安装和部署，Gitlab-Runner 是 Gitlab CI 的运行环境。
+
+- <font>[安装所需镜像及文件](#安装所需镜像及文件)</font>
+- <font>[前置准备](#前置准备)</font>
+  - <font>[获取Runner注册Token](#获取Runner注册Token)</font>
+- <font>[注册Runner](#注册Runner)</font>
+  - <font>[方式1](#方式1)</font>
+  - <font>[方式2](#方式2)</font>
+- <font>[修改部署配置](#修改部署配置)</font>
+- <font>[运行](#运行)</font>
+
+---
 ## 搭建所需镜像及文件
  - 镜像列表 
 
@@ -16,7 +30,7 @@ banner = "img/banners/banner-1.jpg"
      ```
      git clone https://rdc.hand-china.com/gitlab/rdc_hip/devops-install-docs.git
      ```
-     
+---  
 ## 前置准备
 
 ### 获取Runner注册Token
@@ -25,6 +39,7 @@ banner = "img/banners/banner-1.jpg"
 
   ![WX20180120-200145@2x.png](https://i.loli.net/2018/01/20/5a632fc4725c0.png)
 
+---
 ## 注册Runner
 
 ### 方式1
@@ -47,10 +62,12 @@ banner = "img/banners/banner-1.jpg"
   
   ![WX20180120-203636@2x.png](https://i.loli.net/2018/01/20/5a6337e86bb92.png)
 
+---
 ## 修改部署配置
  - 将上一步得到的token、name和url复制出来填写到`gitlab-runner-config`中的对应位置。
  - 修改`cache-pv.yml`和`maven-pv.yml`中nfs服务器地址和路径，并且在nfs的机器上创建这些目录。
 
+---
 ## 运行
 
  ```

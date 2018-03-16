@@ -5,7 +5,24 @@ weight = 1
 banner = "img/banners/banner-1.jpg"
 +++
 
-## 搭建所需镜像及文件
+## Gitlab 安装
+
+介绍 Gitlab 的安装和部署，Gitlab 作为 Choerodon 的代码托管库和分支管理工具。
+
+- <font>[安装所需镜像及文件](#安装所需镜像及文件)</font>
+- <font>[前置准备](#前置准备)</font>
+  - <font>[构建镜像](#构建镜像)</font>
+  - <font>[创建数据库](#创建数据库)</font>
+  - <font>[资源调整](#资源调整)</font>
+- <font>[安装](#安装)</font>
+  - <font>[Redis](#redis)</font>
+  - <font>[Gitlab](#gitlab)</font>
+- <font>[配置Gitlab](#配置gitlab)</font>
+- <font>[创建oauth客户端](#创建oauth客户端)</font>
+- <font>[优化](#优化)</font>
+
+---
+## 安装所需镜像及文件
  - 镜像列表 
 
      ```
@@ -16,8 +33,9 @@ banner = "img/banners/banner-1.jpg"
      ```
      git clone https://rdc.hand-china.com/gitlab/rdc_hip/devops-install-docs.git
      ```
-
+---
 ## 前置准备
+
 ### 构建镜像
 
   > 在使用mysql作为gitlab的数据库时,需要自行安装mysql的依赖和驱动包，使用postgresql则无需构建镜像。进入`devops-install-docs/devops/gitlab-ce`目录，下文我们将以此目录进行讲解。
@@ -54,8 +72,9 @@ banner = "img/banners/banner-1.jpg"
   FLUSH PRIVILEGES;
   ```
 
-### 资源调整（若集群各节点资源充足可跳过此步）
+### 资源调整
 
+  > 若集群各节点资源充足可跳过此步。
   > 由于gitlab运行需要大量的资源并且要保证其稳定性,不受到其他pod的影响,这里专们调整一台节点部署,这里我们选择了node5(4c16g)
   
   - 节点准备
@@ -116,8 +135,9 @@ banner = "img/banners/banner-1.jpg"
           key: gitlab
           operator: Exists
   ```
+--- 
+## 安装
 
-## 部署
 ### Redis
   - 部署Redis
   ```
@@ -165,6 +185,7 @@ banner = "img/banners/banner-1.jpg"
 
   > **重要：** 当容器通过健康检查后，就可以通过域名进行访问了，第一次访问须设置root用户初始密码。若配合Devops平台使用，请进入管理界面创建用户名为SonarQube和Gitlab的两个用户并将其设置为admin用户，并生成私钥保存下来，后面的其他服务搭建会用到它。
 
+--- 
 ## 配置Gitlab
  
  > **重要：** 此步须等待gitlab容器已运行成功健康检查通过且Hapcloud框架服务也可使用了才进行后续操作
@@ -295,7 +316,7 @@ banner = "img/banners/banner-1.jpg"
     # 启动服务
     gitlab-ctl start
     ```
-
+--- 
 ## 创建oauth客户端
 
  - 通过gateway的swagger界面，选择用户服务client的API创建:
@@ -312,7 +333,7 @@ banner = "img/banners/banner-1.jpg"
       "autoApprove": "default"
   }
   ```
-
+---
 ## 优化
 
  如果在gitlab中需要使用`emoji`图标(比如在issue、comment、merge request区域),那么需要做以下配置:
