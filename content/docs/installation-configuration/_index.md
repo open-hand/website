@@ -4,7 +4,7 @@ description = ""
 weight = 2
 +++
 
-## 安装概述
+## 安装与配置
 
 Choerodon 采用Spring Cloud作为微服务框架，运行在Docker上，以Kubernetes作为容器的编排工具。理论上讲只要服务器资源允许，只要可以运行Kubernetes，就可以在Kubernetes上运行Choerodon。由于Choerodon不是一个单体应用系统，而是一个包含多个微服务的分布式系统，所以安装相对比较复杂，目前，我们不提供基于源码的安装方式，仅提供基于Docker镜像的安装方式。
 
@@ -24,11 +24,11 @@ Choerodon 采用Spring Cloud作为微服务框架，运行在Docker上，以Kube
 开发区包含了与开发相关的服务，用户可以使用此作为应用程序的开发平台。整个开发区部署在一个Kubernetes集群上，用户可以使用敏捷看板、移动开发、开发管理属于开发相关服务。开发区最终提交的结果是存储在Gitlab上的代码，当然可以选择是否生成Harbor镜像和相关部署文件。
 
 
-关于如何安装和配置开发区，请参考[开发区安装文档](../deployment-install-guide)。
+关于如何安装和配置开发区，请参考[开发区安装文档](./deployment-install-guide)。
 
 ---
 #### 部署运行区
 
 运行区包含了与运行相关的服务，用户可以使用此作为应用程序的运行平台。整个开发区部署在一个Kubernetes集群上，用户可以手工的将生成的docker镜像和部署文件，部署到运行区。
 
-关于如何安装和配置运行区，请参考[运行区安装文档](../deployment-install-guide)。
+关于如何安装和配置运行区，请参考[运行区安装文档](./deployment-install-guide)。

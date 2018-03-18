@@ -16,7 +16,6 @@ banner = "img/banners/banner-1.jpg"
     - <font>[开始安装](#开始安装)</font>
 - <font>[访问](#访问)</font>
     - <font>[使用HTTP进行访问](#使用http进行访问)</font>
-    - <font>[使用HTTP进行访问](#使用http进行访问)</font>
     - <font>[使用HTTPS进行访问](#使用https进行访问)</font>
 
 --- 
