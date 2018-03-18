@@ -4,80 +4,120 @@ description = ""
 weight = 4
 +++
 
-HUGO **v0.32** minimum required to use this theme
+# 移动应用
 
-The following steps are here to help you initialize your new website. If you don’t know Hugo at all, we strongly suggest you to train by following this [great documentation for beginners](https://gohugo.io/overview/quickstart/).
-<!--more-->
+  本页面演示了移动应用从新建到从手机上访问应用等流程操作。使用本页面，你可以了解：
 
-## Installation
+   - [新建应用](#1)
+   - [开发应用](#2)
+   - [发布应用](#3)
+   - [应用配置](#4)
+   - [版本管理](#5)
+   - [最终结果](#6)
 
-We assume that all changes to Hugo content and customizations are going to be tracked by git (GitHub, Bitbucket etc.). Develop locally, build on remote system.
+<h2 id="1">新建应用</h2>
 
-Before start real work:
+- **菜单层次**：项目层
+- **菜单路径**：开发管理 > 服务
+- **默认角色**：项目所有者、项目成员
 
-1. Initialize Hugo
-2. Install DocDock theme
-3. Configure DocDock and Hugo
+1. 点击`创建`按钮。
 
-### Prepare empty Hugo site
+    ![](../assets/mobile-application/服务创建.png)
 
-Create empty directory, which will be root of your Hugo project. Navigate there and let Hugo to create minimal required directory structure:
-```
-$ hugo new site .
-```
-AFTER that, initialize this as git directory where to track further changes
-```
-$ git init
-```
+1. 输入 “服务编码” 、 “服务名称” 、以及 “服务组” ，并选择相应服务类型为移动，点击 `创建` 按钮。
 
-Next, there are at least three ways to install DocDock (first recommended):
+    a. 服务编码只能包含字母、数字、_、.、破折号和空格并且不能包含大写字母
 
-1. **As git submodule**
-2. As git clone
-3. As direct copy (from ZIP)
+    b. 服务组输入不能包含中文或大写字母,不能以'.'开头或结尾
 
-Navigate to your themes folder in your Hugo site and use perform one of following scenarios.
+    c. 服务名称不是移动端展示的模块名称
 
-### 1. Install DocDock as git submodule
+    ![](../assets/mobile-application/服务创建信息填写.png)
 
-DocDock will be added like a dependency repo to original project. When using CI tools like Netlify, Jenkins etc., submodule method is required, or you will get `theme not found` issues. Same applies when building site on remote server trough SSH.
+1. 新建服务 choerodon 已在服务管理列表中。
 
-If submodule is no-go, use 3rd option.
+    ![](../assets/mobile-application/服务列表.png)
 
-On your root of Hugo execute:
+1. gitlab已自动创建好对应服务类型的代码库 choerodon 。点击 `仓库地址` ，可以查看该服务在gitlab的代码仓库。
 
-```
-$ git submodule add https://github.com/vjeantet/hugo-theme-docdock.git themes/docdock
-```
-Next initialize submodule for parent git repo:
+    注：新建应用的演示使用的是模板
 
-```
-$ git submodule init
-$ git submodule update
-```
+<h2 id="2">开发应用</h2>
 
-Now you are ready to add content and customize looks. Do not change any file inside theme directory.
+1. 拉取代码后，在develop分支上进行开发，开发完成后修改output/bundleManagement.json文件，推送代码。
 
-If you want to freeze changes to DocDock theme itself and use still submodules, fork private copy of DocDock and use that as submodule. When you are ready to update theme, just pull changes from origin to your private fork.
+    a. bundle下的description是该应用的描述
 
-### 2. Install DocDock simply as git clone
+    b. iconName为该应用在移动端显示时，名字前的图标
 
-This method results that files are checked out locally, but won't be visible from parent git repo. Probably you will build site locally with `hugo` command and use result from `public/` on your own.
+    c. isMain判断是否为主模块，0为非主模块
 
-```
-$ git clone https://github.com/vjeantet/hugo-theme-docdock.git themes/docdock
-```
+    b. nameCn为展示的中文名，该名字会显示在移动端
 
+    e. description为应用版本升级时的升级信息
 
-### 3. Install DocDock from ZIP
+    f. type指定平台，Android和iOS
 
-All files from theme will be tracked inside parent repo, to update it, have to override files in theme. [ download following zip](https://github.com/vjeantet/hugo-theme-docdock/archive/master.zip) and extract inside `themes/`.
+    g. appCoreVersion为最低核心版本，即低于该版本的APP无法启用该模块
 
-```
-https://github.com/vjeantet/hugo-theme-docdock/archive/master.zip
-```
-Name of theme in next step will be `hugo-theme-docdock-master`, can rename as you wish.
+    h. status为自动启用选项，0为不自动启用
 
-## Configuration
+    ```
+    {
+      "bundle": {
+        "description": "模块描述",
+        "iconName": "md-log-in",
+        "isMain": "0",
+        "nameCn": "Choerodon"
+      },
+      "description": "更新描述",
+      "type": "Android",
+      "appCoreVersion": "1.0.0",
+      "status": "0"
+    }
+    ```
 
-[Follow instructions here]
+1. 进入服务详情后， 查看服务CI pipeline的完成情况，只有CI各个阶段跑成功了才会生成一条服务版本信息，CI完成后将会自动发布到环境。
+
+    ![](../assets/mobile-application/流水线.png)
+
+<h2 id="3">发布应用</h2>
+
+  移动应用模块均为自动发布，在CI pipeline完成后稍等片刻即可。
+
+<h2 id="4">应用配置</h2>
+
+  该模块提供APP配置模块功能，可以通过该模块实现多APP多不同应用配置的个性化设置。 
+
+  - **菜单层次**：组织层
+  - **菜单路径**：APP
+  - **默认角色**：项目所有者、源代码管理员、项目成员 
+
+1. 新建一个名为 `DigitalPlatform` 的APP。
+
+1. 点击DigitalPlatform的 `版本管理` ，新建iOS和Android的类型。
+
+    ![](../assets/mobile-application/核心版本管理.png)
+
+1. 返回上一级目录，点击对应APP的 `模块配置` 。
+
+1. 关键字搜索或直接找到目标模块，勾选要在该APP中可以使用的模块，点击保存。
+
+    ![](../assets/mobile-application/模块配置.png)
+
+<h2 id="5">版本管理</h2>
+
+  - **菜单层次**：组织层
+  - **菜单路径**：模块
+  - **默认角色**：项目所有者、源代码管理员、项目成员 
+
+1. 在部署成功中选中进行启用
+
+    ![](../assets/mobile-application/版本管理.png)
+
+<h2 id="6">最终结果</h2>
+
+最后，就可以在移动端应用模块菜单中看到刚刚发布的模块，点击进行下载即可。
+
+现在你已经懂得如何开发一个模块了。

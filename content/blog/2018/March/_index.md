@@ -1,4 +1,3 @@
 +++
 title = "March"
-description = ""
 +++
