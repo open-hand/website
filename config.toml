@@ -257,8 +257,9 @@ paginate = 10
 
 [[languages.zh.menu.main]]
     name = "Github"
-    url  = "https://github.com/choerodon/choerodon"
+    url  = "https://github.com/choerodon/"
     weight = 7
+    post= true
 
 [languages.zh.testimonials]
 title  = "客户评价"
