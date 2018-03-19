@@ -260,11 +260,5 @@ paginate = 10
     url  = "https://github.com/choerodon/choerodon"
     weight = 7
 
-[[languages.zh.menu.main]]
-    name = "快速开始"
-    url  = "/docs/"
-    weight = 8
-    post = true
-
 [languages.zh.testimonials]
 title  = "客户评价"
