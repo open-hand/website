@@ -5,21 +5,12 @@ description = ""
 
 ## 欢迎
 
-Choerodon猪齿鱼是一个开源企业服务平台，是基于Kubernetes的容器编排和管理能力，整合DevOps工具链、微服务和移动应用框架，来帮助企业实现敏捷化的应用交付和自动化的运营管理，并提供IoT、支付、数据、智能洞察、企业应用市场等业务组件，来帮助企业聚焦于业务，加速数字化转型。
+Choerodon 猪齿鱼是一个开源企业服务平台，是基于 Kubernetes 的容器编排和管理能力，整合 DevOps 工具链、微服务和移动应用框架，来帮助企业实现敏捷化的应用交付和自动化的运营管理，并提供 IoT 、支付、数据、智能洞察、企业应用市场等业务组件，来帮助企业聚焦于业务，加速数字化转型。
 
-Choerodon的文档两部分组成，即
-
-
-- **Choerodon 企业级数字化服务平台**
-- **Choerodon微服务应用框架**
-
-Choerodon 文档将详细介绍Choerodon 企业级数字化服务平台的架构、安装、配置、部署，以及如何使用等，并且介绍Choerodon微服务应用框架的架构、组件、开发、部署等。
+Choerodon 提供一整套支撑 DevOps 最佳实践的工具链，从计划、编程、构建、测试、发布与运营等支撑敏捷管理；并且还提供了一套基于 Spring Cloud 微服务应用框架，以帮助企业更加快捷高效的进行微服务开发。Choerodon 文档将从**Choerodon相关概念**，**DevOps 工具链** 和 **应用开发** 等方面详细介绍 Choerodon 作为DevOps支撑平台的架构、安装、配置、部署，以及如何使用等，以及 Choerodon 微服务应用框架的开发、部署等。
 
 ---
-## 了解和学习Choerodon 企业级数字化服务平台
-
-Choerodon 企业级数字化服务平台提供一整套DevOps的最佳实践，从计划、编程、构建、测试、发布与运营等。
-
+## 了解和学习 Choerodon 的概念和安装
 
 <div class="docs-home">
 <div class="row">
@@ -31,23 +22,10 @@ Choerodon 企业级数字化服务平台提供一整套DevOps的最佳实践，�
     <li><a href="./concept/choerodon-system-architecture">02 - 系统架构</a></li>
     <li><a href="./concept/choerodon-opensource-component">03 - 使用的开源组件</a></li>
     <li class="more-menu-button"><a href="javascript:void(0)">更多</a></li>
-    <li class="more-menu"><a href="./concept/choerodon-org">04 - 组织层次</a></li>
-    <li class="more-menu"><a href="./concept/security">05 - 安全</a></li>
-    <li class="less-menu-button"><a href="javascript:void(0)">更少</a></li>
-</ul>
-</div>
-
-
-<div class="col-md-3">
-<h4><i class="fa fa-space-shuttle"></i>快速入门</h4>
-<ul>
-    <li><a href="./quick-start/microservice-front">01 - 开发一个微服务前端</a></li>
-    <li><a href="./quick-start/microservice-backend">02 - 开发一个微服务后端</a></li>
-    <li><a href="./quick-start/web-application">03 - 开发一个Web应用</a></li>
-    <li class="more-menu-button"><a href="javascript:void(0)">更多</a></li>
-    <li class="more-menu"><a href="#">04 - 开发一个移动应用</a></li>
-    <li class="more-menu"><a href="#">05 - 从用户故事到运营监控</a></li>
-    <li class="less-menu-button"><a href="javascript:void(0)">更少</a></li>
+    <li class="more-menu"><a href="./concept/choerodon-development-deployment">04 - 开发区与运行区</a></li>
+    <li class="more-menu"><a href="./concept/choerodon-org">05 - 组织层次</a></li>
+    <li class="more-menu"><a href="./concept/security">06 - 安全</a></li>
+    <li class="less-menu-button"><a href="javascript:void(0)">折叠</a></li>
 </ul>
 </div>
 
@@ -63,12 +41,35 @@ Choerodon 企业级数字化服务平台提供一整套DevOps的最佳实践，�
     <li class="more-menu"><a href="#">06 - .deploy.yml文件说明</a></li>
     <li class="more-menu"><a href="#">07 - .gitlab-ci.yml文件说明</a></li>
     <li class="more-menu"><a href="#">08 - Dockerfile文件说明</a></li>
-    <li class="less-menu-button"><a href="javascript:void(0)">更少</a></li>
+    <li class="less-menu-button"><a href="javascript:void(0)">折叠</a></li>
 </ul>
 </div>
+
 </div>
 
+</div>
+
+---
+## 了解和学习 Choerodon 的 DevOps 工具链
+
+Choerodon 提供一整套 DevOps 的最佳实践，从计划、编程、构建、测试、发布与运营等。
+
+<div class="docs-home">
 <div class="row">
+
+<div class="col-md-3">
+<h4><i class="fa fa-space-shuttle"></i>快速入门</h4>
+<ul>
+    <li><a href="./quick-start/microservice-front">01 - 开发一个微服务前端</a></li>
+    <li><a href="./quick-start/microservice-backend">02 - 开发一个微服务后端</a></li>
+    <li><a href="./quick-start/web-application">03 - 开发一个Web应用</a></li>
+    <li class="more-menu-button"><a href="javascript:void(0)">更多</a></li>
+    <li class="more-menu"><a href="#">04 - 开发一个移动应用</a></li>
+    <li class="more-menu"><a href="#">05 - 从用户故事到运营监控</a></li>
+    <li class="less-menu-button"><a href="javascript:void(0)">折叠</a></li>
+</ul>
+</div>
+
 <div class="col-md-3">
 <h4><i class="fa fa-user-circle-o"></i>功能说明</h4>
 <ul>
@@ -78,16 +79,18 @@ Choerodon 企业级数字化服务平台提供一整套DevOps的最佳实践，�
     <li class="more-menu-button"><a href="javascript:void(0)">更多</a></li>
     <li class="more-menu"><a href="./user-guide/continuous-deployment">04 - 持续部署</a></li>
     <li class="more-menu" ><a href="./user-guide/洞察监控">05 - 洞察监控</a></li>
-    <li class="less-menu-button"><a href="javascript:void(0)">更少</a></li>
+    <li class="less-menu-button"><a href="javascript:void(0)">折叠</a></li>
 </ul>
+</div>
 </div>
 </div>
 
 ---
-## 了解和学习Choerodon 微服务应用框架
+## 了解和学习 Choerodon 的开发应用
 
 Choerodon 微服务应用框架是基于多年企业应用服务的经验，面向微服务架构思想和分布式应用架构研发的分布式应用开发平台，以满足应用微服务化和混合云IT架构分布式应用的开发。
 
+<div class="docs-home">
 <div class="row">
 
 <div class="col-md-3">
@@ -97,7 +100,6 @@ Choerodon 微服务应用框架是基于多年企业应用服务的经验，面�
     <li><a href="./microservice-application-framework/quick-start/microservice-backend">02 - 开发一个微服务后端</a></li>
 </ul>
 </div>
-
 
 <div class="col-md-3">
 <h4><i class="fa fa-terminal"></i>开发手册</h4>
@@ -109,25 +111,6 @@ Choerodon 微服务应用框架是基于多年企业应用服务的经验，面�
 </ul>
 </div>
 
-<div class="col-md-3">
-<h4><i class="fa fa-user-circle-o"></i>功能说明</h4>
-<ul>
-    <li><a href="./concept/choerodon-concept">01 - 概述</a></li>
-    <li><a href="./concept/choerodon-system-architecture">02 - 客户端管理</a></li>
-    <li><a href="./concept/choerodon-opensource-component">03 - 用户管理</a></li>
-    <li class="more-menu-button"><a href="javascript:void(0)">更多</a></li>
-    <li class="more-menu"><a href="./concept/choerodon-org">04 - 组织管理</a></li>
-    <li class="more-menu"><a href="./concept/security/security-overview">05 - 角色管理</a></li>
-    <li class="more-menu"><a href="./concept/security/security-overview">05 - LDAP 管理</a></li>
-    <li class="more-menu"><a href="./concept/security/security-overview">05 - 授权管理</a></li>
-    <li class="more-menu"><a href="./concept/security/security-overview">05 - 代码管理</a></li>
-    <li class="more-menu"><a href="./concept/security/security-overview">05 - 语言管理</a></li>
-    <li class="less-menu-button"><a href="javascript:void(0)">更少</a></li>
-</ul>
-</div>
-</div>
-
-<div class="row">
 <div class="col-md-3">
 <h4><i class="fa fa-thumbs-o-up"></i>最佳实践</h4>
 <ul>
