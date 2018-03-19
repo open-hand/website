@@ -37,10 +37,10 @@ Choerodon 提供一整套支撑 DevOps 最佳实践的工具链，从计划、�
     <li><a href="./installation-configuration/deployment-install-guide">03 - 安装运行区</a></li>
     <li class="more-menu-button"><a href="javascript:void(0)">更多</a></li>
     <li class="more-menu"><a href="./installation-configuration/components/">04 - 安装其他组件</a></li>
-    <li class="more-menu"><a href="#">05 - 迁移</a></li>
+    <!--<li class="more-menu"><a href="#">05 - 迁移</a></li>
     <li class="more-menu"><a href="#">06 - .deploy.yml文件说明</a></li>
     <li class="more-menu"><a href="#">07 - .gitlab-ci.yml文件说明</a></li>
-    <li class="more-menu"><a href="#">08 - Dockerfile文件说明</a></li>
+    <li class="more-menu"><a href="#">08 - Dockerfile文件说明</a></li>-->
     <li class="less-menu-button"><a href="javascript:void(0)">折叠</a></li>
 </ul>
 </div>
@@ -96,27 +96,27 @@ Choerodon 微服务应用框架是基于多年企业应用服务的经验，面�
 <div class="col-md-3">
 <h4><i class="fa fa-space-shuttle"></i>快速入门</h4>
 <ul>
-    <li><a href="./microservice-application-framework/quick-start/microservice-front">01 - 开发一个微服务前端</a></li>
-    <li><a href="./microservice-application-framework/quick-start/microservice-backend">02 - 开发一个微服务后端</a></li>
+    <li><a href="./quick-start/microservice-front">01 - 开发一个微服务前端</a></li>
+    <li><a href="./quick-start/microservice-backend">02 - 开发一个微服务后端</a></li>
 </ul>
 </div>
 
 <div class="col-md-3">
 <h4><i class="fa fa-terminal"></i>开发手册</h4>
 <ul>
-    <li><a href="./microservice-application-framework/development-guide/">01 - 后端开发</a></li>
-    <li><a href="./microservice-application-framework/development-guide">02 - 前端开发</a></li>
-    <li><a href="./microservice-application-framework/development-guide">03 - 后端环境部署</a></li>
-    <li><a href="./microservice-application-framework/development-guide">04 - 前端项目部署</a></li>
+    <li><a href="./development-guide/backend">01 - 后端开发</a></li>
+    <li><a href="./development-guide/front">02 - 前端开发</a></li>
+    <li><a href="./development-guide/backend-environment-deployment">03 - 后端环境部署</a></li>
+    <li><a href="./development-guide/front-environment-deployment">04 - 前端项目部署</a></li>
 </ul>
 </div>
 
 <div class="col-md-3">
 <h4><i class="fa fa-thumbs-o-up"></i>最佳实践</h4>
 <ul>
-    <li><a href="./concept/choerodon-concept">01 - 开发规范</a></li>
-    <li><a href="./concept/choerodon-system-architecture">02 - 命名规范</a></li>
-    <li><a href="./concept/choerodon-opensource-component">03 - 测试</a></li>
+    <li><a href="#">01 - 开发规范</a></li>
+    <li><a href="#">02 - 命名规范</a></li>
+    <li><a href="#">03 - 测试</a></li>
 </ul>
 </div>
 </div>

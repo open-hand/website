@@ -168,6 +168,7 @@ Kubernetes v1.8.5
         FLUSH PRIVILEGES;
         ```
 1. 修改`inventory/config.yml`文件中资源区域维护好相应参数。
+
 1. 执行以下命令开始开发区
 
     ```
