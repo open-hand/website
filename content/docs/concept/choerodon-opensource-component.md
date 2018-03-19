@@ -1,7 +1,7 @@
 +++
 title = "使用的开源组件"
 description = ""
-weight = 3
+weight = 5
 +++
 
 ## Choerodon 完全基于开源产品打造 

@@ -1,7 +1,7 @@
 +++
 title = "组织层次"
 description = ""
-weight = 3
+weight = 6
 +++
 
 ## 组织层次

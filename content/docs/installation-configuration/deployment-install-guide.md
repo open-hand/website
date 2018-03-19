@@ -44,9 +44,7 @@ K8S服务	|	com.hand.devops 	|	devops-kubernetes-service	|	1.1.0
 数据操作服务	|	com.hand.insight	|	data-operation-service 	|	1.0.0
 移动服务	|	com.hand.mobile 	|	mobile-cloud-service 	|	1.0.0
 框架前端	|	com.hand.hapcloud	|	hapcloud-front  	|	1.2.2
-开发前端	|	com.hand.devops 	|	devops-front 	|	1.1.3
 部署前端	|	com.hand.devops 	|	deploy-front 	|	1.1.5
-洞察前端	|	com.hand.insight 	|	analysis-insight-front  	|	1.0.0
 监控前端	|	com.hand.insight 	|	monitor-front	|	1.0.0
 移动前端	|	com.hand.mobile 	|	mobile-front 	|	1.0.0
 

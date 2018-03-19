@@ -1,7 +1,7 @@
 +++
-title = "开发一个移动应用"
+title = "创建一个移动应用"
 description = ""
-weight = 4
+weight = 5
 +++
 
 # 移动应用

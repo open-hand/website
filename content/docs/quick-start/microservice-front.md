@@ -1,7 +1,7 @@
 +++
-title = "开发一个Web前端"
+title = "创建一个Web前端"
 description = ""
-weight = 1
+weight = 2
 +++
 
 # Web前端
