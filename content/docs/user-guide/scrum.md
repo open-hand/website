@@ -284,3 +284,292 @@ weight = 2
   可以在<操作>中完成删除缺陷。
 
   ![漏洞](../assets/scrum/漏洞.png)
+
+
+
+  +++
+title = "Scrum Management"
+description = ""
+weight = 2
++++
+
+#  Scrum Management
+
+   This chart explains how to use user story maps, how to use sprints, how to use kanbans, and how to operate user stories, tasks, and bugs as using Scrum Management. As follows:
+   
+   - [Story Map](#1)
+   
+   - [User Story](#2)
+   
+   - [Sprint](#3)
+   
+   - [Kanban](#4)
+   
+   - [Task](#5)
+   
+   - [Bug](#6)
+
+<h2 id="1">Story Map </h2> 
+  
+  Before planning meetings, users can plan roadmaps and organize user stories according to their roles, activities, and task categories. Besides, the recorded user stories will be synchronized to gitlab's issue. Project stakeholders can comment on the issue and discuss user stories.
+  
+  - **Menu Layout**：Project Layout
+  - **Menu Path**：Project > Scrum Management > Story Management > Story Map
+  - **Default Role**：Kanban project owner, Kanban project member
+ 
+### Use story map  
+
+ 1. Add roles
+
+    Role: The user needs are based on which type of role to consider. For example, agile development has three roles: po, master, and project developer.
+    
+    When you click <Create Role>, the mouse cursor will change to the "plus ". And when the" plus "icon appears, the user can click at any position in the interface of Role to add a role.   
+
+    ![Add roles](../assets/scrum/故事地图添加角色.jpg)
+  
+ 1. Add activities
+
+    Activity: It means a specific user scenarios based on a role.  
+
+    When you click <Create activities>, the mouse cursor will change to the "plus ". And when the "plus" icon appears, the user can click at any position in the Activity to add an activity.  
+
+ 1. Add tasks
+
+    Task: The detail of user scenario
+  
+    When you click <Create tasks>, the mouse cursor will change to the "plus ". And when the "plus" icon appears, the user can click at any position in the Task to add a task.  
+
+  
+ 1. Create release plan
+  
+    When you click <Create release plan> button, the related Release Plan could be created on the user story map, which be default named as Release Plan 1, Release Plan 2..... If you want to modify the release plan name or delete Release plan, you can modify or delete Release plan by clicking the three-point symbol next to the plan name. For security reasons, if the release plan exist users’ stories, before deleting the entire release plan, you need to delete all users’ stories which requires the user story in Delete to Delete the entire release plan.
+
+    ![Modify or delete Release plan](../assets/scrum/修改或删除发布计划.png)
+  
+ 1. Create card   
+  
+    User stories: Specific requirement.
+    
+    When you move the mouse around the story map interface and see the text about creating the card, you should click cue in the middle of card and the corresponding card is created, such as roles, activities, tasks, and user stories.
+    
+    ![Create activities](../assets/scrum/创建活动.png)
+
+    ![Create tasks](../assets/scrum/创建任务.png)
+
+    ![Create user stories](../assets/scrum/创建用户故事.png)
+
+ 1. Modify/delete card
+    
+    Modify card: Click on the card directly, modify the title when the card details are popped up.
+    
+    Delete card: The card can only be deleted if there is no sub card. Otherwise, the interface will prompt an error message.
+
+  
+### Introduce story map toolbar 
+  
+ 1. Use of unplanned areas.
+  
+    Click <Unplanned areas>, a sidebar will appear, as shown in the following figure. The sidebar will contain stories of unreleased plan in other screens. For example, if you create a user story of unreleased plan in the user story interface, a story card will appear here. Besides, not only if you want to find a card, you can do an advanced search with the search and filter in the top of the sidebar, but also you can drag the story to the specific Release plan that you think about this story may be more suitable for the Release plan.
+
+    ![The entrance of the Unplanned area](../assets/scrum/未规划区入口.png)
+
+    ![The interface of the Unplanned area](../assets/scrum/未规划区展开界面.png)
+  
+ 1. Data statistics
+  
+    If you want to analyze the date statistics about one project, you can check it not only in this entrance but also in the data insight interface which could select specific project. 
+
+    ![Data statistics](../assets/scrum/数据统计.png)
+
+    ![Data analysis results ](../assets/scrum/数据分析结果展示.png)
+  
+ 1. Export image
+  
+    Click< Export image >, you can save the current map as a picture and export it as PNG.
+
+    ![Export image](../assets/scrum/导出为图片.png)
+  
+ 1. Zoom-in and zoom-out
+  
+    If you want to complete the zoom of the entire map, you click not only to the icon of enlarge, but also to zoom in and out of the scroll bar. 
+
+    ![Zoom-in and Zoom-out](../assets/scrum/放大缩小.png)
+
+<h2 id="2"> User story </h2> 
+  
+  The user story interface is a list of user stories, where you can focus on all the user stories you've created, as well as the task defects below.
+  
+  - **Menu Layout**：Project Layout
+  - **Menu Path**：Project > Scrum Management > Story Management > 用户故事User story
+  - **Default Role**：Kanban project owner, Kanban project member
+  
+### Create story
+  
+  Click <Create story>, and then the window for editing the details appear. Thus you can do an edit in the window, click “save” after editing.
+
+  ![Create story](../assets/scrum/创建故事.png)
+
+### Advanced search
+  
+  You click < filtration >, and then you can do an advanced search. 
+    
+  ![filtration](../assets/scrum/过滤.png)
+ 
+### Delete uer story
+    
+  You can delete the user story without sprit.
+
+### Create task quickly
+    
+  You can create a task in the user story quickly.
+
+### Create filtration quickly
+    
+  You can create a filtration in the user story quickly.
+
+  ![Operation](../assets/scrum/操作.png)
+  
+<h2 id="3">Sprint</h2> 
+  
+  Sprint not only play the role of conveniently managing the story completed in the iterative cycle for you and but also be a back-end data monitor for you. Meanwhile, it comes to the completion status for the visual story, you can use all the functions of Kanban until you carry out the sprint, because the sprint is the link connecting the story maps and the Kanban.
+  
+  - **Menu Layout**：Project Layout
+  - **Menu Path**：Project > Scrum Management > Sprit & Kanban > Sprit.
+  - **Default Role**：Kanban project owner、Kanban project members
+  
+### Create sprint
+  
+  If you want to create a new sprint, you can click <Create sprint>, select released plan and the anticipated starting and ending times of sprints that you anticipated. 
+  
+  ![Create sprint](../assets/scrum/创建冲刺.png)
+  
+### Search sprint
+  
+  You can do a search in the toolbar
+
+  ![Search](../assets/scrum/搜索.png)
+  
+### Turn on / off sprint 
+      
+  You can quickly turn on or off the sprint to complete the state switch.
+  
+  When you click <Turn on sprint>, the current sprint will be carried out. At the sometime, data insight monitor began to record data after the current sprint, and the stories in the sprint auto import in the Kanban, in addition, they are put in the first column. 
+  
+  If you want to turn off the sprint, click < Turn off sprint >, but you need to know that it will not turn on again after closing.
+
+### Edit sprint
+
+  The information of the sprint can be modify, such as, sprint name,  starting and ending time. But the release plan could not be modify. 
+  ![Operation of sprint](../assets/scrum/冲刺操作.png)
+ 
+### Add story
+      
+  If you want to add a story, you need do those operations. First of all, you need select a resource for the story, such as story map and unplanned story. Secondly, you can select the story needed to import, and click “OK” button,adding them to the sprint. Finally, you will see that the color about the story map has been changed after it be import into the sprint.
+    
+### Create task
+      
+  You can create a specific task in the user story that has been import into the sprint.
+    
+### Create bug
+      
+  You can create the bug appeared in the user story and in the task’s test. 
+      
+  ![The detail of sprit](../assets/scrum/冲刺详情.png)
+
+### Filtration
+      
+  You can classify and filtrate the story, task and filtration.
+      
+  ![Filtration](../assets/scrum/冲刺筛选.png)
+
+### Remove story
+      
+  You can remove the story imported in the sprint. After removing, you will notice that the story will not be deleted in the story map, but the card color in the story map becomes another color to represent that the story be not imported in the sprint. 
+      
+  ![Remove story](../assets/scrum/冲刺移除操作.png)
+  
+<h2 id="4">Kanban</h2> 
+
+  You can use all functions of kanban after carrying on Sprint. And Kanban can replace physical Kanban, because not only it can visualize your workflow, but also the background will record the time data of the operation at the sometime, helping you to complete data analysis and record.
+  
+  - **Menu Layout**：Project Layout。
+  - **Menu Path**：Project > Scrum Management > Sprint & Kanban>Kanban.
+  - **Default Role**：Kanban project owner, Kanban project member
+  
+ 1. Select template
+  
+    First of all, after entering the Kanban, you can select a template of the Kanban, and clink the template for checking the detail. Secondly, you double click the current template, it will open completely. In addition, you also can change the template when there be not card in the interface of Kanban.
+
+    ![The template of Kanban](../assets/scrum/看板模板.png)  
+
+    ![The detail of Kanban](../assets/scrum/模板详情.png)
+  
+ 1. Kanban 
+  
+    If you add the story to the current sprint after enter the Kanban, system will auto import it into the current Kanban, putting into the first column.
+
+ 1. Create card
+    
+    When you click `Create card`, a window that you can edit the detail of card in appears. At the sometime, you can create the corresponding card according to the type, the story and the bug that you select. As well as, the card will sync to the interface of story map, putted in the first column of the first role in the current release plan.
+
+    ![Create card](../assets/scrum/创建卡片.png)
+    
+    ![Interface of the detail of Card](../assets/scrum/卡片详情编辑界面.png)
+
+ 1. Kanban drawing
+      
+    Click `Kanban drawing`, enter into the interface of Kanban Edit:
+      
+    1)Add column 
+      
+    2)Draw swim lane
+      
+    3)Add/Cut down row height
+      
+    4)Revocation/Recovery
+      
+    5)Save
+      
+    6)Articles being processed and start column settings.
+
+    ![Kanban drawing](../assets/scrum/看板绘制.png)  
+    
+ 1. Drag story card
+    
+    The operation of the daughter card (Task card /bug card) in the story card
+  
+<h2 id="5">Task</h2> 
+
+  You can check all the tasks you created in the interface. Furthermore, the system can visualize your task flow, at the sometime, the background will record the time data of the operation, helping you to complete the data analysis and record.
+  
+  - **Menu Layout**：Project Layout.
+  - **Menu Path**：Project > Scrum management > Task and bug > Task.
+  - **Default Role**：Kanban project owner, Kanban project member.
+  
+### Check task
+  
+  In the interface of task, you can not only check all tasks that you has been created, but also advanced search task you needed. 
+  
+### Delete task
+  
+  You can finish the operations of the “delete” and “the bug of shortcut creation”
+
+  ![Task](../assets/scrum/任务.png)
+  
+<h2 id="6">Bug</h2> 
+  
+ You can check all bugs that you created.
+  
+  - **Menu Layout**：Project Layout。
+  - **Menu Path**：Project > Scrum Management > Task and bug > Bug.
+  - **Default Role**：Kanban project owner, Kanban project member 
+
+### Check bug
+    
+  In the interface of task, you can not only check all bugs that you has been created, but also advanced search loopholes that you needed. 
+    
+### Delete bug
+    
+  You can delete the bug in the <operation> interface.
+
+  ![Bug](../assets/scrum/漏洞.png)

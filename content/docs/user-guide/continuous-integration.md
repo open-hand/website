@@ -348,7 +348,7 @@ weight = 4
   
   Continuous Integration (CI) refers to the continuous integration of team members' code during the development process. Each integration can be achieved through automated builds. This saves developers a lot of time and allows them to focus more on implementing business logic. 
   
-  This chart introduces how the R&D team manages services after implementing [Agile Management] (../scrum), such as, how to management service how to use Git-Flow model for branch management, how to view the continuous integration Pipeline, how to manage service versions, and how to understand the quality of the code and how to release it.
+  This chart introduces how the R&D team manages services after implementing [Agile Management] (../scrum), such as, how to management service how to use Git-Flow model for branch management, how to view the continuous integration pipeline, how to manage service versions, and how to understand the quality of the code and how to release it.
   
   Continuous integration is basically completed by all members of the scrum development team, including project owners, source code administrators, and project members. Each module contains its concept definition, major functions, and other considerations. Thought this chart, you can understand：
 
@@ -374,8 +374,8 @@ weight = 4
 
 ### Service type
 
-  **Micro-service**：micro-service back-end, it can define the dependent resources and services when it need to configure the gateway in the way of deploying.
-  **Web front-end **： micro-service front-end, it need a domain name when it is deployment.
+  **Micro-service**：Micro-service back-end, it can define the dependent resources and services when it need to configure the gateway in the way of deploying.
+  **Web front-end **：micro-service front-end, it need a domain name when it is deployment.
   **Mobile**：Used for mobile application development. The process of the deployment is different from other types.
   **Common application**：The service type of the non-micro-service structure, such as HAP, HBI, etc. One service works for one system.
   **Java warehouse**：Manage the JAVA toolkit.

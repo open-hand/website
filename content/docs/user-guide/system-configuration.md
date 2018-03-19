@@ -403,7 +403,7 @@ weight = 1
 
       ![](../assets/系统配置/编辑角色.png)
 
-1.	Modify the information of role, as well as permissions, Click `add permission`.
+1.	Modify the information of role, as well as permissions, click `add permission`.
 
       ![](../assets/系统配置/修改添加权限.png)
 
@@ -419,7 +419,7 @@ weight = 1
 
    ![](../assets/系统配置/停用角色.png)
 
-### The instructions for adding permissions to a role
+### The instructions for adding permissions to the role
    
    Note: The permission list of existing roles needed manual configuration.
    
@@ -474,7 +474,7 @@ weight = 1
   - **Menu path**：IAM > User Management
   - **Default role**：Platform administrator, Project creator
 
-### Create the new user
+### Create new user
 
    1. Click `Create`.
 
@@ -488,7 +488,7 @@ weight = 1
 
       ![](../assets/系统配置/新用户创建成功.png)
 
-### View the detail of user
+### View detail of user
 
    1. Click `Detail`, enter into the user detail interface.
       ![](../assets/系统配置/点击用户详情.png)
@@ -497,7 +497,7 @@ weight = 1
 
       ![](../assets/系统配置/用户详细信息.png)
 
-### Edit the users’ information
+### Edit users’ information
 
    1. Click `Edit`, enter into the	user’s compile interface. It is another way enter into the user’s compile interface that click the edit button in the user’s detail interface.
 

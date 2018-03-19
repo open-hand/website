@@ -1,4 +1,4 @@
-baseurl = "http://35.229.102.205/"
+baseurl = "http://choerodon.io/"
 title = "choerodon"
 theme = "hugo-choerodon-theme"
 # themesDir = "../.."
@@ -259,12 +259,6 @@ paginate = 10
     name = "Github"
     url  = "https://github.com/choerodon/choerodon"
     weight = 7
-
-[[languages.zh.menu.main]]
-    name = "快速开始"
-    url  = "/docs/"
-    weight = 8
-    post = true
 
 [languages.zh.testimonials]
 title  = "客户评价"

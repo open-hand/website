@@ -284,7 +284,7 @@ weight = 4
 
     ![](../assets/continuous-deployment/创建资源.png)
 
-### View Resources detail
+### View resources detail
 
   Click "Resource Name" to view the resource details. 
   
@@ -356,14 +356,14 @@ weight = 4
 
     ![](../assets/continuous-deployment/新建域名示意.png)
 
-### Edit the domain information
+### Edit domain information
 
   Click `Edit`. And then modify the domain information, and then click `Save`, modify the domain name completely.
 
   ![](../assets/continuous-deployment/编辑域名信息.png)
 
 
-### Delete the domain name
+### Delete domain name
 
  1. Click `Delete`.
 
