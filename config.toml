@@ -1,4 +1,4 @@
-baseurl = "http://35.229.102.205/"
+baseurl = "http://choerodon.io/"
 title = "choerodon"
 theme = "hugo-choerodon-theme"
 # themesDir = "../.."
