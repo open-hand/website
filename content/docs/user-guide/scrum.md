@@ -558,7 +558,7 @@ weight = 2
   
 <h2 id="6">Bug</h2> 
   
- You can check all bugs that you created
+ You can check all bugs that you created.
   
   - **Menu Layout**：Project Layout。
   - **Menu Path**：Project > Scrum Management > Task and bug > Bug.
