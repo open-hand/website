@@ -39,7 +39,7 @@ banner = "img/banners/banner-1.jpg"
 
  > 如果使用自带数据库请忽略此步骤。
  
- 1. 创建一个`harbor`用户，创建`registry`数据库,并授予`harbor`用户权限
+ 1. 创建一个`harbor`用户，创建`registry`数据库，并授予`harbor`用户权限
  
      ```
      # 创建用户
@@ -58,8 +58,8 @@ banner = "img/banners/banner-1.jpg"
  
   > 进入`devops-install-docs/devops/harbor`目录，下文我们将以此目录进行讲解。搭建后若使用https进行访问，请先阅读[访问](#访问)。
   
-  1. 修改`harbor.cfg`的参数配置，主要包括harbor的访问地址  (hostname),harbor的管理员密码(harbor_admin_password)和其他配置,参考配置如下:
-      > 其他参数如果不清楚其用法请不要修改
+  1. 修改`harbor.cfg`的参数配置，主要包括harbor的访问地址  (hostname)，harbor的管理员密码(harbor_admin_password)和其他配置，参考配置如下:
+      > 其他参数如果不清楚其用法请不要修改。
   
       ```
       hostname = register.hand-china.com
@@ -136,7 +136,7 @@ banner = "img/banners/banner-1.jpg"
       ```
       kubectl apply -f kubernetes/ingress.yaml -n harbor
       ```
-      - 待所有pod的状态都为Running并且全部READY,表示已部署成功。可以使用在第一步中配置的hostname在浏览器中进行访问。
+      待所有pod的状态都为Running并且全部READY，表示已部署成功。可以使用在第一步中配置的hostname在浏览器中进行访问。
   
   1. 在需要对harbor使用docker命令进行`pull`和`push`操作时需要在相应的机器docker配置中添加  `insecure-registries`参数，该值为`harbor.cfg`文件中配置的`hostname`的值。
       - 可以根据操作系统和docker版本不同在对应位置的配置添加参数(请自行查阅)，比如:在centos7.X上配置，只需要在`/etc/docker/daemon.json`文件中添加以下参数:
@@ -154,7 +154,7 @@ banner = "img/banners/banner-1.jpg"
       }
       ```
   
-      - **注意：** 修改之后需要重启docker才能生效。
+      **注意：** 修改之后需要重启docker才能生效。
   
       ```
       systemctl daemon-reload && systemctl restart docker
@@ -163,7 +163,7 @@ banner = "img/banners/banner-1.jpg"
 ### 使用HTTPS进行访问
 #### 使用[kube-lego](https://github.com/jetstack/kube-lego)申请证书
   
-   - 如果集群中部署了[kube-lego](https://github.com/jetstack/kube-lego)申请证书,请编辑   `ingress.yaml`，添加`secretName`属性到spce.tls.hosts中。[kube-lego]   (https://github.com/jetstack/kube-lego)会自动申请证书，部署成功后就可使用https进行访问了。
+   - 如果集群中部署了[kube-lego](https://github.com/jetstack/kube-lego)申请证书，请编辑   `ingress.yaml`，添加`secretName`属性到spce.tls.hosts中。[kube-lego]   (https://github.com/jetstack/kube-lego)会自动申请证书，部署成功后就可使用https进行访问了。
    
        - 1.为ingress添加注解`kubernetes.io/tls-acme: "true"`
    
@@ -182,7 +182,7 @@ banner = "img/banners/banner-1.jpg"
            secretName: harbor-cert
        ```
    
-       > **注意：** 这里的secretName必须在命名空间是唯一的。secretName是必需的（即使这个secret对象不存在，因为它将由kube-lego创建）
+       > **注意：** 这里的secretName值在当前命名空间是唯一的，且secretName值是必需的（即使这个secret对象不存在，它将由kube-lego创建）
    
    - 编辑完成后进行部署
        ```
@@ -200,7 +200,7 @@ banner = "img/banners/banner-1.jpg"
         - 3.该机器上已装有docker环境
    
        ```
-       # 执行以下命令,注意更换域名地址
+       # 执行以下命令，注意更换域名地址
        docker run --rm -ti \
            --network host \
            -v /etc/letsencrypt:/etc/letsencrypt \
@@ -209,10 +209,10 @@ banner = "img/banners/banner-1.jpg"
            certonly --standalone \ 
            -d example.choerodon.com
    
-       # 过程中提示输入邮箱,完成之后证书在/etc/letsencrypt目录下
+       # 过程中提示输入邮箱，完成之后证书在/etc/letsencrypt目录下
        ```
    
-   - 第二步：修改harbor参数配置,并生成configmap
+   - 第二步：修改harbor参数配置，并生成configmap
    
        - 这里需要修改除了[生成配置](#生成配置)中的变量还有以下参数:
    

@@ -49,7 +49,7 @@ banner = "img/banners/banner-1.jpg"
 
 ### 网络好
 
-- 使用admin用户登录SonarQube,安装gitlab插件
+- 使用admin用户登录SonarQube，安装gitlab插件
 
 ![WX20180121-011251@2x.png](https://i.loli.net/2018/01/21/5a6378a5d8090.png)
 
