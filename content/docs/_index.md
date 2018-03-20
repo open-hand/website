@@ -71,7 +71,7 @@ Choerodon 提供一整套 DevOps 的最佳实践，从计划、编程、构建�
 </div>
 
 <div class="col-md-3">
-<h4><i class="fa fa-user-circle-o"></i>功能说明</h4>
+<h4><i class="fas fa-user-circle"></i>功能说明</h4>
 <ul>
     <li><a href="./user-guide/system-configuration">01 - 系统配置</a></li>
     <li><a href="./user-guide/scrum">02 - 敏捷管理</a></li>
@@ -102,7 +102,7 @@ Choerodon 微服务应用框架是基于多年企业应用服务的经验，面�
 </div>
 
 <div class="col-md-3">
-<h4><i class="fa fa-terminal"></i>开发手册</h4>
+<h4><i class="fas fa-terminal"></i>开发手册</h4>
 <ul>
     <li><a href="./development-guide/backend">01 - 后端开发</a></li>
     <li><a href="./development-guide/front">02 - 前端开发</a></li>
@@ -112,7 +112,7 @@ Choerodon 微服务应用框架是基于多年企业应用服务的经验，面�
 </div>
 
 <div class="col-md-3">
-<h4><i class="fa fa-thumbs-o-up"></i>最佳实践</h4>
+<h4><i class="far fa-thumbs-up"></i>最佳实践</h4>
 <ul>
     <li><a href="#">01 - 开发规范</a></li>
     <li><a href="#">02 - 命名规范</a></li>
