@@ -1,3 +1,3 @@
 +++
-title = "blogs"
+title = "博客"
 +++
