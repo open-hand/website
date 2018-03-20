@@ -59,7 +59,7 @@ K8S服务	|	com.hand.devops 	|	devops-kubernetes-service	|	1.1.0
 将所有服务运行起来，一定要注意当前集群内至少有8C可用。
 
 ### 内存
-安装使用Choerodon运行区所有应用需要至少50GB可用内存(RAM + Swap)! 由于操作系统和其他正在运行的应用也会使用内存, 所以安装Choerodon运行区前一定要注意当前集群内至少有50GB的可用内存. 少于50GB内存会导致在部署后Pod一直处于等待状态或者在使用中出现各种诡异的问题。
+安装使用Choerodon运行区所有应用需要至少50GB可用内存(RAM + Swap)! 由于操作系统和其他正在运行的应用也会使用内存， 所以安装Choerodon运行区前一定要注意当前集群内至少有50GB的可用内存. 少于50GB内存会导致在部署后Pod一直处于等待状态或者在使用中出现各种不可预知的问题。
 
 Kubernetes v1.8.5
 
@@ -103,15 +103,15 @@ Harbor(可选) | 1.1.1
 ## 执行安装步骤
 
 1. 修改`inventory/hosts`文件，其中`[run]`分区只能添加一个节点且该节点可以使用`kubectl`命令。
-1. 确认所要部署的资源(mysql、rabbitmq、redis、zookeeper、kafka,minio),若资源已有不需要部署，请在`inventory/vars.yml`文件中将资源`enable`置为`false`。
-1. 执行以下命令搭建部署区所需资源。
+1. 确认所要部署的资源(mysql、rabbitmq、redis、zookeeper、kafka，minio)，若资源已有不需要部署，请在`inventory/vars.yml`文件中将资源`enable`置为`false`。
+1. 执行以下命令搭建运行区所需资源。
 
     ```
     ansible-playbook -i  inventory/hosts -e @inventory/vars.yml dev-resource.yml
     ```
 1. 手动部署监控[参考链接](../components/监控)
 1. 手动部署日志[参考链接](../components/日志)
-1. 创建部署区所需数据库
+1. 创建运行区所需数据库
     - 若使用容器运行的mysql，可以参照以下命令进入容器创建数据库
 
         ```
