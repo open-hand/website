@@ -34,15 +34,15 @@ weight = 2
 
 1. 获取Hello World示例应用程序及其依赖项：
 
-    ``
+    ```
     go get -u -d github.com/GoogleCloudPlatform/golang-samples/appengine_flexible/helloworld
-    ``
+    ```
 
 2. 切换到包含示例代码的目录：
 
-    ``
+    ```
     cd $GOPATH/src/github.com/GoogleCloudPlatform/golang-samples/appengine_flexible/helloworld
-    ``
+    ```
 
 ## 在本地机器上运行Hello World
 
@@ -50,15 +50,15 @@ weight = 2
 
 1. 启动本地Web服务器：
 
-    ``
+    ```
     go run *.go
-    ``
+    ```
 
 2. 在您的网络浏览器中，输入以下地址：
     
-    ``
+    ```
     http://localhost:8080
-    ``
+    ```
 
 > 注意：如果您正在使用云端Shell，请在工具栏中单击 Web预览，然后选择端口8080上的预览。
 
@@ -68,17 +68,17 @@ weight = 2
 
 1. 通过从helloworld目录运行以下命令部署Hello World应用程序：
 
-    ``
+    ```
     gcloud应用程序部署
-    ``
+    ```
 
     [了解](#)可选标志。
 
 2. 通过运行以下命令 启动浏览器并查看应用程序 ：`http://YOUR_PROJECT_ID.appspot.com`
 
-    ``
+    ```
     gcloud应用程序浏览
-    ``
+    ```
 
 这一次，显示Hello World消息的页面由运行在App Engine实例上的Web服务器提供。
 
@@ -113,7 +113,7 @@ Hello World是最简单的App Engine应用程序，因为它只包含一个服�
 
 该`helloworld.go`文件注册一个侦听请求的处理程序`/`，并用'Hello world！'进行响应。信息。
 
-    ``
+    ```
     package main
 
     import (
@@ -140,11 +140,11 @@ Hello World是最简单的App Engine应用程序，因为它只包含一个服�
     func healthCheckHandler(w http.ResponseWriter, r *http.Request) {
             fmt.Fprint(w, "ok")
     }
-    ``
+    ```
 
 **app.yaml**
 
-    ``
+    ```
     runtime: go
     env: flex
 
@@ -158,7 +158,7 @@ Hello World是最简单的App Engine应用程序，因为它只包含一个服�
     cpu: 1
     memory_gb: 0.5
     disk_size_gb: 10
-    ``
+    ```
 
 在这里， `app.yaml`指定应用程序使用的运行时和设置`env: flex`，指定应用程序使用[灵活的环境](#)。
 
