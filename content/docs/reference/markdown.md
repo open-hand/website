@@ -97,7 +97,11 @@ weight = 2
 
 2. 在项目列表中，选择要**删除的项目**并单击**删除**项目。
 
+    ![](../images/markdown/delete-project-screenshot.png)
+
 3. 在对话框中输入项目ID，然后单击**关闭**以删除该项目。
+
+    ![](../images/markdown/delete-project-screenshot.png)
 
 ## 下一步是什么
 
@@ -113,34 +117,34 @@ Hello World是最简单的App Engine应用程序，因为它只包含一个服�
 
 该`helloworld.go`文件注册一个侦听请求的处理程序`/`，并用'Hello world！'进行响应。信息。
 
-    ```
-    package main
+```go
+package main
 
-    import (
-            "fmt"
-            "log"
-            "net/http"
-    )
+import (
+        "fmt"
+        "log"
+        "net/http"
+)
 
-    func main() {
-            http.HandleFunc("/", handle)
-            http.HandleFunc("/_ah/health", healthCheckHandler)
-            log.Print("Listening on port 8080")
-            log.Fatal(http.ListenAndServe(":8080", nil))
-    }
+func main() {
+        http.HandleFunc("/", handle)
+        http.HandleFunc("/_ah/health", healthCheckHandler)
+        log.Print("Listening on port 8080")
+        log.Fatal(http.ListenAndServe(":8080", nil))
+}
 
-    func handle(w http.ResponseWriter, r *http.Request) {
-            if r.URL.Path != "/" {
-                    http.NotFound(w, r)
-                    return
-            }
-            fmt.Fprint(w, "Hello world!")
-    }
+func handle(w http.ResponseWriter, r *http.Request) {
+        if r.URL.Path != "/" {
+                http.NotFound(w, r)
+                return
+        }
+        fmt.Fprint(w, "Hello world!")
+}
 
-    func healthCheckHandler(w http.ResponseWriter, r *http.Request) {
-            fmt.Fprint(w, "ok")
-    }
-    ```
+func healthCheckHandler(w http.ResponseWriter, r *http.Request) {
+        fmt.Fprint(w, "ok")
+}
+```
 
 **app.yaml**
 
