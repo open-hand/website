@@ -35,7 +35,7 @@ banner = "img/banners/banner-1.jpg"
 
 ### 获取Runner注册Token
 
-  > 此教程注册的Runner属性为共享，若需注册私有Runner，Token请在Git项目仓库`Settings -> CI/CD`菜单中获取
+  > 此教程注册的Runner属性为共享，若需注册私有Runner，请在Git项目仓库`Settings -> CI/CD`菜单中获取Token
 
   ![WX20180120-200145@2x.png](https://i.loli.net/2018/01/20/5a632fc4725c0.png)
 

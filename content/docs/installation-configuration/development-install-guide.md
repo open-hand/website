@@ -7,7 +7,7 @@ banner = "img/banners/banner-1.jpg"
 
 ## 开发区安装
 
-> 由于开发区各服务也需要进行更新和管理，所以将部署开发区和部署区的所有服务。本文以CentOS为例进行讲解。
+> 由于开发区各服务也需要进行更新和管理，所以将部署开发区和运行区的所有服务。本文以CentOS为例进行讲解。
 
 本章节介绍开发区的安装。
 
@@ -69,7 +69,7 @@ SonarQube服务	|	com.hand.insight 	|	data-sonar-service  	|	1.0.1
 将所有服务运行起来，一定要注意当前集群内至少有16C可用。
 
 ### 内存
-安装使用Choerodon开发区所有应用需要至少50GB可用内存(RAM + Swap)! 由于操作系统和其他正在运行的应用也会使用内存, 所以安装Choerodon开发区前一定要注意当前集群内至少有70GB的可用内存. 少于70GB内存会导致在部署后Pod一直处于等待状态或者在使用中出现各种诡异的问题。
+安装使用Choerodon开发区所有应用需要至少50GB可用内存(RAM + Swap)! 由于操作系统和其他正在运行的应用也会使用内存， 所以安装Choerodon开发区前一定要注意当前集群内至少有70GB的可用内存. 少于70GB内存会导致在部署后Pod一直处于等待状态或者在使用中出现各种不可预知的问题。
 
 Kubernetes v1.8.5  
 
@@ -117,7 +117,7 @@ Kubernetes v1.8.5
 ## 执行安装步骤
 
 1. 修改`inventory/hosts`文件，其中`[dev]`分区只能添加一个节点且该节点可以使用`kubectl`命令。
-1. 确认所要部署的资源(mysql、rabbitmq、redis、zookeeper、kafka、sonarqube,minio),若资源已有不需要部署，请在`inventory/vars.yml`文件中将资源`enable`置为`false`。
+1. 确认所要部署的资源(mysql、rabbitmq、redis、zookeeper、kafka、sonarqube，minio)，若资源已有不需要部署，请在`inventory/vars.yml`文件中将资源`enable`置为`false`。
 1. 执行以下命令搭建开发区所需资源
 
     ```
@@ -126,7 +126,7 @@ Kubernetes v1.8.5
 1. 手动部署harbor(外部数据库要手工初始化)[参考链接](../components/harbor)
 1. 手动部署Gitlab，等Devops所有服务部署后再配置oauth授权(Mysql 5.6需要转表)[参考链接](../components/gitlab)
 
-    > 搭建完成Gitlab完成后创建一个名为`template`的Public Group，将`http://git.choerodon.com.cn/template`库中所有的仓科克隆并推送到新搭建的Gitlab仓库中,注意这个git库也应是public的，这样开发服务才能正常使用。
+    > 搭建完成Gitlab完成后创建一个名为`template`的Public Group，将`http://git.choerodon.com.cn/template`库中所有的仓科克隆并推送到新搭建的Gitlab仓库中，注意这个git库也应是public的，这样开发服务才能正常使用。
 1. 手动部署Gitlab Runner[参考链接](../components/gitlab-runner)
 1. 配置SonarQube[参考链接](../components/sonarqube)
 1. 手动部署监控[参考链接](../components/监控)

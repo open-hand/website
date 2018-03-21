@@ -1,8 +1,8 @@
 +++
-title = "环境安装"
+title = "前端环境部署"
 date = "2017-10-30"
 draft = false
-weight = 1
+weight = 4
 +++
 
 # 环境安装
@@ -125,26 +125,26 @@ brew cask install docker
 那只叫 Moby 的鲸鱼图标拖拽到 Application 文件夹即可（其间可能会询问系
 统密码）。
 
-![docker](./images/docker1.jpg)
+![docker](../images/docker1.jpg)
 
 ##### 运行
 
 从应用中找到 Docker 图标并点击运行。
 
-![docker](./images/docker2.jpg)
+![docker](../images/docker2.jpg)
 
 运行之后，会在右上角菜单栏看到多了一个鲸鱼图标，这个图标表明了 Docker 的
 运行状态。
-![docker](./images/docker3.jpg)
+![docker](../images/docker3.jpg)
 
 第一次点击图标，可能会看到这个安装成功的界面，点击 "Got it!" 可以关闭这个窗
 口。
 
-![docker](./images/docker4.jpg)
+![docker](../images/docker4.jpg)
 
 以后每次点击鲸鱼图标会弹出操作菜单。
 
-![docker](./images/docker5.jpg)
+![docker](../images/docker5.jpg)
 
 启动终端后，通过命令可以检查安装后的 Docker 版本。
 ```
@@ -163,7 +163,7 @@ $ docker run -d -p 80:80 --name webserver nginx
 服务运行后，可以访问 http://localhost，如果看到了 "Welcome to nginx!"，就说明
 Docker for Mac 安装成功了。
 
-![docker](./images/docker6.jpg)
+![docker](../images/docker6.jpg)
 
 ### Windows 安装Docker
 
@@ -176,18 +176,88 @@ Docker CE 支持 64 位版本的 Windows 10 Pro，且必须开启 Hyper-V。
 
 在 Windows 搜索栏 输入 Docker 点击 Docker for Windows 开始运行。
 
-![docker](./images/docker7.jpg)
+![docker](../images/docker7.jpg)
 
 Docker CE 启动之后会在 Windows 任务栏出现鲸鱼图标。
 
-![docker](./images/docker8.jpg)
+![docker](../images/docker8.jpg)
 
 等待片刻，点击 Got it 开始使用 Docker CE。
 
-![docker](./images/docker9.jpg)
+![docker](../images/docker9.jpg)
 
 [docker使用教程](https://www.gitbook.com/book/yeasy/docker_practice/details)
 
+# 本地项目打包编译
+HAP Cloud项目默认打包编译在`boot`目录下，查看`boot`目录下的`package.json`文件
+![docker](../images/local1.jpg)
 
+在`build`脚本中定义了本地打包编译的步骤。
 
+* 先删除本地dist文件夹
+* 执行webpack.production.js文件
 
+在终端进入`boot`目录下执行命令
+```
+npm run build
+```
+成功之后会在`boot`目录下生成`dist`文件夹
+
+![docker](../images/local2.jpg)
+
+# docker镜像打包发布
+
+### docker镜像仓库登录
+在终端键入
+```
+docker login -u $REGISTRY_USER -p $REGISTRY_PWD $registry
+```
+
+* $REGISTRY_USER 为镜像仓库的登录用户名
+* $REGISTRY_PWD 为镜像仓库的登录密码
+* $registry 为镜像仓库地址
+
+### 镜像构建
+在上一步构建dist文件夹的目录下,新建一个Dockerfile文件
+```
+### nginx镜像根据实际项目替换
+FROM registry.saas.hand-china.com/tools/nginx:stable
+### 后端api地址 根据实际项目替换
+ENV PRO_API_HOST gateway.hapcloud.test.code.saas.hand-china.com
+ENV PRO_CLIENT_ID hapcloudfront
+### 将dist文件夹添加到nginx镜像html目录下
+ADD dist /usr/share/nginx/html
+### 将boot/structure/enterpoint.sh 文件放入nginx/html目录下
+COPY ./boot/structure/enterpoint.sh /usr/share/nginx/html
+### 运行该enterpoint脚本文件
+RUN chmod 777 /usr/share/nginx/html/enterpoint.sh
+ENTRYPOINT ["/usr/share/nginx/html/enterpoint.sh"]
+CMD ["nginx", "-g", "daemon off;"]
+### 暴露80端口
+EXPOSE 80
+```
+
+`boot/structure/enterpoint.sh`文件看起来是这样的
+```
+#!/bin/bash
+set -e
+### 替换PRO_API_HOST和PRO_CLIENT_ID环境变量
+find /usr/share/nginx/html -name '*.js' | xargs sed -i "s/localhost:8080/$PRO_API_HOST/g"
+find /usr/share/nginx/html -name '*.js' | xargs sed -i "s/localhost:clientId/$PRO_CLIENT_ID/g"
+
+exec "$@"
+
+```
+
+在此目录终端下，运行
+```
+### $docker_Name为镜像名称 根据实际需求更改
+docker build -t $docker_Name .
+```
+生成$docker_Name命名的镜像
+
+### 镜像发布
+```
+### $registry为远程镜像地址 根据实际项目更改
+docker push $registry
+```

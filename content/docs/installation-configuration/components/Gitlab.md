@@ -38,7 +38,7 @@ banner = "img/banners/banner-1.jpg"
 
 ### 构建镜像
 
-  > 在使用mysql作为gitlab的数据库时,需要自行安装mysql的依赖和驱动包，使用postgresql则无需构建镜像。进入`devops-install-docs/devops/gitlab-ce`目录，下文我们将以此目录进行讲解。
+  > 在使用mysql作为gitlab的数据库时，需要自行安装mysql的依赖和驱动包，使用postgresql则无需构建镜像。进入`devops-install-docs/devops/gitlab-ce`目录，下文我们将以此目录进行讲解。
   
   ```
   # 在镜像仓库中已有也可直接pull
@@ -75,7 +75,7 @@ banner = "img/banners/banner-1.jpg"
 ### 资源调整
 
   > 若集群各节点资源充足可跳过此步。
-  > 由于gitlab运行需要大量的资源并且要保证其稳定性,不受到其他pod的影响,这里专们调整一台节点部署,这里我们选择了node5(4c16g)
+  > 由于gitlab运行需要大量的资源并且要保证其稳定性，不受到其他pod的影响，这里专们调整一台节点部署，这里我们选择了node5(4c16g)
   
   - 节点准备
   
@@ -338,7 +338,7 @@ banner = "img/banners/banner-1.jpg"
 
  如果在gitlab中需要使用`emoji`图标(比如在issue、comment、merge request区域),那么需要做以下配置:
  
- 首先，需要对数据库表编码和行类型进行转换,如果一开始创建表时就使用`utf8mb4`格式，会造成初始化时列的长度超出限制的错误(767/4)。所以先使用utf8初始化完成后，再用sql进行转换。
+ 首先，需要对数据库表编码和行类型进行转换，如果一开始创建表时就使用`utf8mb4`格式，会造成初始化时列的长度超出限制的错误(767/4)。所以先使用utf8初始化完成后，再用sql进行转换。
  
  - 修改数据库参数
  
@@ -364,7 +364,7 @@ banner = "img/banners/banner-1.jpg"
         AND ROW_FORMAT != "Dynamic";
     ```
  
- - 继续执行sql，并复制返回结果执行,把表的编码进行转换:
+ - 继续执行sql，并复制返回结果执行，把表的编码进行转换:
  
     ```
     SELECT
@@ -377,4 +377,4 @@ banner = "img/banners/banner-1.jpg"
         AND TABLE_TYPE = "BASE TABLE";
     ```
  
- 这样在gitlab里就可以使用`emoji`图标了。对于`postgresql`是可以直接使用`utf8mb4`编码的。而在`mysql5.7`中可以将`ROW_FORMAT = "Dynamic"`这一值设置为默认属性,因此可能不会遇到这个问题。
+ 这样在gitlab里就可以使用`emoji`图标了。对于`postgresql`是可以直接使用`utf8mb4`编码的。而在`mysql5.7`中可以将`ROW_FORMAT = "Dynamic"`这一值设置为默认属性，因此可能不会遇到这个问题。
