@@ -373,14 +373,14 @@ type = "docs"
 
 1. 结束分支之后，`feature-1001`分支的代码会合并到`develop`分支，并触发Gitlab CI。进入服务详情，点击``流水线``,查看CI执行情况。CI阶段具体执行细节参考.gitlab-ci.yml文件。
 
-
-    CI流程有三个阶段：
-
-    **a.单元测试，编译打包，代码质量检查**
-
-    **b.构建docker镜像**
-
-    **c.创建服务版本**
+    <blockquote class="note">
+        Choerodon 缺省的 CI 流程有三个阶段:
+        <ul>
+            <li>单元测试，编译打包，代码质量检查</li>
+            <li>构建docker镜像</li>
+            <li>创建服务版本</li>
+        </ul>
+    </blockquote>
 
     ![](../assets/microservice-backend/流水线1.jpg) 
 
