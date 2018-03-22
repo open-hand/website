@@ -62,6 +62,17 @@ weight = 2
 
 > 注意：如果您正在使用云端Shell，请在工具栏中单击 Web预览，然后选择端口8080上的预览。
 
+<blockquote class="note">
+    如果您正在使用云端Shell，请在工具栏中单击 Web预览，然后选择端口8080上的预览。
+</blockquote>
+<blockquote class="warning">
+    如果您正在使用云端Shell，请在工具栏中单击 Web预览，然后选择端口8080上的预览。
+<ul>
+    <li>如果您使用的是现有项目，则还会删除您在项目中完成的其他任何工作。</li>
+    <li>您不能重复使用已删除项目的项目ID。如果您创建了您计划在将来使用的自定义项目ID，则应该删除项目内部的资源。这可确保使用项目ID的appspot.comURL（例如URL）保持可用。</li>
+</ul>
+</blockquote>
+
 ## 在App Engine上部署并运行 Hello World
 
 要将您的应用部署到App Engine灵活环境：
