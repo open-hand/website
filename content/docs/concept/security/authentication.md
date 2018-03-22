@@ -14,17 +14,6 @@ weight = 2
 - <font>提供微服务通信的统一的用户 session 保证。</font>
 - <font>提供 token 管理系统，用来生成 token ，存储 token ， 撤销 token 。</font>
 
-本章节从如下方面来描述 Choerodon 认证体系：
-
-- <font>[架构](#架构)</font>
-- <font>[组成](#组成)</font>
-    - <font>[认证服务器](#认证服务器)</font>
-    - <font>[资源服务器](#资源服务器)</font>
-- <font>[工作流](#工作流)</font>
-    - <font>[授权阶段](#授权阶段)</font>
-    - <font>[鉴权阶段](#鉴权阶段)</font>
-    - <font>[使用阶段](#使用阶段)</font>
-
 ---
 ## 架构
 
