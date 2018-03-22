@@ -13,7 +13,7 @@ summary: 部署周期从数周减少到几分钟，应用交付的效率提高�
   </div>
 </div>
 <div id="scenario">
-<div class="container" >公司 <b>华润置地</b> &nbsp;&nbsp;&nbsp;地点 <b>深圳,中国</b> &nbsp;&nbsp;&nbsp;行业 <b>电信设备</b></div>
+<div class="container" >公司 <b>华润置地</b> &nbsp;&nbsp;&nbsp;地点 <b>深圳,中国</b> &nbsp;&nbsp;&nbsp;行业 <b>房地产</b></div>
 </div>
   <div class="cols">
     <div class="col1">

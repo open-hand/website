@@ -13,7 +13,7 @@ summary: Choerodon的使用确实在很大程度上缩短了开发周期，加�
     </div>
   </div>
   <div id="scenario">
-<div class="container" >公司 <b>汉得</b> &nbsp;&nbsp;&nbsp;地点 <b>上海,中国</b> &nbsp;&nbsp;&nbsp;行业 <b>电信设备</b></div>
+<div class="container" >公司 <b>汉得</b> &nbsp;&nbsp;&nbsp;地点 <b>上海,中国</b> &nbsp;&nbsp;&nbsp;行业 <b>IT咨询服务</b></div>
 </div>
   <div class="cols">
     <div class="col1">
