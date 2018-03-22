@@ -9,15 +9,6 @@ banner = "img/banners/banner-1.jpg"
 
 介绍 Gitlab-Runner 的安装和部署，Gitlab-Runner 是 Gitlab CI 的运行环境。
 
-- <font>[安装所需镜像及文件](#安装所需镜像及文件)</font>
-- <font>[前置准备](#前置准备)</font>
-  - <font>[获取Runner注册Token](#获取runner注册token)</font>
-- <font>[注册Runner](#注册runner)</font>
-  - <font>[方式1](#方式1)</font>
-  - <font>[方式2](#方式2)</font>
-- <font>[修改部署配置](#修改部署配置)</font>
-- <font>[运行](#运行)</font>
-
 ---
 ## 搭建所需镜像及文件
  - 镜像列表 

@@ -4,6 +4,9 @@ description = ""
 weight = 6
 +++
 
+# Choerodon 的组织架构
+---
+
 ## 组织层次
 
 Choerodon中有三层组织层次，即全局层、组织层和项目层。Choerodon使用三层组织结构来管理用户、权限、项目、环境资源、菜单，以及其他系统资源和功能。Choerodon这样的设计其实是借用的SaaS组织管理概念，主要是Choerodon应用开发框架为了满足用户SaaS化的需求而设计的，在Choerodon的应用开发和运营管理中使用的不多。

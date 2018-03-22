@@ -10,13 +10,6 @@ banner = "img/banners/banner-1.jpg"
 
 介绍 SonarQube 的安装和配置，Choerodon 使用 SonarQube 作为代码质量的检查工具。
 
-- <font>[安装所需镜像及文件](#安装所需镜像及文件)</font>
-- <font>[前置准备](#前置准备)</font>
-- <font>[安装](#安装)</font>
-- <font>[集成Gitlab](#集成gitlab)</font>
-    - <font>[网络好](#网络好)</font>
-    - <font>[网络不好](#网络不好)</font>
-
 --- 
 ## 安装所需镜像及文件
  - 镜像列表 

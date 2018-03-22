@@ -9,15 +9,6 @@ banner = "img/banners/banner-1.jpg"
 
 介绍 Harbor 的安装和配置，Choerodon 使用 Harbor 作为私有镜像库。
 
-- <font>[安装所需镜像及文件](#安装所需镜像及文件)</font>
-- <font>[使用外部数据库](#使用外部数据库)</font>
-- <font>[安装Harbor](#安装harbor)</font>
-    - <font>[生成配置](#生成配置)</font>
-    - <font>[开始安装](#开始安装)</font>
-- <font>[访问](#访问)</font>
-    - <font>[使用HTTP进行访问](#使用http进行访问)</font>
-    - <font>[使用HTTPS进行访问](#使用https进行访问)</font>
-
 --- 
 ## 安装所需镜像及文件
  - 镜像列表 

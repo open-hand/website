@@ -4,11 +4,11 @@ description = ""
 weight = 5
 +++
 
-## Choerodon 完全基于开源产品打造 
+# Choerodon 使用的开源组件
+
 
 Choerodon 完全基于开源产品打造。我们从两个方面来叙述Choerodon使用的开源产品或者工具。其一，Choerodon的本身是使用Spring Cloud作为微服务架构，运行在Docker上，同时使用Kubernetes作为容器管理和编排工具；其二，它以DevOps为理论指导，实现了敏捷的最佳实践。 以下我们从两个方面来阐述Choerodon使用了哪些开源产品和工具：
 
----
 ## 微服务应用框架使用的开源工具集
 
 
@@ -16,8 +16,8 @@ Choerodon 的微服务应用系统架构由五个不同的层组成，从应用�
 
 ![](/img/docs/concept/system-component.png)
 
----
-#### 应用前端
+
+### 应用前端
 
 Choerodon前端使用react和mobx。
 
@@ -27,8 +27,7 @@ Choerodon前端使用react和mobx。
 
 - **Mobo**。Mobx是一个功能强大，上手非常容易的状态管理工具。
 
----
-#### 微服务后端
+### 微服务后端
 
 Choerodon的微服务后端采用Spring Cloud作为微服务框架，使用Spring Boot作为开发脚手架。
 
@@ -38,8 +37,7 @@ Choerodon的微服务后端采用Spring Cloud作为微服务框架，使用Sprin
 
 - **Spring Boot**。Spring Boot是由Pivotal团队提供的全新框架，其设计目的是用来简化新Spring应用的初始搭建以及开发过程。该框架使用了特定的方式来进行配置，从而使开发人员不再需要定义样板化的配置。
 
----
-#### 消息中间件
+### 消息中间件
 
 Choerodon使用Kafka作为消息中间件。
 
@@ -47,8 +45,7 @@ Choerodon使用Kafka作为消息中间件。
 
 - **Kafka**。Kafka是由Apache软件基金会开发的一个开源流处理平台，由Scala和Java编写。Kafka是一种高吞吐量的分布式发布订阅消息系统，它可以处理消费者规模的网站中的所有动作流数据。
 
----
-#### 数据服务层
+### 数据服务层
 
 Choerodon采用MySQL作为关系型数据存储库，Redis作为缓存库。
 
@@ -57,8 +54,7 @@ Choerodon采用MySQL作为关系型数据存储库，Redis作为缓存库。
 - **MySQL**。Mysql是最流行的开源关系型数据库管理系统。
 - **Redis**。Redis是一个开源的使用ANSI C语言编写、支持网络、可基于内存亦可持久化的日志型、Key-Value数据库，并提供多种语言的API
 
----
-#### 运行环境
+### 运行环境
 
 Choerodon运行在Docker上。
 
@@ -66,8 +62,7 @@ Choerodon运行在Docker上。
 
 - **Docker**。Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。
 
----
-#### 容器编排
+### 容器编排
 
 
 Choerodon使用Kubernetes作为容器编排和管理工具。
@@ -76,7 +71,6 @@ Choerodon使用Kubernetes作为容器编排和管理工具。
 
 - **Kubernetes**。Kubernetes是一个开源平台,用于跨主机群集自动部署,扩展和操作应用程序容器,提供以容器为中心的基础架构。
 
----
 ## DevOps平台使用的开源工具集
 
 
@@ -84,8 +78,7 @@ Choerodon使用Kubernetes作为容器编排和管理工具。
 
 ![](/img/docs/concept/devops-opensource-component.png)
 
----
-#### 计划
+### 计划
 
 Choerodon使用自主开发的敏捷管理开完成DevOps的计划步骤的工作。Choerodon敏捷管理的核心是需求，计划和执行。即通过用户故事地图来管理用户故事和发布计划，通过迭代来管理冲刺，最后通过看板来可视化冲刺的执行。
 
@@ -99,8 +92,7 @@ Choerodon使用自主开发的敏捷管理开完成DevOps的计划步骤的工�
 
 关于敏捷管理的详情，请参考[敏捷管理](#)。
 
----
-#### 编码
+### 编码
 
 Choerodon采用主流的Git和Gitlab作为代码的管理和托管工具，同时使用Maven作为项目代码的组织和管理工具。
 
@@ -112,8 +104,7 @@ Choerodon采用主流的Git和Gitlab作为代码的管理和托管工具，同�
 
 - **Maven**。Maven项目对象模型(POM)，可以通过一小段描述信息来管理项目的构建，报告和文档的软件项目管理工具
 
----
-#### 构建
+### 构建
 
 Choerodon在构建阶段，采用Gitlab CI作为持续集成工具，Harbor作为镜像的存放库，同时Choerodon融合了Gitlab CI和Harbor这两个工具，以实现自动化和版本的控制。
 
@@ -121,8 +112,7 @@ Choerodon在构建阶段，采用Gitlab CI作为持续集成工具，Harbor作�
 
 - **Harbor**。Harbor 是一个企业级的 Docker Registry，可以实现 images 的私有存储和日志统计权限控制等功能，并支持创建多项目。
 
---- 
-#### 测试
+### 测试
 
 Choerodon采用多个代码检查和测试工具，其中，SonarQube作为自动化代码检查工具；JUnit作为后端Java代码的测试工具； Selenium作为前端测试的工具。
 
@@ -134,8 +124,7 @@ Choerodon采用多个代码检查和测试工具，其中，SonarQube作为自�
 
 - **Selenium**。Selenium 是一套完整的web应用程序测试系统，包含了测试的录制（selenium IDE）,编写及运行（Selenium Remote Control）和测试的并行处理（Selenium Grid）。
 
----
-#### 部署和运营
+### 部署和运营
 
 Choerodon融合使用Docker、Kubernetes和Harbor作为部署工具。
 
@@ -147,8 +136,7 @@ Choerodon融合使用Docker、Kubernetes和Harbor作为部署工具。
 
 - **Harbor**。Harbor 是一个企业级的 Docker Registry，可以实现 images 的私有存储和日志统计权限控制等功能，并支持创建多项目。
 
----
-#### 监控
+### 监控
 
 Choerodon的监控包括了从用户故事开始到服务的运营全生命周期的状态、反馈、监控等，帮助开发和运营管理更好的提升效能。
 

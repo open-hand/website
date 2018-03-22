@@ -4,7 +4,7 @@ description = ""
 weight = 3
 +++
 
-## Choerodon 角色控制访问权限(RBAC)
+# Choerodon 角色控制访问权限(RBAC)
 
 Choerodon 的对资源的管理是基于角色控制的，并从组织层、项目层和用户层对角色进行划分。
 
@@ -14,21 +14,18 @@ Choerodon 的对资源的管理是基于角色控制的，并从组织层、项�
 - <font>基于组织层、项目层和用户层的三层权限体系</font>
 - <font>自定义角色创建和绑定</font>
 
----
 ## 架构
 
 下图介绍了Choerodon RBAC的架构。
 
 ![权限](/img/docs/security/permission.png)
 
----
 ## 工作流
 
 下图介绍了RBAC的流程图。
 
 ![权限流程图](/img/docs/security/permission_flow.png)
 
----
 ## 组成
 
 Choerodon RBAC 包含资源、角色、用户。同时包含资源与角色的关联，角色与用户的关联。

@@ -11,17 +11,6 @@ banner = "img/banners/banner-1.jpg"
 
 本章节介绍开发区的安装。
 
-- <font>[开发区服务](#开发区服务)</font>
-- <font>[硬件需求](#硬件需求)</font>
-    - <font>[存储](#存储)</font>
-    - <font>[CPU](#CPU)</font>
-    - <font>[内存](#内存)</font>
-- <font>[依赖组件](#依赖组件)</font>
-- <font>[安装所需软件及文件](#安装所需软件及文件)</font>
-- <font>[使用NFS存储](#使用NFS存储)</font>
-- <font>[执行安装步骤](#执行安装步骤)</font>
-
-
 ---
 ## 开发区服务
 

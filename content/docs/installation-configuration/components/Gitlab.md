@@ -9,18 +9,6 @@ banner = "img/banners/banner-1.jpg"
 
 介绍 Gitlab 的安装和部署，Gitlab 作为 Choerodon 的代码托管库和分支管理工具。
 
-- <font>[安装所需镜像及文件](#安装所需镜像及文件)</font>
-- <font>[前置准备](#前置准备)</font>
-  - <font>[构建镜像](#构建镜像)</font>
-  - <font>[创建数据库](#创建数据库)</font>
-  - <font>[资源调整](#资源调整)</font>
-- <font>[安装](#安装)</font>
-  - <font>[Redis](#redis)</font>
-  - <font>[Gitlab](#gitlab)</font>
-- <font>[配置Gitlab](#配置gitlab)</font>
-- <font>[创建oauth客户端](#创建oauth客户端)</font>
-- <font>[优化](#优化)</font>
-
 ---
 ## 安装所需镜像及文件
  - 镜像列表 

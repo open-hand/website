@@ -5,7 +5,7 @@ weight = 3
 type = "docs"
 +++
 
-## 开发区与运行区
+# 开发区与运行区
 
 Choerodon 采用微服务架构融合多个开源组件实现 DevOps的开发相关功能，包括计划、编码、构建、测试、部署、运行、运维等，并且Choerodon是以Docker容器作为运行环境和使用Kubernetes作为容器编排和管理工具，在一个Kubernetes集群中运行DevOps流程的开发相关（计划、编码、构建、测试）微服务和开源工具，我们将此Kubernetes集群称作**开发区**；在一个Kubernetes集群中运行DevOps流程的运行相关（部署、运行、运维）微服务和开源工具，我们将此Kubernetes集群称作**运行区**。
 
@@ -13,10 +13,9 @@ Choerodon 采用微服务架构融合多个开源组件实现 DevOps的开发相
 
 关于运行区的安装，请参考[运行区安装](./installation-configuration/deployment-install-guide)。
 
----
 ## 部署
 
-本节介绍说明 Choerodon 开发区和运行区的部署。Choerodon 可以有两种不同的部署方式，用户可以选择单集群部署，将开发和运行相关服务部署到一个Kubernetes集群上，也可以将开发区和运行区的服务分别部署到不同的Kubernetes集群上。
+Choerodon 可以有两种不同的部署方式，用户可以选择单集群部署，将开发和运行相关服务部署到一个Kubernetes集群上，也可以将开发区和运行区的服务分别部署到不同的Kubernetes集群上。
 
 > 一个Kubernetes集群如果仅部署开发区相关的服务，则可作为DevOps开发端使用，如果仅部署运行区相关服务，则可作为DevOps运行端使用，如果既部署开发区相关服务和组件，又部署运行区相关服务和组件，则可以为一个完整的PaaS平台。
 
@@ -33,7 +32,6 @@ Choerodon 采用微服务架构融合多个开源组件实现 DevOps的开发相
 
 ![](/img/docs/concept/choerodon-deploy-multiple.png)
 
----
 ## 开发区相关服务
 
 Choerodon 开发区各服务版本信息如下：
@@ -59,9 +57,6 @@ SonarQube服务	|	com.hand.insight 	|	data-sonar-service  	|	1.0.1
 看板前端	|	com.hand.kanban 	|	hap-kanban-front 	|	1.1.0
 移动前端	|	com.hand.mobile 	|	mobile-front 	|	1.0.0
 
-
-
----
 ## 运行区相关服务
 
 Choerodon 运行区各服务版本信息如下：

@@ -4,7 +4,7 @@ description = ""
 weight = 2
 +++
 
-## Choerodon 认证体系
+# Choerodon 认证体系
 
 身份验证的目的是增强微服务和保证微服务之间的通信安全。
 
@@ -14,14 +14,12 @@ weight = 2
 - <font>提供微服务通信的统一的用户 session 保证。</font>
 - <font>提供 token 管理系统，用来生成 token ，存储 token ， 撤销 token 。</font>
 
----
 ## 架构
 
 下图介绍了Choerodon 认证体系的架构。
 
 ![架构](/img/docs/security/architecture.png)
 
----
 ## 组成
 
 ### 认证服务器
@@ -34,7 +32,6 @@ weight = 2
 
 在Choerodon 中，资源服务器主要指系统中的一个个微服务。
 
----
 ## 工作流
 
 认证流程包含三个阶段， 授权阶段，鉴权阶段和使用阶段。
