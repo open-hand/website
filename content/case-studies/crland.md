@@ -7,9 +7,13 @@ summary: 部署周期从数周减少到几分钟，应用交付的效率提高�
 ---
 
 <section class="case-studies-detail">
-<div class="text-nav">
+<div class="text-nav" style="background:url(/img/case_studies/detail/hand-2.jpg)">
   <div class="container">
-    <div class="col-md-12 nav-head">案例-华润置地</div>
+    <div class="title">
+      <div class="nav-head">案例-华润置地:</div>
+      <img src="/img/case_studies/detail/crland-ico.png"/>
+    </div>
+    <p>每日更新你关注的头条,与世界接轨</p>
   </div>
 </div>
 <div id="scenario">
