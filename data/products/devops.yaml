@@ -1,6 +1,0 @@
-weight: 3
-horizontal: 15
-vertical: 165
-name: "持续集成与持续交付"
-icon: "features_pic2.png"
-description: "采用Gitlab CI作为持续集成工具，结合Gitlab的Gitflow分支模型，提供持续集成的流水线，让产品可以快速迭代，同时还能保持高质量；并且高效频繁地将软件的新版本，交付给质量团队或者用户"

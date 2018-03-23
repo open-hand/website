@@ -1,4 +1,0 @@
-weight: 1
-name: "Horizontal scaling"
-icon: "features_pic1.png"
-description: "Scale your application up and down with a simple command, with a UI, or automatically based on CPU usage."

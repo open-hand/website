@@ -1,6 +1,0 @@
-weight: 2
-horizontal: 0
-vertical: 30
-name: "敏捷管理"
-icon: "features_pic1.png"
-description: "DevOps理念和敏捷思想的实际落地，包括用户故事地图，ISSUE管理，迭代管理和电子看板等。通过用户故事地图收集需求，并制定发布计划，然后使用迭代管理冲刺，电子看板可视化整个冲刺的执行情况"

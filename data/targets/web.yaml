@@ -1,4 +1,0 @@
-weight: 3
-name: "微服务应用架构"
-icon: "img/home/microservice-application.png"
-description: "采用Spring Cloud作为微服务架构，将系统模块拆分成多个各自独立的微服务，降低应用模块的耦合度。并且，利用容器编排和管理工具，结合DevOps最佳实践，能够使企业对应用的一部分使用更快、更敏捷的方式进行开发、部署和更新工作，因此能够对新的市场需求和竞争状况进行更及时更灵活的响应。"

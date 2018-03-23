@@ -1,7 +1,0 @@
-weight: 3
-horizontal: 15
-vertical: 165
-name: "开发管理"
-icon: "features_pic2.png"
-description: "Choerodon使用gitlab管理代码，包括代码托管、分支管理（Gitflow分支模型），根据服务类型提供持续集成的流水线模板，开发人员也可以根据需要进行定制化修改，以及代码质量管理等。
-"

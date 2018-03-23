@@ -1,5 +1,0 @@
-weight: 1
-name: "混合云的容器平台"
-icon: "img/home/container-platform-clouds.png"
-description: "容器技术和Kubernetes提供的容器编排和管理能力，将企业专有云和公有云基础设施平滑地融合在一起，使混合云平台具有了良好的扩展性和延伸性，以及在发生任何部分损坏或宕机时执行自修复的快速响应能力，确保应用系统具有提供稳定高效服务的能力。
-"
