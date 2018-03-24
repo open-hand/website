@@ -7,40 +7,68 @@ summary: Choerodon的使用确实在很大程度上缩短了开发周期，加�
 ---
 
 <section class="case-studies-detail">
-  <div class="text-nav" style="background:url(/img/case_studies/detail/hand-1.jpg)">
+  <div class="text-nav" style="background:url(/img/case_studies/detail/hand-1.jpg) no-repeat center center">
     <div class="container">
     <div class="title">
       <div class="nav-head">案例-汉得信息:</div>
       <img src="/img/case_studies/detail/hand-ico.png"/>
     </div>
-    <p>每日更新你关注的头条,与世界接轨</p>
+    <p>为客户提供更好的服务</p>
     </div>
   </div>
   <div id="scenario">
 <div class="container" >公司 <b>汉得</b> &nbsp;&nbsp;&nbsp;地点 <b>上海,中国</b> &nbsp;&nbsp;&nbsp;行业 <b>IT咨询服务</b></div>
 </div>
   <div class="cols">
-    <div class="col1">
-      <h2>挑战</h2>
-        <p>汉得成立至今，作为一家在咨询实施行业服务超过20年的企业，服务各行业的客户超过3000家，业务领域已扩展至全面的企业信息化应用产品研发、咨询实施与技术服务，从智能制造到互联网行业再到传统的服装零售等方面都有涉及。随着IT技术发展和经营环境的不断变化，企业表达出越来越多的个性化IT诉求。“当需求越来越多样化，什么样的方式可以更好更高效满足客户需求？”是我们一直关注的问题，我们希望能以更高效稳定的方式实现客户需求。“传统的软件开发方式，当开发过程中新人比较多的时候，经常会因为环境导致编译发布过程中出现问题，很多时间消耗在上面，而且往往这些问题出现的时候，需要一些经验丰富的人去解决，最后确发现很多问题都是因为环境的不一致或是很小的差异引起的，想达到高效，我们知道必须做出一些变革。”汉得研发中心总经理张礼军说。</p>
-      <h2>碰撞</h2>
-        <p>“企业内部要构建业务快转型创新的平台，它必须具备刚才所说DevOps，微服务，容器这些技术，才能满足一个企业内部这种业务创新的一个技术平台的要求，所以我们基于这些，相当于把支撑我们自己研发团队本身的能力转变成了一个平台的能力，所以就逐步形成我们所讲的一个数字化平台——PaaS平台，总的来说，等于把我们内生的需求逐渐演变成了一个产品，为其他客户提供PaaS解决方案。”张礼军说。</p>
+    <div class="col">
+      <div class="content-title-left">
+        <img src="/img/case_studies/detail/content-1.png"/>
+          <!-- <span class="number">1</span>
+          <span class="text">概览</span> -->
+      </div>
+      <p>汉得成立至今，作为一家在咨询实施行业服务超过20年的企业，服务各行业的客户超过3000家，业务领域已扩展至全面的企业信息化应用产品研发、咨询实施与技术服务，从智能制造到互联网行业再到传统的服装零售等方面都有涉及。随着IT技术发展和经营环境的不断变化，企业表达出越来越多的个性化IT诉求。“当需求越来越多样化，什么样的方式可以更好更高效满足客户需求？”是我们一直关注的问题，我们希望能以更高效稳定的方式实现客户需求。“传统的软件开发方式，当开发过程中新人比较多的时候，经常会因为环境导致编译发布过程中出现问题，很多时间消耗在上面，而且往往这些问题出现的时候，需要一些经验丰富的人去解决，最后确发现很多问题都是因为环境的不一致或是很小的差异引起的，想达到高效，我们知道必须做出一些变革。”汉得研发中心总经理张礼军说。</p>
     </div>
-    <div class="col2">
-      <h2>故事发展</h2>
+    <div class="col">
+      <p>“企业内部要构建业务快转型创新的平台，它必须具备刚才所说DevOps，微服务，容器这些技术，才能满足一个企业内部这种业务创新的一个技术平台的要求，所以我们基于这些，相当于把支撑我们自己研发团队本身的能力转变成了一个平台的能力，所以就逐步形成我们所讲的一个数字化平台——PaaS平台，总的来说，等于把我们内生的需求逐渐演变成了一个产品，为其他客户提供PaaS解决方案。”张礼军说。</p>
+      <div class="content-title-right">
+        <img src="/img/case_studies/detail/content-2.png"/>
+          <!-- <span class="number">2</span>
+          <span class="text">挑战</span> -->
+      </div>
+    </div>
+    <div class="col">
+      <div class="content-title-left">
+        <img src="/img/case_studies/detail/content-3.png"/>
+          <!-- <span class="number">3</span>
+          <span class="text">碰撞</span> -->
+      </div>
       <p>IDC曾对2000位跨国企业CEO做过一项调查，结果显示其中有67%的人认为，截止2017年底，数字化转型将成为所在企业的战略核心。预计到2018年底，全球有超过50%的大型企业将拥有完善的数字化转型战略。互联网已经带来了新的经济形势，在以技术为核心的商业模式下，我们必须要不断激发自己的潜能，而数字化转型的本质，是通过技术变革来释放价值的过程，正是我们的方向。</p>
-      <h2>解决方案</h2>
+    </div>
+    <div class="col">
       <p>“一开始我们的服务架构是基于MVC的HIP架构，但是随着业务的快速变革，我们需要微服务这种架构配合我们的敏捷团队，来做快速创新，我们做了很多DevOps相关的敏捷变革，自然而然也促成说我们在软件架构这一块也要进行一个变革，所以才开始从HIP演变去做HAP cloud，但是HAP cloud框架做了之后，我们发现在企业内部这种转型创新，光有一个开发框架，是很薄弱的不足的，如果企业内部要做这种业务转型，他需要一个相当于企业内部私有PaaS平台，首先要有微服务独立快速迭代这种系统功能的开发框架，但是要作微服务交付的话，我们又发现如果没有相应的DevOps的工具链来支持，也是很难交付的。</p>
+      <div class="content-title-right">
+        <img src="/img/case_studies/detail/content-4.png"/>
+          <!-- <span class="number">4</span>
+          <span class="text">故事发展</span> -->
+      </div>
+    </div>
+    <div class="col">
+      <div class="content-title-left">
+        <img src="/img/case_studies/detail/content-5.png"/>
+          <!-- <span class="number">5</span>
+          <span class="text">解决方案</span> -->
+      </div>
       <p>在工具应用上我们是逐步演变的，比如持续集成，因为考虑到语言和开发工具统一，我们用过很多工具，最初工程实践用Jenkins，随着服务架构转变，Jenkins的特性并不适用于DevOps流程，我们开始将基于GO语言实现的gitlab CI作为持续集成的工具。微服务架构，服务数量多，按照原有方式难以管理，容器技术恰恰可以解决这些问题，我们考虑过swarm，Rancher，Mesos，最终决定引入kubernetes来解决微服务架构所带来的问题。</p>
+    </div>
     </div>
   </div>
 </section>
 
-<div class="banner2" style="background:url(/img/case_studies/detail/hand-2.jpg)">
+<div class="banner2" style="background:url(/img/case_studies/detail/hand-2.jpg) no-repeat center center">
   <div class="bannertext">
     <p>"在数字化转型的大背景下，我们一直也在寻求一个更好的软件开发方式，缩短我们的开发周期，更快地交付。我们是在做devops转型，但其实我们Devops转型过程是'不正统'的，回望这个devops转型，并不是有意去做转型，而是真的发现了很多传统开发管理过程中存在的问题。"</p>
     <div class="author">
-      - 研发中心总经理,张礼军
+      - 研发中心总经理 张礼军
     </div>
   </div>
 </div>
@@ -53,7 +81,7 @@ summary: Choerodon的使用确实在很大程度上缩短了开发周期，加�
   </div>
 </section>
 
-<div class="banner3" style="background:url(/img/case_studies/detail/hand-3.jpg)">
+<div class="banner3" style="background:url(/img/case_studies/detail/hand-3.jpg) no-repeat center center">
   <div class="bannertext">
     Choerodon的使用确实在很大程度上缩短了开发周期，加快了迭代的速度,大大减少了开发运维人员的负担
   </div>

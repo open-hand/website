@@ -1,5 +1,5 @@
 baseurl = "http://choerodon.io/"
-title = "choerodon"
+title = "choerodon|企业级数字服务平台"
 theme = "hugo-choerodon-theme"
 # themesDir = "../.."
 #languageCode = "en-us"
@@ -217,8 +217,7 @@ paginate = 10
     # All features are defined in their own files. You can find example items
     # at 'exampleSite/data/products'.
     # For more informtion take a look at the README.
-    title = "特点"
-    subtitle = "特点"
+    title = "产品功能和服务"
 
 [params.clients]
     enable = true
