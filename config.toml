@@ -1,5 +1,5 @@
 baseurl = "http://choerodon.io/"
-title = "choerodon | 企业级数字服务平台"
+title = "Choerodon | 企业级数字服务平台"
 theme = "hugo-choerodon-theme"
 # themesDir = "../.."
 #languageCode = "en-us"

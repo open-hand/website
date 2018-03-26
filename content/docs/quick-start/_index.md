@@ -2,7 +2,7 @@
 title = "快速入门"
 description = ""
 weight = 3
-alwaysopen=true
+alwaysopen=false
 +++
 
 ## 快速入门

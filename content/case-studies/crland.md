@@ -4,16 +4,16 @@ date: "2018-01-01"
 type: "case-studies"
 banner: "img/case_studies/crland.jpg"
 summary: 部署周期从数周减少到几分钟，应用交付的效率提高了10倍，重要的运营支出减少，有些情况下为20-30％，这对华润置地的业务非常有帮助
+weight: 2
 ---
 
 <section class="case-studies-detail">
 <div class="text-nav" style="background:url(/img/case_studies/detail/crland-1.jpg)no-repeat center center">
   <div class="container">
     <div class="title">
-      <div class="nav-head">案例-华润置地:</div>
       <img src="/img/case_studies/detail/crland-ico.png"/>
     </div>
-    <p>每日更新你关注的头条,与世界接轨</p>
+    <p>改变城市，改变生活，我们将始终全力以赴，以卓越的品质描摹更加美好的未来</p>
   </div>
 </div>
 <div id="scenario">

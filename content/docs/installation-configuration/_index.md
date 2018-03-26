@@ -2,7 +2,7 @@
 title = "安装与配置"
 description = ""
 weight = 2
-alwaysopen=true
+alwaysopen=false
 +++
 
 ## 安装与配置

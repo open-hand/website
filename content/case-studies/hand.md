@@ -4,20 +4,20 @@ date: "2017-12-01"
 type: "case-studies"
 banner: "img/case_studies/hand.jpg"
 summary: Choerodon的使用确实在很大程度上缩短了开发周期，加快了迭代的速度,大大减少了开发运维人员的负担
+weight: 1
 ---
 
 <section class="case-studies-detail">
   <div class="text-nav" style="background:url(/img/case_studies/detail/hand-1.jpg) no-repeat center center">
     <div class="container">
     <div class="title">
-      <div class="nav-head">案例-汉得信息:</div>
       <img src="/img/case_studies/detail/hand-ico.png"/>
     </div>
     <p>为客户提供更好的服务</p>
     </div>
   </div>
   <div id="scenario">
-<div class="container" >公司 <b>汉得</b> &nbsp;&nbsp;&nbsp;地点 <b>上海,中国</b> &nbsp;&nbsp;&nbsp;行业 <b>IT咨询服务</b></div>
+<div class="container" >公司 <b>汉得信息</b> &nbsp;&nbsp;&nbsp;地点 <b>上海,中国</b> &nbsp;&nbsp;&nbsp;行业 <b>IT咨询服务</b></div>
 </div>
   <div class="cols">
     <div class="col">
