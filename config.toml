@@ -217,7 +217,7 @@ paginate = 10
     # All features are defined in their own files. You can find example items
     # at 'exampleSite/data/products'.
     # For more informtion take a look at the README.
-    title = "产品功能和服务"
+    title = "产品功能"
 
 [params.clients]
     enable = true
