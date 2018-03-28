@@ -17,7 +17,7 @@ weight: 1
     </div>
   </div>
   <div id="scenario">
-<div class="container" >公司 <b>汉得信息</b> &nbsp;&nbsp;&nbsp;地点 <b>上海,中国</b> &nbsp;&nbsp;&nbsp;行业 <b>IT咨询服务</b></div>
+<div class="container" ><span></span>公司 <b>汉得信息</b> &nbsp;&nbsp;&nbsp;地点 <b>上海,中国</b> &nbsp;&nbsp;&nbsp;行业 <b>IT咨询服务</b></div>
 </div>
   <div class="cols">
     <div class="col">
