@@ -198,7 +198,6 @@ paginate = 10
 
 [params.see_more]
     enable = true
-    icon = "fa fa-caret-right fa-lg"
     title = "想了解更多吗?"
     subtitle = "我们为您准备了许多案例"
     link_url = "/case-studies/"
