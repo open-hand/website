@@ -3,6 +3,7 @@ title = "Choerodon的敏捷之路"
 date = "2018-03-15"
 autor = "choerodon"
 tags = ["agile"]
+categories = ["技术类"]
 +++
 
 敏捷管理是基于用户需求的演变为中心，通过迭代的方式来进行的软件开发。

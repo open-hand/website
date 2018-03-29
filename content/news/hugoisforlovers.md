@@ -1,17 +1,7 @@
 +++
 title = "Getting Started with Hugo"
 description = ""
-tags = [
-    "go",
-    "golang",
-    "hugo",
-    "development",
-]
 date = "2014-06-02"
-categories = [
-    "Development",
-    "golang",
-]
 nomenu = "main"
 image= "img/banners/banner-1.jpg"
 type = "news"
