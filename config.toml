@@ -12,7 +12,7 @@ disqusShortname = "devcows"
 googleAnalytics = ""
 prettyurls=true
 # Define the number of posts per page
-paginate = 10
+paginate = 1
 
 [menu]
 
