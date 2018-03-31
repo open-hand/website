@@ -60,7 +60,7 @@ weight: 2
 	</div>
 </section>
 
-<div class="banner2" style="background:url(/img/case_studies/detail/crland-1.jpg) no-repeat center center">
+<div class="banner2" style="background:url(/img/case_studies/detail/crland-content.png) no-repeat center center;background-size:cover">
 	<div class="bannertext">
 		<p>
 			“华润置地曾使用虚拟机封装应用程序，每次启动虚拟机时，无论是新服务还是因为某些异常节点的功能而关闭的服务，这需要花费一个较长的时间，这时候我们开始考虑用什么技术能很好的解决这个问题。”
@@ -82,7 +82,7 @@ weight: 2
 	</div>
 </section>
 
-<div class="banner3" style="background:url(/img/case_studies/detail/crland-3.jpg) no-repeat center center">
+<div class="banner3" style="background:url(/img/case_studies/detail/crland-content.png) no-repeat center bottom;background-size:cover">
 	<div class="bannertext">
 		<p>
 			部署周期从数周减少到几分钟，应用交付的效率提高了10倍。重要的运营支出减少，有些情况下为20-30％，这对华润置地的业务非常有帮助，节省了很多时间，开发人员很开心有这样的转变。
