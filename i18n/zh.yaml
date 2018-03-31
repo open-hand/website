@@ -38,13 +38,13 @@
   translation: "切换导航"
 
 - id: categoriesTitle
-  translation: "分类"
+  translation: "全部分类"
 
 - id: searchTitle
   translation: "搜索"
 
 - id: tagsTitle
-  translation: "标签"
+  translation: "全部标签"
 
 - id: continueReading
   translation: "继续阅读"
