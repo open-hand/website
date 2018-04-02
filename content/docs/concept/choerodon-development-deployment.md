@@ -38,24 +38,24 @@ Choerodon 开发区各服务版本信息如下：
 
 服务名	|服务组	|	服务代码	|	版本号
 ---	|---	|	---	|	---
-K8S消息收集	|	com.hand.devops 	|	k8s-informer 	|	V0.1.1
-Gitlab服务	|	com.hand.devops 	|	hap-gitlab-service  	|	1.1.0
-K8S服务	|	com.hand.devops 	|	devops-kubernetes-service	|	1.1.0
-文件服务	|	com.hand.devops 	|	hap-file-service 	|	1.1.0
-开发服务	|	com.hand.devops 	|	hap-devops-service  	|	1.1.0
-部署服务	|	com.hand.devops 	|	devops-deploy-service	|	1.1.6
-SonarQube服务	|	com.hand.insight 	|	data-sonar-service  	|	1.0.1
-数据整合服务	|	com.hand.insight 	|	data-intergration-service	|	1.0.0
-数据提供服务	|	com.hand.insight 	|	data-provide-service 	|	1.0.1
-数据操作服务	|	com.hand.insight	|	data-operation-service 	|	1.0.0
-看板服务	|	com.hand.kanban 	|	hap-kanban-service 	|	1.1.0
-移动服务	|	com.hand.mobile 	|	mobile-cloud-service 	|	1.0.0
-开发前端	|	com.hand.devops 	|	devops-front 	|	1.1.3
-部署前端	|	com.hand.devops 	|	deploy-front 	|	1.1.5
-洞察前端	|	com.hand.insight 	|	analysis-insight-front  	|	1.0.0
-监控前端	|	com.hand.insight 	|	monitor-front	|	1.0.0
-看板前端	|	com.hand.kanban 	|	hap-kanban-front 	|	1.1.0
-移动前端	|	com.hand.mobile 	|	mobile-front 	|	1.0.0
+K8S消息收集	|	com.choerodon.devops 	|	k8s-informer 	|	V0.1.1
+Gitlab服务	|	com.choerodon.devops 	|	choerodon-gitlab-service  	|	1.1.0
+K8S服务	|	com.choerodon.devops 	|	devops-kubernetes-service	|	1.1.0
+文件服务	|	com.choerodon.devops 	|	choerodon-file-service 	|	1.1.0
+开发服务	|	com.choerodon.devops 	|	choerodon-devops-service  	|	1.1.0
+部署服务	|	com.choerodon.devops 	|	devops-deploy-service	|	1.1.6
+SonarQube服务	|	com.choerodon.insight 	|	data-sonar-service  	|	1.0.1
+数据整合服务	|	com.choerodon.insight 	|	data-intergration-service	|	1.0.0
+数据提供服务	|	com.choerodon.insight 	|	data-provide-service 	|	1.0.1
+数据操作服务	|	com.choerodon.insight	|	data-operation-service 	|	1.0.0
+看板服务	|	com.choerodon.kanban 	|	choerodon-kanban-service 	|	1.1.0
+移动服务	|	com.choerodon.mobile 	|	mobile-cloud-service 	|	1.0.0
+开发前端	|	com.choerodon.devops 	|	devops-front 	|	1.1.3
+部署前端	|	com.choerodon.devops 	|	deploy-front 	|	1.1.5
+洞察前端	|	com.choerodon.insight 	|	analysis-insight-front  	|	1.0.0
+监控前端	|	com.choerodon.insight 	|	monitor-front	|	1.0.0
+看板前端	|	com.choerodon.kanban 	|	choerodon-kanban-front 	|	1.1.0
+移动前端	|	com.choerodon.mobile 	|	mobile-front 	|	1.0.0
 
 ## 运行区相关服务
 
@@ -63,14 +63,14 @@ Choerodon 运行区各服务版本信息如下：
 
 服务名	|服务组	|	服务代码	|	版本号
 ---	|---	|	---	|	---
-K8S消息收集	|	com.hand.devops 	|	k8s-informer 	|	V0.1.1
-K8S服务	|	com.hand.devops 	|	devops-kubernetes-service	|	1.1.0
-文件服务	|	com.hand.devops 	|	hap-file-service 	|	1.1.0
-部署服务	|	com.hand.devops 	|	devops-deploy-service	|	1.1.6
-数据整合服务	|	com.hand.insight 	|	data-intergration-service	|	1.0.0
-数据提供服务	|	com.hand.insight 	|	data-provide-service 	|	1.0.1
-数据操作服务	|	com.hand.insight	|	data-operation-service 	|	1.0.0
-移动服务	|	com.hand.mobile 	|	mobile-cloud-service 	|	1.0.0
-部署前端	|	com.hand.devops 	|	deploy-front 	|	1.1.5
-监控前端	|	com.hand.insight 	|	monitor-front	|	1.0.0
-移动前端	|	com.hand.mobile 	|	mobile-front 	|	1.0.0
+K8S消息收集	|	com.choerodon.devops 	|	k8s-informer 	|	V0.1.1
+K8S服务	|	com.choerodon.devops 	|	devops-kubernetes-service	|	1.1.0
+文件服务	|	com.choerodon.devops 	|	choerodon-file-service 	|	1.1.0
+部署服务	|	com.choerodon.devops 	|	devops-deploy-service	|	1.1.6
+数据整合服务	|	com.choerodon.insight 	|	data-intergration-service	|	1.0.0
+数据提供服务	|	com.choerodon.insight 	|	data-provide-service 	|	1.0.1
+数据操作服务	|	com.choerodon.insight	|	data-operation-service 	|	1.0.0
+移动服务	|	com.choerodon.mobile 	|	mobile-cloud-service 	|	1.0.0
+部署前端	|	com.choerodon.devops 	|	deploy-front 	|	1.1.5
+监控前端	|	com.choerodon.insight 	|	monitor-front	|	1.0.0
+移动前端	|	com.choerodon.mobile 	|	mobile-front 	|	1.0.0

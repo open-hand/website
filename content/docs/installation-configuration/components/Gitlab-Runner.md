@@ -14,12 +14,12 @@ banner = "img/banners/banner-1.jpg"
  - 镜像列表 
 
      ```
-     registry.saas.hand-china.com/tools/gitlab-runner:alpine-v10.1.0
+     registry.saas.choerodon.com/tools/gitlab-runner:alpine-v10.1.0
      ```
  - 克隆安装脚本 
 
      ```
-     git clone https://rdc.hand-china.com/gitlab/rdc_hip/devops-install-docs.git
+     git clone https://rdc.choerodon.com/gitlab/rdc_hip/devops-install-docs.git
      ```
 ---  
 ## 前置准备
@@ -35,7 +35,7 @@ banner = "img/banners/banner-1.jpg"
 
 ### 方式1
   ```
-  docker run -it --rm --entrypoint=bash   registry.saas.hand-china.com/tools/gitlab-runner:alpine-v10.1.0
+  docker run -it --rm --entrypoint=bash   registry.saas.choerodon.com/tools/gitlab-runner:alpine-v10.1.0
   
   gitlab-runner register
   
@@ -47,7 +47,7 @@ banner = "img/banners/banner-1.jpg"
 ### 方式2
 
   ```
-  docker run -it --rm registry.saas.hand-china.com/tools/gitlab-runner:alpine-v10.1.0   register
+  docker run -it --rm registry.saas.choerodon.com/tools/gitlab-runner:alpine-v10.1.0   register
   ```
   > 注册完成后在Gitlab管理界面获取Runner的token、name和url
   

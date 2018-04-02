@@ -16,27 +16,27 @@ banner = "img/banners/banner-1.jpg"
 
 服务名	|服务组	|	服务代码	|	版本号
 ---	|---	|	---	|	---
-注册服务	|	com.hand.hapcloud	|	hap-register-server 	|	1.2.0
-管理服务	|	com.hand.hapcloud	|	hap-manager-service 	|	1.2.0
-配置服务	|	com.hand.hapcloud	|	hap-config-server	|	1.2.0
-用户服务	|	com.hand.hapcloud	|	hap-user-service 	|	1.2.11
-授权服务	|	com.hand.hapcloud	|	hap-oauth-server 	|	1.2.1
-网关服务	|	com.hand.hapcloud	|	hap-api-gateway 	|	1.2.2
-消息服务	|	com.hand.hapcloud	|	hap-event-store-service 	|	1.2.1
-框架服务	|	com.hand.hapcloud	|	hap-framework-service	|	1.2.1
-用户管理服务	|	com.hand.hapcloud	|	hap-user-admin-service  	|	1.2.0
-K8S消息收集	|	com.hand.devops 	|	k8s-informer 	|	V0.1.1
-K8S服务	|	com.hand.devops 	|	devops-kubernetes-service	|	1.1.0
-文件服务	|	com.hand.devops 	|	hap-file-service 	|	1.1.0
-部署服务	|	com.hand.devops 	|	devops-deploy-service	|	1.1.6
-数据整合服务	|	com.hand.insight 	|	data-intergration-service	|	1.0.0
-数据提供服务	|	com.hand.insight 	|	data-provide-service 	|	1.0.1
-数据操作服务	|	com.hand.insight	|	data-operation-service 	|	1.0.0
-移动服务	|	com.hand.mobile 	|	mobile-cloud-service 	|	1.0.0
-框架前端	|	com.hand.hapcloud	|	hapcloud-front  	|	1.2.2
-部署前端	|	com.hand.devops 	|	deploy-front 	|	1.1.5
-监控前端	|	com.hand.insight 	|	monitor-front	|	1.0.0
-移动前端	|	com.hand.mobile 	|	mobile-front 	|	1.0.0
+注册服务	|	com.choerodon.choerodoncloud	|	choerodon-register-server 	|	1.2.0
+管理服务	|	com.choerodon.choerodoncloud	|	choerodon-manager-service 	|	1.2.0
+配置服务	|	com.choerodon.choerodoncloud	|	choerodon-config-server	|	1.2.0
+用户服务	|	com.choerodon.choerodoncloud	|	choerodon-user-service 	|	1.2.11
+授权服务	|	com.choerodon.choerodoncloud	|	choerodon-oauth-server 	|	1.2.1
+网关服务	|	com.choerodon.choerodoncloud	|	choerodon-api-gateway 	|	1.2.2
+消息服务	|	com.choerodon.choerodoncloud	|	choerodon-event-store-service 	|	1.2.1
+框架服务	|	com.choerodon.choerodoncloud	|	choerodon-framework-service	|	1.2.1
+用户管理服务	|	com.choerodon.choerodoncloud	|	choerodon-user-admin-service  	|	1.2.0
+K8S消息收集	|	com.choerodon.devops 	|	k8s-informer 	|	V0.1.1
+K8S服务	|	com.choerodon.devops 	|	devops-kubernetes-service	|	1.1.0
+文件服务	|	com.choerodon.devops 	|	choerodon-file-service 	|	1.1.0
+部署服务	|	com.choerodon.devops 	|	devops-deploy-service	|	1.1.6
+数据整合服务	|	com.choerodon.insight 	|	data-intergration-service	|	1.0.0
+数据提供服务	|	com.choerodon.insight 	|	data-provide-service 	|	1.0.1
+数据操作服务	|	com.choerodon.insight	|	data-operation-service 	|	1.0.0
+移动服务	|	com.choerodon.mobile 	|	mobile-cloud-service 	|	1.0.0
+框架前端	|	com.choerodon.choerodoncloud	|	choerodoncloud-front  	|	1.2.2
+部署前端	|	com.choerodon.devops 	|	deploy-front 	|	1.1.5
+监控前端	|	com.choerodon.insight 	|	monitor-front	|	1.0.0
+移动前端	|	com.choerodon.mobile 	|	mobile-front 	|	1.0.0
 
 --- 
 ## 硬件需求
@@ -53,7 +53,7 @@ K8S服务	|	com.hand.devops 	|	devops-kubernetes-service	|	1.1.0
 
 Kubernetes v1.8.5
 
-> 搭建Devops平台时，默认已经搭建好K8S集群，若未搭建请[移步K8S集群搭建](https://rdc.hand-china.com/gitlab/rdc_hip/kubeadm-ansible)
+> 搭建Devops平台时，默认已经搭建好K8S集群，若未搭建请[移步K8S集群搭建](https://rdc.choerodon-china.com/gitlab/rdc_hip/kubeadm-ansible)
 
 --- 
 ## 依赖组件
@@ -75,7 +75,7 @@ Harbor(可选) | 1.1.1
 
 - 克隆安装脚本
     ```
-    git clone https://rdc.hand-china.com/gitlab/rdc_hip/devops-ansible.git
+    git clone https://rdc.choerodon-china.com/gitlab/rdc_hip/devops-ansible.git
     ```
 ---
 ## 使用NFS存储
@@ -111,24 +111,24 @@ Harbor(可选) | 1.1.1
         进入mysql命令行
         mysql -uroot -p${MYSQL_ROOT_PASSWORD}
         ```
-    - 创建hapcloud用户及数据库
+    - 创建choerodoncloud用户及数据库
 
         ```sql
-        CREATE USER 'hapcloud'@'%' IDENTIFIED BY 'Handhand123';
-        CREATE DATABASE hap_user_service DEFAULT CHARACTER SET utf8;
-        CREATE DATABASE hap_manager_service DEFAULT CHARACTER SET utf8;
-        CREATE DATABASE hap_event_service DEFAULT CHARACTER SET utf8;
-        CREATE DATABASE hap_framework_service DEFAULT CHARACTER SET utf8;
-        GRANT ALL PRIVILEGES ON hap_user_service.* TO hapcloud@'%';
-        GRANT ALL PRIVILEGES ON hap_manager_service.* TO hapcloud@'%';
-        GRANT ALL PRIVILEGES ON hap_event_service.* TO hapcloud@'%';
-        GRANT ALL PRIVILEGES ON hap_framework_service.* TO hapcloud@'%';
+        CREATE USER 'choerodoncloud'@'%' IDENTIFIED BY 'choerodonchoerodon123';
+        CREATE DATABASE choerodon_user_service DEFAULT CHARACTER SET utf8;
+        CREATE DATABASE choerodon_manager_service DEFAULT CHARACTER SET utf8;
+        CREATE DATABASE choerodon_event_service DEFAULT CHARACTER SET utf8;
+        CREATE DATABASE choerodon_framework_service DEFAULT CHARACTER SET utf8;
+        GRANT ALL PRIVILEGES ON choerodon_user_service.* TO choerodoncloud@'%';
+        GRANT ALL PRIVILEGES ON choerodon_manager_service.* TO choerodoncloud@'%';
+        GRANT ALL PRIVILEGES ON choerodon_event_service.* TO choerodoncloud@'%';
+        GRANT ALL PRIVILEGES ON choerodon_framework_service.* TO choerodoncloud@'%';
         CREATE DATABASE devops_deploy_service DEFAULT CHARACTER SET utf8;
         CREATE DATABASE mobile_cloud_service DEFAULT CHARACTER SET utf8;
         CREATE DATABASE devops_operation_portal DEFAULT CHARACTER SET utf8;
-        GRANT ALL PRIVILEGES ON devops_deploy_service.* TO hapcloud@'%';
-        GRANT ALL PRIVILEGES ON mobile_cloud_service.* TO hapcloud@'%';
-        GRANT ALL PRIVILEGES ON devops_operation_portal.* TO hapcloud@'%';
+        GRANT ALL PRIVILEGES ON devops_deploy_service.* TO choerodoncloud@'%';
+        GRANT ALL PRIVILEGES ON mobile_cloud_service.* TO choerodoncloud@'%';
+        GRANT ALL PRIVILEGES ON devops_operation_portal.* TO choerodoncloud@'%';
         FLUSH PRIVILEGES;
         ```
 1. **重要：** 注释掉`inventory/config.yml`文件中第2109行到文件最后一行的配置，这些配置为开发区所需的，若未注释那么系统搭建完成后会将开发区的信息扫描进去，所以注释掉它。
