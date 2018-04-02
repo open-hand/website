@@ -3,8 +3,9 @@ title: 芝士网
 date: "2017-12-01"
 type: "case-studies"
 banner: "img/case_studies/hand2.png"
-summary: Choerodon的使用确实在很大程度上缩短了开发周期，加快了迭代的速度,大大减少了开发运维人员的负担
+summary: 借助Choerodon，我们使用微服务框架重新塑造IT系统，并且对我们在DevOps实施落地、敏捷管理等方面提供很大的帮助，提高了芝士网对市场和需求反应的敏捷度
 weight: 3
+unfinshed: "true"
 ---
 
 <section class="case-studies-detail">
@@ -73,12 +74,14 @@ weight: 3
 </section>
 
 <div class="banner2" style="background:url(/img/case_studies/detail/hand-content.png) no-repeat center center;background-size:cover">
+<div class="background-color">
     <div class="bannertext">
         <p>"在数字化转型的大背景下，我们一直也在寻求一个更好的软件开发方式，缩短我们的开发周期，更快地交付。我们是在做devops转型，但其实我们Devops转型过程是'不正统'的，回望这个devops转型，并不是有意去做转型，而是真的发现了很多传统开发管理过程中存在的问题。"</p>
         <div class="author">
             - 研发中心总经理 张礼军
         </div>
     </div>
+</div>
 </div>
 
 <section class="section">
@@ -90,9 +93,11 @@ weight: 3
 </section>
 
 <div class="banner3" style="background:url(/img/case_studies/detail/hand-content.png) no-repeat center bottom">
+<div class="background-color">
     <div class="bannertext">
         Choerodon的使用确实在很大程度上缩短了开发周期，加快了迭代的速度，大大减少了开发运维人员的负担。
     </div>
+</div>
 </div>
 
 <section class="section">
