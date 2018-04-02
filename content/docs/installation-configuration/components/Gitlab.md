@@ -14,12 +14,12 @@ banner = "img/banners/banner-1.jpg"
  - 镜像列表 
 
      ```
-     registry.saas.hand-china.com/tools/gitlab-ce:10.2.0-hand
+     registry.saas.choerodon.com/tools/gitlab-ce:10.2.0-hand
      ```
  - 克隆安装脚本 
 
      ```
-     git clone https://rdc.hand-china.com/gitlab/rdc_hip/devops-install-docs.git
+     git clone https://rdc.choerodon.com/gitlab/rdc_hip/devops-install-docs.git
      ```
 ---
 ## 前置准备
@@ -30,7 +30,7 @@ banner = "img/banners/banner-1.jpg"
   
   ```
   # 在镜像仓库中已有也可直接pull
-  docker build -t registry.saas.hand-china.com/tools/gitlab-ce:10.2.0-hand -f .
+  docker build -t registry.saas.choerodon.com/tools/gitlab-ce:10.2.0-hand -f .
   ```
 
   - 镜像构建完成后可以使用以下环境变量配置自动备份
@@ -204,9 +204,9 @@ banner = "img/banners/banner-1.jpg"
 
     # 设置gitlab邮件启用,和回复的邮箱
     gitlab_rails['gitlab_email_enabled'] = true
-    gitlab_rails['gitlab_email_from'] = 'gitlab@hand-china.com'
+    gitlab_rails['gitlab_email_from'] = 'gitlab@choerodon.com'
     gitlab_rails['gitlab_email_display_name'] = 'Gitlab'
-    gitlab_rails['gitlab_email_reply_to'] = 'noreply@hand-china.com'
+    gitlab_rails['gitlab_email_reply_to'] = 'noreply@choerodon.com'
 
     # 设置用户可以创建组和修改密码
     gitlab_rails['gitlab_default_can_create_group'] = true

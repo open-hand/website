@@ -15,13 +15,13 @@ banner = "img/banners/banner-1.jpg"
  - 镜像列表 
 
      ```
-     registry.saas.hand-china.com/library/postgres:latest
-     registry.saas.hand-china.com/library/sonarqube:6.5-alpine
+     registry.saas.choerodon.com/library/postgres:latest
+     registry.saas.choerodon.com/library/sonarqube:6.5-alpine
      ```
  - 克隆安装脚本 
 
      ```
-     git clone https://rdc.hand-china.com/gitlab/rdc_hip/devops-install-docs.git
+     git clone https://rdc.choerodon.com/gitlab/rdc_hip/devops-install-docs.git
      ```
 ---   
 ## 前置准备
