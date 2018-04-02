@@ -2,7 +2,7 @@
 title: 汉得供应链金融
 date: "2017-12-01"
 type: "case-studies"
-banner: "img/case_studies/hand2.png"
+banner: "img/case_studies/hand-financial.png"
 summary: Choerodon的使用确实在很大程度上缩短了开发周期，加快了迭代的速度,大大减少了开发运维人员的负担
 weight: 4
 unfinshed: "true"
