@@ -1,10 +1,10 @@
 ---
-title: 汉得信息
+title: 汉得供应链金融
 date: "2017-12-01"
 type: "case-studies"
 banner: "img/case_studies/hand2.png"
 summary: Choerodon的使用确实在很大程度上缩短了开发周期，加快了迭代的速度,大大减少了开发运维人员的负担
-weight: 1
+weight: 4
 ---
 
 <section class="case-studies-detail">
@@ -14,7 +14,7 @@ weight: 1
             <div class="text-nav-bottom">
                 <div class="text-nav-title">
                     <h1>汉得信息</h1>
-                    <p>更好的用户体验</p>
+                    <p>Choerodon的使用确实在很大程度上缩短了开发周期，加快了迭代的速度,大大减少了开发运维人员的负担</p>
                 </div>
                 <div class="text-nav-icon">
                     <img src="/img/case_studies/hand-single.png" alt="icon">
