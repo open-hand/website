@@ -2,7 +2,7 @@
 title: 汉得信息
 date: "2017-12-01"
 type: "case-studies"
-banner: "img/case_studies/hand2.png"
+banner: "img/case_studies/hand.png"
 summary: "Choerodon的使用在很大程度上缩短了开发周期，加快了迭代的速度，大大减少了开发运维人员的负担，使汉得在数字化转型上更上一个台阶，同时我们收到客户的良好口碑"
 weight: 1
 ---
@@ -17,7 +17,7 @@ weight: 1
                     <p>更好的用户体验</p>
                 </div>
                 <div class="text-nav-icon">
-                    <img src="/img/case_studies/hand-single.png" alt="icon">
+                    <img src="/img/case_studies/hand.png" alt="icon">
                 </div>
             </div>
         </div>
