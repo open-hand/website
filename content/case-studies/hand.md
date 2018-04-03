@@ -72,7 +72,7 @@ weight: 1
     </div>
 </section>
 
-<div class="banner2" style="background:url(/img/case_studies/detail/hand-content.png) no-repeat center center;background-size:cover">
+<div class="banner2" style="background:url(/img/case_studies/detail/hand-content.png) no-repeat;background-size: 100% 200%;background-position: 0% 15%;">
 <div class="background-color">
     <div class="bannertext">
         <p>"在数字化转型的大背景下，我们一直也在寻求一个更好的软件开发方式，缩短我们的开发周期，更快地交付。我们是在做devops转型，但其实我们Devops转型过程是'不正统'的，回望这个devops转型，并不是有意去做转型，而是真的发现了很多传统开发管理过程中存在的问题。"</p>
@@ -91,7 +91,7 @@ weight: 1
     </div>
 </section>
 
-<div class="banner3" style="background:url(/img/case_studies/detail/hand-content.png) no-repeat center bottom">
+<div class="banner3" style="background:url(/img/case_studies/detail/hand-content.png) no-repeat;background-size: 100% 200%;background-position: 0% 55%;">
 <div class="background-color">
     <div class="bannertext">
         Choerodon的使用确实在很大程度上缩短了开发周期，加快了迭代的速度，大大减少了开发运维人员的负担。

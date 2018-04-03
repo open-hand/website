@@ -60,7 +60,7 @@ weight: 2
 	</div>
 </section>
 
-<div class="banner2" style="background:url(/img/case_studies/detail/crland-content.png) no-repeat center center;background-size:cover">
+<div class="banner2" style="background:url(/img/case_studies/detail/crland-content.png) no-repeat;background-size: 100% 250%;background-position: 0% 0%;">
 <div class="background-color">
 	<div class="bannertext">
 		<p>
@@ -84,7 +84,7 @@ weight: 2
 	</div>
 </section>
 
-<div class="banner3" style="background:url(/img/case_studies/detail/crland-content.png) no-repeat center bottom;background-size:cover">
+<div class="banner3" style="background:url(/img/case_studies/detail/crland-content.png) no-repeat;background-size: 100% 200%;background-position: 0% 70%;">
 <div class="background-color">
 	<div class="bannertext">
 		<p>
