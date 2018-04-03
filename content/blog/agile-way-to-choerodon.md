@@ -1,16 +1,17 @@
----
-title: "Choerodon的敏捷之路"
-date: "2018-03-15"
-autor: "choerodon"
-tags: [
++++
+title= "Choerodon的敏捷之路"
+date= "2018-03-15"
+autor= "choerodon"
+tags= [
     "agile"
 ]
-categories: [
+categories= [
     "技术类"
 ]
-description: "Choerodon认为软件交付的过程本质是用户价值的实现，而用户价值的实现是通过用户价值的流动来体现的，Choerodon提供了一套工具来帮助用户通过敏捷的方式来管理用户价值的流动，管理和规范化整个软件开发流程。" 
-img: "/img/blog/agile-way-to-choerodon/agile.jpg"
----
+description= "Choerodon认为软件交付的过程本质是用户价值的实现，而用户价值的实现是通过用户价值的流动来体现的，Choerodon提供了一套工具来帮助用户通过敏捷的方式来管理用户价值的流动，管理和规范化整个软件开发流程。" 
+img= "/img/blog/agile-way-to-choerodon/agile.jpg"
++++
+
 敏捷管理是基于用户需求的演变为中心，通过迭代的方式来进行的软件开发。
 
 关于软件开发，我们现在可以找到很多前人的经验，包括已经存在方法论和工具，这之间其实很难说哪个方法论是正确的，或是哪个工具是最好用的；其实开发是“任性的”，它没有定律，如人饮水冷暖自知，其过程是否高效，除了团队的实力这个决定性因素之外，还取决于整个开发的流程是否是清晰的。高效总是伴随着清晰而来，清晰的目标，清晰的计划，清晰的职责……
