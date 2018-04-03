@@ -1,7 +1,7 @@
 +++
 title= "Choerodon的敏捷之路"
 date= "2018-03-15"
-autor= "choerodon"
+author= "choerodon"
 tags= [
     "agile"
 ]

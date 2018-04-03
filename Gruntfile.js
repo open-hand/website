@@ -1,6 +1,5 @@
 var toml = require("toml");
 var S = require("string");
-var nodejieba = require("nodejieba");
 var Entities = require('html-entities').AllHtmlEntities;
 var Html = new Entities();
 var marked = require("marked");
@@ -67,12 +66,12 @@ module.exports = function(grunt) {
 				url: href.slice(1),
                 title: frontMatter.title,
                 date: frontMatter.date,
-                autor: frontMatter.autor,
+                author: frontMatter.author,
                 description: frontMatter.description,
                 img: frontMatter.img,
                 tags: frontMatter.tags,
                 categories: frontMatter.categories,
-				content: content
+				body: content
 			};
 
 			documentsStore[href] = doc;
