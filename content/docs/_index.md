@@ -16,7 +16,7 @@ Choerodon 提供一整套支撑 DevOps 最佳实践的工具链，从计划、�
 <div class="row">
 
 <div class="col-md-3">
-<h4><i class="fa fa-sitemap"></i>概念</h4>
+<h4><i class="iconfont">&#xebdb;</i>概念</h4>
 <ul>
     <li><a href="./concept/choerodon-concept">01 - Choerodon是什么</a></li>
     <li><a href="./concept/choerodon-system-architecture">02 - 系统架构</a></li>
@@ -30,7 +30,7 @@ Choerodon 提供一整套支撑 DevOps 最佳实践的工具链，从计划、�
 </div>
 
 <div class="col-md-3">
-<h4><i class="fa fa-cogs"></i>安装与配置</h4>
+<h4><i class="iconfont">&#xe6a4;</i>安装与配置</h4>
 <ul>
     <li><a href="./installation-configuration">01 - 概述</a></li>
     <li><a href="./installation-configuration/development-install-guide">02 - 安装开发区</a></li>
@@ -58,7 +58,7 @@ Choerodon 提供一整套 DevOps 的最佳实践，从计划、编程、构建�
 <div class="row">
 
 <div class="col-md-3">
-<h4><i class="fa fa-space-shuttle"></i>快速入门</h4>
+<h4><i class="iconfont">&#xe804;</i>快速入门</h4>
 <ul>
     <li><a href="./quick-start/microservice-front">01 - 开发一个微服务前端</a></li>
     <li><a href="./quick-start/microservice-backend">02 - 开发一个微服务后端</a></li>
@@ -71,7 +71,7 @@ Choerodon 提供一整套 DevOps 的最佳实践，从计划、编程、构建�
 </div>
 
 <div class="col-md-3">
-<h4><i class="fas fa-user-circle"></i>功能说明</h4>
+<h4><i class="iconfont">&#xe74f;</i>功能说明</h4>
 <ul>
     <li><a href="./user-guide/system-configuration">01 - 系统配置</a></li>
     <li><a href="./user-guide/scrum">02 - 敏捷管理</a></li>
@@ -94,7 +94,7 @@ Choerodon 微服务应用框架是基于多年企业应用服务的经验，面�
 <div class="row">
 
 <div class="col-md-3">
-<h4><i class="fa fa-space-shuttle"></i>快速入门</h4>
+<h4><i class="iconfont">&#xe804;</i>快速入门</h4>
 <ul>
     <li><a href="./quick-start/microservice-front">01 - 开发一个微服务前端</a></li>
     <li><a href="./quick-start/microservice-backend">02 - 开发一个微服务后端</a></li>
@@ -102,7 +102,7 @@ Choerodon 微服务应用框架是基于多年企业应用服务的经验，面�
 </div>
 
 <div class="col-md-3">
-<h4><i class="fas fa-terminal"></i>开发手册</h4>
+<h4><i class="iconfont">&#xe733;</i>开发手册</h4>
 <ul>
     <li><a href="./development-guide/backend">01 - 后端开发</a></li>
     <li><a href="./development-guide/front">02 - 前端开发</a></li>
@@ -112,7 +112,7 @@ Choerodon 微服务应用框架是基于多年企业应用服务的经验，面�
 </div>
 
 <div class="col-md-3">
-<h4><i class="far fa-thumbs-up"></i>最佳实践</h4>
+<h4><i class="iconfont">&#xe6e6;</i>最佳实践</h4>
 <ul>
     <li><a href="#">01 - 开发规范</a></li>
     <li><a href="#">02 - 命名规范</a></li>
