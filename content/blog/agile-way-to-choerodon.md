@@ -55,7 +55,8 @@ Choerodon敏捷管理的核心是需求，计划和执行。即通过故事地�
     *	这一组便签，Jeff Patton称为 用户活动 （User Activities）
     *	这时你的地图应该类似于
 
-    ![](img/blog/agile-way-to-choerodon/agile-2.jpg)
+
+    ![](/img/blog/agile-way-to-choerodon/agile-2.jpg)
 
 1.	现在，从粉色便签这行开始讲述用户故事，确保你没有遗漏任何用户活动和用户任务。这时一般由组织者来进行讲述，其他人提出意见，甚至可以让最终用户来参与讨论。
 2.	以上我们已经完成了用户故事地图的基本框架；可以在每个用户任务下面添加更加细节的用户故事（User Stories）了。我们仍然建议使用头脑风暴的模式来进行第一轮用户故事的产生，同时可以借助如Persona和Scenario等方式协助完成这个过程。当我们完成了用户故事的创建，就可以开始划定发布计划（Releases）。
