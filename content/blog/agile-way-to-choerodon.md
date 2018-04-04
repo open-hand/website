@@ -3,7 +3,11 @@ title= "Choerodon的敏捷之路"
 date= "2018-03-15"
 author= "choerodon"
 tags= [
-    "agile"
+    "敏捷",
+    "看板",
+    "用户故事地图",
+    "迭代",
+    "Scrum"
 ]
 categories= [
     "技术类"
