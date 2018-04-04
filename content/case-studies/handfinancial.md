@@ -1,5 +1,5 @@
 ---
-title: 汉得供应链金融
+title: 汉得汇金链
 date: "2017-12-01"
 type: "case-studies"
 banner: "img/case_studies/hand-financial.png"
