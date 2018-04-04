@@ -2,7 +2,7 @@
 title: 汉得供应链金融
 date: "2017-12-01"
 type: "case-studies"
-banner: "img/case_studies/hand-financial2.jpg"
+banner: "img/case_studies/hand-financial.png"
 summary: "Choerodon为我们提供一整套DevOps和敏捷实施工具链，加速了我们交付的速度和提高了交付的质量。消除开发和运营的隔阂，使得我们团队能够同时兼顾开发和运营"
 weight: 4
 unfinshed: "true"
