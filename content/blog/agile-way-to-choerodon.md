@@ -12,7 +12,7 @@ tags= [
 categories= [
     "技术类"
 ]
-description= "Choerodon认为软件交付的过程本质是用户价值的实现，而用户价值的实现是通过用户价值的流动来体现的，Choerodon提供了一套工具来帮助用户通过敏捷的方式来管理用户价值的流动，管理和规范化整个软件开发流程。" 
+description= "Choerodon认为软件交付的过程本质是用户价值的实现，而用户价值的实现是通过用户价值的流动来体现的，Choerodon提供了一套工具来帮助用户通过敏捷的方式来管理用户价值的流动，管理和规范化整个软件开发流程" 
 img= "/img/blog/agile-way-to-choerodon/agile.jpg"
 +++
 
