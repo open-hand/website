@@ -8,7 +8,7 @@ weight: 1
 ---
 
 <section class="case-studies-detail">
-    <div class="text-nav" style="background: url(../../img/banner2.png)no-repeat,-webkit-linear-gradient(0deg, #003DAC,#3371E3);">
+    <div class="text-nav" style="background: url(../../img/banner.png)no-repeat,-webkit-linear-gradient(0deg, #003DAC,#3371E3);">
         <div class="container">
             <div class="text-nav-case">案例</div>
             <div class="text-nav-bottom">
