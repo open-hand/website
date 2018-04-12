@@ -10,7 +10,6 @@ unfinshed: "true"
 
 <section class="case-studies-detail-head">
     <div class="text-nav" style="background: url(../../img/banner.png)no-repeat,-webkit-linear-gradient(0deg, #003DAC,#3371E3);">
-        <div class="container">
             <div class="text-nav-case">案例</div>
             <div class="text-nav-bottom">
                 <div class="text-nav-title">
@@ -21,7 +20,6 @@ unfinshed: "true"
                     <img src="/img/case_studies/hand-single.png" alt="icon">
                 </div>
             </div>
-        </div>
     </div>
     <div class="cols">
         <div class="col">
