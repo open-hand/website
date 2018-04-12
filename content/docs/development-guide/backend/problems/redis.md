@@ -13,4 +13,4 @@ weight = 1
 # client设置重定向地址
 
 在oauth2.0中一个client对应一个redirect_url，在hapcloud后端client表中有如下关键字段，name字段是客户端的名字，前端项目会设置客户端的name。所以当client表中web_server_redirct_url字段非空时必须与前端项目的地址相匹配。
-![](./images/client.png)
+![](../images/client.png)

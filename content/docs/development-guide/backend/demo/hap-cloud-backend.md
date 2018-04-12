@@ -66,7 +66,7 @@ weight = 9
         ```
 
     * 方式二：在启动gat-way的配置信息中添加自订的配置信息：
-    ![](./images/gateway-config.png)
+    ![](../images/gateway-config.png)
     
         ```properties
         -Dzuul.routes.todo.serviceId=hap-todo-service

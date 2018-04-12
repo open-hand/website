@@ -103,13 +103,13 @@ $ docker-compose --version # 验证安装时否成功
 
 1. 安装Docker插件。在File-Settings-Plugins中，搜索Docker integration，点击Install安装，并重启软件加载插件。
 
-    ![](./images/ideaDockerPluginsLinux.png)
+    ![](../images/ideaDockerPluginsLinux.png)
 
     **因网络原因，可能导致下载失败，若一直不能下载成功，可跳过Idea关于Docker的相关配置步骤，在下方关于Docker容器启动方式选择第二种——Docker-Compose**
 
 1. IDEA中配置Docker，在File-Settings-Build,Execution,Deployment-Clouds中，点击加号新建，会自动读取docker信息，直接保存即可。
 
-    ![](./images/ideaAddDockerLinux.png)
+    ![](../images/ideaAddDockerLinux.png)
 
 ## 克隆代码
 
@@ -124,9 +124,9 @@ $ docker-compose --version # 验证安装时否成功
 
 因为各模块分离，故而可通过idea的File > Project Structure添加module
 
-![](./images/ideaAddModuleLinux.png)
+![](../images/ideaAddModuleLinux.png)
 
-![](./images/ideaProjectStructure.png)
+![](../images/ideaProjectStructure.png)
 
 ## 服务环境准备
 
@@ -197,9 +197,9 @@ docker pull registry.saas.hand-china.com/tools/phpmyadmin
     ---|---
     MYSQL_ROOT_PASSWORD | root
 
-    ![](./images/dockerMysql1Linux.png)
+    ![](../images/dockerMysql1Linux.png)
 
-    ![](./images/dockerMysql2Linux.png)
+    ![](../images/dockerMysql2Linux.png)
 
 ##### Rabbit MQ配置
 
@@ -222,9 +222,9 @@ docker pull registry.saas.hand-china.com/tools/phpmyadmin
     15672 | tcp |  | 15672
     5672 | tcp |  | 5672
 
-    ![](./images/dockerRabbitmq1Linux.png)
+    ![](../images/dockerRabbitmq1Linux.png)
 
-    ![](./images/dockerRabbitmq2Linux.png)
+    ![](../images/dockerRabbitmq2Linux.png)
 
 ##### Redis配置
 
@@ -246,9 +246,9 @@ docker pull registry.saas.hand-china.com/tools/phpmyadmin
     ---|---|---|---
     6379 | tcp |  | 6379
 
-    ![](./images/dockerRedis1Linux.png)
+    ![](../images/dockerRedis1Linux.png)
 
-    ![](./images/dockerRedis2Linux.png)
+    ![](../images/dockerRedis2Linux.png)
 
 ###### phpadmin
 
@@ -276,9 +276,9 @@ docker pull registry.saas.hand-china.com/tools/phpmyadmin
     ---|---
     PMA_ARBITRARY | 1
 
-    ![](./images/dockerPhpmyadmin1Linux.png)
+    ![](../images/dockerPhpmyadmin1Linux.png)
 
-    ![](./images/dockerPhpmyadmin2Linux.png)
+    ![](../images/dockerPhpmyadmin2Linux.png)
 
 #### 2. 通过docker-compose来启动docker
 
@@ -319,7 +319,7 @@ services:
 
 通过命令行进入~/Docker目录下，执行`docker-compose up -d`启动docker服务，通过`docker ps`查看容器是否启动。若需要停止，同样在该目录下执行`docker-compose down`
 
-![](./images/dockerComposeLinux.png)
+![](../images/dockerComposeLinux.png)
 
 有关Docker的更多信息请见[此处](https://docs.docker.com/)
 

@@ -9,19 +9,19 @@ weight = 2
 
 ## 新建maven项目
 
-![](./images/createMvnPro_01.png)
+![](../images/createMvnPro_01.png)
 
-![](./images/createMvnPro_02.png)
+![](../images/createMvnPro_02.png)
 
-![](./images/createMvnPro_03.png)
+![](../images/createMvnPro_03.png)
 
 ## 创建子模块
 
-![](./images/createMvnSubPro_01.png)
+![](../images/createMvnSubPro_01.png)
 
-![](./images/createMvnSubPro_02.png)
+![](../images/createMvnSubPro_02.png)
 
-![](./images/createMvnSubPro_03.png)
+![](../images/createMvnSubPro_03.png)
 
 ## 添加pom依赖
 
@@ -153,7 +153,7 @@ weight = 2
 
 ## 项目结构
 
-![](./images/projectStructure.png)
+![](../images/projectStructure.png)
 
 ## 在子模块resource文件夹中配置
 
@@ -218,4 +218,4 @@ swagger:
 
 ## 结构图
 
-![](./images/bootstrap.png)
+![](../images/bootstrap.png)

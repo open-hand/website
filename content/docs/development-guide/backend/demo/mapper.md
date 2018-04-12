@@ -123,7 +123,7 @@ public class TodoTask extends AuditDomain {
 
 ## Mapper
 
-![](./images/mapperStructure.png)
+![](../images/mapperStructure.png)
 
 ### mapper接口类
 

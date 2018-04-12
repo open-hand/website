@@ -377,7 +377,7 @@ public class TaskControllerTest extends BaseControllerTest {
 
 ## 目录结构
 
-![](./images/testStructure.png)
+![](../images/testStructure.png)
 
 ## 运行测试
 

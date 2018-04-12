@@ -12,7 +12,7 @@ draft = false
 
 ## 属性说明
 
-![](./images/permission.png)
+![](../images/permission.png)
 
 - roles：设置可访问用户角色，此为数组，可以设置多个角色。
 - level：设置可访问层级资源。

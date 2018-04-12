@@ -72,21 +72,21 @@ git config --global user.email "Your Email"
 
 1. 菜单栏File > Setting打开设置, Editor > Code Style > Line separator (for new lines): Unix and OS X (n)
 
-    ![](./images/lineSep.png)
+    ![](../images/lineSep.png)
 
 1. 确保idea使用utf-8编码
 
-    ![](./images/encodingSetting.png)
+    ![](../images/encodingSetting.png)
 
 1. 安装Docker插件。在File-Settings-Plugins中，搜索Docker integration，点击Install安装，并重启软件加载插件。
 
-    ![](./images/ideaDockerPlugins.png)
+    ![](../images/ideaDockerPlugins.png)
 
     **因网络原因，可能导致下载失败，若一直不能下载成功，可跳过Idea关于Docker的相关配置步骤，在下方关于Docker容器启动方式选择第二种——docker-compose**
 
 1. IDEA中配置Docker，在File-Settings-Build,Execution,Deployment-Clouds中，点击加号新建，会自动读取docker信息，直接保存即可。
 
-    ![](./images/ideaAddDocker.png)
+    ![](../images/ideaAddDocker.png)
 
 ## 克隆代码
 
@@ -101,9 +101,9 @@ git config --global user.email "Your Email"
 
 因为各模块分离，故而可通过idea的File > Project Structure添加各模块
 
-![](./images/ideaAddModule.png)
+![](../images/ideaAddModule.png)
 
-![](./images/ideaProjectStructure.png)
+![](../images/ideaProjectStructure.png)
 
 ## 服务环境准备
 
@@ -122,7 +122,7 @@ max_connections=500
 
 注意：因为要将docker容器中的mysql文件映射到本机上，若使用docker for windows，需要通过右键系统菜单栏的docker图标 > settings > Shared Drives 对卷绑定的驱动盘进行勾选
 
-![](./images/dockerShareDrive.png)
+![](../images/dockerShareDrive.png)
 
 ### 安装
 
@@ -176,9 +176,9 @@ docker pull registry.saas.hand-china.com/tools/phpmyadmin
     ---|---
     MYSQL_ROOT_PASSWORD | root
 
-  ![](./images/dockerMysql1.png)
+  ![](../images/dockerMysql1.png)
 
-  ![](./images/dockerMysql2.png)
+  ![](../images/dockerMysql2.png)
 
 ##### Rabbit MQ配置
 
@@ -201,9 +201,9 @@ docker pull registry.saas.hand-china.com/tools/phpmyadmin
     15672 | tcp |  | 15672
     5672 | tcp |  | 5672
 
-    ![](./images/dockerRabbitmq1.png)
+    ![](../images/dockerRabbitmq1.png)
 
-    ![](./images/dockerRabbitmq2.png)
+    ![](../images/dockerRabbitmq2.png)
 
 ##### Redis配置
 
@@ -225,9 +225,9 @@ docker pull registry.saas.hand-china.com/tools/phpmyadmin
     ---|---|---|---
     6379 | tcp |  | 6379
 
-    ![](./images/dockerRedis1.png)
+    ![](../images/dockerRedis1.png)
 
-    ![](./images/dockerRedis2.png)
+    ![](../images/dockerRedis2.png)
 
 ###### phpadmin
 
@@ -255,9 +255,9 @@ docker pull registry.saas.hand-china.com/tools/phpmyadmin
     ---|---
     PMA_ARBITRARY | 1
 
-    ![](./images/dockerPhpmyadmin1.png)
+    ![](../images/dockerPhpmyadmin1.png)
 
-    ![](./images/dockerPhpmyadmin2.png)
+    ![](../images/dockerPhpmyadmin2.png)
 
 #### 2. 通过docker-compose来启动docker
 
@@ -298,7 +298,7 @@ services:
 
 启动cmd或powershell，通过cd命令跳转至E:\Docker目录下，执行`docker-compose.exe up -d`启动docker服务，通过`docker ps`查看容器是否启动。若需要停止，同样在该目录下执行`docker-compose.exe down`
 
-![](./images/dockerCompose.png)
+![](../images/dockerCompose.png)
 
 有关Docker的更多信息请见[此处](https://docs.docker.com/)
 
@@ -328,15 +328,15 @@ services:
 
 2.在浏览器中右击检查，然后选中 `security` ,点击 `View Certificate`
 
-![](./images/jdkCert1.png)
+![](../images/jdkCert1.png)
 
 3.从上述步骤进入证书之后，点击详细信息，然后复制到文件
 
-![](./images/jdkCert2.png)
+![](../images/jdkCert2.png)
 
 4.然后依次按着向导导出证书到本地，导出成功后如下图
 
-![](./images/jdkCert3.png)
+![](../images/jdkCert3.png)
 
 5.从证书的位置右击进入命令窗口，执行命令:
 
@@ -348,4 +348,4 @@ services:
 
 6.上述命令执行完成后会提示是否信任此证书，输入 `Y` 证书将被添加进JDK
 
-![](./images/jdkCert4.png)
+![](../images/jdkCert4.png)

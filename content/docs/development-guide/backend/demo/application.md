@@ -31,4 +31,4 @@ public class TodoServiceApplication {
 
 ## 结构图
 
-![](./images/TodoServiceApplication.png)
+![](../images/TodoServiceApplication.png)

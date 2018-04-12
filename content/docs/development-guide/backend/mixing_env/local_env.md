@@ -26,9 +26,9 @@ weight = 3
 - 服务名称: `-Dspring.application.name=hap-api-gateway-yourname`
 - Gateway路由服务: `-Dzuul.routes.dev.serviceId=hap-demo-service-todo-yourname`
 
-![](./images/change-gateway-boot-value.png)
+![](../images/change-gateway-boot-value.png)
 
-![](./images/change-demo-boot-value.png)
+![](../images/change-demo-boot-value.png)
 
 1. 只要是 spring boot application.yml 中的参数都可以按照这种方法用命令行参数替换。
 2. MySQL和Redis也可以同样方法直接使用服务器上的，但是要注意保护数据不被破坏。

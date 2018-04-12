@@ -9,7 +9,7 @@ weight= 1
 
 ## 情景
 windows系统下由于node版本升级可能导致npm install出现如下图所示错误
-![](./images/error.jpg)
+![](../images/error.jpg)
 
 ## 解决办法
 
@@ -19,7 +19,7 @@ windows系统下由于node版本升级可能导致npm install出现如下图所�
 
 进入[nvm安装链接](https://github.com/coreybutler/nvm-windows/releases),下载nvm-setup.zip
 安装完毕后，控制台输入nvm -v出现
-![](./images/nvm.jpg)
+![](../images/nvm.jpg)
 说明nvm安装成功
 
 在控制台键入nvm install 6.11.0

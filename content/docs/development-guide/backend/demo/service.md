@@ -22,7 +22,7 @@ weight = 6
 
 ## 代码
 
-![](./images/serviceStructure.png)
+![](../images/serviceStructure.png)
 
 ## 接口类 TaskService.java
 

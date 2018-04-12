@@ -113,6 +113,6 @@ databaseChangeLog(logicalFilePath: '2017-05-11-demo.groovy') {
     
 - 结构图
 
-![](./images/Excel.png)
+![](../images/Excel.png)
 
 - 准备好三个文件后，在项目根目录执行 `sh init-local-database.sh` 初始化数据库
