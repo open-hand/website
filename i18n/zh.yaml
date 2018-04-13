@@ -1,71 +1,41 @@
-- id: Home
-  translation: "主页"
-
-- id: templateBy
-  translation: "模板来自"
-
-- id: portedBy
-  translation: "移植到 Hugo 来自"
-
-- id: contactGoTo
-  translation: "跳到联系页面"
-
-- id: contactAddrTitle
-  translation: "地址"
-
-- id: contactTitle
-  translation: "联系"
-
-- id: contactForm
-  translation: "联系表单"
-
-- id: contactName
-  translation: "你的名字"
-
-- id: contactMail
-  translation: "你的 Email"
-
-- id: contactMessage
-  translation: "你的信息"
-
-- id: contactSend
-  translation: "发送信息"
-
+# 导航栏
 - id: navHome
   translation: "跳到主页"
 
 - id: navToggle
   translation: "切换导航"
+# 导航栏 结束
 
+# 首页
+- id: quick start
+  translation: "快速开始"
+
+- id: know more
+  translation: "想了解更多吗?"
+
+- id: prepare more case
+  translation: "我们为您准备了许多案例"
+
+- id: go and see
+  translation: "去看看"
+
+- id: product features
+  translation: "产品功能"
+
+- id: case
+  translation: "案例"
+# 首页 结束
+
+# 博客
 - id: categoriesTitle
   translation: "全部分类"
 
-- id: searchTitle
+- id: search
   translation: "搜索"
+
+- id: search blog keys
+  translation: "请搜索博文关键字"
 
 - id: tagsTitle
   translation: "全部标签"
-
-- id: continueReading
-  translation: "继续阅读"
-
-- id: readMore
-  translation: "阅读更多"
-
-- id: authorBy
-  translation: "由"
-
-- id: recentPosts
-  translation: "最新博客"
-
-- id: aboutUs
-  translation: "关于我们"
-
-- id: newer
-  translation: "更新"
-
-- id: older
-  translation: "更旧"
-
-- id: publishedOn
-  translation: "在"
+# 博客 结束

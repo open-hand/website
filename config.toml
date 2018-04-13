@@ -11,7 +11,6 @@ prettyurls=true
 paginate = 10
 
 [menu]
-
 # Main menu
 [[languages.en.menu.main]]
     name = "Docs"
@@ -24,8 +23,8 @@ paginate = 10
     weight = 2
 
 [[languages.en.menu.main]]
-    name = "Cases Studies"
-    url  = "/cases_studies/"
+    name = "Case Studies"
+    url  = "/case-studies/"
     weight = 3
 
 [[languages.en.menu.main]]
@@ -37,63 +36,7 @@ paginate = 10
     name = "Github"
     url  = "https://github.com/choerodon/choerodon"
     weight = 5
-
-[params]
-    viewMorePostLink = "/blog/"
-    author = "Choerodon"
-    defaultKeywords = ["devops"]
-    defaultDescription = ""
-    # Format dates with Go's time formatting
-    date_format = "January 2, 2006"
-    logo = "/img/logo.png"
-
-# Enable and disable widgets for the right sidebar
-[params.widgets]
-    categories = true
-    tags = true
-    search = true
-
-[params.carousel]
-    enable = true
-    # All carousel items are defined in their own files. You can find example items
-    # at 'exampleSite/data/carousel'.
-    # For more informtion take a look at the README.
-
-[params.abstract]
-    enable = true
-    # All carousel items are defined in their own files. You can find example items
-    # at 'exampleSite/data/abstract'.
-    # For more informtion take a look at the README.
-
-[params.targets]
-    enable = true
-    # All features are defined in their own files. You can find example items
-    # at 'exampleSite/data/targets'.
-    # For more informtion take a look at the README.
-    title = "组成"
-    subtitle = "组成"
-
-[params.see_more]
-    enable = true
-    title = "想了解更多吗?"
-    subtitle = "我们为您准备了许多案例"
-    link_url = "/case-studies/"
-    link_text = "去看看"
-
-[params.products]
-    enable = true
-    # All features are defined in their own files. You can find example items
-    # at 'exampleSite/data/products'.
-    # For more informtion take a look at the README.
-    title = "产品功能"
-
-[params.clients]
-    enable = true
-    # All clients are defined in their own files. You can find example items
-    # at 'exampleSite/data/clients'.
-    # For more informtion take a look at the README.
-    title = "案例"
-    subtitle = "案例"
+    post= true
 
 [[languages.zh.menu.main]]
     name = "文档"
@@ -120,3 +63,11 @@ paginate = 10
     url  = "https://github.com/choerodon/"
     weight = 5
     post= true
+
+[params]
+    viewMorePostLink = "/blog/"
+    author = "Choerodon"
+    defaultKeywords = ["devops"]
+    defaultDescription = ""
+    # Format dates with Go's time formatting
+    date_format = "2006-01-02"

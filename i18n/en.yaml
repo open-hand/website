@@ -1,71 +1,41 @@
-- id: home
-  translation: "Home"
-
-- id: templateBy
-  translation: "Template by"
-
-- id: portedBy
-  translation: "Ported to Hugo by"
-
-- id: contactGoTo
-  translation: "Go to contact page"
-
-- id: contactAddrTitle
-  translation: "Address"
-
-- id: contactTitle
-  translation: "Contact"
-
-- id: contactForm
-  translation: "Contact form"
-
-- id: contactName
-  translation: "Your Name"
-
-- id: contactMail
-  translation: "Your Email"
-
-- id: contactMessage
-  translation: "Your Message"
-
-- id: contactSend
-  translation: "Send Message"
-
+# 导航栏
 - id: navHome
   translation: "go to homepage"
 
 - id: navToggle
   translation: "Toggle Navigation"
+# 导航栏 结束
 
+# 首页
+- id: quick start
+  translation: "Quick Start"
+
+- id: know more
+  translation: "Want to know more?"
+
+- id: prepare more case
+  translation: "There are prepared many cases for you"
+
+- id: go and see
+  translation: "Go and See"
+
+- id: product features
+  translation: "Product Features"
+
+- id: case
+  translation: "Case Studies"
+# 首页 结束
+
+# 博客
 - id: categoriesTitle
   translation: "Categories"
 
-- id: searchTitle
+- id: search
   translation: "Search"
+
+- id: search blog keys
+  translation: "Please search blog keyword"
 
 - id: tagsTitle
   translation: "Tags"
-
-- id: continueReading
-  translation: "Continue reading"
-
-- id: readMore
-  translation: "Read more"
-
-- id: authorBy
-  translation: "By"
-
-- id: recentPosts
-  translation: "Recent posts"
-
-- id: aboutUs
-  translation: "About us"
-
-- id: newer
-  translation: "Newer"
-
-- id: older
-  translation: "Older"
-
-- id: publishedOn
-  translation: "on"
+# 博客 结束
