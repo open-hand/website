@@ -2,8 +2,6 @@ baseurl = "http://choerodon.io/"
 title = "Choerodon | 企业级数字服务平台"
 theme = "hugo-choerodon-theme"
 # themesDir = "../.."
-#languageCode = "en-us"
-#languageCode = "zh-cn"
 # Site language. Available translations in the theme's `/i18n` directory.
 defaultContentLanguage = "zh"
 prettyurls=true
