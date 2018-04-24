@@ -33,8 +33,8 @@
 - id: search
   translation: "搜索"
 
-- id: search blog keys
-  translation: "请搜索博文关键字"
+- id: search keys
+  translation: "请搜索关键字"
 
 - id: tagsTitle
   translation: "全部标签"
