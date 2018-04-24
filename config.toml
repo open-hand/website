@@ -8,6 +8,12 @@ prettyurls=true
 # Define the number of posts per page
 paginate = 10
 
+[languages]
+    [languages.en]
+        languageName = "English"
+    [languages.zh]
+        languageName = "中文"
+
 [menu]
 # Main menu
 [[languages.en.menu.main]]
