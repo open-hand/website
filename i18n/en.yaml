@@ -7,6 +7,12 @@
 # 导航栏 结束
 
 # 首页
+- id: enterprise digital services platform
+  translation: "Enterprise Digital Services Platform"
+
+- id: scrum application delivery and automated operations management
+  translation: "Scrum application delivery and automated operations management"
+
 - id: quick start
   translation: "Quick Start"
 
