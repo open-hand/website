@@ -14,16 +14,16 @@ banner = "img/banners/banner-1.jpg"
  - 镜像列表 
 
      ```
-     registry.saas.choerodon.com/harbor/harbor-adminserver:v1.2.0
-     registry.saas.choerodon.com/harbor/harbor-jobservice:v1.2.0
-     registry.saas.choerodon.com/harbor/harbor-db:v1.2.0
-     registry.saas.choerodon.com/harbor/registry:2.6.2-photon
-     registry.saas.choerodon.com/harbor/harbor-ui:v1.2.0
+     registry.saas.hand-china.com/harbor/harbor-adminserver:v1.2.0
+     registry.saas.hand-china.com/harbor/harbor-jobservice:v1.2.0
+     registry.saas.hand-china.com/harbor/harbor-db:v1.2.0
+     registry.saas.hand-china.com/harbor/registry:2.6.2-photon
+     registry.saas.hand-china.com/harbor/harbor-ui:v1.2.0
      ```
  - 克隆安装脚本 
 
      ```
-     git clone https://rdc.choerodon.com/gitlab/rdc_hip/devops-install-docs.git
+     git clone https://rdc.hand-china.com/gitlab/rdc_hip/devops-install-docs.git
      ```
 ---
 ## 使用外部数据库
