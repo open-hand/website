@@ -45,3 +45,11 @@
 - id: tagsTitle
   translation: "Tags"
 # 博客 结束
+
+# 社区
+- id: we hope you have more requests and suggestions
+  translation: "We hope you have more requests and suggestions"
+
+- id: provides a steady stream of nutrients for choerodon
+  translation: "Provides a steady stream of nutrients for Choerodon"
+# 社区 结束

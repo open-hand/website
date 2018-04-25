@@ -45,3 +45,11 @@
 - id: tagsTitle
   translation: "全部标签"
 # 博客 结束
+
+# 社区
+- id: we hope you have more requests and suggestions
+  translation: "希望您多提需求及建议"
+
+- id: provides a steady stream of nutrients for choerodon
+  translation: "为Choerodon猪齿鱼的完善提供源源不断的养分"
+# 社区 结束
