@@ -4,6 +4,7 @@ theme = "hugo-choerodon-theme"
 # themesDir = "../.."
 # Site language. Available translations in the theme's `/i18n` directory.
 defaultContentLanguage = "zh"
+defaultContentLanguageInSubdir= "true"
 prettyurls=true
 # Define the number of posts per page
 paginate = 10
@@ -18,22 +19,22 @@ paginate = 10
 # Main menu
 [[languages.en.menu.main]]
     name = "Docs"
-    url  = "/docs/"
+    url  = "/en/docs/"
     weight = 1
 
 [[languages.en.menu.main]]
     name = "Blog"
-    url  = "/blog/"
+    url  = "/en/blog/"
     weight = 2
 
 [[languages.en.menu.main]]
     name = "Case Studies"
-    url  = "/case-studies/"
+    url  = "/en/case-studies/"
     weight = 3
 
 [[languages.en.menu.main]]
     name = "Community"
-    url  = "/community/"
+    url  = "/en/community/"
     weight = 4
 
 [[languages.en.menu.main]]
@@ -44,22 +45,22 @@ paginate = 10
 
 [[languages.zh.menu.main]]
     name = "文档"
-    url  = "/docs/"
+    url  = "/zh/docs/"
     weight = 1
 
 [[languages.zh.menu.main]]
     name = "博客"
-    url  = "/blog/"
+    url  = "/zh/blog/"
     weight = 2
 
 [[languages.zh.menu.main]]
     name = "案例"
-    url  = "/case-studies/"
+    url  = "/zh/case-studies/"
     weight = 3
 
 [[languages.zh.menu.main]]
     name = "社区"
-    url  = "/community/"
+    url  = "/zh/community/"
     weight = 4
 
 [[languages.zh.menu.main]]
