@@ -48,10 +48,13 @@ module.exports = function(grunt) {
 				}
 				
 				var href = S(abspath).chompLeft("content").chompRight(".md").s;
-				if (filename === "index.md") {
-					href = S(abspath).chompLeft(CONTENT_PATH_PREFIX).chompRight(filename).s;
+				if (filename === "_index.md") {
+					href = S(abspath).chompLeft("content").chompRight(filename).s;
 				}
-		
+				//去除多语言后缀
+				href = href.replace(".zh","");
+				href = href.replace(".en","");
+				
 				var content = body[2].trim();
 				content = marked(content);
 				content = content.replace(/\<script.*\/script\>/g,"");
@@ -78,8 +81,8 @@ module.exports = function(grunt) {
 			grunt.file.write(filename, JSON.stringify(indexPages()));
 			grunt.log.ok("Index built");
 		}
-		var BLOGS_PATH_PREFIX = "./content/blog";
-		var DOCS_PATH_PREFIX = "./content/docs";
+		var BLOGS_PATH_PREFIX = "content/blog";
+		var DOCS_PATH_PREFIX = "content/docs";
 		var blogsStore = {};
 		var docsStore = {};
 		var blogfilename = "./static/lunr.json";
