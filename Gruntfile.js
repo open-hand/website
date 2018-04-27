@@ -60,6 +60,8 @@ module.exports = function(grunt) {
 					href = href.replace(".en","");
 					href = "/en" + href;
 					language = "en";
+				}else{
+					href = "/zh" + href;
 				}
 				var content = body[2].trim();
 				content = marked(content);
