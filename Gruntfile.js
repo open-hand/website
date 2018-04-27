@@ -52,16 +52,10 @@ module.exports = function(grunt) {
 					href = S(abspath).chompLeft("content").chompRight(filename).s;
 				}
 				//去除多语言后缀
-				var language="zh";
 				if(href.indexOf(".zh") != -1){
 					href = href.replace(".zh","");
-					href = "/zh" + href;
 				}else if(href.indexOf(".en") != -1){
 					href = href.replace(".en","");
-					href = "/en" + href;
-					language = "en";
-				}else{
-					href = "/zh" + href;
 				}
 				var content = body[2].trim();
 				content = marked(content);
@@ -78,9 +72,7 @@ module.exports = function(grunt) {
 					description: frontMatter.description,
 					img: frontMatter.img,
 					tags: frontMatter.tags,
-					categories: frontMatter.categories,
-					language: language
-					
+					categories: frontMatter.categories					
 				};
 
 				entity.body=content;
