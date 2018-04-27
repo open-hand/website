@@ -57,6 +57,15 @@
 - id: share
   translation: "分享"
 
+- id: share to wechat
+  translation: "分享到微信"
+
+- id: open wechat click discover
+  translation: "打开微信，点击底部的'发现'，"
+
+- id: use scan or code to share
+  translation: "使用'扫一扫'即可将网页分享至朋友圈。"
+
 - id: nextpage
   translation: "下一篇"
   
@@ -65,6 +74,15 @@
 # 博客 结束
 
 # 案例
+- id: they are using choerodon
+  translation: "他们正在使用猪齿鱼"
+
+- id: to accelerate business remodeling
+  translation: "加速业务重塑"
+
+- id: and digital transformation
+  translation: "和数字化转型"
+
 - id: choerodon has increased the agility of the enterprise
   translation: "Choerodon猪齿鱼正在帮助他们提高企业信息化系统对市场和需求反应的敏捷度"
 
