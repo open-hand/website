@@ -44,7 +44,33 @@
 
 - id: tagsTitle
   translation: "Tags"
+
+- id: author
+  translation: "Author"
+
+- id: source
+  translation: "Source"
+
+- id: welcome to reprint
+  translation: "Welcome to reprint, but without the consent of the author must retain the paragraph of the statement, and in the article gives the original link."
+
+- id: share
+  translation: "Share"
+
+- id: nextpage
+  translation: "NextPage"
+
+- id: previouspage
+  translation: "Previous Page"
 # 博客 结束
+
+# 案例
+- id: choerodon has increased the agility of the enterprise
+  translation: "Choerodon has increased the agility of the enterprise information system in responding to the market and demand"
+
+- id: readmore
+  translation: "Read More"
+# 案例 结束
 
 # 社区
 - id: choerodon's growth
