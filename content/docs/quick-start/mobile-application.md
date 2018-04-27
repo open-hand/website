@@ -16,7 +16,7 @@ weight = 5
 
 1. 点击`创建`按钮。
 
-    ![](../assets/mobile-application/服务创建.png)
+    ![](/img/docs/quick-start/assets/mobile-application/服务创建.png)
 
 1. 输入 “服务编码” 、 “服务名称” 、以及 “服务组” ，并选择相应服务类型为移动，点击 `创建` 按钮。
 
@@ -26,11 +26,11 @@ weight = 5
 
     c. 服务名称不是移动端展示的模块名称
 
-    ![](../assets/mobile-application/服务创建信息填写.png)
+    ![](/img/docs/quick-start/assets/mobile-application/服务创建信息填写.png)
 
 1. 新建服务 choerodon 已在服务管理列表中。
 
-    ![](../assets/mobile-application/服务列表.png)
+    ![](/img/docs/quick-start/assets/mobile-application/服务列表.png)
 
 1. gitlab已自动创建好对应服务类型的代码库 choerodon 。点击 `仓库地址` ，可以查看该服务在gitlab的代码仓库。
 
@@ -73,7 +73,7 @@ weight = 5
 
 1. 进入服务详情后， 查看服务CI pipeline的完成情况，只有CI各个阶段跑成功了才会生成一条服务版本信息，CI完成后将会自动发布到环境。
 
-    ![](../assets/mobile-application/流水线.png)
+    ![](/img/docs/quick-start/assets/mobile-application/流水线.png)
 
 <h2 id="3">发布应用</h2>
 
@@ -91,13 +91,13 @@ weight = 5
 
 1. 点击DigitalPlatform的 `版本管理` ，新建iOS和Android的类型。
 
-    ![](../assets/mobile-application/核心版本管理.png)
+    ![](/img/docs/quick-start/assets/mobile-application/核心版本管理.png)
 
 1. 返回上一级目录，点击对应APP的 `模块配置` 。
 
 1. 关键字搜索或直接找到目标模块，勾选要在该APP中可以使用的模块，点击保存。
 
-    ![](../assets/mobile-application/模块配置.png)
+    ![](/img/docs/quick-start/assets/mobile-application/模块配置.png)
 
 <h2 id="5">版本管理</h2>
 
@@ -107,7 +107,7 @@ weight = 5
 
 1. 在部署成功中选中进行启用
 
-    ![](../assets/mobile-application/版本管理.png)
+    ![](/img/docs/quick-start/assets/mobile-application/版本管理.png)
 
 <h2 id="6">最终结果</h2>
 

@@ -22,7 +22,7 @@ type = "docs"
 <h2 id="1">创建微服务后端</h2>
 
 1. 使用``项目所有者``或者``源代码管理员``的角色登录Choerodon系统，选择新建的项目``DevOps``,点击菜单栏``开发管理``，选择``服务``，进入服务管理页面，在服务管理中``创建``服务。系统会弹出模态框，在框中输入**服务编码、服务名称和服务组**，选择**服务类型**，点击创建，即可创建一个微服务后端服务。
- 
+
     a. 服务编码：`order-service`
 
     b. 服务名称：`订单服务`
@@ -34,7 +34,7 @@ type = "docs"
 
 2. 当服务创建成功，可以在服务列表查看到新建的服务。
 
-    ![](../assets/microservice-backend/创建服务.png) 
+    ![](/img/docs/quick-start/assets/microservice-backend/创建服务.png)
 
 3. 在创建服务的同时，系统还会在Gitlab中创建一个仓库，点击 ``仓库地址`` ，链接到Gitlab新建的仓库。
 
@@ -55,7 +55,7 @@ type = "docs"
 
     进入到服务管理界面，搜索服务编码``order-service``,选择这行记录，点击右侧``详情``，进入到服务详情界面，点击``分支管理``，点击``创建Feature``按钮，会弹出模态框，输入分支名称，例如`1001`。详情参考[分支管理](../../user-guide/continuous-integration#2)。
 
-    ![](../assets/microservice-backend/创建分支.png) 
+    ![](/img/docs/quick-start/assets/microservice-backend/创建分支.png)
 
 1. 在存放代码的文件夹下，打开git bash,输入命令`git clone [仓库地址]`，拉取所需服务的代码仓库。
 
@@ -363,7 +363,7 @@ type = "docs"
 
 1. 运行CI，基于feature分支，具体执行细节请看上面`.gitlab-ci.yml`文件。进入服务详情，点击`流水线`,查看 CI 执行情况。
 
-    ![](../assets/microservice-backend/流水线.jpg) 
+    ![](/img/docs/quick-start/assets/microservice-backend/流水线.jpg)
 
 1. 进入服务详情页面，点击`分支管理`，在分支列表找到`feature-1001`，点击`结束`分支。
 
@@ -382,7 +382,7 @@ type = "docs"
         </ul>
     </blockquote>
 
-    ![](../assets/microservice-backend/流水线1.jpg) 
+    ![](/img/docs/quick-start/assets/microservice-backend/流水线1.jpg)
 
 1. 进入服务详情，点击`服务版本`，确定服务版本已经生成。
 
@@ -394,7 +394,7 @@ type = "docs"
 
 1. 点击菜单栏`发布`，进入到服务发布界面，查看到服务版本，点击右侧`发布`，系统会弹出模态框，输入你要发布到哪个环境，点击`保存`。发布成功后，右侧边栏会显示服务基本信息和发布环境。
 
-    ![](../assets/microservice-backend/已发布环境信息.jpg) 
+    ![](/img/docs/quick-start/assets/microservice-backend/已发布环境信息.jpg)
 
 1. 在服务详情页面，设置服务`自动发布`，下一次CI执行完成后生成的服务版本会自动发布到已配置的环境。[自动发布配置](../../user-guide/continuous-integration#6)
 

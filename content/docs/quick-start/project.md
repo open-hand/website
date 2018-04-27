@@ -58,7 +58,7 @@ type = "docs"
 
 3.  选择`添加`按钮，在如下的弹框中输入用户账号，并且选择相关权限，例如，用户`2199`，权限`项目成员`。
     
-    ![](../assets/project/role-assign.png)
+    ![](/img/docs/quick-start/assets/project/role-assign.png)
 
 4.  用户可以选择删除用户的权限和用户信息。
 
