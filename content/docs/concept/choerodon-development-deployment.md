@@ -9,9 +9,9 @@ type = "docs"
 
 Choerodon 采用微服务架构融合多个开源组件实现 DevOps的开发相关功能，包括计划、编码、构建、测试、部署、运行、运维等，并且Choerodon是以Docker容器作为运行环境和使用Kubernetes作为容器编排和管理工具，在一个Kubernetes集群中运行DevOps流程的开发相关（计划、编码、构建、测试）微服务和开源工具，我们将此Kubernetes集群称作**开发区**；在一个Kubernetes集群中运行DevOps流程的运行相关（部署、运行、运维）微服务和开源工具，我们将此Kubernetes集群称作**运行区**。
 
-关于开发区的安装，请参考[开发区安装](./installation-configuration/development-install-guide)。
+关于开发区的安装，请参考[开发区安装](../../installation-configuration/development-install-guide)。
 
-关于运行区的安装，请参考[运行区安装](./installation-configuration/deployment-install-guide)。
+关于运行区的安装，请参考[运行区安装](../../installation-configuration/deployment-install-guide)。
 
 ## 部署
 
