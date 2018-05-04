@@ -1,4 +1,4 @@
-+++
+﻿+++
 title = "IAM和管理"
 description = ""
 weight = 5
@@ -7,8 +7,7 @@ alwaysopen=false
 
 ## 介绍
 
-本节介绍IAM (Identity & Access Management)身份和访问
-管理的基础概念。
+本节介绍IAM (Identity & Access Management)身份和访问管理的基础概念。
 
 HAP Cloud支持IAM，即管理谁（identity）对哪个资源有什么访问权限（role）。
 使用IAM，你能允许对特定HAP Cloud资源的访问，并且阻止对其他资源的不必要的访问。
@@ -20,9 +19,9 @@ HAP Cloud支持IAM，即管理谁（identity）对哪个资源有什么访问权
 - 用户（user）
 - 客户端（client）
 
-#### 用户
+#### 用户（user）
  
-用户，代表一个独立的个体。在这里，用户是指在HAP Cloud有身份认证的任何人，如游客、匿名用户不包括在用户里面。
+用户，代表一个独立的个体。在这里，用户是指在HAP Cloud有身份认证的任何人。(例如游客、匿名用户不包括在用户里面)
 
 用户有唯一的标识-用户名；因此用户名一旦创建，不可更改。
 
@@ -30,7 +29,7 @@ HAP Cloud支持IAM，即管理谁（identity）对哪个资源有什么访问权
 
 用户的登录为登陆账号（用户名/邮箱/手机号）密码方式登录。
 
-#### 客户端
+#### 客户端（client）
 
 提供服务的一方我们称为 服务端（Server），而接受服务的另一方我们称作客户端（Client）。
 
@@ -48,13 +47,12 @@ HAP Cloud支持IAM，即管理谁（identity）对哪个资源有什么访问权
 
 角色是权限的集合。你不能直接给成员分配权限，而是要授予角色。当你给成员授予一个角色时，也就是将角色里包含的所有权限授予了成员。
 
-在IAM中，有三种角色：
+在IAM中，有两种角色：
 
-- **原始角色：**在HAP Cloud系统中一直可用的角色为Admin、Viewer。
 - **预定义角色：**预定义角色比原始角色的粒度细，可对更细粒度的访问进行控制。例如，源代码管理员（role/hap-devops-service.sourceCodeAdmin）是对environment、git-flow、devops-service、service-release这些资源进行访问授权。
 - **用户自定义角色：**如果原始角色、预定义角色不能满足需求时，用户可根据自身需求创建自定义角色，给该角色添加特定的权限组合。
 
-有关细颗粒度预定义角色的更多信息请参考[理解角色](../understanding_roles)。有关用户自定义角色的更多信息请参考[理解用户自定义角色](../understanding_customroles)和[创建与管理用户自定义角色](../creating_managing_customroles)。
+有关角色的更多信息请参考[角色管理](./site4_role)
 
 #### 角色分配
 
