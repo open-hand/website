@@ -9,6 +9,6 @@ docker-build:
     - echo ${choerodonci} > ~/.ssh/id_rsa
     - chmod 460 ~/.ssh/id_rsa
     - git remote add home "${USERNAME}@choerodon.io:/home/${USERNAME}/git/choerodon/website"
-    - git push home
+    - git push home master
   only:
     - master
