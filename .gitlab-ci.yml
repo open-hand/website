@@ -1,0 +1,14 @@
+stages:
+  - sync-git
+
+docker-build:
+  stage: sync-git
+  image: registry.saas.hand-china.com/tools/devops-ci:1.0.1
+  script:
+    - mkdir -p ~/.ssh
+    - echo ${choerodonci} > ~/.ssh/id_rsa
+    - chmod 460 ~/.ssh/id_rsa
+    - git remote add home "${USERNAME}@choerodon.io:/home/${USERNAME}/git/choerodon/website"
+    - git push home
+  only:
+    - master
