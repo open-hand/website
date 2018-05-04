@@ -53,7 +53,7 @@ K8S服务	|	com.choerodon.devops 	|	devops-kubernetes-service	|	1.1.0
 
 Kubernetes v1.8.5
 
-> 搭建Devops平台时，默认已经搭建好K8S集群，若未搭建请[移步K8S集群搭建](https://rdc.choerodon-china.com/gitlab/rdc_hip/kubeadm-ansible)
+> 搭建Devops平台时，默认已经搭建好K8S集群，若未搭建请[移步K8S集群搭建](https://rdc.hand-china.com/gitlab/rdc_hip/kubeadm-ansible)
 
 --- 
 ## 依赖组件
@@ -75,7 +75,7 @@ Harbor(可选) | 1.1.1
 
 - 克隆安装脚本
     ```
-    git clone https://rdc.choerodon-china.com/gitlab/rdc_hip/devops-ansible.git
+    git clone https://rdc.hand-china.com/gitlab/rdc_hip/devops-ansible.git
     ```
 ---
 ## 使用NFS存储
