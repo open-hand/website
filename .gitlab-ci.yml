@@ -3,7 +3,7 @@ stages:
 
 docker-build:
   stage: sync-git
-  image: registry.saas.hand-china.com/tools/devops-ci:1.0.1
+  image: registry.saas.hand-china.com/tools/devops-ci:1.1.0
   script:
     - mkdir -p ~/.ssh
     - echo ${choerodonci} > ~/.ssh/id_rsa
