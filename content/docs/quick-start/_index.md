@@ -1,4 +1,4 @@
-+++
+﻿+++
 title = "快速入门"
 description = ""
 weight = 3
@@ -12,9 +12,7 @@ alwaysopen=false
 > 目前，Choerodon 支持5种类型应用的创建。**Web前端应用、 微服务后端应用、普通Web应用、移动应用、Java 库**。
 
 - <font>[创建一个项目](./project)</font>
-- <font>[创建一个Web前端服务](./microservice-front)</font>
-- <font>[创建一个微服务后端服务](./microservice-backend)</font>
-- <font>[创建一个普通Web服务](./web-application)</font>
-- <font>[创建一个移动服务](./mobile-application)</font>
-- <font>[开发Web前端服务](./develop-microservice-front)</font>
-- <font>[开发微服务后端服务](./develop-microservice-backend)</font>
+- <font>[创建一个前端应用](./microservice-front)</font>
+- <font>[创建一个后端应用](./microservice-backend)</font>
+- <font>[创建一个普通应用](./web-application)</font>
+- <font>[创建一个移动应用](./mobile-application)</font>
