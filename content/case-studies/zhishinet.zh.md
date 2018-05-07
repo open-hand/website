@@ -9,7 +9,7 @@ unfinshed: "true"
 ---
 
 <section class="case-studies-detail-head">
-    <div class="text-nav" style="background: url(../../img/banner.png)no-repeat,-webkit-linear-gradient(0deg, #003DAC,#3371E3);">
+    <div class="text-nav" style="background: url(/img/case_studies/banner.svg)no-repeat,-webkit-linear-gradient(0deg, #003DAC,#3371E3);">
             <div class="text-nav-case">案例</div>
             <div class="text-nav-bottom">
                 <div class="text-nav-title">

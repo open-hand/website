@@ -1,150 +1,170 @@
-+++
-title = "创建一个Web前端服务"
+﻿+++
+title = "创建一个前端应用"
 description = ""
 weight = 2
 +++
 
 ## 概述
 
-Web前端服务主要是指微服务的前端服务。Choerodon 使用 React 和 MobX 作为前端的UI应用框架，并且对前端的展示做了一定的封装和处理，能够让用户方便快捷的进行前端服务的开发、发布和部署。
+Choerodon 使用 React 和 MobX 作为前端的UI应用框架，并且对前端的展示做了一定的封装和处理，能够让用户方便快捷的进行前端应用的开发和部署。
 
 > React 和 MobX都提供了最优和独特的解决方案。React 提供了优化UI渲染的机制， 这种机制就是通过使用虚拟DOM来减少昂贵的DOM变化的数量。MobX 提供了优化应用状态与 React 组件同步的机制，这种机制就是使用响应式虚拟依赖状态图表，它只有在真正需要的时候才更新并且永远保持是最新的。
 
 ### 目标
 
-本章节将从创建Web前端服务、开发前端、创建分支、提交代码、发布版本、部署等方面介绍，让读者能够熟悉使用Choerodon创建Web前端服务的步骤和流程，并且学会如何利用Choerodon发布版本和部署服务等。
+本章节将从创建Web前端应用、开发前端应用、生成版本、部署应用等方面介绍，让读者能够熟悉使用Choerodon创建Web前端应用的步骤和流程，并且学会如何利用Choerodon创建并部署前端应用。
 
 ---
 ## 前置条件
 
 - <font>在操作之前保证[系统配置](../../user-guide/system-configuration)已经配置完全。</font>
 
-- <font>创建一个[项目](../project)，Web前端服务必须在项目中创建。</font>
+- <font>完成[创建项目](../project)，本章节使用在前面章节创建的`演示proj`。</font>
 
-<h2 id="1">新建服务</h2>
+<h2 id="1">创建前端应用</h2>
 
-- **菜单层次**：项目层
-- **菜单路径**：开发管理 > 服务
-- **默认角色**：项目所有者、源代码管理员
+1. 使用项目所有者或者源代码管理员的角色登录Choerodon系统，选择新建的项目``演示proj``；
+2. 选择`持续交付`模块，点击`应用`，进入应用管理页面；
+3. 点击``创建应用``，系统会弹出窗口，在窗口中输入应用编码、应用名称和选择应用模板；
 
-1. 点击`创建`按钮。
+    a. 应用编码：`fronttest`
 
-    ![](/img/docs/quick-start/assets/microservice-front/服务创建.png)
+    b. 应用名称：`fronttest`
 
-1. 输入 “服务编码” 、 “服务名称” 、以及 “服务组” ，并选择相应服务类型，点击 `创建` 按钮。
+    c. 选择应用模板: `MicroServiceUI`
 
-    a. 服务编码只能包含字母、数字、_、.、破折号和空格并且不能包含大写字母
+    <blockquote class="warning">
+    应用编码输入只能包含字母，数字，下划线，空格， '_', '.', "——",只能以字母，数字，下划线开头。
+    </blockquote>
 
-    b. 服务组输入不能包含中文或大写字母,不能以'.'开头或结尾
+4. 点击`创建`按钮，即可创建一个前端应用；
 
-    ![](/img/docs/quick-start/assets/microservice-front/服务创建信息填写.png)
+5. 当应用创建成功，可以在应用管理查看到新建的应用；
 
-1. 新建服务 “front0307” 已在服务管理列表中。
+6. 在创建应用的同时，系统还会在Gitlab中创建一个仓库，点击 ``仓库地址`` ，链接到Gitlab新建的仓库；
+    
+    <blockquote class="note">
+        Gitlab 仓库的名称是 ``fronttest``，为应用编码。
+    </blockquote>
 
-    ![](/img/docs/quick-start/assets/microservice-front/服务列表.png)
-
-1. gitlab已自动创建好对应服务类型的代码库 “front0307” 。点击 `仓库地址` ，可以查看该服务在gitlab的代码仓库。
-
-    ![](/img/docs/quick-start/assets/microservice-front/仓库地址.png)
-
-    注：新建服务的演示使用的是模板
-
-<h2 id="2">服务版本</h2>
-
- 服务版本是代码提交的历史记录，每提交一次修改后的代码，对应生成一个新的版本。
-
-  - **菜单层次**：项目层
-  - **菜单路径**：开发管理 > 服务> 服务详情 > 服务版本
-  - **默认角色**：项目所有者、源代码管理员、项目成员
-
-1. 进入服务详情后， 查看服务CI pipeline的完成情况，只有CI各个阶段跑成功了才会生成一条服务版本信息。
-
-    ![](/img/docs/quick-start/assets/microservice-front/流水线.png)
-
-1. 查看服务版本信息。
-
-    ![](/img/docs/quick-start/assets/microservice-front/开发区服务版本.png)
-
-<h2 id="3">服务发布</h2>
-
-  该模块提供将服务发布至不同环境的功能，向目标环境传输部署文件，同时附带服务版本信息以便追踪。 
-
-  - **菜单层次**：项目层
-  - **菜单路径**：开发管理 > 发布
-  - **默认角色**：项目所有者、源代码管理员、项目成员 
-
-1. 点击 `发布` 。
-
-    ![](/img/docs/quick-start/assets/microservice-front/发布.png)
-
-1. 关键字搜索或直接从从下拉列表中选择部署文件发布的环境，已发布的环境不能重新发布。发布的环境需要先在组织层配置。
-
-    ![](/img/docs/quick-start/assets/microservice-front/发布的环境.png)
-
-    注：[环境配置](../../user-guide/system-configuration#5)
-
-1. 该服务部署文件已成功发布在某个环境。
-
-    ![](/img/docs/quick-start/assets/microservice-front/已发布的环境.png)
-
-1. 设置服务 “自动发布”，下一次生成的服务版本会自动发布到已配置的环境。[自动发布配置](../../user-guide/continuous-integration#6)
-
-<h2 id="4">新建资源</h2>
-
-1. 定义部署时需要使用的资源。[资源配置](../../user-guide/continuous-deployment#1)
-
-<h2 id="5">域名管理</h2>
-
-1. 目前**Web前端**及**Web应用**需配置域名，若不配置域名，不能进行外网访问该前端，只能查看系统提供的pod ip。[域名配置](../../user-guide/continuous-deployment#3)
-
-<h2 id="6">服务部署</h2>
-
-  提供可视化、一键式部署服务，支持并行部署和流水线无缝集成，实现部署环境标准化和部署过程自动化。
   
-  - **菜单层次**：组织层
-  - **菜单路径**：部署管理 > 服务
-  - **默认角色**：部署管理员
- 
-1. 点击 `部署管理`  ，点击 `服务` ，查看服务列表。
+<h2 id="2">开发前端应用</h2>
 
-    ![](/img/docs/quick-start/assets/microservice-front/运行区服务列表.png)
+应用创建完成之后，开发前端应用。具体的操作步骤如下：
 
-1. 点击`详情`。
+1. 创建Feature分支。
 
-    ![](/img/docs/quick-start/assets/microservice-front/详情.png)
+    点击`应用`，进入到应用管理界面，选择应用编码`fronttest`，点击右侧`分支管理`，选择`创建分支`，系统会弹出侧边栏，填写字段，点击创建按钮，即可创建一个Feature分支。
 
-1. 查看该服务版本信息。
+    ![](/img/docs/quick-start/assets/microservice-front/分支管理.png)
 
-    ![](/img/docs/quick-start/assets/microservice-front/运行区服务版本.png)
+    <blockquote class="warning">
+    字段填写输入包含字母、数字、'——'、'_'），例如 feature-1
+    </blockquote>
 
-1. 在服务列表中找到要部署的服务，点击`详情`，例如"front0307"。
+2. 在存放代码的文件夹下，打开git bash,输入命令`git clone [仓库地址]`，拉取所需应用的代码仓库。
 
-    ![](/img/docs/quick-start/assets/microservice-front/运行区服务列表1.png)
+3. 克隆成功之后，进入项目根目录，打开git bash,输入命令`git checkout feature-1`,切换到新建分支feature-1，并在此分支进行开发。
+   
+    ```shell
+    $ git checkout feature-1
+    ```
+4. 提交代码。    
 
-1. 选择发布的版本，点击`部署服务`。
+    ```shell
+    # 将本地代码变动提交到暂存区
+    $ git add .
+    # 提交代码并且为本次提交添加 commit 信息
+    # 注：[FIX]修改bug  [ADD]新增  [IMP]完善  [DEL]删除
+    $ git commit –m “[ADD]readme: 新增代码示例”
+    # 将本地提交推送至远程仓库对应分支
+    $ git push origin feature-1:feature-1
+    ```
+5. 基于feature分支运行CI。点击`CI流水线`,查看 CI 执行情况。
 
-    ![](/img/docs/quick-start/assets/microservice-front/服务部署.png)
+6. 当CI运行完成以后，点击`应用`，进入应用管理，点击所创应用的`分支管理`，在分支列表找到`feature-1`，点击`结束分支`。
 
-1. 进行资源选择，点击`部署`。
 
-    ![](/img/docs/quick-start/assets/microservice-front/部署详情.png)
+<h2 id="3">生成版本</h2>
 
-     注：服务第一次部署需要自己手动填写资源，再次部署页面会显示上一次部署选择的资源。选择资源一定要谨慎，选择错误严重会导致数据库数据丢失。
+ 应用版本是代码提交的历史记录，每提交一次修改后的代码，对应生成一个新的版本。具体的操作步骤如下：
 
-1. 点击`详情`，可在运行中查看正在部署/运行的版本，以及对容器数量进行调整。
+1. 结束分支之后，`feature-1`分支的代码会合并到`develop`分支，并触发Gitlab CI。点击``CI流水线``,查看CI执行情况。
 
-    ![](/img/docs/quick-start/assets/microservice-front/运行中版本.png)
+    <blockquote class="note">
+        Choerodon 缺省的 CI 流程有三个阶段:
+        <ul>
+            <li>单元测试，编译打包，代码质量检查</li>
+            <li>构建docker镜像</li>
+            <li>创建应用版本</li>
+        </ul>
+    </blockquote>
 
-    > 注：可用容器数量、当前容器数量、期望容器数量都为1时，代表该服务已经部署好了。期望容器数量的加减实际是对kubernetes的pod数量的加减，例如期望容器数量为2，代表kubernetes启动了2个pod，其中一个挂了，还能保证程序正常使用，目前期望容器数量不可为0。
+2. 点击`应用版本`进行查看，确定应用版本已经生成。
 
-1. 点击`详情`，查看服务`部署阶段`，点击`部署`阶段，点击域名地址访问。
 
-    ![](/img/docs/quick-start/assets/microservice-front/域名查看.png)
+<h2 id="4">部署应用</h2>
 
-    > 注：如果没有配置域名，此处显示的是IP地址。
+  提供可视化、一键式部署应用，支持并行部署和流水线无缝集成，实现部署环境标准化和部署过程自动化。
 
-    ![](/img/docs/quick-start/assets/microservice-front/页面查看.png)
+- 使用部署管理员的角色登录Choerodon系统，选择``演示proj``；
 
-1. [灰度部署](../../user-guide/continuous-deployment#4)用于保障系统稳定，验证某服务版本是否正常使用，验证正常后再转为正式部署。
+- 在菜单栏选择`应用部署`，进入应用部署界面，点击`部署应用`；
+     
+     a. 选择应用：之前所创建的应用，如order-app
 
-1. 设置了[自动部署](../../user-guide/continuous-deployment#4)，服务版本发布不再需要手动部署。
+     b. 选择版本：刚才所创建的应用版本
+
+     c. 选择环境: 选择所要部署的环境
+
+     d. 配置信息：配置部署应用所需的信息
+
+     e. 部署模式：新建实例（新建一个应用）
+                  替换实例（新建一个实例，将旧实例替换）
+
+<h2 id="4">配置网络</h2>
+
+  为所选的应用配置网络。
+
+- 在`持续交付`模块中选择`网络`，进入网络配置界面，点击`创建网络`
+
+     a. 环境名称：选择要部署的环境
+    
+     b. 应用名称：选择创建的应用名称
+    
+     c. 版本：选择刚才创建的应用版本
+    
+     d. 实例：选择刚才创建的实例
+
+     e. 网络名称：系统默认一个网络名称（可手动修改）
+
+     f. 外部IP：需要外网时填写
+
+     g. 端口号：应用开放端口
+
+<h2 id="4">配置域名</h2>
+  
+  为所选的应用配置域名。
+  
+- 在`持续交付`模块中选择`域名`，进入域名管理界面，点击`创建网络`
+     
+     a. 域名名称：测试域名
+  
+     b. 域名地址：填写域名地址，如choerodon.io
+    
+     c. 环境名称：选择要部署的环境
+
+     d. 路径：fronttest
+  
+     e. 网络：选择配置的网络
+
+
+<h2 id="5">查看运行信息</h2>
+
+进入持续交付模块，选择应用部署，点击部署应用即可查看运行状态。有四种查看视图，分别为：部署实例、单环境单应用、多应用。
+
+那么如何判断这个应用版本已经部署成功？当可用容器数量、当前容器状态为1时，代表该应用版本已经部署成功了。
+ 在应用版本界面，右侧的`查看部署详情`，进入到查看部署详情界面。点击`部署详情`可以查看到阶段信息及日志。
+
+
+
