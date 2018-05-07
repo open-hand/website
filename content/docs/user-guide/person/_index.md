@@ -1,7 +1,7 @@
-+++
+﻿+++
 title = "个人中心"
 description = ""
-weight = 6
+weight = 8
 +++
 
 # 个人信息
