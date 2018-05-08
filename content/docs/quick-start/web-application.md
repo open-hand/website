@@ -1,140 +1,106 @@
-+++
-title = "创建一个普通Web服务"
+﻿+++
+title = "创建一个Java库"
 description = ""
 weight = 4
 +++
 
-# Web应用
+# 创建一个Java库
+---
 
-本页面介绍了以DevOps平台为基础，演示了Web应用从新建到部署等流程操作。
+## 目标
 
-在操作之前保证[系统配置](../../user-guide/system-configuration)已经配置完全。
+众所周知，Java 的生态环境相当庞大，包含了数量相当可观的官方及第三方库。利用这些库，可以解决在用 Java 开发时遇到的各类问题，让开发效率得到显著提升。
 
-<h2 id="1">新建服务</h2>
+本页面介绍以DevOps平台为基础，演示如何创建一个Java库，让用户熟知整个操作流程。
 
-- **菜单层次**：项目层
-- **菜单路径**：开发管理 > 服务
-- **默认角色**：项目所有者、源代码管理员
 
-1. 点击`创建`按钮。
+## 前置条件
 
-    ![](/img/docs/quick-start/assets/web-application/服务创建.png)
+- 在操作之前保证[系统配置](../../user-guide/system-configuration)已经配置完全。
+- 完成[创建项目](../project)操作。本章节使用在前面章节创建的项目`猪齿鱼研发`。
 
-1. 输入 “服务编码” 、 “服务名称” 、以及 “服务组” ，并选择相应服务类型，点击 `创建` 按钮。
+<h2 id="1">创建Java库</h2>
 
-    a. 服务编码只能包含字母、数字、_、.、破折号和空格并且不能包含大写字母
+1. 使用项目所有者或者源代码管理员的角色登录Choerodon系统，选择项目`猪齿鱼研发`；
+2. 选择`持续交付`模块，点击`应用`，进入应用管理页面；
+3. 点击``创建应用``，系统会弹出窗口，在窗口中输入应用编码、应用名称和选择应用模板；
 
-    b. 服务组输入不能包含中文或大写字母,不能以'.'开头或结尾
+    a. 应用编码：choerodon-java
 
-    ![](/img/docs/quick-start/assets/web-application/服务创建数据填写.png)
+    b. 应用名称：猪齿鱼java应用
 
-1. 新建服务 “application0307” 已在服务管理列表中。
+    c. 选择应用模板: JavaLib
 
-    ![](/img/docs/quick-start/assets/web-application/服务列表.png)
+    <blockquote class="warning">
+    应用编码输入只能包含字母，数字，下划线，空格， '_', '.', "——",只能以字母，数字，下划线开头。
+    </blockquote>
 
-1. gitlab已自动创建好对应服务类型的代码库 “application0307” 。点击 `仓库地址` ，可以查看该服务在gitlab的代码仓库。
+4. 点击`创建`按钮，即可创建一个Java库；
 
-    ![](/img/docs/quick-start/assets/web-application/仓库地址.png)
+5. 当应用创建成功，可以在应用管理查看到新建的应用；
 
-1. 上传Web应用代码到新建的gitlab仓库。
-
-<h2 id="2">服务版本</h2>
-
- 服务版本是代码提交的历史记录，每提交一次修改后的代码，对应生成一个新的版本。
-
-  - **菜单层次**：项目层
-  - **菜单路径**：开发管理 > 服务> 服务详情 > 服务版本
-  - **默认角色**：项目所有者、源代码管理员、项目成员
-
-1. 查看流水线信息。进入服务详情后， 查看服务CI pipeline的完成情况，只有CI各个阶段跑成功了才会生成一条服务版本信息。
-
-    ![](/img/docs/quick-start/assets/web-application/流水线.png)
-
-1. 查看服务版本信息。
-
-    ![](/img/docs/quick-start/assets/web-application/服务版本.png)
-
-<h2 id="3">服务发布</h2>
-
-  该模块提供将服务发布至不同环境的功能，向目标环境传输部署文件，同时附带服务版本信息以便追踪。 
-
-  - **菜单层次**：项目层
-  - **菜单路径**：开发管理 > 发布
-  - **默认角色**：项目所有者、源代码管理员、项目成员 
-
-1. 点击 `发布` 。
-
-    ![](/img/docs/quick-start/assets/web-application/发布.png)
-
-1. 关键字搜索或直接从从下拉列表中选择部署文件发布的环境，已发布的环境不能重新发布。发布的环境需要先在组织层配置。
-
-    ![](/img/docs/quick-start/assets/web-application/选择环境.png)
-
-    注：[环境配置](../../user-guide/system-configuration#5)
-
-1. 该服务部署文件已成功发布在某个环境。
-
-    ![](/img/docs/quick-start/assets/web-application/发布信息查看.png)
-
-1. 设置服务 “自动发布”，下一次生成的服务版本会自动发布到已配置的环境。[自动发布配置](../../user-guide/continuous-integration#6)
-
-<h2 id="4">新建资源</h2>
-
-1. 定义部署时需要使用的资源。[资源配置](../../user-guide/continuous-deployment#1)
-
-<h2 id="5">域名管理</h2>
-
-1. 目前**Web前端**及**Web应用**需配置域名，若不配置域名，不能进行外网访问该前端，只能查看系统提供的pod ip。[域名配置](../../user-guide/continuous-deployment#3)
-
-<h2 id="6">服务部署</h2>
-
-  提供可视化、一键式部署服务，支持并行部署和流水线无缝集成，实现部署环境标准化和部署过程自动化。
-  
-  - **菜单层次**：组织层
-  - **菜单路径**：部署管理 > 服务
-  - **默认角色**：部署管理员
-
-1. 点击 `部署管理`  ，点击 `服务` ，查看服务列表。
-
-    ![](/img/docs/quick-start/assets/web-application/运行区服务列表.png)
-
-1. 点击`详情`。
-
-    ![](/img/docs/quick-start/assets/web-application/服务详情.png)
-
-1. 查看该服务版本信息。
-
-    ![](/img/docs/quick-start/assets/web-application/服务版本1.png)
-
-1. 在服务列表中找到要部署的服务，点击`详情`，例如"yshap180306"。
-
-    ![](/img/docs/quick-start/assets/web-application/要部署的服务.png)
-
-1. 选择发布的版本，点击`部署服务`。
-
-    ![](/img/docs/quick-start/assets/web-application/运行区服务版本.png)
-
-1. 进行资源选择，点击`部署`。
-
-    ![](/img/docs/quick-start/assets/web-application/服务部署.png)
-
-    注：服务第一次部署需要自己手动填写资源，再次部署页面会显示上一次部署选择的资源。选择资源一定要谨慎，选择错误严重会导致数据库数据丢失。
-
-1. 点击`详情`，可在运行中查看正在部署/运行的版本，以及对容器数量进行调整。
-
-    ![](/img/docs/quick-start/assets/web-application/服务运行.png)
-
-    注：可用容器数量、当前容器数量、期望容器数量都为1时，代表该服务已经部署好了。期望容器数量的加减实际是对kubernetes的pod数量的加减，例如期望容器数量为2，代表kubernetes启动了2个pod，其中一个挂了，还能保证程序正常使用，目前期望容器数量不可为0。
-
-1. 点击`详情`，查看服务`部署阶段`，点击`部署`阶段，点击域名地址访问。
-
-    ![](/img/docs/quick-start/assets/web-application/域名查看.png)
-
-    > 注：如果没有配置域名，此处显示的是IP地址。
-
-    ![](/img/docs/quick-start/assets/web-application/页面访问.png)
+6. 在创建应用的同时，系统还会在Gitlab中创建一个仓库，点击 ``仓库地址`` ，链接到Gitlab新建的仓库；
     
-1. [灰度部署](../../user-guide/continuous-deployment#4)用于保障系统稳定，验证某服务版本是否正常使用，验证正常后再转为正式部署。
+    <blockquote class="note">
+        Gitlab 仓库的名称是 ``choerodon-java``，为应用编码。
+    </blockquote>
 
-1. 设置了[自动部署](../../user-guide/continuous-deployment#4)，服务版本发布不再需要手动部署。
+
+<h2 id="2">开发Java库</h2>
+
+Java库创建完成之后，开发Java库。具体的操作步骤如下：
+
+1. 创建Feature分支。
+
+    点击`应用`，进入到应用管理界面，选择应用编码`choerodon-java`，点击右侧`分支管理`，选择`创建分支`，系统会弹出侧边栏，填写字段，点击创建按钮，即可创建一个Feature分支。
+    
+    <blockquote class="warning">
+    字段填写输入包含字母、数字、'——'、'_'），例如 feature-1
+    </blockquote>
+
+2. 在存放代码的文件夹下，打开git bash,输入命令`git clone [仓库地址]`，拉取所需应用的代码仓库。
+
+3. 克隆成功之后，进入项目根目录，打开git bash,输入命令`git checkout feature-1`,切换到新建分支feature-1，并在此分支进行开发。
+   
+    ```shell
+    $ git checkout feature-1
+    ```
+4. 提交代码。    
+
+    ```shell
+    # 将本地代码变动提交到暂存区
+    $ git add .
+    # 提交代码并且为本次提交添加 commit 信息
+    # 注：[FIX]修改bug  [ADD]新增  [IMP]完善  [DEL]删除
+    $ git commit –m “[ADD]readme: 新增代码示例”
+    # 将本地提交推送至远程仓库对应分支
+    $ git push origin feature-1:feature-1
+    ```
+   <blockquote class="note">
+        记得修改maven 仓库地址。
+    </blockquote>
+   
+5. 基于feature分支运行CI。点击`CI流水线`,查看 CI 执行情况。
+
+6. 当CI运行完成以后，点击`应用`，进入应用管理界面，点击`猪齿鱼java应用`的`分支管理`，在分支列表找到`feature-1`，点击`结束分支`。
+
+7. 创建Release分支。
+   
+    在应用管理界面，选择应用编码`choerodon-java`，点击右侧`分支管理`，选择`创建分支`，系统会弹出侧边栏，填写字段，点击创建按钮，即可创建一个Release分支。
+
+8. 在分支列表找到刚才创建的分支，点击`结束分支`。
+
+9. 点击`CI流水线`，再次查看CI运行情况。
+    
+    <blockquote class="note">
+        如果CI运行成功，去maven仓库地址查看是否打包成功。
+    </blockquote>
+
+10. 生成的JAR包的信息如下：
+    
+    groupId：组织编码-项目编码
+   
+    artifactId: 应用编码
+   
+    version: 创建的Release分支名称
 
