@@ -1,6 +1,6 @@
 +++
 title = "编写Application类"
-date = "2017-02-01"
+date = "2018-04-27T11:40:28+08:00"
 draft = false
 weight = 4
 +++
@@ -8,19 +8,12 @@ weight = 4
 # 编写Application类
 
 ## 编写TodoServiceApplication类
-  
 ```java
-package com.hand.hap.cloud.todo.demo;
+package io.choerodon.todo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
-/**
-* Created by ziling.zhong on 2017/7/5.
-*/
-
-@EnableEurekaClient
 @SpringBootApplication
 public class TodoServiceApplication {
     public static void main(String[] args) {
@@ -29,6 +22,23 @@ public class TodoServiceApplication {
 }
 ```
 
-## 结构图
+## 结构
 
-![](../images/TodoServiceApplication.png)
+```
+└─main
+    ├─java
+    │  └─io
+    │      └─choerodon
+    │          └─todo
+    │              └─TodoServiceApplication.java
+    └─resources
+```
+
+## 启动程序
+
+进入`./choerodon-todo-service/` 路径，执行`mvn clean spring-boot:run`。
+
+控制台打印出如下信息，则表示启动成功。
+```bash
+Started TodoServiceApplication in 21.299 seconds (JVM running for 22.968)
+```
