@@ -7,7 +7,7 @@ weight = 3
 
 ## 分支管理
   
-  Choerodonc采用 `git-flow` 工作流模式，有`master`和`develop`两个默认分支。在持续交付过程中对 `feature`、`release`、`hotfix` 等分支进行管理。结束分支可自动触发分支合并和持续集成，可在[流水线](#3)查看代码集成情况。
+  Choerodon采用 `git-flow` 工作流模式，有`master`和`develop`两个默认分支。在持续交付过程中对 `feature`、`release`、`hotfix` 等分支进行管理。结束分支可自动触发分支合并和持续集成，可在流水线查看代码集成情况。
   
   - **菜单层次**：项目层  
   - **菜单路径**：持续交付 > 应用 > 服务详情
@@ -59,9 +59,9 @@ weight = 3
 
     ```bash
     # 在存放代码的文件夹下执行以下命令，拉取所需服务的代码仓库
-    git clone http://git.saas.hand-china.com/devops/hap-devops-service.git
+    git clone http://http://choerodon.io/choerodon-choerodon-dev/choerodon-backend.git
     # 拉取远程仓库成功后进入仓库
-    cd hap-devops-service
+    cd choerodon-backend.git
     ```
 
  1. 拉取最新代码和新建的分支
@@ -72,8 +72,8 @@ weight = 3
  1. 切换到分支
 
     ```bash
-    # 切换到新建分支，以 feature-2 为例
-    git checkout feature-2
+    # 切换到新建分支，以 feature-1 为例
+    git checkout feature-1
     ```
  1. 开发
 
@@ -89,7 +89,7 @@ weight = 3
     # 注：[FIX]修改bug  [ADD]新增  [IMP]完善  [DEL]删除
     $ git commit –m “[ADD]readme: 新增代码示例”
     # 将本地提交推送至远程仓库对应分支
-    $ git push origin feature-2:feature-2
+    $ git push origin feature-1:feature-1
     ```
  1. 界面操作结束分支
 
@@ -102,8 +102,8 @@ weight = 3
  - 本地修改代码解决：
 
     ```bash
-    # 确保当前正在 Feature 分支上，以 feature-2 为例
-    git checkout feature-2
+    # 确保当前正在 Feature 分支上，以 feature-1 为例
+    git checkout feature-1
     # 拉取最新远程仓库 develop 分支代码
     git fetch origin develop:develop
     # 将 Feature 分支重新设立起点于最新的 develop 代码
@@ -117,7 +117,7 @@ weight = 3
     根据本次 `Feature` 分支上提交次数的不同，解决冲突可能会重复多次，只需要重复执行上述解决冲突操作。  
     完成后强制提交至远程仓库。
     ```bash
-    git push -f origin feature-2:feature-2
+    git push -f origin feature-1:feature-1
     ```
 
  - 界面解决冲突（不建议）：

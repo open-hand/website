@@ -59,7 +59,7 @@ Choerodon支持IAM，即管理谁（identity）对哪个资源有什么访问权
 你可以授予用户角色通过在角色分配管理中添加用户与角色的关联关系，即定义谁有什么样的访问权限的一组关联。
 
 
-![image](/docs/user-guide/iam/image/iam_overview_policy.png)
+![image](/docs/user-guide/system-comfiguration/iam/image/iam_overview_policy.png)
 
 IAM的核心就是角色分配，用`member_role`对象表示。一个IAM`member_role`对象由关联列表组成。一个`关联`是将`成员`列表和`角色`关联在一起。
 
