@@ -35,17 +35,17 @@ type = "docs"
 
        项目名称：猪齿鱼研发
 
-    <blockquote class="warning">
-        项目编码 必须输入，且编码只能包含字母，数字，下划线，空格， '_', '.', "——",只能以字母，数字，下划线开头。
-    </blockquote>
+     <blockquote class="warning">
+       项目编码 必须输入，且编码只能包含字母，数字，下划线，空格， '_', '.', "——",只能以字母，数字，下划线开头。
+     </blockquote>
 
    5. 点击``创建``，即可创建新的项目；
 
    6. 当项目创建成功，Choerodon同时会在Gitlab中创建一个Group和Issue库。我们可以登录到Gitlab检查创建。
 
-      <blockquote class="note">
-         Gitlab Group 的名称是 choerodon  —  choerodon-dev，为组织编码 — 项目编码。
-      </blockquote>
+     <blockquote class="note">
+      Gitlab Group 的名称是 choerodon  —  choerodon-dev，为组织编码 — 项目编码。
+     </blockquote>
 
 
 ## 创建环境
