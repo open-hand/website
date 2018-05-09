@@ -1,4 +1,4 @@
-+++
+﻿+++
 title = "LDAP管理"
 weight = 11
 +++
@@ -10,10 +10,6 @@ LDAP管理是对组织应用的LDAP信息设置的管理。LDAP只针对LDAP用�
 **层级：**
 
 - 组织层
-
-**功能：**
-
-- [修改LDAP](#1)
 
 <h2 id="1">修改LDAP</h2>
 
@@ -28,4 +24,3 @@ LDAP管理是对组织应用的LDAP信息设置的管理。LDAP只针对LDAP用�
 - 加密方式：分为SSL、TSL、STARTTLS三种
 - 基础DN：获取数据的路径
 - 描述：对该LDAP得附加信息
-

@@ -9,7 +9,7 @@ weight = 2
 
 项目是基于spring boot的maven项目。
 
-1. 新建meven项目
+1. 新建maven项目
 2. 添加项目依赖
 3. 添加默认配置文件
 
