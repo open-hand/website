@@ -39,21 +39,32 @@ Choerodon 使用 React 和 MobX 作为前端的UI应用框架，并且对前端�
     b. 应用名称：猪齿鱼前端应用
 
     c. 选择应用模板: MicroServiceUI
-    <blockquote class="note">
-        当应用模板不符合您的要求，你可手动创建一个应用模板。具体步骤如下：
-    </blockquote>
-    
-      第一步：在组织层的`持续交付`模块，选择`应用模板`；
-
-      第二部：点击`创建应用模板`，输入相关信息，点击`创建`，即可创建一个模板；
-      
-      第三部：创建完成以后，会生成一个Gitlab地址，点击该地址；
-     
-      第四部：进入Gitlab仓库，克隆代码；
-      
-      第五步：创建一个react的前端UI项目；
    
-      第六步：编写一个dockerfile；
+4. 当应用创建成功，可在应用管理界面查看到新建的应用；
+
+5. 在创建应用的同时，系统还会在Gitlab中创建一个仓库，点击 ``仓库地址`` ，链接到Gitlab新建的仓库；
+    <blockquote class="note">
+        Gitlab 仓库的名称是 choerodon-backend，为应用编码。
+    </blockquote>  
+ 
+ 
+  <h2 id="2">创建前端应用模板</h2>
+
+   
+  当应用模板不符合您的要求，你可手动创建一个应用模板。具体步骤如下：
+  
+ 
+  1. 在组织层的`持续交付`模块，选择`应用模板`；
+
+  2. 点击`创建应用模板`，输入相关信息，点击`创建`，即可创建一个模板；
+      
+  3. 创建完成以后，会生成一个Gitlab地址，点击该地址；
+     
+ 4. 进入Gitlab仓库，克隆代码；
+      
+ 5. 创建一个react的前端UI项目；
+   
+ 6. 编写一个dockerfile；
        
       将dockerfile文件放在项目根目录下
      
@@ -82,7 +93,7 @@ Choerodon 使用 React 和 MobX 作为前端的UI应用框架，并且对前端�
 		```
 
 
-      第七步：[编写gitlab-ci文件](http://eco.hand-china.com/doc/hip/latest/user_guide/integrated_deployment.html)
+7. [编写gitlab-ci文件](http://eco.hand-china.com/doc/hip/latest/user_guide/integrated_deployment.html)
      
       ```
       image: registry.choerodon.io/tools/devops-ci:1.1.0    
@@ -134,7 +145,7 @@ Choerodon 使用 React 和 MobX 作为前端的UI应用框架，并且对前端�
        ```
        before_script:指ci执行前所执行的命令
 
-      第八步：编写charts模块；
+8. 编写charts模块；
       
       目录结构如下
 
@@ -156,17 +167,9 @@ Choerodon 使用 React 和 MobX 作为前端的UI应用框架，并且对前端�
 
       `_helpers.tpl`：放置模板助手的地方，您可以在整个chart中重复使用。
       
-     第九步：编写config.js；
-	  
-     第十步：提交代码，即可完成模板创建；
+9. 编写config.js；
+10.  提交代码，即可完成模板创建；
 
-4. 当应用创建成功，可在应用管理界面查看到新建的应用；
-
-5. 在创建应用的同时，系统还会在Gitlab中创建一个仓库，点击 ``仓库地址`` ，链接到Gitlab新建的仓库；
-    <blockquote class="note">
-        Gitlab 仓库的名称是 choerodon-backend，为应用编码。
-    </blockquote>
-  
 <h2 id="2">开发前端应用</h2>
 
 应用创建完成之后，开发前端应用。具体的操作步骤如下：
