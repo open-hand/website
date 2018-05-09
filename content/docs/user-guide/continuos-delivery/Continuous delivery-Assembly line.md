@@ -4,7 +4,7 @@ description = ""
 weight = 4
 +++
 
-## CI流水线
+# CI流水线
 
 CI流水线是持续集成过程中的完成情况，包括状态、标识、应用编码、应用名称、提交、阶段、时长及创建时间。
 
@@ -25,20 +25,19 @@ CI流水线是持续集成过程中的完成情况，包括状态、标识、应
 
  1. 查看服务CI pipeline的完成情况，只有CI各个阶段跑成功了才会生成一条服务版本信息。
 
-### 界面名词解释
+列表字段：
 
- - 状态：passed  已经通过的；
-         skipped 跳过；
+ - 状态：Job的状态 created, pending, running, failed, success, canceled, skipped, manual
 
  - 标识：CI标识+CI触发者；
 
  - 提交：提交的信息；
 
- - 阶段：CI的阶段；
+ - 阶段：CI的阶段,分为单元测试和生成镜像两个阶段。单元测试阶段完成单元测试的运行并且对代码质量进行审查，生成镜像阶段通过docker把应用生成镜像。
 
  - 时长：CI持续的时长；
 
  - 创建时间：CI创建的时间；
 
  - ![重置按钮](/docs/user-guide/continuos-delivery/image/重置按钮.png) 
-：当非成功状态是，可以重置应用；成功状态时，该按钮不显示。
+：当处于skipped、canceled、failed状态时，可以重置应用。

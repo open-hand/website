@@ -5,7 +5,7 @@ weight = 11
 +++
 
 
-## 域名管理
+# 域名管理
   
 域名是因特网上一个服务器或一个网络系统的名字，网络间正是通过域名进行访问的。
 
@@ -31,3 +31,6 @@ weight = 11
 ### 删除域名
 
 点击页面右侧 ![删除网络按钮](/docs/user-guide/continuos-delivery/image/删除网络按钮.png) 按钮，删除该域名。
+<blockquote class="note">
+         若删除域名，该条数据将被永久删除，不可恢复!
+      </blockquote>

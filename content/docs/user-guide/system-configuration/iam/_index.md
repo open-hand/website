@@ -5,14 +5,14 @@ weight = 5
 alwaysopen=false
 +++
 
-## 介绍
+<h2 id="1">介绍</h2>
 
 本节介绍IAM (Identity & Access Management)身份和访问管理的基础概念。
 
 Choerodon支持IAM，即管理谁（identity）对哪个资源有什么访问权限（role）。
 使用IAM，你能允许对特定Choerodon资源的访问，并且阻止对其他资源的不必要的访问。
 
-<h3 id="1">与身份有关的概念</h3>
+### 与身份有关的概念
 
 在IAM，你能对**成员**（member）授予访问权限。成员可以是以下类型：
 
@@ -59,7 +59,7 @@ Choerodon支持IAM，即管理谁（identity）对哪个资源有什么访问权
 你可以授予用户角色通过在角色分配管理中添加用户与角色的关联关系，即定义谁有什么样的访问权限的一组关联。
 
 
-![image](/docs/user-guide/system-comfiguration/iam/image/iam_overview_policy.png)
+![image](/docs/user-guide/system-configuration/iam/image/iam_overview_policy.png)
 
 IAM的核心就是角色分配，用`member_role`对象表示。一个IAM`member_role`对象由关联列表组成。一个`关联`是将`成员`列表和`角色`关联在一起。
 
@@ -79,7 +79,7 @@ IAM的核心就是角色分配，用`member_role`对象表示。一个IAM`member
 
 在项目层的角色分配中，只能分配项目层的角色，而项目层角色只包含项目层权限，只能访问项目层资源。
 
-![image](/docs/user-guide/iam/image/policy_hierarchy.png)
+![image](/docs/user-guide/system-configuration/iam/image/policy_hierarchy.png)
 
 在全局层对成员授予全局层角色后，成员有访问全局层资源的权限，能对Choerodon系统进行设置，设置将在Choerodon系统中的所有组织、项目生效；
 
@@ -87,14 +87,8 @@ IAM的核心就是角色分配，用`member_role`对象表示。一个IAM`member
 
 在项目层对成员授予项目层角色后，成员有访问项目层资源的权限，对一个项目进行操作，操作将只在这个项目生效。
 
-## 功能
+<h2 id="2">关键流程设计及实现</h2>
 
-## 关键流程设计及实现
-
-![image](/docs/user-guide/iam/image/1.png)
+![image](/docs/user-guide/system-configuration/iam/image/1.png)
 
 
-
-## 关键技术方案
-
-## 领域模型
