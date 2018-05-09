@@ -8,9 +8,10 @@ type = "docs"
 # 创建一个后端应用
 ---
 
-## 目标
-
+## 概述
 后端应用(Backend Application)的架构模式是将传统的单体应用拆分成多个小型应用，每个小型应用可以独立的编译和部署，应用之间的调用通过HTTP的restfull API方式进行通讯。它们彼此之间相互协作，作为一个整体对外开放。Choerodon 的应用后端采用SpringBoot、SpringCloud 作为应用的开发框架，利用丰富的文档、社区活跃和一套完整的应用框架解决方案提供技术支持。
+
+## 目标
 
 本章节将从创建后端应用、开发后端应用、生成版本、部署应用、查看运行信息等方面介绍，让读者能够熟悉使用Choerodon创建应用后端应用的步骤和流程，并且学会如何利用Choerodon部署应用等。
 
@@ -23,23 +24,129 @@ type = "docs"
 
 1. 使用项目所有者或者源代码管理员的角色登录Choerodon系统，选择项目``猪齿鱼研发``；
 2. 选择``持续交付``模块，点击`应用`，进入应用管理页面；
-3. 点击``创建应用``，系统会弹出窗口，在窗口中输入应用编码、应用名称和选择应用模板；
+3. 点击``创建应用``，系统会弹出窗口，在窗口中输入应用编码、应用名称和选择应用模板，点击`创建`，即可创建一个后端应用；
 
     a. 应用编码：choerodon-backend
 
     b. 应用名称：猪齿鱼后端应用
 
     c. 选择应用模板: MicroService
-
-    <blockquote class="warning">
-    应用编码输入只能包含字母，数字，下划线，空格， '_', '.', "——",只能以字母，数字，下划线开头。
+c. 选择应用模板: MicroServiceUI
+    <blockquote class="note">
+        当应用模板不符合您的要求，你可手动创建一个应用模板。具体步骤如下：
     </blockquote>
+    
+      第一步：在组织层的`持续交付`模块，选择`应用模板`；
 
-4. 点击`创建`，即可创建一个后端应用；
+      第二部：点击`创建应用模板`，输入相关信息，点击`创建`，即可创建一个模板。
+      
+      第三部：创建完成以后，会生成一个Gitlab地址，点击该地址；
+     
+      第四部：进入Gitlab仓库，克隆代码；
+      
+      第五步：[创建一个spring-boot项目](../demo/new)
+   
+      第六步：编写一个dockerfile
 
-5. 当应用创建成功，可在应用管理界面查看到新建的应用；
+      ```
+      FROM registry.choerodon.io/hap-cloud/base
 
-6. 在创建应用的同时，系统还会在Gitlab中创建一个仓库，点击 ``仓库地址`` ，链接到Gitlab新建的仓库；
+      COPY app.jar /app.jar
+
+      ENTRYPOINT [ "java", "-jar", "/app.jar"] 
+      ```
+
+      第七步：[编写gitlab-ci文件](../http://eco.hand-china.com/doc/hip/latest/user_guide/integrated_deployment.html)
+     
+      ```
+      image: registry.choerodon.io/tools/devops-ci:1.1.0    
+      ```
+      image指ci运行基础镜像
+
+      ```yaml
+        stages:
+  
+        - maven-package
+  
+        - docker-build 
+      ``` 
+
+       stages指包含 maven-package 和docker-build两个阶段
+        
+       ```yaml 
+       maven-feature:
+  
+       stage: maven-package
+  
+       script:
+    
+         - git_merge develop
+    
+         - update_pom_version
+    
+         - mvn package -U -DskipTests=false
+    
+         - mvn --batch-mode verify sonar:sonar -Dsonar.host.url=${SONAR_URL}- Dsonar.analysis.mode=preview -Dsonar.gitlab.commit_sha=${CI_COMMIT_SHA} -Dsonar.gitlab.ref_name=${CI_COMMIT_REF_NAME} -Dsonar.gitlab.project_id=${CI_PROJECT_ID}
+  
+       only:
+    
+         - /^feature-.*$/
+       ```
+       maven-feature指job名称
+       
+       stage指对应的阶段
+       
+       only指触发的分支
+
+       ```yaml
+       .auto_devops: &auto_devops |
+    
+           curl -o .auto_devops.sh \
+        
+                 "${CHOERODON_URL}/devops/ci?token=${Token}&type=microservice"
+    
+            source .auto_devops.sh
+       ```
+       .auto_devops: 从指定仓库地址中拉取script脚本  用于docker-build阶段
+
+       ```yaml
+       before_script:
+  
+         - *auto_devops
+       ```
+       before_script: ci执行前所执行的命令
+
+      第八步：编写charts模块
+      
+        |--charts
+           ｜--model-service    
+              ｜--templates               
+                ｜--_helper.tpl
+                ｜--deplopment.yaml
+                ｜--pre-config-congig.yaml
+                ｜--pre-config-db.yaml
+                ｜--service.yaml
+              ｜--.helmignore
+              ｜--Chart.yaml
+              ｜--values.yaml  
+      `templates`为模板文件，将模板文件渲染成实际文件，然后发送给Kubernetes。
+      
+      `values.yaml`为模板的预定义变量。                      
+      
+      `Chart.yaml`包含chart的版本信息说明，您可以从模板中访问它。
+      
+      `deployment.yaml`：创建Kubernetes 部署的基本清单
+
+      `service.yaml`：为您的部署创建服务端点的基本清单
+
+      `_helpers.tpl`：放置模板助手的地方，您可以在整个chart中重复使用
+      
+      第九步：提交代码，即可完成模板创建。
+
+
+4. 当应用创建成功，可在应用管理界面查看到新建的应用；
+
+5. 在创建应用的同时，系统还会在Gitlab中创建一个仓库，点击 ``仓库地址`` ，链接到Gitlab新建的仓库；
     
     <blockquote class="note">
         Gitlab 仓库的名称是 ``choerodon-backend``，为应用编码。
@@ -144,3 +251,10 @@ type = "docs"
 
 那么如何判断这个应用版本已经部署成功？当可用容器数量、当前容器状态为1时，代表该应用版本已经部署成功了。
  在应用版本界面，右侧的`查看部署详情`，进入到查看部署详情界面。点击`部署详情`可以查看到阶段信息及日志。
+
+<h2 id="5">产品迭代</h2>
+
+任何产品几乎都会经历产品的初创期、成长期、成熟期。在产品的初创期，需要通过快速试错探索出有用户黏性的功能；探索成功之后，就需要快速导入用户，这时候也会产生新的需求和新的问题，不断去完善产品；在产品的相对成熟期，则可以考虑产品的变现，和新功能的延展，以提升用户活跃。因此，当一个产品开发完成上线后，产品的周期化迭代就变得非常重要。固定的周期有助于为项目团队形成规范，从而提高开发效率。
+
+Choerodon第一次发版前就准备好下个版本的需求。一般第一个版本上线后，开发人员就进入下一个版本的开发和测试。这样当问题暴露的时候，就可以迅速解决问题，优化到某个程度后，再放缓迭代节奏，这样就能更好的平衡好需求。
+
