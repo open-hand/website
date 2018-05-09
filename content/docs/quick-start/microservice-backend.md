@@ -47,6 +47,14 @@ c. 选择应用模板: MicroServiceUI
       第五步：[创建一个spring-boot项目](../../development-guide/backend/demo/create_project)
    
       第六步：编写一个dockerfile
+       
+      目录结构如下
+
+         |--src
+           ｜--main 
+              ｜--docker        
+                ｜--dockerfile
+     
 
       ```
       FROM registry.choerodon.io/choerodon-cloud/base
@@ -118,6 +126,8 @@ c. 选择应用模板: MicroServiceUI
 
       第八步：编写charts模块
       
+      目录结构如下
+
         |--charts
            ｜--model-service    
               ｜--templates               
@@ -181,7 +191,7 @@ c. 选择应用模板: MicroServiceUI
     # 注：[FIX]修改bug  [ADD]新增  [IMP]完善  [DEL]删除
     $ git commit –m “[ADD]readme: 新增代码示例”
     # 将本地提交推送至远程仓库对应分支
-    $ git push origin feature-1:feature-1
+    $ git push origin feature-1
     ```
 5. 基于feature分支运行CI。点击`CI流水线`,查看 CI 执行情况。
 

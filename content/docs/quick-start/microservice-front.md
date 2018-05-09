@@ -51,82 +51,98 @@ Choerodon 使用 React 和 MobX 作为前端的UI应用框架，并且对前端�
      
       第四部：进入Gitlab仓库，克隆代码；
       
-      第五步：[创建一个spring-boot项目](../../development-guide/backend/demo/create_project)；
+      第五步：创建一个react的前端UI项目；
    
       第六步：编写一个dockerfile；
-
-      ```shell
-      FROM registry.choerodon.io/choerodon-cloud/base
-
-      COPY app.jar /app.jar
-
-      ENTRYPOINT [ "java", "-jar", "/app.jar" 
+       
+      将dockerfile文件放在项目根目录下
+     
       ```
+	   FROM registry.choerodon.io/tools/nginx:stable
+       RUN echo "Asia/shanghai" > /etc/timezone;
+       ADD dist /usr/share/nginx/html
+       COPY entrypoint.sh .
+       ENTRYPOINT [ "sh","./entrypoint.sh" ]
+      ```
+     entrypoint.sh文件如下	 
+
+		``` 
+		#bin/bash
+		set -e
+
+		PRO_API_HOST=${PRO_API_HOST:-"gateway.devops.saas.choerodon.com"}
+		PRO_CLIENT_ID=${PRO_CLIENT_ID:-"devops"}
+
+		find /usr/share/nginx/html -name '*.js' | xargs sed -i "s/localhost:8080/$PRO_API_HOST/g"
+		find /usr/share/nginx/html -name '*.js' | xargs sed -i "s/localhost:clientId/$PRO_CLIENT_ID/g"
+
+		nginx -g 'daemon off;'
+
+		exec "$@"
+		```
+
 
       第七步：[编写gitlab-ci文件](http://eco.hand-china.com/doc/hip/latest/user_guide/integrated_deployment.html)
      
-         image: registry.choerodon.io/tools/devops-ci:1.1.0    
-     
-       image指ci运行基础镜像
+      ```
+      image: registry.choerodon.io/tools/devops-ci:1.1.0    
+      ```
+      image指ci运行基础镜像
 
+      ```yaml
+        stages:
+        -  node_build
+        -  docker_build
+      ``` 
+       stages指包含 node_build 和docker_build两个阶段 	
 
-         stages:
-  
-         - maven-package
-  
-         - docker-build  
-
-       stages指包含 maven-package 和docker-build两个阶段
-         
-         maven-test-feature:
-  
-         stage: maven-package
-  
-         script:
-    
-           - git_merge develop
-    
-           - update_pom_version
-    
-           - mvn package -U -DskipTests=false
-    
-           - mvn --batch-mode verify sonar:sonar -Dsonar.host.url=${SONAR_URL}- Dsonar.analysis.mode=preview -Dsonar.gitlab.commit_sha=${CI_COMMIT_SHA} -Dsonar.gitlab.ref_name=${CI_COMMIT_REF_NAME} -Dsonar.gitlab.project_id=${CI_PROJECT_ID}
-  
-         only:
-    
-           - /^feature-.*$/
-     
-       maven-test-feature指job名称
-       
+ 	  ```yaml
+	  node_build_dev:
+        stage: node_build
+		script:
+		  - node_config
+		  - node_module iam
+		  - node_build devbuild
+          - clean_cache
+        only:
+          - /^release-.*$/
+          - /^hotfix-.*$/
+          - develop
+          - tags
+      ``` 
+       node_build_dev指job名称
+	   
        stage指对应的阶段
+	   
+	   script指执行的命令
        
-       only指触发的分支
+	   only指触发的分支
 
-        .auto_devops: &auto_devops |
-    
-              curl -o .auto_devops.sh \
-        
-                  "${CHOERODON_URL}/devops/ci?token=${Token}&type=microservice"
-    
-              source .auto_devops.sh
+       ```yaml
+       .auto_devops: &auto_devops |
+           curl -o .auto_devops.sh \
+                 "${CHOERODON_URL}/devops/ci?token=${Token}&type=microservice"
+            source .auto_devops.sh
+       ```
+       
+	   .auto_devops: 从指定仓库地址中拉取script脚本  用于docker-build阶段
 
-       .auto_devops: 从指定仓库地址中拉取script脚本  用于docker-build阶段
-        
-        before_script:
+       ```
+       before_script:
   
-          - *auto_devops
-       before_script: ci执行前所执行的命令
+         - *auto_devops
+       ```
+       before_script:指ci执行前所执行的命令
 
-      第八步：编写charts模块
+      第八步：编写charts模块；
       
+      目录结构如下
+
         |--charts
            ｜--model-service    
               ｜--templates               
                 ｜--_helper.tpl
                 ｜--deplopment.yaml
-                ｜--pre-config-congig.yaml
-                ｜--pre-config-db.yaml
-                ｜--service.yaml
               ｜--.helmignore
               ｜--Chart.yaml
               ｜--values.yaml  
@@ -136,13 +152,13 @@ Choerodon 使用 React 和 MobX 作为前端的UI应用框架，并且对前端�
       
       `Chart.yaml`包含chart的版本信息说明，您可以从模板中访问它。
       
-      `deployment.yaml`：创建Kubernetes 部署的基本清单
+      `deployment.yaml`：创建Kubernetes 部署的基本清单。
 
-      `service.yaml`：为您的部署创建服务端点的基本清单
-
-      `_helpers.tpl`：放置模板助手的地方，您可以在整个chart中重复使用
+      `_helpers.tpl`：放置模板助手的地方，您可以在整个chart中重复使用。
       
-      第九步：提交代码
+     第九步：编写config.js；
+	  
+     第十步：提交代码，即可完成模板创建；
 
 4. 当应用创建成功，可在应用管理界面查看到新建的应用；
 
@@ -186,7 +202,7 @@ Choerodon 使用 React 和 MobX 作为前端的UI应用框架，并且对前端�
     # 注：[FIX]修改bug  [ADD]新增  [IMP]完善  [DEL]删除
     $ git commit –m “[ADD]readme: 新增代码示例”
     # 将本地提交推送至远程仓库对应分支
-    $ git push origin feature-1:feature-1
+    $ git push origin feature-1
     ```
 　５、基于feature分支运行CI。点击`CI流水线`,查看 CI 执行情况。
 
@@ -280,4 +296,5 @@ Choerodon 使用 React 和 MobX 作为前端的UI应用框架，并且对前端�
 任何产品几乎都会经历产品的初创期、成长期、成熟期。在产品的初创期，需要通过快速试错探索出有用户黏性的功能；探索成功之后，就需要快速导入用户，这时候也会产生新的需求和新的问题，不断去完善产品；在产品的相对成熟期，则可以考虑产品的变现，和新功能的延展，以提升用户活跃。因此，当一个产品开发完成上线后，产品的周期化迭代就变得非常重要。固定的周期有助于为项目团队形成规范，从而提高开发效率。
 
 Choerodon第一次发版前就准备好下个版本的需求。一般第一个版本上线后，开发人员就进入下一个版本的开发和测试。这样当问题暴露的时候，就可以迅速解决问题，优化到某个程度后，再放缓迭代节奏，这样就能更好的平衡好需求。
+
 
