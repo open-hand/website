@@ -31,137 +31,136 @@ type = "docs"
     b. 应用名称：猪齿鱼后端应用
 
     c. 选择应用模板: MicroService
-c. 选择应用模板: MicroServiceUI
+
+4. 当应用创建成功，可在应用管理界面查看到新建的应用；
+
+5. 在创建应用的同时，系统还会在Gitlab中创建一个仓库，点击 ``仓库地址`` ，链接到Gitlab新建的仓库；
+
     <blockquote class="note">
-        当应用模板不符合您的要求，你可手动创建一个应用模板。具体步骤如下：
+        Gitlab 仓库的名称是 ``choerodon-backend``，为应用编码。
     </blockquote>
+
+<h2 id="6">创建后端应用模板</h2> 
+
+当应用模板不符合您的要求，你可手动创建一个应用模板。
     
-      第一步：在组织层的`持续交付`模块，选择`应用模板`；
+第一步：在组织层的`持续交付`模块，选择`应用模板`；
 
-      第二部：点击`创建应用模板`，输入相关信息，点击`创建`，即可创建一个模板。
-      
-      第三部：创建完成以后，会生成一个Gitlab地址，点击该地址；
-     
-      第四部：进入Gitlab仓库，克隆代码；
-      
-      第五步：[创建一个spring-boot项目](../../development-guide/backend/demo/create_project)
-   
-      第六步：编写一个dockerfile
-       
-      目录结构如下
+第二部：点击`创建应用模板`，输入相关信息，点击`创建`，即可创建一个模板。
 
-         |--src
-           ｜--main 
-              ｜--docker        
-                ｜--dockerfile
-     
+第三部：创建完成以后，会生成一个Gitlab地址，点击该地址；
 
-      ```
-      FROM registry.choerodon.io/choerodon-cloud/base
+第四部：进入Gitlab仓库，克隆代码；
 
-      COPY app.jar /app.jar
+第五步：[创建一个spring-boot项目](../../development-guide/backend/demo/create_project)
 
-      ENTRYPOINT [ "java", "-jar", "/app.jar"] 
-      ```
+第六步：编写一个dockerfile
 
-      第七步：[编写gitlab-ci文件](http://eco.hand-china.com/doc/hip/latest/user_guide/integrated_deployment.html)
-     
-      ```
-      image: registry.choerodon.io/tools/devops-ci:1.1.0    
-      ```
-      image指ci运行基础镜像
+目录结构如下
 
-      ```yaml
-        stages:
-  
-        - maven-package
-  
-        - docker-build 
-      ``` 
+    |--src
+    ｜--main 
+        ｜--docker        
+        ｜--dockerfile
 
-       stages指包含 maven-package 和docker-build两个阶段
-        
-       ```yaml 
-       maven-feature:
-  
-       stage: maven-package
-  
-       script:
-    
-         - git_merge develop
-    
-         - update_pom_version
-    
-         - mvn package -U -DskipTests=false
-    
-         - mvn --batch-mode verify sonar:sonar -Dsonar.host.url=${SONAR_URL}- Dsonar.analysis.mode=preview -Dsonar.gitlab.commit_sha=${CI_COMMIT_SHA} -Dsonar.gitlab.ref_name=${CI_COMMIT_REF_NAME} -Dsonar.gitlab.project_id=${CI_PROJECT_ID}
-  
-       only:
-    
-         - /^feature-.*$/
-       ```
-       maven-feature指job名称
-       
-       stage指对应的阶段
-       
-       only指触发的分支
 
-       ```yaml
-       .auto_devops: &auto_devops |
-    
-           curl -o .auto_devops.sh \
-        
-                 "${CHOERODON_URL}/devops/ci?token=${Token}&type=microservice"
-    
-            source .auto_devops.sh
-       ```
-       .auto_devops: 从指定仓库地址中拉取script脚本  用于docker-build阶段
+```
+FROM registry.choerodon.io/choerodon-cloud/base
 
-       ```yaml
-       before_script:
-  
-         - *auto_devops
-       ```
-       before_script: ci执行前所执行的命令
+COPY app.jar /app.jar
 
-      第八步：编写charts模块
-      
-      目录结构如下
+ENTRYPOINT [ "java", "-jar", "/app.jar"] 
+```
 
-        |--charts
-           ｜--model-service    
-              ｜--templates               
+第七步：[编写gitlab-ci文件](http://eco.hand-china.com/doc/hip/latest/user_guide/integrated_deployment.html)
+
+```
+image: registry.choerodon.io/tools/devops-ci:1.1.0    
+```
+image指ci运行基础镜像
+
+```yaml
+stages:
+
+- maven-package
+
+- docker-build 
+``` 
+
+stages指包含 maven-package 和docker-build两个阶段
+
+```yaml 
+maven-feature:
+
+stage: maven-package
+
+script:
+
+    - git_merge develop
+
+    - update_pom_version
+
+    - mvn package -U -DskipTests=false
+
+    - mvn --batch-mode verify sonar:sonar -Dsonar.host.url=${SONAR_URL}- Dsonar.analysis.mode=preview -Dsonar.gitlab.commit_sha=${CI_COMMIT_SHA} -Dsonar.gitlab.ref_name=${CI_COMMIT_REF_NAME} -Dsonar.gitlab.project_id=${CI_PROJECT_ID}
+
+only:
+
+    - /^feature-.*$/
+```
+maven-feature指job名称
+
+stage指对应的阶段
+
+only指触发的分支
+
+```yaml
+.auto_devops: &auto_devops |
+
+    curl -o .auto_devops.sh \
+
+            "${CHOERODON_URL}/devops/ci?token=${Token}&type=microservice"
+
+    source .auto_devops.sh
+```
+.auto_devops: 从指定仓库地址中拉取script脚本  用于docker-build阶段
+
+```yaml
+before_script:
+
+    - *auto_devops
+```
+before_script: ci执行前所执行的命令
+
+第八步：编写charts模块
+
+目录结构如下
+
+    |--charts 
+        ｜--model-service    
+            ｜--templates               
                 ｜--_helper.tpl
                 ｜--deplopment.yaml
                 ｜--pre-config-congig.yaml
                 ｜--pre-config-db.yaml
                 ｜--service.yaml
-              ｜--.helmignore
-              ｜--Chart.yaml
-              ｜--values.yaml  
-      `templates`为模板文件，将模板文件渲染成实际文件，然后发送给Kubernetes。
-      
-      `values.yaml`为模板的预定义变量。                      
-      
-      `Chart.yaml`包含chart的版本信息说明，您可以从模板中访问它。
-      
-      `deployment.yaml`：创建Kubernetes 部署的基本清单
+            ｜--.helmignore
+            ｜--Chart.yaml
+            ｜--values.yaml  
 
-      `service.yaml`：为您的部署创建服务端点的基本清单
+`templates`为模板文件，将模板文件渲染成实际文件，然后发送给Kubernetes。
 
-      `_helpers.tpl`：放置模板助手的地方，您可以在整个chart中重复使用
-      
-      第九步：提交代码，即可完成模板创建。
+`values.yaml`为模板的预定义变量。                      
 
+`Chart.yaml`包含chart的版本信息说明，您可以从模板中访问它。
 
-4. 当应用创建成功，可在应用管理界面查看到新建的应用；
+`deployment.yaml`：创建Kubernetes 部署的基本清单
 
-5. 在创建应用的同时，系统还会在Gitlab中创建一个仓库，点击 ``仓库地址`` ，链接到Gitlab新建的仓库；
-    
-    <blockquote class="note">
-        Gitlab 仓库的名称是 ``choerodon-backend``，为应用编码。
-    </blockquote>
+`service.yaml`：为您的部署创建服务端点的基本清单
 
+`_helpers.tpl`：放置模板助手的地方，您可以在整个chart中重复使用
+
+第九步：提交代码，即可完成模板创建。
     
 <h2 id="2">开发后端应用</h2>
 
