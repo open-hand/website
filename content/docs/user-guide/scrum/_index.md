@@ -10,7 +10,7 @@ weight = 1
 
 ## 功能
 
- - 集成Gitlab，实现[用户故事](../scrum/2-user-story)、[任务](../scrum/3-task)、[缺陷](../scrum/4-bug)、[冲刺](../scrum/5-sprint)等卡片的创建、更新、删除、查询。
+ - 集成Gitlab，实现[用户故事](../scrum/2-user-story)、[任务](../scrum/3-task)、[漏洞](../scrum/4-bug)、[冲刺](../scrum/5-sprint)等卡片的创建、更新、删除、查询。
 
  - 项目创建后默认创建空白看板，可根据项目的需要选择合适的看板模板，用户也可自定义绘制看板。支持[看板](../scrum/6-board)内卡片的拖动以及状态的实时更新。
 
