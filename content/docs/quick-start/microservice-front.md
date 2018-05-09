@@ -51,12 +51,12 @@ Choerodon 使用 React 和 MobX 作为前端的UI应用框架，并且对前端�
      
       第四部：进入Gitlab仓库，克隆代码；
       
-      第五步：[创建一个spring-boot项目](../../development-guide/backend/demo/create_project/)；
+      第五步：[创建一个spring-boot项目](../../development-guide/backend/demo/create_project)；
    
       第六步：编写一个dockerfile；
 
       ```shell
-      FROM registry.choerodon.io/hap-cloud/base
+      FROM registry.choerodon.io/choerodon-cloud/base
 
       COPY app.jar /app.jar
 
@@ -65,7 +65,7 @@ Choerodon 使用 React 和 MobX 作为前端的UI应用框架，并且对前端�
 
       第七步：[编写gitlab-ci文件](http://eco.hand-china.com/doc/hip/latest/user_guide/integrated_deployment.html)
      
-         image: registry.saas.hand-china.com/tools/devops-ci:1.1.0    
+         image: registry.choerodon.io/tools/devops-ci:1.1.0    
      
        image指ci运行基础镜像
 

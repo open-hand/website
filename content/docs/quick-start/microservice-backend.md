@@ -44,19 +44,19 @@ c. 选择应用模板: MicroServiceUI
      
       第四部：进入Gitlab仓库，克隆代码；
       
-      第五步：[创建一个spring-boot项目](../demo/new)
+      第五步：[创建一个spring-boot项目](../../development-guide/backend/demo/create_project)
    
       第六步：编写一个dockerfile
 
       ```
-      FROM registry.choerodon.io/hap-cloud/base
+      FROM registry.choerodon.io/choerodon-cloud/base
 
       COPY app.jar /app.jar
 
       ENTRYPOINT [ "java", "-jar", "/app.jar"] 
       ```
 
-      第七步：[编写gitlab-ci文件](../http://eco.hand-china.com/doc/hip/latest/user_guide/integrated_deployment.html)
+      第七步：[编写gitlab-ci文件](http://eco.hand-china.com/doc/hip/latest/user_guide/integrated_deployment.html)
      
       ```
       image: registry.choerodon.io/tools/devops-ci:1.1.0    
