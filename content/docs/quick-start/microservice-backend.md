@@ -44,123 +44,123 @@ type = "docs"
 
 当应用模板不符合您的要求，你可手动创建一个应用模板。
     
-第一步：在组织层的`持续交付`模块，选择`应用模板`；
+1. 在组织层的`持续交付`模块，选择`应用模板`；
 
-第二部：点击`创建应用模板`，输入相关信息，点击`创建`，即可创建一个模板。
+2. 点击`创建应用模板`，输入相关信息，点击`创建`，即可创建一个模板。
 
-第三部：创建完成以后，会生成一个Gitlab地址，点击该地址；
+3. 创建完成以后，会生成一个Gitlab地址，点击该地址；
 
-第四部：进入Gitlab仓库，克隆代码；
+4. 进入Gitlab仓库，克隆代码；
 
-第五步：[创建一个spring-boot项目](../../development-guide/backend/demo/create_project)
+5. [创建一个spring-boot项目](../../development-guide/backend/demo/create_project)
 
-第六步：编写一个dockerfile
+6. 编写一个dockerfile
 
-目录结构如下
+    目录结构如下
 
-    |--src
-    ｜--main 
-        ｜--docker        
-        ｜--dockerfile
+        |--src
+        ｜--main 
+            ｜--docker        
+            ｜--dockerfile
 
 
-```
-FROM registry.choerodon.io/choerodon-cloud/base
+    ```
+    FROM registry.choerodon.io/choerodon-cloud/base
 
-COPY app.jar /app.jar
+    COPY app.jar /app.jar
 
-ENTRYPOINT [ "java", "-jar", "/app.jar"] 
-```
+    ENTRYPOINT [ "java", "-jar", "/app.jar"] 
+    ```
 
-第七步：[编写gitlab-ci文件](http://eco.hand-china.com/doc/hip/latest/user_guide/integrated_deployment.html)
+7. [编写gitlab-ci文件](http://eco.hand-china.com/doc/hip/latest/user_guide/integrated_deployment.html)
 
-```
-image: registry.choerodon.io/tools/devops-ci:1.1.0    
-```
-image指ci运行基础镜像
+    ```
+    image: registry.choerodon.io/tools/devops-ci:1.1.0    
+    ```
+    image指ci运行基础镜像
 
-```yaml
-stages:
+    ```yaml
+        stages:
 
-- maven-package
+        - maven-package
 
-- docker-build 
-``` 
+        - docker-build 
+    ``` 
 
-stages指包含 maven-package 和docker-build两个阶段
+    stages指包含 maven-package 和docker-build两个阶段
 
-```yaml 
-maven-feature:
+    ```yaml 
+    maven-feature:
 
-stage: maven-package
+    stage: maven-package
 
-script:
+    script:
 
-    - git_merge develop
+        - git_merge develop
 
-    - update_pom_version
+        - update_pom_version
 
-    - mvn package -U -DskipTests=false
+        - mvn package -U -DskipTests=false
 
-    - mvn --batch-mode verify sonar:sonar -Dsonar.host.url=${SONAR_URL}- Dsonar.analysis.mode=preview -Dsonar.gitlab.commit_sha=${CI_COMMIT_SHA} -Dsonar.gitlab.ref_name=${CI_COMMIT_REF_NAME} -Dsonar.gitlab.project_id=${CI_PROJECT_ID}
+        - mvn --batch-mode verify sonar:sonar -Dsonar.host.url=${SONAR_URL}- Dsonar.analysis.mode=preview -Dsonar.gitlab.commit_sha=${CI_COMMIT_SHA} -Dsonar.gitlab.ref_name=${CI_COMMIT_REF_NAME} -Dsonar.gitlab.project_id=${CI_PROJECT_ID}
 
-only:
+    only:
 
-    - /^feature-.*$/
-```
-maven-feature指job名称
+        - /^feature-.*$/
+    ```
+    maven-feature指job名称
 
-stage指对应的阶段
+    stage指对应的阶段
 
-only指触发的分支
+    only指触发的分支
 
-```yaml
-.auto_devops: &auto_devops |
+    ```yaml
+    .auto_devops: &auto_devops |
 
-    curl -o .auto_devops.sh \
+        curl -o .auto_devops.sh \
 
-            "${CHOERODON_URL}/devops/ci?token=${Token}&type=microservice"
+                "${CHOERODON_URL}/devops/ci?token=${Token}&type=microservice"
 
-    source .auto_devops.sh
-```
-.auto_devops: 从指定仓库地址中拉取script脚本  用于docker-build阶段
+        source .auto_devops.sh
+    ```
+    .auto_devops: 从指定仓库地址中拉取script脚本  用于docker-build阶段
 
-```yaml
-before_script:
+    ```yaml
+    before_script:
 
-    - *auto_devops
-```
-before_script: ci执行前所执行的命令
+        - *auto_devops
+    ```
+    before_script: ci执行前所执行的命令
 
-第八步：编写charts模块
+8. 编写charts模块
 
-目录结构如下
+    目录结构如下
 
-    |--charts 
-        ｜--model-service    
-            ｜--templates               
-                ｜--_helper.tpl
-                ｜--deplopment.yaml
-                ｜--pre-config-congig.yaml
-                ｜--pre-config-db.yaml
-                ｜--service.yaml
-            ｜--.helmignore
-            ｜--Chart.yaml
-            ｜--values.yaml  
+        |--charts 
+            ｜--model-service    
+                ｜--templates               
+                    ｜--_helper.tpl
+                    ｜--deplopment.yaml
+                    ｜--pre-config-congig.yaml
+                    ｜--pre-config-db.yaml
+                    ｜--service.yaml
+                ｜--.helmignore
+                ｜--Chart.yaml
+                ｜--values.yaml  
 
-`templates`为模板文件，将模板文件渲染成实际文件，然后发送给Kubernetes。
+    `templates`为模板文件，将模板文件渲染成实际文件，然后发送给Kubernetes。
 
-`values.yaml`为模板的预定义变量。                      
+    `values.yaml`为模板的预定义变量。                      
 
-`Chart.yaml`包含chart的版本信息说明，您可以从模板中访问它。
+    `Chart.yaml`包含chart的版本信息说明，您可以从模板中访问它。
 
-`deployment.yaml`：创建Kubernetes 部署的基本清单
+    `deployment.yaml`：创建Kubernetes 部署的基本清单
 
-`service.yaml`：为您的部署创建服务端点的基本清单
+    `service.yaml`：为您的部署创建服务端点的基本清单
 
-`_helpers.tpl`：放置模板助手的地方，您可以在整个chart中重复使用
+    `_helpers.tpl`：放置模板助手的地方，您可以在整个chart中重复使用
 
-第九步：提交代码，即可完成模板创建。
+9. 提交代码，即可完成模板创建。
     
 <h2 id="2">开发后端应用</h2>
 
