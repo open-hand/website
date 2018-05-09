@@ -10,7 +10,7 @@ weight = 3
   Choerodon采用 `git-flow` 工作流模式，有`master`和`develop`两个默认分支。在持续交付过程中对 `feature`、`release`、`hotfix` 等分支进行管理。结束分支可自动触发分支合并和持续集成，可在流水线查看代码集成情况。
   
   - **菜单层次**：项目层  
-  - **菜单路径**：持续交付 > 应用 > 服务详情
+  - **菜单路径**：持续交付 > 应用 > 分支管理
   - **默认角色**：项目所有者、源代码管理员、项目成员
 
 ### 分支类型
@@ -33,9 +33,9 @@ weight = 3
 
 ### 新建分支
 
- 1. 点击`创建Feature`/`创建Release`/`创建Hotfix`按钮，创建对应分支。
+ 1. 点击`创建Feature`/`创建Release`/`创建Hotfix`按钮，创建对应分支；
 
- 1. 输入`Issue`编码或版本号。点击`保存`按钮。
+ 1. 输入`Issue`编码或版本号。点击`保存`按钮；
     
     `Feature`/`Hotfix` 分支创建时输入`Issue`编码作为分支名。
    
@@ -43,11 +43,11 @@ weight = 3
 
 ### 结束分支
  
- 1. `feature` 分支在结束时会合并生成对应的服务版本，版本号与创建时填写一致。
+ 1. `feature` 分支在结束时会合并生成对应的服务版本，版本号与创建时填写一致；
 
- 2. `Release` 分支在结束时会生成对应的服务版本，版本号与创建时填写一致。
+ 2. `Release` 分支在结束时会生成对应的服务版本，版本号与创建时填写一致；
 
- 3. `Hotfix` 分支在结束时会提示以最新版本的第三位加一作为版本号。如最新版本为`1.1.5`，则`hotfix`分支结束时生成新版本为`1.1.6`。
+ 3. `Hotfix` 分支在结束时会提示以最新版本的第三位加一作为版本号。如最新版本为`1.1.5`，则`hotfix`分支结束时生成新版本为`1.1.6`；
 <blockquote class="note">
          无提交时点击结束分支，将不创建合并请求，直接删除。
          另外，新建分支及结束分支只能在平台界面进行操作，请勿随意在gitlab界面创建合并请求和删除分支
@@ -59,7 +59,7 @@ weight = 3
 
     ```bash
     # 在存放代码的文件夹下执行以下命令，拉取所需服务的代码仓库
-    git clone http://http://choerodon.io/choerodon-choerodon-dev/choerodon-backend.git
+    git clone http://choerodon.io/choerodon-choerodon-dev/choerodon-backend.git
     # 拉取远程仓库成功后进入仓库
     cd choerodon-backend.git
     ```
@@ -89,7 +89,7 @@ weight = 3
     # 注：[FIX]修改bug  [ADD]新增  [IMP]完善  [DEL]删除
     $ git commit –m “[ADD]readme: 新增代码示例”
     # 将本地提交推送至远程仓库对应分支
-    $ git push origin feature-1:feature-1
+    $ git push origin feature-1
     ```
  1. 界面操作结束分支
 
@@ -117,12 +117,8 @@ weight = 3
     根据本次 `Feature` 分支上提交次数的不同，解决冲突可能会重复多次，只需要重复执行上述解决冲突操作。  
     完成后强制提交至远程仓库。
     ```bash
-    git push -f origin feature-1:feature-1
+    git push -f origin feature-1
     ```
-
- - 界面解决冲突（不建议）：
-
-    在gitLab对应的合并请求界面点击 `Solve conficts` 按钮。
 
 #### Release&Hotfix 分支冲突
 

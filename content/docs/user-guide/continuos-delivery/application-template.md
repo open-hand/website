@@ -14,24 +14,23 @@ weight = 1
 
 ### 新建应用模板
 
-  输入应用模板编码,名称,描述,创建默认最简模板。您也可以通过复制于现有模板,以便节省部分共同操作,提升效率。
+  输入应用模板编码，名称，描述，创建默认最简模板。您也可以通过复制于现有模板，以便节省部分共同操作，提升效率。
 
    1. 点击`创建应用模板`按钮；
 
    1. 输入应用相关信息，点击`创建`按钮；
 
-   1. 去克隆模板库
-上传你的模板；
+   1. 本地克隆应用模板对应的代码库。
       一个正确的模板中应该包含:
 spring-boot项目+gitlab-ci.yml文件+dockerfile文件+charts模块
 
-      >spring-boot项目: demo项目
+      >spring-boot项目: 模板项目
 
       >gitlab-ci.yml文件: 定义gitlab ci的阶段
 
       >dockerfile文件: 用于应用部署时生成镜像
 
-      >charts模块: 用于创建应用时 生成创建k8s对象所需的yaml文件 
+      >charts模块: 用于创建应用时生成创建k8s对象 
 
 如:deployment job service ingress,部署时配置信息里的key-value值会被应用到对应的k8s对象中用于部署。
 
@@ -41,17 +40,17 @@ spring-boot项目+gitlab-ci.yml文件+dockerfile文件+charts模块
 
 列表字段
 
- - 应用模板名称：应用模板的自定义名称；
- - 应用模板编码：应用模板的自定义编码；
- - 应用模板描述：应用模板的自定义描述；
- - 应用模板地址：应用模板的git仓库地址；
- - 应用模板来源：应用模板的来源；
+ - 应用模板名称：应用模板的自定义名称。
+ - 应用模板编码：应用模板的自定义编码。
+ - 应用模板描述：应用模板的自定义描述。
+ - 应用模板地址：应用模板的git仓库地址。
+ - 应用模板来源：应用模板的来源。
 
-### 修改模板
+### 修改模板信息
 点击`修改模板`→ ![修改环境按钮](/docs/user-guide/continuos-delivery/image/修改环境按钮.png)按钮 ，进行应用模板名称和描述的修改。
 
-### 删除模板
+### 删除模板信息
 点击`删除模板`→ ![删除网络按钮](/docs/user-guide/continuos-delivery/image/删除网络按钮.png) 按钮，进行模板的删除。
-<blockquote class="note">
+<blockquote class="warning">
          若删除模板，该条数据将被永久删除，不可恢复!
       </blockquote>
