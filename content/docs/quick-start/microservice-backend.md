@@ -13,7 +13,7 @@ type = "docs"
 
 ## 目标
 
-本章节将从创建后端应用、开发后端应用、生成版本、部署应用、查看运行信息等方面介绍，让读者能够熟悉使用Choerodon创建应用后端应用的步骤和流程，并且学会如何利用Choerodon部署应用等。
+本章节将从创建后端应用、创建后端应用模板、开发后端应用、生成版本、部署应用、查看运行信息等方面介绍，让读者能够熟悉使用Choerodon创建应用后端应用的步骤和流程，并且学会如何利用Choerodon部署应用等。
 
 ## 前置条件
 
@@ -30,23 +30,30 @@ type = "docs"
 
     b. 应用名称：猪齿鱼后端应用
 
-    c. 选择应用模板: MicroService
-c. 选择应用模板: MicroServiceUI
-    <blockquote class="note">
-        当应用模板不符合您的要求，你可手动创建一个应用模板。具体步骤如下：
-    </blockquote>
-    
-      第一步：在组织层的`持续交付`模块，选择`应用模板`；
+    c. 选择应用模板: MicroService 
 
-      第二部：点击`创建应用模板`，输入相关信息，点击`创建`，即可创建一个模板。
+4. 当应用创建成功，可在应用管理界面查看到新建的应用；
+
+5. 在创建应用的同时，系统还会在Gitlab中创建一个仓库，点击 ``仓库地址`` ，链接到Gitlab新建的仓库；
+    
+    <blockquote class="note">
+        Gitlab 仓库的名称是 choerodon-backend，为应用编码。
+    </blockquote>
+
+ <h2 id="2">创建后端应用模板</h2>
+        当应用模板不符合您的要求，你可手动创建一个应用模板。具体步骤如下：
+    
+  1. 在组织层的`持续交付`模块，选择`应用模板`；
+
+  2. 点击`创建应用模板`，输入相关信息，点击`创建`，即可创建一个模板。
       
-      第三部：创建完成以后，会生成一个Gitlab地址，点击该地址；
+  3. 创建完成以后，会生成一个Gitlab地址，点击该地址；
      
-      第四部：进入Gitlab仓库，克隆代码；
+  4. 进入Gitlab仓库，克隆代码；
       
-      第五步：[创建一个spring-boot项目](../../development-guide/backend/demo/create_project)
+  5. [创建一个spring-boot项目](../../development-guide/backend/demo/create_project)
    
-      第六步：编写一个dockerfile
+  6. 编写一个dockerfile
        
       目录结构如下
 
@@ -64,7 +71,7 @@ c. 选择应用模板: MicroServiceUI
       ENTRYPOINT [ "java", "-jar", "/app.jar"] 
       ```
 
-      第七步：[编写gitlab-ci文件](http://eco.hand-china.com/doc/hip/latest/user_guide/integrated_deployment.html)
+ 7. [编写gitlab-ci文件](http://eco.hand-china.com/doc/hip/latest/user_guide/integrated_deployment.html)
      
       ```
       image: registry.choerodon.io/tools/devops-ci:1.1.0    
@@ -124,7 +131,7 @@ c. 选择应用模板: MicroServiceUI
        ```
        before_script: ci执行前所执行的命令
 
-      第八步：编写charts模块
+ 8. 编写charts模块
       
       目录结构如下
 
@@ -151,51 +158,36 @@ c. 选择应用模板: MicroServiceUI
 
       `_helpers.tpl`：放置模板助手的地方，您可以在整个chart中重复使用
       
-      第九步：提交代码，即可完成模板创建。
-
-
-4. 当应用创建成功，可在应用管理界面查看到新建的应用；
-
-5. 在创建应用的同时，系统还会在Gitlab中创建一个仓库，点击 ``仓库地址`` ，链接到Gitlab新建的仓库；
-    
-    <blockquote class="note">
-        Gitlab 仓库的名称是 ``choerodon-backend``，为应用编码。
-    </blockquote>
-
-    
+ 9. 提交代码，即可完成模板创建。
+   
 <h2 id="2">开发后端应用</h2>
 
 应用创建完成之后，开发后端应用。具体的操作步骤如下：
 
-1. 创建Feature分支。
+ 1. 创建Feature分支。
 
-    点击`应用`，进入到应用管理界面，选择应用编码`choerodon-backend`，点击右侧`分支管理`，选择`创建分支`，系统会弹出侧边栏，填写字段，点击创建按钮，即可创建一个Feature分支。
-
-    <blockquote class="warning">
-    字段填写输入包含字母、数字、'——'、'_'），如feature-1
-    </blockquote>
-
-2. 在存放代码的文件夹下，打开git bash,输入命令`git clone [仓库地址]`，拉取所需应用的代码仓库。
-
-3. 克隆成功之后，进入项目根目录，打开git bash,输入命令`git checkout feature-1`,切换到新建分支feature-1，并在此分支进行开发。
+     点击`应用`，进入到应用管理界面，选择`猪齿鱼后端应用`，点击右侧`分支管理`，点击`创建分支`，系统弹出侧边栏，填写字段，如`数字1`，点击`创建`按钮，即可创建一个名称为`feature-1`的分支。 
+        <blockquote class="warning">
+        字段填写输入包含字母、数字、'——'、'_'），如feature-1
+        </blockquote>
+ 2. 在存放代码的文件夹下，打开git bash,输入命令`git clone [仓库地址]`，拉取所需应用的代码仓库。
+ 3. 克隆成功后，进入项目根目录，打开git bash，输入`git checkout feature-1`，切换到新建分支feature-1，在此分支进行开发。
+ 4. 提交代码
+  
+		# 将本地代码变动提交到暂存区
+		$ git add .
+		# 提交代码并且为本次提交添加 commit 信息
+		# 注：[FIX]修改bug  [ADD]新增  [IMP]完善  [DEL]删除
+		$ git commit –m “[ADD]readme: 新增代码示例”
+		# 将本地提交推送至远程仓库对应分支
+		$ git push origin feature-1
    
-    ```shell
-    $ git checkout feature-1
-    ```
-4. 提交代码。    
+　5、 基于feature分支运行CI。点击`CI流水线`,查看 CI 执行情况。
 
-    ```shell
-    # 将本地代码变动提交到暂存区
-    $ git add .
-    # 提交代码并且为本次提交添加 commit 信息
-    # 注：[FIX]修改bug  [ADD]新增  [IMP]完善  [DEL]删除
-    $ git commit –m “[ADD]readme: 新增代码示例”
-    # 将本地提交推送至远程仓库对应分支
-    $ git push origin feature-1
-    ```
-5. 基于feature分支运行CI。点击`CI流水线`,查看 CI 执行情况。
+　6、 点击`应用`，进入应用管理，点击`choerodon-backend`的`分支管理`，在分支列表找到`feature-1`，点击`结束分支`。
 
-6. 当CI运行完成以后，点击`应用`，进入应用管理，点击`choerodon-backend`的`分支管理`，在分支列表找到`feature-1`，点击`结束分支`。
+
+
 
 <h2 id="3">生成版本</h2>
 
@@ -208,11 +200,12 @@ c. 选择应用模板: MicroServiceUI
         <ul>
             <li>单元测试，编译打包，代码质量检查</li>
             <li>构建docker镜像</li>
+			<li>CI生成版本的时候，会构建chart的tgz包</li>
             <li>创建应用版本</li>
         </ul>
     </blockquote>
 
-2. 点击`应用版本`进行查看，确定应用版本已经生成。
+2. 当CI运行成功后，点击`应用版本`进行查看，确定应用版本已经生成。
 
 
 <h2 id="4">部署应用</h2>
@@ -232,7 +225,7 @@ c. 选择应用模板: MicroServiceUI
      d. 配置信息：配置部署应用所需的信息
 
      e. 部署模式：新建实例（新建一个应用）
-                  替换实例（新建一个实例，将旧实例替换）
+                           替换实例（滚动更新实例）
 
 
 <h2 id="4">配置网络</h2>
@@ -257,9 +250,9 @@ c. 选择应用模板: MicroServiceUI
 
 <h2 id="5">查看运行信息</h2>
 
-进入持续交付模块，选择应用部署，点击部署应用即可查看运行状态。有四种查看视图，分别为：部署实例、单环境单应用、多应用。
+进入持续交付模块，选择应用部署，点击部署应用即可查看运行状态。有四种查看视图，分别为：部署实例、单环境、单应用、多应用。
 
-那么如何判断这个应用版本已经部署成功？当可用容器数量、当前容器状态为1时，代表该应用版本已经部署成功了。
+那么如何判断这个应用版本已经部署成功？当可用容器数量为1、圆环为绿色时，代表该应用版本已经部署成功了。
  在应用版本界面，右侧的`查看部署详情`，进入到查看部署详情界面。点击`部署详情`可以查看到阶段信息及日志。
 
 <h2 id="5">产品迭代</h2>
