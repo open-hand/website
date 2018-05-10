@@ -55,7 +55,7 @@ weight = 2
 
 ### 分支管理
 
-点击`分支管理`→ ![分支管理按钮](/docs/user-guide/application management/image/分支管理按钮.png) 对应用信息进行[分支管理](../continuous-delivery-branch-management)。
+点击`分支管理`→ ![分支管理按钮](/docs/user-guide/application management/image/分支管理按钮.png) 对应用信息进行[分支管理](../../assembly-line/continuous-delivery-branch-management)。
 
 ### 修改应用信息
 
