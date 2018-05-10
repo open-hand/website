@@ -53,9 +53,9 @@ weight = 4
      
 4. 进入Gitlab仓库，克隆代码；
       
-5. 创建一个普通Java应用
+5. 创建一个普通Java应用；
    
-6. 编写一个Gitlab CI
+6. 编写一个Gitlab CI；
 
       ```
 	    stages:

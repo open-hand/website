@@ -22,24 +22,19 @@ type = "docs"
 
 <h2 id="1">创建后端应用</h2>
 
-1. 使用项目所有者或者源代码管理员的角色登录Choerodon系统，选择项目``猪齿鱼研发``；
-2. 选择``持续交付``模块，点击`应用`，进入应用管理页面；
-3. 点击``创建应用``，系统会弹出窗口，在窗口中输入应用编码、应用名称和选择应用模板，点击`创建`，即可创建一个后端应用；
+ 1. 使用项目所有者或者源代码管理员的角色登录Choerodon系统，选择项目``猪齿鱼研发``；
+ 2. 选择``持续交付``模块，点击`应用`，进入应用管理页面；
+ 3. 点击``创建应用``，系统会弹出窗口，在窗口中输入应用编码、应用名称和选择应用模板，点击`创建`，即可创建一个后端应用；
 
     a. 应用编码：choerodon-backend
 
     b. 应用名称：猪齿鱼后端应用
 
-<<<<<<< HEAD
     c. 选择应用模板: MicroService 
-=======
-    c. 选择应用模板: MicroService
->>>>>>> 8e5665254e8c027b207c14136e212caad0471f97
 
-4. 当应用创建成功，可在应用管理界面查看到新建的应用；
+ 4. 当应用创建成功，可在应用管理界面查看到新建的应用；
 
-5. 在创建应用的同时，系统还会在Gitlab中创建一个仓库，点击 ``仓库地址`` ，链接到Gitlab新建的仓库；
-<<<<<<< HEAD
+ 5. 在创建应用的同时，系统还会在Gitlab中创建一个仓库，点击 ``仓库地址`` ，链接到Gitlab新建的仓库；
     
     <blockquote class="note">
         Gitlab 仓库的名称是 choerodon-backend，为应用编码。
@@ -48,55 +43,17 @@ type = "docs"
  <h2 id="2">创建后端应用模板</h2>
         当应用模板不符合您的要求，你可手动创建一个应用模板。具体步骤如下：
     
-  1. 在组织层的`持续交付`模块，选择`应用模板`；
+ 6. 在组织层的`持续交付`模块，选择`应用模板`；
 
-  2. 点击`创建应用模板`，输入相关信息，点击`创建`，即可创建一个模板。
+ 7. 点击`创建应用模板`，输入相关信息，点击`创建`，即可创建一个模板。
       
-  3. 创建完成以后，会生成一个Gitlab地址，点击该地址；
+ 8. 创建完成以后，会生成一个Gitlab地址，点击该地址；
      
-  4. 进入Gitlab仓库，克隆代码；
+ 9. 进入Gitlab仓库，克隆代码；
       
-  5. [创建一个spring-boot项目](../../development-guide/backend/demo/create_project)
+ 10. [创建一个spring-boot项目](../../development-guide/backend/demo/create_project)
    
-  6. 编写一个dockerfile
-       
-      目录结构如下
-
-         |--src
-           ｜--main 
-              ｜--docker        
-                ｜--dockerfile
-     
-=======
-
-    <blockquote class="note">
-        Gitlab 仓库的名称是 ``choerodon-backend``，为应用编码。
-    </blockquote>
-
-<h2 id="6">创建后端应用模板</h2> 
-
-当应用模板不符合您的要求，你可手动创建一个应用模板。
-    
-1. 在组织层的`持续交付`模块，选择`应用模板`；
-
-2. 点击`创建应用模板`，输入相关信息，点击`创建`，即可创建一个模板。
->>>>>>> 8e5665254e8c027b207c14136e212caad0471f97
-
-3. 创建完成以后，会生成一个Gitlab地址，点击该地址；
-
-4. 进入Gitlab仓库，克隆代码；
-
-5. [创建一个spring-boot项目](../../development-guide/backend/demo/create_project)
-
-<<<<<<< HEAD
- 7. [编写gitlab-ci文件](http://eco.hand-china.com/doc/hip/latest/user_guide/integrated_deployment.html)
-     
-      ```
-      image: registry.choerodon.io/tools/devops-ci:1.1.0    
-      ```
-      image指ci运行基础镜像
-=======
-6. 编写一个dockerfile
+ 11. 编写一个dockerfile
 
     目录结构如下
 
@@ -108,14 +65,13 @@ type = "docs"
 
     ```
     FROM registry.choerodon.io/choerodon-cloud/base
->>>>>>> 8e5665254e8c027b207c14136e212caad0471f97
 
     COPY app.jar /app.jar
 
     ENTRYPOINT [ "java", "-jar", "/app.jar"] 
     ```
 
-7. [编写gitlab-ci文件](http://eco.hand-china.com/doc/hip/latest/user_guide/integrated_deployment.html)
+ 12. [编写gitlab-ci文件](http://eco.hand-china.com/doc/hip/latest/user_guide/integrated_deployment.html)
 
     ```
     image: registry.choerodon.io/tools/devops-ci:1.1.0    
@@ -176,7 +132,7 @@ type = "docs"
        ```
        before_script: ci执行前所执行的命令
 
- 8. 编写charts模块
+ 13. 编写charts模块
       
       目录结构如下
 
@@ -204,86 +160,7 @@ type = "docs"
       `_helpers.tpl`：放置模板助手的地方，您可以在整个chart中重复使用
       
  9. 提交代码，即可完成模板创建。
-   
-=======
-    ``` 
 
-    stages指包含 maven-package 和docker-build两个阶段
-
-    ```yaml 
-    maven-feature:
-
-    stage: maven-package
-
-    script:
-
-        - git_merge develop
-
-        - update_pom_version
-
-        - mvn package -U -DskipTests=false
-
-        - mvn --batch-mode verify sonar:sonar -Dsonar.host.url=${SONAR_URL}- Dsonar.analysis.mode=preview -Dsonar.gitlab.commit_sha=${CI_COMMIT_SHA} -Dsonar.gitlab.ref_name=${CI_COMMIT_REF_NAME} -Dsonar.gitlab.project_id=${CI_PROJECT_ID}
-
-    only:
-
-        - /^feature-.*$/
-    ```
-    maven-feature指job名称
-
-    stage指对应的阶段
-
-    only指触发的分支
-
-    ```yaml
-    .auto_devops: &auto_devops |
-
-        curl -o .auto_devops.sh \
-
-                "${CHOERODON_URL}/devops/ci?token=${Token}&type=microservice"
-
-        source .auto_devops.sh
-    ```
-    .auto_devops: 从指定仓库地址中拉取script脚本  用于docker-build阶段
-
-    ```yaml
-    before_script:
-
-        - *auto_devops
-    ```
-    before_script: ci执行前所执行的命令
-
-8. 编写charts模块
-
-    目录结构如下
-
-        |--charts 
-            ｜--model-service    
-                ｜--templates               
-                    ｜--_helper.tpl
-                    ｜--deplopment.yaml
-                    ｜--pre-config-congig.yaml
-                    ｜--pre-config-db.yaml
-                    ｜--service.yaml
-                ｜--.helmignore
-                ｜--Chart.yaml
-                ｜--values.yaml  
-
-    `templates`为模板文件，将模板文件渲染成实际文件，然后发送给Kubernetes。
-
-    `values.yaml`为模板的预定义变量。                      
-
-    `Chart.yaml`包含chart的版本信息说明，您可以从模板中访问它。
-
-    `deployment.yaml`：创建Kubernetes 部署的基本清单
-
-    `service.yaml`：为您的部署创建服务端点的基本清单
-
-    `_helpers.tpl`：放置模板助手的地方，您可以在整个chart中重复使用
-
-9. 提交代码，即可完成模板创建。
-    
->>>>>>> 8e5665254e8c027b207c14136e212caad0471f97
 <h2 id="2">开发后端应用</h2>
 
 应用创建完成之后，开发后端应用。具体的操作步骤如下：
@@ -384,4 +261,5 @@ type = "docs"
 任何产品几乎都会经历产品的初创期、成长期、成熟期。在产品的初创期，需要通过快速试错探索出有用户黏性的功能；探索成功之后，就需要快速导入用户，这时候也会产生新的需求和新的问题，不断去完善产品；在产品的相对成熟期，则可以考虑产品的变现，和新功能的延展，以提升用户活跃。因此，当一个产品开发完成上线后，产品的周期化迭代就变得非常重要。固定的周期有助于为项目团队形成规范，从而提高开发效率。
 
 Choerodon第一次发版前就准备好下个版本的需求。一般第一个版本上线后，开发人员就进入下一个版本的开发和测试。这样当问题暴露的时候，就可以迅速解决问题，优化到某个程度后，再放缓迭代节奏，这样就能更好的平衡好需求。
+
 
