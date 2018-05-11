@@ -103,3 +103,14 @@
 - id: provides a steady stream of nutrients for choerodon
   translation: "Provides a steady stream of nutrients for Choerodon"
 # 社区 结束
+
+# 404页面
+- id: we are sorry
+  translation: "We are sorry - this page is not here anymore"
+
+- id: page not found
+  translation: "Error 404 - Page not found"
+
+- id: go to homepage
+  translation: "Go to Homepage"
+# 404页面 结束
