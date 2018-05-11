@@ -7,7 +7,6 @@ weight = 5
 
 # infra层编写
 - 此demo需涉及到infra层的 dataobject 类以及 mapper 类。
-- 关于此章节具体工具包介绍见[Mybatis mapper工具包](http://c7n.saas.hand-china.com/docs/framework/library/choerodon-starter-mybatis-mapper/)
 
 ## 编写dataobject类
 - DO 类不需要提供任何实现，所以属于供应方的服务接口层。创建在 项目模块 的 xxx.infra.dataobject 包下。
