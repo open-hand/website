@@ -14,3 +14,4 @@ weight = 1
 - [**租户设置**](../../user-guide/system-configuration/tenant) 在一台服务器上运行单个应用实例，它为多个租户提供服务。
 - [**项目设置**](../../user-guide/system-configuration/project) 对项目进行管理，主要有项目角色分配和项目信息的创建。
 - [**个人中心**](../../user-guide/system-configuration/person) 个人中心是用户管理个人设置的模块。
+- [**通用功能**](../../user-guide/system-configuration/common) 是平台提供的基础功能，包括登录、登出、多租户切换。

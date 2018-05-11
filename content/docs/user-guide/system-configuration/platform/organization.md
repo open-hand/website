@@ -1,6 +1,6 @@
 ﻿+++
 title = "组织管理"
-weight = 3
+weight = 1
 +++
 
 # 组织管理
