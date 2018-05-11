@@ -84,7 +84,6 @@ type = "docs"
         - maven-package
 
         - docker-build 
-<<<<<<< HEAD
       ``` 
 
        stages指包含 maven-package 和docker-build两个阶段
