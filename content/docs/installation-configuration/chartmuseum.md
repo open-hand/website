@@ -1,12 +1,12 @@
 +++
-title = "helm registry安装"
-description = "helm registry安装组件监控"
+title = "chartmuseum安装"
+description = "chartmuseum安装组件监控"
 date = 2018-03-30T13:06:38+08:00
 draft = false
 weight = 1
 +++
 
-# helm registry
+# chartmuseum
 
 ### 添加远程仓库
 
@@ -20,7 +20,7 @@ helm repo add paas http://helm-charts.staging.saas.hand-china.com/paas/base/
 helm repo update 
 ```
 
-### 安装helm registry（chartmuseum）
+### 安装chartmuseum（chartmuseum）
 
 **注意：**启用持久化存储请执行提前创建PV和PVC
 
