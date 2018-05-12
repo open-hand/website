@@ -1,12 +1,12 @@
 +++
-title = "kafka安装"
-description = "kafka安装"
+title = "Kafka安装"
+description = "Kafka安装"
 date = 2018-03-30T13:06:38+08:00
 draft = false
 weight = 1
 +++
 
-# kafka安装
+# Kafka安装
 
 ### 添加远程仓库
 
@@ -20,7 +20,7 @@ helm repo add paas http://helm-charts.staging.saas.hand-china.com/paas/base/
 helm repo update 
 ```
 
-### 安装kafka
+### 安装Kafka
 
 - 执行以下命名进行安装。
 
@@ -36,6 +36,6 @@ helm repo update
 
 - 参数：
     - `replicaCount` 设置副本数量
-    - `persistence.enabled` 是否启用kafka数据持久化
-    - `persistence.selector` kafka创建的pvc选pv的选择器值，为pv的label
+    - `persistence.enabled` 是否启用Kafka数据持久化
+    - `persistence.selector` Kafka创建的pvc选pv的选择器值，为pv的label
     - `zookeeperConnect` 访问zookeeper的链接地址

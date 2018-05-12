@@ -1,37 +1,20 @@
 +++
-title = "helm chart"
-description = "helm chart"
+title = "Helm Chart"
+description = "Helm Chart"
 date = 2018-03-30T13:06:38+08:00
 draft = false
 weight = 1
 +++
 
-# helm chart
+# Helm Chart
 
 应用 | 版本 | APP版本|依赖
 --- | --- | --- | ---
-监控 | 0.1.0 |  - | 
-prometheus | 0.1.0 | 2.0.0 |
-grafana | 0.1.0 | 5.5.c |
-alertmanager | 0.1.0 | 0.7 |
-node-exporter | 0.1.0 | 0.14.0 |
-kube-state-metrics | 0.1.0 | 1.0.0 |
-日志 | 0.1.0 | - | 
-elasticsearch | 0.1.0 | 6.0.0 |
-fluent-bit | 0.1.0 | 0.12.11 |
-fluentd | 0.1.0 | 0.14.22 |
-kibana | 0.1.0 | 6.0.0 |
-logging-discovery| 0.1.0 | 0.0.1 |
-postgresql | 0.1.0 | 9.6.3 | 
 redis | 0.1.0 | 3.2.9 |
 mysql | 0.1.0 | 5.6 | 
-sonarqube | 0.1.0 | 6.5 |
 harbor | 0.1.0 | 1.4.0 |
-nexus3 | 0.1.0 | 3.6.2 |
-TiDB | 0.1.0 | v2.0.0-rc.6
 kafka | 0.1.0 | 1.0.0| 
 zookeeper | 0.1.0 | 3.4.10| 
-openvpn | 0.1.0 |- |
 gitlab | 0.1.0 | 10.2.1
  
 
@@ -59,63 +42,6 @@ helm install create-pv  --set pv.name=test-pv-01 --set glusterfs.path=gv1/alpha
 - `--set endpoints.enable=true` 是否创建endpoints
 - `--set labels.xxx=aaa,yyy=bbb` pv添加额外的标签
 - `--set accessModes[0]=ReadWriteMany` 访问模式
-
-## 监控
-
-- 创建pv
-
-```bash
-helm install create-pv --set pv.name=monitoring-storage --set glusterfs.path=gv1/alpha --set size=100Gi --namespace=monitoring
-```
-
-- 安装监控
-
-```bash
-helm install paas/choerodon-monitoring --set global.storageType=glusterfs --set global.baseUrl=alpha.saas.hand-china.com --namespace=monitoring --set global.persistence.existingClaim=monitoring-storage --set global.clusterName=alpha
-```
-
-参数(等号后边为默认值)：
-
-- `--set global.storageType=host` 指定存储类型可选`glusterfs`、`nfs`、`host`
-- `--set global.baseUrl=` 指定域名后缀
-- `--set global.persistence.existingClaim=` 指定pvc
-- `--set global.clusterName=default` 指定集群名字
-
-访问grafana：http://grafana.alpha.saas.hand-china.com
-
-## 日志
-
-- 创建pv
-
-```bash
-helm install create-pv --set labels.namespace=logging,labels.usage=elasticsearch  --set pv.name=es-pv-01 --set glusterfs.path=gv1/alpha/elasticearch-01 --set pvc.enable=false --set size=80Gi --set "accessModes[0]=ReadWriteOnce" --name es-pv-01 --namespace=logging
-
-helm install create-pv --set labels.namespace=logging,labels.usage=elasticsearch  --set pv.name=es-pv-02 --set glusterfs.path=gv1/alpha/elasticearch-02 --set pvc.enable=false --set size=80Gi --set endpoints.enable=false --set "accessModes[0]=ReadWriteOnce" --name es-pv-02 --namespace=logging
-```
-
-如果已经创建过endponits注意把自动创建endpoints设为false:`--set endpoints.enable=false`,
-创建的数量和实际需要的elasticsearch的data节点的数量一致
-
-- 安装日志
-
-可选参数：
-
-- `--set elasticsearch.storageType=glusterfs`设置elasticsearch存储类型，可以选择`glusterfs`、`nfs`、`emptyDir`
-- `--set global.clusterName=logging`设置集群名称
-- `--set elasticsearch.client.count=2`设置elasticsearch客户端节点数
-- `--set elasticsearch.master.count=2`设置elasticsearch的master节点数
-- `--set elasticsearch.data.count=2`设置elasticsearch的data节点数
-- `--set elasticsearch.data.size`设置elasticsearch的数据卷大小，`emptyDir`时无效
-
-```bash
-helm install paas/choerodon-monitoring --set elasticsearch.storageType=glusterfs --set global.baseUrl=alpha.saas.hand-china.com --set global.clusterName=alpha --set elasticsearch.client.count=1 --namespace=logging --set elasticsearch.data.size=80Gi 
-```
-
-安装完成后，fluent-bit可能会自动重启，因为没有配置读取日志路径，当logging-discover启动成功后会自动查找需要读取日志的服务并配置到fluent-bit的配置文件中。
-
-
-访问kibana：http://kibana.alpha.saas.hand-china.com
-访问elasticsearch：http://elasticsearch.alpha.saas.hand-china.com
 
 ## 微服务
 
