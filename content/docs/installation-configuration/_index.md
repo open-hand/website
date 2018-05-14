@@ -44,4 +44,4 @@ Choerodon采用Spring Cloud作为微服务框架，运行在Docker上，以Kuber
 1. [kafka安装](./kafka)
 1. [Harbor安装](./harbor)
 1. [Gitlab安装](./gitlab)
-1. [Gitlab安装](./gitlab)
+1. [Choerodon安装](./choerodon)
