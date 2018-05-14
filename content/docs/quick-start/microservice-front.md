@@ -93,7 +93,7 @@ Choerodon 使用 React 作为前端的UI应用框架，并且对前端的展示�
 		```
 
 
-7. [编写Gitlab-CI文件](http://eco.hand-china.com/doc/hip/latest/user_guide/integrated_deployment.html)
+7. [编写Gitlab-CI文件](http://https://docs.gitlab.com/ee/ci/doc/hip/latest/user_guide/integrated_deployment.html)
      
       ```
       image: registry.choerodon.io/tools/devops-ci:1.1.0    
