@@ -1,184 +1,138 @@
 +++
-title = "Gitlab安装"
-description = "Gitlab安装"
-date = 2018-03-30T13:06:38+08:00
-draft = false
-weight = 1
+title ="Gitlab安装"
+description ="Gitlab安装"
+weight =50
 +++
 
 # Gitlab安装
 
-### 添加远程仓库
+## 仓库设置
 
-```
-helm repo add paas http://helm-charts.staging.saas.hand-china.com/paas/base/
-```
+1. 本地添加远程仓库
 
-### 更新仓库信息
+    ```
+    helm repo add paas http://helm-charts.staging.saas.hand-china.com/paas/base/
+    ```
+1. 更新本地仓库信息
 
-```
-helm repo update 
-```
+    ```
+    helm repo update 
+    ```
 
-### 安装Gitlab
+## 安装Gitlab
 
-**注意：**启用持久化存储请执行提前创建PV和PVC
+> **注意：**启用持久化存储请执行提前创建所指向的物理地址，PV和PVC可使用以下语句进行创建；可在安装命令中添加`--debug --dry-run`参数，进行渲染预览不进行安装。
 
-1. 新建`values.yaml`文件，粘贴以下内容并修改相关配置。
+- 创建gitlab所需PV和PVC
 
-  ```yaml
-  # 启动副本数量
-  replicaCount: 1
-  # 设置备份周期
-  env:
-    open: 
-      GITLAB_BACKUP_SCHEDULE: daily
-  # 滚动更新策略
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 0
-  # 健康相关检查设置
-  livenessProbe:
-    failureThreshold: 10
-    initialDelaySeconds: 600
-    periodSeconds: 10
-    successThreshold: 1
-    timeoutSeconds: 15
-  readinessProbe:
-    failureThreshold: 3
-    initialDelaySeconds: 120
-    periodSeconds: 10
-    successThreshold: 1
-    timeoutSeconds: 15
-  # 资源请求及限制
-  resources: 
-    # We usually recommend not to specify default resources and to leave this as a conscious
-    # choice for the user. This also increases chances charts run on environments with little
-    # resources, such as Minikube. If you do want to specify resources, uncomment the following
-    # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
-    limits:
-    #  cpu: 100m
-    memory: 4Gi
-    requests:
-    #  cpu: 100m
-    memory: 3Gi
-  # 节点选择
-  nodeSelector: {}
-  # 持久化存储设置，启用则提供pvc名称
-  persistence:
-    enabled: false
-    ## A manually managed Persistent Volume and Claim
-    ## Requires persistence.enabled: true
-    ## If defined, PVC must be created manually before volume will be bound
-    # existingClaim: gitlab
+    ```bash
+    helm install paas/create-pv \
+      --set type=nfs \
+      --set pv.name=gitlab-pv \
+      --set nfs.path=/u01/nfs/exports/io-choerodon/gitlab \
+      --set nfs.server=nfs-rdc3.hand-china.com \
+      --set pvc.name=gitlab-pvc \
+      --set size=3Gi \
+      --set "accessModes[0]=ReadWriteOnce" \
+      --name gitlab-pv --namespace=io-choerodon
+    ```
 
-  # service相关设置
-  service:
-    type: ClusterIP
-    port: 80
+- 部署gitlab
 
-  # 域名相关设置
-  ingress:
-    enabled: false
-    annotations: {}
-      # kubernetes.io/ingress.class: nginx
-      # kubernetes.io/tls-acme: "true"
-    path: /
-    hosts:
-      - gitlab.alpha.saas.hand-china.com
-    tls: []
-    #  - secretName: chart-example-tls
-    #    hosts:
-    #      - chart-example.local
+    ```bash
+    helm install paas/gitlab \
+      --set persistence.enabled=true \
+      --set persistence.existingClaim=gitlab-pvc \
+      --set env.config.GITLAB_EXTERNAL_URL=http://gitlab.example.hand-china.com \
+      --set env.config.GITLAB_TIMEZONE=Asia/Shanghai \
+      --set env.config.GITLAB_DEFAULT_CAN_CREATE_GROUP=true \
+      --set env.config.CHOERODON_OMNIAUTH_ENABLED=true \
+      --set env.config.OMNIAUTH_BLOCK_AUTO_CREATED_USERS=false \
+      --set env.config.CHOERODON_API_URL=http://choerodon.example.saas.hand-china.com \
+      --set env.config.CHOERODON_CLIENT_ID=gitlab \
+      --set env.config.MYSQL_HOST=mysql \
+      --set env.config.MYSQL_PORT=3306 \
+      --set env.config.MYSQL_USERNAME=root \
+      --set env.config.MYSQL_PASSWORD=password \
+      --set env.config.REDIS_HOST=redis \
+      --set env.config.REDIS_PORT=6379 \
+      --set env.config.SMTP_ENABLE=true \
+      --set env.config.SMTP_ADDRESS=smtp.mxhichina.com \
+      --set env.config.SMTP_PORT=465 \
+      --set env.config.SMTP_USER_NAME=git.sys@example.com \
+      --set env.config.SMTP_PASSWORD=password \
+      --set env.config.SMTP_DOMAIN=smtp.mxhichina.com \
+      --set env.config.SMTP_AUTHENTICATION=login \
+      --set env.config.GITLAB_EMAIL_FROM=git.sys@example.com \
+      --set env.config.SMTP_ENABLE_STARTTLS_AUTO=true \
+      --set env.config.SMTP_TLS=true \
+      --set env.config.PROMETHEUS_ENABLE=false \
+      --set env.config.NODE_EXPORTER_ENABLE=false \
+      --set env.config.GITLAB_SECRETS_OTP_KEY_BASE=long-and-random-alphanumeric-string \
+      --set env.config.GITLAB_SECRETS_DB_KEY_BASE=long-and-random-alphanumeric-string \
+      --set env.config.GITLAB_SECRETS_SECRET_KEY_BASE=long-and-random-alphanumeric-string \
+      --set ingress.enabled=true \
+      --set ingress.hosts[0]=gitlab.example.hand-china.com \
+      --name=gitlab --namespace=io-choerodon 
+    ```
 
-  # gitlab应用相关配置
-  config: |
-    # 访问地址
-    external_url 'http://git.alpha.saas.hand-china.com'
-    gitlab_rails['time_zone'] = 'Beijing'
-    # 配置gitlab邮箱
-    gitlab_rails['gitlab_email_enabled'] = true
-    gitlab_rails['gitlab_email_from'] = 'gitlab@hand-china.com'
-    gitlab_rails['gitlab_email_display_name'] = 'Gitlab'
-    gitlab_rails['gitlab_email_reply_to'] = 'noreply@hand-china.com'
-    gitlab_rails['gitlab_default_can_create_group'] = true
-    gitlab_rails['gitlab_username_changing_enabled'] = true
-    gitlab_rails['gitlab_default_theme'] = 1
-    # 启用oauth授权
-    gitlab_rails['omniauth_enabled'] = true
-    gitlab_rails['omniauth_allow_single_sign_on'] = ['oauth2_generic']
-    # 设置默认授权方式
-    # gitlab_rails['omniauth_auto_sign_in_with_provider'] = 'oauth2_generic'
-    gitlab_rails['omniauth_block_auto_created_users'] = false
-    # 配置oauth授权
-    gitlab_rails['omniauth_providers'] = [
+- 参数
+
+    参数 | 含义 
+    --- |  --- 
+    persistence.enabled|是否启用持久化存储
+    persistence.existingClaim|PVC的名称
+    env.config.GITLAB_EXTERNAL_URL|gitlab的域名
+    env.config.GITLAB_TIMEZONE|时区
+    env.config.GITLAB_DEFAULT_CAN_CREATE_GROUP|用户是否可以创建组 
+    env.config.CHOERODON_OMNIAUTH_ENABLED|是否开启第三方认证 
+    env.config.OMNIAUTH_BLOCK_AUTO_CREATED_USERS|是否自动创建用户 
+    env.config.CHOERODON_API_URL|choerodon的Api地址
+    env.config.CHOERODON_CLIENT_ID|在choerodon上申请的client id
+    env.config.MYSQL_HOST|mysql地址 
+    env.config.MYSQL_PORT|mysql端口号 
+    env.config.MYSQL_USERNAME|mysql用户名 
+    env.config.MYSQL_PASSWORD|mysql用户密码 
+    env.config.REDIS_HOST|redis地址 
+    env.config.REDIS_PORT|redis端口号
+    env.config.SMTP_ENABLE|是否开启smtp 
+    env.config.SMTP_ADDRESS|smtp地址
+    env.config.SMTP_PORT|smtp端口号 
+    env.config.SMTP_USER_NAME|stmp用户
+    env.config.SMTP_PASSWORD|stmp用户密码 
+    env.config.SMTP_DOMAIN|smtp地址
+    env.config.SMTP_AUTHENTICATION|认证方式 
+    env.config.GITLAB_EMAIL_FROM|设置发件人email
+    env.config.SMTP_ENABLE_STARTTLS_AUTO|是否自动启用TLS 
+    env.config.SMTP_TLS|是否启用TLS 
+    env.config.PROMETHEUS_ENABLE|是否开启prometheus
+    env.config.NODE_EXPORTER_ENABLE|是否开启node_exporter_enable
+    env.config.GITLAB_SECRETS_OTP_KEY_BASE|gitlab ci secret相关秘钥
+    env.config.GITLAB_SECRETS_DB_KEY_BASE|gitlab ci secret相关秘钥
+    env.config.GITLAB_SECRETS_SECRET_KEY_BASE|gitlab ci secret相关秘钥
+    ingress.enabled|是否开启ingress 
+    ingress.hosts[0]|gitlab的域名
+
+
+## 添加Gitlab Client
+
+- 在访问搭建好的Choerodon的api，`api.exmple.choerodon.io/manager/swagger-ui.html`，选择`iam_service` -> `client-controller` -> `创建client`
+  - 认证请使用用户名：admin，密码：admin
+  - 提交以下数据，注意正式搭建时请替换以下值为真实值
+      
+        ```json
         {
-          'name' => 'oauth2_generic',
-          'app_id' => 'gitlab',
-          'app_secret' => 'secret',
-          'args' => {
-            client_options: {
-              'site' => 'http://gateway.alpha.saas.hand-china.com',
-              'user_info_url' => '/oauth/api/user',
-              'authorize_url'=> '/oauth/oauth/authorize',
-              'token_url'=> '/oauth/oauth/token'
-            },
-            user_response_structure: {
-              root_path: ['userAuthentication','principal'],
-              id_path: ['userAuthentication','principal','userId'],
-              attributes: {
-                  nickname: 'username',
-                  name: 'username',
-                  email: 'email'
-              }
-            },
-            name: 'oauth2_generic',
-            strategy_class: "OmniAuth::Strategies::HandOAuth2Generic",
-            redirect_url: "http://git.alpha.saas.hand-china.com/users/auth/oauth2_generic/callback"
-          }
+          "accessTokenValidity": 60,
+          "additionalInformation": "",
+          "authorizedGrantTypes": "implicit,client_credentials,authorization_code,refresh_token",
+          "autoApprove": "default",
+          "name": "gitlab",
+          "objectVersionNumber": 0,
+          "organizationId": 1,
+          "refreshTokenValidity": 60,
+          "resourceIds": "default",
+          "scope": "default",
+          "secret": "secret",
+          "webServerRedirectUri": "http://gitlab.example.hand-china.com"
         }
-      ]
-    # 配置备份文件保存时长
-    gitlab_rails['backup_keep_time'] = 604800
-    # 配置外部数据库信息
-    gitlab_rails['db_adapter'] = "mysql2"
-    gitlab_rails['db_encoding'] = "utf8mb4"
-    gitlab_rails['db_collation'] = "utf8mb4_unicode_ci"
-    gitlab_rails['db_database'] = "gitlabhq_production"
-    gitlab_rails['db_pool'] = 20
-    gitlab_rails['db_username'] = "root"
-    gitlab_rails['db_password'] = "handhand"
-    gitlab_rails['db_host'] = "gitlab-mysql.db.svc"
-    gitlab_rails['db_port'] = 3306
-    # 配置外部Readis信息
-    gitlab_rails['redis_host'] = "gitlab-redis"
-    gitlab_rails['redis_port'] = 6379
-    # 配置smtp相关信息
-    gitlab_rails['smtp_enable'] = true
-    gitlab_rails['smtp_address'] = "smtp.mxhichina.com"
-    gitlab_rails['smtp_port'] = 465
-    gitlab_rails['smtp_user_name'] = "git.sys@carllhw.com"
-    gitlab_rails['smtp_password'] = "Rdchandhand123"
-    gitlab_rails['smtp_domain'] = "smtp.mxhichina.com"
-    gitlab_rails['smtp_authentication'] = "login"
-    gitlab_rails['gitlab_email_from'] = "git.sys@carllhw.com"
-    gitlab_rails['smtp_enable_starttls_auto'] = true
-    gitlab_rails['smtp_tls'] = true
-    # 禁用内置postgresql数据库
-    postgresql['enable'] = false
-    # 禁用内置redis
-    redis['enable'] = false
-    # 禁用内置prometheus
-    prometheus['enable'] = false
-    # 禁用内置node_exporter
-    node_exporter['enable'] = false
-  ```
-
-1. 执行以下命名进行安装。
-
-  > 安装前请提前创建好,可在安装命令中添加`--debug --dry-run`参数，进行渲染预览不进行安装。
-
-  ```
-  helm install paas/gitlab --name=gitlab --namespace=gitlab -f values.yaml
-  ```
+        ```
