@@ -1,11 +1,11 @@
 ﻿+++
-title = "LDAP管理"
+title = "LDAP"
 weight = 5
 +++
 
 # LDAP
 
-LDAP管理是对组织应用的LDAP信息设置的管理。LDAP只针对LDAP用户，LDAP用户的登录名和密码取自LDAP指向的外部系统中的数据。
+LDAP是对组织应用的LDAP信息设置的管理。LDAP只针对LDAP用户，LDAP用户的登录名和密码取自LDAP指向的外部系统中的数据。
 
 **层级：**
 

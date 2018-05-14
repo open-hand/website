@@ -1,6 +1,6 @@
 ﻿+++
 title = "项目管理"
-weight = 2
+weight = 1
 +++
 
 # 项目管理

@@ -1,6 +1,6 @@
 ﻿+++
 title = "项目信息"
-weight = 2
+weight = 1
 +++
 
 # 项目信息
