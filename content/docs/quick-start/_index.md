@@ -15,4 +15,3 @@ alwaysopen=false
 - <font>[创建一个前端应用](./microservice-front)</font>
 - <font>[创建一个后端应用](./microservice-backend)</font>
 - <font>[创建一个Java库](./web-application)</font>
-
