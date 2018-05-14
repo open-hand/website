@@ -10,19 +10,20 @@ weight = 4
 
 ## 目标
 
-本页面介绍以Choerodon平台为基础，通过创建Java库，创建Java库应用模板、开发Java等方面介绍，演示如何创建一个Java库，让用户熟知整个操作流程。
+本页面介绍以Choerodon平台为基础，通过创建Java库，开发Java等方面介绍，演示如何创建一个Java库，让用户熟知整个操作流程。
 
 
 ## 前置条件
 
 - 在操作之前保证[系统配置](../../user-guide/system-configuration)已经配置完全。
 - 完成[创建项目](../project)操作。本章节使用在前面章节创建的项目`猪齿鱼研发`。
+-  <font>完成[创建环境](../project)操作。
 
 <h2 id="1">创建Java库</h2>
 
-1. 使用项目所有者或者源代码管理员的角色登录Choerodon系统，选择项目`猪齿鱼研发`；
-2. 选择`持续交付`模块，点击`应用`，进入应用管理页面；
-3. 点击``创建应用``，系统会弹出窗口，在窗口中输入应用编码、应用名称和选择应用模板， 点击`创建`按钮，即可创建一个Java库；
+1. 使用项目所有者或者源代码管理员的角色登录Choerodon系统，选择项目``猪齿鱼研发``；
+2. 选择`持续交付`模块，点击`开发流水线`，点击`应用`，进入应用管理页面；
+3. 点击``创建应用``，系统会从右边滑出页面，在页面中输入相关信息，有应用编码、应用名称，选择应用模板；
 
     a. 应用编码：choerodon-jar
 	 <blockquote class="warning">
@@ -32,6 +33,11 @@ weight = 4
     b. 应用名称：猪齿鱼jar应用
 
     c. 选择应用模板: JavaLib  
+	
+	 <blockquote class="note">
+     当应用模板不符合您的要求，你可手动创建一个应用模板。
+    </blockquote>
+
 
 5. 当应用创建成功，可以在应用管理查看到新建的应用；
 
@@ -41,123 +47,70 @@ weight = 4
         Gitlab 仓库的名称是 ``choerodon-jar``，为应用编码。
     </blockquote>
 
-<h2 id="2">创建Java库应用模板</h2>
-
- 当应用模板不符合您的要求，你可手动创建一个应用模板。具体步骤如下：
- 
-1. 在组织层的`持续交付`模块，选择`应用模板`；
-
-2. 点击`创建应用模板`，输入相关信息，点击`创建`，即可创建一个模板；
-      
-3. 创建完成以后，会生成一个Gitlab地址，点击该地址；
-     
-4. 进入Gitlab仓库，克隆代码；
-      
-5. 创建一个普通Java应用；
-   
-6. 编写一个Gitlab CI；
-
-      ```
-	    stages:
-	    - mvn-package
-      ```
-	  stage定义CI中包含的阶段
-	  
-	
-
-	``` stylus
-	maven-branches:
-	  stage: mvn-package
-	  script:
-		- update_pom_version
-		- mvn clean && mvn package -U -DskipTests=false
-		- mvn --batch-mode verify sonar:sonar -Dsonar.host.url=${SONAR_URL} -Dsonar.analysis.mode=preview -Dsonar.gitlab.commit_sha=${CI_COMMIT_SHA} -Dsonar.gitlab.ref_name=${CI_COMMIT_REF_NAME} -Dsonar.gitlab.project_id=${CI_PROJECT_ID}
-	  only:
-		- develop
-		- /^release-.*$/
-		- /^hotfix-.*$/
-		- /^feature-.*$/
-	  except:
-		- tags
-	```
-	   maven-branches指job名称
-	   
-       stage指对应的阶段
-	   
-	   script指执行的命令
-       
-	   only指触发的分支
-      
-	  except指不会触发的分支
-	  
-	  
-
-	``` stylus
-	.auto_devops: &auto_devops |
-			   curl -o .auto_devops.sh \
-					 "${CHOERODON_URL}/devops/ci?token=${Token}&type=lib"
-				source .auto_devops.sh
-	```   
-  .auto_devops: 从指定仓库地址中拉取script脚本  用于docker-build阶段
-
-
-       ```yaml
-       before_script:
-  
-         - *auto_devops
-       ```
-       before_script:指ci执行前所执行的命令
-	   
-7. 提交代码；
-
-
 <h2 id="2">开发Java库</h2>
 
 Java库创建完成之后，开发Java库。具体的操作步骤如下：
 
- 1. 创建Feature分支。
+ **1. 创建Feature分支。**
 
-     点击`应用`，进入到应用管理界面，选择`猪齿鱼jar应用`，点击右侧`分支管理`，点击`创建分支`，系统弹出侧边栏，填写字段，如`数字1`，点击`创建`按钮，即可创建一个名称为`feature-1`的分支。 
-        <blockquote class="warning">
-        字段填写输入包含字母、数字、'——'、'_'），如feature-1
-        </blockquote>
- 2. 在存放代码的文件夹下，打开git bash,输入命令`git clone [仓库地址]`，拉取所需应用的代码仓库。
- 3. 克隆成功后，进入项目根目录，打开git bash，输入`git checkout feature-1`，切换到新建分支feature-1，在此分支进行开发。
- 4. 提交代码
+ - 点击`应用`，进入到应用管理界面，选择`猪齿鱼jar应用`；
+ 
+ - 点击右侧`分支管理`，点击`创建分支`，系统会从右边滑出页面，填写issue号，如`feature-1`。 
+
+**2. 拉取代码仓库**
+ 
+ 在存放代码的文件夹下，打开git bash，输入命令`git clone [仓库地址]`，拉取所需应用的代码仓库。
+ 
+ **3. 开发分支**
+ 
+ 克隆成功后，进入应用根目录，执行命令`git checkout feature-1`，切换到新建分支feature-1，在此分支进行开发。
+ 
+ **4. 提交代码**
   
-		# 将本地代码变动提交到暂存区
-		$ git add .
-		# 提交代码并且为本次提交添加 commit 信息
-		# 注：[FIX]修改bug  [ADD]新增  [IMP]完善  [DEL]删除
-		$ git commit –m “[ADD]readme: 新增代码示例”
-		# 将本地提交推送至远程仓库对应分支
-		$ git push origin feature-1
+	# 将本地代码变动提交到暂存区
+	$ git add .
+	# 提交代码并且为本次提交添加 commit 信息
+	# 注：[FIX]修改bug  [ADD]新增  [IMP]完善  [DEL]删除
+	$ git commit –m “[ADD]readme: 新增代码示例”
+	# 将本地提交推送至远程仓库对应分支
+	$ git push origin feature-1
 
-	<blockquote class="note">
+<blockquote class="note">
 		记得修改maven 仓库地址。
-	</blockquote>
+</blockquote>
 
- 5. 基于feature分支运行CI。点击`CI流水线`,查看 CI 执行情况。
+**５. 运行分支**
 
- 6. 点击`应用`，进入应用管理界面，点击`猪齿鱼jar应用`的`分支管理`，在分支列表找到`feature-1`，点击`结束分支`。
+ - 基于feature分支运行CI。点击`持续集成`,查看 CI 执行情况；
 
- 7. 创建Release分支。
+ - 点击`应用`，进入应用管理界面，点击`猪齿鱼jar应用`的`分支管理`；
+ 
+ - 在分支列表找到`feature-1`，点击`结束分支`。
 
-      在应用管理界面，选择`猪齿鱼jar应用`，点击右侧`分支管理`，选择`创建分支`；系统会弹出侧边栏，填写字    段，点击创建按钮，即可创建一个Release分支；
+ **６. 创建Release分支**
 
- 8. 在分支列表找到刚才创建的分支，点击`结束分支`。
+ - 点击`应用`，进入应用管理界面，选择`猪齿鱼jar应用`；
+ 
+ - 点击右侧`分支管理`， 选择`创建分支`；系统会从右边滑出页面，填写issue号；
+ 
+ - 点击`创建`按钮，即可创建一个Release分支；
 
- 9. 点击`CI流水线`，再次查看CI运行情况。
+ - 在分支列表找到刚才创建的分支，点击`结束分支`；
+
+ - 点击`持续集成`，再次查看CI运行情况；
     
-	   <blockquote class="note">
+	  <blockquote class="note">
 			如果CI运行成功，去maven仓库地址查看是否打包成功。
 		</blockquote>
 
- 10. 生成的JAR包的信息如下：
-
- - 应用编码：choerodon-jar
- -   artifactId: 应用编码 
- -    version: 创建的Release分支名称
+ - 生成的JAR包的信息如下：
+ 
+　　　　应用编码：choerodon-jar
+　
+ 
+　　　　artifactId：应用编码 
+ 
+　　　　 version：创建的Release分支名称
  
 <h2 id="5">产品迭代</h2>
 
