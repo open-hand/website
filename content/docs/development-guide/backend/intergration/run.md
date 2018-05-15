@@ -5,9 +5,9 @@ draft = false
 weight = 3
 +++
 
-## 前提
+## 前置条件
 
-- 开发环境配置：[windows开发环境安装](../../develop_env/install_windows/)
+- 开发环境配置：[开发环境安装](../../develop-env/)
 - 数据环境准备：[基础环境准备](../init/)
 - 启动 `mysql`，`redis`，`kafka`等容器
 

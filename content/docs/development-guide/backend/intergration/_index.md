@@ -5,14 +5,13 @@ weight = 3
 type = "docs"
 +++
 
-# 概述
-
-## 准备
+## 前置条件
 
 在集成之前，要保证：
 
-- 环境已经安装正确，详见 [软件安装(Windows)](../develop_env/install_windows/)
-- Demo已正确编写，详见 [Demo编写](../demo/)
+* 环境已经安装正确，详见 [**开发环境搭建**](../develop-env/)
+* Demo已正确编写，详见 [**开发Demo程序**](../demo/)
 
-## 需求
-- 要求demo与choerodon结合，进行API测试。
+## 介绍
+
+在Demo编写完成之后，本章介绍了如何将Demo与Choerodon 集成，并介绍了如何使用swagger 进行接口测试。
