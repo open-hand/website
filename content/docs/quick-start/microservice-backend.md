@@ -73,38 +73,34 @@ type = "docs"
  
  - 点击右侧`分支管理`，点击`创建分支`，系统会从右边滑出页面，填写issue号，如`feature-1`；
 
--  点击`创建`，即可创建一个分支；
+ -  点击`创建`，即可创建一个分支；
 
 **2. 拉取代码仓库**
  
- 在存放代码的文件夹下，打开git bash,输入命令`git clone [仓库地址]`，拉取所需应用的代码仓库。
- 
- **3.开发分支**
 
-克隆成功后，进入应用根目录，执行命令`git checkout feature-1`，切换到新建分支feature-1，在此分支进行开发。
+ -  在Choerodon平台创建项目后，进入项目创建服务，服务名为gitlab平台的项目名，Choerodon后台将会自动为你生成模板代码，代码仓库地址可以在Choerodon平台查看。
 
- 
+ - 克隆成功后，进入应用根目录，执行命令`git checkout feature-1`，切换到新建分支feature-1，在此分支进行开发。
 
- 1. 拉取代码
+ - 通过git命令拉取生成的项目代码：
 
-	在Choerodon平台创建项目后，进入项目创建服务，服务名为gitlab平台的项目名，Choerodon后台将会自动为你生成模板代码，代码仓库地址可以在Choerodon平台查看。
-通过git命令拉取生成的项目代码：
-
-		`git clone -b develop http://git.staging.saas.hand-china.com/devopstest-projecttest/choerodon-backend.git`
+	    git clone -b develop http://git.staging.saas.hand-china.com/devopstest-projecttest/choerodon-backend.git
 		
-     项目使用DDD领域设计，目录结构如图所示：
 
-    ![](/docs/quick-start/image/dd.png)
+ - 项目使用DDD领域设计，目录结构如图所示：
 
+    ![](/docs/quick-start/image/3.png) 
 
-      项目代码通过IDEA打开后，如图所示：
+ - 项目代码通过IDEA打开后，如图所示：
+
+    ![](/docs/quick-start/image/dd.png) 
   
-     ![](/docs/quick-start/image/2.png)
+ 
+ **3. 修改配置信息**
 
- 2.  修改配置信息
+ - pom.xml依赖
+      
 
-      2.1 pom.xml依赖
-	```
 	<?xml version="1.0" encoding="UTF-8"?>
 	<project xmlns="http://maven.apache.org/POM/4.0.0"
 			 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -259,10 +255,9 @@ type = "docs"
 		</repositories>
 
 	</project>
-	```
 
 
-     2.2 springBoot配置文件
+ - springBoot配置文件
 
        Choerodon平台微服务都是采用yml配置文件的方式进行系统配置，通过修改application-default.yml文件修改数据库配置、端口配置等。
    **application-default.yml**
@@ -311,9 +306,9 @@ spring:
     serviceAccountId: 1
 ```
 
- 3. 数据库初始化脚本
-   
-    3.1 修改数据初始化脚本。
+ **4. 数据库初始化脚本**
+
+ - 修改数据初始化脚本。
 修改数据库配置。
 **init-local-database.sh**
 ```
@@ -331,14 +326,15 @@ spring:
      -jar target/choerodon-tool-liquibase.jar
 ```
 
-    3.2 数据库表结构groovy脚本：
+ - 数据库表结构groovy脚本：
 
        创建一个测试用户表，字段id、name、description、自维护字段（object_version_number、created_by、creation_date、last_updated_by、last_update_date）。自维护字段在项目mybatis依赖包中通过sql拦截器维护，文件命名方式：表名.groovy，存放路径如图所示
-![此处输入图片的描述][4]
+	   
+      ![](/docs/quick-start/image/2.png)
 
 
        **test_user.groovy**
-		```
+		
 		package script.db
 
 			databaseChangeLog(logicalFilePath: 'script/db/test_user.groovy') {
@@ -359,22 +355,24 @@ spring:
 					}
 				}
 			}
-		```
+		
 
      进入项目根目录通过gitBash执行
    
-         `$ sh init-local-database.sh`
+         $ sh init-local-database.sh
 执行成功后，数据库表初始化完成，如图所示
 ![](/docs/quick-start/image/csh.png)
 
- 4. 示例代码
+ **5. 示例代码**
 
-      4.1 DO
-文件存放在infra文件夹下的dataobject，文件命名规范：对象名+DO.java，DO代表UserDO对象是DDD领域设计的持久层对象，该对象直接与mybatis进行持久层交互，对象继承AuditDomain，AuditDomain是自维护字段。
-` @Id
-    @GeneratedValue`
-    2个注解分别对应主键和主键自增长，代码如下:
-		```
+ - DO
+ 
+     文件存放在infra文件夹下的dataobject，文件命名规范：对象名+DO.java，DO代表UserDO对象是DDD领域设计的持久层对象，该对象直接与mybatis进行持久层交互，对象继承AuditDomain，AuditDomain是自维护字段。
+
+	 `@Id@GeneratedValue`
+    
+     2个注解分别对应主键和主键自增长，代码如下:
+		
 		package io.choerodon.test.infra.dataobject;
 
 
@@ -445,14 +443,16 @@ spring:
 			}
 
 		}
-		```
-    4.2 Entity
+		
+   
+
+ - Entity
     
        文件存放在entity文件夹下，文件命名规范：对象名+E.java，E代表UserE对象是DDD领域设计的实体对象，该对象用来实现业务逻辑，DDD思想最重要的就是在没有数据库的情况下实现完整的业务逻辑，所以entity不操作持久层，在entity进行的逻辑都是内存操作。
 
     代码如下所示：
 	
-		```
+		
 		package io.choerodon.test.domain.test.entity;
 
 
@@ -516,12 +516,13 @@ spring:
 			}
 
 		}
-		```
-    4.3 Mapper
+		
+  
+
+ - Mapper
     
 	UserMapper.java
 	
-		```
 		package io.choerodon.test.infra.mapper;
 
 		import io.choerodon.mybatis.common.BaseMapper;
@@ -539,11 +540,9 @@ spring:
 		public interface UserMapper extends BaseMapper<UserDO> {
 
 		}
-		```
 		
 	UserMapper.xml
 	
-			```
 			<?xml version="1.0" encoding="UTF-8" ?>
 			<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 			<mapper namespace="io.choerodon.test.infra.mapper.UserMapper">
@@ -562,14 +561,14 @@ spring:
 				</resultMap>
 
 			</mapper>
-			```
-    4.4 Repository
+    
+
+ - Repository
     
     文件存放在repository文件夹下，文件命名规范：对象名+Repository.java，Repository代表UserE对象是DDD领域设计的仓储，引入仓储的概念，是因为部分业务逻辑有涉及到持久层，需要通过仓储来实现。这样做的好处是，以后不论持久层框架是mybatis还是hibernate，业务逻辑不变，只需要修改仓储实现类。
 	
     UserRepository.java
 	
-		```
 		package io.choerodon.test.domain.test.repository;
 
 		import io.choerodon.test.domain.test.entity.UserE;
@@ -616,13 +615,11 @@ spring:
 			 */
 			List<UserE> queryList();
 		}
-		```
 		
 		
     UserRepositoryImpl.java
 		
 		
-		```
 		package io.choerodon.test.infra.repository.impl;
 
 		import io.choerodon.core.convertor.ConvertHelper;
@@ -693,14 +690,14 @@ spring:
 				return ConvertHelper.convertList(userDOlist, UserE.class);
 			}
 		}
-		```
-    4.5 domainService
+ 
+
+ - domainService
     
     领域层接口命名规范I+对象名+sercice，代码如下
    
        IUserService.java
 	
-		```
 		package io.choerodon.test.domain.service;
 		import io.choerodon.test.infra.dataobject.UserDO;
 		import io.choerodon.mybatis.service.BaseService;
@@ -715,11 +712,9 @@ spring:
 		public interface IUserService extends BaseService<UserDO> {
 
 		}
-		```
 	
       IUserServiceImpl.java
 	  
-		```
 		package io.choerodon.test.domain.service.impl;
 
 		import io.choerodon.mybatis.service.BaseServiceImpl;
@@ -740,15 +735,14 @@ spring:
 		public class IUserServiceImpl extends BaseServiceImpl<UserDO> implements IUserService{
 
 		}
-		```
-    4.6 
-    DTO 
+    
+
+ - DTO 
    
       DTO是与前端进行数据交互定义的对象，命名为：对象名+DTO.java，在DDD设计中，这样的设计确保了数据的安全性，可以根据前端需要传输的信息进行DTO的编写，一部分可以确保重要信息的泄露，另一部分可以确保不必要字段的插入更新。
    
      UserDTO.java
 	 
-		```
 		package io.choerodon.test.api.dto;
 
 
@@ -810,15 +804,13 @@ spring:
 			}
 
 		}
-		```
 
-    4.7 Converter
+ - Converter
     
     Converter是实现do、dto、entity之间的转换，本例只是简单实现，由spring进行管理。根据业务逻辑需求，若需要不同dto，dto的转换在assembler文件夹下实现entity与dto的转换。
 	
      UserConverter.java
 
-		```
 		package io.choerodon.test.domain.test.converter;
 
 
@@ -881,14 +873,13 @@ spring:
 				return userDO;
 			}
 		}
-		```
-4.8 APP
+
+ - APP
 
      app层是对domain方法调用的封装，controller调用app中的service
   
        UserService.java
 
-		```
 		package io.choerodon.test.app.service;
 
 
@@ -912,11 +903,9 @@ spring:
 			List<UserDTO> queryUserList();
 
 		}
-		```
 
      UserServiceImpl.java
 
-		```
 		package io.choerodon.test.app.service.impl;
 
 
@@ -946,15 +935,13 @@ spring:
 				return ConvertHelper.convertList(userRepository.queryList(), UserDTO.class);
 			}
 		}
-		```
 
-    4.9 controller
+ - controller
 
       控制层结合了swagger进行RESTful的API规范进行设计，示例简单展示了通过GET请求获取所有用户信息。
 
     UserController.java
 	
-		```
 		package io.choerodon.test.api.controller.v1;
 
 		import io.choerodon.core.exception.CommonException;
@@ -990,14 +977,14 @@ spring:
 						.orElseThrow(() -> new CommonException("error.queryUserList.get"));
 			}
 		}
-		```
-    4.10 ExtraDataManager
+  
+
+ - ExtraDataManager
 
        编写该文件，可以节省在manager服务的数据库操作，如果是线上环境，可以省去在api-gateway服务的路由配置
 
        CustomExtraDataManager.java
 	   
-		```
 		package io.choerodon.test.infra.common;
 
 		import io.choerodon.core.swagger.ChoerodonRouteData;
@@ -1020,13 +1007,13 @@ spring:
 				return extraData;
 			}
 		}
-		```
-    4.11 application
+	
+
+ -  application
     
        TestServiceApplication.java
 	   
 
-		```
 		package io.choerodon.test;
 
 		import io.choerodon.resource.annoation.EnableChoerodonResourceServer;
@@ -1050,14 +1037,15 @@ spring:
 				SpringApplication.run(TestServiceApplication.class);
 			}
 		}
-	  ```
- 5.  测试结果
+		
+ **6. 测试结果**
 
-      通过Junit进行单元测试
+通过Junit进行单元测试
 
-      UserTest.java
+ 
 
-		```
+ - UserTest.java
+
 		package io.choerodon.test.test;
 
 		import io.choerodon.test.api.dto.UserDTO;
@@ -1092,25 +1080,27 @@ spring:
 			}
 
 		}
-		```
-6. 数据库数据如图所示
+		
 
-    ![](/docs/quick-start/image/sjk.png)
+ - 数据库数据如图所示
 
+      ![](/docs/quick-start/image/sjk.png)
 
-     测试结果如图所示
+ - 测试结果如图所示
 
-     ![](/docs/quick-start/image/csjg.png)
+    ![](/docs/quick-start/image/csjg.png)
 
-     swagger调用api
+**7. swagger调用api**
 
-     本地服务启动如图所示：
+   
 
-     ![](/docs/quick-start/image/swagg.png)
+ - 本地服务启动如图所示：
 
-      访问swagger地址：http://localhost:8080/manager/swagger-ui.html
-
-     如图所示：
+    ![](/docs/quick-start/image/swagg.png)
+    
+ - 访问swagger地址：http://localhost:8080/manager/swagger-ui.html
+ 
+ - 如图所示：
 
       ![](/docs/quick-start/image/api.png)
 
@@ -1127,7 +1117,7 @@ spring:
   [9]: https://note.youdao.com/yws/public/resource/6f25b338f4d01d40402bed1537b9e726/xmlnote/7D125D1259634265BCF7F9B276F9F29F/2395
 
 
- **4. 提交代码**
+ **8. 提交代码**
   
 	# 将本地代码变动提交到暂存区
 	$ git add .
@@ -1137,11 +1127,11 @@ spring:
 	# 将本地提交推送至远程仓库对应分支
 	$ git push origin feature-1
 	
-**5. 代码集成**
+**9. 代码集成**
    
   基于feature分支运行CI。点击`持续集成`,查看 CI 执行情况。
 
-**6. 结束分支**　
+**10. 结束分支**　
 
  -  点击`应用`，进入应用管理，点击`choerodon-backend`的`分支管理`；
  -  在分支列表找到`feature-1`，点击`结束分支`。

@@ -103,11 +103,11 @@ const DemoIndex = asyncRouter(() => import('./organization/demo/DemoIndex'));
 
     index.js
 
-		```
+		
 		import Demo from './DemoIndex';
 
 		export default Demo;
-		```
+		
 
      DemoIndex.js
 	```
