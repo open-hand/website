@@ -1,76 +1,33 @@
 +++
-title = "开发区与运行区"
+title = "基础概念"
 description = ""
-weight = 3
+weight = 2
 type = "docs"
 +++
 
-# 开发区与运行区
+# 平台概念
+![business_structure](/cimg/c7n_concept.png)
+## 项目(Project)
+Choerodon中项目是用来组织开发团队，团队在项目可以进行应用开发，版本发布，应用部署，应用运营。
 
-Choerodon 采用微服务架构融合多个开源组件实现 DevOps的开发相关功能，包括计划、编码、构建、测试、部署、运行、运维等，并且Choerodon是以Docker容器作为运行环境和使用Kubernetes作为容器编排和管理工具，在一个Kubernetes集群中运行DevOps流程的开发相关（计划、编码、构建、测试）微服务和开源工具，我们将此Kubernetes集群称作**开发区**；在一个Kubernetes集群中运行DevOps流程的运行相关（部署、运行、运维）微服务和开源工具，我们将此Kubernetes集群称作**运行区**。
+## 应用(Application)
+应用是满足用户某些需求的程序代码的集合，可以是某个解耦的微服务或是某个单体应用。用户可以创建应用，平台会为用户创建对应的git仓库以便管理该应用代码。应用是整个系统最小的实体单位，Choerodon猪齿鱼中所有的开发、部署，以及运营等都是基于应用的。
 
-关于开发区的安装，请参考[开发区安装](../../installation-configuration/development-install-guide)。
+## 应用版本(Application Version)
+应用版本是应用通过一阶段开发，通过持续集成生成的一个可部署的应用增量
 
-关于运行区的安装，请参考[运行区安装](../../installation-configuration/deployment-install-guide)。
+## 环境(Enviroment)
+环境是指一个应用可以被部署的地方。
+常见环境有开发测试环境、预生产环境、生产环境等。Choerodon自动为您的项目生成一条环境流水线，用户可以根据需要调整顺序环境的顺序。通过环境流水线，用户可以清晰地定义和查看应用版本部署的顺序。
+每一个环境对应了一个Kubernetes的namespace
 
-## 部署
+## 应用实例(Application Instance)
+部署实例是应用的某版本在具体环境运行产生的实例。
+通过Choerodon，用户可以方便的选择某一个应用，以及应用对应的版本，然后选择目标环境。同时，Choerodon会帮助用户自动的检查部署相关的配置信息，如果检查通过，Choerodon会自动的将应用对应的版本部署到目标环境中。
 
-Choerodon 可以有两种不同的部署方式，用户可以选择单集群部署，将开发和运行相关服务部署到一个Kubernetes集群上，也可以将开发区和运行区的服务分别部署到不同的Kubernetes集群上。
+## 负载均衡服务(Service)
+负载均衡服务运行中环境中，是将环境内部的访问请求转发到具体的1个或多个应用实例
+Choerodon中可以根据实际需求，定义应用实例的暴露方式。
 
-> 一个Kubernetes集群如果仅部署开发区相关的服务，则可作为DevOps开发端使用，如果仅部署运行区相关服务，则可作为DevOps运行端使用，如果既部署开发区相关服务和组件，又部署运行区相关服务和组件，则可以为一个完整的PaaS平台。
-
-
-### 单集群部署
-
-单集群部署是将开发区相关的服务和运行区相关的服务部署到一个Kubernetes集群中。用户的开发和应用的部署和运行全部在一个Kubernetes集群中。
-
-![](/img/docs/concept/choerodon-deploy-single.png)
-
-### 多集群部署
-
-多集群部署是将开发区相关的服务和运行区相关的服务分别部署到多个Kubernetes集群中，开发区和运行区集群之间通过http通信。我们可以把多个运行区看做是多套环境，例如测试环境、正式环境等。
-
-![](/img/docs/concept/choerodon-deploy-multiple.png)
-
-## 开发区相关服务
-
-Choerodon 开发区各服务版本信息如下：
-
-服务名	|服务组	|	服务代码	|	版本号
----	|---	|	---	|	---
-K8S消息收集	|	com.choerodon.devops 	|	k8s-informer 	|	V0.1.1
-Gitlab服务	|	com.choerodon.devops 	|	choerodon-gitlab-service  	|	1.1.0
-K8S服务	|	com.choerodon.devops 	|	devops-kubernetes-service	|	1.1.0
-文件服务	|	com.choerodon.devops 	|	choerodon-file-service 	|	1.1.0
-开发服务	|	com.choerodon.devops 	|	choerodon-devops-service  	|	1.1.0
-部署服务	|	com.choerodon.devops 	|	devops-deploy-service	|	1.1.6
-SonarQube服务	|	com.choerodon.insight 	|	data-sonar-service  	|	1.0.1
-数据整合服务	|	com.choerodon.insight 	|	data-intergration-service	|	1.0.0
-数据提供服务	|	com.choerodon.insight 	|	data-provide-service 	|	1.0.1
-数据操作服务	|	com.choerodon.insight	|	data-operation-service 	|	1.0.0
-看板服务	|	com.choerodon.kanban 	|	choerodon-kanban-service 	|	1.1.0
-移动服务	|	com.choerodon.mobile 	|	mobile-cloud-service 	|	1.0.0
-开发前端	|	com.choerodon.devops 	|	devops-front 	|	1.1.3
-部署前端	|	com.choerodon.devops 	|	deploy-front 	|	1.1.5
-洞察前端	|	com.choerodon.insight 	|	analysis-insight-front  	|	1.0.0
-监控前端	|	com.choerodon.insight 	|	monitor-front	|	1.0.0
-看板前端	|	com.choerodon.kanban 	|	choerodon-kanban-front 	|	1.1.0
-移动前端	|	com.choerodon.mobile 	|	mobile-front 	|	1.0.0
-
-## 运行区相关服务
-
-Choerodon 运行区各服务版本信息如下：
-
-服务名	|服务组	|	服务代码	|	版本号
----	|---	|	---	|	---
-K8S消息收集	|	com.choerodon.devops 	|	k8s-informer 	|	V0.1.1
-K8S服务	|	com.choerodon.devops 	|	devops-kubernetes-service	|	1.1.0
-文件服务	|	com.choerodon.devops 	|	choerodon-file-service 	|	1.1.0
-部署服务	|	com.choerodon.devops 	|	devops-deploy-service	|	1.1.6
-数据整合服务	|	com.choerodon.insight 	|	data-intergration-service	|	1.0.0
-数据提供服务	|	com.choerodon.insight 	|	data-provide-service 	|	1.0.1
-数据操作服务	|	com.choerodon.insight	|	data-operation-service 	|	1.0.0
-移动服务	|	com.choerodon.mobile 	|	mobile-cloud-service 	|	1.0.0
-部署前端	|	com.choerodon.devops 	|	deploy-front 	|	1.1.5
-监控前端	|	com.choerodon.insight 	|	monitor-front	|	1.0.0
-移动前端	|	com.choerodon.mobile 	|	mobile-front 	|	1.0.0
+## 接入路由器(Ingress)
+接入路由器运行在具体的环境中，将环境外部的请求转发到环境内部的负载均衡服务
