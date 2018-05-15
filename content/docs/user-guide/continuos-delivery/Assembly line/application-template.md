@@ -9,8 +9,8 @@ weight = 1
   应用模板是将同类型应用的代码库结构整理成模板，用于创建应用时能引用相应模板快速创建初始代码库。 每种应用模板至少都包括CI文件以及Chart目录文件。 平台提供默认的常用模板，用户可以根据实际情况自定义符合更多需求的应用模板。
 
   - **菜单层次**：组织层
-  - **菜单路径**：持续交付 >  开发流水线 > 应用模板
-  - **默认角色**：平台管理员、项目创建者
+  - **菜单路径**：持续交付 > 应用模板
+  - **默认角色**：组织管理员
 
 ### 新建应用模板
 
@@ -357,7 +357,7 @@ spring-boot项目+gitlab-ci.yml文件+dockerfile文件+charts模块
 ### 修改模板信息
 点击`修改模板`→ ![修改环境按钮](/docs/user-guide/continuos-delivery/Assembly line/image/修改环境按钮.png)按钮 ，进行应用模板名称和描述的修改。
 
-### 删除模板信息
+### 删除模板
  1. 预定义模板无法删除；
  1. 点击`删除模板`→ ![删除网络按钮](/docs/user-guide/continuos-delivery/Assembly line/image/删除网络按钮.png) 按钮，进行模板的删除。
 <blockquote class="warning">

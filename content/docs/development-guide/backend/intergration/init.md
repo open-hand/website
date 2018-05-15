@@ -9,7 +9,7 @@ weight = 2
 
 ## 启动容器
 
-启动 `mysql`容器
+首先确保 `mysql` 容器已经启动，详见 [开发环境搭建](../../develop-env/)
 
 ## 创建Mysql数据库
 
@@ -19,10 +19,6 @@ weight = 2
 
 ```bash
 docker exec -ti mysql mysql -u choerodon -p
-```
-If you are using mintty, try prefixing the command with 'winpty'：
-```bash
-winpty docker exec -ti mysql mysql -u choerodon -p
 ```
 
 3.创建用户和数据库:

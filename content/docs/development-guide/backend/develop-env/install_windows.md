@@ -1,10 +1,12 @@
 +++
-title = "软件安装(Windows)"
-description = "软件安装(Windows)"
+title = "开发环境搭建(Windows)"
+description = "开发环境搭建(Windows)"
 weight = 1
 +++
 
-# 软件安装
+# 开发环境搭建
+
+本章节讲述了使用Choerodon 微服务框架开发微服务的一些软件依赖，以及如何在Windows 环境下进行安装使用。
 
 ## 开发工具
 

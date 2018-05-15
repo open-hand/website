@@ -20,3 +20,9 @@ weight = 1
 * 在项目中，yeoman 用于自动生成与boot同级的模块目录和文件。
 * 使用 `npm -g install yo` 安装yeoman
 * 安装成功后，在终端里运行 `yo --version` 应该可以看到yeoman的相关信息。
+
+## 全局安装 gulp
+
+* Gulp 是一个自动化构建工具,开发者可以使用它在项目开发过程中自动执行常见任务。
+* 使用 `npm -g install Gulp` 安装Gulp
+* 安装成功后，在终端里运行 `Gulp --version` 应该可以看到Gulp的相关信息。

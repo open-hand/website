@@ -13,4 +13,5 @@ weight = 4
 <h2 id="1">功能</h2>
 
 - [**个人信息**](../person/information) 用户个人信息的管理。
+
 - [**修改密码**](../person/secret_change) 非LDAP用户可以修改自己的登录密码。

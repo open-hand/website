@@ -4,7 +4,7 @@ description = "Kubernetes集群部署"
 weight = 10
 +++
 
-## 简化模式
+## 简化模式
 
 ### linux/osx
 
@@ -70,7 +70,7 @@ weight = 10
 
 #### 环境准备
 
-- 在要执行ansible脚本的机器上安装ansible运行需要的环境：
+- 在要执行ansible脚本的机器上安装ansible运行需要的环境：
 
     ```
     sudo yum install -y epel-release && \
@@ -97,7 +97,7 @@ weight = 10
 
 #### 修改hosts文件
 
-- 编辑项目下的`kubeadm-ansible/inventory/hosts`文件,修改各机器的访问地址、用户名、密码，并维护好各节点与角色的关系,前面的名称为机器的hostname。该用户必须是具有root权限的用户。
+- 编辑项目下的`kubeadm-ansible/inventory/hosts`文件,修改各机器的访问地址、用户名、密码，并维护好各节点与角色的关系,前面的名称为机器的hostname。该用户必须是具有root权限的用户。
 
 > 注意：etcd节点和master节点需要在相同的机器。
 
@@ -119,7 +119,7 @@ weight = 10
 
 #### 修改变量
 
-- 编辑项目下的`kubeadm-ansible/inventory/vars`文件,修改变量`k8s_interface`的值为要部署机器的ipv4的网卡名称(centos默认是eth0),如果不确定可使用`ifconfig`命令查看。
+- 编辑项目下的`kubeadm-ansible/inventory/vars`文件,修改变量`k8s_interface`的值为要部署机器的ipv4的网卡名称(centos默认是eth0),如果不确定可使用`ifconfig`命令查看。
 
     ```
     k8s_interface: "eth0"
@@ -132,7 +132,7 @@ weight = 10
     node1 ansible_host=192.168.56.11 ip=192.168.56.11 ansible_user=root ansible_ssh_pass=change_it ansible_become=true
     ```
 
-- 如果所有机器以`代理的方式`访问外网,请配置以下几个变量,否则请不要配置:
+- 如果所有机器以`代理的方式`访问外网,请配置以下几个变量,否则请不要配置:
 
     ```
     http_proxy: http://1.2.3.4:3128
@@ -165,7 +165,7 @@ weight = 10
 
 > 注意：以下已以阿里云ECS为例进行讲解，目前只支持centos 7.2+
 
-- 在要执行ansible脚本的机器上安装ansible运行需要的环境：
+- 在要执行ansible脚本的机器上安装ansible运行需要的环境：
 
     ```
     sudo yum install -y epel-release && \
@@ -392,7 +392,7 @@ weight = 10
 
 #### 修改变量
 
-- 编辑项目下的`kubeadm-ansible/inventory/vars`文件,修改变量`k8s_interface`的值为要部署机器的ipv4的网卡名称(centos默认是eth0),如果不确定可使用`ifconfig`命令查看。
+- 编辑项目下的`kubeadm-ansible/inventory/vars`文件,修改变量`k8s_interface`的值为要部署机器的ipv4的网卡名称(centos默认是eth0),如果不确定可使用`ifconfig`命令查看。
 
     ```
     k8s_interface: "eth0"
@@ -405,7 +405,7 @@ weight = 10
     node1 ansible_host=192.168.56.11 ip=192.168.56.11 ansible_user=root ansible_ssh_pass=change_it ansible_become=true
     ```
 
-- 如果所有机器以`代理的方式`访问外网,请配置以下几个变量,否则请不要配置:
+- 如果所有机器以`代理的方式`访问外网,请配置以下几个变量,否则请不要配置:
 
     ```
     http_proxy: http://1.2.3.4:3128
