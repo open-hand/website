@@ -1,10 +1,8 @@
-+++
+<!-- +++
 title = "Helm Chart"
 description = "Helm Chart"
-date = 2018-03-30T13:06:38+08:00
-draft = false
-weight = 1
-+++
+weight = 110
++++ -->
 
 # Helm Chart
 
@@ -183,7 +181,7 @@ helm install hystrix-turbine/chart/hystrix-turbine --namespace=framework
 
 - 创建一个数据库名称为 `usermap_service`
 
-```bash
+```sql
 CREATE USER 'root'@'%' IDENTIFIED BY "handhand";
 CREATE DATABASE usermap_service DEFAULT CHARACTER SET utf8;
 GRANT ALL PRIVILEGES ON usermap_service.* TO root@'%';
@@ -192,7 +190,7 @@ FLUSH PRIVILEGES;
 
 - 注意默认环境变量，一般情况下`CHOERODON_GATEWAY_DOMAIN`，`CHOERODON_SWAGGER_OAUTH_URL`需要修改，其他变量根据实际情况确定是否需要修改
 
-```bash
+```yaml
     EUREKA_DEFAULT_ZONE: http://register-server.io-choerodon:8000/eureka/
     SPRING_DATASOURCE_URL: jdbc:mysql://kanban-mysql.db.svc:3308/usermap_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
     SPRING_DATASOURCE_USERNAME: root
@@ -228,7 +226,7 @@ FLUSH PRIVILEGES;
 
 - 注意默认环境变量根据实际情况确定是否需要修改
 
-```bash
+```yaml
     EUREKA_DEFAULT_ZONE: http://register-server.io-choerodon:8000/eureka/
     SPRING_DATASOURCE_URL: jdbc:mysql://kanban-mysql.db.svc:3308/scrum_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
     SPRING_DATASOURCE_USERNAME: root

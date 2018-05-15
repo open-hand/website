@@ -1,26 +1,18 @@
 +++
-title = "Kubernetes安装"
-weight = 1
+title = "Kubernetes集群部署"
+description = "Kubernetes集群部署"
+weight = 10
 +++
 
+## 简化模式
 
-# 简化模式
+### linux/osx
 
-## windows
-
-### 使用Virtualbox启动
-- 使用Virtualbox启动请参照linux/osx启动方式运行。
-
-### 使用Hyper-v启动
-
-
-## linux/osx
-
-### 环境准备
+#### 环境准备
 - 安装[Virtualbox 5.1.34](https://www.virtualbox.org/wiki/Download_Old_Builds_5_1)
 - 安装[Vagrant 2.0.1](https://releases.hashicorp.com/vagrant/2.0.1/)
 
-### 搭建Kubernetes集群
+#### 搭建Kubernetes集群
 - 克隆搭建脚本,并进入项目中
 
     ```
@@ -69,9 +61,14 @@ weight = 1
     ansible-playbook -i inventory/hosts -e @inventory/vars cluster.yml
     ```
 
-# 测试环境模式
+### windows
 
-### 环境准备
+#### 使用Virtualbox启动
+- 使用Virtualbox启动请参照linux/osx启动方式运行。
+
+## 测试环境模式
+
+#### 环境准备
 
 - 在要执行ansible脚本的机器上安装ansible运行需要的环境：
 
@@ -98,7 +95,7 @@ weight = 1
     git clone https://rdc.hand-china.com/gitlab/rdc_hip/kubeadm-ansible.git
     ```
 
-### 修改hosts文件
+#### 修改hosts文件
 
 - 编辑项目下的`kubeadm-ansible/inventory/hosts`文件,修改各机器的访问地址、用户名、密码，并维护好各节点与角色的关系,前面的名称为机器的hostname。该用户必须是具有root权限的用户。
 
@@ -120,7 +117,7 @@ weight = 1
     node1
     ```
 
-### 修改变量
+#### 修改变量
 
 - 编辑项目下的`kubeadm-ansible/inventory/vars`文件,修改变量`k8s_interface`的值为要部署机器的ipv4的网卡名称(centos默认是eth0),如果不确定可使用`ifconfig`命令查看。
 
@@ -144,7 +141,7 @@ weight = 1
     docker_proxy_enable: true
     ```
 
-### 部署
+#### 部署
 
 - 执行:
 
@@ -164,7 +161,7 @@ weight = 1
     ansible-playbook -i inventory/hosts reset.yml
     ```
 
-# 正式环境模式
+## 正式环境模式
 
 > 注意：以下已以阿里云ECS为例进行讲解，目前只支持centos 7.2+
 
@@ -193,11 +190,11 @@ weight = 1
     git clone https://rdc.hand-china.com/gitlab/rdc_hip/kubeadm-ansible.git
     ```
 
-### 修改hosts文件
+#### 修改hosts文件
 
 > 在阿里云的ECS的控制面板上修改ECS实例的hostname,名称最好只包含小写字母、数字和中划线。并保持与`inventory/hosts`中的名称与ECS控制台上的名称保持一致,重启生效。**注意**：etcd节点和master节点需要在相同的机器。
 
-### 网段选择
+#### 网段选择
 
 - 如果ECS服务器用的是专有网络,pod和service的网段不能与vpc网段重叠，示例参考：
 
@@ -215,7 +212,7 @@ weight = 1
     kube_service_addresses: 172.19.0.0/20
     ```
 
-### flannel类型
+#### flannel类型
 
 - 在使用VPC网络的ECS上部署k8s时，flannel网络的Backend类型需要是`ali-vpc`。在本脚本中默认使用的是`vxlan`类型，虽然在vpc环境下网络能通,但是不稳定波动较大。所以推荐使用`ali-vpc`的类型。
 
@@ -393,7 +390,7 @@ weight = 1
     允许 | 全部 | -1/-1 | 地址段访问 | 192.168.0.0/20 | ...
 
 
-### 修改变量
+#### 修改变量
 
 - 编辑项目下的`kubeadm-ansible/inventory/vars`文件,修改变量`k8s_interface`的值为要部署机器的ipv4的网卡名称(centos默认是eth0),如果不确定可使用`ifconfig`命令查看。
 
@@ -417,7 +414,7 @@ weight = 1
     docker_proxy_enable: true
     ```
 
-### 部署
+#### 部署
 
 - 执行:
 

@@ -1,56 +1,70 @@
 +++
 title = "Chartmuseum安装"
-description = "Chartmuseum安装组件监控"
-date = 2018-03-30T13:06:38+08:00
-draft = false
-weight = 1
+description = "Chartmuseum安装"
+weight = 20
 +++
 
-# Chartmuseum
+# Chartmuseum安装
 
-### 添加远程仓库
+## 仓库设置
 
-```
-helm repo add paas http://helm-charts.staging.saas.hand-china.com/paas/base/
-```
+1. 本地添加远程仓库
 
-### 更新仓库信息
+    ```
+    helm repo add paas http://helm-charts.staging.saas.hand-china.com/paas/base/
+    ```
+1. 更新本地仓库信息
 
-```
-helm repo update 
-```
+    ```
+    helm repo update 
+    ```
 
-### 安装Chartmuseum（Chartmuseum）
+## 安装Chartmuseum
 
-**注意：**启用持久化存储请执行提前创建PV和PVC
+> **注意：** 启用持久化存储请执行提前创建PV和PVC，也可使用以下语句进行创建；由于choerodon-devops-service的储存必须与chartmuseum**存储路径相同**，在此我们一并创建。可在安装命令最后添加`--debug --dry-run`参数，进行渲染预览不进行安装。
 
-1. 创建`values.yaml`配置文件，修改以下必要信息。
+- 创建PV
 
-  ```yaml
-  env:
-    open:
-      # 设置多租户层级
-      DEPTH: 2
-      # 开启API
-      DISABLE_API: false
-      CHART_POST_FORM_FIELD_NAME: chart
-      LOG_JSON: "true"
-      PROV_POST_FORM_FIELD_NAME: prov
-      STORAGE: local
-  persistence:
-    # 启用持久化存储
-    enabled: true
-    # 提供pvc名称
-    existingClaim: chartmuseum
-  ingress:
-    # 启用域名访问
-    enabled: true
-    host: helm.alpha.saas.hand-china.com
-  ```
-1. 执行以下命名进行安装。
+    ```
+    helm install paas/create-pv \
+      --set type=nfs \
+      --set pv.name=chartmuseum-pv \
+      --set nfs.path=/u01/nfs/exports/io-choerodon/chartmuseum \
+      --set nfs.server=nfs-rdc3.hand-china.com \
+      --set pvc.name=chartmuseum-pvc \
+      --set size=3Gi \
+      --set "accessModes[0]=ReadWriteOnce" \
+      --name chartmuseum-pv --namespace=io-choerodon
 
-  > 可在安装命令中添加`--debug --dry-run`参数，进行渲染预览不进行安装。
+    helm install paas/create-pv \
+      --set type=nfs \
+      --set pv.name=devops-service-pv \
+      --set nfs.path=/u01/nfs/exports/io-choerodon/chartmuseum \
+      --set nfs.server=nfs-rdc3.hand-china.com \
+      --set pvc.name=devops-service-pvc \
+      --set size=3Gi \
+      --set "accessModes[0]=ReadWriteOnce" \
+      --name devops-service-pv --namespace=io-choerodon
+    ```
+- 进行安装部署
 
-  ```
-  helm install paas/chartmuseum --name=chartmuseum --namespace=tools -f values.yaml
-  ```
+    ```
+    helm install paas/chartmuseum \
+      --set persistence.enabled=true \
+      --set persistence.existingClaim=chartmuseum-pvc \
+      --set ingress.enabled=true \
+      --set ingress.host=charts.saas.hand-china.com \
+      --set env.open.DISABLE_API=false \
+      --set env.open.DEPTH=2
+    ```
+
+- 参数解释：
+
+    | 参数 | 含义
+    | --- |  --- | 
+    persistence.enabled|是否启用持久化存储
+    persistence.existingClaim|PVC的名称
+    ingress.enabled|是否启用ingress
+    ingress.host|域名
+    env.open.DISABLE_API|是否禁用API
+    env.open.DEPTH|大于0则表示开启多租户，数值代表层级
