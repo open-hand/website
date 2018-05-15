@@ -20,11 +20,11 @@ Choerodon 使用 React 作为前端的UI应用框架，并且对前端的展示�
 
 ## 前置条件
 
-- <font>在操作之前保证[系统配置](../../user-guide/system-configuration)已经配置完全。</font>
+- 在操作之前保证[系统配置](../../user-guide/system-configuration)已经配置完全。
 
-- <font>完成[创建项目](../project)，本章节使用在前面章节创建的项目`猪齿鱼研发`。</font>
+- 完成[创建项目](../project)，本章节使用在前面章节创建的项目`猪齿鱼研发`。
 
-- <font>完成[创建环境](../project)操作。
+- 完成[创建环境](../project)操作。
 
 
 <h2 id="1">创建前端应用</h2>

@@ -15,7 +15,7 @@ type = "docs"
 
 ## 前置条件
 
-- <font>在操作之前保证[系统配置](../../user-guide/system-configuration)已经配置完全。</font>
+- 在操作之前保证[系统配置](../../user-guide/system-configuration)已经配置完全。
 
 - 用户必须属于组织层，且属于唯一组织。
 
