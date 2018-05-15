@@ -2,6 +2,7 @@
 title = "敏捷管理"
 description = ""
 weight = 2
+draft = true
 +++
 
 # 敏捷管理
