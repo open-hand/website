@@ -19,10 +19,10 @@ Choerodon 提供一整套支撑 DevOps 最佳实践的工具链，从计划、�
 <h4><i class="iconfont">&#xebdb;</i>概念</h4>
 <ul>
     <li><a href="./concept/choerodon-concept">01 - Choerodon是什么</a></li>
-    <li><a href="./concept/choerodon-system-architecture">02 - 系统架构</a></li>
-    <li><a href="./concept/choerodon-opensource-component">03 - 使用的开源组件</a></li>
+    <li><a href="./concept/platform-concept">02 - 平台概念</a></li>
+    <li><a href="./concept/choerodon-system-architecture">03 - 系统架构</a></li>
     <li class="more-menu-button"><a href="javascript:void(0)">更多</a></li>
-    <li class="more-menu"><a href="./concept/choerodon-development-deployment">04 - 开发区与运行区</a></li>
+    <li class="more-menu"><a href="./concept/choerodon-opensource-component">04 - 使用的开源组件</a></li>
     <li class="more-menu"><a href="./concept/choerodon-org">05 - 组织层次</a></li>
     <li class="more-menu"><a href="./concept/security">06 - 安全</a></li>
     <li class="less-menu-button"><a href="javascript:void(0)">折叠</a></li>

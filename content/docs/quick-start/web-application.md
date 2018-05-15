@@ -109,13 +109,20 @@ Java库创建完成之后，开发Java库。具体的操作步骤如下：
 
  - 生成的JAR包的信息如下：
  
-　　　　应用编码：choerodon-jar
-　
+　　　　groupId: 组织编码-应用编码(choerodon-choerodon-dev)
+
+　　　　artifactId: 应用编码(choerodon-jar)
  
-　　　　artifactId：应用编码 
+　　　　version: 1.0-SNAPSHOT(以pom文件内的版本为准)
  
-　　　　 version：创建的Release分支名称
- 
+  **8. pom依赖引用**
+
+	<dependency>
+		<groupId>choerodon-choerodon-dev</groupId>
+		<artifactId>choerodon-jar</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</dependency>
+  
 <h2 id="5">产品迭代</h2>
 
 任何产品几乎都会经历产品的初创期、成长期、成熟期。在产品的初创期，需要通过快速试错探索出有用户黏性的功能；探索成功之后，就需要快速导入用户，这时候也会产生新的需求和新的问题，不断去完善产品；在产品的相对成熟期，则可以考虑产品的变现，和新功能的延展，以提升用户活跃。因此，当一个产品开发完成上线后，产品的周期化迭代就变得非常重要。固定的周期有助于为项目团队形成规范，从而提高开发效率。
