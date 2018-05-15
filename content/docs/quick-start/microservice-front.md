@@ -62,67 +62,16 @@ Choerodon 使用 React 作为前端的UI应用框架，并且对前端的展示�
 
  **1. 创建分支**
 
- - 点击`应用`，进入到应用管理界面，选择`猪齿鱼前端应用`
-
-<<<<<<< HEAD
-7. [编写Gitlab-CI文件](http://https://docs.gitlab.com/ee/ci/doc/hip/latest/user_guide/integrated_deployment.html)
-     
-      ```
-      image: registry.choerodon.io/tools/devops-ci:1.1.0    
-      ```
-      image指CI运行基础镜像
-
-      ```yaml
-        stages:
-        -  node_build
-        -  docker_build
-      ``` 
-       stages指包含 node_build 和docker_build两个阶段 	
-
- 	  ```yaml
-	  node_build_dev:
-        stage: node_build
-		script:
-		  - node_config
-		  - node_module iam
-		  - node_build devbuild
-          - clean_cache
-        only:
-          - /^release-.*$/
-          - /^hotfix-.*$/
-          - develop
-          - tags
-      ``` 
-       node_build_dev指job名称
-	   
-       stage指对应的阶段
-	   
-	   script指执行的命令
-       
-	   only指触发的分支
-
-       ```yaml
-       .auto_devops: &auto_devops |
-           curl -o .auto_devops.sh \
-                 "${CHOERODON_URL}/devops/ci?token=${Token}&type=microservice"
-            source .auto_devops.sh
-       ```
-       
-	   .auto_devops: 从指定仓库地址中拉取script脚本  用于docker-build阶段
-
-       ```
-       before_script:
-=======
+ - 点击`应用`，进入到应用管理界面，选择`猪齿鱼前端应用`；
  -  点击右侧`分支管理`，点击`创建分支`，系统会从右边滑出页面，填写issue号，如feature-1；
  -  点击`创建`，即可创建一个分支；
  
  **2. 拉取代码仓库**
  
  在存放代码的文件夹下，打开git bash,输入命令`git clone [仓库地址]`，拉取所需应用的代码仓库。
- 
-  **3. 分支开发**
->>>>>>> 52e6aacdc9286611f157c332026a7fd63eaf27b0
-  
+
+  **3. 开发分支**
+
  克隆成功后，进入应用根目录，执行命令`git checkout feature-1`，切换到新建分支feature-1，在此分支进行开发。
  
   **4. 提交代码**
@@ -135,11 +84,11 @@ Choerodon 使用 React 作为前端的UI应用框架，并且对前端的展示�
 	# 将本地提交推送至远程仓库对应分支
 	$ git push origin feature-1
 		
-**5. 运行分支**
+**5. 代码集成**
 
-基于feature分支运行CI。点击`CI流水线`,查看 CI 执行情况。
+基于feature分支运行CI。点击`持续集成`,查看 CI 执行情况。
 
-**6.结束分支**
+**6. 结束分支**
 
  - 点击`应用`，进入应用管理，点击应用编码`choerodon-front`的`分支管理`；
  - 在分支列表找到`feature-1`，点击`结束分支`。
@@ -159,7 +108,7 @@ Choerodon 使用 React 作为前端的UI应用框架，并且对前端的展示�
     </blockquote>
 
 2. 点击``持续集成``，查看CI执行情况。
-2. CI运行完成以后，点击`应用版本`进行查看，确定应用版本已经生成。
+3. CI运行完成以后，点击`应用版本`进行查看，确定应用版本已经生成。
 
 
 <h2 id="4">部署应用</h2>
@@ -181,8 +130,7 @@ Choerodon 使用 React 作为前端的UI应用框架，并且对前端的展示�
 
      d. 配置信息：配置部署应用所需的信息
 
-     e. 部署模式：新建实例（新建一个应用）
-                           替换实例（滚动更新实例）
+     e. 部署模式：新建实例（新建一个应用）或 替换实例（滚动更新实例）
 					
 4.  点击`部署`按钮，即可完成部署。
 
