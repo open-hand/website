@@ -15,14 +15,6 @@ weight = 2
   - **菜单路径**：持续交付 > 开发流水线 > 应用
   - **默认角色**：项目所有者、项目成员
 
-### 应用类型
-
-  **后端应用**：可以定义依赖的资源和应用，部署时需配置网关。
-
-  **Web前端**：部署时需配置域名。
-
-  **Java库**：Java工具包。
-
 ### 新建应用
 
 输入应用编码及名称，也可以选择某个应用模板，快速创建应用。平台会为您自动创建对应的git库以便管理该应用代码。
@@ -35,10 +27,10 @@ weight = 2
 
     应用名称：应用中自定义的名称；
 
-    应用模板： 自定义模板：用户自定义模板；
+    应用模板：系统预定义模板或组织自定义的模板快；
 
 
-               默认模板：Java库-JavaLib;微服务-MicroService;前端-MicroServiceUI
+              系统预定义模板：Java库-JavaLib;微服务-MicroService;web前端-MicroServiceUI
       
  1. 创建成功后,可去gitlab中查看已创建的代码。
 
@@ -61,7 +53,7 @@ weight = 2
 
 点击`修改应用`→ ![修改应用按钮](/docs/user-guide/continuos-delivery/Assembly line/image/修改应用按钮.png) 对应用信息进行修改。
 
-### 停用/启用应用信息
+### 停用/启用应用
 
  点击 `停用`→ ![停用按钮](/docs/user-guide/continuos-delivery/Assembly line/image/停用按钮.png)，如： “猪齿鱼研发” 已停用，应用详情不可查看。 
 
