@@ -76,8 +76,6 @@ Choerodon 使用 React 作为前端的UI应用框架，并且对前端的展示�
 
 克隆成功后，进入应用根目录，执行命令`git checkout feature-1`，切换到新建分支feature-1，在此分支进行开发。
 
- 
-
  - 创建目录
  
     在 \iam\src\app\iam\containers下新建organization文件夹
@@ -154,15 +152,13 @@ const DemoIndex = asyncRouter(() => import('./organization/demo/DemoIndex'));
 
 	```
 
- - 访问`localhost:9090/#/iam/demo`即可查看效果
- 
-       ![](/docs/quick-start/image/hello-world.png)
+ - 访问`localhost:9090/#/iam/demo`即可查看效果。
 
  - 下面来尝试一下从更复杂的场景，从后端获取10条用户信息并用表格的形式呈现。
 
      将上面的Demo.js的代码改为如下：
 
- - Demo.js
+     Demo.js
 	```
 	import React, { Component } from 'react';
 	import { Table } from 'antd';
@@ -242,8 +238,7 @@ const DemoIndex = asyncRouter(() => import('./organization/demo/DemoIndex'));
 
  -  访问`localhost:9090/#/iam/demo`即可查看效果，至此，你已经掌握了简单的前后端搭配的开发方式了。
  
-     ![](/docs/quick-start/image/bg.png)
-	 
+
   **4. 提交代码**
 
 	# 将本地代码变动提交到暂存区

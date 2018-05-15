@@ -82,16 +82,16 @@ type = "docs"
 
  - 克隆成功后，进入应用根目录，执行命令`git checkout feature-1`，切换到新建分支feature-1，在此分支进行开发。
 
- - 通过git命令拉取生成的项目代码：
+ - 通过git命令拉取生成的项目代码。
 
 	    git clone -b develop http://git.staging.saas.hand-china.com/devopstest-projecttest/choerodon-backend.git
 		
 
- - 项目使用DDD领域设计，目录结构如图所示：
+ - 项目使用DDD领域设计，目录结构如图所示
 
     ![](/docs/quick-start/image/3.png) 
 
- - 项目代码通过IDEA打开后，如图所示：
+ - 项目代码通过IDEA打开后，如图所示
 
     ![](/docs/quick-start/image/dd.png) 
   
@@ -308,25 +308,26 @@ spring:
 
  **4. 数据库初始化脚本**
 
- - 修改数据初始化脚本。
-修改数据库配置。
-**init-local-database.sh**
-```
-#!/bin/bash
-    mkdir -p target
-    if [ ! -f target/choerodon-tool-liquibase.jar ]
-    then
-        curl http://nexus.saas.hand-china.com/content/repositories/rdc/io/choerodon/choerodon-tool-liquibase/0.1.0/choerodon-tool-liquibase-0.1.0.jar -o target/choerodon-tool-liquibase.jar
-    fi
-    java -Dspring.datasource.url="jdbc:mysql://localhost/test?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
-     -Dspring.datasource.username=root \
-     -Dspring.datasource.password=root \
-     -Ddata.drop=false -Ddata.init=true \
-     -Ddata.dir=src/main/resources \
-     -jar target/choerodon-tool-liquibase.jar
-```
+ - 修改数据初始化脚本
 
- - 数据库表结构groovy脚本：
+    修改数据库配置
+**init-local-database.sh**
+	```
+	#!/bin/bash
+		mkdir -p target
+		if [ ! -f target/choerodon-tool-liquibase.jar ]
+		then
+			curl http://nexus.saas.hand-china.com/content/repositories/rdc/io/choerodon/choerodon-tool-liquibase/0.1.0/choerodon-tool-liquibase-0.1.0.jar -o target/choerodon-tool-liquibase.jar
+		fi
+		java -Dspring.datasource.url="jdbc:mysql://localhost/test?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
+		 -Dspring.datasource.username=root \
+		 -Dspring.datasource.password=root \
+		 -Ddata.drop=false -Ddata.init=true \
+		 -Ddata.dir=src/main/resources \
+		 -jar target/choerodon-tool-liquibase.jar
+	```
+
+ - 数据库表结构groovy脚本
 
        创建一个测试用户表，字段id、name、description、自维护字段（object_version_number、created_by、creation_date、last_updated_by、last_update_date）。自维护字段在项目mybatis依赖包中通过sql拦截器维护，文件命名方式：表名.groovy，存放路径如图所示
 	   
@@ -450,7 +451,7 @@ spring:
     
        文件存放在entity文件夹下，文件命名规范：对象名+E.java，E代表UserE对象是DDD领域设计的实体对象，该对象用来实现业务逻辑，DDD思想最重要的就是在没有数据库的情况下实现完整的业务逻辑，所以entity不操作持久层，在entity进行的逻辑都是内存操作。
 
-    代码如下所示：
+    代码如下所示
 	
 		
 		package io.choerodon.test.domain.test.entity;
@@ -876,7 +877,7 @@ spring:
 
  - APP
 
-     app层是对domain方法调用的封装，controller调用app中的service
+     app层是对domain方法调用的封装，controller调用app中的service。
   
        UserService.java
 
@@ -981,7 +982,7 @@ spring:
 
  - ExtraDataManager
 
-       编写该文件，可以节省在manager服务的数据库操作，如果是线上环境，可以省去在api-gateway服务的路由配置
+       编写该文件，可以节省在manager服务的数据库操作，如果是线上环境，可以省去在api-gateway服务的路由配置。
 
        CustomExtraDataManager.java
 	   
@@ -1040,7 +1041,7 @@ spring:
 		
  **6. 测试结果**
 
-通过Junit进行单元测试
+通过Junit进行单元测试。
 
  
 
@@ -1094,13 +1095,13 @@ spring:
 
    
 
- - 本地服务启动如图所示：
+ - 本地服务启动如图所示
 
     ![](/docs/quick-start/image/swagg.png)
     
  - 访问swagger地址：http://localhost:8080/manager/swagger-ui.html
  
- - 如图所示：
+ - 如图所示
 
       ![](/docs/quick-start/image/api.png)
 
