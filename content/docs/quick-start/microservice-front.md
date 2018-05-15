@@ -26,6 +26,8 @@ Choerodon 使用 React 作为前端的UI应用框架，并且对前端的展示�
 
 - 完成[创建环境](../project)操作。
 
+- 完成了前端模板库的依赖安装并且成功启动项目。
+
 
 <h2 id="1">创建前端应用</h2>
 
@@ -72,8 +74,176 @@ Choerodon 使用 React 作为前端的UI应用框架，并且对前端的展示�
 
   **3. 开发分支**
 
- 克隆成功后，进入应用根目录，执行命令`git checkout feature-1`，切换到新建分支feature-1，在此分支进行开发。
+克隆成功后，进入应用根目录，执行命令`git checkout feature-1`，切换到新建分支feature-1，在此分支进行开发。
+
  
+
+ - 创建目录
+ 
+    在 \iam\src\app\iam\containers下新建organization文件夹
+	
+    在organization下新建一个功能文件夹\demo
+	
+    在demo文件夹下新建index.js、DemoIndex.js和Demo.js三个文件
+
+ - 修改路由
+
+       在\iam\src\app\iam\containers\IAMIndex.js文件中配置我们新建的文件的访问路径：
+```
+...
+const DemoIndex = asyncRouter(() => import('./organization/demo/DemoIndex'));
+    ...
+    <Route path={`${match.url}/demo`} component={DemoIndex} />
+    ...
+```
+
+ - 完成后，我们就可以进行相关页面的开发了，开发完成后，访问`/iam/demo`即可查看。
+
+    相关代码如下：
+
+    index.js
+
+		```
+		import Demo from './DemoIndex';
+
+		export default Demo;
+		```
+
+     DemoIndex.js
+	```
+	import React from 'react';
+	import {
+	Route,
+	Switch,
+	} from 'react-router-dom';
+
+	import asyncRouter from '../../../../../util/asyncRouter';
+
+	const demo = asyncRouter(() => (import('./Demo')));
+
+	const DemoIndex = ({ match }) => (
+	<Switch>
+	<Route exact path={match.url} component={demo} />
+	</Switch>
+	);
+	export default DemoIndex;
+
+
+	```
+
+    Demo.js
+	```
+	import React, { Component } from 'react';
+	import { Table } from 'antd';
+	import { withRouter } from 'react-router-dom';
+
+	class Demo extends Component {
+	  componentDidMount() {
+	  }
+
+	  render() {
+		return (
+		  <div>
+			hello world
+		  </div>
+		);
+	  }
+	}
+	// withRouter添加history支持
+	export default withRouter(Demo);
+
+	```
+
+ - 访问`localhost:9090/#/iam/demo`即可查看效果
+ 
+       ![](/docs/quick-start/image/hello-world.png)
+
+ - 下面来尝试一下从更复杂的场景，从后端获取10条用户信息并用表格的形式呈现。
+
+     将上面的Demo.js的代码改为如下：
+
+ - Demo.js
+	```
+	import React, { Component } from 'react';
+	import { Table } from 'antd';
+	import axios from 'Axios';
+	import { withRouter } from 'react-router-dom';
+
+	const pretendUsers = [
+	  {
+		id: 1,
+		name: '小明',
+		description: '获取后端数据失败，此为模拟数据',
+	  },
+	  {
+		id: 2,
+		name: '小红',
+		description: '获取后端数据失败，此为模拟数据',
+	  },
+	];
+
+	class Demo extends Component {
+	  constructor(props) {
+		super(props);
+		this.state = {
+		  users: [],
+		};
+	  }
+
+	  componentDidMount() {
+		this.initUsers();
+	  }
+
+	  initUsers() {
+		this.loadUsers()
+		  .then((res) => {
+			this.setState({ users: res });
+		  })
+		  .catch((error) => {
+			this.setState({ users: pretendUsers });
+		  });
+	  }
+
+	  loadUsers() {
+		// 此处url为后端接口
+		return axios.get('http://127.0.0.1:8080/test/v1/user');
+	  }
+
+	  render() {
+		const columns = [{
+		  title: '用户编号',
+		  dataIndex: 'id',
+		  key: 'id',
+		}, {
+		  title: '用户名',
+		  dataIndex: 'name',
+		  key: 'name',
+		}, {
+		  title: '描述',
+		  dataIndex: 'description',
+		  key: 'description',
+		}];
+		return (
+		  <div style={{ margin: 20 }}>
+			<Table
+			  columns={columns}
+			  dataSource={this.state.users}
+			  pagination
+			  rowKey={record => record.id}
+			/>
+		  </div>
+		);
+	  }
+	}
+	// withRouter添加history支持
+	export default withRouter(Demo);
+
+	```
+
+ -  访问`localhost:9090/#/iam/demo`即可查看效果，至此，你已经掌握了简单的前后端搭配的开发方式了。
+ 
+     ![](/docs/quick-start/image/bg.png)
+	 
   **4. 提交代码**
 
 	# 将本地代码变动提交到暂存区

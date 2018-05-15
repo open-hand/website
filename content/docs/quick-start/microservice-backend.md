@@ -20,6 +20,24 @@ type = "docs"
 - 在操作之前保证[系统配置](../../user-guide/system-configuration)已经配置完全。特别在本章节用到的角色、环境管理等配置。
 - 完成[创建项目](../project)操作。本章节使用在前面章节创建的项目`猪齿鱼研发`。
 - <font>完成[创建环境](../project)操作。
+- 在Choerodon平台下，项目启动依赖于基础服务：
+ 1. api-gateway(网关服务)
+ 2. gateway-helper(授权校验、权限校验、请求限流)
+ 3. manager-service(管理服务，配置管理、路由管理、swagger管理)
+ 4. oauth-server(认证服务，用户的认证与授权)
+ 5. register-server(注册服务，服务发现)
+ 6. iam-service(用户服务，组织、项目、用户信息管理等)
+如果是本地开发，需要在api-gateway服务的application-default.yml配置文件配置路由信息
+
+			``` 
+			zuul:
+			  addHostHeader: true
+			  routes:
+				test:
+				  path: /test/**
+				  serviceId: test-service
+			```
+ [具体服务启动配置参考][1]
 
 <h2 id="1">创建后端应用</h2>
 
@@ -64,6 +82,1050 @@ type = "docs"
  **3.开发分支**
 
 克隆成功后，进入应用根目录，执行命令`git checkout feature-1`，切换到新建分支feature-1，在此分支进行开发。
+
+ 
+
+ 1. 拉取代码
+
+	在Choerodon平台创建项目后，进入项目创建服务，服务名为gitlab平台的项目名，Choerodon后台将会自动为你生成模板代码，代码仓库地址可以在Choerodon平台查看。
+通过git命令拉取生成的项目代码：
+
+		`git clone -b develop http://git.staging.saas.hand-china.com/devopstest-projecttest/choerodon-backend.git`
+		
+     项目使用DDD领域设计，目录结构如图所示：
+
+    ![](/docs/quick-start/image/dd.png)
+
+
+      项目代码通过IDEA打开后，如图所示：
+  
+     ![](/docs/quick-start/image/2.png)
+
+ 2.  修改配置信息
+
+      2.1 pom.xml依赖
+	```
+	<?xml version="1.0" encoding="UTF-8"?>
+	<project xmlns="http://maven.apache.org/POM/4.0.0"
+			 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+		<modelVersion>4.0.0</modelVersion>
+
+		<groupId>devopstest-projecttest</groupId>
+		<artifactId>choerodon-backend</artifactId>
+		<version>1.0-SNAPSHOT</version>
+
+		<parent>
+			<groupId>io.choerodon</groupId>
+			<artifactId>choerodon-framework-parent</artifactId>
+			<version>0.1.0</version>
+		</parent>
+
+		<dependencies>
+			<!-- swagger依赖 -->
+			<dependency>
+				<groupId>io.choerodon</groupId>
+				<artifactId>choerodon-starter-swagger</artifactId>
+				<version>0.1.0</version>
+			</dependency>
+			<!-- feign依赖 -->
+			<dependency>
+				<groupId>io.choerodon</groupId>
+				<artifactId>choerodon-starter-feign-replay</artifactId>
+				<version>0.1.0</version>
+			</dependency>
+			<!-- 数据库 -->
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+			</dependency>
+			<dependency>
+				<groupId>io.choerodon</groupId>
+				<artifactId>choerodon-starter-core</artifactId>
+				<version>0.1.0</version>
+			</dependency>
+			<dependency>
+				<groupId>io.choerodon</groupId>
+				<artifactId>choerodon-starter-hitoa</artifactId>
+				<version>0.1.0</version>
+			</dependency>
+			<!-- 通用mapper -->
+			<dependency>
+				<groupId>io.choerodon</groupId>
+				<artifactId>choerodon-starter-mybatis-mapper</artifactId>
+				<version>0.1.0</version>
+			</dependency>
+			 <!-- 资源服务jwtToken校验工具包-->
+			<dependency>
+				<groupId>io.choerodon</groupId>
+				<artifactId>choerodon-starter-oauth-resource</artifactId>
+				<version>0.1.0</version>
+			</dependency>
+			<!-- 监控 -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-actuator</artifactId>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-web</artifactId>
+				<exclusions>
+					<exclusion>
+						<groupId>org.springframework.boot</groupId>
+						<artifactId>spring-boot-starter-tomcat</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-undertow</artifactId>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-starter-eureka</artifactId>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-configuration-processor</artifactId>
+				<optional>true</optional>
+			</dependency>
+			<!-- config server -->
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-config-client</artifactId>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-aop</artifactId>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.retry</groupId>
+				<artifactId>spring-retry</artifactId>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-starter-bus-kafka</artifactId>
+				<exclusions>
+					<exclusion>
+						<groupId>org.springframework.cloud</groupId>
+						<artifactId>spring-cloud-bus</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<dependency>
+				<groupId>io.choerodon</groupId>
+				<artifactId>choerodon-starter-bus</artifactId>
+				<version>0.1.0</version>
+			</dependency>
+			<!-- test -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-test</artifactId>
+				<scope>test</scope>
+			</dependency>
+			<!--监控相关依赖 -->
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-stream-binder-kafka</artifactId>
+			</dependency>
+			<dependency><!-- 如果服务需要hystrix监控功能则需要此依赖 -->
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-netflix-hystrix-stream</artifactId>
+			</dependency>
+			<dependency><!-- 如果服务需要zipkin监控功能则需要此依赖 -->
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-sleuth-stream</artifactId>
+			</dependency>
+		</dependencies>
+
+		<build>
+			<finalName>app</finalName>
+		</build>
+
+		<repositories>
+			<repository>
+				<id>hand-snapshot-repository</id>
+				<name>Hand Snapshot Repository</name>
+				<url>http://nexus.saas.hand-china.com/content/repositories/rdcsnapshot/</url>
+				<snapshots>
+					<enabled>true</enabled>
+				</snapshots>
+			</repository>
+			<repository>
+				<id>hand-release-repository</id>
+				<name>Hand Release Repository</name>
+				<url>http://nexus.saas.hand-china.com/content/repositories/rdc/</url>
+			</repository>
+		</repositories>
+
+	</project>
+	```
+
+
+     2.2 springBoot配置文件
+
+       Choerodon平台微服务都是采用yml配置文件的方式进行系统配置，通过修改application-default.yml文件修改数据库配置、端口配置等。
+   **application-default.yml**
+```
+spring:
+      datasource:
+        url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf-8&useSSL=false
+        username: root
+        password: root
+      http:
+        encoding:
+          charset: UTF-8
+          force: true
+          enabled: true
+        multipart:
+          max-file-size: 30MB
+          max-request-size: 30MB
+    eureka:
+      client:
+        serviceUrl:
+          defaultZone: ${EUREKA_DEFAULT_ZONE:http://localhost:8000/eureka/}
+    swagger:
+      oauthUrl: http://localhost:8080/oauth/oauth/authorize
+    event:
+      consumer:
+        enabled: true
+        enable-duplicate-remove: false
+        kafka:
+          bootstrapServers: localhost:9092
+          sessionTimeoutMs: 30000
+    feign:
+      hystrix:
+        enabled: true
+    hystrix:
+      command:
+        default:
+          execution:
+            isolation:
+              thread:
+                timeoutInMilliseconds: 30000
+            timeout:
+              enabled: false
+    ribbon:
+      ConnectTimeout: 10000
+      ReadTimeout: 30000
+    serviceAccountId: 1
+```
+
+ 3. 数据库初始化脚本
+   
+    3.1 修改数据初始化脚本。
+修改数据库配置。
+**init-local-database.sh**
+```
+#!/bin/bash
+    mkdir -p target
+    if [ ! -f target/choerodon-tool-liquibase.jar ]
+    then
+        curl http://nexus.saas.hand-china.com/content/repositories/rdc/io/choerodon/choerodon-tool-liquibase/0.1.0/choerodon-tool-liquibase-0.1.0.jar -o target/choerodon-tool-liquibase.jar
+    fi
+    java -Dspring.datasource.url="jdbc:mysql://localhost/test?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
+     -Dspring.datasource.username=root \
+     -Dspring.datasource.password=root \
+     -Ddata.drop=false -Ddata.init=true \
+     -Ddata.dir=src/main/resources \
+     -jar target/choerodon-tool-liquibase.jar
+```
+
+    3.2 数据库表结构groovy脚本：
+
+       创建一个测试用户表，字段id、name、description、自维护字段（object_version_number、created_by、creation_date、last_updated_by、last_update_date）。自维护字段在项目mybatis依赖包中通过sql拦截器维护，文件命名方式：表名.groovy，存放路径如图所示
+![此处输入图片的描述][4]
+
+
+       **test_user.groovy**
+		```
+		package script.db
+
+			databaseChangeLog(logicalFilePath: 'script/db/test_user.groovy') {
+				changeSet(id: '2018-05-14-test-user', author: 'dinghuang123@gmail.com') {
+					createTable(tableName: "test_user", remarks: '测试用户表') {
+						column(name: 'id', type: 'BIGINT UNSIGNED', autoIncrement: true, remarks: '主键') {
+							constraints(primaryKey: true)
+						}
+						column(name: 'name', type: 'VARCHAR(255)', remarks: '用户名称') {
+							constraints(nullable: false)
+						}
+						column(name: 'description', type: 'VARCHAR(255)', remarks: '描述')
+						column(name: "object_version_number", type: "BIGINT UNSIGNED", defaultValue: "1")
+						column(name: "created_by", type: "BIGINT UNSIGNED", defaultValue: "0")
+						column(name: "creation_date", type: "DATETIME", defaultValueComputed: "CURRENT_TIMESTAMP")
+						column(name: "last_updated_by", type: "BIGINT UNSIGNED", defaultValue: "0")
+						column(name: "last_update_date", type: "DATETIME", defaultValueComputed: "CURRENT_TIMESTAMP")
+					}
+				}
+			}
+		```
+
+     进入项目根目录通过gitBash执行
+   
+         `$ sh init-local-database.sh`
+执行成功后，数据库表初始化完成，如图所示
+![](/docs/quick-start/image/csh.png)
+
+ 4. 示例代码
+
+      4.1 DO
+文件存放在infra文件夹下的dataobject，文件命名规范：对象名+DO.java，DO代表UserDO对象是DDD领域设计的持久层对象，该对象直接与mybatis进行持久层交互，对象继承AuditDomain，AuditDomain是自维护字段。
+` @Id
+    @GeneratedValue`
+    2个注解分别对应主键和主键自增长，代码如下:
+		```
+		package io.choerodon.test.infra.dataobject;
+
+
+		import io.choerodon.mybatis.annotation.ModifyAudit;
+		import io.choerodon.mybatis.annotation.VersionAudit;
+		import io.choerodon.mybatis.domain.AuditDomain;
+		import io.choerodon.test.infra.common.utils.StringUtil;
+
+		import javax.persistence.GeneratedValue;
+		import javax.persistence.Id;
+		import javax.persistence.Table;
+		import javax.validation.constraints.NotNull;
+
+		/**
+		 * 测试用户表
+		 *
+		 * @author dinghuang123@gmail.com
+		 * @since 2018-05-15 11:44:28
+		 */
+		@ModifyAudit
+		@VersionAudit
+		@Table(name = "test_user")
+		public class UserDO extends AuditDomain {
+
+			/***/
+			@Id
+			@GeneratedValue
+			private Long id;
+
+			/**
+			 * 用户名称
+			 */
+			@NotNull(message = "error.user.nameNotNull")
+			private String name;
+
+			/**
+			 * 描述
+			 */
+			private String description;
+
+			public Long getId() {
+				return id;
+			}
+
+			public void setId(Long id) {
+				this.id = id;
+			}
+
+			public String getName() {
+				return name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getDescription() {
+				return description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
+			}
+
+			@Override
+			public String toString() {
+				return StringUtil.getToString(this);
+			}
+
+		}
+		```
+    4.2 Entity
+    
+       文件存放在entity文件夹下，文件命名规范：对象名+E.java，E代表UserE对象是DDD领域设计的实体对象，该对象用来实现业务逻辑，DDD思想最重要的就是在没有数据库的情况下实现完整的业务逻辑，所以entity不操作持久层，在entity进行的逻辑都是内存操作。
+
+    代码如下所示：
+	
+		```
+		package io.choerodon.test.domain.test.entity;
+
+
+		import io.choerodon.test.infra.common.utils.StringUtil;
+		import org.springframework.context.annotation.Scope;
+		import org.springframework.stereotype.Component;
+
+		/**
+		 * 测试用户表
+		 *
+		 * @author dinghuang123@gmail.com
+		 * @since 2018-05-15 11:44:28
+		 */
+		@Component
+		@Scope("prototype")
+		public class UserE {
+
+			private Long id;
+
+			private String name;
+
+			private String description;
+
+			private Long objectVersionNumber;
+
+			public Long getId() {
+				return id;
+			}
+
+			public void setId(Long id) {
+				this.id = id;
+			}
+
+			public String getName() {
+				return name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getDescription() {
+				return description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
+			}
+
+			public Long getObjectVersionNumber() {
+				return objectVersionNumber;
+			}
+
+			public void setObjectVersionNumber(Long objectVersionNumber) {
+				this.objectVersionNumber = objectVersionNumber;
+			}
+
+			@Override
+			public String toString() {
+				return StringUtil.getToString(this);
+			}
+
+		}
+		```
+    4.3 Mapper
+    
+	UserMapper.java
+	
+		```
+		package io.choerodon.test.infra.mapper;
+
+		import io.choerodon.mybatis.common.BaseMapper;
+		import io.choerodon.test.infra.dataobject.*;
+		import org.springframework.stereotype.Repository;
+
+
+		/**
+		* 测试用户表
+		* 
+		* @author dinghuang123@gmail.com
+		* @since 2018-05-15 11:44:28
+		*/
+		@Repository
+		public interface UserMapper extends BaseMapper<UserDO> {
+
+		}
+		```
+		
+	UserMapper.xml
+	
+			```
+			<?xml version="1.0" encoding="UTF-8" ?>
+			<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+			<mapper namespace="io.choerodon.test.infra.mapper.UserMapper">
+
+
+				<!-- ResultMap -->
+				<resultMap id="BaseResultMap" type="io.choerodon.test.infra.dataobject.UserDO">
+					<result column="id" property="id" />
+					<result column="name" property="name" />
+					<result column="description" property="description" />
+					<result column="object_version_number" property="objectVersionNumber" />
+					<result column="created_by" property="createdBy" />
+					<result column="creation_date" property="creationDate" />
+					<result column="last_updated_by" property="lastUpdatedBy" />
+					<result column="last_update_date" property="lastUpdateDate" />
+				</resultMap>
+
+			</mapper>
+			```
+    4.4 Repository
+    
+    文件存放在repository文件夹下，文件命名规范：对象名+Repository.java，Repository代表UserE对象是DDD领域设计的仓储，引入仓储的概念，是因为部分业务逻辑有涉及到持久层，需要通过仓储来实现。这样做的好处是，以后不论持久层框架是mybatis还是hibernate，业务逻辑不变，只需要修改仓储实现类。
+	
+    UserRepository.java
+	
+		```
+		package io.choerodon.test.domain.test.repository;
+
+		import io.choerodon.test.domain.test.entity.UserE;
+
+		import java.util.List;
+
+
+		/**
+		 * 测试用户表
+		 *
+		 * @author dinghuang123@gmail.com
+		 * @since 2018-05-15 11:44:28
+		 */
+		public interface UserRepository {
+
+			/**
+			 * 更新测试用户表
+			 *
+			 * @param userE userE
+			 * @return UserE
+			 */
+			UserE update(UserE userE);
+
+			/**
+			 * 添加一个测试用户表
+			 *
+			 * @param userE userE
+			 * @return UserE
+			 */
+			UserE create(UserE userE);
+
+			/**
+			 * 根据id删除测试用户表
+			 *
+			 * @param id id
+			 * @return int
+			 */
+			int delete(Long id);
+
+			/**
+			 * 查询所有用户
+			 *
+			 * @return List<UserE>
+			 */
+			List<UserE> queryList();
+		}
+		```
+		
+		
+    UserRepositoryImpl.java
+		
+		
+		```
+		package io.choerodon.test.infra.repository.impl;
+
+		import io.choerodon.core.convertor.ConvertHelper;
+		import io.choerodon.core.exception.CommonException;
+		import io.choerodon.test.domain.test.converter.UserConverter;
+		import io.choerodon.test.domain.test.entity.UserE;
+		import io.choerodon.test.domain.test.repository.UserRepository;
+		import io.choerodon.test.infra.dataobject.UserDO;
+		import io.choerodon.test.infra.mapper.UserMapper;
+		import org.springframework.beans.factory.annotation.Autowired;
+		import org.springframework.stereotype.Component;
+		import org.springframework.transaction.annotation.Transactional;
+
+		import java.util.List;
+
+
+		/**
+		 * 测试用户表
+		 *
+		 * @author dinghuang123@gmail.com
+		 * @since 2018-05-15 11:44:29
+		 */
+		@Component
+		@Transactional(rollbackFor = CommonException.class)
+		public class UserRepositoryImpl implements UserRepository {
+
+			private static final String UPDATE_ERROR = "error.User.update";
+			private static final String INSERT_ERROR = "error.User.insert";
+			private static final String DELETE_ERROR = "error.User.delete";
+
+			@Autowired
+			private UserMapper userMapper;
+
+			@Autowired
+			private UserConverter userConverter;
+
+			@Override
+			public UserE update(UserE userE) {
+				UserDO userDO = userConverter.entityToDo(userE);
+				if (userMapper.updateByPrimaryKeySelective(userDO) != 1) {
+					throw new CommonException(UPDATE_ERROR);
+				}
+				return userConverter.doToEntity(userMapper.selectByPrimaryKey(userDO.getId()));
+			}
+
+			@Override
+			public UserE create(UserE userE) {
+				UserDO userDO = userConverter.entityToDo(userE);
+				if (userMapper.insert(userDO) != 1) {
+					throw new CommonException(INSERT_ERROR);
+				}
+				return userConverter.doToEntity(userMapper.selectByPrimaryKey(userDO.getId()));
+			}
+
+			@Override
+			public int delete(Long id) {
+				UserDO userDO = userMapper.selectByPrimaryKey(id);
+				int isDelete = userMapper.delete(userDO);
+				if (isDelete != 1) {
+					throw new CommonException(DELETE_ERROR);
+				}
+				return isDelete;
+			}
+
+			@Override
+			public List<UserE> queryList() {
+				List<UserDO> userDOlist = userMapper.selectAll();
+				return ConvertHelper.convertList(userDOlist, UserE.class);
+			}
+		}
+		```
+    4.5 domainService
+    
+    领域层接口命名规范I+对象名+sercice，代码如下
+   
+       IUserService.java
+	
+		```
+		package io.choerodon.test.domain.service;
+		import io.choerodon.test.infra.dataobject.UserDO;
+		import io.choerodon.mybatis.service.BaseService;
+
+
+		/**
+		* 测试用户表
+		* 
+		* @author dinghuang123@gmail.com
+		* @since 2018-05-15 11:44:28
+		*/
+		public interface IUserService extends BaseService<UserDO> {
+
+		}
+		```
+	
+      IUserServiceImpl.java
+	  
+		```
+		package io.choerodon.test.domain.service.impl;
+
+		import io.choerodon.mybatis.service.BaseServiceImpl;
+		import io.choerodon.test.domain.service.*;
+		import io.choerodon.core.exception.CommonException;
+		import org.springframework.stereotype.Service;
+		import org.springframework.transaction.annotation.Transactional;
+
+		import io.choerodon.test.infra.dataobject.UserDO;
+		/**
+		* 测试用户表
+		* 
+		* @author dinghuang123@gmail.com
+		* @since 2018-05-15 11:44:29
+		*/
+		@Service
+		@Transactional(rollbackFor = CommonException.class)
+		public class IUserServiceImpl extends BaseServiceImpl<UserDO> implements IUserService{
+
+		}
+		```
+    4.6 
+    DTO 
+   
+      DTO是与前端进行数据交互定义的对象，命名为：对象名+DTO.java，在DDD设计中，这样的设计确保了数据的安全性，可以根据前端需要传输的信息进行DTO的编写，一部分可以确保重要信息的泄露，另一部分可以确保不必要字段的插入更新。
+   
+     UserDTO.java
+	 
+		```
+		package io.choerodon.test.api.dto;
+
+
+
+		import java.util.Date;
+		import io.choerodon.test.infra.common.utils.StringUtil;
+
+		/**
+		* 测试用户表
+		* 
+		* @author dinghuang123@gmail.com
+		* @since 2018-05-15 11:44:28
+		*/
+		public class UserDTO {
+
+			private Long id;
+
+			private String name;
+
+			private String description;
+
+			private Long objectVersionNumber;
+
+			public Long getId() {
+				return id;
+			}
+
+			public void setId(Long id) {
+				this.id = id;
+			}
+
+			public String getName() {
+				return name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getDescription() {
+				return description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
+			}
+
+			public Long getObjectVersionNumber() {
+				return objectVersionNumber;
+			}
+
+			public void setObjectVersionNumber(Long objectVersionNumber) {
+				this.objectVersionNumber = objectVersionNumber;
+			}
+
+		 @Override
+			public String toString() {
+				return StringUtil.getToString(this);
+			}
+
+		}
+		```
+
+    4.7 Converter
+    
+    Converter是实现do、dto、entity之间的转换，本例只是简单实现，由spring进行管理。根据业务逻辑需求，若需要不同dto，dto的转换在assembler文件夹下实现entity与dto的转换。
+	
+     UserConverter.java
+
+		```
+		package io.choerodon.test.domain.test.converter;
+
+
+
+		import io.choerodon.core.convertor.ConvertorI;
+		import org.springframework.stereotype.Component;
+		import org.springframework.beans.BeanUtils;
+		import io.choerodon.test.api.dto.UserDTO;
+		import io.choerodon.test.infra.dataobject.UserDO;
+		import io.choerodon.test.domain.test.entity.UserE;
+
+		/**
+		* 测试用户表
+		* 
+		* @author dinghuang123@gmail.com
+		* @since 2018-05-15 11:44:28
+		*/
+		@Component
+		public class UserConverter implements ConvertorI<UserE,UserDO, UserDTO> {
+
+			@Override
+			public UserE dtoToEntity(UserDTO userDTO) {
+				UserE userE = new UserE();
+				BeanUtils.copyProperties(userDTO, userE);
+				return userE;
+			}
+
+			@Override
+			public UserE doToEntity(UserDO userDO) {
+				UserE userE = new UserE();
+				BeanUtils.copyProperties(userDO, userE);
+				return userE;
+			}
+
+			@Override
+			public UserDTO entityToDto(UserE userE) {
+				UserDTO userDTO = new UserDTO();
+				BeanUtils.copyProperties(userE, userDTO);
+				return userDTO;
+			}
+
+			@Override
+			public UserDO entityToDo(UserE userE) {
+				UserDO userDO = new UserDO();
+				BeanUtils.copyProperties(userE, userDO);
+				return userDO;
+			}
+
+			@Override
+			public UserDTO doToDto(UserDO userDO) {
+				UserDTO userDTO = new UserDTO();
+				BeanUtils.copyProperties(userDO, userDTO);
+				return userDTO;
+			}
+
+			@Override
+			public UserDO dtoToDo(UserDTO userDTO) {
+				UserDO userDO = new UserDO();
+				BeanUtils.copyProperties(userDTO, userDO);
+				return userDO;
+			}
+		}
+		```
+4.8 APP
+
+     app层是对domain方法调用的封装，controller调用app中的service
+  
+       UserService.java
+
+		```
+		package io.choerodon.test.app.service;
+
+
+		import io.choerodon.test.api.dto.UserDTO;
+
+		import java.util.List;
+
+		/**
+		 * 测试用户表
+		 *
+		 * @author dinghuang123@gmail.com
+		 * @since 2018-05-15 11:44:28
+		 */
+		public interface UserService {
+
+			/**
+			 * 查询所有用户
+			 *
+			 * @return UserDTO
+			 */
+			List<UserDTO> queryUserList();
+
+		}
+		```
+
+     UserServiceImpl.java
+
+		```
+		package io.choerodon.test.app.service.impl;
+
+
+		import io.choerodon.core.convertor.ConvertHelper;
+		import io.choerodon.test.api.dto.UserDTO;
+		import io.choerodon.test.app.service.UserService;
+		import io.choerodon.test.domain.test.repository.UserRepository;
+		import org.springframework.beans.factory.annotation.Autowired;
+		import org.springframework.stereotype.Service;
+
+		import java.util.List;
+
+		/**
+		 * 测试用户表
+		 *
+		 * @author dinghuang123@gmail.com
+		 * @since 2018-05-15 11:44:28
+		 */
+		@Service
+		public class UserServiceImpl implements UserService {
+
+			@Autowired
+			private UserRepository userRepository;
+
+			@Override
+			public List<UserDTO> queryUserList() {
+				return ConvertHelper.convertList(userRepository.queryList(), UserDTO.class);
+			}
+		}
+		```
+
+    4.9 controller
+
+      控制层结合了swagger进行RESTful的API规范进行设计，示例简单展示了通过GET请求获取所有用户信息。
+
+    UserController.java
+	
+		```
+		package io.choerodon.test.api.controller.v1;
+
+		import io.choerodon.core.exception.CommonException;
+		import io.choerodon.test.api.dto.UserDTO;
+		import io.choerodon.test.app.service.UserService;
+		import io.swagger.annotations.ApiOperation;
+		import org.springframework.beans.factory.annotation.Autowired;
+		import org.springframework.http.HttpStatus;
+		import org.springframework.http.ResponseEntity;
+		import org.springframework.web.bind.annotation.*;
+
+		import java.util.List;
+		import java.util.Optional;
+
+		/**
+		 * 测试用户表
+		 *
+		 * @author dinghuang123@gmail.com
+		 * @since 2018-05-15 11:44:28
+		 */
+		@RestController
+		@RequestMapping(value = "/v1/user")
+		public class UserController {
+
+			@Autowired
+			private UserService userService;
+
+			@ApiOperation("查询所有用户")
+			@GetMapping
+			public ResponseEntity<List<UserDTO>> queryUserList() {
+				return Optional.ofNullable(userService.queryUserList())
+						.map(result -> new ResponseEntity<>(result, HttpStatus.CREATED))
+						.orElseThrow(() -> new CommonException("error.queryUserList.get"));
+			}
+		}
+		```
+    4.10 ExtraDataManager
+
+       编写该文件，可以节省在manager服务的数据库操作，如果是线上环境，可以省去在api-gateway服务的路由配置
+
+       CustomExtraDataManager.java
+	   
+		```
+		package io.choerodon.test.infra.common;
+
+		import io.choerodon.core.swagger.ChoerodonRouteData;
+		import io.choerodon.swagger.annotation.ChoerodonExtraData;
+		import io.choerodon.swagger.custom.extra.ExtraData;
+		import io.choerodon.swagger.custom.extra.ExtraDataManager;
+
+		/**
+		 * @author dinghuang123@gmail.com
+		 */
+		@ChoerodonExtraData
+		public class CustomExtraDataManager implements ExtraDataManager {
+			@Override
+			public ExtraData getData() {
+				ChoerodonRouteData choerodonRouteData = new ChoerodonRouteData();
+				choerodonRouteData.setName("test");
+				choerodonRouteData.setPath("/test/**");
+				choerodonRouteData.setServiceId("test-service");
+				extraData.put(ExtraData.ZUUL_ROUTE_DATA, choerodonRouteData);
+				return extraData;
+			}
+		}
+		```
+    4.11 application
+    
+       TestServiceApplication.java
+	   
+
+		```
+		package io.choerodon.test;
+
+		import io.choerodon.resource.annoation.EnableChoerodonResourceServer;
+		import org.springframework.boot.SpringApplication;
+		import org.springframework.boot.autoconfigure.SpringBootApplication;
+		import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+		import org.springframework.cloud.netflix.feign.EnableFeignClients;
+		import org.springframework.scheduling.annotation.EnableAsync;
+
+		/**
+		 1. 测试服务入口类
+		 2.  3. @author dinghuang123@gmail.com
+		 */
+		@EnableFeignClients("io.choerodon")
+		@EnableChoerodonResourceServer
+		@EnableAsync
+		@EnableEurekaClient
+		@SpringBootApplication
+		public class TestServiceApplication {
+			public static void main(String[] args) {
+				SpringApplication.run(TestServiceApplication.class);
+			}
+		}
+	  ```
+ 5.  测试结果
+
+      通过Junit进行单元测试
+
+      UserTest.java
+
+		```
+		package io.choerodon.test.test;
+
+		import io.choerodon.test.api.dto.UserDTO;
+		import io.choerodon.test.app.service.UserService;
+		import org.junit.Test;
+		import org.junit.runner.RunWith;
+		import org.slf4j.Logger;
+		import org.slf4j.LoggerFactory;
+		import org.springframework.beans.factory.annotation.Autowired;
+		import org.springframework.boot.test.context.SpringBootTest;
+		import org.springframework.test.context.junit4.SpringRunner;
+
+		import java.util.List;
+
+
+		/**
+		 * @author dinghuang123@gmail.com
+		 */
+		@RunWith(SpringRunner.class)
+		@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+		public class UserTest {
+
+			@Autowired
+			private UserService userService;
+
+			private static Logger logger = LoggerFactory.getLogger(UserTest.class);
+
+			@Test
+			public void test() {
+				List<UserDTO> userDTOList = userService.queryUserList();
+				userDTOList.forEach(userDTO -> logger.info(userDTO.toString()));
+			}
+
+		}
+		```
+6. 数据库数据如图所示
+
+    ![](/docs/quick-start/image/sjk.png)
+
+
+     测试结果如图所示
+
+     ![](/docs/quick-start/image/csjg.png)
+
+     swagger调用api
+
+     本地服务启动如图所示：
+
+     ![](/docs/quick-start/image/swagg.png)
+
+      访问swagger地址：http://localhost:8080/manager/swagger-ui.html
+
+     如图所示：
+
+      ![](/docs/quick-start/image/api.png)
+
+至此，后端服务一个简单的API完成。
+
+  [1]: http://c7n.saas.hand-china.com/docs/developer_guide/backend/intergration/run/
+  [2]: https://note.youdao.com/yws/public/resource/6f25b338f4d01d40402bed1537b9e726/xmlnote/E8C14A9908914181BD3DFFFC1EBA2E9C/2380
+  [3]: https://note.youdao.com/yws/public/resource/6f25b338f4d01d40402bed1537b9e726/xmlnote/D74FA74981B54FDA8320CDAFC1B7C7CB/2383
+  [4]: https://note.youdao.com/yws/public/resource/6f25b338f4d01d40402bed1537b9e726/xmlnote/FE4FD4792EC14F53B417682B0B9F8471/2385
+  [5]: https://note.youdao.com/yws/public/resource/6f25b338f4d01d40402bed1537b9e726/xmlnote/1B0438FE1B914661B4B9B03781AAED56/2387
+  [6]: https://note.youdao.com/yws/public/resource/6f25b338f4d01d40402bed1537b9e726/xmlnote/EB3ECE5493C447EA80F70116DF7604E5/2389
+  [7]: https://note.youdao.com/yws/public/resource/6f25b338f4d01d40402bed1537b9e726/xmlnote/E76418FEEC3D438D81D4C3F5F807515A/2391
+  [8]: https://note.youdao.com/yws/public/resource/6f25b338f4d01d40402bed1537b9e726/xmlnote/8D4D32435AB54E9CABE216878A729EBA/2393
+  [9]: https://note.youdao.com/yws/public/resource/6f25b338f4d01d40402bed1537b9e726/xmlnote/7D125D1259634265BCF7F9B276F9F29F/2395
+
 
  **4. 提交代码**
   
