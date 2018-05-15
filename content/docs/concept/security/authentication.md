@@ -10,9 +10,9 @@ weight = 2
 
 主要负责如下功能：
 
-- <font>提供给网关一个统一的认证入口。</font>
-- <font>提供微服务通信的统一的用户 session 保证。</font>
-- <font>提供 token 管理系统，用来生成 token ，存储 token ， 撤销 token 。</font>
+- 提供给网关一个统一的认证入口。
+- 提供微服务通信的统一的用户 session 保证。
+- 提供 token 管理系统，用来生成 token ，存储 token ， 撤销 token 。
 
 ## 架构
 
