@@ -109,22 +109,19 @@ Java库创建完成之后，开发Java库。具体的操作步骤如下：
 
  - 生成的JAR包的信息如下：
  
-　　　　groupld：choerodon-jar
-　
+　　　　groupId: 组织编码-应用编码(choerodon-choerodon-dev)
+
+　　　　artifactId: 应用编码(choerodon-jar)
  
-　　　　artifactId：应用编码 
- 
-　　　　 version： 1.0-SNAPSHOT(以pom文件内的版本为准)
+　　　　version: 1.0-SNAPSHOT(以pom文件内的版本为准)
  
   **8. pom依赖引用**
 
-	  ```
 	<dependency>
 		<groupId>choerodon-choerodon-dev</groupId>
 		<artifactId>choerodon-jar</artifactId>
 		<version>1.0-SNAPSHOT</version>
 	</dependency>
-	```
   
 <h2 id="5">产品迭代</h2>
 
