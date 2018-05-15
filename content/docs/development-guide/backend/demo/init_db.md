@@ -100,7 +100,7 @@ databaseChangeLog(logicalFilePath: 'todo_task.groovy') {
             column(name: 'task_number', type: 'VARCHAR(64)', remarks: '任务编号') {
                 constraints(unique: true)
             }
-            column(name: 'task_description', type: 'VARCHAR(256)', remarks: '任务编号')
+            column(name: 'task_description', type: 'VARCHAR(256)', remarks: '任务描述')
 
             column(name: "OBJECT_VERSION_NUMBER", type: "BIGINT", defaultValue : "1")
             column(name: "CREATED_BY", type: "BIGINT", defaultValue : "-1")

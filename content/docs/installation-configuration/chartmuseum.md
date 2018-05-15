@@ -67,4 +67,4 @@ weight = 20
     ingress.enabled|是否启用ingress
     ingress.host|域名
     env.open.DISABLE_API|是否禁用API
-    env.open.DEPTH|大于0则表示开启多租户，数值代表层级
+    env.open.DEPTH|大于0则表示开启多租户，数值代表层级
