@@ -35,6 +35,10 @@ weight = 3
 
 <h2 id="3">创建角色</h2>
 
+1.点击`创建角色`→![创建角色](/docs/user-guide/system-configuration/platform/image/创建角色.png)创建一个角色；
+
+2.输入`角色名称`、`角色层级`、`角色编码`、`角色标签`以及`角色权限`；
+
 必填字段：
 
 - 角色名称：角色的名称应该根据角色权限集合特征定义。
@@ -46,8 +50,13 @@ weight = 3
 
 - 角色标签：用于控制平台外部角色的权限。例如，在角色标签gitlab-master与Gitlab系统中的Master角色相关联，若角色A有角色标签gitlab-master,角色B有角色标签gitlab-master，则Gitlab系统中的Master角色就有角色A和B的所有权限。
 
+3.点击`创建`完成角色的创建。
+
 <h2 id="4">根据所选角色创建角色</h2>
 
+1.点击列表中的`图标`→ ![详情按钮](/docs/user-guide/system-configuration/platform/image/详情按钮.png)，选中`基于该角色创建`；
+
+2.输入`角色名称`、`角色层级`、`角色编码`、`角色标签`以及`角色权限`；
 <blockquote class="note">
           可以选择多个角色，基于这些选择的角色创建一个新的角色。但是多选时，选择的角色只能为同一层级，不能为不同的层级。
       </blockquote>
@@ -66,9 +75,17 @@ weight = 3
 
 - 角色标签：用于控制平台外部角色的权限。例如，在角色标签gitlab-master与Gitlab系统中的Master角色相关联，若角色A有角色标签gitlab-master,角色B有角色标签gitlab-master，则Gitlab系统中的Master角色就有角色A和B的所有权限。
 
+3.点击`创建`完成角色的创建。
+
 <h2 id="5">编辑角色</h2>
 
-预定义角色不可编辑，只能编辑用户自定义的角色。
+1.点击列表中的`图标`→ ![详情按钮](/docs/user-guide/system-configuration/platform/image/详情按钮.png)，选中`修改`；
+
+2.输入`角色名称`、`角色层级`、`角色编码`、`角色标签`以及`角色权限`；
+
+<blockquote class="note">
+        预定义角色不可编辑，只能编辑用户自定义的角色。
+      </blockquote>  
 
 不可编辑字段：
 
@@ -81,7 +98,11 @@ weight = 3
 - 角色标签：用于控制平台外部角色的权限。例如，在角色标签gitlab-master与Gitlab系统中的Master角色相关联，若角色A有角色标签gitlab-master,角色B有角色标签gitlab-master，则Gitlab系统中的Master角色就有角色A和B的所有权限。
 - 角色权限：可以增加或删除角色的权限。
 
+3.点击`保存`完成角色的创建。
+
 <h2 id="6">启用/停用角色</h2>
+点击列表中的`图标`→ ![详情按钮](/docs/user-guide/system-configuration/platform/image/详情按钮.png)，选中`停用`；
+
 <blockquote class="note">
           预定义角色不可停用，只能启用/停用用户自定义角色。
       </blockquote>

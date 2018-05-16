@@ -26,6 +26,10 @@ weight = 4
 
 <h2 id="3">创建客户端</h2>
 
+1.点击`创建`→![创建](/docs/user-guide/system-configuration/tenant/image/创建.png)创建客户端；
+
+2.输入`客户端名称`、`密钥`和`授权类型`；
+
 必填字段:
 
 - **客户端编码**:客户端编码具有唯一性,是客户端的标识。
@@ -44,7 +48,13 @@ weight = 4
 - 重定向地址：用户的登陆后从登陆界面跳转的地址。
 - 附加信息：用json格式添加客户端的附加信息。如{ "description": "string"，"name": "string"}。
 
+3.点击`确定`完成客户端的创建。
+
 <h2 id="4">修改客户端</h2>
+
+1.点击`修改`→![修改](/docs/user-guide/system-configuration/tenant/image/修改.png)，对客户端进行修改；
+
+2.输入`客户端ID`、`客户端名称`、`密钥`和`授权类型`；
 
 不可修改字段：
 
@@ -59,7 +69,9 @@ weight = 4
 - 重定向地址：用户的登陆后从登陆界面跳转的地址。
 - 附加信息：用json格式添加客户端的附加信息。如{ "description": "string"，"name": "string"}。
 
+3.点击`确定`完成客户端的修改。
+
 <h2 id="5">删除客户端</h2>
 
-点击删除图标，即可删除客户端。
+点击`删除图标`→ ![删除按钮](/docs/user-guide/system-configuration/tenant/image/删除按钮.png)，即可删除客户端。
 
