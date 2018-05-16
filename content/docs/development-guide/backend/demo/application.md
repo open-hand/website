@@ -5,7 +5,16 @@ draft = false
 weight = 4
 +++
 
-# 编写Application类
+# 前置条件
+
+在开发之前，请确保
+
+* 本地项目已经创建成功，详见 [新建项目](../create_project/)
+* 数据库创建成功，详见 [初始化数据库](../init_db/)
+
+## 介绍
+
+Choerodon 的微服务基于spring boot，所以需要有一个Application类作为入口程序。
 
 ## 编写TodoServiceApplication类
 ```java

@@ -5,8 +5,16 @@ draft = false
 weight = 5
 +++
 
-# infra层编写
-- 此demo需涉及到infra层的 dataobject 类以及 mapper 类。
+# 前置条件
+
+在开发之前，请确保
+
+* 本地项目已经创建成功，详见 [新建项目](../create_project/)
+* 数据库创建成功，详见 [初始化数据库](../init_db/)
+
+## 介绍
+
+此demo需涉及到infra层的 dataobject 类以及 mapper 类。
 
 ## 编写dataobject类
 - DO 类不需要提供任何实现，所以属于供应方的服务接口层。创建在 项目模块 的 xxx.infra.dataobject 包下。
