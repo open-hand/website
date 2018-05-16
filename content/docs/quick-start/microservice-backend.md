@@ -29,15 +29,15 @@ type = "docs"
  6. iam-service(用户服务，组织、项目、用户信息管理等)
 如果是本地开发，需要在api-gateway服务的application-default.yml配置文件配置路由信息
 
-			``` 
+
 			zuul:
 			  addHostHeader: true
 			  routes:
 				test:
 				  path: /test/**
 				  serviceId: test-service
-			```
- [具体服务启动配置参考][1]
+			
+           [具体服务启动配置参考][1]
 
 <h2 id="1">创建后端应用</h2>
 
@@ -101,11 +101,11 @@ type = "docs"
  - pom.xml依赖
       
 
-	<?xml version="1.0" encoding="UTF-8"?>
-	<project xmlns="http://maven.apache.org/POM/4.0.0"
-			 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-			 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-		<modelVersion>4.0.0</modelVersion>
+		<?xml version="1.0" encoding="UTF-8"?>
+		<project xmlns="http://maven.apache.org/POM/4.0.0"
+				 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+			<modelVersion>4.0.0</modelVersion>
 
 		<groupId>devopstest-projecttest</groupId>
 		<artifactId>choerodon-backend</artifactId>
@@ -260,51 +260,53 @@ type = "docs"
  - springBoot配置文件
 
        Choerodon平台微服务都是采用yml配置文件的方式进行系统配置，通过修改application-default.yml文件修改数据库配置、端口配置等。
-   **application-default.yml**
-```
-spring:
-      datasource:
-        url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf-8&useSSL=false
-        username: root
-        password: root
-      http:
-        encoding:
-          charset: UTF-8
-          force: true
-          enabled: true
-        multipart:
-          max-file-size: 30MB
-          max-request-size: 30MB
-    eureka:
-      client:
-        serviceUrl:
-          defaultZone: ${EUREKA_DEFAULT_ZONE:http://localhost:8000/eureka/}
-    swagger:
-      oauthUrl: http://localhost:8080/oauth/oauth/authorize
-    event:
-      consumer:
-        enabled: true
-        enable-duplicate-remove: false
-        kafka:
-          bootstrapServers: localhost:9092
-          sessionTimeoutMs: 30000
-    feign:
-      hystrix:
-        enabled: true
-    hystrix:
-      command:
-        default:
-          execution:
-            isolation:
-              thread:
-                timeoutInMilliseconds: 30000
-            timeout:
-              enabled: false
-    ribbon:
-      ConnectTimeout: 10000
-      ReadTimeout: 30000
-    serviceAccountId: 1
-```
+	   
+      application-default.yml
+
+	```
+	spring:
+		  datasource:
+			url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf-8&useSSL=false
+			username: root
+			password: root
+		  http:
+			encoding:
+			  charset: UTF-8
+			  force: true
+			  enabled: true
+			multipart:
+			  max-file-size: 30MB
+			  max-request-size: 30MB
+		eureka:
+		  client:
+			serviceUrl:
+			  defaultZone: ${EUREKA_DEFAULT_ZONE:http://localhost:8000/eureka/}
+		swagger:
+		  oauthUrl: http://localhost:8080/oauth/oauth/authorize
+		event:
+		  consumer:
+			enabled: true
+			enable-duplicate-remove: false
+			kafka:
+			  bootstrapServers: localhost:9092
+			  sessionTimeoutMs: 30000
+		feign:
+		  hystrix:
+			enabled: true
+		hystrix:
+		  command:
+			default:
+			  execution:
+				isolation:
+				  thread:
+					timeoutInMilliseconds: 30000
+				timeout:
+				  enabled: false
+		ribbon:
+		  ConnectTimeout: 10000
+		  ReadTimeout: 30000
+		serviceAccountId: 1
+	```
 
  **4. 数据库初始化脚本**
 
@@ -331,7 +333,8 @@ spring:
 
        创建一个测试用户表，字段id、name、description、自维护字段（object_version_number、created_by、creation_date、last_updated_by、last_update_date）。自维护字段在项目mybatis依赖包中通过sql拦截器维护，文件命名方式：表名.groovy，存放路径如图所示
 	   
-      ![](/docs/quick-start/image/2.png)
+     
+	 ![](/docs/quick-start/image/2.png)
 
 
        **test_user.groovy**
@@ -362,7 +365,8 @@ spring:
    
          $ sh init-local-database.sh
 执行成功后，数据库表初始化完成，如图所示
-![](/docs/quick-start/image/csh.png)
+
+     ![](/docs/quick-start/image/csh.png)
 
  **5. 示例代码**
 
