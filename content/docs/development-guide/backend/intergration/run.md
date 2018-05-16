@@ -7,13 +7,18 @@ weight = 3
 
 ## 前置条件
 
-- 开发环境配置：[开发环境安装](../../develop-env/)
-- 数据环境准备：[基础环境准备](../init/)
-- 启动 `mysql`，`redis`，`kafka`等容器
+* 开发环境配置：[开发环境安装](../../develop-env/)
+* 数据环境准备：[基础环境准备](../init/)
+* Demo程序已经开发完毕，详见 [开发Demo程序](../../demo/)
+* 启动 `mysql`，`redis`，`kafka`等容器
+
+## 介绍
+
+本小节介绍如何在本地使用docker compose运行choerodon 微服务开发框架，并启动demo程序
 
 ## 启动相关服务
 
-- 要使功能完整可用，在本地至少启动如下模块
+* 要使功能完整可用，在本地至少启动如下模块
 ```yaml
 register
 api-gateway
@@ -21,9 +26,9 @@ gateway-helper
 oauth
 ```
 
-- 编写docker-compose.yaml 文件
-- 打开git bash 执行docker-compose up -d
-- 执行docker ps 或docker-compose ps 查看容器是否启动
+* 编写docker-compose.yaml 文件
+* 打开git bash 执行docker-compose up -d
+* 执行docker ps 或docker-compose ps 查看容器是否启动
 
 这里提供一份`docker-compose.yaml`以供参考，具体根据本地配置进行修改
 

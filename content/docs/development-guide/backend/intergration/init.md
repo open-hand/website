@@ -5,11 +5,13 @@ draft = false
 weight = 2
 +++
 
-# 数据初始化
-
 ## 启动容器
 
 首先确保 `mysql` 容器已经启动，详见 [开发环境搭建](../../develop-env/)
+
+## 介绍
+
+本小节介绍了如何初始化Choerodon 的数据库
 
 ## 创建Mysql数据库
 
