@@ -4,21 +4,27 @@ date = "2018-04-27T15:58:28+08:00"
 draft = false
 weight = 4
 +++
-# 集成与测试
+
 ## 前提
-- 启动`eureka-serve`等服务
+
+在开发之前，请确保
+
+* Demo程序已经开发完毕，详见 [开发Demo程序](../../demo/)
+* 数据库创建成功，详见 [初始化数据库](../init/)
+* Choerodon 的其他服务已经启动，详见[模块运行](../intergration_swagger/)
 
 ## Eureka服务发现
+
 ##### 如需添加Eureka服务发现，需在CHOERODON-TODO-SERVICE中进行两步修改：
 
-- 在`TodoServiceApplication` 上添加`@EnableEurekaClient` 注解
-- 在`TodoServiceApplication` 上添加`@ChoerodonRoute`注解
+* 在`TodoServiceApplication` 上添加`@EnableEurekaClient` 注解
+* 在`TodoServiceApplication` 上添加`@ChoerodonRoute`注解
 
 ```java
  @EnableEurekaClient
  @ChoerodonRoute(name = "dev", path = "/todo/**", serviceId = "choerodon-todo-service")
 ```
-- 在`bootstrap.yml`中添加关于Eureka的配置
+* 在`bootstrap.yml`中添加关于Eureka的配置
 
 ```yaml
 eureka:
@@ -33,14 +39,14 @@ eureka:
 ##### 重启Todo服务
 ##### 如果上述步骤执行无误，可在本地的 `http://localhost:8000/` 查看注册成功的服务:
 
--  OAUTH-SERVER
--  API-GATEWAY-TEST
--  CHOERODON-TODO-SERVICE
--  REGISTER-SERVER
--  GATEWAY-HELPER
+*  OAUTH-SERVER
+*  API-GATEWAY-TEST
+*  CHOERODON-TODO-SERVICE
+*  REGISTER-SERVER
+*  GATEWAY-HELPER
 
 ## swagger Api服务
-- 使用swagger测试需启动manager-service模块，在docker-compose.yaml中加入此容器并重启所有模块
+* 使用swagger测试需启动manager-service模块，在docker-compose.yaml中加入此容器并重启所有模块
 
 ```yaml
 manager-service:
@@ -56,8 +62,8 @@ manager-service:
 
 ![](/docs/development-guide/backend/intergration/images/swaggerTest1.png)
 
-- 打开任意一个api，点击右边红色的叹号对调用该api进行授权（勾选default scope）
-- 在弹出界面输入用户名密码，本地默认为admin/admin
-- 在这里便可以对controller中声明的api进行测试，这一步需启动gateway-helper
+* 打开任意一个api，点击右边红色的叹号对调用该api进行授权（勾选default scope）
+* 在弹出界面输入用户名密码，本地默认为admin/admin
+* 在这里便可以对controller中声明的api进行测试，这一步需启动gateway-helper
 
 ![](/docs/development-guide/backend/intergration/images/swaggerTest4.png)

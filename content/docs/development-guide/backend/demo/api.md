@@ -5,8 +5,16 @@ draft = false
 weight = 8
 +++
 
-# api层编写
-- 此demo需涉及api层的 dto 以及 controller 。
+# 前置条件
+
+在开发之前，请确保
+
+* 本地项目已经创建成功，详见 [新建项目](../create_project/)
+* 数据库创建成功，详见 [初始化数据库](../init_db/)
+
+## 介绍
+
+此demo需涉及api层的 dto 以及 controller 。
 
 ## 编写DTO
 - DTO 类用来封装用户请求的数据信息，这里指的用户可以是另一个计算机系统，不一定是使用用户界面的人。

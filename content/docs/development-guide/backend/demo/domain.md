@@ -5,8 +5,16 @@ draft = false
 weight = 6
 +++
 
-# domain层编写
-- 此demo需涉及到demain层的entity、convertor、多entity的service、repository接口类以及infra层的repository实现类
+# 前置条件
+
+在开发之前，请确保
+
+* 本地项目已经创建成功，详见 [新建项目](../create_project/)
+* 数据库创建成功，详见 [初始化数据库](../init_db/)
+
+## 介绍
+
+此demo需涉及到demain层的entity、convertor、多entity的service、repository接口类以及infra层的repository实现类
 
 ## 编写entity
 

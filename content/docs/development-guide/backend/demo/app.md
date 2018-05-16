@@ -5,8 +5,16 @@ draft = false
 weight = 7
 +++
 
-# App层编写
-- 此demo需涉及到app层的service接口类与其实现类（根据需要补充api层的dto类 以及 domain 层的 convertor 类）
+# 前置条件
+
+在开发之前，请确保
+
+* 本地项目已经创建成功，详见 [新建项目](../create_project/)
+* 数据库创建成功，详见 [初始化数据库](../init_db/)
+
+## 介绍
+
+此demo需涉及到app层的service接口类与其实现类（根据需要补充api层的dto类 以及 domain 层的 convertor 类）
 
 ## Service 接口类
 
