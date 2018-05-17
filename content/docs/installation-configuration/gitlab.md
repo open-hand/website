@@ -36,44 +36,46 @@ weight =50
       --set "accessModes[0]=ReadWriteOnce" \
       --name gitlab-pv --namespace=io-choerodon
     ```
+- 创建数据库
+
+    ```sql
+    CREATE USER 'gitlab'@'%' IDENTIFIED BY "password";
+    CREATE DATABASE gitlabhq_production DEFAULT CHARACTER SET utf8;
+    GRANT ALL PRIVILEGES ON gitlabhq_production.* TO choerodon@'%';
+    FLUSH PRIVILEGES;
+    ```
 
 - 部署gitlab
 
     ```bash
     helm install paas/gitlab \
-      --set persistence.enabled=true \
-      --set persistence.existingClaim=gitlab-pvc \
-      --set env.config.GITLAB_EXTERNAL_URL=http://gitlab.example.hand-china.com \
-      --set env.config.GITLAB_TIMEZONE=Asia/Shanghai \
-      --set env.config.GITLAB_DEFAULT_CAN_CREATE_GROUP=true \
-      --set env.config.CHOERODON_OMNIAUTH_ENABLED=true \
-      --set env.config.OMNIAUTH_BLOCK_AUTO_CREATED_USERS=false \
-      --set env.config.CHOERODON_API_URL=http://choerodon.example.saas.hand-china.com \
-      --set env.config.CHOERODON_CLIENT_ID=gitlab \
-      --set env.config.MYSQL_HOST=mysql \
-      --set env.config.MYSQL_PORT=3306 \
-      --set env.config.MYSQL_USERNAME=root \
-      --set env.config.MYSQL_PASSWORD=password \
-      --set env.config.REDIS_HOST=redis \
-      --set env.config.REDIS_PORT=6379 \
-      --set env.config.SMTP_ENABLE=true \
-      --set env.config.SMTP_ADDRESS=smtp.mxhichina.com \
-      --set env.config.SMTP_PORT=465 \
-      --set env.config.SMTP_USER_NAME=git.sys@example.com \
-      --set env.config.SMTP_PASSWORD=password \
-      --set env.config.SMTP_DOMAIN=smtp.mxhichina.com \
-      --set env.config.SMTP_AUTHENTICATION=login \
-      --set env.config.GITLAB_EMAIL_FROM=git.sys@example.com \
-      --set env.config.SMTP_ENABLE_STARTTLS_AUTO=true \
-      --set env.config.SMTP_TLS=true \
-      --set env.config.PROMETHEUS_ENABLE=false \
-      --set env.config.NODE_EXPORTER_ENABLE=false \
-      --set env.config.GITLAB_SECRETS_OTP_KEY_BASE=long-and-random-alphanumeric-string \
-      --set env.config.GITLAB_SECRETS_DB_KEY_BASE=long-and-random-alphanumeric-string \
-      --set env.config.GITLAB_SECRETS_SECRET_KEY_BASE=long-and-random-alphanumeric-string \
-      --set ingress.enabled=true \
-      --set ingress.hosts[0]=gitlab.example.hand-china.com \
-      --name=gitlab --namespace=io-choerodon 
+        --set persistence.enabled=true \
+        --set persistence.existingClaim=gitlab-pvc \
+        --set env.config.GITLAB_EXTERNAL_URL=http://gitlab.example.hand-china.com \
+        --set env.config.GITLAB_TIMEZONE=Asia/Shanghai \
+        --set env.config.GITLAB_DEFAULT_CAN_CREATE_GROUP=true \
+        --set env.config.MYSQL_HOST=mysql \
+        --set env.config.MYSQL_PORT=3306 \
+        --set env.config.MYSQL_USERNAME=gitlab \
+        --set env.config.MYSQL_PASSWORD=password \
+        --set env.config.MYSQL_DATABASE=gitlabhq_production \
+        --set env.config.REDIS_HOST=redis \
+        --set env.config.REDIS_PORT=6379 \
+        --set env.config.SMTP_ENABLE=true \
+        --set env.config.SMTP_ADDRESS=smtp.mxhichina.com \
+        --set env.config.SMTP_PORT=465 \
+        --set env.config.SMTP_USER_NAME=git.sys@example.com \
+        --set env.config.SMTP_PASSWORD=password \
+        --set env.config.SMTP_DOMAIN=smtp.mxhichina.com \
+        --set env.config.SMTP_AUTHENTICATION=login \
+        --set env.config.GITLAB_EMAIL_FROM=git.sys@example.com \
+        --set env.config.SMTP_ENABLE_STARTTLS_AUTO=true \
+        --set env.config.SMTP_TLS=true \
+        --set env.config.PROMETHEUS_ENABLE=false \
+        --set env.config.NODE_EXPORTER_ENABLE=false \
+        --set ingress.enabled=true \
+        --set ingress.hosts[0]=gitlab.example.hand-china.com \
+        --name=gitlab --namespace=io-choerodon 
     ```
 
 - 参数
@@ -107,12 +109,48 @@ weight =50
     env.config.SMTP_TLS|是否启用TLS 
     env.config.PROMETHEUS_ENABLE|是否开启prometheus
     env.config.NODE_EXPORTER_ENABLE|是否开启node_exporter_enable
-    env.config.GITLAB_SECRETS_OTP_KEY_BASE|gitlab ci secret相关秘钥
-    env.config.GITLAB_SECRETS_DB_KEY_BASE|gitlab ci secret相关秘钥
-    env.config.GITLAB_SECRETS_SECRET_KEY_BASE|gitlab ci secret相关秘钥
     ingress.enabled|是否开启ingress 
     ingress.hosts[0]|gitlab的域名
 
+
+## 使用Choerodon进行认证登陆
+
+- 执行以下语句更新Gitlab部署
+
+    ```bash
+    helm upgrade gitlab paas/gitlab \
+        --set persistence.enabled=true \
+        --set persistence.existingClaim=gitlab-pvc \
+        --set env.config.GITLAB_EXTERNAL_URL=http://gitlab.example.hand-china.com \
+        --set env.config.GITLAB_TIMEZONE=Asia/Shanghai \
+        --set env.config.GITLAB_DEFAULT_CAN_CREATE_GROUP=true \
+        --set env.config.CHOERODON_OMNIAUTH_ENABLED=true \
+        --set env.config.OMNIAUTH_AUTO_SIGN_IN_WITH_PROVIDER=oauth2_generic \
+        --set env.config.OMNIAUTH_BLOCK_AUTO_CREATED_USERS=false \
+        --set env.config.CHOERODON_API_URL=http://choerodon.example.saas.hand-china.com \
+        --set env.config.CHOERODON_CLIENT_ID=gitlab \
+        --set env.config.MYSQL_HOST=mysql \
+        --set env.config.MYSQL_PORT=3306 \
+        --set env.config.MYSQL_USERNAME=gitlab \
+        --set env.config.MYSQL_PASSWORD=password \
+        --set env.config.MYSQL_DATABASE=gitlabhq_production \
+        --set env.config.REDIS_HOST=redis \
+        --set env.config.REDIS_PORT=6379 \
+        --set env.config.SMTP_ENABLE=true \
+        --set env.config.SMTP_ADDRESS=smtp.mxhichina.com \
+        --set env.config.SMTP_PORT=465 \
+        --set env.config.SMTP_USER_NAME=git.sys@example.com \
+        --set env.config.SMTP_PASSWORD=password \
+        --set env.config.SMTP_DOMAIN=smtp.mxhichina.com \
+        --set env.config.SMTP_AUTHENTICATION=login \
+        --set env.config.GITLAB_EMAIL_FROM=git.sys@example.com \
+        --set env.config.SMTP_ENABLE_STARTTLS_AUTO=true \
+        --set env.config.SMTP_TLS=true \
+        --set env.config.PROMETHEUS_ENABLE=false \
+        --set env.config.NODE_EXPORTER_ENABLE=false \
+        --set ingress.enabled=true \
+        --set ingress.hosts[0]=gitlab.example.hand-china.com \
+    ```
 
 ## 添加Gitlab Client
 

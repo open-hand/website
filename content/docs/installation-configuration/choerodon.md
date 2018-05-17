@@ -24,14 +24,14 @@ weight = 60
   # minio信息
   MINIO_URL="http://minio.exmple.choerodon.io"
   MINIO_USERNAME="admin"
-  MINIO_PASSWORD="handhand"
+  MINIO_PASSWORD="password"
   # gitlab信息
   GITLAB_URL="http://git.exmple.choerodon.io"
   GITLAB_TOKEN="sw1W4jywyxsvkHYRGBBp"
   # harbor信息
   HARBOR_URL="https://registry.exmple.choerodon.io"
   HARBOR_USERNAME="admin"
-  HARBOR_PASSWORD="password"
+  HARBOR_PASSWORD="Password123"
 
   # 定义Redis
   FRAMEWORK_REDIS_HOST='framework-redis'
@@ -47,15 +47,15 @@ weight = 60
   # 定义数据库
   # 格式为（数据库地址 数据库端口号 数据库用户名 数据库用户密码 数据库名）
   # choerodon-iam-service数据库
-  IAM_SERVICE_DB=("choerodon-mysql" "3306" "iam_service" "choerodon" "handhand")
+  IAM_SERVICE_DB=("choerodon-mysql" "3306" "iam_service" "choerodon" "password")
   # choerodon-manager-service数据库
-  MANAGER_SERVICE_DB=("choerodon-mysql" "3306" "manager_service" "choerodon" "handhand")
+  MANAGER_SERVICE_DB=("choerodon-mysql" "3306" "manager_service" "choerodon" "password")
   # choerodon-event-store-service数据库
-  EVENT_STORE_SERVICE_DB=("choerodon-mysql" "3306" "event_store_service" "choerodon" "handhand")
+  EVENT_STORE_SERVICE_DB=("choerodon-mysql" "3306" "event_store_service" "choerodon" "password")
   # choerodon-devops-service数据库
-  DEVOPS_SERVICE_DB=("choerodon-mysql" "3306" "devops_service" "choerodon" "handhand")
+  DEVOPS_SERVICE_DB=("choerodon-mysql" "3306" "devops_service" "choerodon" "password")
   # choerodon-gitlab-service数据库
-  GITLAB_SERVICE_DB=("choerodon-mysql" "3306" "gitlab_service" "choerodon" "handhand")
+  GITLAB_SERVICE_DB=("choerodon-mysql" "3306" "gitlab_service" "choerodon" "password")
   ```
 
 - 执行以下命令进行安装
