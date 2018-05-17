@@ -83,14 +83,14 @@ type = "docs"
 
  -  在Choerodon平台创建项目后，进入项目创建服务，服务名为gitlab平台的项目名，Choerodon后台将会自动为你生成模板代码，代码仓库地址可以在Choerodon平台查看。
 
- - 克隆成功后，进入应用根目录，执行命令`git checkout feature-1`，切换到新建分支feature-1，在此分支进行开发。
-
  - 通过git命令拉取生成的项目代码。
 
 	    git clone -b develop http://git.staging.saas.hand-china.com/devopstest-projecttest/choerodon-backend.git
-		
 
- - 项目使用DDD领域设计，目录结构如图所示
+ -  克隆成功后，进入应用根目录，执行命令`git checkout feature-1`，切换到新建分支feature-1，在此分支进行开发。
+
+
+ - 项目使用DDD领域驱动设计，目录结构如图所示
 
     ![](/docs/quick-start/image/3.png) 
 
@@ -544,7 +544,6 @@ type = "docs"
 		* @author dinghuang123@gmail.com
 		* @since 2018-05-15 11:44:28
 		*/
-		@Repository
 		public interface UserMapper extends BaseMapper<UserDO> {
 
 		}

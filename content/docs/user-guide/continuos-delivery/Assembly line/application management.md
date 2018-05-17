@@ -30,13 +30,13 @@ weight = 2
     应用模板：系统预定义模板或组织自定义的模板快；
 
 
-              系统预定义模板：Java库-JavaLib;微服务-MicroService;web前端-MicroServiceUI
+           系统预定义模板：Java库-JavaLib;微服务-MicroService;web前端-MicroServiceUI
       
  1. 创建成功后,可去gitlab中查看已创建的代码。
 
 ### 查看应用详情
 
-  在详情界面根据应用名称、应用编码、仓库地址、应用状态来查看应用详情。
+  1. 点击`应用`，在应用管理界面，根据应用名称、应用编码、仓库地址、应用状态来查看应用详情。
 
 列表字段
 
