@@ -22,10 +22,3 @@ type = "docs"
 * 2，应用开发管理，实现基于Devops理论的应用开发管理，主要包括应用管理，应用模板管理，CI流水线，分支管理，版本发布管理。
 * 3，部署管理，基于K8S提供持续部署功能，主要包括，环境管理，部署管理，服务管理，对外网络管理。
 
-
-
-### 敏捷项目管理
-![agile_structure](/cimg/scrum_structure.png)
-### 应用开发管理和部署管理
-![deployment_structure](/cimg/deployment_structure.png)
-
