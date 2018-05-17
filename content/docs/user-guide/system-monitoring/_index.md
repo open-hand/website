@@ -9,5 +9,5 @@ weight = 7
 本节介绍系统监控组件
 
 ## 功能
- - [**grafana**](../system-monitoring/grafana) 介绍系统各个部分的仪表盘界面监控数据。
+ - [**指标监控**](../system-monitoring/grafana) 介绍系统各个部分的仪表盘界面监控数据。
 

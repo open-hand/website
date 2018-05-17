@@ -1,3 +1,9 @@
++++
+title = "Kafka监控"
+description = ""
+weight = 3
++++
+
 # Kafka监控
 
 ## 操作指南

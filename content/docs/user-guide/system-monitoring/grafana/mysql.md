@@ -1,4 +1,10 @@
-# Elasicsearch监控
++++
+title = "MySQL监控"
+description = ""
+weight = 4
++++
+
+# MySQL监控
 
 ## 操作指南
 
