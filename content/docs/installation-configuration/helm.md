@@ -12,31 +12,12 @@ weight = 15
 
 ## 创建ServiceAccount
 
-1. 创建`helm-tiller.yaml`文件，粘贴以下内容
+> 服务端端执行
 
-        apiVersion: v1
-        kind: ServiceAccount
-        metadata:
-          name: helm-tiller
-          namespace: kube-system
-        ---
-        apiVersion: rbac.authorization.k8s.io/v1beta1
-        kind: ClusterRoleBinding
-        metadata:
-          name: helm-tiller
-        roleRef:
-          apiGroup: rbac.authorization.k8s.io
-          kind: ClusterRole
-          name: cluster-admin
-        subjects:
-        - kind: ServiceAccount
-          name: helm-tiller
-          namespace: kube-system
-1. 执行创建
-
-    ```bash
-    kubectl apply -f helm-tiller.yaml
-    ```
+```bash
+kubectl create serviceaccount --namespace kube-system helm-tiller
+kubectl create clusterrolebinding helm-tiller-cluster-rule --clusterrole=cluster-admin --serviceaccount=kube-system:helm-tiller
+```
 
 ## 安装客户端
 

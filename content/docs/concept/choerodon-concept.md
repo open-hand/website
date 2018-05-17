@@ -13,7 +13,7 @@ Choerodon猪齿鱼是一个开源企业服务平台，是基于Kubernetes的容�
 
 Choerodon使用Kubernetes来管理和部署服务。关于Kubernetes，请参考[Kubernetes](https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/) 概览。
 
-同时，Choerodon使用Spring Cloud作为微服务分布式系统，并且Choerodon还使用Spring Boot进行了通用性模块的封装，例如组织管理、用户管理、权限管理等；前端使用React作为开发组件。关于Choerodon的开发请参考 [Cloud Framework](/docs/microservice-application-framework) 开发。
+同时，Choerodon使用Spring Cloud作为微服务分布式系统，并且Choerodon还使用Spring Boot进行了通用性模块的封装，例如组织管理、用户管理、权限管理等；前端使用React作为开发组件。关于Choerodon的开发请参考 [Cloud Framework](../../development-guide/) 开发。
 
 有关Choerodon组件的详细概念信息，请参阅我们的其他概念指南。
 
