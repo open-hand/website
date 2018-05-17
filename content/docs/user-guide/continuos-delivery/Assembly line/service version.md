@@ -41,7 +41,6 @@ weight = 5
 6. 如果Master分支或者新版本存在Bug，基于Master分支生成一个Hotfix分支，开发人员修复Bug，末位版本号自动加1，例如当前版本是1.2.0，生成一个Hotfix分支，此分支为Hotfix-1.2.1，其中1.2.1是热修复的版本号。
 7. 将Hotfix分支合并到Develop分支，完成Bug修复。
 8. 将Hotfix分支合并到Master分支，更新Bug修复版本，生成新版本tag，例如版本1.2.1。
-
-<blockquote class="note">
+ <blockquote class="note">
          注： 7.和8.没有先后顺序，当7.和8.都完成系统会自动删除Hotfix分支，例如Hotfix-1.2.1。
       </blockquote>
