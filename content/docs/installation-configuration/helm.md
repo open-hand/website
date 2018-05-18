@@ -25,11 +25,11 @@ kubectl create clusterrolebinding helm-tiller-cluster-rule --clusterrole=cluster
 
 1. 根据系统下载所需版本  
 
-    http://files.saas.hand-china.com/kubernetes-helm/v2.8.2/
+    https://github.com/kubernetes/helm/releases/tag/v2.8.2
 1. 解压压缩包（以linux-amd64为例）
 
     ```bash
-    tar -zxvf helm-v2.8.2-linux-amd64.tgz
+    tar -zxvf helm-v2.8.2-linux-amd64.tar.gz
     ```
 1. 将文件移动到PATH目录中（以linux-amd64为例）
 
@@ -39,5 +39,5 @@ kubectl create clusterrolebinding helm-tiller-cluster-rule --clusterrole=cluster
 1. 初始化Helm
 
     ```bash
-    helm init --tiller-image=registry.saas.hand-china.com/kubernetes-helm/tiller:v2.8.2 --service-account=helm-tiller
+    helm init --tiller-image=registry.cn-shanghai.aliyuncs.com/choerodon/tiller:v2.8.2 --service-account=helm-tiller --stable-repo-url https://kubernetes.oss-cn-hangzhou.aliyuncs.com/charts
     ```
