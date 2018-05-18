@@ -182,7 +182,7 @@ helm install hystrix-turbine/chart/hystrix-turbine --namespace=framework
 - 创建一个数据库名称为 `usermap_service`
 
 ```sql
-CREATE USER 'root'@'%' IDENTIFIED BY "handhand";
+CREATE USER 'root'@'%' IDENTIFIED BY "password";
 CREATE DATABASE usermap_service DEFAULT CHARACTER SET utf8;
 GRANT ALL PRIVILEGES ON usermap_service.* TO root@'%';
 FLUSH PRIVILEGES;
@@ -194,7 +194,7 @@ FLUSH PRIVILEGES;
     EUREKA_DEFAULT_ZONE: http://register-server.io-choerodon:8000/eureka/
     SPRING_DATASOURCE_URL: jdbc:mysql://kanban-mysql.db.svc:3308/usermap_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
     SPRING_DATASOURCE_USERNAME: root
-    SPRING_DATASOURCE_PASSWORD: handhand
+    SPRING_DATASOURCE_PASSWORD: password
     CHOERODON_EVENT_CONSUMER_KAFKA_BOOTSTRAP_SERVERS: kafka-0.kafka-headless.kafka.svc.cluster.local:9092, kafka-1.kafka-headless.kafka.svc.cluster.local:9092, kafka-2.kafka-headless.kafka.svc.cluster.local:9092
     SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS: kafka-0.kafka-headless.kafka.svc.cluster.local:9092, kafka-1.kafka-headless.kafka.svc.cluster.local:9092, kafka-2.kafka-headless.kafka.svc.cluster.local:9092
     SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES: zookeeper-0.zookeeper-headless.zookeeper.svc.cluster.local:2181,zookeeper-1.zookeeper-headless.zookeeper.svc.cluster.local:2181,zookeeper-2.zookeeper-headless.zookeeper.svc.cluster.local:2181
@@ -202,15 +202,15 @@ FLUSH PRIVILEGES;
     SPRING_CLOUD_CONFIG_URI: http://config-server.framework:8010/
     ZUUL_ROUTES_MANAGER_PATH: "/usermap/**"
     ZUUL_ROUTES_MANAGER_SERVICE_ID: usermap-service
-    CHOERODON_GATEWAY_DOMAIN: gateway.staging.saas.hand-china.com
-    CHOERODON_SWAGGER_OAUTH_URL: http://gateway.staging.saas.hand-china.com/iam/oauth/authorize
+    CHOERODON_GATEWAY_DOMAIN: api.exmple.choerodon.io
+    CHOERODON_SWAGGER_OAUTH_URL: http://api.exmple.choerodon.io/iam/oauth/authorize
     SPRING_PROFILES_ACTIVE: default
 ```
 
 - 安装
 
 ```
-helm install . --debug --namespace=scrum --name=usermap_service --set env.open.CHOERODON_GATEWAY_DOMAIN="gateway.alpha.saas.hand-china.com" --set env.open.CHOERODON_SWAGGER_OAUTH_URL="http://gateway.staging.saas.hand-china.com/iam/oauth/authorize"
+helm install . --debug --namespace=scrum --name=usermap_service --set env.open.CHOERODON_GATEWAY_DOMAIN="gateway.alpha.exmple.choerodon.io" --set env.open.CHOERODON_SWAGGER_OAUTH_URL="http://gateway.staging.exmple.choerodon.io/iam/oauth/authorize"
 ```
 
 #### scrum-service 
@@ -218,7 +218,7 @@ helm install . --debug --namespace=scrum --name=usermap_service --set env.open.C
 - 创建一个数据库名称为 `scrum_service`
 
 ```bash
-CREATE USER 'root'@'%' IDENTIFIED BY "handhand";
+CREATE USER 'root'@'%' IDENTIFIED BY "password";
 CREATE DATABASE scrum_service DEFAULT CHARACTER SET utf8;
 GRANT ALL PRIVILEGES ON scrum_service.* TO root@'%';
 FLUSH PRIVILEGES;
@@ -230,7 +230,7 @@ FLUSH PRIVILEGES;
     EUREKA_DEFAULT_ZONE: http://register-server.io-choerodon:8000/eureka/
     SPRING_DATASOURCE_URL: jdbc:mysql://kanban-mysql.db.svc:3308/scrum_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
     SPRING_DATASOURCE_USERNAME: root
-    SPRING_DATASOURCE_PASSWORD: handhand
+    SPRING_DATASOURCE_PASSWORD: password
     CHOERODON_EVENT_CONSUMER_KAFKA_BOOTSTRAP_SERVERS: kafka-0.kafka-headless.kafka.svc.cluster.local:9092, kafka-1.kafka-headless.kafka.svc.cluster.local:9092, kafka-2.kafka-headless.kafka.svc.cluster.local:9092
     SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS: kafka-0.kafka-headless.kafka.svc.cluster.local:9092, kafka-1.kafka-headless.kafka.svc.cluster.local:9092, kafka-2.kafka-headless.kafka.svc.cluster.local:9092
     SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES: zookeeper-0.zookeeper-headless.zookeeper.svc.cluster.local:2181,zookeeper-1.zookeeper-headless.zookeeper.svc.cluster.local:2181,zookeeper-2.zookeeper-headless.zookeeper.svc.cluster.local:2181
@@ -238,8 +238,8 @@ FLUSH PRIVILEGES;
     SPRING_CLOUD_CONFIG_URI: http://config-server.framework:8010/
     ZUUL_ROUTES_MANAGER_PATH: "/usermap/**"
     ZUUL_ROUTES_MANAGER_SERVICE_ID: usermap-service
-    CHOERODON_GATEWAY_DOMAIN: gateway.staging.saas.hand-china.com
-    CHOERODON_SWAGGER_OAUTH_URL: http://gateway.staging.saas.hand-china.com/iam/oauth/authorize
+    CHOERODON_GATEWAY_DOMAIN: api.exmple.choerodon.io
+    CHOERODON_SWAGGER_OAUTH_URL: http://api.exmple.choerodon.io/iam/oauth/authorize
     SPRING_PROFILES_ACTIVE: default
 ```
 

@@ -30,7 +30,7 @@ weight =50
       --set type=nfs \
       --set pv.name=gitlab-pv \
       --set nfs.path=/u01/nfs/exports/io-choerodon/gitlab \
-      --set nfs.server=nfs-rdc3.hand-china.com \
+      --set nfs.server=nfs.exmple.choerodon.io \
       --set pvc.name=gitlab-pvc \
       --set size=3Gi \
       --set "accessModes[0]=ReadWriteOnce" \
@@ -51,7 +51,7 @@ weight =50
     helm install paas/gitlab \
         --set persistence.enabled=true \
         --set persistence.existingClaim=gitlab-pvc \
-        --set env.config.GITLAB_EXTERNAL_URL=http://gitlab.example.hand-china.com \
+        --set env.config.GITLAB_EXTERNAL_URL=http://gitlab.exmple.choerodon.io \
         --set env.config.GITLAB_TIMEZONE=Asia/Shanghai \
         --set env.config.GITLAB_DEFAULT_CAN_CREATE_GROUP=true \
         --set env.config.MYSQL_HOST=mysql \
@@ -74,7 +74,7 @@ weight =50
         --set env.config.PROMETHEUS_ENABLE=false \
         --set env.config.NODE_EXPORTER_ENABLE=false \
         --set ingress.enabled=true \
-        --set ingress.hosts[0]=gitlab.example.hand-china.com \
+        --set ingress.hosts[0]=gitlab.exmple.choerodon.io \
         --name=gitlab --namespace=io-choerodon 
     ```
 
@@ -121,13 +121,13 @@ weight =50
     helm upgrade gitlab paas/gitlab \
         --set persistence.enabled=true \
         --set persistence.existingClaim=gitlab-pvc \
-        --set env.config.GITLAB_EXTERNAL_URL=http://gitlab.example.hand-china.com \
+        --set env.config.GITLAB_EXTERNAL_URL=http://gitlab.exmple.choerodon.io \
         --set env.config.GITLAB_TIMEZONE=Asia/Shanghai \
         --set env.config.GITLAB_DEFAULT_CAN_CREATE_GROUP=true \
         --set env.config.CHOERODON_OMNIAUTH_ENABLED=true \
         --set env.config.OMNIAUTH_AUTO_SIGN_IN_WITH_PROVIDER=oauth2_generic \
         --set env.config.OMNIAUTH_BLOCK_AUTO_CREATED_USERS=false \
-        --set env.config.CHOERODON_API_URL=http://choerodon.example.saas.hand-china.com \
+        --set env.config.CHOERODON_API_URL=http://choerodon.exmple.choerodon.io \
         --set env.config.CHOERODON_CLIENT_ID=gitlab \
         --set env.config.MYSQL_HOST=mysql \
         --set env.config.MYSQL_PORT=3306 \
@@ -149,7 +149,7 @@ weight =50
         --set env.config.PROMETHEUS_ENABLE=false \
         --set env.config.NODE_EXPORTER_ENABLE=false \
         --set ingress.enabled=true \
-        --set ingress.hosts[0]=gitlab.example.hand-china.com \
+        --set ingress.hosts[0]=gitlab.exmple.choerodon.io \
     ```
 
 ## 添加Gitlab Client
@@ -171,6 +171,6 @@ weight =50
           "resourceIds": "default",
           "scope": "default",
           "secret": "secret",
-          "webServerRedirectUri": "http://gitlab.example.hand-china.com"
+          "webServerRedirectUri": "http://gitlab.exmple.choerodon.io"
         }
         ```
