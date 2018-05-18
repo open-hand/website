@@ -10,7 +10,7 @@ weight = 5
 
 左上角 `cluster` 菜单可切换集群， `node` 菜单可切换要显示的节点（可以全选或选择指定节点），`nic` 菜单可以切换选中节点中的网卡，指定要监控那个网卡 。如下图所示：
 
-![03](/docs/user-guide/system-monitoring/grafana/image/03.png)
+![03](/docs/user-guide/operating-manage/basic-monitoring/image/allnode_template.png)
 
 ## 监控指标
 

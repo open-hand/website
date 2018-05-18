@@ -10,7 +10,7 @@ weight = 2
 
 左上角 `node` 菜单可切换监控的节点 。如下图所示:
 
-![04](/docs/user-guide/system-monitoring/grafana/image/04.png)
+![ES_template](/docs/user-guide/operating-manage/application-monitoring/image/ES_template.png)
 
 ## 监控指标
 

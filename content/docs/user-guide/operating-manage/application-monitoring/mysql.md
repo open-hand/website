@@ -10,7 +10,7 @@ weight = 4
 
 左上角 `Interval` 菜单可切换监控频率， `host` 菜单可切换主机地址 。如下图所示：
 
-![07](/docs/user-guide/system-monitoring/grafana/image/07.png)
+![07](/docs/user-guide/operating-manage/application-monitoring/image/mysql_template.png)
 
 ## 监控指标
 

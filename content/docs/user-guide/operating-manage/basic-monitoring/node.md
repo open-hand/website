@@ -10,7 +10,7 @@ weight = 1
 
 左上角 `cluster` 菜单可切换集群， `node` 菜单可切换集群中的节点 。如下图所示：
 
-![02](/docs/user-guide/system-monitoring/grafana/image/02.png)
+![02](/docs/user-guide/operating-manage/basic-monitoring/image/node_template.png)
 
 ## 监控指标
 

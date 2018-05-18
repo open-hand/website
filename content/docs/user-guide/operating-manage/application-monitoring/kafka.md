@@ -10,7 +10,7 @@ weight = 3
 
 左上角 `topic` 菜单可切换监控的话题， `consumergroup` 菜单可切换消费组 。如下图所示：
 
-![05](/docs/user-guide/system-monitoring/grafana/image/05.png)
+![kafka_template](/docs/user-guide/operating-manage/application-monitoring/image/kafka_template.png)
 
 ## 监控指标
 
