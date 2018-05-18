@@ -10,7 +10,7 @@ weight = 3
 ![实例应用配置关系图](/docs/user-guide/system-configuration/platform/image/member_role.png)
 
   - **菜单层次**：组织层
-  - **菜单路径**：租户设置 > 组织角色分配
+  - **菜单路径**：组织管理 > 组织角色分配
   - **默认角色**：组织管理员
 
 <h2 id="1">成员角色列表</h2>

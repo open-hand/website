@@ -1,6 +1,7 @@
 ﻿+++
 title = "组织管理"
 weight = 1
+draft = true
 +++
 
 # 组织管理
