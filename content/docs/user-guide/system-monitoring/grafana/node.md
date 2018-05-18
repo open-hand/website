@@ -8,66 +8,28 @@ weight = 1
 
 ## 操作指南
 
-左上角 `chluster` 菜单可切换集群， `node` 菜单可切换集群中的节点 。
+左上角 `cluster` 菜单可切换集群， `node` 菜单可切换集群中的节点 。如下图所示：
+
+![02](/docs/user-guide/system-monitoring/grafana/image/02.png)
 
 ## 监控指标
 
-### Memory Used
+ - 内存指标: `Memory Used` 显示已用内存，`Memory` 显示节点机器总内存数。
 
-显示已用内存
+ - CPU指标: `CPU Used` 显示已用CPU（每个核心），`CPU CORES` 显示节点机器CPU核心数。
 
-### Memory
+ - 内存交换指标: `Swap Used` 显示已用内存交换空间，`Swap` 显示内存交换区总大小。
 
-节点总内存
+ - 硬盘指标: `Disk on '/' Used` 显示 '/' 路径下硬盘占用，`File System` 显示文件系统大小。
 
-### CPU Used
+ - CPU占用折线图: `(NodeName) cpu` 使用折线图展示所选节点不同时间的cpu占用率。
 
-显示已用CPU（每个核心）
+ - Pod CPU使用折线图: `Pod Cpu` 使用折线图展示节点上运行的pod的cpu负载折线图。使用不同显色表示不同Pod。
 
-### CPU CORES
+ - Pod内存占用折线图: `Pod Memory Percentage` 使用折线图展示节点上运行的Pod的内存占用，以相对于节点内存的百分比形式展示。使用不同显色表示不同Pod。
 
-内存核心数
+ - Pod内存用量折线图: `Pod Memory` 使用折线图展示节点上运行的Pod使用了多少内存。使用不同显色表示不同Pod。
 
-### Swap Used
+ - 节点网络使用情况折线图: `Node Network` 使用折线图展示节点收发两端的带宽占用。绿色线条代表接收，黄色线条代表发出。
 
-显示已用内存交换空间
-
-### Swap
-
-内存交换区大小
-
-### Disk on '/' Used
-
-显示 '/' 路径下硬盘占用
-
-### File System
-
-文件系统大小
-
-### nodexx cpu
-
-节点cup使用折线图
-
-### Pod Cpu
-
-节点上运行的pod占用cpu折线图
-
-### Pod Memory Percentage
-
-节点上运行的pod使用的内存相对主机内存占比折线图
-
-### Pod Memory
-
-Pod内存使用量折线图
-
-### Node Network
-
-节点网络收发总折线图
-
-### Pod Network Receive
-
-节点中Pod网络接收使用量折线图
-
-### Pod Network Trasmit
-
-节点中Pod网络发送使用量折线图
+ - Pod网络用量折线图: `Pod Network Receive` 代表节点上不同Pod使用的下行带宽，`Pod Network Trasmit` 代表节点上不同Pod使用的上行带宽。使用不同显色表示不同Pod。
