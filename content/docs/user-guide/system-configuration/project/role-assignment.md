@@ -9,9 +9,12 @@ weight = 2
 
 ![实例应用配置关系图](/docs/user-guide/system-configuration/platform/image/member_role.png)
 
-**层级：**
 
-- 项目层
+
+
+  - **菜单层次**：项目层
+  - **菜单路径**：项目设置 > 项目角色分配
+  - **默认角色**：项目所有者
 
 <h2 id="1">成员角色列表</h2>
 

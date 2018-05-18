@@ -9,9 +9,9 @@ weight = 4
 
 ![实例应用配置关系图](/docs/user-guide/system-configuration/platform/image/member_role.png)
 
-**层级：**
-
-- 全局层
+  - **菜单层次**：全局层
+  - **菜单路径**：平台设置 > 平台角色分配
+  - **默认角色**：平台管理员
 
 <h2 id="1">成员角色列表</h2>
 
