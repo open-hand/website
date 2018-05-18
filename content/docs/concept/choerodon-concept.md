@@ -11,7 +11,7 @@ weight = 1
 
 Choerodon 猪齿鱼是一个开源企业服务平台，是基于 Kubernetes 的容器编排和管理能力，整合 DevOps 工具链、微服务和移动应用框架，来帮助企业实现敏捷化的应用交付和自动化的运营管理，并提供 IoT、支付、数据、智能洞察、企业应用市场等业务组件，来帮助企业聚焦于业务，加速数字化转型。
 
-Choerodon 使用 Kubernetes 来管理和部署服务。关于 Kubernetes，请参考[Kubernetes](https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/) 概览。
+Choerodon 使用 Kubernetes 来管理和部署服务。关于 Kubernetes，请参考 [Kubernetes](https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/) 概览。
 
 同时，Choerodon 使用 Spring Cloud 作为微服务分布式系统，并且 Choerodon 还使用 Spring Boot 进行了通用性模块的封装，例如组织管理、用户管理、权限管理等；前端使用 React 作为开发组件。关于 Choerodon 的开发请参考 [Choerodon 猪齿鱼微服务开发框架](../../development-guide/) 开发。
 
