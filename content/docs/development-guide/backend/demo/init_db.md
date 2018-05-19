@@ -145,7 +145,7 @@ databaseChangeLog(logicalFilePath: 'todo_swimlane.groovy') {
 mkdir -p target
 if [ ! -f target/choerodon-tool-liquibase.jar ]
 then
-    curl http://nexus.saas.hand-china.com/content/repositories/rdc/io/choerodon/choerodon-tool-liquibase/0.1.0/choerodon-tool-liquibase-0.1.0.jar -o target/choerodon-tool-liquibase.jar
+    curl https://oss.sonatype.org/content/groups/public/io/choerodon/choerodon-tool-liquibase/0.5.0.RELEASE/choerodon-tool-liquibase-0.5.0.RELEASE.jar -o target/choerodon-tool-liquibase.jar
 fi
 java -Dspring.datasource.url="jdbc:mysql://localhost/choerodon_demo_service_todo?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
  -Dspring.datasource.username=choerodon \
@@ -167,7 +167,7 @@ sh init-local-database.sh
 Error: Invalid or corrupt jarfile target/choerodon-tool-liquibase.jar
 ```
 
-则自行下载 [choerodon-tool-liquibase.jar](http://nexus.saas.hand-china.com/content/repositories/rdc/io/choerodon/choerodon-tool-liquibase/0.1.0) 并重命名覆盖./choerodon-todo-service/target/choerodon-tool-liquibase.jar 并重新执行`init-local-database.sh` 脚本
+则自行下载 [choerodon-tool-liquibase.jar](https://oss.sonatype.org/content/groups/public/io/choerodon/choerodon-tool-liquibase/0.5.0.RELEASE/choerodon-tool-liquibase-0.5.0.RELEASE.jar) 并重命名覆盖./choerodon-todo-service/target/choerodon-tool-liquibase.jar 并重新执行`init-local-database.sh` 脚本
 
 ## 验证表结构
 

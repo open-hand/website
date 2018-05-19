@@ -11,7 +11,7 @@ weight = 25
 1. 本地添加远程仓库
 
     ```
-    helm repo add paas http://helm-charts.staging.saas.hand-china.com/paas/base/
+    helm repo add paas http://helm-charts.choerodon.io/paas/base/
     ```
 1. 更新本地仓库信息
 
@@ -30,7 +30,7 @@ weight = 25
         --set type=nfs \
         --set pv.name=minio-pv \
         --set nfs.path=/u01/nfs/exports/io-choerodon/minio \
-        --set nfs.server=nfs-rdc3.hand-china.com \
+        --set nfs.server=nfs.exmple.choerodon.io \
         --set pvc.name=minio-pvc \
         --set size=3Gi \
         --set "accessModes[0]=ReadWriteOnce" \
@@ -40,13 +40,14 @@ weight = 25
 - 进行安装部署
 
     ```
-    helm install paas/minio --name=minio --namespace=tools \
+    helm install paas/minio \
         --set persistence.enabled=true \
         --set persistence.existingClaim=minio-pvc \
         --set env.open.MINIO_ACCESS_KEY=admin \
-        --set env.open.MINIO_SECRET_KEY=handhand \
+        --set env.open.MINIO_SECRET_KEY=password \
         --set ingress.enabled=true \
-        --set "ingress.hosts[0]"="minio.saas.hand-china.com"
+        --set "ingress.hosts[0]"="minio.exmple.choerodon.io" \
+        --name=minio --namespace=io-choerodon
     ```
 
 - 参数：

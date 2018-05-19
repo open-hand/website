@@ -7,11 +7,11 @@ weight = 3
 
 角色是一组特定权限的集合。因此，通过给成员分配角色来赋予成员权限。角色只有属于一个层级，给角色分配权限时只能分配相同层级的权限。在一个层级中给成员分配角色时，只能分配相同层级的角色。
 
-![实例应用配置关系图](/docs/user-guide/system-configuration/platform/image/role_permission.png)
+![](/docs/user-guide/system-configuration/platform/image/role_permission2.png)
 
-**层级：**
-
-- 全局层 
+  - **菜单层次**：全局层
+  - **菜单路径**：平台设置 > 角色管理
+  - **默认角色**：平台管理员
 
 <h2 id="1">角色列表</h2>
 

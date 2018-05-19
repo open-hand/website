@@ -62,7 +62,7 @@ weight = 60
 
   ```bash
   curl -o choerodon-install.sh \
-    https://rdc.hand-china.com/gitlab/io.choerodon/choerodon-docs/raw/master/content/docs/infra/installation/install.sh && \
+    https://choerodon.io/gitlab/io.choerodon/choerodon-docs/raw/master/content/docs/infra/installation/install.sh && \
     sh choerodon-install.sh value.sh
   ```
 

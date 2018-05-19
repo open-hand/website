@@ -8,7 +8,7 @@ weight = 3
 ## 前置条件
 
 * 开发环境配置：[开发环境安装](../../develop-env/)
-* 数据环境准备：[基础环境准备](../init/)
+* 数据环境准备：[数据初始化](../init/)
 * Demo程序已经开发完毕，详见 [开发Demo程序](../../demo/)
 * 启动 `mysql`，`redis`，`kafka`等容器
 
@@ -39,13 +39,13 @@ version: "3"
 services:
   eureka-server:
     container_name: eureka-server
-    image: registry.saas.hand-china.com/choerodon-framework/eureka-server:0.1.0
+    image: registry.choerodon.io/choerodon-framework/eureka-server:0.1.0
     hostname: 127.0.0.1
     ports:
     - "8000:8000"
   api-gateway:
     container_name: api-gateway
-    image: registry.saas.hand-china.com/choerodon-framework/api-gateway:0.1.0
+    image: registry.choerodon.io/choerodon-framework/api-gateway:0.1.0
     ports:
     - "8080:8080"
     environment:
@@ -54,12 +54,12 @@ services:
     - zuul.routes.dev.serviceId=choerodon-todo-service
   oauth-server:
     container_name: oauth-server
-    image: registry.saas.hand-china.com/choerodon-framework/oauth-server:0.1.0
+    image: registry.choerodon.io/choerodon-framework/oauth-server:0.1.0
     ports:
     - "8020:8020"
   gateway-helper:
     container_name: gateway-helper
-    image: registry.saas.hand-china.com/choerodon-framework/gateway-helper:0.1.0
+    image: registry.choerodon.io/choerodon-framework/gateway-helper:0.1.0
     ports:
     - "9180:9180"
 ```

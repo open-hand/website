@@ -214,7 +214,7 @@ Description | Action Name | HTTP Mapping | HTTP Request Body | HTTP Response Bod
 
 ## 版本控制
 
-* 主版本号必须作为包名的最后一个字符。如：`com.hand.controller.v1`。
+* 主版本号必须作为包名的最后一个字符。如：`com.choerodon.controller.v1`。
 
 版本兼容的修改：
 

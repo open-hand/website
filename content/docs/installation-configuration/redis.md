@@ -11,7 +11,7 @@ weight = 30
 1. 本地添加远程仓库
 
     ```
-    helm repo add paas http://helm-charts.staging.saas.hand-china.com/paas/base/
+    helm repo add paas http://helm-charts.choerodon.io/paas/base/
     ```
 1. 更新本地仓库信息
 
@@ -30,7 +30,7 @@ weight = 30
         --set type=nfs \
         --set pv.name=framework-redis-pv \
         --set nfs.path=/u01/nfs/exports/io-choerodon/framework-redis \
-        --set nfs.server=nfs-rdc3.hand-china.com \
+        --set nfs.server=nfs.exmple.choerodon.io \
         --set pvc.name=framework-redis-pv \
         --set size=1Gi \
         --set "accessModes[0]=ReadWriteOnce" \
@@ -40,7 +40,7 @@ weight = 30
         --set type=nfs \
         --set pv.name=devops-redis-pv \
         --set nfs.path=/u01/nfs/exports/io-choerodon/devops-redis \
-        --set nfs.server=nfs-rdc3.hand-china.com \
+        --set nfs.server=nfs.exmple.choerodon.io \
         --set pvc.name=devops-redis-pv \
         --set size=1Gi \
         --set "accessModes[0]=ReadWriteOnce" \

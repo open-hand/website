@@ -85,7 +85,7 @@ type = "docs"
 
  - 通过git命令拉取生成的项目代码。
 
-	    git clone -b develop http://git.staging.saas.hand-china.com/devopstest-projecttest/choerodon-backend.git
+	    git clone -b develop http://git.choerodon.io/devopstest-projecttest/choerodon-backend.git
 
  -  克隆成功后，进入应用根目录，执行命令`git checkout feature-1`，切换到新建分支feature-1，在此分支进行开发。
 
@@ -243,17 +243,17 @@ type = "docs"
 
 		<repositories>
 			<repository>
-				<id>hand-snapshot-repository</id>
-				<name>Hand Snapshot Repository</name>
-				<url>http://nexus.saas.hand-china.com/content/repositories/rdcsnapshot/</url>
+				<id>choerodon-snapshot-repository</id>
+				<name>Choerodon Snapshot Repository</name>
+				<url>http://nexus.choerodon.io/content/repositories/rdcsnapshot/</url>
 				<snapshots>
 					<enabled>true</enabled>
 				</snapshots>
 			</repository>
 			<repository>
-				<id>hand-release-repository</id>
-				<name>Hand Release Repository</name>
-				<url>http://nexus.saas.hand-china.com/content/repositories/rdc/</url>
+				<id>choerodon-release-repository</id>
+				<name>Choerodon Release Repository</name>
+				<url>http://nexus.choerodon.io/content/repositories/rdc/</url>
 			</repository>
 		</repositories>
 
@@ -322,7 +322,7 @@ type = "docs"
 		mkdir -p target
 		if [ ! -f target/choerodon-tool-liquibase.jar ]
 		then
-			curl http://nexus.saas.hand-china.com/content/repositories/rdc/io/choerodon/choerodon-tool-liquibase/0.1.0/choerodon-tool-liquibase-0.1.0.jar -o target/choerodon-tool-liquibase.jar
+			curl http://nexus.choerodon.io/content/repositories/rdc/io/choerodon/choerodon-tool-liquibase/0.1.0/choerodon-tool-liquibase-0.1.0.jar -o target/choerodon-tool-liquibase.jar
 		fi
 		java -Dspring.datasource.url="jdbc:mysql://localhost/test?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
 		 -Dspring.datasource.username=root \
@@ -1112,17 +1112,6 @@ type = "docs"
       ![](/docs/quick-start/image/api.png)
 
 至此，后端服务一个简单的API完成。
-
-  [1]: http://c7n.saas.hand-china.com/docs/developer_guide/backend/intergration/run/
-  [2]: https://note.youdao.com/yws/public/resource/6f25b338f4d01d40402bed1537b9e726/xmlnote/E8C14A9908914181BD3DFFFC1EBA2E9C/2380
-  [3]: https://note.youdao.com/yws/public/resource/6f25b338f4d01d40402bed1537b9e726/xmlnote/D74FA74981B54FDA8320CDAFC1B7C7CB/2383
-  [4]: https://note.youdao.com/yws/public/resource/6f25b338f4d01d40402bed1537b9e726/xmlnote/FE4FD4792EC14F53B417682B0B9F8471/2385
-  [5]: https://note.youdao.com/yws/public/resource/6f25b338f4d01d40402bed1537b9e726/xmlnote/1B0438FE1B914661B4B9B03781AAED56/2387
-  [6]: https://note.youdao.com/yws/public/resource/6f25b338f4d01d40402bed1537b9e726/xmlnote/EB3ECE5493C447EA80F70116DF7604E5/2389
-  [7]: https://note.youdao.com/yws/public/resource/6f25b338f4d01d40402bed1537b9e726/xmlnote/E76418FEEC3D438D81D4C3F5F807515A/2391
-  [8]: https://note.youdao.com/yws/public/resource/6f25b338f4d01d40402bed1537b9e726/xmlnote/8D4D32435AB54E9CABE216878A729EBA/2393
-  [9]: https://note.youdao.com/yws/public/resource/6f25b338f4d01d40402bed1537b9e726/xmlnote/7D125D1259634265BCF7F9B276F9F29F/2395
-
 
  **8. 提交代码**
   

@@ -11,7 +11,7 @@ weight = 45
 1. 本地添加远程仓库
 
     ```
-    helm repo add paas http://helm-charts.staging.saas.hand-china.com/paas/base/
+    helm repo add paas http://helm-charts.choerodon.io/paas/base/
     ```
 1. 更新本地仓库信息
 
@@ -31,7 +31,7 @@ weight = 45
         --set pv.name=kafka-pv-00 \
         --set labels.app=kafka \
         --set nfs.path=/u01/nfs/exports/io-choerodon/kafka-00 \
-        --set nfs.server=nfs-rdc3.hand-china.com \
+        --set nfs.server=nfs.exmple.choerodon.io \
         --set pvc.enable=false \
         --set size=3Gi \
         --set "accessModes[0]=ReadWriteOnce" \
@@ -41,7 +41,7 @@ weight = 45
         --set pv.name=kafka-pv-01 \
         --set labels.app=kafka \
         --set nfs.path=/u01/nfs/exports/io-choerodon/kafka-01 \
-        --set nfs.server=nfs-rdc3.hand-china.com \
+        --set nfs.server=nfs.exmple.choerodon.io \
         --set pvc.enable=false \
         --set size=3Gi \
         --set "accessModes[0]=ReadWriteOnce" \
@@ -51,7 +51,7 @@ weight = 45
         --set pv.name=kafka-pv-02 \
         --set labels.app=kafka \
         --set nfs.path=/u01/nfs/exports/io-choerodon/kafka-02 \
-        --set nfs.server=nfs-rdc3.hand-china.com \
+        --set nfs.server=nfs.exmple.choerodon.io \
         --set pvc.enable=false \
         --set size=3Gi \
         --set "accessModes[0]=ReadWriteOnce" \
@@ -66,7 +66,7 @@ weight = 45
         --set replicaCount=3 \
         --set persistence.enabled=true \
         --set persistence.selector.app="kafka" \
-        --set zookeeperConnect="zookeeper-0.zookeeper-headless.io-choerodon.svc.cluster.local:2181,zookeeper-1.zookeeper-headless.io-choerodon.svc.cluster.local:2181,zookeeper-2.zookeeper-headless.io-choerodon.svc.cluster.local:2181" \
+        --set zookeeperConnect="zookeeper-0.zookeeper-headless.io-choerodon.svc.cluster.local:2181\,zookeeper-1.zookeeper-headless.io-choerodon.svc.cluster.local:2181\,zookeeper-2.zookeeper-headless.io-choerodon.svc.cluster.local:2181" \
         --name=kafka --namespace=io-choerodon 
     ```
 

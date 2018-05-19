@@ -71,8 +71,8 @@ init-local-database.sh:
 ```bash
 #!/usr/bin/env bash
 mkdir -p target
-curl http://nexus.saas.hand-china.com/content/repositories/rdc/io/choerodon/choerodon-tool-liquibase/0.1.0/choerodon-tool-liquibase-0.1.0.jar -o target/choerodon-tool-liquibase.jar
-curl http://nexus.saas.hand-china.com/content/repositories/rdc/io/choerodon/manager-service/0.1.0/manager-service-0.1.0.jar -o target/manager-service.jar
+curl https://oss.sonatype.org/content/groups/public/io/choerodon/choerodon-tool-liquibase/0.5.0.RELEASE/choerodon-tool-liquibase-0.5.0.RELEASE.jar -o target/choerodon-tool-liquibase.jar
+curl https://oss.sonatype.org/content/groups/public/io/choerodon/choerodon-tool-liquibase/0.5.0.RELEASE/choerodon-tool-liquibase-0.5.0.RELEASE.jar -o target/manager-service.jar
 java -Dspring.datasource.url="jdbc:mysql://localhost/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
  -Dspring.datasource.username=choerodon \
  -Dspring.datasource.password=123456 \

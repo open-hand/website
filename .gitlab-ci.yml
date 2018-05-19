@@ -10,7 +10,7 @@ sync-git:
     - echo -e "${known_hosts}" > ~/.ssh/known_hosts
     - chmod 600 ~/.ssh/id_rsa
     - chmod 644 ~/.ssh/known_hosts
-    - git remote add home "${USERNAME}@choerodon.io:/home/${USERNAME}/git/choerodon/website"
+    - git remote add home "${USERNAME}@choerodon.io:/home/choerodon/git/website"
     - git push home master
   only:
     - master

@@ -111,14 +111,6 @@ Choerodon 微服务应用框架是基于多年企业应用服务的经验，面�
 </ul>
 </div>
 
-<div class="col-md-3">
-<h4><i class="iconfont">&#xe6e6;</i>最佳实践</h4>
-<ul>
-    <li><a href="#">01 - 开发规范</a></li>
-    <li><a href="#">02 - 命名规范</a></li>
-    <li><a href="#">03 - 测试</a></li>
-</ul>
-</div>
 </div>
 
 </div>

@@ -11,7 +11,7 @@ weight = 35
 1. 本地添加远程仓库
 
     ```
-    helm repo add paas http://helm-charts.staging.saas.hand-china.com/paas/base/
+    helm repo add paas http://helm-charts.choerodon.io/paas/base/
     ```
 1. 更新本地仓库信息
 
@@ -30,7 +30,7 @@ weight = 35
         --set type=nfs \
         --set pv.name=mysql-pv \
         --set nfs.path=/u01/nfs/exports/io-choerodon/mysql \
-        --set nfs.server=nfs-rdc3.hand-china.com \
+        --set nfs.server=nfs.exmple.choerodon.io \
         --set pvc.name=mysql-pvc \
         --set size=3Gi \
         --set "accessModes[0]=ReadWriteOnce" \
@@ -43,7 +43,7 @@ weight = 35
     helm install paas/mysql \
         --set persistence.enabled=true \
         --set persistence.existingClaim=mysql-pvc \
-        --set env.open.MYSQL_ROOT_PASSWORD=handhand \
+        --set env.open.MYSQL_ROOT_PASSWORD=password \
         --set service.port=3306 \
         --name=choerodon-mysql --namespace=io-choerodon
     ```

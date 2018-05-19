@@ -1,4 +1,4 @@
-+++
+﻿+++
 title = "角色控制访问(RBAC)"
 description = ""
 weight = 3
@@ -16,15 +16,15 @@ Choerodon 的对资源的管理是基于角色控制的，并从组织层、项�
 
 ## 架构
 
-下图介绍了Choerodon RBAC的架构。
+下图介绍了 Choerodon RBAC 的架构。
 
-![权限](/img/docs/security/permission.png)
+![权限](/img/docs/security/Choerodon_permission.png)
 
 ## 工作流
 
-下图介绍了RBAC的流程图。
+下图介绍了 RBAC 的流程图。
 
-![权限流程图](/img/docs/security/permission_flow.png)
+![权限流程图](/img/docs/security/Choerodon_permission-flow.png)
 
 ## 组成
 
@@ -41,7 +41,7 @@ Choerodon RBAC 包含资源、角色、用户。同时包含资源与角色的�
 角色是资源的超集。
 
 * 角色的级别对应为全局、组织、项目。
-* 角色和资源之间通过RBAC 关联起来。
+* 角色和资源之间通过 RBAC 关联起来。
 * 一个角色严格遵循只能访问所属资源的原则。
 * 角色支持自定义角色，通过标签将角色和第三方系统进行关联。
 
@@ -49,4 +49,4 @@ Choerodon RBAC 包含资源、角色、用户。同时包含资源与角色的�
 
 用户是资源的实际使用者。
 
-* 用户和角色之间通过RBAC 关联起来。
+* 用户和角色之间通过 RBAC 关联起来。

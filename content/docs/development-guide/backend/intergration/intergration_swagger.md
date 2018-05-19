@@ -11,7 +11,7 @@ weight = 4
 
 * Demo程序已经开发完毕，详见 [开发Demo程序](../../demo/)
 * 数据库创建成功，详见 [初始化数据库](../init/)
-* Choerodon 的其他服务已经启动，详见[模块运行](../intergration_swagger/)
+* Choerodon 的其他服务已经启动，详见[模块运行](../run/)
 
 ## Eureka服务发现
 
@@ -51,7 +51,7 @@ eureka:
 ```yaml
 manager-service:
     container_name: manager-service
-    image: registry.saas.hand-china.com/choerodon-framework/manager-service:0.1.0
+    image: registry.choerodon.io/choerodon-framework/manager-service:0.1.0
     ports:
     - "8963:8963"
 ```

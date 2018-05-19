@@ -11,7 +11,7 @@ weight = 55
 1. 本地添加远程仓库
 
     ```
-    helm repo add paas http://helm-charts.staging.saas.hand-china.com/paas/base/
+    helm repo add paas http://helm-charts.choerodon.io/paas/base/
     ```
 1. 更新本地仓库信息
 
@@ -30,7 +30,7 @@ weight = 55
         --set type=nfs \
         --set pv.name=harbor-adminserver-pv \
         --set nfs.path=/u01/nfs/exports/io-choerodon/harbor-adminserver \
-        --set nfs.server=nfs-rdc3.hand-china.com \
+        --set nfs.server=nfs.exmple.choerodon.io \
         --set pvc.enable=false \
         --set size=3Gi \
         --set "accessModes[0]=ReadWriteOnce" \
@@ -40,7 +40,7 @@ weight = 55
         --set type=nfs \
         --set pv.name=harbor-mysql-pv \
         --set nfs.path=/u01/nfs/exports/io-choerodon/harbor-mysql \
-        --set nfs.server=nfs-rdc3.hand-china.com \
+        --set nfs.server=nfs.exmple.choerodon.io \
         --set pvc.enable=false \
         --set size=3Gi \
         --set "accessModes[0]=ReadWriteOnce" \
@@ -50,11 +50,31 @@ weight = 55
         --set type=nfs \
         --set pv.name=harbor-registry-pv \
         --set nfs.path=/u01/nfs/exports/io-choerodon/harbor-registry \
-        --set nfs.server=nfs-rdc3.hand-china.com \
+        --set nfs.server=nfs.exmple.choerodon.io \
         --set pvc.enable=false \
         --set size=3Gi \
         --set "accessModes[0]=ReadWriteOnce" \
         --name harbor-registry-pv --namespace=io-choerodon
+
+    helm install paas/create-pv \
+        --set type=nfs \
+        --set pv.name=harbor-notary-pv \
+        --set nfs.path=/u01/nfs/exports/io-choerodon/harbor-notary \
+        --set nfs.server=nfs.exmple.choerodon.io \
+        --set pvc.enable=false \
+        --set size=5Gi \
+        --set "accessModes[0]=ReadWriteOnce" \
+        --name harbor-notary-pv --namespace=io-choerodon
+
+    helm install paas/create-pv \
+        --set type=nfs \
+        --set pv.name=harbor-postgresql-pv \
+        --set nfs.path=/u01/nfs/exports/io-choerodon/harbor-postgresql \
+        --set nfs.server=nfs.exmple.choerodon.io \
+        --set pvc.name=harbor-postgresql-pvc \
+        --set size=1Gi \
+        --set "accessModes[0]=ReadWriteOnce" \
+        --name harbor-postgresql-pv --namespace=io-choerodon
     ```
 
 - 部署harbor
@@ -67,14 +87,16 @@ weight = 55
         --set adminserver.volumes.config.selector.pv="harbor-adminserver-pv" \
         --set mysql.volumes.config.selector.pv="harbor-mysql-pv" \
         --set registry.volumes.config.selector.pv="harbor-registry-pv" \
-        --set clair.enabled=false \
-        --set notary.enabled=false \
+        --set notary.db.volumes.data.selector.pv="harbor-notary-pv" \
+        --set postgresql.persistence.enabled=true \
+        --set postgresql.persistence.existingClaim="harbor-postgresql-pvc" \
+        --set insecureRegistry=true \
         --name=harbor --namespace=io-choerodon 
     ```
 
   <!-- ```
   helm install paas/harbor --name=harbor --namespace=harbor \
-        --set externalDomain=harbor.alpha.saas.hand-china.com \
+        --set externalDomain=harbor.alpha.exmple.choerodon.io \
         --set persistence.enabled=true \
         --set adminserver.volumes.config.selector.pv="adminserver" \
         --set mysql.volumes.config.selector.pv="mysql" \

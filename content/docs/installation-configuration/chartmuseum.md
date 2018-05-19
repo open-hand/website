@@ -11,7 +11,7 @@ weight = 20
 1. 本地添加远程仓库
 
     ```
-    helm repo add paas http://helm-charts.staging.saas.hand-china.com/paas/base/
+    helm repo add paas http://helm-charts.choerodon.io/paas/base/
     ```
 1. 更新本地仓库信息
 
@@ -30,7 +30,7 @@ weight = 20
       --set type=nfs \
       --set pv.name=chartmuseum-pv \
       --set nfs.path=/u01/nfs/exports/io-choerodon/chartmuseum \
-      --set nfs.server=nfs-rdc3.hand-china.com \
+      --set nfs.server=nfs.exmple.choerodon.io \
       --set pvc.name=chartmuseum-pvc \
       --set size=3Gi \
       --set "accessModes[0]=ReadWriteOnce" \
@@ -40,7 +40,7 @@ weight = 20
       --set type=nfs \
       --set pv.name=devops-service-pv \
       --set nfs.path=/u01/nfs/exports/io-choerodon/chartmuseum \
-      --set nfs.server=nfs-rdc3.hand-china.com \
+      --set nfs.server=nfs.exmple.choerodon.io \
       --set pvc.name=devops-service-pvc \
       --set size=3Gi \
       --set "accessModes[0]=ReadWriteOnce" \
@@ -53,9 +53,10 @@ weight = 20
       --set persistence.enabled=true \
       --set persistence.existingClaim=chartmuseum-pvc \
       --set ingress.enabled=true \
-      --set ingress.host=charts.saas.hand-china.com \
+      --set ingress.host=charts.exmple.choerodon.io \
       --set env.open.DISABLE_API=false \
-      --set env.open.DEPTH=2
+      --set env.open.DEPTH=2 \
+      --name chartmuseum --namespace=io-choerodon
     ```
 
 - 参数解释：

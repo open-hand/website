@@ -11,7 +11,7 @@ weight = 40
 1. 本地添加远程仓库
 
     ```
-    helm repo add paas http://helm-charts.staging.saas.hand-china.com/paas/base/
+    helm repo add paas http://helm-charts.choerodon.io/paas/base/
     ```
 1. 更新本地仓库信息
 
@@ -31,7 +31,7 @@ weight = 40
         --set pv.name=zookeeper-pv-00 \
         --set labels.app=zookeeper \
         --set nfs.path=/u01/nfs/exports/io-choerodon/zookeeper-00 \
-        --set nfs.server=nfs-rdc3.hand-china.com \
+        --set nfs.server=nfs.exmple.choerodon.io \
         --set pvc.enable=false \
         --set size=3Gi \
         --set "accessModes[0]=ReadWriteOnce" \
@@ -41,7 +41,7 @@ weight = 40
         --set pv.name=zookeeper-pv-01 \
         --set labels.app=zookeeper \
         --set nfs.path=/u01/nfs/exports/io-choerodon/zookeeper-01 \
-        --set nfs.server=nfs-rdc3.hand-china.com \
+        --set nfs.server=nfs.exmple.choerodon.io \
         --set pvc.enable=false \
         --set size=3Gi \
         --set "accessModes[0]=ReadWriteOnce" \
@@ -51,7 +51,7 @@ weight = 40
         --set pv.name=zookeeper-pv-02 \
         --set labels.app=zookeeper \
         --set nfs.path=/u01/nfs/exports/io-choerodon/zookeeper-02 \
-        --set nfs.server=nfs-rdc3.hand-china.com \
+        --set nfs.server=nfs.exmple.choerodon.io \
         --set pvc.enable=false \
         --set size=3Gi \
         --set "accessModes[0]=ReadWriteOnce" \
