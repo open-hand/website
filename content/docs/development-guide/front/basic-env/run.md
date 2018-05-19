@@ -14,7 +14,6 @@ weight = 2
 
 ```
 git clone https://github.com/choerodon/choerodon-front-iam.git --recursive
-
 ```
 
 
