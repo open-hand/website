@@ -1,4 +1,4 @@
-﻿+++
++++
 title = "系统配置"
 description = ""
 weight = 1
@@ -12,7 +12,7 @@ weight = 1
 
 - [**平台设置**](../../user-guide/system-configuration/platform) 对平台的菜单、角色、组织、平台角色进行设置，改设置的层级属于全局层。
 
-- [**租户设置**](../../user-guide/system-configuration/tenant) 在一台服务器上运行单个应用实例，它为多个租户提供服务及管理。
+- [**组织设置**](../../user-guide/system-configuration/tenant) 在一台服务器上运行单个应用实例，它为多个组织提供服务及管理。
 
 - [**项目设置**](../../user-guide/system-configuration/project) 对项目进行管理，主要有项目信息的创建和项目角色分配。
 
