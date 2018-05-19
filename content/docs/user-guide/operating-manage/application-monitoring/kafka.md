@@ -1,7 +1,7 @@
 +++
 title = "Kafka监控"
 description = ""
-weight = 3
+weight = 11
 +++
 
 # Kafka监控

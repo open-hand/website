@@ -1,7 +1,7 @@
 +++
 title = "节点监控"
 description = ""
-weight = 1
+weight = 22
 +++
 
 # 节点监控

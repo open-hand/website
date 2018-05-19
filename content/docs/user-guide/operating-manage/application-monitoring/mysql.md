@@ -1,7 +1,7 @@
 +++
 title = "MySQL监控"
 description = ""
-weight = 4
+weight = 13
 +++
 
 # MySQL监控

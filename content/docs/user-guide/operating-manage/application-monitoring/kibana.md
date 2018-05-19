@@ -1,7 +1,7 @@
 +++
-title = "kibana监控"
+title = "Kibana监控"
 description = ""
-weight = 2
+weight = 12
 +++
 
 # Kibana基础入门
@@ -39,8 +39,6 @@ Kibana 会自动检测在 Elasticsearch 中是否存在该索引名称，如果�
 
 本次测试选择柱状图演示，点击柱状图
 
-![kibana_bar](/docs/user-guide/operating-manage/application-monitoring/image/kibana_bar.png)
-
 点击右上角`Save` 按钮可以进行保存。笔者将该可视化保存为 “test-Visualize”。
 
 ####  Dashboard
@@ -62,4 +60,5 @@ Kibana 会自动检测在 Elasticsearch 中是否存在该索引名称，如果�
 
 ## 参考资料
 
-- https://www.elastic.co/guide/en/kibana/current/getting-started.html
+- [**Kibana官方文档**](https://www.elastic.co/guide/en/kibana/current/getting-started.html)
+

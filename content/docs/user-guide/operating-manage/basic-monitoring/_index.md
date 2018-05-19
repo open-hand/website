@@ -1,7 +1,7 @@
 +++
 title = "服务指标"
 description = ""
-weight = 3
+weight = 2
 alwaysopen=false
 +++
 # 服务指标
