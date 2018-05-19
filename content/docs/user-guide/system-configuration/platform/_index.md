@@ -21,7 +21,6 @@ weight = 1
 <h2 id="1">功能</h2>
 
 
-- [**组织管理**](../platform/organization) 是对组织信息和启用状态的管理。
 
 
 - [**菜单管理**](../platform/menu_configuration) 用于配置平台菜单。

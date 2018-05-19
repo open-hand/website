@@ -166,7 +166,7 @@ weight = 1
      
  9. 进入 Gitlab 仓库，克隆代码；
       
- 10. [创建一个 spring-boot 项目](../../../../development-guide/backend/demo/create_project)；
+ 10. [创建一个 spring-boot 项目](../../../development-guide/backend/demo/create_project)；
    
  11. 编写一个 dockerfile；
 
