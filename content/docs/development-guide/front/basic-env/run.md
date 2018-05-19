@@ -13,7 +13,7 @@ weight = 2
 可以新建一个 `choerodon-cloud-front` 的目录，进入到该目录下，在终端执行
 
 ```
-git clone https://xxxx@rdc.hand-china.com/gitlab/HAPCloud/HAPCloudFront.git --recursive
+git clone https://xxxx@choerodon.io/gitlab/HAPCloud/HAPCloudFront.git --recursive
 
 ```
 

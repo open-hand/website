@@ -11,7 +11,7 @@ weight = 30
 1. 本地添加远程仓库
 
     ```
-    helm repo add paas http://helm-charts.staging.saas.hand-china.com/paas/base/
+    helm repo add paas http://helm-charts.choerodon.io/paas/base/
     ```
 1. 更新本地仓库信息
 
