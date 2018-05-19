@@ -243,16 +243,16 @@ type = "docs"
 
 		<repositories>
 			<repository>
-				<id>hand-snapshot-repository</id>
-				<name>Hand Snapshot Repository</name>
+				<id>choerodon-snapshot-repository</id>
+				<name>Choerodon Snapshot Repository</name>
 				<url>http://nexus.choerodon.io/content/repositories/rdcsnapshot/</url>
 				<snapshots>
 					<enabled>true</enabled>
 				</snapshots>
 			</repository>
 			<repository>
-				<id>hand-release-repository</id>
-				<name>Hand Release Repository</name>
+				<id>choerodon-release-repository</id>
+				<name>Choerodon Release Repository</name>
 				<url>http://nexus.choerodon.io/content/repositories/rdc/</url>
 			</repository>
 		</repositories>
