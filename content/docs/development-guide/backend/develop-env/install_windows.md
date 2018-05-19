@@ -95,7 +95,7 @@ version: "3"
 services:
   zookeeper-0:
     container_name: zookeeper-0
-    image: registry.saas.hand-china.com/tools/zookeeper:3.4.10
+    image: registry.cn-hangzhou.aliyuncs.com/choerodon-tools/zookeeper:3.4.10
     hostname: zookeeper-0
     environment:
     - ZK_REPLICAS=1
@@ -122,7 +122,7 @@ services:
     - "./kafka/zk:/var/lib/zookeeper"
   kafka-0:
     container_name: kafka-0
-    image: registry.saas.hand-china.com/tools/kafka:1.0.0
+    image: registry.cn-hangzhou.aliyuncs.com/choerodon-tools/kafka:1.0.0
     hostname: 127.0.0.1
     depends_on:
     - zookeeper-0
@@ -141,7 +141,7 @@ services:
     - "./kafka/kafka:/opt/kafka/data"
   mysql:
     container_name: mysql
-    image: registry.saas.hand-china.com/tools/mysql:5.7.17
+    image: registry.cn-hangzhou.aliyuncs.com/choerodon-tools/mysql:5.7.17
     ports:
       - "3306:3306"
     environment:
@@ -149,18 +149,6 @@ services:
     volumes:
       - ./mysql/mysql_data:/var/lib/mysql
       - ./mysql/mysql_db.cnf:/etc/mysql/conf.d/mysql_db.cnf
-  redis:
-    container_name: redis
-    image: registry.saas.hand-china.com/tools/redis:4.0.2
-    ports:
-      - "6379:6379"
-  phpadmin:
-    container_name: phpadmin
-    image: registry.saas.hand-china.com/tools/phpmyadmin
-    ports:
-      - "80:80"
-    environment:
-      PMA_ARBITRARY: 1
 ```
 
 停止容器通过命令`docker-compose down`。

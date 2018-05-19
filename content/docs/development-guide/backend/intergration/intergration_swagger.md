@@ -11,7 +11,7 @@ weight = 4
 
 * Demo程序已经开发完毕，详见 [开发Demo程序](../../demo/)
 * 数据库创建成功，详见 [初始化数据库](../init/)
-* Choerodon 的其他服务已经启动，详见[模块运行](../intergration_swagger/)
+* Choerodon 的其他服务已经启动，详见[模块运行](../run/)
 
 ## Eureka服务发现
 

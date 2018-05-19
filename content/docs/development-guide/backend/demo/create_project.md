@@ -32,37 +32,21 @@ weight = 2
     <groupId>choerodon-todo-service-parent</groupId>
     <artifactId>choerodon-todo-service-parent</artifactId>
     <packaging>pom</packaging>
-    <version>0.1.0</version>
+    <version>1.0.0</version>
     <modules>
         <module>choerodon-todo-service</module>
     </modules>
 
     <properties>
-        <choerodon.version>0.1.0</choerodon.version>
+        <choerodon.version>0.5.0.RELEASE</choerodon.version>
     </properties>
     <!--parent-->
     <parent>
         <groupId>io.choerodon</groupId>
         <artifactId>choerodon-framework-parent</artifactId>
-        <version>0.1.0</version>
+        <version>0.5.0.RELEASE</version>
     </parent>
-    
-    <!--添加公司私有仓库-->
-    <repositories>
-        <repository>
-            <id>hand-snapshot-repository</id>
-            <name>Hand Snapshot Repository</name>
-            <url>http://nexus.saas.hand-china.com/content/repositories/rdcsnapshot/</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-        <repository>
-            <id>hand-release-repository</id>
-            <name>Hand Release Repository</name>
-            <url>http://nexus.saas.hand-china.com/content/repositories/rdc/</url>
-        </repository>
-    </repositories>
+
 
 </project>
 ```
@@ -77,7 +61,7 @@ weight = 2
     <parent>
         <artifactId>choerodon-todo-service-parent</artifactId>
         <groupId>choerodon-todo-service-parent</groupId>
-        <version>0.1.0</version>
+        <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 

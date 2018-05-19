@@ -20,12 +20,8 @@ weight = 1
 
 <h2 id="1">功能</h2>
 
-
-
-
 - [**菜单管理**](../platform/menu_configuration) 用于配置平台菜单。
 
 - [**角色管理**](../platform/role) 角色是一组特定权限的集合，通过给成员分配角色来赋予成员权限。
-
 
 - [**平台角色分配**](../platform/role-assignment) 对平台的角色进行分配。
