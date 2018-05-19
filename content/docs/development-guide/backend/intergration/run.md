@@ -39,13 +39,13 @@ version: "3"
 services:
   eureka-server:
     container_name: eureka-server
-    image: registry.saas.hand-china.com/choerodon-framework/eureka-server:0.1.0
+    image: registry.cn-hangzhou.aliyuncs.com/choerodon-framework/eureka-server:0.5.0
     hostname: 127.0.0.1
     ports:
     - "8000:8000"
   api-gateway:
     container_name: api-gateway
-    image: registry.saas.hand-china.com/choerodon-framework/api-gateway:0.1.0
+    image: registry.cn-hangzhou.aliyuncs.com/choerodon-framework/api-gateway:0.5.0
     ports:
     - "8080:8080"
     environment:
@@ -54,12 +54,12 @@ services:
     - zuul.routes.dev.serviceId=choerodon-todo-service
   oauth-server:
     container_name: oauth-server
-    image: registry.saas.hand-china.com/choerodon-framework/oauth-server:0.1.0
+    image: registry.cn-hangzhou.aliyuncs.com/choerodon-framework/oauth-server:0.5.0
     ports:
     - "8020:8020"
   gateway-helper:
     container_name: gateway-helper
-    image: registry.saas.hand-china.com/choerodon-framework/gateway-helper:0.1.0
+    image: registry.cn-hangzhou.aliyuncs.com/choerodon-framework/gateway-helper:0.5.0
     ports:
     - "9180:9180"
 ```
