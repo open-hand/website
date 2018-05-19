@@ -1,4 +1,4 @@
-+++
+﻿+++
 title = "kibana监控"
 description = ""
 weight = 2
@@ -7,11 +7,11 @@ weight = 2
 # Kibana基础入门
 
 ## 前言
-Kibana是一个开源的分析与可视化平台，设计出来用于和Elasticsearch一起使用的。你可以用kibana搜索、查看、交互存放在Elasticsearch索引里的数据，使用各种不同的图表、表格、地图等kibana能够很轻易地展示高级数据分析与可视化。
+Kibana 是一个开源的分析与可视化平台，设计出来用于和 Elasticsearch 一起使用的。你可以用 Kibana 搜索、查看、交互存放在 Elasticsearch 索引里的数据，使用各种不同的图表、表格、地图等Kibana能够很轻易地展示高级数据分析与可视化。
 
 ## 演示
 
-上图中，提示你所拥有的索引，并要求你编写一个对应的模式，我们需要手动配置。在 Index Pattern 下边的输入框中输入 access-*(Elasticsearch中存在的一个索引开头)，它是 Elasticsearch 中的一个索引名称开头。
+上图中，提示你所拥有的索引，并要求你编写一个对应的模式，我们需要手动配置。在 Index Pattern 下边的输入框中输入 access-*(Elasticsearch 中存在的一个索引开头)，它是 Elasticsearch 中的一个索引名称开头。
 
 Kibana 会自动检测在 Elasticsearch 中是否存在该索引名称，如果有，则下边出现 `Create` 按钮，我们点击进行创建并来到如下界面：
 
