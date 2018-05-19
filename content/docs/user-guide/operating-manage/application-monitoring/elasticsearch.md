@@ -1,7 +1,7 @@
 +++
-title = "Elasicsearch监控"
+title = "ElasicSearch监控"
 description = ""
-weight = 2
+weight = 10
 +++
 
 # Elasicsearch监控
