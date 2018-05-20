@@ -11,7 +11,7 @@ weight = 30
 1. 本地添加远程仓库
 
     ```
-    helm repo add paas http://helm-charts.choerodon.io/paas/base/
+    helm repo add paas http://openchart.choerodon.com.cn/choerodon/paas/
     ```
 1. 更新本地仓库信息
 
@@ -47,13 +47,6 @@ weight = 30
         --name devops-redis-pv --namespace=io-choerodon
     ```
 
-- 部署认证服务所需Redis
-
-    ```bash
-    helm install paas/redis --name=framework-redis --namespace=io-choerodon \
-        --set persistence.enabled=true \
-        --set persistence.existingClaim=framework-redis-pvc
-    ```
 - 部署Devops服务所需Redis
 
     ```bash

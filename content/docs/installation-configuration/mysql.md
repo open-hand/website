@@ -11,7 +11,7 @@ weight = 35
 1. 本地添加远程仓库
 
     ```
-    helm repo add paas http://helm-charts.choerodon.io/paas/base/
+    helm repo add paas http://openchart.choerodon.com.cn/choerodon/paas/
     ```
 1. 更新本地仓库信息
 

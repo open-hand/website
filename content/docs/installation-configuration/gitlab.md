@@ -11,7 +11,7 @@ weight =50
 1. 本地添加远程仓库
 
     ```
-    helm repo add paas http://helm-charts.choerodon.io/paas/base/
+    helm repo add paas http://openchart.choerodon.com.cn/choerodon/paas/
     ```
 1. 更新本地仓库信息
 
@@ -22,6 +22,46 @@ weight =50
 ## 安装Gitlab
 
 > **注意：**启用持久化存储请执行提前创建所指向的物理地址，PV和PVC可使用以下语句进行创建；可在安装命令中添加`--debug --dry-run`参数，进行渲染预览不进行安装。
+
+- 创建mysql所需PV和PVC
+
+    ```bash
+    helm install paas/create-pv \
+        --set type=nfs \
+        --set pv.name=gitlab-mysql-pv \
+        --set nfs.path=/u01/nfs/exports/io-choerodon/mysql \
+        --set nfs.server=nfs.exmple.choerodon.io \
+        --set pvc.name=gitlab-mysql-pvc \
+        --set size=3Gi \
+        --set "accessModes[0]=ReadWriteOnce" \
+        --name gitlab-mysql-pv --namespace=io-choerodon
+    ```
+
+- 部署mysql
+
+    ```
+    helm install paas/mysql \
+        --set persistence.enabled=true \
+        --set persistence.existingClaim=gitlab-mysql-pvc \
+        --set env.open.MYSQL_ROOT_PASSWORD=password \
+        --set service.port=3306 \
+        --name=gitlab-mysql --namespace=io-choerodon
+    ```
+
+- 创建数据库
+
+    ```sql
+    CREATE USER 'gitlab'@'%' IDENTIFIED BY "password";
+    CREATE DATABASE gitlabhq_production DEFAULT CHARACTER SET utf8;
+    GRANT ALL PRIVILEGES ON gitlabhq_production.* TO choerodon@'%';
+    FLUSH PRIVILEGES;
+    ```
+
+- 部署gitlab所需Redis
+
+    ```bash
+    helm install paas/redis --name=gitlab-redis --namespace=io-choerodon
+    ```
 
 - 创建gitlab所需PV和PVC
 
@@ -36,14 +76,6 @@ weight =50
       --set "accessModes[0]=ReadWriteOnce" \
       --name gitlab-pv --namespace=io-choerodon
     ```
-- 创建数据库
-
-    ```sql
-    CREATE USER 'gitlab'@'%' IDENTIFIED BY "password";
-    CREATE DATABASE gitlabhq_production DEFAULT CHARACTER SET utf8;
-    GRANT ALL PRIVILEGES ON gitlabhq_production.* TO choerodon@'%';
-    FLUSH PRIVILEGES;
-    ```
 
 - 部署gitlab
 
@@ -53,13 +85,14 @@ weight =50
         --set persistence.existingClaim=gitlab-pvc \
         --set env.config.GITLAB_EXTERNAL_URL=http://gitlab.exmple.choerodon.io \
         --set env.config.GITLAB_TIMEZONE=Asia/Shanghai \
+        --set env.config.CHOERODON_OMNIAUTH_ENABLED=false \
         --set env.config.GITLAB_DEFAULT_CAN_CREATE_GROUP=true \
-        --set env.config.MYSQL_HOST=mysql \
+        --set env.config.MYSQL_HOST=gitlab-mysql \
         --set env.config.MYSQL_PORT=3306 \
         --set env.config.MYSQL_USERNAME=gitlab \
         --set env.config.MYSQL_PASSWORD=password \
         --set env.config.MYSQL_DATABASE=gitlabhq_production \
-        --set env.config.REDIS_HOST=redis \
+        --set env.config.REDIS_HOST=gitlab-redis \
         --set env.config.REDIS_PORT=6379 \
         --set env.config.SMTP_ENABLE=true \
         --set env.config.SMTP_ADDRESS=smtp.mxhichina.com \

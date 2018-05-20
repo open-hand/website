@@ -11,7 +11,7 @@ weight = 55
 1. 本地添加远程仓库
 
     ```
-    helm repo add paas http://helm-charts.choerodon.io/paas/base/
+    helm repo add paas http://openchart.choerodon.com.cn/choerodon/paas/
     ```
 1. 更新本地仓库信息
 
@@ -93,18 +93,6 @@ weight = 55
         --set insecureRegistry=true \
         --name=harbor --namespace=io-choerodon 
     ```
-
-  <!-- ```
-  helm install paas/harbor --name=harbor --namespace=harbor \
-        --set externalDomain=harbor.alpha.exmple.choerodon.io \
-        --set persistence.enabled=true \
-        --set adminserver.volumes.config.selector.pv="adminserver" \
-        --set mysql.volumes.config.selector.pv="mysql" \
-        --set registry.volumes.config.selector.pv="registry" \
-        --set postgresql.persistence.enabled=true \
-        --set postgresql.persistence.existingClaim=postgresql \
-        --set notary.volumes.config.selector.pv="notary"
-  ``` -->
 
 - 参数：
 

@@ -16,7 +16,7 @@ weight = 10
 - 克隆搭建脚本,并进入项目中
 
     ```
-    git clone https://choerodon.io/gitlab/rdc_hip/kubeadm-ansible.git && cd kubeadm-ansible
+    git clone https://github.com/choerodon/choerodon/kubeadm-ansible.git && cd kubeadm-ansible
     ```
 
 > 默认启动3个虚拟机，若PC内存不足，请降低`Vagrantfile`中第6行循环次数。
@@ -92,7 +92,7 @@ weight = 10
 - 克隆项目：
 
     ```
-    git clone https://choerodon.io/gitlab/rdc_hip/kubeadm-ansible.git
+    git clone https://github.com/choerodon/choerodon/kubeadm-ansible.git
     ```
 
 #### 修改hosts文件
@@ -187,7 +187,7 @@ weight = 10
 - 克隆项目：
 
     ```
-    git clone https://choerodon.io/gitlab/rdc_hip/kubeadm-ansible.git
+    git clone https://github.com/choerodon/choerodon/kubeadm-ansible.git
     ```
 
 #### 修改hosts文件
