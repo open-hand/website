@@ -1,0 +1,116 @@
+# 导航栏
+- id: navHome
+  translation: "go to homepage"
+
+- id: navToggle
+  translation: "Toggle Navigation"
+# 导航栏 结束
+
+# 首页
+- id: enterprise digital services platform
+  translation: "Enterprise Digital Services Platform"
+
+- id: scrum application delivery and automated operations management
+  translation: "Scrum application delivery and automated operations management"
+
+- id: quick start
+  translation: "Quick Start"
+
+- id: know more
+  translation: "Want to know more?"
+
+- id: prepare more case
+  translation: "There are prepared many cases for you"
+
+- id: go and see
+  translation: "Go and See"
+
+- id: product features
+  translation: "Product Features"
+
+- id: case
+  translation: "Case Studies"
+# 首页 结束
+
+# 博客
+- id: categoriesTitle
+  translation: "Categories"
+
+- id: search
+  translation: "Search"
+
+- id: search keys
+  translation: "Please search keyword"
+
+- id: tagsTitle
+  translation: "Tags"
+
+- id: author
+  translation: "Author"
+
+- id: source
+  translation: "Source"
+
+- id: welcome to reprint
+  translation: "Welcome to reprint, but without the consent of the author must retain the paragraph of the statement, and in the article gives the original link."
+
+- id: share
+  translation: "Share"
+
+- id: share to wechat
+  translation: "Share to WeChat"
+
+- id: open wechat click discover
+  translation: "Open WeChat, click 'Discover',"
+
+- id: use scan or code to share
+  translation: "Use 'Scan QR Code' to share the pages of web with your friends."
+
+- id: nextpage
+  translation: "NextPage"
+
+- id: previouspage
+  translation: "Previous Page"
+# 博客 结束
+
+# 案例
+- id: they are using choerodon
+  translation: "They are using Choerodon"
+
+- id: to accelerate business remodeling
+  translation: "to accelerate business remodeling"
+
+- id: and digital transformation
+  translation: " and digital transformation"
+
+- id: choerodon has increased the agility of the enterprise
+  translation: "Choerodon has increased the agility of the enterprise information system in responding to the market and demand"
+
+- id: readmore
+  translation: "Read More"
+# 案例 结束
+
+# 社区
+- id: welcome to choerodon community
+  translation: "Welcome to Choerodon Community"
+
+- id: people committed to technology sharing
+  translation: "A group of zealous, friendly, diversified, intelligent people committed to technology sharing, grow together with the Choerodon."
+
+- id: we hope you have more requests and suggestions
+  translation: "We hope you have more requests and suggestions"
+
+- id: provides a steady stream of nutrients for choerodon
+  translation: "Provides a steady stream of nutrients for Choerodon"
+# 社区 结束
+
+# 404页面
+- id: we are sorry
+  translation: "We are sorry - this page is not here anymore"
+
+- id: page not found
+  translation: "Error 404 - Page not found"
+
+- id: go to homepage
+  translation: "Go to Homepage"
+# 404页面 结束

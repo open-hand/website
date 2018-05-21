@@ -1,0 +1,78 @@
+baseurl = "http://choerodon.io/"
+title = "Choerodon | 企业级数字服务平台"
+theme = "choerodon-document-theme"
+# themesDir = "../.."
+# Site language. Available translations in the theme's `/i18n` directory.
+defaultContentLanguage = "zh"
+defaultContentLanguageInSubdir= "true"
+prettyurls=true
+# Define the number of posts per page
+paginate = 10
+
+[languages]
+    [languages.en]
+        languageName = "English"
+    [languages.zh]
+        languageName = "中文"
+
+[menu]
+# Main menu
+[[languages.en.menu.main]]
+    name = "Docs"
+    url  = "/en/docs/"
+    weight = 1
+
+[[languages.en.menu.main]]
+    name = "Blog"
+    url  = "/en/blog/"
+    weight = 2
+
+[[languages.en.menu.main]]
+    name = "Case Studies"
+    url  = "/en/case-studies/"
+    weight = 3
+
+[[languages.en.menu.main]]
+    name = "Community"
+    url  = "/en/community/"
+    weight = 4
+
+[[languages.en.menu.main]]
+    name = "Github"
+    url  = "https://github.com/choerodon/choerodon"
+    weight = 5
+    post= true
+
+[[languages.zh.menu.main]]
+    name = "文档"
+    url  = "/zh/docs/"
+    weight = 1
+
+[[languages.zh.menu.main]]
+    name = "博客"
+    url  = "/zh/blog/"
+    weight = 2
+
+[[languages.zh.menu.main]]
+    name = "案例"
+    url  = "/zh/case-studies/"
+    weight = 3
+
+[[languages.zh.menu.main]]
+    name = "社区"
+    url  = "/zh/community/"
+    weight = 4
+
+[[languages.zh.menu.main]]
+    name = "Github"
+    url  = "https://github.com/choerodon/"
+    weight = 5
+    post= true
+
+[params]
+    viewMorePostLink = "/blog/"
+    author = "Choerodon"
+    defaultKeywords = ["devops"]
+    defaultDescription = ""
+    # Format dates with Go's time formatting
+    date_format = "2006-01-02"

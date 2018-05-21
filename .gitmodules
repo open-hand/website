@@ -1,0 +1,3 @@
+[submodule "themes/choerodon-document-theme"]
+	path = themes/choerodon-document-theme
+	url = https://github.com/choerodon/choerodon-document-theme.git

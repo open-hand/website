@@ -1,0 +1,16 @@
+stages:
+  - sync-git
+
+sync-git:
+  stage: sync-git
+  image: registry.saas.hand-china.com/tools/devops-ci:1.1.0
+  script:
+    - mkdir -p ~/.ssh
+    - echo -e "${choerodonci}" > ~/.ssh/id_rsa
+    - echo -e "${known_hosts}" > ~/.ssh/known_hosts
+    - chmod 600 ~/.ssh/id_rsa
+    - chmod 644 ~/.ssh/known_hosts
+    - git remote add home "${USERNAME}@choerodon.io:/home/choerodon/git/website"
+    - git push home master
+  only:
+    - master
