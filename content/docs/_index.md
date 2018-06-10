@@ -184,6 +184,17 @@ description = ""
                     </a>
                 </div>
             </li>
+            <li>
+                <div class="access-list-item">
+                    <a href="./quick-start/scrum">
+                        <div class="item-head">
+                            <img class="n-max" src="/img/docs/home/use-agile.svg"/>
+                            <h4>使用敏捷管理工具</h4>
+                        </div>
+                        <p>介绍了Choerodon的敏捷管理，从创建项目、问题、冲刺来介绍如何快速了解敏捷管理的操作方法</p>
+                    </a>
+                </div>
+            </li>
         </ul>
     </div>
     <hr>
@@ -198,6 +209,17 @@ description = ""
                             <h4>系统配置</h4>
                         </div>
                         <p>为了让Choerodon的用户更便捷、科学地使用平台，需在用户使用前进行的系统配置，包括角色、用户、项目、环境等</p>
+                    </a>
+                <div>
+            </li>
+            <li>
+                <div class="access-list-item">
+                    <a href="./user-guide/scrum">
+                        <div class="item-head">
+                            <img class="n-max" src="/img/docs/home/agile.svg"/>
+                            <h4>敏捷管理</h4>
+                        </div>
+                        <p>对敏捷管理各个功能的使用进行详细的介绍，包括问题管理、待办事项、版本发布、活跃冲刺、模块管理等</p>
                     </a>
                 <div>
             </li>
