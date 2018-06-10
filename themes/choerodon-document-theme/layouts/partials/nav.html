@@ -1,0 +1,82 @@
+<div class='navbar {{ if or (and (in .URL "case-studies") (eq .Name "Case-studies")) (and (in .URL "docs") (ne .Name "文档")) }} top-white-nav {{ end }} top-nav' role="navigation" id="navbar">
+    {{ if in .URL "docs" }}
+        <div class="navbar-left-buttons" {{ if eq .Name "文档" }} style="display: none" {{ end }}>
+            <button type="button" class="navbar-toggle btn-template-main">
+                <i class="iconfont">&#xe78e;</i>
+            </button>
+        </div>
+    {{ end }}
+    <a class="navbar-brand" href="{{ .Site.BaseURL }}/{{ .Site.Language.Lang }}">
+        <div class="nav-logo"></div>
+    </a>
+    <div class="navbar-buttons">
+        <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation-mobile">
+            <i class="iconfont">&#xe790;</i>
+        </button>
+    </div>
+
+    <div class="navbar-collapse collapse" id="navigation">
+        <ul class="nav navbar-nav navbar-right">
+            {{ range .Site.Menus.main }}
+                {{ if .HasChildren }}
+                    <li class='haschildren'>
+                        <a  {{ if .Post }} target="_blank" {{ end }} href="{{ .URL }}">{{ .Name }} {{ .Pre }}</a>
+                        <ul class="sub-menus none">
+                            {{ range .Children }}
+                                <li>
+                                    <a  {{ if .Post }} target="_blank" {{ end }} href="{{ .URL }}">{{ .Name }} </a>
+                                </li>
+                            {{ end }}
+                        </ul>
+                    </li>
+                    {{ else }}
+                    <li>
+                        <a  {{ if .Post }} target="_blank" {{ end }} href="{{ .URL }}">{{ .Name }}</a>
+                    </li>
+                {{ end }}
+            {{ end }}
+        </ul>
+    </div>
+    <div class="global-language">
+        <a>{{ .Site.Language.Lang | upper}}</a>
+        <ul class="language-list">
+            {{ range $.Site.Home.AllTranslations }}
+            <li><a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a></li>
+            {{ end }}
+        </ul>
+    </div>
+
+<!-- /#navbar -->
+
+</div>
+
+<!-- *** NAVBAR END ***-->
+<div class="navbar-collapse-bg none" id="navbar-collapse-bg">
+    <div class="navbar-collapse collapse" id="navigation-mobile">
+        {{ range .Site.Menus.main }}
+            {{ if .HasChildren }}
+                <div class="select" id="version" >
+                    <div>{{ .Name }}</div>
+                    {{ .Pre }}
+                </div>
+                <ul class="none select-menu" id="select-menu">
+                    {{ range .Children }}
+                        <li><a  href="{{ .URL }}">{{ .Name }}</a></li>
+                    {{ end }}
+                </ul>
+                
+            {{ end }}
+        {{ end }}
+        <ul class="nav navbar-nav navbar-right">
+            {{ range .Site.Menus.main }}
+                {{ if .HasChildren }}
+                    {{ else }}
+                    <li>
+                        <a  {{ if .Post }} target="_blank" {{ end }} href="{{ .URL }}">{{ .Name }}</a>
+                    </li>
+                {{ end }}
+            {{ end }}
+        </ul>
+    </div>
+</div>
+

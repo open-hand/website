@@ -129,7 +129,7 @@ services:
     links:
     - zookeeper-0
     ports:
-    - "9092:9092"
+      - "9092:9092"
     command:
     - sh
     - -c
@@ -141,14 +141,15 @@ services:
     - "./kafka/kafka:/opt/kafka/data"
   mysql:
     container_name: mysql
+    hostname: mysql
     image: registry.cn-hangzhou.aliyuncs.com/choerodon-tools/mysql:5.7.17
     ports:
-      - "3306:3306"
+    - "3306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: root
     volumes:
-      - ./mysql/mysql_data:/var/lib/mysql
-      - ./mysql/mysql_db.cnf:/etc/mysql/conf.d/mysql_db.cnf
+    - ./mysql/mysql_data:/var/lib/mysql
+    - ./mysql/mysql_db.cnf:/etc/mysql/conf.d/mysql_db.cnf
 ```
 
 停止容器通过命令`docker-compose down`。

@@ -1,0 +1,15 @@
+{{ $.Scratch.Set "language" .Site.Language.Lang }}
+<div class="social-detail">
+    {{ $baseURL := .Site.BaseURL}}
+    {{ range $index, $element := sort .Site.Data.social "weight" }}
+        {{ if eq ($.Scratch.Get "language") $element.language }}
+            <a target="_blank" {{ if $element.url }} href="{{ $element.url }}" {{ end }} class="social-single">
+                <div class="social-img" data-img-url="{{ $baseURL }}{{ $element.icon }}"  {{ if $element.hover }} data-hover="true" data-hover-url="{{ $baseURL }}{{ $element.hover }}" {{ else}} data-hover="false" {{ end }}>
+                    <img src="{{ $baseURL }}{{ $element.icon }}"/>
+                </div>
+                <div class="social-name">{{ $element.name }}</div>
+                <div class="social-description">{{ $element.description }}</div>
+            </a>
+        {{ end }}
+    {{ end }}
+</div>

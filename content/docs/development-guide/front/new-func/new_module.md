@@ -10,15 +10,65 @@ weight = 1
 
 ## 开发新模块
 
-- 切换到boot/generator-hap的目录下，运行 `npm link` 。
+1、在本地新建一个文件夹，然后将`choerodon-front-boot` clone到本地，并执行`npm install`。
+```bash
+$ mkdir choerodn-front-demo
+$ cd choerodon-front-demo
+$ git clone https://github.com/choerodon/choerodon-front-boot boot
+$ cd boot
+$ npm install
+```
 
-- 在项目根目录，运行 `yo hap` ,则会出现需要输入和选择的信息。
+2、创建新的模块文件夹，并且创建`favicon.ico`, `config.js` 和 `webpack.config.js`文件。
+```bash
+$ cd ..
+$ mkdir demo
+$ touch favicon.ico
+$ touch config.js
+$ touch webpack.config.js
+```
 
-> 注意: 在后面文档中,模块名默认输入的是demo, 如果输入的其他的模块名, 相应替换便可。此时会自动构建模块的结构
+3、修改`config.js` 文件，添加如下内容。
+``` js
+const config = {
+  local: true, //是否为本地开发
+  clientId: 'localhost', // 必须填入响应的客户端（本地开发）
+  titlename: 'Demo', //项目页面的title名称
+  favicon: 'favicon.ico', //项目页面的icon图片名称
+  theme: true, //是否开启主题色设定
+  mainCss: JSON.stringify('boot'), //master选择哪个项目的主题
+  Masters: JSON.stringify('boot'), //master选择哪个项目模块
+  Home: JSON.stringify('demo'), //Home选择哪个项目模块
+  themeSetting: {
+    antdTheme: {
+      'primary-color': '#3F51B5', //antd的主题颜色设定
+    },
+    header: '#3F51B5', //头部主题颜色设定
+    // header: 'rgb(59,120,231)', //头部主题颜色设定
+    backgroundColor: 'white', //背景色主题颜色设定
+  },
+  cookieServer: '', //子域名token共享
+  server: 'http://api.choerodon.com.cn', //api gateway地址
+  webpackConfig: '', //webpack扩展配置，当未设定时默认为webpack.config.js
+};
 
-- 进入到 `boot` 的目录下, 运行 `npm run gulp` , 之后运行 `npm start` 启动项目, 在 `localhost:9090/#/demo` 便可以查看页面。
+module.exports = config;
+```
 
-> 其中 `输入的模块名` + `Index` 文件是必须的，该文件的命名规则为 `模块名的大写` + `Index` ，如若模块名为test，则该文件应命名为TESTIndex.js，这是在gulp的配置文件中规定的。
+4、修改`webpack.config.js` 文件，添加如下内容。
+```js
+const webpack = require('./boot/node_modules/webpack');
+
+module.exports = function (config) {
+  return config;
+};
+```
+
+5、进入到 `boot` 的目录下, 运行 `npm run gulp` , 之后新开一个窗口，运行 `npm run dev` 启动项目, 在 `localhost:9090/#/demo` 便可以查看页面。
+```bash
+$ cd boot
+$ npm run gulp
+```
 
 * 在继续开发新页面，请查看[开发新页面](../new_page/)文档
 

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    {{ partial "head.html" . }}
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/blog-list.css">
+    {{ partial "blog_nav.html" . }}
+  <body baseUrl="{{ .Site.BaseURL }}">
+    <div>
+        <div id="content" class="blogs">
+            <div class="content-post blog-post" id="content-post">
+                <div class="blog-single-head">
+                    <h1>{{ .Title }}</h1>
+                    {{ if .Params.subtitle }}
+                    <h2>--{{ .Params.subtitle }}</h2>
+                    {{ end }}
+                    <div class="space-row">
+                        <div>
+                            <span class="right-user">{{ i18n "author" }}：<span>{{ .Params.author}}</span></span>
+                            <span class="right-categories">{{ i18n "tagsTitle" }}: 
+                                {{ range $index, $category := .Params.categories }}
+                                <a href="{{ $.Site.BaseURL }}{{ $.Site.Language.Lang }}/categories/{{ $category | urlize | lower }}">
+                                    {{$category}}
+                                    </a>
+                                {{end}}
+                            </span>
+                        </div>
+                        <div class="blog-single-time">
+                            <i class="iconfont">&#xe8cf;</i>{{ dateFormat "2006年01月02号" .Params.date }}
+                        </div>
+                    </div>
+                    <ul class="blog-single-tags">
+                        {{ range $index, $tag := .Params.tags }}
+                        <li class="tag">
+                            <a class="tag-text" href="{{ $.Site.BaseURL }}{{ $.Site.Language.Lang }}/tags/{{ $tag | urlize | lower }}">
+                                <i class="iconfont">&#xe844;</i> {{$tag}}
+                            </a>
+                        </li>
+                        {{end}}
+                    </ul>
+                    <!-- 分享 -->
+                    <div class="share-box">
+                        <a style="vertical-align: middle;" class="share-title"><i class="iconfont">&#xe63f;</i>{{ i18n "share" }}</a>
+                        <a data-click-url="{{ $.Site.BaseURL }}{{ .URL }}" class="shareSina"><span class="share-icon"></span></a>
+                        <a data-click-url="{{ $.Site.BaseURL }}{{ .URL }}" class="shareWX"><span class="share-icon"></span></a>
+                    </div>
+                    <div class="share-wx-alert">
+                        <div class="wx-box">
+                            <div class="wx-box-head">
+                                <span>{{ i18n "share to wechat" }}</span>
+                                <a href="#" onclick="return false;" class="wx-box-close">×</a>
+                            </div>
+                            <div id="wxCode" class="wx-box-main">
+
+                            </div>
+                            <div class="wx-box-foot">
+                                {{ i18n "open wechat, click discover" }}
+                                <br>
+                                {{ i18n "use scan or code to share" }}
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="blog-single-body">
+                    {{ .Content }}
+                    <div class="blog-single-user">
+                        <p>{{ i18n "author" }}：<span>{{ .Params.author}}</span></p>
+                        <p>{{ i18n "source" }}：<span>Choerodon</span></p>
+                        <p>{{ i18n "welcome to reprint" }}</p>
+                    </div>
+                </div>
+                {{ if or .PrevInSection .NextInSection}}
+                <div class="blog-single-foot">
+                    <div class="blog-single-footbar">
+                    {{ with .PrevInSection }}
+                    <a class="prepage" href="{{.Permalink}}">{{ i18n "previouspage"}}: {{ .Title }}</a>
+                    {{ end }}
+                    {{ with .NextInSection }}
+                    <a class="nextpage" href="{{.Permalink}}">{{ i18n "nextpage"}}:{{ .Title }}</a>
+                    {{ end }}
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+            <div class="content-menu blog-menu">
+                {{ partial "sidebar.html" . }}
+            </div>
+        </div>
+
+        {{ partial "footer.html" . }}
+
+    </div>
+
+    {{ partial "scripts.html" . }}
+<!-- blog search -->
+<script src="{{ .Site.BaseURL }}/js/blog-search.js"></script>
+<!-- blog search end -->
+<!-- share -->
+<script src="{{ .Site.BaseURL }}/js/jquery/jquery.qrcode.min.js"></script>
+<!-- share end -->
+  </body>
+</html>

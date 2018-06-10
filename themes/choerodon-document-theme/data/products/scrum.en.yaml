@@ -1,0 +1,5 @@
+weight: 1
+name: "Container runtime"
+icon: "/img/home/scrum-icon.svg"
+description: "Choerodon applications run on a modular, lightweight application container runtime where the applications can use the platform's service APIs according to the standard schema. In this way, companies can more easily build and run custom microservices applications, web front-end applications, general web applications, mobile applications, and Java libraries in the cloud"
+language: en

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  {{ partial "head.html" . }}
+  <link href="{{ .Site.BaseURL }}/css/case-studies.css" rel="stylesheet">
+  <body>
+    <style>
+        body #content{
+            height: auto;
+        }
+    </style>
+    <div>
+
+        <header id="header">
+
+          {{ partial "nav.html" . }}
+
+        </header>
+        <div id="content" class="case-studies-detail">
+          {{ .Content }}
+
+        </div>
+        <!-- /#content -->
+
+        {{ partial "footer.html" . }}
+
+    </div>
+    <!-- /#all -->
+
+    {{ partial "scripts.html" . }}
+
+
+  </body>
+</html>

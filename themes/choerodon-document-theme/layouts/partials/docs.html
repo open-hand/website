@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    {{ partial "head.html" . }}
+    <link href="{{ .Site.BaseURL }}/css/docs.css" rel="stylesheet">
+    <header id="header">
+        {{ partial "nav.html" . }}
+        {{ if eq .Name "文档" }}
+            <div class="docs-home-nav">
+                <div class="nav-text">
+                    <h2>欢迎使用猪齿鱼文档</h2>
+                    <p>通过阅读文档，您可以了解Choerodon猪齿鱼的相关概念、功能和系统的安装与配置，掌握平台使用方法，快速学会使用微服务开发框架进行系统开发</p>
+                </div>
+            </div>
+        {{ end }}
+    </header>
+    <body baseUrl="{{ .Site.BaseURL }}">
+        <div id="content" class="docs">
+            <!-- docs-nav -->
+            <div class="content-menu docs-menu" {{ if eq .Name "文档" }} style="display: none" {{ end }}>
+            {{- $currentNode := . }}
+            {{- range  where .Site.Home.Sections.ByWeight "Type" "docs"}}
+            {{- template "section-tree-nav" dict "sect" . "currentnode" $currentNode}}
+            {{- end }}
+
+            <!-- templates -->
+            {{- define "section-tree-nav" }}
+
+            {{- $currentNode := .currentnode }}
+            {{- with .sect}}
+            {{- if and .IsSection}}
+                {{- $numberOfPages := (add (len .Pages) (len .Sections)) }}
+                {{- safeHTML .Params.head}}
+                
+                <li data-nav-id="{{.URL}}" class="dd-item
+                    {{- if .IsAncestor $currentNode}} parent{{end}}
+                    {{- if eq .URL $currentNode.URL}} active{{end}}
+                    {{- if .Params.alwaysopen}} alwaysopen{{end -}}
+                    {{- if ne $numberOfPages 0 }} haschildren{{end}}">
+                {{if eq .Name "文档"}}
+                    {{else}}
+                    <div class="dir-div">
+                    {{- if ne $numberOfPages 0 }}
+                        <a class="category" href="{{ .RelPermalink}}">{{safeHTML  .Params.Pre}}{{.Title}}{{safeHTML .Params.Post}}</a>
+                        {{else}}
+                        <a href="{{ .RelPermalink}}">{{safeHTML  .Params.Pre}}{{.Title}}{{safeHTML .Params.Post}}</a>
+                    {{end}}
+                    {{- if ne $numberOfPages 0 }}
+                        {{- if or (.IsAncestor $currentNode) (.Params.alwaysopen) }}
+                        <i class="iconfont caret-down category-icon">&#xe639;</i>
+                        {{- else -}}
+                        <i class="iconfont caret-right category-icon">&#xe66f;</i>
+                        {{- end}}
+                    {{- end}}
+                    </div>
+                {{end}}
+                {{- if ne $numberOfPages 0 }}
+                    <ul class="none">
+                    {{- .Scratch.Set "pages" .Pages }}
+                    {{- if .Sections}}
+                    {{- .Scratch.Set "pages" (.Pages | union .Sections) }}
+                    {{- end}}
+                    {{- $pages := (.Scratch.Get "pages") }}
+
+                    {{- range $pages.ByWeight }}
+                        {{- template "section-tree-nav" dict "sect" . "currentnode" $currentNode}}
+                    {{- end}}
+                    </ul>
+                {{- end}}
+                </li>
+            {{- else}}
+                <li data-nav-id="{{.URL}}" class="dd-item
+                {{- if eq .URL $currentNode.URL}} active{{end -}}
+                ">
+                    <div>
+                    <a href="{{ .RelPermalink}}">
+                        {{safeHTML .Params.Pre}}{{.LinkTitle}}{{safeHTML .Params.Post}}
+                    </a>
+                    </div>
+                </li>
+            {{- end}}
+            {{- end}}
+            {{- end}}
+            </div>
+            <!-- docs-nav end -->
+            <div class='docs-post content-post {{ if eq .Name "文档" }} docs-home {{ end }}' id="content-post" >
+                {{ .Content }}
+            </div>
+            <div class="content-menu article-menu" {{ if eq .Name "文档" }} style="display: none" {{ end }}>
+                {{ partial "widgets/search.html" . }}
+                <!--详情页右侧标题导航栏-->
+                <ul id="article-nav-ul">
+                </ul>
+            </div>
+        </div>
+        <!-- /#content -->
+        <!-- 图片点击放大 -->
+        {{ if eq .Name "文档" }}
+            {{ else }}
+            <div style="clear: both;"></div>
+        {{ end }}
+
+        {{ partial "footer.html" . }}
+        {{ partial "scripts.html" . }}
+        <!-- highlight.js -->
+        <link rel="stylesheet" href="{{ .Site.BaseURL }}/highlight/styles/atom-one-light.css">
+        <script src="{{ .Site.BaseURL }}/highlight/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        
+    </body>
+<!-- doc search -->
+<script src="{{ .Site.BaseURL }}/js/doc-search.js"></script>
+<!-- doc search end -->
+</html>

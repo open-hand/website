@@ -1,0 +1,5 @@
+weight: 2
+name: "The integration of development and operation"
+icon: "/img/home/operation.svg"
+description: "With DevOps as the concept, combined with scrum software development practices, it effectively promotes communication, collaboration, and integration between development (application/software engineering), technical operations, and quality assurance (QA) personnel; at the same time, Continuous integration and continuous delivery increase the company's response rate to the market and the quality of software delivery."
+language: en

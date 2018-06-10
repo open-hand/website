@@ -1,0 +1,5 @@
+name: "Cheese Network"
+image: "/img/clients/zhishinet.jpg"
+description: "Remodeling the architecture of system to improve external service capabilitie"
+classname: "zhishinet"
+language: en

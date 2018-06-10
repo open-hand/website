@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="148px" height="129px" viewBox="0 0 148 129" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47 (45396) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 4</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-14.3%" y="-11.4%" width="128.6%" height="128.6%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.16 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <circle id="path-2" cx="35" cy="35" r="35"></circle>
+    </defs>
+    <g id="产品模块" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="产品模块-2" transform="translate(-773.000000, -486.000000)">
+            <g id="Group-4" transform="translate(773.000000, 486.000000)">
+                <rect id="Rectangle-4-Copy-3" fill="#FFFFFF" x="0" y="0" width="148" height="98" rx="5"></rect>
+                <rect id="Rectangle-4-Copy-4" fill-opacity="0.8" fill="#FFFFFF" x="0" y="108" width="148" height="21" rx="5"></rect>
+                <rect id="Rectangle-6-Copy-4" fill-opacity="0.1" fill="#4A4A4A" x="8" y="116" width="26" height="6" rx="3"></rect>
+                <g id="Group-18" filter="url(#filter-1)" transform="translate(105.000000, 50.000000) scale(-1, 1) translate(-105.000000, -50.000000) translate(70.000000, 15.000000)">
+                    <mask id="mask-3" fill="white">
+                        <use xlink:href="#path-2"></use>
+                    </mask>
+                    <use id="Oval" fill="#6694EF" xlink:href="#path-2"></use>
+                    <path d="M36,-0.994448121 C36.2079521,-0.998143861 36.4163464,-1 36.6251691,-1 C51.8553743,-1 64.9224285,9.19066006 70,22.8447021 L36,38 L36,-0.994448121 Z" id="Oval" stroke="#FFFFFF" stroke-width="2" fill="#F0F2F5" mask="url(#mask-3)"></path>
+                    <circle id="Oval" fill="#FFFFFF" mask="url(#mask-3)" cx="35" cy="35" r="20"></circle>
+                    <text id="80%" transform="translate(34.500000, 35.500000) scale(-1, 1) translate(-34.500000, -35.500000) " font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" fill-opacity="0.65" fill="#000000">
+                        <tspan x="21" y="40">80%</tspan>
+                    </text>
+                </g>
+                <rect id="Rectangle-2" fill="#B7B7B7" x="8" y="17" width="26" height="6" rx="3"></rect>
+                <rect id="Rectangle-2-Copy-6" fill="#B7B7B7" x="8" y="59" width="26" height="6" rx="3"></rect>
+                <rect id="Rectangle-2-Copy-7" fill="#B7B7B7" x="8" y="70" width="51" height="6" rx="3"></rect>
+                <rect id="Rectangle-2-Copy-4" fill="#FAD352" x="8" y="48" width="6" height="6" rx="3"></rect>
+                <rect id="Rectangle-2-Copy-5" fill="#FAD352" x="18" y="48" width="16" height="6" rx="3"></rect>
+                <rect id="Rectangle-2-Copy" fill="#B7B7B7" x="8" y="28" width="51" height="6" rx="3"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

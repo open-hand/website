@@ -1,0 +1,5 @@
+weight: 6
+name: "Microservice"
+icon: "/img/home/operation-icon.svg"
+description: "With Choerodon's microservice application architecture, and the lightweight, application-oriented virtualized operating environment and ideal carrier for microservices provided by containers, Kubernetes is used as a container orchestration tool to help companies build application services quickly and easily"
+language: en

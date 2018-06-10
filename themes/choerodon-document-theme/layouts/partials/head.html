@@ -1,0 +1,59 @@
+<head>
+  <meta name="baidu-site-verification" content="NQB7kASlT6" />
+  <meta charset="utf-8">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    {{ if hasPrefix .URL "/case-studies" }}
+    <title>案例 | Choerodon</title>
+    {{ else if hasPrefix .URL "/docs"}}
+      <title>文档 | Choerodon</title>
+    {{ else if hasPrefix .URL "/blog"}}
+      <title>博客 | Choerodon</title>
+    {{ else if hasPrefix .URL "/community"}}
+      <title>社区 | Choerodon</title>
+    {{ else }}
+      <title>{{ .Title }}</title>
+  {{ end }}
+  {{ if .Keywords }}
+  <meta name="keywords" content="{{ delimit .Keywords ", " }}">
+  {{ else if .Site.Params.DefaultKeywords }}
+  <meta name="keywords" content="{{ delimit .Site.Params.DefaultKeywords ", " }}">	
+  {{ end }}
+
+  {{ if .Description }}
+  <meta name="description" content="{{ .Description }}">
+  {{ else if .Site.Params.DefaultDescription }}
+  <meta name="description" content="{{ .Site.Params.DefaultDescription }}">	
+  {{ end }}
+
+  <!-- iconfont -->
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}/font/iconfont.css">
+  <!-- rem.js -->
+  <script src="{{ .Site.BaseURL }}/js/rem.js"></script>
+  <!-- Bootstrap and Font Awesome css -->
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/bootstrap.min.css">
+  <!-- Theme stylesheet, if possible do not edit this stylesheet -->
+  <link href="{{ .Site.BaseURL }}/css/style.choerodon.css" rel="stylesheet" id="theme-stylesheet">
+  <!-- home css -->
+  <link href="{{ .Site.BaseURL }}/css/home.css" rel="stylesheet">
+  <!-- Custom stylesheet - for your changes -->
+  <link href="{{ .Site.BaseURL }}/css/footer.css" rel="stylesheet">
+
+  <link rel="shortcut icon" href="{{ .Site.BaseURL }}/img/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="{{ .Site.BaseURL }}/img/apple-touch-icon-144.png">
+  <!-- owl carousel css -->
+  <!-- <link href="{{ .Site.BaseURL }}/css/owl.carousel.css" rel="stylesheet"> -->
+  <!-- <link href="{{ .Site.BaseURL }}/css/owl.theme.css" rel="stylesheet"> -->
+  <!-- 百度统计 -->
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?8b9485b9f982efd2c649f426a25b1fe8";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+    
+</head>

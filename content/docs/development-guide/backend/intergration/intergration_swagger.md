@@ -15,14 +15,20 @@ weight = 4
 
 ## Eureka服务发现
 
-##### 如需添加Eureka服务发现，需在CHOERODON-TODO-SERVICE中进行两步修改：
-
-* 在`TodoServiceApplication` 上添加`@EnableEurekaClient` 注解
-* 在`TodoServiceApplication` 上添加`@ChoerodonRoute`注解
-
+##### 如需添加Eureka服务发现，需在xxx.infra.util包下创建拓展数据配置类，并继承ExtraDataManager，以用于自动初始化路由。示例如下：
 ```java
- @EnableEurekaClient
- @ChoerodonRoute(name = "dev", path = "/todo/**", serviceId = "choerodon-todo-service")
+@ChoerodonExtraData
+public class CustomExtraDataManager implements ExtraDataManager {
+    @Override
+    public ExtraData getData() {
+        ChoerodonRouteData choerodonRouteData = new ChoerodonRouteData();
+        choerodonRouteData.setName("todo");
+        choerodonRouteData.setPath("/todo/**");
+        choerodonRouteData.setServiceId("choerodon-todo-service");
+        extraData.put(ExtraData.ZUUL_ROUTE_DATA, choerodonRouteData);
+        return extraData;
+    }
+}
 ```
 * 在`bootstrap.yml`中添加关于Eureka的配置
 
@@ -51,7 +57,7 @@ eureka:
 ```yaml
 manager-service:
     container_name: manager-service
-    image: registry.choerodon.io/choerodon-framework/manager-service:0.1.0
+    image: registry.cn-shanghai.aliyuncs.com/choerodon/manager-service:0.1.0
     ports:
     - "8963:8963"
 ```

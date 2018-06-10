@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="148px" height="139px" viewBox="0 0 148 139" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47 (45396) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 31</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="74" cy="30" r="30"></circle>
+        <filter x="-16.7%" y="-13.3%" width="133.3%" height="133.3%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.16 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="产品模块" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="产品模块-1" transform="translate(-263.000000, -1599.000000)">
+            <g id="Group-31" transform="translate(263.000000, 1603.000000)">
+                <polyline id="Path-3" stroke="#979797" points="34.7840314 79.4845658 73.5127683 37.9985506 112.203755 79.4845658"></polyline>
+                <g id="Oval-3-Copy-5">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                </g>
+                <path d="M74,13 C65.2,13 58,20.2 58,29 C58,37.8 65.2,45 74,45 C82.8,45 90,37.8 90,29 C90,20.2 82.8,13 74,13 L74,13 Z M71.28,35.406413 L66,30.126413 L68.24,27.886413 L71.28,30.926413 L79.76,22.446413 L82,24.686413 L71.28,35.406413 L71.28,35.406413 Z" id="Shape" fill="#6694EF"></path>
+                <rect id="Rectangle-4-Copy-35" fill="#FFFFFF" x="0" y="70" width="63" height="65" rx="5"></rect>
+                <rect id="Rectangle-4-Copy-38" fill="#FFFFFF" x="85" y="70" width="63" height="65" rx="5"></rect>
+                <g id="Group-13-Copy-2" transform="translate(13.000000, 83.000000)">
+                    <g id="Group-12" transform="translate(0.000000, 21.000000)">
+                        <path d="M18,21.6168007 C27.9411255,21.6168007 36,18.0350787 36,13.6168007 C36,12.0160217 36,10.1437548 36,8 L0,8 C0,8.79901517 0,10.6712821 0,13.6168007 C0,18.0350787 8.0588745,21.6168007 18,21.6168007 Z" id="Oval-4-Copy" fill="#EDE9B2"></path>
+                        <ellipse id="Oval-4" fill="#F9F5C2" cx="18" cy="8" rx="18" ry="8"></ellipse>
+                    </g>
+                    <g id="Group-12-Copy" transform="translate(0.000000, 11.000000)">
+                        <path d="M18,21.6168007 C27.9411255,21.6168007 36,18.0350787 36,13.6168007 C36,12.0160217 36,10.1437548 36,8 L0,8 C0,8.79901517 0,10.6712821 0,13.6168007 C0,18.0350787 8.0588745,21.6168007 18,21.6168007 Z" id="Oval-4-Copy" fill="#EDE9B2"></path>
+                        <ellipse id="Oval-4" fill="#F9F5C2" cx="18" cy="8" rx="18" ry="8"></ellipse>
+                    </g>
+                    <g id="Group-12-Copy-2">
+                        <path d="M18,21.6168007 C27.9411255,21.6168007 36,18.0350787 36,13.6168007 C36,12.0160217 36,10.1437548 36,8 L0,8 C0,8.79901517 0,10.6712821 0,13.6168007 C0,18.0350787 8.0588745,21.6168007 18,21.6168007 Z" id="Oval-4-Copy" fill="#EDE9B2"></path>
+                        <ellipse id="Oval-4" fill="#F9F5C2" cx="18" cy="8" rx="18" ry="8"></ellipse>
+                    </g>
+                </g>
+                <g id="Group-13-Copy" transform="translate(99.000000, 83.000000)">
+                    <g id="Group-12" transform="translate(0.000000, 21.000000)">
+                        <path d="M18,21.6168007 C27.9411255,21.6168007 36,18.0350787 36,13.6168007 C36,12.0160217 36,10.1437548 36,8 L0,8 C0,8.79901517 0,10.6712821 0,13.6168007 C0,18.0350787 8.0588745,21.6168007 18,21.6168007 Z" id="Oval-4-Copy" fill="#9BE8EF"></path>
+                        <ellipse id="Oval-4" fill="#BCF5FB" cx="18" cy="8" rx="18" ry="8"></ellipse>
+                    </g>
+                    <g id="Group-12-Copy" transform="translate(0.000000, 11.000000)">
+                        <path d="M18,21.6168007 C27.9411255,21.6168007 36,18.0350787 36,13.6168007 C36,12.0160217 36,10.1437548 36,8 L0,8 C0,8.79901517 0,10.6712821 0,13.6168007 C0,18.0350787 8.0588745,21.6168007 18,21.6168007 Z" id="Oval-4-Copy" fill="#9BE8EF"></path>
+                        <ellipse id="Oval-4" fill="#BCF5FB" cx="18" cy="8" rx="18" ry="8"></ellipse>
+                    </g>
+                    <g id="Group-12-Copy-2">
+                        <path d="M18,21.6168007 C27.9411255,21.6168007 36,18.0350787 36,13.6168007 C36,12.0160217 36,10.1437548 36,8 L0,8 C0,8.79901517 0,10.6712821 0,13.6168007 C0,18.0350787 8.0588745,21.6168007 18,21.6168007 Z" id="Oval-4-Copy" fill="#9BE8EF"></path>
+                        <ellipse id="Oval-4" fill="#BCF5FB" cx="18" cy="8" rx="18" ry="8"></ellipse>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

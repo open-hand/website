@@ -70,14 +70,15 @@ mysql> show databases;
 init-local-database.sh:
 ```bash
 #!/usr/bin/env bash
+git clone https://github.com/choerodon/manager-service.git
+cd ./manager-service
 mkdir -p target
 curl https://oss.sonatype.org/content/groups/public/io/choerodon/choerodon-tool-liquibase/0.5.0.RELEASE/choerodon-tool-liquibase-0.5.0.RELEASE.jar -o target/choerodon-tool-liquibase.jar
-curl https://oss.sonatype.org/content/groups/public/io/choerodon/choerodon-tool-liquibase/0.5.0.RELEASE/choerodon-tool-liquibase-0.5.0.RELEASE.jar -o target/manager-service.jar
 java -Dspring.datasource.url="jdbc:mysql://localhost/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
  -Dspring.datasource.username=choerodon \
  -Dspring.datasource.password=123456 \
  -Ddata.drop=false -Ddata.init=init \
- -Ddata.jar=target/manager-service.jar \
+ -Ddata.dir=./src/main/resources \
  -jar target/choerodon-tool-liquibase.jar
 ```
 - 执行命令:

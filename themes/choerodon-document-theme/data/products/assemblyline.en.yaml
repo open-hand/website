@@ -1,0 +1,5 @@
+weight: 2
+name: "Continuous integration & continuous delivery"
+icon: "/img/home/assemblyline-icon.svg"
+description: "Using Gitlab CI as a continuous integration tool, combined with Gitlab's Gitflow branching model, provides a continuous integration pipeline that allows products to be rapidly iterated while maintaining high quality; and delivers new versions of the software to quality teams or users efficiently and frequently"
+language: en

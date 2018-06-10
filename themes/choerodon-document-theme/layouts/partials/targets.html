@@ -1,0 +1,31 @@
+{{ if gt (len .Site.Data.targets) 0 }}
+<section class="targets-section">
+        {{ $.Scratch.Set "index" 0}}
+        {{ range $index, $element := sort .Site.Data.targets "weight" }}
+            {{ if eq ($.Scratch.Get "language") $element.language }}
+                {{ if eq (mod ($.Scratch.Get "index") 2) 0 }}
+                    <div class="bow img-left">
+                        <div class="img-left">
+                            <img src="{{ $element.icon }}"/>
+                        </div>
+                        <div class="text-right">
+                            <h3>{{ $element.name }}</h3>
+                            <p>{{ $element.description | markdownify }}</p>
+                        </div>
+                    </div>
+                    {{ else }}
+                    <div class="bow">
+                        <div class="text-left">
+                            <h3>{{ $element.name }}</h3>
+                            <p>{{ $element.description | markdownify }}</p>
+                        </div>
+                        <div class="img-right">
+                            <img src="{{ $element.icon }}"/>
+                        </div>
+                    </div>
+                {{ end }}
+                {{ $.Scratch.Add "index" 1 }}
+            {{ end }}
+        {{ end }}
+</section>
+{{ end }}

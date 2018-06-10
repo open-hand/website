@@ -1,4 +1,4 @@
-baseurl = "http://choerodon.io/"
+baseurl = "http://website.staging.saas.hand-china.com/"
 title = "Choerodon | 企业级数字服务平台"
 theme = "choerodon-document-theme"
 # themesDir = "../.."
@@ -64,10 +64,31 @@ paginate = 10
     weight = 4
 
 [[languages.zh.menu.main]]
-    name = "Github"
+    name = "GITHUB"
     url  = "https://github.com/choerodon/"
     weight = 5
     post= true
+    identifier = "github"
+
+[[languages.zh.menu.main]]
+    name = "v0.5"
+    url  = "/zh/"
+    weight = 6
+    identifier = "version"
+    pre = "<i class='iconfont'>&#xe612;</i>"
+
+    [[languages.zh.menu.main]]
+    name = "v0.6"
+    url  = "http://choerodon.io/zh/"
+    weight = 1
+    parent = "version"
+
+    [[languages.zh.menu.main]]
+    name = "v0.5"
+    url  = "/zh/"
+    weight = 2
+    parent = "version"
+
 
 [params]
     viewMorePostLink = "/blog/"

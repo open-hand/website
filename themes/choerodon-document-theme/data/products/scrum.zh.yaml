@@ -1,0 +1,22 @@
+weight: 1
+name: "敏捷管理"
+icon: "/img/home/scrum-icon.svg"
+description: "Choerodon认为软件交付过程的本质是用户价值的实现，而用户价值的实现是通过用户价值流动来体现的，Choerodon提供了一套工具来帮助用户通过敏捷的方式来管理用户价值的流动，使整个软件开发流程管化规范化。Choerodon敏捷管理的核心是需求，计划和执行。即通过故事地图、用户故事来管理用户故事和发布计划，通过迭代来管理冲刺，最后通过看板来可视化冲刺的执行。"
+summary: "通过敏捷的方式来管理用户价值的流动，使整个软件开发流程管理规范化"
+language: zh
+
+childIcon1: "/img/home/scrum-illustrator-1.svg"
+childTitle1: "故事地图"
+childDescription1: "将用户故事像地图一样展现出来"
+
+childIcon2: "/img/home/scrum-illustrator-2.svg"
+childTitle2: "故事、任务和缺陷"
+childDescription2: "管理所有的项目故事、任务和缺陷"
+
+childIcon3: "/img/home/scrum-illustrator-3.svg"
+childTitle3: "迭代"
+childDescription3: "用迭代来管理和执行冲刺"
+
+childIcon4: "/img/home/scrum-illustrator-4.svg"
+childTitle4: "看板"
+childDescription4: "可视化整个冲刺的计划执行"

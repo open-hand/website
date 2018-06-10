@@ -1,0 +1,22 @@
+{{ if not (eq (len .Site.Taxonomies.tags) 0) }}
+<div class="sidebar-menu">
+    <div class="panel-heading">
+      <h3 class="panel-title">{{ i18n "tagsTitle" }}</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="tag-cloud">
+            {{ if in .URL "/blog" }} 
+                {{ else }}  
+                {{ $.Scratch.Set "v1" (split .URL "/") }} 
+            {{ end }}
+            {{ range ($.Site.GetPage "taxonomyTerm" "tags").Pages }}
+                <li {{ if in ($.Scratch.Get "v1") (.Title | urlize) }}  class='active' {{ end }}>
+                    <a href="{{ $.Site.BaseURL }}{{ $.Site.Language.Lang }}/tags/{{ .Title | urlize | lower }}">
+                        <i class="iconfont">&#xe844;</i> {{ .Title }}
+                    </a>
+                </li>
+            {{ end }}
+        </ul>
+    </div>
+</div>
+{{ end }}

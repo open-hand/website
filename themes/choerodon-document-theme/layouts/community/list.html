@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    {{ partial "head.html" . }}
+    <link href="{{ .Site.BaseURL }}/css/community.css" rel="stylesheet">
+    <header id="header">
+        {{ partial "nav.html" . }}
+        <div class="community-nav">
+            <div class="banner-text">
+                <div>{{ i18n "welcome to choerodon community" }}</div>
+                <div class="description">{{ i18n "people committed to technology sharing" }}</div>
+                <a href="http://forum.choerodon.io/" class="white-button">进入论坛</a>
+            </div>
+            <img src="/img/community.svg"/>
+        </div>
+    </header>
+  <body>
+    <div>
+        <div id="content" class="community">
+            <div class="talk-text">
+                <p>{{ i18n "we hope you have more requests and suggestions"}}</p>
+                <p>{{ i18n "provides a steady stream of nutrients for choerodon" }}</p>
+            </div>
+            {{ partial "social.html" .}}
+            <div class="forum">
+                <div class="forum-background">
+                    <div class="forum-title">猪齿鱼论坛</div>
+                    <div class="forum-description">在猪齿鱼论坛，你可以就技术上的疑惑进行讨论，可以和有相同关注的伙伴交流产品信息</div>
+                    <div class="forum-data">
+                        <div class="forum-button">
+                            <div>
+                                <button id="latest-btn" class="btn choose">最新</button>
+                                <button id="hotest-btn" class="btn">最热</button>
+                            </div>
+                            <a class="btn forum-entr" href="http://forum.choerodon.io/">进入论坛 <i class="iconfont">&#xe727;</i></a>
+                        </div>
+                        <div class="forum-table" id="forum"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        {{ partial "footer.html" . }}
+    </div>
+    <!-- /#all -->
+
+    {{ partial "scripts.html" . }}
+
+    <script src="{{ .Site.BaseURL }}/js/community.js"></script>
+  </body>
+</html>

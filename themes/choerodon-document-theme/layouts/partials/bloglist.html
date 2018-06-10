@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    {{ partial "head.html" . }}
+    <link href="{{ .Site.BaseURL }}/css/blog-list.css" rel="stylesheet">
+    {{ partial "blog_nav.html" . }}
+  <body baseUrl="{{ .Site.BaseURL }}">
+    <div class="content-max">
+        <div id="content" class="blogs">
+            <div class="content-post blog-post" id="content-post">
+                {{ $paginator := .Paginate (where .Data.Pages "Type" "blog") }}
+                {{ range $paginator.Pages }}
+                <div class="row blog-list" id="blog-list">
+                    <div class="blog-list-img">
+                        <img src="{{ .Params.img }}" alt="">
+                    </div>
+                    <div class="blog-list-content">
+                        <a href="{{ .Permalink }}" class="right-title" >{{ .Params.title }}</a>
+                        <div class="right-info">
+                            <span class="right-user">{{ i18n "author" }}：<span>{{ .Params.author}}</span></span>
+                            {{ range $index, $category := .Params.categories }}
+                                {{ if eq $index 0}}
+                                    <span class="right-categories">{{ i18n "tagsTitle" }}: <a href="{{ $.Site.BaseURL }}{{ $.Site.Language.Lang }}/categories/{{ $category | urlize | lower }}">{{ $category }}</a></span>
+                                {{ end }}
+                            {{end}}
+                            <span class="right-time">
+                                <i class="iconfont">&#xe8cf;</i>{{ .Date.Format .Site.Params.date_format }}
+                            </span>
+                        </div>
+                        <div class="right-text">{{ .Params.description }}</div>
+                        <ul class="right-tags">
+                            {{ range $index, $tag := .Params.tags }}
+                            <li class="tag">
+                                
+                                <a class="tag-text" href="{{ $.Site.BaseURL }}{{ $.Site.Language.Lang }}/tags/{{ $tag | urlize | lower }}">
+                                    <i class="iconfont">&#xe844;</i> {{$tag}}
+                                </a>
+                            </li>
+                            {{end}}
+                        </ul>
+                    </div>
+                </div>
+                {{end}}
+                {{ $currentPage := int (substr .Paginator 6) }}
+                {{ $totalPage := int .Paginator.TotalPages }}
+                {{ $totalPagePrev := sub $totalPage 1 }}
+                {{ $nowPage := .Paginator.PageNumber }}
+                {{ $url := .Paginator.First.URL }}
+                <nav id="paginator" class="paginator" aria-label="Page navigation">
+                    <ul class="pagination">
+                    {{ if .Paginator.HasPrev }}
+                        <li class="paginate page-left">
+                            <a href="{{ .Paginator.First.URL }}" aria-label="Previous">
+                                <span aria-hidden="true"><img src="{{ .Site.BaseURL }}/img/right.svg" alt=""></span>
+                            </a>
+                        </li>
+                    {{ end }}
+                    {{ if le $totalPage 5}}
+                        {{ range $index, $element := .Paginator.Pagers }}
+                            <li class="paginate {{ if eq (add $index 1) $nowPage }} active {{ end }}">
+                                <a href="{{ $url }}/page/{{ add $index 1 }}">{{ add $index 1 }}</a>
+                            </li>
+                        {{ end }}
+                        {{ else }}
+                            {{ if le 6 $nowPage }}
+                                <li class="paginate"><a>...</a></li>
+                            {{ end }}
+                            {{ range $index, $element := .Paginator.Pagers }}
+                                {{ if le $index (add $nowPage 3) }}
+                                    {{ if le (sub $nowPage 5) $index }}
+                                        <li class="paginate {{ if eq (add $index 1) $nowPage }} active {{ end }}">
+                                            <a href="{{ $url }}/page/{{ add $index 1 }}">{{ add $index 1 }}</a>
+                                        </li>
+                                    {{ end }}
+                                {{ end }}
+                            {{ end }}
+                            {{ if le (add $nowPage 5) $totalPage }}
+                                <li class="paginate"><a>...</a></li>
+                            {{ end }}
+                    {{ end }}
+                    {{ if .Paginator.HasNext }}
+                        <li class="paginate">
+                            <a href="{{ .Paginator.Last.URL }}" aria-label="Next">
+                                <span aria-hidden="true"><img src="{{ .Site.BaseURL }}/img/right.svg" alt=""></span>
+                            </a>
+                        </li>
+                    {{ end }}
+                    </ul>
+                </nav>
+            </div>
+            <div class="content-menu blog-menu">
+                {{ partial "sidebar.html" . }}
+            </div>
+        </div>
+
+        {{ partial "footer.html" . }}
+
+    </div>
+
+    {{ partial "scripts.html" . }}
+<!-- blog search -->
+<script src="{{ .Site.BaseURL }}js/blog-search.js"></script>
+<!-- blog search end -->
+
+  </body>
+</html>

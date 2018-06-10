@@ -1,0 +1,5 @@
+weight: 3
+name: "Deploy pipeline"
+icon: "/img/home/application-icon.svg"
+description: "With Choerodon, you can seamlessly integrate native cloud applications into the architecture of business. You can connect key enterprise data and create customer-specific applications in a hybrid deployment environment, an on-premise environment, or a cloud environment. Then you can use the API to interact with customers and build relationships with new partners to expand new markets"
+language: en

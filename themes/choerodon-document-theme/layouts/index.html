@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+{{ partial "head.html" . }}
+<body>
+
+<div id="home">
+
+    <header id="header">
+
+        {{ partial "nav.html" . }}
+
+        {{ partial "carousel.html" . }}
+
+    </header>
+    <div id="content">
+        {{ partial "no_active_maintenance.html" . }}
+        
+        {{ partial "abstract.html" . }}
+
+        {{ partial "targets.html" . }}
+
+        {{ partial "see_more.html" . }}
+
+        {{ partial "product.html" . }}
+
+        {{ partial "clients.html" . }}
+    </div>
+
+    {{ partial "footer.html" . }}
+
+</div>
+<!-- /#all -->
+
+{{ partial "scripts.html" . }}
+
+</body>
+</html>

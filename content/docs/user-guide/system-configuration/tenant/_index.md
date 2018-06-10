@@ -1,7 +1,7 @@
 +++
 title = "组织设置"
 description = ""
-weight = 2
+weight = 3
 +++
 
 <h2 id="1">介绍</h2>

@@ -1,7 +1,7 @@
 ﻿+++
 title = "创建一个前端应用"
 description = ""
-weight = 2
+weight = 3
 +++
 
 # 创建一个前端应用
@@ -20,13 +20,13 @@ Choerodon 使用 React 作为前端的UI应用框架，并且对前端的展示�
 
 ## 前置条件
 
-**1.** 在操作之前保证[系统配置](../../user-guide/system-configuration)已经配置完全。
+**1.** 在操作之前保证[系统配置](../../user-guide/system-configuration)已经配置完全。特别在本章节用到的角色、环境管理等配置。
 
-**2.** 完成[创建项目](../project)，本章节使用在前面章节创建的项目`猪齿鱼研发`。
+**2.** 完成[创建项目](../project)操作。本章节使用在前面章节创建的项目`猪齿鱼研发`。
 
-**3.** 完成[创建环境](../project)操作。
+**3.** <font>完成[创建环境](../../user-guide/deployment-pipeline/environment-pipeline)，环境流水线中有连接状态正常的环境。
 
-**4.** 完成了前端模板库的依赖安装并且成功启动项目。
+**4.** 在Choerodon平台下，项目启动依赖于基础服务：
 
 
 <h2 id="1">创建前端应用</h2>
@@ -40,14 +40,14 @@ Choerodon 使用 React 作为前端的UI应用框架，并且对前端的展示�
  -  应用编码：choerodon-front 
 
 	<blockquote class="warning">
-		   应用编码输入只能包含字母，数字，下划线，空格， '_', '.', "——",只能以字母，数字，下划线开头。
+		   应用编码输入只能包含字母，数字，下划线，空格， '_', '.', "——"，只能以字母，数字，下划线开头。
 		 </blockquote>
   
  - 应用名称：猪齿鱼前端应用
  
  - 选择应用模板: MicroServiceUI
 	  <blockquote class="note">
-       当应用模板不符合您的需求，您可手动创建一个[应用模板](../../user-guide/continuos-delivery/assembly-line/application-template)。
+       当应用模板不符合您的需求，您可手动创建一个[应用模板](../../user-guide/development-pipeline/application-template/)。
      </blockquote>
    
 **4.** 点击`创建`，即可创建一个前端应用。
@@ -74,6 +74,7 @@ Choerodon 使用 React 作为前端的UI应用框架，并且对前端的展示�
  **2. 拉取代码仓库**
  
  在存放代码的文件夹下，打开git bash,输入命令`git clone [仓库地址]`，拉取所需应用的代码仓库。
+ 运行代码相关文档请查看[前端开发手册](../../development-guide/front/)。
 
   **3. 开发分支**
 
@@ -355,6 +356,7 @@ const DemoIndex = asyncRouter(() => import('./organization/demo/DemoIndex'));
 任何产品几乎都会经历产品的初创期、成长期、成熟期。在产品的初创期，需要通过快速试错探索出有用户黏性的功能；探索成功之后，就需要快速导入用户，这时候也会产生新的需求和新的问题，不断去完善产品；在产品的相对成熟期，则可以考虑产品的变现，和新功能的延展，以提升用户活跃。因此，当一个产品开发完成上线后，产品的周期化迭代就变得非常重要。固定的周期有助于为项目团队形成规范，从而提高开发效率。
 
 Choerodon第一次发版前就准备好下个版本的需求。一般第一个版本上线后，开发人员就进入下一个版本的开发和测试。这样当问题暴露的时候，就可以迅速解决问题，优化到某个程度后，再放缓迭代节奏，这样就能更好的平衡好需求。
+
 
 
 

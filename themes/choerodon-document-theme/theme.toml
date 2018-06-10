@@ -1,0 +1,6 @@
+name = "Choerodon"
+description = "A port of the Choerodon theme"
+homepage = "https://code.choerodon.com.cn/choerodon-framework/choerodon-document-theme"
+
+[author]
+    name = "choerodon"

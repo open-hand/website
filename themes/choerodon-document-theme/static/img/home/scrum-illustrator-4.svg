@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="148px" height="120px" viewBox="0 0 148 120" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47 (45396) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 5</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="8" y="35" width="60" height="28" rx="3"></rect>
+        <filter x="-16.7%" y="-28.6%" width="133.3%" height="171.4%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.16 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <rect id="path-3" x="81" y="35" width="60" height="28" rx="3"></rect>
+        <filter x="-16.7%" y="-28.6%" width="133.3%" height="171.4%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.16 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <rect id="path-5" x="81" y="75" width="60" height="28" rx="3"></rect>
+        <filter x="-16.7%" y="-28.6%" width="133.3%" height="171.4%" filterUnits="objectBoundingBox" id="filter-6">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.16 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="产品模块" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="产品模块-2" transform="translate(-1028.000000, -491.000000)">
+            <g id="Group-5" transform="translate(1028.000000, 491.000000)">
+                <rect id="Rectangle-4-Copy-5" fill="#FFFFFF" x="0" y="0" width="148" height="120" rx="5"></rect>
+                <text id="story" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" fill-opacity="0.65" fill="#000000">
+                    <tspan x="10" y="22">story</tspan>
+                </text>
+                <text id="task" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" fill-opacity="0.65" fill="#000000">
+                    <tspan x="84" y="22">task</tspan>
+                </text>
+                <g id="Rectangle-4-Copy-6">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                </g>
+                <path d="M11,35 L65,35 L65,35 C66.6568542,35 68,36.3431458 68,38 L68,41 L8,41 L8,38 L8,38 C8,36.3431458 9.34314575,35 11,35 Z" id="Rectangle-4-Copy-6" fill="#6694EF"></path>
+                <rect id="Rectangle-6" fill-opacity="0.4" fill="#4A4A4A" x="14" y="45" width="16" height="4" rx="2"></rect>
+                <path d="M16,53 L47,53 L47,53 C48.1045695,53 49,53.8954305 49,55 L49,55 L49,55 C49,56.1045695 48.1045695,57 47,57 L25.6590248,57 L16,57 L16,57 C14.8954305,57 14,56.1045695 14,55 L14,55 L14,55 C14,53.8954305 14.8954305,53 16,53 Z" id="Rectangle-6-Copy-5" fill-opacity="0.4" fill="#4A4A4A"></path>
+                <g id="Rectangle-4-Copy-7">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-3"></use>
+                </g>
+                <g id="Rectangle-4-Copy-8">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-6)" xlink:href="#path-5"></use>
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-5"></use>
+                </g>
+                <path d="M84,35 L138,35 L138,35 C139.656854,35 141,36.3431458 141,38 L141,41 L81,41 L81,38 L81,38 C81,36.3431458 82.3431458,35 84,35 Z" id="Rectangle-4-Copy-9" fill="#9BE8EF"></path>
+                <path d="M84,75 L138,75 L138,75 C139.656854,75 141,76.3431458 141,78 L141,81 L81,81 L81,78 L81,78 C81,76.3431458 82.3431458,75 84,75 Z" id="Rectangle-4-Copy-10" fill="#FDF1CB"></path>
+                <rect id="Rectangle-6-Copy-6" fill-opacity="0.4" fill="#4A4A4A" x="87" y="45" width="16" height="4" rx="2"></rect>
+                <rect id="Rectangle-6-Copy-8" fill-opacity="0.4" fill="#4A4A4A" x="87" y="85" width="16" height="4" rx="2"></rect>
+                <rect id="Rectangle-6-Copy-7" fill-opacity="0.4" fill="#4A4A4A" x="87" y="53" width="35" height="4" rx="2"></rect>
+                <rect id="Rectangle-6-Copy-9" fill-opacity="0.4" fill="#4A4A4A" x="87" y="93" width="35" height="4" rx="2"></rect>
+                <path d="M6,28.5 L140.513071,28.5" id="Line-2" stroke="#9B9B9B" stroke-linecap="square"></path>
+                <path d="M74.5,13.5 L74.5,113" id="Line-3" stroke="#9B9B9B" stroke-linecap="square"></path>
+            </g>
+        </g>
+    </g>
+</svg>

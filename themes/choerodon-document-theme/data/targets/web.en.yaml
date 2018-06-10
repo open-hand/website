@@ -1,0 +1,5 @@
+weight: 3
+name: "Microservice application architecture"
+icon: "/img/home/microservice.svg"
+description: "Using Spring Cloud as a microservice architecture, the system module is split into multiple independent microservices to reduce the coupling of application modules. And then, using container orchestration and management tools, combined with best practices of DevOps, companies can use part of the application in a faster, more scrum manner to develop, deploy, and update, so that new market demands and competitive conditions can be made more timely and more flexibly."
+language: en

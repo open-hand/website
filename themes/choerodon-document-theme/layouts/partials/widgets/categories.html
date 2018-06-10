@@ -1,0 +1,24 @@
+{{ if not (eq (len .Site.Taxonomies.categories) 0) }}
+<div class="sidebar-menu">
+
+    <div class="panel-heading">
+      <h3 class="panel-title">{{ i18n "categoriesTitle" }}</h3>
+    </div>
+
+    <div class="panel-body">
+        <ul class="nav nav-pills nav-stacked">
+            {{ if in .URL "/blog" }} 
+                {{ else }}  
+                {{ $.Scratch.Set "v1" (split .URL "/") }} 
+            {{ end }}
+            {{ range $name, $items := .Site.Taxonomies.categories }}
+            <li class='{{ if in ($.Scratch.Get "v1") ($name | urlize) }} active {{ end }}'>
+                <a href="{{ $.Site.BaseURL }}{{ $.Site.Language.Lang }}/categories/{{ $name | urlize | lower }}">
+                    {{ $name }} ({{ len $items }})
+                </a>
+            </li>
+            {{ end }}
+        </ul>
+    </div>
+</div>
+{{ end }}

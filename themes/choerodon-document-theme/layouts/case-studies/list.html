@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  {{ partial "head.html" . }}
+  <link href="{{ .Site.BaseURL }}/css/case-studies.css" rel="stylesheet">
+    <header id="header">
+        {{ partial "nav.html" . }}
+  </header>
+  <body>
+
+    <div id="content" class="case-studies-section">
+        <div class="case-nav">
+            <h1>{{ i18n "they are using choerodon"}}<br><div><div>{{ i18n "to accelerate business remodeling" }}</div><div>{{ i18n "and digital transformation" }}</div></div></h1>
+            <p>{{ i18n "choerodon has increased the agility of the enterprise"}}</p>
+        </div>
+        <div class="case-studies-content">
+            <div class="case-studies-content-box-mobile">
+                {{ $paginator := .Paginate (where .Data.Pages "Type" "case-studies") }}
+                {{ range $paginator.Pages }}
+                <div class="mo-padding">
+                    <div class="case-study">
+                        <a {{ if .Params.unfinshed }} {{ else }} href="{{ .Permalink }}" {{ end }} class="case-list-logo"><img src="{{ .Site.BaseURL}}{{ .Params.banner }}"></a>
+                        <div class="case-list-content">
+                            <h3>{{ .Params.title }}</h3>
+                            <p class="summary">{{ .Params.summary }}</p>
+                            <a class="button" {{ if .Params.unfinshed }} {{ else }} href="{{ .Permalink }}" {{ end }}>
+                                <div>{{ i18n "readmore"}}</div>
+                                <div class="single-icon"></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+        </div>        
+    </div>
+    {{ partial "footer.html" . }}
+
+    {{ partial "scripts.html" . }}
+  </body>
+</html>

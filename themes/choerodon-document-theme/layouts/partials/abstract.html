@@ -1,0 +1,13 @@
+{{ $.Scratch.Set "language" .Site.Language.Lang }}
+<section class="abstracts-section">
+    {{ range $index, $element := sort .Site.Data.abstract "weight" }}
+        {{ if eq ($.Scratch.Get "language") $element.language }}
+            <div class = "abstract-section-content">
+                {{ $element.description | markdownify }}
+            </div>
+            <div class="abstract-section-img">
+                <img src="{{ $element.image }}"/>
+            </div>
+        {{ end }}
+    {{ end }}
+</section>

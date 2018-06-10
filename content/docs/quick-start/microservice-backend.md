@@ -1,7 +1,7 @@
 ﻿+++
 title = "创建一个后端应用"
 description = ""
-weight = 3
+weight = 4
 type = "docs"
 +++
 
@@ -21,7 +21,7 @@ type = "docs"
 
 **2.** 完成[创建项目](../project)操作。本章节使用在前面章节创建的项目`猪齿鱼研发`。
 
-**3.** <font>完成[创建环境](../project)操作。
+**3.** <font>完成[创建环境](../../user-guide/deployment-pipeline/environment-pipeline)，环境流水线中有连接状态正常的环境。
 
 **4.** 在Choerodon平台下，项目启动依赖于基础服务：
 
@@ -54,7 +54,7 @@ type = "docs"
  -  应用名称：猪齿鱼后端应用
  -  选择应用模板: MicroService 
 	<blockquote class="note">
-       当应用模板不符合您的需求，您可手动创建一个[应用模板](../../user-guide/continuos-delivery/assembly-line/application-template)。
+       当应用模板不符合您的需求，您可手动创建一个[应用模板](../../user-guide/development-pipeline/application-template/)。
 	    </blockquote>
 
  **4.** 当应用创建成功，可在应用管理界面查看到新建的应用。
@@ -117,7 +117,7 @@ type = "docs"
 		<parent>
 			<groupId>io.choerodon</groupId>
 			<artifactId>choerodon-framework-parent</artifactId>
-			<version>0.1.0</version>
+			<version>0.5.0.RELEASE</version>
 		</parent>
 
 		<dependencies>
@@ -125,13 +125,13 @@ type = "docs"
 			<dependency>
 				<groupId>io.choerodon</groupId>
 				<artifactId>choerodon-starter-swagger</artifactId>
-				<version>0.1.0</version>
+				<version>0.5.0.RELEASE</version>
 			</dependency>
 			<!-- feign依赖 -->
 			<dependency>
 				<groupId>io.choerodon</groupId>
 				<artifactId>choerodon-starter-feign-replay</artifactId>
-				<version>0.1.0</version>
+				<version>0.5.0.RELEASE</version>
 			</dependency>
 			<!-- 数据库 -->
 			<dependency>
@@ -141,24 +141,24 @@ type = "docs"
 			<dependency>
 				<groupId>io.choerodon</groupId>
 				<artifactId>choerodon-starter-core</artifactId>
-				<version>0.1.0</version>
+				<version>0.5.0.RELEASE</version>
 			</dependency>
 			<dependency>
 				<groupId>io.choerodon</groupId>
 				<artifactId>choerodon-starter-hitoa</artifactId>
-				<version>0.1.0</version>
+				<version>0.5.0.RELEASE</version>
 			</dependency>
 			<!-- 通用mapper -->
 			<dependency>
 				<groupId>io.choerodon</groupId>
 				<artifactId>choerodon-starter-mybatis-mapper</artifactId>
-				<version>0.1.0</version>
+				<version>0.5.0.RELEASE</version>
 			</dependency>
 			 <!-- 资源服务jwtToken校验工具包-->
 			<dependency>
 				<groupId>io.choerodon</groupId>
 				<artifactId>choerodon-starter-oauth-resource</artifactId>
-				<version>0.1.0</version>
+				<version>0.5.0.RELEASE</version>
 			</dependency>
 			<!-- 监控 -->
 			<dependency>
@@ -214,7 +214,7 @@ type = "docs"
 			<dependency>
 				<groupId>io.choerodon</groupId>
 				<artifactId>choerodon-starter-bus</artifactId>
-				<version>0.1.0</version>
+				<version>0.5.0.RELEASE</version>
 			</dependency>
 			<!-- test -->
 			<dependency>
@@ -240,24 +240,8 @@ type = "docs"
 		<build>
 			<finalName>app</finalName>
 		</build>
-
-		<repositories>
-			<repository>
-				<id>choerodon-snapshot-repository</id>
-				<name>Choerodon Snapshot Repository</name>
-				<url>http://nexus.choerodon.io/content/repositories/rdcsnapshot/</url>
-				<snapshots>
-					<enabled>true</enabled>
-				</snapshots>
-			</repository>
-			<repository>
-				<id>choerodon-release-repository</id>
-				<name>Choerodon Release Repository</name>
-				<url>http://nexus.choerodon.io/content/repositories/rdc/</url>
-			</repository>
-		</repositories>
-
-	</project>
+		
+	    </project>
 
 
  - springBoot配置文件
@@ -322,7 +306,7 @@ type = "docs"
 		mkdir -p target
 		if [ ! -f target/choerodon-tool-liquibase.jar ]
 		then
-			curl http://nexus.choerodon.io/content/repositories/rdc/io/choerodon/choerodon-tool-liquibase/0.1.0/choerodon-tool-liquibase-0.1.0.jar -o target/choerodon-tool-liquibase.jar
+			curl http://nexus.choerodon.com.cn/repository/choerodon-release/io/choerodon/choerodon-tool-liquibase/0.5.0.RELEASE/choerodon-tool-liquibase-0.5.0.RELEASE.jar -o target/choerodon-tool-liquibase.jar
 		fi
 		java -Dspring.datasource.url="jdbc:mysql://localhost/test?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
 		 -Dspring.datasource.username=root \

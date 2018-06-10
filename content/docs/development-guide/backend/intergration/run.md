@@ -33,35 +33,162 @@ oauth
 这里提供一份`docker-compose.yaml`以供参考，具体根据本地配置进行修改
 
 ``` yaml
-# docker-compose.yaml
 version: "3"
-
 services:
+  zookeeper-0:
+    container_name: zookeeper-0
+    image: registry.cn-hangzhou.aliyuncs.com/choerodon-tools/zookeeper:3.4.10
+    environment:
+    - ZK_REPLICAS=1
+    - ZK_HEAP_SIZE=2G
+    - ZK_TICK_TIME=2000
+    - ZK_INIT_LIMIT=10
+    - ZK_SYNC_LIMIT=5
+    - ZK_MAX_CLIENT_CNXNS=60
+    - ZK_SNAP_RETAIN_COUNT=3
+    - ZK_PURGE_INTERVAL=1
+    - ZK_LOG_LEVEL=INFO
+    - ZK_CLIENT_PORT=2181
+    - ZK_SERVER_PORT=2888
+    - ZK_ELECTION_PORT=3888
+    ports:
+    - "2181:2181"
+    - "2888:2888"
+    - "3888:3888"
+    command:
+    - sh
+    - -c
+    - zkGenConfig.sh && exec zkServer.sh start-foreground
+    volumes:
+    - "./kafka/zk:/var/lib/zookeeper"
+    expose:
+    - "2181"
+  kafka-0:
+    container_name: kafka-0
+    image: registry.cn-hangzhou.aliyuncs.com/choerodon-tools/kafka:1.0.0
+    depends_on:
+    - zookeeper-0
+    links: 
+        - zookeeper-0
+    ports:
+      - "9092:9092"
+    command:
+    - sh
+    - -c
+    - "/opt/kafka/bin/kafka-server-start.sh config/server.properties \
+           --override zookeeper.connect=zookeeper-0:2181 \
+           --override log.dirs=/opt/kafka/data/logs \
+           --override broker.id=0 "
+    volumes:
+    - "./kafka/kafka:/opt/kafka/data"
+    expose:
+    - "9092"
+  mysql:
+    container_name: mysql
+    image: registry.cn-hangzhou.aliyuncs.com/choerodon-tools/mysql:5.7.17
+    ports:
+    - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+    - ./mysql/mysql_data:/var/lib/mysql
+    - ./mysql/mysql_db.cnf:/etc/mysql/conf.d/mysql_db.cnf
+    expose:
+    - "3306"
   eureka-server:
     container_name: eureka-server
-    image: registry.choerodon.io/choerodon-framework/eureka-server:0.1.0
-    hostname: 127.0.0.1
+    image: registry.cn-shanghai.aliyuncs.com/choerodon/eureka-server:0.5.0
+    links:
+    - kafka-0
     ports:
     - "8000:8000"
+    depends_on:
+    - zookeeper-0
+    - kafka-0
+    environment:
+    - spring.kafka.bootstrap-servers=kafka-0:9092
+    - eureka.client.serviceUrl.defaultZone=http://eureka-server:8000/eureka/
+    - eureka.instance.prefer-ip-address=false
+    - hystrix.stream.queue.enabled=false
+    - spring.cloud.bus.enabled=false
+    - spring.sleuth.stream.enabled=false
+    expose:
+    - "8000"
   api-gateway:
     container_name: api-gateway
-    image: registry.choerodon.io/choerodon-framework/api-gateway:0.1.0
+    image: registry.cn-shanghai.aliyuncs.com/choerodon/api-gateway:0.5.0
+    links: 
+    - zookeeper-0
+    - kafka-0
+    - eureka-server
+    depends_on:
+    - zookeeper-0
+    - kafka-0
+    - eureka-server
     ports:
     - "8080:8080"
     environment:
     - zuul.addHostHeader=true
     - zuul.routes.dev.path=/todo/**
     - zuul.routes.dev.serviceId=choerodon-todo-service
+    - eureka.client.serviceUrl.defaultZone=http://eureka-server:8000/eureka/
+    - spring.cloud.stream.kafka.binder.zkNodes=zookeeper-0:2181
+    - spring.cloud.stream.kafka.binder.brokers=kafka-0:9092
+    - hystrix.stream.queue.enabled=false
+    - spring.cloud.bus.enabled=false
+    - spring.sleuth.stream.enabled=false
+    expose:
+    - "8080"
   oauth-server:
     container_name: oauth-server
-    image: registry.choerodon.io/choerodon-framework/oauth-server:0.1.0
+    image: registry.cn-shanghai.aliyuncs.com/choerodon/oauth-server:0.5.0
+    depends_on:
+    - zookeeper-0
+    - kafka-0
+    - eureka-server
+    - mysql
+    links: 
+    - zookeeper-0
+    - kafka-0
+    - eureka-server
+    - mysql
     ports:
     - "8020:8020"
+    environment:
+    - eureka.client.serviceUrl.defaultZone=http://eureka-server:8000/eureka/
+    - spring.cloud.stream.kafka.binder.zkNodes=zookeeper-0:2181
+    - spring.cloud.stream.kafka.binder.brokers=kafka-0:9092
+    - spring.datasource.url=jdbc:mysql://mysql/iam_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    - spring.datasource.username=root
+    - spring.datasource.password=root
+    - hystrix.stream.queue.enabled=false
+    - spring.cloud.bus.enabled=false
+    - spring.sleuth.stream.enabled=false
   gateway-helper:
     container_name: gateway-helper
-    image: registry.choerodon.io/choerodon-framework/gateway-helper:0.1.0
+    image: registry.cn-shanghai.aliyuncs.com/choerodon/gateway-helper:0.5.0
+    depends_on:
+    - zookeeper-0
+    - kafka-0
+    - eureka-server
+    - mysql
+    links: 
+    - zookeeper-0
+    - kafka-0
+    - eureka-server
+    - mysql
     ports:
     - "9180:9180"
+    environment:
+    - eureka.client.serviceUrl.defaultZone=http://eureka-server:8000/eureka/
+    - spring.cloud.stream.kafka.binder.zkNodes=zookeeper-0:2181
+    - spring.cloud.stream.kafka.binder.brokers=kafka-0:9092
+    - spring.datasource.url=jdbc:mysql://mysql/iam_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    - spring.datasource.username=root
+    - spring.datasource.password=root
+    - hystrix.stream.queue.enabled=false
+    - spring.cloud.bus.enabled=false
+    - spring.sleuth.stream.enabled=false
 ```
 
 停止容器通过命令`docker-compose down`。

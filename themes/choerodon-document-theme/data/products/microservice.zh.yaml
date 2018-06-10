@@ -1,0 +1,22 @@
+weight: 4
+name: "微服务开发"
+icon: "/img/home/Microservice-icon.svg"
+description: "Choerodon提供一套完整的基于Spring Cloud的微服务应用开发框架。借助Choerodon的微服务应用开发架构，以及容器为微服务提供的轻量级、面向应用的虚拟化运行环境和理想载体，并以Kubernetes作为容器编排工具，帮助企业方便快捷的构建应用服务。"
+summary: "Choerodon提供一套完整的基于Spring Cloud的微服务应用开发框架"
+language: zh
+
+childIcon1: "/img/home/microservice-illustrator-1.svg"
+childTitle1: "服务注册发现"
+childDescription1: "基于Zookeeper的服务注册与发现"
+
+childIcon2: "/img/home/microservice-illustrator-2.svg"
+childTitle2: "高可用管控和实时监控"
+childDescription2: "限流降级、流量管控，及系统和服务级监控"
+
+childIcon3: "/img/home/microservice-illustrator-3.svg"
+childTitle3: "事件一致性"
+childDescription3: "采用可靠事件模式来保证数据的一致性"
+
+childIcon4: "/img/home/microservice-illustrator-4.svg"
+childTitle4: "通用模块和快速开发"
+childDescription4: "预置各种通用模块，无需从头搭建系统"

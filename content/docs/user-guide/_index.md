@@ -12,9 +12,11 @@ alwaysopen=false
 
 - [**系统配置**](../user-guide/system-configuration) 是为了让 Choerodon的用户更便捷、科学地使用平台，在用户使用前需要进行的系统配置，包括角色、用户、项 目、环境等。
 
-- [**开发流水线**](../user-guide/assembly-line) 以 DevOps 理念为指引，借助 Gitlab CI 作为持续集成工具，结合 Gitflow 分支管理模型，提供持续集成的流水线可以最大限度地减少代码冲突风险，降低修复错误代码的成本。
+- [**开发流水线**](../user-guide/development-pipeline) 以 DevOps 理念为指引，借助 Gitlab CI 作为持续集成工具，结合 Gitflow 分支管理模型，提供持续集成的流水线可以最大限度地减少代码冲突风险，降低修复错误代码的成本。
 
-- [**部署流水线**](../user-guide/deploy)借助 Choerodon 平台，用户可以方便地管理各种使用 Choerodon 开发部署的应用服务，包括应用启停、状态监控，以及应用对应的版本控制、容器管理等，同时还包括应用涉及到的各种资源管理，例如网络、域名、数据库服务、缓存服务等。
+- [**应用和部署流水线**](../user-guide/deployment-pipeline) 借助 Choerodon 平台，用户可以方便地管理各种使用 Choerodon 开发部署的应用服务，包括应用启停、状态监控，以及应用对应的版本控制、容器管理等，同时还包括应用涉及到的各种资源管理，例如网络、域名、数据库服务、缓存服务等。
+
+- [**运营管理**](../user-guide/operating-manage) 借助 Choerodon 平台，用户可以查看部署的应用对应的各种监控指标，如服务指标：CPU，内存，磁盘，网络及应用指标：Kafka，Kibana，Mysql，调用链等。
 
 
 

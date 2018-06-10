@@ -3,114 +3,287 @@ title = "文档"
 description = ""
 +++
 
-## 欢迎使用 Choerodon 文档
-
-Choerodon 猪齿鱼是一个开源企业服务平台，是基于 Kubernetes 的容器编排和管理能力，整合 DevOps 工具链、微服务和移动应用框架，来帮助企业实现敏捷化的应用交付和自动化的运营管理，并提供 IoT 、支付、数据、智能洞察、企业应用市场等业务组件，来帮助企业聚焦于业务，加速数字化转型。
-
-Choerodon 提供一整套支撑 DevOps 最佳实践的工具链，从计划、编程、构建、测试、发布与运营等支撑敏捷管理；并且还提供了一套基于 Spring Cloud 微服务应用框架，以帮助企业更加快捷高效的进行微服务开发。Choerodon 文档将从**Choerodon相关概念**，**DevOps 工具链** 和 **应用开发** 等方面详细介绍 Choerodon 作为DevOps支撑平台的架构、安装、配置、部署，以及如何使用等，以及 Choerodon 微服务应用框架的开发、部署等。
-
----
-## 了解和学习 Choerodon 的概念和安装
-
-<div class="docs-home">
-<div class="row">
-
-<div class="col-md-3">
-<h4><i class="iconfont">&#xebdb;</i>概念</h4>
-<ul>
-    <li><a href="./concept/choerodon-concept">01 - Choerodon是什么</a></li>
-    <li><a href="./concept/platform-concept">02 - 平台概念</a></li>
-    <li><a href="./concept/choerodon-system-architecture">03 - 系统架构</a></li>
-    <li class="more-menu-button"><a href="javascript:void(0)">更多</a></li>
-    <li class="more-menu"><a href="./concept/choerodon-opensource-component">04 - 使用的开源组件</a></li>
-    <li class="more-menu"><a href="./concept/choerodon-org">05 - 组织层次</a></li>
-    <li class="more-menu"><a href="./concept/security">06 - 安全</a></li>
-    <li class="less-menu-button"><a href="javascript:void(0)">折叠</a></li>
-</ul>
-</div>
-
-<div class="col-md-3">
-<h4><i class="iconfont">&#xe6a4;</i>安装与配置</h4>
-<ul>
-    <li><a href="./installation-configuration">01 - 概述</a></li>
-    <li><a href="./installation-configuration/development-install-guide">02 - 安装开发区</a></li>
-    <li><a href="./installation-configuration/deployment-install-guide">03 - 安装运行区</a></li>
-    <li class="more-menu-button"><a href="javascript:void(0)">更多</a></li>
-    <li class="more-menu"><a href="./installation-configuration/components/">04 - 安装其他组件</a></li>
-    <!--<li class="more-menu"><a href="#">05 - 迁移</a></li>
-    <li class="more-menu"><a href="#">06 - .deploy.yml文件说明</a></li>
-    <li class="more-menu"><a href="#">07 - .gitlab-ci.yml文件说明</a></li>
-    <li class="more-menu"><a href="#">08 - Dockerfile文件说明</a></li>-->
-    <li class="less-menu-button"><a href="javascript:void(0)">折叠</a></li>
-</ul>
-</div>
-
-</div>
-
-</div>
-
----
-## 了解和学习 Choerodon 的 DevOps 工具链
-
-Choerodon 提供一整套 DevOps 的最佳实践，从计划、编程、构建、测试、发布与运营等。
-
-<div class="docs-home">
-<div class="row">
-
-<div class="col-md-3">
-<h4><i class="iconfont">&#xe804;</i>快速入门</h4>
-<ul>
-    <li><a href="./quick-start/microservice-front">01 - 开发一个微服务前端</a></li>
-    <li><a href="./quick-start/microservice-backend">02 - 开发一个微服务后端</a></li>
-    <li><a href="./quick-start/web-application">03 - 开发一个Web应用</a></li>
-    <li class="more-menu-button"><a href="javascript:void(0)">更多</a></li>
-    <li class="more-menu"><a href="#">04 - 开发一个移动应用</a></li>
-    <li class="more-menu"><a href="#">05 - 从用户故事到运营监控</a></li>
-    <li class="less-menu-button"><a href="javascript:void(0)">折叠</a></li>
-</ul>
-</div>
-
-<div class="col-md-3">
-<h4><i class="iconfont">&#xe74f;</i>功能说明</h4>
-<ul>
-    <li><a href="./user-guide/system-configuration">01 - 系统配置</a></li>
-    <li><a href="./user-guide/scrum">02 - 敏捷管理</a></li>
-    <li><a href="./user-guide/continuous-integration">03 - 持续集成</a></li>
-    <li class="more-menu-button"><a href="javascript:void(0)">更多</a></li>
-    <li class="more-menu"><a href="./user-guide/continuous-deployment">04 - 持续部署</a></li>
-    <li class="more-menu" ><a href="./user-guide/洞察监控">05 - 洞察监控</a></li>
-    <li class="less-menu-button"><a href="javascript:void(0)">折叠</a></li>
-</ul>
-</div>
-</div>
-</div>
-
----
-## 了解和学习 Choerodon 的开发应用
-
-Choerodon 微服务应用框架是基于多年企业应用服务的经验，面向微服务架构思想和分布式应用架构研发的分布式应用开发平台，以满足应用微服务化和混合云IT架构分布式应用的开发。
-
-<div class="docs-home">
-<div class="row">
-
-<div class="col-md-3">
-<h4><i class="iconfont">&#xe804;</i>快速入门</h4>
-<ul>
-    <li><a href="./quick-start/microservice-front">01 - 开发一个微服务前端</a></li>
-    <li><a href="./quick-start/microservice-backend">02 - 开发一个微服务后端</a></li>
-</ul>
-</div>
-
-<div class="col-md-3">
-<h4><i class="iconfont">&#xe733;</i>开发手册</h4>
-<ul>
-    <li><a href="./development-guide/backend">01 - 后端开发</a></li>
-    <li><a href="./development-guide/front">02 - 前端开发</a></li>
-    <li><a href="./development-guide/backend-environment-deployment">03 - 后端环境部署</a></li>
-    <li><a href="./development-guide/front-environment-deployment">04 - 前端项目部署</a></li>
-</ul>
-</div>
-
-</div>
-
+<div class="docs-home-content">
+    <div class="doc-home">
+        <a href="./concept" class="doc-home-head">概念</a>
+        <ul>
+            <li>
+                <div class="access-list-item">
+                    <a href="./concept/choerodon-concept">
+                        <div class="item-head">
+                            <img class="n-max" src="/img/docs/home/1.svg"/>
+                            <h4>Choerodon是什么</h4>
+                        </div>
+                        <p>介绍了Choerodon的概念,产品特征和使用价值</p>
+                    </a>
+                <div>
+            </li>
+            <li>
+                <div class="access-list-item">
+                    <a href="./concept/platform-concept">
+                        <div class="item-head">
+                            <img class="n-max" src="/img/docs/home/2.svg"/>
+                            <h4>平台概念</h4>
+                        </div>
+                        <p>简短介绍了Choerodon平台所涉及的一些专业名词的概念，包括项目、应用版本、应用实例等</p>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="access-list-item">
+                    <a href="./concept/choerodon-system-architecture">
+                        <div class="item-head">
+                            <img class="n-max" src="/img/docs/home/3.svg"/>
+                            <h4>系统架构</h4>
+                        </div>
+                        <p>从技术架构和业务架构两方面简析了Choerodon的总体系统架构的设计</p>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="access-list-item">
+                    <a href="./concept/choerodon-opensource-component">
+                        <div class="item-head">
+                            <img class="n-max" src="/img/docs/home/4.svg"/>
+                            <h4>使用的开源组件</h4>
+                        </div>
+                        <p>从微服务应用框架和DevOps平台使用的开源工具集两个方面来介绍Choerodon使用的开源产品或者工具</p>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="access-list-item">
+                    <a href="./concept/choerodon-org">
+                        <div class="item-head">
+                            <img class="n-max" src="/img/docs/home/5.svg"/>
+                            <h4>组织层次</h4>
+                        </div>
+                        <p>从全局层、组织层、项目层三个方面阐述了Choerodon的组织层次</p>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="access-list-item">
+                    <a href="./concept/choerodon-agent">
+                        <div class="item-head">
+                            <img class="n-max" src="/img/docs/home/choerodon-agent.svg"/>
+                            <h4>Agent</h4>
+                        </div>
+                        <p>Choerodon Agent是猪齿鱼持续交付部分的一个核心组件，通过主动连接devops service(部署服务),并与Kubernetes集群进行直接交互。</p>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="access-list-item">
+                    <a href="./concept/security">
+                        <div class="item-head">
+                            <img class="n-max" src="/img/docs/home/6.svg"/>
+                            <h4>安全</h4>
+                        </div>
+                        <p>介绍了Choerodon的认证体系和角色控制访问权限</p>
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <hr>
+    <div class="doc-home">
+        <a href="./installation-configuration" class="doc-home-head">部署与配置</a>
+        <ul>
+            <li>
+                <div class="access-list-item">
+                    <a href="./installation-configuration/kubernetes/">
+                        <div class="item-head">
+                            <img class="n-max" src="/img/docs/home/7.svg"/>
+                            <h4>Kubernetes集群部署</h4>
+                        </div>
+                        <p>详细教程了Kubernetes集群的部署搭建</p>
+                    </a>
+                <div>
+            </li>
+            <li>
+                <div class="access-list-item">
+                    <a href="./installation-configuration/choerodon/">
+                        <div class="item-head">
+                            <img class="n-max" src="/img/docs/home/8.svg"/>
+                            <h4>一键部署Choerodon</h4>
+                        </div>
+                        <p>介绍如何部署Choerodon平台，以及部署常见问题解决办法</p>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="access-list-item">
+                    <a href="./installation-configuration/parts/">
+                        <div class="item-head">
+                            <img class="n-max" src="/img/docs/home/9.svg"/>
+                            <h4>分步部署Choerodon</h4>
+                        </div>
+                        <p>描述基础组件部署、微服务开发框架部署以及Choerodon部署</p>
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <hr>
+    <div class="doc-home">
+        <a href="./quick-start" class="doc-home-head">快速入门</a>
+        <ul>
+            <li>
+                <div class="access-list-item">
+                    <a href="./quick-start/project">
+                        <div class="item-head">
+                            <img class="n-max" src="/img/docs/home/10.svg"/>
+                            <h4>创建一个项目</h4>
+                        </div>
+                        <p>从创建项目、定义环境、资源等方面介绍 Choerodon 项目，让读者能够了解项目的基本概念</p>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="access-list-item">
+                    <a href="./quick-start/nginx-demo">
+                        <div class="item-head">
+                            <img class="n-max" src="/img/docs/home/11.svg" >
+                            <h4>创建一个nginx示例</h4>
+                        </div>
+                        <p>介绍了如何在Choerodon中快速搭建一个nginx示例</p>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="access-list-item">
+                    <a href="./quick-start/microservice-front">
+                        <div class="item-head">
+                            <img class="n-max" src="/img/docs/home/12.svg"/>
+                            <h4>创建一个前端应用</h4>
+                        </div>
+                        <p>从创建前端应用、创建前端应用模板、开发前端应用、生成版本、部署应用、配置网络、配置域名等方面介绍</p>
+                    </a>
+                <div>
+            </li>
+            <li>
+                <div class="access-list-item">
+                    <a href="./quick-start/microservice-backend">
+                        <div class="item-head">
+                            <img class="n-max" src="/img/docs/home/13.svg"/>
+                            <h4>创建一个后端应用</h4>
+                        </div>
+                        <p>从创建后端应用、创建后端应用模板、开发后端应用、生成版本、部署应用、查看运行信息等方面介绍</p>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="access-list-item">
+                    <a href="./quick-start/web-application">
+                        <div class="item-head">
+                            <img class="n-max" src="/img/docs/home/14.svg"/>
+                            <h4>创建一个Java库</h4>
+                        </div>
+                        <p>从创建Java库，创建Java库应用模板、开发Java等方面介绍</p>
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <hr>
+    <div class="doc-home">
+        <a href="./user-guide" class="doc-home-head">用户手册</a>
+        <ul>
+            <li>
+                <div class="access-list-item">
+                    <a href="./user-guide/system-configuration">
+                        <div class="item-head">
+                            <img class="n-max" src="/img/docs/home/15.svg"/>
+                            <h4>系统配置</h4>
+                        </div>
+                        <p>为了让Choerodon的用户更便捷、科学地使用平台，需在用户使用前进行的系统配置，包括角色、用户、项目、环境等</p>
+                    </a>
+                <div>
+            </li>
+            <li>
+                <div class="access-list-item">
+                    <a href="./user-guide/development-pipeline">
+                        <div class="item-head">
+                            <img class="n-max" src="/img/docs/home/16.svg"/>
+                            <h4>开发流水线</h4>
+                        </div>
+                        <p>软件开发策略，用于优化软件交付的流程，以尽快得到高质量、有价值的软件</p>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="access-list-item">
+                    <a href="./user-guide/deployment-pipeline">
+                        <div class="item-head">
+                            <img class="n-max" src="/img/docs/home/17.svg"/>
+                            <h4>应用和部署流水线</h4>
+                        </div>
+                        <p>应用和部署流水线主要描述部署的环境、网络、域名、容器等，来告知用户如何部署和部署情况</p>
+                    </a>
+                <div>
+            </li>
+            <li>
+                <div class="access-list-item">
+                    <a href="./user-guide/operating-manage">
+                        <div class="item-head">
+                            <img class="n-max" src="/img/docs/home/18.svg"/>
+                            <h4>运营管理</h4>
+                        </div>
+                        <p>本节介绍各种监控工具的使用</p>
+                    </a>
+                <div>
+            </li>
+        </ul>
+    </div>
+    <hr>
+    <div class="doc-home">
+        <a href="./development-guide" class="doc-home-head">开发手册</a>
+        <ul>
+            <li>
+                <div class="access-list-item">
+                    <a href="./development-guide/basic  ">
+                        <div class="item-head">
+                            <img class="n-max" src="/img/docs/home/19.svg"/>
+                            <h4>基础开发手册</h4>
+                        </div>
+                        <p>介绍了使用Choerodon使用到的基础组件，包括如何从使用Kubernetes的yaml部署转型到使用helm chart 进行部署等一系列入门教程</p>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="access-list-item">
+                    <a href="./development-guide/front">
+                        <div class="item-head">
+                            <img class="n-max" src="/img/docs/home/20.svg"/>
+                            <h4>前端开发手册</h4>
+                        </div>
+                        <p>介绍如何开发新的页面，如何建立并开发新的模块和系统平台的相关配置项</p>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="access-list-item">
+                    <a href="./development-guide/backend">
+                        <div class="item-head">
+                            <img class="n-max" src="/img/docs/home/21.svg"/>
+                            <h4>后端开发手册</h4>
+                        </div>
+                        <p>介绍基于开发的基本工具与其具体安装配置。通过此章节，用户可完成基本开发环境的搭建</p>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="access-list-item">
+                    <a href="./development-guide/platform">
+                        <div class="item-head">
+                            <img class="n-max" src="/img/docs/home/22.svg"/>
+                            <h4>平台开发手册</h4>
+                        </div>
+                        <p>介绍如何向我们报告Issues，和如何帮助我们改进我们的程序</p>
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </div>
 </div>

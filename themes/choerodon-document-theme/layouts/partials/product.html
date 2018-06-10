@@ -1,0 +1,54 @@
+<section class="products-section">
+        <div class="text-center">
+            {{ i18n "product features" }}
+        </div>
+        <div class="products-content">
+            {{ range $index, $element := sort .Site.Data.products "weight" }}
+                {{ if eq ($.Scratch.Get "language") $element.language }}
+                    <div class="product-box">
+                        <div class="product-head">
+                            <img src="{{ $element.icon }}"/>
+                            <div>
+                                <div class="product-title">{{ $element.name }}</div>
+                                <div class="product-summary">{{ $element.summary }}</div>
+                            </div>
+                        </div>
+                        <div class="product-detail {{ if gt $index 1}} none {{ else }} block {{ end }}">
+                            <div class="product-description">{{ $element.description }}</div>
+                            <div class="product-childs">
+                                <div class="product-child">
+                                    <img src="{{ $element.childIcon1 }}"/>
+                                    <div class="product-child-content">
+                                        <div class="product-child-title">{{ $element.childTitle1 }}</div>
+                                        <div class="product-child-description">{{ $element.childDescription1 }}</div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="product-child">
+                                    <img src="{{ $element.childIcon2 }}"/>
+                                    <div class="product-child-content">
+                                        <div class="product-child-title">{{ $element.childTitle2 }}</div>
+                                        <div class="product-child-description">{{ $element.childDescription2 }}</div>
+                                    </div>
+                                </div>
+                                <div class="product-child">
+                                    <img src="{{ $element.childIcon3 }}"/>
+                                    <div class="product-child-content">
+                                        <div class="product-child-title">{{ $element.childTitle3 }}</div>
+                                        <div class="product-child-description">{{ $element.childDescription3 }}</div>
+                                    </div>
+                                </div>
+                                <div class="product-child">
+                                    <img src="{{ $element.childIcon4 }}"/>
+                                    <div class="product-child-content">
+                                        <div class="product-child-title">{{ $element.childTitle4 }}</div>
+                                        <div class="product-child-description">{{ $element.childDescription4 }}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {{ end }}
+            {{ end }}
+        </div>
+</section>

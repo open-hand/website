@@ -1,0 +1,100 @@
+{{ if gt (len .Site.Data.clients) 0 }}
+<section class="clients-section">
+    <div class="text-center">
+        {{ i18n "case" }}
+    </div>
+
+    <div class="customers">
+        {{ range .Site.Data.clients }}
+            {{ if eq ($.Scratch.Get "language") .language }}
+                <div class="mo-padding">
+                    {{ if .url }}
+                    <a href="{{ .url }}">
+                        <img class="{{ .classname }}" src="{{ .image }}" alt="{{ .name }}"/>
+                        <div class="description">
+                            <div class="content">
+                                <div class="content-text">
+                                    {{ .description }}
+                                </div>
+                            </div>
+                            <div class="title">
+                                <div>
+                                    {{ .name }}
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </a>
+                    {{ else }}
+                    <a href="javascript:void(0)">
+                        <img class="{{ .classname }}" src="{{ .image }}" alt="{{ .name }}"/> 
+                        <div class="description">
+                            <div class="content">
+                                <div class="content-text">
+                                    {{ .description}}
+                                </div>
+                            </div>
+                            <div class="title">
+                                <div>
+                                    {{ .name }}
+                                </div>
+                            </div>
+                        </div>
+                    </a> 
+                    {{ end }}
+                </div>
+            {{ end }}
+        {{ end }}
+    </div>
+    <!-- 移动端轮播案例 -->
+    <div class="customers-mobile">
+        <div class="customers-box-mobile">
+            {{ range .Site.Data.clients }}
+                {{ if eq ($.Scratch.Get "language") .language }}
+                    <div class="mo-padding">
+                        {{ if .url }}
+                        <a href="{{ .url }}">
+                            <img class="{{ .classname }}" src="{{ .image }}" alt="{{ .name }}"/>
+                            <div class="description">
+                                <div class="content">
+                                    <div class="content-text">
+                                        {{ .description }}
+                                    </div>
+                                </div>
+                                <div class="title">
+                                    <div>
+                                        {{ .name }}
+                                    </div>
+                                </div>
+                            </div>
+
+                        </a>
+                        {{ else }}
+                        <a href="javascript:void(0)">
+                            <img class="{{ .classname }}" src="{{ .image }}" alt="{{ .name }}"/>
+                            <div class="description">
+                                <div class="content">
+                                    <div class="content-text">
+                                        {{ .description}}
+                                    </div>
+                                </div>
+                                <div class="title">
+                                    <div>
+                                        {{ .name }}
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        {{ end }}
+                    </div>
+                {{ end }}
+            {{ end }}
+        </div>
+    </div>
+    <!-- <div class="col-md-12">
+        <p class="read-more light-text">
+            <a href="case-studies/" class="btn btn-template-main">查看全部案例</a>
+        </p>
+    </div> -->
+</section>
+{{ end }}

@@ -41,7 +41,7 @@ weight: 1
     </div>
 </section>
 
-<div class="banner2" style="background:url(/img/case_studies/detail/hand-content.png) no-repeat;background-size: 100% 200%;background-position: 0% 15%;">
+<div class="banner2" style="background:url(/img/case_studies/detail/handfinancial-content.png) no-repeat;background-size: 100% 200%;background-position: 0% 15%;">
 <div class="background-color">
     <div class="bannertext">
         <p>"在数字化转型的大背景下，我们一直也在寻求一个更好的软件开发方式，缩短我们的开发周期，更快地交付。我们是在做devops转型，但其实我们Devops转型过程是'不正统'的，回望这个devops转型，并不是有意去做转型，而是真的发现了很多传统开发管理过程中存在的问题。"</p>
@@ -57,7 +57,7 @@ weight: 1
     <p>对于服务的管理、发布，当服务越来越多，一个数据中心必须要有相应的持续交付来配合。为了更快地做好应用部署，要实现从infrastructure层来屏蔽它的复杂度和统一它的标准。企业内部要构建业务转型创新平台，必须具备devops，微服务，容器这些技术，才能满足这种业务创新技术平台的要求。基于这些，研发中心把支撑自身研发的团队能力转变成了一个平台的能力，逐步形成所说的数字化平台——PaaS（平台即服务）平台，总的来说，即把自身内生的需求逐渐演变成了一个产品，为其他客户提供Paas解决方案。</p>
 </div>
 
-<div class="banner3" style="background:url(/img/case_studies/detail/hand-content.png) no-repeat;background-size: 100% 200%;background-position: 0% 55%;">
+<div class="banner3" style="background:url(/img/case_studies/detail/handfinancial-content.png) no-repeat;background-size: 100% 200%;background-position: 60% 80%;">
 <div class="background-color">
     <div class="bannertext">
         Choerodon的使用确实在很大程度上缩短了开发周期，加快了迭代的速度，大大减少了开发运维人员的负担。

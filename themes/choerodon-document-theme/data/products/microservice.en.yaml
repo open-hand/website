@@ -1,0 +1,5 @@
+weight: 4
+name: "Microservice"
+icon: "/img/home/Microservice-icon.svg"
+description: "Choerodon provides a set of monitoring tools to establish data collection and measurement at all stages of software delivery production, enabling the team to make the necessary improvements based on the bottlenecks in the delivery process. The monitoring mainly includes development metrics, logs, and microservice call chains"
+language: en

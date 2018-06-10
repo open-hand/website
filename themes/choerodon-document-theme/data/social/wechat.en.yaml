@@ -1,0 +1,6 @@
+weight: 2
+name: "WeChat"
+icon: "/img/socials/wechat.svg"
+hover: "/img/socials/wechat_code.png"
+description: "Contact us to share your thoughts"
+language: en

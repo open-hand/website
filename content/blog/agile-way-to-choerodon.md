@@ -1,7 +1,7 @@
 +++
 title= "Choerodon的敏捷之路"
 date= "2018-03-15"
-author= "choerodon"
+author= "Choerodon"
 tags= [
     "敏捷",
     "看板",

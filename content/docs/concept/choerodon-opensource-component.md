@@ -25,7 +25,7 @@ Choerodon 前端使用 react 和 mobx。
 
 - **React**：React 是一个用于构建用户界面的 JAVASCRIPT 库。
 
-- **Mobo**：Mobx 是一个功能强大，上手非常容易的状态管理工具。
+- **Mobx**：Mobx 是一个功能强大，上手非常容易的状态管理工具。
 
 ### 微服务后端
 
@@ -80,7 +80,7 @@ Choerodon 使用 Kubernetes 作为容器编排和管理工具。
 
 ### 计划
 
-Choerodon 使用自主开发的敏捷管理开完成 DevOps 的计划步骤的工作。Choerodon 敏捷管理的核心是需求，计划和执行。即通过用户故事地图来管理用户故事和发布计划，通过迭代来管理冲刺，最后通过看板来可视化冲刺的执行。
+Choerodon 使用自主开发的敏捷管理完成 DevOps 的计划步骤的工作。Choerodon 敏捷管理的核心是需求，计划和执行。即通过用户故事地图来管理用户故事和发布计划，通过迭代来管理冲刺，最后通过看板来可视化冲刺的执行。
 
 ![](/img/docs/concept/choerodon_devops.png)
 

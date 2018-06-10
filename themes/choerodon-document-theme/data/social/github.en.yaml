@@ -1,0 +1,6 @@
+weight: 1
+name: "Github"
+icon: "/img/socials/github.png"
+description: "Comments and questions"
+url: "https://github.com/choerodon/choerodon/issues/new"
+language: en

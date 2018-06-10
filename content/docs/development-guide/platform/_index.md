@@ -1,7 +1,7 @@
 +++
 title = "平台开发手册"
 description = "平台开发手册"
-weight = 3
+weight = 4
 +++
 
 # 介绍

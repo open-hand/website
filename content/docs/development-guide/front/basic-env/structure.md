@@ -12,7 +12,7 @@ weight = 3
 
 ## 目录划分
 
-开发仿照iam项目结构（推荐通过yo命令自动生成目录结构，节省自动建立目录时间），源文件目录在 `iam/src/app/iam` ，主要目录结构如下：
+开发仿照iam项目结构，源文件目录在 `iam/src/app/iam` ，主要目录结构如下：
 
 ```
 
@@ -57,7 +57,7 @@ weight = 3
 
 - assets 中css存放模块通用样式表,images存放图片资源
 - containers 存放前端的页面
-- stores 存放前端页面所需的数据
+- stores 存放前端状态管理文件
 - common 存放公共的配置文件
 - components 存放的是公共的组件
 - local 存放模块多语言文件
