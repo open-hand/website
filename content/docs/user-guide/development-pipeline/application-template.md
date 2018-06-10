@@ -36,9 +36,9 @@ weight = 1
 
 ### 创建前端应用模板
  
-  当应用模板不符合您的要求，你可手动创建一个应用模板。具体步骤如下：
+当应用模板不符合您的要求，你可手动创建一个应用模板。具体步骤如下：
   
- 1. 在组织层的`持续交付`模块，选择`应用模板`；
+ 1. 选择组织后，在组织层的`持续交付`模块，选择`应用模板`；
 
  2. 点击`创建应用模板`，输入相关信息，点击`创建`，即可创建一个模板；
       
@@ -75,7 +75,7 @@ weight = 1
 
 		exec "$@"
 		```
-7. [编写 Gitlab-CI 文件](https://docs.gitlab.com/ee/ci/)
+ 7. [编写 Gitlab-CI 文件](https://docs.gitlab.com/ee/ci/)
      
       ```
       image: registry.choerodon.io/tools/devops-ci:1.1.0    
@@ -126,8 +126,8 @@ weight = 1
          - *auto_devops
        ```
        before_script 指 ci 执行前所执行的命令。
-
-8. 编写 charts 模块；
+  
+ 8. 编写 charts 模块；
       
       目录结构如下
 
@@ -149,26 +149,26 @@ weight = 1
 
       `_helpers.tpl`：放置模板助手的地方，您可以在整个 chart 中重复使用。
       
-9. 编写 config.js；
+ 9. 编写 config.js；
 
-10. 提交代码，即可完成模板创建。
+ 10. 提交代码，即可完成模板创建。
 
 
 ### 创建后端应用模板
 
 当应用模板不符合您的要求，你可手动创建一个应用模板。具体步骤如下：
     
- 6. 在组织层的`持续交付`模块，选择`应用模板`；
+ 1. 选择组织后，在组织层的`持续交付`模块，选择`应用模板`；
 
- 7. 点击`创建应用模板`，输入相关信息，点击`创建`，即可创建一个模板；
+ 1. 点击`创建应用模板`，输入相关信息，点击`创建`，即可创建一个模板；
       
- 8. 创建完成以后，会生成一个 Gitlab 地址，点击该地址；
+ 1. 创建完成以后，会生成一个 Gitlab 地址，点击该地址；
      
- 9. 进入 Gitlab 仓库，克隆代码；
+ 1. 进入 Gitlab 仓库，克隆代码；
       
- 10. [创建一个 spring-boot 项目](../../../development-guide/backend/demo/create_project)；
+ 1. [创建一个 spring-boot 项目](../../../development-guide/backend/demo/create_project)；
    
- 11. 编写一个 dockerfile；
+ 1. 编写一个 dockerfile；
 
     目录结构如下：
 
@@ -186,7 +186,7 @@ weight = 1
     ENTRYPOINT [ "java", "-jar", "/app.jar"] 
     ```
 
- 12. [编写 Gitlab-ci 文件](https://docs.gitlab.com/ee/ci/)
+ 1. [编写 Gitlab-ci 文件](https://docs.gitlab.com/ee/ci/)
 
     ```
     image: registry.choerodon.io/tools/devops-ci:1.1.0    
@@ -246,7 +246,7 @@ weight = 1
        ```
        before_script：ci 执行前所执行的命令
 
- 13. 编写 charts 模块
+ 1. 编写 charts 模块
       
       目录结构如下：
 
@@ -273,13 +273,13 @@ weight = 1
 
       `_helpers.tpl`：放置模板助手的地方，您可以在整个 chart 中重复使用。
       
- 9. 提交代码，即可完成模板创建。
+ 1. 提交代码，即可完成模板创建。
 
 ### 创建Java库应用模板
 
- 当应用模板不符合您的要求，你可手动创建一个应用模板。具体步骤如下：
+当应用模板不符合您的要求，你可手动创建一个应用模板。具体步骤如下：
  
-1. 在组织层的`持续交付`模块，选择`应用模板`；
+1. 选择组织后，在组织层的`持续交付`模块，选择`应用模板`；
 
 2. 点击`创建应用模板`，输入相关信息，点击`创建`，即可创建一个模板；
       
@@ -357,12 +357,15 @@ weight = 1
  - 应用模板来源：有预定义和自定义两种来源。预定义是 Choerodon 系统预置的模板；自定义是由用户自己创建的模板。
 
 ### 修改模板信息
+
 点击`修改模板`→ ![修改环境按钮](/docs/user-guide/development-pipeline/image/修改环境按钮.png) 按钮 ，进行应用模板名称和描述的修改。
 
 ### 删除模板
+
  1. 预定义模板无法删除；
 
  1. 点击`删除模板`→ ![删除网络按钮](/docs/user-guide/development-pipeline/image/删除网络按钮.png) 按钮，进行模板的删除。
+ 
 <blockquote class="warning">
-         若删除模板，该条数据将被永久删除，不可恢复!
-      </blockquote>
+若删除模板，该条数据将被永久删除，不可恢复!
+</blockquote>

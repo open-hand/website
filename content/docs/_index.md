@@ -92,7 +92,7 @@ description = ""
         <ul>
             <li>
                 <div class="access-list-item">
-                    <a href="./installation-configuration/kubernetes/">
+                    <a href="./installation-configuration/steps/kubernetes/">
                         <div class="item-head">
                             <img class="n-max" src="/img/docs/home/7.svg"/>
                             <h4>Kubernetes集群部署</h4>
@@ -103,7 +103,7 @@ description = ""
             </li>
             <li>
                 <div class="access-list-item">
-                    <a href="./installation-configuration/choerodon/">
+                    <a href="./installation-configuration/steps/choerodon/">
                         <div class="item-head">
                             <img class="n-max" src="/img/docs/home/8.svg"/>
                             <h4>一键部署Choerodon</h4>
@@ -114,7 +114,7 @@ description = ""
             </li>
             <li>
                 <div class="access-list-item">
-                    <a href="./installation-configuration/parts/">
+                    <a href="./installation-configuration/steps/parts/">
                         <div class="item-head">
                             <img class="n-max" src="/img/docs/home/9.svg"/>
                             <h4>分步部署Choerodon</h4>

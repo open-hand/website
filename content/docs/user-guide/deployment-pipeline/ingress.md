@@ -1,7 +1,7 @@
 ﻿+++
 title = "域名管理"
 description = ""
-weight = 4
+weight = 6
 +++
 
 

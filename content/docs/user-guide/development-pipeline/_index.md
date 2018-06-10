@@ -1,7 +1,7 @@
 ﻿+++
 title = "开发流水线"
 description = ""
-weight = 2
+weight = 3
 +++
 
 <h2 id="1">介绍</h2>
@@ -18,3 +18,5 @@ weight = 2
  - [**持续集成**](../development-pipeline/continuous-integration) 是 Gitlab 自带的持续集成引擎，免去了第三方 CI 服务器只能定时检测 git 仓库带来的延迟和对 Git Server 造成的性能压力。能够解决的问题有小步伐的产品迭代，高频率的版本发布，随时随地的系统集成等，达到效率极大增加的作用。
 
  - [**应用版本**](../development-pipeline/application-version) 由于 Choerodon 采用 Gitflow 的方式管理分支，所以对于版本的控制也是根据 Feature、Release、Hotfix 等分支上进行的。
+
+ - [**应用发布**](../development-pipeline/application-release) 是可以将您研发的应用发布至其他项目使用。可发布的范围有本组织或全平台下的所有项目，并且可以控制发布应用版本的范围，使应用及应用版本在本组织或全平台共享。

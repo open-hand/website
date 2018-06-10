@@ -21,7 +21,7 @@ type = "docs"
 
 **2.** 完成[创建项目](../project)操作。本章节使用在前面章节创建的项目`猪齿鱼研发`。
 
-**3.** <font>完成[创建环境](../../user-guide/deployment-pipeline/environment-pipeline)，环境流水线中有连接状态正常的环境。
+**3.** <font>完成[创建环境](../../user-guide/deployment-pipeline/environment-pipeline)，环境流水线中有状态为运行中的环境。
 
 **4.** 在Choerodon平台下，项目启动依赖于基础服务：
 
@@ -51,11 +51,11 @@ type = "docs"
  **3.** 点击``创建应用``，系统会从右边滑出页面，在页面中输入应用编码、应用名称，并且选择应用模板，点击`创建`，即可创建一个后端应用。
 
  - 应用编码：choerodon-backend
- -  应用名称：猪齿鱼后端应用
- -  选择应用模板: MicroService 
-	<blockquote class="note">
-       当应用模板不符合您的需求，您可手动创建一个[应用模板](../../user-guide/development-pipeline/application-template/)。
-	    </blockquote>
+ - 应用名称：猪齿鱼后端应用
+ - 选择应用模板：MicroService 
+<blockquote class="note">
+当应用模板不符合您的需求，您可手动创建一个[应用模板](../../user-guide/development-pipeline/application-template/)。
+</blockquote>
 
  **4.** 当应用创建成功，可在应用管理界面查看到新建的应用。
 
@@ -1075,11 +1075,11 @@ type = "docs"
 
  - 数据库数据如图所示
 
-      ![](/docs/quick-start/image/sjk.png)
+   ![](/docs/quick-start/image/sjk.png)
 
  - 测试结果如图所示
 
-    ![](/docs/quick-start/image/csjg.png)
+   ![](/docs/quick-start/image/csjg.png)
 
 **7. swagger调用api**
 
@@ -1087,13 +1087,13 @@ type = "docs"
 
  - 本地服务启动如图所示
 
-    ![](/docs/quick-start/image/swagg.png)
+   ![](/docs/quick-start/image/swagg.png)
     
  - 访问swagger地址：http://localhost:8080/manager/swagger-ui.html
  
  - 如图所示
 
-      ![](/docs/quick-start/image/api.png)
+   ![](/docs/quick-start/image/api.png)
 
 至此，后端服务一个简单的API完成。
 
@@ -1149,8 +1149,8 @@ type = "docs"
 
  -  选择应用：choerodon-backend
  -  选择版本：刚才创建的应用版本
- -  选择环境： 选择要部署的环境
- -   配置信息：配置部署应用所需的信息
+ -  选择环境：选择要部署的环境
+ -  配置信息：配置部署应用所需的信息
  -  部署模式：新建实例（新建一个应用）或替换实例（滚动更新实例）
 					
 **4.**  点击`部署`按钮，即可完成部署。
@@ -1177,13 +1177,14 @@ type = "docs"
  
  **3.** 点击`创建网络`，系统从右侧滑出创建网络界面，输入如下信息：
 
- -  环境名称：选择要部署的环境
+ - 环境名称：选择要部署的环境
  - 应用名称：猪齿鱼前端应用
  - 版本：刚才创建的应用版本
  - 实例：刚才部署的实例
- -  网络名称：名称默认为“应用编码-4位随机码”，且可手动修改
+ - 网络名称：名称默认为“应用编码-4位随机码”，且可手动修改
  - 外部IP：需要外网时填写
- -  端口号：应用开放端口
+ - 端口号：网络开放的端口号
+ - 目标端口号：网络选择的目标实例所暴露的端口号
 
 **4.** 点击`创建`按钮即可。
 

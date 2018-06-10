@@ -1,7 +1,6 @@
 +++
 title = "微服务管理"
 weight = 2
-draft = true
 +++
 <h2 id="1">介绍</h2>
 

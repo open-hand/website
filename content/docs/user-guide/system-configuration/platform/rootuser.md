@@ -1,7 +1,6 @@
 +++
 title = "Root用户设置"
 weight = 5
-draft = true
 +++
 
 # Root用户设置
