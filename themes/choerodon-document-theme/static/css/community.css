@@ -98,8 +98,8 @@
 
 .community .social-detail img{
     margin-left: 0;
-    width: 100%;
-    height: 1.4rem;
+    width: 70%;
+    height: 1rem;
 }
 .community .forum {
     background-image: linear-gradient(-1deg, #003DAC 0%, #3371E3 100%);
