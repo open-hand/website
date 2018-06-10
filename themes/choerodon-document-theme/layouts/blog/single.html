@@ -13,7 +13,7 @@
                     <h2>--{{ .Params.subtitle }}</h2>
                     {{ end }}
                     <div class="space-row">
-                        <div>
+                        <div class="space-right">
                             <span class="right-user">{{ i18n "author" }}：<span>{{ .Params.author}}</span></span>
                             <span class="right-categories">{{ i18n "tagsTitle" }}: 
                                 {{ range $index, $category := .Params.categories }}

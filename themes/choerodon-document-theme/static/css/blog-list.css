@@ -558,6 +558,14 @@
         margin: 0.035rem 0.035rem 0 0;
         padding: 0.015rem 0.03rem;
     }
+    .blog-post .blog-single-head .space-row{
+        flex-direction: column;
+    }
+    .blog-post .blog-single-head .space-row .space-right{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.1rem;
+    }
     .blogs .blog-post {
         margin: 0 auto;
     }
