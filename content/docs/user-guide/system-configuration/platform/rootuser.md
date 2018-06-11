@@ -15,7 +15,7 @@ Root用户是最高权限管理员，可以管理平台及平台中所有组织�
 
 输入`用户`，将用户设置为Root用户，步骤如下。
 
-1. 点击`添加`按钮→ ![添加按钮](/docs/user-guide/system-configuration/platform/image/添加.png)；
+1. 点击`添加`按钮→ ![添加按钮](/docs/user-guide/system-configuration/platform/image/add.png)；
 1. 输入`用户`，一次添加操作可以输入一个或多个用户，点击添加按钮。
 
 - 用户：添加用户需要输入用户的登录名。如果用户已为Root用户，重复添加后该用户仍为Root用户。
@@ -27,7 +27,7 @@ Root用户是最高权限管理员，可以管理平台及平台中所有组织�
          平台中至少要有一个Root用户
       </blockquote>
 
- 1. 点击`移除Root用户`→ ![移除按钮](/docs/user-guide/system-configuration/platform/image/删除按钮.png)，进行Root用户的移除。
+ 1. 点击`移除Root用户`→ ![移除按钮](/docs/user-guide/system-configuration/platform/image/del_button.png)，进行Root用户的移除。
 
 <blockquote class="warning">
          若执行移除Root用户操作，该用户将不再为Root用户，不可撤回！如需再次将该用户设置为Root用户，需要重新执行添加操作。

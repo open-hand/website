@@ -14,7 +14,7 @@ weight = 1
 
 
 
-- 在全局层界面中，点击`管理`按钮→ ![管理按钮](/docs/user-guide/system-configuration/platform/image/管理按钮.png) 进入平台设置界面。
+- 在全局层界面中，点击`管理`按钮→ ![管理按钮](/docs/user-guide/system-configuration/platform/image/manage_button.png) 进入平台设置界面。
 
 
 

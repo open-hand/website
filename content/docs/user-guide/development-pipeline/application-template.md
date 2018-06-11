@@ -358,13 +358,13 @@ weight = 1
 
 ### 修改模板信息
 
-点击`修改模板`→ ![修改环境按钮](/docs/user-guide/development-pipeline/image/修改环境按钮.png) 按钮 ，进行应用模板名称和描述的修改。
+点击`修改模板`→ ![修改环境按钮](/docs/user-guide/development-pipeline/image/update_env_button.png) 按钮 ，进行应用模板名称和描述的修改。
 
 ### 删除模板
 
  1. 预定义模板无法删除；
 
- 1. 点击`删除模板`→ ![删除网络按钮](/docs/user-guide/development-pipeline/image/删除网络按钮.png) 按钮，进行模板的删除。
+ 1. 点击`删除模板`→ ![删除网络按钮](/docs/user-guide/development-pipeline/image/del_net_button.png) 按钮，进行模板的删除。
  
 <blockquote class="warning">
 若删除模板，该条数据将被永久删除，不可恢复!

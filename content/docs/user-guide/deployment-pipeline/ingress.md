@@ -26,11 +26,11 @@ weight = 6
 
 ### 编辑域名信息
 
-点击页面右侧 ![修改环境按钮](/docs/user-guide/deployment-pipeline/image/修改环境按钮.png) 按钮，进入修改域名界面后,对域名信息进行修改,最后`保存`。
+点击页面右侧 ![修改环境按钮](/docs/user-guide/deployment-pipeline/image/update_network_button.png) 按钮，进入修改域名界面后,对域名信息进行修改,最后`保存`。
 
 ### 删除域名
 
-点击页面右侧 ![删除网络按钮](/docs/user-guide/deployment-pipeline/image/删除网络按钮.png) 按钮，删除该域名。
+点击页面右侧 ![删除网络按钮](/docs/user-guide/deployment-pipeline/image/delete_network_button.png) 按钮，删除该域名。
 <blockquote class="warning">
          若删除域名，该条数据将被永久删除，不可恢复!
       </blockquote>

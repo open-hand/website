@@ -59,18 +59,18 @@ weight = 2
 
 ### 分支管理
 
-点击`分支管理`→ ![分支管理按钮](/docs/user-guide/development-pipeline/image/分支管理按钮.png) 对应用信息进行[分支管理](../../development-pipeline/branch-management)。
+点击`分支管理`→ ![分支管理按钮](/docs/user-guide/development-pipeline/image/branch_management_button.png) 对应用信息进行[分支管理](../../development-pipeline/branch-management)。
 
 ### 修改应用信息
 
-点击`修改应用`→ ![修改应用按钮](/docs/user-guide/development-pipeline/image/修改应用按钮.png) 对应用信息进行修改。
+点击`修改应用`→ ![修改应用按钮](/docs/user-guide/development-pipeline/image/update_app_button.png) 对应用信息进行修改。
 
 ### 停用/启用应用
 
- 点击 `停用`→ ![停用按钮](/docs/user-guide/development-pipeline/image/停用按钮.png) 即可停用应用。若应用已停用，则不可以进行分支管理，不可以修改应用名称，且不可以部署该应用。
+ 点击 `停用`→ ![停用按钮](/docs/user-guide/development-pipeline/image/stop_button.png) 即可停用应用。若应用已停用，则不可以进行分支管理，不可以修改应用名称，且不可以部署该应用。
  
 <blockquote class="note">
   若该应用已被部署在某环境上生成实例则不可以停用。 
 </blockquote>
 
- 点击 `启用`→ ![启用按钮](/docs/user-guide/development-pipeline/image/启用按钮.png) 即可重新启用被停用的应用，即可恢复相关操作。
+ 点击 `启用`→ ![启用按钮](/docs/user-guide/development-pipeline/image/start_button.png) 即可重新启用被停用的应用，即可恢复相关操作。

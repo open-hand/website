@@ -34,7 +34,7 @@ Choerodon 采用 `git-flow` 工作流模式，有`master`和`develop`两个默�
  
 分支使用流程包括四个部分：创建分支、拉下分支至本地开发、开发完提交代码/解决冲突、结束分支。
 
- ![GitFlow使用流程](/docs/user-guide/assets/continuous-integration/GitFlow使用流程.png)
+ ![GitFlow使用流程](/docs/user-guide/deployment-pipeline/image/gitflow_use_flow.png)
 
 ### 创建分支
 

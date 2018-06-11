@@ -29,5 +29,5 @@ weight = 4
  - 阶段：持续集成的阶段是在gitlab-ci文件里定义的。例如，可以分为单元测试和生成镜像两个阶段。单元测试阶段完成单元测试的运行并且对代码质量进行审查，生成镜像阶段通过 docker 把应用生成镜像。
  - 时长：完成这条持续集成流水线的总时长。
  - 创建时间：创建这条持续集成流水线的时间。
- - ![重试按钮](/docs/user-guide/development-pipeline/image/重试按钮.png) ：当处于 Skipped、Canceled、Failed 状态时，可以重新运行持续集成流水线。
- - ![取消按钮](/docs/user-guide/development-pipeline/image/取消按钮.png) ：当处于 Pending，Running 状态时，可以取消运行持续集成流水线。 
+ - ![重试按钮](/docs/user-guide/development-pipeline/image/retry_button.png) ：当处于 Skipped、Canceled、Failed 状态时，可以重新运行持续集成流水线。
+ - ![取消按钮](/docs/user-guide/development-pipeline/image/cancle_button.png) ：当处于 Pending，Running 状态时，可以取消运行持续集成流水线。 

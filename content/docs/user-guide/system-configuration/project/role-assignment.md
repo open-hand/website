@@ -45,7 +45,7 @@ weight = 2
    
 <h2 id="3">添加成员角色</h2>
 
-1.点击`添加`→![添加](/docs/user-guide/system-configuration/platform/image/添加.png) 添加成员角色；
+1.点击`添加`→![添加](/docs/user-guide/system-configuration/platform/image/add.png) 添加成员角色；
 
 2.输入`成员`、`选择一个角色`；
 
@@ -74,7 +74,7 @@ weight = 2
 
 <h2 id="4">移除成员角色</h2>
 
-点击`移除`→![移除](/docs/user-guide/system-configuration/platform/image/移除.png) 移除成员角色；
+点击`移除`→![移除](/docs/user-guide/system-configuration/platform/image/del.png) 移除成员角色；
 
 可以进行批量删除，即可以一次性删除与某个成员或角色有关的所有成员角色关联。
 
@@ -83,10 +83,10 @@ weight = 2
 
 <h2 id="5">删除成员角色</h2>
 
-- 按成员查看时，点击`删除`→![删除按钮](/docs/user-guide/system-configuration/platform/image/删除按钮.png)，可直接删除与该成员有关联的角色，即删除了一个成员角色关联。
-- 按角色查看时，点击`删除`→![删除按钮](/docs/user-guide/system-configuration/platform/image/删除按钮.png)，可直接删除与该角色有关联的成员，即删除了一个成员角色关联。
-- 按成员或角色查看时，点击编辑图标，进入编辑成员的角色界面，点击`删除`→![删除按钮](/docs/user-guide/system-configuration/platform/image/删除按钮.png)，可删除与成员有关联的一个角色。
+- 按成员查看时，点击`删除`→![删除按钮](/docs/user-guide/system-configuration/platform/image/del_button.png)，可直接删除与该成员有关联的角色，即删除了一个成员角色关联。
+- 按角色查看时，点击`删除`→![删除按钮](/docs/user-guide/system-configuration/platform/image/del_button.png)，可直接删除与该角色有关联的成员，即删除了一个成员角色关联。
+- 按成员或角色查看时，点击编辑图标，进入编辑成员的角色界面，点击`删除`→![删除按钮](/docs/user-guide/system-configuration/platform/image/del_button.png)，可删除与成员有关联的一个角色。
 
 <h2 id="6">修改成员的角色</h2>
 
-点击`编辑`→![修改](/docs/user-guide/system-configuration/platform/image/修改.png)，进入编辑一个成员的所有角色界面，可编辑该成员的角色关联。即可以删除角色，更改已有角色，添加其他角色。只有上一个角色已选时才可以继续添加其他角色。
+点击`编辑`→![修改](/docs/user-guide/system-configuration/platform/image/update.png)，进入编辑一个成员的所有角色界面，可编辑该成员的角色关联。即可以删除角色，更改已有角色，添加其他角色。只有上一个角色已选时才可以继续添加其他角色。

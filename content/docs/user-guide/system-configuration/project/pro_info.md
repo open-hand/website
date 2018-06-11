@@ -37,5 +37,5 @@ weight = 1
 
 
 
-点击`停用`→![停用](/docs/user-guide/system-configuration/project/image/停用.png) 可以停用此项目。停用后，无法进入该项目。如果需要再次启用此项目，需要在项目管理中对该项目进行启用操作。
+点击`停用`→![停用](/docs/user-guide/system-configuration/project/image/stop.png) 可以停用此项目。停用后，无法进入该项目。如果需要再次启用此项目，需要在项目管理中对该项目进行启用操作。
 

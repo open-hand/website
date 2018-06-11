@@ -1,8 +1,17 @@
 image: registry.choerodon.com.cn/tools/cifront:0.5.0
 
 stages:
+  - broken_link_check
   - docker_build
 
+broken_link_check:
+  image: registry.choerodon.com.cn/tools/cifront:0.5.0
+  stage: broken_link_check
+  script:
+    - npm install broken-link-checker -g
+    - blc http://website.staging.saas.hand-china.com/zh/ -ro --exclude "http://website.staging.saas.hand-china.com/en/" --exclude "http://localhost:8080/manager/swagger-ui.html" --exclude "https://www.virtualbox.org/wiki/Download_Old_Builds_5_1" --exclude "https:/www.python.org/downloads/release/python-2712/" --exclude "https:/www.python.org/downloads/release/python-2712/"
+  only:
+    - /^hotfix-check.*$/
 docker_build:
   image: registry.choerodon.com.cn/tools/cibase:0.5.0
   stage: docker_build
