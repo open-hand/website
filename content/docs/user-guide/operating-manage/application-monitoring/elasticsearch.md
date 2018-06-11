@@ -4,7 +4,7 @@ description = ""
 weight = 10
 +++
 
-# Elasicsearch监控
+# Elasticsearch监控
 
 ## 操作指南
 
