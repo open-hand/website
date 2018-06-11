@@ -124,8 +124,8 @@ weight = 15
 
     ```
     curl -o choerodon-install.sh \
-        https://file.choerodon.com.cn/choerodon-install/install.sh && \
-    sh choerodon-install.sh "$PWD/values.sh"
+        https://file.choerodon.com.cn/choerodon-install/install-0.6.sh && \
+    sh choerodon-install.sh values.sh
     ```
 
     - 部署完成后你将看到如下类似信息，请注意保存。

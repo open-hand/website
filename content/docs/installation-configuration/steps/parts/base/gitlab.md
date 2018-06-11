@@ -177,8 +177,12 @@ helm install c7n/gitlab \
 
 1. 推送到搭建的Gitlab中（下面语句请注意替换相应值）
 
+    <blockquote class="warning">
+    请不要修改仓库组织名称和仓库名称，这里的app_template就是仓库组织名称，***为仓库名称，只修改域名gitlab.exmple.choerodon.io。
+    </blockquote>
+
     ```shell
-    git remote set-url origin http://gitlab.exmple.choerodon.io/*****.git
+    git remote set-url origin http://gitlab.exmple.choerodon.io/app_template/***.git
     git push origin master:master
     ```
 
