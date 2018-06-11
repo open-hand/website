@@ -9,7 +9,7 @@ broken_link_check:
   stage: broken_link_check
   script:
     - npm install broken-link-checker -g
-    - blc http://choerodon.io/zh/ -ro --exclude "http://choerodon.io/en/" --exclude "http://localhost:8080/manager/swagger-ui.html" --exclude "https://www.virtualbox.org/wiki/Download_Old_Builds_5_1"
+    - blc http://website.staging.saas.hand-china.com/zh/ -ro --exclude "http://website.staging.saas.hand-china.com/en/" --exclude "http://localhost:8080/manager/swagger-ui.html" --exclude "https://www.virtualbox.org/wiki/Download_Old_Builds_5_1"
   only:
     - /^hotfix-check.*$/
 docker_build:
