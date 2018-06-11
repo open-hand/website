@@ -24,7 +24,7 @@ a. 未发布应用
 
  - 应用编码：可发布的应用的编码；
 
- - 发布应用：点击以发布应用→ ![发布图标](/docs/user-guide/development-pipeline/image/发布图标.png) ；
+ - 发布应用：点击以发布应用→ ![发布图标](/docs/user-guide/development-pipeline/image/release_icon.png) ；
 
 b. 已发布应用
   
@@ -41,7 +41,7 @@ b. 已发布应用
 
  <h2 id="2">发布应用</h2>  
   
-点击发布应用→ ![发布图标](/docs/user-guide/development-pipeline/image/发布图标.png)，就可以进入发布应用的操作界面。
+点击发布应用→ ![发布图标](/docs/user-guide/development-pipeline/image/release_icon.png)，就可以进入发布应用的操作界面。
 
 具体操作如下：
 
