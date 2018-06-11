@@ -35,7 +35,7 @@ weight = 3
 
 <h2 id="3">创建角色</h2>
 
-1.点击`创建角色`→![创建角色](/docs/user-guide/system-configuration/platform/image/创建角色.png)创建一个角色；
+1.点击`创建角色`→![创建角色](/docs/user-guide/system-configuration/platform/image/create_role.png)创建一个角色；
 
 2.输入`角色名称`、`角色层级`、`角色编码`、`角色标签`以及`角色权限`；
 
@@ -54,7 +54,7 @@ weight = 3
 
 <h2 id="4">根据所选角色创建角色</h2>
 
-1.点击列表中的`图标`→ ![详情按钮](/docs/user-guide/system-configuration/platform/image/详情按钮.png)，选中`基于该角色创建`；
+1.点击列表中的`图标`→ ![详情按钮](/docs/user-guide/system-configuration/platform/image/detail_button.png)，选中`基于该角色创建`；
 
 2.输入`角色名称`、`角色层级`、`角色编码`、`角色标签`以及`角色权限`；
 <blockquote class="note">
@@ -79,7 +79,7 @@ weight = 3
 
 <h2 id="5">编辑角色</h2>
 
-1.点击列表中的`图标`→ ![详情按钮](/docs/user-guide/system-configuration/platform/image/详情按钮.png)，选中`修改`；
+1.点击列表中的`图标`→ ![详情按钮](/docs/user-guide/system-configuration/platform/image/detail_button.png)，选中`修改`；
 
 2.输入`角色名称`、`角色层级`、`角色编码`、`角色标签`以及`角色权限`；
 
@@ -101,7 +101,7 @@ weight = 3
 3.点击`保存`完成角色的创建。
 
 <h2 id="6">启用/停用角色</h2>
-点击列表中的`图标`→ ![详情按钮](/docs/user-guide/system-configuration/platform/image/详情按钮.png)，选中`停用`；
+点击列表中的`图标`→ ![详情按钮](/docs/user-guide/system-configuration/platform/image/detail_button.png)，选中`停用`；
 
 <blockquote class="note">
           预定义角色不可停用，只能启用/停用用户自定义角色。

@@ -38,20 +38,20 @@ Choerodon猪齿鱼作为企业级PaaS平台，基于DevOps敏捷化和自动化�
      
 	 Choerodon借助Gitlab CI作为持续集成工具，提供持续集成的流水线，简化应用开发、缩短应用开发周期，实现软件功能快速迭代。
 	 
-	  ![](/blog/img/开发流水线.png)
+	  ![](/blog/img/development-pipeline.png)
 	 
 
  - [应用和部署流水线](../../docs/user-guide/deployment-pipeline/)
  
     方便地部署和管理各种使用Choerodon开发的应用服务，包括应用启停、状态监控，以及应用对应的版本控制、容器管理等。
 	
-	![](/blog/img/部署.png)
+	![](/blog/img/deployment-pipeline.png)
 
  - [微服务开发](../../docs/development-guide/backend/)
 
      Choerodon提供一套基于Spring Cloud的微服务开发框架，借助它企业可以方便快捷地构建应用服务，简化开发，加速信息化系统的实施和落地。
 	 
-	 ![](/blog/img/微服务.png)
+	 ![](/blog/img/backend.png)
 
 
  - 运营管理

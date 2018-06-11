@@ -19,7 +19,7 @@ weight = 5
 
  1. 进入容器界面，通过列表信息观察应用状态、可用情况、创建时间；
 
- 1. 点击`容器日志`→ ![容器日志按钮](/docs/user-guide/deployment-pipeline/image/容器日志按钮.png) 查看容器日志。
+ 1. 点击`容器日志`→ ![容器日志按钮](/docs/user-guide/deployment-pipeline/image/container_log_button.png) 查看容器日志。
 
 列表信息
 

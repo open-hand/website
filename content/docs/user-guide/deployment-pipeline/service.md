@@ -38,11 +38,11 @@ weight = 3
 
 ### 修改网络信息
 
-点击`修改网络` → ![修改环境按钮](/docs/user-guide/deployment-pipeline/image/修改环境按钮.png) 对网络进行修改。
+点击`修改网络` → ![修改环境按钮](/docs/user-guide/deployment-pipeline/image/update_env_button.png) 对网络进行修改。
 
 ### 删除网络
 
-点击`删除网络` → ![删除网络按钮](/docs/user-guide/deployment-pipeline/image/删除网络按钮.png) 对网络进行修改。
+点击`删除网络` → ![删除网络按钮](/docs/user-guide/deployment-pipeline/image/del_net_button.png) 对网络进行修改。
 <blockquote class="warning">
          若删除网络，该条数据将被永久删除，不可恢复!
       </blockquote>
