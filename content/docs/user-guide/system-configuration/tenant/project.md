@@ -29,7 +29,7 @@ weight = 1
 
 ## 创建项目
 
-1.点击`创建项目`→![创建项目](/docs/user-guide/system-configuration/tenant/image/创建项目.png)创建一个项目；
+1.点击`创建项目`→![创建项目](/docs/user-guide/system-configuration/tenant/image/create_project.png)创建一个项目；
 
 2.输入`项目编码`和`项目名称`；
 
@@ -42,7 +42,7 @@ weight = 1
 
 ## 修改项目
 
-1.点击`修改`→![修改](/docs/user-guide/system-configuration/tenant/image/修改.png)，对项目进行修改。
+1.点击`修改`→![修改](/docs/user-guide/system-configuration/tenant/image/update.png)，对项目进行修改。
 
 2.输入`项目编码`和`项目名称`；
 
@@ -58,5 +58,5 @@ weight = 1
 
 ## 启用/停用项目
 
-- 停用项目：点击列表中`停用`→![停用按钮](/docs/user-guide/system-configuration/tenant/image/停用按钮.png)，项目的启用状态为启用时，可进行停用项目的操作。停用项目后，项目的启用状态变为停用，不可进入该项目。
-- 启用项目：点击列表中`启用`→![启用按钮](/docs/user-guide/system-configuration/tenant/image/启用按钮.png)项目的启用状态为停用时，可进行启用项目的操作。启用项目后，项目的启用状态变为启用，可进入该项目进行项目设置、项目角色分配等操作。
+- 停用项目：点击列表中`停用`→![停用按钮](/docs/user-guide/system-configuration/tenant/image/stop_button.png)，项目的启用状态为启用时，可进行停用项目的操作。停用项目后，项目的启用状态变为停用，不可进入该项目。
+- 启用项目：点击列表中`启用`→![启用按钮](/docs/user-guide/system-configuration/tenant/image/start_button.png)项目的启用状态为停用时，可进行启用项目的操作。启用项目后，项目的启用状态变为启用，可进入该项目进行项目设置、项目角色分配等操作。

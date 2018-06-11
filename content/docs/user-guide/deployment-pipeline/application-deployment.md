@@ -56,7 +56,7 @@ weight = 2
 
     e. 环境：环境的名称和环境编码。
 
-    f. 点击页面右侧 ![详情按钮](/docs/user-guide/development-pipeline/image/详情按钮.png) 按钮 ，再点击`查看实例详情`，进入实例详情后观察其运行详情和部署详情。
+    f. 点击页面右侧 ![详情按钮](/docs/user-guide/development-pipeline/image/detail_button.png) 按钮 ，再点击`查看实例详情`，进入实例详情后观察其运行详情和部署详情。
 
  2. **单环境** 通过搜索单个环境名称来观察该环境应用中所部署的情况。
     
@@ -64,7 +64,7 @@ weight = 2
 
     a. 环境名称：对环境进行选择。
 
-    b. 应用：选择相应环境下的应用。可以在环境中点击 ![查看部署应用按钮](/docs/user-guide/development-pipeline/image/查看部署应用按钮.png) 按钮，对当前进行快速部署。
+    b. 应用：选择相应环境下的应用。可以在环境中点击 ![查看部署应用按钮](/docs/user-guide/development-pipeline/image/scan_deploy_button.png) 按钮，对当前进行快速部署。
 
       列表字段：
 
@@ -76,7 +76,7 @@ weight = 2
 
     d. 应用版本：应用的版本。
 
-    e. 点击页面右侧 ![详情按钮](/docs/user-guide/development-pipeline/image/详情按钮.png) 按钮 ，再点击`查看实例详情`，进入实例详情后观察其运行详情和部署详情。
+    e. 点击页面右侧 ![详情按钮](/docs/user-guide/development-pipeline/image/detail_button.png) 按钮 ，再点击`查看实例详情`，进入实例详情后观察其运行详情和部署详情。
 
  3. **单应用** 观察单个应用在不同环境下的部署情况。
     
@@ -86,7 +86,7 @@ weight = 2
 
     b. 应用版本：选择应用版本。
 
-    c. 环境：环境的状态和名称。可以在环境中点击 ![查看部署应用按钮](/docs/user-guide/development-pipeline/image/查看部署应用按钮.png) 按钮，对当前进行快速部署。
+    c. 环境：环境的状态和名称。可以在环境中点击 ![查看部署应用按钮](/docs/user-guide/development-pipeline/image/scan_deploy_button.png) 按钮，对当前进行快速部署。
 
      列表字段：
    
@@ -96,7 +96,7 @@ weight = 2
 
     c. 实例名称：实例的名称。
 
-    e. 点击页面右侧 ![详情按钮](/docs/user-guide/development-pipeline/image/详情按钮.png) 按钮 ，再点击`查看实例详情`，进入实例详情后观察其运行详情和部署详情。
+    e. 点击页面右侧 ![详情按钮](/docs/user-guide/development-pipeline/image/detail_button.png) 按钮 ，再点击`查看实例详情`，进入实例详情后观察其运行详情和部署详情。
 
  4. **多应用** 观察所有应用在不同环境下的部署情况，这里对实例详情不可查看。
     
@@ -133,14 +133,14 @@ Ingress （域名）|name，hosts，address，ports，age
 包括报错信息、配置信息、阶段及日志。
 
 ### 修改配置信息
-点击页面右侧 ![详情按钮](/docs/user-guide/deployment-pipeline/image/详情按钮.png) 按钮 ，再点击`修改配置信息`，进入修改配置信息界面后对实例配置信息进行修改后重新部署。
+点击页面右侧 ![详情按钮](/docs/user-guide/deployment-pipeline/image/detail_button.png) 按钮 ，再点击`修改配置信息`，进入修改配置信息界面后对实例配置信息进行修改后重新部署。
 
 ### 停止实例
-点击页面右侧 ![详情按钮](/docs/user-guide/deployment-pipeline/image/详情按钮.png) 按钮 ，再点击`停止实例`，该实例即为停止状态，且容器状态停止。容器状态为“0”时，实例存在。
+点击页面右侧 ![详情按钮](/docs/user-guide/deployment-pipeline/image/detail_button.png) 按钮 ，再点击`停止实例`，该实例即为停止状态，且容器状态停止。容器状态为“0”时，实例存在。
 <blockquote class="note">
   停止实例后，停止实例按钮转变为重启实例按钮，点击重启实例按钮时，重启环境。
 </blockquote>
 
 ### 删除实例
-点击页面右侧 ![详情按钮](/docs/user-guide/deployment-pipeline/image/详情按钮.png) 按钮，再点击`删除实例`，该实例被删除。
+点击页面右侧 ![详情按钮](/docs/user-guide/deployment-pipeline/image/detail_button.png) 按钮，再点击`删除实例`，该实例被删除。
 

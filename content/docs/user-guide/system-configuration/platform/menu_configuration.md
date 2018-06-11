@@ -76,7 +76,7 @@ weight = 2
 
 1.点击`创建自设目录
 `→![创建自设目录
-](/docs/user-guide/system-configuration/platform/image/创建自设目录.png)创建一个自设目录；
+](/docs/user-guide/system-configuration/platform/image/create_own_dir.png)创建一个自设目录；
 
 2.输入`目录名称`、`目录编码`以及`目录图表`；
 
@@ -94,7 +94,7 @@ weight = 2
 <h2 id="4">修改自设目录</h2>
 
 
-点击列表中`编辑`→![修改](/docs/user-guide/system-configuration/platform/image/修改.png) 进行自设目录的修改编辑。
+点击列表中`编辑`→![修改](/docs/user-guide/system-configuration/platform/image/update.png) 进行自设目录的修改编辑。
 <blockquote class="note">
         目录编码具有唯一性，是目录的标识。所以目录一旦成功创建，不可修改。
       </blockquote> 
@@ -114,7 +114,7 @@ weight = 2
 
 
 
-点击列表中`删除`→![删除按钮](/docs/user-guide/system-configuration/platform/image/删除按钮.png)，删除自设目录。
+点击列表中`删除`→![删除按钮](/docs/user-guide/system-configuration/platform/image/del_button.png)，删除自设目录。
 <blockquote class="note">
         只有自设目录可删除，预置目录和菜单不可是系统定义的，无法删除。
       </blockquote> 

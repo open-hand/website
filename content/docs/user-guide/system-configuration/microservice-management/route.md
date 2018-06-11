@@ -26,7 +26,7 @@ draft = true
 
 ### 修改路由
  1. 预定义路由无法修改；
-1. 点击`修改路由`→ ![修改按钮](/docs/user-guide/system-configuration/microservice-management/image/修改.png) 按钮 ，进行路由信息的修改。
+1. 点击`修改路由`→ ![修改按钮](/docs/user-guide/system-configuration/microservice-management/image/update.png) 按钮 ，进行路由信息的修改。
 
 不可修改字段：
 
@@ -46,7 +46,7 @@ draft = true
 
  1. 预定义路由无法删除；
 
- 1. 点击`删除路由`→ ![删除按钮](/docs/user-guide/system-configuration/microservice-management/image/删除按钮.png) 按钮，进行模板的删除。
+ 1. 点击`删除路由`→ ![删除按钮](/docs/user-guide/system-configuration/microservice-management/image/del_button.png) 按钮，进行模板的删除。
 <blockquote class="warning">
          若删除路由，该条数据将被永久删除，不可恢复!
       </blockquote>

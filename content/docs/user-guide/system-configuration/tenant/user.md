@@ -33,7 +33,7 @@ weight = 2
 
 <h2 id="3">创建用户</h2>
 
-1.点击`创建用户`→![创建用户](/docs/user-guide/system-configuration/tenant/image/创建用户.png)创建一个组织；
+1.点击`创建用户`→![创建用户](/docs/user-guide/system-configuration/tenant/image/create_user.png)创建一个组织；
 
 2.输入`登录名`、`用户名`、`邮箱`、`密码`、`确认密码`、`语言`和`时区`；
 
@@ -50,7 +50,7 @@ weight = 2
 
 <h2 id="4">修改用户</h2>
 
-1.点击`修改`→![修改](/docs/user-guide/system-configuration/tenant/image/修改.png)，对用户进行修改。
+1.点击`修改`→![修改](/docs/user-guide/system-configuration/tenant/image/update.png)，对用户进行修改。
 
 2.填写输入`登录名`、`用户名`、`邮箱`、`密码`、`确认密码`、`语言`和`时区`；
 
@@ -73,8 +73,8 @@ weight = 2
           用户不可以被删除，可以被启用/停用。
       </blockquote>
 
-- 停用用户：点击列表中`停用`→![停用按钮](/docs/user-guide/system-configuration/tenant/image/停用按钮.png),用户被停用之后，无法被分配角色，无法登录系统。
-- 启用用户：点击列表中`启用`→![启用按钮](/docs/user-guide/system-configuration/tenant/image/启用按钮.png),用户被启用之后，可以被分配角色，可以登录系统。
+- 停用用户：点击列表中`停用`→![停用按钮](/docs/user-guide/system-configuration/tenant/image/stop_button.png),用户被停用之后，无法被分配角色，无法登录系统。
+- 启用用户：点击列表中`启用`→![启用按钮](/docs/user-guide/system-configuration/tenant/image/start_button.png),用户被启用之后，可以被分配角色，可以登录系统。
 
 <h2 id="6">解锁用户</h2>
 

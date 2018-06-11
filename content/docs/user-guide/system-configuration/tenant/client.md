@@ -26,7 +26,7 @@ weight = 4
 
 <h2 id="3">创建客户端</h2>
 
-1.点击`创建`→![创建](/docs/user-guide/system-configuration/tenant/image/创建.png)创建客户端；
+1.点击`创建`→![创建](/docs/user-guide/system-configuration/tenant/image/create.png)创建客户端；
 
 2.输入`客户端名称`、`密钥`和`授权类型`；
 
@@ -52,7 +52,7 @@ weight = 4
 
 <h2 id="4">修改客户端</h2>
 
-1.点击`修改`→![修改](/docs/user-guide/system-configuration/tenant/image/修改.png)，对客户端进行修改；
+1.点击`修改`→![修改](/docs/user-guide/system-configuration/tenant/image/update.png)，对客户端进行修改；
 
 2.输入`客户端ID`、`客户端名称`、`密钥`和`授权类型`；
 
@@ -73,5 +73,5 @@ weight = 4
 
 <h2 id="5">删除客户端</h2>
 
-点击`删除图标`→ ![删除按钮](/docs/user-guide/system-configuration/tenant/image/删除按钮.png)，即可删除客户端。
+点击`删除图标`→ ![删除按钮](/docs/user-guide/system-configuration/tenant/image/del_button.png)，即可删除客户端。
 
