@@ -11,7 +11,7 @@ broken_link_check:
     - npm install broken-link-checker -g
     - blc http://choerodon.io/zh/ -ro --exclude "http://choerodon.io/en/" --exclude "http://localhost:8080/manager/swagger-ui.html" --exclude "https://www.virtualbox.org/wiki/Download_Old_Builds_5_1"
   only:
-    - /^hotfix-.*$/
+    - /^hotfix-check.*$/
 docker_build:
   image: registry.choerodon.com.cn/tools/cibase:0.5.0
   stage: docker_build
