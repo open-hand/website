@@ -23,7 +23,7 @@ Zookeeper|分布式应用程序协调服务|3.4.10
 Kafka|消息中间件|1.0.0
 Harbor|容器的镜像库|1.4.0
 Gitlab|代码托管|10.2.8
-Gitlab-Runner|CI/CD 运行环境|10.6.1
+Gitlab-Runner|CI/CD 运行环境|10.7.2
 
 ### Choerodon服务列表
 
@@ -35,18 +35,18 @@ Gitlab-Runner|CI/CD 运行环境|10.6.1
 
 组件|描述| 版本
 ---|---|---
-register server|注册服务|0.5.0
-config server|配置服务|0.5.0
-manager service|管理服务|0.5.0
-iam service|IAM服务|0.5.0
-api gateway|网关服务|0.5.0
-gateway helper|网关helper|0.5.0
-oauth server|认证服务|0.5.0
-event store service|事件服务|0.5.0
-file service|文件服务|0.5.0
-hystrix dashboard|调用链仪表盘|0.5.0
-hystrix turbine|调用链监控|0.5.0
-choerodon iam front|Choerodon IAM前端|0.5.0
-devops service|Devops 服务|0.5.0
-gitlab service|Gitlab 服务|0.5.0
-choerodon front|Choerodon 前端|0.5.0
+register server|注册服务|0.6.0
+config server|配置服务|0.6.0
+manager service|管理服务|0.6.0
+iam service|IAM服务|0.6.0
+api gateway|网关服务|0.6.0
+gateway helper|网关helper|0.6.0
+oauth server|认证服务|0.6.0
+event store service|事件服务|0.6.0
+file service|文件服务|0.6.0
+hystrix dashboard|调用链仪表盘|0.6.0
+hystrix turbine|调用链监控|0.6.0
+choerodon iam front|Choerodon IAM前端|0.6.0
+devops service|Devops 服务|0.6.3
+gitlab service|Gitlab 服务|0.6.0
+choerodon front|Choerodon 前端|0.6.1
