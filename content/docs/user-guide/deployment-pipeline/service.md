@@ -38,7 +38,7 @@ weight = 3
 
 ### 修改网络信息
 
-点击`修改网络` → ![修改环境按钮](/docs/user-guide/deployment-pipeline/image/update_env_button.png) 对网络进行修改。
+点击`修改网络` → ![修改网络按钮](/docs/user-guide/deployment-pipeline/image/update_network_button.png) 对网络进行修改。
 
 ### 删除网络
 

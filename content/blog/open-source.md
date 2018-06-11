@@ -32,7 +32,7 @@ Choerodon猪齿鱼作为企业级PaaS平台，基于DevOps敏捷化和自动化�
 
      Choerodon使用敏捷模型来管理项目，包含故事地图、用户故事管理、发布计划、迭代和看板等功能，让需求、计划、执行一目了然，使整个软件开发流程更加高效和规范。
 	 
-	  ![](/blog/img/敏捷.png)
+	  ![](/blog/img/agile.png)
 
  - [开发流水线](../../docs/user-guide/development-pipeline/)
      
