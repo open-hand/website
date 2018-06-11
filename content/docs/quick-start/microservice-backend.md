@@ -252,47 +252,47 @@ type = "docs"
 
 	```
 	spring:
-		  datasource:
-			url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf-8&useSSL=false
-			username: root
-			password: root
-		  http:
-			encoding:
-			  charset: UTF-8
-			  force: true
-			  enabled: true
-			multipart:
-			  max-file-size: 30MB
-			  max-request-size: 30MB
-		eureka:
-		  client:
+		datasource:
+		url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf-8&useSSL=false
+		username: root
+		password: root
+		http:
+		encoding:
+			charset: UTF-8
+			force: true
+			enabled: true
+		multipart:
+			max-file-size: 30MB
+			max-request-size: 30MB
+	eureka:
+	  	client:
 			serviceUrl:
-			  defaultZone: ${EUREKA_DEFAULT_ZONE:http://localhost:8000/eureka/}
-		swagger:
-		  oauthUrl: http://localhost:8080/oauth/oauth/authorize
-		event:
-		  consumer:
+		  	defaultZone: ${EUREKA_DEFAULT_ZONE:http://localhost:8000/eureka/}
+	swagger:
+	  	oauthUrl: http://localhost:8080/oauth/oauth/authorize
+	event:
+	  	consumer:
 			enabled: true
 			enable-duplicate-remove: false
 			kafka:
-			  bootstrapServers: localhost:9092
-			  sessionTimeoutMs: 30000
-		feign:
-		  hystrix:
+				bootstrapServers: localhost:9092
+				sessionTimeoutMs: 30000
+	feign:
+	  	hystrix:
 			enabled: true
-		hystrix:
-		  command:
+	hystrix:
+	  	command:
 			default:
 			  execution:
 				isolation:
-				  thread:
+					thread:
 					timeoutInMilliseconds: 30000
 				timeout:
-				  enabled: false
-		ribbon:
-		  ConnectTimeout: 10000
-		  ReadTimeout: 30000
-		serviceAccountId: 1
+				  	enabled: false
+	ribbon:
+	  	ConnectTimeout: 10000
+	  	ReadTimeout: 30000
+	serviceAccountId: 1
 	```
 
  **4. 数据库初始化脚本**

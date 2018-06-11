@@ -57,7 +57,7 @@ eureka:
 ```yaml
 manager-service:
     container_name: manager-service
-    image: registry.cn-shanghai.aliyuncs.com/choerodon/manager-service:0.1.0
+    image: registry.cn-shanghai.aliyuncs.com/choerodon/manager-service:0.6.0
     ports:
     - "8963:8963"
 ```
