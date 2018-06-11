@@ -82,7 +82,7 @@ Choerodon 的微服务，采用DDD 的设计思想，整体架构如下图所示
 Choerodon 的后端主要以Java 为主，您所开发的Java 程序需要生效SonarQube的规范检查和CheckStyle的规范检查：
 
 * SonarQube 的规范检查，SonarQube提供应用程序的能力，可以通过SonarQube 显示程序的健康程度和质量。你可以修复泄漏，系统地提高代码质量。Choerodon 使用sonarlint作为SonarQube的检查。
-* CheckStyle 的规范检查，Checkstyle是一个开发工具来帮助程序员编写Java代码,提供了统一的编码标准。Choerodon 提供一份自己的checkStyle 文件。[choerodon_checkStyle.xml](https://choerodon.io/gitlab/io.choerodon/coding_guidelines/raw/master/checkConfigure/choerodon_checks.xml)
+* CheckStyle 的规范检查，Checkstyle是一个开发工具来帮助程序员编写Java代码,提供了统一的编码标准。Choerodon 提供一份自己的checkStyle 文件。[choerodon_checkStyle.xml](./choerodon_checks.xml)
 
 ### SQL 规范
 
