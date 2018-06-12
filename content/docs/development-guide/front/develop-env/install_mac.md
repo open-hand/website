@@ -34,6 +34,6 @@ weight = 1
 
 在项目中,python(2.7.X)用于执行功能性脚本。
 
-1. 在[python 官网](https:/www.python.org/downloads/release/python-2712/) 下载2.7版本的python 安装包。
+1. 在[python 官网](https://www.python.org/downloads/release/python-2712/) 下载2.7版本的python 安装包。
 2. 运行`brew install python@2` 安装python。
 3. 配置完成后打开 git bash 执行 `python`，有提示则说明环境安装成功。
