@@ -28,6 +28,7 @@ helm repo update
     helm install c7n/go-register-server \
         --set service.enable=true \
         --set service.name=register-server \
+        --set env.open.REGISTER_SERVICE_NAMESPACE=choerodon-devops-prod \
         --set env.open.KAFKA_ADDRESSES="kafka-0.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-1.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-2.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092" \
         --name register-server \
         --version=0.6.0 --namespace=choerodon-devops-prod
@@ -38,6 +39,7 @@ helm repo update
     service.enable|是否创建service对象
     service.name|service对象的名称
     env.open.KAFKA_ADDRESSES|kafka地址
+    env.open.REGISTER_SERVICE_NAMESPACE|仅监听的namespace，多个namespace请用逗号隔开
 
 - 验证部署
     - 验证命令
@@ -333,6 +335,8 @@ helm repo update
         --set env.open.SPRING_DATASOURCE_URL="jdbc:mysql://choerodon-mysql:3306/iam_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
         --set env.open.SPRING_DATASOURCE_USERNAME=choerodon \
         --set env.open.SPRING_DATASOURCE_PASSWORD=password \
+        --set env.open.SPRING_REDIS_HOST=devops-redis \
+        --set env.open.SPRING_REDIS_PORT=6379 \
         --set env.open.CHOERODON_DEFAULT_REDIRECT_URL="http://example.choerodon.io" \
         --set env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE="http://register-server.choerodon-devops-prod:8000/eureka/" \
         --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
