@@ -193,8 +193,8 @@ mysql> show tables;
 ``` yml
 spring:
   datasource:
-    url: jdbc:mysql://192.168.99.100:3306/todo_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
-    username: root
+    url: jdbc:mysql://localhost:3306/todo_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: choerodon
     password: 123456
 ```
 
