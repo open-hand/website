@@ -35,6 +35,6 @@ Python是一种解释型、面向对象、动态数据类型的高级程序设�
 
 在项目中，python用于执行功能性脚本。
 
-1. 在[python 官网](https:/www.python.org/downloads/release/python-2712/) 下载2.7版本的python 安装包。
+1. 在[python 官网](https://www.python.org/downloads/release/python-2712/) 下载2.7版本的python 安装包。
 2. 本地执行安装文件。
 3. 配置完成后打开 git bash 执行 `python`，有提示则说明环境安装成功。
