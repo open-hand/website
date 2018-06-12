@@ -92,34 +92,67 @@ description = ""
         <ul>
             <li>
                 <div class="access-list-item">
-                    <a href="./installation-configuration/steps/kubernetes/">
+                    <a href="./installation-configuration/install-list/">
                         <div class="item-head">
-                            <img class="n-max" src="/img/docs/home/7.svg"/>
-                            <h4>Kubernetes集群部署</h4>
+                            <img class="n-max" src="/img/docs/home/install-list.svg"/>
+                            <h4>组件安装列表</h4>
                         </div>
-                        <p>详细教程了Kubernetes集群的部署搭建</p>
+                        <p>详细描述了在部署与配置中安装的基础组件名称，描述以及对应的版本信息</p>
                     </a>
                 <div>
             </li>
             <li>
                 <div class="access-list-item">
-                    <a href="./installation-configuration/steps/choerodon/">
+                    <a href="./installation-configuration/switch-install/">
                         <div class="item-head">
-                            <img class="n-max" src="/img/docs/home/8.svg"/>
-                            <h4>一键部署Choerodon</h4>
+                            <img class="n-max" src="/img/docs/home/switch-install.svg"/>
+                            <h4>选择安装方式</h4>
                         </div>
-                        <p>介绍如何部署Choerodon平台，以及部署常见问题解决办法</p>
+                        <p>介绍Choerodon的两种安装方式：一键部署Choerodon和分步部署Choerodon</p>
                     </a>
                 </div>
             </li>
             <li>
                 <div class="access-list-item">
-                    <a href="./installation-configuration/steps/parts/">
+                    <a href="./installation-configuration/pre-install/">
                         <div class="item-head">
-                            <img class="n-max" src="/img/docs/home/9.svg"/>
-                            <h4>分步部署Choerodon</h4>
+                            <img class="n-max" src="/img/docs/home/pre-install.svg"/>
+                            <h4>安装要求及约定</h4>
                         </div>
-                        <p>描述基础组件部署、微服务开发框架部署以及Choerodon部署</p>
+                        <p>详细介绍安装Choerodon的要求和约定</p>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="access-list-item">
+                    <a href="./installation-configuration/steps/">
+                        <div class="item-head">
+                            <img class="n-max" src="/img/docs/home/steps.svg"/>
+                            <h4>安装步骤</h4>
+                        </div>
+                        <p>安装Choerodon步骤的详细介绍</p>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="access-list-item">
+                    <a href="./installation-configuration/stop/">
+                        <div class="item-head">
+                            <img class="n-max" src="/img/docs/home/stop.svg"/>
+                            <h4>启停</h4>
+                        </div>
+                        <p>介绍了如何正确启动和停止Choerodon平台</p>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="access-list-item">
+                    <a href="./installation-configuration/uninstall/">
+                        <div class="item-head">
+                            <img class="n-max" src="/img/docs/home/uninstall.svg"/>
+                            <h4>卸载</h4>
+                        </div>
+                        <p>详细介绍了一键部署和分步部署对应的两种卸载方式</p>
                     </a>
                 </div>
             </li>
