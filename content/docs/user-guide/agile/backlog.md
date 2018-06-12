@@ -1,7 +1,7 @@
 ﻿+++
 title = "待办事项"
 description = ""
-weight = 2
+weight = 1
 +++
 
 <h1 id="1">待办事项</h1>
@@ -20,7 +20,7 @@ weight = 2
 
   
 **编辑一个版本**：
-点击版本列表的右边的![enter description here](/docs/user-guide/scrum/imge/image1.png "image1")标识，可对版本进行发布、归档、删除等操作，并可对名称、描述、开始日期、发布日期进行修改。
+点击版本列表的右边的![enter description here](/docs/user-guide/agile/imge/image1.png "image1")标识，可对版本进行发布、归档、删除等操作，并可对名称、描述、开始日期、发布日期进行修改。
 
       
 <h2 id="1">创建史诗</h2>
