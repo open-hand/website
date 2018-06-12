@@ -56,7 +56,7 @@ Choerodon 采用Liquibase + groovy 的方式对数据库管理。
 
 更多有关Liguibase的资料见 [Liquibase 官网](http://www.liquibase.org/)。
 
-1. 在`./choerodon-todo-service/src/resources/db/script` 路径下创建`todo_swimlane.groovy`, `todo_user.groovy`, `todo_task.groovy`。
+1. 在`./choerodon-todo-service/src/resources/script/db/` 路径下创建`todo_swimlane.groovy`, `todo_user.groovy`, `todo_task.groovy`。
 2. 编写groovy 脚本。
 
 * todo_user.groovy
