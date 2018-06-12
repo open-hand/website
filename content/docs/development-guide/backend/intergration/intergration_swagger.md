@@ -15,7 +15,7 @@ weight = 4
 
 ## Eureka服务发现
 
-##### 如需添加Eureka服务发现，需在xxx.infra.util包下创建拓展数据配置类，并继承ExtraDataManager，以用于自动初始化路由。示例如下：
+如需添加Eureka服务发现，需在`xxx.infra.util`包下创建拓展数据配置类，并继承`ExtraDataManager`，以用于自动初始化路由。示例如下：
 ```java
 @ChoerodonExtraData
 public class CustomExtraDataManager implements ExtraDataManager {
@@ -30,11 +30,11 @@ public class CustomExtraDataManager implements ExtraDataManager {
     }
 }
 ```
+在`TodoServiceApplication`中添加`@EnableEurekaClient` 注解。
 
+在`applicationyml`中添加关于Eureka的配置
 
-* 在`applicationyml`中添加关于Eureka的配置
-
-```yaml
+```yml
 eureka:
   instance:
     preferIpAddress: true
@@ -44,8 +44,10 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8000/eureka/
 ```
-##### 重启Todo服务
-##### 如果上述步骤执行无误，可在本地的 `http://localhost:8000/` 查看注册成功的服务:
+
+##重启Todo服务
+
+如果上述步骤执行无误，可在本地的 `http://localhost:8000/` 查看注册成功的服务:
 
 *  OAUTH-SERVER
 *  API-GATEWAY-TEST
@@ -54,7 +56,8 @@ eureka:
 *  GATEWAY-HELPER
 
 ## swagger Api服务
-* 使用swagger测试需启动manager-service模块，在docker-compose.yaml中加入此容器并重启所有模块
+
+* 使用`swagger`测试需启动`manager-service`模块，在`docker-compose.yaml`中加入此容器并重启所有模块
 
 ```yaml
 manager-service:
@@ -64,14 +67,14 @@ manager-service:
     - "8963:8963"
 ```
 
-**Note. 启动顺序：基础软件mysql、kafka等 ，eureka-server服务，manager-service，api-gateway，其余模块。**
+**Note. 启动顺序：基础软件mysql、kafka、redis等 ，eureka-server服务，manager-service，api-gateway，其余模块。**
 
 - 打开 `http://localhost:8963/swagger-ui.html` 该地址端口号为Eurake上对应端口号
 
 ![](/docs/development-guide/backend/intergration/images/swaggerTest1.png)
 
-* 打开任意一个api，点击右边红色的叹号对调用该api进行授权（勾选default scope）
-* 在弹出界面输入用户名密码，本地默认为admin/admin
-* 在这里便可以对controller中声明的api进行测试，这一步需启动gateway-helper
+* 打开任意一个`api`，点击右边红色的叹号对调用该`api`进行授权（勾选`default scope`）
+* 在弹出界面输入用户名密码，本地默认为`admin/admin`
+* 在这里便可以对`controller`中声明的`api`进行测试，这一步需启动`gateway-helper`
 
 ![](/docs/development-guide/backend/intergration/images/swaggerTest4.png)
