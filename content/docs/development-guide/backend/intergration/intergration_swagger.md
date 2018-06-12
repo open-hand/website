@@ -30,7 +30,9 @@ public class CustomExtraDataManager implements ExtraDataManager {
     }
 }
 ```
-* 在`bootstrap.yml`中添加关于Eureka的配置
+
+
+* 在`applicationyml`中添加关于Eureka的配置
 
 ```yaml
 eureka:
@@ -40,7 +42,7 @@ eureka:
     leaseExpirationDurationInSeconds: 3
   client:
     serviceUrl:
-      defaultZone: ${EUREKA_DEFAULT_ZONE:http://localhost:8000/eureka/}
+      defaultZone: http://localhost:8000/eureka/
 ```
 ##### 重启Todo服务
 ##### 如果上述步骤执行无误，可在本地的 `http://localhost:8000/` 查看注册成功的服务:

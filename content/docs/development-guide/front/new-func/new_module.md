@@ -60,7 +60,7 @@ $ touch package.json
   "name": "choerodon-front-demo",
   "version": "1.0.0",
   "description": "",
-  "main": "src/app/demo/containers/IAMIndex.js",
+  "main": "src/app/demo/containers/DEMOIndex.js",
   "scripts": {
     "start": "choerodon-front-boot start --config ../config.js",
     "build": "choerodon-front-boot build --config ../config.js"
