@@ -127,7 +127,7 @@ spec:
     replicaCount: 1
 
     image:
-      repository: registry.saas.hand-china.com/tools/nginx
+      repository: registry.cn-hangzhou.aliyuncs.com/choerodon-tools/nginx
       tag: 1.13.5-alpine
 
     metrics:

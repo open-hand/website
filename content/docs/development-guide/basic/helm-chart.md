@@ -122,7 +122,7 @@ choerodon.io/metrics-path: {{ .Values.metrics.path | quote }}
 replicaCount: 1
 
 image:
-  repository: registry.saas.hand-china.com/tools/nginx
+  repository: registry.cn-hangzhou.aliyuncs.com/choerodon-tools/nginx
   version: 1.13.5-alpine
 
 metrics:
