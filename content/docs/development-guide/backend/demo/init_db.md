@@ -159,7 +159,7 @@ Error: Invalid or corrupt jarfile target/choerodon-tool-liquibase.jar
 ```bash
 mysql> show tables;
 +---------------------------------------+
-| Tables_in_choerodon_demo_service_todo |
+| Tables_in_todo_service |
 +---------------------------------------+
 | DATABASECHANGELOG                     |
 | DATABASECHANGELOGLOCK                 |
