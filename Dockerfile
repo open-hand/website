@@ -4,5 +4,5 @@ RUN npm install -g grunt-cli && npm install toml string html-entities marked gru
 COPY . .
 RUN hugo
 
-FROM registry.cn-hangzhou.aliyuncs.com/choerodon-tools/frontbase:0.5.0
+FROM registry.cn-hangzhou.aliyuncs.com/choerodon-tools/nginx:1.11.4-alpine
 COPY --from=0 /app/public /usr/share/nginx/html

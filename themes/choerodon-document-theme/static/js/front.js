@@ -201,7 +201,7 @@ jQuery(document).ready(function() {
       if(wWidth >= 768){
           var rem =calRem();
           var top = $('.wechat').offset().top -parseInt($(".wechat-hover").css("height")) - 20 ;
-          var left =document.documentElement.clientWidth/2 - parseInt($('.wechat-hover').css("width"))/2;
+          var left =document.documentElement.clientWidth/2 - parseInt($('.wechat-hover').css("width")) + parseInt($('.wechat').css("margin-left"));
           $('.wechat-hover').css("display","block").css("top",top/rem + "rem").css("left",left/rem + "rem").fadeIn("fast");
       }
   },function(){

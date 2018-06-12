@@ -1,5 +1,4 @@
 var $results, INDEX_DATA={};
-    var baseUrl = $("body").attr("baseUrl");
     function initLunr() {
         // First retrieve the index file
         $.getJSON('/lunr.json')
@@ -81,12 +80,12 @@ var $results, INDEX_DATA={};
             }
             var $result = $('<div class="row blog-list" id="blog-list"></div>');
             var $contentDiv = $('<div class="blog-list-content" style="width:100%">');
-            var $divA = $('<a href="'+ baseUrl + language + result.url +'"class="right-title">'+ result.title +'</a>');
-            var $info = $('<div class="right-info"><span class="right-user">'+ author +'：<span>'+ result.author +'</span></span><span class="right-categories">'+ tags +': <a href="'+ baseUrl + language +'/categories/'+ result.categories[0].toLowerCase() +'">'+ result.categories[0] +'</a></span><span class="right-time"><i class="iconfont">&#xe8cf;</i>'+ result.date +'</span></div>');
+            var $divA = $('<a href="'+ language + result.url +'"class="right-title">'+ result.title +'</a>');
+            var $info = $('<div class="right-info"><span class="right-user">'+ author +'：<span>'+ result.author +'</span></span><span class="right-categories">'+ tags +': <a href="'+ language +'/categories/'+ result.categories[0].toLowerCase() +'">'+ result.categories[0] +'</a></span><span class="right-time"><i class="iconfont">&#xe8cf;</i>'+ result.date +'</span></div>');
             var $text = $('<div class="right-text">'+result.body +'</div>');
             var $tags = $('<ul class="right-tags">');
             for (index=0; index < result.tags.length; index++){
-                $tags.append('<li class="tag"><a class="tag-text" href="'+ baseUrl + language +'/tags/'+ result.tags[index].toLowerCase() +'"><i class="iconfont">&#xe844;</i> '+result.tags[index]+'</a></li>')
+                $tags.append('<li class="tag"><a class="tag-text" href="'+ language +'/tags/'+ result.tags[index].toLowerCase() +'"><i class="iconfont">&#xe844;</i> '+result.tags[index]+'</a></li>')
             }
             $tags.append('</ul');
             var $contentDivEnd = '</div>';

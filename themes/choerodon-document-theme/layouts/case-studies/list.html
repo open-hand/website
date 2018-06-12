@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   {{ partial "head.html" . }}
-  <link href="{{ .Site.BaseURL }}/css/case-studies.css" rel="stylesheet">
+  <link href="/css/case-studies.css" rel="stylesheet">
     <header id="header">
         {{ partial "nav.html" . }}
   </header>
@@ -18,11 +18,11 @@
                 {{ range $paginator.Pages }}
                 <div class="mo-padding">
                     <div class="case-study">
-                        <a {{ if .Params.unfinshed }} {{ else }} href="{{ .Permalink }}" {{ end }} class="case-list-logo"><img src="{{ .Site.BaseURL}}{{ .Params.banner }}"></a>
+                        <a {{ if .Params.unfinshed }} {{ else }} href="{{ .RelPermalink }}" {{ end }} class="case-list-logo"><img src="{{ .Params.banner }}"></a>
                         <div class="case-list-content">
                             <h3>{{ .Params.title }}</h3>
                             <p class="summary">{{ .Params.summary }}</p>
-                            <a class="button" {{ if .Params.unfinshed }} {{ else }} href="{{ .Permalink }}" {{ end }}>
+                            <a class="button" {{ if .Params.unfinshed }} {{ else }} href="{{ .RelPermalink }}" {{ end }}>
                                 <div>{{ i18n "readmore"}}</div>
                                 <div class="single-icon"></div>
                             </a>

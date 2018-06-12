@@ -13,7 +13,7 @@
             {{ end }}
             {{ range $name, $items := .Site.Taxonomies.categories }}
             <li class='{{ if in ($.Scratch.Get "v1") ($name | urlize) }} active {{ end }}'>
-                <a href="{{ $.Site.BaseURL }}{{ $.Site.Language.Lang }}/categories/{{ $name | urlize | lower }}">
+                <a href="/{{ $.Site.Language.Lang }}/categories/{{ $name | urlize | lower }}">
                     {{ $name }} ({{ len $items }})
                 </a>
             </li>

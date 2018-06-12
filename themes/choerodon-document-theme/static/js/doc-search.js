@@ -1,5 +1,4 @@
 var $results, INDEX_DATA={};
-    var baseUrl = $("body").attr("baseUrl");
     function initLunr() {
         // First retrieve the index file
         $.getJSON('/docslunr.json')
@@ -66,7 +65,7 @@ var $results, INDEX_DATA={};
         }
         results.slice(0, 10).forEach(function(result) {
             var $result = $('<div class="result-row">');
-            var $divA = $('<a href="'+ baseUrl + language + result.url +'"class="right-title">'+ result.title +'</a>');
+            var $divA = $('<a href="'+ language + result.url +'"class="right-title">'+ result.title +'</a>');
             var $text = $('<div class="right-text">'+result.body +'</div>');
             var $resultDivEnd = '</div>';
 

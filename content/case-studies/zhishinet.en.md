@@ -2,7 +2,7 @@
 title: Cheese Network
 date: "2017-12-01"
 type: "case-studies"
-banner: "img/case_studies/zhishinet.png"
+banner: "/img/case_studies/zhishinet.png"
 summary: "借助Choerodon，我们使用微服务框架重新塑造IT系统，并且对我们在DevOps实施落地、敏捷管理等方面提供很大的帮助，提高了芝士网对市场和需求反应的敏捷度"
 weight: 3
 unfinshed: "true"
