@@ -221,7 +221,7 @@ $ mvn clean spring-boot:run
 Started TodoServiceApplication in 20.651 seconds (JVM running for 24.976)
 ```
 
-此时可以打开浏览器，在浏览器输入：http://localhost:18081/health
+此时可以打开浏览器，在浏览器输入：```http://localhost:18081/health```
 
 返回如下信息：
 
@@ -245,6 +245,6 @@ status: "UP",
 }
 ```
 
-在浏览器输入：http://localhost:18080/hello，页面打印 `hello world`。
+在浏览器输入：```http://localhost:18080/hello```，页面打印 `hello world`。
 
 这样，一个简单的`spring boot` 应用就已经搭建成功。

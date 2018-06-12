@@ -19,4 +19,3 @@ weight = 3
 
 - [**开发新模块**](../new-func/new_module) 讲述了如何使用Choerodon 和React 开发一个新的模块。
 - [**开发新页面**](../new-func/new_page) 讲述了如何使用Choerodon 和React 开发一个全新的页面。
-- [**项目配置项**](../new-func/project_setting) 对Choerodon 微服务开发框架前端的配置项进行了说明。
