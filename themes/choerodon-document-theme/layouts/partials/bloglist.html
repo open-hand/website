@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
     {{ partial "head.html" . }}
-    <link href="{{ .Site.BaseURL }}/css/blog-list.css" rel="stylesheet">
+    <link href="/css/blog-list.css" rel="stylesheet">
     {{ partial "blog_nav.html" . }}
-  <body baseUrl="{{ .Site.BaseURL }}">
+  <body>
     <div class="content-max">
         <div id="content" class="blogs">
             <div class="content-post blog-post" id="content-post">
@@ -14,12 +14,12 @@
                         <img src="{{ .Params.img }}" alt="">
                     </div>
                     <div class="blog-list-content">
-                        <a href="{{ .Permalink }}" class="right-title" >{{ .Params.title }}</a>
+                        <a href="{{ .RelPermalink }}" class="right-title" >{{ .Params.title }}</a>
                         <div class="right-info">
                             <span class="right-user">{{ i18n "author" }}：<span>{{ .Params.author}}</span></span>
                             {{ range $index, $category := .Params.categories }}
                                 {{ if eq $index 0}}
-                                    <span class="right-categories">{{ i18n "tagsTitle" }}: <a href="{{ $.Site.BaseURL }}{{ $.Site.Language.Lang }}/categories/{{ $category | urlize | lower }}">{{ $category }}</a></span>
+                                    <span class="right-categories">{{ i18n "tagsTitle" }}: <a href="/{{ $.Site.Language.Lang }}/categories/{{ $category | urlize | lower }}">{{ $category }}</a></span>
                                 {{ end }}
                             {{end}}
                             <span class="right-time">
@@ -31,7 +31,7 @@
                             {{ range $index, $tag := .Params.tags }}
                             <li class="tag">
                                 
-                                <a class="tag-text" href="{{ $.Site.BaseURL }}{{ $.Site.Language.Lang }}/tags/{{ $tag | urlize | lower }}">
+                                <a class="tag-text" href="/{{ $.Site.Language.Lang }}/tags/{{ $tag | urlize | lower }}">
                                     <i class="iconfont">&#xe844;</i> {{$tag}}
                                 </a>
                             </li>
@@ -50,7 +50,7 @@
                     {{ if .Paginator.HasPrev }}
                         <li class="paginate page-left">
                             <a href="{{ .Paginator.First.URL }}" aria-label="Previous">
-                                <span aria-hidden="true"><img src="{{ .Site.BaseURL }}/img/right.svg" alt=""></span>
+                                <span aria-hidden="true"><img src="/img/right.svg" alt=""></span>
                             </a>
                         </li>
                     {{ end }}
@@ -80,7 +80,7 @@
                     {{ if .Paginator.HasNext }}
                         <li class="paginate">
                             <a href="{{ .Paginator.Last.URL }}" aria-label="Next">
-                                <span aria-hidden="true"><img src="{{ .Site.BaseURL }}/img/right.svg" alt=""></span>
+                                <span aria-hidden="true"><img src="/img/right.svg" alt=""></span>
                             </a>
                         </li>
                     {{ end }}
@@ -98,7 +98,7 @@
 
     {{ partial "scripts.html" . }}
 <!-- blog search -->
-<script src="{{ .Site.BaseURL }}js/blog-search.js"></script>
+<script src="/js/blog-search.js"></script>
 <!-- blog search end -->
 
   </body>

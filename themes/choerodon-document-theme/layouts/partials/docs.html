@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     {{ partial "head.html" . }}
-    <link href="{{ .Site.BaseURL }}/css/docs.css" rel="stylesheet">
+    <link href="/css/docs.css" rel="stylesheet">
     <header id="header">
         {{ partial "nav.html" . }}
         {{ if eq .Name "文档" }}
@@ -13,7 +13,7 @@
             </div>
         {{ end }}
     </header>
-    <body baseUrl="{{ .Site.BaseURL }}">
+    <body>
         <div id="content" class="docs">
             <!-- docs-nav -->
             <div class="content-menu docs-menu" {{ if eq .Name "文档" }} style="display: none" {{ end }}>
@@ -102,12 +102,12 @@
         {{ partial "footer.html" . }}
         {{ partial "scripts.html" . }}
         <!-- highlight.js -->
-        <link rel="stylesheet" href="{{ .Site.BaseURL }}/highlight/styles/atom-one-light.css">
-        <script src="{{ .Site.BaseURL }}/highlight/highlight.min.js"></script>
+        <link rel="stylesheet" href="/highlight/styles/atom-one-light.css">
+        <script src="/highlight/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script>
         
     </body>
 <!-- doc search -->
-<script src="{{ .Site.BaseURL }}/js/doc-search.js"></script>
+<script src="/js/doc-search.js"></script>
 <!-- doc search end -->
 </html>

@@ -1089,7 +1089,7 @@ type = "docs"
 
     ![](/docs/quick-start/image/swagg.png)
     
- - 访问swagger地址：http://localhost:8080/manager/swagger-ui.html
+ - 访问swagger地址：`http://localhost:8080/manager/swagger-ui.html`
  
  - 如图所示
 

@@ -11,7 +11,7 @@
             {{ end }}
             {{ range ($.Site.GetPage "taxonomyTerm" "tags").Pages }}
                 <li {{ if in ($.Scratch.Get "v1") (.Title | urlize) }}  class='active' {{ end }}>
-                    <a href="{{ $.Site.BaseURL }}{{ $.Site.Language.Lang }}/tags/{{ .Title | urlize | lower }}">
+                    <a href="/{{ $.Site.Language.Lang }}/tags/{{ .Title | urlize | lower }}">
                         <i class="iconfont">&#xe844;</i> {{ .Title }}
                     </a>
                 </li>
