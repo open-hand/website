@@ -35,14 +35,6 @@ weight = 2
     task_description | VARCHAR | 任务描述
     state | VARCHAR | 状态
 
-* `todo_swimlane` 泳道表，存储该项目中的泳道信息
-
-    字段名 | 字段类型 | 字段说明
-    ---|--- | ---
-    id | BIGINT UNSIGNED | 主键
-    state | VARCHAR | 状态
-    next_state | VARCHAR | 下一状态
-
 ## 项目结构
 ```bash
 choerodon-todo-service-parent
