@@ -43,4 +43,4 @@ weight =1
 ### 更多操作
 - [寻找一个问题](../mange-issue/)
 - [查看和编辑问题](../mange-issue/)
-- [创建一个冲刺](../backlog)
+- [创建一个冲刺](../../backlog)

@@ -18,11 +18,11 @@ weight = 4
 ### 创建与修改版本
 
 - 点击“创建发布版本”按钮进入到创建页面，输入版本名称（必输）、开始日期（必输）、结束日期（必输）、版本描述（可选）即可创建一个新的版本。
--  点击版本右侧![enter description here](/docs/user-guide/scrum/imge/image1.png "image1")按钮，点击“编辑”可修改版本信息。
+-  点击版本右侧![enter description here](/docs/user-guide/agile/imge/image1.png "image1")按钮，点击“编辑”可修改版本信息。
 
 ### 删除版本
 
-点击版本右侧![enter description here](/docs/user-guide/scrum/imge/image1.png "image1")按钮，点击“删除“即删除版本。注意：如果版本里有问题，删除版本时，版本内的问题可选择放置到另外未发布的版本中。
+点击版本右侧![enter description here](/docs/user-guide/agile/imge/image1.png "image1")按钮，点击“删除“即删除版本。注意：如果版本里有问题，删除版本时，版本内的问题可选择放置到另外未发布的版本中。
 
 ### 发布版本
 - 当一个版本需要发布时，选择“发布版本”，系统显示版本下仍未解决的问题数量。

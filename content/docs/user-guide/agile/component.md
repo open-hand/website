@@ -24,10 +24,10 @@ weight = 5
 3. 点击页面上方`创建模块`按钮，右侧会滑出创建模块的页面，输入模块名称（必输）、负责人（必输）、模块描述（可选）、默认经办人（必输），点击`确定`即可创建一个新的模块。
 
 ### 编辑模块
- 在模块右边点击![enter description here](/docs/user-guide/scrum/imge/image4.png "image4")的标识可对模块详细信息进行编辑
+ 在模块右边点击![enter description here](/docs/user-guide/agile/imge/image4.png "image4")的标识可对模块详细信息进行编辑
 
 ### 删除模块 
-模块右边点击![enter description here](/docs/user-guide/scrum/imge/image5.png "image5")标识可删除模块，删除模块会考虑两种情况：
+模块右边点击![enter description here](/docs/user-guide/agile/imge/image5.png "image5")标识可删除模块，删除模块会考虑两种情况：
 
 - 如果模块未关联任何问题，则可以选择直接删除
 - 如果模块关联了某个问题，可以选择将该问题关联到其他模块中，或者直接删除与问题的关联关系
