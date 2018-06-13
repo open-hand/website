@@ -633,7 +633,7 @@ p {
 .content-menu .dd-item.haschildren>div {
     margin-left: -0.2rem;
     align-items: center;
-    padding-left: 0.05rem;
+    padding-left: 0;
 }
 
 .content-menu .dd-item div {
