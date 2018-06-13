@@ -1,4 +1,4 @@
-+++
+ +++
 title = "文档"
 description = ""
 +++
@@ -186,7 +186,7 @@ description = ""
             </li>
             <li>
                 <div class="access-list-item">
-                    <a href="./quick-start/scrum">
+                    <a href="./quick-start/agile">
                         <div class="item-head">
                             <img class="n-max" src="/img/docs/home/use-agile.svg"/>
                             <h4>使用敏捷管理工具</h4>
@@ -214,7 +214,7 @@ description = ""
             </li>
             <li>
                 <div class="access-list-item">
-                    <a href="./user-guide/scrum">
+                    <a href="./user-guide/agile">
                         <div class="item-head">
                             <img class="n-max" src="/img/docs/home/agile.svg"/>
                             <h4>敏捷管理</h4>
