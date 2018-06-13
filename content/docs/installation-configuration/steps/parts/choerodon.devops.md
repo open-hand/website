@@ -1,12 +1,10 @@
 +++
-title = "Choerodon部署"
-description = "Choerodon部署"
+title = "DevOps部署"
+description = "DevOps部署"
 weight = 20
 +++
 
-# Choerodon部署
-
-## 分步部署Choerodon
+## DevOps部署
 
 <blockquote class="warning">
 在此之前，应该准备好Mysql、Harbor、Kafka、Zookeeper、Gitlab、Minio，Chartmuseum这些组件的信息。按以下搭建顺序进行搭建，请不要随意调整搭建顺序。
@@ -155,11 +153,11 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
         UP
         ```
 
-### 部署choerodon front
+### 部署choerodon devops front
 - 部署服务
 
     ```
-    helm install c7n/choerodon-front \
+    helm install c7n/choerodon-front-devops \
         --set preJob.preConfig.mysql.host=choerodon-mysql \
         --set preJob.preConfig.mysql.port=3306 \
         --set preJob.preConfig.mysql.dbname=iam_service \
@@ -167,14 +165,14 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
         --set preJob.preConfig.mysql.password=password \
         --set env.open.PRO_API_HOST="api.example.choerodon.io" \
         --set env.open.PRO_DEVOPS_HOST="devops.service.example.choerodon.io" \
-        --set env.open.PRO_CLIENT_ID="choerodon" \
+        --set env.open.PRO_CLIENT_ID="devops" \
         --set env.open.PRO_TITLE_NAME="Choerodon" \
         --set env.open.PRO_HEADER_TITLE_NAME="Choerodon" \
         --set env.open.PRO_HTTP="http" \
-        --set ingress.host="example.choerodon.io" \
+        --set ingress.host="devops.choerodon.exmple.choerodon.io" \
         --set service.enable=true \
         --set ingress.enable=true \
-        --name=choerodon-front \
+        --name=choerodon-front-devops \
         --version=0.6.1 --namespace=choerodon-devops-prod
     ```
     参数名 | 含义 
@@ -194,7 +192,7 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
     - 验证命令
 
         ```
-        curl $(kubectl get svc choerodon-front -o jsonpath="{.spec.clusterIP}" -n choerodon-devops-prod)
+        curl $(kubectl get svc choerodon-front-devops -o jsonpath="{.spec.clusterIP}" -n choerodon-devops-prod)
         ```
     - 出现以下类似信息即为成功部署
 
@@ -212,13 +210,13 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
             "additionalInformation": "",
             "authorizedGrantTypes": "implicit,client_credentials,authorization_code,refresh_token",
             "autoApprove": "default",
-            "name": "choerodon",
+            "name": "devops",
             "objectVersionNumber": 0,
             "organizationId": 1,
             "refreshTokenValidity": 60,
             "resourceIds": "default",
             "scope": "default",
             "secret": "secret",
-            "webServerRedirectUri": "http://choerodon.exmple.choerodon.io"
+            "webServerRedirectUri": "http://devops.choerodon.exmple.choerodon.io"
         }
         ```

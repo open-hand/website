@@ -4,8 +4,6 @@ description = "微服务开发框架部署"
 weight = 10
 +++
 
-# 微服务开发框架部署
-
 ## 分步部署微服务开发框架
 
 <blockquote class="warning">
@@ -536,7 +534,7 @@ helm repo update
         --set preJob.preConfig.mysql.dbname=iam_service \
         --set preJob.preConfig.mysql.username=choerodon \
         --set preJob.preConfig.mysql.password=password \
-        --set env.open.PRO_API_HOST="iam.choerodon.exmple.choerodon.io" \
+        --set env.open.PRO_API_HOST="api.example.choerodon.io" \
         --set env.open.PRO_CLIENT_ID="iam" \
         --set env.open.PRO_TITLE_NAME="Choerodon" \
         --set env.open.PRO_HEADER_TITLE_NAME="Choerodon" \

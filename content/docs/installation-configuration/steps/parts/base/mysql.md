@@ -86,10 +86,12 @@ helm install c7n/mysql \
     CREATE DATABASE gitlab_service DEFAULT CHARACTER SET utf8;
     CREATE DATABASE iam_service DEFAULT CHARACTER SET utf8;
     CREATE DATABASE manager_service DEFAULT CHARACTER SET utf8;
+    CREATE DATABASE agile_service DEFAULT CHARACTER SET utf8;
     GRANT ALL PRIVILEGES ON devops_service.* TO choerodon@'%';
     GRANT ALL PRIVILEGES ON event_store_service.* TO choerodon@'%';
     GRANT ALL PRIVILEGES ON gitlab_service.* TO choerodon@'%';
     GRANT ALL PRIVILEGES ON iam_service.* TO choerodon@'%';
     GRANT ALL PRIVILEGES ON manager_service.* TO choerodon@'%';
+    GRANT ALL PRIVILEGES ON agile_service.* TO choerodon@'%';
     FLUSH PRIVILEGES;
     ```
