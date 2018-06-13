@@ -854,7 +854,7 @@ p {
 }
 /* 搜索组件样式 结束 */
 /* general banner */
-.header-nav{
+.header-nav {
     background: linear-gradient(0deg, #003DAC, #3371E3);
     background: -webkit-linear-gradient(0deg, #003DAC, #3371E3);
     background:-moz-linear-gradient(0deg, #003DAC, #3371E3);
@@ -867,10 +867,8 @@ p {
     padding: 0;
     display: flex;
     flex-direction: row;
-    justify-content: center;
     justify-content: space-between;
 }
-
 .header-nav .banner-text{
     font-size: 0.36rem;
     font-weight: 300;
@@ -879,7 +877,6 @@ p {
     display: flex;
     flex-direction: column;
     margin-left: 1.9rem;
-    font-weight: 300;
     margin-top: 0.3rem;
 }
 
@@ -893,7 +890,12 @@ p {
     margin-top: 0.6rem;
     width: 3.86rem;
     height: 1.99rem;
-    margin-left: 1.5rem;
+    margin-left: 2rem;
+}
+
+.header-nav a{
+    font-size: 0.16rem;
+    margin-top: 0.15rem;
 }
 
 /* general banner end */
@@ -1077,9 +1079,10 @@ p {
         margin: 0.4rem 0.2rem 0 0.2rem;
         text-align: center;
     }
-    .header-nav .banner-text .head{
-        width: 100%;
+    .header-nav .banner-text a{
+        margin: 0.15rem auto 0;
     }
+    
     .header-nav img{
         display: none;
     }

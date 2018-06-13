@@ -1,51 +1,4 @@
 /* 社区页面 */
-
-.community-nav {
-    background: linear-gradient(0deg, #003DAC, #3371E3);
-    background: -webkit-linear-gradient(0deg, #003DAC, #3371E3);
-    background:-moz-linear-gradient(0deg, #003DAC, #3371E3);
-    background: -o-linear-gradient(0deg, #003DAC, #3371E3);
-    background:-ms-linear-gradient(0deg, #003DAC, #3371E3);
-    background-size: 14.4rem;
-    width: 100%;
-    height: 2.8rem;
-    color: #FFFFFF;
-    padding: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    justify-content: space-between;
-}
-.community-nav .banner-text{
-    font-size: 0.36rem;
-    font-weight: 300;
-    justify-content: center;
-    align-items: flex-start;
-    display: flex;
-    flex-direction: column;
-    margin-left: 1.9rem;
-    font-weight: 300;
-    margin-top: 0.3rem;
-}
-
-.community-nav .banner-text .description{
-    font-size: 0.16rem;
-    margin-top: 0.15rem;
-}
-
-.community-nav img{
-    margin-right: 1.9rem;
-    margin-top: 0.6rem;
-    width: 3.86rem;
-    height: 1.99rem;
-    margin-left: 2rem;
-}
-
-.community-nav a{
-    font-size: 0.16rem;
-    margin-top: 0.15rem;
-}
-
 .community .talk-text {
     display: flex;
     flex-direction: column;
@@ -218,20 +171,6 @@
     .community{
         width: auto;
         margin: 0 0.2rem;
-    }
-    .community-nav {
-        height: 2.85rem;
-    }
-    .community-nav .banner-text{
-        margin: 0.4rem 0.2rem 0 0.2rem;
-        text-align: center;
-    }
-    .community-nav .banner-text a{
-        margin: 0.15rem auto 0;
-    }
-    
-    .community-nav img{
-        display: none;
     }
     .community .talk-text{
         margin-top: 0.25rem;
