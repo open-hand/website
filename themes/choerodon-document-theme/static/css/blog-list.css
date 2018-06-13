@@ -1,3 +1,32 @@
+.blog-nav{
+    background: #FFFFFF;
+    width: 100%;
+    height: 3rem;
+    color: #000000;
+    margin-top: 0.6rem;
+    margin-bottom: 0.1rem;
+}
+.blog-nav .banner-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.blog-nav .banner-text .head{
+    margin-top: 0.5rem;
+    font-size: 0.42rem;
+    color: #000000;
+    font-weight: 500;
+    margin-bottom: 0.2rem;
+}
+.blog-nav .banner-text .description{
+    font-size: 0.22rem;
+    color: #000000;
+}
+.blog-nav img{
+    width: 100%;
+    position: absolute;
+    top: 1.2rem;
+}
 .blogs {
     background-color: #fafafa;
     display: flex;
@@ -184,13 +213,36 @@
 }
 
 /* blog single */
-
+.blogs .blog-post,
+.blog-menu{
+    margin-top: 0.8rem;
+}
 .blogs .blog-post {
     padding: 0.4rem 0.3rem 0.35rem 0.3rem;
-    margin-left: 1.6rem;
+    margin-left: 1.6rem;  
 }
 .blogs .blog-post h1{
     font-size: 0.36rem;
+}
+
+.bre-nav{
+    margin-bottom: 0.2rem;
+    margin-top: 0.2rem;
+    display: flex;
+    font-size: 0.2rem;
+}
+.bre-nav a{
+    display: flex;
+    text-align: center;
+    margin: 0 0.05rem 0;
+}
+
+.bre-nav .bre-nav-title{
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    width: 1.5rem;
+    margin: 0 0 0 0.05rem;
 }
 
 .blog-post .blog-single-head {
@@ -510,8 +562,19 @@
 }
 
 @media (max-width: 767px) {
+    .blog-nav{
+        height: 2rem;
+    }
+    .blog-nav .banner-text .description{
+        font-size: 0.16rem;
+        text-align: center;
+    }
+    .blog-nav img{
+        display: none;
+    }
     .blog-list {
-        padding: 0.2rem 0;
+        padding: 0.2rem 0.15rem;
+        background-color: #FFFFFF;
     }
     .blog-list .blog-list-img{
         width: auto;
@@ -534,7 +597,6 @@
         display: none;
     }
     
-
     .blog-menu {
         display: none;
     }
@@ -565,6 +627,8 @@
     }
     .blogs .blog-post {
         margin: 0 auto;
+        padding: 0.4rem 0.15rem 0.35rem 0.15rem;
+        background-color: #F5F5F5;
     }
     .blogs .blog-post .blog-list:last-of-type{
         border: 0;
@@ -589,5 +653,10 @@
     .blog-post .blog-single-footbar{
         display: flex;
         flex-direction: column;
+    }
+    .blog-post.blog-article{
+        background-color: #FFFFFF;
+        padding: 0.15rem;
+        margin-top: 0.4rem;
     }
 }
