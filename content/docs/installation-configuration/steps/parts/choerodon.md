@@ -4,8 +4,6 @@ description = "微服务开发框架部署"
 weight = 10
 +++
 
-# 微服务开发框架部署
-
 ## 分步部署微服务开发框架
 
 <blockquote class="warning">
@@ -28,6 +26,7 @@ helm repo update
     helm install c7n/go-register-server \
         --set service.enable=true \
         --set service.name=register-server \
+        --set env.open.REGISTER_SERVICE_NAMESPACE=choerodon-devops-prod \
         --set env.open.KAFKA_ADDRESSES="kafka-0.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-1.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-2.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092" \
         --name register-server \
         --version=0.6.0 --namespace=choerodon-devops-prod
@@ -38,6 +37,7 @@ helm repo update
     service.enable|是否创建service对象
     service.name|service对象的名称
     env.open.KAFKA_ADDRESSES|kafka地址
+    env.open.REGISTER_SERVICE_NAMESPACE|仅监听的namespace，多个namespace请用逗号隔开
 
 - 验证部署
     - 验证命令
@@ -333,6 +333,8 @@ helm repo update
         --set env.open.SPRING_DATASOURCE_URL="jdbc:mysql://choerodon-mysql:3306/iam_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
         --set env.open.SPRING_DATASOURCE_USERNAME=choerodon \
         --set env.open.SPRING_DATASOURCE_PASSWORD=password \
+        --set env.open.SPRING_REDIS_HOST=devops-redis \
+        --set env.open.SPRING_REDIS_PORT=6379 \
         --set env.open.CHOERODON_DEFAULT_REDIRECT_URL="http://example.choerodon.io" \
         --set env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE="http://register-server.choerodon-devops-prod:8000/eureka/" \
         --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
@@ -532,7 +534,7 @@ helm repo update
         --set preJob.preConfig.mysql.dbname=iam_service \
         --set preJob.preConfig.mysql.username=choerodon \
         --set preJob.preConfig.mysql.password=password \
-        --set env.open.PRO_API_HOST="iam.choerodon.exmple.choerodon.io" \
+        --set env.open.PRO_API_HOST="api.example.choerodon.io" \
         --set env.open.PRO_CLIENT_ID="iam" \
         --set env.open.PRO_TITLE_NAME="Choerodon" \
         --set env.open.PRO_HEADER_TITLE_NAME="Choerodon" \
