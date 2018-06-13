@@ -457,6 +457,9 @@ body {
 .white-button:focus{
     color: #326DE6;
 }
+.no-border{
+    border: none !important;
+}
 .none {
     display: none;
 }
