@@ -2,11 +2,16 @@
 <html>
     {{ partial "head.html" . }}
     <link rel="stylesheet" href="/css/blog-list.css">
-    {{ partial "blog_nav.html" . }}
+    {{ partial "nav.html" . }}
   <body>
     <div>
         <div id="content" class="blogs">
-            <div class="content-post blog-post" id="content-post">
+            <div class="content-post blog-post blog-article" id="content-post">
+                <div class="bre-nav">
+                    <a class="bre-nav-list" href="../">博客列表</a>
+                    <div> / </div>
+                    <p class="bre-nav-title">{{ .Title }}</p>
+                </div>
                 <div class="blog-single-head">
                     <h1>{{ .Title }}</h1>
                     {{ if .Params.subtitle }}
