@@ -18,17 +18,24 @@ weight = 3
 
 ## 启动相关服务
 
-* 要使功能完整可用，在本地至少启动如下模块
-```yaml
-register
-api-gateway
-gateway-helper
-oauth
-```
+要使功能完整可用，在本地至少启动如下模块：
 
-* 编写docker-compose.yaml 文件
-* 打开git bash 执行docker-compose up -d
-* 执行docker ps 或docker-compose ps 查看容器是否启动
+* register-server
+* api-gateway
+* gateway-helper
+* oauth-server
+* manager-service
+* iam-service
+
+<blockquote class="note">
+本地通过docker-compose启动服务，建议本地内存至少16G。建议在服务器运行一整套环境，然后本地实际开发的服务注册到服务器的`register`上。
+</blockquote>
+
+1.编写`docker-compose.yaml` 文件。
+
+2.打开`git bash` 执行`docker-compose up -d`。
+
+3.执行`docker ps` 或`docker-compose ps` 查看容器是否启动。
 
 这里提供一份`docker-compose.yaml`以供参考，具体根据本地配置进行修改
 
@@ -64,7 +71,7 @@ services:
     - "./kafka/zk:/var/lib/zookeeper"
   kafka-0:
     container_name: kafka-0
-    image: registry.saas.hand-china.com/tools/kafka:1.0.0
+    image: registry.cn-hangzhou.aliyuncs.com/choerodon-tools/kafka:1.0.0
     hostname: kafka-0
     depends_on:
     - zookeeper-0
@@ -110,6 +117,7 @@ services:
     - hystrix.stream.queue.enabled=false
     - spring.cloud.bus.enabled=false
     - spring.sleuth.stream.enabled=false
+    - logging.level=WARN
     expose:
     - "8000"
   api-gateway:
@@ -129,6 +137,7 @@ services:
     - hystrix.stream.queue.enabled=false
     - spring.cloud.bus.enabled=false
     - spring.sleuth.stream.enabled=false
+    - logging.level=WARN
     expose:
     - "8080"
   gateway-helper:
@@ -150,6 +159,7 @@ services:
     - hystrix.stream.queue.enabled=false
     - spring.cloud.bus.enabled=false
     - spring.sleuth.stream.enabled=false
+    - logging.level=WARN
   iam-service:
     container_name: iam-service
     image: registry.cn-shanghai.aliyuncs.com/choerodon/iam-service:0.6.0
@@ -172,6 +182,7 @@ services:
     - hystrix.stream.queue.enabled=false
     - spring.cloud.bus.enabled=false
     - spring.sleuth.stream.enabled=false
+    - logging.level=WARN
   manager-service:
     container_name: manager-service
     image: registry.cn-shanghai.aliyuncs.com/choerodon/manager-service:0.6.0
@@ -194,6 +205,7 @@ services:
     - hystrix.stream.queue.enabled=false
     - spring.cloud.bus.enabled=false
     - spring.sleuth.stream.enabled=false
+    - logging.level=WARN
   oauth-server:
     container_name: oauth-server
     image: registry.cn-shanghai.aliyuncs.com/choerodon/oauth-server:0.6.0
@@ -213,6 +225,29 @@ services:
     - hystrix.stream.queue.enabled=false
     - spring.cloud.bus.enabled=false
     - spring.sleuth.stream.enabled=false
+    - logging.level=WARN
+  manager-service:
+    container_name: manager-service
+    image: registry.cn-shanghai.aliyuncs.com/choerodon/manager-service:0.6.0
+    depends_on:
+    - eureka-server
+    - mysql
+    links: 
+    - eureka-server
+    - mysql
+    environment:
+    - eureka.client.serviceUrl.defaultZone=http://eureka-server:8000/eureka/
+    - spring.datasource.username=root
+    - spring.datasource.url=jdbc:mysql://mysql/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    - spring.datasource.password=root
+    - hystrix.stream.queue.enabled=false
+    - spring.cloud.bus.enabled=false
+    - spring.sleuth.stream.enabled=false
+    - choerodon.swagger.oauth.url=http://oauth-server8020/oauth/oauth/authorize
+    - choerodon.gateway.domain=http://api-gateway:8080
+    - logging.level=WARN
+    ports:
+    - "8963:8963"
 ```
 
 停止容器通过命令`docker-compose down`。

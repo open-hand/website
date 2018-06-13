@@ -55,21 +55,9 @@ eureka:
 *  REGISTER-SERVER
 *  GATEWAY-HELPER
 
-## swagger Api服务
-
-* 使用`swagger`测试需启动`manager-service`模块，在`docker-compose.yaml`中加入此容器并重启所有模块
-
-```yaml
-manager-service:
-    container_name: manager-service
-    image: registry.cn-shanghai.aliyuncs.com/choerodon/manager-service:0.6.0
-    ports:
-    - "8963:8963"
-```
-
 **Note. 启动顺序：基础软件mysql、kafka、redis等 ，eureka-server服务，manager-service，api-gateway，其余模块。**
 
-- 打开 `http://localhost:8963/swagger-ui.html` 该地址端口号为Eurake上对应端口号
+- 打开 `http://localhost:8080/manager/swagger-ui.html`。
 
 ![](/docs/development-guide/backend/intergration/images/swaggerTest1.png)
 
