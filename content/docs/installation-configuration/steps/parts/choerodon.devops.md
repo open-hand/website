@@ -173,7 +173,7 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
         --set service.enable=true \
         --set ingress.enable=true \
         --name=choerodon-front-devops \
-        --version=0.6.1 --namespace=choerodon-devops-prod
+        --version=0.6.2 --namespace=choerodon-devops-prod
     ```
     参数名 | 含义 
     --- |  --- 
