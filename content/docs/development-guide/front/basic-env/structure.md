@@ -12,46 +12,65 @@ weight = 3
 
 ## 目录划分
 
-开发仿照iam项目结构，源文件目录在 `iam/src/app/iam` ，主要目录结构如下：
-
+开发仿照`choerodon-front-iam`项目结构，源文件目录在 `choerodon-front-iam/iam/src/app/iam` ，主要目录结构如下：
 ```
-
-├── src
-│   └── app
-│       └── iam
-│           ├── assets
-│           │   ├── css
-│           │   └── images
-│           ├── components
-│           │   ├── loadingBar
-│           │   ├── memberRole
-│           │   └── menuType
-│           ├── config
-│           │   ├── Menu.yml
-│           │   └── language
-│           ├── containers
-│           │   ├── Home.js
-│           │   ├── IAMIndex.js
-│           │   ├── Masters.js
-│           │   ├── global
-│           │   ├── master.css
-│           │   ├── organization
-│           │   ├── project
-│           │   └── user
-│           ├── locale
-│           │   ├── en.js
-│           │   └── zh.js
-│           ├── stores
-│           │   ├── globalStores
-│           │   ├── organization
-│           │   ├── project
-│           │   └── user
-│           └── test
-│               └── util
-├── package-lock.json
-├── package.json
-├── tsconfig.json
-└── yarn.lock
+choerodon-front-iam
+│  .editorconfig
+│  config.js
+│  favicon.ico
+│  webpack.config.js             
+└─iam
+    │  .editorconfig
+    │  .eslintrc.json
+    │  .stylelintrc.json
+    │  package.json
+    │  tsconfig.json  
+    └─src
+        └─app
+            └─iam
+                ├─assets
+                │  ├─css
+                │  │      *.less
+                │  │      
+                │  └─images
+                │          *.svg
+                │          *.png
+                ├─components
+                │          
+                ├─config
+                │  │  Menu.yml
+                │  │  
+                │  └─language
+                │          en.yml
+                │          zh.yml
+                │          
+                ├─containers
+                │  │  IAMIndex.js
+                │  │  
+                │  ├─global
+                │  │           
+                │  ├─organization
+                │  │              
+                │  ├─project
+                │  │              
+                │  └─user
+                │                  
+                ├─locale
+                │      en_US.js
+                │      zh_CN.js
+                │      
+                ├─stores
+                │  ├─globalStores
+                │  │          
+                │  ├─organization
+                │  │              
+                │  ├─project
+                │  │          
+                │  └─user
+                │              
+                └─test
+                    └─util
+                            index.test.js
 
 ```
 

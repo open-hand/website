@@ -6,43 +6,24 @@ draft = false
 weight = 2
 +++
 
-## 部署与配置
+## Choerodon 系统部署架构
 
-Choerodon采用Spring Cloud作为微服务框架，运行在Docker上，以Kubernetes作为容器的编排工具。理论上只要服务器资源允许，可以运行Kubernetes，就可以运行Choerodon。Choerodon不是一个单体应用系统，而是一个包含多个微服务的分布式系统，所以部署相对比较复杂。目前，我们提供基于Helm的部署方式，以提高部署效率。
+Choerodon猪齿鱼作为一套PaaS平台，目前对于通过Choerodon开发部署的应用系统有多种部署方式，并且由于Choerodon现在仅支持基于Kubernetes部署的应用系统，所以，部署方式根据Kubernetes集群不同而不同。
 
 ---
 
-### 前置要求与约定
+## 系统部署架构图
 
-- 硬件要求：
-    - 节点数量：4    
-    - 单节点内存信息：16G及以上
-    - 单节点处理器信息：4核4线程及以上   
-    <blockquote class="note">
-    只要现有节点内存与CPU总和大于上述节点要求即可。
-    </blockquote>
+<img src="/docs/installation-configuration/image/choerodon.png" />
 
-- 软件要求：
-    - 系统版本：CentOS7.2及以上
-    - Kubernetes：1.8.5及以上
-    - Helm：2.8.2及以上(tiller版本请一定与helm版本一致)
+## 单Kubernetes集群部署
 
-- 约定：部署教程以NFS类型的PV为例进行创建，所有非集群级对象都创建在`choerodon-devops-prod`命名空间下。
-        <blockquote class="note">
-        NFS搭建可参考此<a href="parts/base/nfs" target="_blank">教程</a>。
-        </blockquote>
+Choerodon与应用系统部署在一个Kubernetes集群中。可以在一个Kubernetes集群中安装应用系统的开发环境、测试环境，以及正式环境。
 
-### 开始部署
+## 多Kubernetes集群部署
+- Choerodon与应用系统开发环境部署在同一个Kubernetes集群中，应用系统测试环境部署到单独 一个Kubernetes集群中，应用系统正式环境部署到单独一个Kubernetes集群中。
+<img src="/docs/installation-configuration/image/logic.png" />
 
-<blockquote class="note">
-下面我们开始进行部署，首选进行Kubernetes集群部署，部署完成后，你可以选择使用脚本进行一键式安装Choerodon，也可以分步进行安装Choerodon。
-</blockquote>
-
-1. [Kubernetes集群部署](./kubernetes)
-2. [一键部署Choerodon](./choerodon)
-3. [分步部署Choerodon](./parts)
-4. [Gitlab Runner部署](./gitlab-runner)
-
-<blockquote class="note">
-部署GitLab Runner用于代码提交后自动进行代码测试、构建Choerodon服务的镜像及生成helm chart并将结果发回给Choerodon。它与GitLab CI一起使用，GitLab CI是GitLab中包含的开源持续集成服务，用于协调作业。
-</blockquote>
+- 注：
+  1. 以上部署方式是其中一种，用户根据自身的实际条件选择合适的Kubernetes集群部署方式；
+  1. 应用系统开发环境、应用系统测试环境、应用系统正式环境，并不是唯一的规划方式，用户同样可以根据自身的实际情况进行调整，例如，服务器资源紧张，可以选择只搭建应用系统开发环境和应用系统正式环境。

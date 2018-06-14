@@ -11,20 +11,18 @@ weight = 2
 
 ## 介绍
 
-本小节介绍了如何初始化Choerodon 的数据库
+本小节介绍了如何初始化Choerodon 的数据库。
 
 ## 创建Mysql数据库
 
-1.查看容器，确认存在容器名为mysql的容器
+1.查看容器，确认存在容器名为mysql的容器。
 
-2.用`choerodon`用户命令行登陆 `mysql` 容器，密码为 `123456`
-
-```bash
-docker exec -ti mysql mysql -u choerodon -p
+2.用`choerodon`用户命令行登陆 `mysql` 容器，密码为 `123456`。
+``` bash
+$ docker exec -ti mysql mysql -u choerodon -p
 ```
 
-3.创建用户和数据库:
-
+3.创建用户和数据库。
 ```sql
 CREATE DATABASE iam_service DEFAULT CHARACTER SET utf8;
 CREATE DATABASE manager_service DEFAULT CHARACTER SET utf8;
@@ -32,9 +30,10 @@ GRANT ALL PRIVILEGES ON iam_service.* TO choerodon@'%';
 GRANT ALL PRIVILEGES ON manager_service.* TO choerodon@'%';
 FLUSH PRIVILEGES;
 ```
-查看用户与数据库
+
+4.查看用户与数据库。
 ```bash
-mysql> select User from mysql.user;
+$ mysql> select User from mysql.user;
 +-----------+
 | User      |
 +-----------+
@@ -51,7 +50,7 @@ mysql> show databases;
 | information_schema          |
 | iam_service                 |
 | manager_service             |
-| choerodon_demo_service_todo |
+| todo_service                |
 | mysql                       |
 | performance_schema          |
 | sys                         |
@@ -60,29 +59,52 @@ mysql> show databases;
 
 ```
 
-
 ## 初始化数据库
-- 需初始化`manager-service`，`iam-service`两个数据库，此处以`manager-service`为例。
 
-- 新建初始化数据库临时目录，如：`managerInit`
-- `cd managerInit`，新建sh脚本`init-local-database`，以下提供脚本示例，具体请根据本地配置修改。
+需初始化`manager-service`，`iam-service`两个数据库。
 
-init-local-database.sh:
+1.新建初始化数据库临时目录，并创建初始化脚本。
+``` bash
+$ mkdir -p tmp
+$ cd tmp
+$ touch init-manager-service.sh
+```
+
+2.修改初始化脚本。
 ```bash
-#!/usr/bin/env bash
-git clone https://github.com/choerodon/manager-service.git
-cd ./manager-service
-mkdir -p target
-curl https://oss.sonatype.org/content/groups/public/io/choerodon/choerodon-tool-liquibase/0.5.0.RELEASE/choerodon-tool-liquibase-0.5.0.RELEASE.jar -o target/choerodon-tool-liquibase.jar
-java -Dspring.datasource.url="jdbc:mysql://localhost/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
+#!/bin/bash
+# get manager-service
+git clone https://github.com/choerodon/manager-service.git manager-service
+mkdir -p manager/script
+cp -r ./manager-service/src/main/resources/script/db ./manager/script
+rm -rf ./manager-service
+
+# get user-service
+git clone https://github.com/choerodon/iam-service.git iam-service
+mkdir -p iam/script
+cp -r ./iam-service/src/main/resources/script/db ./iam/script
+rm -rf ./iam-service
+
+# init manager-service
+java -Dspring.datasource.url="jdbc:mysql://localhost:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
  -Dspring.datasource.username=choerodon \
  -Dspring.datasource.password=123456 \
  -Ddata.drop=false -Ddata.init=init \
- -Ddata.dir=./src/main/resources \
- -jar target/choerodon-tool-liquibase.jar
+ -Ddata.dir=./manager \
+ -jar ../bin/choerodon-tool-liquibase.jar
+
+# init iam-service
+java -Dspring.datasource.url="jdbc:mysql://localhost:3306/iam_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
+ -Dspring.datasource.username=choerodon \
+ -Dspring.datasource.password=123456 \
+ -Ddata.drop=false -Ddata.init=init \
+ -Ddata.dir=./iam \
+ -jar ../bin/choerodon-tool-liquibase.jar
 ```
-- 执行命令:
+
+3.运行脚本。
 ```
-sh init-local-database.sh
+$ sh ./init-local-database.sh
 ```
-- 命令执行成功之后，刷新 `manager_service` 数据库，会出现初始化脚本中的表以及初始化数据
+
+4.命令执行成功之后，刷新数据库，会出现初始化脚本中的表以及初始化数据。

@@ -79,7 +79,7 @@ Java库创建完成之后，开发Java库。具体的操作步骤如下：
 	$ git push origin feature-1
 
 <blockquote class="note">
-		记得修改maven 仓库地址。
+	记得修改maven 仓库地址。
 </blockquote>
 
 **５. 代码集成**
@@ -106,9 +106,9 @@ Java库创建完成之后，开发Java库。具体的操作步骤如下：
 
  - 点击`持续集成`，再次查看CI运行情况。
     
-	  <blockquote class="note">
-			如果CI运行成功，去maven仓库地址查看是否打包成功。
-		</blockquote>
+<blockquote class="note">
+	如果CI运行成功，去maven仓库地址查看是否打包成功。
+</blockquote>
 
  - 生成的JAR包的信息如下：
  

@@ -10,7 +10,7 @@ alwaysopen=false
 
 本用户手册介绍了 Choerodon 各环节的操作步骤。Choerodon 的用户可以通过此章节了解每个环节的概念定义、主要功能流程及其他注意事项。使用本教程，您可以了解：
 
-- [**系统配置**](../user-guide/system-configuration) 是为了让 Choerodon的用户更便捷、科学地使用平台，在用户使用前需要进行的系统配置，包括角色、用户、项 目、环境等。
+- [**系统配置**](../user-guide/system-configuration) 是为了让 Choerodon的用户更便捷、科学地使用平台，在用户使用前需要进行的系统配置，包括角色、用户、项目、环境等。
 
 - [**开发流水线**](../user-guide/development-pipeline) 以 DevOps 理念为指引，借助 Gitlab CI 作为持续集成工具，结合 Gitflow 分支管理模型，提供持续集成的流水线可以最大限度地减少代码冲突风险，降低修复错误代码的成本。
 

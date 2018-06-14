@@ -15,58 +15,40 @@ weight = 2
 
 ## 创建maven项目
 
-* 本地新建一个空的maven 项目```choerodon-todo-service-parent```
-* 进入项目中，创建子模块```choerodon-todo-service```
+本地新建一个空的 `maven` 项目`choerodon-todo-service`。
+``` bash
+$ mkdir -p choerodon-todo-service
+$ cd choerodon-todo-service
+```
 
 ## 添加项目依赖
 
-* 在父项目中添加一些公用的pom属性。修改父项目的pom文件。
+创建`pom.xml` 文件。
+``` bash
+$ touch pom.xml
+```
 
+修改`pom.xml`。
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-
-    <groupId>choerodon-todo-service-parent</groupId>
-    <artifactId>choerodon-todo-service-parent</artifactId>
-    <packaging>pom</packaging>
+    <groupId>io.choerodon</groupId>
+    <artifactId>choerodon-todo-service</artifactId>
     <version>1.0.0</version>
-    <modules>
-        <module>choerodon-todo-service</module>
-    </modules>
-
-    <properties>
-        <choerodon.version>0.5.0.RELEASE</choerodon.version>
-    </properties>
-    <!--parent-->
+    <!--choerodon-framework-parent dependency-->
     <parent>
         <groupId>io.choerodon</groupId>
         <artifactId>choerodon-framework-parent</artifactId>
-        <version>0.5.0.RELEASE</version>
-    </parent>
-
-
-</project>
-```
-
-* 在子项目中添加一些子项目的依赖。修改子项目的pom文件。
-
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <parent>
-        <artifactId>choerodon-todo-service-parent</artifactId>
-        <groupId>choerodon-todo-service-parent</groupId>
-        <version>1.0.0</version>
+        <version>0.6.0.RELEASE</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>choerodon-todo-service</artifactId>
-
+    <!--choerodon-starters dependency-->
+    <properties>
+        <choerodon.starters.version>0.5.1.RELEASE</choerodon.starters.version>
+    </properties>
     <dependencies>
         <!--spring boot-->
         <dependency>
@@ -98,41 +80,25 @@ weight = 2
         <dependency>
             <groupId>io.choerodon</groupId>
             <artifactId>choerodon-starter-core</artifactId>
-            <version>${choerodon.version}</version>
+            <version>${choerodon.starters.version}</version>
         </dependency>
         <dependency>
             <groupId>io.choerodon</groupId>
             <artifactId>choerodon-starter-oauth-resource</artifactId>
-            <version>${choerodon.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.choerodon</groupId>
-            <artifactId>choerodon-starter-mybatis-mapper</artifactId>
-            <version>${choerodon.version}</version>
+            <version>${choerodon.starters.version}</version>
         </dependency>
         <dependency>
             <groupId>io.choerodon</groupId>
             <artifactId>choerodon-starter-swagger</artifactId>
-            <version>${choerodon.version}</version>
+            <version>${choerodon.starters.version}</version>
         </dependency>
 
-        <!--other dependencies-->
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-        </dependency>
-
-        <!-- test -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
     </dependencies>
 
     <build>
-        <finalName>app</finalName>
+        <finalName>choerodon-todo-service</finalName>
     </build>
+
 </project>
 ```
 
@@ -142,38 +108,143 @@ weight = 2
 * (必须)choerodon-starter-oauth-resource，oauth资源服务工具包，主要提供了服务controller的异常统一捕获，并转换成用户语言对应的描述信息，以及配置了服务在接受请求时对jwt token的验证规则。
 * choerodon-starter-mybatis-mapper，通用mapper和分页插件集成，扩展多语言、审计字段等功能。
 
+更多`choerodon-starter`的依赖可以参考[choerodon-starters](https://github.com/choerodon/choerodon-starters)。
+
 ## 添加默认配置文件
+
+在根目录下创建源码文件夹和资源文件夹。
+
+``` bash
+$ mkdir -p src/main/java
+$ mkdir -p src/main/resources
+```
 
 项目采用spring boot 进行管理。需要在子项目中配置默认的配置项。
 
-在子模块resource文件夹中创建 bootstrap.yaml
+在`resource`文件夹中创建 `application.yml`, `bootstrap.yml`。
+``` bash
+$ cd src/main/resources
+$ touch application.yml
+$ touch bootstrap.yml
+```
 
-包含如下内容：
+- `bootstrap.yml`: 存放不会通过环境变量替换和必须在bootstrap中指定的变量。包括项目端口，应用名，`config-server`地址等。
+- `application.yml`: 存放项目的基础配置，包含数据库连接配置，`kafka`配置，注册中心地址等，这些变量可以通过`profile`或者环境变量修改。
 
-* 项目基础配置，类如数据库、端口号等等
-* 项目与choerodon进行集成，关联注册服务器、验证服务器、以及gateway
-* bootstrap.yml ,一定会执行的配置文件，声明项目的一些基本配置。
-
-
-``` yaml
+``` yml
+# bootstrap.yml
+server:
+  port: 18080
 spring:
   application:
     name: choerodon-todo-service
-server:
-  port: 8080
-mybatis:
-  mapperLocations: classpath*:/mapper/*.xml
-  configuration:
-    mapUnderscoreToCamelCase: true
+  cloud:
+    config:
+      failFast: true
+      retry:
+        maxAttempts: 6
+        multiplier: 1.5
+        maxInterval: 2000
+      uri: localhost:8010
+      enabled: false
 management:
-  port: 8081
+  port: 18081
   security:
     enabled: false
-feign:
-  hystrix:
-    enabled: true
-security:
-  basic:
-    enabled: false
-  ignored: /v2/api-docs
 ```
+
+``` yml
+# application.yml
+eureka:
+  instance:
+    preferIpAddress: true
+    leaseRenewalIntervalInSeconds: 10
+    leaseExpirationDurationInSeconds: 30
+    metadata-map:
+      VERSION: v1
+  client:
+    serviceUrl:
+      defaultZone: ttp://localhost:8000/eureka/
+    registryFetchIntervalSeconds: 10
+mybatis:
+  mapperLocations: classpath*:/mapper/*.xml
+  configuration: # 数据库下划线转驼峰配置
+    mapUnderscoreToCamelCase: true
+```
+
+## 编写TodoServiceApplication类
+
+在`src/main/java`中创建TodoServiceApplication。
+``` bash
+$ mkdir -p src/main/java/io/choerodon/todo
+$ touch src/main/java/io/choerodon/todo/TodoServiceApplication
+```
+
+添加`main` 函数。
+``` java
+package io.choerodon.todo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import io.choerodon.resource.annoation.EnableChoerodonResourceServer;
+
+@SpringBootApplication
+// 是否允许注册到注册中心，暂时注释掉
+//@EnableEurekaClient
+@RestController
+@EnableChoerodonResourceServer
+public class TodoServiceApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(TodoServiceApplication.class, args);
+    }
+
+    @GetMapping
+    public String hello() {
+        return "hello world";
+    }
+}
+```
+
+## 启动应用
+
+项目根目录下执行命令。
+``` bash
+$ mvn clean spring-boot:run
+```
+
+
+控制台打印出如下信息，则表示启动成功。
+```bash
+Started TodoServiceApplication in 20.651 seconds (JVM running for 24.976)
+```
+
+此时可以打开浏览器，在浏览器输入：```http://localhost:18081/health```
+
+返回如下信息：
+
+``` json
+{
+status: "UP",
+    diskSpace: {
+        status: "UP"
+    },
+    db: {
+        status: "UP",
+        database: "MySQL",
+        hello: 1
+    },
+    refreshScope: {
+        status: "UP"
+    },
+    hystrix: {
+        status: "UP"
+    }
+}
+```
+
+在浏览器输入：```http://localhost:18080/hello```，页面打印 `hello world`。
+
+这样，一个简单的`spring boot` 应用就已经搭建成功。

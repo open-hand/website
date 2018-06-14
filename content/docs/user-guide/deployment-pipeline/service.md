@@ -1,7 +1,7 @@
 ﻿+++
 title = "网络管理"
 description = ""
-weight = 3
+weight = 5
 +++
 
 # 网络管理
@@ -11,9 +11,9 @@ weight = 3
   - **菜单层次**：项目层
   - **菜单路径**：持续交付 > 部署流水线 > 网络
   - **默认角色**：项目所有者、项目成员、部署管理员
-    <blockquote class="note">
-         项目所有者和项目成员对网络只有查看界面的权限，不可进行编辑修改。
-      </blockquote>
+<blockquote class="note">
+项目所有者和项目成员对网络只有查看界面的权限，不可进行编辑修改。
+</blockquote>
 
 ### 创建网络
 
@@ -23,26 +23,30 @@ weight = 3
 
  1. 选择`应用名称`、`版本`及`实例`；
 
- 1. 输入`网络名称`、`外部IP`及`端口号`；
-<blockquote class="note">
-         外部IP为选填项，需要外部网络访问时填写。
-      </blockquote>
+ 1. 输入`网络名称`、`外部IP`、`端口号`以及`目标端口号`；
+    
+    - 外部IP为选填项，需要外部网络访问时填写。
+
+    - 端口号为实例内部端口号，目标端口号为实例外部端口号，用以配置网络的端口映射。
+
  1. 点击 `创建`完成网络创建。
 
-### 查看应用版本详情
+### 查看网络
 
  1. 进入持续交付后，点击`网络管理` 页签；
 
  1. 查看项目应用的网络配置信息。
 
 
-### 修改网络信息
+### 修改网络
 
 点击`修改网络` → ![修改网络按钮](/docs/user-guide/deployment-pipeline/image/update_network_button.png) 对网络进行修改。
+
+<blockquote class="note">
+修改网络的信息可能会导致基于此网络的域名被修改。
+</blockquote>
 
 ### 删除网络
 
 点击`删除网络` → ![删除网络按钮](/docs/user-guide/deployment-pipeline/image/del_net_button.png) 对网络进行修改。
-<blockquote class="warning">
-         若删除网络，该条数据将被永久删除，不可恢复!
-      </blockquote>
+

@@ -24,7 +24,7 @@ Choerodon 使用 React 作为前端的UI应用框架，并且对前端的展示�
 
 **2.** 完成[创建项目](../project)操作。本章节使用在前面章节创建的项目`猪齿鱼研发`。
 
-**3.** <font>完成[创建环境](../../user-guide/deployment-pipeline/environment-pipeline)，环境流水线中有连接状态正常的环境。
+**3.** <font>完成[创建环境](../../user-guide/deployment-pipeline/environment-pipeline)，环境流水线中有状态为运行中的环境。
 
 **4.** 在Choerodon平台下，项目启动依赖于基础服务：
 
@@ -317,7 +317,7 @@ const DemoIndex = asyncRouter(() => import('./organization/demo/DemoIndex'));
 
   为所选的应用配置网络。
 
- **1.**  使用部署管理员的角色登录Choerodon系统，选择项目``猪齿鱼研发``。
+ **1.** 使用部署管理员的角色登录Choerodon系统，选择项目``猪齿鱼研发``。
  
  **2.** 进入`持续交付`模块，选择`部署管理`，点击`网络`，进入网络配置界面。
  
@@ -329,7 +329,8 @@ const DemoIndex = asyncRouter(() => import('./organization/demo/DemoIndex'));
  - 实例：刚才部署的实例
  - 网络名称：名称默认为“应用编码-4位随机码”，且可手动修改
  - 外部IP：需要外网时填写
- - 端口号：应用开放端口
+ - 端口号：网络开放的端口号
+ - 目标端口号：网络选择的目标实例所暴露的端口号
 
 **4.** 点击`创建`按钮即可。
 
@@ -345,9 +346,9 @@ const DemoIndex = asyncRouter(() => import('./organization/demo/DemoIndex'));
      
 
  - 域名：测试域名
- - 域名地址：choerodon.io
+ - 域名地址：choerodon.io（请填写所属环境集群主机绑定的域名及其子域名地址）
  - 路径：choerodon-front
- - 网络：配置的网络
+ - 网络：选择上一步配置的网络
 
 **4.** 点击`创建`即可。
 

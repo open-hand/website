@@ -48,7 +48,10 @@ weight = 3
 
 选填字段：
 
-- 角色标签：用于控制平台外部角色的权限。例如，在角色标签gitlab-master与Gitlab系统中的Master角色相关联，若角色A有角色标签gitlab-master,角色B有角色标签gitlab-master，则Gitlab系统中的Master角色就有角色A和B的所有权限。
+- 角色标签：用于定义角色的特定逻辑的功能，需与代码开发结合。例如：织时会自动为其分配拥有该角色标签的角色。如组织管理员。
+    - project.owner：当用户创建项目时会自动为其分配拥有该角色标签的角色。如项目所有者。
+    - gitlab.owner：当给某用户在某项目下分配拥有该标签的角色后，平台会为该用户在gitlab对应的group下分配owner角色。
+    - gitlab.developer：当给某用户在某项目下分配拥有该标签的角色后，平台会为该用户在gitlab对应的group下分配developer的角色。
 
 3.点击`创建`完成角色的创建。
 
@@ -73,7 +76,7 @@ weight = 3
 
 选填字段：
 
-- 角色标签：用于控制平台外部角色的权限。例如，在角色标签gitlab-master与Gitlab系统中的Master角色相关联，若角色A有角色标签gitlab-master,角色B有角色标签gitlab-master，则Gitlab系统中的Master角色就有角色A和B的所有权限。
+- 角色标签：用于定义角色的特定逻辑的功能，需与代码开发结合。
 
 3.点击`创建`完成角色的创建。
 
@@ -95,7 +98,7 @@ weight = 3
 可编辑字段：
 
 - 角色名称：应该根据角色的权限特性进行命名，这样分配角色的时候可以直观的选择角色。
-- 角色标签：用于控制平台外部角色的权限。例如，在角色标签gitlab-master与Gitlab系统中的Master角色相关联，若角色A有角色标签gitlab-master,角色B有角色标签gitlab-master，则Gitlab系统中的Master角色就有角色A和B的所有权限。
+- 角色标签：用于定义角色的特定逻辑的功能，需与代码开发结合。
 - 角色权限：可以增加或删除角色的权限。
 
 3.点击`保存`完成角色的创建。
