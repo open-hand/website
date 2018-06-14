@@ -119,7 +119,7 @@ description = ""
                             <img class="n-max" src="/img/docs/home/pre-install.svg"/>
                             <h4>安装要求及约定</h4>
                         </div>
-                        <p>详细介绍安装Choerodon的要求和约定</p>
+                        <p>详细介绍安装Choerodon时的硬件、软件、网络、端口、域名要求和基本约定</p>
                     </a>
                 </div>
             </li>
@@ -130,7 +130,18 @@ description = ""
                             <img class="n-max" src="/img/docs/home/steps.svg"/>
                             <h4>安装步骤</h4>
                         </div>
-                        <p>安装Choerodon步骤的详细介绍</p>
+                        <p>Choerodon安装步骤的详细介绍及一些对应的注意事项</p>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="access-list-item">
+                    <a href="./installation-configuration/update/">
+                        <div class="item-head">
+                            <img class="n-max" src="/img/docs/home/update.svg"/>
+                            <h4>升级指南</h4>
+                        </div>
+                        <p>详细描述了意见部署和分步部署的各版本升级的要求与步骤</p>
                     </a>
                 </div>
             </li>
