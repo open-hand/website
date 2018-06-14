@@ -37,7 +37,7 @@ helm install c7n/create-pv \
     --set pv.name=zookeeper-pv-00 \
     --set labels.app=zookeeper \
     --set nfs.path=/u01/io-choerodon/zookeeper-00 \
-    --set nfs.server=nfs.exmple.choerodon.io \
+    --set nfs.server=nfs.example.choerodon.io \
     --set pvc.enable=false \
     --set size=3Gi \
     --set "accessModes[0]=ReadWriteOnce" \
@@ -47,7 +47,7 @@ helm install c7n/create-pv \
     --set pv.name=zookeeper-pv-01 \
     --set labels.app=zookeeper \
     --set nfs.path=/u01/io-choerodon/zookeeper-01 \
-    --set nfs.server=nfs.exmple.choerodon.io \
+    --set nfs.server=nfs.example.choerodon.io \
     --set pvc.enable=false \
     --set size=3Gi \
     --set "accessModes[0]=ReadWriteOnce" \
@@ -57,7 +57,7 @@ helm install c7n/create-pv \
     --set pv.name=zookeeper-pv-02 \
     --set labels.app=zookeeper \
     --set nfs.path=/u01/io-choerodon/zookeeper-02 \
-    --set nfs.server=nfs.exmple.choerodon.io \
+    --set nfs.server=nfs.example.choerodon.io \
     --set pvc.enable=false \
     --set size=3Gi \
     --set "accessModes[0]=ReadWriteOnce" \

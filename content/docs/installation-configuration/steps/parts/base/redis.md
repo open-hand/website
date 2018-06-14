@@ -32,7 +32,7 @@ helm install c7n/create-pv \
     --set type=nfs \
     --set pv.name=devops-redis-pv \
     --set nfs.path=/u01/io-choerodon/devops-redis \
-    --set nfs.server=nfs.exmple.choerodon.io \
+    --set nfs.server=nfs.example.choerodon.io \
     --set pvc.name=devops-redis-pvc \
     --set size=1Gi \
     --set "accessModes[0]=ReadWriteOnce" \

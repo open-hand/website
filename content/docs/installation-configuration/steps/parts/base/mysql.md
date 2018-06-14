@@ -32,7 +32,7 @@ helm install c7n/create-pv \
     --set type=nfs \
     --set pv.name=mysql-pv \
     --set nfs.path=/u01/io-choerodon/mysql \
-    --set nfs.server=nfs.exmple.choerodon.io \
+    --set nfs.server=nfs.example.choerodon.io \
     --set pvc.name=mysql-pvc \
     --set size=3Gi \
     --set "accessModes[0]=ReadWriteOnce" \
