@@ -37,7 +37,7 @@ helm install c7n/create-pv \
     --set pv.name=kafka-pv-00 \
     --set labels.app=kafka \
     --set nfs.path=/u01/io-choerodon/kafka-00 \
-    --set nfs.server=nfs.exmple.choerodon.io \
+    --set nfs.server=nfs.example.choerodon.io \
     --set pvc.enable=false \
     --set size=3Gi \
     --set "accessModes[0]=ReadWriteOnce" \
@@ -47,7 +47,7 @@ helm install c7n/create-pv \
     --set pv.name=kafka-pv-01 \
     --set labels.app=kafka \
     --set nfs.path=/u01/io-choerodon/kafka-01 \
-    --set nfs.server=nfs.exmple.choerodon.io \
+    --set nfs.server=nfs.example.choerodon.io \
     --set pvc.enable=false \
     --set size=3Gi \
     --set "accessModes[0]=ReadWriteOnce" \
@@ -57,7 +57,7 @@ helm install c7n/create-pv \
     --set pv.name=kafka-pv-02 \
     --set labels.app=kafka \
     --set nfs.path=/u01/io-choerodon/kafka-02 \
-    --set nfs.server=nfs.exmple.choerodon.io \
+    --set nfs.server=nfs.example.choerodon.io \
     --set pvc.enable=false \
     --set size=3Gi \
     --set "accessModes[0]=ReadWriteOnce" \

@@ -32,7 +32,7 @@ helm install c7n/create-pv \
     --set type=nfs \
     --set pv.name=mysql-pv \
     --set nfs.path=/u01/io-choerodon/mysql \
-    --set nfs.server=nfs.exmple.choerodon.io \
+    --set nfs.server=nfs.example.choerodon.io \
     --set pvc.name=mysql-pvc \
     --set size=3Gi \
     --set "accessModes[0]=ReadWriteOnce" \
@@ -86,10 +86,12 @@ helm install c7n/mysql \
     CREATE DATABASE gitlab_service DEFAULT CHARACTER SET utf8;
     CREATE DATABASE iam_service DEFAULT CHARACTER SET utf8;
     CREATE DATABASE manager_service DEFAULT CHARACTER SET utf8;
+    CREATE DATABASE agile_service DEFAULT CHARACTER SET utf8;
     GRANT ALL PRIVILEGES ON devops_service.* TO choerodon@'%';
     GRANT ALL PRIVILEGES ON event_store_service.* TO choerodon@'%';
     GRANT ALL PRIVILEGES ON gitlab_service.* TO choerodon@'%';
     GRANT ALL PRIVILEGES ON iam_service.* TO choerodon@'%';
     GRANT ALL PRIVILEGES ON manager_service.* TO choerodon@'%';
+    GRANT ALL PRIVILEGES ON agile_service.* TO choerodon@'%';
     FLUSH PRIVILEGES;
     ```

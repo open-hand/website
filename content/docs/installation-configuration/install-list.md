@@ -30,7 +30,7 @@ Gitlab-Runner|CI/CD 运行环境|10.7.2
 以下是通过本部署教程将会在安装的Choerodon各服务及其版本信息。
 
 <blockquote class="note">
-部署Choerodon前端可不部署ChoerodonIAM前端，Choerodon前端功能包括了ChoerodonIAM前端所有功能。
+部署Choerodon前端可不部署其他服务前端，Choerodon前端功能包括了其他服务前端所有功能。
 </blockquote>
 
 组件|描述| 版本
@@ -47,6 +47,9 @@ file service|文件服务|0.6.0
 hystrix dashboard|调用链仪表盘|0.6.0
 hystrix turbine|调用链监控|0.6.0
 choerodon iam front|Choerodon IAM前端|0.6.0
-devops service|Devops 服务|0.6.3
 gitlab service|Gitlab 服务|0.6.0
-choerodon front|Choerodon 前端|0.6.1
+devops service|Devops 服务|0.6.3
+devops service front|Devops 服务前端|0.6.2
+agile service|敏捷管理|0.5.2
+agile service front|敏捷管理前端|0.5.3
+choerodon front|Choerodon 前端|0.6.4

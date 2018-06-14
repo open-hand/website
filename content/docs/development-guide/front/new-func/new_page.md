@@ -52,9 +52,9 @@ Menu.yml文件内容看起来是这样的:
         sort: 1 # 菜单的次序
         permission: # 菜单内容具有的权限
           - 'demo-service.demo.hello'
-  site: # site层的菜单
-  project: # 项目层的菜单
-  user: # 个人中心层的菜单
+  # site: # site层的菜单
+  # project: # 项目层的菜单
+  # user: # 个人中心层的菜单
 ```
 
 en.yml文件内容:

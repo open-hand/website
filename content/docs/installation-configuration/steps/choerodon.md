@@ -34,7 +34,7 @@ weight = 15
     # 比如：组织Code为choerodon，项目Code为demo，环境Code为prod，那么最终定义的namespace为：choerodon-devops-prod
     NAMESPACE="choerodon-devops-prod"
     # 提供NFS服务的主机地址（可以为IP地址）
-    NFS_SERVER_HOST="nfs.exmple.choerodon.io"
+    NFS_SERVER_HOST="nfs.example.choerodon.io"
     #######################  choerodon配置  ##########################
     # 搭建服务时镜像仓库前缀，默认"registry.cn-shanghai.aliyuncs.com/choerodon"
     #IMAGE_REPO_PRE="registry.cn-shanghai.aliyuncs.com/choerodon"

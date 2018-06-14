@@ -36,7 +36,7 @@ helm install c7n/create-pv \
     --set type=nfs \
     --set pv.name=chartmuseum-pv \
     --set nfs.path=/u01/io-choerodon/chartmuseum \
-    --set nfs.server=nfs.exmple.choerodon.io \
+    --set nfs.server=nfs.example.choerodon.io \
     --set pvc.name=chartmuseum-pvc \
     --set size=3Gi \
     --set "accessModes[0]=ReadWriteOnce" \
@@ -46,7 +46,7 @@ helm install c7n/create-pv \
     --set type=nfs \
     --set pv.name=devops-service-pv \
     --set nfs.path=/u01/io-choerodon/chartmuseum \
-    --set nfs.server=nfs.exmple.choerodon.io \
+    --set nfs.server=nfs.example.choerodon.io \
     --set pvc.name=devops-service-pvc \
     --set size=3Gi \
     --set "accessModes[0]=ReadWriteOnce" \
@@ -59,7 +59,7 @@ helm install c7n/chartmuseum \
     --set persistence.enabled=true \
     --set persistence.existingClaim=chartmuseum-pvc \
     --set ingress.enabled=true \
-    --set ingress.host=charts.exmple.choerodon.io \
+    --set ingress.host=charts.example.choerodon.io \
     --set env.open.DISABLE_API=false \
     --set env.open.DEPTH=2 \
     --name chartmuseum --namespace=choerodon-devops-prod

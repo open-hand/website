@@ -32,7 +32,7 @@ helm install c7n/create-pv \
     --set type=nfs \
     --set pv.name=gitlab-mysql-pv \
     --set nfs.path=/u01/io-choerodon/gitlab/mysql \
-    --set nfs.server=nfs.exmple.choerodon.io \
+    --set nfs.server=nfs.example.choerodon.io \
     --set pvc.name=gitlab-mysql-pvc \
     --set size=3Gi \
     --set "accessModes[0]=ReadWriteOnce" \
@@ -81,7 +81,7 @@ helm install c7n/create-pv \
     --set type=nfs \
     --set pv.name=gitlab-pv \
     --set nfs.path=/u01/io-choerodon/gitlab/data \
-    --set nfs.server=nfs.exmple.choerodon.io \
+    --set nfs.server=nfs.example.choerodon.io \
     --set pvc.name=gitlab-pvc \
     --set size=3Gi \
     --set "accessModes[0]=ReadWriteOnce" \
@@ -97,7 +97,7 @@ helm install c7n/create-pv \
 helm install c7n/gitlab \
     --set persistence.enabled=true \
     --set persistence.existingClaim=gitlab-pvc \
-    --set env.config.GITLAB_EXTERNAL_URL=http://gitlab.exmple.choerodon.io \
+    --set env.config.GITLAB_EXTERNAL_URL=http://gitlab.example.choerodon.io \
     --set env.config.GITLAB_TIMEZONE=Asia/Shanghai \
     --set env.config.CHOERODON_OMNIAUTH_ENABLED=false \
     --set env.config.GITLAB_DEFAULT_CAN_CREATE_GROUP=true \
@@ -121,7 +121,7 @@ helm install c7n/gitlab \
     --set env.config.PROMETHEUS_ENABLE=false \
     --set env.config.NODE_EXPORTER_ENABLE=false \
     --set ingress.enabled=true \
-    --set ingress.hosts[0]=gitlab.exmple.choerodon.io \
+    --set ingress.hosts[0]=gitlab.example.choerodon.io \
     --name=gitlab --namespace=choerodon-devops-prod 
 ```
 
@@ -178,11 +178,11 @@ helm install c7n/gitlab \
 1. 推送到搭建的Gitlab中（下面语句请注意替换相应值）
 
     <blockquote class="warning">
-    请不要修改仓库组织名称和仓库名称，这里的app_template就是仓库组织名称，***为仓库名称，只修改域名gitlab.exmple.choerodon.io。
+    请不要修改仓库组织名称和仓库名称，这里的app_template就是仓库组织名称，***为仓库名称，只修改域名gitlab.example.choerodon.io。
     </blockquote>
 
     ```shell
-    git remote set-url origin http://gitlab.exmple.choerodon.io/app_template/***.git
+    git remote set-url origin http://gitlab.example.choerodon.io/app_template/***.git
     git push origin master:master
     ```
 
@@ -243,9 +243,8 @@ helm install c7n/gitlab \
 
 ### 更新Gitlab配置
 
-
     helm upgrade gitlab c7n/gitlab \
-        --reuse-values \
+        -f <(helm get values gitlab) \
         --set env.config.CHOERODON_OMNIAUTH_ENABLED=true \
         --set env.config.OMNIAUTH_AUTO_SIGN_IN_WITH_PROVIDER=oauth2_generic \
         --set env.config.OMNIAUTH_BLOCK_AUTO_CREATED_USERS=false \
@@ -255,7 +254,7 @@ helm install c7n/gitlab \
 
 ### 添加Gitlab Client
 
-- 在访问搭建好的Choerodon的api，`api.exmple.choerodon.io/manager/swagger-ui.html`，选择`iam_service` -> `client-controller` -> `创建client`
+- 在访问搭建好的Choerodon的api，`api.example.choerodon.io/manager/swagger-ui.html`，选择`iam_service` -> `client-controller` -> `创建client`
   - 认证请使用用户名：admin，密码：admin
   - 提交以下数据，注意正式搭建时请替换以下值为真实值
       
@@ -272,7 +271,7 @@ helm install c7n/gitlab \
           "resourceIds": "default",
           "scope": "default",
           "secret": "secret",
-          "webServerRedirectUri": "http://gitlab.exmple.choerodon.io"
+          "webServerRedirectUri": "http://gitlab.example.choerodon.io"
         }
         ```
 

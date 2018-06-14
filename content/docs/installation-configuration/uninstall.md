@@ -1,7 +1,7 @@
 +++
 title = "卸载"
 description = "卸载"
-weight = 10
+weight = 11
 +++
 
 ## 卸载一键安装的Choerodon
