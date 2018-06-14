@@ -15,6 +15,8 @@ weight = 2
 
 <h2 id="1">功能</h2>
 
+- [**实例管理**](../microservice-management/instance) 用于管理微服务的实例。
+- [**配置管理**](../microservice-management/config) 用于管理微服务的路由。
 - [**路由管理**](../microservice-management/route) 用于管理平台路由。
 
 

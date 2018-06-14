@@ -1,6 +1,6 @@
 +++
 title = "路由管理"
-weight = 1
+weight = 3
 +++
 
 # 路由管理
