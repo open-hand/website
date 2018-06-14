@@ -49,7 +49,7 @@ hystrix turbine|调用链监控|0.6.0
 choerodon iam front|Choerodon IAM前端|0.6.0
 gitlab service|Gitlab 服务|0.6.0
 devops service|Devops 服务|0.6.3
-devops service front|Devops 服务前端|0.6.1
+devops service front|Devops 服务前端|0.6.2
 agile service|敏捷管理|0.5.2
 agile service front|敏捷管理前端|0.5.3
-choerodon front|Choerodon 前端|0.6.3
+choerodon front|Choerodon 前端|0.6.4

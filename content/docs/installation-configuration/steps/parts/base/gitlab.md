@@ -243,9 +243,8 @@ helm install c7n/gitlab \
 
 ### 更新Gitlab配置
 
-
     helm upgrade gitlab c7n/gitlab \
-        --reuse-values \
+        -f <(helm get values gitlab) \
         --set env.config.CHOERODON_OMNIAUTH_ENABLED=true \
         --set env.config.OMNIAUTH_AUTO_SIGN_IN_WITH_PROVIDER=oauth2_generic \
         --set env.config.OMNIAUTH_BLOCK_AUTO_CREATED_USERS=false \
