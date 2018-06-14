@@ -32,7 +32,7 @@ helm install c7n/create-pv \
     --set type=nfs \
     --set pv.name=minio-pv \
     --set nfs.path=/u01/io-choerodon/minio \
-    --set nfs.server=nfs.exmple.choerodon.io \
+    --set nfs.server=nfs.example.choerodon.io \
     --set pvc.name=minio-pvc \
     --set size=3Gi \
     --set "accessModes[0]=ReadWriteOnce" \
@@ -48,7 +48,7 @@ helm install c7n/minio \
     --set env.open.MINIO_ACCESS_KEY=admin \
     --set env.open.MINIO_SECRET_KEY=password \
     --set ingress.enabled=true \
-    --set "ingress.hosts[0]"="minio.exmple.choerodon.io" \
+    --set "ingress.hosts[0]"="minio.example.choerodon.io" \
     --name=minio --namespace=choerodon-devops-prod
 ```
 

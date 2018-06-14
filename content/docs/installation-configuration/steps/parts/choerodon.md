@@ -539,7 +539,7 @@ helm repo update
         --set env.open.PRO_TITLE_NAME="Choerodon" \
         --set env.open.PRO_HEADER_TITLE_NAME="Choerodon" \
         --set env.open.PRO_HTTP="http" \
-        --set ingress.host="iam.choerodon.exmple.choerodon.io" \
+        --set ingress.host="iam.choerodon.example.choerodon.io" \
         --set service.enable=true \
         --set ingress.enable=true \
         --name=choerodon-front-iam \
@@ -569,7 +569,7 @@ helm repo update
         <!DOCTYPE html><html><head><meta http-equiv="Content-type"content="text/html; charset=utf-8"><title>Choerodon</title><link rel="shortcut icon"href="favicon.ico"></head><body><div id="app"></div><script type="text/javascript"src="app/vendor_19e4b950.js"></script><script type="text/javascript"src="app/main_19e4b950.js"></script></body></html>
         ```
 
-- 在访问搭建好的Choerodon的api，`api.exmple.choerodon.io/manager/swagger-ui.html`，选择`iam_service` -> `client-controller` -> `创建client`
+- 在访问搭建好的Choerodon的api，`api.example.choerodon.io/manager/swagger-ui.html`，选择`iam_service` -> `client-controller` -> `创建client`
   - 认证请使用用户名：admin，密码：admin
   - 提交以下数据，注意正式搭建时请替换以下值为真实值
       
@@ -586,6 +586,6 @@ helm repo update
             "resourceIds": "default",
             "scope": "default",
             "secret": "secret",
-            "webServerRedirectUri": "http://iam.choerodon.exmple.choerodon.io"
+            "webServerRedirectUri": "http://iam.choerodon.example.choerodon.io"
         }
         ```
