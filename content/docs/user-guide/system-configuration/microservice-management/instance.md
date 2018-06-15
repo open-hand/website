@@ -15,7 +15,7 @@ weight = 1
 
 ### 实例详情
 
-1. 点击查看详情→![info](/docs/user-guide/system-configuration/microservice-management/image/info.png)按钮。
+1. 点击查看详情→<img class="no-border" src="/docs/user-guide/system-configuration/microservice-management/image/info.png">按钮。
 1. 点击‘实例信息’，查看实例的下列信息
     - 实例ID：实例ID的展示形式为`<主机名>:<所属微服务>:<端口号>`。实例ID具有唯一性，是实例的标识。
     - 主机名：分配给实例的地址。
