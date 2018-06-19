@@ -29,25 +29,47 @@ weight = 10
     kube-controller-manager|v1.8.5
     kube-scheduler|v1.8.5
 
-## 防护墙及端口检测
+## 防火墙及端口检测
 
 ### 检测防火墙状态
 
-```console
-$ firewall-cmd --state
-not running
-```
+- 检测firewall-cmd状态
+<pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> firewall-cmd --state</span>
+<span style="color: #ff0000;">not running</span>
+</code></pre>
 
+    `not running`表示防火墙未启动,如果出现`running`则为启动状态。
 
+- 检测iptables状态
 
-```console
-$ firewall-cmd --state
-running
-```
+    ```bash
+    yum install iptables-services
 
-iptables -A INPUT -p tcp -dport 6000:6500 -j ACCEPT
-iptables -A OUTPUT -p tcp --sport 6000:6500 -j ACCEPT
+    ● iptables.service - IPv4 firewall with iptables
+    Loaded: loaded (/usr/lib/systemd/system/iptables.service; disabled; vendor preset: disabled)
+    Active: inactive (dead)
+    ```
 
+    单状态为inactive或者提示`Unit iptables.service could not be found.`均表示iptables未启动。
+
+### 开放指定端口
+
+  如果防火墙已启用，则需要开放[指定端口](../../pre-install/#需开放的端口号)，下面分别列举使用iptables和firewalld设置开放端口命令。
+
+- iptables
+
+    ```bash
+    $ iptables -A INPUT -p tcp --dport 6443 -j ACCEPT      # 开放6443端口
+    $ iptables -A INPUT -p tcp --dport 2379:2378 -j ACCEPT # 开放2379到2380端口
+    $ iptables save && service iptables restart            # 保存并重启iptables
+    ```
+
+- firewalld
+    
+    ```bash
+    firewall-cmd --add-port=6443/tcp --permanent # 永久开放6443端口
+    firewall-cmd --reload                        # 重新加载firewall
+    ```
 
 ## 同步服务器时区
 
