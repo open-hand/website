@@ -92,7 +92,6 @@ helm install c7n/harbor \
     --set notary.db.volumes.data.selector.pv="harbor-notary-pv" \
     --set postgresql.persistence.enabled=true \
     --set postgresql.persistence.existingClaim="harbor-postgresql-pvc" \
-    --set insecureRegistry=true \
     --name=harbor --namespace=choerodon-devops-prod 
 ```
 
@@ -144,24 +143,13 @@ Harbor启动速度较慢请等待所有Pod都为Running后进行界面查看。
     kubectl edit ingress -n choerodon-devops-prod harbor-harbor-ingress
     ```
 
-    - 第一步：为ingress添加注解`kubernetes.io/tls-acme: "true"`
+    - 为ingress添加注解`kubernetes.io/tls-acme: "true"`
 
         ```
         metadata:
           annotations:
             kubernetes.io/tls-acme: "true"
         ```
-
-    - 第二步：为ingress添加添加`spec.tls`属性及其值
-        <blockquote class="note">
-        这里的secretName必须在命名空间是唯一的。secretName是必需的（即使这个secret对象不存在，因为它将由kube-lego创建）。
-        </blockquote>
-
-            spec:
-              tls:
-              - hosts:
-                - registry.example.choerodon.io
-                secretName: harbor-cert
 
 ### 手动申请证书
 
