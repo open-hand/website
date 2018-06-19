@@ -431,6 +431,15 @@ type = "docs"
 
 	`xxxxx/eureka/apps`
 
+	如果线上发现服务没有被注册，请修改go-register的配置信息，并重新部署，如图操作：
+
+	![](/docs/quick-start/image/backend5.png)
+
+	然后在配置文件的REGISTER_SERVICE_NAMESPACE后面加入之前创建环境时候的环境编码，如有多个，请用','号隔开
+
+	![](/docs/quick-start/image/backend6.png)
+
+
 **５. swagger调用api**
 
  - 本地访问swagger地址：
@@ -446,12 +455,6 @@ type = "docs"
    ![](/docs/quick-start/image/backend4.png)
 
 可在swagger-ui上找到该服务，至此，后端服务一个简单的API完成。
-
-![](/docs/quick-start/image/backend5.png)
-
-	然后在配置文件的REGISTER_SERVICE_NAMESPACE加入之前创建环境时候的环境编码
-
-![](/docs/quick-start/image/backend6.png)
 
 <h2 id="5">查看实例部署详情</h2>
 
