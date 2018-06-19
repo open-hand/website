@@ -6,6 +6,8 @@ weight = 25
 
 # Gitlab Runner部署
 
+Gitlab Runner，用于代码提交后自动进行代码测试、构建服务的镜像及生成helm chart并将结果发回给Choerodon。它与GitLab CI一起使用，Gitlab CI是Gitlab中包含的开源持续集成服务，用于协调作业。
+
 ## 获取Runner注册Token
 
 <blockquote class="note">
@@ -69,7 +71,7 @@ weight = 25
 
 ## 部署Runner
 <blockquote class="note">
-启用持久化存储请执行提前创建所指向的物理地址，PV和PVC可使用以下语句进行创建；可在部署命令中添加--debug --dry-run参数，进行渲染预览不进行部署。
+启用持久化存储请执行提前创建所对应的物理目录，PV和PVC可使用以下语句进行创建；可在部署命令中添加--debug --dry-run参数，进行渲染预览不进行部署。
 </blockquote>
 
 - 创建缓存所需PV和PVC

@@ -22,7 +22,7 @@ weight = 20
 ## 部署Chartmuseum
 
 <blockquote class="note">
-启用持久化存储请执行提前创建所指向的物理地址，PV和PVC可使用以下语句进行创建；可在部署命令中添加--debug --dry-run参数，进行渲染预览不进行部署。
+启用持久化存储请执行提前创建所对应的物理目录，PV和PVC可使用以下语句进行创建；可在部署命令中添加--debug --dry-run参数，进行渲染预览不进行部署。
 </blockquote>
 
 <blockquote class="warning">
@@ -40,7 +40,7 @@ helm install c7n/create-pv \
     --set pvc.name=chartmuseum-pvc \
     --set size=3Gi \
     --set "accessModes[0]=ReadWriteOnce" \
-    --name chartmuseum-pv --namespace=choerodon-devops-prod
+    --name choerodon-chartmuseum-pv --namespace=choerodon-devops-prod
 
 helm install c7n/create-pv \
     --set type=nfs \
@@ -50,7 +50,7 @@ helm install c7n/create-pv \
     --set pvc.name=devops-service-pvc \
     --set size=3Gi \
     --set "accessModes[0]=ReadWriteOnce" \
-    --name devops-service-pv --namespace=choerodon-devops-prod
+    --name choerodon-devops-service-pv --namespace=choerodon-devops-prod
 ```
 ### 进行部署
 
@@ -62,7 +62,7 @@ helm install c7n/chartmuseum \
     --set ingress.host=charts.example.choerodon.io \
     --set env.open.DISABLE_API=false \
     --set env.open.DEPTH=2 \
-    --name chartmuseum --namespace=choerodon-devops-prod
+    --name choerodon-chartmuseum --namespace=choerodon-devops-prod
 ```
 
 - 参数解释：
