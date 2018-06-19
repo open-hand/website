@@ -219,17 +219,6 @@ description = ""
             </li>
             <li>
                 <div class="access-list-item">
-                    <a href="./quick-start/web-application">
-                        <div class="item-head">
-                            <img class="n-max" src="/img/docs/home/14.svg"/>
-                            <h4>创建一个Java库</h4>
-                        </div>
-                        <p>从创建Java库，创建Java库应用模板、开发Java等方面介绍</p>
-                    </a>
-                </div>
-            </li>
-            <li>
-                <div class="access-list-item">
                     <a href="./quick-start/agile">
                         <div class="item-head">
                             <img class="n-max" src="/img/docs/home/use-agile.svg"/>
