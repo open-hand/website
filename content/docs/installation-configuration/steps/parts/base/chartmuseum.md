@@ -40,7 +40,7 @@ helm install c7n/create-pv \
     --set pvc.name=chartmuseum-pvc \
     --set size=3Gi \
     --set "accessModes[0]=ReadWriteOnce" \
-    --name choerodon-chartmuseum-pv --namespace=choerodon-devops-prod
+    --name chartmuseum-pv --namespace=choerodon-devops-prod
 
 helm install c7n/create-pv \
     --set type=nfs \
@@ -50,7 +50,7 @@ helm install c7n/create-pv \
     --set pvc.name=devops-service-pvc \
     --set size=3Gi \
     --set "accessModes[0]=ReadWriteOnce" \
-    --name choerodon-devops-service-pv --namespace=choerodon-devops-prod
+    --name devops-service-pv --namespace=choerodon-devops-prod
 ```
 ### 进行部署
 
@@ -62,7 +62,7 @@ helm install c7n/chartmuseum \
     --set ingress.host=charts.example.choerodon.io \
     --set env.open.DISABLE_API=false \
     --set env.open.DEPTH=2 \
-    --name choerodon-chartmuseum --namespace=choerodon-devops-prod
+    --name chartmuseum --namespace=choerodon-devops-prod
 ```
 
 - 参数解释：
