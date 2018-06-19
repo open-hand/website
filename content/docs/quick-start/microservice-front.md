@@ -11,12 +11,11 @@ weight = 3
 
 就前端主流技术框架的开发而言，过去几年里发展极快，在填补原有技术框架空白和不足的同时也渐渐趋于成熟。未来前端在已经趋向成熟的技术方向上面会慢慢稳定下来，并进入技术迭代优化阶段，但这并不代表前端领域技术就此稳定了，因为新的技术方向已经出现，并在等待下一个风口的到来。可能是虚拟现实也有可能是人工智能或者其他。
 
-Choerodon 使用 React 作为前端的UI应用框架，并且对前端的展示做了一定的封装和处理，能够让用户方便快捷地进行前端应用的开发和部署。React和MobX是一对强力组合，React通过提供机制把应用状态转换为可渲染组件树并对其进行渲染。而MobX提供机制来存储和更新应用状态供React使用。 这种机制就是通过使用虚拟DOM来减少昂贵的DOM变化的数量。MobX 提供了优化应用状态与 React 组件同步的机制，这种机制就是使用响应式虚拟依赖状态图表，它只有在真正需要的时候才更新并且永远保持是最新的。
+Choerodon 使用 `React` 作为前端应用框架，并且对前端的展示做了一定的封装和处理，能够让用户方便快捷地进行前端应用的开发和部署。`React`和`MobX`是一对强力组合，`React`通过提供机制把应用状态转换为可渲染组件树并对其进行渲染。而`MobX`提供机制来存储和更新应用状态供`React`使用。 这种机制就是通过使用虚拟`DOM`来减少昂贵的`DOM`变化的数量。`MobX` 提供了优化应用状态与 `React` 组件同步的机制，这种机制就是使用响应式虚拟依赖状态图表，它只有在真正需要的时候才更新并且永远保持是最新的。
 
 ## 目标
 
-本章节将从创建前端应用、开发前端应用、生成版本、部署应用、配置网络、配置域名等方面介绍，让读者能够熟悉使用Choerodon创建前端应用的步骤和流程，并且学会如何利用Choerodon创建并部署前端应用。
-
+本章节将从创建前端应用、开发前端应用、部署应用、配置网络、配置域名等方面介绍，让读者能够熟悉使用Choerodon创建前端应用的步骤和流程，并且学会如何利用Choerodon创建并部署前端应用。
 
 ## 前置条件
 
@@ -24,12 +23,9 @@ Choerodon 使用 React 作为前端的UI应用框架，并且对前端的展示�
 
 **2.** 完成[创建项目](../project)操作。本章节使用在前面章节创建的项目`猪齿鱼研发`。
 
-**3.** <font>完成[创建环境](../../user-guide/deployment-pipeline/environment-pipeline)，环境流水线中有状态为运行中的环境。
+**3.** 完成[创建环境](../../user-guide/deployment-pipeline/environment-pipeline)，环境流水线中有状态为运行中的环境。
 
-**4.** 在Choerodon平台下，项目启动依赖于基础服务：
-
-
-<h2 id="1">创建前端应用</h2>
+## 创建前端应用
 
 **1.** 使用项目所有者或者源代码管理员的角色登录Choerodon系统，选择项目``猪齿鱼研发``。
 
@@ -37,330 +33,181 @@ Choerodon 使用 React 作为前端的UI应用框架，并且对前端的展示�
 
 **3.** 点击``创建应用``，系统会从右边滑出页面，在页面中输入相关信息，有应用编码、应用名称，选择应用模板。
 
- -  应用编码：choerodon-front 
+**1.** 使用项目所有者或者源代码管理员的角色登录Choerodon系统，选择项目``猪齿鱼研发``。
 
-	<blockquote class="warning">
-		   应用编码输入只能包含字母，数字，下划线，空格， '_', '.', "——"，只能以字母，数字，下划线开头。
-		 </blockquote>
-  
- - 应用名称：猪齿鱼前端应用
- 
- - 选择应用模板: MicroServiceUI
-	  <blockquote class="note">
-       当应用模板不符合您的需求，您可手动创建一个[应用模板](../../user-guide/development-pipeline/application-template/)。
-     </blockquote>
+**2.** 选择`持续交付`模块，点击`开发流水线`，点击`应用`，进入应用管理页面。
+
+**3.** 点击`创建应用`，系统会从右边滑出页面，在页面中输入`应用编码`、`应用名称`，`应用模板`，`应用模板`选择`MicroServiceUI`。点击`创建`，即可创建一个前端应用。
+
+字段名 | 输入值
+---|--- 
+应用编码 | `choerodon-front-demo`
+应用名称 | `猪齿鱼前端Demo应用`
+选择应用模板 | `MicroServiceUI`
+
+> 当应用模板不符合您的需求，您可手动创建一个[应用模板](../../user-guide/development-pipeline/application-template/)。 
    
-**4.** 点击`创建`，即可创建一个前端应用。
-   
-**5.** 当应用创建成功，可在应用管理界面查看到新建的应用。
+**4.** 当应用创建成功，可在`开发流水线` -> `应用` 界面查看到新建的应用。
 
-**6.** 在创建应用的同时，系统还会在Gitlab中创建一个仓库，点击 ``仓库地址`` ，链接到Gitlab新建的仓库。
+**5.** 在创建应用的同时，系统会对应在`Gitlab`中创建一个仓库，点击 `仓库地址`，链接到`Gitlab`新建的仓库。
 
-<blockquote class="note">
-	Gitlab 仓库的名称是 choerodon-front，为应用编码。
-</blockquote>  
- 
+Choerodon 名词 | 对应Gitlab 名词 | 举例
+---|---|---
+项目名 | 组名 | `猪齿鱼研发`
+应用编码 | 项目名 |`choerodon-front-demo`
+应用名称 | 无 |`猪齿鱼前端Demo应用`
 
-<h2 id="2">开发前端应用</h2>
+## 开发前端应用
 
 应用创建完成之后，开发前端应用。具体的操作步骤如下：
 
- **1. 创建分支**
- 
- - 点击`应用`，进入到应用管理界面，选择`猪齿鱼前端应用`。
- -  点击右侧`分支管理`，点击`创建分支`，系统会从右边滑出页面，填写issue号，如feature-1。
- -  点击`创建`，即可创建一个分支。
- 
- **2. 拉取代码仓库**
- 
- 在存放代码的文件夹下，打开git bash,输入命令`git clone [仓库地址]`，拉取所需应用的代码仓库。
- 运行代码相关文档请查看[前端开发手册](../../development-guide/front/)。
+**1. 创建`Feature`分支**
 
-  **3. 开发分支**
+在 `开发流水线` -> `应用` 界面中找到`choerodon-front-demo`。选择分支管理，点击`创建分支`，选择`创建feature分支`，填写`issue`号，如`feature-1`。点击`创建`，即可创建一个分支。
 
-克隆成功后，进入应用根目录，执行命令`git checkout feature-1`，切换到新建分支feature-1，在此分支进行开发。
+Choerodon 采用 `git-flow` 工作流模式，有`master`和`develop`两个默认分支。在持续交付过程中对 `feature`、`release`、`hotfix` 等分支进行管理。结束分支可自动触发分支合并和持续集成，可在流水线查看代码集成情况。更多相关信息参考[分支管理](../../user-guide/development-pipeline/branch-management/)。
 
- - 创建目录
- 
-    在 \iam\src\app\iam\containers下新建organization文件夹
-	
-    在organization下新建一个功能文件夹\demo
-	
-    在demo文件夹下新建index.js、DemoIndex.js和Demo.js三个文件
 
- - 修改路由
+**2. 拉取代码仓库**
 
-       在\iam\src\app\iam\containers\IAMIndex.js文件中配置我们新建的文件的访问路径：
-```
-...
-const DemoIndex = asyncRouter(() => import('./organization/demo/DemoIndex'));
-    ...
-    <Route path={`${match.url}/demo`} component={DemoIndex} />
-    ...
+在`开发流水线` -> `应用` 找到`choerodon-front-demo` 的`仓库地址`。通过git命令拉取生成的项目代码。然后切换到对应分支进行本地开发。
+
+``` bash
+$ git clone `仓库地址`
+$ cd ./choerodon-front-demo
+$ git checkout feature-1
 ```
 
- - 完成后，我们就可以进行相关页面的开发了，开发完成后，访问`/iam/demo`即可查看。
+**3. 本地开发**
 
-    相关代码如下：
+将代码克隆到本地后，就可以在本地进行开发。
 
-    index.js
+通过Choerodon 提供的`MicroService` 应用模板，会生成一个最简单的`spring boot` 应用。
 
-		
-		import Demo from './DemoIndex';
-
-		export default Demo;
-		
-
-     DemoIndex.js
-	```
-	import React from 'react';
-	import {
-	Route,
-	Switch,
-	} from 'react-router-dom';
-
-	import asyncRouter from '../../../../../util/asyncRouter';
-
-	const demo = asyncRouter(() => (import('./Demo')));
-
-	const DemoIndex = ({ match }) => (
-	<Switch>
-	<Route exact path={match.url} component={demo} />
-	</Switch>
-	);
-	export default DemoIndex;
+模板本身生成的应用可以直接运行在平台上。更多具体的开发参考[前端开发手册](../../development-guide/front/)。
 
 
-	```
+**4. 修改`ci` 文件**
 
-    Demo.js
-	```
-	import React, { Component } from 'react';
-	import { Table } from 'antd';
-	import { withRouter } from 'react-router-dom';
+通过Choerodon 提供的默认模板，会创建`.gitlab-ci.yml`。
 
-	class Demo extends Component {
-	  componentDidMount() {
-	  }
+`.gitlab-ci.yml`定义 `Gitlab CI` 的阶段，Choerodon 缺省的 CI 流程包含了`编译`，`打包`，`生成镜像`，`生成helm 包`几个阶段。	
 
-	  render() {
-		return (
-		  <div>
-			hello world
-		  </div>
-		);
-	  }
-	}
-	// withRouter添加history支持
-	export default withRouter(Demo);
+有关`.gitlab-ci.yml` 的编写参考[应用模板](../../user-guide/development-pipeline/application-template/)。
 
-	```
+**5. 修改`charts` 文件**
 
- - 访问`localhost:9090/#/iam/demo`即可查看效果。
+通过Choerodon 提供的默认模板，会创建`charts` 文件夹。
 
- - 下面来尝试一下从更复杂的场景，从后端获取10条用户信息并用表格的形式呈现。
+`charts`模块用于创建应用时生成创建 `k8s` 对象，包含了`部署的模板`，`chart values`。
 
-     将上面的Demo.js的代码改为如下：
+有关`charts` 的编写参考[应用模板](../../user-guide/development-pipeline/application-template/)。
 
-     Demo.js
-	```
-	import React, { Component } from 'react';
-	import { Table } from 'antd';
-	import axios from 'Axios';
-	import { withRouter } from 'react-router-dom';
+**6. 修改`Dockerfile` 文件**
 
-	const pretendUsers = [
-	  {
-		id: 1,
-		name: '小明',
-		description: '获取后端数据失败，此为模拟数据',
-	  },
-	  {
-		id: 2,
-		name: '小红',
-		description: '获取后端数据失败，此为模拟数据',
-	  },
-	];
+Choerodon 使用`docker` 来运行应用。你可以通过修改`Dockerfile` 来修改应用的运行环境。
 
-	class Demo extends Component {
-	  constructor(props) {
-		super(props);
-		this.state = {
-		  users: [],
-		};
-	  }
+有关`Dockerfile` 的编写参考[应用模板](../../user-guide/development-pipeline/application-template/)。
 
-	  componentDidMount() {
-		this.initUsers();
-	  }
+**7. 提交代码**
 
-	  initUsers() {
-		this.loadUsers()
-		  .then((res) => {
-			this.setState({ users: res });
-		  })
-		  .catch((error) => {
-			this.setState({ users: pretendUsers });
-		  });
-	  }
+当本地修改结束后，需要将本地仓库的代码提交到远程分支上。
 
-	  loadUsers() {
-		// 此处url为后端接口
-		return axios.get('http://127.0.0.1:8080/test/v1/user');
-	  }
+``` bash
+$ git add .
+$ git commit -m "[ADD] init choerodon-front-todo"
+$ git push origin feature-1
+```
 
-	  render() {
-		const columns = [{
-		  title: '用户编号',
-		  dataIndex: 'id',
-		  key: 'id',
-		}, {
-		  title: '用户名',
-		  dataIndex: 'name',
-		  key: 'name',
-		}, {
-		  title: '描述',
-		  dataIndex: 'description',
-		  key: 'description',
-		}];
-		return (
-		  <div style={{ margin: 20 }}>
-			<Table
-			  columns={columns}
-			  dataSource={this.state.users}
-			  pagination
-			  rowKey={record => record.id}
-			/>
-		  </div>
-		);
-	  }
-	}
-	// withRouter添加history支持
-	export default withRouter(Demo);
+提交时需要遵循Choerodon 的规范:
 
-	```
+* [IMP] 提升改善正在开发或者已经实现的功能
+* [FIX] 修正BUG
+* [REF] 重构一个功能，对功能重写
+* [ADD] 添加实现新功能
+* [REM] 删除不需要的文件
 
- -  访问`localhost:9090/#/iam/demo`即可查看效果，至此，你已经掌握了简单的前后端搭配的开发方式了。
- 
+**9. 代码集成**
 
-  **4. 提交代码**
+当代码提交到服务器之后，可以在页面查看持续集成。
 
-	# 将本地代码变动提交到暂存区
-	$ git add .
-	# 提交代码并且为本次提交添加 commit 信息
-	# 注：[FIX]修改bug  [ADD]新增  [IMP]完善  [DEL]删除
-	$ git commit –m “[ADD]readme: 新增代码示例”
-	# 将本地提交推送至远程仓库对应分支
-	$ git push origin feature-1
-		
-**5. 代码集成**
+在`开发流水线` -> `持续集成` 页面，找到`choerodon-front-demo`。点击阶段跳转到`Gitlab` 查看`ci`执行情况。
 
-基于feature分支运行CI。点击`持续集成`,查看 CI 执行情况。
+**10. 结束分支**　
 
-**6. 结束分支**
+当`ci`执行通过以后，可以关闭分支，将`feature`分支合并到`develop`分支上。
 
- - 点击`应用`，进入应用管理，点击应用编码`choerodon-front`的`分支管理`。
- - 在分支列表找到`feature-1`，点击`结束分支`。
+在`开发流水线` -> `应用` 页面，找到`choerodon-front-demo`。选择分支管理，找到`feature-1` 分支，点击`结束分支`。结束分支后，会触发`develop` 分支的`ci流水线`。
 
+当`develop` 分支的`ci流水线` 通过以后。在`开发流水线` -> `应用版本` 可以找到，`choerodon-front-demo`生成的对应版本。接下来就可以部署了。
 
-<h2 id="3">生成版本</h2>
+## 部署应用
 
- 应用版本是代码提交的历史记录，每提交一次修改后的代码，对应生成一个新的版本。具体的操作步骤如下：
+提供可视化、一键式部署应用，支持并行部署和流水线无缝集成，实现部署环境标准化和部署过程自动化。
 
-**1.** 结束分支之后，`feature-1`分支的代码会合并到`develop`分支，并触发Gitlab CI。
-<blockquote class="note">
-        Choerodon 缺省的 CI 流程有两个阶段:
-        <ul>
-            <li>克隆子库，编译打包</li>
-            <li>构建docker镜像</li>
-        </ul>
-    </blockquote>
+**1.** 使用部署管理员的角色登录Choerodon系统，选择项目`猪齿鱼研发`。
 
-**2.** 点击``持续集成``，查看CI执行情况。
+**2.** 进入`持续交付`模块，选择`部署流水线` -> `应用部署` 进入应用部署界面。
 
-**3.** CI运行完成以后，点击`应用版本`进行查看，确定应用版本已经生成。
+**3.** 点击`选择应用`，找到已经提交的`choerodon-front-demo`。点击`选择版本`，选择`choerodon-front-demo` 最新的版本，点击下一步。
 
+**4.** 点击`选择环境`，选择一个环境。部署的环境信息会展现在底下。如果没有环境，请先完成[创建环境](../../user-guide/deployment-pipeline/environment-pipeline)。
 
-<h2 id="4">部署应用</h2>
+**5.** 根据实际的配置，配置部署应用所需的配置信息。然后点击下一步。
 
-  提供可视化、一键式部署应用，支持并行部署和流水线无缝集成，实现部署环境标准化和部署过程自动化。
+**6.** 选择`新建实例`。如果环境中已有一个实例，则可以选择`替换实例`。点击下一步，生成预览信息。
+
+**7.** 确认信息无误后，可以点击`部署` 来部署应用，页面自动跳转到`实例`页面。
+
+**8.** 选择已经部署的应用，右侧的`查看实例详情`，可以查看到阶段信息及日志。
+
+> **如何判断某版本的应用已经部署成功并通过？**
+>
+>* 当实例出现在列表中，且实例名称后没有报错提示`icon`即为部署成功生成实例；
+>* 当容器状态条为绿色，且容器状态显示为`1/1`时，表示新部署的实例通过健康检查。
+
+## 配置网络
+
+前端应用部署成功以后，需要创建对应的网络，才能够被外部访问。
+
+**1.** 使用部署管理员的角色登录Choerodon系统，选择项目``猪齿鱼研发``。
+
+**2.** 进入`持续交付`模块，选择`部署流水线` -> `网络`。
+
+**3.** 点击`创建网络`，输入如下信息：
+
+字段名 | 含义
+|---|---|
+环境名称 | 选择要部署的环境。如果没有环境，请先完成[创建环境](../../user-guide/deployment-pipeline/environment-pipeline)
+应用名称 | 猪齿鱼前端Todo应用
+版本 | 正在运行的应用版本
+实例 | 部署的实例id
+网络名称 | 名称默认为`应用编码-4位随机码`，且可手动修改
+外部IP | k8s集群节点ip，默认随机分配节点
+端口号 | 网络开放的端口号
+目标端口号 | 网络选择的目标实例所暴露的端口号
+
+**4.** 点击`创建` 按钮，网络创建成功。
+
+## 配置域名
   
+创建对应的网络后，同时需要给网络指定外网域名，这样外部可以直接通过域名访问到前端。
 
- **1.** 使用部署管理员的角色登录Choerodon系统，选择项目``猪齿鱼研发``。
- 
- **2.** 进入`持续交付`模块，选择`部署管理`，点击`应用部署`进入应用部署界面。
- 
- **3.** 点击`部署应用`，系统会从右侧滑出部署应用界面，输入如下信息：
-    
+**1.** 使用部署管理员的角色登录Choerodon系统，选择项目`猪齿鱼研发`。
 
- -  选择应用：choerodon-front
- -  选择版本：刚才创建的应用版本
- -  选择环境： 选择要部署的环境
- -  配置信息：配置部署应用所需的信息
- -  部署模式：新建实例（新建一个应用）或 替换实例（滚动更新实例）
-					
-**4.**  点击`部署`按钮，即可完成部署。
+**2.** 进入`持续交付`模块，选择`部署流水线` -> `域名`。
 
+**3.** 点击`创建域名`，输入如下信息：
 
-<h2 id="5">查看实例部署详情</h2>
+字段名 | 含义
+|---|---|
+域名 | 测试域名
+域名地址 | choerodon.io（请填写所属环境集群主机绑定的域名及其子域名地址）
+路径 | 默认为根目录`/`，遵循`Ant path`的规范
+网络 | 选择上一步创建的网络
 
- **1.** 使用部署管理员的角色登录Choerodon系统，选择项目``猪齿鱼研发``。
- 
- **2.** 进入`持续交付`模块，选择`部署管理`，点击`应用部署`进入应用部署界面。
- 
- **3.** 点击`部署应用`即可查看实例。有四种查看视图，分别为：部署实例、单环境、单应用、多应用。
+**4.** 点击`创建` 按钮，域名创建成功。
 
-如何判断某版本的应用已经部署成功并通过？当实例出现在列表中，且实例名称后没有报错提示icon即为部署成功生成实例；当容器状态条为绿色，数值显示为1/1时表示容器数量为1且通过健康检查，点击右侧的`查看实例详情`，可以查看到阶段信息及日志。
+## 总结
 
-
-<h2 id="4">配置网络</h2>
-
-  为所选的应用配置网络。
-
- **1.** 使用部署管理员的角色登录Choerodon系统，选择项目``猪齿鱼研发``。
- 
- **2.** 进入`持续交付`模块，选择`部署管理`，点击`网络`，进入网络配置界面。
- 
- **3.** 点击`创建网络`，系统从右侧滑出创建网络界面，输入如下信息：
-
- - 环境名称：选择要部署的环境
- - 应用名称：猪齿鱼前端应用
- - 版本：刚才创建的应用版本
- - 实例：刚才部署的实例
- - 网络名称：名称默认为“应用编码-4位随机码”，且可手动修改
- - 外部IP：需要外网时填写
- - 端口号：网络开放的端口号
- - 目标端口号：网络选择的目标实例所暴露的端口号
-
-**4.** 点击`创建`按钮即可。
-
-<h2 id="4">配置域名</h2>
-  
-  为所选的应用配置域名。
-
- **1.** 使用部署管理员的角色登录Choerodon系统，选择项目``猪齿鱼研发``。
-
- **2.** 进入`持续交付`模块，选择`部署管理`，点击`域名`，进入域名管理界面。
- 
- **3.** 点击`创建域名`，系统会从右侧滑出界面，输入如下信息：
-     
-
- - 域名：测试域名
- - 域名地址：choerodon.io（请填写所属环境集群主机绑定的域名及其子域名地址）
- - 路径：choerodon-front
- - 网络：选择上一步配置的网络
-
-**4.** 点击`创建`即可。
-
-<h2 id="5">产品迭代</h2>
-
-任何产品几乎都会经历产品的初创期、成长期、成熟期。在产品的初创期，需要通过快速试错探索出有用户黏性的功能；探索成功之后，就需要快速导入用户，这时候也会产生新的需求和新的问题，不断去完善产品；在产品的相对成熟期，则可以考虑产品的变现，和新功能的延展，以提升用户活跃。因此，当一个产品开发完成上线后，产品的周期化迭代就变得非常重要。固定的周期有助于为项目团队形成规范，从而提高开发效率。
-
-Choerodon第一次发版前就准备好下个版本的需求。一般第一个版本上线后，开发人员就进入下一个版本的开发和测试。这样当问题暴露的时候，就可以迅速解决问题，优化到某个程度后，再放缓迭代节奏，这样就能更好的平衡好需求。
-
-
-
-
-
-
-
+通过上述的步骤，就可以很快速的在Choerodon 中创建并部署一个后端的服务。

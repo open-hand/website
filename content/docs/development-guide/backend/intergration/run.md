@@ -1,5 +1,5 @@
 +++
-title = "模块运行"
+title = "运行与测试"
 date = "2018-04-25T11:00:28+08:00"
 draft = false
 weight = 3
@@ -14,30 +14,112 @@ weight = 3
 
 ## 介绍
 
-本小节介绍如何在本地使用docker compose运行choerodon 微服务开发框架，并启动demo程序
+本小节介绍如何在本地通过choerodon 来进行微服务开发。
 
-## 启动相关服务
+## 启动`todo` 服务
 
-要使功能完整可用，在本地至少启动如下模块：
+进入`choerodon-todo-service`目录下，运行以下命令启动本地项目
+
+```bash
+mvn clean spring-boot:run
+```
+
+> * 本地开发服务，如果不调用其他服务，则可以不需要启动注册中心，在`TodoServiceApplication`中不需要添加`@EnableEurekaClient` 注解。
+> * 如果不需要测试到kafka相关的，可以将kafka的相关的依赖注释掉。提交时再打开。
+
+## 服务注册
+
+在`TodoServiceApplication`中添加`@EnableEurekaClient` 注解。
+
+在`application.yml`中添加关于Eureka的配置
+
+```yml
+eureka:
+  instance:
+    preferIpAddress: true
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 3
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8000/eureka/
+```
+
+如果需要自动将该服务在线上添加到路由列表中，需在`xxx.infra.util`包下创建拓展数据配置类，并继承`ExtraDataManager`，以用于自动初始化路由。示例如下：
+```java
+@ChoerodonExtraData
+public class CustomExtraDataManager implements ExtraDataManager {
+    @Override
+    public ExtraData getData() {
+        ChoerodonRouteData choerodonRouteData = new ChoerodonRouteData();
+        choerodonRouteData.setName("todo");
+        choerodonRouteData.setPath("/todo/**");
+        choerodonRouteData.setServiceId("choerodon-todo-service");
+        extraData.put(ExtraData.ZUUL_ROUTE_DATA, choerodonRouteData);
+        return extraData;
+    }
+}
+```
+
+或者以管理员权限登录平台，在`管理` -> `微服务管理` -> `路由管理` 中添加对应服务的路由信息。
+
+## 接口权限
+
+Choerodon 的接口权限遵循`RBAC`。需要在接口上添加`@Permission()`注解。
+
+包含如下参数。
+
+参数名 | 说明
+|---|---|
+level | 接口层级，ResourceLevel.SITE，ResourceLevel.ORGANIZATION，ResourceLevel.PROJECT三种
+permissionLogin | 登录允许访问，默认为false
+permissionPublic | 公开接口，默认为false
+
+其中如果层级为组织层或项目层，则接口的`mapping` 中必须包含`organization_id` 或 `project_id` 作为变量。否则`gateway-helper`校验时不会识别该权限。
+
+## 本地测试
+
+由于Choerodon 包含的服务比较多和依赖的组件较多。一般不会在本地将所有的服务都启动，只会根据自己的需要启动对应的服务。建议在服务器运行一整套环境，本地做服务的单体测试，服务器上进行集成测试。
+
+**1.** 如果不需要获取当前登录的用户信息，在`TodoServiceApplication`中不需要添加`@EnableChoerodonResourceServer` 注解。然后直接通过`postman` 或其他接口测试工具对服务提供的接口进行测试。
+
+**2.** 如果需要获取当前登录的用户信息，则需要在本地启动如下服务，进行登录。
 
 * register-server
 * api-gateway
 * gateway-helper
 * oauth-server
-* manager-service
-* iam-service
 
-<blockquote class="note">
-本地通过docker-compose启动服务，建议本地内存至少16G。建议在服务器运行一整套环境，然后本地实际开发的服务注册到服务器的`register`上。
-</blockquote>
+**3.** 然后通过`api-gateway` 的输出日志，获取登录用户的`jwt_token`。然后添加请求头。
 
-1.编写`docker-compose.yaml` 文件。
+``` json
+{
+  "Jwt_Token": jwt_token
+}
+```
 
-2.打开`git bash` 执行`docker-compose up -d`。
+## swagger 测试
 
-3.执行`docker ps` 或`docker-compose ps` 查看容器是否启动。
+将程序部署到线上以后，可以通过`swagger` 来对接口进行测试。
 
-这里提供一份`docker-compose.yaml`以供参考，具体根据本地配置进行修改
+* 打开 `http:、/api.example.com/manager/swagger-ui.html`。其中`http://api.example.com` 为平台网关对外的域名。
+
+![](/docs/development-guide/backend/intergration/images/swaggerTest1.png)
+
+* 打开任意一个`api`，点击右边红色的叹号对调用该`api`进行授权（勾选`default scope`）
+* 在弹出界面输入用户名密码，输入管理员账号密码 admin/admin
+
+![](/docs/development-guide/backend/intergration/images/swaggerTest4.png)
+
+## 启动相关服务
+
+如果需要启动其他模块，可以再[github](https://github.com/choerodon/)上获取到对应服务的最新代码，克隆到本地，将`./src/main/resources/application.yml` 复制一份出来，修改里面的默认值。根据本地环境信息，修改数据库和kafka连接。
+
+``` bash
+$ cp ./src/main/resources/application.yml ./src/main/resources/application-default.yml
+$ mvn clean spring-boot:run
+```
+
+这里提供一份`docker-compose.yaml`仅供参考，具体根据配置修改本地程序的配置。
 
 ``` yaml
 version: "3"
@@ -250,16 +332,6 @@ services:
     - "8963:8963"
 ```
 
-停止容器通过命令`docker-compose down`。
-
 > 有关Docker的更多信息请见[此处](https://docs.docker.com/)
 
 > 有关Docker-Compose的更多信息请见[此处](https://docs.docker.com/compose/overview/)
-
-## 启动todo服务
-
-进入`choerodon-todo-service`目录下，运行以下命令启动本地项目
-
-```bash
-mvn clean spring-boot:run
-```
