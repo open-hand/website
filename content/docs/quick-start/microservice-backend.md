@@ -51,6 +51,7 @@ type = "docs"
  **3.** 点击``创建应用``，系统会从右边滑出页面，在页面中输入应用编码、应用名称，并且选择应用模板，点击`创建`，即可创建一个后端应用。
  
  创建应用前，请保证搭建的gitlab中有对应的模板库，详情看文档分布式部署搭建gitlab，克隆模板仓库部分（已克隆过的请重新克隆最新的版本）
+ 
  - 应用编码：choerodon-backend
  - 应用名称：猪齿鱼后端应用
  - 选择应用模板：MicroService 
@@ -98,7 +99,9 @@ type = "docs"
  - 修改数据初始化脚本
 
     修改数据库配置,如果本地开发,请在项目根目录下创建脚本文件，注意修改对应的数据库用户密码
-**init-local-database.sh**
+
+　**init-local-database.sh**
+	
 	```
 	#!/bin/bash
     mkdir -p target
@@ -122,7 +125,7 @@ type = "docs"
 	 ![](/docs/quick-start/image/backend2.png)
 
 
-       **test_user.groovy**
+       **demo.groovy**
 		
 		package script.db
 
@@ -336,23 +339,7 @@ type = "docs"
 		   
 	![](/docs/quick-start/image/backend3.png)	
 
-**５. swagger调用api**
-
-   
-
- - 本地服务启动如图所示
-
-   ![](/docs/quick-start/image/swagg.png)
-    
- - 访问swagger地址：`http://localhost:8080/manager/swagger-ui.html`
- 
- - 如图所示
-
-   ![](/docs/quick-start/image/backend4.png)
-
-至此，后端服务一个简单的API完成。
-
- **６. 提交代码**
+ **５. 提交代码**
   
 	# 将本地代码变动提交到暂存区
 	$ git add .
@@ -362,11 +349,11 @@ type = "docs"
 	# 将本地提交推送至远程仓库对应分支
 	$ git push origin feature-1
 	
-**７. 代码集成**
+**６. 代码集成**
    
   基于feature分支运行CI。点击`持续集成`,查看 CI 执行情况。
 
-**８. 结束分支**　
+**７. 结束分支**　
 
  -  点击`应用`，进入应用管理，点击`choerodon-backend`的`分支管理`。
  -  在分支列表找到`feature-1`，点击`结束分支`。
@@ -436,11 +423,35 @@ type = "docs"
 	
 	此服务部署好之后，有可能不会注册到注册中心中，因为注册中心只会监听特定的K8s集群`命令空间`的微服务，需要检查注册中心配置的监听的命名空间。如果不在其中，可以修改注册中心的配置，将此应用所属的命名空间，加入注册中心的监听范围。
 
-![](/docs/quick-start/image/backend4.png)
+- 本地查看服务是否被注册发现地址：
+	
+	`http://localhost:8000`
 
-	然后在配置文件的REGISTER_SERVICE_NAMESPACE加入之前创建环境时候的环境code
+- 线上访问服务是否被注册发现地址：xxxxx为部署register-server时创建路由的地址
 
-![](/docs/quick-start/image/backend4.png)
+	`xxxxx/eureka/apps`
+
+**５. swagger调用api**
+
+ - 本地访问swagger地址：
+
+	`http://localhost:8080/manager/swagger-ui.html`
+ 
+ - 线上访问swagger地址：xxxxx是部署api-gateway时所创建域名的地址
+ 
+ 	`http://xxxxx:8080/manager/swagger-ui.html`
+ 
+ - 如图所示
+
+   ![](/docs/quick-start/image/backend4.png)
+
+可在swagger-ui上找到该服务，至此，后端服务一个简单的API完成。
+
+![](/docs/quick-start/image/backend5.png)
+
+	然后在配置文件的REGISTER_SERVICE_NAMESPACE加入之前创建环境时候的环境编码
+
+![](/docs/quick-start/image/backend6.png)
 
 <h2 id="5">查看实例部署详情</h2>
 
