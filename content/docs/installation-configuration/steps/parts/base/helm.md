@@ -19,7 +19,7 @@ weight = 15
 </blockquote>
 
 <blockquote class="warning">
-若集群没有开启RBAC权限认证，请忽略被小节。
+若集群没有开启RBAC权限认证，请忽略本小节。
 </blockquote>
 
 ```bash
@@ -35,7 +35,7 @@ kubectl create clusterrolebinding helm-tiller-cluster-rule --clusterrole=cluster
 
 1. 根据系统下载所需版本  
 
-    https://github.com/kubernetes/helm/releases/tag/v2.8.2
+    curl -L -o helm-v2.8.2-linux-amd64.tar.gz https://storage.googleapis.com/kubernetes-helm/helm-v2.8.2-linux-amd64.tar.gz
 1. 解压压缩包（以linux-amd64为例）
 
     ```bash
