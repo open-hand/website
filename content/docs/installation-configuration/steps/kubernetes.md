@@ -50,7 +50,7 @@ weight = 10
     Active: inactive (dead)
     ```
 
-    单状态为inactive或者提示`Unit iptables.service could not be found.`均表示iptables未启动。
+    当状态为inactive或者提示`Unit iptables.service could not be found.`均表示iptables未启动。
 
 ### 开放指定端口
 
