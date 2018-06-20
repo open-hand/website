@@ -10,6 +10,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    z-index: 2;
 }
 .blog-nav .banner-text .head{
     margin-top: 0.5rem;
@@ -26,6 +28,7 @@
     width: 100%;
     position: absolute;
     top: 1.2rem;
+    z-index: 1;
 }
 .blogs {
     background-color: #fafafa;
@@ -215,7 +218,7 @@
 /* blog single */
 .blogs .blog-post,
 .blog-menu{
-    margin-top: 0.8rem;
+    margin-top: 0.4rem;
 }
 .blogs .blog-post {
     padding: 0.4rem 0.3rem 0.35rem 0.3rem;
@@ -564,13 +567,17 @@
 @media (max-width: 767px) {
     .blog-nav{
         height: 2rem;
+        margin-bottom: 1rem;
     }
     .blog-nav .banner-text .description{
         font-size: 0.16rem;
         text-align: center;
     }
     .blog-nav img{
-        display: none;
+        width: 380%;
+        position: relative;
+        left: -580px;
+        top: -140px;
     }
     .blog-list {
         padding: 0.2rem 0.15rem;
