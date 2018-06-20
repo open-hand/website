@@ -22,79 +22,78 @@ weight = 50
 ## 部署Harbor
 
 <blockquote class="note">
-启用持久化存储请执行提前创建所指向的物理地址，PV和PVC可使用以下语句进行创建；可在部署命令中添加--debug --dry-run参数，进行渲染预览不进行部署。
+启用持久化存储请执行提前创建所对应的物理目录，PV和PVC可使用以下语句进行创建；可在部署命令中添加--debug --dry-run参数，进行渲染预览不进行部署。
 </blockquote>
 
-- 创建harbor所需PV和PVC
+### 创建harbor所需PV和PVC
 
-    ```bash
-    helm install c7n/create-pv \
-        --set type=nfs \
-        --set pv.name=harbor-adminserver-pv \
-        --set nfs.path=/u01/io-choerodon/harbor-adminserver \
-        --set nfs.server=nfs.exmple.choerodon.io \
-        --set pvc.enable=false \
-        --set size=5Gi \
-        --set "accessModes[0]=ReadWriteOnce" \
-        --name harbor-adminserver-pv --namespace=choerodon-devops-prod
-        
-    helm install c7n/create-pv \
-        --set type=nfs \
-        --set pv.name=harbor-mysql-pv \
-        --set nfs.path=/u01/io-choerodon/harbor-mysql \
-        --set nfs.server=nfs.exmple.choerodon.io \
-        --set pvc.enable=false \
-        --set size=5Gi \
-        --set "accessModes[0]=ReadWriteOnce" \
-        --name harbor-mysql-pv --namespace=choerodon-devops-prod
-        
-    helm install c7n/create-pv \
-        --set type=nfs \
-        --set pv.name=harbor-registry-pv \
-        --set nfs.path=/u01/io-choerodon/harbor-registry \
-        --set nfs.server=nfs.exmple.choerodon.io \
-        --set pvc.enable=false \
-        --set size=5Gi \
-        --set "accessModes[0]=ReadWriteOnce" \
-        --name harbor-registry-pv --namespace=choerodon-devops-prod
+```shell
+helm install c7n/create-pv \
+    --set type=nfs \
+    --set pv.name=harbor-adminserver-pv \
+    --set nfs.path=/u01/io-choerodon/harbor-adminserver \
+    --set nfs.server=nfs.example.choerodon.io \
+    --set pvc.enable=false \
+    --set size=5Gi \
+    --set "accessModes[0]=ReadWriteOnce" \
+    --name harbor-adminserver-pv --namespace=choerodon-devops-prod
+    
+helm install c7n/create-pv \
+    --set type=nfs \
+    --set pv.name=harbor-mysql-pv \
+    --set nfs.path=/u01/io-choerodon/harbor-mysql \
+    --set nfs.server=nfs.example.choerodon.io \
+    --set pvc.enable=false \
+    --set size=5Gi \
+    --set "accessModes[0]=ReadWriteOnce" \
+    --name harbor-mysql-pv --namespace=choerodon-devops-prod
+    
+helm install c7n/create-pv \
+    --set type=nfs \
+    --set pv.name=harbor-registry-pv \
+    --set nfs.path=/u01/io-choerodon/harbor-registry \
+    --set nfs.server=nfs.example.choerodon.io \
+    --set pvc.enable=false \
+    --set size=5Gi \
+    --set "accessModes[0]=ReadWriteOnce" \
+    --name harbor-registry-pv --namespace=choerodon-devops-prod
 
-    helm install c7n/create-pv \
-        --set type=nfs \
-        --set pv.name=harbor-notary-pv \
-        --set nfs.path=/u01/io-choerodon/harbor-notary \
-        --set nfs.server=nfs.exmple.choerodon.io \
-        --set pvc.enable=false \
-        --set size=5Gi \
-        --set "accessModes[0]=ReadWriteOnce" \
-        --name harbor-notary-pv --namespace=choerodon-devops-prod
+helm install c7n/create-pv \
+    --set type=nfs \
+    --set pv.name=harbor-notary-pv \
+    --set nfs.path=/u01/io-choerodon/harbor-notary \
+    --set nfs.server=nfs.example.choerodon.io \
+    --set pvc.enable=false \
+    --set size=5Gi \
+    --set "accessModes[0]=ReadWriteOnce" \
+    --name harbor-notary-pv --namespace=choerodon-devops-prod
 
-    helm install c7n/create-pv \
-        --set type=nfs \
-        --set pv.name=harbor-postgresql-pv \
-        --set nfs.path=/u01/io-choerodon/harbor-postgresql \
-        --set nfs.server=nfs.exmple.choerodon.io \
-        --set pvc.name=harbor-postgresql-pvc \
-        --set size=1Gi \
-        --set "accessModes[0]=ReadWriteOnce" \
-        --name harbor-postgresql-pv --namespace=choerodon-devops-prod
-    ```
+helm install c7n/create-pv \
+    --set type=nfs \
+    --set pv.name=harbor-postgresql-pv \
+    --set nfs.path=/u01/io-choerodon/harbor-postgresql \
+    --set nfs.server=nfs.example.choerodon.io \
+    --set pvc.name=harbor-postgresql-pvc \
+    --set size=1Gi \
+    --set "accessModes[0]=ReadWriteOnce" \
+    --name harbor-postgresql-pv --namespace=choerodon-devops-prod
+```
 
-- 部署harbor
+### 部署harbor
 
-    ```bash
-    helm install c7n/harbor \
-        --set persistence.enabled=true \
-        --set externalDomain=harbor.my.domain \
-        --set adminserver.adminPassword=Harbor12345 \
-        --set adminserver.volumes.config.selector.pv="harbor-adminserver-pv" \
-        --set mysql.volumes.config.selector.pv="harbor-mysql-pv" \
-        --set registry.volumes.config.selector.pv="harbor-registry-pv" \
-        --set notary.db.volumes.data.selector.pv="harbor-notary-pv" \
-        --set postgresql.persistence.enabled=true \
-        --set postgresql.persistence.existingClaim="harbor-postgresql-pvc" \
-        --set insecureRegistry=true \
-        --name=harbor --namespace=choerodon-devops-prod 
-    ```
+```shell
+helm install c7n/harbor \
+    --set persistence.enabled=true \
+    --set externalDomain=registry.example.choerodon.io \
+    --set adminserver.adminPassword=Harbor12345 \
+    --set adminserver.volumes.config.selector.pv="harbor-adminserver-pv" \
+    --set mysql.volumes.config.selector.pv="harbor-mysql-pv" \
+    --set registry.volumes.config.selector.pv="harbor-registry-pv" \
+    --set notary.db.volumes.data.selector.pv="harbor-notary-pv" \
+    --set postgresql.persistence.enabled=true \
+    --set postgresql.persistence.existingClaim="harbor-postgresql-pvc" \
+    --name=harbor --namespace=choerodon-devops-prod 
+```
 
 - 参数：
 
@@ -128,34 +127,29 @@ Harbor启动速度较慢请等待所有Pod都为Running后进行界面查看。
 ### 使用[kube-lego](https://github.com/jetstack/kube-lego)申请证书
 
 <blockquote class="note">
-以下讲解为通过<a href="https://github.com/jetstack/kube-lego" target="_blank">kube-lego</a>创建证书，kube-lego会自动申请证书，若集群中未安装kube-lego请忽略以下本节操作。
+以下讲解为通过<a href="https://github.com/jetstack/kube-lego" target="_blank">kube-lego</a>创建证书，kube-lego会自动申请证书。通过本站Kubernetes部署教程部署的集群默认是安装kube-lego的。若集群中未安装kube-lego请忽略以下本节操作。
 </blockquote>
 
-- 编辑harbor的ingress对象
+- 检测是否安装有kube-lego:
 
+    ```
+    # 执行命令后有返回结果则说明已部署
+    kubectl get secret --all-namespaces | grep kube-lego-account
+    ```
+
+- 编辑harbor的ingress对象
 
     ```
     kubectl edit ingress -n choerodon-devops-prod harbor-harbor-ingress
     ```
 
-    - 第一步：为ingress添加注解`kubernetes.io/tls-acme: "true"`
+    - 为ingress添加注解`kubernetes.io/tls-acme: "true"`
 
         ```
         metadata:
           annotations:
             kubernetes.io/tls-acme: "true"
         ```
-
-    - 第二步：为ingress添加添加`spec.tls`属性及其值
-        <blockquote class="note">
-        这里的secretName必须在命名空间是唯一的。secretName是必需的（即使这个secret对象不存在，因为它将由kube-lego创建）。
-        </blockquote>
-
-            spec:
-              tls:
-              - hosts:
-                - harbor.my.domain
-                secretName: harbor-cert
 
 ### 手动申请证书
 
@@ -178,7 +172,7 @@ Harbor启动速度较慢请等待所有Pod都为Running后进行界面查看。
             -v /var/lib/letsencrypt:/var/lib/letsencrypt \
             certbot/certbot:v0.19.0 \
             certonly --standalone \
-            -d harbor.my.domain  
+            -d registry.example.choerodon.io
         ```
 
 - 第二步：创建secret并修改ingress
@@ -200,5 +194,5 @@ Harbor启动速度较慢请等待所有Pod都为Running后进行界面查看。
             spec:
               tls:
               - hosts:
-                - harbor.my.domain
+                - registry.example.choerodon.io
                 secretName: harbor-cert

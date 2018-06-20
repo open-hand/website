@@ -22,7 +22,7 @@ weight = 30
 ## 部署Redis
 
 <blockquote class="note">
-启用持久化存储请执行提前创建所指向的物理地址，PV和PVC可使用以下语句进行创建；可在部署命令中添加--debug --dry-run参数，进行渲染预览不进行部署。
+启用持久化存储请执行提前创建所对应的物理目录，PV和PVC可使用以下语句进行创建；可在部署命令中添加--debug --dry-run参数，进行渲染预览不进行部署。
 </blockquote>
 
 - 创建PV和PVC
@@ -32,7 +32,7 @@ weight = 30
         --set type=nfs \
         --set pv.name=devops-redis-pv \
         --set nfs.path=/u01/io-choerodon/devops-redis \
-        --set nfs.server=nfs.exmple.choerodon.io \
+        --set nfs.server=nfs.example.choerodon.io \
         --set pvc.name=devops-redis-pvc \
         --set size=1Gi \
         --set "accessModes[0]=ReadWriteOnce" \

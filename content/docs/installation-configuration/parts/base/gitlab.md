@@ -22,7 +22,7 @@ weight = 55
 ## 部署Gitlab
 
 <blockquote class="note">
-启用持久化存储请执行提前创建所指向的物理地址，PV和PVC可使用以下语句进行创建；可在部署命令中添加--debug --dry-run参数，进行渲染预览不进行部署。
+启用持久化存储请执行提前创建所对应的物理目录，PV和PVC可使用以下语句进行创建；可在部署命令中添加--debug --dry-run参数，进行渲染预览不进行部署。
 </blockquote>
 
 1. 创建mysql所需PV和PVC
@@ -32,7 +32,7 @@ weight = 55
         --set type=nfs \
         --set pv.name=gitlab-mysql-pv \
         --set nfs.path=/u01/io-choerodon/gitlab/mysql \
-        --set nfs.server=nfs.exmple.choerodon.io \
+        --set nfs.server=nfs.example.choerodon.io \
         --set pvc.name=gitlab-mysql-pvc \
         --set size=3Gi \
         --set "accessModes[0]=ReadWriteOnce" \
@@ -83,7 +83,7 @@ weight = 55
       --set type=nfs \
       --set pv.name=gitlab-pv \
       --set nfs.path=/u01/io-choerodon/gitlab/data \
-      --set nfs.server=nfs.exmple.choerodon.io \
+      --set nfs.server=nfs.example.choerodon.io \
       --set pvc.name=gitlab-pvc \
       --set size=3Gi \
       --set "accessModes[0]=ReadWriteOnce" \
@@ -99,7 +99,7 @@ weight = 55
     helm install c7n/gitlab \
         --set persistence.enabled=true \
         --set persistence.existingClaim=gitlab-pvc \
-        --set env.config.GITLAB_EXTERNAL_URL=http://gitlab.exmple.choerodon.io \
+        --set env.config.GITLAB_EXTERNAL_URL=http://gitlab.example.choerodon.io \
         --set env.config.GITLAB_TIMEZONE=Asia/Shanghai \
         --set env.config.CHOERODON_OMNIAUTH_ENABLED=false \
         --set env.config.GITLAB_DEFAULT_CAN_CREATE_GROUP=true \
@@ -123,7 +123,7 @@ weight = 55
         --set env.config.PROMETHEUS_ENABLE=false \
         --set env.config.NODE_EXPORTER_ENABLE=false \
         --set ingress.enabled=true \
-        --set ingress.hosts[0]=gitlab.exmple.choerodon.io \
+        --set ingress.hosts[0]=gitlab.example.choerodon.io \
         --name=gitlab --namespace=choerodon-devops-prod 
     ```
 
@@ -180,7 +180,7 @@ weight = 55
 1. 推送到搭建的Gitlab中（下面语句请注意替换相应值）
 
     ```
-    git remote set-url origin http://gitlab.exmple.choerodon.io/*****.git
+    git remote set-url origin http://gitlab.example.choerodon.io/*****.git
     git push origin master:master
     ```
 
@@ -243,18 +243,17 @@ weight = 55
 
     ```bash
     helm upgrade gitlab c7n/gitlab \
-        --reuse-values \
+        -f <(helm get values gitlab) \
         --set env.config.CHOERODON_OMNIAUTH_ENABLED=true \
         --set env.config.OMNIAUTH_AUTO_SIGN_IN_WITH_PROVIDER=oauth2_generic \
         --set env.config.OMNIAUTH_BLOCK_AUTO_CREATED_USERS=false \
         --set env.config.CHOERODON_API_URL=http://api.example.choerodon.io \
         --set env.config.CHOERODON_CLIENT_ID=gitlab \
-        --namespace=choerodon-devops-prod 
     ```
 
 ## 添加Gitlab Client
 
-- 在访问搭建好的Choerodon的api，`api.exmple.choerodon.io/manager/swagger-ui.html`，选择`iam_service` -> `client-controller` -> `创建client`
+- 在访问搭建好的Choerodon的api，`api.example.choerodon.io/manager/swagger-ui.html`，选择`iam_service` -> `client-controller` -> `创建client`
   - 认证请使用用户名：admin，密码：admin
   - 提交以下数据，注意正式搭建时请替换以下值为真实值
       
@@ -271,7 +270,7 @@ weight = 55
           "resourceIds": "default",
           "scope": "default",
           "secret": "secret",
-          "webServerRedirectUri": "http://gitlab.exmple.choerodon.io"
+          "webServerRedirectUri": "http://gitlab.example.choerodon.io"
         }
         ```
 

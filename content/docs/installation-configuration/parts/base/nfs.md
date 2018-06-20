@@ -8,74 +8,67 @@ weight = 5
 
 ## 前置要求
 
-- CentOS7.2+
-
-## 结点信息
-
-|主机名(hostname)|主机IP|描述|
-|:---:|:---:|:---:|
-|vs01|192.168.1.1|nfs服务器|
-|vs02|192.168.1.2|nfs客户端|
+- 系统要求：CentOS
 
 ## NFS服务端安装及配置
 
-### 安装NFS服务端
+### 部署NFS服务端
 
-<blockquote class="note">
-在CentOS6.X及以上版本是默认已经安装了NFS服务端的，如果你操作系统的版本符合上述要求，可跳过此步，也可执行此命令进行依赖包升级。
-</blockquote>
-
-```bash
-sudo yum upgrade -y && sudo yum install -y nfs-utils portmap
-```
+- `sudo yum upgrade -y && sudo yum install -y nfs-utils portmap`
 
 ### 配置NFS服务端
 
-- NFS服务的配置文件为：`/etc/exports`，这个文件是NFS的主要配置文件，不过系统并没有默认值，所以这个文件不一定会存在，可能要使用`vim`手动建立，然后在文件里面写入配置内容。
+NFS服务的配置文件为：`/etc/exports`，这个文件是NFS的主要配置文件，不过系统并没有默认值，所以这个文件不一定会存在，可能要使用`vim`手动建立，然后在文件里面写入配置内容：
 
-    - `/etc/exports`文件内容格式：
+- `/etc/exports`文件内容格式：
 
-    ```
+    ```bash
     <输出目录> [客户端1 选项（访问权限,用户映射,其他）] [客户端2 选项（访问权限,用户映射,其他）]
     ```
 
-    - 例子：
-
-    ```bash
-    # 创建文件目录
-    mkdir -p /u01
-
-    # /u01 为上面创建的目录。
-    # 192.168.0.0/16为要连接到这台文件服务器的客户端的ip地址，这里使用的是掩码的方式。
-    # 其他配置请看本文“详细配置选项”，这里不再累述。
-    echo '/u01 192.168.0.0/16(rw,sync,no_root_squash,no_all_squash)' >> /etc/exports
-    ```
+- 例子：
+    - 创建共享目录：`mkdir /u01`
+    - 执行命令将配置写入到`/etc/exports`文件中：`echo '/u01 192.168.0.0/16(rw,sync,no_root_squash,no_all_squash)' >> /etc/exports`
+        - `/u01` 为上面创建的共享目录。
+        - `192.168.0.0/16`为要连接到这台文件服务器的客户端的ip地址，这里使用的是掩码的方式。
+        - 其他配置请看本文[详细配置选项](./#详细配置选项)，这里不再累述。
 
 ### 开启NFS服务
 
-```bash
-# 设置启动项
-systemctl enable nfs-server
+- 设置开机自启：`systemctl enable nfs-server`
+- 启动服务：`systemctl start nfs-server`
 
-# 启动服务
-systemctl start nfs-server
-```
+## 客户端挂载NFS服务器共享目录(验证NFS服务端部署)
 
-## 客户端挂载NFS服务器中的共享目录
+### 安装客户端工具包
 
-```bash
-# 创建挂的目录
-mkdir -p /var/app/data
+更新系统所有包并安装NFS工具包：
 
-# 写入配置文件，其中`192.168.1.1:/u01`为nfs服务器端ip地址和rdc的文件共享目录，`/var/app/data`为上面创建的目录，即要挂载的目录
-echo '192.168.1.1:/u01 /var/app/data nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1800 0 0' >> /etc/fstab
+- `sudo yum upgrade -y && sudo yum install -y nfs-utils`
 
-# 挂载目录，使配置生效
-mount -a
+<blockquote class="note">
+创建NFS类型的PV只需执行上述nfs-utils安装命令，以下挂载共享目录到客户端主机命令请忽略。
+</blockquote>
 
-# 查看挂载目录
-df -h
-```
+### 创建挂目录
+
+这里我们创建一个与服务端同名的目录`/u01`，安装文档其他地方都会以这个目录作为根目录进行讲述。
+
+- `mkdir /u01`
+
+### 配置挂载文件
+
+- 执行命令将配置写入到`/etc/fstab`文件中：`echo '192.168.1.1:/u01 /u01 nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1800 0 0' >> /etc/fstab`
+    - 其中`192.168.1.1:/u01`为NFS服务端IP地址和服务端共享目录。
+    - 第二个`/u01`为上面客户端创建的目录，即要挂载到的目录。
+
+### 挂载生效
+
+- `mount -a`
+
+### 验证挂载
+
+- `df -h`，记录中有`/u01`的挂载记录则表示已成功。
 
 ## 详细配置选项
 

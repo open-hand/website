@@ -32,6 +32,64 @@ weight = 1
         TCP|入方向|10255	|Read-only Kubelet API
         TCP|入方向|30000-32767|	NodePort Services**
 
+- 使用本教程部署后会安装以下组件
+
+    **组件名称**|**组件版本**
+    :-----:|:-----:
+    kube-flannel|v0.9.0
+    kube-lego|0.1.5
+    kubernetes-dashboard|v1.7.1
+    nginx-ingress-controller|0.9.0-beta.17
+    default-http-backend|1.4
+    kube-proxy|v1.8.5
+    kube-apiserver|v1.8.5
+    kube-dns|1.14.5
+    kube-controller-manager|v1.8.5
+    kube-scheduler|v1.8.5
+
+
+## 防火墙及端口检测
+
+### 检测防火墙状态
+
+- 检测firewall-cmd状态
+<pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> firewall-cmd --state</span>
+<span style="color: #ff0000;">not running</span>
+</code></pre>
+
+    `not running`表示防火墙未启动,如果出现`running`则为启动状态。
+
+- 检测iptables状态
+
+    ```bash
+    yum install iptables-services
+
+    ● iptables.service - IPv4 firewall with iptables
+    Loaded: loaded (/usr/lib/systemd/system/iptables.service; disabled; vendor preset: disabled)
+    Active: inactive (dead)
+    ```
+
+    当状态为inactive或者提示`Unit iptables.service could not be found.`均表示iptables未启动。
+
+### 开放指定端口
+
+  如果防火墙已启用，则需要开放[指定端口](./#前置要求与约定)，下面分别列举使用iptables和firewalld设置开放端口命令。
+
+- iptables
+
+    ```bash
+    $ iptables -A INPUT -p tcp --dport 6443 -j ACCEPT      # 开放6443端口
+    $ iptables -A INPUT -p tcp --dport 2379:2378 -j ACCEPT # 开放2379到2380端口
+    $ iptables save && service iptables restart            # 保存并重启iptables
+    ```
+
+- firewalld
+    
+    ```bash
+    firewall-cmd --add-port=6443/tcp --permanent # 永久开放6443端口
+    firewall-cmd --reload                        # 重新加载firewall
+    ```
+
 ## 同步服务器时区
 
 时区和时间的同步性对于服务器很重要（例如您在更新数据库时，时间的准确性对业务的影响会非常大），为避免实例上运行的业务逻辑混乱和避免网络请求错误，您需要将一台或多台服务器设置在同一时区下，比如 Asia/Shanghai 或 America/Los Angeles。您可以根据自己的业务需求并参照本文为服务器设置或者修改时区。此外，NTP（Network Time Protocol）服务能保证您的服务器的时间与标准时间同步，您可以根据本文配置 NTP 服务。
@@ -204,12 +262,83 @@ weight = 1
     ansible-playbook -i inventory/hosts -e @inventory/vars cluster.yml
     ```
 
+#### 添加节点
+
+<blockquote class="warning">
+通过本小节教程添加的节点不能是Master或Etce节点，只能是普通的Work节点。若你使用的是NFS作为存储，建议你先<a href="../parts/base/nfs/#客户端挂载nfs服务器中的共享目录" target="_blank">安装nfs-utils</a>
+</blockquote>
+
+- 若集群搭建完毕后还想再添加节点，请按以下方式进行添加：
+    - 修改kubeadm-ansible/inventory/hosts文件，在`[all]`分区按照原有格式添加新增节点信息，在`[kube-node]`分区添加新增节点名，其他分区请一定不要改动。比如原有信息如下，我们添加一个ip为192.168.56.14的node4节点：
+
+        ```
+        [all]
+        node1 ansible_host=192.168.56.11 ansible_user=root ansible_ssh_pass=vagrant ansible_become=true
+        node2 ansible_host=192.168.56.12 ansible_user=root ansible_ssh_pass=vagrant ansible_become=true
+        node3 ansible_host=192.168.56.13 ansible_user=root ansible_ssh_pass=vagrant ansible_become=true
+
+        [kube-master]
+        node1
+        node2
+        node3
+
+
+        [etcd]
+        node1
+        node2
+        node3
+
+
+        [kube-node]
+        node1
+        node2
+        node3
+        ```
+    - 修改后信息如下：
+
+        ```
+        [all]
+        node1 ansible_host=192.168.56.11 ansible_user=root ansible_ssh_pass=vagrant ansible_become=true
+        node2 ansible_host=192.168.56.12 ansible_user=root ansible_ssh_pass=vagrant ansible_become=true
+        node3 ansible_host=192.168.56.13 ansible_user=root ansible_ssh_pass=vagrant ansible_become=true
+        node4 ansible_host=192.168.56.14 ansible_user=root ansible_ssh_pass=vagrant ansible_become=true
+
+        [kube-master]
+        node1
+        node2
+        node3
+
+
+        [etcd]
+        node1
+        node2
+        node3
+
+
+        [kube-node]
+        node1
+        node2
+        node3
+        node4
+        ```
+
+    - 在node1中添加节点 
+
+    ```shell
+    cd /vagrant
+    ansible-playbook -i inventory/hosts -e @inventory/vars scale.yml
+    ```
+
 ### windows
 
 #### 使用Virtualbox启动
 - 使用Virtualbox启动请参照linux/osx启动方式运行。
 
 ## 测试环境模式
+
+<blockquote class="note">
+测试环境模式指的是在私有云或非生产级集群中部署，与正式环境模式的区别在于部署网络时使用的网络模式。
+</blockquote>
 
 ### 环境准备
 
@@ -264,9 +393,25 @@ Etcd节点和Master节点需要在相同的机器。
 
 - 编辑项目下的`kubeadm-ansible/inventory/vars`文件，修改变量`k8s_interface`的值为要部署机器的ipv4的网卡名称(centos默认是eth0)，如果不确定可使用`ifconfig`命令查看。
 
-    ```
-    k8s_interface: "eth0"
-    ```
+    - 比如主机IP地址为`192.168.1.2`,则执行`ifconfig`后会有一张网卡的`inet`属性的值就为该IP，本例中这张网卡名为`eth0`
+
+        ```
+        $ ifconfig
+
+        eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+                inet 192.168.1.2  netmask 255.255.240.0  broadcast 192.168.1.1
+                ether 00:16:3e:02:40:4f  txqueuelen 1000  (Ethernet)
+                RX packets 2402553462  bytes 2140456032098 (1.9 TiB)
+                RX errors 0  dropped 882  overruns 0  frame 0
+                TX packets 1355819977  bytes 2188695923278 (1.9 TiB)
+                TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        ```
+
+    - 设置网卡名
+    
+        ```shell
+        k8s_interface: "eth0"
+        ```
 
 - **注意**：如果各个机器之间网卡名称不一致，请将`k8s_interface`变量从`kubeadm-ansible/inventory/vars`文件删掉，并在`inventory/host`文件中给每个机器加上ip地址，比如：
 
@@ -304,10 +449,56 @@ Etcd节点和Master节点需要在相同的机器。
     ansible-playbook -i inventory/hosts reset.yml
     ```
 
+### 添加节点
+
+<blockquote class="warning">
+通过本小节教程添加的节点不能是Master或Etce节点，只能是普通的Work节点。若你使用的是NFS作为存储，建议你先<a href="../parts/base/nfs/#客户端挂载nfs服务器中的共享目录" target="_blank">安装nfs-utils</a>
+</blockquote>
+
+- 若集群搭建完毕后还想再添加节点，请按以下方式进行添加：
+    - 修改kubeadm-ansible/inventory/hosts文件，在`[all]`分区按照原有格式添加新增节点信息，在`[kube-node]`分区添加新增节点名，其他分区请一定不要改动。比如原有信息如下，我们添加一个ip为192.168.56.12的node2节点：
+
+        ```
+        [all]
+        node1 ansible_host=192.168.56.11 ansible_user=root ansible_ssh_pass=vagrant ansible_become=true
+
+        [kube-master]
+        node1
+
+        [etcd]
+        node1
+
+        [kube-node]
+        node1
+        ```
+    - 修改后信息如下：
+
+        ```
+        [all]
+        node1 ansible_host=192.168.56.11 ansible_user=root ansible_ssh_pass=vagrant ansible_become=true
+        node2 ansible_host=192.168.56.12 ansible_user=root ansible_ssh_pass=vagrant ansible_become=true
+
+        [kube-master]
+        node1
+
+        [etcd]
+        node1
+
+        [kube-node]
+        node1
+        node2
+        ```
+
+    - 执行添加节点命令
+
+        ```shell
+        ansible-playbook -i inventory/hosts -e @inventory/vars scale.yml
+        ```
+
 ## 正式环境模式
 
 <blockquote class="note">
-下面以阿里云ECS为例进行讲解，目前只支持Centos 7.2及以上版本
+正式环境模式是指在公有云或生产级环境的部署，下面以阿里云ECS为例进行讲解，其它公有云可参考本教程，但具体安装方式请咨相应云提供商。目前只支持Centos 7.2及以上版本。
 </blockquote>
 
 - 在要执行ansible脚本的机器上部署ansible运行需要的环境：
@@ -378,11 +569,27 @@ Etcd节点和Master节点必须一致。
     kube_service_addresses: 172.16.16.0/20
     ```
 
-- 编辑项目下的`kubeadm-ansible/inventory/vars`文件，修改变量`k8s_interface`的值为要部署机器的ipv4的网卡名称(Centos默认是eth0)，如果不确定可使用`ifconfig`命令查看。
+- 编辑项目下的`kubeadm-ansible/inventory/vars`文件，修改变量`k8s_interface`的值为要部署机器的ipv4的网卡名称(centos默认是eth0)，如果不确定可使用`ifconfig`命令查看。
 
-    ```
-    k8s_interface: "eth0"
-    ```
+    - 比如主机IP地址为`192.168.1.2`,则执行`ifconfig`后会有一张网卡的`inet`属性的值就为该IP，本例中这张网卡名为`eth0`
+
+        ```
+        $ ifconfig
+
+        eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+                inet 192.168.1.2  netmask 255.255.240.0  broadcast 192.168.1.1
+                ether 00:16:3e:02:40:4f  txqueuelen 1000  (Ethernet)
+                RX packets 2402553462  bytes 2140456032098 (1.9 TiB)
+                RX errors 0  dropped 882  overruns 0  frame 0
+                TX packets 1355819977  bytes 2188695923278 (1.9 TiB)
+                TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        ```
+
+    - 设置网卡名
+    
+        ```shell
+        k8s_interface: "eth0"
+        ```
 
 - **注意：** 如果各个机器之间网卡名称不一致，请将`k8s_interface`变量从`kubeadm-ansible/inventory/vars`文件删掉，并在`kubeadm-ansible/inventory/host`文件中给每个机器加上ip地址，比如：
 
@@ -599,3 +806,49 @@ Etcd节点和Master节点必须一致。
     ```
     ansible-playbook -i inventory/hosts reset.yml
     ```
+
+### 添加节点
+
+<blockquote class="warning">
+通过本小节教程添加的节点不能是Master或Etce节点，只能是普通的Work节点。若你使用的是NFS作为存储，建议你先<a href="../parts/base/nfs/#客户端挂载nfs服务器中的共享目录" target="_blank">安装nfs-utils</a>
+</blockquote>
+
+- 若集群搭建完毕后还想再添加节点，请按以下方式进行添加：
+    - 修改kubeadm-ansible/inventory/hosts文件，在`[all]`分区按照原有格式添加新增节点信息，在`[kube-node]`分区添加新增节点名，其他分区请一定不要改动。比如原有信息如下，我们添加一个ip为192.168.56.12的node2节点：
+
+        ```
+        [all]
+        node1 ansible_host=192.168.56.11 ansible_user=root ansible_ssh_pass=vagrant ansible_become=true
+
+        [kube-master]
+        node1
+
+        [etcd]
+        node1
+
+        [kube-node]
+        node1
+        ```
+    - 修改后信息如下：
+
+        ```
+        [all]
+        node1 ansible_host=192.168.56.11 ansible_user=root ansible_ssh_pass=vagrant ansible_become=true
+        node2 ansible_host=192.168.56.12 ansible_user=root ansible_ssh_pass=vagrant ansible_become=true
+
+        [kube-master]
+        node1
+
+        [etcd]
+        node1
+
+        [kube-node]
+        node1
+        node2
+        ```
+
+    - 执行添加节点命令
+
+        ```shell
+        ansible-playbook -i inventory/hosts -e @inventory/vars scale.yml
+        ```
