@@ -14,12 +14,6 @@ weight = 5
 
 ### 部署NFS服务端
 
-<blockquote class="note">
-在CentOS6.X及以上版本是默认已经安装了NFS服务端的，如果你操作系统的版本符合上述要求，可跳过此步，也可执行此命令进行依赖包升级。
-</blockquote>
-
-更新系统所有包并安装NFS工具包：
-
 - `sudo yum upgrade -y && sudo yum install -y nfs-utils portmap`
 
 ### 配置NFS服务端
@@ -44,7 +38,7 @@ NFS服务的配置文件为：`/etc/exports`，这个文件是NFS的主要配置
 - 设置开机自启：`systemctl enable nfs-server`
 - 启动服务：`systemctl start nfs-server`
 
-## 客户端挂载NFS服务器共享目录
+## 客户端挂载NFS服务器共享目录(验证NFS服务端部署)
 
 ### 安装客户端工具包
 
@@ -74,7 +68,7 @@ NFS服务的配置文件为：`/etc/exports`，这个文件是NFS的主要配置
 
 ### 验证挂载
 
-- `df -h`
+- `df -h`，记录中有`/u01`的挂载记录则表示已成功。
 
 ## 详细配置选项
 

@@ -55,6 +55,7 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
         --set env.open.SERVICES_GITLAB_PASSWORD=123456 \
         --set env.open.SERVICES_GITLAB_PROJECTLIMIT=100 \
         --set env.open.AGENT_VERSION="0.6.0" \
+        --set env.open.AGENT_REPOURL="https://openchart.choerodon.com.cn/choerodon/c7n/" \
         --set env.open.AGENT_SERVICEURL="ws://devops.service.example.choerodon.io/agent/" \
         --set ingress.enable=true \
         --set ingress.host=devops.service.example.choerodon.io \
@@ -84,8 +85,14 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
     env.open.SERVICES_GITLAB_URL|gitlab地址
     env.open.SERVICES_GITLAB_PASSWORD|通过choerodon平台创建的gitlab用户初始密码
     env.open.SERVICES_GITLAB_PROJECTLIMIT|通过choerodon平台创建的gitlab可创建项目上限
+    env.open.AGENT_VERSION|与当前Devops Service相匹配的Agent版本，不需要修改
+    env.open.AGENT_REPOURL|Agent Chart包远程仓库，不需要修改
+    env.open.AGENT_SERVICEURL|Agent与Devops Service进行链接的webSocket地址，主机域名与ingress.host相同
     persistence.enabled|启用持久化存储
     persistence.existingClaim|一定与chartmuseum挂载出来的目录相同
+    service.enable|启用service
+    ingress.enable|启用域名
+    ingress.host|设置域名，这里不要加http前缀
 
 - 验证部署
     - 验证命令

@@ -22,7 +22,7 @@ weight = 25
 ## 部署Minio
 
 <blockquote class="note">
-启用持久化存储请执行提前创建所指向的物理地址，PV和PVC可使用以下语句进行创建；可在部署命令中添加--debug --dry-run参数，进行渲染预览不进行部署。
+启用持久化存储请执行提前创建所对应的物理目录，PV和PVC可使用以下语句进行创建；可在部署命令中添加--debug --dry-run参数，进行渲染预览不进行部署。
 </blockquote>
 
 ### 创建minio所需PV和PVC

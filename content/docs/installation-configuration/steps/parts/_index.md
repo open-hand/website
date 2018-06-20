@@ -13,9 +13,9 @@ Choerodon采用Spring Cloud作为微服务框架，运行在Docker上，以Kuber
 ---
 <blockquote class="warning">
   <ul>
-  <li>请确认以下所有域名是否已映射到将要部署的集群中</li>
-  <li>以下环境变量请逐个确认，默认所有组件都通过脚本进行安装</li>
-  <li>本安装脚本基于NFS存储进行搭建，非NFS存储不能使用本脚本</li>
+  <li>部署时请逐个确认环境变量</li>
+  <li>部署时请确认设置的域名是否已映射到将要部署的集群中</li>
+  <li>安装命令基于NFS存储进行部署，非NFS存储不能使用本教程命令</li>
   <li>请确认集群中每个节点都安装了nfs-utils，若未安装请进行<a href="../nfs/#客户端挂载nfs服务器共享目录" target="_blank">安装</a></li>
   <li>请注意所有目录都是基于NFS Server主机的根目录，并非mount到的主机上的根目录，请清楚之间的关系，NFS相关信息请参考<a href="../nfs" target="_blank">这里</a></li>
   </ul>
