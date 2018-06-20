@@ -22,7 +22,7 @@ weight = 50
 ## 部署Harbor
 
 <blockquote class="note">
-启用持久化存储请执行提前创建所指向的物理地址，PV和PVC可使用以下语句进行创建；可在部署命令中添加--debug --dry-run参数，进行渲染预览不进行部署。
+启用持久化存储请执行提前创建所对应的物理目录，PV和PVC可使用以下语句进行创建；可在部署命令中添加--debug --dry-run参数，进行渲染预览不进行部署。
 </blockquote>
 
 ### 创建harbor所需PV和PVC
@@ -92,7 +92,6 @@ helm install c7n/harbor \
     --set notary.db.volumes.data.selector.pv="harbor-notary-pv" \
     --set postgresql.persistence.enabled=true \
     --set postgresql.persistence.existingClaim="harbor-postgresql-pvc" \
-    --set insecureRegistry=true \
     --name=harbor --namespace=choerodon-devops-prod 
 ```
 
@@ -128,34 +127,29 @@ Harbor启动速度较慢请等待所有Pod都为Running后进行界面查看。
 ### 使用[kube-lego](https://github.com/jetstack/kube-lego)申请证书
 
 <blockquote class="note">
-以下讲解为通过<a href="https://github.com/jetstack/kube-lego" target="_blank">kube-lego</a>创建证书，kube-lego会自动申请证书，若集群中未安装kube-lego请忽略以下本节操作。
+以下讲解为通过<a href="https://github.com/jetstack/kube-lego" target="_blank">kube-lego</a>创建证书，kube-lego会自动申请证书。通过本站Kubernetes部署教程部署的集群默认是安装kube-lego的。若集群中未安装kube-lego请忽略以下本节操作。
 </blockquote>
 
-- 编辑harbor的ingress对象
+- 检测是否安装有kube-lego:
 
+    ```
+    # 执行命令后有返回结果则说明已部署
+    kubectl get secret --all-namespaces | grep kube-lego-account
+    ```
+
+- 编辑harbor的ingress对象
 
     ```
     kubectl edit ingress -n choerodon-devops-prod harbor-harbor-ingress
     ```
 
-    - 第一步：为ingress添加注解`kubernetes.io/tls-acme: "true"`
+    - 为ingress添加注解`kubernetes.io/tls-acme: "true"`
 
         ```
         metadata:
           annotations:
             kubernetes.io/tls-acme: "true"
         ```
-
-    - 第二步：为ingress添加添加`spec.tls`属性及其值
-        <blockquote class="note">
-        这里的secretName必须在命名空间是唯一的。secretName是必需的（即使这个secret对象不存在，因为它将由kube-lego创建）。
-        </blockquote>
-
-            spec:
-              tls:
-              - hosts:
-                - registry.example.choerodon.io
-                secretName: harbor-cert
 
 ### 手动申请证书
 

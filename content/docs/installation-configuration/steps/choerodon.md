@@ -7,7 +7,7 @@ weight = 15
 ## 部署Choerodon
 
 <blockquote class="note">
-执行一键部署Choerodon命令的主机能够管理该kubernetes集群，且该集群每个节点都安装有NFS客户端程序。执行一键部署Choerodon请忽略分步部署Choerodon步骤。
+执行一键部署Choerodon命令的主机能够管理该kubernetes集群建议在Master节点执行，且该集群每个节点都安装有NFS客户端程序。执行一键部署Choerodon请忽略分步部署Choerodon步骤。
 </blockquote>
 
 ### 通过脚本部署
@@ -73,6 +73,7 @@ weight = 15
     #EVENT_STORE_SERVICE_DB=("mysql" "3306" "event_store_service" "username" "password")
     #DEVOPS_SERVICE_DB=("mysql" "3306" "devops_service" "username" "password")
     #GITLAB_SERVICE_DB=("mysql" "3306" "gitlab_service" "username" "password")
+    #AGILE_SERVICE_DB=("mysql" "3306" "agile_service" "username" "password")
     #GITLAB_DB=("mysql" "3306" "gitlabhq_production" "username" "password")
     ########################### Gitlab配置 ############################
     # 是否使用外部Gitlab，若使用请设置为true
