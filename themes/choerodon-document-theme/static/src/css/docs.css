@@ -1,3 +1,43 @@
+/* 代码块注释角标 */
+i.note-number[data-value] {
+  display: inline-block;
+  color: white !important;
+  background-color: #c00;
+  -webkit-border-radius: 100px;
+  border-radius: 100px;
+  text-align: center;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  line-height: 20px;
+  font-family: "Open Sans", "Sans", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  text-indent: -1px;
+  margin-bottom: 0.05rem;
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
+}
+
+i.note-number[data-value]::after{
+  content: attr(data-value);
+}
+
+.note-description{
+  padding: .15rem .15rem;
+}
+
+.annotation{
+  border: #e6e6e6 1px solid;
+  padding: .15rem;
+}
+.annotation-code{
+  background-color: #f7f7f7;
+  padding-bottom: .15rem;
+}
+
 .language-console.hljs{
   color: #005cc5;
 }
