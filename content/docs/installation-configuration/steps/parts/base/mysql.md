@@ -79,9 +79,9 @@ helm install c7n/mysql \
 
 - 创建choerodon所需数据库及用户并授权
 
-<blockquote class="note">
-部署完成后请注意保存用户名和密码。
-</blockquote>
+    <blockquote class="note">
+    部署完成后请注意保存用户名和密码。
+    </blockquote>
 
     ```sql
     CREATE USER 'choerodon'@'%' IDENTIFIED BY "password";
