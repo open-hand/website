@@ -1,24 +1,20 @@
 {{ $.Scratch.Set "language" (.Get 0) }} 
 <div class="annotation">
     <div class="annotation-code">
-        {{ range $index, $value :=  (split (replaceRE "[(]{1}[0-9]+[)]{1}" "$0(...)" .Inner ) "(...)") }}
+        {{ range $index, $value :=  (split (replaceRE "[(]{1}[0-9]+[)]{1}" "$0(...)" .Inner) "(...)") }}
             {{ if (findRE "[(]{1}[0-9]+[)]{1}" $value) }}
             <pre style="margin: 0 auto;padding-bottom: 0; padding-top: 0;">
                 <code class='{{ $.Scratch.Get "language" }}' style="display: table">
-                    <div style="display: flex;">
-                        <div style="display: flex;flex-direction: column;">
-                            {{ range $value := (split (replaceRE "[(]{1}[0-9]+[)]{1}" "$0" (trim $value "\n")) "\n") }}
-                            <div style="display: flex;">
-                                {{ if (findRE "[(]{1}[0-9]+[)]{1}" $value) }}
-                                <div>{{ replaceRE "[(]{1}[0-9]+[)]{1}" "" $value }}</div>
-                                <i class="note-number" data-value='{{ add $index 1 }}' style="align-self: flex-end;margin: 0"></i>
-                                {{ else }}
-                                <div>{{ $value }}</div>
-                                {{ end }}
-                            </div>
+                    <div style="display: flex;flex-direction: column;">
+                        {{ range $value := (split (replaceRE "[(]{1}[0-9]+[)]{1}" "$0" (trim $value "\n")) "\n") }}
+                        <div style="display: flex;">
+                            {{ if (findRE "[(]{1}[0-9]+[)]{1}" $value) }}
+                            <div>{{ replaceRE "[(]{1}[0-9]+[)]{1}" "" $value }}<i class="note-number" data-value='{{ add $index 1 }}' style="align-self: flex-end;margin: 0"></i></div>
+                            {{ else }}
+                            <div>{{ $value }}</div>
                             {{ end }}
                         </div>
-                        
+                        {{ end }}
                     </div>
                 </code>
             </pre>
@@ -36,8 +32,11 @@
         {{ range $index, $value := .Params }}
             {{ if (eq $index 0) }}
             {{ else }}
-            <i class="note-number" data-value='{{ $index }}'></i> {{ $value }}
-            </br>
+            <div style="display: flex;flex-direction: row">
+                <i class="note-number" data-value='{{ $index }}'></i> 
+                <div>{{ $value }}</div>
+            </div>
+
             {{ end }}
         {{ end }}
     </div>
