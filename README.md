@@ -10,3 +10,42 @@ Once your pull request is created, a Choerodon reviewer will take responsibility
 
 Choerodon thrives on community participation, and we really appreciate your
 contributions to our site and our documentation!
+
+
+## Choerodon Theme
+### Markdown Custom Style
+
+* note
+
+![](/static/img/readme/note.jpg)
+
+Usage:
+```
+{{< note >}}
+One-click deployment of Choerodon and step-by-step deployment of Choerodon require the server to be able to connect to the external network. Users can choose the appropriate installation method according to their actual situation.
+{{< /note >}}
+```
+
+* warning
+
+![](/static/img/readme/warning.jpg)
+
+Usage:
+```
+{{< warning >}}
+Etcd nodes and Master nodes must be consistent.
+{{< /warning >}}
+```
+
+* annotation
+
+![](/static/img/readme/annotation.jpg)
+
+Usage:
+```
+{{< annotation shell "[mysql pod name]Replace it with the name of the container you want to enter">}}
+kubectl get po -n choerodon-devops-prod
+kubectl exec -it [mysql pod name] -n choerodon-devops-prod bash (1)
+mysql -uroot -p${MYSQL_ROOT_PASSWORD}
+{{< /annotation >}}
+```

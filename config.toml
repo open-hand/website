@@ -8,6 +8,8 @@ defaultContentLanguageInSubdir= "true"
 prettyurls=true
 # Define the number of posts per page
 paginate = 10
+# Open highlight
+#pygmentsCodeFences = true
 
 [languages]
     [languages.en]
