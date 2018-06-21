@@ -32,6 +32,12 @@ Choerodon 解决了开发人员和运维人员面临的许多挑战。随着企�
 
     经常发布代码，缩短反馈回路，降低风险
 
+    {{< annotation shell "[mysql pod name]Replace it with the name of the container you want to enter" "vhhvasdasd asdasda sdsadasd asdasdasd [mysql pod name Replace it with the name of[mysql pod name]Replace it with the name of the container you want to ent the container you want to entasd">}}
+kubectl get po -n choerodon-devops-prod
+kubectl exec -it [mysql pod name] -n choerodon-devops-prod bash (1)
+mysql -uroot -p${MYSQL_ROOT_PASSWORD} (2)
+{{< /annotation >}}
+
 - **移动和多设备**
 
     充分利用移动设备，用户能够在多种设备使用，系统能够适应扩展的需求
