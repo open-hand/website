@@ -29,6 +29,11 @@ Choerodon采用Spring Cloud作为微服务框架，运行在Docker上，以Kuber
 - 各个服务器能够访问外网
 
 ### 需开放的端口号
+
+  <blockquote class="note">
+  如果您没有开启防火墙则无需配置该项内容
+  </blockquote>
+
 - Master(s)节点：Master(s)节点为Kubernetes主节点
 
     协议|方向|端口范围|目的

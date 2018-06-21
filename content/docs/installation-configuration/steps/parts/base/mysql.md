@@ -22,7 +22,7 @@ weight = 35
 ## 部署Mysql
 
 <blockquote class="note">
-启用持久化存储请执行提前创建所指向的物理地址，PV和PVC可使用以下语句进行创建；可在部署命令中添加--debug --dry-run参数，进行渲染预览不进行部署。
+启用持久化存储请执行提前创建所对应的物理目录，PV和PVC可使用以下语句进行创建；可在部署命令中添加--debug --dry-run参数，进行渲染预览不进行部署。
 </blockquote>
 
 ### 创建mysql所需PV和PVC
@@ -78,6 +78,10 @@ helm install c7n/mysql \
     ```
 
 - 创建choerodon所需数据库及用户并授权
+
+    <blockquote class="note">
+    部署完成后请注意保存用户名和密码。
+    </blockquote>
 
     ```sql
     CREATE USER 'choerodon'@'%' IDENTIFIED BY "password";

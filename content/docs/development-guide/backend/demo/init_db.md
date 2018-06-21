@@ -22,22 +22,16 @@ weight = 3
 
 ## 创建用户
 
-* 确保数据库启动成功
-
-* 创建项目访问的用户，执行如下命令：
+确保数据库启动成功，并创建项目访问的用户。
 ``` sql
 CREATE USER 'choerodon'@'%' IDENTIFIED BY "123456";
 ```
 
 ## 创建数据库
 
-* 用户创建成功之后，创建项目对应的数据库，执行如下命令：
+用户创建成功之后，创建项目对应的数据库，并将新创建的数据库权限赋予用户。
 ```sql
 CREATE DATABASE todo_service DEFAULT CHARACTER SET utf8;
-```
-
-* 将新创建的数据库权限赋予用户
-```sql
 GRANT ALL PRIVILEGES ON todo_service.* TO choerodon@'%';
 FLUSH PRIVILEGES;
 ```
@@ -48,12 +42,7 @@ Choerodon 采用`Liquibase` + `groovy` 的方式对数据库管理。
 
 更多有关Liguibase的资料见 [Liquibase 官网](http://www.liquibase.org/)。
 
-<<<<<<< HEAD
-1. 在`./choerodon-todo-service/src/resources/script/db/` 路径下创建`todo_swimlane.groovy`, `todo_user.groovy`, `todo_task.groovy`。
-2. 编写groovy 脚本。
-=======
 创建`groovy`文件存储的文件夹，并且创建`groovy`文件。
->>>>>>> feature-C7NF-945
 
 ``` bash
 $ mkdir -p src/main/resources/script/db

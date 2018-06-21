@@ -4,6 +4,14 @@ description = "第六步：监控部署"
 weight = 26
 +++
 
+## 前置要求与约定
+
+监控作为独立的一部分，如果您选择安装，需要准备额外的资源：
+
+- 内存: 8G及以上
+- 磁盘: ssd或高速存储介质50G及以上
+- CPU: 2核2线程及以上
+
 ## 部署监控组件
 
 <blockquote class="note">
@@ -41,9 +49,7 @@ helm repo update
     ```bash
     helm install c7n/choerodon-monitoring \
     --set global.storageType=nfs \
-    --set alertmanager.host=alertmanager.example.com \
     --set grafana.host=grafana.example.com \
-    --set prometheus.host=prometheus.example.com \
     --set global.persistence.existingClaim=monitoring-pvc \
     --set global.clusterName=example
     --namespace=monitoring
@@ -52,9 +58,7 @@ helm repo update
     参数名 | 含义 
     --- |  --- 
     global.storageType|存储类型
-    alertmanager.host|配置alertmanager的域名
     grafana.host|配置grafana的域名
-    prometheus.host|配置prometheus的域名
     global.persistence.existingClaim|存储的pvc
 
 <blockquote class="note">

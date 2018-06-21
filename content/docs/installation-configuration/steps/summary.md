@@ -21,7 +21,7 @@ weight = 30
 ### Gitlab URL
 - 文档中举例地址：`gitlab.example.choerodon.io`
 - 一键部署变量名：`GITLAB_EXTERNAL_URL`
-- [分步部署设置](../parts/base/chartmuseum/#进行部署部署)
+- [分步部署设置](../parts/base/gitlab/#部署gitlab-1)
 
 ### Harbor URL 
 - 文档中举例地址：`registry.example.choerodon.io`
@@ -36,7 +36,7 @@ weight = 30
 ### Choerodon URL
 - 文档中举例地址：`example.choerodon.io`
 - 一键部署变量名：`CHOERODON_FRONT_EXTERNAL_URL`
-- [分步部署设置](../parts/choerodon.devops/#部署choerodon-front)
+- [分步部署设置](../parts/choerodon.front/#部署choerodon-front)
 
 ### Choerodon Devops Service WebSocket URL
 - 文档中举例地址：`devops.example.choerodon.io`

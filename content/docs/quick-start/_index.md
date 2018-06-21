@@ -15,4 +15,3 @@ alwaysopen=false
 - [创建一个nginx示例](./nginx-demo)
 - [创建一个前端应用](./microservice-front)
 - [创建一个后端应用](./microservice-backend)
-- [创建一个Java库](./web-application)
