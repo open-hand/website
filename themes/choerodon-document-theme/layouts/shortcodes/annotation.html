@@ -5,9 +5,20 @@
             {{ if (findRE "[(]{1}[0-9]+[)]{1}" $value) }}
             <pre style="margin: 0 auto;padding-bottom: 0; padding-top: 0;">
                 <code class='{{ $.Scratch.Get "language" }}' style="display: table">
-                    <div style="display: flex">
-                        <div>{{ replaceRE "[(]{1}[0-9]+[)]{1}" "" $value }}</div>
-                        <i class="note-number" data-value='1' style="align-self: flex-end;margin: 0"></i>
+                    <div style="display: flex;">
+                        <div style="display: flex;flex-direction: column;">
+                            {{ range $value := (split (replaceRE "[(]{1}[0-9]+[)]{1}" "$0" (trim $value "\n")) "\n") }}
+                            <div style="display: flex;">
+                                {{ if (findRE "[(]{1}[0-9]+[)]{1}" $value) }}
+                                <div>{{ replaceRE "[(]{1}[0-9]+[)]{1}" "" $value }}</div>
+                                <i class="note-number" data-value='{{ add $index 1 }}' style="align-self: flex-end;margin: 0"></i>
+                                {{ else }}
+                                <div>{{ $value }}</div>
+                                {{ end }}
+                            </div>
+                            {{ end }}
+                        </div>
+                        
                     </div>
                 </code>
             </pre>
