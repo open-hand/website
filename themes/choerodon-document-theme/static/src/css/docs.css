@@ -410,9 +410,7 @@ i.note-number[data-value]::after{
 .docs-post  ul li {
   list-style: disc; 
 }
-.docs-post  ol li {
-  list-style: decimal; 
-}
+
 .docs-post  ul ul, 
 .docs-post  ol ol, 
 .docs-post  ul ol, 
