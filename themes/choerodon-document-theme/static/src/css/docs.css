@@ -14,7 +14,8 @@ i.note-number[data-value] {
   font-style: normal;
   font-weight: bold;
   text-indent: -1px;
-  margin-bottom: 0.05rem;
+  margin: .03rem .05rem 0 0;
+  flex-shrink:0;
   -webkit-user-select:none;
   -moz-user-select:none;
   -ms-user-select:none;
@@ -35,7 +36,7 @@ i.note-number[data-value]::after{
 }
 .annotation-code{
   background-color: #f7f7f7;
-  padding-bottom: .15rem;
+  padding: .15rem;
 }
 
 .language-console.hljs{
