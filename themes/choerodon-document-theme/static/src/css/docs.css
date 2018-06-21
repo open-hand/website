@@ -1,3 +1,9 @@
+.language-console.hljs{
+  color: #005cc5;
+}
+.language-console .bash{
+  color: #000;
+}
 .docs{
   display: flex;
   flex-direction: row;
