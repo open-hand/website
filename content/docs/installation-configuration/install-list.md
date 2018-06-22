@@ -44,12 +44,12 @@ gateway helper|网关helper|0.6.0
 oauth server|认证服务|0.6.0
 event store service|事件服务|0.6.0
 file service|文件服务|0.6.0
-hystrix dashboard|调用链仪表盘|0.6.0
-hystrix turbine|调用链监控|0.6.0
-choerodon iam front|Choerodon IAM前端|0.6.0
-gitlab service|Gitlab 服务|0.6.0
-devops service|Devops 服务|0.6.3
-devops service front|Devops 服务前端|0.6.2
-agile service|敏捷管理|0.5.2
+<!-- hystrix dashboard|调用链仪表盘|0.6.0
+hystrix turbine|调用链监控|0.6.0 -->
+choerodon iam front|Choerodon IAM前端|0.6.1
+gitlab service|Gitlab 服务|0.6.1
+devops service|Devops 服务|0.6.5
+devops service front|Devops 服务前端|0.6.5
+agile service|敏捷管理|0.5.3
 agile service front|敏捷管理前端|0.5.3
-choerodon front|Choerodon 前端|0.6.4
+choerodon front|Choerodon 前端|0.6.5

@@ -63,7 +63,7 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
         --set persistence.enabled=true \
         --set persistence.existingClaim="devops-service-pvc" \
         --name=devops-service \
-        --version=0.6.3 --namespace=choerodon-devops-prod
+        --version=0.6.5 --namespace=choerodon-devops-prod
     ```
     参数名 | 含义 
     --- |  --- 
@@ -132,7 +132,7 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
         --set env.open.GITLAB_URL="https://code.example.choerodon.io" \
         --set env.open.GITLAB_PRIVATETOKEN="choerodon-gitlab-token" \
         --name=gitlab-service \
-        --version=0.6.0 --namespace=choerodon-devops-prod
+        --version=0.6.1 --namespace=choerodon-devops-prod
     ```
     参数名 | 含义 
     --- |  --- 
@@ -171,7 +171,7 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
         --set preJob.preConfig.mysql.username=choerodon \
         --set preJob.preConfig.mysql.password=password \
         --set env.open.PRO_API_HOST="api.example.choerodon.io" \
-        --set env.open.PRO_DEVOPS_HOST="devops.service.example.choerodon.io" \
+        --set env.open.PRO_DEVOPS_HOST="ws://devops.service.example.choerodon.io" \
         --set env.open.PRO_CLIENT_ID="devops" \
         --set env.open.PRO_TITLE_NAME="Choerodon" \
         --set env.open.PRO_HEADER_TITLE_NAME="Choerodon" \
@@ -180,7 +180,7 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
         --set service.enable=true \
         --set ingress.enable=true \
         --name=choerodon-front-devops \
-        --version=0.6.2 --namespace=choerodon-devops-prod
+        --version=0.6.5 --namespace=choerodon-devops-prod
     ```
     参数名 | 含义 
     --- |  --- 
