@@ -1,7 +1,8 @@
 +++
 title = "升级指南"
-description = "升级指南"
+description = "详细描述了意见部署和分步部署的各版本升级的要求与步骤"
 weight = 9
+icon = "/img/docs/home/update.svg"
 +++
 
 ## 升级指南

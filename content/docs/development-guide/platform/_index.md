@@ -1,7 +1,8 @@
 +++
 title = "平台开发手册"
-description = "平台开发手册"
+description = "介绍如何向我们报告Issues，和如何帮助我们改进我们的程序"
 weight = 4
+icon = "/img/docs/home/22.svg"
 +++
 
 # 介绍

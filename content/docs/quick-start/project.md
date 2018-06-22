@@ -1,8 +1,9 @@
 ﻿+++
 title = "创建一个项目"
-description = ""
+description = "从创建项目、定义环境、资源等方面介绍 Choerodon 项目，让读者能够了解项目的基本概念"
 weight = 1
 type = "docs"
+icon = "/img/docs/home/10.svg"
 +++
 
 # 创建一个项目

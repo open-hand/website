@@ -1,7 +1,8 @@
 ﻿+++
 title = "使用的开源组件"
-description = ""
+description = "从微服务应用框架和DevOps平台使用的开源工具集两个方面来介绍Choerodon使用的开源产品或者工具"
 weight = 5
+icon ="/img/docs/home/4.svg"
 +++
 
 # Choerodon 使用的开源组件
