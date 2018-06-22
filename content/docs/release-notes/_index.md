@@ -1,0 +1,10 @@
++++
+title = "Release Notes"
+description = ""
+weight = 6
++++
+
+# Release Notes
+Release Notes 详细介绍了Choerodon的版本更新、改正、优化以及功能的增加。通过此文档，您可以快速了解对应版本的变更记录以及所包含的功能。
+
+* [v0.6 Release Notes](./changelog_v0.6.0) 介绍了0.6.0中微服务开发框架、持续交付和敏捷管理等功能的增强、变更等。

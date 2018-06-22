@@ -1,7 +1,8 @@
 +++
 title = "卸载"
-description = "卸载"
+description = "详细介绍了一键部署和分步部署对应的两种卸载方式"
 weight = 11
+icon = "/img/docs/home/uninstall.svg"
 +++
 
 ## 卸载一键安装的Choerodon

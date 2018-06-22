@@ -1,7 +1,8 @@
 ﻿+++
 title = "Agent"
-description = ""
+description = "Choerodon Agent是猪齿鱼持续交付部分的一个核心组件，通过主动连接devops service(部署服务),并与Kubernetes集群进行直接交互。"
 weight = 7
+icon = "/img/docs/home/choerodon-agent.svg"
 +++
 
 # Choerodon  Agent

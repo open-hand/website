@@ -1,8 +1,9 @@
 ﻿+++
 title = "系统架构"
-description = ""
+description = "从技术架构和业务架构两方面简析了Choerodon的总体系统架构的设计"
 weight = 3
 type = "docs"
+icon = "/img/docs/home/3.svg"
 +++
 
 ## 技术架构

@@ -1,7 +1,8 @@
 ﻿+++
 title = "Choerodon 是什么?"
-description = ""
+description = "介绍了Choerodon的概念,产品特征和使用价值"
 weight = 1
+icon = "/img/docs/home/1.svg"
 +++
 
 # Choerodon 是什么？

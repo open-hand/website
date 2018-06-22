@@ -7,7 +7,7 @@ alwaysopen=false
 
 ## 开发手册
 
-本用户手册介绍了Choerodon 微服务开发框架的开发流程。Choerodon的用户可以通过此章节了解每个环节的流程。使用本教程，你可以了解：
+本开发手册介绍了Choerodon 微服务开发框架的开发流程。Choerodon的用户可以通过此章节了解每个环节的流程。使用本教程，你可以了解：
 
 - [**基础开发手册**](../development-guide/basic) 介绍了如何使用我们的Choerodon 所依赖的基础框架。
 - [**后端开发手册**](../development-guide/backend) 介绍了如何使用我们的Choerodon 微服务开发框架和docker来开发一个简单的微服务。
