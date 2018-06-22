@@ -1,8 +1,8 @@
 ﻿+++
 title = "使用敏捷管理工具"
-description = ""
+description = "介绍了Choerodon的敏捷管理，从创建项目、问题、冲刺来介绍如何快速了解敏捷管理的操作方法"
 weight = 6
-draft = false
+icon = "/img/docs/home/use-agile.svg"
 +++
 
 # 使用敏捷管理工具

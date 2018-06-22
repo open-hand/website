@@ -1,7 +1,8 @@
 ﻿+++
 title = "组织层次"
-description = ""
+description = "从全局层、组织层、项目层三个方面阐述了Choerodon的组织层次"
 weight = 6
+icon = "/img/docs/home/5.svg"
 +++
 
 # Choerodon 的组织架构

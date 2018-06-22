@@ -1,7 +1,8 @@
 +++
 title = "安装要求及约定"
-description = "安装要求及约定"
+description = "详细介绍安装Choerodon时的硬件、软件、网络、端口、域名要求和基本约定"
 weight = 7
+icon = "/img/docs/home/pre-install.svg"
 +++
 
 ## 要求与约定

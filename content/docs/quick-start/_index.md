@@ -11,7 +11,4 @@ alwaysopen=false
 
 > 目前，Choerodon 支持3种类型应用的创建。**前端应用、 后端应用、Java 库**。
 
-- [创建一个项目](./project)
-- [创建一个nginx示例](./nginx-demo)
-- [创建一个前端应用](./microservice-front)
-- [创建一个后端应用](./microservice-backend)
+{{< docdir >}}

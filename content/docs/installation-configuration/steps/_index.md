@@ -1,7 +1,8 @@
 +++
 title = "安装步骤"
-description = "安装步骤"
+description = "Choerodon安装步骤的详细介绍及一些对应的注意事项"
 weight = 8
+icon = "/img/docs/home/steps.svg"
 +++
 
 ## 安装步骤

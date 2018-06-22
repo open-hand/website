@@ -1,7 +1,8 @@
 +++
 title = "组件安装列表"
-description = "组件安装列表"
+description = "详细描述了在部署与配置中安装的基础组件名称，描述以及对应的版本信息"
 weight = 5
+icon = "/img/docs/home/install-list.svg"
 +++
 
 ## 服务详情

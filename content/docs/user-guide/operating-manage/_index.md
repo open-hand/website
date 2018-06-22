@@ -1,13 +1,13 @@
 ﻿+++
 title = "运营管理"
-description = ""
+description = "本节介绍各种监控工具的使用"
 weight = 7
+icon = "/img/docs/home/18.svg"
 +++
 
 ## 介绍
 
 本节介绍各种监控工具的使用。
-
 
 ## 功能
 
