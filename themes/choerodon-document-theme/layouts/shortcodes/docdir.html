@@ -1,0 +1,9 @@
+{{ with $.Page }}
+    <ul>
+        {{ range (union .Pages .Sections).ByWeight}}
+            <li>
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a> {{ .Description }}
+            </li>
+        {{ end }}
+    </ul>
+{{ end }}
