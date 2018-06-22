@@ -24,7 +24,7 @@ helm repo update
         --set preJob.preConfig.mysql.username=choerodon \
         --set preJob.preConfig.mysql.password=password \
         --set env.open.PRO_API_HOST="api.example.choerodon.io" \
-        --set env.open.PRO_DEVOPS_HOST="devops.service.example.choerodon.io" \
+        --set env.open.PRO_DEVOPS_HOST="ws://devops.service.example.choerodon.io" \
         --set env.open.PRO_AGILE_HOST="http://minio.example.choerodon.io/agile-service/" \
         --set env.open.PRO_CLIENT_ID="choerodon" \
         --set env.open.PRO_TITLE_NAME="Choerodon" \
@@ -34,7 +34,7 @@ helm repo update
         --set service.enable=true \
         --set ingress.enable=true \
         --name=choerodon-front \
-        --version=0.6.4 --namespace=choerodon-devops-prod
+        --version=0.6.5 --namespace=choerodon-devops-prod
     ```
     参数名 | 含义 
     --- |  --- 

@@ -466,7 +466,7 @@ helm repo update
         UP
         ```
 
-### 部署hystrix dashboard
+<!-- ### 部署hystrix dashboard
 - 部署服务
 
     ```
@@ -522,7 +522,7 @@ helm repo update
     - 出现以下类似信息即为成功部署
         ```
         UP
-        ```
+        ``` -->
 
 ### 部署choerodon iam front
 - 部署服务
