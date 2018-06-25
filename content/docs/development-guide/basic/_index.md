@@ -2,7 +2,7 @@
 title = "基础开发手册"
 description = "介绍了使用Choerodon使用到的基础组件，包括如何从使用Kubernetes的yaml部署转型到使用helm chart 进行部署等一系列入门教程"
 weight = 1
-icon = "/img/docs/home/19.svg"
+icon = "&#xe61c;"
 +++
 
 <h2 id="1">介绍</h2>

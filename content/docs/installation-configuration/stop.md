@@ -2,7 +2,7 @@
 title = "启停"
 description = "介绍了如何正确启动和停止Choerodon平台"
 weight = 10
-icon = "/img/docs/home/stop.svg"
+icon = "&#xe621;"
 +++
 
 ## 停止Choerodon
