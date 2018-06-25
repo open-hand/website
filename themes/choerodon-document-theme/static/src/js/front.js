@@ -277,12 +277,8 @@ var ahtml = "<li><a class='head' >目录</a></li>";
 $(document).ready(function() {
   if ( document.getElementById("article-nav-ul")){
     if ($(window).width() >= 768) {
-        $(".content-post h2,.content-post h3").each(function () {
-            if ($(this).is("h2")){
-                ahtml = ahtml + "<li><a class='sec' id='id-" + $(this).attr("id") + "' href='#" + $(this).attr("id") + "'>" + $(this).text() + "</a></li>";
-            }else{
-                ahtml = ahtml + "<li><a class='thi' id='id-" + $(this).attr("id") + "' href='#" + $(this).attr("id") + "'>" + $(this).text() + "</a></li>";
-            }
+        $(".content-post h2").each(function () {
+            ahtml = ahtml + "<li><a class='sec' id='id-" + $(this).attr("id") + "' href='#" + $(this).attr("id") + "'>" + $(this).text() + "</a></li>";
         })
         document.getElementById("article-nav-ul").innerHTML= ahtml;
     }
@@ -294,7 +290,7 @@ $(document).ready(function() {
  */
 $(document).ready(function() {
     $("#article-nav-ul a").click(function(e){
-      $("h1,h2,h3").each(function () {
+      $("h1,h2").each(function () {
         $("#id-"+$(this).attr("id")).addClass("article-active");
         $("#id-"+$(this).attr("id")).removeClass("article-active");
       });
@@ -320,7 +316,7 @@ $(document).ready(function() {
   if($(window).width()>=768) {
       var articlenav = $('.article-menu li a');
       $(window).scroll(function () {
-          $("h1,h2,h3").each(function () {
+          $("h1,h2").each(function () {
               var dis = $(this).offset().top - $(window).scrollTop();
               if (dis < 120) {
                   for (var i = 0; i < articlenav.length; i++) {
