@@ -110,7 +110,6 @@ Gitlab Runner，用于代码提交后自动进行代码测试、构建服务的�
         --set env.concurrent=3 \
         --set env.url=http://gitlab.example.choerodon.io \
         --set env.token=token_token \
-        --set env.environment.SONAR_URL=http://sonarqube.example.choerodon.io \
         --set env.environment.DOCKER_REGISTRY=registry.example.choerodon.io \
         --set env.environment.DOCKER_USER=username \
         --set env.environment.DOCKER_PWD=password \
@@ -130,7 +129,6 @@ Gitlab Runner，用于代码提交后自动进行代码测试、构建服务的�
     env.concurrent|可以同时进行的CI数量
     env.url|Gitlab地址
     env.token|注册Runner后得到的token
-    env.environment.SONAR_URL|Sonarqube地址
     env.environment.DOCKER_REGISTRY|Docker镜像仓库地址
     env.environment.DOCKER_USER|Docker镜像仓库用户名
     env.environment.DOCKER_PWD|Docker镜像仓库用户密码
