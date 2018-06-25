@@ -2,7 +2,7 @@
 title = "系统配置"
 description = "为了让Choerodon的用户更便捷、科学地使用平台，需在用户使用前进行的系统配置，包括角色、用户、项目、环境等"
 weight = 1
-icon = "/img/docs/home/15.svg"
+icon = "&#xe60d;"
 +++
 
 <h2 id="1">介绍</h2>
