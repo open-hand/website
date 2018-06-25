@@ -1,6 +1,6 @@
 +++
-title = "第六步：监控部署"
-description = "第六步：监控部署"
+title = "第七步：监控部署"
+description = "第七步：监控部署"
 weight = 26
 +++
 

@@ -1,6 +1,6 @@
 +++
-title = "第四步：分步部署Choerodon"
-description = "第四步：分步部署Choerodon"
+title = "第五步：分步部署Choerodon"
+description = "第五步：分步部署Choerodon"
 date = 2018-03-30T13:06:38+08:00
 draft = false
 weight = 20

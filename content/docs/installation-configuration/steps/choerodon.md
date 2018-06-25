@@ -1,6 +1,6 @@
 +++
-title = "第三步：一键部署Choerodon"
-description = "第三步：一键部署Choerodon"
+title = "第四步：一键部署Choerodon"
+description = "第四步：一键部署Choerodon"
 weight = 15
 +++
 
