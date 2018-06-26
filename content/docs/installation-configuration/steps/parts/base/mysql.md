@@ -35,7 +35,7 @@ helm install c7n/create-pv \
     --set nfs.server=nfs.example.choerodon.io \
     --set pvc.name=mysql-pvc \
     --set size=3Gi \
-    --set "accessModes[0]=ReadWriteOnce" \
+    --set accessModes={ReadWriteOnce} \
     --name mysql-pv --namespace=choerodon-devops-prod
 ```
 
@@ -58,7 +58,7 @@ helm install c7n/mysql \
     persistence.existingClaim|PVC的名称
     persistence.subPath|设置将数据存储到的子目录
     service.port|设置service端口号
-    service.externalIPs[0]|设置externalIPs
+    service.externalIPs[]|设置externalIPs
     env.open.MYSQL_ROOT_PASSWORD|设置数据库root用户密码
     env.open.MYSQL_DATABASE|初始化创建的数据库名称
     env.open.MYSQL_USER|初始化创建的用户名

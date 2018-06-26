@@ -35,7 +35,7 @@ helm install c7n/create-pv \
     --set nfs.server=nfs.example.choerodon.io \
     --set pvc.enable=false \
     --set size=5Gi \
-    --set "accessModes[0]=ReadWriteOnce" \
+    --set accessModes={ReadWriteOnce} \
     --name harbor-adminserver-pv --namespace=choerodon-devops-prod
     
 helm install c7n/create-pv \
@@ -45,7 +45,7 @@ helm install c7n/create-pv \
     --set nfs.server=nfs.example.choerodon.io \
     --set pvc.enable=false \
     --set size=5Gi \
-    --set "accessModes[0]=ReadWriteOnce" \
+    --set accessModes={ReadWriteOnce} \
     --name harbor-mysql-pv --namespace=choerodon-devops-prod
     
 helm install c7n/create-pv \
@@ -55,7 +55,7 @@ helm install c7n/create-pv \
     --set nfs.server=nfs.example.choerodon.io \
     --set pvc.enable=false \
     --set size=5Gi \
-    --set "accessModes[0]=ReadWriteOnce" \
+    --set accessModes={ReadWriteOnce} \
     --name harbor-registry-pv --namespace=choerodon-devops-prod
 
 helm install c7n/create-pv \
@@ -65,7 +65,7 @@ helm install c7n/create-pv \
     --set nfs.server=nfs.example.choerodon.io \
     --set pvc.enable=false \
     --set size=5Gi \
-    --set "accessModes[0]=ReadWriteOnce" \
+    --set accessModes={ReadWriteOnce} \
     --name harbor-notary-pv --namespace=choerodon-devops-prod
 
 helm install c7n/create-pv \
@@ -75,7 +75,7 @@ helm install c7n/create-pv \
     --set nfs.server=nfs.example.choerodon.io \
     --set pvc.name=harbor-postgresql-pvc \
     --set size=1Gi \
-    --set "accessModes[0]=ReadWriteOnce" \
+    --set accessModes={ReadWriteOnce} \
     --name harbor-postgresql-pv --namespace=choerodon-devops-prod
 ```
 

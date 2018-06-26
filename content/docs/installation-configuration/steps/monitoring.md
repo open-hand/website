@@ -37,7 +37,7 @@ helm repo update
         --set nfs.server=nfs.example.com \
         --set pvc.name=monitoring-pvc \
         --set size=50Gi \
-        --set "accessModes[0]=ReadWriteOnce" \
+        --set accessModes={ReadWriteOnce} \
         --name monitoring-pv --namespace=monitoring
     ```
 <blockquote class="note">

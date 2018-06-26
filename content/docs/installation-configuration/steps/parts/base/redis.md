@@ -35,7 +35,7 @@ helm install c7n/create-pv \
     --set nfs.server=nfs.example.choerodon.io \
     --set pvc.name=devops-redis-pvc \
     --set size=1Gi \
-    --set "accessModes[0]=ReadWriteOnce" \
+    --set accessModes={ReadWriteOnce} \
     --name devops-redis-pv --namespace=choerodon-devops-prod
 ```
 
