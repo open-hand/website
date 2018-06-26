@@ -5,3 +5,5 @@ public/
 **/.DS_Store
 node_modules/
 **/*.log
+**/docslunr.json
+**/lunr.json

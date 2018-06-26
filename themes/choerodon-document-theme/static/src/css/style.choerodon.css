@@ -576,117 +576,6 @@ p {
     font-size: 0.21rem;
 }
 
-/* menu */
-
-.content-menu {
-    margin-top: 0.2rem;
-    margin-bottom: 0.2rem;
-    line-height: 1.29;
-    list-style-type: none;
-    min-width: 2.16rem;
-}
-
-.content-menu a {
-    color: black;
-    font-size: 0.14rem;
-}
-
-.content-menu .dd-item.alwaysopen>ul {
-    display: block;
-    padding-bottom: 0.12rem;
-}
-
-.content-menu .dd-item.parent>ul {
-    display: block;
-}
-
-.content-menu .dd-item.active>ul {
-    display: block;
-}
-
-.content-menu ul {
-    padding-left: 0.1rem;
-}
-
-.content-menu .dd-item {
-    margin-top: 0.08rem;
-    list-style: none;
-}
-
-.content-menu .dd-item.alwaysopen>ul {
-    display: block;
-}
-
-.content-menu .dd-item.parent>ul {
-    display: block;
-}
-
-.content-menu .dd-item.active>ul {
-    display: block;
-}
-
-.content-menu .dd-item.active>div {
-    color: #5CC2F2;
-    align-items: center;
-}
-
-.content-menu .dd-item.haschildren>div {
-    margin-left: -0.2rem;
-    align-items: center;
-    padding-left: 0;
-}
-
-.content-menu .dd-item div {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.content-menu .dd-item div * {
-    line-height: inherit;
-}
-
-.content-menu .dd-item div i.read-icon {
-    display: none;
-}
-
-.content-menu .dd-item div svg {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    order: 1;
-    width: 0.15rem;
-    cursor: pointer;
-    font-size: 0.1rem;
-    color: #999999;
-}
-
-.content-menu .dd-item div a {
-    display: flex;
-    flex: 1;
-    order: 2;
-    padding: 0;
-    color: #333333;
-    font-size: 0.14rem;
-    line-height: 2.14;
-}
-
-.content-menu .dd-item div a:hover {
-    color: #5CC2F2;
-}
-
-.content-menu .dd-item.active>div>a {
-    color: #5CC2F2;
-}
-
-.content-menu .category-icon {
-    font-size: 0.2rem;
-    color: black;
-    font-weight: 400;
-}
-
-/* menu 结束 */
-
 .content-post {
     background-color: white;
     margin-top: 0.2rem;
@@ -709,30 +598,6 @@ p {
 .content-post td {
     border: 0.01rem solid rgba(170, 170, 170, .3);
     padding: 0.05rem 0.1rem;
-}
-
-/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
-
-.content-menu::-webkit-scrollbar {
-    width: 0.04rem;
-    height: 0.06rem;
-    background-color: #F5F5F5;
-}
-
-/*定义滚动条轨道 内阴影+圆角*/
-
-.content-menu::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 0.06rem rgba(0, 0, 0, 0.3);
-    border-radius: 0.1rem;
-    background-color: #F5F5F5;
-}
-
-/*定义滑块 内阴影+圆角*/
-
-.content-menu::-webkit-scrollbar-thumb {
-    border-radius: 0.1rem;
-    -webkit-box-shadow: inset 0 0 0.06rem #dadada;
-    background-color: #555;
 }
 
 /* 图片点击放大 */
@@ -1062,14 +927,6 @@ p {
         width: 100%;
         margin-left: 0;
         margin-bottom: 0.5rem;
-    }
-    .content-menu {
-        margin-top: 0;
-        margin-bottom: 0;
-    }
-    .content-menu li {
-        padding-top: 0.2rem;
-        margin-top: 0;
     }
 /* general banner */
     .header-nav {

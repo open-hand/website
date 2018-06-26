@@ -82,7 +82,9 @@ jQuery(document).ready(function() {
   function clickLeftButton(){
     if($('.navbar-left-buttons').children('button.open').length == 1){        
         $('.navbar-left-buttons').children('button').removeClass('open');
-        $('.docs').css('left','-2.5rem');
+        console.log($('.docs-menu').css('min-width'));
+        
+        $('.docs').css('left','-'+$('.docs-menu').css('min-width'));
     }else{
         $('.navbar-left-buttons').children('button').addClass('open');
         $('.docs').css('left','0');
@@ -92,7 +94,8 @@ jQuery(document).ready(function() {
   $('.docs-post').on('click', function () {
     if($('.docs').css('left') == '0px'){
         $('.navbar-left-buttons').children('button').removeClass('open');
-        $('.docs').css('left','-2.5rem');
+        console.log($('.docs-menu').css('min-width'));
+        $('.docs').css('left','-'+$('.docs-menu').css('min-width'));
     }
   })
   // 导航栏点击事件
@@ -167,33 +170,32 @@ jQuery(document).ready(function() {
   // 初始化页面菜单栏高度
   menuChangeHeight();
 // 文档页左侧菜单栏收缩图标点击事件
-    jQuery('.dir-div').on('click', function() {
+    jQuery('.docs-menu .dd-item.haschildren>div').on('click', function() {
         var thisI = $(this).children("i");
         if(thisI.hasClass('caret-right')){
-            thisI.html('&#xe639;')
+            thisI.toggleClass("icon-arrow-up icon-arrow-down")
             thisI.removeClass('caret-right')
             thisI.addClass('caret-down')
         } else {
-            thisI.html('&#xe66f;')
+            thisI.toggleClass("icon-arrow-up icon-arrow-down")
             thisI.removeClass('caret-down')
             thisI.addClass('caret-right')
         }
         $( this ).parent().children('ul').toggle() ;
     });
 // 文档页左侧菜单栏收缩图标点击事件 结束
-  jQuery('.category').on('click', function() {
+  jQuery('.docs-menu .dd-item.haschildren>div a').on('click', function() {
       var thisI = $(this).nextAll("i:first");
       if(thisI.hasClass('caret-right')){
-          thisI.html('&#xe639;')
+        thisI.toggleClass("icon-arrow-up icon-arrow-down")
           thisI.removeClass('caret-right')
           thisI.addClass('caret-down')
       } else {
-          thisI.html('&#xe66f;')
+        thisI.toggleClass("icon-arrow-up icon-arrow-down")
           thisI.removeClass('caret-down')
           thisI.addClass('caret-right')
       }
-    $( this ).parent().parent().children('ul').toggle() ;
-    
+    $( this ).parent().parent().children('ul').toggle();
   });
   // footer 微信、微博二维码
   jQuery('.wechat').hover(function(e) {
@@ -277,12 +279,8 @@ var ahtml = "<li><a class='head' >目录</a></li>";
 $(document).ready(function() {
   if ( document.getElementById("article-nav-ul")){
     if ($(window).width() >= 768) {
-        $(".content-post h2,.content-post h3").each(function () {
-            if ($(this).is("h2")){
-                ahtml = ahtml + "<li><a class='sec' id='id-" + $(this).attr("id") + "' href='#" + $(this).attr("id") + "'>" + $(this).text() + "</a></li>";
-            }else{
-                ahtml = ahtml + "<li><a class='thi' id='id-" + $(this).attr("id") + "' href='#" + $(this).attr("id") + "'>" + $(this).text() + "</a></li>";
-            }
+        $(".content-post h2").each(function () {
+            ahtml = ahtml + "<li><a class='sec' id='id-" + $(this).attr("id") + "' href='#" + $(this).attr("id") + "'>" + $(this).text() + "</a></li>";
         })
         document.getElementById("article-nav-ul").innerHTML= ahtml;
     }
@@ -294,7 +292,7 @@ $(document).ready(function() {
  */
 $(document).ready(function() {
     $("#article-nav-ul a").click(function(e){
-      $("h1,h2,h3").each(function () {
+      $("h1,h2").each(function () {
         $("#id-"+$(this).attr("id")).addClass("article-active");
         $("#id-"+$(this).attr("id")).removeClass("article-active");
       });
@@ -320,7 +318,7 @@ $(document).ready(function() {
   if($(window).width()>=768) {
       var articlenav = $('.article-menu li a');
       $(window).scroll(function () {
-          $("h1,h2,h3").each(function () {
+          $("h1,h2").each(function () {
               var dis = $(this).offset().top - $(window).scrollTop();
               if (dis < 120) {
                   for (var i = 0; i < articlenav.length; i++) {

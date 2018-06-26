@@ -45,8 +45,6 @@ gateway helper|网关helper|0.6.0
 oauth server|认证服务|0.6.0
 event store service|事件服务|0.6.0
 file service|文件服务|0.6.0
-<!-- hystrix dashboard|调用链仪表盘|0.6.0
-hystrix turbine|调用链监控|0.6.0 -->
 choerodon iam front|Choerodon IAM前端|0.6.1
 gitlab service|Gitlab 服务|0.6.1
 devops service|Devops 服务|0.6.5
