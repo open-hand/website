@@ -39,7 +39,7 @@ helm install c7n/create-pv \
     --set nfs.server=nfs.example.choerodon.io \
     --set pvc.name=chartmuseum-pvc \
     --set size=3Gi \
-    --set "accessModes[0]=ReadWriteOnce" \
+    --set accessModes={ReadWriteOnce} \
     --name chartmuseum-pv --namespace=choerodon-devops-prod
 
 helm install c7n/create-pv \
@@ -49,7 +49,7 @@ helm install c7n/create-pv \
     --set nfs.server=nfs.example.choerodon.io \
     --set pvc.name=devops-service-pvc \
     --set size=3Gi \
-    --set "accessModes[0]=ReadWriteOnce" \
+    --set accessModes={ReadWriteOnce} \
     --name devops-service-pv --namespace=choerodon-devops-prod
 ```
 ### 进行部署

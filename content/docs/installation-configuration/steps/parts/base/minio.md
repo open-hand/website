@@ -35,7 +35,7 @@ helm install c7n/create-pv \
     --set nfs.server=nfs.example.choerodon.io \
     --set pvc.name=minio-pvc \
     --set size=3Gi \
-    --set "accessModes[0]=ReadWriteOnce" \
+    --set accessModes={ReadWriteOnce} \
     --name minio-pv --namespace=choerodon-devops-prod
 ```
 
@@ -48,7 +48,7 @@ helm install c7n/minio \
     --set env.open.MINIO_ACCESS_KEY=admin \
     --set env.open.MINIO_SECRET_KEY=password \
     --set ingress.enabled=true \
-    --set "ingress.hosts[0]"="minio.example.choerodon.io" \
+    --set ingress.hosts={minio.example.choerodon.io} \
     --name=minio --namespace=choerodon-devops-prod
 ```
 
@@ -59,7 +59,7 @@ helm install c7n/minio \
     persistence.enabled|是否启用持久化存储
     persistence.existingClaim|PVC的名称
     ingress.enabled|是否启用ingress
-    ingress.hosts[0]|域名
+    ingress.hosts|域名
     env.open.MINIO_ACCESS_KEY|用户名
     env.open.MINIO_SECRET_KEY|密码
 

@@ -84,7 +84,7 @@ Gitlab Runner，用于代码提交后自动进行代码测试、构建服务的�
         --set nfs.server=nfs.example.choerodon.io \
         --set pvc.name=runner-maven-pvc \
         --set size=5Gi \
-        --set "accessModes[0]=ReadWriteMany" \
+        --set accessModes={ReadWriteMany} \
         --name runner-maven-pv --namespace=choerodon-devops-prod
 
     helm install c7n/create-pv \
@@ -94,7 +94,7 @@ Gitlab Runner，用于代码提交后自动进行代码测试、构建服务的�
         --set nfs.server=nfs.example.choerodon.io \
         --set pvc.name=runner-cache-pvc \
         --set size=5Gi \
-        --set "accessModes[0]=ReadWriteMany" \
+        --set accessModes={ReadWriteMany} \
         --name runner-cache-pv --namespace=choerodon-devops-prod
     ```
 

@@ -35,7 +35,7 @@ helm install c7n/create-pv \
     --set nfs.server=nfs.example.choerodon.io \
     --set pvc.name=gitlab-mysql-pvc \
     --set size=3Gi \
-    --set "accessModes[0]=ReadWriteOnce" \
+    --set accessModes={ReadWriteOnce} \
     --name gitlab-mysql-pv --namespace=choerodon-devops-prod
 ```
 
@@ -84,13 +84,13 @@ helm install c7n/create-pv \
     --set nfs.server=nfs.example.choerodon.io \
     --set pvc.name=gitlab-pvc \
     --set size=3Gi \
-    --set "accessModes[0]=ReadWriteOnce" \
+    --set accessModes={ReadWriteOnce} \
     --name gitlab-pv --namespace=choerodon-devops-prod
 ```
 
 ### 部署gitlab
 <blockquote class="note">
-参数GITLAB_EXTERNAL_URL和ingress.hosts[0]这两个地址的域名必须一致，但写法不能一样，GITLAB_EXTERNAL_URL必须写上http://前缀，ingress.hosts[0]不能带上http://前缀，这两个参数使用的地方是不同的GITLAB_EXTERNAL_URL是Gitlab内置参数，ingress.hosts[0]是创建k8s中ingress对象所要使用的。
+参数GITLAB_EXTERNAL_URL和ingress.hosts[]这两个地址的域名必须一致，但写法不能一样，GITLAB_EXTERNAL_URL必须写上http://前缀，ingress.hosts[]不能带上http://前缀，这两个参数使用的地方是不同的GITLAB_EXTERNAL_URL是Gitlab内置参数，ingress.hosts[]是创建k8s中ingress对象所要使用的。
 </blockquote>
 
 ```shell
@@ -121,7 +121,7 @@ helm install c7n/gitlab \
     --set env.config.PROMETHEUS_ENABLE=false \
     --set env.config.NODE_EXPORTER_ENABLE=false \
     --set ingress.enabled=true \
-    --set ingress.hosts[0]=gitlab.example.choerodon.io \
+    --set ingress.hosts={gitlab.example.choerodon.io} \
     --name=gitlab --namespace=choerodon-devops-prod 
 ```
 
@@ -157,7 +157,7 @@ helm install c7n/gitlab \
     env.config.PROMETHEUS_ENABLE|是否开启prometheus
     env.config.NODE_EXPORTER_ENABLE|是否开启node_exporter_enable
     ingress.enabled|是否开启ingress 
-    ingress.hosts[0]|gitlab的域名
+    ingress.hosts|gitlab的域名
 
 
 ### 验证部署
