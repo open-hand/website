@@ -36,9 +36,9 @@ helm repo update
         --set nfs.path=/u01/monitoring \
         --set nfs.server=nfs.example.com \
         --set pvc.name=monitoring-pvc \
-        --set size=3Gi \
+        --set size=50Gi \
         --set "accessModes[0]=ReadWriteOnce" \
-        --name mysql-pv --namespace=monitoring
+        --name monitoring-pv --namespace=monitoring
     ```
 <blockquote class="note">
 创建pvc时注意在nfs中创建对应的目录

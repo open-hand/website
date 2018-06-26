@@ -6,9 +6,9 @@ weight = 11
 
 # 域名解析
 
-## 前置要求
-
-- 已按本站Kubernetes部署文档部署好整个集群。
+<div>
+<div>Choerodon安装和配置<span style="color: #ff0000;"><strong>必须</strong></span>使用域名，只有正确配置了域名解析才能进行安装和使用。</div>
+</div>
 
 ## 预备知识
 
@@ -22,23 +22,28 @@ weight = 11
 
 ## 域名注册
 
-<blockquote class="note">
-以阿里云域名服务为例，请确认你Kubernetes集群中的master节点可以通过公网进行访问，若不能通过公网访问请查看<a href='./#自主搭建dns'>自主搭建DNS</a>教程。
-</blockquote>
+如果您希望对外提供服务，必须注册一个域名并正确配置解析。如果仅用于测试或内部使用，可以使用[自主搭建DNS](#自主搭建dns)伪造一个域名暂时跳过域名注册环节。使用自建DNS服务需要所有用户设置自己电脑的DNS，强烈建议注册一个自己的域名。
 
 ### 域名注册流程
 
-您需要购买并拥有一个域名。购买域名的方法，请参考[如何注册域名](https://help.aliyun.com/document_detail/54068.html?spm=a2c4g.11186623.2.3.IZnRtO)。
+如果您没有域名，您需要购买一个域名。购买域名的方法，请参考[如何注册域名](https://help.aliyun.com/document_detail/54068.html?spm=a2c4g.11186623.2.3.IZnRtO)。
 
-### 服务器备案
+### 域名备案
 
-根据规定，只要是用于网站服务的服务器，都需要进行备案（约需 20 个工作日）。只有备案成功，网站才可以正常使用。备案操作请参考[阿里云备案服务](https://beian.aliyun.com/)。
+根据中华人民共和国信息产业部第十二次部务会议审议通过的《非经营性互联网信息服务备案管理办法》精神，在中华人民共和国境内提供非经营性互联网信息服务，应当办理备案。未经备案，不得在中华人民共和国境内从事非经营性互联网信息服务。而对于没有备案的网站将予以罚款和关闭。备案操作请参考[阿里云备案服务](https://beian.aliyun.com/)。
 
 ### 设置域名解析
 
-您需要将你的域名指向你集群中任意一台master节点的IP。设置域名解析的方法，请参考[如何设置域名解析](https://help.aliyun.com/document_detail/29716.html?spm=a2c4g.11186623.2.13.IZnRtO)。
+您需要将你的域名解析到你集群中任意一台master节点的IP。解析包括后边安装文档中<span style="color: #ff0000;"><strong>所有</strong></span>您定义的域名。设置域名解析的方法，请参考[如何设置域名解析](https://help.aliyun.com/document_detail/29716.html?spm=a2c4g.11186623.2.13.IZnRtO)。
+
 
 ## 自主搭建DNS
+
+如果您不想注册域名，请参考本节，使用自己搭建的DNS服务器，需要<span style="color: #ff0000;"><strong>所有用户</strong></span>手动配置DNS解析以访问相关服务。
+
+### 前置要求
+
+- 已按本站Kubernetes部署文档部署好整个集群。
 
 <blockquote class="warning">
 在进行此之前，你应该先安装Helm，安装Helm的方式请参考<a href='../parts/base/helm/'>这里</a>
@@ -51,13 +56,18 @@ weight = 11
     ```shell
     helm repo add c7n https://openchart.choerodon.com.cn/choerodon/c7n/
     ```
+
 1. 更新本地仓库信息
 
     ```shell
     helm repo update 
     ```
 
-### 进行部署
+### 部署DNS(请勿直接复制命令执行)
+
+假如您想在使用`example.choerodon.io`这个域名，则在参数中设置`config."example\.choerodon\.io"={集群ip}`，具体参数请参考下面的参数解释。
+kubernetest service是一个面向微服务架构的设计，它从k8s本身解决了容器集群的负载均衡，并开放式地支持了用户所需要的各种负载均衡方案和使用场景。由于k8s中的pod在每次创建之后的ip都不一定相同，所以这里需要指定一个service并绑定一个主机ip，使得可以使用主机ip+端口访问dns服务器。
+
 
 ```shell
 helm install c7n/dnsmasq \
@@ -75,10 +85,11 @@ helm install c7n/dnsmasq \
     service.externalIPs|service外部IP，这里请填写任意一台master节点IP
     config."example\\.choerodon\\.io"|引号中间的字符为你要设置的域名后缀，这里请将“.”用“\”进行转义，等号后面的值可以为`service.externalIPs`的值，也可为另一master节点的IP
 
-### 配置kube-dns服务
+### 配置k8s集群中的kube-dns服务
 
-- 新建名为`kube-dns.cm.yml`的文件，粘贴以下内容，注意修改相应信息：
-    - 这里的IP地址请填写`service.externalIPs`的值
+- 新建名为`kube-dns.cm.yml`的文件，粘贴以下内容，<span style="color: #ff0000;"><strong>注意修改</strong></span>相应信息：
+
+    - 这里的`192.168.1.1`替换为上一步填写`service.externalIPs`的值
 
     ```yaml
     apiVersion: v1
@@ -91,12 +102,14 @@ helm install c7n/dnsmasq \
         {"example.choerodon.io": ["192.168.1.1"]} 
     ```
 
-- 部署kube-dns配置文件
+- 应用kube-dns配置文件
+
     ```bash
     kubectl apply -f kube-dns.cm.yml
     ```
 
 - 重启kube-dns服务
+
     ```bash
     kubectl scale deployment kube-dns -n kube-system --replicas=0
     kubectl scale deployment kube-dns -n kube-system --replicas=1
@@ -112,7 +125,9 @@ helm install c7n/dnsmasq \
     example.choerodon.io has address 192.168.1.1
     ```
 
-## 访问主机添加DNS
+- 部署完成后您的DNS服务器即为您设置的`externalIP`
+
+## 设置主机DNS
 
 - [Mac设置DNS](https://jingyan.baidu.com/article/6525d4b1887abaac7d2e94ec.html)
 - [Linux设置DNS](https://jingyan.baidu.com/article/d3b74d64e80e281f77e609f6.html)
