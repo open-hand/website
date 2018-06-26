@@ -15,6 +15,7 @@ icon = "/img/docs/home/steps.svg"
 
 1. [NFS服务搭建](./nfs)
 1. [Kubernetes集群部署](./kubernetes)
+1. [域名解析](./dns)
 1. [一键部署Choerodon](./choerodon)
 1. [分步部署Choerodon](./parts)
 1. [Gitlab Runner部署](./gitlab-runner)

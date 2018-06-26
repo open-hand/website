@@ -1,10 +1,10 @@
 +++
-title = "DevOps部署"
-description = "DevOps部署"
+title = "持续交付部署"
+description = "持续交付部署"
 weight = 20
 +++
 
-## DevOps部署
+## 持续交付部署
 
 <blockquote class="warning">
 在此之前，应该准备好Mysql、Harbor、Kafka、Zookeeper、Gitlab、Minio，Chartmuseum这些组件的信息。按以下搭建顺序进行搭建，请不要随意调整搭建顺序。
