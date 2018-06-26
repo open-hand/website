@@ -16,17 +16,22 @@
     <body>
         <div id="content" class="docs">
             <!-- docs-nav -->
-            <div class="content-menu docs-menu" {{ if eq .Name "文档" }} style="display: none" {{ end }}>
+            <div class="docs-menu" {{ if eq .Name "文档" }} style="display: none" {{ end }}>
+            
+            {{- $level := 0}}
             {{- $currentNode := . }}
             {{- range  where .Site.Home.Sections.ByWeight "Type" "docs"}}
-            {{- template "section-tree-nav" dict "sect" . "currentnode" $currentNode}}
+            {{- template "section-tree-nav" dict "sect" . "currentnode" $currentNode "level" $level}}
             {{- end }}
-
+            
             <!-- templates -->
             {{- define "section-tree-nav" }}
 
             {{- $currentNode := .currentnode }}
+
+            {{- $level := (add .level 1)}}
             {{- with .sect}}
+           
             {{- if and .IsSection}}
                 {{- $numberOfPages := (add (len .Pages) (len .Sections)) }}
                 {{- safeHTML .Params.head}}
@@ -36,23 +41,23 @@
                     {{- if eq .URL $currentNode.URL}} active{{end}}
                     {{- if .Params.alwaysopen}} alwaysopen{{end -}}
                     {{- if ne $numberOfPages 0 }} haschildren{{end}}">
-                {{if eq .Name "文档"}}
-                    {{else}}
-                    <div class="dir-div">
-                    {{- if ne $numberOfPages 0 }}
-                        <a class="category" href="{{ .RelPermalink}}">{{safeHTML  .Params.Pre}}{{.Title}}{{safeHTML .Params.Post}}</a>
-                        {{else}}
-                        <a href="{{ .RelPermalink}}">{{safeHTML  .Params.Pre}}{{.Title}}{{safeHTML .Params.Post}}</a>
-                    {{end}}
-                    {{- if ne $numberOfPages 0 }}
-                        {{- if or (.IsAncestor $currentNode) (.Params.alwaysopen) }}
-                        <i class="iconfont caret-down category-icon">&#xe639;</i>
-                        {{- else -}}
-                        <i class="iconfont caret-right category-icon">&#xe66f;</i>
+                    {{- if eq .Name "文档" }}
+                    {{- else }}
+                        <div style='padding-left: {{ mul $level 0.16 }}rem;'>
+                        {{- if ne $numberOfPages 0 }}
+                            <a href="{{ .RelPermalink}}">{{safeHTML  .Params.Pre}}{{.Title}}{{safeHTML .Params.Post}}</a>
+                            {{else}}
+                            <a href="{{ .RelPermalink}}">{{safeHTML  .Params.Pre}}{{.Title}}{{safeHTML .Params.Post}}</a>
+                        {{end}}
+                        {{- if ne $numberOfPages 0 }}
+                            {{- if or (.IsAncestor $currentNode) (.Params.alwaysopen) }}
+                            <i class="iconfont caret-down icon-arrow-up"></i>
+                            {{- else -}}
+                            <i class="iconfont caret-right icon-arrow-down"></i>
+                            {{- end}}
                         {{- end}}
-                    {{- end}}
-                    </div>
-                {{end}}
+                        </div>
+                    {{- end }}
                 {{- if ne $numberOfPages 0 }}
                     <ul class="none">
                     {{- .Scratch.Set "pages" .Pages }}
@@ -62,7 +67,7 @@
                     {{- $pages := (.Scratch.Get "pages") }}
 
                     {{- range $pages.ByWeight }}
-                        {{- template "section-tree-nav" dict "sect" . "currentnode" $currentNode}}
+                        {{- template "section-tree-nav" dict "sect" . "currentnode" $currentNode "level" $level}}
                     {{- end}}
                     </ul>
                 {{- end}}
@@ -71,7 +76,7 @@
                 <li data-nav-id="{{.URL}}" class="dd-item
                 {{- if eq .URL $currentNode.URL}} active{{end -}}
                 ">
-                    <div>
+                    <div style='padding-left: {{ mul $level 0.16 }}rem;'>
                     <a href="{{ .RelPermalink}}">
                         {{safeHTML .Params.Pre}}{{.LinkTitle}}{{safeHTML .Params.Post}}
                     </a>
@@ -85,7 +90,7 @@
             <div class='docs-post content-post {{ if eq .Name "文档" }} docs-home {{ end }}' id="content-post" >
                 {{ .Content }}
             </div>
-            <div class="content-menu article-menu" {{ if eq .Name "文档" }} style="display: none" {{ end }}>
+            <div class="article-menu" {{ if eq .Name "文档" }} style="display: none" {{ end }}>
                 {{ partial "widgets/search.html" . }}
                 <!--详情页右侧标题导航栏-->
                 <ul id="article-nav-ul">
