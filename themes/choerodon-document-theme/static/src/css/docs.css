@@ -11,7 +11,6 @@ i.note-number[data-value] {
     height: 0.2rem;
     font-size: 0.12rem;
     line-height: 0.2rem;
-    font-family: "Open Sans", "Sans", sans-serif;
     font-style: normal;
     font-weight: bold;
     text-indent: -0.01rem;
@@ -119,21 +118,22 @@ i.note-number[data-value]::after {
     color: #5CC2F2;
 }
 
-.docs-menu .dd-item.haschildren>div i{
+.docs-menu .dd-item.haschildren>div i {
     font-size: 0.1rem;
     color: #314659;
     font-weight: 400;
     margin: auto 0.15rem;
-    cursor:pointer;
+    cursor: pointer;
 }
 
-.docs-menu .dd-item.active>div i{
+.docs-menu .dd-item.active>div i {
     margin: auto 0.12rem auto 0.15rem;
 }
 
 .docs-menu .dd-item.active>div>a {
     color: #5CC2F2;
 }
+
 /*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
 
 .docs-menu::-webkit-scrollbar {
@@ -458,11 +458,6 @@ i.note-number[data-value]::after {
     max-width: calc(100% - 0.32rem)
 }
 
-.docs-post b,
-.docs-post strong {
-    font-weight: 500
-}
-
 .docs-post .access-list-item a,
 .docs-post p,
 .docs-post pre {
@@ -495,7 +490,6 @@ i.note-number[data-value]::after {
     border: none;
     border-radius: 0.02rem;
     background: #f2f4f5;
-    font-family: Lucida Console, Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace
 }
 
 .docs-post pre code {
@@ -516,15 +510,12 @@ i.note-number[data-value]::after {
 .docs-post code,
 .docs-post pre code {
     color: #314659;
+    font-weight: 300;
+    word-wrap: break-word;
 }
 
 .docs-post pre code {
     padding: 0;
-}
-
-.docs-post code,
-.docs-post pre code {
-    font-weight: 300;
 }
 
 .docs-post ul ul,
