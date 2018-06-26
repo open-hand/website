@@ -82,7 +82,9 @@ jQuery(document).ready(function() {
   function clickLeftButton(){
     if($('.navbar-left-buttons').children('button.open').length == 1){        
         $('.navbar-left-buttons').children('button').removeClass('open');
-        $('.docs').css('left','-2.5rem');
+        console.log($('.docs-menu').css('min-width'));
+        
+        $('.docs').css('left','-'+$('.docs-menu').css('min-width'));
     }else{
         $('.navbar-left-buttons').children('button').addClass('open');
         $('.docs').css('left','0');
@@ -92,7 +94,8 @@ jQuery(document).ready(function() {
   $('.docs-post').on('click', function () {
     if($('.docs').css('left') == '0px'){
         $('.navbar-left-buttons').children('button').removeClass('open');
-        $('.docs').css('left','-2.5rem');
+        console.log($('.docs-menu').css('min-width'));
+        $('.docs').css('left','-'+$('.docs-menu').css('min-width'));
     }
   })
   // 导航栏点击事件
@@ -167,33 +170,32 @@ jQuery(document).ready(function() {
   // 初始化页面菜单栏高度
   menuChangeHeight();
 // 文档页左侧菜单栏收缩图标点击事件
-    jQuery('.dir-div').on('click', function() {
+    jQuery('.docs-menu .dd-item.haschildren>div').on('click', function() {
         var thisI = $(this).children("i");
         if(thisI.hasClass('caret-right')){
-            thisI.html('&#xe639;')
+            thisI.toggleClass("icon-arrow-up icon-arrow-down")
             thisI.removeClass('caret-right')
             thisI.addClass('caret-down')
         } else {
-            thisI.html('&#xe66f;')
+            thisI.toggleClass("icon-arrow-up icon-arrow-down")
             thisI.removeClass('caret-down')
             thisI.addClass('caret-right')
         }
         $( this ).parent().children('ul').toggle() ;
     });
 // 文档页左侧菜单栏收缩图标点击事件 结束
-  jQuery('.category').on('click', function() {
+  jQuery('.docs-menu .dd-item.haschildren>div a').on('click', function() {
       var thisI = $(this).nextAll("i:first");
       if(thisI.hasClass('caret-right')){
-          thisI.html('&#xe639;')
+        thisI.toggleClass("icon-arrow-up icon-arrow-down")
           thisI.removeClass('caret-right')
           thisI.addClass('caret-down')
       } else {
-          thisI.html('&#xe66f;')
+        thisI.toggleClass("icon-arrow-up icon-arrow-down")
           thisI.removeClass('caret-down')
           thisI.addClass('caret-right')
       }
-    $( this ).parent().parent().children('ul').toggle() ;
-    
+    $( this ).parent().parent().children('ul').toggle();
   });
   // footer 微信、微博二维码
   jQuery('.wechat').hover(function(e) {
