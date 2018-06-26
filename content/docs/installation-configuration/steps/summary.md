@@ -1,6 +1,6 @@
 +++
-title = "第七步：安装总结"
-description = "第七步：安装总结"
+title = "第八步：安装总结"
+description = "第八步：安装总结"
 weight = 30
 +++
 
