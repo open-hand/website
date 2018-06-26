@@ -40,7 +40,7 @@ helm install c7n/create-pv \
     --set nfs.server=nfs.example.choerodon.io \
     --set pvc.enable=false \
     --set size=3Gi \
-    --set "accessModes[0]=ReadWriteOnce" \
+    --set accessModes={ReadWriteOnce} \
     --name zookeeper-pv-00 --namespace=choerodon-devops-prod
 helm install c7n/create-pv \
     --set type=nfs \
@@ -50,7 +50,7 @@ helm install c7n/create-pv \
     --set nfs.server=nfs.example.choerodon.io \
     --set pvc.enable=false \
     --set size=3Gi \
-    --set "accessModes[0]=ReadWriteOnce" \
+    --set accessModes={ReadWriteOnce} \
     --name zookeeper-pv-01 --namespace=choerodon-devops-prod
 helm install c7n/create-pv \
     --set type=nfs \
@@ -60,7 +60,7 @@ helm install c7n/create-pv \
     --set nfs.server=nfs.example.choerodon.io \
     --set pvc.enable=false \
     --set size=3Gi \
-    --set "accessModes[0]=ReadWriteOnce" \
+    --set accessModes={ReadWriteOnce} \
     --name zookeeper-pv-02 --namespace=choerodon-devops-prod
 ```
 
