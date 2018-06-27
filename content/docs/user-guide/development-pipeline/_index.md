@@ -2,7 +2,7 @@
 title = "开发流水线"
 description = "软件开发策略，用于优化软件交付的流程，以尽快得到高质量、有价值的软件"
 weight = 3
-icon = "/img/docs/home/16.svg"
+icon = "&#xe611;"
 +++
 
 <h2 id="1">介绍</h2>
