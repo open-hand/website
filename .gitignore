@@ -7,3 +7,5 @@ node_modules/
 **/*.log
 **/docslunr.json
 **/lunr.json
+themes/**/static/css/*.css
+themes/**/static/js/*.js
