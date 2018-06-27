@@ -20,4 +20,3 @@ icon = "&#xe611;"
 
  - [**应用版本**](../development-pipeline/application-version) 由于 Choerodon 采用 Gitflow 的方式管理分支，所以对于版本的控制也是根据 Feature、Release、Hotfix 等分支上进行的。
 
- - [**应用发布**](../development-pipeline/application-release) 是可以将您研发的应用发布至其他项目使用。可发布的范围有本组织或全平台下的所有项目，并且可以控制发布应用版本的范围，使应用及应用版本在本组织或全平台共享。
