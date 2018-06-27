@@ -14,7 +14,7 @@
                                         <div class="access-list-item">
                                             <a href="{{ .RelPermalink }}">
                                                 <div class="item-head">
-                                                    <i class="iconfont">{{ .Params.icon | markdownify }}</i>
+                                                    <i class="iconfont {{ .Params.icon}}"></i>
                                                     <h4>{{ .Title }}</h4>
                                                 </div>
                                                 <p>{{ .Description }}</p>

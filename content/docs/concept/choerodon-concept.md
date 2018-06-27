@@ -2,7 +2,7 @@
 title = "Choerodon 是什么?"
 description = "介绍了Choerodon的概念,产品特征和使用价值"
 weight = 1
-icon = '&#xe605;'
+icon = 'icon-choerodon'
 +++
 
 # Choerodon 是什么？

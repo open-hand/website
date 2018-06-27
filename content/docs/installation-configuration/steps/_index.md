@@ -2,7 +2,7 @@
 title = "安装步骤"
 description = "Choerodon安装步骤的详细介绍及一些对应的注意事项"
 weight = 8
-icon = "&#xe625;"
+icon = "icon-steps"
 +++
 
 ## 安装步骤
