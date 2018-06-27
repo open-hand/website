@@ -2,7 +2,7 @@
 title = "后端开发手册"
 description = "介绍基于开发的基本工具与其具体安装配置。通过此章节，用户可完成基本开发环境的搭建"
 weight = 3
-icon = "/img/docs/home/21.svg"
+icon = "&#xe618;"
 +++
 
 <h2 id="1">介绍</h2>

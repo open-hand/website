@@ -2,7 +2,7 @@
 title = "选择安装方式"
 description = "介绍Choerodon的两种安装方式：一键部署Choerodon和分步部署Choerodon"
 weight = 6
-icon = "/img/docs/home/switch-install.svg"
+icon = "&#xe623;"
 +++
 
 ## 安装方式
