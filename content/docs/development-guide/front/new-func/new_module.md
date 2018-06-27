@@ -19,7 +19,6 @@ $ mkdir -p choerodon-front-demo/demo/src/app/demo/containers
 ``` bash
 $ cd choerodon-front-demo
 $ touch config.js
-$ touch webpack.config.js
 ```
 
 ``` js
@@ -38,15 +37,6 @@ const config = {
 };
 
 module.exports = config;
-```
-
-``` js
-// webpack.config.js
-const webpack = require('./boot/node_modules/webpack');
-
-module.exports = function (config) {
-  return config;
-};
 ```
 
 3、在子文件夹下创建`package.json`文件，并修改。
@@ -70,7 +60,7 @@ $ touch package.json
   ],
   "license": "ISC",
   "dependencies": {
-    "choerodon-front-boot": "^0.6.1"
+    "choerodon-front-boot": "0.6.2"
   }
 }
 ```
@@ -105,7 +95,7 @@ export default DEMOIndex;
 5、在`package.json` 同级的目录下，安装并启动。
 ``` bash
 $ npm install
-$ npm start
+$ npm run start
 ```
 
 6、查看效果
