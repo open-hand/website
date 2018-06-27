@@ -47,7 +47,7 @@ $ touch pom.xml
 
     <!--choerodon-starters dependency-->
     <properties>
-        <choerodon.starters.version>0.5.1.RELEASE</choerodon.starters.version>
+        <choerodon.starters.version>0.5.2.RELEASE</choerodon.starters.version>
     </properties>
     <dependencies>
         <!--spring boot-->
