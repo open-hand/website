@@ -51,7 +51,7 @@ helm repo update
     --set global.storageType=nfs \
     --set grafana.host=grafana.example.com \
     --set global.persistence.existingClaim=monitoring-pvc \
-    --set global.clusterName=example
+    --set global.clusterName=example \
     --namespace=monitoring
     ```
 
