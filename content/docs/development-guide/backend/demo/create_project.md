@@ -151,6 +151,9 @@ management:
   port: 18081
   security:
     enabled: false
+security:
+  basic:
+    enabled: fasle
 ```
 
 ``` yml
@@ -195,15 +198,18 @@ import io.choerodon.resource.annoation.EnableChoerodonResourceServer;
 // 是否允许注册到注册中心，暂时注释掉
 //@EnableEurekaClient
 @RestController
-@EnableChoerodonResourceServer
+// 是否开启猪齿鱼资源服务器
+// @EnableChoerodonResourceServer
 public class TodoServiceApplication {
     public static void main(String[] args) {
         SpringApplication.run(TodoServiceApplication.class, args);
     }
 
     @GetMapping
-    public String hello() {
-        return "hello world";
+    @Permission(level = ResourceLevel.SITE, permissionPublic = true)
+    @ApiOperation(value = "demo")
+    public ResponseEntity<String> hello() {
+        return new ResponseEntity<String>("hello world", HttpStatus.OK);
     }
 }
 ```
