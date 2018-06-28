@@ -30,11 +30,12 @@ helm repo update
         --set env.open.PRO_TITLE_NAME="Choerodon" \
         --set env.open.PRO_HEADER_TITLE_NAME="Choerodon" \
         --set env.open.PRO_HTTP="http" \
+        --set env.open.PRO_FILE_SERVER="http://minio.example.com" \
         --set ingress.host="example.choerodon.io" \
         --set service.enable=true \
         --set ingress.enable=true \
         --name=choerodon-front \
-        --version=0.6.5 --namespace=choerodon-devops-prod
+        --version=0.7.0 --namespace=choerodon-devops-prod
     ```
     参数名 | 含义 
     --- |  --- 
@@ -46,6 +47,7 @@ helm repo update
     env.open.PRO_TITLE_NAME|页面显示标题
     env.open.PRO_HEADER_TITLE_NAME|页面header标题
     env.open.PRO_HTTP|使用协议
+    env.open.PRO_FILE_SERVER|minio地址
     service.enable|创建service对象
     ingress.enable|创建ingress对象
     ingress.host|域名地址，此处不能带http://
