@@ -30,7 +30,7 @@ public class CustomExtraDataManager implements ExtraDataManager {
     }
 }
 ```
-在`TodoServiceApplication`中添加`@EnableEurekaClient` 注解。
+在`TodoServiceApplication`中添加`@EnableEurekaClient` 注解和`@EnableChoerodonResourceServer` 注解。
 
 在`applicationyml`中添加关于Eureka的配置
 
