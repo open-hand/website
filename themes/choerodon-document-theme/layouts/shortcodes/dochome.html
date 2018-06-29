@@ -8,7 +8,7 @@
                         {{ range (union .Pages .Sections).ByWeight}}
                             {{ if .Params.unhome }}
                             {{ else }}
-                                {{ if and ((isset .Params "description") (isset .Params "icon")) }}
+                            {{ if and (isset .Params "description") (isset .Params "icon") (ne .Params.icon "") (ne .Description "") }}
                                     {{ $.Scratch.Set "card" true }}
                                     <li>
                                         <div class="access-list-item">
