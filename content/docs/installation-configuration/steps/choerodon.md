@@ -125,7 +125,7 @@ weight = 15
 
     ```
     curl -o choerodon-install.sh \
-        https://file.choerodon.com.cn/choerodon-install/install-0.6.sh && \
+        https://file.choerodon.com.cn/choerodon-install/install-0.7.sh && \
     sh choerodon-install.sh values.sh
     ```
 
