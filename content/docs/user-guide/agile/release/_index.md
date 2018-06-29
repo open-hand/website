@@ -1,6 +1,6 @@
 ﻿+++
 title = "发布版本"
-description = ""
+description = "根据项目周期，您可以对软件项目追踪不同的版本，同时可以将对应的问题分配到版本中"
 weight = 4
 +++
 

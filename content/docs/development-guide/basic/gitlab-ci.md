@@ -1,6 +1,6 @@
 +++
 title = "持续集成"
-description = "持续集成"
+description = ""
 weight = 2
 +++
 

@@ -1,6 +1,7 @@
 ﻿+++
 title = "LDAP"
 weight = 5
+description = "是对组织应用的LDAP信息设置的管理"
 +++
 
 # LDAP

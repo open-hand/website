@@ -1,6 +1,6 @@
 ﻿+++
 title = "节点概述监控"
-description = ""
+description = "显示 Kubernetes 集群中的节点指标"
 weight = 21
 +++
 

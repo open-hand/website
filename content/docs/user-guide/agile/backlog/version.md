@@ -1,6 +1,6 @@
 ﻿+++
 title = "划分版本"
-description = ""
+description = "您将了解到版本的含义、如何创建一个新版本，以及对问题进行版本划分"
 weight = 3
 +++
 

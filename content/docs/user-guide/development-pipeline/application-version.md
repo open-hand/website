@@ -1,6 +1,6 @@
 ﻿+++
 title = "应用版本"
-description = ""
+description = "由于 Choerodon 采用 Gitflow 的方式管理分支，所以对于版本的控制也是根据 Feature、Release、Hotfix 等分支上进行的"
 weight = 5
 +++
 

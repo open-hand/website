@@ -1,6 +1,7 @@
 +++
 title = "Root用户设置"
 weight = 5
+description = "Root用户是最高权限管理员，可以管理平台及平台中所有组织和项目"
 +++
 
 # Root用户设置

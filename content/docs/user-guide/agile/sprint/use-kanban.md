@@ -1,6 +1,6 @@
 ﻿+++
 title = "使用看板"
-description = ""
+description = "了解看板各种功能，以及如何使用一块看板去管理项目工作"
 weight = 1
 +++
 

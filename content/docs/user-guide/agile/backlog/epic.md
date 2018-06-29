@@ -1,6 +1,6 @@
 ﻿+++
 title = "分配史诗"
-description = ""
+description = "您将了解到史诗的含义、如何创建一个新史诗，以及对史诗作出分配"
 weight = 4
 +++
 

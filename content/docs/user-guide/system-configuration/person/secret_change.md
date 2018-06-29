@@ -1,6 +1,7 @@
 ﻿+++
 title = "修改密码"
 weight = 2
+description = "非LDAP用户可以修改自己的登录密码"
 +++
 
 # 修改密码

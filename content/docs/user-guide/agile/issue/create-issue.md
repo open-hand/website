@@ -1,6 +1,6 @@
 ﻿+++
 title = "问题创建"
-description = ""
+description = "您将了解到如何创建一个新问题，以及了解问题详情各字段的含义"
 weight =1
 +++
 

@@ -1,6 +1,6 @@
 +++
 title = "从yaml到helm"
-description = "从yaml到helm"
+description = "讲述了如何在将一份Kubernetes 部署文件加工成Choerodon 平台所使用的helm chart文件"
 weight = 1
 +++
 

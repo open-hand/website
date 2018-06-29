@@ -1,6 +1,6 @@
 ﻿+++
 title = "结束冲刺"
-description = ""
+description = "通过此页面，您将了解如何结束一个冲刺并关闭其对应的看板"
 weight = 5
 +++
 

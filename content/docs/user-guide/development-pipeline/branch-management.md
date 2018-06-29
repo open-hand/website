@@ -1,6 +1,6 @@
 ﻿+++
 title = "分支管理"
-description = ""
+description = "采用的 Gitflow 工作流模式，有Master和Develop两个默认分支。在持续交付过程中对 Feature、Release、Hotfix 等分支进行管理。结束分支可自动触发分支合并和持续集成，可在流水线查看代码集成情况"
 weight = 3
 +++
 

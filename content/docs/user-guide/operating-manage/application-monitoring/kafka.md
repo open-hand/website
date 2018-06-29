@@ -1,6 +1,6 @@
 +++
 title = "Kafka监控"
-description = ""
+description = "监控kafaka的topic,消费延迟等"
 weight = 11
 +++
 

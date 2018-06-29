@@ -1,6 +1,6 @@
 +++
 title = "ElasicSearch监控"
-description = ""
+description = "监控ElasticSearch数据库性能指标，如任务，CG等"
 weight = 10
 +++
 

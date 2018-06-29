@@ -1,6 +1,6 @@
 ﻿+++
 title = "设置"
-description = ""
+description = "设置是敏捷模块使用过程中一些能便捷您操作的设置"
 weight = 7
 +++
 
