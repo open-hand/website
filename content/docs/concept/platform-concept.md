@@ -3,7 +3,7 @@ title = "平台概念"
 description = "简短介绍了Choerodon平台所涉及的一些专业名词的概念，包括项目、应用版本、应用实例等"
 weight = 2
 type = "docs"
-icon = "&#xe603;"
+icon = "icon-platform-concept"
 +++
 
 # 平台概念

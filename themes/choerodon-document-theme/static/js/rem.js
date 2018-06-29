@@ -1,1 +1,30 @@
-var remWidth=document.documentElement.clientWidth;!function(e){var t,n=e.document.documentElement;function i(){var e=document.documentElement.clientWidth,t=(remWidth=e)/14.4;e<768&&(t=e/3.75),n.style.fontSize=t+"px"}e.addEventListener("resize",function(){clearTimeout(t),t=setTimeout(i,10)},!1),e.addEventListener("pageshow",function(e){e.persisted&&(clearTimeout(t),t=setTimeout(i,10))},!1),i()}(window);
+;
+var remWidth = document.documentElement.clientWidth;
+(function (win) {
+    var doc = win.document;
+    var docEl = doc.documentElement;
+    var tid;
+
+    function refreshRem() {
+        var width = document.documentElement.clientWidth;
+        remWidth = width;
+        var rem = width / 14.4;
+        if(width < 768){
+            rem = width / 3.75;
+        }
+        docEl.style.fontSize = rem + 'px';
+    }
+
+    win.addEventListener('resize', function () {
+        clearTimeout(tid);
+        tid = setTimeout(refreshRem, 10);
+    }, false);
+    win.addEventListener('pageshow', function (e) {
+        if (e.persisted) {
+            clearTimeout(tid);
+            tid = setTimeout(refreshRem, 10);
+        }
+    }, false);
+
+    refreshRem();
+})(window);
