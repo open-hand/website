@@ -15,6 +15,4 @@ weight = 2
 
 <h2 id="1">功能</h2>
 
-- [**路由管理**](../microservice-management/route) 用于管理平台路由。
-
-
+{{< docdir >}}
