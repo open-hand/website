@@ -74,7 +74,7 @@ paginate = 10
 
 [[languages.zh.menu.main]]
     name = "v0.6"
-    url  = "http://v0-6.choerodon.io/zh/"
+    url  = "/zh/"
     weight = 6
     identifier = "version"
     pre = "<i class='iconfont'>&#xe600;</i>"
@@ -87,7 +87,7 @@ paginate = 10
 
     [[languages.zh.menu.main]]
     name = "v0.6"
-    url  = "http://v0-6.choerodon.io/zh/"
+    url  = "/zh/"
     weight = 2
     parent = "version"
 
