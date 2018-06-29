@@ -77,7 +77,7 @@ paginate = 10
     url  = "/zh/"
     weight = 6
     identifier = "version"
-    pre = "<i class='iconfont' class="arrow-down"></i>"
+    pre = "<i class='iconfont' class='arrow-down'></i>"
 
     [[languages.zh.menu.main]]
     name = "v0.6"
