@@ -73,16 +73,22 @@ paginate = 10
     identifier = "github"
 
 [[languages.zh.menu.main]]
-    name = "v0.6"
+    name = "v0.7"
     url  = "/zh/"
     weight = 6
     identifier = "version"
-    pre = "<i class='iconfont' class='arrow-down'></i>"
+    pre = "<i class='iconfont'>&#xe600;</i>"
+    
+    [[languages.zh.menu.main]]
+    name = "v0.7"
+    url  = "/zh/"
+    weight = 1
+    parent = "version"
 
     [[languages.zh.menu.main]]
     name = "v0.6"
-    url  = "/zh/"
-    weight = 1
+    url  = "http://v0-6.choerodon.io/zh/"
+    weight = 2
     parent = "version"
 
     [[languages.zh.menu.main]]
