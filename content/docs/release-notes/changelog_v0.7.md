@@ -5,4 +5,4 @@ description = "介绍了0.7中微服务开发框架、持续交付和敏捷管�
 icon = "icon-release-notes"
 +++
 
-{{< readfile file="/static/release/CHANGELOG_V0.7.0_zh.md" markdown="true" >}}
+{{< readfile file="/static/release/CHANGELOG_v0.7.0_zh.md" markdown="true" >}}
