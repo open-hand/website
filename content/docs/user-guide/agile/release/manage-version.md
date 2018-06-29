@@ -36,6 +36,6 @@ weight = 1
 
 ## 更多操作
 
-- [规划冲刺](../../backlog/sprint1)
+- [规划冲刺](../../backlog/sprint)
 - [如何配置看板](../../sprint/manage-kanban)
 - [模块管理](../../component)

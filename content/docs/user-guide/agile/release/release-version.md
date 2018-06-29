@@ -33,4 +33,4 @@ weight = 2
 
 - [创建问题](../../issue/create-issue)
 - [创建看板](../../sprint/create-kanban)
-- [创建冲刺](../../backlog/sprint1/#创建冲刺)
+- [创建冲刺](../../backlog/sprint/#创建冲刺)

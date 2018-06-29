@@ -47,4 +47,4 @@ weight =1
 ## 更多操作
 - [寻找一个问题](../search-issue/)
 - [查看和编辑问题](../manage-issue/)
-- [创建一个冲刺](../../backlog/sprint1)
+- [创建一个冲刺](../../backlog/sprint)
