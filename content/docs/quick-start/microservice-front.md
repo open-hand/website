@@ -2,7 +2,7 @@
 title = "创建一个前端应用"
 description = "从创建前端应用、创建前端应用模板、开发前端应用、生成版本、部署应用、配置网络、配置域名等方面介绍"
 weight = 3
-icon = "&#xe615;"
+icon = "icon-microservice-front"
 +++
 
 # 创建一个前端应用

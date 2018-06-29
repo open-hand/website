@@ -1,1 +1,393 @@
-.case-studies-header .top-white-nav.top-nav{box-shadow:none}.case-nav{margin-bottom:1.1rem;width:100%;text-align:center;color:rgba(0,0,0,.65);padding:0;display:flex;flex-direction:column;justify-content:center}.case-nav h1{font-size:.48rem;color:rgba(0,0,0,.87);line-height:1.46;font-weight:500;display:flex;flex-direction:column}.case-nav h1 div{display:flex;justify-content:center;white-space:pre}.case-nav p{font-size:.24rem;color:rgba(0,0,0,.65);line-height:1.5}.case-studies-section{display:flex;flex-direction:column;margin-top:1.1rem}.case-studies-section .case-studies-content{padding:.5rem 0 .2rem 0;flex-direction:column;background-color:#326de6}.case-studies-section .case-studies-content .case-studies-content-box-mobile{width:auto!important}.case-studies-section .case-study{flex-direction:row;width:9.2rem;border-bottom:.01rem solid #eee;display:flex;align-items:center;background:#fff;box-shadow:0 0 .1rem 0 rgba(0,0,0,.1);border-radius:.06rem;height:2.76rem;margin:0 auto .3rem auto}.case-study .case-list-logo{width:3.07rem;height:2.16rem;border-right:.02rem solid #dadada;display:flex;flex-direction:column;justify-content:center;margin-right:.6rem}.case-study .case-list-logo img{width:70%;margin:0 auto}.case-study .case-list-content{justify-content:center;display:flex;flex-direction:column;width:4.91rem;margin-right:.6rem}.case-study .case-list-content h3{font-size:.24rem;color:#000;letter-spacing:.0056rem;font-weight:500;margin:0 0 .12rem 0}.case-study .case-list-content .summary{font-size:.2rem;color:rgba(0,0,0,.65);text-align:left;line-height:1.75;margin:0;flex:1}.case-study .case-list-content .button{font-size:.14rem;color:#326de6;text-align:left;display:flex;flex-direction:row;line-height:1.43;align-items:center;flex-shrink:0}.case-study .case-list-content .button .single-icon{background:url(../img/see-more-ico.svg) no-repeat center;height:.3rem;width:.3rem}.case-studies-detail-head .text-nav{color:#fff;align-items:center;width:100%;padding:.8rem 2.04rem .5rem 2.04rem}.case-studies-detail-head .text-nav p{color:#fff}.case-studies-detail-head .text-nav .text-nav-case{font-size:.16rem;color:rgba(255,255,255,.7);text-align:left;line-height:1.5;width:100%}.case-studies-detail-head .text-nav .text-nav-bottom{display:flex;justify-content:space-between}.case-studies-detail-head .text-nav .text-nav-title{width:68.5%}.case-studies-detail-head .text-nav .text-nav-title h1{font-size:.36rem;color:#fff;text-align:left;line-height:1.2;font-weight:500;margin-top:.3rem;margin-bottom:.2rem}.case-studies-detail-head .text-nav .text-nav-title p{font-size:.16rem;color:#fff;text-align:left;line-height:1.75}.case-studies-detail-head .text-nav .text-nav-icon{background-color:#fff;width:1.5rem;height:1.5rem;border-radius:.2rem;padding:0 .15rem;display:flex;align-items:center}.case-studies-detail-head .text-nav .text-nav-icon img{width:1.2rem}.case-studies-detail-head .cols .col{margin:.4rem auto}.case-studies-detail .fullcol,.case-studies-detail-head .cols .col{width:10.16rem}.case-studies-detail-head .col .content-title{font-size:.24rem;color:#326de6;text-align:left;line-height:1.25;border-left:.03rem solid #326de6;padding-left:.16rem}.case-studies-detail-head-head .col p{font-size:.14rem;color:rgba(0,0,0,.7);text-align:left}.case-studies-detail .banner2 .author{display:flex;justify-content:center;font-size:.16rem;color:#fff;margin-top:.3rem}.case-studies-detail .banner3{color:#fff;text-align:center;font-size:.24rem}.case-studies-detail .banner2,.case-studies-detail .banner3{display:flex;align-items:center;justify-content:center;height:2.8rem}.case-studies-detail .background-color{background-color:#326de6;height:2.8rem;opacity:.8;display:flex;align-items:center;justify-content:center;width:100%}.case-studies-detail .bannertext{padding-left:5%;padding-right:5%}.case-studies-detail .banner3 .background-color{height:2.8rem}.case-studies-detail .bannertext{color:#fff;text-align:left;padding:0 1rem;font-size:.24rem}.case-studies-detail .bannertext p{font-size:.24rem;color:#fff;line-height:1.67}.case-studies-detail .fullcol{margin:.4rem auto}.case-studies-detail .fullcol p{font-size:.14rem;color:rgba(0,0,0,.7);text-align:left}.case-studies-detail .fullcol p+p{margin-top:.3rem}@media (max-width:767px){.case-nav{margin-top:.9rem;margin-bottom:.405rem}.case-nav h1{font-size:.3rem;line-height:1.33;width:2.7rem;margin:0 auto .225rem auto}.case-nav h1 div{display:block}.case-nav p{font-size:.14rem;line-height:1.5;width:3.35rem;margin:0 auto}.case-studies-section{padding:0;margin:0}.case-studies-section .case-studies-content{width:100%;position:relative;overflow:hidden;display:flex;padding:.7rem 0 .7rem 0;height:5.4rem}.case-studies-section .case-studies-content .case-studies-content-box-mobile{display:flex;overflow:scroll;flex-direction:row;flex-wrap:nowrap;position:absolute;width:400%!important}.case-studies-section .case-studies-content .mo-padding{margin-left:.2rem}.case-studies-section .case-study{width:3.15rem;flex-direction:column;height:auto;margin:0 auto}.case-studies-section .case-study .case-list-logo{margin:0 auto .4rem auto;border-right:0;border-bottom:.01rem solid #dadada;width:2.85rem;height:1.35rem}.case-studies-section .case-study .case-list-content{margin:0 auto;width:2.45rem;height:auto}.case-studies-section .case-study .case-list-content h3{font-size:.18rem;color:#000;letter-spacing:.0042rem;line-height:1.22;margin-bottom:.1rem}.case-studies-section .case-study .case-list-content .summary{font-size:.14rem;line-height:1.5;margin-bottom:.2rem;height:1.05rem}.case-studies-section .case-study .case-list-content .button{margin-bottom:.35rem;font-size:.14rem;font-weight:500}.case-studies-detail-head .text-nav .text-nav-title h1{font-size:.24rem;margin:.15rem 0 .1rem 0}.case-studies-detail-head .text-nav .text-nav-title p{font-size:.14rem;line-height:1.28;padding:0 .2rem 0 0}.case-studies-detail .col{width:90%;margin:.2rem auto}.case-studies-detail .text-nav{padding:.7rem .2rem .25rem .2rem}.case-studies-detail .fullcol,.case-studies-detail-head .cols .col{width:90%;margin:.2rem auto}.case-studies-detail .bannertext{padding:0 .2rem;font-size:.16rem}.case-studies-detail .bannertext p{line-height:1.875;font-size:.16rem}}
+/* 案例 */
+
+.case-studies-header .top-white-nav.top-nav {
+    box-shadow: none;
+}
+
+.case-nav {
+    margin-bottom: 1.1rem;
+    width: 100%;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.65);
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.case-nav h1 {
+    font-size: 0.48rem;
+    color: rgba(0, 0, 0, 0.87);
+    line-height: 1.46;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+}
+.case-nav h1 div{
+    display: flex;
+    justify-content: center;
+    white-space: pre;
+}
+.case-nav p {
+    font-size: 0.24rem;
+    color: rgba(0, 0, 0, 0.65);
+    line-height: 1.5;
+}
+
+.case-studies-section {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.1rem;
+}
+
+.case-studies-section .case-studies-content{
+    padding: 0.5rem 0 0.2rem 0;
+    flex-direction: column;
+    background-color: #326DE6;
+}
+.case-studies-section .case-studies-content .case-studies-content-box-mobile{
+    width: auto!important;
+}
+
+
+.case-studies-section .case-study {
+    flex-direction: row;
+    width: 9.2rem;
+    border-bottom: 0.01rem solid #eee;
+    display: flex;
+    align-items: center;
+    background: #FFFFFF;
+    box-shadow: 0 0 0.1rem 0 rgba(0, 0, 0, 0.10);
+    border-radius: 0.06rem;
+    height: 2.76rem;
+    margin: 0 auto 0.3rem auto;
+}
+
+.case-study .case-list-logo {
+    width: 3.07rem;
+    height: 2.16rem;
+    border-right: 0.02rem solid #DADADA;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 0.6rem;
+}
+
+.case-study .case-list-logo img {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.case-study .case-list-content {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    width: 4.91rem;
+    margin-right: 0.6rem;
+}
+
+.case-study .case-list-content h3 {
+    font-size: 0.24rem;
+    color: #000000;
+    letter-spacing: 0.0056rem;
+    font-weight: 500;
+    margin: 0 0 0.12rem 0;
+}
+
+.case-study .case-list-content .summary {
+    font-size: 0.2rem;
+    color: rgba(0, 0, 0, 0.65);
+    text-align: left;
+    line-height: 1.75;
+    margin: 0;
+    flex: 1;
+}
+
+.case-study .case-list-content .button {
+    font-size: 0.14rem;
+    color: #326DE6;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    line-height: 1.43;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+
+.case-study .case-list-content .button .single-icon {
+    background: url(../img/see-more-ico.svg) no-repeat center;
+    height: 0.3rem;
+    width: 0.3rem;
+}
+
+/* 案例详情页 */
+.case-studies-detail-head .text-nav {
+    color: white;
+    align-items: center;
+    width: 100%;
+    padding: 0.8rem 2.04rem 0.5rem 2.04rem;
+}
+
+.case-studies-detail-head .text-nav p {
+    color: white;
+}
+
+.case-studies-detail-head .text-nav .text-nav-case {
+    font-size: 0.16rem;
+    color: rgba(255, 255, 255, 0.70);
+    text-align: left;
+    line-height: 1.5;
+    width: 100%;
+}
+
+.case-studies-detail-head .text-nav .text-nav-bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+.case-studies-detail-head .text-nav .text-nav-title {
+    width: 68.5%;
+}
+
+.case-studies-detail-head .text-nav .text-nav-title h1 {
+    font-size: 0.36rem;
+    color: #FFFFFF;
+    text-align: left;
+    line-height: 1.2;
+    font-weight: 500;
+    margin-top: 0.3rem;
+    margin-bottom: 0.2rem;
+}
+
+.case-studies-detail-head .text-nav .text-nav-title p {
+    font-size: 0.16rem;
+    color: #FFFFFF;
+    text-align: left;
+    line-height: 1.75;
+}
+
+.case-studies-detail-head .text-nav .text-nav-icon {
+    background-color: #fff;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 0.2rem;
+    padding: 0 0.15rem;
+    display: flex;
+    align-items: center;
+}
+.case-studies-detail-head .text-nav .text-nav-icon img {
+    width: 1.2rem;
+}
+
+.case-studies-detail-head .cols .col {
+    margin: 0.4rem auto;
+}
+
+.case-studies-detail .fullcol,
+.case-studies-detail-head .cols .col {
+    width: 10.16rem;
+}
+
+.case-studies-detail-head .col .content-title {
+    font-size: 0.24rem;
+    color: #326DE6;
+    text-align: left;
+    line-height: 1.25;
+    border-left: 0.03rem solid #326DE6;
+    padding-left: 0.16rem;
+}
+
+.case-studies-detail-head-head .col p {
+    font-size: 0.14rem;
+    color: rgba(0, 0, 0, 0.70);
+    text-align: left;
+}
+
+.case-studies-detail .banner2 .author {
+    display: flex;
+    justify-content: center;
+    font-size: 0.16rem;
+    color: #ffffff;
+    margin-top: 0.3rem;
+}
+
+.case-studies-detail .banner3 {
+    color: white;
+    text-align: center;
+    font-size: 0.24rem;
+}
+
+.case-studies-detail .banner2,
+.case-studies-detail .banner3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.8rem;
+}
+
+.case-studies-detail .background-color {
+    background-color: #326DE6;
+    height: 2.8rem;
+    opacity: 0.8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.case-studies-detail .bannertext {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.case-studies-detail .banner3 .background-color {
+    height: 2.8rem;
+}
+
+.case-studies-detail .bannertext {
+    color: white;
+    text-align: left;
+    padding: 0 1rem;
+    font-size: 0.24rem;
+}
+
+.case-studies-detail .bannertext p {
+    font-size: 0.24rem;
+    color: #ffffff;
+    line-height: 1.67;
+}
+
+.case-studies-detail .fullcol {
+    margin: 0.4rem auto;
+}
+
+
+.case-studies-detail .fullcol p {
+    font-size: 0.14rem;
+    color: rgba(0, 0, 0, 0.70);
+    text-align: left;
+}
+
+.case-studies-detail .fullcol p + p {
+    margin-top: 0.3rem;
+}
+
+@media (max-width: 767px) {
+    .case-nav{
+        margin-top: 0.9rem;
+        margin-bottom: 0.405rem
+    }
+    .case-nav h1{
+        font-size: 0.3rem;
+        line-height: 1.33;
+        width: 2.7rem;
+        margin: 0 auto 0.225rem auto;
+    }
+    .case-nav h1 div{
+        display: block;
+    }
+    .case-nav p{
+        font-size: 0.14rem;
+        line-height: 1.5;
+        width: 3.35rem;
+        margin: 0 auto;
+    }
+    /* 案例 */
+    .case-studies-section{
+        padding: 0; 
+        margin:0;
+    }
+    .case-studies-section .case-studies-content{
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        padding: 0.7rem 0 0.7rem 0;
+        height: 5.4rem;
+    }
+    .case-studies-section .case-studies-content .case-studies-content-box-mobile{
+        display: flex;
+        overflow: scroll;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        position: absolute;
+        /*height: 4.37rem;*/
+        width: 400%!important;
+    }
+    .case-studies-section .case-studies-content .mo-padding{
+        margin-left: 0.2rem;
+    }
+    .case-studies-section .case-study {
+        width: 3.15rem;
+        flex-direction: column;
+        height: auto;
+        margin: 0 auto;
+    }
+    .case-studies-section .case-study .case-list-logo{
+        margin: 0 auto 0.4rem auto;
+        border-right: 0;
+        border-bottom: 0.01rem solid #DADADA;
+        width: 2.85rem;
+        height: 1.35rem;
+    }
+    .case-studies-section .case-study .case-list-content{
+        margin: 0 auto;
+        width: 2.45rem;
+        height: auto;
+    }
+
+    .case-studies-section .case-study .case-list-content h3{
+        font-size: 0.18rem;
+        color: #000000;
+        letter-spacing: 0.0042rem;
+        line-height: 1.22;
+        margin-bottom: 0.1rem;
+    }
+
+    .case-studies-section .case-study .case-list-content .summary {
+        font-size: 0.14rem;
+        line-height: 1.5;
+        margin-bottom: 0.2rem;
+        height: 1.05rem;
+    }
+    .case-studies-section .case-study .case-list-content .button{
+        margin-bottom: 0.35rem;
+        font-size: 0.14rem;
+        font-weight: 500;
+    }
+
+    /* 案例详情 */
+    .case-studies-detail-head .text-nav .text-nav-title h1{
+        font-size: 0.24rem;
+        margin: 0.15rem 0 0.1rem 0;
+    }
+    .case-studies-detail-head .text-nav .text-nav-title p{
+        font-size: 0.14rem;
+        line-height: 1.28;
+        padding: 0 0.2rem 0 0;
+    }
+    .case-studies-detail .col {
+        width: 90%;
+        margin: 0.2rem auto;
+      }
+    .case-studies-detail .text-nav {
+        padding: 0.7rem 0.2rem 0.25rem 0.2rem;
+    }
+
+    .case-studies-detail .fullcol,
+    .case-studies-detail-head .cols .col {
+        width: 90%;
+        margin: 0.2rem auto;
+    }
+    .case-studies-detail .bannertext{
+        padding: 0 0.2rem;
+        font-size: 0.16rem;
+    }
+
+    .case-studies-detail .bannertext p {
+        line-height: 1.875;
+        font-size: 0.16rem;
+    }
+
+}
+

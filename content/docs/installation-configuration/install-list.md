@@ -2,7 +2,7 @@
 title = "组件安装列表"
 description = "详细描述了在部署与配置中安装的基础组件名称，描述以及对应的版本信息"
 weight = 5
-icon = "&#xe629;"
+icon = "icon-install-list"
 +++
 
 ## 服务详情
