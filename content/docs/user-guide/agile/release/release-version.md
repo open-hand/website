@@ -1,6 +1,6 @@
 ﻿+++
 title = "发布版本"
-description = ""
+description = "对版本进行发布，并对即将发布版本下的问题进行处理"
 weight = 2
 +++
 

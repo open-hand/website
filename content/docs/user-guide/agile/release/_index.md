@@ -36,8 +36,7 @@ weight = 4
 
 ## 相关操作
 
-- [**管理版本**](../release/manage-version)：浏览版本下问题详情以及对版本进行编辑管理。
-- [**发布版本**](../release/release-version)：对版本进行发布，并对即将发布版本下的问题进行处理。
+{{< docdir >}}
 
 
 ## 更多操作
