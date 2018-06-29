@@ -94,7 +94,7 @@ paginate = 10
     [[languages.zh.menu.main]]
     name = "v0.5"
     url  = "http://v0-5.choerodon.io/zh/"
-    weight = 2
+    weight = 3
     parent = "version"
 
 
