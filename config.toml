@@ -82,7 +82,7 @@ paginate = 10
     [[languages.zh.menu.main]]
     name = "v0.7"
     url  = "/zh/"
-    weight = 2
+    weight = 1
     parent = "version"
 
     [[languages.zh.menu.main]]
