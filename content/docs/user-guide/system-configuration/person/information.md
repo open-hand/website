@@ -1,6 +1,6 @@
 ﻿+++
 title = "个人信息"
-description = ""
+description = "用户个人信息的管理"
 weight = 1
 +++
 

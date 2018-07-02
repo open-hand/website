@@ -1,6 +1,6 @@
 ﻿+++
 title = "域名管理"
-description = ""
+description = "可以将您已经预定义好的域名规则在平台中进行配置，使外部能够通过指定的域名访问到系统内部的实例和网络"
 weight = 6
 +++
 
@@ -18,17 +18,17 @@ weight = 6
          项目所有者和项目成员对域名只有查看界面的权限，不可进行编辑修改。
       </blockquote>
 
-### 创建域名
+## 创建域名
 
  1. 点击 `创建域名` ，选择需要配置域名的应用，并输入`域名`、`域名地址`、`路径`及选择网络，点击 `创建` ；
 
  1. 创建成功后，域名将会出现在域名管理列表中。
 
-### 编辑域名信息
+## 编辑域名信息
 
 点击页面右侧 ![修改环境按钮](/docs/user-guide/deployment-pipeline/image/update_network_button.png) 按钮，进入修改域名界面后,对域名信息进行修改,最后`保存`。
 
-### 删除域名
+## 删除域名
 
 点击页面右侧 ![删除网络按钮](/docs/user-guide/deployment-pipeline/image/delete_network_button.png) 按钮，删除该域名。
 <blockquote class="warning">

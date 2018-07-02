@@ -4,20 +4,20 @@ description = "持续交付部署"
 weight = 20
 +++
 
-## 持续交付部署
+# 持续交付部署
 
 <blockquote class="warning">
 在此之前，应该准备好Mysql、Harbor、Kafka、Zookeeper、Gitlab、Minio，Chartmuseum这些组件的信息。按以下搭建顺序进行搭建，请不要随意调整搭建顺序。
 </blockquote>
 
-### 添加choerodon chart仓库
+## 添加choerodon chart仓库
 
 ```
 helm repo add c7n https://openchart.choerodon.com.cn/choerodon/c7n/
 helm repo update
 ```
 
-### 部署devops service
+## 部署devops service
 
 <blockquote class="warning">
 choerodon devops service需要与Chartmuseum共用存储，所以choerodon devops service的PV物理目录与Chartmuseum的PV物理目录必须一致。
@@ -54,16 +54,19 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
         --set env.open.SERVICES_GITLAB_URL="https://code.example.choerodon.io" \
         --set env.open.SERVICES_GITLAB_PASSWORD=123456 \
         --set env.open.SERVICES_GITLAB_PROJECTLIMIT=100 \
-        --set env.open.AGENT_VERSION="0.6.0" \
+        --set env.open.AGENT_VERSION="0.7.0" \
         --set env.open.AGENT_REPOURL="https://openchart.choerodon.com.cn/choerodon/c7n/" \
         --set env.open.AGENT_SERVICEURL="ws://devops.service.example.choerodon.io/agent/" \
+        --set env.open.TEMPLATE_VERSION_MICROSERVICE="0.7.0" \
+        --set env.open.TEMPLATE_VERSION_MICROSERVICEFRONT="0.7.0" \
+        --set env.open.TEMPLATE_VERSION_JAVALIB="0.7.0" \
         --set ingress.enable=true \
         --set ingress.host=devops.service.example.choerodon.io \
         --set service.enable=true \
         --set persistence.enabled=true \
         --set persistence.existingClaim="devops-service-pvc" \
         --name=devops-service \
-        --version=0.6.5 --namespace=choerodon-devops-prod
+        --version=0.7.0 --namespace=choerodon-devops-prod
     ```
     参数名 | 含义 
     --- |  --- 
@@ -88,6 +91,9 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
     env.open.AGENT_VERSION|与当前Devops Service相匹配的Agent版本，不需要修改
     env.open.AGENT_REPOURL|Agent Chart包远程仓库，不需要修改
     env.open.AGENT_SERVICEURL|Agent与Devops Service进行链接的webSocket地址，主机域名与ingress.host相同
+    env.open.TEMPLATE_VERSION_MICROSERVICE| 预定义微服务后端模板的版本
+    env.open.TEMPLATE_VERSION_MICROSERVICEFRONT| 预定义微服务前端模板的版本
+    env.open.TEMPLATE_VERSION_JAVALIB| 预定义java lib的版本
     persistence.enabled|启用持久化存储
     persistence.existingClaim|一定与chartmuseum挂载出来的目录相同
     service.enable|启用service
@@ -105,7 +111,7 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
         UP
         ```
 
-### 部署gitlab service
+## 部署gitlab service
 - 部署服务
 
     ```
@@ -132,7 +138,7 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
         --set env.open.GITLAB_URL="https://code.example.choerodon.io" \
         --set env.open.GITLAB_PRIVATETOKEN="choerodon-gitlab-token" \
         --name=gitlab-service \
-        --version=0.6.1 --namespace=choerodon-devops-prod
+        --version=0.7.0 --namespace=choerodon-devops-prod
     ```
     参数名 | 含义 
     --- |  --- 
@@ -160,7 +166,7 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
         UP
         ```
 
-### 部署choerodon devops front
+## 部署choerodon devops front
 - 部署服务
 
     ```
@@ -176,11 +182,12 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
         --set env.open.PRO_TITLE_NAME="Choerodon" \
         --set env.open.PRO_HEADER_TITLE_NAME="Choerodon" \
         --set env.open.PRO_HTTP="http" \
+        --set env.open.PRO_FILE_SERVER="http://minio.example.com" \
         --set ingress.host="devops.choerodon.example.choerodon.io" \
         --set service.enable=true \
         --set ingress.enable=true \
         --name=choerodon-front-devops \
-        --version=0.6.5 --namespace=choerodon-devops-prod
+        --version=0.7.0 --namespace=choerodon-devops-prod
     ```
     参数名 | 含义 
     --- |  --- 

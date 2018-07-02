@@ -4,13 +4,13 @@ description = "结构说明"
 weight = 3
 +++
 
-# 前置条件
+## 前置条件
 
 请确保已经将代码clone 到本地。详见 [代码运行](../run/)
 
-# 结构说明
+## 结构说明
 
-## 目录划分
+### 目录划分
 
 开发仿照`choerodon-front-iam`项目结构，源文件目录在 `choerodon-front-iam/iam/src/app/iam` ，主要目录结构如下：
 ```

@@ -1,6 +1,7 @@
 ﻿+++
 title = "登出"
 weight = 2
+description = "用户能退出登录"
 +++
 
 # 登出

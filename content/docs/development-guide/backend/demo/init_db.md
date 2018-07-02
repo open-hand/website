@@ -118,7 +118,7 @@ $ touch init-local-database.sh
 mkdir -p bin
 if [ ! -f bin/choerodon-tool-liquibase.jar ]
 then
-    curl https://oss.sonatype.org/content/groups/public/io/choerodon/choerodon-tool-liquibase/0.5.1.RELEASE/choerodon-tool-liquibase-0.5.1.RELEASE.jar -o target/choerodon-tool-liquibase.jar
+    curl https://oss.sonatype.org/content/groups/public/io/choerodon/choerodon-tool-liquibase/0.5.2.RELEASE/choerodon-tool-liquibase-0.5.2.RELEASE.jar -o ./bin/choerodon-tool-liquibase.jar
 fi
 java -Dspring.datasource.url="jdbc:mysql://localhost:3306/todo_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
  -Dspring.datasource.username=choerodon \
@@ -144,7 +144,7 @@ $ sh ./init-local-database.sh
 Error: Invalid or corrupt jarfile target/choerodon-tool-liquibase.jar
 ```
 
-则自行下载 [choerodon-tool-liquibase.jar](https://oss.sonatype.org/content/groups/public/io/choerodon/choerodon-tool-liquibase/0.5.1.RELEASE/choerodon-tool-liquibase-0.5.1.RELEASE.jar) 并重命名覆盖./bin/choerodon-tool-liquibase.jar 并重新执行`init-local-database.sh` 脚本
+则自行下载 [choerodon-tool-liquibase.jar](https://oss.sonatype.org/content/groups/public/io/choerodon/choerodon-tool-liquibase/0.5.2.RELEASE/choerodon-tool-liquibase-0.5.2.RELEASE.jar) 并重命名覆盖./bin/choerodon-tool-liquibase.jar 并重新执行`init-local-database.sh` 脚本
 
 ## 验证表结构
 

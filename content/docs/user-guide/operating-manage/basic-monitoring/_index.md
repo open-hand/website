@@ -1,6 +1,6 @@
 ﻿+++
 title = "服务指标"
-description = ""
+description = "CPU，内存等服务器性能数据监控"
 weight = 2
 alwaysopen=false
 +++
@@ -12,11 +12,7 @@ alwaysopen=false
 
 Grafana 是基于 JS 开发的，功能齐全的度量仪表盘，可以对接多数据源，实现图形化实时监控。
 
-<h2 id="2">模块</h2>
-
- - [**节点监控**](../basic-monitoring/node) 显示 Kubernetes 集群中的节点指标。
-
- - [**节点概述监控**](../basic-monitoring/allnode) 显示 Kubernetes 集群中的节点指标。
+ {{< docdir >}}
 
 <h2 id="2">使用简介</h2>
 登录后点击看板切换菜单即可切换监控模块。

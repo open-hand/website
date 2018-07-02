@@ -1,7 +1,7 @@
 
 +++
 title = "Kibana监控"
-description = ""
+description = "介绍Kibana页面使用指南"
 weight = 12
 +++
 

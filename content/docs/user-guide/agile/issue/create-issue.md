@@ -1,6 +1,6 @@
 ﻿+++
 title = "问题创建"
-description = ""
+description = "您将了解到如何创建一个新问题，以及了解问题详情各字段的含义"
 weight =1
 +++
 
@@ -47,4 +47,4 @@ weight =1
 ## 更多操作
 - [寻找一个问题](../search-issue/)
 - [查看和编辑问题](../manage-issue/)
-- [创建一个冲刺](../../backlog/sprint1)
+- [创建一个冲刺](../../backlog/sprint)

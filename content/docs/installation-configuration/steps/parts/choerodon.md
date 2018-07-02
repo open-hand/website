@@ -4,21 +4,21 @@ description = "微服务开发框架部署"
 weight = 10
 +++
 
-## 分步部署微服务开发框架
+# 分步部署微服务开发框架
 
 <blockquote class="warning">
 在此之前，应该准备好Mysql、Harbor、Kafka、Zookeeper、Gitlab、Minio，Chartmuseum这些组件的信息。按以下搭建顺序进行搭建，请不要随意调整搭建顺序。
 以下验证部署是否成功如未特别说明则执行验证的环境为任意一台集群Master节点。
 </blockquote>
 
-### 添加Choerodon Chart仓库
+## 添加Choerodon Chart仓库
 
 ```
 helm repo add c7n https://openchart.choerodon.com.cn/choerodon/c7n/
 helm repo update
 ```
 
-### 部署register server
+## 部署register server
 
 - 部署服务
 
@@ -29,7 +29,7 @@ helm repo update
         --set env.open.REGISTER_SERVICE_NAMESPACE=choerodon-devops-prod \
         --set env.open.KAFKA_ADDRESSES="kafka-0.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-1.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-2.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092" \
         --name register-server \
-        --version=0.6.0 --namespace=choerodon-devops-prod
+        --version=0.7.0 --namespace=choerodon-devops-prod
     ```
 
     参数名 | 含义 
@@ -80,7 +80,7 @@ helm repo update
                     "serviceUpTimestamp": 1528201698
                 },
                 "metadata": {
-                    "VERSION": "0.6.0"
+                    "VERSION": "0.7.0"
                 },
                 "homePageUrl": "http://192.168.3.19:8000/",
                 "statusPageUrl": "http://192.168.3.19:8000/info",
@@ -97,7 +97,7 @@ helm repo update
         ```
 
 
-### 部署config server
+## 部署config server
 
 - 部署服务
 
@@ -108,7 +108,7 @@ helm repo update
         --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS="kafka-0.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-1.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-2.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092" \
         --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES="zookeeper-0.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181\,zookeeper-1.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181\,zookeeper-2.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181" \
         --name config-server \
-        --version=0.6.0 --namespace=choerodon-devops-prod
+        --version=0.7.0 --namespace=choerodon-devops-prod
     ```
     参数名 | 含义 
     --- |  --- 
@@ -127,7 +127,7 @@ helm repo update
         UP
         ```
 
-### 部署manager service
+## 部署manager service
 
 - 部署服务
 
@@ -150,7 +150,7 @@ helm repo update
         --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS="kafka-0.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-1.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-2.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092" \
         --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES="zookeeper-0.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181\,zookeeper-1.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181\,zookeeper-2.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181" \
         --name manager-service \
-        --version=0.6.0 --namespace=choerodon-devops-prod
+        --version=0.7.0 --namespace=choerodon-devops-prod
     ```
     参数名 | 含义 
     --- |  --- 
@@ -178,7 +178,7 @@ helm repo update
         UP
         ```
 
-### 部署iam service
+## 部署iam service
 - 部署服务
 
     ```
@@ -204,7 +204,7 @@ helm repo update
         --set env.open.SPRING_KAFKA_BOOTSTRAP_SERVERS="kafka-0.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-1.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-2.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092" \
         --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES="zookeeper-0.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181\,zookeeper-1.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181\,zookeeper-2.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181" \
         --name iam-service \
-        --version=0.6.0 --namespace=choerodon-devops-prod
+        --version=0.7.0 --namespace=choerodon-devops-prod
     ```
     参数名 | 含义 
     --- |  --- 
@@ -232,7 +232,7 @@ helm repo update
         UP
         ```
 
-### 部署api gateway
+## 部署api gateway
 - 部署服务
 
     ```
@@ -251,7 +251,7 @@ helm repo update
         --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS="kafka-0.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-1.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-2.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092" \
         --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES="zookeeper-0.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181\,zookeeper-1.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181\,zookeeper-2.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181" \
         --name api-gateway \
-        --version=0.6.0 --namespace=choerodon-devops-prod
+        --version=0.7.0 --namespace=choerodon-devops-prod
     ```
     参数名 | 含义 
     --- |  --- 
@@ -276,7 +276,7 @@ helm repo update
         UP
         ```
 
-### 部署gateway helper
+## 部署gateway helper
 - 部署服务
 
     ```
@@ -295,7 +295,7 @@ helm repo update
         --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS="kafka-0.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-1.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-2.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092" \
         --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES="zookeeper-0.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181\,zookeeper-1.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181\,zookeeper-2.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181" \
         --name gateway-helper \
-        --version=0.6.0 --namespace=choerodon-devops-prod
+        --version=0.7.0 --namespace=choerodon-devops-prod
     ```
     参数名 | 含义 
     --- |  --- 
@@ -320,7 +320,7 @@ helm repo update
         UP
         ```
 
-### 部署oauth server
+## 部署oauth server
 - 部署服务
 
     ```
@@ -342,7 +342,7 @@ helm repo update
         --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS="kafka-0.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-1.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-2.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092" \
         --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES="zookeeper-0.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181\,zookeeper-1.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181\,zookeeper-2.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181" \
         --name oauth-server \
-        --version=0.6.0 --namespace=choerodon-devops-prod
+        --version=0.7.0 --namespace=choerodon-devops-prod
     ```
     参数名 | 含义 
     --- |  --- 
@@ -368,7 +368,7 @@ helm repo update
         UP
         ```
 
-### 部署event store service
+## 部署event store service
 - 部署服务
 
     ```
@@ -394,7 +394,7 @@ helm repo update
         --set env.open.SPRING_KAFKA_BOOTSTRAP_SERVERS="kafka-0.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-1.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-2.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092" \
         --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES="zookeeper-0.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181\,zookeeper-1.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181\,zookeeper-2.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181" \
         --name event-store-service \
-        --version=0.6.0 --namespace=choerodon-devops-prod
+        --version=0.7.0 --namespace=choerodon-devops-prod
     ```
     参数名 | 含义 
     --- |  --- 
@@ -422,7 +422,7 @@ helm repo update
         UP
         ```
 
-### 部署file service
+## 部署file service
 - 部署服务
 
     ```
@@ -441,7 +441,7 @@ helm repo update
         --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS="kafka-0.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-1.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-2.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092" \
         --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES="zookeeper-0.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181\,zookeeper-1.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181\,zookeeper-2.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181" \
         --name file-service \
-        --version=0.6.0 --namespace=choerodon-devops-prod
+        --version=0.7.0 --namespace=choerodon-devops-prod
     ```
     参数名 | 含义 
     --- |  --- 
@@ -524,7 +524,7 @@ helm repo update
         UP
         ``` -->
 
-### 部署choerodon iam front
+## 部署choerodon iam front
 - 部署服务
 
     ```
@@ -543,7 +543,7 @@ helm repo update
         --set service.enable=true \
         --set ingress.enable=true \
         --name=choerodon-front-iam \
-        --version=0.6.1 --namespace=choerodon-devops-prod
+        --version=0.7.0 --namespace=choerodon-devops-prod
     ```
     参数名 | 含义 
     --- |  --- 

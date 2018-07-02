@@ -1,10 +1,10 @@
 ﻿+++
 title = "发布版本"
-description = ""
+description = "对版本进行发布，并对即将发布版本下的问题进行处理"
 weight = 2
 +++
 
-# 发布版本
+## 发布版本
 
 通过此页面，您将来了解到如何版本发布的具体步骤和细节功能。
 
@@ -33,4 +33,4 @@ weight = 2
 
 - [创建问题](../../issue/create-issue)
 - [创建看板](../../sprint/create-kanban)
-- [创建冲刺](../../backlog/sprint1/#创建冲刺)
+- [创建冲刺](../../backlog/sprint/#创建冲刺)

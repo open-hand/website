@@ -1,6 +1,6 @@
 +++
 title = "实例"
-description = ""
+description = "查看并且管理实例，进行实例的修改配置，启用停用等操作"
 weight = 4
 +++
 
@@ -81,7 +81,7 @@ weight = 4
 
     b. 最新版本：最新的版本号。
 
-#### 实例状态
+## 实例状态
 
 实例状态的显示由实例的当前状态和最后一次操作的状态来决定，不同的实例状态可以执行不同的操作。
 
@@ -101,7 +101,7 @@ weight = 4
 重启失败|✔|✔|✔| |✔
 删除中|✔|
 
-#### 运行详情
+## 运行详情
 Chart 里定义的各个资源对象列表及参数信息。
 
 资源对象|参数信息
@@ -112,17 +112,17 @@ ReplicaSet |name, desired, current, ready, age
 Service|name, type, cluster-ip, external-ip, port, age
 Ingress|name, hosts, address, ports, age
 
-#### 部署详情
+## 部署详情
 包括报错信息、配置信息、阶段及日志。
 
-### 修改配置信息
+## 修改配置信息
 点击页面右侧 ![详情按钮](/docs/user-guide/development-pipeline/image/detail_button.png) 按钮 ，再点击`修改配置信息`，进入修改配置信息界面后对实例配置信息进行修改后重新部署。
 
-### 停止实例
+## 停止实例
 点击页面右侧 ![详情按钮](/docs/user-guide/development-pipeline/image/detail_button.png) 按钮 ，再点击`停止实例`，该实例即为停止状态，且容器状态停止。容器状态为“0”时，实例存在。
 <blockquote class="note">
          停止实例后，停止实例按钮转变为重启实例按钮，点击重启实例按钮时，重启环境。
       </blockquote>
 
-### 删除实例
+## 删除实例
 点击页面右侧 ![详情按钮](/docs/user-guide/development-pipeline/image/detail_button.png) 按钮，再点击`删除实例`，该实例被删除。

@@ -1,6 +1,6 @@
 ﻿+++
 title = "多看板"
-description = ""
+description = "了解多看板的定义，以及如何运用多看板来进行团队协作"
 weight = 4
 +++
 
