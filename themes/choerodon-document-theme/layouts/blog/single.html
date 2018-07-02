@@ -44,8 +44,8 @@
                     <!-- 分享 -->
                     <div class="share-box">
                         <a style="vertical-align: middle;" class="share-title"><i class="iconfont">&#xe63f;</i>{{ i18n "share" }}</a>
-                        <a data-click-url="{{ .URL }}" class="shareSina"><span class="share-icon"></span></a>
-                        <a data-click-url="{{ .URL }}" class="shareWX"><span class="share-icon"></span></a>
+                        <a data-click-url="{{ .URL | absURL}}" class="shareSina"><span class="share-icon"></span></a>
+                        <a data-click-url="{{ .URL | absURL}}" class="shareWX"><span class="share-icon"></span></a>
                     </div>
                     <div class="share-wx-alert">
                         <div class="wx-box">
