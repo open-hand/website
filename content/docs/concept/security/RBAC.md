@@ -1,6 +1,6 @@
 ﻿+++
 title = "角色控制访问(RBAC)"
-description = ""
+description = "介绍 Choerodon 的权限控制功能， Choerodon 采用基于角色的权限访问控制（Role-Based Access Control）"
 weight = 3
 +++
 

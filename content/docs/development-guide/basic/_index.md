@@ -9,6 +9,4 @@ icon = "icon-basic-development"
   
 本页面介绍了使用Choerodon 使用到的基础组件，包括如何从使用Kubernetes 的yaml部署转型到使用helm chart 进行部署等一系列入门教程。
 
-## 功能
-
 {{< docdir >}}

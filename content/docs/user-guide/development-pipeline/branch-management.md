@@ -18,7 +18,7 @@ Choerodon 采用 `git-flow` 工作流模式，有`master`和`develop`两个默�
   项目成员对分支管理权限对应 gitlab 仅有 Developer 权限。
 </blockquote>
 
-### 分支类型
+## 分支类型
 
  - **Master**：默认分支，版本发布分支。
     
@@ -30,13 +30,13 @@ Choerodon 采用 `git-flow` 工作流模式，有`master`和`develop`两个默�
 
  -  **Hotfix**：适用于产品发布后修复 bug，基于主分支生成，完成时先合并至主分支和开发分支，并打上标签。
 
-### 分支使用流程
+## 分支使用流程
  
 分支使用流程包括四个部分：创建分支、拉下分支至本地开发、开发完提交代码/解决冲突、结束分支。
 
  ![GitFlow使用流程](/docs/user-guide/deployment-pipeline/image/gitflow_use_flow.png)
 
-### 创建分支
+## 创建分支
 
  1. 点击`创建分支`按钮，创建对应分支；
 
@@ -57,7 +57,7 @@ Choerodon 采用 `git-flow` 工作流模式，有`master`和`develop`两个默�
 </blockquote>
     
 
-### 结束分支
+## 结束分支
  
  1. `feature` 分支在结束时会合并生成对应的应用版本；
 
@@ -71,7 +71,7 @@ Choerodon 采用 `git-flow` 工作流模式，有`master`和`develop`两个默�
  另外，创建分支及结束分支只能在平台界面进行操作，请勿随意在 Gitlab 界面创建合并请求和删除分支
 </blockquote>
 
-### 版本号生成规则
+## 版本号生成规则
 
 1. feature分支
 
@@ -98,7 +98,7 @@ Choerodon 采用 `git-flow` 工作流模式，有`master`和`develop`两个默�
       e.g. 当前hotfix分支名为hotfix-1.2.3，那么得到的版本号为：1.2.3-beta.最后一次提交的时间戳
 
 
-### 示例：分支管理操作步骤
+## 示例：分支管理操作步骤
 
  1. 克隆代码到本地；
 
@@ -136,7 +136,7 @@ Choerodon 采用 `git-flow` 工作流模式，有`master`和`develop`两个默�
     ```
  1. 界面操作结束分支。
 
-### 解决分支冲突
+## 解决分支冲突
 
 #### Feature 分支冲突
 

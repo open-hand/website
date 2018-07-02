@@ -17,7 +17,7 @@ description = "配置管理用来集中管理应用的当前环境的配置，�
 - **菜单路径**：微服务管理 > 配置管理
 - **默认角色**：平台管理员
 
-### 创建配置
+## 创建配置
 
 配置必须以已有的配置为模版，在配置模版基础上进行修改从而生成一个新的配置。创建配置步骤如下。
 
@@ -40,7 +40,7 @@ description = "配置管理用来集中管理应用的当前环境的配置，�
     - 配置yml详细信息：上一步中配置的yml文件，确认信息时为只读形式，如需修改请返回上一步进行修改。
     - 确认信息无误后，点击‘创建’按钮。
 
-### 基于一个已有配置创建
+## 基于一个已有配置创建
 
 1. 在配置中选择一条配置，点击更多操作→![detail_button](/docs/user-guide/system-configuration/microservice-management/image/detail_button.png)
  按钮。选择‘基于此配置创建’。
@@ -57,14 +57,14 @@ description = "配置管理用来集中管理应用的当前环境的配置，�
 
 1. 确认信息并创建
 
-### 设置默认配置
+## 设置默认配置
 
 每个微服务有且仅有一个默认配置，在微服务下新建的实例会自动应用默认配置。设置默认配置的步骤如下。
 
 1. 在配置列表中选择一条配置，点击更多操作→ ![detail_button](/docs/user-guide/system-configuration/microservice-management/image/detail_button.png)按钮。
 1. 选择‘设为默认配置’。
 
-### 应用配置
+## 应用配置
 
 如果配置和实例属于同一个微服务，则实例可以应用配置。一个配置可以被多个实例应用。
 
@@ -73,7 +73,7 @@ description = "配置管理用来集中管理应用的当前环境的配置，�
 1. 选择实例，可以选择零个到多个实例。
 1. 点击‘保存’。
 
-### 修改配置
+## 修改配置
 
 1. 在配置列表中选择一条配置，点击更多操作→ ![detail_button](/docs/user-guide/system-configuration/microservice-management/image/detail_button.png)按钮。
 1. 选择‘修改’。
@@ -81,7 +81,7 @@ description = "配置管理用来集中管理应用的当前环境的配置，�
 1. 最后确认信息后点击保存。
 
 
-### 删除配置
+## 删除配置
 
 1. 在配置列表中选择一条配置，点击更多操作→ ![detail_button](/docs/user-guide/system-configuration/microservice-management/image/detail_button.png)按钮。
 1. 选择‘删除’。

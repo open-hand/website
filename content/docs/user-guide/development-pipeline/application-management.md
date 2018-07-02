@@ -20,7 +20,7 @@ weight = 2
   项目成员、部署管理员对应用管理只有查看应用列表的权限，不可进行编辑修改应用名称及启用/停用应用。
 </blockquote>
 
-### 创建应用
+## 创建应用
 
 输入`应用编码`及`应用名称`，创建一个新的应用，步骤如下。您也可以选择一个应用模板，快速创建应用，平台会为您自动创建对应的 Git 库以便管理该应用代码。
 
@@ -42,7 +42,7 @@ weight = 2
   若不选择应用模板，则会创建空白仓库，基础代码、默认分支、gitlab-ci.yml等内容都需要自行创建或配置。
 </blockquote>
 
-### 查看应用详情
+## 查看应用详情
 
   1. 点击`应用`，在应用管理界面，根据应用名称、应用编码、仓库地址、应用状态来查看应用详情。
 
@@ -57,15 +57,15 @@ weight = 2
   若应用状态一直都是创建中，请先检查是否正确配置了项目所有者角色及其角色标签，并且分配给该操作用户。另外，若您本地搭建的 gitlab 不稳定的话也可能导致消息发送至 gitlab 处理失败。
 </blockquote>
 
-### 分支管理
+## 分支管理
 
 点击`分支管理`→ ![分支管理按钮](/docs/user-guide/development-pipeline/image/branch_management_button.png) 对应用信息进行[分支管理](../../development-pipeline/branch-management)。
 
-### 修改应用信息
+## 修改应用信息
 
 点击`修改应用`→ ![修改应用按钮](/docs/user-guide/development-pipeline/image/update_app_button.png) 对应用信息进行修改。
 
-### 停用/启用应用
+## 停用/启用应用
 
  点击 `停用`→ ![停用按钮](/docs/user-guide/development-pipeline/image/stop_button.png) 即可停用应用。若应用已停用，则不可以进行分支管理，不可以修改应用名称，且不可以部署该应用。
  

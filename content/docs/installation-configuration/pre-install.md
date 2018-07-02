@@ -5,13 +5,13 @@ weight = 7
 icon = "icon-pre-install"
 +++
 
-## 要求与约定
+# 要求与约定
 
 Choerodon采用Spring Cloud作为微服务框架，运行在Docker上，以Kubernetes作为容器的编排工具。理论上只要服务器资源允许，可以运行Kubernetes，就可以运行Choerodon。Choerodon不是一个单体应用系统，而是一个包含多个微服务的分布式系统，所以部署相对比较复杂。目前，我们提供基于Helm的部署方式，以提高部署效率。
 
 ---
 
-### 硬件要求
+## 硬件要求
 - 节点数量：4    
 - 单节点内存信息：16G及以上
 - 单节点处理器信息：4核4线程及以上
@@ -20,16 +20,16 @@ Choerodon采用Spring Cloud作为微服务框架，运行在Docker上，以Kuber
 只要现有节点内存与CPU总和大于上述节点要求即可。
 </blockquote>
 
-### 软件要求
+## 软件要求
 - 系统版本：CentOS7.2及以上
 - Kubernetes：1.8.5（其他版本未经测试，不建议使用）
 - Helm：2.8.2（tiller版本请一定与helm版本一致；其他版本未经测试，不建议使用）
 
-### 网络要求
+## 网络要求
 - 各个服务器之间内网互通
 - 各个服务器能够访问外网
 
-### 需开放的端口号
+## 需开放的端口号
 
   <blockquote class="note">
   如果您没有开启防火墙则无需配置该项内容
@@ -54,9 +54,9 @@ Choerodon采用Spring Cloud作为微服务框架，运行在Docker上，以Kuber
     TCP|入方向|10255	|Read-only Kubelet API
     TCP|入方向|30000-32767|	NodePort Services**
 
-### 域名要求
+## 域名要求
 - Choerodon必须通过域名访问，用户需要将自己的域名指向搭建的Kubernetes任意主节点。
 
-### 约定
+## 约定
 - 非特别说明，请使用具有root权限的用户进行安装操作
 - 部署教程以NFS类型的PV为例进行创建，所有非集群级对象都创建在`choerodon-devops-prod`命名空间下

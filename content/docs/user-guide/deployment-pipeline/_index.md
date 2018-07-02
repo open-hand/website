@@ -9,6 +9,4 @@ icon = "icon-deployment-pipeline"
 
 应用和部署流水线主要描述部署的环境、网络、域名、容器等，来告知用户如何部署和部署情况。
 
-## 功能
-
  {{< docdir >}}

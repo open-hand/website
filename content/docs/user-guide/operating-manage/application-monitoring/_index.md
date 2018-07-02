@@ -10,6 +10,4 @@ alwaysopen=false
 
 使用prometheus进行指标采集，然后使用grafana对各个应用的性能数据进行数据图形化展示。
 
-## 模块
-
 {{< docdir >}}

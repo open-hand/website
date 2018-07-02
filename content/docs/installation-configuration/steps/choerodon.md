@@ -4,13 +4,13 @@ description = "第四步：一键部署Choerodon"
 weight = 15
 +++
 
-## 部署Choerodon
+# 部署Choerodon
 
 <blockquote class="note">
 执行一键部署Choerodon命令的主机能够管理该kubernetes集群建议在Master节点执行，且该集群每个节点都安装有NFS客户端程序。执行一键部署Choerodon请忽略分步部署Choerodon步骤。
 </blockquote>
 
-### 通过脚本部署
+## 通过脚本部署
 
 <blockquote class="warning">
   <ul>
@@ -160,7 +160,7 @@ weight = 15
 - [设置Harbor启用HTTPS](../parts/base/harbor/#启用https)
 - [克隆模板仓库到自己的Gitlab中](../parts/base/gitlab/#克隆模板仓库)
 
-### 部署失败操作
+## 部署失败操作
 
 1. 部署失败后重新执行脚本根据脚本提示信息执行删除命令。
 1. 请删除`values.sh`文件中定义的所有物理目录中的数据。

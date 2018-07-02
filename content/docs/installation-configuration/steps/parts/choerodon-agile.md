@@ -4,20 +4,20 @@ description = "敏捷管理部署"
 weight = 30
 +++
 
-## 部署敏捷管理
+# 部署敏捷管理
 
 <blockquote class="warning">
 在此之前，应该准备好Mysql、Harbor、Kafka、Zookeeper、Gitlab、Minio，Chartmuseum这些组件的信息。按以下搭建顺序进行搭建，请不要随意调整搭建顺序。
 </blockquote>
 
-### 添加choerodon chart仓库
+## 添加choerodon chart仓库
 
 ```
 helm repo add c7n https://openchart.choerodon.com.cn/choerodon/c7n/
 helm repo update
 ```
 
-### 部署agile service
+## 部署agile service
 
 - 部署服务
 
@@ -72,7 +72,7 @@ helm repo update
         UP
         ```
 
-### 部署choerodon agile front
+## 部署choerodon agile front
 - 部署服务
 
     ```

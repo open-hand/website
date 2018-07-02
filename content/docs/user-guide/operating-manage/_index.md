@@ -9,6 +9,4 @@ icon = "icon-operation"
 
 本节介绍各种监控工具的使用。
 
-## 功能
-
 {{< docdir >}}

@@ -4,21 +4,21 @@ description = "微服务开发框架部署"
 weight = 10
 +++
 
-## 分步部署微服务开发框架
+# 分步部署微服务开发框架
 
 <blockquote class="warning">
 在此之前，应该准备好Mysql、Harbor、Kafka、Zookeeper、Gitlab、Minio，Chartmuseum这些组件的信息。按以下搭建顺序进行搭建，请不要随意调整搭建顺序。
 以下验证部署是否成功如未特别说明则执行验证的环境为任意一台集群Master节点。
 </blockquote>
 
-### 添加Choerodon Chart仓库
+## 添加Choerodon Chart仓库
 
 ```
 helm repo add c7n https://openchart.choerodon.com.cn/choerodon/c7n/
 helm repo update
 ```
 
-### 部署register server
+## 部署register server
 
 - 部署服务
 
@@ -97,7 +97,7 @@ helm repo update
         ```
 
 
-### 部署config server
+## 部署config server
 
 - 部署服务
 
@@ -127,7 +127,7 @@ helm repo update
         UP
         ```
 
-### 部署manager service
+## 部署manager service
 
 - 部署服务
 
@@ -178,7 +178,7 @@ helm repo update
         UP
         ```
 
-### 部署iam service
+## 部署iam service
 - 部署服务
 
     ```
@@ -232,7 +232,7 @@ helm repo update
         UP
         ```
 
-### 部署api gateway
+## 部署api gateway
 - 部署服务
 
     ```
@@ -276,7 +276,7 @@ helm repo update
         UP
         ```
 
-### 部署gateway helper
+## 部署gateway helper
 - 部署服务
 
     ```
@@ -320,7 +320,7 @@ helm repo update
         UP
         ```
 
-### 部署oauth server
+## 部署oauth server
 - 部署服务
 
     ```
@@ -368,7 +368,7 @@ helm repo update
         UP
         ```
 
-### 部署event store service
+## 部署event store service
 - 部署服务
 
     ```
@@ -422,7 +422,7 @@ helm repo update
         UP
         ```
 
-### 部署file service
+## 部署file service
 - 部署服务
 
     ```
@@ -524,7 +524,7 @@ helm repo update
         UP
         ``` -->
 
-### 部署choerodon iam front
+## 部署choerodon iam front
 - 部署服务
 
     ```
