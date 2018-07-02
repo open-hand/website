@@ -1,6 +1,6 @@
 +++
 title = "持续集成"
-description = "持续集成"
+description = "讲述了Choerodon平台中gitlab ci文件详解"
 weight = 2
 +++
 

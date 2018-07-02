@@ -1,6 +1,6 @@
 ﻿+++
 title = "认证体系"
-description = ""
+description = "介绍 Choerodon 的认证体系， Choerodon 采用 Spring Cloud Security 和 Spring Cloud OAuth2 作为认证"
 weight = 2
 +++
 

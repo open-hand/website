@@ -1,6 +1,6 @@
 ﻿+++
 title = "应用版本"
-description = ""
+description = "由于 Choerodon 采用 Gitflow 的方式管理分支，所以对于版本的控制也是根据 Feature、Release、Hotfix 等分支上进行的"
 weight = 5
 +++
 
@@ -12,7 +12,7 @@ weight = 5
   - **菜单路径**：持续交付 > 开发流水线 > 应用版本
   - **默认角色**：项目所有者、项目成员、部署管理员
 
-### 查看应用版本详情
+## 查看应用版本详情
 
  1. 进入持续交付后，点击 `应用版本` 页签；
 
@@ -28,7 +28,7 @@ weight = 5
 
  - 创建时间：应用创建时的时间。
 
-### 版本控制方式
+## 版本控制方式
 
 1. 基于 Develop 分支生成一个 Feature 分支，开发人员在 Feature 分支上开发，例如 Feature-101，其中编号101是新 Feature 对应的 ISSUE 编号。
 

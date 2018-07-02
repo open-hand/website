@@ -1,6 +1,7 @@
 ﻿+++
 title = "客户端"
 weight = 4
+description = "是对多个客户端信息设置的管理"
 +++
 
 # 客户端

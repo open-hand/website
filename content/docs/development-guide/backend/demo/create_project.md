@@ -153,7 +153,7 @@ management:
     enabled: false
 security:
   basic:
-    enabled: fasle
+    enabled: false
 ```
 
 ``` yml

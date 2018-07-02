@@ -4,20 +4,20 @@ description = "持续交付部署"
 weight = 20
 +++
 
-## 持续交付部署
+# 持续交付部署
 
 <blockquote class="warning">
 在此之前，应该准备好Mysql、Harbor、Kafka、Zookeeper、Gitlab、Minio，Chartmuseum这些组件的信息。按以下搭建顺序进行搭建，请不要随意调整搭建顺序。
 </blockquote>
 
-### 添加choerodon chart仓库
+## 添加choerodon chart仓库
 
 ```
 helm repo add c7n https://openchart.choerodon.com.cn/choerodon/c7n/
 helm repo update
 ```
 
-### 部署devops service
+## 部署devops service
 
 <blockquote class="warning">
 choerodon devops service需要与Chartmuseum共用存储，所以choerodon devops service的PV物理目录与Chartmuseum的PV物理目录必须一致。
@@ -111,7 +111,7 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
         UP
         ```
 
-### 部署gitlab service
+## 部署gitlab service
 - 部署服务
 
     ```
@@ -166,7 +166,7 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
         UP
         ```
 
-### 部署choerodon devops front
+## 部署choerodon devops front
 - 部署服务
 
     ```

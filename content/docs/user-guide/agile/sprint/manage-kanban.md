@@ -1,6 +1,6 @@
 ﻿+++
 title = "配置看板"
-description = ""
+description = "了解如何对看板的列和看板问题的状态进行自定义设置"
 weight = 3
 +++
 

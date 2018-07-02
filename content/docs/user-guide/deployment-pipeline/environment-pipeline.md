@@ -1,6 +1,6 @@
 ﻿+++
 title = "环境流水线"
-description = ""
+description = "是面向平台管理员、项目创建者和项目所有者根据不同用途配置相对应的环境信息。可以创建环境，删除环境，及对环境详情信息进行编辑修改"
 weight = 1
 +++
 
@@ -16,7 +16,7 @@ weight = 1
          项目所有者和项目成员对环境流水线只有查看界面的权限，不可进行编辑修改。
       </blockquote>
 
-### 创建环境
+## 创建环境
 
  **1. 前置条件**
 
@@ -73,7 +73,7 @@ weight = 1
 环境客户端使用了平台的[Choerodon-Agent](../../../concept/choerodon-agent/)技术，通过websocket方式连接到猪齿鱼平台。双方通过`command/response`方式来进行交互，来完成`helm release`的管理、网络管理、k8s对象监听和容器日志和shell等功能。 
 		
 
-### 查看环境流水线详情
+## 查看环境流水线详情
 
  1. 进入持续交付后，点击 `环境流水线` 页签；
 
@@ -83,7 +83,7 @@ weight = 1
 >- 在环境卡片中，点击`修改环境`→ ![修改环境按钮](/docs/user-guide/deployment-pipeline/image/update_env_button.png) ，修改环境名称及描述。
 >- 在环境卡片中，点击`禁用环境`→ ![停用按钮](/docs/user-guide/deployment-pipeline/image/stop_button.png) ，当点击确认后，该环境将被禁用。
 
-### 环境停用区 
+## 环境停用区 
 
 可在环境停用区查看已被停用的环境，点击卡片右上角`启用按钮` → ![启用按钮](/docs/user-guide/deployment-pipeline/image/start_button.png) 重新启用。
 

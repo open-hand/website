@@ -1,6 +1,6 @@
 ﻿+++
 title = "MySQL监控"
-description = ""
+description = "监控Mysql相关指标"
 weight = 13
 +++
 

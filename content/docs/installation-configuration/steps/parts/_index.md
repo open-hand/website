@@ -6,7 +6,7 @@ draft = false
 weight = 20
 +++
 
-## 部署与配置
+# 部署与配置
 
 Choerodon采用Spring Cloud作为微服务框架，运行在Docker上，以Kubernetes作为容器的编排工具。理论上只要服务器资源允许，可以运行Kubernetes，就可以运行Choerodon。Choerodon不是一个单体应用系统，而是一个包含多个微服务的分布式系统，所以部署相对比较复杂。目前，我们提供基于Helm的部署方式，以提高部署效率。
 
@@ -21,7 +21,7 @@ Choerodon采用Spring Cloud作为微服务框架，运行在Docker上，以Kuber
   </ul>
 </blockquote>
 
-### 前置要求与约定
+## 前置要求与约定
 
 - 硬件要求：
     - 核心数量：4核4线程及以上
@@ -38,7 +38,7 @@ Choerodon采用Spring Cloud作为微服务框架，运行在Docker上，以Kuber
 
 - 约定：部署教程以NFS类型的PV为例进行创建，所有非集群级对象都创建在`choerodon-devops-prod`命名空间下。
 
-### 开始部署
+## 开始部署
 
 1. [Helm部署](./base/helm)
 1. [Chartmuseum部署](./base/chartmuseum)

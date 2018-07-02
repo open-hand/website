@@ -1,6 +1,6 @@
 ﻿+++
 title = "规划冲刺"
-description = ""
+description = "您将了解到冲刺的含义、如何开启和关闭冲刺，以及对冲刺问题进行规划"
 weight = 5
 +++
 

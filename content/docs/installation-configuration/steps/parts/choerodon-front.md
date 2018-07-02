@@ -4,16 +4,16 @@ description = "整合前端"
 weight = 40
 +++
 
-## 部署整合前端
+# 部署整合前端
 
-### 添加choerodon chart仓库
+## 添加choerodon chart仓库
 
 ```
 helm repo add c7n https://openchart.choerodon.com.cn/choerodon/c7n/
 helm repo update
 ```
 
-### 部署choerodon front
+## 部署choerodon front
 - 部署服务
 
     ```

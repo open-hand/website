@@ -1,6 +1,6 @@
 +++
 title = "开发环境搭建(Windows)"
-description = "开发环境搭建(Windows)"
+description = "讲述了如何在windows 环境下搭建本地开发环境"
 weight = 1
 +++
 
