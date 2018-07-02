@@ -84,7 +84,7 @@ weight = 2
 - 在编辑一个问题时，您可以为该问题设置一个预计的处理时间，该时间会以剩余时间的形式显示在问题详情页面的问题概要下方。
 - 您可以通过`登记工作`或`登记工作日志`来记录您每次处理问题所耗时间，系统会自动核减时间，显示出该问题最新的剩余时间。
 
-![enter description here](/docs/user-guide/agile/imge/image6.png "image20")
+![enter description here](/docs/user-guide/agile/imge/image20.png)
 
 1. 登记您此次工作所用时间。
 2. 选择此次工作开始的日期。
