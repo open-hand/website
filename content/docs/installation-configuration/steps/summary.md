@@ -36,9 +36,9 @@ weight = 30
 ## Choerodon URL
 - 文档中举例地址：`example.choerodon.io`
 - 一键部署变量名：`CHOERODON_FRONT_EXTERNAL_URL`
-- [分步部署设置](../parts/choerodon.front/#部署choerodon-front)
+- [分步部署设置](../parts/choerodon-front/#部署choerodon-front)
 
 ## Choerodon Devops Service WebSocket URL
 - 文档中举例地址：`devops.example.choerodon.io`
 - 一键部署变量名：`CHOERODON_DEVOPS_EXTERNAL_URL`
-- [分步部署设置](../parts/choerodon.devops/#部署devops-service)
+- [分步部署设置](../parts/choerodon-devops/#部署devops-service)
