@@ -77,7 +77,7 @@ $ git checkout feature-1
 
 将代码克隆到本地后，就可以在本地进行开发。
 
-通过Choerodon 提供的`MicroService` 应用模板，会生成一个最简单的`spring boot` 应用。
+通过Choerodon 提供的`MicroServiceUI` 应用模板，会生成一个最简单的前端应用。
 
 模板本身生成的应用可以直接运行在平台上。更多具体的开发参考[前端开发手册](../../development-guide/front/)。
 
@@ -205,4 +205,4 @@ $ git push origin feature-1
 
 ## 总结
 
-通过上述的步骤，就可以很快速的在Choerodon 中创建并部署一个后端的服务。
+通过上述的步骤，就可以很快速的在Choerodon 中创建并部署一个前端的服务。
