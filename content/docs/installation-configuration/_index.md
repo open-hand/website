@@ -1,9 +1,10 @@
 +++
 title = "部署与配置"
-description = "部署与配置"
+description = "从安装要求，步骤，升级指南，启停，卸载等详细描述了Choeroodn的部署与安装"
 date = 2018-03-30T13:06:38+08:00
-draft = false
 weight = 2
+icon = "/img/docs/doc-home/installation-configuration.svg"
+home = true
 +++
 
 ## Choerodon 系统部署架构

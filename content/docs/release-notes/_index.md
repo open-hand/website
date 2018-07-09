@@ -1,7 +1,9 @@
 +++
 title = "版本更新"
-description = ""
 weight = 6
+description = "详细介绍了Choerodon的版本迭代、改正、优化以及功能的增加"
+icon = "/img/docs/doc-home/release-notes.svg"
+home = true
 +++
 
 ## 介绍

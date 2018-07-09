@@ -275,12 +275,12 @@ jQuery(document).ready(function() {
 
 /*文档右侧文章标题导航*/
 /*导航菜单生成*/
-var ahtml = "<li><a class='head' >目录</a></li>";
+var ahtml = "";
 $(document).ready(function() {
   if ( document.getElementById("article-nav-ul")){
     if ($(window).width() >= 768) {
         $(".content-post h2").each(function () {
-            ahtml = ahtml + "<li><a class='sec' id='id-" + $(this).attr("id") + "' href='#" + $(this).attr("id") + "'>" + $(this).text() + "</a></li>";
+            ahtml = ahtml + "<li id='id-" + $(this).attr("id") + "' href='#" + $(this).attr("id") + "'><a class='sec' >" + $(this).text() + "</a></li>";
         })
         document.getElementById("article-nav-ul").innerHTML= ahtml;
     }
@@ -291,12 +291,12 @@ $(document).ready(function() {
  * 右侧菜单栏滚动效果
  */
 $(document).ready(function() {
-    $("#article-nav-ul a").click(function(e){
+    $("#article-nav-ul li").click(function(e){
       $("h1,h2").each(function () {
         $("#id-"+$(this).attr("id")).addClass("article-active");
         $("#id-"+$(this).attr("id")).removeClass("article-active");
       });
-        var articlenav = $('.article-menu li a');
+        var articlenav = $('.article-menu li');
         $('html, body').animate({
             scrollTop: $('[id="' + $.attr(this, 'href').substr(1) + '"]').offset().top-87
         }, 500,function(){
@@ -316,7 +316,7 @@ $(document).ready(function() {
  */
 $(document).ready(function() {
   if($(window).width()>=768) {
-      var articlenav = $('.article-menu li a');
+      var articlenav = $('.article-menu li ');
       $(window).scroll(function () {
           $("h1,h2").each(function () {
               var dis = $(this).offset().top - $(window).scrollTop();

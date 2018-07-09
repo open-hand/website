@@ -1,6 +1,6 @@
-<div class='navbar {{ if or (in .URL "blog") (in .URL "categories") (in .URL "tags") (and (in .URL "case-studies") (eq .Name "案例")) (and (in .URL "docs") (ne .Name "文档")) }} top-white-nav {{ end }} top-nav' role="navigation" id="navbar">
+<div class='navbar {{ if or (in .URL "blog") (in .URL "categories") (in .URL "tags") (and (in .URL "case-studies") (eq .Name "案例")) (in .URL "docs") }} top-white-nav {{ end }} top-nav' role="navigation" id="navbar">
     {{ if in .URL "docs" }}
-        <div class="navbar-left-buttons" {{ if eq .Name "文档" }} style="display: none" {{ end }}>
+        <div class="navbar-left-buttons">
             <button type="button" class="navbar-toggle btn-template-main">
                 <i class="iconfont">&#xe78e;</i>
             </button>

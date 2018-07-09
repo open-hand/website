@@ -4,21 +4,13 @@
     <link href="/css/docs.css" rel="stylesheet">
     <header id="header">
         {{ partial "nav.html" . }}
-        {{ if eq .Name "文档" }}
-            <div class="header-nav">
-                <div class="banner-text">
-                    <div class="head">欢迎使用猪齿鱼文档</div>
-                    <div class="description">通过阅读文档，您可以了解Choerodon猪齿鱼的相关概念、功能和系统的安装与配置，掌握平台使用方法，快速学会使用微服务开发框架进行系统开发</div>
-                </div>
-                <img src="/img/docs/docs-home-nav.svg"/>
-            </div>
-        {{ end }}
     </header>
     <body>
         <div id="content" class="docs">
-            <!-- docs-nav -->
-            <div class="docs-menu" {{ if eq .Name "文档" }} style="display: none" {{ end }}>
             
+            <!-- docs-nav -->
+            <div class="docs-menu">
+            <div class="docs-search">{{ partial "widgets/search.html" . }}</div>
             {{- $level := 0}}
             {{- $currentNode := . }}
             {{- range  where .Site.Home.Sections.ByWeight "Type" "docs"}}
@@ -88,11 +80,10 @@
             {{- end}}
             </div>
             <!-- docs-nav end -->
-            <div class='docs-post content-post {{ if eq .Name "文档" }} docs-home {{ end }}' id="content-post" >
+            <div class='docs-post content-post' id="content-post" >
                 {{ .Content }}
             </div>
-            <div class="article-menu" {{ if eq .Name "文档" }} style="display: none" {{ end }}>
-                {{ partial "widgets/search.html" . }}
+            <div class="article-menu">
                 <!--详情页右侧标题导航栏-->
                 <ul id="article-nav-ul">
                 </ul>
@@ -100,10 +91,7 @@
         </div>
         <!-- /#content -->
         <!-- 图片点击放大 -->
-        {{ if eq .Name "文档" }}
-            {{ else }}
-            <div style="clear: both;"></div>
-        {{ end }}
+        <div style="clear: both;"></div>
 
         {{ partial "footer.html" . }}
         {{ partial "scripts.html" . }}

@@ -1,20 +1,18 @@
 <div class="docs-home-content">
     {{- range  where .Site.Home.Sections.ByWeight "Type" "docs"}}
         {{- with . }}
-            {{ range .Sections }}
-                <div class="doc-home" style="display: flex;flex-direction: column-reverse;">
+                <div class="doc-home">
                     {{ $.Scratch.Set "card" false }}
                     <ul>
-                        {{ range (union .Pages .Sections).ByWeight}}
-                            {{ if .Params.unhome }}
-                            {{ else }}
+                        {{ range .Sections.ByWeight}}
+                            {{ if .Params.home }}
                             {{ if and (isset .Params "description") (isset .Params "icon") (ne .Params.icon "") (ne .Description "") }}
                                     {{ $.Scratch.Set "card" true }}
                                     <li>
                                         <div class="access-list-item">
                                             <a href="{{ .RelPermalink }}">
                                                 <div class="item-head">
-                                                    <i class="iconfont {{ .Params.icon}}"></i>
+                                                    <img class="n-max" src='{{ .Params.icon }}'>
                                                     <h4>{{ .Title }}</h4>
                                                 </div>
                                                 <p>{{ .Description }}</p>
@@ -25,10 +23,7 @@
                             {{ end }}
                         {{ end }}
                     </ul>
-                    <a href="{{ .RelPermalink }}" class='doc-home-head {{ if ($.Scratch.Get "card") }} {{ else }} none {{ end }}'>{{ .Title }}</a>
                 </div>
-                <hr class='{{ if ($.Scratch.Get "card") }} {{ else }} none {{ end }}'>
-            {{ end }}
         {{- end }}
     {{- end }}
 </div>
