@@ -415,6 +415,7 @@ fieldset[disabled] .btn-template-main.active {
 .top-white-nav,
 .fixed-nav{
   background-color: #ffffff;
+  border-bottom: 1px solid #DADADA;
 }
 
 .fixed-nav{

@@ -1,8 +1,10 @@
 ﻿+++
 title = "快速入门"
-description = ""
 weight = 3
 alwaysopen=false
+description = "从使用敏捷管理工具入手，结合前后端开发示例，详细介绍了如何使用Choerodon"
+icon = "/img/docs/doc-home/quick-start.svg"
+home = true
 +++
 
 ## 快速入门

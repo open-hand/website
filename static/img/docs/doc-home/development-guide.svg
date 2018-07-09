@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="70px" height="70px" viewBox="0 0 70 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47 (45396) - http://www.bohemiancoding.com/sketch -->
+    <title>Page 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="文档页优化" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="文档-门户" transform="translate(-734.000000, -736.000000)">
+            <g id="Page-1" transform="translate(734.000000, 736.000000)">
+                <path d="M0,13.5367 L69.238,13.5367 L69.238,-0.0003 L0,-0.0003 L0,13.5367 Z M58.713,9.0297 L62.77,9.0297 L62.77,4.9727 L58.713,4.9727 L58.713,9.0297 Z M51.456,9.0297 L55.513,9.0297 L55.513,4.9727 L51.456,4.9727 L51.456,9.0297 Z M44.199,9.0297 L48.255,9.0297 L48.255,4.9727 L44.199,4.9727 L44.199,9.0297 Z" id="Fill-1" fill="#3670E3"></path>
+                <path d="M0,59.2367 L69.238,59.2367 L69.238,17.5937 L0,17.5937 L0,59.2367 Z M26.552,47.1927 L39.378,28.9627 L42.696,31.2967 L29.87,49.5277 L26.552,47.1927 Z M43.892,46.0767 L53.006,39.2227 L43.891,32.3687 L46.33,29.1267 L59.755,39.2227 L46.33,49.3187 L43.892,46.0767 Z M9.483,39.2227 L22.908,29.1267 L25.346,32.3687 L16.232,39.2227 L25.347,46.0767 L22.908,49.3187 L9.483,39.2227 Z" id="Fill-2" fill="#6694EF"></path>
+                <polygon id="Fill-3" fill="#34D2DF" points="0 69.2377 69.238 69.2377 69.238 62.9687 0 62.9687"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>
