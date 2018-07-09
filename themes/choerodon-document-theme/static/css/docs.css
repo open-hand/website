@@ -359,7 +359,7 @@ i.note-number[data-value]::after {
 
 .docs-post .doc-home .access-list-item h4 {
     font-size: 0.15rem;
-    color: #000;
+    color: #326DE6;
     margin-bottom: 0.2rem;
     font-weight: 500;
     margin: auto;
@@ -403,6 +403,10 @@ i.note-number[data-value]::after {
 .docs-post blockquote.note::before {
     color: #039be5;
     content: "\e650 \00a0 \00a0 \00a0 Note:";
+}
+
+.docs-post blockquote.note a{
+    color: #326DE6;
 }
 
 .docs-post blockquote.warning {

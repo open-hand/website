@@ -439,6 +439,10 @@ body {
     right: 0;
 }
 
+.no-warp{
+    white-space:nowrap; 
+}
+
 .iconfont{
     font-size:0.16rem;
 }
@@ -594,6 +598,7 @@ p {
     background-color: #e5e5e5;
     padding: 0.05rem 0.1rem;
     color: #6b6b6b;
+    white-space: nowrap;
 }
 
 .content-post td {
