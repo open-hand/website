@@ -1,0 +1,36 @@
+{{ range $index,$value := (split .Inner "\n") }}
+    {{ if ne $value "" }}
+        {{ $.Scratch.Add "level" 1 }}
+    {{ end }}
+{{ end }}
+<table>
+    {{ $.Scratch.Set "level" 0 }}
+    {{ range $index,$value := (split .Inner "\n") }}
+        {{ if and (ne $value "") (eq ($.Scratch.Get "level") 0)}}
+            {{ $.Scratch.Add "level" 1 }}
+            <thead>
+                <tr>
+                    {{ range $row,$td := (split $value "|") }}
+                    {{ if in $.Params $row }}no-warp{{ end }}
+                        <th {{ if in $.Params (string $row) }}class='no-warp'{{ end }}>{{$td}}</th>
+                    {{ end }}
+                </tr>
+            </thead>
+        {{ end }}
+    {{ end }}
+    <tbody>
+    {{ $.Scratch.Set "level" 0 }}
+    {{ range $index,$value := (split .Inner "\n") }}
+        {{ if and (ne $value "")}}
+            {{ $.Scratch.Add "level" 1 }}
+        {{ end }}
+        {{ if and (ne ($.Scratch.Get "level") 2) (ne ($.Scratch.Get "level") 1) (ne $value "") }}
+            <tr>
+                {{ range $row,$td := (split $value "|") }}
+                    <td {{ if in $.Params (string $row) }}class='no-warp'{{ end }}>{{ $td }}</td>
+                {{ end }}
+            </tr>
+        {{ end }}
+    {{ end }}
+    </tbody>
+</table>
