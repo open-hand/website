@@ -1,7 +1,9 @@
 +++
 title = "概念"
-description = ""
+description = "用户可以通过此章节了解Choerodon的作用、系统架构、使用的开源组件以及系统的组织层次和安全设计等"
 weight = 1
+icon = "/img/docs/doc-home/concept.svg"
+home = true
 +++
 
 # 概念

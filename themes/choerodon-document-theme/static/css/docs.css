@@ -73,6 +73,10 @@ i.note-number[data-value]::after {
     list-style-type: none;
     min-width: 3rem;
 }
+.docs-menu .docs-search{
+    margin-left: 0.32rem;
+    margin-right: 0.2rem;
+}
 
 .docs-menu .dd-item {
     list-style: none;
@@ -122,7 +126,7 @@ i.note-number[data-value]::after {
     font-size: 0.1rem;
     color: #314659;
     font-weight: 400;
-    margin: auto 0.15rem;
+    margin: auto 0.18rem;
     cursor: pointer;
 }
 
@@ -163,30 +167,31 @@ i.note-number[data-value]::after {
     line-height: 1;
 }
 
-.article-menu ul li:first-child a {
-    font-weight: 900;
-}
-
 .article-menu {
     position: fixed;
     right: 0;
     margin-right: 0.23rem;
     background-color: white;
-    width: 2.16rem;
+    width: 1.7rem;
     flex-direction: column;
     margin-top: 0.8rem;
+    display: flex;
 }
 
-.article-menu ul li a.article-active {
-    color: #5cc2f2;
+.article-menu ul li.article-active{
+    border-left: 0.01rem solid #326DE6;
+    padding-left: 0.1rem;
+}
+.article-menu ul li.article-active a{
+    color: #326DE6;
     position: relative;
 }
 
 .article-menu ul {
     list-style: none;
-    padding-left: 0.1rem;
+    padding-left: 0;
     display: block;
-    border-left: 0.01rem solid #5cc2f2;
+    border-left: 0.01rem solid #DADADA;
     overflow: auto;
     position: relative;
 }
@@ -194,9 +199,10 @@ i.note-number[data-value]::after {
 .article-menu ul li {
     align-items: center;
     line-height: 1.23;
-    margin-top: 0.08rem;
+    padding-top: 0.08rem;
     list-style: none;
     font-size: 0.13rem;
+    padding-left: 0.11rem;
 }
 
 .article-menu .head {
@@ -213,17 +219,7 @@ i.note-number[data-value]::after {
     font-size: 0.12rem;
 }
 
-.article-menu {
-    display: flex;
-}
-
 /* 文档菜单结束 */
-
-.docs-post.docs-home {
-    width: 100%;
-    margin: 0;
-    background-color: #f5f5f5;
-}
 
 .docs-home-nav {
     min-height: 2.85rem;
@@ -260,7 +256,6 @@ i.note-number[data-value]::after {
 }
 
 .docs-home-content {
-    width: 10.24rem;
     margin: 0.4rem auto;
 }
 
@@ -294,17 +289,8 @@ i.note-number[data-value]::after {
     font-weight: 300;
 }
 
-.docs-home-content {
-    width: 10.24rem;
-    margin: 0.4rem auto;
-}
-
-.docs-post .docs-home-content img {
-    border: none;
-}
-
 .docs-post {
-    width: 8.3rem;
+    width: 8.8rem;
     padding: 0;
     margin-left: 0.28rem;
     margin-top: 0.8rem;
@@ -329,21 +315,6 @@ i.note-number[data-value]::after {
     margin-top: 0.4rem;
 }
 
-.doc-home-head {
-    font-size: 0.24rem;
-    font-weight: 500;
-    line-height: 1;
-    color: #000;
-}
-
-.doc-home-head:hover {
-    color: #000;
-}
-
-.doc-home-head i {
-    font-size: 0.24rem;
-}
-
 .docs-post .doc-home ul {
     display: flex;
     flex-wrap: wrap;
@@ -353,10 +324,10 @@ i.note-number[data-value]::after {
 
 .docs-post .doc-home ul li {
     background-color: #fff;
-    box-shadow: 0 0.01rem 0.03rem -0.02rem rgba(0, 0, 0, 0.2), 0 0.01rem 0.01rem 0 rgba(0, 0, 0, 0.14), 0 0.02rem 0.01rem -0.01rem rgba(0, 0, 0, 0.12);
     border-radius: 0.02rem;
-    width: 2.4rem;
-    min-height: 2.06rem;
+    border: 1px solid #DADADA;
+    width: 2.8rem;
+    min-height: 2.13rem;
     list-style: none;
     margin: 0 0.1rem 0.2rem 0.1rem;
 }
@@ -368,18 +339,22 @@ i.note-number[data-value]::after {
 
 .docs-post .doc-home .access-list-item .item-head {
     display: flex;
+    flex-direction: column;
     margin-bottom: 0.1rem;
 }
 
 .docs-post .doc-home ul li:hover {
-    box-shadow: 0 0.04rem 0.02rem -0.02rem rgba(0, 0, 0, 0.12), 0 0.04rem 0.02rem -0.02rem rgba(0, 0, 0, 0.12), 0 0.04rem 0.02rem -0.02rem rgba(0, 0, 0, 0.12);
+    background: #F0F8FF;
+    border: 1px solid #6694EF;
 }
 
 .docs-post .doc-home img {
-    height: 0.34rem;
+    height: 0.71rem;
     background-size: auto 100%;
     background-position: left;
     background-repeat: no-repeat;
+    margin-bottom: 0.16rem;
+    max-width: 100%;
 }
 
 .docs-post .doc-home .access-list-item h4 {
@@ -387,7 +362,7 @@ i.note-number[data-value]::after {
     color: #000;
     margin-bottom: 0.2rem;
     font-weight: 500;
-    margin: auto auto auto 0.2rem;
+    margin: auto;
 }
 
 .docs-post .doc-home li p {
@@ -488,7 +463,7 @@ i.note-number[data-value]::after {
 
 .docs-post img {
     border: 0.01rem solid #ebebeb;
-    max-width: calc(100% - 0.32rem)
+    max-width: calc(100% - .32rem);
 }
 
 .docs-post .access-list-item a,
@@ -654,15 +629,15 @@ i.note-number[data-value]::after {
         margin-top: 0.3rem;
         margin-bottom: 0;
     }
+    .docs-menu .docs-search{
+        display: none;
+    }
+    .docs-menu .docs-search .search{
+        margin-bottom: 0.2rem;
+    }
     .docs-menu li {
         padding-top: 0.2rem;
         margin-top: 0;
-    }
-    .docs-post.docs-home {
-        width: 3.75rem;
-        padding: 0;
-        position: relative;
-        left: 3rem;
     }
     .docs-home-nav {
         background-image: none;
@@ -684,13 +659,8 @@ i.note-number[data-value]::after {
     .docs-home-nav .nav-text p {
         text-align: center;
     }
-    .doc-home-head {
-        margin-left: 0.2rem;
-    }
     .docs-home-content {
         padding: 0 0.4rem;
-    }
-    .docs-home-content {
         width: 3.5rem;
     }
     .docs-post .doc-home ul li {

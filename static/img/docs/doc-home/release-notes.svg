@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="66px" height="72px" viewBox="0 0 66 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47 (45396) - http://www.bohemiancoding.com/sketch -->
+    <title>Page 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="65.511 42.6403 65.511 0.8863 0.0001 0.8863 0.0001 42.6403 65.511 42.6403"></polygon>
+    </defs>
+    <g id="文档页优化" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="文档-门户" transform="translate(-1036.000000, -734.000000)">
+            <g id="Page-1" transform="translate(1036.000000, 733.000000)">
+                <polygon id="Fill-1" fill="#3670E3" points="1.117 64.0076 22.524 64.0076 22.524 59.7566 1.117 59.7566"></polygon>
+                <polygon id="Fill-2" fill="#3670E3" points="42.988 64.0076 64.394 64.0076 64.394 59.7566 42.988 59.7566"></polygon>
+                <g id="Group-10" transform="translate(0.000000, 0.113600)">
+                    <g id="Group-5">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <g id="Clip-4"></g>
+                        <path d="M34.8811,42.6403 L56.4491,42.6403 C61.4461,42.6403 65.5111,38.5753 65.5111,33.5783 C65.5111,29.3123 62.5271,25.7103 58.5371,24.7623 C57.7661,18.2833 52.2371,13.2413 45.5531,13.2413 C44.7141,13.2413 43.8851,13.3213 43.0711,13.4783 C42.1111,10.2793 40.2491,7.3913 37.6891,5.1803 C34.4841,2.4113 30.3841,0.8863 26.1441,0.8863 C16.4501,0.8863 8.5541,8.7323 8.4741,18.4083 C3.4681,20.0783 0.0001,24.7743 0.0001,30.2013 C0.0001,37.0603 5.5801,42.6403 12.4401,42.6403 L34.8811,42.6403 Z" id="Fill-3" fill="#6694EF" mask="url(#mask-2)"></path>
+                    </g>
+                    <polygon id="Fill-6" fill="#34D2DF" points="30.6301 51.5366 30.6301 51.5366 22.5241 51.5366 22.5241 59.6426 22.5241 63.8936 22.5241 71.9996 42.9871 71.9996 42.9871 63.8936 42.9871 59.6426 42.9871 51.5366"></polygon>
+                    <polyline id="Fill-8" fill="#3670E3" points="30.6301 47.2783 30.6301 51.5363 34.8811 51.5353 34.8811 47.2783"></polyline>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
