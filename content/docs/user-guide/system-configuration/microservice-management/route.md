@@ -1,6 +1,6 @@
 +++
 title = "路由管理"
-weight = 3
+weight = 4
 description = "用于管理平台路由"
 +++
 
