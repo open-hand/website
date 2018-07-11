@@ -1,7 +1,7 @@
 ﻿+++
 title = "项目设置"
 description = "对项目进行管理，主要有项目信息的创建和项目角色分配"
-weight = 4
+weight = 5
 +++
 
 ## 介绍
