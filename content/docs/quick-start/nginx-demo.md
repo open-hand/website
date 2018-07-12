@@ -3,7 +3,7 @@ title = "创建一个nginx示例"
 description = "介绍了如何在Choerodon中快速搭建一个nginx示例"
 weight = 2
 type = "docs"
-icon = "icon-nginx-demo"
+
 +++
 
 # 创建一个nginx示例
