@@ -32,7 +32,7 @@ weight = 1
 2. 运行 `brew install node` 安装node。
 3. 配置完成后打开终端执行 `node --version`，有提示则说明环境安装成功。
 
-## 在Macn上安装python
+## 在Mac上安装python
 
 在项目中,python(2.7.X)用于执行功能性脚本。
 

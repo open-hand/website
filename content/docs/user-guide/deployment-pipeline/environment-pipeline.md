@@ -85,7 +85,7 @@ weight = 1
 
 ## 环境停用区 
 
-可在环境停用区查看已被停用的环境，点击卡片右上角`启用按钮` → ![启用按钮](/docs/user-guide/deployment-pipeline/image/start_button.png) 重新启用。
+可在环境停用区查看已被停用的环境，点击卡片右上角`启用按钮` → ![启用按钮](/docs/user-guide/deployment-pipeline/image/start_button.png) 重新启用，重新启用后默认加至流水线最后一个节点。
 
 
  
