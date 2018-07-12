@@ -82,7 +82,6 @@ jQuery(document).ready(function () {
             $('#tutorial-video').css("display","none");
             $('#tutorial-video iframe').attr("src","");
         }
-        
     })
     // 案例hover更换图片
     jQuery('.clients-section .customers a').hover(function (e) {
