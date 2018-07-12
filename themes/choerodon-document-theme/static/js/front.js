@@ -1,3 +1,15 @@
+//判断是否为PC端
+function IsPC() {
+    var userAgentInfo = navigator.userAgent;
+    var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod");
+    var flag = true;
+    for (var v = 0; v < Agents.length; v++) {
+        if (userAgentInfo.indexOf(Agents[v]) > 0) { flag = false; break; }
+    }
+    return flag;
+}
+var isPC = IsPC();
+
 // 导航栏版本选择
 $("#version").on("click", function () {
     $("#select-menu").toggleClass("none block");
@@ -69,18 +81,20 @@ if ($(window).scrollTop() == 0) {
 // home
 jQuery(document).ready(function () {
     //文档教程播放
-    $('#tutorial-img img').on('click', function(){
-        $('#tutorial-video iframe').attr("src",($(this).attr('data-src')));
-        $('#tutorial-video').css("display","flex");
-    })
-    $('#tutorial-video').on('click', function(e){
-        if($(e.target).hasClass("bg")){
-            $('#tutorial-video').css("display","none");
-            $('#tutorial-video iframe').attr("src","");
+    $('#tutorial-img img').on('click', function () {
+        if (isPC){
+            var src = "http://player.youku.com/embed/"+ $(this).attr('data-src') +"?autoplay=1";
+            $('#tutorial-video iframe').attr("src", src);
+            $('#tutorial-video').css("display", "flex");
+        } else {
+            var src = "https://v.youku.com/v_show/id_" + $(this).attr('data-src');
+            window.location.href=src;
         }
-        else if($(e.target).hasClass("icon-guanbi")){
-            $('#tutorial-video').css("display","none");
-            $('#tutorial-video iframe').attr("src","");
+    })
+    $('#tutorial-video').on('click', function (e) {
+        if ($(e.target).hasClass("bg") || $(e.target).hasClass("icon-guanbi")) {
+            $('#tutorial-video').css("display", "none");
+            $('#tutorial-video iframe').attr("src", "");
         }
     })
     // 案例hover更换图片
