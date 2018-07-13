@@ -21,6 +21,6 @@ description = ""
 </div>
 <div class="tutorial-video" id="tutorial-video">
     <div class="bg"></div>
-    <iframe src='' frameborder=0 'allowfullscreen' ></iframe>
+    <iframe src='' frameborder=0 allowfullscreen="true"></iframe>
     <div class="iconfont icon-guanbi"></div>
 </div>
