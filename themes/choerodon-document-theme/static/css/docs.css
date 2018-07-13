@@ -248,7 +248,6 @@ i.note-number[data-value]::after {
     background: url(/docs/quick-start/video-tutorial/img/video-button.svg)no-repeat center,-moz-linear-gradient(270deg, rgba(175, 173, 173, 0.6),rgba(0, 0, 0, 0.6));
     background: url(/docs/quick-start/video-tutorial/img/video-button.svg)no-repeat center,-o-linear-gradient(270deg, rgba(175, 173, 173, 0.6),rgba(0, 0, 0, 0.6));
     background: url(/docs/quick-start/video-tutorial/img/video-button.svg)no-repeat center,-ms-linear-gradient(270deg, rgba(175, 173, 173, 0.6),rgba(0, 0, 0, 0.6));
-    background-size: 15%;
 }
 .tutorial-img .tutorial .tutorial-content .mask .description{
     position: absolute;
