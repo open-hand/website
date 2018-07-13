@@ -17,3 +17,7 @@ Choerodon 猪齿鱼以容器化管理、微服务架构为基础；以高效敏�
 一起来加入我们 Choerodon 猪齿鱼的大家庭吧！
 
 {{< dochome >}}
+
+## 视频教程
+
+为了使您更好、更方便的了解Choeroodn猪齿鱼，我们还录制了产品的视频教程，详情请查看[视频教程](./quick-start/video-tutorial/)。
