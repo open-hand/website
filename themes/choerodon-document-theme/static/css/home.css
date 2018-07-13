@@ -221,9 +221,9 @@
 
 
 .see-more-section .more-icon{
-	background: url(../img/see-more-ico.svg) no-repeat center;
-	height: 0.4rem;
-	width: 0.3rem;
+	background: url(../img/home/video-icon.svg) no-repeat center;
+	height: 0.3rem;
+	width: 0.2rem;
 }
 .see-more-section .icon-text{
 	font-size: 0.16rem;
@@ -589,9 +589,9 @@
 		line-height: 1.43;
 	}
 	.see-more-section .more-icon {
-		background: url(../img/see-more-ico.svg) no-repeat center;
-		height: 0.28rem;
-		width: 0.28rem;
+		background: url(../img/home/video-icon.svg) no-repeat center;
+		height: 0.2rem;
+		width: 0.2rem;
 	}
 	.clients-section .text-center, 
 	.products-section .text-center{
