@@ -2,7 +2,7 @@
 title = "前端开发手册"
 description = "介绍如何开发新的页面，如何建立并开发新的模块和系统平台的相关配置项"
 weight = 2
-icon = "icon-front-development"
+
 +++
 
 <h2 id="1">介绍</h2>

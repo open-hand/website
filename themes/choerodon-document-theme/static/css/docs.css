@@ -220,7 +220,53 @@ i.note-number[data-value]::after {
 }
 
 /* 文档菜单结束 */
+.tutorial-img .tutorial{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.tutorial-img .tutorial img{
+    width: 3.7rem;
+}
+.tutorial-img .title{
+    font-size: 0.18rem;
+    font-weight: 700;
+}
 
+.tutorial-video{
+	z-index: 1001;
+	width: 10.6rem;
+	margin: auto;
+	justify-content: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	align-items: center;
+	display: none;
+}
+.tutorial-video .icon-guanbi{
+    font-size: 0.5rem;
+    position: absolute;
+    right: 0.2rem;
+    top: 0;
+    z-index: 1002;
+}
+.tutorial-video .bg{
+    background-color: #000;
+    opacity: 0.3;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.tutorial-video iframe{
+    z-index: 1002;
+	display: flex;
+	align-items: center;
+	width: 7.68rem;
+	height: 5.76rem;
+}
 .docs-home-nav {
     min-height: 2.85rem;
     padding: 0;
@@ -569,11 +615,6 @@ i.note-number[data-value]::after {
 }
 
 .docs-post table {
-    /* width: 100%;
-    border: 0.01rem solid #ccc;
-    border-spacing: 0;
-    margin-top: 0.3rem;
-    margin-bottom: 0.3rem; */
     border-collapse: collapse;
     border-spacing: 0;
     empty-cells: show;
@@ -669,5 +710,28 @@ i.note-number[data-value]::after {
     }
     .docs-post .doc-home ul li {
         margin: 0 auto 0.2rem auto;
+    }
+    .tutorial-video .bg{
+        background-color: #000;
+        opacity: 1;
+    }
+    .tutorial-img .tutorial img{
+        max-width: 100%;
+        width: 100%;
+    }
+    .tutorial-video .icon-guanbi{
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 1002;
+        font-size: 0.4rem;
+        color: white;
+    }
+    .tutorial-video iframe{
+        z-index: 1002;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 4.8rem;
     }
 }

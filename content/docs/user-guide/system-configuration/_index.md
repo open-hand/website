@@ -2,7 +2,6 @@
 title = "系统配置"
 description = "为了让Choerodon的用户更便捷、科学地使用平台，需在用户使用前进行的系统配置，包括角色、用户、项目、环境等"
 weight = 1
-icon = "icon-system-configuration"
 +++
 
 ## 介绍
