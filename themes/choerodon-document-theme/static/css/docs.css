@@ -226,7 +226,44 @@ i.note-number[data-value]::after {
     align-items: center;
 }
 .tutorial-img .tutorial img{
-    width: 3.7rem;
+    width: 3rem;
+    max-width: 100%;
+    height: 2rem;
+}
+.tutorial-img .tutorial .tutorial-content{
+    position: relative;
+    display:flex;
+}
+.tutorial-img .tutorial .tutorial-content:hover{
+    opacity: 0.9;
+}
+.tutorial-img .tutorial .tutorial-content .mask{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: url(/docs/quick-start/video-tutorial/img/video-button.svg)no-repeat center,linear-gradient(270deg,rgba(175, 173, 173, 0.6),rgba(0, 0, 0, 0.6));
+    background: url(/docs/quick-start/video-tutorial/img/video-button.svg)no-repeat center,-webkit-linear-gradient(270deg,rgba(175, 173, 173, 0.6),rgba(0, 0, 0, 0.6));
+    background: url(/docs/quick-start/video-tutorial/img/video-button.svg)no-repeat center,-moz-linear-gradient(270deg, rgba(175, 173, 173, 0.6),rgba(0, 0, 0, 0.6));
+    background: url(/docs/quick-start/video-tutorial/img/video-button.svg)no-repeat center,-o-linear-gradient(270deg, rgba(175, 173, 173, 0.6),rgba(0, 0, 0, 0.6));
+    background: url(/docs/quick-start/video-tutorial/img/video-button.svg)no-repeat center,-ms-linear-gradient(270deg, rgba(175, 173, 173, 0.6),rgba(0, 0, 0, 0.6));
+    background-size: 15%;
+}
+.tutorial-img .tutorial .tutorial-content .mask .description{
+    position: absolute;
+    top: 70%;
+    left: 0;
+    padding: 0 10%;
+    color: #FFFFFF;
+
+}
+.tutorial-img .tutorial .tutorial-content .tutorial-button{
+    position:absolute;
+    top:40%;
+    left:0;
+    width: 40%;
+    height: 20%;
 }
 .tutorial-img .title{
     font-size: 0.18rem;
@@ -273,8 +310,8 @@ i.note-number[data-value]::after {
     display: flex;
     flex-direction: column;
     color: #fafafa;
-    background: linear-gradient(0deg, #003DAC, #3371E3);
-    background: -webkit-linear-gradient(0deg, #003DAC, #3371E3);
+    background: url(/docs/quick-start/video-tutorial/img/video-button.svg),no-repeat,linear-gradient(0deg, #003DAC, #3371E3);
+    background: url(/docs/quick-start/video-tutorial/img/video-button.svg),no-repeat,-webkit-linear-gradient(0deg, #003DAC, #3371E3);
     background: -moz-linear-gradient(0deg, #003DAC, #3371E3);
     background: -o-linear-gradient(0deg, #003DAC, #3371E3);
     background: -ms-linear-gradient(0deg, #003DAC, #3371E3);

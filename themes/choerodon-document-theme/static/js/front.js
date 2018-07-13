@@ -81,7 +81,7 @@ if ($(window).scrollTop() == 0) {
 // home
 jQuery(document).ready(function () {
     //文档教程播放
-    $('#tutorial-img img').on('click', function () {
+    $('#tutorial-img .tutorial-content').on('click', function () {
         if (isPC){
             var src = "http://player.youku.com/embed/"+ $(this).attr('data-src') +"?autoplay=1";
             $('#tutorial-video iframe').attr("src", src);
