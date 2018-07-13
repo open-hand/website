@@ -2,7 +2,6 @@
 title = "应用市场"
 description = "应用市场部分包括了应用发布和应用市场，能进行项目内应用的公开和应用市场内应用的部署以及导入导出"
 weight = 4
-icon = "icon-application-market"
 +++
 
 ## 介绍

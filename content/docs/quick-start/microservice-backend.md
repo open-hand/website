@@ -3,7 +3,7 @@ title = "创建一个后端应用"
 description = "从创建后端应用、创建后端应用模板、开发后端应用、生成版本、部署应用、查看运行信息等方面介绍"
 weight = 4
 type = "docs"
-icon = "icon-microservice-backend"
+
 +++
 
 # 创建一个后端应用

@@ -2,7 +2,7 @@
 title = "安全"
 description = "介绍了Choerodon的认证体系和角色控制访问权限"
 weight = 7
-icon = "icon-security"
+
 #alwaysopen=true
 +++
 

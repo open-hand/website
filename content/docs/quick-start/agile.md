@@ -2,7 +2,7 @@
 title = "使用敏捷管理工具"
 description = "介绍了Choerodon的敏捷管理，从创建项目、问题、冲刺来介绍如何快速了解敏捷管理的操作方法"
 weight = 6
-icon = "icon-use-agile"
+
 +++
 
 # 使用敏捷管理工具
