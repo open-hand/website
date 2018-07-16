@@ -73,7 +73,8 @@ i.note-number[data-value]::after {
     list-style-type: none;
     min-width: 3rem;
 }
-.docs-menu .docs-search{
+
+.docs-menu .docs-search {
     margin-left: 0.32rem;
     margin-right: 0.2rem;
 }
@@ -178,11 +179,12 @@ i.note-number[data-value]::after {
     display: flex;
 }
 
-.article-menu ul li.article-active{
+.article-menu ul li.article-active {
     border-left: 0.01rem solid #326DE6;
     padding-left: 0.1rem;
 }
-.article-menu ul li.article-active a{
+
+.article-menu ul li.article-active a {
     color: #326DE6;
     position: relative;
 }
@@ -220,97 +222,112 @@ i.note-number[data-value]::after {
 }
 
 /* 文档菜单结束 */
-.tutorial-img .tutorial{
+
+.tutorial-img {
+    cursor: pointer;
+}
+
+.tutorial-img .tutorial {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.tutorial-img .tutorial img{
+
+.tutorial-img .tutorial img {
     width: 3rem;
     max-width: 100%;
     height: 2rem;
 }
-.tutorial-img .tutorial .tutorial-content{
+
+.tutorial-img .tutorial .tutorial-content {
     position: relative;
-    display:flex;
+    display: flex;
 }
-.tutorial-img .tutorial .tutorial-content:hover{
+
+.tutorial-img .tutorial .tutorial-content:hover {
     opacity: 0.9;
 }
-.tutorial-img .tutorial .tutorial-content .mask{
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background: url(/docs/quick-start/video-tutorial/img/video-button.svg)no-repeat center,linear-gradient(270deg,rgba(175, 173, 173, 0.6),rgba(0, 0, 0, 0.6));
-    background: url(/docs/quick-start/video-tutorial/img/video-button.svg)no-repeat center,-webkit-linear-gradient(270deg,rgba(175, 173, 173, 0.6),rgba(0, 0, 0, 0.6));
-    background: url(/docs/quick-start/video-tutorial/img/video-button.svg)no-repeat center,-moz-linear-gradient(270deg, rgba(175, 173, 173, 0.6),rgba(0, 0, 0, 0.6));
-    background: url(/docs/quick-start/video-tutorial/img/video-button.svg)no-repeat center,-o-linear-gradient(270deg, rgba(175, 173, 173, 0.6),rgba(0, 0, 0, 0.6));
-    background: url(/docs/quick-start/video-tutorial/img/video-button.svg)no-repeat center,-ms-linear-gradient(270deg, rgba(175, 173, 173, 0.6),rgba(0, 0, 0, 0.6));
+
+.tutorial-img .tutorial .tutorial-content .mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(/docs/quick-start/video-tutorial/img/video-button.svg)no-repeat center, linear-gradient(270deg, rgba(175, 173, 173, 0.6), rgba(0, 0, 0, 0.6));
+    background: url(/docs/quick-start/video-tutorial/img/video-button.svg)no-repeat center, -webkit-linear-gradient(270deg, rgba(175, 173, 173, 0.6), rgba(0, 0, 0, 0.6));
+    background: url(/docs/quick-start/video-tutorial/img/video-button.svg)no-repeat center, -moz-linear-gradient(270deg, rgba(175, 173, 173, 0.6), rgba(0, 0, 0, 0.6));
+    background: url(/docs/quick-start/video-tutorial/img/video-button.svg)no-repeat center, -o-linear-gradient(270deg, rgba(175, 173, 173, 0.6), rgba(0, 0, 0, 0.6));
+    background: url(/docs/quick-start/video-tutorial/img/video-button.svg)no-repeat center, -ms-linear-gradient(270deg, rgba(175, 173, 173, 0.6), rgba(0, 0, 0, 0.6));
 }
-.tutorial-img .tutorial .tutorial-content .mask .description{
+
+.tutorial-img .tutorial .tutorial-content .mask .description {
     position: absolute;
     top: 70%;
     left: 0;
     padding: 0 10%;
     color: #FFFFFF;
-
 }
-.tutorial-img .tutorial .tutorial-content .tutorial-button{
-    position:absolute;
-    top:40%;
-    left:0;
+
+.tutorial-img .tutorial .tutorial-content .tutorial-button {
+    position: absolute;
+    top: 40%;
+    left: 0;
     width: 40%;
     height: 20%;
 }
-.tutorial-img .title{
+
+.tutorial-img .title {
     font-size: 0.18rem;
     font-weight: 700;
 }
 
-.tutorial-video{
-	z-index: 1001;
-	width: 10.6rem;
-	margin: auto;
-	justify-content: center;
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	align-items: center;
-	display: none;
+.tutorial-video {
+    z-index: 1001;
+    width: 10.6rem;
+    margin: auto;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    display: none;
 }
-.tutorial-video .icon-guanbi{
+
+.tutorial-video .icon-guanbi {
     font-size: 0.5rem;
     position: absolute;
     right: 0.2rem;
     top: 0;
     z-index: 1002;
 }
-.tutorial-video .bg{
+
+.tutorial-video .bg {
     background-color: #000;
     opacity: 0.3;
     position: absolute;
     width: 100%;
     height: 100%;
 }
-.tutorial-video iframe{
+
+.tutorial-video iframe {
     z-index: 1002;
-	display: flex;
-	align-items: center;
-	width: 7.68rem;
-	height: 5.76rem;
+    display: flex;
+    align-items: center;
+    width: 7.68rem;
+    height: 5.76rem;
 }
+
 .docs-home-nav {
     min-height: 2.85rem;
     padding: 0;
     display: flex;
     flex-direction: column;
     color: #fafafa;
-    background: url(/docs/quick-start/video-tutorial/img/video-button.svg),no-repeat,linear-gradient(0deg, #003DAC, #3371E3);
-    background: url(/docs/quick-start/video-tutorial/img/video-button.svg),no-repeat,-webkit-linear-gradient(0deg, #003DAC, #3371E3);
+    background: url(/docs/quick-start/video-tutorial/img/video-button.svg), no-repeat, linear-gradient(0deg, #003DAC, #3371E3);
+    background: url(/docs/quick-start/video-tutorial/img/video-button.svg), no-repeat, -webkit-linear-gradient(0deg, #003DAC, #3371E3);
     background: -moz-linear-gradient(0deg, #003DAC, #3371E3);
     background: -o-linear-gradient(0deg, #003DAC, #3371E3);
     background: -ms-linear-gradient(0deg, #003DAC, #3371E3);
@@ -487,7 +504,7 @@ i.note-number[data-value]::after {
     content: "\e650 \00a0 \00a0 \00a0 Note:";
 }
 
-.docs-post blockquote.note a{
+.docs-post blockquote.note a {
     color: #326DE6;
 }
 
@@ -710,10 +727,10 @@ i.note-number[data-value]::after {
         margin-top: 0.3rem;
         margin-bottom: 0;
     }
-    .docs-menu .docs-search{
+    .docs-menu .docs-search {
         display: none;
     }
-    .docs-menu .docs-search .search{
+    .docs-menu .docs-search .search {
         margin-bottom: 0.2rem;
     }
     .docs-menu li {
@@ -747,15 +764,15 @@ i.note-number[data-value]::after {
     .docs-post .doc-home ul li {
         margin: 0 auto 0.2rem auto;
     }
-    .tutorial-video .bg{
+    .tutorial-video .bg {
         background-color: #000;
         opacity: 1;
     }
-    .tutorial-img .tutorial img{
+    .tutorial-img .tutorial img {
         max-width: 100%;
         width: 100%;
     }
-    .tutorial-video .icon-guanbi{
+    .tutorial-video .icon-guanbi {
         position: absolute;
         right: 0;
         top: 0;
@@ -763,7 +780,7 @@ i.note-number[data-value]::after {
         font-size: 0.4rem;
         color: white;
     }
-    .tutorial-video iframe{
+    .tutorial-video iframe {
         z-index: 1002;
         display: flex;
         align-items: center;
