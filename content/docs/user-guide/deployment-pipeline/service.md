@@ -43,7 +43,7 @@ weight = 5
 
     - 端口号为实例service端口号，目标端口号为实例Pod端口号，用以配置网络的端口映射转发。
 
-          <blockquote class="warning">
+        <blockquote class="warning">
      端口号必须是数字且大小在0-65535之间
     	</blockquote>
 
