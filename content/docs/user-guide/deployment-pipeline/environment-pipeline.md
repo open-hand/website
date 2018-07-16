@@ -26,7 +26,7 @@ weight = 1
 
 **2. 创建环境**
   
-  ![enter description here](/docs/user-guide/deployment-pipeline/imge/envcreate.png)
+  ![enter description here](/docs/user-guide/deployment-pipeline/image/envcreate.png)
  
  -  点击`创建`，系统会滑出创建环境页面，输入相关信息，有环境编码、环境名称、环境描述。
 	
