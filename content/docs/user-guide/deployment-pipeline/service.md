@@ -15,27 +15,46 @@ weight = 5
 项目所有者和项目成员对网络只有查看界面的权限，不可进行编辑修改。
 </blockquote>
 
+  ![enter description here](/docs/user-guide/deployment-pipeline/imge/service.png)
+
 ## 创建网络
 
  1. 点击 `创建网络` ；
 
- 1. 选择`环境`，只可选择运行中的环境，故障中的环境不可选；
+ 2. 选择`环境`，只可选择运行中的环境，故障中的环境不可选；
 
- 1. 选择`应用名称`、`版本`及`实例`；
+ 3. 选择`应用名称`、`版本`及`实例`；
 
- 1. 输入`网络名称`、`外部IP`、`端口号`以及`目标端口号`；
+    <blockquote class="note">
+       可以为同一个应用的不同版本创建同一个网络，以后用于灰度发布，（暂不支持灰度发布）,版本只能查到所选环境下运行中实例的版本！
+    	</blockquote>
+
+     <blockquote class="warning">
+      网络名称只能由小写字母、数字、"-"组成，并且以小写字母开头，不能以"-"结尾
+    	</blockquote>
+ 
+ 4. 输入`网络名称`、`外部IP`、`端口号`以及`目标端口号`；
     
     - 外部IP为选填项，需要外部网络访问时填写。
 
-    - 端口号为实例内部端口号，目标端口号为实例外部端口号，用以配置网络的端口映射。
+       <blockquote class="warning">
+       外部IP的值不能随意填写，必须是service所在集群节点的ip！
+    	</blockquote>
 
- 1. 点击 `创建`完成网络创建。
+    - 端口号为实例service端口号，目标端口号为实例Pod端口号，用以配置网络的端口映射转发。
+
+          <blockquote class="warning">
+     端口号必须是数字且大小在0-65535之间
+    	</blockquote>
+
+ 5. 点击 `创建`完成网络创建。
+
 
 ## 查看网络
 
  1. 进`部署流水线`后，点击`网络` ；
 
- 1. 查看项目应用的网络配置信息。
+ 2. 查看项目应用的网络配置信息。
 
 
 ## 修改网络
@@ -43,10 +62,15 @@ weight = 5
 点击`修改网络` → ![修改网络按钮](/docs/user-guide/deployment-pipeline/image/update_network_button.png) 对网络进行修改。
 
 <blockquote class="note">
-修改网络的信息可能会导致基于此网络的域名被修改。
+修改网络，可以修改关联的应用的实例！
 </blockquote>
 
 ## 删除网络
 
-点击`删除网络` → ![删除网络按钮](/docs/user-guide/deployment-pipeline/image/del_net_button.png) 对网络进行修改。
+点击`删除网络` → ![删除网络按钮](/docs/user-guide/deployment-pipeline/image/del_net_button.png) 对网络进行删除。
+
+
+<blockquote class="warning">
+  删除网络，将导致网络关联的域名不可用！
+</blockquote>
 
