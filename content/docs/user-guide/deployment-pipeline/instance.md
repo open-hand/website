@@ -17,17 +17,9 @@ weight = 4
 通过容器状态、实例、应用版本、环境的信息来观察应用的部署情况。分为四种视图，以不通侧重点展示实例状态、运行详情和部署详情等。部署管理员，项目成员，项目所有者都拥有查看权限。
 
 #### 四种分视图：
-<<<<<<< 6c230b9bff6580ed2dfaab21ad790b5f0a0ca0d3
- 1. **部署实例** 通过容器状态、实例状态、应用及应用版本、环境来观察部署的实例情况。
-=======
-<<<<<<< Updated upstream
- 1. **部署实例** 通过容器状态、实例、应用版本、环境来观察部署的情况。
-=======
  1. **部署实例** 通过容器状态、实例状态、应用及应用版本、环境来观察部署的实例情况。
       
-      ![enter description here](/docs/user-guide/deployment-pipeline/imge/instance1.png)
->>>>>>> Stashed changes
->>>>>>> [FIX] fix the doc of deployment-pipeline
+      ![enter description here](/docs/user-guide/deployment-pipeline/image/instance1.png)
 
     列表字段：
 
@@ -45,7 +37,7 @@ weight = 4
 
  2. **单环境** 通过选择单个环境来筛选查看该环境下各应用所部署实例的情况。
     
-      ![enter description here](/docs/user-guide/deployment-pipeline/imge/instance4.png)
+      ![enter description here](/docs/user-guide/deployment-pipeline/image/instance4.png)
 
       可查询字段：
 
@@ -67,7 +59,7 @@ weight = 4
 
  3. **单应用** 对应用和版本筛选，观察单个应用在不同环境下的部署情况。
     
-      ![enter description here](/docs/user-guide/deployment-pipeline/imge/instance5.png)
+      ![enter description here](/docs/user-guide/deployment-pipeline/image/instance5.png)
 
      可查询字段：
 
@@ -87,19 +79,10 @@ weight = 4
 
     e. 点击页面右侧 ![详情按钮](/docs/user-guide/development-pipeline/image/detail_button.png) 按钮 ，再点击`查看实例详情`，进入实例详情后观察其运行详情和部署详情。
 
-<<<<<<< 6c230b9bff6580ed2dfaab21ad790b5f0a0ca0d3
- 4. **多应用** 观察所有应用在不同环境下的部署情况，这里对实例详情不可查看，可查看各个版本下的实例情况。
-=======
-<<<<<<< Updated upstream
- 4. **多应用** 观察所有应用在不同环境下的部署情况，这里对实例详情不可查看。
->>>>>>> [FIX] fix the doc of deployment-pipeline
-    
-=======
  4. **多应用** 观察所有应用在不同环境下的部署情况，这里对实例详情不可查看，可查看各个版本下的实例情况。
 
-      ![enter description here](/docs/user-guide/deployment-pipeline/imge/instance6.png)
+      ![enter description here](/docs/user-guide/deployment-pipeline/image/instance6.png)
 
->>>>>>> Stashed changes
       列表字段：
 
     a. 应用：应用的名称。
@@ -129,7 +112,7 @@ weight = 4
 ## 运行详情
 Chart 里定义的各个资源对象列表及参数信息。
 
-  ![enter description here](/docs/user-guide/deployment-pipeline/imge/instance3.png)
+  ![enter description here](/docs/user-guide/deployment-pipeline/image/instance3.png)
 
 资源对象|参数信息|参数介绍
 :----|----|----
@@ -142,7 +125,7 @@ Ingress|name, hosts, address, ports, age|name是指Ingress的名称，hosts是�
 ## 部署详情
 包括报错信息、配置信息、阶段及日志。
        
-  ![enter description here](/docs/user-guide/deployment-pipeline/imge/instance2.png)
+  ![enter description here](/docs/user-guide/deployment-pipeline/image/instance2.png)
 
 
 ## 修改配置信息
@@ -152,19 +135,12 @@ Ingress|name, hosts, address, ports, age|name是指Ingress的名称，hosts是�
 点击页面右侧 ![详情按钮](/docs/user-guide/development-pipeline/image/detail_button.png) 按钮，再点击`升级实例`，当运行中的实例的应用版本不是最新时，可以升级实例，升级实例是简化了 **应用版本**的替换实例操作，点击升级即可实现滚动更新，只有部署管理员有权限。
 
 ## 停止实例
-<<<<<<< Updated upstream
-点击页面右侧 ![详情按钮](/docs/user-guide/development-pipeline/image/detail_button.png) 按钮 ，再点击`停止实例`，该实例即为停止状态，且容器状态停止。容器状态为“0”时，实例存在。
-<blockquote class="note">
-         停止实例后，停止实例按钮转变为重启实例按钮，点击重启实例按钮时，重启实例。
-      </blockquote>
-=======
 点击页面右侧 ![详情按钮](/docs/user-guide/development-pipeline/image/detail_button.png) 按钮 ，再点击`停止实例`，该实例即为停止状态，且容器状态停止。容器状态为“0”时，实例存在，实质是实例的Pod被删掉。只有部署管理员有权限。
 
 
 ## 重启实例
 点击页面右侧 ![详情按钮](/docs/user-guide/development-pipeline/image/detail_button.png) 按钮 ，再点击`重启实例`，当实例状态为已停止时候，可以点击重启实例，使实例重新启动，实质是实例的Pod重新创建。只有部署管理员有权限。只有部署管理员有权限。
 
->>>>>>> Stashed changes
 
 ## 删除实例
 点击页面右侧 ![详情按钮](/docs/user-guide/development-pipeline/image/detail_button.png) 按钮，再点击`删除实例`，该实例被删除，状态置为已删除。只有部署管理员有权限。

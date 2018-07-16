@@ -18,7 +18,7 @@ weight = 6
          项目所有者和项目成员对域名只有查看界面的权限，不可进行编辑修改。
       </blockquote>
 
-    ![enter description here](/docs/user-guide/deployment-pipeline/imge/ingress.png) 
+    ![enter description here](/docs/user-guide/deployment-pipeline/image/ingress.png) 
 
 ## 创建域名
 

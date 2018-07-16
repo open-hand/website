@@ -38,7 +38,7 @@ type = "docs"
 应用名称 | `猪齿鱼Todo服务`
 选择应用模板 | `MicroService`
  
-> 当应用模板不符合您的需求，您可手动创建一个[应用模板](../../user-guide/development-pipeline/application-template/)。
+> 当应用模板不符合您的需求，您可手动创建一个[应用模板](../../user-guide/application-management/application-template/)。
 
 **4.** 当应用创建成功，可在`开发流水线` -> `应用` 界面查看到新建的应用。
 
@@ -84,7 +84,7 @@ $ git checkout feature-1
 
 `.gitlab-ci.yml`定义 `Gitlab CI` 的阶段，Choerodon 缺省的 CI 流程包含了`编译`，`打包`，`生成镜像`，`生成helm 包`几个阶段。	
 
-有关`.gitlab-ci.yml` 的编写参考[应用模板](../../user-guide/development-pipeline/application-template/)。
+有关`.gitlab-ci.yml` 的编写参考[应用模板](../../user-guide/application-management/application-template/)。
 
 **5. 修改`charts` 文件**
 
@@ -92,13 +92,13 @@ $ git checkout feature-1
 
 `charts`模块用于创建应用时生成创建 `k8s` 对象，包含了`部署的模板`，`chart values`。
 
-有关`charts` 的编写参考[应用模板](../../user-guide/development-pipeline/application-template/)。
+有关`charts` 的编写参考[应用模板](../../user-guide/application-management/application-template/)。
 
 **6. 修改`Dockerfile` 文件**
 
 Choerodon 使用`docker` 来运行应用。你可以通过修改`Dockerfile` 来修改应用的运行环境。
 
-有关`Dockerfile` 的编写参考[应用模板](../../user-guide/development-pipeline/application-template/)。
+有关`Dockerfile` 的编写参考[应用模板](../../user-guide/application-management/application-template/)。
 
 **7. 提交代码**
 

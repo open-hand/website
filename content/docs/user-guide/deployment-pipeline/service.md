@@ -15,7 +15,7 @@ weight = 5
 项目所有者和项目成员对网络只有查看界面的权限，不可进行编辑修改。
 </blockquote>
 
-  ![enter description here](/docs/user-guide/deployment-pipeline/imge/service.png)
+  ![enter description here](/docs/user-guide/deployment-pipeline/image/service.png)
 
 ## 创建网络
 
