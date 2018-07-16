@@ -1,6 +1,6 @@
 ﻿+++
-title = "UI"
-weight = 8
+title = "Choerodon UI"
+weight = 7
 +++
 
 # Choerodon UI
@@ -8,7 +8,7 @@ weight = 8
 
 如果您想加入我们，您可以前往[github](https://github.com/choerodon/choerodon-ui)进行fork 和 issue。
 
-您可以通过[官网](http://ui.choerodon.io/)了解更多、更详细的使用方法。
+您可以通过[官网](http://ui.choerodon.io/docs/react/introduce-cn)了解更多、更详细的使用方法。
 
 ## 简介
 

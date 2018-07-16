@@ -8,6 +8,6 @@ weight = 2
   
 本页面介绍了使用Choerodon 微服务开发框架，来开发一个简单的前端服务。包含了本地开发环境搭建，基础环境搭建，开发新功能。每个模块都包含了其主要功能、操作流程及其他注意事项。
 
-Choerodon 使用 `React` 作为前端应用框架，并且对前端的展示做了一定的封装和处理，能够让用户方便快捷地进行前端应用的开发和部署。同时为了使前端开发更加规范，合理进行，Choerodon为大家准备了前端组件`Choerodon UI`，了解详情请前往[Choerodon UI](http://ui.choerodon.io)。
+Choerodon 使用 `React` 作为前端应用框架，并且对前端的展示做了一定的封装和处理，能够让用户方便快捷地进行前端应用的开发和部署。同时为了使前端开发更加规范，合理进行，Choerodon为大家准备了前端组件`Choerodon UI`，了解详情请前往[Choerodon UI](http://ui.choerodon.io/docs/react/introduce-cn)。
 
 {{< docdir >}}
