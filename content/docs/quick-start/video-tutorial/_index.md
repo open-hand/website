@@ -1,7 +1,7 @@
 ﻿+++
 title = "视频教程"
 weight = 6
-description = ""
+description = "包含了Choerodon 的所有在线视频教程"
 +++
 
 ## 概述

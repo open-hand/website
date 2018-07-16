@@ -1,6 +1,6 @@
 +++
 title = "基础环境准备"
-description = "基础环境准备"
+description = "讲述了前端代码运行情况和目录结构的说明介绍。"
 weight = 2
 +++
 
