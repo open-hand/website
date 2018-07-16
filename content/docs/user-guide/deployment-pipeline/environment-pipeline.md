@@ -99,23 +99,23 @@ weight = 1
 
  - 当运行中的环境的版本低于部署持续交互devops-service环境变量`env.open.AGENT_VERSION`的值时,此时环境会自动置成未连接状态,并提示`版本过低，请升级！`,然后点击激活环境，会自动生成升级环境的shell命令,升级命令和创建命令的参数是一样的，只不过是操作由helm install变为了helm upgrade。
 	``` 
-		if ! [ -x "$(command -v kubectl)" ]; then
-  		echo 'Error: kubectl is not installed.' >&2
-  		exit 1
-		fi
-		if ! [ -x "$(command -v helm)" ]; then
-  		echo 'Error: helm is not installed.' >&2
-  		exit 1
-		fi
-		helm upgrade --repo=http://chart.choerodon.com.cn/choerodon/c7ncd/ \
-    	--namespace=younger-env \
-    	--version=0.9.0-dev.20180710092530 \
-    	--set config.connect=ws://devops-service.alpha.saas.hand-china.com/agent/ \
-    	--set config.token=081868ae-2fc2-4c78-8944-5c5dfc42c7e6 \
-    	--set config.envId=17 \
-    	--set rbac.create=true \
-    	younger-env \
-    	choerodon-agent
+	if ! [ -x "$(command -v kubectl)" ]; then
+  	echo 'Error: kubectl is not installed.' >&2
+  	exit 1
+	fi
+	if ! [ -x "$(command -v helm)" ]; then
+  	echo 'Error: helm is not installed.' >&2
+  	exit 1
+	fi
+	helm upgrade --repo=http://chart.choerodon.com.cn/choerodon/c7ncd/ \
+    --namespace=younger-env \
+    --version=0.9.0-dev.20180710092530 \
+    --set config.connect=ws://devops-service.alpha.saas.hand-china.com/agent/ \
+    --set config.token=081868ae-2fc2-4c78-8944-5c5dfc42c7e6 \
+    --set config.envId=17 \
+    --set rbac.create=true \
+    younger-env \
+    choerodon-agent
 	``` 
 - 复制脚本命令至集群中运行，环境重新置为已连接。
 	 <blockquote class="warning">
