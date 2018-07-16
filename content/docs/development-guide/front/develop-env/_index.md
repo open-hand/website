@@ -1,6 +1,6 @@
 +++
 title = "开发环境搭建"
-description = "开发环境搭建"
+description = "讲述了如何在本地搭建开发环境，以支撑我们在本地进行前端服务开发。"
 weight = 1
 +++
 
