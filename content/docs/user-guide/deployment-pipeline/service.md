@@ -37,14 +37,14 @@ weight = 5
     
     - 外部IP为选填项，需要外部网络访问时填写。
 
-       <blockquote class="warning">
+      <blockquote class="warning">
        外部IP的值不能随意填写，必须是service所在集群节点的ip！
     	</blockquote>
 
     - 端口号为实例service端口号，目标端口号为实例Pod端口号，用以配置网络的端口映射转发。
 
         <blockquote class="warning">
-     端口号必须是数字且大小在0-65535之间
+      端口号必须是数字且大小在0-65535之间
     	</blockquote>
 
  5. 点击 `创建`完成网络创建。

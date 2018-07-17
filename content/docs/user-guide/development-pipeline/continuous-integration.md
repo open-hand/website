@@ -18,7 +18,7 @@ weight = 5
 
  1. 查看应用持续集成的完成情况；
 
- 1. 查看应用持续集成的完成情况，只有 CI 各个ment阶段跑成功了才会依据[版本生成规则](../branch-management)生成一个[应用版本](../application-management/application-version)。
+ 1. 查看应用持续集成的完成情况，只有 CI 各个ment阶段跑成功了才会依据[版本生成规则](../branch-management)生成一个[应用版本](../../application-management/application-version)。
 
       
 列表字段：
