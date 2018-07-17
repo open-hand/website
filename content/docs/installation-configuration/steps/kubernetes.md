@@ -71,6 +71,64 @@ weight = 10
     firewall-cmd --reload                        # 重新加载firewall
     ```
 
+- 使用本教程部署后会安装以下组件
+
+    **组件名称**|**组件版本**
+    :-----:|:-----:
+    kube-flannel|v0.9.0
+    kube-lego|0.1.5
+    kubernetes-dashboard|v1.7.1
+    nginx-ingress-controller|0.9.0-beta.17
+    default-http-backend|1.4
+    kube-proxy|v1.8.5
+    kube-apiserver|v1.8.5
+    kube-dns|1.14.5
+    kube-controller-manager|v1.8.5
+    kube-scheduler|v1.8.5
+
+
+## 防火墙及端口检测
+
+### 检测防火墙状态
+
+- 检测firewall-cmd状态
+<pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> firewall-cmd --state</span>
+<span style="color: #ff0000;">not running</span>
+</code></pre>
+
+    `not running`表示防火墙未启动,如果出现`running`则为启动状态。
+
+- 检测iptables状态
+
+    ```bash
+    yum install iptables-services
+
+    ● iptables.service - IPv4 firewall with iptables
+    Loaded: loaded (/usr/lib/systemd/system/iptables.service; disabled; vendor preset: disabled)
+    Active: inactive (dead)
+    ```
+
+    当状态为inactive或者提示`Unit iptables.service could not be found.`均表示iptables未启动。
+
+### 开放指定端口
+
+  如果防火墙已启用，则需要开放[指定端口](./#前置要求与约定)，下面分别列举使用iptables和firewalld设置开放端口命令。
+
+- iptables
+
+    ```bash
+    $ iptables -A INPUT -p tcp --dport 6443 -j ACCEPT      # 开放6443端口
+    $ iptables -A INPUT -p tcp --dport 2379:2378 -j ACCEPT # 开放2379到2380端口
+    $ iptables save && service iptables restart            # 保存并重启iptables
+    ```
+
+- firewalld
+    
+    ```bash
+    firewall-cmd --add-port=6443/tcp --permanent # 永久开放6443端口
+    firewall-cmd --reload                        # 重新加载firewall
+    ```
+
 ## 同步服务器时区
 
 时区和时间的同步性对于服务器很重要（例如您在更新数据库时，时间的准确性对业务的影响会非常大），为避免实例上运行的业务逻辑混乱和避免网络请求错误，您需要将一台或多台服务器设置在同一时区下，比如 Asia/Shanghai 或 America/Los Angeles。您可以根据自己的业务需求并参照本文为服务器设置或者修改时区。此外，NTP（Network Time Protocol）服务能保证您的服务器的时间与标准时间同步，您可以根据本文配置 NTP 服务。
@@ -389,7 +447,6 @@ Etcd节点和Master节点需要在相同的机器。
         ```
 
     - 设置网卡名
-
         ```shell
         k8s_interface: "eth0"
         ```
