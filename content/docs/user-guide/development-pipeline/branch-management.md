@@ -1,14 +1,14 @@
 ﻿+++
-title = "分支管理"
+title = "分支"
 description = "使用 GitLab 进行分支管理，默认分支为 master。在产品开发过程中对 Feature、Bugfix、Release、Hotfix 等分支进行管理。所有的提交将触发持续集成，可在持续集成菜单下查看代码集成情况"
 weight = 2
 +++
 
-# 分支管理
-  
+# 分支
+
 使用 GitLab 进行分支管理，默认分支为 master。在产品开发过程中对 Feature、Bugfix、Release、Hotfix 等分支进行管理。所有的提交将触发持续集成，可在持续集成菜单下查看代码集成情况。
 
-  - **菜单层次**：项目层  
+  - **菜单层次**：项目层
 
   - **菜单路径**：开发流水线 >  分支
 
@@ -16,7 +16,7 @@ weight = 2
 
     <blockquote class="note">
       项目所有者对分支管理权限对应 gitlab 的 Master 权限。
-    
+
       项目成员对分支管理权限对应 gitlab 仅有 Developer 权限。
     </blockquote>
 
