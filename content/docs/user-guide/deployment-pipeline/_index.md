@@ -40,7 +40,7 @@ weight = 4
     (https://docs.helm.sh/)
  - 由于部署流水线应用部署部分用到了Helm repository,请确保在部署Choerodon平台的时候已经部署好helm,详情请见 [Chartmuseum部署](../../installation-configuration/steps/parts/base/chartmuseum)
 
-## 权限了解
+## 权限说明
 1. `部署管理员`拥有以下权限：
 
     模块|操作
