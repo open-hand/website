@@ -11,7 +11,7 @@ icon = "icon-deployment-pipeline"
 
 <h2 id="2">功能</h2>
 
- - [**环境流水线**](../deployment-pipeline/environment-pipeline) 是面向平台管理员、项目创建者和项目所有者根据不同用途配置相对应的环境信息。可以创建环境，删除环境，及对环境详情信息进行编辑修改。
+ - [**环境流水线**](../deployment-pipeline/environment-pipeline) 是面向部署管理员根据不同用途配置相对应的环境信息。可以创建环境，删除环境，及对环境详情信息进行编辑修改。
 
  - [**应用市场**](../deployment-pipeline/application-market) 集合所有发布到本项目的应用，供用户浏览，可部署所需的应用及应用版本至项目中。
 
