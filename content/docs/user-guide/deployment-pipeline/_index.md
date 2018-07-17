@@ -22,7 +22,7 @@ weight = 3
 
 
 
- - [**环境流水线**](../deployment-pipeline/environment-pipeline) 是面向平台管理员、项目创建者和项目所有者根据不同用途配置相对应的环境信息。可以创建环境，删除环境，及对环境详情信息进行编辑修改。
+ - [**环境流水线**](../deployment-pipeline/environment-pipeline) 是面向部署管理员根据不同用途配置相对应的环境信息。可以创建环境，删除环境，及对环境详情信息进行编辑修改。
 
 
  - [**应用部署**](../deployment-pipeline/application-deployment) 提供可视化、一键式部署应用，支持并行部署和流水线无缝集成，实现部署环境标准化和部署过程自动化。
