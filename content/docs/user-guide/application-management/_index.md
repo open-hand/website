@@ -1,7 +1,7 @@
 ﻿+++
 title = "应用管理"
 description = "应用管理部分包括了应用管理、应用版本、应用发布和应用市场，能进行项目内应用的开发，版本管理，公开和应用市场内应用的部署以及导入导出"
-weight = 1
+weight = 2
 icon = "icon-application-market"
 +++
 
