@@ -28,7 +28,7 @@ weight = 1
   
   ![enter description here](/docs/user-guide/deployment-pipeline/image/envcreate.png)
  
- -  点击`创建`，系统会滑出创建环境页面，输入相关信息，有环境编码、环境名称、环境描述。
+-  点击`创建`，系统会滑出创建环境页面，输入相关信息，有环境编码、环境名称、环境描述。
 	
 	环境编码:集群中产生的环境客户端的名称，限制60个字符。
 	     <blockquote class="warning">
@@ -43,7 +43,7 @@ weight = 1
         根据用途配置不同的环境，常见的有开发环境，集成测试环境，用户访问测试环境及正式环境。新环境默认新增在环境流水线的最后一个节点。
      </blockquote>
 
- -  填写完成后，点击`创建`，界面会自动生成可执行的shell脚本命令，其中各个参数已经由后端服务自动生成。
+-  填写完成后，点击`创建`，界面会自动生成可执行的shell脚本命令，其中各个参数已经由后端服务自动生成。
 	``` 
 	if ! [ -x "$(command -v kubectl)" ]; then
   	echo 'Error: kubectl is not installed.' >&2
@@ -84,7 +84,7 @@ weight = 1
 			- choerodon-agent: chart name
 
 
- -  复制脚本命令至集群中运行，与平台建立连接。
+-  复制脚本命令至集群中运行，与平台建立连接。
      <blockquote class="note">
         运行前需要先初始化helm helm init ，helm repo update。
     </blockquote>
@@ -93,11 +93,11 @@ weight = 1
     </blockquote>
 
 
- - 执行成功后到环境流水线界面可以看到我们之前创建好的环境状态为连接状态。
+- 执行成功后到环境流水线界面可以看到我们之前创建好的环境状态为连接状态。
 	    
 **3. 升级环境**
 
- - 当运行中的环境的版本低于部署持续交互devops-service环境变量`env.open.AGENT_VERSION`的值时,此时环境会自动置成未连接状态,并提示`版本过低，请升级！`,然后点击激活环境，会自动生成升级环境的shell命令,升级命令和创建命令的参数是一样的，只不过是操作由helm install变为了helm upgrade。
+- 当运行中的环境的版本低于部署持续交互devops-service环境变量`env.open.AGENT_VERSION`的值时,此时环境会自动置成未连接状态,并提示`版本过低，请升级！`,然后点击激活环境，会自动生成升级环境的shell命令,升级命令和创建命令的参数是一样的，只不过是操作由helm install变为了helm upgrade。
 	``` 
 	if ! [ -x "$(command -v kubectl)" ]; then
   	echo 'Error: kubectl is not installed.' >&2
