@@ -1,6 +1,6 @@
 +++
-title = "第八步：日志部署"
-description = "第八步：日志部署"
+title = "日志部署"
+description = "日志部署"
 weight = 26
 +++
 
@@ -25,7 +25,7 @@ helm repo add c7n https://openchart.choerodon.com.cn/choerodon/c7n/
 helm repo update
 ```
 
-### 安装监控组件
+### 安装日志组件
 
 - 创建存储卷pv和pvc
 
@@ -41,36 +41,48 @@ helm repo update
         --name elasticsearch-pv --namespace=logging
     ```
 
+- 为nfs相关文件授权
+
+    ```bash 
+    chmod -R 777 /u01/elasticsearch
+    ```
+
 <blockquote class="note">
 创建pvc时注意在nfs中创建对应的目录
 </blockquote>
 
 - 安装Elasticsearch
 
-   ```bash
-helm install c7n/elasticsearch \
---set global.storageType=nfs \
---set global.persistence.enabled=true \
---set global.persistence.existingClaim=elasticsearch-pvc \
---set global.clusterName=example \
---namespace=logging
-   ```
+    ```bash
+    helm install c7n/elasticsearch \
+        --set data.storageType=nfs \
+        --set replicaCount=3 \
+        --set minimumMasterNodes=2 \
+        --set persistence.enabled=true \
+        --set persistence.existingClaim=elasticsearch-pvc \
+        --set clusterName=example \
+        --set service.enabled=true \
+        --name=elasticsearch \
+        --namespace=logging
+    ```
 
 - 安装日志收集服务
 
-   ```bash
-helm install c7n/choerodon-logging \
---set fluentd.elasticsearch.host=<Elastisearch地址> \
---namespace=logging
-   ```
+    ```bash
+    helm install c7n/choerodon-logging \
+        --set fluentd.elasticsearch.host="elasticsearch-elasticsearch.logging" \
+        --namespace=logging \
+        --name=choerodon-logging \
+    ```
 
 - 安装kibana
 
     ```bash
-helm install c7n/kibana \
---set elasticsearch.host=<Elastisearch地址> \
---set service.enabled=true \
---set ingress.enabled=true \
---set ingress.host=kibana.example.com \
---namespace=logging
+    helm install c7n/kibana \
+        --set elasticsearch.host="elasticsearch-elasticsearch.logging" \
+        --set service.enabled=true \
+        --set ingress.enabled=true \
+        --set ingress.host=kibana.example.com \
+        --namespace=logging \
+        --name=kibana
     ```
