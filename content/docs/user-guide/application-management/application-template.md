@@ -15,7 +15,7 @@ weight = 1
   - **默认角色**：组织管理员
 
 ## 预置应用模板
-系统中已经预置了几种应用模板，其中包括 `JavaLib(jar库)`、`MicroServiceFront(web前端应用模板)`、`MicroService(微服务应用模板)`在创建应用时可以根据自己的需求选择应用模板，进行快速开发,预定义模板不可操作。
+系统中已经预置了几种应用模板，其中包括 `JavaLib(jar库)`、`MicroServiceFront(web前端应用模板)`、`MicroService(微服务应用模板)`在创建应用时可以根据自己的需求选择应用模板，进行快速开发，预定义模板不可操作。
 
 ## 创建应用模板
 
@@ -29,13 +29,13 @@ weight = 1
    1. 点击`创建`按钮；
    1. 本地克隆应用模板对应的代码库。一个正确的模板中应该包含: Spring-boot 项目+ Gitlab-ci.yml 文件+ Dockerfile 文件+ Charts 模块。
 
-      >Spring-boot 项目: 生成应用时的初始项目
+      > Spring-boot 项目: 生成应用时的初始项目
 
-      >Gitlab-ci.yml 文件: 定义 Gitlab CI 的阶段
+      > Gitlab-ci.yml 文件: 定义 Gitlab CI 的阶段
 
-      >Dockerfile 文件: 用于应用部署时生成镜像
+      > Dockerfile 文件: 用于应用部署时生成镜像
 
-      >Charts 模块: 用于创建应用时生成创建 k8s 对象 
+      > Charts 模块: 用于创建应用时生成创建 k8s 对象 
 
       如: Deployment job service ingress ,部署时配置信息里的 Key-value 值会被应用到对应的 k8s 对象中用于部署。
 
@@ -55,16 +55,16 @@ weight = 1
    
  6. 编写一个Dockerfile；
        
-      将 Dockerfile 文件放在项目根目录下
+    将 Dockerfile 文件放在项目根目录下
      
-      ```
-	   FROM registry.choerodon.io/tools/nginx:stable
-       RUN echo "Asia/shanghai" > /etc/timezone;
-       ADD dist /usr/share/nginx/html
-       COPY entrypoint.sh .
-       ENTRYPOINT [ "sh","./entrypoint.sh" ]
-      ```
-     entrypoint.sh文件如下	 
+        ```
+        FROM registry.choerodon.io/tools/nginx:stable
+        RUN echo "Asia/shanghai" > /etc/timezone;
+        ADD dist /usr/share/nginx/html
+        COPY entrypoint.sh .
+        ENTRYPOINT [ "sh","./entrypoint.sh" ]
+        ```
+    entrypoint.sh文件如下	 
 
 		``` 
 		#bin/bash
@@ -80,10 +80,10 @@ weight = 1
 
 		exec "$@"
 		```
- 7. [编写 Gitlab-CI 文件](https://docs.gitlab.com/ee/ci/)
+ 7. 编写 [Gitlab-CI](https://docs.gitlab.com/ee/ci/) 文件
      
       ```
-      image: registry.choerodon.io/tools/devops-ci:1.1.0    
+      image: registry.cn-hangzhou.aliyuncs.com/choerodon-tools/cifront:0.5.0    
       ```
       image 指 CI 运行基础镜像。
 
@@ -173,28 +173,27 @@ weight = 1
       
  1. [创建一个 spring-boot 项目](../../../development-guide/backend/demo/create_project)；
    
- 1. 编写一个 dockerfile；
-
-    目录结构如下：
+ 1. 目录结构如下：
 
         |--src
         ｜--main 
             ｜--docker        
             ｜--dockerfile
+ 
+ 1. 编写一个 dockerfile；
 
-
-    ```
-    FROM registry.choerodon.io/choerodon-cloud/base
-
-    COPY app.jar /app.jar
-
-    ENTRYPOINT [ "java", "-jar", "/app.jar"] 
-    ```
+        ```
+        FROM registry.choerodon.io/choerodon-cloud/base
+    
+        COPY app.jar /app.jar
+    
+        ENTRYPOINT [ "java", "-jar", "/app.jar"] 
+        ```
 
  1. [编写 Gitlab-ci 文件](https://docs.gitlab.com/ee/ci/)
 
     ```
-    image: registry.choerodon.io/tools/devops-ci:1.1.0    
+    image: registry.cn-hangzhou.aliyuncs.com/choerodon-tools/cibase:0.5.0   
     ```
     image 指 ci 运行基础镜像。
 
@@ -296,56 +295,51 @@ weight = 1
    
 6. 编写一个 Gitlab CI；
 
-      ```
-	    stages:
-	    - mvn-package
-      ```
-	  stages 定义 CI 中包含的阶段。
-	  
-	
-
-	``` stylus
-	maven-branches:
-	  stage: mvn-package
-	  script:
-		- update_pom_version
-		- mvn clean && mvn package -U -DskipTests=false
-		- mvn --batch-mode verify sonar:sonar -Dsonar.host.url=${SONAR_URL} -Dsonar.analysis.mode=preview -Dsonar.gitlab.commit_sha=${CI_COMMIT_SHA} -Dsonar.gitlab.ref_name=${CI_COMMIT_REF_NAME} -Dsonar.gitlab.project_id=${CI_PROJECT_ID}
-	  only:
-		- develop
-		- /^release-.*$/
-		- /^hotfix-.*$/
-		- /^feature-.*$/
-	  except:
-		- tags
-	```
+    ```
+    stages:
+    - mvn-package
+    ```
+    stages 定义 CI 中包含的阶段。
+    
+    ``` stylus
+    maven-branches:
+      stage: mvn-package
+      script:
+        - update_pom_version
+        - mvn clean && mvn package -U -DskipTests=false
+        - mvn --batch-mode verify sonar:sonar -Dsonar.host.url=${SONAR_URL} -Dsonar.analysis.mode=preview -Dsonar.gitlab.commit_sha=${CI_COMMIT_SHA} -Dsonar.gitlab.ref_name=${CI_COMMIT_REF_NAME} -Dsonar.gitlab.project_id=${CI_PROJECT_ID}
+      only:
+        - develop
+        - /^release-.*$/
+        - /^hotfix-.*$/
+        - /^feature-.*$/
+      except:
+        - tags
+    ```
     maven-branches 指 job 名称。
-	   
+       
     stage 指对应的阶段。
-
+    
     script 指执行的命令。
        
     only 指触发的分支。
       
     except 指不会触发的分支。
-	  
-	  
+      
+    ``` stylus
+    .auto_devops: &auto_devops |
+               curl -o .auto_devops.sh \
+                     "${CHOERODON_URL}/devops/ci?token=${Token}&type=lib"
+                source .auto_devops.sh
+    ```   
+    .auto_devops：从指定仓库地址中拉取 script 脚本  用于 docker-build 阶段。
 
-	``` stylus
-	.auto_devops: &auto_devops |
-			   curl -o .auto_devops.sh \
-					 "${CHOERODON_URL}/devops/ci?token=${Token}&type=lib"
-				source .auto_devops.sh
-	```   
-  .auto_devops：从指定仓库地址中拉取 script 脚本  用于 docker-build 阶段。
-
-
-       ```yaml
-       before_script:
-  
-         - *auto_devops
-       ```
-       before_script：指 ci 执行前所执行的命令。
+    ```yaml
+    before_script:
+    
+     - *auto_devops
+    ```
+    before_script：指 ci 执行前所执行的命令。
 	   
 7. 提交代码。
 
