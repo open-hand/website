@@ -1,6 +1,6 @@
 ﻿+++
-title = "应用和部署流水线"
-description = "应用和部署流水线主要描述部署的环境、实例、网络、域名、容器等，来告知用户如何部署和部署情况"
+title = "部署流水线"
+description = "部署流水线主要描述部署的环境、实例、网络、域名、容器等，来告知用户如何部署和部署情况"
 weight = 4
 +++
 
@@ -33,9 +33,9 @@ weight = 4
  - Choerodon的部署流水线也是基于开发流水线的，在使用Choerodon部署流水线之前，需要先了解和学习[Choerodon的开发流水线](../development-pipeline)。
  - 系统用户必须具有`部署管理员`，或者`项目所有者`，或者`项目成员`角色，才能使用部署流水线。所以，在使用部署流水线之前，您需要为您的用户分配上述。关于权限管理，请参阅[项目角色分配](.././system-configuration/project/role-assignment/)。
  - 由于部署流水线环境流水线功能中需要创建agent环境客户端，请确保本机能够用ssh连接到系统所在的k8s集群且集群内安装好了helm客户端，有关helm和kubectl的相关知识请自行去对应官网理解
- 
+
     kubectl:(https://kubernetes.io/docs/reference/kubectl/overview/)
-    
+
     helm:
     (https://docs.helm.sh/)
  - 由于部署流水线应用部署部分用到了Helm repository,请确保在部署Choerodon平台的时候已经部署好helm,详情请见 [Chartmuseum部署](../../installation-configuration/steps/parts/base/chartmuseum)
