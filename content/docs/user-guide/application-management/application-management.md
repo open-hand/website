@@ -10,7 +10,7 @@ weight = 2
 
 另外，每创建一个应用，平台会自动在 Gitlab 创建好对应的代码库。
 
-只有该项目的项目所有者才能创建应用，项目成员仅能查看应用。
+只有该项目的`项目所有者`才有应用操作权限，`项目成员`仅能查看应用。
   
   - **菜单层次**：项目层
   - **菜单路径**：应用管理 > 应用
@@ -47,7 +47,7 @@ weight = 2
 
 ## 查看应用详情
 
-  1. 点击`应用`菜单，在应用管理界面，可查看应用名称、编码、对应Gitlab仓库地址、应用状态等信息。
+  1. 点击`应用`菜单，在应用管理界面，可查看应用名称、编码、对应Gitlab仓库地址、应用状态等信息，有些项目可能没有仓库地址，则说明该应用是导入的应用，目前应用默认是排序是项目下的启用项目->停用项目->导入应用的排序方式。
 
 列表字段
 
@@ -60,17 +60,13 @@ weight = 2
   若应用状态一直都是创建中，请先检查是否正确配置了项目所有者角色及其角色标签，并且分配给该操作用户。另外，若您本地搭建的 Gitlab 不稳定的话也可能导致消息发送至 Gitlab 处理失败。
 </blockquote>
 
-## 分支管理
-
-点击`分支管理`→ ![分支管理按钮](/docs/user-guide/development-pipeline/image/branch_management_button.png) 对应用信息进行[分支管理](../../development-pipeline/branch-management)。
-
 ## 修改应用信息
 
 点击`修改应用`→ ![修改应用按钮](/docs/user-guide/development-pipeline/image/update_app_button.png) 对应用信息进行修改。
 
 ## 停用/启用应用
 
- 点击 `停用`→ ![停用按钮](/docs/user-guide/development-pipeline/image/stop_button.png) 即可停用应用。若应用已停用，则不可以进行分支管理，不可以修改应用名称，且不可以部署该应用。
+ 点击 `停用`→ ![停用按钮](/docs/user-guide/development-pipeline/image/stop_button.png) 即可停用应用。若应用已停用，不可以修改应用名称，且不可以部署该应用。
  
 <blockquote class="note">
   若该应用已被部署在某环境上生成实例则不可以停用。 
