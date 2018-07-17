@@ -52,6 +52,9 @@ weight = 2
  1. 输入分支名称。
  
  1. 点击创建，完成创建分支。
+ <blockquote class="note">
+  选择问题后默认切换分支类型，并且分支名称的默认值是问题的issue号，用户故事类问题对应feature分支，bug类问题对应bugfix分支类型，其余都是custom分支类型。
+</blockquote>
  
 
 ## 拉下分支至本地开发
