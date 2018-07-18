@@ -43,43 +43,44 @@ weight = 1
  
 当应用模板不符合您的要求，你可手动创建一个应用模板。具体步骤如下：
   
- 1. 选择组织后，在组织层的`应用管理`模块，选择`应用模板`；
+1. 选择组织后，在组织层的`应用管理`模块，选择`应用模板`；
 
- 2. 点击`创建应用模板`，输入相关信息进行数据校验，点击`创建`，即可创建一个模板；
-      
- 3. 创建完成以后，会生成一个 Gitlab 地址，点击该地址；
-     
- 4. 进入 Gitlab 仓库，克隆代码；
-      
- 5. 创建一个 React 的前端UI项目；
+2. 点击`创建应用模板`，输入相关信息进行数据校验，点击`创建`，即可创建一个模板；
+  
+3. 创建完成以后，会生成一个 Gitlab 地址，点击该地址；
+ 
+4. 进入 Gitlab 仓库，克隆代码；
+  
+5. 创建一个 React 的前端UI项目；
+
+6. 编写一个Dockerfile；
    
- 6. 编写一个Dockerfile；
-       
     将 Dockerfile 文件放在项目根目录下
-     
-        ```
-        FROM registry.choerodon.io/tools/nginx:stable
-        RUN echo "Asia/shanghai" > /etc/timezone;
-        ADD dist /usr/share/nginx/html
-        COPY entrypoint.sh .
-        ENTRYPOINT [ "sh","./entrypoint.sh" ]
-        ```
+    
+    ```
+    FROM registry.choerodon.io/tools/nginx:stable
+    RUN echo "Asia/shanghai" > /etc/timezone;
+    ADD dist /usr/share/nginx/html
+    COPY entrypoint.sh .
+    ENTRYPOINT [ "sh","./entrypoint.sh" ]
+    ```
+        
     entrypoint.sh文件如下	 
 
-		``` 
-		#bin/bash
-		set -e
+    ``` 
+    #bin/bash
+    set -e
 
-		PRO_API_HOST=${PRO_API_HOST:-"gateway.devops.saas.choerodon.com"}
-		PRO_CLIENT_ID=${PRO_CLIENT_ID:-"devops"}
+    PRO_API_HOST=${PRO_API_HOST:-"gateway.devops.saas.choerodon.com"}
+    PRO_CLIENT_ID=${PRO_CLIENT_ID:-"devops"}
 
-		find /usr/share/nginx/html -name '*.js' | xargs sed -i "s/localhost:8080/$PRO_API_HOST/g"
-		find /usr/share/nginx/html -name '*.js' | xargs sed -i "s/localhost:clientId/$PRO_CLIENT_ID/g"
+    find /usr/share/nginx/html -name '*.js' | xargs sed -i "s/localhost:8080/$PRO_API_HOST/g"
+    find /usr/share/nginx/html -name '*.js' | xargs sed -i "s/localhost:clientId/$PRO_CLIENT_ID/g"
 
-		nginx -g 'daemon off;'
+    nginx -g 'daemon off;'
 
-		exec "$@"
-		```
+    exec "$@"
+    ```
  7. 编写 [Gitlab-CI](https://docs.gitlab.com/ee/ci/) 文件
      
       ```
@@ -182,13 +183,13 @@ weight = 1
  
  1. 编写一个 dockerfile；
 
-        ```
-        FROM registry.choerodon.io/choerodon-cloud/base
-    
-        COPY app.jar /app.jar
-    
-        ENTRYPOINT [ "java", "-jar", "/app.jar"] 
-        ```
+    ```
+    FROM registry.choerodon.io/choerodon-cloud/base
+
+    COPY app.jar /app.jar
+
+    ENTRYPOINT [ "java", "-jar", "/app.jar"] 
+    ```
 
  1. [编写 Gitlab-ci 文件](https://docs.gitlab.com/ee/ci/)
 
@@ -203,52 +204,52 @@ weight = 1
         - maven-package
 
         - docker-build 
-      ``` 
+    ``` 
 
-       stages 指包含 maven-package 和 docker-build 两个阶段。
-        
-       ```yaml 
-       maven-feature:
-  
-       stage: maven-package
-  
-       script:
+    stages 指包含 maven-package 和 docker-build 两个阶段。
     
-         - git_merge develop
+    ```yaml 
+    maven-feature:
     
-         - update_pom_version
+    stage: maven-package
     
-         - mvn package -U -DskipTests=false
+    script:
     
-         - mvn --batch-mode verify sonar:sonar -Dsonar.host.url=${SONAR_URL}- Dsonar.analysis.mode=preview -Dsonar.gitlab.commit_sha=${CI_COMMIT_SHA} -Dsonar.gitlab.ref_name=${CI_COMMIT_REF_NAME} -Dsonar.gitlab.project_id=${CI_PROJECT_ID}
-  
-       only:
+     - git_merge develop
     
-         - /^feature-.*$/
-       ```
-       maven-feature 指 job 名称。
-       
-       stage 指对应的阶段。
-       
-       only 指触发的分支。
-
-       ```yaml
-       .auto_devops: &auto_devops |
+     - update_pom_version
     
-           curl -o .auto_devops.sh \
-        
-                 "${CHOERODON_URL}/devops/ci?token=${Token}&type=microservice"
+     - mvn package -U -DskipTests=false
     
-            source .auto_devops.sh
-       ```
-       .auto_devops: 从指定仓库地址中拉取 script 脚本  用于 docker-build 阶段。
-
-       ```yaml
-       before_script:
-  
-         - *auto_devops
-       ```
-       before_script：ci 执行前所执行的命令
+     - mvn --batch-mode verify sonar:sonar -Dsonar.host.url=${SONAR_URL}- Dsonar.analysis.mode=preview -Dsonar.gitlab.commit_sha=${CI_COMMIT_SHA} -Dsonar.gitlab.ref_name=${CI_COMMIT_REF_NAME} -Dsonar.gitlab.project_id=${CI_PROJECT_ID}
+    
+    only:
+    
+     - /^feature-.*$/
+    ```
+    maven-feature 指 job 名称。
+    
+    stage 指对应的阶段。
+    
+    only 指触发的分支。
+    
+    ```yaml
+    .auto_devops: &auto_devops |
+    
+       curl -o .auto_devops.sh \
+    
+             "${CHOERODON_URL}/devops/ci?token=${Token}&type=microservice"
+    
+        source .auto_devops.sh
+    ```
+    .auto_devops: 从指定仓库地址中拉取 script 脚本  用于 docker-build 阶段。
+    
+    ```yaml
+    before_script:
+    
+     - *auto_devops
+    ```
+    before_script：ci 执行前所执行的命令
 
  1. 编写 charts 模块
       
@@ -297,8 +298,9 @@ weight = 1
 
     ```
     stages:
-    - mvn-package
+        - mvn-package
     ```
+    
     stages 定义 CI 中包含的阶段。
     
     ``` stylus
