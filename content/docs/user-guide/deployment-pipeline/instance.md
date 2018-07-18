@@ -19,7 +19,7 @@ weight = 4
 #### 四种分视图：
  1. **部署实例** 通过容器状态、实例状态、应用及应用版本、环境来观察部署的实例情况。
       
-      ![enter description here](/docs/user-guide/deployment-pipeline/image/instance1.png)
+      ![instances](/docs/user-guide/deployment-pipeline/image/instance1.png)
 
     列表字段：
 
@@ -37,7 +37,7 @@ weight = 4
 
  2. **单环境** 通过选择单个环境来筛选查看该环境下各应用所部署实例的情况。
     
-      ![enter description here](/docs/user-guide/deployment-pipeline/image/instance4.png)
+      ![single env](/docs/user-guide/deployment-pipeline/image/instance4.png)
 
       可查询字段：
 
@@ -59,7 +59,7 @@ weight = 4
 
  3. **单应用** 对应用和版本筛选，观察单个应用在不同环境下的部署情况。
     
-      ![enter description here](/docs/user-guide/deployment-pipeline/image/instance5.png)
+      ![single app](/docs/user-guide/deployment-pipeline/image/instance5.png)
 
      可查询字段：
 
@@ -81,7 +81,7 @@ weight = 4
 
  4. **多应用** 观察所有应用在不同环境下的部署情况，这里对实例详情不可查看，可查看各个版本下的实例情况。
 
-      ![enter description here](/docs/user-guide/deployment-pipeline/image/instance6.png)
+      ![multi apps](/docs/user-guide/deployment-pipeline/image/instance6.png)
 
       列表字段：
 
@@ -112,7 +112,7 @@ weight = 4
 ## 运行详情
 Chart 里定义的各个资源对象列表及参数信息。
 
-  ![enter description here](/docs/user-guide/deployment-pipeline/image/instance3.png)
+  ![instance details](/docs/user-guide/deployment-pipeline/image/instance3.png)
 
 资源对象|参数信息|参数介绍
 :----|----|----
@@ -125,7 +125,7 @@ Ingress|name, hosts, address, ports, age|name是指Ingress的名称，hosts是�
 ## 部署详情
 包括报错信息、配置信息、阶段及日志。
        
-  ![enter description here](/docs/user-guide/deployment-pipeline/image/instance2.png)
+  ![stage log](/docs/user-guide/deployment-pipeline/image/instance2.png)
 
 
 ## 修改配置信息
