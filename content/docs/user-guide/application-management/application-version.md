@@ -28,21 +28,27 @@ weight = 3
 
  - 创建时间：应用创建时的时间。
  
- ## 版本生成命名规则
+## 版本生成命名规则
  
- - 非 tag 版本的版本命名为 `年.月.日-时分秒-分支名`。对应 `%Y.%M.%D-%H%Min%S-%branch` 。各变量说明如下：
+ - 非 tag 版本的版本默认命名为 `年.月.日-时分秒-分支名`。对应 `%Y.%M.%D-%H%Min%S-%branch` 。各变量说明如下：
  
      变量|说明  
      --- | ---
-     %Y|不以0开头的提交年份
+     %TimeStamp|完整的时间戳
+     %Y|提交年份
      %M|不以0开头的提交月份
+     %Mon|包含0开头的提交月份
      %D|不以0开头的提交日
+     %Day|包含0开头的提交月份
      %H|提交小时，24小时制
      %Min|提交分钟
      %S|提交秒
      %branch|分支名称
+     %commit|八位的 commit SHA
+     
+     > 变量的使用以及版本详细逻辑参考 [cibase](https://github.com/choerodon/cibase) 。
      
      > e.g. 分支名为feature-demo，提交时间2018年07月10日19:25:11， 那么得到的版本号为：2018.7.10-192511-feature-demo
   
- - tag 版本的版本命名为版本号，参考[语义化版本](https://semver.org/lang/zh-CN/)
+ - tag 版本的版本默认命名为版本号，参考[语义化版本](https://semver.org/lang/zh-CN/)。版本自定义变量与非 tag 版本相同。
  
