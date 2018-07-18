@@ -6,7 +6,11 @@ weight = 1
 
 # 环境流水线
 
-环境是一个客户端,是部署流水线和k8s信息交互的桥梁，实质上也是一个实例，只不过该实例是直接用helm部署在集群中，有了环境，我们就可以部署实例，部署网络，部署域名。环境可以部署在不同的集群中，由此就会产生不同的环境。比如开发测试环境、预生产环境、生产环境等。使系统的开发，测试，上线变的更加可视化，流程化。当创建多个环境后环境流水线会自动生成一条环境流水线，用户可以根据需要调整顺序环境的顺序，通过环境流水线，用户可以清晰地定义和查看应用部署的顺序。
+环境是一个客户端,是部署流水线和k8s信息交互的桥梁，实质上也是一个实例，只不过该实例是直接用helm部署在集群中，有了环境，我们就可以部署实例，部署网络，部署域名。
+
+环境可以部署在不同的集群中，由此就会产生不同的环境。比如开发测试环境、预生产环境、生产环境等。使系统的开发，测试，上线变的更加可视化，流程化。
+
+当创建多个环境后环境流水线会自动生成一条环境流水线，用户可以根据需要调整顺序环境的顺序，通过环境流水线，用户可以清晰地定义和查看应用部署的顺序。
 
   
   - **菜单层次**：项目层
@@ -26,7 +30,7 @@ weight = 1
 
 **2. 创建环境**
   
-  ![enter description here](/docs/user-guide/deployment-pipeline/image/envcreate.png)
+  ![创建环境](/docs/user-guide/deployment-pipeline/image/envcreate.png)
  
 -  点击`创建`，系统会滑出创建环境页面，输入相关信息，有环境编码、环境名称、环境描述。
 	
@@ -62,14 +66,13 @@ weight = 1
     --set rbac.create=true \
     choerodon-agent
 	```
-	- shell命令介绍：
-		shell命令由2个if判断命令和一个kubectl命令以及helm命令组成
+	- shell命令介绍：shell命令由2个if判断命令和一个kubectl命令以及helm命令组成
 		
-		if判断: 判断集群中是否支持kubectl命令以及是否支持helm命令
+		- if判断: 判断集群中是否支持kubectl命令以及是否支持helm命令
 		
-		kubectl: 在集群中创建一个命名空间，命名空间的名字为创建环境时候的编码
+		- kubectl: 在集群中创建一个命名空间，命名空间的名字为创建环境时候的编码
 
-		helm: 在集群中的kubectl创建的命名空间内通过helm install部署一个环境客户端的release,等同于平台的实例。参数有：
+		- helm: 在集群中的kubectl创建的命名空间内通过helm install部署一个环境客户端的release,等同于平台的实例。参数有：
 
 			- repo: chart仓库地址，取值为部署持续交互时的环境变量`env.open.AGENT_REPOURL`
 			- namespace: 所属命名空间，取值为环境编码
@@ -139,7 +142,7 @@ weight = 1
 
 ## 环境客户端补充说明
 
-	环境客户端使用了平台的[Choerodon-Agent](../../../concept/choerodon-agent/)技术，通过websocket方式连接到猪齿鱼平台。双方通过`command/response`方式来进行交互，来完成`helm release`的管理、网络管理、k8s对象监听和容器日志和shell等功能。 
+环境客户端使用了平台的 [Choerodon-Agent](../../../concept/choerodon-agent/) 技术，通过 websocket 方式连接到猪齿鱼平台。双方通过 `command/response` 方式来进行交互，来完成 `helm release` 的管理、网络管理、 k8s 对象监听和容器日志和 shell 等功能。 
 
 ## 环境停用区 
 

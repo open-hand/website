@@ -15,7 +15,7 @@ weight = 7
   - **菜单路径**：部署流水线 > 容器
   - **默认角色**：项目所有者、项目成员、部署管理员
 
-     ![enter description here](/docs/user-guide/deployment-pipeline/image/container.png) 
+![container](/docs/user-guide/deployment-pipeline/image/container.png) 
 
 ## 查看容器管理详情
 

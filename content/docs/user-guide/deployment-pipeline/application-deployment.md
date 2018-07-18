@@ -31,7 +31,7 @@ weight = 2
       当上次部署时候删除了某个values行，只会影响到上次部署，下次部署的时候，该行仍然会显示出来！目前暂时不支持从界面删除行。
     	  </blockquote>
     
-    ![enter description here](/docs/user-guide/deployment-pipeline/image/deploy1.png)
+    ![configuration](/docs/user-guide/deployment-pipeline/image/deploy1.png)
 
     - 部署values有四种显示格式：
         - 新增：新增的参数行，显示绿色
@@ -39,7 +39,8 @@ weight = 2
         - 红色x: yaml格式错误的行，显示红色xx
         - 未改变：默认色
       	<blockquote class="note">
-       yaml格式的校验是实时的，每次只会返回一个yaml格式错误，即使文件有多行报错。只有将上一个错误修改正确
+       yaml格式的校验是实时的，每次只会返回一个yaml格式错误，即使文件有多行报错。只有将上一个错误修改正确。 
+          
        每修改一次部署values的值都会校验一次yaml格式，有错就会界面上用红色x提示,鼠标移到红色x上会显示具体的报错信息。yaml格式不正确不能点击下一步。但是当版本里面的values文件有yaml格式错误时，无法通个过界面修改yaml格式错误，只能修改代码内的values文件并且生成新的版本，重新部署新的版本！
     	  </blockquote>
 
@@ -52,6 +53,6 @@ weight = 2
 
  6. 确认部署信息；
       
-      ![enter description here](/docs/user-guide/deployment-pipeline/image/deploy2.png)
+    ![deployment confirm](/docs/user-guide/deployment-pipeline/image/deploy2.png)
       
  7. 点击 `部署应用` 按钮，完成部署。
