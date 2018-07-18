@@ -15,6 +15,9 @@ weight = 2
   - **默认角色**：项目所有者、项目成员
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> [FIX]fix conflict
     <blockquote class="note">
       项目所有者对分支管理权限对应 gitlab 的 Master 权限。
 
@@ -308,6 +311,7 @@ weight = 2
     - `git checkout -- demo.demo`
     - 抛弃文件的改动，使文件恢复到修改前的状态。
     - 在使用前，对当前分支备份。
+<<<<<<< HEAD
 =======
 <blockquote class="note">
   项目所有者对分支管理权限对应 gitlab 的 Master 权限。
@@ -417,6 +421,8 @@ weight = 2
     git push origin master
     ```
 >>>>>>> [ADD]update development-pipeline
+=======
+>>>>>>> [FIX]fix conflict
 
 1. 重写历史
     - 在 Git 上工作的时候，你也许会由于某种原因想要修订你的提交历史。
