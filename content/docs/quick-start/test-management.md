@@ -1,7 +1,7 @@
 ﻿+++
 title = "使用测试管理"
 description = "介绍Choerodon的测试管理，从创建项目，测试用例，测试循环，执行测试来介绍如何快速上手测试管理"
-weight = 6
+weight = 7
 +++
 
 

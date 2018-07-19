@@ -1,7 +1,7 @@
 ﻿+++
 title = "知识管理"
 description = ""
-weight = 1
+weight = 2
 +++
 
 ## 使用 Choerodon 知识管理
