@@ -1,0 +1,22 @@
+weight: 6
+name: "部署流水线"
+icon: "/img/home/deployment-icon.svg"
+description: "借助Choerodon平台，用户客户可以方便地管理各种使用Choerodon开发部署的应用服务，包括应用启停、状态监控，以及应用对应的版本控制、容器管理等，同时还包括应用涉及到的各种资源管理，例如网络、域名、数据库服务、缓存服务等。"
+summary: "方便地管理各种使用Choerodon开发部署的应用服务和资源"
+language: zh
+
+childIcon1: "/img/home/deployment-1.svg"
+childTitle1: "环境流水线"
+childDescription1: "定义环境流水线，例如开发环境、测试环境和正式环境"
+
+childIcon2: "/img/home/deployment-2.svg"
+childTitle2: "部署"
+childDescription2: "手工或者自动部署，方便快捷"
+
+childIcon3: "/img/home/deployment-3.svg"
+childTitle3: "实例"
+childDescription3: "查看管理已部署应用的容器、实例等"
+
+childIcon4: "/img/home/deployment-4.svg"
+childTitle4: "资源"
+childDescription4: "定义网络、域名、数据库服务、缓存服务等"

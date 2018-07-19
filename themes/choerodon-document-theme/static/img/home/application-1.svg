@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="154px" height="128px" viewBox="0 0 154 128" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47 (45396) - http://www.bohemiancoding.com/sketch -->
+    <title>application-1</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="39" cy="39" r="39"></circle>
+        <filter x="-12.8%" y="-10.3%" width="125.6%" height="125.6%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.16 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="产品模块" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-257.000000, -1624.000000)" id="application-1">
+            <g transform="translate(263.000000, 1628.000000)">
+                <polygon id="Path-2" stroke="#9B9B9B" points="46 41.4696211 124.743974 28 107.082192 96.0179581"></polygon>
+                <g id="Oval-5">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                </g>
+                <path d="M39.6789228,41.2568617 L39.6789228,57 L55.4220611,57 L55.4220611,41.2568617 L39.6789228,41.2568617 L39.6789228,41.2568617 Z M20,57 L35.7431383,57 L35.7431383,41.2568617 L20,41.2568617 L20,57 L20,57 Z M20,21.5779389 L20,37.3210772 L35.7431383,37.3210772 L35.7431383,21.5779389 L20,21.5779389 L20,21.5779389 Z" id="Shape" fill="#6694EF"></path>
+                <polygon id="Path" fill="#F8F1A1" points="46.8814086 19 35.7431383 30.1185914 46.8814086 41.2568617 58.0196789 30.1185914 46.8814086 19"></polygon>
+                <circle id="Oval-5-Copy" fill="#FFFFFF" cx="124" cy="27" r="24"></circle>
+                <path d="M132,17 L116,17 C114.9,17 114,17.9 114,19 L114,35 C114,36.1 114.9,37 116,37 L132,37 C133.1,37 134,36.1 134,35 L134,19 C134,17.9 133.1,17 132,17 L132,17 Z M116,31 L120,31 L120,35 L116,35 L116,31 Z M116,25 L120,25 L120,29 L116,29 L116,25 Z M116,19 L120,19 L120,23 L116,23 L116,19 Z M122,31 L126,31 L126,35 L122,35 L122,31 Z M122,25 L126,25 L126,29 L122,29 L122,25 Z M122,19 L126,19 L126,23 L122,23 L122,19 Z M128,31 L132,31 L132,35 L128,35 L128,31 Z M128,25 L132,25 L132,29 L128,29 L128,25 Z M128,19 L132,19 L132,23 L128,23 L128,19 Z" id="Fill-388" fill="#E2E2E2"></path>
+                <circle id="Oval-5-Copy-2" fill="#FFFFFF" cx="105" cy="97" r="27"></circle>
+                <path d="M102,97 C100.35,97 99,98.35 99,100 C99,101.65 100.35,103 102,103 C103.65,103 105,101.65 105,100 C105,98.35 103.65,97 102,97 L102,97 Z M96,91 C94.35,91 93,92.35 93,94 C93,95.65 94.35,97 96,97 C97.65,97 99,95.65 99,94 C99,92.35 97.65,91 96,91 L96,91 Z M96,103 C94.35,103 93,104.35 93,106 C93,107.65 94.35,109 96,109 C97.65,109 99,107.65 99,106 C99,104.35 97.65,103 96,103 L96,103 Z M114,91 C115.65,91 117,89.65 117,88 C117,86.35 115.65,85 114,85 C112.35,85 111,86.35 111,88 C111,89.65 112.35,91 114,91 L114,91 Z M114,97 C112.35,97 111,98.35 111,100 C111,101.65 112.35,103 114,103 C115.65,103 117,101.65 117,100 C117,98.35 115.65,97 114,97 L114,97 Z M108,91 C106.35,91 105,92.35 105,94 C105,95.65 106.35,97 108,97 C109.65,97 111,95.65 111,94 C111,92.35 109.65,91 108,91 L108,91 Z" id="Fill-386" fill="#9BE8EF"></path>
+                <path d="M108,103 C106.35,103 105,104.35 105,106 C105,107.65 106.35,109 108,109 C109.65,109 111,107.65 111,106 C111,104.35 109.65,103 108,103 L108,103 Z" id="Path" fill="#F8F1A1"></path>
+                <path d="M102,85 C100.35,85 99,86.35 99,88 C99,89.65 100.35,91 102,91 C103.65,91 105,89.65 105,88 C105,86.35 103.65,85 102,85 L102,85 Z" id="Path" fill="#F8F1A1"></path>
+            </g>
+        </g>
+    </g>
+</svg>
