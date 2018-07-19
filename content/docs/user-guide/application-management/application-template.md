@@ -201,10 +201,10 @@ weight = 1
     ```yaml
     stages:
 
-      - maven-package
+     - maven-package
 
-      - docker-build 
-    ``` 
+     - docker-build 
+    ```
 
     stages 指包含 maven-package 和 docker-build 两个阶段。
     
