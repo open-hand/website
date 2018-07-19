@@ -1,6 +1,6 @@
 ﻿+++
-title = "应用管理"
-description = "一个系统可以被解耦成很多应用，每一个应用都可以独立部署，每一个应用仅关注于完成一部分任务，每部分任务代表一个小的业务模块，因此各应用之间关系是松耦合的。另外，每创建一个应用，平台会自动在gitlab创建好对应的代码库"
+title = "应用"
+description = "一个系统可以被解耦成很多应用，每一个应用都是一个独立的服务，实现某一类具体的功能都可以独立部署，应用仅关注于完成一部分任务，每部分任务代表一个小的业务模块，因此各应用之间关系是松耦合的。另外，每创建一个应用，平台会自动在gitlab创建对应的代码库，应用也可以通过应用市场导入产生。"
 weight = 2
 +++
 
@@ -73,3 +73,7 @@ weight = 2
 </blockquote>
 
  点击 `启用`→ ![启用按钮](/docs/user-guide/development-pipeline/image/start_button.png) 即可重新启用被停用的应用，恢复相关操作。
+
+## 查看代码质量
+
+ 点击 `代码质量`→ ![代码质量按钮](/docs/user-guide/development-pipeline/image/app_quality.png)，若平台部署了[sonarqube](https://www.sonarqube.org/)服务,并且CI集成sonarqube检查即可看见该应用的代码质量信息

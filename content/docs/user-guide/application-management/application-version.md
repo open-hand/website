@@ -1,6 +1,6 @@
 ﻿+++
 title = "应用版本"
-description = "由于 Choerodon 采用 GitLab 管理分支，所以对于版本的控制也是根据 Feature、Release、Hotfix 等分支在 GitLab 的 CI/CD 进行的"
+description = "由于 Choerodon 采用 GitLab 管理分支，所以对于版本的控制也是根据 Feature、Release、Hotfix、Bugfix、custom 等分支在 GitLab 的 CI/CD 进行的, 针对具体分支上提交可以生成相应的版本。"
 weight = 3
 +++
 
