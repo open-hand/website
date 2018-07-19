@@ -199,16 +199,16 @@ weight = 1
     image 指 ci 运行基础镜像。
 
     ```yaml
-        stages:
+    stages:
 
-        - maven-package
+      - maven-package
 
-        - docker-build 
+      - docker-build 
     ``` 
 
     stages 指包含 maven-package 和 docker-build 两个阶段。
     
-    ```yaml 
+    ```yaml
     maven-feature:
     
     stage: maven-package
@@ -227,6 +227,7 @@ weight = 1
     
      - /^feature-.*$/
     ```
+
     maven-feature 指 job 名称。
     
     stage 指对应的阶段。
@@ -242,6 +243,7 @@ weight = 1
     
         source .auto_devops.sh
     ```
+    
     .auto_devops: 从指定仓库地址中拉取 script 脚本  用于 docker-build 阶段。
     
     ```yaml
@@ -249,6 +251,7 @@ weight = 1
     
      - *auto_devops
     ```
+    
     before_script：ci 执行前所执行的命令
 
  1. 编写 charts 模块
