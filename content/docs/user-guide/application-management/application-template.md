@@ -296,7 +296,6 @@ weight = 1
    
 6. 编写一个 Gitlab CI；
 
-<<<<<<< HEAD
     ```
     stages:
         - mvn-package
@@ -328,41 +327,7 @@ weight = 1
     only 指触发的分支。
       
     except 指不会触发的分支。
-=======
-
-   ```yaml
-stages:
- - mvn-package
-   ```
- stages 定义 CI 中包含的阶段。
-
-   ```yaml
-maven-branches:
-  stage: mvn-package
-  script:
-    - update_pom_version
-    - mvn clean && mvn package -U -DskipTests=false
-    - mvn --batch-mode verify sonar:sonar -Dsonar.host.url=${SONAR_URL} -Dsonar.analysis.mode=preview -Dsonar.gitlab.commit_sha=${CI_COMMIT_SHA} -Dsonar.gitlab.ref_name=${CI_COMMIT_REF_NAME} -Dsonar.gitlab.project_id=${CI_PROJECT_ID}
-  only:
-    - develop
-    - /^release-.*$/
-    - /^hotfix-.*$/
-    - /^feature-.*$/
-  except:
-    - tags
-   ```
-
-  maven-branches 指 job 名称。
-
-  stage 指对应的阶段。
-
-  script 指执行的命令。
-
-  only 指触发的分支。
-
-  except 指不会触发的分支。
->>>>>>> [IMP]update branch manage doc
-      
+ 
    ``` yaml
 .auto_devops: &auto_devops |
            curl -o .auto_devops.sh \
