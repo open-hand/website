@@ -35,7 +35,7 @@ helm repo update
         --set service.enable=true \
         --set ingress.enable=true \
         --name=choerodon-front \
-        --version=0.7.1 --namespace=choerodon-devops-prod
+        --version=0.8.0 --namespace=choerodon-devops-prod
     ```
     参数名 | 含义 
     --- |  --- 

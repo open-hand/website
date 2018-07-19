@@ -76,7 +76,7 @@ helm install infra/harbor \
     参数 | 含义 
     --- |  --- 
     externalDomain|Harbor域名
-    adminserver.adminPassword|admin用户密码
+    harborAdminPassword|admin用户密码
     adminserver.volumes.config.selector|adminserver创建的pvc选pv的选择器值，为pv的label
     database.volumes.config.selector|harbor mysql创建的pvc选pv的选择器值，为pv的label
     registry.volumes.config.selector|registry创建的pvc选pv的选择器值，为pv的label

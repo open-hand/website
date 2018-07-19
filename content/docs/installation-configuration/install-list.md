@@ -36,19 +36,19 @@ Gitlab-Runner|CI/CD 运行环境|10.7.2
 
 组件|描述| 版本
 ---|---|---
-register server|注册服务|0.6.0
-config server|配置服务|0.6.0
-manager service|管理服务|0.6.0
-iam service|IAM服务|0.6.0
-api gateway|网关服务|0.6.0
-gateway helper|网关helper|0.6.0
-oauth server|认证服务|0.6.0
-event store service|事件服务|0.6.0
-file service|文件服务|0.6.0
-choerodon iam front|Choerodon IAM前端|0.6.1
-gitlab service|Gitlab 服务|0.6.1
-devops service|Devops 服务|0.6.5
-devops service front|Devops 服务前端|0.6.5
-agile service|敏捷管理|0.5.3
-agile service front|敏捷管理前端|0.5.3
-choerodon front|Choerodon 前端|0.6.5
+register server|注册服务|0.8.0
+config server|配置服务|0.8.0
+manager service|管理服务|0.8.0
+iam service|IAM服务|0.8.0
+api gateway|网关服务|0.8.0
+gateway helper|网关helper|0.8.0
+oauth server|认证服务|0.8.0
+event store service|事件服务|0.8.0
+file service|文件服务|0.8.0
+choerodon iam front|Choerodon IAM前端|0.8.0
+gitlab service|Gitlab 服务|0.8.0
+devops service|Devops 服务|0.8.0
+devops service front|Devops 服务前端|0.8.0
+agile service|敏捷管理|0.8.0
+agile service front|敏捷管理前端|0.8.0
+choerodon front|Choerodon 前端|0.8.0
