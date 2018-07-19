@@ -1,22 +1,22 @@
-weight: 2
+weight: 4 
 name: "开发流水线"
-icon: "/img/home/assemblyline-icon.svg"
-description: "以DevOps理念为指引，借助Gitlab CI作为持续集成工具，结合Gitlab的Gitflow分支模型，提供持续集成的流水线，可以简化应用开发、应用生命周期，以及快速迭代，同时还能提高团队效率,保持高质量；并且高效频繁地将软件的新版本，交付给质量团队或者用户。"
+icon: "/img/home/development-icon.svg"
+description: "以DevOps理念为指引，借助Gitlab CI作为持续集成工具，结合Gitlab的分支管理，提供持续集成的流水线，可以简化应用开发、应用生命周期，以及快速迭代，同时还能提高团队效率，保持高质量；并且高效频繁地将软件的新版本，交付给质量团队或者用户。"
 summary: "提供持续集成的流水线，可以简化应用开发、应用生命周期，以及快速迭代"
 language: zh
 
-childIcon1: "/img/home/assemblyline-illustrator-1.svg"
+childIcon1: "/img/home/development-1.svg"
 childTitle1: "代码托管"
 childDescription1: "集成Gitlab，作为代码托管的仓库"
 
-childIcon2: "/img/home/assemblyline-illustrator-2.svg"
-childTitle2: "CI流水线"
+childIcon2: "/img/home/development-2.svg"
+childTitle2: "持续集成"
 childDescription2: "借助Gitlab CI作为持续集成工具"
 
-childIcon3: "/img/home/assemblyline-illustrator-3.svg"
+childIcon3: "/img/home/development-3.svg"
 childTitle3: "分支管理"
-childDescription3: "借助Gitlab的Gitflow分支模型"
+childDescription3: "借助Gitlab进行分支的管理"
 
-childIcon4: "/img/home/assemblyline-illustrator-4.svg"
-childTitle4: "版本控制"
-childDescription4: "提供分布式代码版本控制"
+childIcon4: "/img/home/development-4.svg"
+childTitle4: "合并请求"
+childDescription4: "合并请求的创建、查看、审核和合并等"

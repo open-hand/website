@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="152px" height="148px" viewBox="0 0 152 148" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47 (45396) - http://www.bohemiancoding.com/sketch -->
+    <title>knowledge-4</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="96" width="40" height="40" rx="5"></rect>
+        <filter x="-25.0%" y="-20.0%" width="150.0%" height="150.0%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.16 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <rect id="path-3" x="100" y="48" width="40" height="40" rx="5"></rect>
+        <filter x="-25.0%" y="-20.0%" width="150.0%" height="150.0%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.16 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <rect id="path-5" x="50" y="0" width="40" height="40" rx="5"></rect>
+        <filter x="-25.0%" y="-20.0%" width="150.0%" height="150.0%" filterUnits="objectBoundingBox" id="filter-6">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.16 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="产品模块" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-1026.000000, -468.000000)" id="knowledge-4">
+            <g transform="translate(1032.000000, 472.000000)">
+                <rect id="Rectangle-4-Copy-15" fill-opacity="0.6" fill="#FFFFFF" x="0" y="0" width="40" height="40" rx="5"></rect>
+                <rect id="Rectangle-4-Copy-32" fill="#FFFFFF" x="0" y="48" width="40" height="40" rx="5"></rect>
+                <path d="M10.28,68 C10.28,65.948 11.948,64.28 14,64.28 L18.8,64.28 L18.8,62 L14,62 C10.688,62 8,64.688 8,68 C8,71.312 10.688,74 14,74 L18.8,74 L18.8,71.72 L14,71.72 C11.948,71.72 10.28,70.052 10.28,68 L10.28,68 Z M15.2,69.2 L24.8,69.2 L24.8,66.8 L15.2,66.8 L15.2,69.2 Z M26,62 L21.2,62 L21.2,64.28 L26,64.28 C28.052,64.28 29.72,65.948 29.72,68 C29.72,70.052 28.052,71.72 26,71.72 L21.2,71.72 L21.2,74 L26,74 C29.312,74 32,71.312 32,68 C32,64.688 29.312,62 26,62 L26,62 Z" id="Fill-69" fill="#E2E2E2"></path>
+                <g id="Rectangle-4-Copy-35">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                </g>
+                <rect id="Rectangle-4-Copy-31" fill-opacity="0.6" fill="#FFFFFF" x="100" y="0" width="40" height="40" rx="5"></rect>
+                <g id="Rectangle-4-Copy-33">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-3"></use>
+                </g>
+                <rect id="Rectangle-4-Copy-36" fill="#FFFFFF" x="100" y="96" width="40" height="40" rx="5"></rect>
+                <g id="Rectangle-4-Copy-17">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-6)" xlink:href="#path-5"></use>
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-5"></use>
+                </g>
+                <path d="M124.790126,111.834809 L121.665452,108.710134 L113.332986,117.0426 L113.332986,120.167274 L116.457661,120.167274 L124.790126,111.834809 L124.790126,111.834809 Z M127.256536,109.368399 C127.581502,109.043433 127.581502,108.518488 127.256536,108.193522 L125.306739,106.243725 C124.981773,105.918758 124.456827,105.918758 124.131861,106.243725 L122.498698,107.876888 L125.623373,111.001562 L127.256536,109.368399 L127.256536,109.368399 Z M110,122.667014 L129.997917,122.667014 L129.997917,126 L110,126 L110,122.667014 Z" id="Shape" fill="#E2E2E2"></path>
+                <path d="M72,10 L64,10 C62.9,10 62.01,10.9 62.01,12 L62,28 C62,29.1 62.89,30 63.99,30 L76,30 C77.1,30 78,29.1 78,28 L78,16 L72,10 L72,10 Z M66,24 L74,24 L74,26 L66,26 L66,24 Z M66,20 L74,20 L74,22 L66,22 L66,20 Z M71,17 L71,11.5 L76.5,17 L71,17 L71,17 Z" id="Fill-159" fill="#6694EF"></path>
+                <path d="M20,106 C14.48,106 10,110.48 10,116 C10,121.52 14.48,126 20,126 C25.52,126 30,121.52 30,116 C30,110.48 25.52,106 20,106 L20,106 Z M18,120.5 L18,111.5 L24,116 L18,120.5 L18,120.5 Z" id="Fill-113" fill="#9BE8EF"></path>
+                <rect id="Rectangle-4-Copy-34" fill="#FFFFFF" x="50" y="48" width="40" height="40" rx="5"></rect>
+                <path d="M69.3333333,57 L69.3333333,68.3422222 C68.7588889,68.1344444 68.1477778,68 67.5,68 C64.4566667,68 62,70.4566667 62,73.5 C62,76.5433333 64.4566667,79 67.5,79 C70.3233333,79 72.6333333,76.8611111 72.9388889,74.1111111 L73,74.1111111 L73,60.6666667 L77.8888889,60.6666667 L77.8888889,57 L69.3333333,57" id="Fill-315" fill="#E2E2E2"></path>
+                <rect id="Rectangle-4-Copy-37" fill-opacity="0.6" fill="#FFFFFF" x="50" y="96" width="40" height="40" rx="5"></rect>
+                <path d="M130,75.7777778 L130,60.2222222 C130,59 129,58 127.777778,58 L112.222222,58 C111,58 110,59 110,60.2222222 L110,75.7777778 C110,77 111,78 112.222222,78 L127.777778,78 C129,78 130,77 130,75.7777778 L130,75.7777778 Z M116.111111,69.6666667 L118.888889,73.0111111 L122.777778,68 L127.777778,74.6666667 L112.222222,74.6666667 L116.111111,69.6666667 L116.111111,69.6666667 Z" id="Fill-420" fill="#F8F1A1"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="160px" height="133px" viewBox="0 0 160 133" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 47 (45396) - http://www.bohemiancoding.com/sketch -->
-    <title>Group 16</title>
+    <title>development-3</title>
     <desc>Created with Sketch.</desc>
     <defs>
         <rect id="path-1" x="0" y="0" width="148" height="98" rx="5"></rect>
@@ -12,8 +12,8 @@
         </filter>
     </defs>
     <g id="产品模块" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="产品模块-1" transform="translate(-766.000000, -1041.000000)">
-            <g id="Group-16" transform="translate(772.000000, 1045.000000)">
+        <g transform="translate(-767.000000, -2172.000000)" id="development-3">
+            <g transform="translate(773.000000, 2176.000000)">
                 <g id="Rectangle-4-Copy-3">
                     <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
                     <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>

@@ -1,0 +1,22 @@
+weight: 5
+name: "测试管理"
+icon: "/img/home/test-icon.svg"
+description: "Choerodon的测试管理为用户提供敏捷化的持续测试工具，包括测试用例管理、测试循环、测试分析等，可以有效地提高软件测试的效率和质量，提高测试的灵活性和可视化水平，最终减少测试时间，让用户将主要精力放到软件功能构建上。"
+summary: "敏捷化的持续测试工具，可以有效地提高软件测试的效率和质量"
+language: zh
+
+childIcon1: "/img/home/test-1.svg"
+childTitle1: "敏捷化"
+childDescription1: "Choerodon测试管理与敏捷管理集成，为用户提供无缝的敏捷体验"
+
+childIcon2: "/img/home/test-2.svg"
+childTitle2: "自动化"
+childDescription2: "与主流的自动化测试框架集成，显著提高测试的自动化覆盖率"
+
+childIcon3: "/img/home/test-3.svg"
+childTitle3: "DevOps"
+childDescription3: "提高DevOps全流程端到端的测试可视化程度，提高软件交付的质量和资源利用率"
+
+childIcon4: "/img/home/test-4.svg"
+childTitle4: "测试分析"
+childDescription4: "最大限度地利用自动化，优化测试用例实现，以及缺陷趋势预测，提高软件交付质量"
