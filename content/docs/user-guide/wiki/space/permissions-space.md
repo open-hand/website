@@ -20,8 +20,8 @@ weight = 4
 
 ## 更多操作
 
-- [页面层次结构看板](../../page/permissions-page)
-- [创建空间](../../page/create-space)
+- [页面层次结构](../../page/permissions-page)
+- [创建空间](../create-space)
 - [创建页面](../../page/create-page) 
 
 

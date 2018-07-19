@@ -40,7 +40,7 @@ weight = 1
 
 - [创建空间](../../space/create-space)
 - [管理空间](../../space/manage-space) 
-- [权限管理](../hierarchy)
+- [权限管理](../../hierarchy)
 
 
 

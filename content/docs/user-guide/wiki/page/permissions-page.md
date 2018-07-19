@@ -8,7 +8,7 @@ weight = 4
 
 您可以拥有多个空间和多个页面，并通过建构页面层次结构来管理空间里的页面，通过此页面中您将了解到页面的如何划分页面的层次结构。
 
-例如，你可以在一个页面“wiki”里面再创建一个“wiki产品文档”的页面，因此你可以看到页面位置关于如图所示。
+例如，你可以在一个页面“Wiki”里面再创建一个“Wiki产品文档”的页面，因此你可以看到页面位置关于如图所示。
 
 ![enter description here](/docs/user-guide/wiki/image/image19.png)
 
@@ -19,8 +19,8 @@ weight = 4
 
 ## 更多操作
 
-- [空间层次结构](../../permissions-space)
-- [管理空间](../../manage-space) 
+- [空间层次结构](../../space/permissions-space)
+- [管理空间](../../space/manage-space) 
 - [管理页面](../manage-page)
 
 

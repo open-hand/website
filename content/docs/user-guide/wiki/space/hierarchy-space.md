@@ -17,8 +17,12 @@ weight = 3
 3. 查找过滤器，用于快速查找小组和用户。
 4. 通过打钩的方式针对每个小组和用户进行权限设置，包括：视图（仅查看）、评论、编辑、运行脚本、删除和设置管理员。
 5. 选择不同的页面权限设置，有Rights:Page & Children 和 Rights:Page 两种设置方式。
+   
+    -  Page & Children 设置的权限适用于本空间及其所有子空间。
+    -  Rights: Page 设置的权限仅适用于本空间不影响其子空间。
+
     <blockquote class="note">
-    Rights: Page & Children页面设置的权限适用于本空间及其所有子空间；而 Rights: Page 设置的权限仅适用于本空间不影响其子空间。
+    当使用Rights: Page 权限设置时，是没有设置管理员这项权限的。
     </blockquote>
 
 更多关于权限的详情，请查看[权限管理](../../hierarchy)
@@ -29,8 +33,8 @@ weight = 3
 
 ## 更多操作
 
-- [创建空间](../space/create-space)
-- [管理空间](../space/manage-space) 
+- [创建空间](../create-space)
+- [管理空间](../manage-space) 
 - [什么是空间](../space)
 
 

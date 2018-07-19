@@ -29,15 +29,35 @@ weight = 2
  2. Action：导出、打印预览、查看源码、邮件分享。
  3. Viewers：子空间、评论、附件、记录、信息。
 
+### 导出
+
+目前支持四种导出模式HTML，PDF，RTF（适用于MS Office）和XAR（XWiki Archive）。
+
+![enter description here](/docs/user-guide/wiki/image/image22.png)
+
+### 评论
+
+![enter description here](/docs/user-guide/wiki/image/image23.png)
+
+1. 页面下方会显示出评论者和评论日期等信息。
+2. 点击回复某条评论。
+3. 点击会某条评论直接进行编辑。
+4. 点击生成评论链接。
+5. 点击删除某条评论。
+
+### 添加附件
+
+可以在`更多`或者页面下方评论旁边，点击查看和添加附件。
+
 ## 下一步
 
 - [**空间权限**](../hierarchy-space)：您将了解到如何对空间的权限进行设置。
 
 ## 更多操作
 
-- [创建空间](../space/create-space)
+- [创建空间](../create-space)
 - [管理页面](../../page/manage-page) 
-- [什么是空间](../space)
+- [什么是空间](../../space)
 
 
 

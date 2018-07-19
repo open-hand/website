@@ -21,7 +21,7 @@ weight = 1
 ![enter description here](/docs/user-guide/wiki/image/image1.png "image1")
 
 1. 点击此处进入相关组织。
-2. 点击此处创建新的空间。
+2. 点击此处[创建空间](../space/create-space)。
 3. 快速检索问题，在此检索相关空间。
 4. 设置该页面可展示空间信息，包括`图标`、`名称`、`地址`和`状态`。
 5. 此处为空间地址，点击即可跳转至该空间页面。
@@ -30,7 +30,7 @@ weight = 1
 ## 相关操作
 
 - [**创建空间**](../space/create-space)：您将了解到如何创建一个新空间。
-- [**管理空间**](../space/manage-space)：您将了解到如何对一个空间进行管理，包括：
+- [**管理空间**](../space/manage-space)：您将了解到如何对一个空间进行管理，包括：导出、评论和添加附件。
 - [**空间权限**](../space/hierarchy-space)：您将了解到如何分配空间的权限，以及进行相关设置。
 - [**空间层次结构**](../space/permissions-space)：您将了解到空间层次结构的具体说明。
 

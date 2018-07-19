@@ -40,7 +40,7 @@ weight = 1
 ## 更多操作
 - [什么是空间？](../space)
 - [管理空间](../space/manage-space)
-- [系统管理](../system manage)
+- [系统管理](../system-management)
 
 
 

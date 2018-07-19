@@ -49,9 +49,10 @@ weight = 2
 
 ## 更多操作
 
-- [什么是看板](../../sprint)
-- [创建版本](../version)
-- [处理问题](../../issue/manage-issue) 
+- [创建空间](../../space/create-space)
+- [管理空间](../../space/manage-space) 
+- [权限管理](../../hierarchy)
+
 
 
 

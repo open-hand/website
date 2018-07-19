@@ -17,14 +17,18 @@ weight = 3
 3. 查找过滤器，用于快速查找小组和用户。
 4. 通过打钩的方式针对每个小组和用户进行权限设置，包括：视图（仅查看）、评论、编辑、运行脚本、删除和设置管理员。
 5. 选择不同的页面权限设置，有Rights:Page & Children 和 Rights:Page 两种设置方式。
+   
+    -  Page & Children页面设置的权限适用于本页面及其所有子页面。
+    -  Rights: Page 设置的权限仅适用于本页面不影响其子页面。
+
     <blockquote class="note">
-    Rights: Page & Children页面设置的权限适用于本页面及其所有子页面；而 Rights: Page 设置的权限仅适用于本页面不影响其子页面。
+    当使用Rights: Page 页面设置时，是没有设置管理员这项权限的。
     </blockquote>
 
 
 ## 下一步
 
-- [**页面层次结构**](../permissions-page)：
+- [**页面层次结构**](../permissions-page)：您将了解什么是页面的层次结构。
 
 ## 更多操作
 
