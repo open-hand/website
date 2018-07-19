@@ -36,7 +36,7 @@ helm install c7n/create-pv \
     --set type=nfs \
     --set pv.name=zookeeper-pv-00 \
     --set labels.app=zookeeper \
-    --set nfs.path=/u01/io-choerodon/zookeeper-00 \
+    --set nfs.path=/u01/io-choerodon/zookeeper/00 \
     --set nfs.server=nfs.example.choerodon.io \
     --set pvc.enable=false \
     --set size=3Gi \
@@ -46,7 +46,7 @@ helm install c7n/create-pv \
     --set type=nfs \
     --set pv.name=zookeeper-pv-01 \
     --set labels.app=zookeeper \
-    --set nfs.path=/u01/io-choerodon/zookeeper-01 \
+    --set nfs.path=/u01/io-choerodon/zookeeper/01 \
     --set nfs.server=nfs.example.choerodon.io \
     --set pvc.enable=false \
     --set size=3Gi \
@@ -56,7 +56,7 @@ helm install c7n/create-pv \
     --set type=nfs \
     --set pv.name=zookeeper-pv-02 \
     --set labels.app=zookeeper \
-    --set nfs.path=/u01/io-choerodon/zookeeper-02 \
+    --set nfs.path=/u01/io-choerodon/zookeeper/02 \
     --set nfs.server=nfs.example.choerodon.io \
     --set pvc.enable=false \
     --set size=3Gi \
@@ -70,6 +70,7 @@ helm install c7n/create-pv \
 helm install c7n/zookeeper \
     --set replicaCount=3 \
     --set persistence.enabled=true \
+    --set persistence.size=3Gi \
     --set persistence.selector.app="zookeeper" \
     --name=zookeeper --namespace=choerodon-devops-prod
 ```

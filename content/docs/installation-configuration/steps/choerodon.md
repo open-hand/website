@@ -22,6 +22,10 @@ weight = 15
   </ul>
 </blockquote>
 
+<blockquote class="note">
+部署成功后Choerodon平台默认登录名为admin，默认密码为admin。
+</blockquote>
+
 - 新建`values.sh`文件，粘贴以下内容后按注释进行修改后保存。注意正式搭建时请替换以下值为真实值。
 
     ```bash

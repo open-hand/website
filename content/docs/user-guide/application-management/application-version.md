@@ -28,27 +28,17 @@ weight = 3
 
  - 创建时间：应用创建时的时间。
  
-## 版本生成命名规则
- 
- - 非 tag 版本的版本默认命名为 `年.月.日-时分秒-分支名`。对应 `%Y.%M.%D-%H%Min%S-%branch` 。各变量说明如下：
- 
-     变量|说明  
-     --- | ---
-     %TimeStamp|完整的时间戳
-     %Y|提交年份
-     %M|不以0开头的提交月份
-     %Mon|包含0开头的提交月份
-     %D|不以0开头的提交日
-     %Day|包含0开头的提交月份
-     %H|提交小时，24小时制
-     %Min|提交分钟
-     %S|提交秒
-     %branch|分支名称
-     %commit|八位的 commit SHA
-     
-     > 变量的使用以及版本详细逻辑参考 [cibase](https://github.com/choerodon/cibase) 。
-     
-     > e.g. 分支名为feature-demo，提交时间2018年07月10日19:25:11， 那么得到的版本号为：2018.7.10-192511-feature-demo
-  
- - tag 版本的版本默认命名为版本号，参考[语义化版本](https://semver.org/lang/zh-CN/)。版本自定义变量与非 tag 版本相同。
- 
+## 版本生成相关变量
+
+- 各变量说明如下：
+
+    变量|说明  
+    --- | ---
+    C7N_COMMIT_TIME|本地Commit代码的时间，格式为`年.月.日-时分秒`, 例如 `2018.7.9-192511`
+    C7N_COMMIT_SHA|Commit的Sha值前八位
+    C7N_BRANCH|当前提交分支名
+    C7N_VERSION|Choerodon平台提供的默认版本号，格式为：`C7N_COMMIT_TIME-C7N_BRANCH`。若为切出的 tag 则为 tag 的值。
+    
+    > e.g. 分支名为feature-demo，提交时间2018年07月09日19:25:11， 那么得到的C7N_VERSION值为：2018.7.9-192511-feature-demo。若打 tag 为0.5.0，则得到的C7N_VERSION值为0.5.0。
+
+- **注意：** 因为生成Chart包时所指定的版本号必须符合[语义化版本](https://semver.org/lang/zh-CN/)规则，这也是`C7N_COMMIT_TIME`时间戳格式为`年.月.日-时分秒`的原因。

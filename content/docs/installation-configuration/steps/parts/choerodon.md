@@ -11,6 +11,10 @@ weight = 10
 以下验证部署是否成功如未特别说明则执行验证的环境为任意一台集群Master节点。
 </blockquote>
 
+<blockquote class="note">
+部署成功后Choerodon平台默认登录名为admin，默认密码为admin。
+</blockquote>
+
 ## 添加Choerodon Chart仓库
 
 ```
