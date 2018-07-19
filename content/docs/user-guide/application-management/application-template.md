@@ -1,6 +1,6 @@
 ﻿+++
 title = "应用模板"
-description = "是将同类型应用的代码库结构整理成模板，用于创建应用时能引用相应模板快速创建初始代码库"
+description = "是将同类型应用的代码库结构整理成模板，用于创建应用时能引用相应模板快速创建初始代码库，目前系统预置了三种模板分别是:  JavaLib(jar库)、MicroServiceFront(web前端应用模板)、MicroService(微服务应用模板)。"
 weight = 1
 +++
 
@@ -296,6 +296,7 @@ weight = 1
    
 6. 编写一个 Gitlab CI；
 
+<<<<<<< HEAD
     ```
     stages:
         - mvn-package
@@ -327,21 +328,55 @@ weight = 1
     only 指触发的分支。
       
     except 指不会触发的分支。
-      
-    ``` stylus
-    .auto_devops: &auto_devops |
-               curl -o .auto_devops.sh \
-                     "${CHOERODON_URL}/devops/ci?token=${Token}&type=lib"
-                source .auto_devops.sh
-    ```   
-    .auto_devops：从指定仓库地址中拉取 script 脚本  用于 docker-build 阶段。
+=======
 
-    ```yaml
-    before_script:
-    
-     - *auto_devops
-    ```
-    before_script：指 ci 执行前所执行的命令。
+   ```yaml
+stages:
+ - mvn-package
+   ```
+ stages 定义 CI 中包含的阶段。
+
+   ```yaml
+maven-branches:
+  stage: mvn-package
+  script:
+    - update_pom_version
+    - mvn clean && mvn package -U -DskipTests=false
+    - mvn --batch-mode verify sonar:sonar -Dsonar.host.url=${SONAR_URL} -Dsonar.analysis.mode=preview -Dsonar.gitlab.commit_sha=${CI_COMMIT_SHA} -Dsonar.gitlab.ref_name=${CI_COMMIT_REF_NAME} -Dsonar.gitlab.project_id=${CI_PROJECT_ID}
+  only:
+    - develop
+    - /^release-.*$/
+    - /^hotfix-.*$/
+    - /^feature-.*$/
+  except:
+    - tags
+   ```
+
+  maven-branches 指 job 名称。
+
+  stage 指对应的阶段。
+
+  script 指执行的命令。
+
+  only 指触发的分支。
+
+  except 指不会触发的分支。
+>>>>>>> [IMP]update branch manage doc
+      
+   ``` yaml
+.auto_devops: &auto_devops |
+           curl -o .auto_devops.sh \
+                 "${CHOERODON_URL}/devops/ci?token=${Token}&type=lib"
+            source .auto_devops.sh
+  ```
+  .auto_devops：从指定仓库地址中拉取 script 脚本  用于 docker-build 阶段。
+
+  ```yaml
+before_script:
+
+ - *auto_devops
+  ```
+  before_script：指 ci 执行前所执行的命令。
 	   
 7. 提交代码。
 

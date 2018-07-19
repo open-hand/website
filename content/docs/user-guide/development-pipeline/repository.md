@@ -24,3 +24,7 @@ weight = 1
 为提供便捷的复制仓库地址的操作，在列表的每一行最后都有一个`复制按钮`→ ![复制按钮](/docs/user-guide/development-pipeline/image/repo_copy_button.png)。
 
 点击`复制按钮`→ ![复制按钮](/docs/user-guide/development-pipeline/image/repo_copy_button.png)可以将仓库地址复制到系统的剪切板中，你可以在任意地方粘贴使用。
+
+<blockquote class="note">
+  仓库列表地址前的颜色标记是一个随机颜色，并无特殊含义。
+</blockquote>

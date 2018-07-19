@@ -28,7 +28,7 @@ weight = 2
 
  4. 修改配置信息,第一次部署时为应用版本里面的默认values文件,在某个环境部署过之后，查询出来的为部署在某环境中上次部署实例的values文件和版本里面自带的values的合并值,合并逻辑为修改的values替换,新增的values新增.
      	<blockquote class="warning">
-      当上次部署时候删除了某个values行，只会影响到上次部署，下次部署的时候，该行仍然会显示出来！目前暂时不支持从界面删除行。
+      目前暂时不支持从界面删除参数。
     	  </blockquote>
     
     ![configuration](/docs/user-guide/deployment-pipeline/image/deploy1.png)
@@ -40,7 +40,6 @@ weight = 2
         - 未改变：默认色
       	<blockquote class="note">
        yaml格式的校验是实时的，每次只会返回一个yaml格式错误，即使文件有多行报错。只有将上一个错误修改正确。 
-          
        每修改一次部署values的值都会校验一次yaml格式，有错就会界面上用红色x提示,鼠标移到红色x上会显示具体的报错信息。yaml格式不正确不能点击下一步。但是当版本里面的values文件有yaml格式错误时，无法通个过界面修改yaml格式错误，只能修改代码内的values文件并且生成新的版本，重新部署新的版本！
     	  </blockquote>
 
