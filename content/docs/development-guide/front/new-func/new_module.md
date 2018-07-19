@@ -60,7 +60,7 @@ $ touch package.json
   ],
   "license": "ISC",
   "dependencies": {
-    "choerodon-front-boot": "0.6.2"
+    "choerodon-front-boot": "0.6.4"
   }
 }
 ```
