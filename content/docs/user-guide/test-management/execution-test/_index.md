@@ -17,4 +17,4 @@ description = "介绍了如何执行测试的相关操作"
 - [创建测试用例](../case-management/create-case) 详细阐述了如何创建测试用例
 - [创建测试循环](../test-cycle/create-cycle) 介绍了如何查看，修改，删除执行
 - [设置状态](../setting/status) 自定义测试管理中执行和步骤的状态
-- [查看测试报告](../test-report/) 在这里您可以通过不同维度查看关于项目的测试追踪性报告
+- [查看测试报告](../test-report/) 提供从不同维度，不同角度的测试分析报告

@@ -563,11 +563,11 @@ jQuery('.navbar .global-language').hover(function (e) {
 
 // 移除html锚点的移动效果
 jQuery(document).ready(function () {
-    $(".content-post a").click(function () {
-        var offset = parseInt($("#navbar").css("height")) + parseInt($("#content-post").css("margin-top"));
-        $("html, body").animate({ scrollTop: $($(this).attr("href")).offset().top - offset }, 500);
-        return false;
-    });
+    if (isPC){
+        var navHeight = $("#navigation").css("height");
+    
+        $("html, body").animate({ scrollTop: $(decodeURIComponent(window.location.hash)).offset().top - navHeight.split("px")[0] }, 500);
+    }
 });
 
 // 首页
