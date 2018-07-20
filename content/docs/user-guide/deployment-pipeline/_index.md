@@ -29,7 +29,7 @@ weight = 7
 
 ## 前置条件
 
- - Choerodon的部署流水线也是基于应用管理的，在使用Choerodon部署流水线之前，需要先了解和学习[Choerodon的应用管理](../application-management)。
+ - Choerodon的部署流水线也是基于应用管理的，在使用Choerodon部署流水线之前，需要先了解和学习[Choerodon的应用管理](../application)。
  - Choerodon的部署流水线也是基于开发流水线的，在使用Choerodon部署流水线之前，需要先了解和学习[Choerodon的开发流水线](../development-pipeline)。
  - 系统用户必须具有`部署管理员`，或者`项目所有者`，或者`项目成员`角色，才能使用部署流水线。所以，在使用部署流水线之前，您需要为您的用户分配上述。关于权限管理，请参阅[项目角色分配](.././system-configuration/project/role-assignment/)。
  - 由于部署流水线环境流水线功能中需要创建agent环境客户端，请确保本机能够用ssh连接到系统所在的k8s集群且集群内安装好了helm客户端，有关[helm](https://docs.helm.sh/)和 [kubectl](https://kubernetes.io/docs/reference/kubectl/overview/)的相关知识请自行去对应官网理解

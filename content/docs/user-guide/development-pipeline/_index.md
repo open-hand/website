@@ -21,7 +21,7 @@ weight = 5
 
 ## 前置条件
 
- - Choerodon的开发流水线基于应用管理，在使用Choerodon开发流水线之前，需要先了解和学习[Choerodon的应用管理](../application-management)。
+ - Choerodon的开发流水线基于应用管理，在使用Choerodon开发流水线之前，需要先了解和学习[Choerodon的应用管理](../application)。
  - 系统用户必须具有`项目所有者`，或者`项目成员`角色，才能使用开发流水线。所以，在使用开发流水线之前，您需要为您的用户分配上述角色。关于权限管理，请参阅[项目角色分配](.././system-configuration/project/role-assignment/)。
 
 ## 权限说明

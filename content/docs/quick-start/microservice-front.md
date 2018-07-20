@@ -61,7 +61,7 @@ Choerodon 名词 | 对应Gitlab 名词 | 举例
 
 在 `开发流水线` -> `应用` 界面中找到`choerodon-front-demo`。选择分支管理，点击`创建分支`，选择`创建feature分支`，填写`issue`号，如`feature-1`。点击`创建`，即可创建一个分支。
 
-Choerodon 采用 `git-flow` 工作流模式，有`master`和`develop`两个默认分支。在持续交付过程中对 `feature`、`release`、`hotfix` 等分支进行管理。结束分支可自动触发分支合并和持续集成，可在流水线查看代码集成情况。更多相关信息参考[分支管理](../../user-guide/development-pipeline/branch-management/)。
+Choerodon 采用 `git-flow` 工作流模式，有`master`和`develop`两个默认分支。在持续交付过程中对 `feature`、`release`、`hotfix` 等分支进行管理。结束分支可自动触发分支合并和持续集成，可在流水线查看代码集成情况。更多相关信息参考[分支管理](../../user-guide/development-pipeline/branch/)。
 
 
 **2. 拉取代码仓库**
