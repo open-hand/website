@@ -67,4 +67,4 @@ helm repo update
 
 - 查看监控
 
-    在浏览器中输入配置的grafana地址即可，更多信息参见[此处](../../../user-guide/operating-manage/)。
+    在浏览器中输入配置的grafana地址即可，更多信息参见[此处](../../../../user-guide/operating-manage/)。

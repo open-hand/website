@@ -54,7 +54,7 @@ Choerodon知识管理服务是一个轻量级的强大Wiki平台，允许用户�
 
 ### 创建一个页面
 
-在空间主页中，您能快速创建一个页面，并对页面进行编辑和管理。想要了解更多关于编辑、管理页面的内容，请点击[编辑页面](../edict-page) 查看。
+在空间主页中，您能快速创建一个页面，并对页面进行编辑和管理。想要了解更多关于编辑、管理页面的内容，请点击[编辑页面](../../user-guide/wiki/page/edict-page) 查看。
 
 ![enter description here](/docs/user-guide/wiki/image/image9.png)
 

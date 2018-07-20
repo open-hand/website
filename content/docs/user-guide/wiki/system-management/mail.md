@@ -46,6 +46,6 @@ weight = 7
 - [**查询**](../query)：查询是对检索的设置。
 
 ## 更多操作
-- [**全局权限**](../../backlog/create-issue1)
-- [**空间权限**](../../backlog/version)
-- [**页面权限**](../../backlog/sprint1)
+- [**全局权限**](../../hierarchy)
+- [**空间权限**](../../space/hierarchy-space)
+- [**页面权限**](../../page/hierarchy-page)
