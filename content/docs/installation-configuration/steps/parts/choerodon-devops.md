@@ -60,9 +60,9 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
         --set env.open.AGENT_VERSION="0.8.0" \
         --set env.open.AGENT_REPOURL="https://openchart.choerodon.com.cn/choerodon/c7n/" \
         --set env.open.AGENT_SERVICEURL="ws://devops.service.example.choerodon.io/agent/" \
-        --set env.open.TEMPLATE_VERSION_MICROSERVICE="0.8.0" \
-        --set env.open.TEMPLATE_VERSION_MICROSERVICEFRONT="0.8.0" \
-        --set env.open.TEMPLATE_VERSION_JAVALIB="0.8.0" \
+        --set env.open.TEMPLATE_VERSION_MICROSERVICE="0.7.0" \
+        --set env.open.TEMPLATE_VERSION_MICROSERVICEFRONT="0.7.0" \
+        --set env.open.TEMPLATE_VERSION_JAVALIB="0.7.0" \
         --set ingress.enable=true \
         --set ingress.host=devops.service.example.choerodon.io \
         --set service.enable=true \
