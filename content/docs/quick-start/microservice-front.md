@@ -82,7 +82,6 @@ $ git checkout feature-1
 
 模板本身生成的应用可以直接运行在平台上。更多具体的开发参考[前端开发手册](../../development-guide/front/)。
 
-
 **4. 修改`ci` 文件**
 
 通过Choerodon 提供的默认模板，会创建`.gitlab-ci.yml`。
