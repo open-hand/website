@@ -36,7 +36,7 @@ helm install c7n/create-pv \
     --set type=nfs \
     --set pv.name=kafka-pv-00 \
     --set labels.app=kafka \
-    --set nfs.path=/u01/io-choerodon/kafka-00 \
+    --set nfs.path=/u01/io-choerodon/kafka/00 \
     --set nfs.server=nfs.example.choerodon.io \
     --set pvc.enable=false \
     --set size=3Gi \
@@ -46,7 +46,7 @@ helm install c7n/create-pv \
     --set type=nfs \
     --set pv.name=kafka-pv-01 \
     --set labels.app=kafka \
-    --set nfs.path=/u01/io-choerodon/kafka-01 \
+    --set nfs.path=/u01/io-choerodon/kafka/01 \
     --set nfs.server=nfs.example.choerodon.io \
     --set pvc.enable=false \
     --set size=3Gi \
@@ -56,7 +56,7 @@ helm install c7n/create-pv \
     --set type=nfs \
     --set pv.name=kafka-pv-02 \
     --set labels.app=kafka \
-    --set nfs.path=/u01/io-choerodon/kafka-02 \
+    --set nfs.path=/u01/io-choerodon/kafka/02 \
     --set nfs.server=nfs.example.choerodon.io \
     --set pvc.enable=false \
     --set size=3Gi \
@@ -71,9 +71,10 @@ helm install c7n/create-pv \
 helm install c7n/kafka \
     --set replicaCount=3 \
     --set persistence.enabled=true \
+    --set persistence.size=3Gi \
     --set persistence.selector.app="kafka" \
     --set zookeeperConnect="zookeeper-0.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181\,zookeeper-1.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181\,zookeeper-2.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181" \
-    --name=kafka --namespace=choerodon-devops-prod 
+    --name=kafka --namespace=choerodon-devops-prod
 ```
 
 - 参数：

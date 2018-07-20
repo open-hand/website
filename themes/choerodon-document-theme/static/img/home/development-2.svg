@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="160px" height="133px" viewBox="0 0 160 133" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47 (45396) - http://www.bohemiancoding.com/sketch -->
+    <title>development-2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="148" height="98" rx="5"></rect>
+        <filter x="-6.8%" y="-8.2%" width="113.5%" height="120.4%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.16 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="产品模块" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-512.000000, -2172.000000)" id="development-2">
+            <g transform="translate(518.000000, 2176.000000)">
+                <g id="Rectangle-4-Copy-3">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                </g>
+                <circle id="Oval-3" fill="#6694EF" cx="131" cy="67" r="8"></circle>
+                <circle id="Oval-3-Copy-6" fill="#EAEAEB" cx="59" cy="67" r="8"></circle>
+                <circle id="Oval-3-Copy-7" fill="#E2E2E2" cx="83" cy="67" r="8"></circle>
+                <circle id="Oval-3-Copy-8" fill="#B7B7B7" cx="107" cy="67" r="8"></circle>
+                <polygon id="Fill-45-Copy-3" fill="#9B9B9B" points="71.2504265 26 71.2504265 28.2498578 68 28.2498578 68 29.7501422 71.2504265 29.7501422 71.2504265 32 74.2506161 29.0001896"></polygon>
+                <polygon id="Fill-45-Copy-10" fill="#9B9B9B" points="71.2504265 64 71.2504265 66.2498578 68 66.2498578 68 67.7501422 71.2504265 67.7501422 71.2504265 70 74.2506161 67.0001896"></polygon>
+                <polygon id="Fill-45-Copy-11" fill="#9B9B9B" points="95.2504265 64 95.2504265 66.2498578 92 66.2498578 92 67.7501422 95.2504265 67.7501422 95.2504265 70 98.2506161 67.0001896"></polygon>
+                <polygon id="Fill-45-Copy-12" fill="#9B9B9B" points="119.250427 64 119.250427 66.2498578 116 66.2498578 116 67.7501422 119.250427 67.7501422 119.250427 70 122.250616 67.0001896"></polygon>
+                <polygon id="Fill-45-Copy-4" fill="#9B9B9B" points="95.2504265 26 95.2504265 28.2498578 92 28.2498578 92 29.7501422 95.2504265 29.7501422 95.2504265 32 98.2506161 29.0001896"></polygon>
+                <polygon id="Fill-45-Copy-13" fill="#9B9B9B" transform="translate(107.000000, 48.125308) rotate(90.000000) translate(-107.000000, -48.125308) " points="112.125118 45.1253081 112.125118 47.3751659 98.8746919 47.3751659 98.8746919 48.8754502 112.125118 48.8754502 112.125118 51.1253081 115.125308 48.1254976"></polygon>
+                <circle id="Oval-3-Copy-2" fill="#F8F1A1" cx="59" cy="29" r="8"></circle>
+                <circle id="Oval-3-Copy-4" fill="#9BE8EF" cx="107" cy="29" r="8"></circle>
+                <circle id="Oval-3-Copy-3" fill="#F8F1A1" cx="83" cy="29" r="8"></circle>
+                <rect id="Rectangle-6-Copy-2" fill="#B7B7B7" x="11" y="61" width="26" height="12" rx="5"></rect>
+                <rect id="Rectangle-6-Copy-10" fill="#E2E2E2" x="11" y="23" width="26" height="12" rx="5"></rect>
+                <rect id="Rectangle-4-Copy-4" fill-opacity="0.8" fill="#FFFFFF" x="0" y="108" width="148" height="21" rx="5"></rect>
+                <rect id="Rectangle-6-Copy-4" fill-opacity="0.1" fill="#4A4A4A" x="11" y="116" width="26" height="6" rx="3"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

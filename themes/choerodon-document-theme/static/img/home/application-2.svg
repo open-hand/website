@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="142px" height="140px" viewBox="0 0 142 140" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47 (45396) - http://www.bohemiancoding.com/sketch -->
+    <title>application-2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="62" height="62" rx="5"></rect>
+        <filter x="-16.1%" y="-12.9%" width="132.3%" height="132.3%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.16 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="产品模块" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-519.000000, -1620.000000)" id="application-2">
+            <g transform="translate(525.000000, 1624.000000)">
+                <g id="Rectangle-4-Copy-15">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                </g>
+                <rect id="Rectangle-4-Copy-18" fill="#FFFFFF" x="0" y="74" width="62" height="62" rx="5"></rect>
+                <rect id="Rectangle-4-Copy-17" fill="#FFFFFF" x="74" y="0" width="62" height="62" rx="5"></rect>
+                <rect id="Rectangle-4-Copy-19" fill-opacity="0.6" fill="#FFFFFF" x="74" y="74" width="62" height="62" rx="5"></rect>
+                <g id="Group-12-Copy-2" transform="translate(87.000000, 87.000000)">
+                    <path d="M18,38.6168007 C27.9411255,38.6168007 36,35.0350787 36,30.6168007 C36,29.0160217 36,21.4770881 36,8 L0,8 C0,20.1323485 0,27.6712821 0,30.6168007 C0,35.0350787 8.0588745,38.6168007 18,38.6168007 Z" id="Oval-4-Copy" fill="#F0F0F0"></path>
+                    <ellipse id="Oval-4" fill="#F5F5F5" cx="18" cy="8" rx="18" ry="8"></ellipse>
+                </g>
+                <g id="Group-13" transform="translate(13.000000, 10.000000)">
+                    <g id="Group-12" transform="translate(0.000000, 21.000000)">
+                        <path d="M18,21.6168007 C27.9411255,21.6168007 36,18.0350787 36,13.6168007 C36,12.0160217 36,10.1437548 36,8 L0,8 C0,8.79901517 0,10.6712821 0,13.6168007 C0,18.0350787 8.0588745,21.6168007 18,21.6168007 Z" id="Oval-4-Copy" fill="#6694EF"></path>
+                        <ellipse id="Oval-4" fill="#9BBBF8" cx="18" cy="8" rx="18" ry="8"></ellipse>
+                    </g>
+                    <g id="Group-12-Copy" transform="translate(0.000000, 11.000000)">
+                        <path d="M18,21.6168007 C27.9411255,21.6168007 36,18.0350787 36,13.6168007 C36,12.0160217 36,10.1437548 36,8 L0,8 C0,8.79901517 0,10.6712821 0,13.6168007 C0,18.0350787 8.0588745,21.6168007 18,21.6168007 Z" id="Oval-4-Copy" fill="#6694EF"></path>
+                        <ellipse id="Oval-4" fill="#9BBBF8" cx="18" cy="8" rx="18" ry="8"></ellipse>
+                    </g>
+                    <g id="Group-12-Copy-2">
+                        <path d="M18,21.6168007 C27.9411255,21.6168007 36,18.0350787 36,13.6168007 C36,12.0160217 36,10.1437548 36,8 L0,8 C0,8.79901517 0,10.6712821 0,13.6168007 C0,18.0350787 8.0588745,21.6168007 18,21.6168007 Z" id="Oval-4-Copy" fill="#6694EF"></path>
+                        <ellipse id="Oval-4" fill="#9BBBF8" cx="18" cy="8" rx="18" ry="8"></ellipse>
+                    </g>
+                </g>
+                <g id="Group-13-Copy" opacity="0.6" transform="translate(87.000000, 10.000000)">
+                    <g id="Group-12" transform="translate(0.000000, 21.000000)">
+                        <path d="M18,21.6168007 C27.9411255,21.6168007 36,18.0350787 36,13.6168007 C36,12.0160217 36,10.1437548 36,8 L0,8 C0,8.79901517 0,10.6712821 0,13.6168007 C0,18.0350787 8.0588745,21.6168007 18,21.6168007 Z" id="Oval-4-Copy" fill="#9BE8EF"></path>
+                        <ellipse id="Oval-4" fill="#BCF5FB" cx="18" cy="8" rx="18" ry="8"></ellipse>
+                    </g>
+                    <g id="Group-12-Copy" transform="translate(0.000000, 11.000000)">
+                        <path d="M18,21.6168007 C27.9411255,21.6168007 36,18.0350787 36,13.6168007 C36,12.0160217 36,10.1437548 36,8 L0,8 C0,8.79901517 0,10.6712821 0,13.6168007 C0,18.0350787 8.0588745,21.6168007 18,21.6168007 Z" id="Oval-4-Copy" fill="#9BE8EF"></path>
+                        <ellipse id="Oval-4" fill="#BCF5FB" cx="18" cy="8" rx="18" ry="8"></ellipse>
+                    </g>
+                    <g id="Group-12-Copy-2">
+                        <path d="M18,21.6168007 C27.9411255,21.6168007 36,18.0350787 36,13.6168007 C36,12.0160217 36,10.1437548 36,8 L0,8 C0,8.79901517 0,10.6712821 0,13.6168007 C0,18.0350787 8.0588745,21.6168007 18,21.6168007 Z" id="Oval-4-Copy" fill="#9BE8EF"></path>
+                        <ellipse id="Oval-4" fill="#BCF5FB" cx="18" cy="8" rx="18" ry="8"></ellipse>
+                    </g>
+                </g>
+                <g id="Group-13-Copy-2" opacity="0.6" transform="translate(13.000000, 83.000000)">
+                    <g id="Group-12" transform="translate(0.000000, 21.000000)">
+                        <path d="M18,21.6168007 C27.9411255,21.6168007 36,18.0350787 36,13.6168007 C36,12.0160217 36,10.1437548 36,8 L0,8 C0,8.79901517 0,10.6712821 0,13.6168007 C0,18.0350787 8.0588745,21.6168007 18,21.6168007 Z" id="Oval-4-Copy" fill="#EDE9B2"></path>
+                        <ellipse id="Oval-4" fill="#F9F5C2" cx="18" cy="8" rx="18" ry="8"></ellipse>
+                    </g>
+                    <g id="Group-12-Copy" transform="translate(0.000000, 11.000000)">
+                        <path d="M18,21.6168007 C27.9411255,21.6168007 36,18.0350787 36,13.6168007 C36,12.0160217 36,10.1437548 36,8 L0,8 C0,8.79901517 0,10.6712821 0,13.6168007 C0,18.0350787 8.0588745,21.6168007 18,21.6168007 Z" id="Oval-4-Copy" fill="#EDE9B2"></path>
+                        <ellipse id="Oval-4" fill="#F9F5C2" cx="18" cy="8" rx="18" ry="8"></ellipse>
+                    </g>
+                    <g id="Group-12-Copy-2">
+                        <path d="M18,21.6168007 C27.9411255,21.6168007 36,18.0350787 36,13.6168007 C36,12.0160217 36,10.1437548 36,8 L0,8 C0,8.79901517 0,10.6712821 0,13.6168007 C0,18.0350787 8.0588745,21.6168007 18,21.6168007 Z" id="Oval-4-Copy" fill="#EDE9B2"></path>
+                        <ellipse id="Oval-4" fill="#F9F5C2" cx="18" cy="8" rx="18" ry="8"></ellipse>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -17,6 +17,34 @@ helm repo add c7n https://openchart.choerodon.com.cn/choerodon/c7n/
 helm repo update
 ```
 
+## 创建数据库
+
+- 进入数据库
+
+    ```bash
+    # 获取pod的名称
+    kubectl get po -n choerodon-devops-prod
+    # 进入pod
+    kubectl exec -it [mysql pod name] -n choerodon-devops-prod bash
+    # 进入mysql命令行
+    mysql -uroot -p${MYSQL_ROOT_PASSWORD}
+    ```
+
+- 创建choerodon所需数据库及用户并授权
+
+    <blockquote class="note">
+    部署完成后请注意保存用户名和密码。
+    </blockquote>
+
+    ```sql
+    CREATE USER IF NOT EXISTS 'choerodon'@'%' IDENTIFIED BY "password";
+    CREATE DATABASE IF NOT EXISTS devops_service DEFAULT CHARACTER SET utf8;
+    CREATE DATABASE IF NOT EXISTS gitlab_service DEFAULT CHARACTER SET utf8;
+    GRANT ALL PRIVILEGES ON devops_service.* TO choerodon@'%';
+    GRANT ALL PRIVILEGES ON gitlab_service.* TO choerodon@'%';
+    FLUSH PRIVILEGES;
+    ```
+
 ## 部署devops service
 
 <blockquote class="warning">
@@ -52,9 +80,12 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
         --set env.open.SERVICES_HARBOR_PASSWORD="Harbor12345" \
         --set env.open.SERVICES_HELM_URL="http://chart.example.choerodon.io" \
         --set env.open.SERVICES_GITLAB_URL="https://code.example.choerodon.io" \
-        --set env.open.SERVICES_GITLAB_PASSWORD=123456 \
+        --set env.open.SERVICES_GITLAB_PASSWORD=password \
         --set env.open.SERVICES_GITLAB_PROJECTLIMIT=100 \
-        --set env.open.AGENT_VERSION="0.7.0" \
+        --set env.open.SERVICES_GATEWAY_URL=http://api.example.choerodon.io \
+        --set env.open.SERVICES_SONARQUBE_URL=http://sonarqube.example.choerodon.io \
+        --set env.open.SECURITY_IGNORED="/ci\,/webhook\,/v2/api-docs\,/agent/**\,/ws/**" \
+        --set env.open.AGENT_VERSION="0.8.0" \
         --set env.open.AGENT_REPOURL="https://openchart.choerodon.com.cn/choerodon/c7n/" \
         --set env.open.AGENT_SERVICEURL="ws://devops.service.example.choerodon.io/agent/" \
         --set env.open.TEMPLATE_VERSION_MICROSERVICE="0.7.0" \
@@ -66,7 +97,7 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
         --set persistence.enabled=true \
         --set persistence.existingClaim="devops-service-pvc" \
         --name=devops-service \
-        --version=0.7.0 --namespace=choerodon-devops-prod
+        --version=0.8.0 --namespace=choerodon-devops-prod
     ```
     参数名 | 含义 
     --- |  --- 
@@ -138,7 +169,7 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
         --set env.open.GITLAB_URL="https://code.example.choerodon.io" \
         --set env.open.GITLAB_PRIVATETOKEN="choerodon-gitlab-token" \
         --name=gitlab-service \
-        --version=0.7.0 --namespace=choerodon-devops-prod
+        --version=0.8.0 --namespace=choerodon-devops-prod
     ```
     参数名 | 含义 
     --- |  --- 
@@ -167,6 +198,11 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
         ```
 
 ## 部署choerodon devops front
+
+<blockquote class="note">
+若部署<a href="../choerodon-front">整合前端</a>，请忽略本小节，因为整合前端中会包含本小节部署的功能。
+</blockquote>
+
 - 部署服务
 
     ```
@@ -187,7 +223,7 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
         --set service.enable=true \
         --set ingress.enable=true \
         --name=choerodon-front-devops \
-        --version=0.7.0 --namespace=choerodon-devops-prod
+        --version=0.8.0 --namespace=choerodon-devops-prod
     ```
     参数名 | 含义 
     --- |  --- 

@@ -63,39 +63,3 @@ helm install c7n/mysql \
     env.open.MYSQL_DATABASE|初始化创建的数据库名称
     env.open.MYSQL_USER|初始化创建的用户名
     env.open.MYSQL_PASSWORD|初始化创建的用户密码
-
-## 创建数据库
-
-- 进入数据库
-
-    ```bash
-    # 获取pod的名称
-    kubectl get po -n choerodon-devops-prod
-    # 进入pod
-    kubectl exec -it [mysql pod name] -n choerodon-devops-prod bash
-    # 进入mysql命令行
-    mysql -uroot -p${MYSQL_ROOT_PASSWORD}
-    ```
-
-- 创建choerodon所需数据库及用户并授权
-
-    <blockquote class="note">
-    部署完成后请注意保存用户名和密码。
-    </blockquote>
-
-    ```sql
-    CREATE USER 'choerodon'@'%' IDENTIFIED BY "password";
-    CREATE DATABASE devops_service DEFAULT CHARACTER SET utf8;
-    CREATE DATABASE event_store_service DEFAULT CHARACTER SET utf8;
-    CREATE DATABASE gitlab_service DEFAULT CHARACTER SET utf8;
-    CREATE DATABASE iam_service DEFAULT CHARACTER SET utf8;
-    CREATE DATABASE manager_service DEFAULT CHARACTER SET utf8;
-    CREATE DATABASE agile_service DEFAULT CHARACTER SET utf8;
-    GRANT ALL PRIVILEGES ON devops_service.* TO choerodon@'%';
-    GRANT ALL PRIVILEGES ON event_store_service.* TO choerodon@'%';
-    GRANT ALL PRIVILEGES ON gitlab_service.* TO choerodon@'%';
-    GRANT ALL PRIVILEGES ON iam_service.* TO choerodon@'%';
-    GRANT ALL PRIVILEGES ON manager_service.* TO choerodon@'%';
-    GRANT ALL PRIVILEGES ON agile_service.* TO choerodon@'%';
-    FLUSH PRIVILEGES;
-    ```

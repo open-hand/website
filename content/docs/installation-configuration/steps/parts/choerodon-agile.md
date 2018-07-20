@@ -17,6 +17,32 @@ helm repo add c7n https://openchart.choerodon.com.cn/choerodon/c7n/
 helm repo update
 ```
 
+## 创建数据库
+
+- 进入数据库
+
+    ```bash
+    # 获取pod的名称
+    kubectl get po -n choerodon-devops-prod
+    # 进入pod
+    kubectl exec -it [mysql pod name] -n choerodon-devops-prod bash
+    # 进入mysql命令行
+    mysql -uroot -p${MYSQL_ROOT_PASSWORD}
+    ```
+
+- 创建choerodon所需数据库及用户并授权
+
+    <blockquote class="note">
+    部署完成后请注意保存用户名和密码。
+    </blockquote>
+
+    ```sql
+    CREATE USER IF NOT EXISTS 'choerodon'@'%' IDENTIFIED BY "password";
+    CREATE DATABASE IF NOT EXISTS agile_service DEFAULT CHARACTER SET utf8;
+    GRANT ALL PRIVILEGES ON agile_service.* TO choerodon@'%';
+    FLUSH PRIVILEGES;
+    ```
+
 ## 部署agile service
 
 - 部署服务
@@ -44,7 +70,7 @@ helm repo update
         --set env.open.SPRING_CLOUD_CONFIG_URI="http://config-server.choerodon-devops-prod:8010/" \
         --set env.open.SERVICES_ATTACHMENT_URL="https://minio.example.choerodon.io/agile-service/" \
         --name=agile-service \
-        --version=0.6.1 --namespace=choerodon-devops-prod
+        --version=0.8.0 --namespace=choerodon-devops-prod
     ```
     参数名 | 含义 
     --- |  --- 
@@ -73,6 +99,11 @@ helm repo update
         ```
 
 ## 部署choerodon agile front
+
+<blockquote class="note">
+若部署<a href="../choerodon-front">整合前端</a>，请忽略本小节，因为整合前端中会包含本小节部署的功能。
+</blockquote>
+
 - 部署服务
 
     ```
@@ -92,7 +123,7 @@ helm repo update
         --set service.enable=true \
         --set ingress.enable=true \
         --name=choerodon-front-agile \
-        --version=0.6.1 --namespace=choerodon-devops-prod
+        --version=0.8.0 --namespace=choerodon-devops-prod
     ```
     参数名 | 含义 
     --- |  --- 

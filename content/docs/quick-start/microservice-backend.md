@@ -26,7 +26,7 @@ type = "docs"
 
 ## 创建后端应用
 
-**1.** 使用项目所有者或者源代码管理员的角色登录Choerodon系统，选择项目``猪齿鱼研发``。
+**1.** 使用项目所有者的角色用户登录Choerodon系统，选择项目``猪齿鱼研发``。
 
 **2.** 选择`开发流水线`模块，点击`应用`，进入应用管理页面。
 
@@ -38,7 +38,7 @@ type = "docs"
 应用名称 | `猪齿鱼Todo服务`
 选择应用模板 | `MicroService`
  
-> 当应用模板不符合您的需求，您可手动创建一个[应用模板](../../user-guide/development-pipeline/application-template/)。
+> 当应用模板不符合您的需求，您可手动创建一个[应用模板](../../user-guide/application-management/application-template/)。
 
 **4.** 当应用创建成功，可在`开发流水线` -> `应用` 界面查看到新建的应用。
 
@@ -58,7 +58,7 @@ Choerodon 名词 | 对应Gitlab 名词 | 举例
 
 在 `开发流水线` -> `应用` 界面中找到`choerodon-todo-service`。选择分支管理，点击`创建分支`，选择`创建feature分支`，填写`issue`号，如`feature-1`。点击`创建`，即可创建一个分支。
 
-Choerodon 采用 `git-flow` 工作流模式，有`master`和`develop`两个默认分支。在持续交付过程中对 `feature`、`release`、`hotfix` 等分支进行管理。结束分支可自动触发分支合并和持续集成，可在流水线查看代码集成情况。更多相关信息参考[分支管理](../../user-guide/development-pipeline/branch-management/)。
+Choerodon 采用 `git-flow` 工作流模式，有`master`和`develop`两个默认分支。在持续交付过程中对 `feature`、`release`、`hotfix` 等分支进行管理。结束分支可自动触发分支合并和持续集成，可在流水线查看代码集成情况。更多相关信息参考[分支管理](../../user-guide/development-pipeline/branch/)。
 
 **2. 拉取代码仓库**
 
@@ -84,7 +84,7 @@ $ git checkout feature-1
 
 `.gitlab-ci.yml`定义 `Gitlab CI` 的阶段，Choerodon 缺省的 CI 流程包含了`编译`，`打包`，`生成镜像`，`生成helm 包`几个阶段。	
 
-有关`.gitlab-ci.yml` 的编写参考[应用模板](../../user-guide/development-pipeline/application-template/)。
+有关`.gitlab-ci.yml` 的编写参考[应用模板](../../user-guide/application-management/application-template/)。
 
 **5. 修改`charts` 文件**
 
@@ -92,13 +92,13 @@ $ git checkout feature-1
 
 `charts`模块用于创建应用时生成创建 `k8s` 对象，包含了`部署的模板`，`chart values`。
 
-有关`charts` 的编写参考[应用模板](../../user-guide/development-pipeline/application-template/)。
+有关`charts` 的编写参考[应用模板](../../user-guide/application-management/application-template/)。
 
 **6. 修改`Dockerfile` 文件**
 
 Choerodon 使用`docker` 来运行应用。你可以通过修改`Dockerfile` 来修改应用的运行环境。
 
-有关`Dockerfile` 的编写参考[应用模板](../../user-guide/development-pipeline/application-template/)。
+有关`Dockerfile` 的编写参考[应用模板](../../user-guide/application-management/application-template/)。
 
 **7. 提交代码**
 

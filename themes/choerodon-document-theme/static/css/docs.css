@@ -108,6 +108,7 @@ i.note-number[data-value]::after {
 .docs-menu .dd-item.active>div {
     background-color: #e6f7ff;
     border-right: 3px solid #1890ff;
+    padding-right: 0.03rem;
 }
 
 .docs-menu .dd-item.haschildren>div a {

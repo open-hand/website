@@ -19,7 +19,7 @@ weight = 15
 </blockquote>
 
 <blockquote class="warning">
-若集群没有开启RBAC权限认证，请忽略本小节。
+若集群没有开启RBAC权限认证，请忽略本小节。通过本站Kubernetes集群搭建文档搭建的Kubernetes集群默认是启用RBAC权限认证的。
 </blockquote>
 
 ```bash
@@ -51,7 +51,7 @@ kubectl create clusterrolebinding helm-tiller-cluster-rule --clusterrole=cluster
 1. 初始化Helm
 
     <blockquote class="warning">
-    若集群没有开启RBAC权限认证，请删除命令中 --service-account=helm-tiller 参数。
+    若集群没有开启RBAC权限认证，请删除命令中 --service-account=helm-tiller 参数。通过本站Kubernetes集群搭建文档搭建的Kubernetes集群默认是启用RBAC权限认证的。
     </blockquote>
 
     ```bash

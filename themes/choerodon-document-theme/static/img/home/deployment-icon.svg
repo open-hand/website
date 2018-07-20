@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60px" height="60px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47 (45396) - http://www.bohemiancoding.com/sketch -->
+    <title>deployment-icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="产品模块" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-220.000000, -3104.000000)" id="deployment-icon">
+            <g transform="translate(220.000000, 3104.000000)">
+                <path d="M60,30 C60,46.5684545 46.5684545,60 30,60 C13.4315455,60 0,46.5684545 0,30 C0,13.4315455 13.4315455,0 30,0 C46.5684545,0 60,13.4315455 60,30" id="Fill-1" fill="#5D6FD4"></path>
+                <polygon id="Fill-3" fill="#FFFFFF" points="44 30 40.2607551 30 40.2607551 19.7386743 30 19.7386743 30 16 44 16"></polygon>
+                <polygon id="Fill-5" fill="#FFFFFF" points="45 45 16 45 16 16 27.3502075 16 27.3502075 19.8727894 19.8727524 19.8727894 19.8727524 41.1272106 41.1272476 41.1272106 41.1272476 34.1938112 45 34.1938112"></polygon>
+                <polygon id="Fill-7" fill="#FFFFFF" points="31.7888332 31 29 28.3503018 41.2111668 16 44 18.6496982"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

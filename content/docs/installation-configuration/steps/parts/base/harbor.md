@@ -31,7 +31,7 @@ weight = 50
 helm install c7n/create-pv \
     --set type=nfs \
     --set pv.name=harbor-adminserver-pv \
-    --set nfs.path=/u01/io-choerodon/harbor-adminserver \
+    --set nfs.path=/u01/io-choerodon/harbor/adminserver \
     --set nfs.server=nfs.example.choerodon.io \
     --set pvc.enable=false \
     --set size=5Gi \
@@ -40,59 +40,35 @@ helm install c7n/create-pv \
     
 helm install c7n/create-pv \
     --set type=nfs \
-    --set pv.name=harbor-mysql-pv \
-    --set nfs.path=/u01/io-choerodon/harbor-mysql \
+    --set pv.name=harbor-harbor-db-pv \
+    --set nfs.path=/u01/io-choerodon/harbor/harbor-db \
     --set nfs.server=nfs.example.choerodon.io \
     --set pvc.enable=false \
     --set size=5Gi \
     --set accessModes={ReadWriteOnce} \
-    --name harbor-mysql-pv --namespace=choerodon-devops-prod
+    --name harbor-harbor-db-pv --namespace=choerodon-devops-prod
     
 helm install c7n/create-pv \
     --set type=nfs \
     --set pv.name=harbor-registry-pv \
-    --set nfs.path=/u01/io-choerodon/harbor-registry \
+    --set nfs.path=/u01/io-choerodon/harbor/registry \
     --set nfs.server=nfs.example.choerodon.io \
     --set pvc.enable=false \
     --set size=5Gi \
     --set accessModes={ReadWriteOnce} \
     --name harbor-registry-pv --namespace=choerodon-devops-prod
-
-helm install c7n/create-pv \
-    --set type=nfs \
-    --set pv.name=harbor-notary-pv \
-    --set nfs.path=/u01/io-choerodon/harbor-notary \
-    --set nfs.server=nfs.example.choerodon.io \
-    --set pvc.enable=false \
-    --set size=5Gi \
-    --set accessModes={ReadWriteOnce} \
-    --name harbor-notary-pv --namespace=choerodon-devops-prod
-
-helm install c7n/create-pv \
-    --set type=nfs \
-    --set pv.name=harbor-postgresql-pv \
-    --set nfs.path=/u01/io-choerodon/harbor-postgresql \
-    --set nfs.server=nfs.example.choerodon.io \
-    --set pvc.name=harbor-postgresql-pvc \
-    --set size=1Gi \
-    --set accessModes={ReadWriteOnce} \
-    --name harbor-postgresql-pv --namespace=choerodon-devops-prod
 ```
 
 ### 部署harbor
 
 ```shell
-helm install c7n/harbor \
-    --set persistence.enabled=true \
+helm install infra/harbor \
     --set externalDomain=registry.example.choerodon.io \
-    --set adminserver.adminPassword=Harbor12345 \
+    --set harborAdminPassword=Harbor12345 \
     --set adminserver.volumes.config.selector.pv="harbor-adminserver-pv" \
-    --set mysql.volumes.config.selector.pv="harbor-mysql-pv" \
+    --set database.internal.volumes.config.selector.pv="harbor-harbor-db-pv" \
     --set registry.volumes.config.selector.pv="harbor-registry-pv" \
-    --set notary.db.volumes.data.selector.pv="harbor-notary-pv" \
-    --set postgresql.persistence.enabled=true \
-    --set postgresql.persistence.existingClaim="harbor-postgresql-pvc" \
-    --name=harbor --namespace=choerodon-devops-prod 
+    --name=harbor --namespace=choerodon-devops-prod
 ```
 
 - 参数：
@@ -100,17 +76,10 @@ helm install c7n/harbor \
     参数 | 含义 
     --- |  --- 
     externalDomain|Harbor域名
-    adminserver.adminPassword|admin用户密码
-    persistence.enabled|是否起启用数据持久化
+    harborAdminPassword|admin用户密码
     adminserver.volumes.config.selector|adminserver创建的pvc选pv的选择器值，为pv的label
-    mysql.volumes.config.selector|mysql创建的pvc选pv的选择器值，为pv的label
+    database.volumes.config.selector|harbor mysql创建的pvc选pv的选择器值，为pv的label
     registry.volumes.config.selector|registry创建的pvc选pv的选择器值，为pv的label
-    postgresql.persistence.enabled|是否启用postgresql数据持久化
-    postgresql.persistence.existingClaim|postgresql将要绑定的pvc的name
-    notary.volumes.config.selector|notary创建的pvc选pv的选择器值，为pv的label
-    clair.enabled|是否启用clair
-    notary.enabled|是否启用notary
-    insecureRegistry|启动非安全模式（即使用http访问）
 
 ## 验证部署
 

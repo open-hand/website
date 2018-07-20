@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="160px" height="120px" viewBox="0 0 160 120" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47 (45396) - http://www.bohemiancoding.com/sketch -->
+    <title>application-3</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="148" height="32" rx="5"></rect>
+        <filter x="-6.8%" y="-25.0%" width="113.5%" height="162.5%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.16 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="产品模块" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-767.000000, -1621.000000)" id="application-3">
+            <g transform="translate(773.000000, 1625.000000)">
+                <g id="Rectangle-4-Copy-28">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                </g>
+                <path d="M31.7777778,6 L16.2222222,6 C15,6 14,7 14,8.22222222 L14,23.7777778 C14,25 15,26 16.2222222,26 L31.7777778,26 C33,26 34,25 34,23.7777778 L34,8.22222222 C34,7 33,6 31.7777778,6 L31.7777778,6 Z M27.3333333,14.3333333 C27.3333333,15.2555556 26.5888889,16 25.6666667,16 C26.5888889,16 27.3333333,16.7444444 27.3333333,17.6666667 L27.3333333,19.3333333 C27.3333333,20.5666667 26.3333333,21.5555556 25.1111111,21.5555556 L20.6666667,21.5555556 L20.6666667,19.3333333 L25.1111111,19.3333333 L25.1111111,17.1111111 L22.8888889,17.1111111 L22.8888889,14.8888889 L25.1111111,14.8888889 L25.1111111,12.6666667 L20.6666667,12.6666667 L20.6666667,10.4444444 L25.1111111,10.4444444 C26.3333333,10.4444444 27.3333333,11.4333333 27.3333333,12.6666667 L27.3333333,14.3333333 L27.3333333,14.3333333 Z" id="Fill-401" fill="#6694EF"></path>
+                <rect id="Rectangle-2-Copy-20" fill="#B7B7B7" x="48" y="18" width="86" height="6" rx="3"></rect>
+                <rect id="Rectangle-2-Copy-22" fill="#B7B7B7" x="48" y="7" width="32" height="6" rx="3"></rect>
+                <rect id="Rectangle-4-Copy-29" fill="#FFFFFF" x="0" y="42" width="148" height="32" rx="5"></rect>
+                <path d="M31.7777778,48 L16.2222222,48 C15,48 14,49 14,50.2222222 L14,65.7777778 C14,67 15,68 16.2222222,68 L31.7777778,68 C33,68 34,67 34,65.7777778 L34,50.2222222 C34,49 33,48 31.7777778,48 L31.7777778,48 Z M27.3333333,56.8888889 C27.3333333,58.1222222 26.3333333,59.1111111 25.1111111,59.1111111 L22.8888889,59.1111111 L22.8888889,61.3333333 L27.3333333,61.3333333 L27.3333333,63.5555556 L20.6666667,63.5555556 L20.6666667,59.1111111 C20.6666667,57.8777778 21.6666667,56.8888889 22.8888889,56.8888889 L25.1111111,56.8888889 L25.1111111,54.6666667 L20.6666667,54.6666667 L20.6666667,52.4444444 L25.1111111,52.4444444 C26.3333333,52.4444444 27.3333333,53.4333333 27.3333333,54.6666667 L27.3333333,56.8888889 L27.3333333,56.8888889 Z" id="Fill-407" fill="#9BE8EF"></path>
+                <rect id="Rectangle-2-Copy-20" fill="#E2E2E2" x="48" y="60" width="86" height="6" rx="3"></rect>
+                <rect id="Rectangle-2-Copy-22" fill="#E2E2E2" x="48" y="49" width="32" height="6" rx="3"></rect>
+                <rect id="Rectangle-4-Copy-30" fill="#FFFFFF" opacity="0.6" x="0" y="84" width="148" height="32" rx="5"></rect>
+                <path d="M31.7777778,90 L16.2222222,90 C15,90 14,91 14,92.2222222 L14,107.777778 C14,109 15,110 16.2222222,110 L31.7777778,110 C33,110 34,109 34,107.777778 L34,92.2222222 C34,91 33,90 31.7777778,90 L31.7777778,90 Z M26.2222222,105.555556 L24,105.555556 L24,96.6666667 L21.7777778,96.6666667 L21.7777778,94.4444444 L26.2222222,94.4444444 L26.2222222,105.555556 L26.2222222,105.555556 Z" id="Fill-406" fill="#F8F1A1"></path>
+                <rect id="Rectangle-2-Copy-35" fill="#ECECEC" x="48" y="103" width="86" height="6" rx="3"></rect>
+                <rect id="Rectangle-2-Copy-38" fill="#ECECEC" x="48" y="92" width="32" height="6" rx="3"></rect>
+            </g>
+        </g>
+    </g>
+</svg>
