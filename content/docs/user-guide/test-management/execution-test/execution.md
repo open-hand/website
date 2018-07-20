@@ -30,5 +30,5 @@ description = "介绍了如何查看，修改，删除执行"
 
 ## 更多操作
 
-- [临时执行](../temp-execution) 临时执行是指测试计划之外的执行
-- [搜索执行](../search-execution) 快速从树状图中检索要寻找的循环
+- [临时执行](../temp-execution)
+- [搜索执行](../search-execution)

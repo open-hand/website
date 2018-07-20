@@ -21,7 +21,6 @@ description = "详细阐述了如何创建测试用例"
 点击`创建问题`按钮后，会弹出创建用户案例详情页面，页面如图所示，字段说明见图下方。
 ![](/img/docs/user-guide/test-management/case-management/create-detail.jpg)
 
-1. 问题类型：选择测试用例类型，可选`测试`
 1. 概要：测试用例的概要
 <blockquote class="note">用户自行填写，上限44字。</blockquote>
 
@@ -45,6 +44,6 @@ description = "详细阐述了如何创建测试用例"
 
 ## 更多操作
 
-- [创建测试用例](../create-case) 详细阐述了如何创建测试用例
-- [在测试循环中添加执行](../../test-cycle/add-execution) 介绍了如何将测试用例归档分类。
-- [查看测试报告](../../test-report/) 查看项目测试执行情况
+- [创建测试用例](../create-case)
+- [在测试循环中添加执行](../../test-cycle/add-execution)
+- [查看测试报告](../../test-report/)

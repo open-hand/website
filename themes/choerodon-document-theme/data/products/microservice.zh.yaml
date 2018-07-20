@@ -1,8 +1,8 @@
 weight: 8
 name: "微服务开发"
 icon: "/img/home/Microservice-icon.svg"
-description: "Choerodon提供一套完整的基于Spring Cloud的微服务应用开发框架。借助Choerodon的微服务应用开发架构，以及容器为微服务提供的轻量级、面向应用的虚拟化运行环境和理想载体，并以Kubernetes作为容器编排工具，帮助企业方便快捷的构建应用服务。"
-summary: "Choerodon提供一套完整的基于Spring Cloud的微服务应用开发框架"
+description: "一套完整的基于Spring Cloud的微服务应用开发框架。借助微服务开发架构，以及容器为微服务提供的轻量级、面向应用的虚拟化运行环境和理想载体，并以Kubernetes作为容器编排工具，帮助企业方便快捷的构建应用服务。"
+summary: "一套完整的基于Spring Cloud的微服务开发框架"
 language: zh
 
 childIcon1: "/img/home/microservice-illustrator-1.svg"

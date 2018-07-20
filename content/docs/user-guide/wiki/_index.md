@@ -1,6 +1,6 @@
 ﻿+++
 title = "知识管理"
-description = ""
+description = "便捷的项目协作平台和强大的项目内容管理平台"
 weight = 2
 +++
 
