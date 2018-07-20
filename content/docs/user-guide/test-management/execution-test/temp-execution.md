@@ -22,5 +22,5 @@ description = "临时执行是指测试计划之外的执行"
 
 ## 更多操作
 
-- [执行测试](../execution) 介绍了如何查看，修改，删除执行
-- [搜索执行](../search-execution) 临时执行是指测试计划之外的执行
+- [执行测试](../execution)
+- [搜索执行](../search-execution)

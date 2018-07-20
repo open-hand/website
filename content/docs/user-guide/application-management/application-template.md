@@ -45,15 +45,20 @@ weight = 1
   
 1. 选择组织后，在组织层的`应用管理`模块，选择`应用模板`；
 
-2. 点击`创建应用模板`，输入相关信息进行数据校验，点击`创建`，即可创建一个模板；
-  
-3. 创建完成以后，会生成一个 Gitlab 地址，点击该地址；
- 
-4. 进入 Gitlab 仓库，克隆代码；
-  
-5. 创建一个 React 的前端UI项目；
+1. 输入应用相关信息，进行数据校验
+    - 模板编码：编码只能由小写字母、数字、"-"组成，且以小写字母开头，不能以"-"结尾，并且是唯一的，不能与其他的模板编码相同。
+    - 模板名称：名称要求唯一，不能与其他的模板名称相同。
+    - 模板描述：不允许为空。
 
-6. 编写一个Dockerfile；
+1. 点击`创建`，即可创建一个模板；
+  
+1. 创建完成以后，会生成一个 Gitlab 地址，点击该地址；
+ 
+1. 进入 Gitlab 仓库，克隆代码；
+  
+1. 创建一个 React 的前端UI项目；
+
+1. 编写一个Dockerfile；
    
     将 Dockerfile 文件放在项目根目录下
     
@@ -81,7 +86,7 @@ weight = 1
 
     exec "$@"
     ```
- 7. 编写 [Gitlab-CI](https://docs.gitlab.com/ee/ci/) 文件
+1. 编写 [Gitlab-CI](https://docs.gitlab.com/ee/ci/) 文件
      
       ```
       image: registry.cn-hangzhou.aliyuncs.com/choerodon-tools/cifront:0.5.0    
@@ -133,7 +138,7 @@ weight = 1
        ```
        before_script 指 ci 执行前所执行的命令。
   
- 8. 编写 charts 模块；
+1. 编写 charts 模块；
       
       目录结构如下
 
@@ -155,9 +160,9 @@ weight = 1
 
       `_helpers.tpl`：放置模板助手的地方，您可以在整个 chart 中重复使用。
       
- 9. 编写 config.js；
+1. 编写 config.js；
 
- 10. 提交代码，即可完成模板创建。
+1. 提交代码，即可完成模板创建。
 
 
 ### 创建后端应用模板

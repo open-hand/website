@@ -26,7 +26,7 @@ description = "使用测试用例管理可以创建测试用例，分配给测�
 
 ## 更多操作
 
-- [创建测试循环](../test-cycle/create-cycle) 介绍了如何查看，修改，删除执行
-- [执行测试](../execution-test/execution) 介绍如何创建循环，并且分类测试用例，添加执行，记录测试步骤结果，查看测试进度
-- [设置状态](../setting/status) 自定义测试管理中执行和步骤的状态
-- [查看测试报告](../test-report/) 提供从不同维度，不同角度的测试分析报告
+- [创建测试循环](../test-cycle/create-cycle)
+- [执行测试](../execution-test/execution)
+- [设置状态](../setting/status)
+- [查看测试报告](../test-report/)

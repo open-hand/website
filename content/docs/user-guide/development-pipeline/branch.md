@@ -1,12 +1,12 @@
 ﻿+++
-title = "分支"
-description = "使用 GitLab 进行分支管理，默认分支为 master。在产品开发过程中对 Feature、Bugfix、Release、Hotfix 等分支进行管理。所有的提交将触发持续集成，可在持续集成菜单下查看代码集成情况"
+title = "分支管理"
+description = "分支是将您的开发工作从主线上分离开来，以免影响主线。使用 GitLab 进行分支管理，默认分支为 master。在产品开发过程中对 Feature、Bugfix、Release、Hotfix 等分支进行管理。所有的提交将触发持续集成，可在持续集成菜单下查看代码集成情况"
 weight = 2
 +++
 
 # 分支管理
 
-使用 GitLab 进行分支管理，默认分支为 master。在产品开发过程中对 Feature、Bugfix、Release、Hotfix 等分支进行管理。所有的提交将触发持续集成，可在持续集成菜单下查看代码集成情况。
+分支是将您的开发工作从主线上分离开来，以免影响主线。使用 GitLab 进行分支管理，默认分支为 master。在产品开发过程中对 Feature、Bugfix、Release、Hotfix 等分支进行管理。所有的提交将触发持续集成，可在持续集成菜单下查看代码集成情况。您可以在此查看各应用的分支，创建分支，并将代码拉至本地开发后提交代码。
 
   - **菜单层次**：项目层
 

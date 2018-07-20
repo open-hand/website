@@ -1,7 +1,7 @@
 +++
 title = "整合前端"
 description = "整合前端"
-weight = 40
+weight = 70
 +++
 
 # 部署整合前端
@@ -23,6 +23,8 @@ helm repo update
         --set preJob.preConfig.mysql.dbname=iam_service \
         --set preJob.preConfig.mysql.username=choerodon \
         --set preJob.preConfig.mysql.password=password \
+        --set preJob.preConfig.mysql.enabledelete=true \
+        --set preJob.preConfig.mysql.upattrs="sort\,parent_id" \
         --set env.open.PRO_API_HOST="api.example.choerodon.io" \
         --set env.open.PRO_DEVOPS_HOST="ws://devops.service.example.choerodon.io" \
         --set env.open.PRO_AGILE_HOST="http://minio.example.choerodon.io/agile-service/" \
@@ -35,7 +37,7 @@ helm repo update
         --set service.enable=true \
         --set ingress.enable=true \
         --name=choerodon-front \
-        --version=0.7.1 --namespace=choerodon-devops-prod
+        --version=0.8.0 --namespace=choerodon-devops-prod
     ```
     参数名 | 含义 
     --- |  --- 

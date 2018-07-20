@@ -6,7 +6,7 @@ weight = 9
 
 # 其他
 ## 通知
-![note](/docs/user-guide/wiki/system management/image/note.png)
+![note](/docs/user-guide/wiki/system-management/image/note.png)
 
 1.在此您可以选择要接收的有关电子邮件中所有更改的详细信息级别。
 

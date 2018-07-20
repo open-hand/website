@@ -35,7 +35,7 @@ weight = 3
 
 - [创建空间](../create-space)
 - [管理空间](../manage-space) 
-- [什么是空间](../space)
+- [什么是空间](../)
 
 
 

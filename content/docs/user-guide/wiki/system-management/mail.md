@@ -7,7 +7,7 @@ weight = 7
 # 邮件发送
 您可以在此自定义邮件发送状态等。
 
-![email](/docs/user-guide/wiki/system management/image/email.png)
+![email](/docs/user-guide/wiki/system-management/image/email.png)
 
 1.在此输入电子邮箱地址，该地址是用于发送通知电子邮件的默认电子邮件地址。
 
@@ -24,7 +24,7 @@ weight = 7
 # 邮件发送状态
 如果您找不到邮件的状态，那么可能是因为未指定发送邮件的属性，邮件状态应该保留，可以在此查询。
 
-![send](/docs/user-guide/wiki/system management/image/send.png)
+![send](/docs/user-guide/wiki/system-management/image/send.png)
 
 1.选择日期，您可以选择今天、昨天、过去7天、过去30天、这个月、上个与或者自定义范围。
 
@@ -46,6 +46,6 @@ weight = 7
 - [**查询**](../query)：查询是对检索的设置。
 
 ## 更多操作
-- [**全局权限**](../../backlog/create-issue1)
-- [**空间权限**](../../backlog/version)
-- [**页面权限**](../../backlog/sprint1)
+- [**全局权限**](../../hierarchy)
+- [**空间权限**](../../space/hierarchy-space)
+- [**页面权限**](../../page/hierarchy-page)

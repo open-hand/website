@@ -25,7 +25,7 @@ broken_link_check:
   stage: broken_link_check
   script:
   - npm install broken-link-checker -g
-  - blc "http://localhost/zh/" -ro --exclude "http://localhost/en/"
+  - blc "http://localhost/zh/" -roe --exclude "http://localhost/en/"
   only:
   - develop
   - /^release-.*$/

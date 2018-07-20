@@ -7,7 +7,7 @@ weight = 5
 
 您可以对编辑模式进行设定。
 
-![编辑](/docs/user-guide/wiki/system management/image/editing.png)
+![编辑](/docs/user-guide/wiki/system-management/image/editing.png)
 
 1.选择是否将文档标题设为必选项，以防止用户创建具有空标题的Wiki页面。
 
@@ -22,7 +22,7 @@ weight = 5
 ## 语法设置
 在编辑中您也可以设置默认文档语法，默认文档语法为创建新Wiki页面时默认用于页面内容的标记语法。
 
-![语法](/docs/user-guide/wiki/system management/image/sy.png)
+![语法](/docs/user-guide/wiki/system-management/image/sy.png)
 
 ## 下一步
 - [**邮箱**](../mail)：对邮件发送模式进行设置。
