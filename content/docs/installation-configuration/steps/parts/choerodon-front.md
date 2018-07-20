@@ -23,6 +23,8 @@ helm repo update
         --set preJob.preConfig.mysql.dbname=iam_service \
         --set preJob.preConfig.mysql.username=choerodon \
         --set preJob.preConfig.mysql.password=password \
+        --set preJob.preConfig.mysql.enabledelete=true \
+        --set preJob.preConfig.mysql.upattrs="sort\,parent_id" \
         --set env.open.PRO_API_HOST="api.example.choerodon.io" \
         --set env.open.PRO_DEVOPS_HOST="ws://devops.service.example.choerodon.io" \
         --set env.open.PRO_AGILE_HOST="http://minio.example.choerodon.io/agile-service/" \
