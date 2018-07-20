@@ -12,7 +12,7 @@ weight = 4
 ## 模板
 您在页面中使用的模板可以在此处创建，有效的模板提供者也会在此处可见。
 
-![模板](/docs/user-guide/wiki/system management/image/template.png)
+![模板](/docs/user-guide/wiki/system-management/image/template.png)
 
 1.在此处填写模板提供者，此处为必填栏
 
@@ -23,7 +23,7 @@ weight = 4
 ## 国际化
 Wiki语言可以自行设置，支持一种或多种语言，设置语言可以在管理中完成。
 
-![语言](/docs/user-guide/wiki/system management/image/language.png)
+![语言](/docs/user-guide/wiki/system-management/image/language.png)
 
 1.此处可以设置是否选择多语言，即使选择多语言，在查看界面时也会以首选语言为主。
 
@@ -47,7 +47,7 @@ Wiki语言可以自行设置，支持一种或多种语言，设置语言可以�
 - 获得Wiki的管理页面（右上方的抽屉菜单），然后找到导入菜单。
 - 附加要导入的XAR文件，然后从 “可用包”下的列表中选择它。几秒钟后，您应该会看到XAR中列出并默认选中所有页面的列表（取消选择您不想导入的页面/文件夹）：
 
-![导入](/docs/user-guide/wiki/system management/image/dr.png)
+![导入](/docs/user-guide/wiki/system-management/image/dr.png)
 
 - 如果要将文档历史记录替换为导入包中的历史记录，请选择第二个单选按钮。如果您不选择它，新导入的页面将具有修订版“1.1”
 - 如果要保留导入页面的作者，请选中“作为备份包导入”选项。
@@ -70,7 +70,7 @@ Wiki语言可以自行设置，支持一种或多种语言，设置语言可以�
 - 单击“导出”并填写表单
 - 点击“导出”
 
-![导出](/docs/user-guide/wiki/system management/image/dc.png)
+![导出](/docs/user-guide/wiki/system-management/image/dc.png)
 
 ### 自定义XAR
 执行导出时，Wiki页面使用XAR格式保存。导出时创建的典型XAR将包含Wiki实例上的所有页面。但是，您可以使用自定义导出URL控制此操作。
@@ -88,7 +88,7 @@ Wiki语言可以自行设置，支持一种或多种语言，设置语言可以�
 以下两个设置可让你具体配置哪个空间可以启用注释功能。
 第一个总的勾选框代表在Wiki上激活注释功能；其他的勾选框用于设置某一特定的空间是否需要激活注释功能。
 
-![注释](/docs/user-guide/wiki/system management/image/annotation.png)
+![注释](/docs/user-guide/wiki/system-management/image/annotation.png)
 
 ### 注释显示设置和注释类型设置
 在注释显示设置中，您可以勾选默认显示注释或者默认突出显示注释。默认显示注释是在每页上选中“显示注释”时显示注释，默认突出显示注释是指只要将鼠标悬停在注释或注释结构上时，就会显示出注释。
@@ -96,7 +96,7 @@ Wiki语言可以自行设置，支持一种或多种语言，设置语言可以�
 关于注释类型设置，如果您希望为您的注释添加额外的属性，可以在此增加属性。
 ## Office Server
 Office 需要后端打开 Office 服务器才能运行，操作如图。
-![office](/docs/user-guide/wiki/system management/image/office.png)
+![office](/docs/user-guide/wiki/system-management/image/office.png)
 
 ## 下一步
 - [**编辑**](../editing)：对编辑模式进行设置。

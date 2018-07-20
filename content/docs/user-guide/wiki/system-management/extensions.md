@@ -7,7 +7,7 @@ weight = 3
 # 扩展程序
 您可以使用扩展管理器给正在运行的Wiki的安装附加组件，您也可以根据需求在扩展程序中下载并安装您所需要的程序。
 
-![扩展](/docs/user-guide/wiki/system management/image/cj.png)
+![扩展](/docs/user-guide/wiki/system-management/image/cj.png)
 
 1.您可以在此处输入您需要的程序名称或者关键词
 

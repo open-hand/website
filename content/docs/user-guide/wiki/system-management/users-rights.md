@@ -29,7 +29,7 @@ Wiki提供了一个强大而精细的权限系统，允许您精确控制用户�
 
 如图所示，可将未注册用户的可查看即视图权限关闭，脚本权限打开。
 
-![users](/docs/user-guide/wiki/system management/image/users.png)
+![users](/docs/user-guide/wiki/system-management/image/users.png)
 
 1.点击此处选择筛选对象
 

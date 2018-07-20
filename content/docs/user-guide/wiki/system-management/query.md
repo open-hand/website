@@ -6,7 +6,7 @@ weight = 8
 # 查询
 查询是对检索的设置。
 
-![solr](/docs/user-guide/wiki/system management/image/solr.png)
+![solr](/docs/user-guide/wiki/system-management/image/solr.png)
 
 1.在这里您可以对索引执行的操作有“添加到索引”、“从索引中删除”、“重新编制”。
 
