@@ -17,6 +17,34 @@ helm repo add c7n https://openchart.choerodon.com.cn/choerodon/c7n/
 helm repo update
 ```
 
+## 创建数据库
+
+- 进入数据库
+
+    ```bash
+    # 获取pod的名称
+    kubectl get po -n choerodon-devops-prod
+    # 进入pod
+    kubectl exec -it [mysql pod name] -n choerodon-devops-prod bash
+    # 进入mysql命令行
+    mysql -uroot -p${MYSQL_ROOT_PASSWORD}
+    ```
+
+- 创建choerodon所需数据库及用户并授权
+
+    <blockquote class="note">
+    部署完成后请注意保存用户名和密码。
+    </blockquote>
+
+    ```sql
+    CREATE USER IF NOT EXISTS 'choerodon'@'%' IDENTIFIED BY "password";
+    CREATE DATABASE IF NOT EXISTS devops_service DEFAULT CHARACTER SET utf8;
+    CREATE DATABASE IF NOT EXISTS gitlab_service DEFAULT CHARACTER SET utf8;
+    GRANT ALL PRIVILEGES ON devops_service.* TO choerodon@'%';
+    GRANT ALL PRIVILEGES ON gitlab_service.* TO choerodon@'%';
+    FLUSH PRIVILEGES;
+    ```
+
 ## 部署devops service
 
 <blockquote class="warning">
@@ -170,6 +198,11 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
         ```
 
 ## 部署choerodon devops front
+
+<blockquote class="note">
+若部署<a href="../choerodon-front">整合前端</a>，请忽略本小节，因为整合前端中会包含本小节部署的功能。
+</blockquote>
+
 - 部署服务
 
     ```

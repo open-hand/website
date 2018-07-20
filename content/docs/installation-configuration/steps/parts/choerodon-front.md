@@ -1,7 +1,7 @@
 +++
 title = "整合前端"
 description = "整合前端"
-weight = 40
+weight = 70
 +++
 
 # 部署整合前端
