@@ -47,6 +47,24 @@ helm repo update
 
 ## 部署xwiki
 
+- 创建数据卷
+
+    <blockquote class="note">
+    创建之前请在nfs服务器对应位置创建相应的目录。
+    </blockquote>
+
+    ```bash
+    helm install c7n/create-pv \
+    --set type=nfs \
+    --set pv.name=wiki-pv \
+    --set nfs.path=/u01/wiki \
+    --set nfs.server=nfs.example.com \
+    --set pvc.name=wiki-pvc \
+    --set size=50Gi \
+    --set accessModes={ReadWriteMany} \
+    --name wiki-pv --namespace=choerodon-devops-prod
+    ```
+
 - 部署xwiki
 
     <blockquote class="note">
