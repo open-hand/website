@@ -14,7 +14,7 @@ weight = 1
 
 ## 什么是页面
 
-页面是XWiki中的基本内容单元，作为内容的承载。
+页面是Wiki中的基本内容单元，作为内容的承载。
 
 页面通常分为这几个区域。
 ![enter description here](/docs/user-guide/wiki/image/image18.png)
