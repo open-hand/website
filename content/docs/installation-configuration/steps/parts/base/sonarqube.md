@@ -28,7 +28,7 @@ weight = 60
 ### 创建SonarQube所需PV和PVC
 
 ```shell
-helm install paas/create-pv \
+helm install c7n/create-pv \
     --set type=nfs \
     --set pv.name=sonarqube-postgresql-pv \
     --set nfs.path=/u01/io-choerodon/sonarqube/postgresql \
@@ -38,7 +38,7 @@ helm install paas/create-pv \
     --set accessModes={ReadWriteOnce} \
     --name sonarqube-postgresql-pv --namespace=choerodon-devops-prod
 
-helm install paas/create-pv \
+helm install c7n/create-pv \
     --set type=nfs \
     --set pv.name=sonarqube-pv \
     --set nfs.path=/u01/io-choerodon/sonarqube/sonar \
@@ -52,7 +52,7 @@ helm install paas/create-pv \
 ### 部署SonarQube
 
 ```shell
-helm install paas/postgresql \
+helm install c7n/postgresql \
     --set persistence.enabled=true \
     --set persistence.existingClaim=sonarqube-postgresql-pvc \
     --set env.open.POSTGRES_USER=admin \
@@ -60,7 +60,7 @@ helm install paas/postgresql \
     --set env.open.POSTGRES_DB=sonar \
     --name sonarqube-postgresql --namespace=choerodon-devops-prod
 
-helm install paas/sonarqube \
+helm install c7n/sonarqube \
     --set persistence.enabled=true \
     --set persistence.existingClaim=sonarqube-pvc \
     --set env.open.SONARQUBE_JDBC_URL="jdbc:postgresql://sonarqube-postgresql/sonar" \
