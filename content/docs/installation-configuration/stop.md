@@ -23,11 +23,12 @@ weight = 10
     kubectl scale deployment -n choerodon-devops-prod --replicas=0 oauth-server
     kubectl scale deployment -n choerodon-devops-prod --replicas=0 event-store-service
     kubectl scale deployment -n choerodon-devops-prod --replicas=0 file-service
-    kubectl scale deployment -n choerodon-devops-prod --replicas=0 hystrix-dashboard
-    kubectl scale deployment -n choerodon-devops-prod --replicas=0 hystrix-turbine
     kubectl scale deployment -n choerodon-devops-prod --replicas=0 choerodon-front-iam
     kubectl scale deployment -n choerodon-devops-prod --replicas=0 devops-service
     kubectl scale deployment -n choerodon-devops-prod --replicas=0 gitlab-service
+    kubectl scale deployment -n choerodon-devops-prod --replicas=0 agile-service
+    kubectl scale deployment -n choerodon-devops-prod --replicas=0 test-manager-service
+    kubectl scale deployment -n choerodon-devops-prod --replicas=0 wiki-service
     kubectl scale deployment -n choerodon-devops-prod --replicas=0 choerodon-front
     ```
 
@@ -46,9 +47,10 @@ weight = 10
 1. `kubectl scale deployment -n choerodon-devops-prod --replicas=1 oauth-server`
 1. `kubectl scale deployment -n choerodon-devops-prod --replicas=1 event-store-service`
 1. `kubectl scale deployment -n choerodon-devops-prod --replicas=1 file-service`
-1. `kubectl scale deployment -n choerodon-devops-prod --replicas=1 hystrix-dashboard`
-1. `kubectl scale deployment -n choerodon-devops-prod --replicas=1 hystrix-turbine`
 1. `kubectl scale deployment -n choerodon-devops-prod --replicas=1 choerodon-front-iam`
 1. `kubectl scale deployment -n choerodon-devops-prod --replicas=1 devops-service`
 1. `kubectl scale deployment -n choerodon-devops-prod --replicas=1 gitlab-service`
+1. `kubectl scale deployment -n choerodon-devops-prod --replicas=1 agile-service`
+1. `kubectl scale deployment -n choerodon-devops-prod --replicas=1 test-manager-service`
+1. `kubectl scale deployment -n choerodon-devops-prod --replicas=1 wiki-service`
 1. `kubectl scale deployment -n choerodon-devops-prod --replicas=1 choerodon-front`

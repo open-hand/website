@@ -137,7 +137,9 @@ helm repo update
         --set env.open.WIKI_CLIENT=xwiki \
         --set env.open.WIKI_URL=wiki.example.choerodon.io \
         --set env.open.WIKI_TOKEN=Choerodon \
-        --set env.open.WIKI_DEFAULT_GROUP=XWikiAllGroup
+        --set env.open.WIKI_DEFAULT_GROUP=XWikiAllGroup \
+        --name=wiki-service \
+        --namespace=choerodon-devops-prod
     ```
 
     参数名 | 含义 

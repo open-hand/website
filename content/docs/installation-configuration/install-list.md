@@ -51,4 +51,7 @@ devops service|Devops 服务|0.8.0
 devops service front|Devops 服务前端|0.8.0
 agile service|敏捷管理|0.8.0
 agile service front|敏捷管理前端|0.8.0
+wiki service|知识管理服务|0.8.0
+test manager service|测试管理服务|0.8.0
+test manager service front|测试管理服务前端|0.8.0
 choerodon front|Choerodon 前端|0.8.0
