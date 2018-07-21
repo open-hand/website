@@ -61,14 +61,14 @@ weight = 11
 - 删除oauth-server：`helm delete --purge oauth-server`
 - 删除event-store-service：`helm delete --purge event-store-service`
 - 删除file-service：`helm delete --purge file-service`
-- 删除hystrix-dashboard：`helm delete --purge hystrix-dashboard`
-- 删除hystrix-turbine：`helm delete --purge hystrix-turbine`
 - 删除choerodon-front-iam：`helm delete --purge choerodon-front-iam`
 - 删除devops-service：`helm delete --purge devops-service`
 - 删除gitlab-service：`helm delete --purge gitlab-service`
+- 删除agile-service：`helm delete --purge agile-service`
+- 删除test-manager-service：`helm delete --purge test-manager-service`
+- 删除wiki-service：`helm delete --purge wiki-service`
 - 删除choerodon-front：`helm delete --purge choerodon-front`
 - 删除runner：`helm delete --purge runner`
 - 删除runner-maven-pv：`helm delete --purge runner-maven-pv`
 - 删除runner-cache-pv：`helm delete --purge runner-cache-pv`
 - 删除devops service pv：`helm delete --purge devops-service-pv`
-
