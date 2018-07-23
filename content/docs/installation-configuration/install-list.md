@@ -38,7 +38,7 @@ Gitlab-Runner|CI/CD 运行环境|10.7.2
 ---|---|---
 register server|注册服务|0.8.0
 config server|配置服务|0.8.0
-manager service|管理服务|0.8.0
+manager service|管理服务|0.8.1
 iam service|IAM服务|0.8.0
 api gateway|网关服务|0.8.0
 gateway helper|网关helper|0.8.0
