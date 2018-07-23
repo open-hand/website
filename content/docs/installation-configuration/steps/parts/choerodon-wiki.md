@@ -68,7 +68,7 @@ helm repo update
 - 部署xwiki
 
     <blockquote class="note">
-    部署xwiki需要初始化一些数据，安装需要几分钟，请耐心等待,部署完成后需要根据指定的客户端到Choerodon添加对应的客户端。
+    部署xwiki需要初始化一些数据，安装需要几分钟，请耐心等待,部署完成后需要根据指定的客户端到Choerodon添加对应的客户端。Choerodon创建客户端时不选择scope，请在创建完成后编辑Scope
     </blockquote>
 
     ```bash
@@ -112,11 +112,11 @@ helm repo update
 
     ```bash
     helm install c7n/wiki-service \
-        --set preJob.preInitDB.mysql.host=choerodon-mysql \
-        --set preJob.preInitDB.mysql.port=3306 \
-        --set preJob.preInitDB.mysql.database=manager_service \
-        --set preJob.preInitDB.mysql.username=choerodon \
-        --set preJob.preInitDB.mysql.password=password \
+        --set preJob.preConfig.mysql.host=choerodon-mysql \
+        --set preJob.preConfig.mysql.port=3306 \
+        --set preJob.preConfig.mysql.database=manager_service \
+        --set preJob.preConfig.mysql.username=choerodon \
+        --set preJob.preConfig.mysql.password=password \
         --set preJob.preInitDB.mysql.host=choerodon-mysql \
         --set preJob.preInitDB.mysql.port=3306 \
         --set preJob.preInitDB.mysql.database=wiki_service \
@@ -139,6 +139,7 @@ helm repo update
         --set env.open.WIKI_TOKEN=Choerodon \
         --set env.open.WIKI_DEFAULT_GROUP=XWikiAllGroup \
         --name=wiki-service \
+        --version=0.8.0 \
         --namespace=choerodon-devops-prod
     ```
 

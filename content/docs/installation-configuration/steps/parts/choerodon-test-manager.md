@@ -128,7 +128,7 @@ helm install c7n/redis --name=test-manager-service-redis --namespace=choerodon-d
         --set service.enable=true \
         --set ingress.enable=true \
         --name=choerodon-front-test-manager \
-        --version=0.8.0 --namespace=choerodon-devops-prod
+        --version=0.8.1 --namespace=choerodon-devops-prod
     ```
     参数名 | 含义 
     --- |  --- 
