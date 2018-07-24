@@ -42,7 +42,7 @@ weight = 2
 
 1. 预发布分支 `release`
     - 将开发分支细化为以 `release` 分支为主，指发布正式版本之前（即合并到 `master` 分支之前），需要有一个预发布的版本进行测试。
-    - 分支基于 `master` 创建，只做 `feature` ， `bugfix` 分支的合并操作，不单独在分支上进行提交。
+    - 分支基于 `master` 创建。
     - 一个 `release` 分支对应一个版本发布计划，包含一个或多个的用户故事、不定量的功能点、漏洞修复等。
     - 完成发布计划的所有开发后，将 `release` 分支的内容部署到一个 UAT(User Acceptance Testing) 环境进行测试验收。
     - 完成一个发布计划后，为 `release` 制作一个新的次版本标记。
@@ -50,15 +50,15 @@ weight = 2
 
 1. 功能分支 `feature`
     - 功能分支 `feature` 为开发某个功能点创建。
-    - 基于对应的 `release` 分支创建。
+    - 基于对应的 `master` 分支创建。
     - 完成功能点的开发后，将 `feature` 分支的最新内容部署至 `staging` 环境进行功能测试验收。
-    - 功能点完成后合并入 `release` 分支，并删除 `feature` 分支。
+    - 功能点完成后合并入 `master` 分支，并删除 `feature` 分支。
 
 1. 修补 Bug 分支 `bugfix`
     - 修补 Bug 分支 `bugfix` 是在开发过程中，对于发现的漏洞进行修补的分支。
-    - 基于当前的 `release` 分支创建。
+    - 基于当前的 `master` 分支创建。
     - 完成漏洞修补的开发后，将 `bugfix` 分支的最新内容部署至 `staging` 环境进行功能测试验收。
-    - 漏洞修复完成后合并入 `release` 分支，并删除 `bugfix` 分支。
+    - 漏洞修复完成后合并入 `master` 分支，并删除 `bugfix` 分支。
 
 1. 热修复分支 `hotfix`
     - 软件正式发布以后，难免会出现 Bug 。这时就需要创建一个分支 `hotfix` ，进行 Bug 热修复。
@@ -110,7 +110,7 @@ weight = 2
 
 1. 新建分支
     - 每次开发新功能等提交代码的行为，都应新建一个单独的分支。
-        - 建议在 origin 先基于最新的分支创建一个新分支。在这里，我们以基于 release 来创建的 feature 分支为例。
+        - 建议在 origin 先基于最新的分支创建一个新分支。在这里，我们以基于 master 来创建的 feature 分支为例。
             ```bash
             # 抓取远程仓库
             $ git fetch origin
@@ -128,25 +128,22 @@ weight = 2
             $ git checkout feature
             > Switched to branch 'feature'
             ```
-        - 若是对 git 操作相对熟练，则可以在本地直接创建 feature 分支。在这里，同样基于 release 来创建。
+        - 若是对 git 操作相对熟练，则可以在本地直接创建 feature 分支。在这里，同样基于 master 来创建。
             ```bash
-            # 若本地没有 release 分支，则需要抓取最新的 release 分支至本地
-            $ git fetch origin release:release
+            # 切换至本地的 master 分支
+            $ git checkout master
+            > Switched to branch 'master'
 
-            # 切换至本地的 release 分支
-            $ git checkout release
-            > Switched to branch 'release'
-
-            # 更新本地的 release 分支，若已确认 release 为最新，则可以跳过此步
-            $ git pull origin release
+            # 更新本地的 master 分支，若已确认 master 为最新，则可以跳过此步
+            $ git pull origin master
             > From http://demo.gitlab.com/demo-group/demo
-            >  * branch            release    -> FETCH_HEAD
+            >  * branch            master    -> FETCH_HEAD
             > Updating 8e11cf6..dacf93e
             > Fast-forward
             > ... (更新信息)
 
             # 创建 feature 分支
-            $ git checkout -b feature release
+            $ git checkout -b feature master
             > Switched to a new branch 'feature'
             ```
 
@@ -207,7 +204,7 @@ weight = 2
         > * 25110aa - [ADD] add demo service (4 minutes ago) <Runge>
         > * 5f19a3c - [ADD] add sql demo (4 minutes ago) <Runge>
         > * e8b2f52 - [INIT] init database demo (5 minutes ago) <Runge>
-        > * 2fdc021 - (origin/release, origin/master, origin/HEAD, release, master) Init Repository (12 minutes ago) <Runge>
+        > * 2fdc021 - (origin/master, origin/HEAD, master) Init Repository (12 minutes ago) <Runge>
         > (END)
         ```
     - 合理有序的提交信息保证了分支的干净整洁，然而当失误造成了错误的提交或是事后发现提交信息冗余等，可通过一些操作来合并 commit 信息。
@@ -215,11 +212,11 @@ weight = 2
         - 合并commit的一种简便方法，就是先撤销过去的 commit ，然后再重新提交一个新的 commit 。
             ```bash
             # 将提交信息撤回至远程主干分支，或是 HEAD
-            $ git reset --soft origin/release
+            $ git reset --soft HEAD
 
             # 提交改动
             $ git add .
-            $ git commit -am "[FIX] Here's the bug fix that closes #28"
+            $ git commit -m "[FIX] Fix msg"
 
             # 强制推送。
             #   若之前已经推送，则必定存在冲突，需要 `--force` 或是 `-f` 参数强制推送。
@@ -229,7 +226,7 @@ weight = 2
         - 使用 `git rebase` 命令。具体可以参考 [Tute Costa 的文章](https://robots.thoughtbot.com/git-interactive-rebase-squash-amend-rewriting-history)。
             ```bash
             # i 参数表示互动（interactive），执行后git 会打开一个互动界面，进行下一步操作。
-            $ git rebase -i origin/release
+            $ git rebase -i origin/master
             ```
         - 将 `squash` 和 `fixup` 命令当作命令行参数使用，自动合并 commit 记录。具体可以参考 [Florent Lebreton 的文章](https://fle.github.io/git-tip-keep-your-branch-clean-with-fixup-and-autosquash.html)。
 
@@ -242,19 +239,19 @@ weight = 2
         > remote: Total 3 (delta 0), reused 0 (delta 0)
         > Unpacking objects: 100% (3/3), done.
         > From http://demo.gitlab.com/demo-group/demo
-        >    2fdc021..b097f2f  release    -> origin/release
+        >    2fdc021..b097f2f  master    -> origin/master
 
         # 对当前分支执行变基操作
-        # 示例中 feature 是基于 release 创建的，所以变基操作的目标是 origin 的 release 分支
-        # 即 origin/release
-        $ git rebase origin/release
+        # 示例中 feature 是基于 master 创建的，所以变基操作的目标是 origin 的 master 分支
+        # 即 origin/master
+        $ git rebase origin/master
         > First, rewinding head to replay your work on top of it...
         > Applying: [INIT] init database demo
         > Applying: [ADD] add sql demo
         > Applying: [ADD] add demo service
         > Applying: [ADD] add demo API
         ```
-    - 根据控制台反馈，可以看到 demo 示范的四个提交被重新应用于最新的 origin/release 并且更新了当前分支。
+    - 根据控制台反馈，可以看到 demo 示范的四个提交被重新应用于最新的 origin/master 并且更新了当前分支。
 
 1. 推送到远程仓库
     - 完全提交了本地的改动并且也已经同步主干分支后，可以将当前分支推送到远程仓库
@@ -265,7 +262,7 @@ weight = 2
     - 强制推送是一个危险操作，进行这个操作前务必慎重。具体参见 [Will Anderson 的文章](https://willi.am/blog/2014/08/12/the-dark-side-of-the-force-push/)。
 
 1. 提出合并请求
-    - 发出 `feature` 到 `release` 的合并请求，或是按实际情况的合并请求。
+    - 发出 `feature` 到 `master` 的合并请求，或是按实际情况的合并请求。
     - 向项目代码的管理者提出 code review 要求。
     - 根据 reviewer 提出的建议等进行讨论修改代码，再次提交，重复 code review
     - 在代码审核通过后，接受合并请求，并删除该分支。（强烈建议此步由 reviewer 或是管理者操作）
