@@ -135,7 +135,7 @@ helm repo update
         --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
         --set env.open.SPRING_CLOUD_CONFIG_URI=http://config-server.choerodon-devops-prod:8010/ \
         --set env.open.WIKI_CLIENT=xwiki \
-        --set env.open.WIKI_URL=wiki.example.choerodon.io \
+        --set env.open.WIKI_URL=http://wiki.example.choerodon.io \
         --set env.open.WIKI_TOKEN=Choerodon \
         --set env.open.WIKI_DEFAULT_GROUP=XWikiAllGroup \
         --name=wiki-service \
@@ -151,3 +151,10 @@ helm repo update
     env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE|注册服务地址
     env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS|kafk地址
     env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES|zookeeper地址
+
+- 同步已有项目和组织
+
+    服务部署完成之后，访问Swagger-ui,在服务选择列表中选择wiki-service,打开wiki-scanning-controller，使用同步方法。
+    1.同步指定的组织和项目：根据组织id同步该组织以及组织下的项目到wiki。
+    2.扫描组织和项目：同步所有的组织和项目到wiki。
+    注：同步会在后台执行，请耐心等待同步完成。
