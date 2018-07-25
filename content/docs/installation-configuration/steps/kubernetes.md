@@ -412,7 +412,7 @@ weight = 10
 Etcd节点和Master节点需要在相同的机器。
 </blockquote>
 
-- 编辑项目下的`kubeadm-ansible/inventory/hosts`文件，修改各机器的访问地址、用户名、密码，并维护好各节点与角色的关系，前面的名称为机器的hostname。该用户必须是具有root权限的用户。比如，想要部署单节点集群，只需要这样配置(参考)：
+- 编辑项目下的`kubeadm-ansible/inventory/hosts`文件，修改各机器的访问地址、用户名、密码，并维护好各节点与角色的关系，前面的名称为机器的hostname。该用户必须是具有root权限的用户。但<span style="color: #ff0000;">并非</span>要求一定是root用户，其他<span style="color: #ff0000;">具有root权限</span>的用户也可以。比如，想要部署单节点集群，只需要这样配置(参考)：
 
     ```shell
     [all]
@@ -472,8 +472,13 @@ Etcd节点和Master节点需要在相同的机器。
 - 执行：
 
     ```shell
-    ansible-playbook -i inventory/hosts -e @inventory/vars cluster.yml
+    export ANSIBLE_HOST_KEY_CHECKING=False
+    ansible-playbook -i inventory/hosts -e @inventory/vars cluster.yml -K 
     ```
+
+    <blockquote class="note">
+    如果你配置的是root用户则无需添加-K参数
+    </blockquote>
 
 - 查看等待pod的状态为runnning：
 
@@ -484,7 +489,7 @@ Etcd节点和Master节点需要在相同的机器。
 - 如果部署失败，想要重置集群(所有数据)，执行：
 
     ```shell
-    ansible-playbook -i inventory/hosts reset.yml
+    ansible-playbook -i inventory/hosts reset.yml -K
     ```
 
 ### 添加节点
@@ -530,7 +535,7 @@ Etcd节点和Master节点需要在相同的机器。
     - 执行添加节点命令
 
         ```shell
-        ansible-playbook -i inventory/hosts -e @inventory/vars scale.yml
+        ansible-playbook -i inventory/hosts -e @inventory/vars scale.yml -K
         ```
 
 ## 正式环境模式
@@ -575,7 +580,7 @@ Etcd节点和Master节点需要在相同的机器。
 Etcd节点和Master节点必须一致。
 </blockquote>
 
-- 编辑项目下的`kubeadm-ansible/inventory/hosts`文件，修改各机器的访问地址、用户名、密码，并维护好各节点与角色的关系，前面的名称为机器的hostname。该用户必须是具有root权限的用户。比如，想要部署单节点集群，只需要这样配置(参考)：
+- 编辑项目下的`kubeadm-ansible/inventory/hosts`文件，修改各机器的访问地址、用户名、密码，并维护好各节点与角色的关系，前面的名称为机器的hostname。该用户必须是具有root权限的用户。但<span style="color: #ff0000;">并非</span>要求一定是root用户，其他<span style="color: #ff0000;">具有root权限</span>的用户也可以。比如，想要部署单节点集群，只需要这样配置(参考)：
 
     ```shell
     [all]
@@ -832,8 +837,13 @@ Etcd节点和Master节点必须一致。
 - 执行：
 
     ```shell
-    ansible-playbook -i inventory/hosts -e @inventory/vars cluster.yml
+    export ANSIBLE_HOST_KEY_CHECKING=False
+    ansible-playbook -i inventory/hosts -e @inventory/vars cluster.yml -K
     ```
+
+    <blockquote class="note">
+    如果你配置的是root用户则无需添加-K参数
+    </blockquote>
 
 - 查看等待pod的状态为runnning：
 
@@ -844,7 +854,7 @@ Etcd节点和Master节点必须一致。
 - 如果部署失败，想要重置集群(所有数据)，执行：
 
     ```shell
-    ansible-playbook -i inventory/hosts reset.yml
+    ansible-playbook -i inventory/hosts reset.yml -K
     ```
 
 ### 添加节点
@@ -890,5 +900,5 @@ Etcd节点和Master节点必须一致。
     - 执行添加节点命令
 
         ```shell
-        ansible-playbook -i inventory/hosts -e @inventory/vars scale.yml
+        ansible-playbook -i inventory/hosts -e @inventory/vars scale.yml -K
         ```
