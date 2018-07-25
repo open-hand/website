@@ -62,7 +62,7 @@ helm install c7n/create-pv \
 ### 部署harbor
 
 ```shell
-helm install infra/harbor \
+helm install c7n/harbor \
     --set externalDomain=registry.example.choerodon.io \
     --set harborAdminPassword=Harbor12345 \
     --set adminserver.volumes.config.selector.pv="harbor-adminserver-pv" \
