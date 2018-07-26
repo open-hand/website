@@ -70,7 +70,7 @@ helm repo update
         --set env.open.SPRING_CLOUD_CONFIG_URI="http://config-server.choerodon-devops-prod:8010/" \
         --set env.open.SERVICES_ATTACHMENT_URL="https://minio.example.choerodon.io/agile-service/" \
         --name=agile-service \
-        --version=0.8.1 --namespace=choerodon-devops-prod
+        --version=0.8.3 --namespace=choerodon-devops-prod
     ```
     参数名 | 含义 
     --- |  --- 

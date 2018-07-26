@@ -139,7 +139,7 @@ helm repo update
         --set env.open.WIKI_TOKEN=Choerodon \
         --set env.open.WIKI_DEFAULT_GROUP=XWikiAllGroup \
         --name=wiki-service \
-        --version=0.8.0 \
+        --version=0.8.1 \
         --namespace=choerodon-devops-prod
     ```
 

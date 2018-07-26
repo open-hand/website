@@ -76,7 +76,7 @@ helm install c7n/redis --name=test-manager-service-redis --namespace=choerodon-d
         --set env.open.SPRING_CLOUD_CONFIG_URI="http://config-server.choerodon-devops-prod:8010/" \
         --set env.open.SPRING_REDIS_HOST=test-manager-service-redis.choerodon-devops-prod \
         --name=test-manager-service \
-        --version=0.8.0 --namespace=choerodon-devops-prod
+        --version=0.8.2 --namespace=choerodon-devops-prod
     ```
     参数名 | 含义 
     --- |  --- 
@@ -97,7 +97,7 @@ helm install c7n/redis --name=test-manager-service-redis --namespace=choerodon-d
     - 验证命令
 
         ```
-        curl -s $(kubectl get po -n choerodon-devops-prod -l choerodon.io/release=agile-service -o jsonpath="{.items[0].status.podIP}"):8094/health | jq -r .status
+        curl -s $(kubectl get po -n choerodon-devops-prod -l choerodon.io/release=test-manager-service -o jsonpath="{.items[0].status.podIP}"):8094/health | jq -r .status
         ```
     - 出现以下类似信息即为成功部署
         ```
@@ -128,7 +128,7 @@ helm install c7n/redis --name=test-manager-service-redis --namespace=choerodon-d
         --set service.enable=true \
         --set ingress.enable=true \
         --name=choerodon-front-test-manager \
-        --version=0.8.1 --namespace=choerodon-devops-prod
+        --version=0.8.0 --namespace=choerodon-devops-prod
     ```
     参数名 | 含义 
     --- |  --- 
