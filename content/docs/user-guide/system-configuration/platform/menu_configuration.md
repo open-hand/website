@@ -1,6 +1,6 @@
 +++
 title = "菜单配置"
-weight = 2
+weight = 1
 description ="用于配置平台菜单"
 +++
 
