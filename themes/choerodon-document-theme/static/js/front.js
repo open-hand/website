@@ -81,14 +81,16 @@ if ($(window).scrollTop() == 0) {
 // home
 jQuery(document).ready(function () {
     //文档教程播放
-    $('#tutorial-img .tutorial-content').on('click', function () {
-        if (isPC){
-            var src = "http://player.youku.com/embed/"+ $(this).attr('data-src') +"?autoplay=1";
-            $('#tutorial-video iframe').attr("src", src);
-            $('#tutorial-video').css("display", "flex");
-        } else {
-            var src = "https://v.youku.com/v_show/id_" + $(this).attr('data-src');
-            window.location.href=src;
+    $('#tutorial-img .tutorial-content').on('click', function (e) {
+        if(!$(e.target).hasClass("icon-shijian")){
+            if (isPC){
+                var src = "https://v.qq.com/iframe/player.html?vid="+ $(this).attr('data-src') +"&tiny=0&auto=1";
+                $('#tutorial-video iframe').attr("src", src);
+                $('#tutorial-video').css("display", "flex");
+            } else {
+                var src = "https://v.qq.com/x/page/" + $(this).attr('data-src')+".html";
+                window.location.href=src;
+            }
         }
     })
     $('#tutorial-video').on('click', function (e) {
