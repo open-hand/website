@@ -446,6 +446,15 @@ body {
 .iconfont{
     font-size:0.16rem;
 }
+
+.ellipsis{
+    max-width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    word-wrap: normal;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
 .white-button{
     justify-content: center;
     font-size: 0.16rem;

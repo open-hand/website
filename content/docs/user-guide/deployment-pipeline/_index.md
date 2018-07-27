@@ -51,4 +51,35 @@ weight = 7
 
 以下将围绕部署流水线各个功能的使用进行详细的介绍，包括 **环境流水线**、**应用部署**、**实例**、**网络**、**域名**、**容器**。
 
+## 视频介绍
+
+<div class="tutorial-img" id="tutorial-img">
+    <div class="col-lg-6 col-md-6 col-xs-12 tutorial">
+        <div class="tutorial-content" data-src="y0735zgqr1j">
+            <div class="mask">
+                <div class="head">
+                    <div class="title ellipsis">部署流水线</div>
+                    <a href="https://v.qq.com/x/page/y0735zgqr1j.html" target="_blank"><i class="iconfont icon-shijian" title="稍后观看"></i></a>
+                </div>
+                <div class="foot">
+                    <div class="description">以部署并访问应用示例来介绍持续交付中部署流水线使用方法</div>
+                    <div class="info">
+                        <div class="begin">
+                            <i class="iconfont icon-play-button"></i>
+                            <div class="no-warp">开始</div>
+                        </div>
+                        <div class="time">6min</div>
+                    </div>
+                </div>
+            </div>
+            <img class="n-max " src="/docs/quick-start/video-tutorial/img/agile.jpg">
+        </div>
+    </div>
+</div>
+<div class="tutorial-video" id="tutorial-video">
+    <div class="bg"></div>
+    <iframe frameborder="0" src='' allowfullscreen="true" quality="high"></iframe>
+    <div class="iconfont icon-guanbi"></div>
+</div>
+
 {{< docdir >}}

@@ -51,5 +51,36 @@ weight = 3
 
 以下将围绕敏捷管理各个功能的使用进行详细的介绍，包括 **待办事项**、**活动冲刺**、**问题管理**、**发布版本**、**模块管理**、**报告**。
 
+## 视频介绍
+
+<div class="tutorial-img" id="tutorial-img">
+    <div class="col-lg-6 col-md-6 col-xs-12 tutorial">
+        <div class="tutorial-content" data-src="h07358jaa5q">
+            <div class="mask">
+                <div class="head">
+                    <div class="title ellipsis">敏捷管理</div>
+                    <a href="https://v.qq.com/x/page/h07358jaa5q.html" target="_blank"><i class="iconfont icon-shijian" title="稍后观看"></i></a>
+                </div>
+                <div class="foot">
+                    <div class="description">围绕敏捷的Scrum模型，阐述如何使用Choerodon的敏捷管理来管理项目。</div>
+                    <div class="info">
+                        <div class="begin">
+                            <i class="iconfont icon-play-button"></i>
+                            <div class="no-warp">开始</div>
+                        </div>
+                        <div class="time">22min</div>
+                    </div>
+                </div>
+            </div>
+            <img class="n-max " src="/docs/quick-start/video-tutorial/img/agile.jpg">
+        </div>
+    </div>
+</div>
+<div class="tutorial-video" id="tutorial-video">
+    <div class="bg"></div>
+    <iframe frameborder="0" src='' allowfullscreen="true" quality="high"></iframe>
+    <div class="iconfont icon-guanbi"></div>
+</div>
+
 {{< docdir >}}
 
