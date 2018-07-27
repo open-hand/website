@@ -1,7 +1,7 @@
 ﻿+++
 title = "通用功能"
 description = "是平台提供的基础功能，包括登录、登出、多租户切换"
-weight = 7
+weight = 8
 +++
 
 # 通用功能

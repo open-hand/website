@@ -1,6 +1,6 @@
 +++
 title = "菜单配置"
-weight = 2
+weight = 1
 description ="用于配置平台菜单"
 +++
 
@@ -86,7 +86,7 @@ description ="用于配置平台菜单"
 <h2 id="4">修改自设目录</h2>
 
 
-点击列表中`编辑`→![修改](/docs/user-guide/system-configuration/platform/image/update.png) 进行自设目录的修改编辑。
+点击列表中`修改`→![修改](/docs/user-guide/system-configuration/platform/image/update.png) 进行自设目录的修改编辑。
 <blockquote class="note">
         目录编码具有唯一性，是目录的标识。所以目录一旦成功创建，不可修改。
       </blockquote> 
