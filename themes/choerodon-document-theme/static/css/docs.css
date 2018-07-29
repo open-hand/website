@@ -174,7 +174,7 @@ i.note-number[data-value]::after {
     right: 0;
     margin-right: 0.23rem;
     background-color: white;
-    width: 1.7rem;
+    width: 1.5rem;
     flex-direction: column;
     margin-top: 0.8rem;
     display: flex;
@@ -226,23 +226,29 @@ i.note-number[data-value]::after {
 
 .tutorial-img {
     cursor: pointer;
+    display: flex;
+    flex-flow: row wrap;
 }
 
 .tutorial-img .tutorial {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 0.2rem;
 }
 
-.tutorial-img .tutorial img {
-    width: 3rem;
+.tutorial-img .tutorial .tutorial-content>img {
+    height: 100%;
+    width: 100%;
     max-width: 100%;
-    height: 2rem;
 }
 
 .tutorial-img .tutorial .tutorial-content {
     position: relative;
     display: flex;
+    box-shadow: 0 0 0.1rem 0 rgba(0,0,0,0.10);
+    height: 100%;
+    width: 100%;
 }
 
 .tutorial-img .tutorial .tutorial-content:hover {
@@ -255,19 +261,45 @@ i.note-number[data-value]::after {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url(/docs/quick-start/video-tutorial/img/video-button.svg)no-repeat center, linear-gradient(270deg, rgba(175, 173, 173, 0.6), rgba(0, 0, 0, 0.6));
-    background: url(/docs/quick-start/video-tutorial/img/video-button.svg)no-repeat center, -webkit-linear-gradient(270deg, rgba(175, 173, 173, 0.6), rgba(0, 0, 0, 0.6));
-    background: url(/docs/quick-start/video-tutorial/img/video-button.svg)no-repeat center, -moz-linear-gradient(270deg, rgba(175, 173, 173, 0.6), rgba(0, 0, 0, 0.6));
-    background: url(/docs/quick-start/video-tutorial/img/video-button.svg)no-repeat center, -o-linear-gradient(270deg, rgba(175, 173, 173, 0.6), rgba(0, 0, 0, 0.6));
-    background: url(/docs/quick-start/video-tutorial/img/video-button.svg)no-repeat center, -ms-linear-gradient(270deg, rgba(175, 173, 173, 0.6), rgba(0, 0, 0, 0.6));
+    background: url(/docs/quick-start/video-tutorial/img/video-button.svg)no-repeat center 30%, linear-gradient(270deg, rgba(175, 173, 173, 0.6), rgba(0, 0, 0, 0.6));
+    background: url(/docs/quick-start/video-tutorial/img/video-button.svg)no-repeat center 30%, -webkit-linear-gradient(270deg, rgba(175, 173, 173, 0.6), rgba(0, 0, 0, 0.6));
+    background: url(/docs/quick-start/video-tutorial/img/video-button.svg)no-repeat center 30%, -moz-linear-gradient(270deg, rgba(175, 173, 173, 0.6), rgba(0, 0, 0, 0.6));
+    background: url(/docs/quick-start/video-tutorial/img/video-button.svg)no-repeat center 30%, -o-linear-gradient(270deg, rgba(175, 173, 173, 0.6), rgba(0, 0, 0, 0.6));
+    background: url(/docs/quick-start/video-tutorial/img/video-button.svg)no-repeat center 30%, -ms-linear-gradient(270deg, rgba(175, 173, 173, 0.6), rgba(0, 0, 0, 0.6));
 }
 
-.tutorial-img .tutorial .tutorial-content .mask .description {
+.tutorial-img .tutorial .tutorial-content .mask .foot {
     position: absolute;
-    top: 70%;
+    bottom: 0;
     left: 0;
-    padding: 0 10%;
-    color: #FFFFFF;
+    color: #000000;
+    background-color: #FFFFFF;
+    text-align: left;
+    width: 100%;
+}
+
+.tutorial-img .tutorial .tutorial-content .mask .foot .description{
+    padding: 0 0.2rem;
+    border-bottom: 0.01rem solid #dadada;
+    font-size: 0.1rem;
+}
+
+.tutorial-img .tutorial .tutorial-content .mask .foot .info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 0.2rem;
+}
+
+.tutorial-img .tutorial .tutorial-content .mask .foot .begin{
+    display: flex;
+    align-items: center;
+}
+
+.tutorial-img .tutorial .tutorial-content .mask .foot .begin>i{
+    font-size: 0.1rem;
+    padding-right: 0.05rem;
+    color: #3371e3;
 }
 
 .tutorial-img .tutorial .tutorial-content .tutorial-button {
@@ -278,13 +310,27 @@ i.note-number[data-value]::after {
     height: 20%;
 }
 
-.tutorial-img .title {
+.tutorial-img .mask .head{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+}
+.tutorial-img .mask .head .title {
+    padding: 0 0.25rem;
     font-size: 0.18rem;
     font-weight: 700;
+    color: #FFFFFF;
+}
+
+.tutorial-img .mask .head .icon-shijian {
+    color: #ffffff;
+    padding-right: 0.25rem;
+    z-index: 1001;
+    font-size: 0.18rem;
 }
 
 .tutorial-video {
-    z-index: 1001;
+    z-index: 1002;
     width: 10.6rem;
     margin: auto;
     justify-content: center;
