@@ -1,5 +1,9 @@
 +++
+<<<<<<< HEAD
 title= "Choerodon猪齿鱼实践之持续交付中的分支管理与版本控制"
+=======
+title= "Choerodon猪齿鱼：持续交付中的分支管理与版本控制"
+>>>>>>> [ADD] blog branch management and version control
 date= "2018-07-30"
 author= "Choerodon"
 tags= [
