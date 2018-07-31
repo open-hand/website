@@ -130,7 +130,6 @@ spec:
 
     image:
       repository: registry.cn-hangzhou.aliyuncs.com/choerodon-tools/nginx
-      tag: 1.13.5-alpine
 
     metrics:
       path: /prometheus
@@ -180,7 +179,7 @@ spec:
         spec:
           containers:
           - name: {{ .Release.Name }}
-            image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+            image: "{{ .Values.image.repository }}:{{ .Chart.Version }}"
             env:
             - name: FOOBAR
               value: {{ .Chart.Version | quote }}
