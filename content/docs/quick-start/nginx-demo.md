@@ -43,7 +43,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: registry.choerodon.com.cn/operation-choerodon-dev/nginx-demo:1.13.5-alpine
+        image: nginx:1.13.5-alpine
         ports:
         - containerPort: 80
 ```
@@ -60,7 +60,7 @@ spec:
  - 在项目根目录下添加 `Dockerfile` 文件，内容如下下:
 
     ```shell
-    FROM registry.choerodon.com.cn/operation-choerodon-dev/nginx-demo:1.13.5-alpine
+    FROM nginx:1.13.5-alpine
     ```
 
  - 在项目根目录下添加 `.gitlab-ci.yml` 文件，内容如下下:
@@ -129,7 +129,7 @@ spec:
     replicaCount: 1
 
     image:
-      repository: registry.cn-hangzhou.aliyuncs.com/choerodon-tools/nginx
+      repository: nginx
 
     metrics:
       path: /prometheus
