@@ -18,11 +18,11 @@ description = "包含了Choerodon 的所有在线视频教程"
 ---
 <div class="tutorial-img" id="tutorial-img">
     <div class="col-lg-6 col-md-6 col-xs-12 tutorial">
-        <div class="tutorial-content" data-src="u0735exa883">
+        <div class="tutorial-content" data-src="g07413b6v6s">
             <div class="mask">
                 <div class="head">
                     <div class="title ellipsis">知识管理</div>
-                    <a href="https://v.qq.com/x/page/u0735exa883.html" target="_blank"><i class="iconfont icon-shijian" title="稍后观看"></i></a>
+                    <a href="https://v.qq.com/x/page/g07413b6v6s.html" target="_blank"><i class="iconfont icon-shijian" title="稍后观看"></i></a>
                 </div>
                 <div class="foot">
                     <div class="description">以如何创建和管理产品文档的示例来介绍知识管理的使用方法</div>
