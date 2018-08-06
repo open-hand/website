@@ -78,7 +78,7 @@ weight = 15
     #DEVOPS_SERVICE_DB=("mysql" "3306" "devops_service" "username" "password")
     #GITLAB_SERVICE_DB=("mysql" "3306" "gitlab_service" "username" "password")
     #AGILE_SERVICE_DB=("mysql" "3306" "agile_service" "username" "password")
-    #ATEST_MANAGER_SERVICE_DB=("mysql" "3306" "test_manager_service" "username" "password")
+    #TEST_MANAGER_SERVICE_DB=("mysql" "3306" "test_manager_service" "username" "password")
     #GITLAB_DB=("mysql" "3306" "gitlabhq_production" "username" "password")
     ########################### Gitlab配置 ############################
     # 是否使用外部Gitlab，若使用请设置为true
