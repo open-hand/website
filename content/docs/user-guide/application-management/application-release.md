@@ -82,3 +82,8 @@ weight = 4
      <blockquote class="note">
         平台将会提取发布的应用版本里chart/app文件夹下的README.md文件展示在应用市场的应用详情页，建议请先维护好后再发布。
       </blockquote>
+
+## 更多操作
+- [应用管理](../application)
+- [应用版本](../application-version)
+- [应用市场](../application-market)

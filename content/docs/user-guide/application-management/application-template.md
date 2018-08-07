@@ -378,3 +378,8 @@ before_script:
 <blockquote class="warning">
 若删除模板，该条数据将被永久删除，不可恢复!
 </blockquote>
+
+## 更多操作
+- [创建应用](../application)
+- [应用版本](../application-version)
+- [应用发布](../application-release)

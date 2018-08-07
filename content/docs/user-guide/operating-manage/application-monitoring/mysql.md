@@ -43,3 +43,9 @@ weight = 13
  - 内存概述: `MySQL Network Usage Hourly` 数据库使用的内存情况。
 
  - 表状态: `MySQL Table Open Cache Status` 正在打开的表的缓存大小。`MySQL Open Tables` 打开的表的数量。 `MySQL Table Definition Cache`  表定义缓存。
+
+## 更多操作
+- [Elasticsearch监控](../elasticsearch)
+- [Kafka监控](../kafka)
+- [MySQL监控](../mysql)
+- [zipkin操作指南](../zipkin)

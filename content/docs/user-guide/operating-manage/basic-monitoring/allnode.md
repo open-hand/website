@@ -23,3 +23,8 @@ weight = 21
  - 文件系统指标: `(NodeName) FileSystem Used` 表示节点磁盘用量。
 
  - 交换区指标: `(NodeName) Swap Used` 表示节点内存交换区用量。
+
+## 更多操作
+- [新建监控](../../newtemplate)
+- [服务指标](../../basic-monitoring)
+- [应用监控](../../application-monitoring)

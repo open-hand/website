@@ -42,3 +42,8 @@ weight = 3
     > e.g. 分支名为feature-demo，提交时间2018年07月09日19:25:11， 那么得到的C7N_VERSION值为：2018.7.9-192511-feature-demo。若打 tag 为0.5.0，则得到的C7N_VERSION值为0.5.0。
 
 - **注意：** 因为生成Chart包时所指定的版本号必须符合[语义化版本](https://semver.org/lang/zh-CN/)规则，这也是`C7N_COMMIT_TIME`时间戳格式为`年.月.日-时分秒`的原因。
+
+## 更多操作
+- [应用管理](../application)
+- [应用发布](../application-release)
+- [应用市场](../application-market)
