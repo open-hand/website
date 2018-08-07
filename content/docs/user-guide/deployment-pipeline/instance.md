@@ -148,3 +148,8 @@ Ingress|name, hosts, address, ports, age|name是指Ingress的名称，hosts是�
    <blockquote class="warning">
        删除实例会导致为该实例创建的service和ingress不可用，请谨慎操作！
     	</blockquote>
+
+## 更多操作
+- [环境流水线](../environment-pipeline)
+- [容器管理](../container)
+- [网络管理](../service)

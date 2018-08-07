@@ -53,3 +53,8 @@ weight = 5
     若导入的应用已经发布，则不会对发布层级产生影响。
     目前只支持.zip包的导入。
 </blockquote>
+
+## 更多操作
+- [应用管理](../application)
+- [应用版本](../application-version)
+- [应用发布](../application-release)

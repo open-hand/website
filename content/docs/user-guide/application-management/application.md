@@ -77,3 +77,8 @@ weight = 2
 ## 查看代码质量
 
  点击 `代码质量`→ ![代码质量按钮](/docs/user-guide/development-pipeline/image/app_quality.png)，若平台部署了[sonarqube](https://www.sonarqube.org/)服务,并且CI集成sonarqube检查即可看见该应用的代码质量信息
+
+## 更多操作
+- [什么是应用模板](../application-template)
+- [应用版本](../application-version)
+- [应用发布](../application-release)

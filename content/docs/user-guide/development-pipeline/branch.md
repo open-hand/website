@@ -357,3 +357,8 @@ weight = 2
 ## 删除分支
 
 点击`删除分支`按钮，将会删除该分支。
+
+## 更多操作
+- [标记管理](../tag)
+- [合并请求](../merge-request)
+- [持续集成](../continuous-integration)

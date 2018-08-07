@@ -23,3 +23,9 @@ weight = 10
  - 任务最大等待时间: `Max task wait time` 表示任务的最大等待时间的折线图。
 
  - 磁盘监控: `Disk io bytes` 表示实时的磁盘读写数据大小， `Disk io operations` 表示实时磁盘读写操作次数。
+
+## 更多操作
+- [Kafka监控](../kafka)
+- [Kibana基础入门](../kibana)
+- [MySQL监控](../mysql)
+- [zipkin操作指南](../zipkin)
