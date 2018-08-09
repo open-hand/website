@@ -13,7 +13,7 @@ icon = "icon-application-market"
 
 ## 快速开始
 
- - 如果您是第一次使用接触Choerodon应用管理，在学习阅读本章节之前，请阅读[快速入门手册](../../quick-start/agile/)。
+ - 如果您是第一次使用接触Choerodon应用管理，在学习阅读本章节之前，请阅读[快速入门手册](../../quick-start)。
  - 如果您对Choerodon应用管理已经非常熟悉，请使用文档搜索功能，查找您需要了解的内容。
 
 ## 前置条件

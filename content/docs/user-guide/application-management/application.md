@@ -30,6 +30,7 @@ weight = 2
     - 应用编码：该字段是必输的, 编码只能由小写字母、数字、"-"组成，且以小写字母开头，不能以"-"结尾并且是唯一的。
     - 应用名称：唯一，不能和其他应用相同。
  3. 点击 `创建` 按钮；
+ ![](/docs/user-guide/application-management/image/Create Application.png "Create Application") 
 
     应用编码：应用中自定义的编码。
 

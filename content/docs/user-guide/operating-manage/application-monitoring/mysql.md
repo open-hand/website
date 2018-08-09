@@ -47,5 +47,5 @@ weight = 13
 ## 更多操作
 - [Elasticsearch监控](../elasticsearch)
 - [Kafka监控](../kafka)
-- [MySQL监控](../mysql)
+- [Kibana基础入门](../kibana)
 - [zipkin操作指南](../zipkin)
