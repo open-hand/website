@@ -23,9 +23,13 @@ GitOps是一种实现持续交付的模型，它的核心思想是将应用系�
 这篇文章是根据Weave Cloud的几篇关于GitOps的文章翻译整理而来：
 
 [GitOps](https://www.weave.works/technologies/gitops/)
+
 [GitOps: Operations by Pull Request](https://www.weave.works/blog/gitops-operations-by-pull-request)
+
 [The GitOps Pipeline - Part 2](https://www.weave.works/blog/the-gitops-pipeline)
+
 [GitOps - Part 3: Observability](https://www.weave.works/blog/gitops-part-3-observability)
+
 [GitOps - Part 4: Application Delivery Compliance and Secure CICD](https://www.weave.works/blog/gitops-compliance-and-secure-cicd)
 
 主要内容：
