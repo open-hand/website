@@ -246,7 +246,11 @@ weight = 10
 
 ### linux/osx
 
-##### 环境准备
+<blockquote class="warning">
+安装前请确认已开启CPU虚拟化支持。
+</blockquote>
+
+#### 环境准备
 - 部署[Virtualbox 5.1.34](https://www.virtualbox.org/wiki/Download_Old_Builds_5_1)
 - 部署[Vagrant 2.0.1](https://releases.hashicorp.com/vagrant/2.0.1/)
 
@@ -370,8 +374,132 @@ weight = 10
 
 ### windows
 
-#### 使用Virtualbox启动
-- 使用Virtualbox启动请参照linux/osx启动方式运行。
+<blockquote class="warning">
+本教程使用Virtualbox启动，安装Virtualbox前请确认已开启CPU虚拟化支持。若你启动了Hyper-V，请关闭它之后安装Virtualbox。
+</blockquote>
+
+#### 环境准备
+- 部署[Virtualbox 5.1.34](https://www.virtualbox.org/wiki/Download_Old_Builds_5_1)
+- 部署[Vagrant 2.0.1](https://releases.hashicorp.com/vagrant/2.0.1/)
+
+#### 搭建Kubernetes集群
+- 克隆搭建脚本，并进入项目中
+
+    ```shell
+    git clone https://github.com/choerodon/kubeadm-ansible.git && cd kubeadm-ansible
+    ```
+<blockquote class="note">
+默认启动3个虚拟机，若PC内存不足，请降低Vagrantfile中第6行循环次数。
+</blockquote>
+
+- 启动虚拟机
+
+    ```shell
+    vagrant up
+    ```
+
+- 进入虚拟机node1
+
+    ```shell
+    vagrant ssh node1
+    ```
+
+- 在node1中部署ansible环境
+
+    ```shell
+    sudo yum install -y epel-release && \
+    sudo yum install -y \
+        ansible \
+        git \
+        httpd-tools \
+        pyOpenSSL \
+        python-cryptography \
+        python-lxml \
+        python-netaddr \
+        python-passlib \
+        python-pip
+
+    # 查看ansible版本（version>=2.4.0.0）
+    ansible --version
+    ```
+<blockquote class="note">
+若修改了Vagrantfile中启动的虚拟机数量，请删除kubeadm-ansible/inventory/hosts文件中未启动的虚拟机信息。
+</blockquote>
+
+- 在node1中部署集群  
+
+    ```shell
+    cd ~
+    git clone https://github.com/choerodon/kubeadm-ansible.git && cd kubeadm-ansible
+    ansible-playbook -i inventory/hosts -e @inventory/vars cluster.yml
+    ```
+
+#### 添加节点
+
+<blockquote class="warning">
+通过本小节教程添加的节点不能是Master或Etce节点，只能是普通的Work节点。若你使用的是NFS作为存储，建议你先<a href="../nfs/#客户端挂载nfs服务器共享目录" target="_blank">安装nfs-utils</a>
+</blockquote>
+
+- 若集群搭建完毕后还想再添加节点，请按以下方式进行添加：
+    - 修改kubeadm-ansible/inventory/hosts文件，在`[all]`分区按照原有格式添加新增节点信息，在`[kube-node]`分区添加新增节点名，其他分区请一定不要改动。比如原有信息如下，我们添加一个ip为192.168.56.14的node4节点：
+
+        ```
+        [all]
+        node1 ansible_host=192.168.56.11 ansible_user=root ansible_ssh_pass=vagrant ansible_become=true
+        node2 ansible_host=192.168.56.12 ansible_user=root ansible_ssh_pass=vagrant ansible_become=true
+        node3 ansible_host=192.168.56.13 ansible_user=root ansible_ssh_pass=vagrant ansible_become=true
+
+        [kube-master]
+        node1
+        node2
+        node3
+
+
+        [etcd]
+        node1
+        node2
+        node3
+
+
+        [kube-node]
+        node1
+        node2
+        node3
+        ```
+    - 修改后信息如下：
+
+        ```
+        [all]
+        node1 ansible_host=192.168.56.11 ansible_user=root ansible_ssh_pass=vagrant ansible_become=true
+        node2 ansible_host=192.168.56.12 ansible_user=root ansible_ssh_pass=vagrant ansible_become=true
+        node3 ansible_host=192.168.56.13 ansible_user=root ansible_ssh_pass=vagrant ansible_become=true
+        node4 ansible_host=192.168.56.14 ansible_user=root ansible_ssh_pass=vagrant ansible_become=true
+
+        [kube-master]
+        node1
+        node2
+        node3
+
+
+        [etcd]
+        node1
+        node2
+        node3
+
+
+        [kube-node]
+        node1
+        node2
+        node3
+        node4
+        ```
+
+    - 在node1中添加节点 
+
+    ```shell
+    cd ~/kubeadm-ansible
+    ansible-playbook -i inventory/hosts -e @inventory/vars scale.yml
+    ```
 
 ## 测试环境模式
 
