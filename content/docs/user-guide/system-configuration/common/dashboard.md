@@ -18,11 +18,11 @@ description = "展示主要概览信息"
 
 用户可以根据需求，对仪表盘中卡片的顺序进行调整。
 
-1. 在卡片图标及标题所在的水平范围内，按住卡片进行拖拽。
+1. 在卡片图标及标题所在的水平范围内，待箭头变为十字形，长按住卡片进行拖拽。
 1. 进行拖拽时，所有卡片按顺序排列为等高等宽的矩形。通过蓝色实心水平线，可以预判松开卡片后，卡片所在的位置。
 1. 松开卡片，完成位置调整。
 
-<img class="no-border" src="/docs/user-guide/system-configuration/common/image/card-order.png"/>
+<img class="no-border" src="/docs/user-guide/system-configuration/common/image/movecard.gif"/>
 
 ## 设置卡片可见性
 
