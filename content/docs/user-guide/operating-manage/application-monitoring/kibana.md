@@ -63,3 +63,8 @@ Kibana 会自动检测在 Elasticsearch 中是否存在该索引名称，如果�
 
 - [**Kibana官方文档**](https://www.elastic.co/guide/en/kibana/current/getting-started.html)
 
+## 更多操作
+- [Elasticsearch监控](../elasticsearch)
+- [Kafka监控](../kafka)
+- [MySQL监控](../mysql)
+- [zipkin操作指南](../zipkin)

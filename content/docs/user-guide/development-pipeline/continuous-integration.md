@@ -31,3 +31,8 @@ weight = 5
  - 创建时间：创建这条持续集成流水线的时间。
  - ![重试按钮](/docs/user-guide/development-pipeline/image/retry_button.png) ：当处于 Skipped、Canceled、Failed 状态时，可以重新运行持续集成流水线。
  - ![取消按钮](/docs/user-guide/development-pipeline/image/cancle_button.png) ：当处于 Pending，Running 状态时，可以取消运行持续集成流水线。 
+
+## 更多操作
+- [分支管理](../branch)
+- [标记管理](../tag)
+- [合并请求](../merge-request)

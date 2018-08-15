@@ -33,3 +33,8 @@ weight = 22
  - 节点网络使用情况折线图: `Node Network` 使用折线图展示节点收发两端的带宽占用。绿色线条代表接收，黄色线条代表发出。
 
  - Pod 网络用量折线图: `Pod Network Receive` 代表节点上不同 Pod 使用的下行带宽，`Pod Network Trasmit` 代表节点上不同 Pod 使用的上行带宽。使用不同显色表示不同 Pod。
+
+## 更多操作
+- [新建监控](../../newtemplate)
+- [服务指标](../../basic-monitoring)
+- [应用监控](../../application-monitoring)
