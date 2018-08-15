@@ -1,0 +1,409 @@
+<script type="text/babel">
+const { Cascader } = window['choerodon-ui'];
+
+// basic
+const defaultValue = ['zhejiang', 'hangzhou', 'xihu'];
+const basicoptions = [{
+  value: 'zhejiang',
+  label: 'Zhejiang',
+  children: [{
+    value: 'hangzhou',
+    label: 'Hangzhou',
+    children: [{
+      value: 'xihu',
+      label: 'West Lake',
+    }],
+  }],
+}, {
+  value: 'jiangsu',
+  label: 'Jiangsu',
+  children: [{
+    value: 'nanjing',
+    label: 'Nanjing',
+    children: [{
+      value: 'zhonghuamen',
+      label: 'Zhong Hua Men',
+    }],
+  }],
+}];
+
+function onChange(value) {
+  console.log(value);
+}
+
+ReactDOM.render(
+  <Cascader label="cascader" options={basicoptions} onChange={onChange} placeholder="Please select" />,
+  document.getElementById('cascader-basic'));
+  // custom
+
+const customoptions = [{
+  value: 'zhejiang',
+  label: 'Zhejiang',
+  children: [{
+    value: 'hangzhou',
+    label: 'Hangzhou',
+  }],
+}, {
+  value: 'jiangsu',
+  label: 'Jiangsu',
+  children: [{
+    value: 'nanjing',
+    label: 'Nanjing',
+  }],
+}];
+
+class CitySwitcher extends React.Component {
+  state = {
+    text: 'Unselect',
+  };
+
+  onChange = (value, selectedOptions) => {
+    this.setState({
+      text: selectedOptions.map(o => o.label).join(', '),
+    });
+  }
+
+  render() {
+    return (
+      <span>
+        {this.state.text}
+        &nbsp;
+        <Cascader options={customoptions} onChange={this.onChange}>
+          <a href="#">Change city</a>
+        </Cascader>
+      </span>
+    );
+  }
+}
+
+ReactDOM.render(<CitySwitcher />, document.getElementById('cascader-custom'));
+
+// disabled
+const disabledoptions = [{
+  value: 'zhejiang',
+  label: 'Zhejiang',
+  children: [{
+    value: 'hangzhou',
+    label: 'Hangzhou',
+    children: [{
+      value: 'xihu',
+      label: 'West Lake',
+    }],
+  }],
+}, {
+  value: 'jiangsu',
+  label: 'Jiangsu',
+  disabled: true,
+  children: [{
+    value: 'nanjing',
+    label: 'Nanjing',
+    children: [{
+      value: 'zhonghuamen',
+      label: 'Zhong Hua Men',
+    }],
+  }],
+}];
+
+function onChange(value) {
+  console.log(value);
+}
+
+ReactDOM.render(
+  <Cascader options={disabledoptions} onChange={onChange} />,
+  document.getElementById('cascader-disabled'));
+
+// size
+const sizeoptions = [{
+  value: 'zhejiang',
+  label: 'Zhejiang',
+  children: [{
+    value: 'hangzhou',
+    label: 'Hangzhou',
+    children: [{
+      value: 'xihu',
+      label: 'West Lake',
+    }],
+  }],
+}, {
+  value: 'jiangsu',
+  label: 'Jiangsu',
+  children: [{
+    value: 'nanjing',
+    label: 'Nanjing',
+    children: [{
+      value: 'zhonghuamen',
+      label: 'Zhong Hua Men',
+    }],
+  }],
+}];
+
+function onChange(value) {
+  console.log(value);
+}
+
+ReactDOM.render(
+  <div>
+    <Cascader size="large" options={sizeoptions} onChange={onChange} /><br /><br />
+    <Cascader options={sizeoptions} onChange={onChange} /><br /><br />
+    <Cascader size="small" options={sizeoptions} onChange={onChange} /><br /><br />
+  </div>,
+  document.getElementById('cascader-size'));
+
+// search
+const searchoptions = [{
+  value: 'zhejiang',
+  label: 'Zhejiang',
+  children: [{
+    value: 'hangzhou',
+    label: 'Hangzhou',
+    children: [{
+      value: 'xihu',
+      label: 'West Lake',
+    }, {
+      value: 'xiasha',
+      label: 'Xia Sha',
+      disabled: true,
+    }],
+  }],
+}, {
+  value: 'jiangsu',
+  label: 'Jiangsu',
+  children: [{
+    value: 'nanjing',
+    label: 'Nanjing',
+    children: [{
+      value: 'zhonghuamen',
+      label: 'Zhong Hua men',
+    }],
+  }],
+}];
+
+function onChange(value, selectedOptions) {
+  console.log(value, selectedOptions);
+}
+
+function filter(inputValue, path) {
+  return (path.some(option => (option.label).toLowerCase().indexOf(inputValue.toLowerCase()) > -1));
+}
+
+ReactDOM.render(
+  <Cascader
+    options={searchoptions}
+    onChange={onChange}
+    placeholder="Please select"
+    showSearch={filter}
+  />,
+  document.getElementById('cascader-search')
+);
+
+// default
+const defaultoptions = [{
+  value: 'zhejiang',
+  label: 'Zhejiang',
+  children: [{
+    value: 'hangzhou',
+    label: 'Hangzhou',
+    children: [{
+      value: 'xihu',
+      label: 'West Lake',
+    }],
+  }],
+}, {
+  value: 'jiangsu',
+  label: 'Jiangsu',
+  children: [{
+    value: 'nanjing',
+    label: 'Nanjing',
+    children: [{
+      value: 'zhonghuamen',
+      label: 'Zhong Hua Men',
+    }],
+  }],
+}];
+
+function onChange(value) {
+  console.log(value);
+}
+
+ReactDOM.render(
+  <Cascader defaultValue={defaultValue} options={defaultoptions} onChange={onChange} />,
+  document.getElementById('cascader-default'));
+
+// hover
+const hoveroptions = [{
+  value: 'zhejiang',
+  label: 'Zhejiang',
+  children: [{
+    value: 'hangzhou',
+    label: 'Hangzhou',
+    children: [{
+      value: 'xihu',
+      label: 'West Lake',
+    }],
+  }],
+}, {
+  value: 'jiangsu',
+  label: 'Jiangsu',
+  children: [{
+    value: 'nanjing',
+    label: 'Nanjing',
+    children: [{
+      value: 'zhonghuamen',
+      label: 'Zhong Hua Men',
+    }],
+  }],
+}];
+
+function onChange(value) {
+  console.log(value);
+}
+
+ReactDOM.render(
+  <Cascader defaultValue={defaultValue} options={hoveroptions} onChange={onChange} />,
+  document.getElementById('cascader-hover'));
+// change
+const changeoptions = [{
+  value: 'zhejiang',
+  label: 'Zhejiang',
+  children: [{
+    value: 'hangzhou',
+    label: 'Hanzhou',
+    children: [{
+      value: 'xihu',
+      label: 'West Lake',
+    }],
+  }],
+}, {
+  value: 'jiangsu',
+  label: 'Jiangsu',
+  children: [{
+    value: 'nanjing',
+    label: 'Nanjing',
+    children: [{
+      value: 'zhonghuamen',
+      label: 'Zhong Hua Men',
+    }],
+  }],
+}];
+
+function onChange(value) {
+  console.log(value);
+}
+
+ReactDOM.render(
+  <Cascader options={changeoptions} onChange={onChange} changeOnSelect />,
+  document.getElementById('cascader-change'));
+
+// selected
+const percentWith={
+  width:'100%'
+}
+const selectedCustomoptions = [{
+  value: 'zhejiang',
+  label: 'Zhejiang',
+  children: [{
+    value: 'hangzhou',
+    label: 'Hangzhou',
+    children: [{
+      value: 'xihu',
+      label: 'West Lake',
+      code: 752100,
+    }],
+  }],
+}, {
+  value: 'jiangsu',
+  label: 'Jiangsu',
+  children: [{
+    value: 'nanjing',
+    label: 'Nanjing',
+    children: [{
+      value: 'zhonghuamen',
+      label: 'Zhong Hua Men',
+      code: 453400,
+    }],
+  }],
+}];
+
+function handleAreaClick(e, label, option) {
+  e.stopPropagation();
+  console.log('clicked', label, option);
+}
+
+function onClick(e) {
+  return handleAreaClick(e, label, option)
+}
+const displayRender = (labels, selectedOptions) => labels.map((label, i) => {
+  const option = selectedOptions[i];
+  if (i === labels.length - 1) {
+    return (
+      <span key={option.value}>
+        {label} (<a onClick={onClick}>{option.code}</a>)
+      </span>
+    );
+  }
+  return <span key={option.value}>{label} / </span>;
+});
+
+ReactDOM.render(
+  <Cascader
+    options={selectedCustomoptions}
+    defaultValue={defaultValue}
+    displayRender={displayRender}
+    style={percentWith}
+  />,
+  document.getElementById('cascader-selected'));
+
+// load
+const options = [{
+  value: 'zhejiang',
+  label: 'Zhejiang',
+  isLeaf: false,
+}, {
+  value: 'jiangsu',
+  label: 'Jiangsu',
+  isLeaf: false,
+}];
+
+class LazyOptions extends React.Component {
+  state = {
+    options,
+  };
+
+  onChange = (value, selectedOptions) => {
+    console.log(value, selectedOptions);
+  }
+
+  loadData = (selectedOptions) => {
+    const targetOption = selectedOptions[selectedOptions.length - 1];
+    targetOption.loading = true;
+
+    // load options lazily
+    setTimeout(() => {
+      targetOption.loading = false;
+      targetOption.children = [{
+        label: `${targetOption.label} Dynamic 1`,
+        value: 'dynamic1',
+      }, {
+        label: `${targetOption.label} Dynamic 2`,
+        value: 'dynamic2',
+      }];
+      this.setState({
+        options: [...this.state.options],
+      });
+    }, 1000);
+  }
+
+  render() {
+    return (
+      <Cascader
+        options={this.state.options}
+        loadData={this.loadData}
+        onChange={this.onChange}
+        changeOnSelect
+      />
+    );
+  }
+}
+
+ReactDOM.render(<LazyOptions />, document.getElementById('cascader-load'));
+</script>

@@ -1,0 +1,49 @@
+<script type="text/babel">
+const { Carousel } = window['choerodon-ui'];
+
+// basic
+
+function onChange(a, b, c) {
+  console.log(a, b, c);
+}
+
+ReactDOM.render(
+  <Carousel afterChange={onChange}>
+    <div><h3>1</h3></div>
+    <div><h3>2</h3></div>
+    <div><h3>3</h3></div>
+    <div><h3>4</h3></div>
+  </Carousel>,
+  document.getElementById('carousel-demo-basic'));
+
+// fade
+ReactDOM.render(
+  <Carousel effect="fade">
+    <div><h3>1</h3></div>
+    <div><h3>2</h3></div>
+    <div><h3>3</h3></div>
+    <div><h3>4</h3></div>
+  </Carousel>,
+  document.getElementById('carousel-demo-fade'));
+
+// vertical
+ReactDOM.render(
+  <Carousel vertical>
+    <div><h3>1</h3></div>
+    <div><h3>2</h3></div>
+    <div><h3>3</h3></div>
+    <div><h3>4</h3></div>
+  </Carousel>,
+  document.getElementById('carousel-demo-vertical'));
+
+// switch
+ReactDOM.render(
+  <Carousel autoplay>
+    <div><h3>1</h3></div>
+    <div><h3>2</h3></div>
+    <div><h3>3</h3></div>
+    <div><h3>4</h3></div>
+  </Carousel>,
+  document.getElementById('carousel-demo-switch'));
+</script>
+

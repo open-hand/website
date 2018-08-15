@@ -1,0 +1,166 @@
+<script type="text/babel">
+const { TreeSelect } = window['choerodon-ui'];
+
+// basic
+const TreeNode = TreeSelect.TreeNode;
+
+const threeWidthStyle = { width: 300 };
+const dropdownStyle = { maxHeight: 400, overflow: 'auto' };
+const colorStyle = { color: '#08c' };
+const title = <b style={colorStyle}>sss</b>;
+class Demo extends React.Component {
+  state = {
+    value: undefined,
+  }
+
+  onChange = (value) => {
+    console.log(arguments);
+    this.setState({ value });
+  }
+
+  render() {
+    return (
+      <TreeSelect
+        showSearch
+        style={threeWidthStyle}
+        value={this.state.value}
+        dropdownStyle={dropdownStyle}
+        placeholder="Please select"
+        allowClear
+        treeDefaultExpandAll
+        onChange={this.onChange}
+      >
+        <TreeNode value="parent 1" title="parent 1" key="0-1">
+          <TreeNode value="parent 1-0" title="parent 1-0" key="0-1-1">
+            <TreeNode value="leaf1" title="my leaf" key="random" />
+            <TreeNode value="leaf2" title="your leaf" key="random1" />
+          </TreeNode>
+          <TreeNode value="parent 1-1" title="parent 1-1" key="random2">
+            <TreeNode value="sss" title={title} key="random3" />
+          </TreeNode>
+        </TreeNode>
+      </TreeSelect>
+    );
+  }
+}
+
+ReactDOM.render(<Demo />, document.getElementById('treeSelect-demo-basic'));
+
+// data
+const treeData = [{
+  label: 'Node1',
+  value: '0-0',
+  key: '0-0',
+  children: [{
+    label: 'Child Node1',
+    value: '0-0-1',
+    key: '0-0-1',
+  }, {
+    label: 'Child Node2',
+    value: '0-0-2',
+    key: '0-0-2',
+  }],
+}, {
+  label: 'Node2',
+  value: '0-1',
+  key: '0-1',
+}];
+
+class DataDemo extends React.Component {
+  state = {
+    value: undefined,
+  }
+
+  onChange = (value) => {
+    console.log(arguments);
+    this.setState({ value });
+  }
+
+  render() {
+    return (
+      <TreeSelect
+        style={threeWidthStyle}
+        value={this.state.value}
+        dropdownStyle={dropdownStyle}
+        treeData={treeData}
+        placeholder="Please select"
+        treeDefaultExpandAll
+        onChange={this.onChange}
+      />
+    );
+  }
+}
+
+ReactDOM.render(<DataDemo />, document.getElementById('treeSelect-demo-data'));
+
+// mutilselect
+class MutilSelectDemo extends React.Component {
+  state = {
+    value: undefined,
+  }
+
+  onChange = (value) => {
+    console.log(arguments);
+    this.setState({ value });
+  }
+
+  render() {
+    return (
+      <TreeSelect
+        showSearch
+        style={threeWidthStyle}
+        value={this.state.value}
+        dropdownStyle={dropdownStyle}
+        placeholder="Please select"
+        allowClear
+        multiple
+        treeDefaultExpandAll
+        onChange={this.onChange}
+      >
+        <TreeNode value="parent 1" title="parent 1" key="0-1">
+          <TreeNode value="parent 1-0" title="parent 1-0" key="0-1-1">
+            <TreeNode value="leaf1" title="my leaf" key="random" />
+            <TreeNode value="leaf2" title="your leaf" key="random1" />
+          </TreeNode>
+          <TreeNode value="parent 1-1" title="parent 1-1" key="random2">
+            <TreeNode value="sss" title={title} key="random3" />
+          </TreeNode>
+        </TreeNode>
+      </TreeSelect>
+    );
+  }
+}
+
+ReactDOM.render(<MutilSelectDemo />, document.getElementById('treeSelect-demo-mutilselect'));
+
+// select
+const SHOW_PARENT = TreeSelect.SHOW_PARENT;
+
+class SelectDemo extends React.Component {
+  state = {
+    value: ['0-0-1'],
+  }
+
+  onChange = (value) => {
+    console.log('onChange ', value, arguments);
+    this.setState({ value });
+  }
+
+  render() {
+    const tProps = {
+      treeData,
+      value: this.state.value,
+      onChange: this.onChange,
+      treeCheckable: true,
+      showCheckedStrategy: SHOW_PARENT,
+      searchPlaceholder: 'Please select',
+      style: {
+        width: 300,
+      },
+    };
+    return <TreeSelect {...tProps} />;
+  }
+}
+
+ReactDOM.render(<SelectDemo />, document.getElementById('treeSelect-demo-select'));
+</script>

@@ -1,0 +1,139 @@
+<script type="text/babel">
+const { Button, notification, Icon, Select } = window['choerodon-ui'];
+
+// basic
+const openNotification = () => {
+  notification.open({
+    message: 'Notification Title',
+    description: 'This is the content of the notification. This is the content of the notification. This is the content of the notification.',
+  });
+};
+
+ReactDOM.render(
+  <Button type="primary" onClick={openNotification}>Open the notification box</Button>,
+  document.getElementById('notification-demo-basic'));
+
+// icon
+const openNotificationWithIcon = (type) => {
+  notification[type]({
+    message: 'Notification Title',
+    description: 'This is the content of the notification. This is the content of the notification. This is the content of the notification.',
+  });
+};
+
+const onClickSuccess = () => openNotificationWithIcon('success');
+const onClickInfo = () => openNotificationWithIcon('info');
+const onClickWarning = () => openNotificationWithIcon('warning');
+const onClickError = () => openNotificationWithIcon('error');
+ReactDOM.render(
+  <div>
+    <Button onClick={onClickSuccess}>Success</Button>
+    <Button onClick={onClickInfo}>Info</Button>
+    <Button onClick={onClickWarning}>Warning</Button>
+    <Button onClick={onClickError}>Error</Button>
+  </div>,
+  document.getElementById('notification-demo-icon'));
+
+// custom
+const customOpenNotification = () => {
+  notification.open({
+    message: 'Notification Title',
+    description: 'This is the content of the notification. This is the content of the notification. This is the content of the notification.',
+    icon: <Icon type="smile-circle" />,
+  });
+};
+
+ReactDOM.render(
+  <Button type="primary" onClick={customOpenNotification}>Open the notification box</Button>,
+  document.getElementById('notification-demo-custom'));
+
+// style
+const styleOpenNotification = () => {
+  notification.open({
+    message: 'Notification Title',
+    description: 'This is the content of the notification. This is the content of the notification. This is the content of the notification.',
+    style: {
+      width: 600,
+      marginLeft: 335 - 600,
+    },
+  });
+};
+
+ReactDOM.render(
+  <Button type="primary" onClick={styleOpenNotification}>Open the notification box</Button>,
+  document.getElementById('notification-demo-style'));
+
+// delay
+const delayOpenNotification = () => {
+  const args = {
+    message: 'Notification Title',
+    description: 'I will never close automatically. I will be close automatically. I will never close automatically.',
+    duration: 0,
+  };
+  notification.open(args);
+};
+
+ReactDOM.render(
+  <Button type="primary" onClick={delayOpenNotification}>Open the notification box</Button>,
+  document.getElementById('notification-demo-delay'));
+
+// button
+const close = () => {
+  console.log('Notification was closed. Either the close button was clicked or duration time elapsed.');
+};
+
+const buttonOpenNotification = () => {
+  const key = `open${Date.now()}`;
+  const onClickClose = () => notification.close(key);
+  const btn = (
+    <Button type="primary" size="small" onClick={onClickClose}>
+      Confirm
+    </Button>
+  );
+  notification.open({
+    message: 'Notification Title',
+    description: 'A function will be be called after the notification is closed (automatically after the "duration" time of manually).',
+    btn,
+    key,
+    onClose: close,
+  });
+};
+
+ReactDOM.render(
+  <Button type="primary" onClick={buttonOpenNotification}>
+    Open the notification box
+  </Button>,
+  document.getElementById('notification-demo-button'));
+
+// location
+const { Option } = Select;
+const options = ['topLeft', 'topRight', 'bottomLeft', 'bottomRight'];
+const locationOpenNotification = () => {
+  notification.open({
+    message: 'Notification Title',
+    description: 'This is the content of the notification. This is the content of the notification. This is the content of the notification.',
+  });
+};
+
+const onChangeVal = val => {
+        notification.config({
+          placement: val,
+        });
+      };
+ReactDOM.render(
+  <div>
+    <Select
+      defaultValue="topRight"
+      onChange={onChangeVal}
+    >
+      {options.map(val => <Option key={val} value={val}>{val}</Option>)}
+    </Select>
+    <Button
+      type="primary"
+      onClick={locationOpenNotification}
+    >
+      Open the notification box
+    </Button>
+  </div>,
+  document.getElementById('notification-demo-location'));
+</script>

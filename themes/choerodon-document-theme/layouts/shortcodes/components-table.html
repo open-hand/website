@@ -1,0 +1,1781 @@
+<script type="text/babel">
+const { Table, Icon, Divider, Button,Input,Popconfirm,Badge, Menu,Switch, Radio, Form } = window['choerodon-ui'];
+const reqwest = window['reqwest'];
+
+// basic
+const basicColumns = [{
+  title: 'Name',
+  dataIndex: 'name',
+  key: 'name',
+  render: text => <a href="#">{text}</a>,
+}, {
+  title: 'Age',
+  dataIndex: 'age',
+  key: 'age',
+}, {
+  title: 'Address',
+  dataIndex: 'address',
+  key: 'address',
+}, {
+  title: '',
+  key: 'action',
+  render: (text, record) => (
+    <span>
+      <a href="#">Action 一 {record.name}</a>
+      <Divider type="vertical" />
+      <a href="#">Delete</a>
+      <Divider type="vertical" />
+      <a href="#" className="ant-dropdown-link">
+        More actions <Icon type="down" />
+      </a>
+    </span>
+  ),
+}];
+
+const basicData = [{
+  key: '1',
+  name: 'John Brown',
+  age: 32,
+  address: 'New York No. 1 Lake Park',
+}, {
+  key: '2',
+  name: 'Jim Green',
+  age: 42,
+  address: 'London No. 1 Lake Park',
+}, {
+  key: '3',
+  name: 'Joe Black',
+  age: 32,
+  address: 'Sidney No. 1 Lake Park',
+}];
+
+ReactDOM.render(<Table columns={basicColumns} dataSource={basicData} filterBarPlaceholder="过滤表" />, document.getElementById('table-demo-basic'));
+
+// jsx
+const { Column, ColumnGroup } = Table;
+
+const jsxData = [{
+  key: '1',
+  firstName: 'John',
+  lastName: 'Brown',
+  age: 32,
+  address: 'New York No. 1 Lake Park',
+}, {
+  key: '2',
+  firstName: 'Jim',
+  lastName: 'Green',
+  age: 42,
+  address: 'London No. 1 Lake Park',
+}, {
+  key: '3',
+  firstName: 'Joe',
+  lastName: 'Black',
+  age: 32,
+  address: 'Sidney No. 1 Lake Park',
+}];
+
+ReactDOM.render(
+  <Table dataSource={jsxData}>
+    <ColumnGroup title="Name">
+      <Column
+        title="First Name"
+        dataIndex="firstName"
+        key="firstName"
+      />
+      <Column
+        title="Last Name"
+        dataIndex="lastName"
+        key="lastName"
+      />
+    </ColumnGroup>
+    <Column
+      title="Age"
+      dataIndex="age"
+      key="age"
+    />
+    <Column
+      title="Address"
+      dataIndex="address"
+      key="address"
+    />
+    <Column
+      title="Action"
+      key="action"
+      render={(text, record) => (
+        <span>
+          <a href="#">Action 一 {record.name}</a>
+          <Divider type="vertical" />
+          <a href="#">Delete</a>
+          <Divider type="vertical" />
+          <a href="#" className="ant-dropdown-link">
+            More actions <Icon type="down" />
+          </a>
+        </span>
+      )}
+    />
+  </Table>,
+  document.getElementById('table-demo-jsx'));
+
+// select
+const selectColumns = [{
+  title: 'Name',
+  dataIndex: 'name',
+  render: text => <a href="#">{text}</a>,
+}, {
+  title: 'Age',
+  dataIndex: 'age',
+}, {
+  title: 'Address',
+  dataIndex: 'address',
+}];
+const selectData = [{
+  key: '1',
+  name: 'John Brown',
+  age: 32,
+  address: 'New York No. 1 Lake Park',
+}, {
+  key: '2',
+  name: 'Jim Green',
+  age: 42,
+  address: 'London No. 1 Lake Park',
+}, {
+  key: '3',
+  name: 'Joe Black',
+  age: 32,
+  address: 'Sidney No. 1 Lake Park',
+}, {
+  key: '4',
+  name: 'Disabled User',
+  age: 99,
+  address: 'Sidney No. 1 Lake Park',
+}];
+
+// rowSelection object indicates the need for row selection
+const rowSelection = {
+  onChange: (selectedRowKeys, selectedRows) => {
+    console.log(`selectedRowKeys: ${selectedRowKeys}`, 'selectedRows: ', selectedRows);
+  },
+  getCheckboxProps: record => ({
+    disabled: record.name === 'Disabled User', // Column configuration not to be checked
+    name: record.name,
+  }),
+  selections: true,
+};
+
+ReactDOM.render(
+  <Table rowSelection={rowSelection} columns={selectColumns} dataSource={selectData} />,
+  document.getElementById('table-demo-select'));
+
+// operation
+const operationColumns = [{
+  title: 'Name',
+  dataIndex: 'name',
+}, {
+  title: 'Age',
+  dataIndex: 'age',
+}, {
+  title: 'Address',
+  dataIndex: 'address',
+}];
+
+const operationData = [];
+for (let i = 0; 46 - i; i++) {
+  operationData.push({
+    key: i,
+    name: `Edward King ${i}`,
+    age: 32,
+    address: `London, Park Lane no. ${i}`,
+  });
+}
+
+class OperationApp extends React.Component {
+  state = {
+    selectedRowKeys: [], // Check here to configure the default column
+    loading: false,
+  };
+
+  start = () => {
+    this.setState({ loading: true });
+    // ajax request after empty completing
+    setTimeout(() => {
+      this.setState({
+        selectedRowKeys: [],
+        loading: false,
+      });
+    }, 1000);
+  }
+
+  onSelectChange = (selectedRowKeys) => {
+    console.log('selectedRowKeys changed: ', selectedRowKeys);
+    this.setState({ selectedRowKeys });
+  }
+
+  render() {
+    const { loading, selectedRowKeys } = this.state;
+    const rowSelection = {
+      selectedRowKeys,
+      onChange: this.onSelectChange,
+    };
+    const hasSelected = selectedRowKeys.length > 0;
+    return (
+      <div>
+        <div>
+          <Button
+            type="primary"
+            onClick={this.start}
+            disabled={!hasSelected}
+            loading={loading}
+          >
+            Reload
+          </Button>
+          <span>
+            {hasSelected ? `Selected ${selectedRowKeys.length} items` : ''}
+          </span>
+        </div>
+        <Table rowSelection={rowSelection} columns={operationColumns} dataSource={operationData} />
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<OperationApp />, document.getElementById('table-demo-operation'));
+
+// custom
+const customColumns = [{
+  title: 'Name',
+  dataIndex: 'name',
+}, {
+  title: 'Age',
+  dataIndex: 'age',
+}, {
+  title: 'Address',
+  dataIndex: 'address',
+}];
+
+const customData = [];
+for (let i = 0; 46 - i; i++) {
+  customData.push({
+    key: i,
+    name: `Edward King ${i}`,
+    age: 32,
+    address: `London, Park Lane no. ${i}`,
+  });
+}
+
+class CustomApp extends React.Component {
+  state = {
+    selectedRowKeys: [], // Check here to configure the default column
+  }
+
+  onSelectChange = (selectedRowKeys) => {
+    console.log('selectedRowKeys changed: ', selectedRowKeys);
+    this.setState({ selectedRowKeys });
+  }
+
+  render() {
+    const { selectedRowKeys } = this.state;
+    const rowSelection = {
+      selectedRowKeys,
+      onChange: this.onSelectChange,
+      hideDefaultSelections: true,
+      selections: [{
+        key: 'all-data',
+        text: 'Select All Data',
+        onSelect: () => {
+          this.setState({
+            selectedRowKeys: [...Array(46).keys()], // 0...45
+          });
+        },
+      }, {
+        key: 'odd',
+        text: 'Select Odd Row',
+        onSelect: (changableRowKeys) => {
+          let newSelectedRowKeys = [];
+          newSelectedRowKeys = changableRowKeys.filter((key, index) => {
+            if (index % 2 !== 0) {
+              return false;
+            }
+            return true;
+          });
+          this.setState({ selectedRowKeys: newSelectedRowKeys });
+        },
+      }, {
+        key: 'even',
+        text: 'Select Even Row',
+        onSelect: (changableRowKeys) => {
+          let newSelectedRowKeys = [];
+          newSelectedRowKeys = changableRowKeys.filter((key, index) => {
+            if (index % 2 !== 0) {
+              return true;
+            }
+            return false;
+          });
+          this.setState({ selectedRowKeys: newSelectedRowKeys });
+        },
+      }],
+      onSelection: this.onSelection,
+    };
+    return (
+      <Table rowSelection={rowSelection} columns={customColumns} dataSource={customData} />
+    );
+  }
+}
+
+ReactDOM.render(<CustomApp />, document.getElementById('table-demo-custom'));
+
+// controller
+const controllerData = [{
+  key: '1',
+  name: 'John Brown',
+  age: 32,
+  address: 'New York No. 1 Lake Park',
+}, {
+  key: '2',
+  name: 'Jim Green',
+  age: 42,
+  address: 'London No. 1 Lake Park',
+}, {
+  key: '3',
+  name: 'Joe Black',
+  age: 32,
+  address: 'Sidney No. 1 Lake Park',
+}, {
+  key: '4',
+  name: 'Jim Red',
+  age: 32,
+  address: 'London No. 2 Lake Park',
+}];
+
+function findText(value, filters) {
+  const found = filters.find(filter => filter.value === value);
+  return found ? found.text : value;
+}
+
+class ControllerApp extends React.Component {
+  state = {
+    filteredInfo: { name: ['1'], address: ['a'] },
+    barFilters: ['No. 1'],
+    sortedInfo: null,
+  }
+
+  handleChange = (pagination, filters, sorter, barFilters) => {
+    console.log('Various parameters', pagination, filters, sorter, barFilters);
+    this.setState({
+      filteredInfo: filters,
+      sortedInfo: sorter,
+      barFilters,
+    });
+  }
+
+  clearFilters = () => {
+    this.setState({ filteredInfo: null });
+  }
+
+  clearAll = () => {
+    this.setState({
+      filteredInfo: null,
+      sortedInfo: null,
+    });
+  }
+
+  setAgeSort = () => {
+    this.setState({
+      sortedInfo: {
+        order: 'descend',
+        columnKey: 'age',
+      },
+    });
+  }
+
+  render() {
+    let { sortedInfo, filteredInfo, barFilters } = this.state;
+    sortedInfo = sortedInfo || {};
+    filteredInfo = filteredInfo || {};
+    barFilters = barFilters || [];
+    const controllerColumns = [{
+      title: 'Name',
+      dataIndex: 'name',
+      key: 'name',
+      filters: [
+        { text: 'Joe', value: '1' },
+        { text: 'Jim', value: '2' },
+      ],
+      filteredValue: filteredInfo.name || null,
+      onFilter: (value, record, filters) => record.name.includes(findText(value, filters)),
+      sorter: (a, b) => a.name.length - b.name.length,
+      sortOrder: sortedInfo.columnKey === 'name' && sortedInfo.order,
+    }, {
+      title: 'Age',
+      dataIndex: 'age',
+      key: 'age',
+      sorter: (a, b) => a.age - b.age,
+      sortOrder: sortedInfo.columnKey === 'age' && sortedInfo.order,
+    }, {
+      title: 'Address',
+      dataIndex: 'address',
+      key: 'address',
+      filters: [
+        { text: 'London', value: 'a' },
+        { text: 'New York', value: 'b' },
+      ],
+      filterMultiple: true,
+      filteredValue: filteredInfo.address || null,
+      onFilter: (value, record, filters) => record.address.includes(findText(value, filters)),
+      sorter: (a, b) => a.address.length - b.address.length,
+      sortOrder: sortedInfo.columnKey === 'address' && sortedInfo.order,
+    }];
+    return (
+      <div>
+        <div className="table-operations">
+          <Button onClick={this.setAgeSort}>Sort age</Button>
+          <Button onClick={this.clearFilters}>Clear filters</Button>
+          <Button onClick={this.clearAll}>Clear filters and sorters</Button>
+        </div>
+        <Table columns={controllerColumns} dataSource={controllerData} onChange={this.handleChange} filters={barFilters} />
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<ControllerApp />, document.getElementById('table-demo-controller'));
+
+// sort
+const sortColumns = [{
+  title: 'Name',
+  dataIndex: 'name',
+  filters: [{
+    text: 'Joe',
+    value: 'Joe',
+  }, {
+    text: 'Jim',
+    value: 'Jim',
+  }],
+  // specify the condition of filtering result
+  // here is that finding the name started with `value`
+  onFilter: (value, record) => record.name.indexOf(value) === 0,
+  sorter: (a, b) => a.name.length - b.name.length,
+}, {
+  title: 'Age',
+  dataIndex: 'age',
+  defaultSortOrder: 'descend',
+  sorter: (a, b) => a.age - b.age,
+  filters: [],
+  onFilter: (value, record) => record.name.indexOf(value) === 0,
+}, {
+  title: 'Address',
+  dataIndex: 'address',
+  filters: [{
+    text: 'London',
+    value: 'London',
+  }, {
+    text: 'New York',
+    value: 'New York',
+  }],
+  filterMultiple: false,
+  onFilter: (value, record) => record.address.indexOf(value) === 0,
+  sorter: (a, b) => a.address.length - b.address.length,
+}];
+
+const sortData = [{
+  key: '1',
+  name: 'John Brown',
+  age: 32,
+  address: 'New York No. 1 Lake Park',
+}, {
+  key: '2',
+  name: 'Jim Green',
+  age: 42,
+  address: 'London No. 1 Lake Park',
+}, {
+  key: '3',
+  name: 'Joe Black',
+  age: 32,
+  address: 'Sidney No. 1 Lake Park',
+}, {
+  key: '4',
+  name: 'Jim Red',
+  age: 32,
+  address: 'London No. 2 Lake Park',
+}];
+
+function onChange(pagination, filters, sorter) {
+  console.log('params', pagination, filters, sorter);
+}
+
+ReactDOM.render(
+  <Table columns={sortColumns} dataSource={sortData} onChange={onChange} />,
+  document.getElementById('table-demo-sort'));
+
+// dropdown
+const dropdownColumns = [{
+  title: 'Name',
+  dataIndex: 'name',
+  filters: [{
+    text: 'Joe',
+    value: 'Joe',
+  }, {
+    text: 'Jim',
+    value: 'Jim',
+  }, {
+    text: 'Last Name',
+    value: 'last',
+    children: [{
+      text: 'Green',
+      value: 'Green',
+    }, {
+      text: 'Black',
+      value: 'Black',
+    }],
+  }],
+  // specify the condition of filtering result
+  // here is that finding the name started with `value`
+  onFilter: (value, record) => record.name.indexOf(value) > -1,
+}, {
+  title: 'Age',
+  dataIndex: 'age',
+  filters: [],
+  onFilter: (value, record) => record.name.indexOf(value) === 0,
+}, {
+  title: 'Address',
+  dataIndex: 'address',
+  filters: [{
+    text: 'London',
+    value: 'London',
+  }, {
+    text: 'New York',
+    value: 'New York',
+  }],
+  filterMultiple: true,
+  onFilter: (value, record) => record.address.indexOf(value) === 0,
+}];
+
+const dropdownData = [{
+  key: '1',
+  name: 'John Brown',
+  age: 32,
+  address: 'New York No. 1 Lake Park',
+}, {
+  key: '2',
+  name: 'Jim Green',
+  age: 42,
+  address: 'London No. 1 Lake Park',
+}, {
+  key: '3',
+  name: 'Joe Black',
+  age: 32,
+  address: 'Sidney No. 1 Lake Park',
+}, {
+  key: '4',
+  name: 'Jim Red',
+  age: 32,
+  address: 'London No. 2 Lake Park',
+}];
+
+function onChange(pagination, filters, sorter) {
+  console.log('params', pagination, filters, sorter);
+}
+
+ReactDOM.render(
+  <Table columns={dropdownColumns} dataSource={dropdownData} onChange={onChange} filterBar={false} />,
+  document.getElementById('table-demo-dropdown'));
+
+// filter
+const filterData = [{
+  key: '1',
+  name: 'John Brown',
+  age: 32,
+  address: 'New York No. 1 Lake Park',
+}, {
+  key: '2',
+  name: 'Joe Black',
+  age: 42,
+  address: 'London No. 1 Lake Park',
+}, {
+  key: '3',
+  name: 'Jim Green',
+  age: 32,
+  address: 'Sidney No. 1 Lake Park',
+}, {
+  key: '4',
+  name: 'Jim Red',
+  age: 32,
+  address: 'London No. 2 Lake Park',
+}];
+
+class FilterApp extends React.Component {
+  state = {
+    filterDropdownVisible: false,
+    filterData,
+    searchText: '',
+    filtered: false,
+  }
+
+  onInputChange = (e) => {
+    this.setState({ searchText: e.target.value });
+  }
+
+  onSearch = () => {
+    const { searchText } = this.state;
+    const reg = new RegExp(searchText, 'gi');
+    this.setState({
+      filterDropdownVisible: false,
+      filtered: !!searchText,
+      filterData: filterData.map((record) => {
+        const match = record.name.match(reg);
+        if (!match) {
+          return null;
+        }
+        return {
+          ...record,
+          name: (
+            <span>
+              {record.name.split(reg).map((text, i) => (
+                i > 0 ? [<span className="highlight">{match[0]}</span>, text] : text
+              ))}
+            </span>
+          ),
+        };
+      }).filter(record => !!record),
+    });
+  }
+
+  render() {
+    const filterColumns = [{
+      title: 'Name',
+      dataIndex: 'name',
+      key: 'name',
+      filterDropdown: (
+        <div className="custom-filter-dropdown">
+          <Input
+            placeholder="Search name"
+            value={this.state.searchText}
+            onChange={this.onInputChange}
+            onPressEnter={this.onSearch}
+          />
+          <Button type="primary" onClick={this.onSearch}>Search</Button>
+        </div>
+      ),
+      filterIcon: <Icon type="smile-o"/>,
+      filterDropdownVisible: this.state.filterDropdownVisible,
+      onFilterDropdownVisibleChange: (visible) => {
+        this.setState({
+          filterDropdownVisible: visible,
+        }, () => this.searchInput && this.searchInput.focus());
+      },
+    }, {
+      title: 'Age',
+      dataIndex: 'age',
+      key: 'age',
+    }, {
+      title: 'Address',
+      dataIndex: 'address',
+      key: 'address',
+      filters: [{
+        text: 'London',
+        value: 'London',
+      }, {
+        text: 'New York',
+        value: 'New York',
+      }],
+      onFilter: (value, record) => record.address.indexOf(value) === 0,
+    }];
+    return <Table columns={filterColumns} dataSource={this.state.filterData} />;
+  }
+}
+
+ReactDOM.render(<FilterApp />, document.getElementById('table-demo-custom-filter'));
+
+// remote
+const remoteColumns = [{
+  title: 'Name',
+  dataIndex: 'name',
+  sorter: true,
+  render: name => `${name.first} ${name.last}`,
+  width: '20%',
+}, {
+  title: 'Gender',
+  dataIndex: 'gender',
+  filters: [
+    { text: 'Male', value: 'male' },
+    { text: 'Female', value: 'female' },
+  ],
+  width: '20%',
+}, {
+  title: 'Email',
+  dataIndex: 'email',
+}];
+
+class RemoteApp extends React.Component {
+  state = {
+    data: [],
+    pagination: {},
+    loading: false,
+  }
+
+  handleTableChange = (pagination, filters, sorter) => {
+    const pager = { ...this.state.pagination };
+    pager.current = pagination.current;
+    this.setState({
+      pagination: pager,
+    });
+    this.fetch({
+      results: pagination.pageSize,
+      page: pagination.current,
+      sortField: sorter.field,
+      sortOrder: sorter.order,
+      ...filters,
+    });
+  }
+
+  fetch = (params = {}) => {
+    console.log('params:', params);
+    this.setState({ loading: true });
+    reqwest({
+      url: 'https://randomuser.me/api',
+      method: 'get',
+      data: {
+        results: 10,
+        ...params,
+      },
+      type: 'json',
+    }).then((data) => {
+      const pagination = { ...this.state.pagination };
+      // Read total count from server
+      // pagination.total = data.totalCount;
+      pagination.total = 200;
+      this.setState({
+        loading: false,
+        data: data.results,
+        pagination,
+      });
+    });
+  }
+
+  componentDidMount() {
+    this.fetch();
+  }
+
+  render() {
+    return (
+      <Table columns={remoteColumns}
+        rowKey={
+          record => record.registered}
+        dataSource={this.state.data}
+        pagination={this.state.pagination}
+        loading={this.state.loading}
+        onChange={this.handleTableChange}
+      />
+    );
+  }
+}
+
+ReactDOM.render(<RemoteApp />, document.getElementById('table-demo-remote'));
+
+// small
+const smallColumns = [{
+  title: 'Name',
+  dataIndex: 'name',
+}, {
+  title: 'Age',
+  dataIndex: 'age',
+}, {
+  title: 'Address',
+  dataIndex: 'address',
+}];
+const smallData = [{
+  key: '1',
+  name: 'John Brown',
+  age: 32,
+  address: 'New York No. 1 Lake Park',
+}, {
+  key: '2',
+  name: 'Jim Green',
+  age: 42,
+  address: 'London No. 1 Lake Park',
+}, {
+  key: '3',
+  name: 'Joe Black',
+  age: 32,
+  address: 'Sidney No. 1 Lake Park',
+}];
+
+ReactDOM.render(
+  <div>
+    <h4>Large size table</h4>
+    <Table columns={smallColumns} dataSource={smallData} size="large" />
+    <h4>Small size table</h4>
+    <Table columns={smallColumns} dataSource={smallData} size="small" />
+  </div>,
+  document.getElementById('table-demo-small'));
+
+// border
+const borderColumns = [{
+  title: 'Name',
+  dataIndex: 'name',
+  render: text => <a href="#">{text}</a>,
+}, {
+  title: 'Cash Assets',
+  className: 'column-money',
+  dataIndex: 'money',
+}, {
+  title: 'Address',
+  dataIndex: 'address',
+}];
+
+const borderData = [{
+  key: '1',
+  name: 'John Brown',
+  money: '￥300,000.00',
+  address: 'New York No. 1 Lake Park',
+}, {
+  key: '2',
+  name: 'Jim Green',
+  money: '￥1,256,000.00',
+  address: 'London No. 1 Lake Park',
+}, {
+  key: '3',
+  name: 'Joe Black',
+  money: '￥120,000.00',
+  address: 'Sidney No. 1 Lake Park',
+}];
+
+ReactDOM.render(
+  <Table
+    columns={borderColumns}
+    dataSource={borderData}
+    bordered
+  />,
+  document.getElementById('table-demo-border'));
+
+// expend
+const expendColumns = [
+  { title: 'Name', dataIndex: 'name', key: 'name' },
+  { title: 'Age', dataIndex: 'age', key: 'age' },
+  { title: 'Address', dataIndex: 'address', key: 'address' },
+  { title: 'Action', dataIndex: '', key: 'x', render: () => <a href="#">Delete</a> },
+];
+
+const expendData = [
+  { key: 1, name: 'John Brown', age: 32, address: 'New York No. 1 Lake Park', description: 'My name is John Brown, I am 32 years old, living in New York No. 1 Lake Park.' },
+  { key: 2, name: 'Jim Green', age: 42, address: 'London No. 1 Lake Park', description: 'My name is Jim Green, I am 42 years old, living in London No. 1 Lake Park.' },
+  { key: 3, name: 'Joe Black', age: 32, address: 'Sidney No. 1 Lake Park', description: 'My name is Joe Black, I am 32 years old, living in Sidney No. 1 Lake Park.' },
+];
+const expandedRowRender = record => <p>{record.description}</p>;
+ReactDOM.render(
+  <Table
+    columns={expendColumns}
+    expandedRowRender={expandedRowRender}
+    dataSource={expendData}
+  />,
+  document.getElementById('table-demo-expend'));
+
+// merge
+const renderContent = (value, row, index) => {
+  const obj = {
+    children: value,
+    props: {},
+  };
+  if (index === 4) {
+    obj.props.colSpan = 0;
+  }
+  return obj;
+};
+
+const mergeColumns = [{
+  title: 'Name',
+  dataIndex: 'name',
+  render: (text, row, index) => {
+    if (4 - index) {
+      return <a href="#">{text}</a>;
+    }
+    return {
+      children: <a href="#">{text}</a>,
+      props: {
+        colSpan: 5,
+      },
+    };
+  },
+}, {
+  title: 'Age',
+  dataIndex: 'age',
+  render: renderContent,
+}, {
+  title: 'Home phone',
+  colSpan: 2,
+  dataIndex: 'tel',
+  render: (value, row, index) => {
+    const obj = {
+      children: value,
+      props: {},
+    };
+    if (index === 2) {
+      obj.props.rowSpan = 2;
+    }
+    // These two are merged into above cell
+    if (index === 3) {
+      obj.props.rowSpan = 0;
+    }
+    if (index === 4) {
+      obj.props.colSpan = 0;
+    }
+    return obj;
+  },
+}, {
+  title: 'Phone',
+  colSpan: 0,
+  dataIndex: 'phone',
+  render: renderContent,
+}, {
+  title: 'Address',
+  dataIndex: 'address',
+  render: renderContent,
+}];
+
+const mergeData = [{
+  key: '1',
+  name: 'John Brown',
+  age: 32,
+  tel: '0571-22098909',
+  phone: 18889898989,
+  address: 'New York No. 1 Lake Park',
+}, {
+  key: '2',
+  name: 'Jim Green',
+  tel: '0571-22098333',
+  phone: 18889898888,
+  age: 42,
+  address: 'London No. 1 Lake Park',
+}, {
+  key: '3',
+  name: 'Joe Black',
+  age: 32,
+  tel: '0575-22098909',
+  phone: 18900010002,
+  address: 'Sidney No. 1 Lake Park',
+}, {
+  key: '4',
+  name: 'Jim Red',
+  age: 18,
+  tel: '0575-22098909',
+  phone: 18900010002,
+  address: 'London No. 2 Lake Park',
+}, {
+  key: '5',
+  name: 'Jake White',
+  age: 18,
+  tel: '0575-22098909',
+  phone: 18900010002,
+  address: 'Dublin No. 2 Lake Park',
+}];
+
+ReactDOM.render(<Table columns={mergeColumns} dataSource={mergeData} bordered />,
+document.getElementById('table-demo-merge'));
+
+// tree
+const treeColumns = [{
+  title: 'Name',
+  dataIndex: 'name',
+  key: 'name',
+}, {
+  title: 'Age',
+  dataIndex: 'age',
+  key: 'age',
+  width: '12%',
+}, {
+  title: 'Address',
+  dataIndex: 'address',
+  width: '30%',
+  key: 'address',
+}];
+
+const treeData = [{
+  key: 1,
+  name: 'John Brown sr.',
+  age: 60,
+  address: 'New York No. 1 Lake Park',
+  children: [{
+    key: 11,
+    name: 'John Brown',
+    age: 42,
+    address: 'New York No. 2 Lake Park',
+  }, {
+    key: 12,
+    name: 'John Brown jr.',
+    age: 30,
+    address: 'New York No. 3 Lake Park',
+    children: [{
+      key: 121,
+      name: 'Jimmy Brown',
+      age: 16,
+      address: 'New York No. 3 Lake Park',
+    }],
+  }, {
+    key: 13,
+    name: 'Jim Green sr.',
+    age: 72,
+    address: 'London No. 1 Lake Park',
+    children: [{
+      key: 131,
+      name: 'Jim Green',
+      age: 42,
+      address: 'London No. 2 Lake Park',
+      children: [{
+        key: 1311,
+        name: 'Jim Green jr.',
+        age: 25,
+        address: 'London No. 3 Lake Park',
+      }, {
+        key: 1312,
+        name: 'Jimmy Green sr.',
+        age: 18,
+        address: 'London No. 4 Lake Park',
+      }],
+    }],
+  }],
+}, {
+  key: 2,
+  name: 'Joe Black',
+  age: 32,
+  address: 'Sidney No. 1 Lake Park',
+}];
+
+// rowSelection objects indicates the need for row selection
+const treeRowSelection = {
+  onChange: (selectedRowKeys, selectedRows) => {
+    console.log(`selectedRowKeys: ${selectedRowKeys}`, 'selectedRows: ', selectedRows);
+  },
+  onSelect: (record, selected, selectedRows) => {
+    console.log(record, selected, selectedRows);
+  },
+  onSelectAll: (selected, selectedRows, changeRows) => {
+    console.log(selected, selectedRows, changeRows);
+  },
+};
+
+ReactDOM.render(
+  <Table columns={treeColumns} rowSelection={treeRowSelection} dataSource={treeData} />,
+  document.getElementById('table-demo-tree'));
+
+// head 
+const headColumns = [{
+  title: 'Name',
+  dataIndex: 'name',
+  width: 150,
+}, {
+  title: 'Age',
+  dataIndex: 'age',
+  width: 150,
+}, {
+  title: 'Address',
+  dataIndex: 'address',
+}];
+
+const headData = [];
+for (let i = 0; 100 - i; i++) {
+  headData.push({
+    key: i,
+    name: `Edward King ${i}`,
+    age: 32,
+    address: `London, Park Lane no. ${i}`,
+  });
+}
+const headPageSize = { pageSize: 50 };
+const headScroll = { y: 240 }
+
+ReactDOM.render(
+  <Table columns={headColumns} dataSource={headData} pagination={headPageSize} scroll={headScroll} />,
+  document.getElementById('table-demo-head'));
+
+// row
+const rowColumns = [
+  { title: 'Full Name', width: 100, dataIndex: 'name', key: 'name', fixed: 'left' },
+  { title: 'Age', width: 100, dataIndex: 'age', key: 'age', fixed: 'left' },
+  { title: 'Column 1', dataIndex: 'address', key: '1' },
+  { title: 'Column 2', dataIndex: 'address', key: '2' },
+  { title: 'Column 3', dataIndex: 'address', key: '3' },
+  { title: 'Column 4', dataIndex: 'address', key: '4' },
+  { title: 'Column 5', dataIndex: 'address', key: '5' },
+  { title: 'Column 6', dataIndex: 'address', key: '6' },
+  { title: 'Column 7', dataIndex: 'address', key: '7' },
+  { title: 'Column 8', dataIndex: 'address', key: '8' },
+  {
+    title: 'Action',
+    key: 'operation',
+    fixed: 'right',
+    width: 100,
+    render: () => <a href="#">action</a>,
+  },
+];
+
+const rowData = [{
+  key: '1',
+  name: 'John Brown',
+  age: 32,
+  address: 'New York Park',
+}, {
+  key: '2',
+  name: 'Jim Green',
+  age: 40,
+  address: 'London Park',
+}];
+
+const rowScroll = { x: 1300};
+ReactDOM.render(<Table columns={rowColumns} dataSource={rowData} scroll={rowScroll} />, document.getElementById('table-demo-row'));
+
+// columns
+const columnsColumns = [
+  { title: 'Full Name', width: 100, dataIndex: 'name', key: 'name', fixed: 'left' },
+  { title: 'Age', width: 100, dataIndex: 'age', key: 'age', fixed: 'left' },
+  { title: 'Column 1', dataIndex: 'address', key: '1', width: 150 },
+  { title: 'Column 2', dataIndex: 'address', key: '2', width: 150 },
+  { title: 'Column 3', dataIndex: 'address', key: '3', width: 150 },
+  { title: 'Column 4', dataIndex: 'address', key: '4', width: 150 },
+  { title: 'Column 5', dataIndex: 'address', key: '5', width: 150 },
+  { title: 'Column 6', dataIndex: 'address', key: '6', width: 150 },
+  { title: 'Column 7', dataIndex: 'address', key: '7', width: 150 },
+  { title: 'Column 8', dataIndex: 'address', key: '8' },
+  {
+    title: 'Action',
+    key: 'operation',
+    fixed: 'right',
+    width: 100,
+    render: () => <a href="#">action</a>,
+  },
+];
+
+const columnData = [];
+for (let i = 0; 100 - i; i++) {
+  columnData.push({
+    key: i,
+    name: `Edrward ${i}`,
+    age: 32,
+    address: `London Park no. ${i}`,
+  });
+}
+
+const columnScroll = { x:1500, y:300};
+ReactDOM.render(<Table columns={columnsColumns} dataSource={columnData} scroll={columnScroll} />, document.getElementById('table-demo-columns'));
+
+// group
+const groupColumns = [{
+  title: 'Name',
+  dataIndex: 'name',
+  key: 'name',
+  width: 100,
+  fixed: 'left',
+  filters: [{
+    text: 'Joe',
+    value: 'Joe',
+  }, {
+    text: 'John',
+    value: 'John',
+  }],
+  onFilter: (value, record) => record.name.indexOf(value) === 0,
+}, {
+  title: 'Other',
+  children: [{
+    title: 'Age',
+    dataIndex: 'age',
+    key: 'age',
+    width: 200,
+    sorter: (a, b) => a.age - b.age,
+  }, {
+    title: 'Address',
+    children: [{
+      title: 'Street',
+      dataIndex: 'street',
+      key: 'street',
+      width: 200,
+    }, {
+      title: 'Block',
+      children: [{
+        title: 'Building',
+        dataIndex: 'building',
+        key: 'building',
+        width: 100,
+      }, {
+        title: 'Door No.',
+        dataIndex: 'number',
+        key: 'number',
+        width: 100,
+      }],
+    }],
+  }],
+}, {
+  title: 'Company',
+  children: [{
+    title: 'Company Address',
+    dataIndex: 'companyAddress',
+    key: 'companyAddress',
+  }, {
+    title: 'Company Name',
+    dataIndex: 'companyName',
+    key: 'companyName',
+  }],
+}, {
+  title: 'Gender',
+  dataIndex: 'gender',
+  key: 'gender',
+  width: 60,
+  fixed: 'right',
+}];
+
+const groupData = [];
+for (let i = 0; 100 - i; i++) {
+  groupData.push({
+    key: i,
+    name: 'John Brown',
+    age: i + 1,
+    street: 'Lake Park',
+    building: 'C',
+    number: 2035,
+    companyAddress: 'Lake Street 42',
+    companyName: 'SoftLake Co',
+    gender: 'M',
+  });
+}
+
+const groupScroll = {x:'130%', y:240};
+ReactDOM.render(
+  <Table
+    columns={groupColumns}
+    dataSource={groupData}
+    bordered
+    size="middle"
+    scroll={groupScroll}
+  />,
+  document.getElementById('table-demo-group'));
+
+// edit
+class EditableCell extends React.Component {
+  state = {
+    value: this.props.value,
+    editable: false,
+  }
+
+  handleChange = (e) => {
+    const value = e.target.value;
+    this.setState({ value });
+  }
+
+  check = () => {
+    this.setState({ editable: false });
+    if (this.props.onChange) {
+      this.props.onChange(this.state.value);
+    }
+  }
+
+  edit = () => {
+    this.setState({ editable: true });
+  }
+
+  render() {
+    const { value, editable } = this.state;
+    return (
+      <div className="editable-cell">
+        {
+          editable ? (
+            <div className="editable-cell-input-wrapper">
+              <Input
+                value={value}
+                onChange={this.handleChange}
+                onPressEnter={this.check}
+              />
+              <Icon
+                type="check"
+                className="editable-cell-icon-check"
+                onClick={this.check}
+              />
+            </div>) : (
+              <div className="editable-cell-text-wrapper">
+                {value || ' '}
+                <Icon
+                  type="edit"
+                  className="editable-cell-icon"
+                  onClick={this.edit}
+                />
+              </div>)
+        }
+      </div>
+    );
+  }
+}
+
+class EditableTable extends React.Component {
+  constructor(props) {
+    super(props);
+    this.columns = [{
+      title: 'name',
+      dataIndex: 'name',
+      width: '30%',
+      render: (text, record) => (
+        <EditableCell
+          value={text}
+          onChange={this.onCellChange(record.key)}
+        />
+      ),
+    }, {
+      title: 'age',
+      dataIndex: 'age',
+    }, {
+      title: 'address',
+      dataIndex: 'address',
+    }, {
+      title: 'operation',
+      dataIndex: 'operation',
+      render: (text, record) => {
+        return (
+          this.state.dataSource.length > 1
+          ? (
+            <Popconfirm title="Sure to delete?" onConfirm={
+              () => this.onDelete(record.key)
+            }>
+              <a>Delete</a>
+            </Popconfirm>
+          ) : null
+        );
+      },
+    }];
+
+    this.state = {
+      dataSource: [{
+        key: '0',
+        name: 'Edward King 0',
+        age: '32',
+        address: 'London, Park Lane no. 0',
+      }, {
+        key: '1',
+        name: 'Edward King 1',
+        age: '32',
+        address: 'London, Park Lane no. 1',
+      }],
+      count: 2,
+    };
+  }
+
+  onCellChange = (key) => {
+    return (value) => {
+      const dataSource = [...this.state.dataSource];
+      const target = dataSource.find(item => item.key === key);
+      if (target) {
+        target['name'] = value;
+        this.setState({ dataSource });
+      }
+    };
+  }
+
+  onDelete = (key) => {
+    const dataSource = [...this.state.dataSource];
+    this.setState({ dataSource: dataSource.filter(item => item.key !== key) });
+  }
+
+  handleAdd = () => {
+    const { count, dataSource } = this.state;
+    const newData = {
+      key: count,
+      name: `Edward King ${count}`,
+      age: 32,
+      address: `London, Park Lane no. ${count}`,
+    };
+    this.setState({
+      dataSource: [...dataSource, newData],
+      count: count + 1,
+    });
+  }
+
+  render() {
+    const { dataSource } = this.state;
+    const columns = this.columns;
+    return (
+      <div>
+        <Button className="editable-add-btn" onClick={this.handleAdd}>Add</Button>
+        <Table bordered dataSource={dataSource} columns={columns} />
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<EditableTable />, document.getElementById('table-demo-edit'));
+
+// edit-columns
+const columnsData = [];
+for (let i = 0; 100 - i; i++) {
+  columnsData.push({
+    key: i.toString(),
+    name: `Edrward ${i}`,
+    age: 32,
+    address: `London Park no. ${i}`,
+  });
+}
+
+const EditableCellColums = ({ editable, value, onChange }) => (
+  <div>
+    {editable
+      ? <Input value={value} onChange={
+        e => onChange(e.target.value)} />
+      : value
+    }
+  </div>
+);
+
+class EditableTableColums extends React.Component {
+  constructor(props) {
+    super(props);
+    this.columns = [{
+      title: 'name',
+      dataIndex: 'name',
+      width: '25%',
+      render: (text, record) => this.renderColumns(text, record, 'name'),
+    }, {
+      title: 'age',
+      dataIndex: 'age',
+      width: '15%',
+      render: (text, record) => this.renderColumns(text, record, 'age'),
+    }, {
+      title: 'address',
+      dataIndex: 'address',
+      width: '40%',
+      render: (text, record) => this.renderColumns(text, record, 'address'),
+    }, {
+      title: 'operation',
+      dataIndex: 'operation',
+      render: (text, record) => {
+        const { editable } = record;
+        return (
+          <div className="editable-row-operations">
+            {
+              editable ? (
+                <span>
+                  <a onClick={
+                    () => this.save(record.key)}>Save</a>
+                  <Popconfirm title="Sure to cancel?" onConfirm={
+                    () => this.cancel(record.key)}>
+                    <a>Cancel</a>
+                  </Popconfirm>
+                </span>)
+                : <a onClick={
+                  () => this.edit(record.key)}>Edit</a>
+            }
+          </div>
+        );
+      },
+    }];
+    this.state = { columnsData };
+    this.cacheData = columnsData.map(item => ({ ...item }));
+  }
+
+  renderColumns(text, record, column) {
+    return (
+      <EditableCellColums
+        editable={record.editable}
+        value={text}
+        onChange={
+          value => this.handleChange(value, record.key, column)}
+      />
+    );
+  }
+
+  handleChange(value, key, column) {
+    const newData = [...this.state.columnsData];
+    const target = newData.filter(item => key === item.key)[0];
+    if (target) {
+      target[column] = value;
+      this.setState({ columnsData: newData });
+    }
+  }
+
+  edit(key) {
+    const newData = [...this.state.columnsData];
+    const target = newData.filter(item => key === item.key)[0];
+    if (target) {
+      target.editable = true;
+      this.setState({ columnsData: newData });
+    }
+  }
+
+  save(key) {
+    const newData = [...this.state.columnsData];
+    const target = newData.filter(item => key === item.key)[0];
+    if (target) {
+      delete target.editable;
+      this.setState({ columnsData: newData });
+      this.cacheData = newData.map(item => ({ ...item }));
+    }
+  }
+
+  cancel(key) {
+    const newData = [...this.state.columnsData];
+    const target = newData.filter(item => key === item.key)[0];
+    if (target) {
+      Object.assign(target, this.cacheData.filter(item => key === item.key)[0]);
+      delete target.editable;
+      this.setState({ columnsData: newData });
+    }
+  }
+
+  render() {
+    return <Table bordered dataSource={this.state.columnsData} columns={this.columns} />;
+  }
+}
+
+ReactDOM.render(<EditableTableColums />, document.getElementById('table-demo-edit-columns'));
+
+// nested
+const menu = (
+  <Menu>
+    <Menu.Item>
+      Action 1
+    </Menu.Item>
+    <Menu.Item>
+      Action 2
+    </Menu.Item>
+  </Menu>
+);
+
+function NestedTable() {
+  const expandedRowRender = () => {
+    const columns = [
+      { title: 'Date', dataIndex: 'date', key: 'date' },
+      { title: 'Name', dataIndex: 'name', key: 'name' },
+      { title: 'Status', key: 'state', render: () => <span><Badge status="success" />Finished</span> },
+      { title: 'Upgrade Status', dataIndex: 'upgradeNum', key: 'upgradeNum' },
+      {
+        title: 'Action',
+        dataIndex: 'operation',
+        key: 'operation',
+        render: () => (
+          <span className="table-operation">
+            <a href="#">Pause</a>
+            <a href="#">Stop</a>
+            <Dropdown overlay={menu}>
+              <a href="#">
+                More <Icon type="down" />
+              </a>
+            </Dropdown>
+          </span>
+        ),
+      },
+    ];
+
+    const nestedData = [];
+    for (let i = 0; 3 - i; ++i) {
+      nestedData.push({
+        key: i,
+        date: '2014-12-24 23:12:00',
+        name: 'This is production name',
+        upgradeNum: 'Upgraded: 56',
+      });
+    }
+    return (
+      <Table
+        columns={nestedColumns}
+        dataSource={nestedData}
+        pagination={false}
+      />
+    );
+  };
+
+  const nestedColumns = [
+    { title: 'Name', dataIndex: 'name', key: 'name' },
+    { title: 'Platform', dataIndex: 'platform', key: 'platform' },
+    { title: 'Version', dataIndex: 'version', key: 'version' },
+    { title: 'Upgraded', dataIndex: 'upgradeNum', key: 'upgradeNum' },
+    { title: 'Creator', dataIndex: 'creator', key: 'creator' },
+    { title: 'Date', dataIndex: 'createdAt', key: 'createdAt' },
+    { title: 'Action', key: 'operation', render: () => <a href="#">Publish</a> },
+  ];
+
+  const nestedData = [];
+  for (let i = 0; 3 - i; ++i) {
+    nestedData.push({
+      key: i,
+      name: 'Screem',
+      platform: 'iOS',
+      version: '10.3.4.5654',
+      upgradeNum: 500,
+      creator: 'Jack',
+      createdAt: '2014-12-24 23:12:00',
+    });
+  }
+
+  return (
+    <Table
+      className="components-table-demo-nested"
+      columns={nestedColumns}
+      expandedRowRender={expandedRowRender}
+      dataSource={nestedData}
+    />
+  );
+}
+
+ReactDOM.render(<NestedTable />, document.getElementById('table-demo-nested'));
+
+// drag
+
+// attribute
+const FormItem = Form.Item;
+
+const columns = [{
+  title: 'Name',
+  dataIndex: 'name',
+  key: 'name',
+  width: 150,
+  render: text => <a href="#">{text}</a>,
+}, {
+  title: 'Age',
+  dataIndex: 'age',
+  key: 'age',
+  width: 70,
+}, {
+  title: 'Address',
+  dataIndex: 'address',
+  key: 'address',
+}, {
+  title: 'Action',
+  key: 'action',
+  width: 360,
+  render: (text, record) => (
+    <span>
+      <a href="#">Action 一 {record.name}</a>
+      <Divider type="vertical" />
+      <a href="#">Delete</a>
+      <Divider type="vertical" />
+      <a href="#" className="ant-dropdown-link">
+        More actions <Icon type="down" />
+      </a>
+    </span>
+  ),
+}];
+
+const data = [];
+for (let i = 1; 10 >= i; i++) {
+  data.push({
+    key: i,
+    name: 'John Brown',
+    age: `${i}2`,
+    address: `New York No. ${i} Lake Park`,
+    description: `My name is John Brown, I am ${i}2 years old, living in New York No. ${i} Lake Park.`,
+  });
+}
+
+const title = () => 'Here is title';
+const showHeader = true;
+const footer = () => 'Here is footer';
+const scroll = { y: 240 };
+const pagination = { position: 'bottom' };
+
+class Demo extends React.Component {
+  state = {
+    bordered: false,
+    loading: false,
+    pagination,
+    size: 'default',
+    expandedRowRender,
+    title: undefined,
+    showHeader,
+    footer,
+    rowSelection: {},
+    scroll: undefined,
+  }
+
+  handleToggle = (prop) => {
+    return (enable) => {
+      this.setState({ [prop]: enable });
+    };
+  }
+
+  handleSizeChange = (e) => {
+    this.setState({ size: e.target.value });
+  }
+
+  handleExpandChange = (enable) => {
+    this.setState({ expandedRowRender: enable ? expandedRowRender : undefined });
+  }
+
+  handleTitleChange = (enable) => {
+    this.setState({ title: enable ? title : undefined });
+  }
+
+  handleHeaderChange = (enable) => {
+    this.setState({ showHeader: enable ? showHeader : false });
+  }
+
+  handleFooterChange = (enable) => {
+    this.setState({ footer: enable ? footer : undefined });
+  }
+
+  handleRowSelectionChange = (enable) => {
+    this.setState({ rowSelection: enable ? {} : undefined });
+  }
+
+  handleScollChange = (enable) => {
+    this.setState({ scroll: enable ? scroll : undefined });
+  }
+
+  handlePaginationChange = (e) => {
+    const { value } = e.target;
+    this.setState({
+      pagination: value === 'none' ? false : { position: value },
+    });
+  }
+
+  render() {
+    const state = this.state;
+    const bordered = 'bordered';
+    const loading = 'loading';
+    return (
+      <div>
+        <div className="components-table-demo-control-bar">
+          <Form layout="inline">
+            <FormItem label="Bordered">
+              <Switch checked={state.bordered} onChange={this.handleToggle(bordered)} />
+            </FormItem>
+            <FormItem label="loading">
+              <Switch checked={state.loading} onChange={this.handleToggle(loading)} />
+            </FormItem>
+            <FormItem label="Title">
+              <Switch checked={!!state.title} onChange={this.handleTitleChange} />
+            </FormItem>
+            <FormItem label="Column Header">
+              <Switch checked={!!state.showHeader} onChange={this.handleHeaderChange} />
+            </FormItem>
+            <FormItem label="Footer">
+              <Switch checked={!!state.footer} onChange={this.handleFooterChange} />
+            </FormItem>
+            <FormItem label="Expandable">
+              <Switch checked={!!state.expandedRowRender} onChange={this.handleExpandChange} />
+            </FormItem>
+            <FormItem label="Checkbox">
+              <Switch checked={!!state.rowSelection} onChange={this.handleRowSelectionChange} />
+            </FormItem>
+            <FormItem label="Fixed Header">
+              <Switch checked={!!state.scroll} onChange={this.handleScollChange} />
+            </FormItem>
+            <FormItem label="Size">
+              <Radio.Group size="default" value={state.size} onChange={this.handleSizeChange}>
+                <Radio.Button value="default">Default</Radio.Button>
+                <Radio.Button value="middle">Middle</Radio.Button>
+                <Radio.Button value="small">Small</Radio.Button>
+              </Radio.Group>
+            </FormItem>
+            <FormItem label="Pagination">
+              <Radio.Group
+                
+                onChange={this.handlePaginationChange}
+              >
+                <Radio.Button value="top">Top</Radio.Button>
+                <Radio.Button value="bottom">Bottom</Radio.Button>
+                <Radio.Button value="both">Both</Radio.Button>
+                <Radio.Button value="none">None</Radio.Button>
+              </Radio.Group>
+            </FormItem>
+          </Form>
+        </div>
+        <Table {...this.state} columns={columns} dataSource={data} />
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<Demo />, document.getElementById('table-demo-attribute'));
+</script>

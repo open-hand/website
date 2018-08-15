@@ -1,0 +1,89 @@
+<script type="text/babel">
+const { InputNumber,Button } = window['choerodon-ui'];
+
+// asic
+function onChange(value) {
+  console.log('changed', value);
+}
+
+ReactDOM.render(
+  <InputNumber label="数字" min={1} max={10} defaultValue={3} onChange={onChange} />,
+  document.getElementById('inputNumber-demo-basic'));
+
+// disabled
+let marginTop = {
+    marginTop: 20
+  }
+class App extends React.Component {
+
+  state = {
+    disabled: true,
+  };
+
+  toggle = () => {
+    this.setState({
+      disabled: !this.state.disabled,
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        <InputNumber label="禁用" min={1} max={10} disabled={this.state.disabled} defaultValue={3} />
+        <div style={marginTop}>
+          <Button onClick={this.toggle} type="primary">Toggle disabled</Button>
+        </div>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<App />, document.getElementById('inputNumber-demo-disabled'));
+
+// point
+function onChange(value) {
+  console.log('changed', value);
+}
+
+ReactDOM.render(
+  <InputNumber label="小数" min={0} max={10} step={0.1} onChange={onChange} />,
+  document.getElementById('inputNumber-demo-point'));
+
+// format
+function onChange(value) {
+  console.log('changed', value);
+}
+
+function moneyFormatter(value) {
+  return `$ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+}
+function moneyParser(value){
+  return value.replace(/\$\s?|(,*)/g, '')
+}
+function percentFormatter(value){
+  return `${value}%`
+}
+function percentParser(value) {
+  return value.replace('%', '')
+}
+ReactDOM.render(
+  <div>
+    <InputNumber
+      defaultValue={1000}
+      label="金额"
+      formatter={moneyFormatter}
+      parser={moneyParser}
+      onChange={onChange}
+    />
+    <InputNumber
+      defaultValue={100}
+      label="百分比"
+      min={0}
+      max={100}
+      formatter={percentFormatter}
+      parser={percentParser}
+      onChange={onChange}
+    />
+  </div>,
+  document.getElementById('inputNumber-demo-format'));
+</script>

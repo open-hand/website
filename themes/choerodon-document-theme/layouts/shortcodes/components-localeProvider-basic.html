@@ -1,0 +1,18 @@
+<script type="text/babel">
+const { Pagination, LocaleProvider } = window['choerodon-ui'];
+const enUS = window['enUS'];
+// basic
+const App = () => (
+  <div>
+    <Pagination defaultCurrent={1} total={50} showSizeChanger />
+  </div>
+);
+
+ReactDOM.render(
+  <LocaleProvider locale={enUS}>
+    <App />
+  </LocaleProvider>,
+  document.getElementById('localeProvider-demo-basic'));
+</script>
+
+<script src="/js/en_US.js"></script>
