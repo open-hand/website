@@ -365,16 +365,20 @@ before_script:
  - 应用模板地址：应用模板的 Git 仓库地址；
  - 应用模板来源：有预定义和自定义两种来源。预定义是 Choerodon 系统预置的模板；自定义是由用户自己创建的模板；
 
-## 修改模板信息
+## 修改模板信息/删除模板
+![](/docs/user-guide/application-management/image/modify.png "modify") 
 
-点击`修改模板`→ ![修改环境按钮](/docs/user-guide/development-pipeline/image/update_env_button.png) 按钮 ，进行应用模板名称和描述的修改。
+ 1. 点击`修改模板`→ ![修改环境按钮](/docs/user-guide/development-pipeline/image/update_env_button.png) 按钮 ，进行应用模板名称和描述的修改。
 
-## 删除模板
+ 1. 点击`删除模板`→ ![删除网络按钮](/docs/user-guide/development-pipeline/image/del_net_button.png) 按钮，进行模板的删除。
 
  1. 预定义模板无法删除；
 
- 1. 点击`删除模板`→ ![删除网络按钮](/docs/user-guide/development-pipeline/image/del_net_button.png) 按钮，进行模板的删除。
- 
 <blockquote class="warning">
 若删除模板，该条数据将被永久删除，不可恢复!
 </blockquote>
+
+## 更多操作
+- [创建应用](../application)
+- [应用版本](../application-version)
+- [应用发布](../application-release)

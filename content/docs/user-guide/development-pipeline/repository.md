@@ -30,3 +30,8 @@ weight = 1
 <blockquote class="note">
   仓库列表地址前的颜色标记是一个随机颜色，并无特殊含义。
 </blockquote>
+
+## 更多操作
+- [分支管理](../branch)
+- [标记管理](../tag)
+- [持续集成](../continuous-integration)
