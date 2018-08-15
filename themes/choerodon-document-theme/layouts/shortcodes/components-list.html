@@ -1,0 +1,328 @@
+<script type="text/babel">
+const { List, Avatar, Button, Spin, Icon, Card, message } = window['choerodon-ui'];
+
+// simple
+const data = [
+  'Racing car sprays burning fuel into crowd.',
+  'Japanese princess to wed commoner.',
+  'Australian walks 100km after outback crash.',
+  'Man charged over missing wedding girl.',
+  'Los Angeles battles huge wildfires.',
+];
+
+const marginBottomStyle = { marginBottom: 16 };
+const marginStyle = { margin: '16px 0' };
+const header = <div>Header</div>;
+const footer = <div>Footer</div>;
+const renderItem = item => (<List.Item>{item}</List.Item>);
+
+ReactDOM.render(
+
+  <div>
+    <h3 style={marginBottomStyle}>Default Size</h3>
+    <List
+      header={header}
+      footer={footer}
+      bordered
+      dataSource={data}
+      renderItem={renderItem}
+    />
+    <h3 style={marginStyle}>Small Size</h3>
+    <List
+      size="small"
+      header={header}
+      footer={footer}
+      bordered
+      dataSource={data}
+      renderItem={renderItem}
+    />
+    <h3 style={marginStyle}>Large Size</h3>
+    <List
+      size="large"
+      header={header}
+      footer={footer}
+      bordered
+      dataSource={data}
+      renderItem={renderItem}
+    />
+  </div>,
+  document.getElementById('list-demo-simple'));
+
+// basic
+
+const basicData = [
+  {
+    title: 'Choerodon UI Title 1',
+  },
+  {
+    title: 'Choerodon UI Title 2',
+  },
+  {
+    title: 'Choerodon UI Title 3',
+  },
+  {
+    title: 'Choerodon UI Title 4',
+  },
+];
+
+const avatar = <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />;
+const ListItem = item => (
+      <List.Item>
+        <List.Item.Meta
+          avatar={avatar}
+          title={item.title}
+        />
+      </List.Item>
+    );
+ReactDOM.render(
+  <List
+    itemLayout="horizontal"
+    dataSource={basicData}
+    renderItem={ListItem}
+  />,
+  document.getElementById('list-demo-basic'));
+
+// more
+
+const fakeDataUrl = 'https://randomuser.me/api/?results=5&inc=name,gender,email,nat&noinfo';
+const moreBaseData =  [
+        {
+            "gender": "male",
+            "name": {
+                "title": "mr",
+                "first": "alex",
+                "last": "smith"
+            },
+            "email": "alex.smith@example.com",
+            "nat": "NZ"
+        },
+        {
+            "gender": "male",
+            "name": {
+                "title": "mr",
+                "first": "koray",
+                "last": "karaböcek"
+            },
+            "email": "koray.karaböcek@example.com",
+            "nat": "TR"
+        }
+    ];
+const moreData =  [
+{
+            "gender": "male",
+            "name": {
+                "title": "mr",
+                "first": "alex",
+                "last": "smith"
+            },
+            "email": "alex.smith@example.com",
+            "nat": "NZ"
+        },
+        {
+            "gender": "male",
+            "name": {
+                "title": "mr",
+                "first": "koray",
+                "last": "karaböcek"
+            },
+            "email": "koray.karaböcek@example.com",
+            "nat": "TR"
+        },
+        {
+            "gender": "female",
+            "name": {
+                "title": "ms",
+                "first": "grit",
+                "last": "riemann"
+            },
+            "email": "grit.riemann@example.com",
+            "nat": "DE"
+        },
+        {
+            "gender": "female",
+            "name": {
+                "title": "miss",
+                "first": "pamela",
+                "last": "gray"
+            },
+            "email": "pamela.gray@example.com",
+            "nat": "US"
+        },
+        {
+            "gender": "male",
+            "name": {
+                "title": "mr",
+                "first": "jonathan",
+                "last": "rubio"
+            },
+            "email": "jonathan.rubio@example.com",
+            "nat": "ES"
+        }
+    ];
+class LoadMoreList extends React.Component {
+  state = {
+    loading: true,
+    loadingMore: false,
+    showLoadingMore: true,
+    data: [],
+  }
+
+  componentDidMount() {
+    this.setState({
+        loading: false,
+        data: moreBaseData,
+      });
+  }
+
+
+  onLoadMore = () => {
+    this.setState({
+      loadingMore: true,
+    });
+    const data = this.state.data.concat(moreData);
+    this.setState({
+      data,
+      loadingMore: false,
+      }, () => {
+        // Resetting window's offsetTop so as to display react-virtualized demo underfloor.
+        // In real scene, you can using public method of react-virtualized:
+        // https://stackoverflow.com/questions/46700726/how-to-use-public-method-updateposition-of-react-virtualized
+        window.dispatchEvent(new Event('resize'));
+      });
+  }
+ divStyle = { textAlign: 'center', marginTop: 12, height: 32, lineHeight: '32px' };
+  render() {
+    const { loading, loadingMore, showLoadingMore, data } = this.state;
+    const loadMore = showLoadingMore ? (
+      <div style={this.divStyle}>
+        {loadingMore && <Spin />}
+        {!loadingMore && <Button onClick={this.onLoadMore}>loading more</Button>}
+      </div>
+    ) : null;
+
+    const actions = [<a>edit</a>, <a>more</a>];
+    const renderItem = item => (
+          <List.Item actions={actions}>
+            <List.Item.Meta
+              avatar={avatar}
+              title={item.name.last}
+            />
+            <div>content</div>
+          </List.Item>);
+    return (
+      <List
+        className="demo-loadmore-list"
+        loading={loading}
+        itemLayout="horizontal"
+        loadMore={loadMore}
+        dataSource={data}
+        renderItem={renderItem}
+      />
+    );
+  }
+}
+
+ReactDOM.render(<LoadMoreList />, document.getElementById('list-demo-more'));
+
+// vertical
+const listData = [];
+for (let i = 0; i - 5; i++) {
+  listData.push({
+    href: 'http://choerodon.io',
+    title: `choerodon ui part ${i}`,
+  });
+}
+
+const pagination = {
+  pageSize: 10,
+  current: 1,
+  total: listData.length,
+  onChange: (() => {}),
+};
+
+const IconText = ({ type, text }) => (
+  <span>
+    <Icon type={type} />
+    {text}
+  </span>
+);
+
+const verticalActions = [<IconText type="star-o" text="156" />, <IconText type="like-o" text="156" />, <IconText type="message" text="2" />];
+const verticalExtra = <img width={272} alt="logo" src="https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png" />;
+const verticalAvatar = <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />;
+const verticalRenderItem = item => (
+      <List.Item
+        key={item.title}
+        actions={verticalActions}
+        extra={verticalExtra}
+      >
+        <List.Item.Meta
+          avatar={verticalAvatar}
+          title={item.title}
+          description={item.description}
+        />
+        {item.content}
+      </List.Item>
+    );
+ReactDOM.render(
+  <List
+    itemLayout="vertical"
+    size="large"
+    pagination={pagination}
+    dataSource={listData}
+    renderItem={verticalRenderItem}
+  />,
+  document.getElementById('list-demo-vertical'));
+
+// grid
+const grid = { gutter: 16, column: 4 };
+const gridRenderItem = item => (
+      <List.Item>
+        <Card title={item.title}>Card content</Card>
+      </List.Item>
+    )
+ReactDOM.render(
+  <List
+    grid={grid}
+    dataSource={data}
+    renderItem={gridRenderItem}
+  />,
+  document.getElementById('list-demo-grid'));
+
+// response
+const responseData = [
+  {
+    title: 'Title 1',
+  },
+  {
+    title: 'Title 2',
+  },
+  {
+    title: 'Title 3',
+  },
+  {
+    title: 'Title 4',
+  },
+  {
+    title: 'Title 5',
+  },
+  {
+    title: 'Title 6',
+  },
+];
+const responseGrid = { gutter: 16, xs: 1, sm: 2, md: 4, lg: 4, xl: 6, xxl: 3 };
+const responseRenderItem = item => (
+      <List.Item>
+        <Card title={item.title}>Card content</Card>
+      </List.Item>
+    )
+ReactDOM.render(
+  <List
+    grid={responseGrid}
+    dataSource={responseData}
+    renderItem={responseRenderItem}
+  />,
+  document.getElementById('list-demo-response'));
+
+// load
+</script>

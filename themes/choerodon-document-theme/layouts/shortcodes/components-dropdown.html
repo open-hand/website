@@ -1,0 +1,265 @@
+<script type="text/babel">
+const { Menu, Dropdown, Icon, message, Button } = window['choerodon-ui'];
+
+// dropdown-basic
+const menu = (
+  <Menu>
+    <Menu.Item>
+        <a target="_blank" rel="noopener noreferrer" href="http://www.alipay.com/">1st menu item</a>
+    </Menu.Item>
+    <Menu.Item>
+      <a target="_blank" rel="noopener noreferrer" href="http://www.taobao.com/">2nd menu item</a>
+    </Menu.Item>
+    <Menu.Item>
+      <a target="_blank" rel="noopener noreferrer" href="http://www.tmall.com/">3rd menu item</a>
+    </Menu.Item>
+  </Menu>
+);
+
+ReactDOM.render(
+  <div>
+    <Dropdown overlay={menu}>
+      <a className="ant-dropdown-link" href="#">
+        Hover me <Icon type="arrow_drop_down" />
+      </a>
+    </Dropdown>
+  </div>,
+  document.getElementById('dropdown-basic'));
+
+// dropdown-item
+const itemMenu = (
+  <Menu>
+    <Menu.Item key="0">
+      <a target="_blank" rel="noopener noreferrer" href="http://www.alipay.com/">1st menu item</a>
+    </Menu.Item>
+    <Menu.Item key="1">
+      <a target="_blank" rel="noopener noreferrer" href="http://www.taobao.com/">2nd menu item</a>
+    </Menu.Item>
+    <Menu.Divider />
+    <Menu.Item key="3" disabled>3rd menu item（disabled）</Menu.Item>
+  </Menu>
+);
+
+ReactDOM.render(
+  <Dropdown overlay={itemMenu}>
+    <a className="ant-dropdown-link" href="#">
+      Hover me <Icon type="arrow_drop_down" />
+    </a>
+  </Dropdown>,
+  document.getElementById('dropdown-item'));
+
+// dropdown-event
+const onClick = function ({ key }) {
+  message.info(`Click on item ${key}`);
+};
+
+const eventMenu = (
+  <Menu onClick={onClick}>
+    <Menu.Item key="1">1st menu item</Menu.Item>
+    <Menu.Item key="2">2nd memu item</Menu.Item>
+    <Menu.Item key="3">3rd menu item</Menu.Item>
+  </Menu>
+);
+
+ReactDOM.render(
+  <Dropdown overlay={eventMenu}>
+    <a className="ant-dropdown-link" href="#">
+      Hover me, Click menu item <Icon type="arrow_drop_down" />
+    </a>
+  </Dropdown>,
+  document.getElementById('dropdown-event'));
+
+// dropdown-sub-menu
+const SubMenu = Menu.SubMenu;
+
+const subMenu = (
+  <Menu>
+    <Menu.Item>1st menu item</Menu.Item>
+    <Menu.Item>2nd menu item</Menu.Item>
+    <SubMenu title="sub menu">
+      <Menu.Item>3rd menu item</Menu.Item>
+      <Menu.Item>4th menu item</Menu.Item>
+    </SubMenu>
+    <SubMenu title="disabled sub menu" disabled>
+      <Menu.Item>5d menu item</Menu.Item>
+      <Menu.Item>6th menu item</Menu.Item>
+    </SubMenu>
+  </Menu>
+);
+
+ReactDOM.render(
+  <Dropdown overlay={subMenu}>
+    <a className="ant-dropdown-link" href="#">
+      Cascading menu <Icon type="arrow_drop_down" />
+    </a>
+  </Dropdown>,
+  document.getElementById('dropdown-sub-menu'));
+
+// dropdown-context-menu
+const contexMenuTrigger= ['contextMenu']
+const contextMenuSpanStyle = {
+  userSelect: 'none'
+}
+const contextMenu = (
+  <Menu>
+    <Menu.Item key="1">1st menu item</Menu.Item>
+    <Menu.Item key="2">2nd menu item</Menu.Item>
+    <Menu.Item key="3">3rd menu item</Menu.Item>
+  </Menu>
+);
+
+ReactDOM.render(
+  <Dropdown overlay={contextMenu} trigger={contexMenuTrigger}>
+    <span style={contextMenuSpanStyle}>Right Click on Me</span>
+  </Dropdown>,
+  document.getElementById('dropdown-context-menu'));
+
+// dropdown-placement
+
+const placementMenu = (
+  <Menu>
+    <Menu.Item>
+      <a target="_blank" rel="noopener noreferrer" href="http://www.alipay.com/">1st menu item</a>
+    </Menu.Item>
+    <Menu.Item>
+      <a target="_blank" rel="noopener noreferrer" href="http://www.taobao.com/">2nd menu item</a>
+    </Menu.Item>
+    <Menu.Item>
+      <a target="_blank" rel="noopener noreferrer" href="http://www.tmall.com/">3rd menu item</a>
+    </Menu.Item>
+  </Menu>
+);
+
+ReactDOM.render(
+  <div>
+    <Dropdown overlay={placementMenu} placement="bottomLeft">
+      <Button>bottomLeft</Button>
+    </Dropdown>
+    <Dropdown overlay={placementMenu} placement="bottomCenter">
+      <Button>bottomCenter</Button>
+    </Dropdown>
+    <Dropdown overlay={placementMenu} placement="bottomRight">
+      <Button>bottomRight</Button>
+    </Dropdown>
+    <br />
+    <Dropdown overlay={placementMenu} placement="topLeft">
+      <Button>topLeft</Button>
+    </Dropdown>
+    <Dropdown overlay={placementMenu} placement="topCenter">
+      <Button>topCenter</Button>
+    </Dropdown>
+    <Dropdown overlay={placementMenu} placement="topRight">
+      <Button>topRight</Button>
+    </Dropdown>
+  </div>,
+  document.getElementById('dropdown-placement'));
+
+// dropdown-trigger
+const triggerMenu = (
+  <Menu>
+    <Menu.Item key="0">
+      <a href="http://www.alipay.com/">1st menu item</a>
+    </Menu.Item>
+    <Menu.Item key="1">
+      <a href="http://www.taobao.com/">2nd menu item</a>
+    </Menu.Item>
+    <Menu.Divider />
+    <Menu.Item key="3">3rd menu item</Menu.Item>
+  </Menu>
+);
+
+ReactDOM.render(
+  <div>
+    <Dropdown overlay={triggerMenu} trigger="click">
+      <a className="ant-dropdown-link" href="#">
+        Click me <Icon type="arrow_drop_down" />
+      </a>
+    </Dropdown>
+    <Dropdown overlay={triggerMenu} trigger="click">
+      <Button shape="circle" icon="more_vert" />
+    </Dropdown>
+  </div>,
+  document.getElementById('dropdown-trigger'));
+
+// dropdown-button
+const buttonStyle = {
+  marginLeft: 8
+}
+function handleButtonClick(e) {
+  message.info('Click on left button.');
+  console.log('click left button', e);
+}
+
+function handleMenuClick(e) {
+  message.info('Click on menu item.');
+  console.log('click', e);
+}
+
+const buttonMenu = (
+  <Menu onClick={handleMenuClick}>
+    <Menu.Item key="1">1st menu item</Menu.Item>
+    <Menu.Item key="2">2nd menu item</Menu.Item>
+    <Menu.Item key="3">3rd item</Menu.Item>
+  </Menu>
+);
+
+ReactDOM.render(
+  <div>
+    <Dropdown.Button onClick={handleButtonClick} overlay={buttonMenu}>
+      Dropdown
+    </Dropdown.Button>
+    <Dropdown.Button
+      onClick={handleButtonClick}
+      overlay={buttonMenu}
+      disabled
+      style={buttonStyle}
+    >
+      Dropdown
+    </Dropdown.Button>
+    <Dropdown overlay={buttonMenu}>
+      <Button style={buttonStyle}>
+        Button <Icon type="arrow_drop_down" />
+      </Button>
+    </Dropdown>
+  </div>,
+  document.getElementById('dropdown-button'));
+
+// breadcrumb-overlay-isible
+class OverlayVisible extends React.Component {
+  state = {
+    visible: false,
+  };
+
+  handleMenuClick = (e) => {
+    if (e.key === '3') {
+      this.setState({ visible: false });
+    }
+  }
+
+  handleVisibleChange = (flag) => {
+    this.setState({ visible: flag });
+  }
+
+  render() {
+    const overlayIsibleMenu = (
+      <Menu onClick={this.handleMenuClick}>
+        <Menu.Item key="1">Clicking me will not close the menu.</Menu.Item>
+        <Menu.Item key="2">Clicking me will not close the menu also.</Menu.Item>
+        <Menu.Item key="3">Clicking me will close the menu</Menu.Item>
+      </Menu>
+    );
+    return (
+      <Dropdown overlay={overlayIsibleMenu}
+        onVisibleChange={this.handleVisibleChange}
+        visible={this.state.visible}
+      >
+        <a className="ant-dropdown-link" href="#">
+          Hover me <Icon type="arrow_drop_down" />
+        </a>
+      </Dropdown>
+    );
+  }
+}
+
+ReactDOM.render(<OverlayVisible />, document.getElementById('breadcrumb-overlay-isible'));
+</script>

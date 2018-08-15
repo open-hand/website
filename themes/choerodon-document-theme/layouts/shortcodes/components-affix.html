@@ -1,0 +1,47 @@
+<script type="text/babel">
+const { Affix, Button } = window['choerodon-ui'];
+
+// basic
+ReactDOM.render(
+  <div>
+    <Affix offsetTop={120}>
+      <Button type="primary">Affix top</Button>
+    </Affix>
+    <br />
+    <Affix offsetBottom={0}>
+      <Button type="primary">Affix bottom</Button>
+    </Affix>
+  </div>,
+  document.getElementById('affix-basic')
+);
+
+// affix-target
+
+class TargetDemo extends React.Component {
+  render() {
+    const ref = (node) => { this.container = node; }
+    const affixTarget = () => this.container;
+    return (
+      <div className="scrollable-container" ref={ref}>
+        <div className="background">
+          <Affix offsetTop={60} target={affixTarget}>
+            <Button type="primary">
+              Fixed at the top of container
+            </Button>
+          </Affix>
+        </div>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<TargetDemo />, document.getElementById('affix-demo-target'));
+
+// affix-change
+ReactDOM.render(
+  <Affix offsetTop={120}>
+    <Button>120px to affix top</Button>
+  </Affix>,
+  document.getElementById('affix-change')
+);
+</script>

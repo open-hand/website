@@ -1,0 +1,193 @@
+<script type="text/babel">
+const { Checkbox, Button, Row, Col } = window['choerodon-ui'];
+
+const marginBottomTwo = {
+  marginBottom: '20px'
+}
+const marginLeftOne = {
+  marginLeft: '10px'
+}
+
+const borderBottom = {
+  borderBottom: '1px solid #E9E9E9'
+}
+
+const defaultValue = ['Apple']
+
+const defaultValuePear = ['Pear']
+
+const widthPercent = {
+  width: '100%'
+}
+// basic
+function onChange(e) {
+  console.log(`checked = ${e.target.checked}`);
+}
+
+ReactDOM.render(
+  <Checkbox onChange={onChange}>Checkbox</Checkbox>,
+  document.getElementById('checkbox-basic'));
+
+// controller
+class App extends React.Component {
+  state = {
+    checked: true,
+    disabled: false,
+  };
+
+  render() {
+    const label = `${this.state.checked ? 'Checked' : 'Unchecked'}-${this.state.disabled ? 'Disabled' : 'Enabled'}`;
+    return (
+      <div>
+        <p style={marginBottomTwo}>
+          <Checkbox
+            checked={this.state.checked}
+            disabled={this.state.disabled}
+            onChange={this.onChange}
+          >
+            {label}
+          </Checkbox>
+        </p>
+        <p>
+          <Button
+            type="primary"
+            size="small"
+            onClick={this.toggleChecked}
+          >
+            {!this.state.checked ? 'Check' : 'Uncheck'}
+          </Button>
+          <Button
+            style={marginLeftOne}
+            type="primary"
+            size="small"
+            onClick={this.toggleDisable}
+          >
+            {!this.state.disabled ? 'Disable' : 'Enable'}
+          </Button>
+        </p>
+      </div>
+    );
+  }
+
+  toggleChecked = () => {
+    this.setState({ checked: !this.state.checked });
+  }
+
+  toggleDisable = () => {
+    this.setState({ disabled: !this.state.disabled });
+  }
+
+  onChange = (e) => {
+    console.log('checked = ', e.target.checked);
+    this.setState({
+      checked: e.target.checked,
+    });
+  }
+}
+
+ReactDOM.render(<App />, document.getElementById('checkbox-controller'));
+
+// all
+const CheckboxGroup = Checkbox.Group;
+
+const plainOptions = ['Apple', 'Pear', 'Orange'];
+const defaultCheckedList = ['Apple', 'Orange'];
+
+class AllApp extends React.Component {
+  state = {
+    checkedList: defaultCheckedList,
+    indeterminate: true,
+    checkAll: false,
+  };
+
+  render() {
+    return (
+      <div>
+        <div style={borderBottom}>
+          <Checkbox
+            indeterminate={this.state.indeterminate}
+            onChange={this.onCheckAllChange}
+            checked={this.state.checkAll}
+          >
+            Check all
+          </Checkbox>
+        </div>
+        <br />
+        <CheckboxGroup options={plainOptions} value={this.state.checkedList} onChange={this.onChange} />
+      </div>
+    );
+  }
+
+  onChange = (checkedList) => {
+    this.setState({
+      checkedList,
+      // indeterminate: !!checkedList.length && (checkedList.length < plainOptions.length),
+      checkAll: checkedList.length === plainOptions.length,
+    });
+  }
+
+  onCheckAllChange = (e) => {
+    this.setState({
+      checkedList: e.target.checked ? plainOptions : [],
+      indeterminate: false,
+      checkAll: e.target.checked,
+    });
+  }
+}
+
+ReactDOM.render(<AllApp />, document.getElementById('checkbox-all'));
+
+// disabled
+ReactDOM.render(
+  <div>
+    <Checkbox defaultChecked={false} disabled />
+    <br />
+    <Checkbox defaultChecked disabled />
+  </div>,
+  document.getElementById('checkbox-disabled'));
+
+// group
+function onChange(checkedValues) {
+  console.log('checked = ', checkedValues);
+}
+
+const options = [
+  { label: 'Apple', value: 'Apple' },
+  { label: 'Pear', value: 'Pear' },
+  { label: 'Orange', value: 'Orange' },
+];
+const optionsWithDisabled = [
+  { label: 'Apple', value: 'Apple' },
+  { label: 'Pear', value: 'Pear' },
+  { label: 'Orange', value: 'Orange', disabled: false },
+];
+
+ReactDOM.render(
+  <div>
+    <CheckboxGroup label="这是一个label" options={plainOptions} defaultValue={defaultValue} onChange={onChange} />
+    <br /><br />
+    <CheckboxGroup options={options} defaultValue={defaultValuePear} onChange={onChange} />
+    <br /><br />
+    <CheckboxGroup options={optionsWithDisabled} disabled defaultValue={defaultValue} onChange={onChange} />
+  </div>,
+  document.getElementById('checkbox-group'));
+
+// layout
+
+function onChange(checkedValues) {
+  console.log('checked = ', checkedValues);
+}
+
+ReactDOM.render(
+  <Checkbox.Group style={widthPercent} onChange={onChange}>
+    <Row>
+      <Col span={8}><Checkbox value="A">A</Checkbox></Col>
+      <Col span={8}><Checkbox value="B">B</Checkbox></Col>
+      <Col span={8}><Checkbox value="C">C</Checkbox></Col>
+      <Col span={8}><Checkbox value="D">D</Checkbox></Col>
+      <Col span={8}><Checkbox value="E">E</Checkbox></Col>
+    </Row>
+  </Checkbox.Group>,
+  document.getElementById('checkbox-layout')
+);
+</script>

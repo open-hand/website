@@ -1,0 +1,27 @@
+<script type="text/babel">
+const { BackTop } = window['choerodon-ui'];
+
+// basic
+ReactDOM.render(
+  <div>
+    <BackTop />
+    Scroll down to see the bottom-right
+    <strong> gray </strong>
+    button.
+  </div>,
+  document.getElementById('backTop-demo-basic')
+);
+
+// custom
+ReactDOM.render(
+  <div>
+    <BackTop>
+      <div className="ant-back-top-inner">UP</div>
+    </BackTop>
+    Scroll down to see the bottom-right
+    <strong> blue </strong>
+    button.
+  </div>,
+  document.getElementById('backTop-demo-custom')
+);
+</script>
