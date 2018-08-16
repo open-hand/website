@@ -55,25 +55,21 @@ weight = 5
 ## 视频介绍
 
 <div class="tutorial-img" id="tutorial-img">
-    <div class="col-lg-6 col-md-6 col-xs-12 tutorial">
-        <div class="tutorial-content" data-src="f0735vcyhgm">
-            <div class="mask">
-                <div class="head">
-                    <div class="title ellipsis">开发流水线</div>
-                    <a href="https://v.qq.com/x/page/f0735vcyhgm.html" target="_blank"><i class="iconfont icon-shijian" title="稍后观看"></i></a>
-                </div>
-                <div class="foot">
-                    <div class="description">以创建单接口调用的应用示例来介绍持续交付中开发流水线使用方法</div>
-                    <div class="info">
-                        <div class="begin">
-                            <i class="iconfont icon-play-button"></i>
-                            <div class="no-warp">开始</div>
-                        </div>
-                        <div class="time">15min</div>
-                    </div>
+    <div class="col-lg-4 col-md-4 col-xs-12 tutorial" data-src="f0735vcyhgm">
+        <div class="tutorial-head" style="background: url(/img/docs/quick-start/video/devops.svg)no-repeat center 100%;    background-size: cover;">
+            <div class="title">开发流水线</div>
+            <div class="time">
+                <div class="content">
+                    <i class="iconfont icon-play-button"></i>
+                    <div>15分14秒</div>
                 </div>
             </div>
-            <img class="n-max " src="/docs/quick-start/video-tutorial/img/develop.jpg">
+        </div>
+        <div class="tutorial-footer">
+            <div class="content">
+                <div class="title">开发流水线</div>
+                <div class="description">以创建单接口调用的应用示例来介绍持续交付中开发流水线使用方法</div>
+            </div>
         </div>
     </div>
 </div>

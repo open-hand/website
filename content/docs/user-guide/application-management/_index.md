@@ -52,25 +52,21 @@ icon = "icon-application-market"
 ## 视频介绍
 
 <div class="tutorial-img" id="tutorial-img">
-    <div class="col-lg-6 col-md-6 col-xs-12 tutorial">
-        <div class="tutorial-content" data-src="d0735n2dplx">
-            <div class="mask">
-                <div class="head">
-                    <div class="title ellipsis">应用发布</div>
-                    <a href="https://v.qq.com/x/page/d0735n2dplx.html" target="_blank"><i class="iconfont icon-shijian" title="稍后观看"></i></a>
-                </div>
-                <div class="foot">
-                    <div class="description">以发布并部署应用的示例来介绍持续交付中应用发布的使用方法</div>
-                    <div class="info">
-                        <div class="begin">
-                            <i class="iconfont icon-play-button"></i>
-                            <div class="no-warp">开始</div>
-                        </div>
-                        <div class="time">3min</div>
-                    </div>
+    <div class="col-lg-4 col-md-4 col-xs-12 tutorial" data-src="d0735n2dplx">
+        <div class="tutorial-head" style="background: url(/img/docs/quick-start/video/devops.svg)no-repeat center 100%;    background-size: cover;">
+            <div class="title">应用发布</div>
+            <div class="time">
+                <div class="content">
+                    <i class="iconfont icon-play-button"></i>
+                    <div>3分38秒</div>
                 </div>
             </div>
-            <img class="n-max " src="/docs/quick-start/video-tutorial/img/market.jpg">
+        </div>
+        <div class="tutorial-footer">
+            <div class="content">
+                <div class="title">应用发布</div>
+                <div class="description">以发布并部署应用的示例来介绍持续交付中应用发布的使用方法</div>
+            </div>
         </div>
     </div>
 </div>
