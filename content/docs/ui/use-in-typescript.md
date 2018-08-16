@@ -111,7 +111,7 @@ module.exports = function override(config, env) {
 
 ### 使用 ts-import-plugin
 
-[ts-import-plugin](https://github.com/Brooooooklyn/ts-import-plugin) 是一个用于按需加载组件代码和样式的 TypeScript 插件（[原理](/docs/react/getting-started#按需加载)），现在我们尝试安装它并修改 `config-overrides.js` 文件。
+[ts-import-plugin](https://github.com/Brooooooklyn/ts-import-plugin) 是一个用于按需加载组件代码和样式的 TypeScript 插件（[原理](../quick-start#按需加载)），现在我们尝试安装它并修改 `config-overrides.js` 文件。
 
 ```bash
 $ yarn add ts-import-plugin --dev
@@ -165,11 +165,11 @@ class App extends React.Component {
 export default App;
 ```
 
-最后重启 `yarn start` 访问页面，antd 组件的 js 和 css 代码都会按需加载，你在控制台也不会看到这样的[警告信息](https://zos.alipayobjects.com/rmsportal/vgcHJRVZFmPjAawwVoXK.png)。关于按需加载的原理和其他方式可以阅读[这里](/docs/react/getting-started#按需加载)。
+最后重启 `yarn start` 访问页面，antd 组件的 js 和 css 代码都会按需加载，你在控制台也不会看到这样的[警告信息](https://zos.alipayobjects.com/rmsportal/vgcHJRVZFmPjAawwVoXK.png)。关于按需加载的原理和其他方式可以阅读[这里](../quick-start#按需加载)。
 
 ### 自定义主题
 
-按照 [配置主题](/docs/react/customize-theme) 的要求，自定义主题需要用到 less 变量覆盖功能。我们可以引入 react-app-rewire 的 less 插件 [react-app-rewire-less](http://npmjs.com/react-app-rewire-less) 来帮助加载 less 样式，同时修改 `config-overrides.js` 文件。
+按照 [配置主题](../customize-theme) 的要求，自定义主题需要用到 less 变量覆盖功能。我们可以引入 react-app-rewire 的 less 插件 [react-app-rewire-less](http://npmjs.com/react-app-rewire-less) 来帮助加载 less 样式，同时修改 `config-overrides.js` 文件。
 
 ```bash
 $ yarn add react-app-rewire-less --dev
@@ -209,13 +209,13 @@ $ yarn add react-app-rewire-less --dev
 ```
 
 这里利用了 [less-loader](https://github.com/webpack/less-loader#less-options) 的 `modifyVars` 来进行主题配置，
-变量和其他配置方式可以参考 [配置主题](/docs/react/customize-theme) 文档。
+变量和其他配置方式可以参考 [配置主题](../customize-theme) 文档。
 
 修改后重启 `yarn start`，如果看到一个绿色的按钮就说明配置成功了。
 
 ## 其他方案
 
-你也可以根据 [在 create-react-app 中使用](/docs/react/use-with-create-react-app.zh-CN.md) 的介绍使用 [react-app-rewire-typescript][https://github.com/lwd-technology/react-app-rewire-typescript] 自己来配置 TypeScript 的开发环境。
+你也可以根据 [在 create-react-app 中使用](../use-with-create-react-app) 的介绍使用 [react-app-rewire-typescript][https://github.com/lwd-technology/react-app-rewire-typescript] 自己来配置 TypeScript 的开发环境。
 
 此外，还可以选择 [react-scripts-ts-antd](https://www.npmjs.com/package/react-scripts-ts-antd)，其中已经配置好了 ts-import-plugin、react-app-rewired、scss、less 等常用功能。只需一条命令即可生成一个免配置的 TypeScript 项目.
 ```bash

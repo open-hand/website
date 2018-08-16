@@ -493,7 +493,8 @@ i.note-number[data-value]::after {
     background-position: left;
     background-repeat: no-repeat;
     margin-bottom: 0.16rem;
-    max-width: 100%;
+    max-width: 100%!important;
+    border:none!important;
 }
 
 .docs-post .doc-home .access-list-item h4 {
