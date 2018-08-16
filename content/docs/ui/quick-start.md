@@ -203,7 +203,7 @@ import { Button } from 'choerodon-ui';
 
 ## 配置主题和字体
 
-- [改变主题](/docs/react/customize-theme)
+- [改变主题](../customize-theme)
 - [使用本地字体](https://github.com/ant-design/antd-init/tree/master/examples/local-iconfont)
 
 ## 小贴士

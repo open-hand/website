@@ -10,7 +10,7 @@ weight = 11
 ## 何时使用
 
 - 弹出一个下拉菜单给用户选择操作，用于代替原生的选择器，或者需要一个更优雅的多选器时。
-- 当选项少时（少于 5 项），建议直接将选项平铺，使用 [Radio](/components/radio/) 是更好的选择。
+- 当选项少时（少于 5 项），建议直接将选项平铺，使用 [Radio](../radio/) 是更好的选择。
 
 
 ## 代码演示
@@ -97,7 +97,7 @@ weight = 11
                 <div class="code-box-title"><a>智能提示</a></div>
                 <div>
                     <p>输入框自动完成功能，下面是一个账号注册表单的例子。</p>
-                    <p>推荐使用 <a href="/components/auto-complete-cn/">AutoComplete</a> 组件。</p>
+                    <p>推荐使用 <a href="../autoComplete/">AutoComplete</a> 组件。</p>
                 </div>
             </section>
         </section>
@@ -107,7 +107,7 @@ weight = 11
                 <div class="code-box-title"><a>联动</a></div>
                 <div>
                     <p>省市联动是典型的例子。</p>
-                    <p>推荐使用 <a href="/components/cascader-cn/">Cascader</a> 组件。</p>
+                    <p>推荐使用 <a href="../cascader/">Cascader</a> 组件。</p>
                 </div>
             </section>
         </section>

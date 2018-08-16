@@ -129,7 +129,7 @@ module.exports = function override(config, env) {
 
 ### 使用 babel-plugin-import
 
-[babel-plugin-import](https://github.com/ant-design/babel-plugin-import) 是一个用于按需加载组件代码和样式的 babel 插件（[原理](/docs/react/getting-started#按需加载)），现在我们尝试安装它并修改 `config-overrides.js` 文件。
+[babel-plugin-import](https://github.com/ant-design/babel-plugin-import) 是一个用于按需加载组件代码和样式的 babel 插件（[原理](../quick-start#按需加载)），现在我们尝试安装它并修改 `config-overrides.js` 文件。
 
 ```bash
 $ yarn add babel-plugin-import --dev
@@ -166,11 +166,11 @@ $ yarn add babel-plugin-import --dev
   export default App;
 ```
 
-最后重启 `yarn start` 访问页面，antd 组件的 js 和 css 代码都会按需加载，你在控制台也不会看到这样的[警告信息](https://zos.alipayobjects.com/rmsportal/vgcHJRVZFmPjAawwVoXK.png)。关于按需加载的原理和其他方式可以阅读[这里](/docs/react/getting-started#按需加载)。
+最后重启 `yarn start` 访问页面，antd 组件的 js 和 css 代码都会按需加载，你在控制台也不会看到这样的[警告信息](https://zos.alipayobjects.com/rmsportal/vgcHJRVZFmPjAawwVoXK.png)。关于按需加载的原理和其他方式可以阅读[这里](../quick-start#按需加载)。
 
 ### 自定义主题
 
-按照 [配置主题](/docs/react/customize-theme) 的要求，自定义主题需要用到 less 变量覆盖功能。我们可以引入 react-app-rewire 的 less 插件 [react-app-rewire-less](http://npmjs.com/react-app-rewire-less) 来帮助加载 less 样式，同时修改 `config-overrides.js` 文件。
+按照 [配置主题](../customize-theme) 的要求，自定义主题需要用到 less 变量覆盖功能。我们可以引入 react-app-rewire 的 less 插件 [react-app-rewire-less](http://npmjs.com/react-app-rewire-less) 来帮助加载 less 样式，同时修改 `config-overrides.js` 文件。
 
 ```bash
 $ yarn add react-app-rewire-less --dev
@@ -191,7 +191,7 @@ $ yarn add react-app-rewire-less --dev
 ```
 
 这里利用了 [less-loader](https://github.com/webpack/less-loader#less-options) 的 `modifyVars` 来进行主题配置，
-变量和其他配置方式可以参考 [配置主题](/docs/react/customize-theme) 文档。
+变量和其他配置方式可以参考 [配置主题](../customize-theme) 文档。
 
 修改后重启 `yarn start`，如果看到一个绿色的按钮就说明配置成功了。
 
