@@ -563,7 +563,7 @@ jQuery('.navbar .global-language').hover(function (e) {
 
 // 移除html锚点的移动效果
 jQuery(document).ready(function () {
-    if (isPC){
+    if (isPC && window.location.hash){
         var navHeight = $("#navigation").css("height");
     
         $("html, body").animate({ scrollTop: $(decodeURIComponent(window.location.hash)).offset().top - navHeight.split("px")[0] }, 500);
