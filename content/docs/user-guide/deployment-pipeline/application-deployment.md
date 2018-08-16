@@ -1,7 +1,7 @@
 ﻿+++
 title = "应用部署"
 description = "提供可视化、一键式部署应用，支持并行部署和流水线无缝集成，实现部署环境标准化和部署过程自动化"
-weight = 2
+weight = 3
 +++
 
 # 应用部署
@@ -57,6 +57,7 @@ weight = 2
  7. 点击 `部署应用` 按钮，完成部署。 
 
 ## 更多操作
+- [环境总览](../environments-overview)
 - [环境流水线](../environment-pipeline)
 - [容器管理](../container)
 - [网络管理](../service)

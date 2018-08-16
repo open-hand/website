@@ -1,7 +1,7 @@
 ﻿+++
 title = "环境流水线"
 description = "是面向平台管理员、项目创建者和项目所有者根据不同用途配置相对应的环境信息。可以创建环境，删除环境，及对环境详情信息进行编辑修改"
-weight = 1
+weight = 2
 +++
 
 # 环境流水线
@@ -150,6 +150,7 @@ weight = 1
 可在环境停用区查看已被停用的环境，点击卡片右上角`启用按钮` → ![启用按钮](/docs/user-guide/deployment-pipeline/image/start_button.png) 重新启用，重新启用后默认加至流水线最后一个节点。
 
 ## 更多操作
+- [环境总览](../environments-overview)
 - [应用部署](../application-deployment)
 - [实例管理](../instance)
 - [网络管理](../service)
