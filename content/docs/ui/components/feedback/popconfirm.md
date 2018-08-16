@@ -71,7 +71,7 @@ weight = 6
 | onCancel | 点击取消的回调 | function(e) | 无 |
 | onConfirm | 点击确认的回调 | function(e) | 无 |
 
-更多属性请参考 [Tooltip](/components/tooltip/#API)。
+更多属性请参考 [Tooltip](../../data-display/tooltip/#API)。
 
 ## 注意
 

@@ -76,7 +76,7 @@ weight = 8
 | content | 卡片内容 | string\|ReactNode | 无 |
 | title | 卡片标题 | string\|ReactNode | 无 |
 
-更多属性请参考 [Tooltip](/components/tooltip/#API)。
+更多属性请参考 [Tooltip](../tooltip/#API)。
 
 ## 注意
 

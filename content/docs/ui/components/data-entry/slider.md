@@ -58,7 +58,7 @@ weight = 12
             <section class="code-box-meta">
                 <div class="code-box-title"><a>带输入框的滑块</a></div>
                 <div>
-                    <p>和 <a href="/components/input-number-cn/">数字输入框</a> 组件保持同步。</p>
+                    <p>和 <a href="../inputNumber/">数字输入框</a> 组件保持同步。</p>
                 </div>
             </section>
         </section>

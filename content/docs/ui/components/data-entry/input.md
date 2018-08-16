@@ -97,7 +97,7 @@ weight = 7
             <section class="code-box-meta">
                 <div class="code-box-title"><a>输入时格式化展现</a></div>
                 <div>
-                    <p>结合 <a href="/components/tooltip-cn/">Tooltip</a> 组件，实现一个数值输入框，方便内容超长时的全量展现。</p>
+                    <p>结合 <a href="../../data-display/tooltip/">Tooltip</a> 组件，实现一个数值输入框，方便内容超长时的全量展现。</p>
                 </div>
             </section>
         </section>

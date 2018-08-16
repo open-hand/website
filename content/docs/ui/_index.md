@@ -15,7 +15,7 @@ weight = 7
 
 ## 支持环境
 
-* 现代浏览器和 IE9 及以上（需要 [polyfills](https://ant.design/docs/react/getting-started-cn#兼容性)）。
+* 现代浏览器和 IE9 及以上（需要 [polyfills](./quick-start#兼容性)）。
 * 支持服务端渲染。
 * [Electron](http://electron.atom.io/)
 
@@ -92,23 +92,3 @@ import 'choerodon-ui/dist/antd.css';  // or 'choerodon-ui/dist/antd.less'
    import 'choerodon-ui/lib/date-picker/style/css';        // 加载 CSS
    // import 'choerodon-ui/lib/date-picker/style';         // 加载 LESS
    ```
-
-## 链接
-
-- [首页](/)
-- [组件库](/docs/react/introduce)
-- [更新日志](/changelog)
-- [脚手架市场](http://scaffold.ant.design)
-- [Ant Design](http://ant.design/)
-- [React 底层基础组件](http://react-component.github.io/)
-- [移动端组件](http://mobile.ant.design)
-- [动效](https://motion.ant.design)
-- [设计规范速查手册](https://github.com/ant-design/ant-design/wiki/Ant-Design-%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80%E7%AE%80%E7%89%88)
-- [开发者说明](https://github.com/ant-design/ant-design/wiki/Development)
-- [版本发布规则](https://github.com/ant-design/ant-design/wiki/%E8%BD%AE%E5%80%BC%E8%A7%84%E5%88%99%E5%92%8C%E7%89%88%E6%9C%AC%E5%8F%91%E5%B8%83%E6%B5%81%E7%A8%8B)
-- [常见问题](https://github.com/ant-design/ant-design/wiki/FAQ)
-- [CodeSandbox 模板](https://u.ant.design/codesandbox-repro) for bug reports
-- [Awesome Ant Design](https://github.com/websemantics/awesome-ant-design)
-- [定制主题](/docs/react/customize-theme)
-
-> 强烈推荐阅读 [《提问的智慧》](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way)、[《如何向开源社区提问题》](https://github.com/seajs/seajs/issues/545) 和 [《如何有效地报告 Bug》](http://www.chiark.greenend.org.uk/%7Esgtatham/bugs-cn.html)、[《如何向开源项目提交无法解答的问题》](https://zhuanlan.zhihu.com/p/25795393)，更好的问题更容易获得帮助。
