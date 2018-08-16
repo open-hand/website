@@ -14,6 +14,8 @@
   "license": "ISC",
   "dependencies": {
     "grunt": "^1.0.3",
+    "gulp-clean-css": "^3.10.0",
+    "gulp-uglify": "^3.0.1",
     "html-entities": "^1.2.1",
     "marked": "^0.4.0",
     "string": "^3.3.3",
