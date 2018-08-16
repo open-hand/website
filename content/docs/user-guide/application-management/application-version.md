@@ -18,7 +18,7 @@ weight = 3
 
  1. 查看应用版本信息。
 
-列表字段
+![](/docs/user-guide/application-management/image/应用版本界面介绍.png "应用版本界面介绍") 
 
  - 版本：迭代升级中对应的不同版本；
 

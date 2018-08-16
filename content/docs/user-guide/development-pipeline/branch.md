@@ -72,20 +72,21 @@ weight = 2
     - 我们推荐使用 `github-flow` 为主，可以[参考](http://scottchacon.com/2011/08/31/github-flow.html) Scott Chacon 对于主流分支管理策略的探讨。
 
 ## 创建分支
+![](/docs/user-guide/development-pipeline/image/创建分支.png "创建分支") 
 
- 1. 点击`创建分支`按钮，创建对应分支；
+ - 点击`创建分支`按钮，创建对应分支；
 
- 1. 可选的为分支指定一个[问题](http://choerodon.io/zh/docs/user-guide/agile/issue/)，问题对应这个分支将要改动的内容；
+ - 可选的为分支指定一个[问题](http://choerodon.io/zh/docs/user-guide/agile/issue/)，问题对应这个分支将要改动的内容；
 
- 1. 指定分支来源，分支将会基于目标分支创建。
+ - 指定分支来源，分支将会基于目标分支创建。
 
- 1. 指定分支类型，这个分支将要完成的功能类型。
+ - 指定分支类型，这个分支将要完成的功能类型。
 
- 1. 输入分支名称。
+ - 输入分支名称。
 
- 1. 点击创建，完成创建分支。
+ - 点击创建，完成创建分支。
  
- 1. 具体分支的本地开发使用 [git](https://git-scm.com/book/zh/v1/%E8%B5%B7%E6%AD%A5) 。
+ - 具体分支的本地开发使用 [git](https://git-scm.com/book/zh/v1/%E8%B5%B7%E6%AD%A5) 。
 
  <blockquote class="note">
   分支名有唯一性校验。
@@ -94,12 +95,13 @@ weight = 2
 </blockquote>
 
 ## 分支列表操作
+![](/docs/user-guide/development-pipeline/image/分支列表.png "分支列表")
 
-1. 在分支列表上可以为分支修改关联的问题。
+- 在分支列表上可以为分支修改关联的问题。
 
-1. 在分支列表上可以为分支创建一个合并请求。
+- 在分支列表上可以为分支创建一个合并请求。
 
-1. 在分支列表上可以通过删除按钮删除分支。
+- 在分支列表上可以通过删除按钮删除分支。
 
 
 ## 操作规范
@@ -351,6 +353,7 @@ weight = 2
 </blockquote>
 
 ## 创建合并请求
+![](/docs/user-guide/development-pipeline/image/分支请求.png "分支请求")
 
 点击`创建合并请求`按钮，系统会默认打开gitlab的创建合并请求的界面，其中源分支就是点击列的分支，目标分支默认是master，用户可以更改。
 

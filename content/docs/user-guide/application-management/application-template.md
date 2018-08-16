@@ -20,6 +20,7 @@ weight = 1
 ## 创建应用模板
 
 输入`应用模板编码`，`名称`，`描述`，创建默认最简模板，步骤如下。您也可以通过复制于现有模板，以便节省部分共同操作，提升效率。
+![](/docs/user-guide/application-management/image/创建模板.png "创建模板")
 
    1. 点击`创建应用模板`按钮；
    1. 输入应用相关信息，进行数据校验
@@ -356,23 +357,21 @@ before_script:
 ## 查看应用模板详情
 
 在详情界面根据应用模板名称、应用模板编码、应用模板描述、应用模板地址、应用模板来源来查看应用模板详情。
+![](/docs/user-guide/application-management/image/应用模板.png "应用模板") 
 
-列表字段
-
- - 应用模板名称：应用模板的自定义名称；
- - 应用模板编码：应用模板的自定义编码；
- - 应用模板描述：应用模板的自定义描述；
- - 应用模板地址：应用模板的 Git 仓库地址；
- - 应用模板来源：有预定义和自定义两种来源。预定义是 Choerodon 系统预置的模板；自定义是由用户自己创建的模板；
+1. 应用模板名称：应用模板的自定义名称；
+2. 应用模板编码：应用模板的自定义编码；
+3. 应用模板描述：应用模板的自定义描述；
+4. 应用模板地址：应用模板的 Git 仓库地址；
+5. 应用模板来源：有预定义和自定义两种来源。预定义是 Choerodon 系统预置的模板；自定义是由用户自己创建的模板；
 
 ## 修改模板信息/删除模板
-![](/docs/user-guide/application-management/image/modify.png "modify") 
 
- 1. 点击`修改模板`→ ![修改环境按钮](/docs/user-guide/development-pipeline/image/update_env_button.png) 按钮 ，进行应用模板名称和描述的修改。
+- 点击`修改模板`→ ![修改环境按钮](/docs/user-guide/development-pipeline/image/update_env_button.png) 按钮 ，进行应用模板名称和描述的修改。
 
- 1. 点击`删除模板`→ ![删除网络按钮](/docs/user-guide/development-pipeline/image/del_net_button.png) 按钮，进行模板的删除。
+- 点击`删除模板`→ ![删除网络按钮](/docs/user-guide/development-pipeline/image/del_net_button.png) 按钮，进行模板的删除。
 
- 1. 预定义模板无法删除；
+- 预定义模板无法删除；
 
 <blockquote class="warning">
 若删除模板，该条数据将被永久删除，不可恢复!

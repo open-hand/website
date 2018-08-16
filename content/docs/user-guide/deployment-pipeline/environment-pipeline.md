@@ -132,15 +132,15 @@ weight = 1
 
  2. 查看应用环境的运行情况。
 
-	>- 在环境卡片中，点击`复制指令`→ ![复制指令按钮](/docs/user-guide/deployment-pipeline/image/copy_button.png) ，复制代码至Kubernetes运行，与平台建立链接。
-	>- 在环境卡片中，点击`修改环境`→ ![修改环境按钮](/docs/user-guide/deployment-pipeline/image/update_env_button.png) ，修改环境名称及描述。
-	>- 在环境卡片中，点击`禁用环境`→ ![停用按钮](/docs/user-guide/deployment-pipeline/image/stop_button.png) ，当点击确认后，该环境将被禁用。
-	  	<blockquote class="warning">
-       		当环境中有运行中的实例，网络，域名时，环境不可禁用！
-    	</blockquote>
+![应用环境](/docs/user-guide/deployment-pipeline/image/应用环境.png)
  
-		
-
+- 在环境卡片中，点击`复制指令`→ ![复制指令按钮](/docs/user-guide/deployment-pipeline/image/copy_button.png) ，复制代码至Kubernetes运行，与平台建立链接。
+- 在环境卡片中，点击`修改环境`→ ![修改环境按钮](/docs/user-guide/deployment-pipeline/image/update_env_button.png) ，修改环境名称及描述。
+-  在环境卡片中，点击`禁用环境`→ ![停用按钮](/docs/user-guide/deployment-pipeline/image/stop_button.png) ，当点击确认后，该环境将被禁用。
+ <blockquote class="warning">
+    当环境中有运行中的实例，网络，域名时，环境不可禁用！
+    </blockquote>
+ 
 ## 环境客户端补充说明
 
 环境客户端使用了平台的 [Choerodon-Agent](../../../concept/choerodon-agent/) 技术，通过 websocket 方式连接到猪齿鱼平台。双方通过 `command/response` 方式来进行交互，来完成 `helm release` 的管理、网络管理、 k8s 对象监听和容器日志和 shell 等功能。 
