@@ -54,3 +54,6 @@ weight = 1
 - [累积流量图](../cumulative-flow)
 - [冲刺报告](../sprint)
 - [版本报告](../version-report)
+- [迭代速度图](../iterative-chart)
+- [史诗报告](../epic-report)
+- [统计图](../statistical)
