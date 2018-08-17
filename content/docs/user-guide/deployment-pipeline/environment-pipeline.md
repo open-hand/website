@@ -1,7 +1,7 @@
 ﻿+++
 title = "环境流水线"
 description = "是面向平台管理员、项目创建者和项目所有者根据不同用途配置相对应的环境信息。可以创建环境，删除环境，及对环境详情信息进行编辑修改"
-weight = 1
+weight = 2
 +++
 
 # 环境流水线
@@ -25,7 +25,8 @@ weight = 1
 - 进入`部署流水线`后，点击 `环境流水线` 页签；
  
  **1. 前置条件**
- - 使用集群节点地址，用户名，密码连接到所要创建环境的集群机器上，确保集群内安装了helm
+
+ - 使用集群节点地址，用户名，密码连接到所要创建环境的集群机器上，确保集群内安装了helm。
 
 
 **2. 创建环境**
@@ -41,7 +42,7 @@ weight = 1
 
 	环境名称：平台环境的显示名称。现在为10个字符。
 	
-	环境描述：环境的描述，限制为60字符
+	环境描述：环境的描述，限制为60字符。
 
     <blockquote class="note">
         根据用途配置不同的环境，常见的有开发环境，集成测试环境，用户访问测试环境及正式环境。新环境默认新增在环境流水线的最后一个节点。
@@ -131,15 +132,15 @@ weight = 1
 
  2. 查看应用环境的运行情况。
 
-	>- 在环境卡片中，点击`复制指令`→ ![复制指令按钮](/docs/user-guide/deployment-pipeline/image/copy_button.png) ，复制代码至Kubernetes运行，与平台建立链接。
-	>- 在环境卡片中，点击`修改环境`→ ![修改环境按钮](/docs/user-guide/deployment-pipeline/image/update_env_button.png) ，修改环境名称及描述。
-	>- 在环境卡片中，点击`禁用环境`→ ![停用按钮](/docs/user-guide/deployment-pipeline/image/stop_button.png) ，当点击确认后，该环境将被禁用。
-	  	<blockquote class="warning">
-       		当环境中有运行中的实例，网络，域名时，环境不可禁用！
-    	</blockquote>
+![应用环境](/docs/user-guide/deployment-pipeline/image/应用环境.png)
  
-		
-
+- 在环境卡片中，点击`复制指令`→ ![复制指令按钮](/docs/user-guide/deployment-pipeline/image/copy_button.png) ，复制代码至Kubernetes运行，与平台建立链接。
+- 在环境卡片中，点击`修改环境`→ ![修改环境按钮](/docs/user-guide/deployment-pipeline/image/update_env_button.png) ，修改环境名称及描述。
+-  在环境卡片中，点击`禁用环境`→ ![停用按钮](/docs/user-guide/deployment-pipeline/image/stop_button.png) ，当点击确认后，该环境将被禁用。
+ <blockquote class="warning">
+    当环境中有运行中的实例，网络，域名时，环境不可禁用！
+    </blockquote>
+ 
 ## 环境客户端补充说明
 
 环境客户端使用了平台的 [Choerodon-Agent](../../../concept/choerodon-agent/) 技术，通过 websocket 方式连接到猪齿鱼平台。双方通过 `command/response` 方式来进行交互，来完成 `helm release` 的管理、网络管理、 k8s 对象监听和容器日志和 shell 等功能。 
@@ -148,5 +149,10 @@ weight = 1
 
 可在环境停用区查看已被停用的环境，点击卡片右上角`启用按钮` → ![启用按钮](/docs/user-guide/deployment-pipeline/image/start_button.png) 重新启用，重新启用后默认加至流水线最后一个节点。
 
+## 更多操作
+- [环境总览](../environments-overview)
+- [应用部署](../application-deployment)
+- [实例管理](../instance)
+- [网络管理](../service)
 
  

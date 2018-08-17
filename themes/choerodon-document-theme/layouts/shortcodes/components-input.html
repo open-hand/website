@@ -1,0 +1,355 @@
+<script type="text/babel">
+const { Input, Row, Col, Select, Icon,InputNumber, DatePicker, AutoComplete, Cascader,Tooltip } = window['choerodon-ui'];
+// basic
+ReactDOM.render(
+  <Row gutter={8}>
+    <Col span={12}>
+      <Input placeholder="Basic usage" maxLength={50} required label="Basic" copy />
+    </Col>
+    <Col span={12}>
+      <Input defaultValue="123" placeholder="Basic usage" maxLength={20} required label="Basic" disabled />
+    </Col>
+  </Row>,
+  document.getElementById('input-demo-basic'));
+
+// label
+const Option = Select.Option;
+const ninthWidth ={
+  width: 90
+}
+const eightWidth ={
+  width: 80
+}
+const sixtheenMarginBottom = {
+  marginBottom: 16
+}
+const settingIcon = <Icon type="setting" />
+const selectBefore = (
+  <Select defaultValue="Http://" style={ninthWidth}>
+    <Option value="Http://">Http://</Option>
+    <Option value="Https://">Https://</Option>
+  </Select>
+);
+const selectAfter = (
+  <Select defaultValue=".com" style={eightWidth}>
+    <Option value=".com">.com</Option>
+    <Option value=".jp">.jp</Option>
+    <Option value=".cn">.cn</Option>
+    <Option value=".org">.org</Option>
+  </Select>
+);
+
+ReactDOM.render(
+  <div>
+    <div style={sixtheenMarginBottom}>
+      <Input addonBefore="Http://" addonAfter=".com" defaultValue="mysite" maxLength={30} />
+    </div>
+    <div style={sixtheenMarginBottom}>
+      <Input addonBefore={selectBefore} addonAfter={selectAfter} defaultValue="mysite" />
+    </div>
+    <div style={sixtheenMarginBottom}>
+      <Input addonAfter={settingIcon} label="mysite" />
+    </div>
+  </div>,
+  document.getElementById('input-demo-label'));
+
+// search
+const twoWidth ={
+  width: 200
+}
+const Search = Input.Search;
+
+ReactDOM.render(
+  <div>
+    <Search
+      placeholder="input search text"
+      style={twoWidth}
+    />
+    <br /><br />
+    <Search
+      placeholder="input search text"
+      enterButton
+    />
+    <br /><br />
+    <Search placeholder="input search text" enterButton="Search" size="large" />
+  </div>,
+  document.getElementById('input-demo-search'));
+
+// autoHeight
+const autoHeightmargin = {
+  margin: '24px 0' 
+}
+const autosize = {
+  minRows: 2, maxRows: 6
+}
+const { TextArea } = Input;
+
+ReactDOM.render(
+  <div>
+    <TextArea placeholder="Autosize height based on content lines" autosize ></TextArea>
+    <div style={autoHeightmargin} />
+    <TextArea placeholder="Autosize height with minimum and maximum number of lines" autosize={autosize} ></TextArea>
+  </div>,
+  document.getElementById('input-demo-autoHeight'));
+
+// presuffix
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      userName: 'xxx',
+    };
+  }
+
+  emitEmpty = () => {
+    this.userNameInput.focus();
+    this.setState({ userName: '' });
+  }
+
+  onChangeUserName = (e) => {
+    this.setState({ userName: e.target.value });
+  }
+  render() {
+    const { userName } = this.state;
+    const closeIcon = <Icon type="close" onClick={this.emitEmpty} />;
+    const suffix = userName ? closeIcon : null;
+    const ref = node => this.userNameInput = node;
+    return (
+      <Input
+        placeholder="Enter your username"
+        prefix="input-"
+        suffix={suffix}
+        label="username"
+        value={userName}
+        onChange={this.onChangeUserName}
+        ref={ref}
+        copy
+      />
+    );
+  }
+}
+
+ReactDOM.render(<App />, document.getElementById('input-demo-presuffix'));
+
+// size
+ReactDOM.render(
+  <div className="example-input">
+    <Input size="large" placeholder="large size" label="Large" maxLength="20" />
+    <Input placeholder="default size" />
+    <Input size="small" placeholder="small size" label="small" />
+  </div>,
+  document.getElementById('input-demo-size'));
+
+// group
+const InputGroup = Input.Group;
+
+const options = [{
+  value: 'zhejiang',
+  label: 'Zhejiang',
+  children: [{
+    value: 'hangzhou',
+    label: 'Hangzhou',
+    children: [{
+      value: 'xihu',
+      label: 'West Lake',
+    }],
+  }],
+}, {
+  value: 'jiangsu',
+  label: 'Jiangsu',
+  children: [{
+    value: 'nanjing',
+    label: 'Nanjing',
+    children: [{
+      value: 'zhonghuamen',
+      label: 'Zhong Hua Men',
+    }],
+  }],
+}];
+
+class CompactDemo extends React.Component {
+  state = {
+    dataSource: [],
+  }
+
+  handleChange = (value) => {
+    this.setState({
+      dataSource: !value || value.indexOf('@') >= 0 ? [] : [
+        `${value}@gmail.com`,
+        `${value}@163.com`,
+        `${value}@qq.com`,
+      ],
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        <InputGroup size="large">
+          <Col span={5}>
+            <Input defaultValue="0571" />
+          </Col>
+          <Col span={8}>
+            <Input defaultValue="26888888" />
+          </Col>
+        </InputGroup>
+        <br />
+        <InputGroup compact>
+          <Input  defaultValue="0571" />
+          <Input  defaultValue="26888888" />
+        </InputGroup>
+        <br />
+        <InputGroup compact>
+          <Select defaultValue="Zhejiang">
+            <Option value="Zhejiang">Zhejiang</Option>
+            <Option value="Jiangsu">Jiangsu</Option>
+          </Select>
+          <Input defaultValue="Xihu District, Hangzhou" />
+        </InputGroup>
+        <br />
+        <InputGroup compact>
+          <Select defaultValue="Option1">
+            <Option value="Option1">Option1</Option>
+            <Option value="Option2">Option2</Option>
+          </Select>
+          <Input  defaultValue="input content" />
+          <InputNumber />
+        </InputGroup>
+        <br />
+        <InputGroup compact>
+          <Input defaultValue="input content" />
+          <DatePicker />
+        </InputGroup>
+        <br />
+        <InputGroup compact>
+          <Select defaultValue="Option1-1">
+            <Option value="Option1-1">Option1-1</Option>
+            <Option value="Option1-2">Option1-2</Option>
+          </Select>
+          <Select defaultValue="Option2-2">
+            <Option value="Option2-1">Option2-1</Option>
+            <Option value="Option2-2">Option2-2</Option>
+          </Select>
+        </InputGroup>
+        <br />
+        <InputGroup compact>
+          <Select defaultValue="1">
+            <Option value="1">Between</Option>
+            <Option value="2">Except</Option>
+          </Select>
+          <Input placeholder="Minimum" />
+          <Input value="~" disabled />
+          <Input placeholder="Maximum" />
+        </InputGroup>
+        <br />
+        <InputGroup compact>
+          <Select defaultValue="Sign Up">
+            <Option value="Sign Up">Sign Up</Option>
+            <Option value="Sign In">Sign In</Option>
+          </Select>
+          <AutoComplete
+            dataSource={this.state.dataSource}
+            onChange={this.handleChange}
+            placeholder="Email"
+          />
+        </InputGroup>
+        <br />
+        <InputGroup compact>
+          <Select defaultValue="Home">
+            <Option value="Home">Home</Option>
+            <Option value="Company">Company</Option>
+          </Select>
+          <Cascader options={options} placeholder="Select Address" />
+        </InputGroup>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<CompactDemo />, document.getElementById('input-demo-group'));
+
+// field
+
+ReactDOM.render(<TextArea rows={4} maxLength={20} label="textarea" placeholder="textarea usage" > </TextArea>, document.getElementById('input-demo-field'));
+
+// format
+function formatNumber(value) {
+  value += '';
+  const list = value.split('.');
+  const prefix = list[0].charAt(0) === '-' ? '-' : '';
+  let num = prefix ? list[0].slice(1) : list[0];
+  let result = '';
+  while (num.length > 3) {
+    result = `,${num.slice(-3)}${result}`;
+    num = num.slice(0, num.length - 3);
+  }
+  if (num) {
+    result = num + result;
+  }
+  return `${prefix}${result}${list[1] ? `.${list[1]}` : ''}`;
+}
+
+class NumericInput extends React.Component {
+  onChange = (e) => {
+    const { value } = e.target;
+    const reg = /^-?(0|[1-9][0-9]*)(\.[0-9]*)?$/;
+    if ((!isNaN(value) && reg.test(value)) || value === '' || value === '-') {
+      this.props.onChange(value);
+    }
+  }
+
+  // '.' at the end or only '-' in the input box.
+  onBlur = () => {
+    const { value, onBlur, onChange } = this.props;
+    if (value.charAt(value.length - 1) === '.' || value === '-') {
+      onChange({ value: value.slice(0, -1) });
+    }
+    if (onBlur) {
+      onBlur();
+    }
+  }
+
+  render() {
+    const { value } = this.props;
+    const title = value ? (
+      <span className="numeric-input-title">
+        {value !== '-' ? formatNumber(value) : '-'}
+      </span>
+    ) : 'Input a number';
+    const focus = ['focus'];
+    return (
+      <Tooltip
+        trigger={focus}
+        title={title}
+        placement="topLeft"
+        overlayClassName="numeric-input"
+      >
+        <Input
+          {...this.props}
+          onChange={this.onChange}
+          onBlur={this.onBlur}
+          placeholder="Input a number"
+          maxLength="25"
+        />
+      </Tooltip>
+    );
+  }
+}
+
+class NumericInputDemo extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { value: '' };
+  }
+
+  onChange = (value) => {
+    this.setState({ value });
+  }
+
+  render() {
+    return <NumericInput value={this.state.value} onChange={this.onChange} />;
+  }
+}
+
+ReactDOM.render(<NumericInputDemo />, document.getElementById('input-demo-format'));
+</script>

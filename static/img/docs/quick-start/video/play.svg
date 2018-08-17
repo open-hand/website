@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="42px" height="42px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>播放</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="视频教程页" transform="translate(-453.000000, -1430.000000)" fill-rule="nonzero">
+            <g id="测试管理" transform="translate(329.000000, 1292.000000)">
+                <g id="Group-2" transform="translate(0.000000, 58.000000)">
+                    <g id="播放" transform="translate(124.000000, 80.000000)">
+                        <path d="M21,0 C9.45,0 0,9.45 0,21 C0,32.55 9.45,42 21,42 C32.55,42 42,32.55 42,21 C42,9.45 32.55,0 21,0 Z" id="Shape" fill="#FFFFFF"></path>
+                        <path d="M28.0545582,17.8474386 L20.9926438,12.9331517 C18.6092477,11.2641486 16.5789473,12.3768173 16.5789474,15.4366563 L16.5789474,26.5633437 C16.5789474,29.6231827 18.5209738,30.7358514 20.9926438,29.0668483 L28.0545582,24.1525614 C30.4379543,22.2981135 30.4379543,19.5164417 28.0545582,17.8474386 Z" id="Shape" fill="#3F51B5"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

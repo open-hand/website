@@ -1,0 +1,82 @@
+<script type="text/babel">
+const { Tooltip, Button } = window['choerodon-ui'];
+
+// basic
+
+ReactDOM.render(
+  <Tooltip title="prompt text">
+    <span>Tooltip will show when mouse enter.</span>
+  </Tooltip>,
+  document.getElementById('tooltip-demo-basic'));
+
+// arrow
+
+ReactDOM.render(
+  <div>
+    <Tooltip placement="topLeft" title="Prompt Text">
+      <Button>Align edge / 边缘对齐</Button>
+    </Tooltip>
+    <Tooltip placement="topLeft" title="Prompt Text" arrowPointAtCenter>
+      <Button>Arrow points to center / 箭头指向中心</Button>
+    </Tooltip>
+  </div>,
+  document.getElementById('tooltip-demo-arrow'));
+
+// location
+const text = <span>prompt text</span>;
+
+const buttonWidth = 70;
+const locationDivOneStyle = { marginLeft: buttonWidth, whiteSpace: 'nowrap' };
+const locationDivTwoStyle = { width: buttonWidth, float: 'left' };
+const locationDivThreeStyle = { width: buttonWidth, marginLeft: (buttonWidth * 3) + 24 };
+const locationDivFourStyle = { marginLeft: buttonWidth, clear: 'both', whiteSpace: 'nowrap' };
+
+ReactDOM.render(
+  <div className="demo">
+    <div style={locationDivOneStyle}>
+      <Tooltip placement="topLeft" title={text}>
+        <Button>TL</Button>
+      </Tooltip>
+      <Tooltip placement="top" title={text}>
+        <Button>Top</Button>
+      </Tooltip>
+      <Tooltip placement="topRight" title={text}>
+        <Button>TR</Button>
+      </Tooltip>
+    </div>
+    <div style={locationDivTwoStyle}>
+      <Tooltip placement="leftTop" title={text}>
+        <Button>LT</Button>
+      </Tooltip>
+      <Tooltip placement="left" title={text}>
+        <Button>Left</Button>
+      </Tooltip>
+      <Tooltip placement="leftBottom" title={text}>
+        <Button>LB</Button>
+      </Tooltip>
+    </div>
+    <div style={locationDivThreeStyle}>
+      <Tooltip placement="rightTop" title={text}>
+        <Button>RT</Button>
+      </Tooltip>
+      <Tooltip placement="right" title={text}>
+        <Button>Right</Button>
+      </Tooltip>
+      <Tooltip placement="rightBottom" title={text}>
+        <Button>RB</Button>
+      </Tooltip>
+    </div>
+    <div style={locationDivFourStyle}>
+      <Tooltip placement="bottomLeft" title={text}>
+        <Button>BL</Button>
+      </Tooltip>
+      <Tooltip placement="bottom" title={text}>
+        <Button>Bottom</Button>
+      </Tooltip>
+      <Tooltip placement="bottomRight" title={text}>
+        <Button>BR</Button>
+      </Tooltip>
+    </div>
+  </div>,
+  document.getElementById('tooltip-demo-location'));
+</script>

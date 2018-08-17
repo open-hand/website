@@ -1,0 +1,355 @@
+<script type="text/babel">
+  const { Layout, Menu, Breadcrumb,Icon } = window['choerodon-ui'];
+  const { Header, Footer, Sider, Content } = Layout;
+  const { SubMenu } = Menu;
+  // layout-basic
+  ReactDOM.render(
+    <div>
+      <Layout>
+        <Header>Header</Header>
+        <Content>Content</Content>
+        <Footer>Footer</Footer>
+      </Layout>
+
+      <Layout>
+        <Header>Header</Header>
+        <Layout>
+          <Sider>Sider</Sider>
+          <Content>Content</Content>
+        </Layout>
+        <Footer>Footer</Footer>
+      </Layout>
+
+      <Layout>
+        <Header>Header</Header>
+        <Layout>
+          <Content>Content</Content>
+          <Sider>Sider</Sider>
+        </Layout>
+        <Footer>Footer</Footer>
+      </Layout>
+
+      <Layout>
+        <Sider>Sider</Sider>
+        <Layout>
+          <Header>Header</Header>
+          <Content>Content</Content>
+          <Footer>Footer</Footer>
+        </Layout>
+      </Layout>
+    </div>,
+    document.getElementById('layout-basic'));
+
+  // layout-top
+  const topLogoStyle ={
+    width: '120px',
+    height: '31px',
+    background: 'rgba(255,255,255,.2)',
+    margin: '16px 28px 16px 0',
+    float: 'left',
+  }
+  ReactDOM.render(
+    <Layout className="layout">
+      <Header>
+        <div className="logo" style={topLogoStyle}/>
+        <Menu
+          theme="dark"
+          mode="horizontal"
+          id = "layout-top-menu"
+        >
+          <Menu.Item key="1">nav 1</Menu.Item>
+          <Menu.Item key="2">nav 2</Menu.Item>
+          <Menu.Item key="3">nav 3</Menu.Item>
+        </Menu>
+      </Header>
+      <Content id="layout-top-content">
+        <Breadcrumb className="layout-top-Breadcrumb">
+          <Breadcrumb.Item>Home</Breadcrumb.Item>
+          <Breadcrumb.Item>List</Breadcrumb.Item>
+          <Breadcrumb.Item>App</Breadcrumb.Item>
+        </Breadcrumb>
+        <div id = "layout-top-div">Content</div>
+      </Content>
+      <Footer id = "layout-top-footer">
+        Ant Design ©2016 Created by Ant UED
+      </Footer>
+    </Layout>,
+    document.getElementById('layout-top'));
+    
+  // layout-top-side-menu
+  const topSideMenulogoStyle ={
+    width: '120px',
+    height: '31px',
+    background: 'rgba(255,255,255,.2)',
+    margin: '16px 28px 16px 0',
+    float: 'left',
+  }
+  const defaultSelectedKeys = ['1'];
+  const defaultOpenKeys = ['sub1'];
+  ReactDOM.render(
+    <Layout>
+      <Header className="header">
+        <div className="logo" style={topSideMenulogoStyle}/>
+        <Menu
+          theme="dark"
+          mode="horizontal"
+          id = "layout-top-side-menu-menu"
+        >
+          <Menu.Item key="1">nav 1</Menu.Item>
+          <Menu.Item key="2">nav 2</Menu.Item>
+          <Menu.Item key="3">nav 3</Menu.Item>
+        </Menu>
+      </Header>
+      <Layout>
+        <Sider width={200} id = "layout-top-side-menu-sider">
+          <Menu
+            mode="inline"
+            defaultSelectedKeys={defaultSelectedKeys}
+            defaultOpenKeys={defaultOpenKeys}
+            id = "layout-top-side-menu-sider-menu"
+          >
+            <SubMenu key="sub1" title="subnav 1">
+              <Menu.Item key="1">option1</Menu.Item>
+              <Menu.Item key="2">option2</Menu.Item>
+              <Menu.Item key="3">option3</Menu.Item>
+              <Menu.Item key="4">option4</Menu.Item>
+            </SubMenu>
+            <SubMenu key="sub2" title="subnav 2">
+              <Menu.Item key="5">option5</Menu.Item>
+              <Menu.Item key="6">option6</Menu.Item>
+              <Menu.Item key="7">option7</Menu.Item>
+              <Menu.Item key="8">option8</Menu.Item>
+            </SubMenu>
+            <SubMenu key="sub3" title="subnav 3">
+              <Menu.Item key="9">option9</Menu.Item>
+              <Menu.Item key="10">option10</Menu.Item>
+              <Menu.Item key="11">option11</Menu.Item>
+              <Menu.Item key="12">option12</Menu.Item>
+            </SubMenu>
+          </Menu>
+        </Sider>
+        <Layout id = "layout-top-side-menu-layout">
+          <Breadcrumb className="layout-top-side-menu-breadcrumb">
+            <Breadcrumb.Item>Home</Breadcrumb.Item>
+            <Breadcrumb.Item>List</Breadcrumb.Item>
+            <Breadcrumb.Item>App</Breadcrumb.Item>
+          </Breadcrumb>
+          <Content id = "layout-top-side-menu-layout-content">
+            Content
+          </Content>
+        </Layout>
+      </Layout>
+    </Layout>,
+    document.getElementById('layout-top-side-menu'));
+
+    // layout-top-side
+    const topSideLogoStyle ={
+      width: '120px',
+      height: '31px',
+      background: 'rgba(255,255,255,.2)',
+      margin: '16px 28px 16px 0',
+      float: 'left',
+    }
+  ReactDOM.render(
+    <Layout>
+      <Header className="header">
+        <div className="logo" style={topSideLogoStyle}/>
+        <Menu
+          theme="dark"
+          mode="horizontal"
+          id = "layout-top-side-react-menu"
+        >
+          <Menu.Item key="1">nav 1</Menu.Item>
+          <Menu.Item key="2">nav 2</Menu.Item>
+          <Menu.Item key="3">nav 3</Menu.Item>
+        </Menu>
+      </Header>
+      <Content id = "layout-top-side-react-content">
+        <Breadcrumb className = "layout-top-side-react-breadcrumb">
+          <Breadcrumb.Item>Home</Breadcrumb.Item>
+          <Breadcrumb.Item>List</Breadcrumb.Item>
+          <Breadcrumb.Item>App</Breadcrumb.Item>
+        </Breadcrumb>
+        <Layout id = "layout-top-side-react-layout">
+          <Sider className = "white-back" width={200}>
+            <Menu
+              mode="inline"
+              className = "height-one-hundred-percent"
+            >
+              <SubMenu key="sub1" title="subnav 1">
+                <Menu.Item key="1">option1</Menu.Item>
+                <Menu.Item key="2">option2</Menu.Item>
+                <Menu.Item key="3">option3</Menu.Item>
+                <Menu.Item key="4">option4</Menu.Item>
+              </SubMenu>
+              <SubMenu key="sub2" title="subnav 2">
+                <Menu.Item key="5">option5</Menu.Item>
+                <Menu.Item key="6">option6</Menu.Item>
+                <Menu.Item key="7">option7</Menu.Item>
+                <Menu.Item key="8">option8</Menu.Item>
+              </SubMenu>
+              <SubMenu key="sub3" title="subnav 3">
+                <Menu.Item key="9">option9</Menu.Item>
+                <Menu.Item key="10">option10</Menu.Item>
+                <Menu.Item key="11">option11</Menu.Item>
+                <Menu.Item key="12">option12</Menu.Item>
+              </SubMenu>
+            </Menu>
+          </Sider>
+          <Content id = "layout-top-side-react-content">
+            Content
+          </Content>
+        </Layout>
+      </Content>
+      <Footer className="center-text">
+        Ant Design ©2016 Created by Ant UED
+      </Footer>
+    </Layout>,
+    document.getElementById('layout-top-side'));
+
+  // layout-side
+  const layoutStyle = {
+    minHeight: '100vh',
+  };
+  const HeaderStyle = {
+    background: '#fff', padding: 0,
+  };
+  const ContentStyle = {
+    margin: '0 16px'
+  };
+  const BreadcrumbStyle = {
+    margin: '16px 0'
+  };
+  const divStyle = {
+    padding: 24, background: '#fff', minHeight: 360
+  };
+  const footerStyle = {
+    textAlign: 'center',
+  };
+  const logoStyle ={
+    height: '32px',
+    background: 'rgba(255,255,255,.2)',
+    margin: '16px',
+  }
+
+  // layout-trigger
+  const triggerHeaderStyle = {
+    background: '#fff', padding: 0
+  }
+  const triggerContentStyle = {
+    margin: '24px 16px', padding: 24, background: '#fff', minHeight: 280
+  }
+
+class SiderDemoTrriger extends React.Component {
+  state = {
+    collapsed: false,
+  };
+
+  toggle = () => {
+    this.setState({
+      collapsed: !this.state.collapsed,
+    });
+  }
+
+  render() {
+    return (
+      <Layout>
+        <Sider
+          trigger={null}
+          collapsible
+          collapsed={this.state.collapsed}
+        >
+          <div className="logo" />
+          <Menu theme="dark" mode="inline">
+            <Menu.Item key="1">
+              <Icon type="user" />
+              <span>nav 1</span>
+            </Menu.Item>
+            <Menu.Item key="2">
+              <Icon type="video-camera" />
+              <span>nav 2</span>
+            </Menu.Item>
+            <Menu.Item key="3">
+              <Icon type="upload" />
+              <span>nav 3</span>
+            </Menu.Item>
+          </Menu>
+        </Sider>
+        <Layout>
+          <Header style={triggerHeaderStyle}>
+            <Icon
+              className="trigger"
+              onClick={this.toggle}
+            />
+          </Header>
+          <Content style={triggerContentStyle}>
+            Content
+          </Content>
+        </Layout>
+      </Layout>
+    );
+  }
+}
+
+ReactDOM.render(<SiderDemoTrriger />, document.getElementById('layout-trigger'));
+
+// layout-responsive
+const responsiveHeaderStyle = {
+  background: '#fff', padding: 0,
+}
+const responsiveContentStyle={
+  margin: '24px 16px 0'
+}
+const responsivedivStyle ={
+  padding: 24, background: '#fff', minHeight: 360
+}
+const responsiveFooterStyle = {
+  textAlign: 'center'
+}
+ReactDOM.render(
+  <Layout>
+    <Sider
+      breakpoint="lg"
+      collapsedWidth="0"
+      onCollapse={(collapsed, type) => { console.log(collapsed, type); }}
+    >
+      <div className="logo" />
+      <Menu theme="dark" mode="inline">
+        <Menu.Item key="1">
+          <Icon type="user" />
+          <span className="nav-text">nav 1</span>
+        </Menu.Item>
+        <Menu.Item key="2">
+          <Icon type="video-camera" />
+          <span className="nav-text">nav 2</span>
+        </Menu.Item>
+        <Menu.Item key="3">
+          <Icon type="upload" />
+          <span className="nav-text">nav 3</span>
+        </Menu.Item>
+        <Menu.Item key="4">
+          <Icon type="user" />
+          <span className="nav-text">nav 4</span>
+        </Menu.Item>
+      </Menu>
+    </Sider>
+    <Layout>
+      <Header style={responsiveHeaderStyle} />
+      <Content style={responsiveContentStyle}>
+        <div style={responsivedivStyle}>
+          content
+        </div>
+      </Content>
+      <Footer style={responsiveFooterStyle}>
+        Ant Design ©2016 Created by Ant UED
+      </Footer>
+    </Layout>
+  </Layout>,
+  document.getElementById('layout-responsive'));
+
+  // layout-fixed
+  
+
+// layout-fixed-side
+
+</script>

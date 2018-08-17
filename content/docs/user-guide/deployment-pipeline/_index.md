@@ -20,6 +20,8 @@ weight = 7
 
 - 当实例运行之后，部署管理员可以通过 **容器管理** 查看实例容器的信息，包括容器的状态以及容器的日志
 
+- 所有在环境下的部署信息，都可以在 **环境总览** 中快捷查看
+
 - 项目成员和项目所有者没有应用部署的权限，但是项目成员和项目所有者可以查看实例的详情，网络，域名，容器信息。
 
 ## 快速开始
@@ -40,6 +42,7 @@ weight = 7
 
     模块|操作
     |---|---|
+    环境总览|"总览环境下的所有部署信息，可以进行一些对应的快捷操作。
     环境流水线|创建，升级环境，停用，启用环境以及修改环境信息
     应用部署|选择应用和应用版本以及对应的环境，修改对应的values部署文件，分布创建或者替换实例
     实例|修改配置信息，升级，停止，重启实例，查询实例详情，其中包括实例下的k8s对象，目前平台支持查询的有(Pod,Servic,e,Ingress,Deployment,ReplicaSet)，实例部署时阶段信息（Job）以及上次部署的values的展示
@@ -54,25 +57,21 @@ weight = 7
 ## 视频介绍
 
 <div class="tutorial-img" id="tutorial-img">
-    <div class="col-lg-6 col-md-6 col-xs-12 tutorial">
-        <div class="tutorial-content" data-src="y0735zgqr1j">
-            <div class="mask">
-                <div class="head">
-                    <div class="title ellipsis">部署流水线</div>
-                    <a href="https://v.qq.com/x/page/y0735zgqr1j.html" target="_blank"><i class="iconfont icon-shijian" title="稍后观看"></i></a>
-                </div>
-                <div class="foot">
-                    <div class="description">以部署并访问应用示例来介绍持续交付中部署流水线使用方法</div>
-                    <div class="info">
-                        <div class="begin">
-                            <i class="iconfont icon-play-button"></i>
-                            <div class="no-warp">开始</div>
-                        </div>
-                        <div class="time">6min</div>
-                    </div>
+    <div class="col-lg-4 col-md-4 col-xs-12 tutorial" data-src="y0735zgqr1j">
+        <div class="tutorial-head" style="background: url(/img/docs/quick-start/video/devops.svg)no-repeat center 100%;    background-size: cover;">
+            <div class="title">部署流水线</div>
+            <div class="time">
+                <div class="content">
+                    <i class="iconfont icon-play-button"></i>
+                    <div>6分18秒</div>
                 </div>
             </div>
-            <img class="n-max " src="/docs/quick-start/video-tutorial/img/agile.jpg">
+        </div>
+        <div class="tutorial-footer">
+            <div class="content">
+                <div class="title">部署流水线</div>
+                <div class="description">以部署并访问应用示例来介绍持续交付中部署流水线使用方法</div>
+            </div>
         </div>
     </div>
 </div>

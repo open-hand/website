@@ -28,46 +28,38 @@ Choerodon的测试管理为用户提供敏捷化的持续测试工具，包括�
 ## 视频介绍
 
 <div class="tutorial-img" id="tutorial-img">
-    <div class="col-lg-6 col-md-6 col-xs-12 tutorial">
-        <div class="tutorial-content" data-src="s0735iqq4eu">
-            <div class="mask">
-                <div class="head">
-                    <div class="title ellipsis">测试规划</div>
-                    <a href="https://v.qq.com/x/page/s0735iqq4eu.html" target="_blank"><i class="iconfont icon-shijian" title="稍后观看"></i></a>
-                </div>
-                <div class="foot">
-                    <div class="description">以规划测试并执行的示例来介绍测试管理中如何规划测试并执行</div>
-                    <div class="info">
-                        <div class="begin">
-                            <i class="iconfont icon-play-button"></i>
-                            <div class="no-warp">开始</div>
-                        </div>
-                        <div class="time">10min</div>
-                    </div>
+    <div class="col-lg-4 col-md-4 col-xs-12 tutorial" data-src="s0735iqq4eu">
+        <div class="tutorial-head" style="background: url(/img/docs/quick-start/video/test.svg)no-repeat center 100%;    background-size: cover;">
+            <div class="title">测试规划</div>
+            <div class="time">
+                <div class="content">
+                    <i class="iconfont icon-play-button"></i>
+                    <div>10分17秒</div>
                 </div>
             </div>
-            <img class="n-max " src="/docs/quick-start/video-tutorial/img/cycle.jpg">
+        </div>
+        <div class="tutorial-footer">
+            <div class="content">
+                <div class="title">测试规划</div>
+                <div class="description">以规划测试并执行的示例来介绍测试管理中如何规划测试并执行</div>
+            </div>
         </div>
     </div>
-    <div class="col-lg-6 col-md-6 col-xs-12 tutorial">
-        <div class="tutorial-content" data-src="f0735a6jfyg">
-            <div class="mask">
-                <div class="head">
-                    <div class="title ellipsis">测试报告</div>
-                    <a href="https://v.qq.com/x/page/f0735a6jfyg.html" target="_blank"><i class="iconfont icon-shijian" title="稍后观看"></i></a>
-                </div>
-                <div class="foot">
-                    <div class="description">以讲解两种测试报表的方式来介绍测试管理的报表展现的含义</div>
-                    <div class="info">
-                        <div class="begin">
-                            <i class="iconfont icon-play-button"></i>
-                            <div class="no-warp">开始</div>
-                        </div>
-                        <div class="time">5min</div>
-                    </div>
+    <div class="col-lg-4 col-md-4 col-xs-12 tutorial" data-src="f0735a6jfyg">
+        <div class="tutorial-head" style="background: url(/img/docs/quick-start/video/test.svg)no-repeat center 100%;    background-size: cover;">
+            <div class="title">测试报告</div>
+            <div class="time">
+                <div class="content">
+                    <i class="iconfont icon-play-button"></i>
+                    <div>5分18秒</div>
                 </div>
             </div>
-            <img class="n-max " src="/docs/quick-start/video-tutorial/img/report.jpg">
+        </div>
+        <div class="tutorial-footer">
+            <div class="content">
+                <div class="title">测试报告</div>
+                <div class="description">以讲解两种测试报表的方式来介绍测试管理的报表展现的含义</div>
+            </div>
         </div>
     </div>
 </div>

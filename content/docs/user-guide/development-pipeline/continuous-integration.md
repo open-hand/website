@@ -20,9 +20,8 @@ weight = 5
 
  1. 查看应用持续集成的完成情况，只有 CI 各个ment阶段跑成功了才会依据[版本生成规则](../branch)生成一个[应用版本](../../application-management/application-version)。
 
+![](/docs/user-guide/development-pipeline/image/持续集成.png "持续集成") 
       
-列表字段：
-
  - 状态：Job 的状态 Created，Pending，Running，Failed，Success，Canceled，Skipped，Manual。
  - 标识：持续集成流水线的标识，以及持续集成流水线创建者。
  - 提交：最新一次提交的提交编码及提交信息，以及触发的分支。
@@ -31,3 +30,8 @@ weight = 5
  - 创建时间：创建这条持续集成流水线的时间。
  - ![重试按钮](/docs/user-guide/development-pipeline/image/retry_button.png) ：当处于 Skipped、Canceled、Failed 状态时，可以重新运行持续集成流水线。
  - ![取消按钮](/docs/user-guide/development-pipeline/image/cancle_button.png) ：当处于 Pending，Running 状态时，可以取消运行持续集成流水线。 
+
+## 更多操作
+- [分支管理](../branch)
+- [标记管理](../tag)
+- [合并请求](../merge-request)

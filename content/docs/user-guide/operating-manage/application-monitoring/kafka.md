@@ -23,3 +23,9 @@ weight = 11
  - 消费速率监控: `消费速率` 显示所选消费组对当前topic的消费速度。
 
  - 分区监控: `分区主节点ID` 显示选定topic中每个分区的主节点id，`分区ISR数量` 显示每个分区的可用副本数量。
+
+## 更多操作
+- [Elasticsearch监控](../elasticsearch)
+- [Kibana基础入门](../kibana)
+- [MySQL监控](../mysql)
+- [zipkin操作指南](../zipkin)

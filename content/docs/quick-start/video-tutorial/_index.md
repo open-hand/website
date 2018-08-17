@@ -17,25 +17,21 @@ description = "包含了Choerodon 的所有在线视频教程"
 ## 知识管理
 ---
 <div class="tutorial-img" id="tutorial-img">
-    <div class="col-lg-6 col-md-6 col-xs-12 tutorial">
-        <div class="tutorial-content" data-src="g07413b6v6s">
-            <div class="mask">
-                <div class="head">
-                    <div class="title ellipsis">知识管理</div>
-                    <a href="https://v.qq.com/x/page/g07413b6v6s.html" target="_blank"><i class="iconfont icon-shijian" title="稍后观看"></i></a>
-                </div>
-                <div class="foot">
-                    <div class="description">以如何创建和管理产品文档的示例来介绍知识管理的使用方法</div>
-                    <div class="info">
-                        <div class="begin">
-                            <i class="iconfont icon-play-button"></i>
-                            <div class="no-warp">开始</div>
-                        </div>
-                        <div class="time">12min</div>
-                    </div>
+    <div class="col-lg-4 col-md-4 col-xs-12 tutorial" data-src="g07413b6v6s">
+        <div class="tutorial-head" style="background: url(/img/docs/quick-start/video/wiki.svg)no-repeat center 100%;    background-size: cover;">
+            <div class="title">知识管理</div>
+            <div class="time">
+                <div class="content">
+                    <i class="iconfont icon-play-button"></i>
+                    <div>12分07秒</div>
                 </div>
             </div>
-            <img class="n-max " src="/docs/quick-start/video-tutorial/img/wiki.jpg">
+        </div>
+        <div class="tutorial-footer">
+            <div class="content">
+                <div class="title">知识管理</div>
+                <div class="description">以如何创建和管理产品文档的示例来介绍知识管理的使用方法。</div>
+            </div>
         </div>
     </div>
 </div>
@@ -43,25 +39,21 @@ description = "包含了Choerodon 的所有在线视频教程"
 ## 敏捷管理
 ---
 <div class="tutorial-img" id="tutorial-img">
-    <div class="col-lg-6 col-md-6 col-xs-12 tutorial">
-        <div class="tutorial-content" data-src="h07358jaa5q">
-            <div class="mask">
-                <div class="head">
-                    <div class="title ellipsis">敏捷管理</div>
-                    <a href="https://v.qq.com/x/page/h07358jaa5q.html" target="_blank"><i class="iconfont icon-shijian" title="稍后观看"></i></a>
-                </div>
-                <div class="foot">
-                    <div class="description">围绕敏捷的Scrum模型，阐述如何使用Choerodon的敏捷管理来管理项目。</div>
-                    <div class="info">
-                        <div class="begin">
-                            <i class="iconfont icon-play-button"></i>
-                            <div class="no-warp">开始</div>
-                        </div>
-                        <div class="time">22min</div>
-                    </div>
+    <div class="col-lg-4 col-md-4 col-xs-12 tutorial" data-src="h07358jaa5q">
+        <div class="tutorial-head" style="background: url(/img/docs/quick-start/video/agile.svg)no-repeat center 100%;    background-size: cover;">
+            <div class="title">敏捷管理</div>
+            <div class="time">
+                <div class="content">
+                    <i class="iconfont icon-play-button"></i>
+                    <div>22分43秒</div>
                 </div>
             </div>
-            <img class="n-max " src="/docs/quick-start/video-tutorial/img/agile.jpg">
+        </div>
+        <div class="tutorial-footer">
+            <div class="content">
+                <div class="title">敏捷管理</div>
+                <div class="description">围绕敏捷的Scrum模型，阐述如何使用Choerodon的敏捷管理来管理项目。</div>
+            </div>
         </div>
     </div>
 </div>
@@ -69,67 +61,55 @@ description = "包含了Choerodon 的所有在线视频教程"
 ## 持续交付
 ---
 <div class="tutorial-img" id="tutorial-img">
-    <div class="col-lg-6 col-md-6 col-xs-12 tutorial">
-        <div class="tutorial-content" data-src="f0735vcyhgm">
-            <div class="mask">
-                <div class="head">
-                    <div class="title ellipsis">开发流水线</div>
-                    <a href="https://v.qq.com/x/page/f0735vcyhgm.html" target="_blank"><i class="iconfont icon-shijian" title="稍后观看"></i></a>
-                </div>
-                <div class="foot">
-                    <div class="description">以创建单接口调用的应用示例来介绍持续交付中开发流水线使用方法</div>
-                    <div class="info">
-                        <div class="begin">
-                            <i class="iconfont icon-play-button"></i>
-                            <div class="no-warp">开始</div>
-                        </div>
-                        <div class="time">15min</div>
-                    </div>
+    <div class="col-lg-4 col-md-4 col-xs-12 tutorial" data-src="f0735vcyhgm">
+        <div class="tutorial-head" style="background: url(/img/docs/quick-start/video/devops.svg)no-repeat center 100%;    background-size: cover;">
+            <div class="title">开发流水线</div>
+            <div class="time">
+                <div class="content">
+                    <i class="iconfont icon-play-button"></i>
+                    <div>15分14秒</div>
                 </div>
             </div>
-            <img class="n-max " src="/docs/quick-start/video-tutorial/img/develop.jpg">
+        </div>
+        <div class="tutorial-footer">
+            <div class="content">
+                <div class="title">开发流水线</div>
+                <div class="description">以创建单接口调用的应用示例来介绍持续交付中开发流水线使用方法</div>
+            </div>
         </div>
     </div>
-    <div class="col-lg-6 col-md-6 col-xs-12 tutorial">
-        <div class="tutorial-content" data-src="y0735zgqr1j">
-            <div class="mask">
-                <div class="head">
-                    <div class="title ellipsis">部署流水线</div>
-                    <a href="https://v.qq.com/x/page/y0735zgqr1j.html" target="_blank"><i class="iconfont icon-shijian" title="稍后观看"></i></a>
-                </div>
-                <div class="foot">
-                    <div class="description">以部署并访问应用示例来介绍持续交付中部署流水线使用方法</div>
-                    <div class="info">
-                        <div class="begin">
-                            <i class="iconfont icon-play-button"></i>
-                            <div class="no-warp">开始</div>
-                        </div>
-                        <div class="time">6min</div>
-                    </div>
+    <div class="col-lg-4 col-md-4 col-xs-12 tutorial" data-src="y0735zgqr1j">
+        <div class="tutorial-head" style="background: url(/img/docs/quick-start/video/devops.svg)no-repeat center 100%;    background-size: cover;">
+            <div class="title">部署流水线</div>
+            <div class="time">
+                <div class="content">
+                    <i class="iconfont icon-play-button"></i>
+                    <div>6分18秒</div>
                 </div>
             </div>
-            <img class="n-max " src="/docs/quick-start/video-tutorial/img/agile.jpg">
+        </div>
+        <div class="tutorial-footer">
+            <div class="content">
+                <div class="title">部署流水线</div>
+                <div class="description">以部署并访问应用示例来介绍持续交付中部署流水线使用方法</div>
+            </div>
         </div>
     </div>
-    <div class="col-lg-6 col-md-6 col-xs-12 tutorial">
-        <div class="tutorial-content" data-src="d0735n2dplx">
-            <div class="mask">
-                <div class="head">
-                    <div class="title ellipsis">应用发布</div>
-                    <a href="https://v.qq.com/x/page/d0735n2dplx.html" target="_blank"><i class="iconfont icon-shijian" title="稍后观看"></i></a>
-                </div>
-                <div class="foot">
-                    <div class="description">以发布并部署应用的示例来介绍持续交付中应用发布的使用方法</div>
-                    <div class="info">
-                        <div class="begin">
-                            <i class="iconfont icon-play-button"></i>
-                            <div class="no-warp">开始</div>
-                        </div>
-                        <div class="time">3min</div>
-                    </div>
+    <div class="col-lg-4 col-md-4 col-xs-12 tutorial" data-src="d0735n2dplx">
+        <div class="tutorial-head" style="background: url(/img/docs/quick-start/video/devops.svg)no-repeat center 100%;    background-size: cover;">
+            <div class="title">应用发布</div>
+            <div class="time">
+                <div class="content">
+                    <i class="iconfont icon-play-button"></i>
+                    <div>3分38秒</div>
                 </div>
             </div>
-            <img class="n-max " src="/docs/quick-start/video-tutorial/img/market.jpg">
+        </div>
+        <div class="tutorial-footer">
+            <div class="content">
+                <div class="title">应用发布</div>
+                <div class="description">以发布并部署应用的示例来介绍持续交付中应用发布的使用方法</div>
+            </div>
         </div>
     </div>
 </div>
@@ -137,47 +117,38 @@ description = "包含了Choerodon 的所有在线视频教程"
 ## 测试管理
 ---
 <div class="tutorial-img" id="tutorial-img">
-    <div class="col-lg-6 col-md-6 col-xs-12 tutorial">
-        <div class="tutorial-content" data-src="s0735iqq4eu">
-            <div class="mask">
-                <div class="head">
-                    <div class="title ellipsis">测试规划</div>
-                    <a href="https://v.qq.com/x/page/s0735iqq4eu.html" target="_blank"><i class="iconfont icon-shijian" title="稍后观看"></i></a>
-                </div>
-                <div class="foot">
-                    <div class="description">以规划测试并执行的示例来介绍测试管理中如何规划测试并执行</div>
-                    <div class="info">
-                        <div class="begin">
-                            <i class="iconfont icon-play-button"></i>
-                            <div class="no-warp">开始</div>
-                        </div>
-                        <div class="time">10min</div>
-                    </div>
+    <div class="col-lg-4 col-md-4 col-xs-12 tutorial" data-src="s0735iqq4eu">
+        <div class="tutorial-head" style="background: url(/img/docs/quick-start/video/test.svg)no-repeat center 100%;    background-size: cover;">
+            <div class="title">测试规划</div>
+            <div class="time">
+                <div class="content">
+                    <i class="iconfont icon-play-button"></i>
+                    <div>10分17秒</div>
                 </div>
             </div>
-            <img class="n-max " src="/docs/quick-start/video-tutorial/img/cycle.jpg">
+        </div>
+        <div class="tutorial-footer">
+            <div class="content">
+                <div class="title">测试规划</div>
+                <div class="description">以规划测试并执行的示例来介绍测试管理中如何规划测试并执行</div>
+            </div>
         </div>
     </div>
-    <div class="col-lg-6 col-md-6 col-xs-12 tutorial">
-        <div class="tutorial-content" data-src="f0735a6jfyg">
-            <div class="mask">
-                <div class="head">
-                    <div class="title ellipsis">测试报告</div>
-                    <a href="https://v.qq.com/x/page/f0735a6jfyg.html" target="_blank"><i class="iconfont icon-shijian" title="稍后观看"></i></a>
-                </div>
-                <div class="foot">
-                    <div class="description">以讲解两种测试报表的方式来介绍测试管理的报表展现的含义</div>
-                    <div class="info">
-                        <div class="begin">
-                            <i class="iconfont icon-play-button"></i>
-                            <div class="no-warp">开始</div>
-                        </div>
-                        <div class="time">5min</div>
-                    </div>
+    <div class="col-lg-4 col-md-4 col-xs-12 tutorial" data-src="f0735a6jfyg">
+        <div class="tutorial-head" style="background: url(/img/docs/quick-start/video/test.svg)no-repeat center 100%;    background-size: cover;">
+            <div class="title">测试报告</div>
+            <div class="time">
+                <div class="content">
+                    <i class="iconfont icon-play-button"></i>
+                    <div>5分18秒</div>
                 </div>
             </div>
-            <img class="n-max " src="/docs/quick-start/video-tutorial/img/report.jpg">
+        </div>
+        <div class="tutorial-footer">
+            <div class="content">
+                <div class="title">测试报告</div>
+                <div class="description">以讲解两种测试报表的方式来介绍测试管理的报表展现的含义</div>
+            </div>
         </div>
     </div>
 </div>
-

@@ -1,0 +1,138 @@
+<script type="text/babel">
+const { Popover, Button } = window['choerodon-ui'];
+
+// basic
+const content = (
+  <div>
+    <p>Content</p>
+    <p>Content</p>
+  </div>
+);
+
+ReactDOM.render(
+  <Popover content={content} title="Title">
+    <Button type="primary">Hover me</Button>
+  </Popover>,
+  document.getElementById('popover-demo-basic'));
+
+// location
+const text = <span>Title</span>;
+const buttonWidth = 70;
+const locationOneDivStyle = { marginLeft: buttonWidth, whiteSpace: 'nowrap' };
+const locationTwoDivStyle = { width: buttonWidth, float: 'left' };
+const locationThreeDivStyle = { width: buttonWidth, marginLeft: (buttonWidth * 4) + 24 };
+const locationFourDivStyle = { marginLeft: buttonWidth, clear: 'both', whiteSpace: 'nowrap' };
+
+ReactDOM.render(
+  <div className="demo">
+    <div style={locationOneDivStyle}>
+      <Popover placement="topLeft" title={text} content={content} trigger="click">
+        <Button>TL</Button>
+      </Popover>
+      <Popover placement="top" title={text} content={content} trigger="click">
+        <Button>Top</Button>
+      </Popover>
+      <Popover placement="topRight" title={text} content={content} trigger="click">
+        <Button>TR</Button>
+      </Popover>
+    </div>
+    <div style={locationTwoDivStyle}>
+      <Popover placement="leftTop" title={text} content={content} trigger="click">
+        <Button>LT</Button>
+      </Popover>
+      <Popover placement="left" title={text} content={content} trigger="click">
+        <Button>Left</Button>
+      </Popover>
+      <Popover placement="leftBottom" title={text} content={content} trigger="click">
+        <Button>LB</Button>
+      </Popover>
+    </div>
+    <div style={locationThreeDivStyle}>
+      <Popover placement="rightTop" title={text} content={content} trigger="click">
+        <Button>RT</Button>
+      </Popover>
+      <Popover placement="right" title={text} content={content} trigger="click">
+        <Button>Right</Button>
+      </Popover>
+      <Popover placement="rightBottom" title={text} content={content} trigger="click">
+        <Button>RB</Button>
+      </Popover>
+    </div>
+    <div style={locationFourDivStyle}>
+      <Popover placement="bottomLeft" title={text} content={content} trigger="click">
+        <Button>BL</Button>
+      </Popover>
+      <Popover placement="bottom" title={text} content={content} trigger="click">
+        <Button>Bottom</Button>
+      </Popover>
+      <Popover placement="bottomRight" title={text} content={content} trigger="click">
+        <Button>BR</Button>
+      </Popover>
+    </div>
+  </div>,
+  document.getElementById('popover-demo-location'));
+
+// arrow
+
+ReactDOM.render(
+  <div>
+    <Popover placement="topLeft" title={text} content={content}>
+      <Button>Align edge / 边缘对齐</Button>
+    </Popover>
+    <Popover placement="topLeft" title={text} content={content} arrowPointAtCenter>
+      <Button>Arrow points to center / 箭头指向中心</Button>
+    </Popover>
+  </div>,
+  document.getElementById('popover-demo-arrow'));
+
+// trigger
+ReactDOM.render(
+  <div>
+    <Popover content={content} title="Title" trigger="hover">
+      <Button>Hover me</Button>
+    </Popover>
+    <Popover content={content} title="Title" trigger="focus">
+      <Button>Focus me</Button>
+    </Popover>
+    <Popover content={content} title="Title" trigger="click">
+      <Button>Click me</Button>
+    </Popover>
+  </div>,
+  document.getElementById('popover-demo-trigger'));
+
+// close
+function closeContent(hide) {
+    return <a onClick={hide}>Close</a>;
+  }
+class CloseApp extends React.Component {
+  state = {
+    visible: false,
+  }
+
+  hide = () => {
+    this.setState({
+      visible: false,
+    });
+  }
+
+  handleVisibleChange = (visible) => {
+    this.setState({ visible });
+  }
+
+  render() {
+    return (
+      <Popover
+        content={closeContent(this.hide)}
+        title="Title"
+        trigger="click"
+        visible={this.state.visible}
+        onVisibleChange={this.handleVisibleChange}
+      >
+        <Button type="primary">Click me</Button>
+      </Popover>
+    );
+  }
+}
+
+ReactDOM.render(<CloseApp />, document.getElementById('popover-demo-close'));
+</script>

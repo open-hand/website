@@ -53,3 +53,8 @@ weight = 3
 项目所有者可以删除标记，删除标记成功后，代码仓库中不再存在该标记，并且线上应用无法再使用该标记。
 
 标记列表每一行的最后都提供点击`删除按钮`→ ![删除按钮](/docs/user-guide/development-pipeline/image/del_net_button.png)，点击该按钮，会弹出一个确认删除的弹框，点击确认，该标记被删除。
+
+## 更多操作
+- [分支管理](../branch)
+- [合并请求](../merge-request)
+- [持续集成](../continuous-integration)

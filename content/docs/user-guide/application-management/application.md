@@ -23,22 +23,18 @@ weight = 2
 ## 创建应用
 
 输入`应用编码`及`应用名称`，创建一个新的应用。步骤如下：您也可以选择一个应用模板，快速创建应用，平台会在Gitlab上为您自动创建对应的代码库以便管理该应用代码。
-
+ 
  1. 点击 `创建应用` 按钮；
 
  2. 输入`应用编码`、`应用名称`进行数据校验，以及选择`应用模板`。
+ ![](/docs/user-guide/application-management/image/Create Application.png "Create Application") 
     - 应用编码：该字段是必输的, 编码只能由小写字母、数字、"-"组成，且以小写字母开头，不能以"-"结尾并且是唯一的。
     - 应用名称：唯一，不能和其他应用相同。
- 3. 点击 `创建` 按钮；
-
-    应用编码：应用中自定义的编码。
-
-    应用名称：应用中自定义的名称。
-
-    应用模板：系统预定义模板或组织自定义的模板快。
+    - 应用模板：系统预定义模板或组织自定义的模板快。
 
         系统预定义模板：微服务-MicroService；web前端-MicroServiceUI；Java库-JavaLib。
-      
+ 3. 点击 `创建` 按钮；
+    
  4. 创建成功后，可在 Gitlab 中查看已创建的代码库。
 
 <blockquote class="note">
@@ -48,8 +44,7 @@ weight = 2
 ## 查看应用详情
 
   1. 点击`应用`菜单，在应用管理界面，可查看应用名称、编码、对应Gitlab仓库地址、应用状态等信息，有些项目可能没有仓库地址，则说明该应用是导入的应用，目前应用默认是排序是项目下的启用项目->停用项目->导入应用的排序方式。
-
-列表字段
+![](/docs/user-guide/application-management/image/应用.png "应用") 
 
  - 应用名称：应用的自定义名称；
  - 应用编码：应用的自定义编码，Gitlab 仓库的地址将会取应用编码作为仓库地址中的一段路径，且编码是项目下唯一且不可修改的；
@@ -77,3 +72,8 @@ weight = 2
 ## 查看代码质量
 
  点击 `代码质量`→ ![代码质量按钮](/docs/user-guide/development-pipeline/image/app_quality.png)，若平台部署了[sonarqube](https://www.sonarqube.org/)服务,并且CI集成sonarqube检查即可看见该应用的代码质量信息
+
+## 更多操作
+- [什么是应用模板](../application-template)
+- [应用版本](../application-version)
+- [应用发布](../application-release)
