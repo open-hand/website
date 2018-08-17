@@ -1,7 +1,7 @@
 +++
 title = "冲刺报告"
 description = "了解每个冲刺中完成、进行和退回待办的工作。这有助于您确定您团队的工作量是否超额，更直观的查看冲刺的范围与工作量。"
-weight = 1
+weight = 2
 +++
 
 # 冲刺报告
@@ -50,6 +50,9 @@ weight = 1
 
 ## 其他报表
 
-- [燃尽图](../burn-down)
 - [累积流量图](../cumulative-flow)
+- [燃尽图](../burn-down)
 - [版本报告](../version-report)
+- [迭代速度图](../iterative-chart)
+- [史诗报告](../epic-report)
+- [统计图](../statistical)

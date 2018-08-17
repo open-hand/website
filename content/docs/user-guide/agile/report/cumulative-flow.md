@@ -45,6 +45,9 @@ weight = 3
 
 ## 其他报表
 
-- [燃尽图](../burn-down)
 - [冲刺报告](../sprint)
+- [燃尽图](../burn-down)
 - [版本报告](../version-report)
+- [迭代速度图](../iterative-chart)
+- [史诗报告](../epic-report)
+- [统计图](../statistical)
