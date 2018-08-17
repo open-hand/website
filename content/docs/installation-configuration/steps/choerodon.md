@@ -130,7 +130,7 @@ weight = 15
 
     ```
     curl -o choerodon-install.sh \
-        https://file.choerodon.com.cn/choerodon-install/install-0.8.sh && \
+        https://file.choerodon.com.cn/choerodon-install/install-0.9.sh && \
     sh choerodon-install.sh values.sh
     ```
 
@@ -164,6 +164,7 @@ weight = 15
 
 - [设置Harbor启用HTTPS](../parts/base/harbor/#启用https)
 - [克隆模板仓库到自己的Gitlab中](../parts/base/gitlab/#克隆模板仓库)
+- [设置Gitlab启用SSH协议](../parts/base/gitlab/#启用SSH协议)
 
 ## 部署失败操作
 
