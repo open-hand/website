@@ -493,7 +493,8 @@ i.note-number[data-value]::after {
     background-position: left;
     background-repeat: no-repeat;
     margin-bottom: 0.16rem;
-    max-width: 100%;
+    max-width: 100%!important;
+    border:none!important;
 }
 
 .docs-post .doc-home .access-list-item h4 {
@@ -1397,6 +1398,33 @@ margin: 0;
   .change-locale {
     margin-bottom: 16px;
   }
+
+  ul.anticons-list>li:hover{
+      background-color: #3367d6;
+      color: #fff;
+  }
+
+  ul.anticons-list li.copied:hover {
+      color: hsla(0,0%,100%,.2);
+    }
+ul.anticons-list li:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    content: "Copied!";
+    text-align: center;
+    line-height: 110px;
+    color: #fff;
+    -webkit-transition: all .3s cubic-bezier(.18,.89,.32,1.28);
+    transition: all .3s cubic-bezier(.18,.89,.32,1.28);
+    opacity: 0;
+}
+ul.anticons-list li.copied:after {
+    opacity: 1;
+    top: -10px;
+}
 /* components end  */
 
 /* 文档内容结束 */

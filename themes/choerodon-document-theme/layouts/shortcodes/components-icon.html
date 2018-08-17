@@ -136,18 +136,37 @@
       'wifi', 'wifi_lock', 'wifi_tethering', 'work', 'wrap_text', 'youtube_searched_for', 'zoom_in', 'zoom_out', 'zoom_out_map',
     ],
   };
+  
   class IconSet extends React.Component {
     static defaultProps = {};
     // Show badges
 
     newIcons = [];
-
+    copyIcon = (type) => {
+      const input = document.createElement('input');
+      document.body.appendChild(input);
+      input.setAttribute('readonly', 'readonly');
+      input.setAttribute('value', '<Icon type="'+type+'"/>');
+      input.select();
+      if (document.execCommand('copy')) {
+        document.execCommand('copy');
+        var li = document.getElementById(type);        
+        li.className+= "copied";
+        setTimeout(() => {
+          li.className = "";
+        }, 1000);
+        
+      }
+      document.body.removeChild(input);
+    }
     render() {
       const { catigory = 'default' } = this.props;
       return (
         <ul class="anticons-list clearfix icons">
             {icons[catigory].map(type => (
-              <li>
+              <li id={type} onClick={
+                () => this.copyIcon(type)
+                }>
                 <Icon type={type} />
                 <span class="anticon-class">{type}</span>
               </li>
