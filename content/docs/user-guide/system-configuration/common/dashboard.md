@@ -36,3 +36,8 @@ description = "展示主要概览信息"
 1. 设置完卡片的可见性后，点击`完成`，保持更改。
 
     <img class="no-border" src="/docs/user-guide/system-configuration/common/image/visible2.png"/>
+
+## 更多操作
+- [登录](../login)
+- [登出](../logout)
+- [组织项目切换](../tenant_switch)

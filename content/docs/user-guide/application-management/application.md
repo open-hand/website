@@ -44,7 +44,7 @@ weight = 2
 ## 查看应用详情
 
   1. 点击`应用`菜单，在应用管理界面，可查看应用名称、编码、对应Gitlab仓库地址、应用状态等信息，有些项目可能没有仓库地址，则说明该应用是导入的应用，目前应用默认是排序是项目下的启用项目->停用项目->导入应用的排序方式。
-![](/docs/user-guide/application-management/image/应用.png "应用") 
+![](/docs/user-guide/application-management/image/Create Application .png "Create Application ") 
 
  - 应用名称：应用的自定义名称；
  - 应用编码：应用的自定义编码，Gitlab 仓库的地址将会取应用编码作为仓库地址中的一段路径，且编码是项目下唯一且不可修改的；

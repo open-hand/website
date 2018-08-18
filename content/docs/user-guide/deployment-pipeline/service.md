@@ -16,7 +16,7 @@ weight = 5
 </blockquote>
 
 ## 创建网络
-![创建环网络](/docs/user-guide/deployment-pipeline/image/创建网络.png)
+![创建环网络](/docs/user-guide/deployment-pipeline/image/create network.png)
  
  1. 点击 `创建网络` ；
 

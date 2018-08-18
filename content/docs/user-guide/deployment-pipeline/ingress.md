@@ -23,7 +23,7 @@ weight = 6
 ## 创建域名
 - 点击 `创建域名`；
 
-![创建域名](/docs/user-guide/deployment-pipeline/image/创建域名.png) 
+![创建域名](/docs/user-guide/deployment-pipeline/image/create domain.png) 
 
  - 选择需要配置域名的应用，并输入`域名`、`域名地址`、`路径`及选择网络，点击 `创建` ；
     

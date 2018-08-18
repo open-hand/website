@@ -76,3 +76,8 @@ description = "是对多个客户端信息设置的管理"
 
 点击`删除图标`→ ![删除按钮](/docs/user-guide/system-configuration/tenant/image/del_button.png)，即可删除客户端。
 
+## 更多操作
+- [项目管理](../project)
+- [用户管理](../user)
+- [LDAP](../ldap)
+

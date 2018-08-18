@@ -46,3 +46,6 @@ weight = 5
 ## 测试连接
 
 - 点击`测试连接`→![测试连接](/docs/user-guide/system-configuration/message/image/test.png)测试邮箱服务器是否连接成功。
+
+## 更多操作
+- [邮件模板](../email-template)

@@ -34,5 +34,9 @@ Root用户是最高权限管理员，可以管理平台及平台中所有组织�
          若执行移除Root用户操作，该用户将不再为Root用户，不可撤回！如需再次将该用户设置为Root用户，需要重新执行添加操作。
       </blockquote>
 
+## 更多操作
+- [菜单配置](../menu_configuration)
+- [角色管理](../role)
+- [仪表盘配置](../dashboard-config)
 
 

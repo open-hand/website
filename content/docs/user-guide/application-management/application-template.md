@@ -20,7 +20,7 @@ weight = 1
 ## 创建应用模板
 
 输入`应用模板编码`，`名称`，`描述`，创建默认最简模板，步骤如下。您也可以通过复制于现有模板，以便节省部分共同操作，提升效率。
-![](/docs/user-guide/application-management/image/创建模板.png "创建模板")
+![](/docs/user-guide/application-management/image/Creating application templates.png "Creating application templates")
 
    1. 点击`创建应用模板`按钮；
    1. 输入应用相关信息，进行数据校验
@@ -357,7 +357,7 @@ before_script:
 ## 查看应用模板详情
 
 在详情界面根据应用模板名称、应用模板编码、应用模板描述、应用模板地址、应用模板来源来查看应用模板详情。
-![](/docs/user-guide/application-management/image/应用模板.png "应用模板") 
+![](/docs/user-guide/application-management/image/application template.png "application template") 
 
 1. 应用模板名称：应用模板的自定义名称；
 2. 应用模板编码：应用模板的自定义编码；

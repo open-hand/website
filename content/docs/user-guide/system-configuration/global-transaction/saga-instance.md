@@ -66,3 +66,6 @@ description = "实际运行的事务定义"
 1. 点击事务实例的详情按钮→<img class="no-border" src="/docs/user-guide/system-configuration/global-transaction/image/particulars.png"/>。
 1. 出现事务实例的事务执行流程图后，点击要重试的任务。
 1. 出现任务运行情况后，在运行情况底部点击解锁按钮→<img class="no-border" src="/docs/user-guide/system-configuration/global-transaction/image/retry.png"/>。
+
+## 更多操作
+- [事务定义](../saga)

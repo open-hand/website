@@ -18,5 +18,8 @@ weight = 6
 
 - [**邮箱配置**](./email-config) 对平台所使用的发件邮箱服务器信息进行管理。
 
-
+## 更多操作
+- [全局事务](..//global-transaction)
+- [个人中心](..//person)
+- [通用功能](..//common)
 

@@ -11,3 +11,8 @@ weight = 6
 - 在项目层界面中，进入“项目设置”界面。
 
 {{< docdir >}}
+
+## 更多操作
+- [平台设置](..//platform)
+- [全局事务](..//global-transaction)
+- [组织设置](..//tenant)
