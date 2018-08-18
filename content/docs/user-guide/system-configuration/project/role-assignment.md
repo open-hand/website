@@ -91,3 +91,7 @@ description = "对项目层角色的分配方法"
 <h2 id="6">修改成员的角色</h2>
 
 点击`编辑`→![修改](/docs/user-guide/system-configuration/platform/image/update.png)，进入编辑一个成员的所有角色界面，可编辑该成员的角色关联。即可以删除角色，更改已有角色，添加其他角色。只有上一个角色已选时才可以继续添加其他角色。
+
+## 更多操作
+- [项目管理](../../tenant/project)
+- [项目信息](../pro_info)

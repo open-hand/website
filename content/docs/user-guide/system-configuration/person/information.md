@@ -31,3 +31,8 @@ weight = 1
 <blockquote class="note">
          由于登录名是用户的标识，不可以修改登录名。
       </blockquote>
+
+## 更多操作
+- [修改密码](../secret_change)
+- [组织信息](../org-info)
+- [项目信息](../pro-info)

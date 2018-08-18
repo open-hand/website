@@ -42,3 +42,6 @@ Saga采用了BASE（Basic Availability, Soft, Eventual consistency，即基本�
      - 所属微服务：定义任务的微服务。
 
 - 按Json的方式查看事务定义：输入、任务、输出信息、执行流程等信息以Json文件的方式展示。
+
+## 更多操作
+- [事务实例](../saga-instance)

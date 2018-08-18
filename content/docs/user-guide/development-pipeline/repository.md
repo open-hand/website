@@ -15,7 +15,7 @@ weight = 1
 ## 代码仓库列表
 
 代码仓库模块提供一个可以查看该项目下所有应用以及应用所对应的仓库地址的列表。在这个列表上你可以进行以下操作：
-![](/docs/user-guide/development-pipeline/image/代码仓库.png "代码仓库") 
+![](/docs/user-guide/development-pipeline/image/code.png "code") 
 
 - 根据仓库名进行排序
 - 点击仓库地址跳转至 GitLab 仓库

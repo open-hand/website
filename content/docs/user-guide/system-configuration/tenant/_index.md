@@ -11,3 +11,8 @@ weight = 5
 - 在项目层界面中选择一个“组织”，进入“组织管理”界面。
 
 {{< docdir >}}
+
+## 更多操作
+- [平台设置](..//platform)
+- [API管理](..//api-management)
+- [全局事务](..//global-transaction)

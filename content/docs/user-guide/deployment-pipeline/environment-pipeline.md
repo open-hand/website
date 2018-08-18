@@ -132,7 +132,7 @@ weight = 2
 
  2. 查看应用环境的运行情况。
 
-![应用环境](/docs/user-guide/deployment-pipeline/image/应用环境.png)
+![应用环境](/docs/user-guide/deployment-pipeline/image/environment.png)
  
 - 在环境卡片中，点击`复制指令`→ ![复制指令按钮](/docs/user-guide/deployment-pipeline/image/copy_button.png) ，复制代码至Kubernetes运行，与平台建立链接。
 - 在环境卡片中，点击`修改环境`→ ![修改环境按钮](/docs/user-guide/deployment-pipeline/image/update_env_button.png) ，修改环境名称及描述。

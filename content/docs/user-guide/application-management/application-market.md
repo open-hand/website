@@ -28,7 +28,7 @@ weight = 5
 <h2> 应用导出 </h2>
 
 通过点击应用市场界面的`导出`按钮，可以进行导出操作。
-![](/docs/user-guide/application-management/image/应用导出.png "应用导出")
+![](/docs/user-guide/application-management/image/export.png "export")
 
 1. 在列表中选择需要导出的一个或多个应用。
 
@@ -41,7 +41,7 @@ weight = 5
 <h2> 应用导入 </h2>
 
 通过点击应用市场界面的`导入`按钮，可以进行导入操作。
-![](/docs/user-guide/application-management/image/应用导入.png "应用导入")
+![](/docs/user-guide/application-management/image/import.png "import")
 
 1. 点击选取或拖拽上传导出操作生成的压缩包。
 

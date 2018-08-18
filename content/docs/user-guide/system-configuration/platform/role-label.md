@@ -22,3 +22,8 @@ description = "与角色关联进行特定功能开发"
     - project.owner：当用户创建项目时会自动为其分配拥有该角色标签的角色。如项目所有者。
     - gitlab.owner：当给某用户在某项目下分配拥有该标签的角色后，平台会为该用户在gitlab对应的group下分配owner角色。
     - gitlab.developer：当给某用户在某项目下分配拥有该标签的角色后，平台会为该用户在gitlab对应的group下分配developer的角色。
+
+## 更多操作
+- [角色管理](../role)
+- [平台角色分配](../role-assignment)
+- [Root用户设置](../rootuser)

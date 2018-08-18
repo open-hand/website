@@ -40,3 +40,6 @@ description = "进入一个项目后，可以修改项目信息和停用项目"
 
 点击`停用`→![停用](/docs/user-guide/system-configuration/project/image/stop.png) 可以停用此项目。停用后，无法进入该项目。如果需要再次启用此项目，需要在项目管理中对该项目进行启用操作。
 
+## 更多操作
+- [项目管理](../../tenant/project)
+- [项目角色分配](../role-assignment)

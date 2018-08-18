@@ -72,7 +72,7 @@ weight = 2
     - 我们推荐使用 `github-flow` 为主，可以[参考](http://scottchacon.com/2011/08/31/github-flow.html) Scott Chacon 对于主流分支管理策略的探讨。
 
 ## 创建分支
-![](/docs/user-guide/development-pipeline/image/创建分支.png "创建分支") 
+![](/docs/user-guide/development-pipeline/image/git branch .png "git branch ") 
 
  - 点击`创建分支`按钮，创建对应分支；
 
@@ -95,7 +95,7 @@ weight = 2
 </blockquote>
 
 ## 分支列表操作
-![](/docs/user-guide/development-pipeline/image/分支列表.png "分支列表")
+![](/docs/user-guide/development-pipeline/image/list.png "list")
 
 - 在分支列表上可以为分支修改关联的问题。
 
@@ -353,7 +353,7 @@ weight = 2
 </blockquote>
 
 ## 创建合并请求
-![](/docs/user-guide/development-pipeline/image/分支请求.png "分支请求")
+![](/docs/user-guide/development-pipeline/image/branch.png "branch")
 
 点击`创建合并请求`按钮，系统会默认打开gitlab的创建合并请求的界面，其中源分支就是点击列的分支，目标分支默认是master，用户可以更改。
 

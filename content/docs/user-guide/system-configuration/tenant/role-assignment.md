@@ -82,3 +82,8 @@ description = "是对组织层的角色进行分配"
 <h2 id="6">修改成员的角色</h2>
 
 点击`编辑`→![修改](/docs/user-guide/system-configuration/platform/image/update.png)，进入编辑一个成员的所有角色界面，可编辑该成员的角色关联。即可以删除角色，更改已有角色，添加其他角色。只有上一个角色已选时才可以继续添加其他角色。
+
+## 更多操作
+- [角色管理](../../platform/role)
+- [平台角色分配](../../platform/role-assignment)
+- [角色标签](../../platform/role-label)

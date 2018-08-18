@@ -83,3 +83,6 @@ weight = 2
 <blockquote class="note">
           只能够删除自定义模板，不能删除预置模板。
       </blockquote>
+
+## 更多操作
+- [邮箱配置](../email-config)
