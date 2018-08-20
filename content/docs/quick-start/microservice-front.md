@@ -31,7 +31,7 @@ Choerodon 使用 `React` 作为前端应用框架，并且对前端的展示做�
 
 **1.** 使用拥有项目所有者角色的用户登录Choerodon系统，选择项目``猪齿鱼研发``。
 
-**2.** 选择`开发流水线`模块，点击`应用`，进入应用管理页面。
+**2.** 选择`应用管理`模块，点击`应用`，进入应用管理页面。
 
 **3.** 点击`创建应用`，系统会从右边滑出页面，在页面中输入`应用编码`、`应用名称`，`应用模板`，`应用模板`选择`MicroServiceUI`。点击`创建`，即可创建一个前端应用。
 
@@ -43,9 +43,9 @@ Choerodon 使用 `React` 作为前端应用框架，并且对前端的展示做�
 
 > 当应用模板不符合您的需求，您可手动创建一个[应用模板](../../user-guide/application-management/application-template/)。 
    
-**4.** 当应用创建成功，可在`开发流水线` -> `应用` 界面查看到新建的应用。
+**4.** 当应用创建成功，可在`应用管理`模块，点击`应用` 界面查看到新建的应用。
 
-**5.** 在创建应用的同时，系统会对应在`Gitlab`中创建一个仓库，点击 `仓库地址`，链接到`Gitlab`新建的仓库。
+**5.** 在创建应用的同时，系统会对应在`Gitlab`中创建一个仓库，选择 `开发流水线`点击`代码仓库`，找到创建好的应用，点击`仓库地址`，链接到`Gitlab`新建的仓库。
 
 Choerodon 名词 | 对应Gitlab 名词 | 举例
 ---|---|---
@@ -59,14 +59,13 @@ Choerodon 名词 | 对应Gitlab 名词 | 举例
 
 **1. 创建`Feature`分支**
 
-在 `开发流水线` -> `应用` 界面中找到`choerodon-front-demo`。选择分支管理，点击`创建分支`，选择`创建feature分支`，填写`issue`号，如`feature-1`。点击`创建`，即可创建一个分支。
+在 `开发流水线` -> `分支` 界面，选择应用`choerodon-front-demo`。点击`创建分支`，选择对应的`issue` 问题。分支来源选择`master`。填写`issue`号，如`feature-1`。点击`创建`，即可创建一个分支。
 
-Choerodon 采用 `git-flow` 工作流模式，有`master`和`develop`两个默认分支。在持续交付过程中对 `feature`、`release`、`hotfix` 等分支进行管理。结束分支可自动触发分支合并和持续集成，可在流水线查看代码集成情况。更多相关信息参考[分支管理](../../user-guide/development-pipeline/branch/)。
-
+Choerodon 采用 [`github-flow`](https://guides.github.com/introduction/flow/)作为我们的分支管理策略的主体。并在此基础上，参考了一些其他策略，对开发者的开发分支做了一定程度上的细分。更多相关信息参考[分支管理](../../user-guide/development-pipeline/branch/)。
 
 **2. 拉取代码仓库**
 
-在`开发流水线` -> `应用` 找到`choerodon-front-demo` 的`仓库地址`。通过git命令拉取生成的项目代码。然后切换到对应分支进行本地开发。
+在`开发流水线` -> `代码仓库` 找到`choerodon-front-demo` 的`仓库地址`。通过`git` 命令拉取生成的项目代码。然后切换到对应分支进行本地开发。
 
 ``` bash
 $ git clone `仓库地址`
@@ -128,13 +127,13 @@ $ git push origin feature-1
 
 在`开发流水线` -> `持续集成` 页面，找到`choerodon-front-demo`。点击阶段跳转到`Gitlab` 查看`ci`执行情况。
 
-**10. 结束分支**　
+**10. 合并分支**　
 
-当`ci`执行通过以后，可以关闭分支，将`feature`分支合并到`develop`分支上。
+当`ci`执行通过以后，可以将`feature`分支合并到`master`分支上。
 
-在`开发流水线` -> `应用` 页面，找到`choerodon-front-demo`。选择分支管理，找到`feature-1` 分支，点击`结束分支`。结束分支后，会触发`develop` 分支的`ci流水线`。
+在`开发流水线` -> `合并请求` 页面，选择应用`choerodon-front-demo`。点击`创建合并请求`，跳转到`Gitlab`。 分别选择源分支为`feature-1` ，目标分支为`master`。并提交合并请求。等待`ci流水线`通过后，点击合并分支。。
 
-当`develop` 分支的`ci流水线` 通过以后。在`开发流水线` -> `应用版本` 可以找到，`choerodon-front-demo`生成的对应版本。接下来就可以部署了。
+当`master` 分支的`ci流水线` 通过以后。在`应用管理` -> `应用版本` 可以找到`choerodon-front-demo`生成的对应版本。接下来就可以部署了。
 
 ## 部署应用
 
