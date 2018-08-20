@@ -45,6 +45,8 @@ gateway helper|网关helper|0.9.0
 oauth server|认证服务|0.9.0
 event store service|事件服务|0.9.0
 file service|文件服务|0.9.0
+notify service|通知服务|0.9.0
+asgard service|事务服务|0.9.0
 choerodon iam front|Choerodon IAM前端|0.9.0
 gitlab service|Gitlab 服务|0.9.0
 devops service|Devops 服务|0.9.0
