@@ -175,4 +175,4 @@ $ git push origin feature-1
 
 ## 总结
 
-通过上述的步骤，就可以很快速的在Choerodon 中创建并部署一个后端的服务。
+通过上述的步骤，就可以很快速的在Choerodon 中创建并部署一个后端的服务。  
