@@ -7,3 +7,4 @@ node_modules/
 **/*.log
 **/docslunr.json
 **/lunr.json
+package-lock.json
