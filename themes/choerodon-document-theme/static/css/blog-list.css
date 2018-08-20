@@ -211,9 +211,13 @@
 }
 
 /* blog single */
+.content-max .blogs .blog-post,
+.content-max .blog-menu{
+    margin-top: 0.4rem;
+}
 .blogs .blog-post,
 .blog-menu{
-    margin-top: 0.4rem;
+    margin-top: 0.9rem;
 }
 .blogs .blog-post {
     padding: 0.4rem 0.3rem 0.35rem 0.3rem;
