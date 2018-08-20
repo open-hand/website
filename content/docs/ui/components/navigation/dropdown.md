@@ -131,9 +131,9 @@ weight = 3
 | disabled | 菜单是否禁用 | boolean | - |
 | overlay | 菜单 | [Menu](../menu/) | - |
 | placement | 菜单弹出位置：`bottomLeft` `bottomCenter` `bottomRight` `topLeft` `topCenter` `topRight` | String | `bottomLeft` |
-| size | 按钮大小，和 [Button](../button/) 一致 | string | 'default' |
+| size | 按钮大小，和 [Button](../../general/button/) 一致 | string | 'default' |
 | trigger | 触发下拉的行为 | Array&lt;`click`\|`hover`\|`contextMenu`> | `['hover']` |
-| type | 按钮类型，和 [Button](../button/) 一致 | string | 'default' |
+| type | 按钮类型，和 [Button](../../general/button/) 一致 | string | 'default' |
 | visible | 菜单是否显示 | boolean | - |
-| onClick | 点击左侧按钮的回调，和 [Button](../button/) 一致 | Function | - |
+| onClick | 点击左侧按钮的回调，和 [Button](../../general/button/) 一致 | Function | - |
 | onVisibleChange | 菜单显示状态改变时调用，参数为 visible | Function | - |
