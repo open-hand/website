@@ -97,7 +97,7 @@ weight = 11
                 <div class="code-box-title"><a>智能提示</a></div>
                 <div>
                     <p>输入框自动完成功能，下面是一个账号注册表单的例子。</p>
-                    <p>推荐使用 <a href="../autoComplete/">AutoComplete</a> 组件。</p>
+                    <p>推荐使用 <a href="../auto-complete/">AutoComplete</a> 组件。</p>
                 </div>
             </section>
         </section>
