@@ -256,6 +256,15 @@ const columns = [{
             </section>
         </section>
         <section class="code-box">
+            <section class="code-box-demo"><div id="table-demo-edit-drag"></div></section>
+            <section class="code-box-meta">
+                <div class="code-box-title"><a>拖拽排序</a></div>
+                <div>
+                    <p>使用自定义元素，我们可以集成 react-dnd 来实现拖拽排序。</p>
+                </div>
+            </section>
+        </section>
+        <section class="code-box">
             <section class="code-box-demo"><div id="table-demo-attribute"></div></section>
             <section class="code-box-meta">
                 <div class="code-box-title"><a>动态控制表格属性</a></div>

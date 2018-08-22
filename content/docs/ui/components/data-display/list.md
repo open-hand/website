@@ -69,6 +69,15 @@ weight = 7
                 </div>
             </section>
         </section>
+        <section class="code-box">
+            <section class="code-box-demo"><div id="list-demo-load"></div></section>
+            <section class="code-box-meta">
+                <div class="code-box-title"><a>滚动加载</a></div>
+                <div>
+                    <p>结合 <a href="https://github.com/CassetteRocks/react-infinite-scroller">react-infinite-scroller</a> 实现滚动自动加载列表。</p>
+                </div>
+            </section>
+        </section>
     </div>
 </div>
 

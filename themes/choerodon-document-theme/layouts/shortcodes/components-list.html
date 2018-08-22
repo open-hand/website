@@ -325,4 +325,105 @@ ReactDOM.render(
   document.getElementById('list-demo-response'));
 
 // load
+const reqwest = window['reqwest'];
+var InfiniteScroll = require('react-infinite-scroller');
+const loadFakeDataUrl = 'https://randomuser.me/api/?results=5&inc=name,gender,email,nat&noinfo';
+class InfiniteListExample extends React.Component {
+  state = {
+    data: [],
+    loading: false,
+    hasMore: true,
+  }
+
+  getData = (callback) => {
+    reqwest({
+      url: loadFakeDataUrl,
+      type: 'json',
+      method: 'get',
+      contentType: 'application/json',
+      success: (res) => {
+        callback(res);
+      },
+    });
+  }
+
+  componentWillMount() {
+    this.getData((res) => {
+      this.setState({
+        data: res.results,
+      });
+    });
+  }
+
+  handleInfiniteOnLoad = () => {
+    let data = this.state.data;
+    this.setState({
+      loading: true,
+    });
+    if (data.length > 14) {
+      message.warning('Infinite List loaded all');
+      this.setState({
+        hasMore: false,
+        loading: false,
+      });
+      return;
+    }
+    this.getData((res) => {
+      data = data.concat(res.results);
+      this.setState({
+        data,
+        loading: false,
+      });
+    });
+  }
+
+  render() {
+    return (
+      <div className="demo-infinite-container">
+        <InfiniteScroll
+          initialLoad={false}
+          pageStart={0}
+          loadMore={this.handleInfiniteOnLoad}
+          hasMore={!this.state.loading && this.state.hasMore}
+          useWindow={false}
+        >
+          <List
+            dataSource={this.state.data}
+            renderItem={
+              item => (
+              <List.Item key={item.id}>
+                <List.Item.Meta
+                  avatar={avatar}
+                  title={item.name.last}
+                  description={item.email}
+                />
+                <div>Content</div>
+              </List.Item>
+            )}
+          >
+            {this.state.loading && this.state.hasMore && <Spin className="demo-loading" />}
+          </List>
+        </InfiniteScroll>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<InfiniteListExample />, document.getElementById('list-demo-load'));
 </script>
+
+<script src="/js/ui-components/react-infinite-scroller.js"></script>
+<style>
+.demo-infinite-container {
+  border: 1px solid #e8e8e8;
+  border-radius: 4px;
+  overflow: auto;
+  padding: 8px 24px;
+  height: 300px;
+}
+.demo-loading {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+}
+</style>
