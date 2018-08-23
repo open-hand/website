@@ -34,7 +34,7 @@ ReactDOM.render(
 ````
 """
 script= """
-const { Button, Radio, Icon,Menu,Dropdown } = window['choerodon-ui'];
+const { Button,Menu,Dropdown,Icon } = window['choerodon-ui'];
 function handleMenuClick(e) {
   console.log('click', e);
 }

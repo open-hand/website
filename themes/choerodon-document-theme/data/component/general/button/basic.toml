@@ -21,11 +21,12 @@ ReactDOM.render(
 ````
 """
 script= """
-const { Button, Radio, Icon,Menu,Dropdown } = window['choerodon-ui'];
+const { Button } = window['choerodon-ui'];
 ReactDOM.render(
   <div>
     <Button funcType="raised">Rasied</Button>
     <Button funcType="flat">Flat</Button>
     <Button shape="circle" funcType="flat" icon="search" />
-  </div>,document.getElementById('button-type'));
+  </div>,
+  document.getElementById('button-type'));
 """

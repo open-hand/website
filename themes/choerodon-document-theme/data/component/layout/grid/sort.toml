@@ -1,0 +1,36 @@
+parent="grid-components-demo-sort"
+id= "grid-sort"
+weight= 4
+name= "栅格排序"
+description= """
+列排序。
+
+通过使用 `push` 和 `pull` 类就可以很容易的改变列（column）的顺序。
+"""
+code= """
+````jsx
+import { Row, Col } from 'choerodon-ui';
+
+ReactDOM.render(
+  <div>
+    <Row>
+      <Col span={18} push={6}>col-18 col-push-6</Col>
+      <Col span={6} pull={18}>col-6 col-pull-18</Col>
+    </Row>
+  </div>,
+  mountNode
+);
+````
+"""
+script= """
+const { Row,Col } = window['choerodon-ui'];
+ReactDOM.render(
+  <div>
+    <Row>
+      <Col span={18} push={6}>col-18 col-push-6</Col>
+      <Col span={6} pull={18}>col-6 col-pull-18</Col>
+    </Row>
+  </div>,
+  document.getElementById('grid-sort')
+);
+"""

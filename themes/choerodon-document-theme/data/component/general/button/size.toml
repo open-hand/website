@@ -55,7 +55,7 @@ ReactDOM.render(<ButtonSize />, mountNode);
 ```
 """
 script= """
-const { Button, Radio, Icon,Menu,Dropdown } = window['choerodon-ui'];
+const { Button, Radio, Icon } = window['choerodon-ui'];
 class ButtonSize extends React.Component {
   state = {
     size: 'large',

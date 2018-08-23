@@ -1,14 +1,16 @@
 {{ $.Scratch.Set "top" (.Get 0) }} 
 {{ $.Scratch.Set "bottom" (.Get 1) }} 
+{{ $.Scratch.Set "singleline" false }}
+{{ $.Scratch.Set "singleline" (.Get 2) }}
 {{ range $key, $index := $.Site.Data.component }}
   {{ if eq ($.Scratch.Get "top") $key }}
     {{ range $key,$index := . }}
       {{ if eq $key ($.Scratch.Get "bottom") }}
         <div class="c7n-row">
-            <div class="c7n-row-6">
+            <div class='{{if ($.Scratch.Get "singleline")}}c7n-row-12{{else}}c7n-row-6{{end}}'>
               {{ range ( sort . "weight") }}
-                {{ if .left }}
-                  <section class="code-box">
+                {{ if (or ($.Scratch.Get "singleline") .left) }}
+                  <section class="code-box" id="{{.parent}}">
                     <section class="code-box-demo"><div id="{{.id}}"></div></section>
                     <section class="code-box-meta">
                         <div class="code-box-title"><a>{{.name}}</a></div>
@@ -22,31 +24,36 @@
                       {{.code|markdownify}}
                     </section>
                     <script type="text/babel">{{.script|safeHTML}}</script>
+                    <style>{{print .css | safeCSS}}</style>
                   </section>
                 {{ end }}
               {{ end }}
             </div>
-            <div class="c7n-row-6">
-              {{ range ( sort . "weight") }}
-                {{ if .right }}
-                  <section class="code-box">
-                    <section class="code-box-demo"><div id="{{.id}}"></div></section>
-                    <section class="code-box-meta">
-                        <div class="code-box-title"><a>{{.name}}</a></div>
-                        <div>{{.description |markdownify}}</div>
-                        <span class="code-expand-icon">
-                          <img alt="expand code" src="https://gw.alipayobjects.com/zos/rmsportal/wSAkBuJFbdxsosKKpqyq.svg" class="code-expand-icon-show n-max">
-                          <img alt="expand code" src="https://gw.alipayobjects.com/zos/rmsportal/OpROPHYqWmrMDBFMZtKF.svg" class="code-expand-icon-hide n-max">
-                        </span>
+            {{if ($.Scratch.Get "singleline")}}
+            {{else}}
+              <div class="c7n-row-6">
+                {{ range ( sort . "weight") }}
+                  {{ if .right }}
+                    <section class="code-box">
+                      <section class="code-box-demo"><div id="{{.id}}"></div></section>
+                      <section class="code-box-meta">
+                          <div class="code-box-title"><a>{{.name}}</a></div>
+                          <div>{{.description |markdownify}}</div>
+                          <span class="code-expand-icon">
+                            <img alt="expand code" src="https://gw.alipayobjects.com/zos/rmsportal/wSAkBuJFbdxsosKKpqyq.svg" class="code-expand-icon-show n-max">
+                            <img alt="expand code" src="https://gw.alipayobjects.com/zos/rmsportal/OpROPHYqWmrMDBFMZtKF.svg" class="code-expand-icon-hide n-max">
+                          </span>
+                      </section>
+                      <section class="code-box-code none">
+                        {{.code|markdownify}}
+                      </section>
+                      <script type="text/babel">{{.script|safeHTML}}</script>
+                      <style>{{print .css | safeCSS}}</style>
                     </section>
-                    <section class="code-box-code none">
-                      {{.code|markdownify}}
-                    </section>
-                    <script type="text/babel">{{.script|safeHTML}}</script>
-                  </section>
+                  {{ end }}
                 {{ end }}
-              {{ end }}
-            </div>
+              </div>
+            {{end}}
           </div>
       {{ end }}
     {{ end }}

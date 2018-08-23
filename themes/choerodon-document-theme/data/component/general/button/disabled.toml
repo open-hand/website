@@ -25,7 +25,7 @@ ReactDOM.render(
 ````
 """
 script= """
-const { Button, Radio, Icon,Menu,Dropdown } = window['choerodon-ui'];
+const { Button } = window['choerodon-ui'];
 ReactDOM.render(
   <div>
     <Button type="primary" funcType="raised">Primary</Button>
