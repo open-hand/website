@@ -18,14 +18,14 @@ ReactDOM.render(
 ````
 """
 script= """
-const { Button, Radio, Icon,Menu,Dropdown } = window['choerodon-ui'];
+const { Button } = window['choerodon-ui'];
 ReactDOM.render(
-<div id="button-ghost-background">
-  <Button type="primary" ghost>Primary</Button>
-  <Button ghost>Default</Button>
-  <Button type="dashed" ghost>Dashed</Button>
-  <Button type="danger" ghost>danger</Button>
-</div>,
-document.getElementById('button-ghost')
+  <div style={{ background: 'rgb(190, 200, 200)', padding: '26px 16px 16px' }}>
+    <Button type="primary" ghost>Primary</Button>
+    <Button ghost>Default</Button>
+    <Button type="dashed" ghost>Dashed</Button>
+    <Button type="danger" ghost>danger</Button>
+  </div>,
+  document.getElementById('button-ghost')
 );
 """

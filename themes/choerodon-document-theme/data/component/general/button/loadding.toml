@@ -49,7 +49,7 @@ ReactDOM.render(<App />, mountNode);
 ````
 """
 script= """
-const { Button, Radio, Icon,Menu,Dropdown } = window['choerodon-ui'];
+const { Button } = window['choerodon-ui'];
 class App extends React.Component {
   state = {
     loading: false,

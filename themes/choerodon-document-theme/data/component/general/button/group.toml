@@ -48,6 +48,7 @@ ReactDOM.render(
 ````
 """
 script= """
+const { Button,Icon } = window['choerodon-ui'];
 const ButtonGroup = Button.Group;
 
 ReactDOM.render(
@@ -81,6 +82,7 @@ ReactDOM.render(
       <Button type="primary" icon="cloud" />
       <Button type="primary" icon="cloud-download" />
     </ButtonGroup>
-  </div>,document.getElementById('button-group')
+  </div>,
+  document.getElementById('button-group')
 );
 """
