@@ -13,92 +13,7 @@ weight = 1
 
 ## 代码演示
 
-<div class="c7n-row">
-    <div class="c7n-row-6">
-        <section class="code-box">
-            <section class="code-box-demo"><div id="button-type"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>按钮类型</a></div>
-                <div>
-                    <p>按钮有四种类型：主按钮、次按钮、虚线按钮、危险按钮。主按钮在同一个操作区域最多出现一次。</p>
-                    <blockquote>
-                        <p><code>danger</code> 在 <code>antd@2.7</code> 后支持。</p>
-                    </blockquote>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="button-size"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>按钮尺寸</a></div>
-                <div>
-                    <p>按钮有大、中、小三种尺寸。</p>
-                    <p>通过设置 <code>size</code> 为 <code>large</code> <code>small</code> 分别把按钮设为大、小尺寸。若不设置 <code>size</code>，则尺寸为中。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="button-loadding"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>加载中状态</a></div>
-                <div>
-                    <p>添加 <code>loading</code> 属性即可让按钮处于加载状态，最后两个按钮演示点击后进入加载状态。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="button-group"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>按钮组合</a></div>
-                <div>
-                    <p>可以将多个 <code>Button</code> 放入 <code>Button.Group</code> 的容器中。</p>
-                    <p>通过设置 <code>size</code> 为 <code>large</code> <code>small</code> 分别把按钮组合设为大、小尺寸。若不设置 <code>size</code>，则尺寸为中。</p>
-                </div>
-            </section>
-        </section>
-    </div>
-    <div class="c7n-row-6">
-        <section class="code-box">
-            <section class="code-box-demo"><div id="button-icon"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>图标按钮</a></div>
-                <div>
-                    <p>当需要在 <code>Button</code> 内嵌入 <code>Icon</code> 时，可以设置 <code>icon</code> 属性，或者直接在 <code>Button</code> 内使用 <code>Icon</code> 组件。</p>
-                    <p>如果想控制 <code>Icon</code> 具体的位置，只能直接使用 <code>Icon</code> 组件，而非 <code>icon</code> 属性。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="button-disabled"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>不可用状态</a></div>
-                <div>
-                    <p>添加 <code>disabled</code> 属性即可让按钮处于不可用状态，同时按钮样式也会改变。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="button-multiple"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>多个按钮组合</a></div>
-                <div>
-                    <p>按钮组合使用时，推荐使用1个主操作 + n 个次操作，3个以上操作时把更多操作放到 <code>Dropdown.Button</code> 中组合使用。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="button-ghost"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>幽灵按钮</a></div>
-                <div>
-                    <p>幽灵按钮将其他按钮的内容反色，背景变为透明，常用在有色背景上。</p>
-                </div>
-            </section>
-        </section>
-    </div>
-</div>
-
-{{< components-button >}}
+{{< components general button >}}
 
 ## API
 
@@ -133,3 +48,17 @@ weight = 1
   margin-right: 0;
 }
 </style>
+
+````jsx
+import { Button } from 'choerodon-ui';
+
+ReactDOM.render(
+<div>
+    <Button type="primary" funcType="raised" shape="circle" icon="search" />
+    <Button type="primary" funcType="raised" icon="search">Search</Button>
+    <Button type="primary" funcType="flat" shape="circle" icon="search" />
+    <Button type="primary" funcType="flat" icon="search">Search</Button>
+</div>,
+mountNode
+);
+````

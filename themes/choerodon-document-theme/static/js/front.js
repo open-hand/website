@@ -577,3 +577,9 @@ jQuery(document).ready(function () {
     });
 });
 // 首页 end
+
+// UI文档代码块点击事件
+$(".code-expand-icon").on("click", function (e) {
+    $(this).parent().parents(".code-box").children(".code-box-code").toggleClass("none block");
+    
+})

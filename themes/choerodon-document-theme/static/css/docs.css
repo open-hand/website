@@ -802,6 +802,13 @@ i.note-number[data-value]::after {
     width: 100%;
     font-size: 13px;
 }
+.code-box-code{
+    margin: 0;
+}
+.code-box .code-box-code>pre{
+    margin: 0;
+    padding: 18px 32px
+}
 .code-box-title{
     position: absolute;
     top: -14px;
@@ -1425,6 +1432,48 @@ ul.anticons-list li.copied:after {
     opacity: 1;
     top: -10px;
 }
+
+.code-expand-icon {
+    position: absolute;
+    right: 16px;
+    bottom: 23px;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    text-align: center;
+  }
+
+  .code-expand-icon-show,
+  .code-expand-icon-hide {
+    transition: all 0.4s;
+    user-select: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 0;
+    max-width: 100%;
+    vertical-align: baseline;
+    box-shadow: none;
+  }
+
+  .code-expand-icon-show {
+    opacity: 0.55;
+    pointer-events: auto;
+  }
+
+  .code-expand-icon-show:hover{
+    opacity: 1;
+  }
+
+  .code-expand-icon.ant-tooltip-open .code-expand-icon-show {
+    opacity: 1;
+  }
+
+  .code-expand-icon-hide {
+    opacity: 0;
+    pointer-events: none;
+  }
 /* components end  */
 
 /* 文档内容结束 */

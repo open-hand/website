@@ -1,0 +1,54 @@
+{{ $.Scratch.Set "top" (.Get 0) }} 
+{{ $.Scratch.Set "bottom" (.Get 1) }} 
+{{ range $key, $index := $.Site.Data.component }}
+  {{ if eq ($.Scratch.Get "top") $key }}
+    {{ range $key,$index := . }}
+      {{ if eq $key ($.Scratch.Get "bottom") }}
+        <div class="c7n-row">
+            <div class="c7n-row-6">
+              {{ range ( sort . "weight") }}
+                {{ if .left }}
+                  <section class="code-box">
+                    <section class="code-box-demo"><div id="{{.id}}"></div></section>
+                    <section class="code-box-meta">
+                        <div class="code-box-title"><a>{{.name}}</a></div>
+                        <div>{{.description |markdownify}}</div>
+                        <span class="code-expand-icon">
+                          <img alt="expand code" src="https://gw.alipayobjects.com/zos/rmsportal/wSAkBuJFbdxsosKKpqyq.svg" class="code-expand-icon-show n-max">
+                          <img alt="expand code" src="https://gw.alipayobjects.com/zos/rmsportal/OpROPHYqWmrMDBFMZtKF.svg" class="code-expand-icon-hide n-max">
+                        </span>
+                    </section>
+                    <section class="code-box-code none">
+                      {{.code|markdownify}}
+                    </section>
+                    <script type="text/babel">{{.script|safeHTML}}</script>
+                  </section>
+                {{ end }}
+              {{ end }}
+            </div>
+            <div class="c7n-row-6">
+              {{ range ( sort . "weight") }}
+                {{ if .right }}
+                  <section class="code-box">
+                    <section class="code-box-demo"><div id="{{.id}}"></div></section>
+                    <section class="code-box-meta">
+                        <div class="code-box-title"><a>{{.name}}</a></div>
+                        <div>{{.description |markdownify}}</div>
+                        <span class="code-expand-icon">
+                          <img alt="expand code" src="https://gw.alipayobjects.com/zos/rmsportal/wSAkBuJFbdxsosKKpqyq.svg" class="code-expand-icon-show n-max">
+                          <img alt="expand code" src="https://gw.alipayobjects.com/zos/rmsportal/OpROPHYqWmrMDBFMZtKF.svg" class="code-expand-icon-hide n-max">
+                        </span>
+                    </section>
+                    <section class="code-box-code none">
+                      {{.code|markdownify}}
+                    </section>
+                    <script type="text/babel">{{.script|safeHTML}}</script>
+                  </section>
+                {{ end }}
+              {{ end }}
+            </div>
+          </div>
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}

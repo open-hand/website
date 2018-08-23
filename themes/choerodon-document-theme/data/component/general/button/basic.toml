@@ -1,0 +1,31 @@
+id= "button-type"
+left= true
+weight= 1
+name= "按钮类型"
+description= """
+按钮有四种类型：主按钮、次按钮、虚线按钮、危险按钮。主按钮在同一个操作区域最多出现一次。
+
+> `danger` 在 `antd@2.7` 后支持。
+"""
+code= """
+````jsx
+import { Button } from 'choerodon-ui';
+
+ReactDOM.render(
+  <div>
+    <Button funcType="raised">Rasied</Button>
+    <Button funcType="flat">Flat</Button>
+    <Button shape="circle" funcType="flat" icon="search" />
+  </div>,
+  mountNode);
+````
+"""
+script= """
+const { Button, Radio, Icon,Menu,Dropdown } = window['choerodon-ui'];
+ReactDOM.render(
+  <div>
+    <Button funcType="raised">Rasied</Button>
+    <Button funcType="flat">Flat</Button>
+    <Button shape="circle" funcType="flat" icon="search" />
+  </div>,document.getElementById('button-type'));
+"""

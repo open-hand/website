@@ -1,0 +1,31 @@
+id= "button-ghost"
+right= true
+weight= 4
+name= "幽灵按钮"
+description= "幽灵按钮将其他按钮的内容反色，背景变为透明，常用在有色背景上。"
+code= """
+````jsx
+import { Button } from 'choerodon-ui';
+
+ReactDOM.render(
+  <div style={{ background: 'rgb(190, 200, 200)', padding: '26px 16px 16px' }}>
+    <Button type="primary" ghost>Primary</Button>
+    <Button ghost>Default</Button>
+    <Button type="dashed" ghost>Dashed</Button>
+    <Button type="danger" ghost>danger</Button>
+  </div>,
+  mountNode);
+````
+"""
+script= """
+const { Button, Radio, Icon,Menu,Dropdown } = window['choerodon-ui'];
+ReactDOM.render(
+<div id="button-ghost-background">
+  <Button type="primary" ghost>Primary</Button>
+  <Button ghost>Default</Button>
+  <Button type="dashed" ghost>Dashed</Button>
+  <Button type="danger" ghost>danger</Button>
+</div>,
+document.getElementById('button-ghost')
+);
+"""
