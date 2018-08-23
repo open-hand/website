@@ -1,7 +1,7 @@
 +++
 title = "卸载"
 description = "详细介绍了一键部署和分步部署对应的两种卸载方式"
-weight = 11
+weight = 12
 
 +++
 
@@ -56,6 +56,8 @@ weight = 11
 - 删除config-server：`helm delete --purge config-server`
 - 删除manager-service：`helm delete --purge manager-service`
 - 删除iam-service：`helm delete --purge iam-service`
+- 删除asgard-service：`helm delete --purge asgard-service`
+- 删除notify-service：`helm delete --purge notify-service`
 - 删除api-gateway：`helm delete --purge api-gateway`
 - 删除gateway-helper：`helm delete --purge gateway-helper`
 - 删除oauth-server：`helm delete --purge oauth-server`

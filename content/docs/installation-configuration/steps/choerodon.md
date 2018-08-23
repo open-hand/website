@@ -30,8 +30,6 @@ weight = 15
 
     ```bash
     #########################  全局配置  ############################
-    # 仅debug不真实部署，删除此变量则进行正式部署
-    DEBUG="--debug --dry-run"
     # Helm release 前缀，解决release冲突问题（必须是小写字母，不能以数字开头，不能有特殊字符）
     #RELEASE_PREFIX="prefix"
     # 设置部署的namespace，请按："组织Code-项目Code-环境Code" 格式进行设置，以方便后期将应用自动扫描到数据库中。
