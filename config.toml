@@ -78,8 +78,8 @@ paginate = 10
     pre = "<i class='iconfont'>&#xe612;</i>"
 
     [[languages.zh.menu.main]]
-    name = "v0.8"
-    url  = "http://v0-8.choerodon.io/zh/"
+    name = "latest"
+    url  = "http://choerodon.io/zh/"
     weight = 1
     parent = "version"
 
