@@ -1,0 +1,43 @@
+id= "breadcrumb-icon"
+right= true
+weight= 1
+name= "带有图标的"
+description= '图标放在文字前面。'
+code= """
+````jsx
+import { Breadcrumb, Icon } from 'choerodon-ui';
+
+ReactDOM.render(
+  <Breadcrumb>
+    <Breadcrumb.Item href="">
+      <Icon type="home" />
+    </Breadcrumb.Item>
+    <Breadcrumb.Item href="">
+      <Icon type="user" />
+      <span>Application List</span>
+    </Breadcrumb.Item>
+    <Breadcrumb.Item>
+      Application
+    </Breadcrumb.Item>
+  </Breadcrumb>,
+  mountNode);
+````
+"""
+script= """
+const { Breadcrumb, Icon } = window['choerodon-ui'];
+
+ReactDOM.render(
+  <Breadcrumb>
+    <Breadcrumb.Item href="">
+      <Icon type="home" />
+    </Breadcrumb.Item>
+    <Breadcrumb.Item href="">
+      <Icon type="user" />
+      <span>Application List</span>
+    </Breadcrumb.Item>
+    <Breadcrumb.Item>
+      Application
+    </Breadcrumb.Item>
+  </Breadcrumb>,
+  document.getElementById('breadcrumb-icon'));
+"""

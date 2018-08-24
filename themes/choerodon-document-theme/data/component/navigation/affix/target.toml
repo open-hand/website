@@ -1,0 +1,50 @@
+parent="components-affix-demo-target"
+id= "affix-demo-target"
+left= true
+weight= 2
+name= "滚动容器"
+description= "用 `target` 设置 `Affix` 需要监听其滚动事件的元素，默认为 `window`。"
+code= """
+````jsx
+import { Affix, Button } from 'choerodon-ui';
+
+class Demo extends React.Component {
+  render() {
+    return (
+      <div className="scrollable-container" ref={(node) => { this.container = node; }}>
+        <div className="background">
+          <Affix target={() => this.container}>
+            <Button type="primary">
+              Fixed at the top of container
+            </Button>
+          </Affix>
+        </div>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<Demo />, mountNode);
+````
+"""
+script= """
+const { Affix, Button } = window['choerodon-ui'];
+
+class Demo extends React.Component {
+  render() {
+    return (
+      <div className="scrollable-container" ref={(node) => { this.container = node; }}>
+        <div className="background">
+          <Affix target={() => this.container}>
+            <Button type="primary">
+              Fixed at the top of container
+            </Button>
+          </Affix>
+        </div>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<Demo />, document.getElementById('affix-demo-target'));
+"""

@@ -14,42 +14,8 @@ weight = 2
 - 当需要向上导航的功能时。
 
 ## 代码演示
-<div class="c7n-row">
-    <div class="c7n-row-6">
-        <section class="code-box" id="">
-            <section class="code-box-demo"><div id="breadcrumb-basic"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>基本</a></div>
-                <div>
-                    <p>最简单的用法。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="breadcrumb-seprator"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>分隔符</a></div>
-                <div>
-                    <p>使用 <code>separator="&gt;"</code> 可以自定义分隔符。</p>
-                </div>
-            </section>
-        </section>
-    </div>
-    <div class="c7n-row-6">
-        <section class="code-box">
-            <section class="code-box-demo"><div id="breadcrumb-icon"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>带有图标的</a></div>
-                <div>
-                    <p>图标放在文字前面。</p>
-                </div>
-            </section>
-        </section>
-    </div>
-</div>
 
-
-{{< components-breadcrumb >}}
+{{< components navigation breadcrumb >}}
 
 ## API
 
