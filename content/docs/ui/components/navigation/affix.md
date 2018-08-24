@@ -14,42 +14,8 @@ weight = 1
 页面可视范围过小时，慎用此功能以免遮挡页面内容。
 
 ## 代码演示
-<div class="c7n-row">
-    <div class="c7n-row-6">
-        <section class="code-box" id="components-affix-demo-target">
-            <section class="code-box-demo"><div id="affix-basic"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>基本</a></div>
-                <div>
-                    <p>最简单的用法。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box" id = "components-affix-demo-target">
-            <section class="code-box-demo"><div id="affix-demo-target"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>滚动容器</a></div>
-                <div>
-                    <p>用 <code>target</code> 设置 <code>Affix</code> 需要监听其滚动事件的元素，默认为 <code>window</code>。</p>
-                </div>
-            </section>
-        </section>
-    </div>
-    <div class="c7n-row-6">
-        <section class="code-box">
-            <section class="code-box-demo"><div id="affix-change"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>固定状态改变的回调</a></div>
-                <div>
-                    <p>可以获得是否固定的状态。</p>
-                </div>
-            </section>
-        </section>
-    </div>
-</div>
 
-
-{{< components-affix >}}
+{{< components navigation affix >}}
 
 ## API
 

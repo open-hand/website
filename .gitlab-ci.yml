@@ -12,11 +12,9 @@ docker_build:
   - docker push ${DOCKER_REGISTRY}/${GROUP_NAME}/${PROJECT_NAME}:${CI_BUILD_REF_NAME}
   - chart_build
   only:
-  - develop
   - /^release-.*$/
   - /^hotfix-.*$/
   - /^feature-.*$/
-  - tags
 
 broken_link_check:
   image: registry.choerodon.com.cn/tools/cifront:0.5.0
@@ -27,11 +25,9 @@ broken_link_check:
   - npm install broken-link-checker -g
   - blc "http://localhost/zh/" -roe --exclude "http://localhost/en/"
   only:
-  - develop
   - /^release-.*$/
   - /^hotfix-.*$/
   - /^feature-.*$/
-  - tags
 
 .auto_devops: &auto_devops |
   curl -o .auto_devops.sh \
