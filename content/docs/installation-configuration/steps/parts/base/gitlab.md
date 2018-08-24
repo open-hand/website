@@ -289,3 +289,67 @@ helm install c7n/gitlab \
 - 访问设置的Gitlab域名出现以下界面即更新成功
 
     ![](/docs/installation-configuration/image/gitlab-oauth.png)
+
+## 启用SSH协议
+
+### 修改节点SSH默认端口
+CentOS各发行版中SSH端口默认为22，如果正式做站或其它用途，为了提高安全性就需要修改掉默认的SSH端口号，防止被有心人穷举密码。部分VPS提供商，若您的VPS服务器SSH遭受多次的暴力破解，可能会遭到罚款或临时终止服务，所以修改SSH的默认端口是有必要的，先通过当前的SSH端口（默认为：22）登陆。
+ 
+1. 修改配置文件：`/etc/ssh/sshd_config` ，找到以下行：
+
+    ```
+    #port 22
+    ```
+
+1. 先将`Port 22`前面的 `#` 号去掉，并另起一行。如定义SSH端口号为33322，自定义端口选择建议在万位的端口（如：10000-65535之间），则输入：
+
+    ```
+    Port 33322
+    ```
+也许您会问为什么要先把`port 22`前面的 `#` 去掉呢？因为在配置文件中，`#` 是Linux的注释字符。注释字符后的代码程序是不会执行的。SSH默认的（即非手动指定）端口为22，所以配置文件在默认的情况下以注释字符出现。当需要指定其它端口或多端口同时访问时，就要删掉注释符号，告知程序按照您的意愿来执行响应操作。
+以上操作，手动指定SSH端口为22和33322（双端口号），保留22是为了防止个别防火墙屏蔽了其它端口导致无法连接VPS（如没单独指定22，新指定的33322端口防火墙也没放行，那么可能无法通过SSH连接VPS或服务器）。为了防止不必要问题的产生，所以要给自己保留条“后路”。
+
+1. 修改完毕后，重启SSH服务，并退出当前连接的SSH端口。
+
+    ```
+    service sshd restart
+    ```
+
+1. 重启完毕，尝试使用新端口登陆
+连接成功，需要重新添加SSH-RSA验证，点击是（或Yes）即可。
+1. 若能正常访问，返回第一步，根据第二步的操作将原`port 22`整段注释或删掉，再按第三步重启SSH即可。
+以上步骤重启后使用默认22号端口无法进入SSH，达到目的。
+
+<blockquote class="warning">
+如果您启用了防火墙iptables或者安全组，那么必须先添加新开的33322端口
+</blockquote>
+
+### 添加Gitlab SSH Service
+
+1. 在Master节点新建`gitlab-ssh-svc.yml`文件，添加以下信息：
+
+        apiVersion: v1
+        kind: Service
+        metadata:
+        name: gitlab-ssh
+        namespace: choerodon-devops-prod
+        spec:
+        externalIPs:
+        - 192.168.1.1 #请修改这里的IP为第一步设置SSH端口号的节点IP
+        ports:
+        - name: http
+            port: 22
+            protocol: TCP
+            targetPort: 22
+        selector:
+            choerodon.io/infra: gitlab
+
+1. 使Gitlab SSH Service生效
+
+```
+kubectl apply -f gitlab-ssh-svc.yml
+```
+
+### 域名映射
+
+你需要在DNS运营商提供的控制面板上添加一条Gitlab域名与第一步设置SSH端口号的节点IP的记录。

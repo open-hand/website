@@ -36,22 +36,23 @@ Gitlab-Runner|CI/CD 运行环境|10.7.2
 
 组件|描述| 版本
 ---|---|---
-register server|注册服务|0.8.0
-config server|配置服务|0.8.0
-manager service|管理服务|0.8.1
-iam service|IAM服务|0.8.0
-api gateway|网关服务|0.8.0
-gateway helper|网关helper|0.8.0
-oauth server|认证服务|0.8.0
-event store service|事件服务|0.8.0
-file service|文件服务|0.8.0
-choerodon iam front|Choerodon IAM前端|0.8.0
-gitlab service|Gitlab 服务|0.8.0
-devops service|Devops 服务|0.8.0
-devops service front|Devops 服务前端|0.8.0
-agile service|敏捷管理|0.8.0
-agile service front|敏捷管理前端|0.8.0
-wiki service|知识管理服务|0.8.0
-test manager service|测试管理服务|0.8.0
-test manager service front|测试管理服务前端|0.8.0
-choerodon front|Choerodon 前端|0.8.0
+register server|注册服务|0.9.0
+config server|配置服务|0.9.0
+manager service|管理服务|0.9.0
+iam service|IAM服务|0.9.0
+api gateway|网关服务|0.9.0
+gateway helper|网关helper|0.9.0
+oauth server|认证服务|0.9.0
+file service|文件服务|0.9.0
+notify service|通知服务|0.9.0
+asgard service|事务服务|0.9.0
+choerodon iam front|Choerodon IAM前端|0.9.0
+gitlab service|Gitlab 服务|0.9.1
+devops service|Devops 服务|0.9.1
+devops service front|Devops 服务前端|0.9.2
+agile service|敏捷管理|0.9.1
+agile service front|敏捷管理前端|0.9.1
+wiki service|知识管理服务|0.9.1
+test manager service|测试管理服务|0.9.2
+test manager service front|测试管理服务前端|0.9.2
+choerodon front|Choerodon 前端|0.9.1

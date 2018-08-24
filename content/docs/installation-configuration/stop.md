@@ -1,7 +1,7 @@
 +++
 title = "启停"
 description = "介绍了如何正确启动和停止Choerodon平台"
-weight = 10
+weight = 11
 
 +++
 
@@ -29,6 +29,8 @@ weight = 10
     kubectl scale deployment -n choerodon-devops-prod --replicas=0 agile-service
     kubectl scale deployment -n choerodon-devops-prod --replicas=0 test-manager-service
     kubectl scale deployment -n choerodon-devops-prod --replicas=0 wiki-service
+    kubectl scale deployment -n choerodon-devops-prod --replicas=0 asgard-service
+    kubectl scale deployment -n choerodon-devops-prod --replicas=0 notify-service
     kubectl scale deployment -n choerodon-devops-prod --replicas=0 choerodon-front
     ```
 
@@ -53,4 +55,6 @@ weight = 10
 1. `kubectl scale deployment -n choerodon-devops-prod --replicas=1 agile-service`
 1. `kubectl scale deployment -n choerodon-devops-prod --replicas=1 test-manager-service`
 1. `kubectl scale deployment -n choerodon-devops-prod --replicas=1 wiki-service`
+1. `kubectl scale deployment -n choerodon-devops-prod --replicas=1 asgard-service`
+1. `kubectl scale deployment -n choerodon-devops-prod --replicas=1 notify-service`
 1. `kubectl scale deployment -n choerodon-devops-prod --replicas=1 choerodon-front`

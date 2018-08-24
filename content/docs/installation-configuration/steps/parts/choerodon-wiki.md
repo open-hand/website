@@ -80,6 +80,7 @@ helm repo update
         --set env.OIDC_ENDPOINT_AUTHORIZATION=http://api.example.choerodon.io/oauth/oauth/authorize \
         --set env.OIDC_ENDPOINT_TOKEN=http://api.example.choerodon.io/oauth/oauth/token \
         --set env.OIDC_ENDPOINT_USERINFO=http://api.example.choerodon.io/oauth/api/user \
+        --set env.OIDC_ENDPOINT_LOGOUT=http://api.example.choerodon.io/oauth/logout \
         --set env.OIDC_CLIENTID=wiki \
         --set env.OIDC_SECRET=secret \
         --set env.OIDC_WIKI_TOKEN=Choerodon \
@@ -89,6 +90,7 @@ helm repo update
         --set ingress.enabled=true \
         --set "ingress.hosts[0]"=wiki.example.choerodon.io \
         --name=xwiki \
+        --version=0.9.0 \
         --namespace=choerodon-devops-prod
     ```
 
@@ -99,8 +101,9 @@ helm repo update
     env.DB_HOST|数据库地址
     env.DB_DATABASE|数据库
     env.OIDC_ENDPOINT_AUTHORIZATION|OIDC认证地址
-    env.env.OIDC_ENDPOINT_TOKEN|OIDC TOKEN校验地址
+    env.OIDC_ENDPOINT_TOKEN|OIDC TOKEN校验地址
     env.OIDC_ENDPOINT_USERINFO|OIDC用户信息地址
+    env.OIDC_ENDPOINT_LOGOUT|OAuth登出地址
     env.OIDC_CLIENTID|OIDC客户端
     env.OIDC_SECRET|OIDC秘钥
     env.OIDC_WIKI_TOKEN|OIDC TOKEN
@@ -139,7 +142,7 @@ helm repo update
         --set env.open.WIKI_TOKEN=Choerodon \
         --set env.open.WIKI_DEFAULT_GROUP=XWikiAllGroup \
         --name=wiki-service \
-        --version=0.8.1 \
+        --version=0.9.1 \
         --namespace=choerodon-devops-prod
     ```
 

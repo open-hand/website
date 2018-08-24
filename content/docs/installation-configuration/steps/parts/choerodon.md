@@ -43,12 +43,14 @@ helm repo update
 
     ```sql
     CREATE USER IF NOT EXISTS 'choerodon'@'%' IDENTIFIED BY "password";
-    CREATE DATABASE IF NOT EXISTS event_store_service DEFAULT CHARACTER SET utf8;
     CREATE DATABASE IF NOT EXISTS iam_service DEFAULT CHARACTER SET utf8;
     CREATE DATABASE IF NOT EXISTS manager_service DEFAULT CHARACTER SET utf8;
-    GRANT ALL PRIVILEGES ON event_store_service.* TO choerodon@'%';
+    CREATE DATABASE IF NOT EXISTS asgard_service DEFAULT CHARACTER SET utf8;
+    CREATE DATABASE IF NOT EXISTS notify_service DEFAULT CHARACTER SET utf8;
     GRANT ALL PRIVILEGES ON iam_service.* TO choerodon@'%';
     GRANT ALL PRIVILEGES ON manager_service.* TO choerodon@'%';
+    GRANT ALL PRIVILEGES ON asgard_service.* TO choerodon@'%';
+    GRANT ALL PRIVILEGES ON notify_service.* TO choerodon@'%';
     FLUSH PRIVILEGES;
     ```
 
@@ -63,7 +65,7 @@ helm repo update
         --set env.open.REGISTER_SERVICE_NAMESPACE=choerodon-devops-prod \
         --set env.open.KAFKA_ADDRESSES="kafka-0.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-1.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-2.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092" \
         --name register-server \
-        --version=0.8.0 --namespace=choerodon-devops-prod
+        --version=0.9.0 --namespace=choerodon-devops-prod
     ```
 
     参数名 | 含义 
@@ -142,7 +144,7 @@ helm repo update
         --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS="kafka-0.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-1.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-2.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092" \
         --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES="zookeeper-0.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181\,zookeeper-1.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181\,zookeeper-2.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181" \
         --name config-server \
-        --version=0.8.0 --namespace=choerodon-devops-prod
+        --version=0.9.0 --namespace=choerodon-devops-prod
     ```
     参数名 | 含义 
     --- |  --- 
@@ -184,7 +186,7 @@ helm repo update
         --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS="kafka-0.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-1.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-2.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092" \
         --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES="zookeeper-0.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181\,zookeeper-1.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181\,zookeeper-2.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181" \
         --name manager-service \
-        --version=0.8.1 --namespace=choerodon-devops-prod
+        --version=0.9.0 --namespace=choerodon-devops-prod
     ```
     参数名 | 含义 
     --- |  --- 
@@ -206,6 +208,116 @@ helm repo update
 
         ```
         curl -s $(kubectl get po -n choerodon-devops-prod -l choerodon.io/release=manager-service -o jsonpath="{.items[0].status.podIP}"):8964/health | jq -r .status
+        ```
+    - 出现以下类似信息即为成功部署
+        ```
+        UP
+        ```
+
+## 部署notify service
+
+- 部署服务
+
+    ```
+    helm install c7n/notify-service \
+        --set preJob.preConfig.mysql.host=choerodon-mysql \
+        --set preJob.preConfig.mysql.port=3306 \
+        --set preJob.preConfig.mysql.database=manager_service \
+        --set preJob.preConfig.mysql.username=choerodon \
+        --set preJob.preConfig.mysql.password=password \
+        --set preJob.preInitDB.mysql.host=choerodon-mysql \
+        --set preJob.preInitDB.mysql.port=3306 \
+        --set preJob.preInitDB.mysql.database=notify_service \
+        --set preJob.preInitDB.mysql.username=choerodon \
+        --set preJob.preInitDB.mysql.password=password \
+        --set env.open.SPRING_DATASOURCE_URL="jdbc:mysql://choerodon-mysql:3306/notify_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
+        --set env.open.SPRING_DATASOURCE_USERNAME=choerodon \
+        --set env.open.SPRING_DATASOURCE_PASSWORD=password \
+        --set env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE="http://register-server.choerodon-devops-prod:8000/eureka/" \
+        --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
+        --set env.open.SPRING_CLOUD_CONFIG_URI="http://config-server.choerodon-devops-prod:8010/" \
+        --set env.open.CHOERODON_EVENT_CONSUMER_KAFKA_BOOTSTRAP_SERVERS="kafka-0.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-1.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-2.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092" \
+        --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS="kafka-0.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-1.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-2.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092" \
+        --set env.open.SPRING_KAFKA_BOOTSTRAP_SERVERS="kafka-0.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-1.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-2.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092" \
+        --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES="zookeeper-0.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181\,zookeeper-1.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181\,zookeeper-2.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181" \
+        --name notify-service \
+        --version=0.9.0 --namespace=choerodon-devops-prod
+    ```
+    参数名 | 含义 
+    --- |  --- 
+    preJob.preConfig.mysql{}|初始化配置所需manager_service数据库信息
+    preJob.preInitDB.mysql{}|初始化数据库所需数据库信息
+    env.open.SPRING_DATASOURCE_URL|数据库链接地址
+    env.open.SPRING_DATASOURCE_USERNAME|数据库用户名
+    env.open.SPRING_DATASOURCE_PASSWORD|数据库密码
+    env.open.SPRING_CLOUD_CONFIG_ENABLED|启用配置中心
+    env.open.SPRING_CLOUD_CONFIG_URI|配置中心地址
+    env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE|注册服务地址
+    env.open.SPRING_KAFKA_BOOTSTRAP_SERVERS|kafk地址
+    env.open.CHOERODON_EVENT_CONSUMER_KAFKA_BOOTSTRAP_SERVERS|kafk地址
+    env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS|kafk地址
+    env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES|zookeeper地址
+
+- 验证部署
+    - 验证命令
+
+        ```
+        curl -s $(kubectl get po -n choerodon-devops-prod -l choerodon.io/release=notify-service -o jsonpath="{.items[0].status.podIP}"):18085/health | jq -r .status
+        ```
+    - 出现以下类似信息即为成功部署
+        ```
+        UP
+        ```
+
+## 部署asgard service
+
+- 部署服务
+
+    ```
+    helm install c7n/asgard-service \
+        --set preJob.preConfig.mysql.host=choerodon-mysql \
+        --set preJob.preConfig.mysql.port=3306 \
+        --set preJob.preConfig.mysql.database=manager_service \
+        --set preJob.preConfig.mysql.username=choerodon \
+        --set preJob.preConfig.mysql.password=password \
+        --set preJob.preInitDB.mysql.host=choerodon-mysql \
+        --set preJob.preInitDB.mysql.port=3306 \
+        --set preJob.preInitDB.mysql.database=asgard_service \
+        --set preJob.preInitDB.mysql.username=choerodon \
+        --set preJob.preInitDB.mysql.password=password \
+        --set env.open.SPRING_DATASOURCE_URL="jdbc:mysql://choerodon-mysql:3306/asgard_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
+        --set env.open.SPRING_DATASOURCE_USERNAME=choerodon \
+        --set env.open.SPRING_DATASOURCE_PASSWORD=password \
+        --set env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE="http://register-server.choerodon-devops-prod:8000/eureka/" \
+        --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
+        --set env.open.SPRING_CLOUD_CONFIG_URI="http://config-server.choerodon-devops-prod:8010/" \
+        --set env.open.CHOERODON_EVENT_CONSUMER_KAFKA_BOOTSTRAP_SERVERS="kafka-0.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-1.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-2.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092" \
+        --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS="kafka-0.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-1.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-2.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092" \
+        --set env.open.SPRING_KAFKA_BOOTSTRAP_SERVERS="kafka-0.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-1.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-2.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092" \
+        --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES="zookeeper-0.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181\,zookeeper-1.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181\,zookeeper-2.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181" \
+        --name asgard-service \
+        --version=0.9.0 --namespace=choerodon-devops-prod
+    ```
+    参数名 | 含义 
+    --- |  --- 
+    preJob.preConfig.mysql{}|初始化配置所需manager_service数据库信息
+    preJob.preInitDB.mysql{}|初始化数据库所需数据库信息
+    env.open.SPRING_DATASOURCE_URL|数据库链接地址
+    env.open.SPRING_DATASOURCE_USERNAME|数据库用户名
+    env.open.SPRING_DATASOURCE_PASSWORD|数据库密码
+    env.open.SPRING_CLOUD_CONFIG_ENABLED|启用配置中心
+    env.open.SPRING_CLOUD_CONFIG_URI|配置中心地址
+    env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE|注册服务地址
+    env.open.SPRING_KAFKA_BOOTSTRAP_SERVERS|kafk地址
+    env.open.CHOERODON_EVENT_CONSUMER_KAFKA_BOOTSTRAP_SERVERS|kafk地址
+    env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS|kafk地址
+    env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES|zookeeper地址
+
+- 验证部署
+    - 验证命令
+
+        ```
+        curl -s $(kubectl get po -n choerodon-devops-prod -l choerodon.io/release=asgard-service -o jsonpath="{.items[0].status.podIP}"):18081/health | jq -r .status
         ```
     - 出现以下类似信息即为成功部署
         ```
@@ -238,7 +350,7 @@ helm repo update
         --set env.open.SPRING_KAFKA_BOOTSTRAP_SERVERS="kafka-0.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-1.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-2.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092" \
         --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES="zookeeper-0.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181\,zookeeper-1.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181\,zookeeper-2.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181" \
         --name iam-service \
-        --version=0.8.0 --namespace=choerodon-devops-prod
+        --version=0.9.0 --namespace=choerodon-devops-prod
     ```
     参数名 | 含义 
     --- |  --- 
@@ -285,7 +397,7 @@ helm repo update
         --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS="kafka-0.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-1.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-2.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092" \
         --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES="zookeeper-0.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181\,zookeeper-1.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181\,zookeeper-2.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181" \
         --name api-gateway \
-        --version=0.8.0 --namespace=choerodon-devops-prod
+        --version=0.9.0 --namespace=choerodon-devops-prod
     ```
     参数名 | 含义 
     --- |  --- 
@@ -329,7 +441,7 @@ helm repo update
         --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS="kafka-0.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-1.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-2.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092" \
         --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES="zookeeper-0.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181\,zookeeper-1.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181\,zookeeper-2.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181" \
         --name gateway-helper \
-        --version=0.8.0 --namespace=choerodon-devops-prod
+        --version=0.9.0 --namespace=choerodon-devops-prod
     ```
     参数名 | 含义 
     --- |  --- 
@@ -376,7 +488,7 @@ helm repo update
         --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS="kafka-0.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-1.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-2.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092" \
         --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES="zookeeper-0.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181\,zookeeper-1.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181\,zookeeper-2.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181" \
         --name oauth-server \
-        --version=0.8.1 --namespace=choerodon-devops-prod
+        --version=0.9.0 --namespace=choerodon-devops-prod
     ```
     参数名 | 含义 
     --- |  --- 
@@ -402,60 +514,6 @@ helm repo update
         UP
         ```
 
-## 部署event store service
-- 部署服务
-
-    ```
-    helm install c7n/event-store-service \
-        --set preJob.preConfig.mysql.host=choerodon-mysql \
-        --set preJob.preConfig.mysql.port=3306 \
-        --set preJob.preConfig.mysql.database=manager_service \
-        --set preJob.preConfig.mysql.username=choerodon \
-        --set preJob.preConfig.mysql.password=password \
-        --set preJob.preInitDB.mysql.host=choerodon-mysql \
-        --set preJob.preInitDB.mysql.port=3306 \
-        --set preJob.preInitDB.mysql.database=event_store_service \
-        --set preJob.preInitDB.mysql.username=choerodon \
-        --set preJob.preInitDB.mysql.password=password \
-        --set env.open.SPRING_DATASOURCE_URL="jdbc:mysql://choerodon-mysql:3306/event_store_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
-        --set env.open.SPRING_DATASOURCE_USERNAME=choerodon \
-        --set env.open.SPRING_DATASOURCE_PASSWORD=password \
-        --set env.open.SPRING_CLOUD_STREAM_DEFAULT_BINDER="kafka" \
-        --set env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE="http://register-server.choerodon-devops-prod:8000/eureka/" \
-        --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
-        --set env.open.SPRING_CLOUD_CONFIG_URI="http://config-server.choerodon-devops-prod:8010/" \
-        --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS="kafka-0.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-1.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-2.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092" \
-        --set env.open.SPRING_KAFKA_BOOTSTRAP_SERVERS="kafka-0.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-1.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-2.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092" \
-        --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES="zookeeper-0.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181\,zookeeper-1.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181\,zookeeper-2.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181" \
-        --name event-store-service \
-        --version=0.8.0 --namespace=choerodon-devops-prod
-    ```
-    参数名 | 含义 
-    --- |  --- 
-    preJob.preConfig.mysql{}|初始化配置所需manager_service数据库信息
-    preJob.preInitDB.mysql{}|初始化数据库所需数据库信息
-    env.open.SPRING_DATASOURCE_URL|数据库链接地址
-    env.open.SPRING_DATASOURCE_USERNAME|数据库用户名
-    env.open.SPRING_DATASOURCE_PASSWORD|数据库密码
-    env.open.SPRING_CLOUD_CONFIG_ENABLED|启用配置中心
-    env.open.SPRING_CLOUD_STREAM_DEFAULT_BINDER|中间件类型
-    env.open.SPRING_CLOUD_CONFIG_URI|配置中心地址
-    env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE|注册服务地址
-    env.open.SPRING_KAFKA_BOOTSTRAP_SERVERS|kafk地址
-    env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS|kafk地址
-    env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES|zookeeper地址
-
-- 验证部署
-    - 验证命令
-
-        ```
-        curl -s $(kubectl get po -n choerodon-devops-prod -l choerodon.io/release=event-store-service -o jsonpath="{.items[0].status.podIP}"):9011/health | jq -r .status
-        ```
-    - 出现以下类似信息即为成功部署
-        ```
-        UP
-        ```
-
 ## 部署file service
 - 部署服务
 
@@ -475,7 +533,7 @@ helm repo update
         --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS="kafka-0.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-1.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-2.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092" \
         --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES="zookeeper-0.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181\,zookeeper-1.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181\,zookeeper-2.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181" \
         --name file-service \
-        --version=0.8.0 --namespace=choerodon-devops-prod
+        --version=0.9.0 --namespace=choerodon-devops-prod
     ```
     参数名 | 含义 
     --- |  --- 
@@ -582,7 +640,7 @@ helm repo update
         --set service.enable=true \
         --set ingress.enable=true \
         --name=choerodon-front-iam \
-        --version=0.8.0 --namespace=choerodon-devops-prod
+        --version=0.9.0 --namespace=choerodon-devops-prod
     ```
     参数名 | 含义 
     --- |  --- 

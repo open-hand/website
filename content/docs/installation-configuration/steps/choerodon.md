@@ -30,8 +30,6 @@ weight = 15
 
     ```bash
     #########################  全局配置  ############################
-    # 仅debug不真实部署，删除此变量则进行正式部署
-    DEBUG="--debug --dry-run"
     # Helm release 前缀，解决release冲突问题（必须是小写字母，不能以数字开头，不能有特殊字符）
     #RELEASE_PREFIX="prefix"
     # 设置部署的namespace，请按："组织Code-项目Code-环境Code" 格式进行设置，以方便后期将应用自动扫描到数据库中。
@@ -74,7 +72,8 @@ weight = 15
     # 启用外部mysql后，定义以下数据库信息，使用内部mysql请忽略。值格式为： host prot database_name username password。
     #IAM_SERVICE_DB=("mysql" "3306" "iam_service" "username" "password")
     #MANAGER_SERVICE_DB=("mysql" "3306" "manager_service" "username" "password")
-    #EVENT_STORE_SERVICE_DB=("mysql" "3306" "event_store_service" "username" "password")
+    #NOTIFY_SERVICE_DB=("mysql" "3306" "notify_service" "username" "password")
+    #ASGARD_SERVICE_DB=("mysql" "3306" "asgard_service" "username" "password")
     #DEVOPS_SERVICE_DB=("mysql" "3306" "devops_service" "username" "password")
     #GITLAB_SERVICE_DB=("mysql" "3306" "gitlab_service" "username" "password")
     #AGILE_SERVICE_DB=("mysql" "3306" "agile_service" "username" "password")
@@ -116,10 +115,8 @@ weight = 15
     EXTERNAL_HARBOR="false"
     # Harbar 所需目录，若使用外部Harbor，请忽略。
     HARBOR_ADMINSERVER_DIR="/u01/io-choerodon/harbor/adminserver"
-    HARBOR_MYSQL_DIR="/u01/io-choerodon/harbor/mysql"
+    HARBOR_DB_DIR="/u01/io-choerodon/harbor/db"
     HARBOR_REGISTRY_DIR="/u01/io-choerodon/harbor/registry"
-    HARBOR_NOTARY_DIR="/u01/io-choerodon/harbor/notary"
-    HARBOR_POSTGRESQL_DIR="/u01/io-choerodon/harbor/postgresql"
     # Harbar访问地址（仅为域名地址，不能为IP地址）
     HARBOR_EXTERNAL_URL="registry.example.choerodon.io"
     # Harbar管理员密码（长度8-20位，必须包含至少1个大写字母，至少1个小写字母，至少1个数字）
@@ -130,7 +127,7 @@ weight = 15
 
     ```
     curl -o choerodon-install.sh \
-        https://file.choerodon.com.cn/choerodon-install/install-0.8.sh && \
+        https://file.choerodon.com.cn/choerodon-install/install-0.9.sh && \
     sh choerodon-install.sh values.sh
     ```
 
@@ -164,6 +161,7 @@ weight = 15
 
 - [设置Harbor启用HTTPS](../parts/base/harbor/#启用https)
 - [克隆模板仓库到自己的Gitlab中](../parts/base/gitlab/#克隆模板仓库)
+- [设置Gitlab启用SSH协议](../parts/base/gitlab/#启用SSH协议)
 
 ## 部署失败操作
 

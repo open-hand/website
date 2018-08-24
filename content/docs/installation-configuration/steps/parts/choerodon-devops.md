@@ -79,25 +79,26 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
         --set env.open.SERVICES_HARBOR_USERNAME=admin \
         --set env.open.SERVICES_HARBOR_PASSWORD="Harbor12345" \
         --set env.open.SERVICES_HELM_URL="http://chart.example.choerodon.io" \
-        --set env.open.SERVICES_GITLAB_URL="https://code.example.choerodon.io" \
+        --set env.open.SERVICES_GITLAB_URL="http://code.example.choerodon.io" \
+        --set env.open.SERVICES_GITLAB_SSHURL="git@code.example.choerodon.io" \
         --set env.open.SERVICES_GITLAB_PASSWORD=password \
         --set env.open.SERVICES_GITLAB_PROJECTLIMIT=100 \
         --set env.open.SERVICES_GATEWAY_URL=http://api.example.choerodon.io \
         --set env.open.SERVICES_SONARQUBE_URL=http://sonarqube.example.choerodon.io \
-        --set env.open.SECURITY_IGNORED="/ci\,/webhook\,/v2/api-docs\,/agent/**\,/ws/**" \
-        --set env.open.AGENT_VERSION="0.8.0" \
+        --set env.open.SECURITY_IGNORED="/ci\,/webhook\,/v2/api-docs\,/agent/**\,/ws/**\,/webhook/**" \
+        --set env.open.AGENT_VERSION="0.9.3" \
         --set env.open.AGENT_REPOURL="https://openchart.choerodon.com.cn/choerodon/c7n/" \
         --set env.open.AGENT_SERVICEURL="ws://devops.service.example.choerodon.io/agent/" \
-        --set env.open.TEMPLATE_VERSION_MICROSERVICE="0.7.0" \
-        --set env.open.TEMPLATE_VERSION_MICROSERVICEFRONT="0.7.0" \
-        --set env.open.TEMPLATE_VERSION_JAVALIB="0.7.0" \
+        --set env.open.TEMPLATE_VERSION_MICROSERVICE="0.9.0" \
+        --set env.open.TEMPLATE_VERSION_MICROSERVICEFRONT="0.9.0" \
+        --set env.open.TEMPLATE_VERSION_JAVALIB="0.9.0" \
         --set ingress.enable=true \
         --set ingress.host=devops.service.example.choerodon.io \
         --set service.enable=true \
         --set persistence.enabled=true \
         --set persistence.existingClaim="devops-service-pvc" \
         --name=devops-service \
-        --version=0.8.4 --namespace=choerodon-devops-prod
+        --version=0.9.1 --namespace=choerodon-devops-prod
     ```
     参数名 | 含义 
     --- |  --- 
@@ -169,7 +170,7 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
         --set env.open.GITLAB_URL="https://code.example.choerodon.io" \
         --set env.open.GITLAB_PRIVATETOKEN="choerodon-gitlab-token" \
         --name=gitlab-service \
-        --version=0.8.0 --namespace=choerodon-devops-prod
+        --version=0.9.1 --namespace=choerodon-devops-prod
     ```
     参数名 | 含义 
     --- |  --- 
@@ -223,7 +224,7 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
         --set service.enable=true \
         --set ingress.enable=true \
         --name=choerodon-front-devops \
-        --version=0.8.0 --namespace=choerodon-devops-prod
+        --version=0.9.2 --namespace=choerodon-devops-prod
     ```
     参数名 | 含义 
     --- |  --- 
