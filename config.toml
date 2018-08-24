@@ -1,4 +1,4 @@
-baseurl = "http://v0-8.choerodon.io/"
+baseurl = "http://v0-9.choerodon.io/"
 title = "Choerodon | 企业级数字服务平台"
 theme = "choerodon-document-theme"
 # themesDir = "../.."
@@ -88,19 +88,19 @@ paginate = 10
     [[languages.zh.menu.main]]
     name = "v0.8"
     url  = "http://v0-8.choerodon.io/zh/"
-    weight = 1
+    weight = 2
     parent = "version"
 
     [[languages.zh.menu.main]]
     name = "v0.7"
     url  = "http://v0-7.choerodon.io/zh/"
-    weight = 2
+    weight = 3
     parent = "version"
 
     [[languages.zh.menu.main]]
     name = "v0.6"
     url  = "http://v0-6.choerodon.io/zh/"
-    weight = 3
+    weight = 4
     parent = "version"
 
 [params]

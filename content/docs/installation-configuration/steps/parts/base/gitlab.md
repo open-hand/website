@@ -331,18 +331,18 @@ CentOS各发行版中SSH端口默认为22，如果正式做站或其它用途，
         apiVersion: v1
         kind: Service
         metadata:
-        name: gitlab-ssh
-        namespace: choerodon-devops-prod
+          name: gitlab-ssh
+          namespace: choerodon-devops-prod
         spec:
-        externalIPs:
-        - 192.168.1.1 #请修改这里的IP为第一步设置SSH端口号的节点IP
-        ports:
-        - name: http
+          externalIPs:
+          - 192.168.1.1 #请修改这里的IP为第一步设置SSH端口号的节点IP
+          ports:
+          - name: http
             port: 22
             protocol: TCP
             targetPort: 22
-        selector:
-            choerodon.io/infra: gitlab
+          selector:
+              choerodon.io/infra: gitlab
 
 1. 使Gitlab SSH Service生效
 

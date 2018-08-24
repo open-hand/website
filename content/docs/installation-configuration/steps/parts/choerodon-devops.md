@@ -51,6 +51,26 @@ helm repo update
 choerodon devops service需要与Chartmuseum共用存储，所以choerodon devops service的PV物理目录与Chartmuseum的PV物理目录必须一致。
 </blockquote>
 
+- 创建CRD
+    - 在任意master节点新建`C7NHelmRelease.yaml`文件，粘贴以下信息：
+
+            apiVersion: apiextensions.k8s.io/v1beta1
+            kind: CustomResourceDefinition
+            metadata:
+              name: c7nhelmreleases.choerodon.io
+            spec:
+              group: choerodon.io
+              names:
+                kind: C7NHelmRelease
+                listKind: C7NHelmReleaseList
+                plural: c7nhelmreleases
+                singular: c7nhelmrelease
+              scope: Namespaced
+              version: v1alpha1
+    - 执行以下命令进行部署：
+
+            kubectl apply -f C7NHelmRelease.yaml
+
 - 部署服务
 
     ``` 
@@ -80,13 +100,13 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
         --set env.open.SERVICES_HARBOR_PASSWORD="Harbor12345" \
         --set env.open.SERVICES_HELM_URL="http://chart.example.choerodon.io" \
         --set env.open.SERVICES_GITLAB_URL="http://code.example.choerodon.io" \
-        --set env.open.SERVICES_GITLAB_SSHURL="git@code.example.choerodon.io" \
+        --set env.open.SERVICES_GITLAB_SSHURL="code.example.choerodon.io" \
         --set env.open.SERVICES_GITLAB_PASSWORD=password \
         --set env.open.SERVICES_GITLAB_PROJECTLIMIT=100 \
         --set env.open.SERVICES_GATEWAY_URL=http://api.example.choerodon.io \
         --set env.open.SERVICES_SONARQUBE_URL=http://sonarqube.example.choerodon.io \
         --set env.open.SECURITY_IGNORED="/ci\,/webhook\,/v2/api-docs\,/agent/**\,/ws/**\,/webhook/**" \
-        --set env.open.AGENT_VERSION="0.9.3" \
+        --set env.open.AGENT_VERSION="0.9.4" \
         --set env.open.AGENT_REPOURL="https://openchart.choerodon.com.cn/choerodon/c7n/" \
         --set env.open.AGENT_SERVICEURL="ws://devops.service.example.choerodon.io/agent/" \
         --set env.open.TEMPLATE_VERSION_MICROSERVICE="0.9.0" \
