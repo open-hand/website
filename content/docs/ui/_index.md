@@ -43,7 +43,7 @@ $ yarn add choerodon-ui
 
 在浏览器中使用 `script` 和 `link` 标签直接引入文件，并使用全局变量 `antd`。
 
-我们在 npm 发布包内的 `choerodon-ui/dist` 目录下提供了 `antd.js` `antd.css` 以及 `antd.min.js` `antd.min.css`。你也可以通过 [![CDNJS](https://img.shields.io/cdnjs/v/antd.svg?style=flat-square)](https://cdnjs.com/libraries/antd)
+我们在 npm 发布包内的 `choerodon-ui/dist` 目录下提供了 `choerodon-ui.js` `choerodon-ui.css` 以及 `choerodon-ui.min.js` `choerodon-ui.min.css`。你也可以通过 [![CDNJS](https://img.shields.io/cdnjs/v/antd.svg?style=flat-square)](https://cdnjs.com/libraries/antd)
  或 [UNPKG](https://unpkg.com/choerodon-ui/dist/) 进行下载。
 
 > **强烈不推荐使用已构建文件**，这样无法按需加载，而且难以获得底层依赖模块的 bug 快速修复支持。
