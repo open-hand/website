@@ -70,7 +70,7 @@ helm repo update
         --set env.open.SPRING_CLOUD_CONFIG_URI="http://config-server.choerodon-devops-prod:8010/" \
         --set env.open.SERVICES_ATTACHMENT_URL="https://minio.example.choerodon.io/agile-service/" \
         --name=agile-service \
-        --version=0.9.0 --namespace=choerodon-devops-prod
+        --version=0.9.1 --namespace=choerodon-devops-prod
     ```
     参数名 | 含义 
     --- |  --- 
@@ -123,7 +123,7 @@ helm repo update
         --set service.enable=true \
         --set ingress.enable=true \
         --name=choerodon-front-agile \
-        --version=0.9.0 --namespace=choerodon-devops-prod
+        --version=0.9.1 --namespace=choerodon-devops-prod
     ```
     参数名 | 含义 
     --- |  --- 
