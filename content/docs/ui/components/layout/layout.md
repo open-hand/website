@@ -56,77 +56,8 @@ weight = 2
 > 注意：采用 flex 布局实现，请注意[浏览器兼容性](http://caniuse.com/#search=flex)问题。
 
 ## 代码演示
-<div class="c7n-row">
-    <div class="c7n-row-12">
-        <section class="code-box" id="components-layout-demo-basic">
-            <section class="code-box-demo"><div id="layout-basic"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>基本结构</a></div>
-                <div>
-                    <p>典型的页面布局。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box" id="components-layout-demo-top">
-            <section class="code-box-demo"><div id="layout-top"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>上中下布局</a></div>
-                <div>
-                    <p>最基本的『上-中-下』布局。</p>
-                    <p>一般主导航放置于页面的顶端，从左自右依次为：logo、一级导航项、辅助菜单（用户、设置、通知等）。通常将内容放在固定尺寸（例如：1200px）内，整个页面排版稳定，不受用户终端显示器影响；上下级的结构符合用户上下浏览的习惯，也是较为经典的网站导航模式。页面上下切分的方式提高了主工作区域的信息展示效率，但在纵向空间上会有一些牺牲。此外，由于导航栏水平空间的限制，不适合那些一级导航项很多的信息结构。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box" id="components-layout-demo-top-side-2">
-            <section class="code-box-demo"><div id="layout-top-side-menu"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>顶部-侧边布局-通栏</a></div>
-                <div>
-                    <p>同样拥有顶部导航及侧边栏，区别是两边未留边距，多用于应用型的网站。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box" id="components-layout-demo-side">
-            <section class="code-box-demo"><div id="layout-top-side"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>顶部-侧边布局</a></div>
-                <div>
-                    <p>拥有顶部导航及侧边栏的页面，多用于展示类网站。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box" id="components-layout-demo-custom-trigger">
-            <section class="code-box-demo"><div id="layout-trigger"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>自定义触发器</a></div>
-                <div>
-                    <p>要使用自定义触发器，可以设置 trigger={null} 来隐藏默认设定。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box" id="components-layout-demo-responsive">
-            <section class="code-box-demo"><div id="layout-responsive"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>响应式布局</a></div>
-                <div>
-                    <p>Layout.Sider 支持响应式布局。</p>
-                    <blockquote><p>说明：配置 <code>breakpoint</code> 属性即生效，视窗宽度小于 <code>breakpoint</code> 时 Sider 缩小为 <code>collapsedWidth</code> 宽度，若将 <code>collapsedWidth</code> 设置为零，会出现特殊 trigger。</p></blockquote>
-                </div>
-            </section>
-        </section>
-        <section class="code-box" id="components-layout-demo-fixed">
-            <section class="code-box-demo"><div id="layout-fixed"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>固定头部</a></div>
-                <div>
-                    <p>一般用于固定顶部导航，方便页面切换。</p>
-                </div>
-            </section>
-        </section>
-    </div>
-</div>
 
-{{< components-layout >}}
+{{< components layout layout true >}}
 
 ## API
 

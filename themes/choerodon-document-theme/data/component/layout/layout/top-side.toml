@@ -1,0 +1,74 @@
+parent="components-layout-demo-top-side"
+id= "layout-top-side"
+weight= 4
+name= "顶部-侧边布局"
+description= "拥有顶部导航及侧边栏的页面，多用于展示类网站。"
+code= """
+````jsx
+import { Layout, Menu, Breadcrumb } from 'choerodon-ui';
+const { Header, Content, Footer } = Layout;
+
+ReactDOM.render(
+  <Layout className="layout">
+    <Header>
+      <div className="logo" />
+      <Menu
+        theme="dark"
+        mode="horizontal"
+        defaultSelectedKeys={['2']}
+        style={{ lineHeight: '64px' }}
+      >
+        <Menu.Item key="1">nav 1</Menu.Item>
+        <Menu.Item key="2">nav 2</Menu.Item>
+        <Menu.Item key="3">nav 3</Menu.Item>
+      </Menu>
+    </Header>
+    <Content style={{ padding: '0 50px' }}>
+      <Breadcrumb style={{ margin: '16px 0' }}>
+        <Breadcrumb.Item>Home</Breadcrumb.Item>
+        <Breadcrumb.Item>List</Breadcrumb.Item>
+        <Breadcrumb.Item>App</Breadcrumb.Item>
+      </Breadcrumb>
+      <div style={{ background: '#fff', padding: 24, minHeight: 280 }}>Content</div>
+    </Content>
+    <Footer style={{ textAlign: 'center' }}>
+      Ant Design ©2016 Created by Ant UED
+    </Footer>
+  </Layout>,
+  mountNode);
+````
+"""
+script= """
+const {  Layout, Menu, Breadcrumb } = window['choerodon-ui'];
+const { Header, Content, Footer } = Layout;
+
+ReactDOM.render(
+  <Layout className="layout">
+    <Header>
+      <div className="logo" />
+      <Menu
+        theme="dark"
+        mode="horizontal"
+        defaultSelectedKeys={['2']}
+        style={{ lineHeight: '64px' }}
+      >
+        <Menu.Item key="1">nav 1</Menu.Item>
+        <Menu.Item key="2">nav 2</Menu.Item>
+        <Menu.Item key="3">nav 3</Menu.Item>
+      </Menu>
+    </Header>
+    <Content style={{ padding: '0 50px' }}>
+      <Breadcrumb style={{ margin: '16px 0' }}>
+        <Breadcrumb.Item>Home</Breadcrumb.Item>
+        <Breadcrumb.Item>List</Breadcrumb.Item>
+        <Breadcrumb.Item>App</Breadcrumb.Item>
+      </Breadcrumb>
+      <div style={{ background: '#fff', padding: 24, minHeight: 280 }}>Content</div>
+    </Content>
+    <Footer style={{ textAlign: 'center' }}>
+      Ant Design ©2016 Created by Ant UED
+    </Footer>
+  </Layout>,
+  document.getElementById('layout-top-side')
+);
+"""

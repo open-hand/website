@@ -1,0 +1,38 @@
+id= "affix-basic"
+left= true
+weight= 1
+name= "基本"
+description= "最简单的用法。"
+code= """
+````jsx
+import { Affix, Button } from 'choerodon-ui';
+
+ReactDOM.render(
+  <div>
+    <Affix>
+      <Button type="primary">Affix top</Button>
+    </Affix>
+    <br />
+    <Affix offsetBottom={0}>
+      <Button type="primary">Affix bottom</Button>
+    </Affix>
+  </div>,
+  mountNode
+);
+````
+"""
+script= """
+const { Affix, Button } = window['choerodon-ui'];
+
+ReactDOM.render(
+  <div>
+    <Affix>
+      <Button type="primary">Affix top</Button>
+    </Affix>
+    <br />
+    <Affix offsetBottom={0}>
+      <Button type="primary">Affix bottom</Button>
+    </Affix>
+  </div>,
+  document.getElementById('affix-basic'));
+"""
