@@ -73,11 +73,17 @@ paginate = 10
     identifier = "github"
 
 [[languages.zh.menu.main]]
-    name = "v0.8"
+    name = "v0.9"
     url  = "/zh/"
     weight = 6
     identifier = "version"
     pre = "<i class='iconfont'>&#xe600;</i>"
+
+    [[languages.zh.menu.main]]
+    name = "v0.9"
+    url  = "http://v0-9.choerodon.io/zh/"
+    weight = 1
+    parent = "version"
 
     [[languages.zh.menu.main]]
     name = "v0.8"
@@ -96,13 +102,6 @@ paginate = 10
     url  = "http://v0-6.choerodon.io/zh/"
     weight = 3
     parent = "version"
-
-    [[languages.zh.menu.main]]
-    name = "v0.5"
-    url  = "http://v0-5.choerodon.io/zh/"
-    weight = 4
-    parent = "version"
-
 
 [params]
     viewMorePostLink = "/blog/"
