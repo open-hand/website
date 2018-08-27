@@ -1,0 +1,30 @@
+id= "steps-small"
+weight= 2
+name= "迷你版"
+description= '迷你版的步骤条，通过设置 `<Steps size="small">` 启用.'
+code= """
+````jsx
+import { Steps } from 'choerodon-ui';
+const Step = Steps.Step;
+
+ReactDOM.render(
+  <Steps size="small" current={1}>
+    <Step title="Finished" />
+    <Step title="In Progress" />
+    <Step title="Waiting" />
+  </Steps>,
+  mountNode);
+````
+"""
+script= """
+const { Steps } = window['choerodon-ui'];
+const Step = Steps.Step;
+
+ReactDOM.render(
+  <Steps size="small" current={1}>
+    <Step title="Finished" />
+    <Step title="In Progress" />
+    <Step title="Waiting" />
+  </Steps>,
+  document.getElementById('steps-small'));
+"""

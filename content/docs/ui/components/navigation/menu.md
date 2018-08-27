@@ -14,67 +14,8 @@ weight = 4
 更多布局和导航的使用可以参考：[通用布局](../../layout/layout)。
 
 ## 代码演示
-<div class="c7n-row">
-    <div class="c7n-row-12">
-        <section class="code-box">
-            <section class="code-box-demo"><div id="menu-horizontal"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>顶部导航</a></div>
-                <div>
-                    <p>水平的顶部导航菜单。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="menu-inline"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>内嵌菜单</a></div>
-                <div>
-                    <p>垂直菜单，子菜单内嵌在菜单区域。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="menu-inline-collapsed"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>缩起内嵌菜单</a></div>
-                <div>
-                    <p>内嵌菜单可以被缩起/展开。</p>
-                    <p>你可以在 <a href="../../layout/layout/#components-layout-demo-side">Layout</a> 里查看侧边布局结合的完整示例。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="menu-current"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>只展开当前父级菜单</a></div>
-                <div>
-                    <p>点击菜单，收起其他展开的所有菜单，保持菜单聚焦简洁。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="menu-vertical"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>垂直菜单</a></div>
-                <div>
-                    <p>子菜单是弹出的形式。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="menu-switch-mode"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>切换菜单类型</a></div>
-                <div>
-                    <p>展示动态切换模式。</p>
-                </div>
-            </section>
-        </section>
-    </div>
-</div>
 
-{{< components-menu >}}
+{{< components navigation menu true >}}
 
 ## API
 

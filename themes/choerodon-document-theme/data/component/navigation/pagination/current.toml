@@ -1,0 +1,42 @@
+id= "pagination-current"
+weight= 3
+name= "改变"
+description= "改变每页显示条目数。"
+code= """
+````jsx
+import { Pagination } from 'choerodon-ui';
+
+function onShowSizeChange(current, pageSize) {
+  console.log(current, pageSize);
+}
+
+ReactDOM.render(
+  <Pagination
+    tiny={false}
+    showSizeChangerLabel={false}
+    showTotal={false}
+    onShowSizeChange={onShowSizeChange}
+    defaultCurrent={3}
+    total={500}
+  />,
+  mountNode);
+````
+"""
+script= """
+const { Pagination } = window['choerodon-ui'];
+
+function onShowSizeChange(current, pageSize) {
+  console.log(current, pageSize);
+}
+
+ReactDOM.render(
+  <Pagination
+    tiny={false}
+    showSizeChangerLabel={false}
+    showTotal={false}
+    onShowSizeChange={onShowSizeChange}
+    defaultCurrent={3}
+    total={500}
+  />,
+  document.getElementById('pagination-current'));
+"""

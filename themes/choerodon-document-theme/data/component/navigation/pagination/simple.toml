@@ -1,0 +1,20 @@
+id= "pagination-simple"
+weight= 7
+name= "简洁"
+description= "简单的翻页。"
+code= """
+````jsx
+import { Pagination } from 'choerodon-ui';
+
+ReactDOM.render(
+  <Pagination simple defaultCurrent={2} total={50} />,
+  mountNode);
+````
+"""
+script= """
+const { Pagination } = window['choerodon-ui'];
+
+ReactDOM.render(
+  <Pagination simple defaultCurrent={2} total={50} />,
+  document.getElementById('pagination-simple'));
+"""
