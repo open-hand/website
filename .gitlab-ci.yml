@@ -2,6 +2,9 @@ stages:
 - docker_build
 - broken_link_check
 
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive
+
 docker_build:
   stage: docker_build
   image: registry.cn-hangzhou.aliyuncs.com/choerodon-tools/cibase:0.5.0
