@@ -14,77 +14,7 @@ weight = 1
 
 ## 代码演示
 
-<div class="c7n-row">
-    <div class="c7n-row-6">
-        <section class="code-box">
-            <section class="code-box-demo"><div id="alert-demo-basic"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>基本</a></div>
-                <div>
-                    <p>最简单的用法，适用于简短的警告提示。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="alert-demo-close"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>可关闭的警告提示</a></div>
-                <div>
-                    <p>显示关闭按钮，点击可关闭警告提示。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="alert-demo-icon"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>图标</a></div>
-                <div>
-                    <p>可口的图标让信息类型更加醒目。</p>
-                </div>
-            </section>
-        </section>
-    </div>
-    <div class="c7n-row-6">
-        <section class="code-box">
-            <section class="code-box-demo"><div id="alert-demo-type"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>四种样式</a></div>
-                <div>
-                    <p>共有四种样式 <code>success</code>、<code>info</code>、<code>warning</code>、<code>error</code>。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="alert-demo-text"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>含辅助性文字介绍</a></div>
-                <div>
-                    <p>含有辅助性文字介绍的警告提示。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="alert-demo-custom"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>自定义关闭</a></div>
-                <div>
-                    <p>可以自定义关闭，自定义的文字会替换原先的关闭 <code>Icon</code>。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="alert-demo-uninstall"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>平滑的卸载</a></div>
-                <div>
-                    <p>平滑、自然的卸载提示</p>
-                </div>
-            </section>
-        </section>
-    </div>
-</div>
-
-{{< components-alert >}}
+{{< components feedback alert >}}
 
 ## API
 

@@ -1,0 +1,77 @@
+id= "alert-demo-uninstall"
+right= true
+weight= 4
+name= "平滑的卸载"
+description= "平滑、自然的卸载提示"
+code= """
+````jsx
+import { Alert } from 'choerodon-ui';
+
+class App extends React.Component {
+  state = {
+    visiable: true,
+  }
+
+  handleClose = () => {
+    this.setState({ visiable: false });
+  }
+
+  render() {
+    return (
+      <div>
+        {
+          this.state.visiable ? (
+            <Alert
+              message="Alert Message Text"
+              type="success"
+              closable
+              afterClose={this.handleClose}
+            />
+          ) : null
+        }
+        <p>placeholder text here</p>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(
+  <App />,
+  mountNode);
+````
+"""
+script= """
+const { Alert } = window['choerodon-ui'];
+
+class App extends React.Component {
+  state = {
+    visiable: true,
+  }
+
+  handleClose = () => {
+    this.setState({ visiable: false });
+  }
+
+  render() {
+    return (
+      <div>
+        {
+          this.state.visiable ? (
+            <Alert
+              message="Alert Message Text"
+              type="success"
+              closable
+              afterClose={this.handleClose}
+            />
+          ) : null
+        }
+        <p>placeholder text here</p>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(
+  <App />,
+  document.getElementById('alert-demo-uninstall'));
+"""

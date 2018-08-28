@@ -1,0 +1,25 @@
+id= "progress-demo-segment"
+left= true
+weight= 5
+name= "分段进度条"
+description= "标准的进度条。"
+code= """
+````jsx
+import { Tooltip, Progress } from 'choerodon-ui';
+
+ReactDOM.render(
+  <Tooltip title="3 done / 3 in progress / 4 to do">
+    <Progress percent={60} successPercent={30} />
+  </Tooltip>,
+  mountNode);
+````
+"""
+script= """
+const { Tooltip, Progress } = window['choerodon-ui'];
+
+ReactDOM.render(
+  <Tooltip title="3 done / 3 in progress / 4 to do">
+    <Progress percent={60} successPercent={30} />
+  </Tooltip>,
+  document.getElementById('progress-demo-segment'));
+"""

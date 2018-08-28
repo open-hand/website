@@ -1,0 +1,35 @@
+id= "notification-demo-basic"
+left= true
+weight= 1
+name= "基本"
+description= "最简单的用法，4.5 秒后自动关闭。"
+code= """
+````jsx
+import { Button, notification } from 'choerodon-ui';
+
+const openNotification = () => {
+  notification.open({
+    message: 'Notification Title',
+    description: 'This is the content of the notification. This is the content of the notification. This is the content of the notification.',
+  });
+};
+
+ReactDOM.render(
+  <Button type="primary" onClick={openNotification}>Open the notification box</Button>,
+  mountNode);
+````
+"""
+script= """
+const { Button, notification } = window['choerodon-ui'];
+
+const openNotification = () => {
+  notification.open({
+    message: 'Notification Title',
+    description: 'This is the content of the notification. This is the content of the notification. This is the content of the notification.',
+  });
+};
+
+ReactDOM.render(
+  <Button type="primary" onClick={openNotification}>Open the notification box</Button>,
+  document.getElementById('notification-demo-basic'));
+"""

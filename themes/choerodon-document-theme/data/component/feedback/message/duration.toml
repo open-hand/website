@@ -1,0 +1,29 @@
+id= "message-demo-duration"
+left= true
+weight= 2
+name= "修改延时"
+description= "自定义时长 `10s`，默认时长为 `3s`。"
+code= """
+````jsx
+import { message, Button } from 'choerodon-ui';
+
+const success = () => {
+  message.success('This is a prompt message for success, and it will disappear in 10 seconds', 10);
+};
+
+ReactDOM.render(
+  <Button onClick={success}>Customized display duration</Button>,
+  mountNode);
+````
+"""
+script= """
+const { message, Button } = window['choerodon-ui'];
+
+const success = () => {
+  message.success('This is a prompt message for success, and it will disappear in 10 seconds', 10);
+};
+
+ReactDOM.render(
+  <Button onClick={success}>Customized display duration</Button>,
+  document.getElementById('message-demo-duration'));
+"""

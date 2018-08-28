@@ -1,0 +1,25 @@
+id= "spin-demo-inside"
+left= true
+weight= 2
+name= "容器"
+description= "放入一个容器中。"
+code= """
+````jsx
+import { Spin } from 'choerodon-ui';
+
+ReactDOM.render(
+  <div className="example">
+    <Spin />
+  </div>,
+  mountNode);
+````
+"""
+script= """
+const { Spin } = window['choerodon-ui'];
+
+ReactDOM.render(
+  <div className="example">
+    <Spin />
+  </div>,
+  document.getElementById('spin-demo-inside'));
+"""

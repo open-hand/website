@@ -12,9 +12,9 @@ ReactDOM.render(
   <Anchor affix={false}>
     <Link href="#anchor-demo-basic" title="Basic demo" />
     <Link href="#anchor-demo-location" title="Fixed demo" />
-    <Link href="#API" title="API">
-      <Link href="#Anchor-Props" title="Anchor Props" />
-      <Link href="#Link-Props" title="Link Props" />
+    <Link href="#api" title="API">
+      <Link href="#anchor-props" title="Anchor Props" />
+      <Link href="#link-props" title="Link Props" />
     </Link>
   </Anchor>,
   mountNode);

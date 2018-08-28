@@ -1,0 +1,67 @@
+id= "spin-demo-nested"
+right= true
+weight= 2
+name= "卡片加载中"
+description= "可以直接把内容内嵌到 `Spin` 中，将现有容器变为加载状态。"
+code= """
+````jsx
+import { Spin, Switch, Alert } from 'choerodon-ui';
+
+class Card extends React.Component {
+  state = { loading: false }
+
+  toggle = (value) => {
+    this.setState({ loading: value });
+  }
+
+  render() {
+    return (
+      <div>
+        <Spin spinning={this.state.loading}>
+          <Alert
+            message="Alert message title"
+            description="Further details about the context of this alert."
+            type="info"
+          />
+        </Spin>
+        <div style={{ marginTop: 16 }}>
+          Loading state：<Switch checked={this.state.loading} onChange={this.toggle} />
+        </div>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<Card />, mountNode);
+````
+"""
+script= """
+const { Spin, Switch, Alert } = window['choerodon-ui'];
+
+class Card extends React.Component {
+  state = { loading: false }
+
+  toggle = (value) => {
+    this.setState({ loading: value });
+  }
+
+  render() {
+    return (
+      <div>
+        <Spin spinning={this.state.loading}>
+          <Alert
+            message="Alert message title"
+            description="Further details about the context of this alert."
+            type="info"
+          />
+        </Spin>
+        <div style={{ marginTop: 16 }}>
+          Loading state：<Switch checked={this.state.loading} onChange={this.toggle} />
+        </div>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<Card />, document.getElementById('spin-demo-nested'));
+"""

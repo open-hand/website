@@ -1,0 +1,61 @@
+id= "message-demo-other"
+right= true
+weight= 1
+name= "其他提示类型"
+description= "包括成功、失败、警告。"
+code= """
+````jsx
+import { message, Button } from 'choerodon-ui';
+
+message.config({
+  top: '24px',
+});
+
+const success = () => {
+  message.success('This is a message of success');
+};
+
+const error = () => {
+  message.error('This is a message of error');
+};
+
+const warning = () => {
+  message.warning('This is message of warning');
+};
+
+ReactDOM.render(
+  <div>
+    <Button onClick={success}>Success</Button>
+    <Button onClick={error}>Error</Button>
+    <Button onClick={warning}>Warning</Button>
+  </div>,
+  mountNode);
+````
+"""
+script= """
+const { message, Button } = window['choerodon-ui'];
+
+message.config({
+  top: '24px',
+});
+
+const success = () => {
+  message.success('This is a message of success');
+};
+
+const error = () => {
+  message.error('This is a message of error');
+};
+
+const warning = () => {
+  message.warning('This is message of warning');
+};
+
+ReactDOM.render(
+  <div>
+    <Button onClick={success}>Success</Button>
+    <Button onClick={error}>Error</Button>
+    <Button onClick={warning}>Warning</Button>
+  </div>,
+  document.getElementById('message-demo-other'));
+"""
