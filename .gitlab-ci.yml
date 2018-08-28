@@ -7,7 +7,7 @@ variables:
 
 docker_build:
   stage: docker_build
-  image: registry.cn-hangzhou.aliyuncs.com/choerodon-tools/cibase:0.5.0
+  image: registry.cn-hangzhou.aliyuncs.com/choerodon-tools/cifront:0.6.0
   script:
   - docker build --pull -t ${DOCKER_REGISTRY}/${GROUP_NAME}/${PROJECT_NAME}:${CI_COMMIT_TAG} .
   - docker build --pull -t ${DOCKER_REGISTRY}/${GROUP_NAME}/${PROJECT_NAME}:${CI_BUILD_REF_NAME} .
@@ -20,7 +20,7 @@ docker_build:
   - /^feature-.*$/
 
 broken_link_check:
-  image: registry.choerodon.com.cn/tools/cifront:0.5.0
+  image: registry.cn-hangzhou.aliyuncs.com/choerodon-tools/cifront:0.6.0
   services:
   - ${DOCKER_REGISTRY}/${CI_PROJECT_PATH}:${CI_BUILD_REF_NAME}
   stage: broken_link_check
@@ -33,9 +33,11 @@ broken_link_check:
   - /^feature-.*$/
 
 .auto_devops: &auto_devops |
-  curl -o .auto_devops.sh \
-  "${CHOERODON_URL}/devops/ci?token=${Token}&type=front"
-  source .auto_devops.sh
+  http_status_code=`curl -o .auto_devops.sh -s -m 10 --connect-timeout 10 -w %{http_code} "${CHOERODON_URL}/devops/ci?token=${Token}&type=front"`
+  if [ "$http_status_code" != "200" ]; then
+    cat .auto_devops.sh
+    exit 1
+  fi
 
 before_script:
 - *auto_devops
