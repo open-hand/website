@@ -106,7 +106,7 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
         --set env.open.SERVICES_GATEWAY_URL=http://api.example.choerodon.io \
         --set env.open.SERVICES_SONARQUBE_URL=http://sonarqube.example.choerodon.io \
         --set env.open.SECURITY_IGNORED="/ci\,/webhook\,/v2/api-docs\,/agent/**\,/ws/**\,/webhook/**" \
-        --set env.open.AGENT_VERSION="0.9.4" \
+        --set env.open.AGENT_VERSION="0.9.5" \
         --set env.open.AGENT_REPOURL="https://openchart.choerodon.com.cn/choerodon/c7n/" \
         --set env.open.AGENT_SERVICEURL="ws://devops.service.example.choerodon.io/agent/" \
         --set env.open.TEMPLATE_VERSION_MICROSERVICE="0.9.0" \
@@ -118,7 +118,7 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
         --set persistence.enabled=true \
         --set persistence.existingClaim="devops-service-pvc" \
         --name=devops-service \
-        --version=0.9.1 --namespace=choerodon-devops-prod
+        --version=0.9.2 --namespace=choerodon-devops-prod
     ```
     参数名 | 含义 
     --- |  --- 
@@ -216,78 +216,4 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
     - 出现以下类似信息即为成功部署
         ```
         UP
-        ```
-
-## 部署choerodon devops front
-
-<blockquote class="note">
-若部署<a href="../choerodon-front">整合前端</a>，请忽略本小节，因为整合前端中会包含本小节部署的功能。
-</blockquote>
-
-- 部署服务
-
-    ```
-    helm install c7n/choerodon-front-devops \
-        --set preJob.preConfig.mysql.host=choerodon-mysql \
-        --set preJob.preConfig.mysql.port=3306 \
-        --set preJob.preConfig.mysql.dbname=iam_service \
-        --set preJob.preConfig.mysql.username=choerodon \
-        --set preJob.preConfig.mysql.password=password \
-        --set env.open.PRO_API_HOST="api.example.choerodon.io" \
-        --set env.open.PRO_DEVOPS_HOST="ws://devops.service.example.choerodon.io" \
-        --set env.open.PRO_CLIENT_ID="devops" \
-        --set env.open.PRO_TITLE_NAME="Choerodon" \
-        --set env.open.PRO_HEADER_TITLE_NAME="Choerodon" \
-        --set env.open.PRO_HTTP="http" \
-        --set env.open.PRO_FILE_SERVER="http://minio.example.com" \
-        --set ingress.host="devops.choerodon.example.choerodon.io" \
-        --set service.enable=true \
-        --set ingress.enable=true \
-        --name=choerodon-front-devops \
-        --version=0.9.2 --namespace=choerodon-devops-prod
-    ```
-    参数名 | 含义 
-    --- |  --- 
-    preJob.preConfig.mysql{}|初始化配置所需manager_service数据库信息
-    env.open.PRO_API_HOST|api地址
-    env.open.PRO_DEVOPS_HOST|devops service地址
-    env.open.PRO_CLIENT_ID|client id
-    env.open.PRO_TITLE_NAME|页面显示标题
-    env.open.PRO_HEADER_TITLE_NAME|页面header标题
-    env.open.PRO_HTTP|使用协议
-    service.enable|创建service对象
-    ingress.enable|创建ingress对象
-    ingress.host|域名地址，此处不能带http://
-
-- 验证部署
-    - 验证命令
-
-        ```
-        curl $(kubectl get svc choerodon-front-devops -o jsonpath="{.spec.clusterIP}" -n choerodon-devops-prod)
-        ```
-    - 出现以下类似信息即为成功部署
-
-        ```html
-        <!DOCTYPE html><html><head><meta http-equiv="Content-type"content="text/html; charset=utf-8"><title>Choerodon</title><link rel="shortcut icon"href="favicon.ico"></head><body><div id="app"></div><script type="text/javascript"src="app/vendor_19e4b950.js"></script><script type="text/javascript"src="app/main_19e4b950.js"></script></body></html>
-        ```
-
-- 在访问搭建好的Choerodon的api，`api.example.choerodon.io/manager/swagger-ui.html`，选择`iam_service` -> `client-controller` -> `创建client`
-  - 认证请使用用户名：admin，密码：admin
-  - 提交以下数据，注意正式搭建时请替换以下值为真实值
-      
-        ```json
-        {
-            "accessTokenValidity": 60,
-            "additionalInformation": "",
-            "authorizedGrantTypes": "implicit,client_credentials,authorization_code,refresh_token",
-            "autoApprove": "default",
-            "name": "devops",
-            "objectVersionNumber": 0,
-            "organizationId": 1,
-            "refreshTokenValidity": 60,
-            "resourceIds": "default",
-            "scope": "default",
-            "secret": "secret",
-            "webServerRedirectUri": "http://devops.choerodon.example.choerodon.io"
-        }
         ```

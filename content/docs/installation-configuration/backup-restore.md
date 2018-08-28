@@ -383,27 +383,29 @@ weight = 10
     ```
 
 ### 恢复manager server
-1. 恢复配置
 
-    ```
-    helm upgrade --install manager-server c7n/manager-server -f manager-server-helm-values.yaml
-    ```
 1. 恢复数据库
 
     ```
     gunzip manager_service-<date>.sql.gz | mysql -u<username> -p<password> --databases manager_service 
     ```
-
-### 恢复iam server
 1. 恢复配置
 
     ```
-    helm upgrade --install iam-server c7n/iam-server -f iam-server-helm-values.yaml
+    helm upgrade --install manager-server c7n/manager-server -f manager-server-helm-values.yaml
     ```
+
+### 恢复iam server
+
 1. 恢复数据库
 
     ```
     gunzip iam_service-<date>.sql.gz | mysql -u<username> -p<password> --databases iam_service 
+    ```
+1. 恢复配置
+
+    ```
+    helm upgrade --install iam-server c7n/iam-server -f iam-server-helm-values.yaml
     ```
 
 ### 恢复api gateway
@@ -428,15 +430,17 @@ weight = 10
     ```
 
 ### 恢复event store service
-1. 恢复配置
 
-    ```
-    helm upgrade --install event-store-service c7n/event-store-service -f event-store-service-helm-values.yaml
-    ```
 1. 恢复数据库
 
     ```
     gunzip event_store_service-<date>.sql.gz | mysql -u<username> -p<password> --databases event_store_service 
+    ```
+
+1. 恢复配置
+
+    ```
+    helm upgrade --install event-store-service c7n/event-store-service -f event-store-service-helm-values.yaml
     ```
 
 ### 恢复file service
@@ -447,59 +451,58 @@ weight = 10
     ```
 
 ### 恢复devops service
-1. 恢复配置
 
-    ```
-    helm upgrade --install devops-service c7n/devops-service -f devops-service-helm-values.yaml
-    ```
 1. 恢复数据库
 
     ```
     gunzip devops_service-<date>.sql.gz | mysql -u<username> -p<password> --databases devops_service 
     ```
-
-### 恢复gitlab service
 1. 恢复配置
 
     ```
-    helm upgrade --install gitlab-service c7n/gitlab-service -f gitlab-service-helm-values.yaml
+    helm upgrade --install devops-service c7n/devops-service -f devops-service-helm-values.yaml
     ```
+
+### 恢复gitlab service
 1. 恢复数据库
 
     ```
     gunzip gitlab_service-<date>.sql.gz | mysql -u<username> -p<password> --databases gitlab_service 
     ```
-
-### 恢复agile service
 1. 恢复配置
 
     ```
-    helm upgrade --install agile-server c7n/agile-server -f agile-server-helm-values.yaml
+    helm upgrade --install gitlab-service c7n/gitlab-service -f gitlab-service-helm-values.yaml
     ```
+
+### 恢复agile service
+
 1. 恢复数据库
 
     ```
     gunzip agile_service-<date>.sql.gz | mysql -u<username> -p<password> --databases agile_service 
     ```
-
-### 恢复test manager service
 1. 恢复配置
 
     ```
-    helm upgrade --install test-manager-server c7n/test-manager-server -f test-manager-server-helm-values.yaml
+    helm upgrade --install agile-server c7n/agile-server -f agile-server-helm-values.yaml
     ```
+
+### 恢复test manager service
+
 1. 恢复数据库
 
     ```
     gunzip test_manager_service-<date>.sql.gz | mysql -u<username> -p<password> --databases test_manager_service 
     ```
-
-### 恢复xwiki
 1. 恢复配置
 
     ```
-    helm upgrade --install xwiki c7n/xwiki -f xwiki-helm-values.yaml
+    helm upgrade --install test-manager-server c7n/test-manager-server -f test-manager-server-helm-values.yaml
     ```
+
+### 恢复xwiki
+
 1. 恢复数据库
 
     ```
@@ -507,17 +510,22 @@ weight = 10
     ```
 1. 恢复数据
     - 将挂载的所有目录数据恢复即可
-
-### 恢复wiki service
 1. 恢复配置
 
     ```
-    helm upgrade --install wiki-service c7n/wiki-service -f wiki-service-helm-values.yaml
+    helm upgrade --install xwiki c7n/xwiki -f xwiki-helm-values.yaml
     ```
+
+### 恢复wiki service
 1. 恢复数据库
 
     ```
     gunzip wiki_service-<date>.sql.gz | mysql -u<username> -p<password> --databases wiki_service 
+    ```
+1. 恢复配置
+
+    ```
+    helm upgrade --install wiki-service c7n/wiki-service -f wiki-service-helm-values.yaml
     ```
 
 ### 恢复choerodon front
