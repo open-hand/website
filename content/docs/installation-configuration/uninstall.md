@@ -43,9 +43,7 @@ weight = 12
 - 删除kafka-pv-02：`helm delete --purge kafka-pv-02`
 - 删除harbor：`helm delete --purge harbor`
 - 删除harbor-adminserver-pv：`helm delete --purge harbor-adminserver-pv`
-- 删除harbor-mysql-pv：`helm delete --purge harbor-mysql-pv`
 - 删除harbor-registry-pv：`helm delete --purge harbor-registry-pv`
-- 删除harbor-notary-pv：`helm delete --purge harbor-notary-pv`
 - 删除harbor-postgresql-pv：`helm delete --purge harbor-postgresql-pv`
 - 删除gitlab：`helm delete --purge gitlab`
 - 删除gitlab-pv：`helm delete --purge gitlab-pv`
