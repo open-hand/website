@@ -1,0 +1,21 @@
+id= "alert-demo-basic"
+left= true
+weight= 1
+name= "基本"
+description= "最简单的用法，适用于简短的警告提示。"
+code= """
+````jsx
+import { Alert } from 'choerodon-ui';
+
+ReactDOM.render(
+  <Alert message="Success Text" type="success" />,
+  mountNode);
+````
+"""
+script= """
+const { Alert } = window['choerodon-ui'];
+
+ReactDOM.render(
+  <Alert message="Success Text" type="success" />,
+  document.getElementById('alert-demo-basic'));
+"""

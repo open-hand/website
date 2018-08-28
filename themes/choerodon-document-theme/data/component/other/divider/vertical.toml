@@ -1,0 +1,33 @@
+id= "divider-demo-vertical"
+right= true
+weight= 1
+name= "垂直分割线"
+description= '使用 `type="vertical"` 设置为行内的垂直分割线。'
+code= """
+````jsx
+import { Divider } from 'choerodon-ui';
+
+ReactDOM.render(
+  <div>
+    Text
+    <Divider type="vertical" />
+    <a href="#">Link</a>
+    <Divider type="vertical" />
+    <a href="#">Link</a>
+  </div>,
+  mountNode);
+````
+"""
+script= """
+const { Divider } = window['choerodon-ui'];
+
+ReactDOM.render(
+  <div>
+    Text
+    <Divider type="vertical" />
+    <a href="#">Link</a>
+    <Divider type="vertical" />
+    <a href="#">Link</a>
+  </div>,
+  document.getElementById('divider-demo-vertical'));
+"""

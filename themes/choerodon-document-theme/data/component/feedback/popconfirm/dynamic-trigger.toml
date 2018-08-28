@@ -1,0 +1,129 @@
+id= "popconfirm-demo-dynamic-trigger"
+right= true
+weight= 2
+name= "条件触发"
+description= "可以判断是否需要弹出。"
+code= """
+````jsx
+import { Popconfirm, Switch, message } from 'choerodon-ui';
+
+class App extends React.Component {
+  state = {
+    visible: false,
+    condition: true, // Whether meet the condition, if not show popconfirm.
+  }
+
+  changeCondition = (value) => {
+    this.setState({ condition: value });
+  }
+
+  confirm = () => {
+    this.setState({ visible: false });
+    message.success('Next step.');
+  }
+
+  cancel = () => {
+    this.setState({ visible: false });
+    message.error('Click on cancel.');
+  }
+
+  handleVisibleChange = (visible) => {
+    if (!visible) {
+      this.setState({ visible });
+      return;
+    }
+    // Determining condition before show the popconfirm.
+    console.log(this.state.condition);
+    if (this.state.condition) {
+      this.confirm(); // next step
+    } else {
+      this.setState({ visible }); // show the popconfirm
+    }
+  }
+
+  render() {
+    return (
+      <div>
+        <Popconfirm
+          title="Are you sure delete this task?"
+          visible={this.state.visible}
+          onVisibleChange={this.handleVisibleChange}
+          onConfirm={this.confirm}
+          onCancel={this.cancel}
+          okText="Yes"
+          cancelText="No"
+        >
+          <a href="#">Delete a task</a>
+        </Popconfirm>
+        <br />
+        <br />
+        Whether directly execute：<Switch defaultChecked onChange={this.changeCondition} />
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<App />, mountNode);
+````
+"""
+script= """
+const { Popconfirm, Switch, message } = window['choerodon-ui'];
+
+class App extends React.Component {
+  state = {
+    visible: false,
+    condition: true, // Whether meet the condition, if not show popconfirm.
+  }
+
+  changeCondition = (value) => {
+    this.setState({ condition: value });
+  }
+
+  confirm = () => {
+    this.setState({ visible: false });
+    message.success('Next step.');
+  }
+
+  cancel = () => {
+    this.setState({ visible: false });
+    message.error('Click on cancel.');
+  }
+
+  handleVisibleChange = (visible) => {
+    if (!visible) {
+      this.setState({ visible });
+      return;
+    }
+    // Determining condition before show the popconfirm.
+    console.log(this.state.condition);
+    if (this.state.condition) {
+      this.confirm(); // next step
+    } else {
+      this.setState({ visible }); // show the popconfirm
+    }
+  }
+
+  render() {
+    return (
+      <div>
+        <Popconfirm
+          title="Are you sure delete this task?"
+          visible={this.state.visible}
+          onVisibleChange={this.handleVisibleChange}
+          onConfirm={this.confirm}
+          onCancel={this.cancel}
+          okText="Yes"
+          cancelText="No"
+        >
+          <a href="#">Delete a task</a>
+        </Popconfirm>
+        <br />
+        <br />
+        Whether directly execute：<Switch defaultChecked onChange={this.changeCondition} />
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<App />, document.getElementById('popconfirm-demo-dynamic-trigger'));
+"""

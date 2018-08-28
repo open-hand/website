@@ -1,0 +1,30 @@
+id= "steps-vertical-tiny"
+weight= 6
+name= "竖直方向的小型步骤条"
+description= "简单的竖直方向的小型步骤条。"
+code= """
+````jsx
+import { Steps } from 'choerodon-ui';
+const Step = Steps.Step;
+
+ReactDOM.render(
+  <Steps direction="vertical" size="small" current={1}>
+    <Step title="Finished" description="This is a description." />
+    <Step title="In Progress" description="This is a description." />
+    <Step title="Waiting" description="This is a description." />
+  </Steps>,
+  mountNode);
+````
+"""
+script= """
+const { Steps } = window['choerodon-ui'];
+const Step = Steps.Step;
+
+ReactDOM.render(
+  <Steps direction="vertical" size="small" current={1}>
+    <Step title="Finished" description="This is a description." />
+    <Step title="In Progress" description="This is a description." />
+    <Step title="Waiting" description="This is a description." />
+  </Steps>,
+  document.getElementById('steps-vertical-tiny'));
+"""

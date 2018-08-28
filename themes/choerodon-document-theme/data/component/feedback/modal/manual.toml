@@ -1,0 +1,41 @@
+id= "modal-demo-manual"
+right= true
+weight= 4
+name= "手动移除"
+description= "手动关闭modal。"
+code= """
+````jsx
+import { Modal, Button } from 'choerodon-ui';
+
+function success() {
+  const modal = Modal.success({
+    title: 'This is a notification message',
+    content: 'This modal will be destroyed after 1 second',
+  });
+  setTimeout(() => modal.destroy(), 1000);
+}
+
+
+ReactDOM.render(
+  <Button onClick={success}>Success</Button>,
+  mountNode
+);
+````
+"""
+script= """
+const { Modal, Button } = window['choerodon-ui'];
+
+function success() {
+  const modal = Modal.success({
+    title: 'This is a notification message',
+    content: 'This modal will be destroyed after 1 second',
+  });
+  setTimeout(() => modal.destroy(), 1000);
+}
+
+
+ReactDOM.render(
+  <Button onClick={success}>Success</Button>,
+  document.getElementById('modal-demo-manual')
+);
+"""

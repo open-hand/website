@@ -1,0 +1,39 @@
+id= "notification-demo-duration"
+right= true
+weight= 1
+name= "自定义关闭的延时"
+description= "自定义通知框自动关闭的延时，默认`4.5s`，取消自动关闭只要将该值设为 `0` 即可。"
+code= """
+````jsx
+import { Button, notification } from 'choerodon-ui';
+
+const openNotification = () => {
+  const args = {
+    message: 'Notification Title',
+    description: 'I will never close automatically. I will be close automatically. I will never close automatically.',
+    duration: 0,
+  };
+  notification.open(args);
+};
+
+ReactDOM.render(
+  <Button type="primary" onClick={openNotification}>Open the notification box</Button>,
+  mountNode);
+````
+"""
+script= """
+const { Button, notification } = window['choerodon-ui'];
+
+const openNotification = () => {
+  const args = {
+    message: 'Notification Title',
+    description: 'I will never close automatically. I will be close automatically. I will never close automatically.',
+    duration: 0,
+  };
+  notification.open(args);
+};
+
+ReactDOM.render(
+  <Button type="primary" onClick={openNotification}>Open the notification box</Button>,
+  document.getElementById('notification-demo-duration'));
+"""

@@ -96,8 +96,8 @@
         {{ partial "footer.html" . }}
         {{ partial "scripts.html" . }}
         <!-- highlight.js -->
-        <link rel="stylesheet" href="/highlight/styles/atom-one-light.css">
-        <script src="/highlight/highlight.min.js"></script>
+        <link href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/atom-one-light.min.css" rel="stylesheet">
+        <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script>
         <!-- Choerodon UI 引用 -->
         {{ if (strings.Contains .Path "/components/") }}

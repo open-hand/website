@@ -1,0 +1,33 @@
+id= "backTop-demo-basic"
+left= true
+weight= 1
+name= "基本"
+description= "最简单的用法。"
+code= """
+````jsx
+import { BackTop } from 'choerodon-ui';
+
+ReactDOM.render(
+  <div>
+    <BackTop />
+    Scroll down to see the bottom-right
+    <strong style={{ color: 'rgba(64, 64, 64, 0.6)' }}> gray </strong>
+    button.
+  </div>,
+  mountNode
+);
+````
+"""
+script= """
+const { BackTop } = window['choerodon-ui'];
+
+ReactDOM.render(
+  <div>
+    <BackTop />
+    Scroll down to see the bottom-right
+    <strong style={{ color: 'rgba(64, 64, 64, 0.6)' }}> gray </strong>
+    button.
+  </div>,
+  document.getElementById('backTop-demo-basic')
+);
+"""

@@ -1,0 +1,45 @@
+id= "popconfirm-demo-basic"
+left= true
+weight= 1
+name= "基本"
+description= "最简单的用法。"
+code= """
+````jsx
+import { Popconfirm, message } from 'choerodon-ui';
+
+function confirm(e) {
+  console.log(e);
+  message.success('Click on Yes');
+}
+
+function cancel(e) {
+  console.log(e);
+  message.error('Click on No');
+}
+
+ReactDOM.render(
+  <Popconfirm title="Are you sure delete this task?" onConfirm={confirm} onCancel={cancel} okText="Yes" cancelText="No">
+    <a href="#">Delete</a>
+  </Popconfirm>,
+  mountNode);
+````
+"""
+script= """
+const { Popconfirm, message } = window['choerodon-ui'];
+
+function confirm(e) {
+  console.log(e);
+  message.success('Click on Yes');
+}
+
+function cancel(e) {
+  console.log(e);
+  message.error('Click on No');
+}
+
+ReactDOM.render(
+  <Popconfirm title="Are you sure delete this task?" onConfirm={confirm} onCancel={cancel} okText="Yes" cancelText="No">
+    <a href="#">Delete</a>
+  </Popconfirm>,
+  document.getElementById('popconfirm-demo-basic'));
+"""

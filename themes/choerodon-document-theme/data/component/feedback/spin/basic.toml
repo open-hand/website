@@ -1,0 +1,17 @@
+id= "spin-demo-basic"
+left= true
+weight= 1
+name= "基本用法"
+description= "一个简单的 loading 状态。"
+code= """
+````jsx
+import { Spin } from 'choerodon-ui';
+
+ReactDOM.render(<Spin />, mountNode);
+````
+"""
+script= """
+const { Spin } = window['choerodon-ui'];
+
+ReactDOM.render(<Spin />, document.getElementById('spin-demo-basic'));
+"""

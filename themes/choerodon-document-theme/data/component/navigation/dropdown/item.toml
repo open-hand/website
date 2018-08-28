@@ -1,0 +1,55 @@
+id= "dropdown-item"
+left= true
+weight= 2
+name= "其他元素"
+description= "分割线和不可用菜单项。"
+code= """
+````jsx
+import { Menu, Dropdown, Icon } from 'choerodon-ui';
+
+const menu = (
+  <Menu>
+    <Menu.Item key="0">
+      <a target="_blank" rel="noopener noreferrer" href="https://github.com/choerodon">1st menu item</a>
+    </Menu.Item>
+    <Menu.Item key="1">
+      <a target="_blank" rel="noopener noreferrer" href="https://github.com/choerodon">2nd menu item</a>
+    </Menu.Item>
+    <Menu.Divider />
+    <Menu.Item key="3" disabled>3rd menu item（disabled）</Menu.Item>
+  </Menu>
+);
+
+ReactDOM.render(
+  <Dropdown overlay={menu}>
+    <a className="ant-dropdown-link" href="#">
+      Hover me <Icon type="arrow_drop_down" />
+    </a>
+  </Dropdown>,
+  mountNode);
+````
+"""
+script= """
+const { Menu, Dropdown, Icon } = window['choerodon-ui'];
+
+const menu = (
+  <Menu>
+    <Menu.Item key="0">
+      <a target="_blank" rel="noopener noreferrer" href="https://github.com/choerodon">1st menu item</a>
+    </Menu.Item>
+    <Menu.Item key="1">
+      <a target="_blank" rel="noopener noreferrer" href="https://github.com/choerodon">2nd menu item</a>
+    </Menu.Item>
+    <Menu.Divider />
+    <Menu.Item key="3" disabled>3rd menu item（disabled）</Menu.Item>
+  </Menu>
+);
+
+ReactDOM.render(
+  <Dropdown overlay={menu}>
+    <a className="ant-dropdown-link" href="#">
+      Hover me <Icon type="arrow_drop_down" />
+    </a>
+  </Dropdown>,
+  document.getElementById('dropdown-item'));
+"""

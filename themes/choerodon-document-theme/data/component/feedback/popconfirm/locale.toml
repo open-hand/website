@@ -1,0 +1,25 @@
+id= "popconfirm-demo-locale"
+right= true
+weight= 1
+name= "国际化"
+description= "使用 `okText` 和 `cancelText` 自定义按钮文字。"
+code= """
+````jsx
+import { Popconfirm } from 'choerodon-ui';
+
+ReactDOM.render(
+  <Popconfirm title="Are you sure？" okText="Yes" cancelText="No">
+    <a href="#">Delete</a>
+  </Popconfirm>,
+  mountNode);
+````
+"""
+script= """
+const { Popconfirm } = window['choerodon-ui'];
+
+ReactDOM.render(
+  <Popconfirm title="Are you sure？" okText="Yes" cancelText="No">
+    <a href="#">Delete</a>
+  </Popconfirm>,
+  document.getElementById('popconfirm-demo-locale'));
+"""

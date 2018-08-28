@@ -1,0 +1,89 @@
+id= "dropdown-placement"
+right= true
+weight= 1
+name= "弹出位置"
+description= "支持 6 个弹出位置。"
+code= """
+````jsx
+import { Menu, Dropdown, Button } from 'choerodon-ui';
+
+const menu = (
+  <Menu>
+    <Menu.Item>
+      <a target="_blank" rel="noopener noreferrer" href="https://github.com/choerodon">1st menu item</a>
+    </Menu.Item>
+    <Menu.Item>
+      <a target="_blank" rel="noopener noreferrer" href="https://github.com/choerodon">2nd menu item</a>
+    </Menu.Item>
+    <Menu.Item>
+      <a target="_blank" rel="noopener noreferrer" href="https://github.com/choerodon">3rd menu item</a>
+    </Menu.Item>
+  </Menu>
+);
+
+ReactDOM.render(
+  <div>
+    <Dropdown overlay={menu} placement="bottomLeft">
+      <Button>bottomLeft</Button>
+    </Dropdown>
+    <Dropdown overlay={menu} placement="bottomCenter">
+      <Button>bottomCenter</Button>
+    </Dropdown>
+    <Dropdown overlay={menu} placement="bottomRight">
+      <Button>bottomRight</Button>
+    </Dropdown>
+    <br />
+    <Dropdown overlay={menu} placement="topLeft">
+      <Button>topLeft</Button>
+    </Dropdown>
+    <Dropdown overlay={menu} placement="topCenter">
+      <Button>topCenter</Button>
+    </Dropdown>
+    <Dropdown overlay={menu} placement="topRight">
+      <Button>topRight</Button>
+    </Dropdown>
+  </div>,
+  mountNode);
+````
+"""
+script= """
+const { Menu, Dropdown, Button } = window['choerodon-ui'];
+
+const menu = (
+  <Menu>
+    <Menu.Item>
+      <a target="_blank" rel="noopener noreferrer" href="https://github.com/choerodon">1st menu item</a>
+    </Menu.Item>
+    <Menu.Item>
+      <a target="_blank" rel="noopener noreferrer" href="https://github.com/choerodon">2nd menu item</a>
+    </Menu.Item>
+    <Menu.Item>
+      <a target="_blank" rel="noopener noreferrer" href="https://github.com/choerodon">3rd menu item</a>
+    </Menu.Item>
+  </Menu>
+);
+
+ReactDOM.render(
+  <div>
+    <Dropdown overlay={menu} placement="bottomLeft">
+      <Button>bottomLeft</Button>
+    </Dropdown>
+    <Dropdown overlay={menu} placement="bottomCenter">
+      <Button>bottomCenter</Button>
+    </Dropdown>
+    <Dropdown overlay={menu} placement="bottomRight">
+      <Button>bottomRight</Button>
+    </Dropdown>
+    <br />
+    <Dropdown overlay={menu} placement="topLeft">
+      <Button>topLeft</Button>
+    </Dropdown>
+    <Dropdown overlay={menu} placement="topCenter">
+      <Button>topCenter</Button>
+    </Dropdown>
+    <Dropdown overlay={menu} placement="topRight">
+      <Button>topRight</Button>
+    </Dropdown>
+  </div>,
+  document.getElementById('dropdown-placement'));
+"""

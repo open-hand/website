@@ -1,0 +1,32 @@
+id= "steps-icon"
+weight= 3
+name= "带图标的步骤"
+description= "简单的步骤条。"
+code= """
+````jsx
+import { Steps, Icon } from 'choerodon-ui';
+const Step = Steps.Step;
+
+ReactDOM.render(
+  <Steps>
+    <Step status="finish" title="Login" icon={<Icon type="person_outline" />} />
+    <Step status="finish" title="Verification" icon={<Icon type="panorama_vertical" />} />
+    <Step status="process" title="Pay" icon={<Icon type="schedule" />} />
+    <Step status="wait" title="Done" icon={<Icon type="tag_faces" />} />
+  </Steps>,
+  mountNode);
+````
+"""
+script= """
+const { Steps, Icon } = window['choerodon-ui'];
+const Step = Steps.Step;
+
+ReactDOM.render(
+  <Steps>
+    <Step status="finish" title="Login" icon={<Icon type="person_outline" />} />
+    <Step status="finish" title="Verification" icon={<Icon type="panorama_vertical" />} />
+    <Step status="process" title="Pay" icon={<Icon type="schedule" />} />
+    <Step status="wait" title="Done" icon={<Icon type="tag_faces" />} />
+  </Steps>,
+  document.getElementById('steps-icon'));
+"""

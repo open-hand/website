@@ -14,59 +14,7 @@ weight = 3
 
 ## 代码演示
 
-<div class="c7n-row">
-    <div class="c7n-row-6">
-        <section class="code-box">
-            <section class="code-box-demo"><div id="message-demo-basic"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>普通提示</a></div>
-                <div>
-                    <p>信息提醒反馈。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="message-demo-delay"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>修改延时</a></div>
-                <div>
-                    <p>自定义时长 <code>10s</code>，默认时长为 <code>3s</code>。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="message-demo-location"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>消息位置</a></div>
-                <div>
-                    <p>定义消息位置</p>
-                </div>
-            </section>
-        </section>
-    </div>
-    <div class="c7n-row-6">
-        <section class="code-box">
-            <section class="code-box-demo"><div id="message-demo-other"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>其他提示类型</a></div>
-                <div>
-                    <p>包括成功、失败、警告。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="message-demo-loading"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>加载中</a></div>
-                <div>
-                    <p>进行全局 loading，异步自行移除。</p>
-                </div>
-            </section>
-        </section>
-    </div>
-</div>
-
-{{< components-message >}}
+{{< components feedback message >}}
 
 ## API
 

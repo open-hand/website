@@ -1,0 +1,68 @@
+id= "pagination-controlled"
+weight= 8
+name= "受控"
+description= "受控制的页码。"
+code= """
+````jsx
+import { Pagination } from 'choerodon-ui';
+
+class App extends React.Component {
+  state = {
+    current: 3,
+  }
+
+  onChange = (page) => {
+    console.log(page);
+    this.setState({
+      current: page,
+    });
+  }
+
+  render() {
+    return (
+      <Pagination
+        current={this.state.current}
+        onChange={this.onChange}
+        total={50}
+        tiny={false}
+        showTotal={false}
+        showSizeChanger={false}
+      />
+    );
+  }
+}
+
+ReactDOM.render(<App />, mountNode);
+````
+"""
+script= """
+const { Pagination } = window['choerodon-ui'];
+
+class App extends React.Component {
+  state = {
+    current: 3,
+  }
+
+  onChange = (page) => {
+    console.log(page);
+    this.setState({
+      current: page,
+    });
+  }
+
+  render() {
+    return (
+      <Pagination
+        current={this.state.current}
+        onChange={this.onChange}
+        total={50}
+        tiny={false}
+        showTotal={false}
+        showSizeChanger={false}
+      />
+    );
+  }
+}
+
+ReactDOM.render(<App />, document.getElementById('pagination-controlled'));
+"""

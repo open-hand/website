@@ -1,0 +1,33 @@
+id= "spin-demo-tip"
+left= true
+weight= 3
+name= "自定义描述文案"
+description= "自定义描述文案。"
+code= """
+````jsx
+import { Spin, Alert } from 'choerodon-ui';
+
+ReactDOM.render(
+  <Spin tip="Loading...">
+    <Alert
+      message="Alert message title"
+      description="Further details about the context of this alert."
+      type="info"
+    />
+  </Spin>,
+  mountNode);
+````
+"""
+script= """
+const { Spin, Alert } = window['choerodon-ui'];
+
+ReactDOM.render(
+  <Spin tip="Loading...">
+    <Alert
+      message="Alert message title"
+      description="Further details about the context of this alert."
+      type="info"
+    />
+  </Spin>,
+  document.getElementById('spin-demo-tip'));
+"""
