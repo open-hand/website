@@ -32,7 +32,7 @@ $(".navbar-buttons button").on("click", function () {
 jQuery('.navbar-collapse .haschildren').hover(function (e) {
     $(this).children('ul').toggleClass("none block");
 }, function (e) {
-    $(this).children('ul').toggleClass("none block");
+    $(this).children('ul').removeClass("block");
 });
 // 导航栏子菜单结束
 // 导航栏动态渲染
