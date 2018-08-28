@@ -861,7 +861,7 @@ Etcd节点和Master节点必须一致。
             }
           net-conf.json: |
             {
-              "Network": "[PodsSubnet]",
+              "Network": "kube_pods_subnet",
               "Backend": {
                 "Type": "ali-vpc"
               }
@@ -920,9 +920,9 @@ Etcd节点和Master节点必须一致。
                     fieldRef:
                       fieldPath: metadata.namespace
                 - name: ACCESS_KEY_ID
-                  value: [YOUR_ACCESS_KEY_ID]
+                  value: YOUR_ACCESS_KEY_ID
                 - name: ACCESS_KEY_SECRET
-                  value: [YOUR_ACCESS_KEY_SECRET]
+                  value: YOUR_ACCESS_KEY_SECRET
                 volumeMounts:
                 - name: run
                   mountPath: /run
