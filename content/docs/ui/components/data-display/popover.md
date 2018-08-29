@@ -15,59 +15,7 @@ weight = 8
 
 ## 代码演示
 
-<div class="c7n-row">
-    <div class="c7n-row-6">
-        <section class="code-box">
-            <section class="code-box-demo"><div id="popover-demo-basic"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>基本</a></div>
-                <div>
-                    <p>最简单的用法，浮层的大小由内容区域决定。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="popover-demo-location"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>位置</a></div>
-                <div>
-                    <p>位置有十二个方向。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="popover-demo-arrow"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>箭头指向</a></div>
-                <div>
-                    <p>设置了 <code>arrowPointAtCenter</code> 后，箭头将指向目标元素的中心。</p>
-                </div>
-            </section>
-        </section>
-    </div>
-    <div class="c7n-row-6">
-        <section class="code-box">
-            <section class="code-box-demo"><div id="popover-demo-trigger"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>三种触发方式</a></div>
-                <div>
-                    <p>鼠标移入、聚集、点击。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="popover-demo-close"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>从浮层内关闭</a></div>
-                <div>
-                    <p>使用 <code>visible</code> 属性控制浮层显示。</p>
-                </div>
-            </section>
-        </section>
-    </div>
-</div>
-
-{{< components-popover >}}
+{{< components data-display popover>}}
 
 ## API
 

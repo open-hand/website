@@ -1,0 +1,31 @@
+id= "timeline-demo-basic"
+weight= 1
+left = true
+name= "基本用法"
+description= "基本的时间轴。"
+code= """
+````jsx
+import { Timeline } from 'choerodon-ui';
+
+ReactDOM.render(
+  <Timeline>
+    <Timeline.Item>Create a services site 2015-09-01</Timeline.Item>
+    <Timeline.Item>Solve initial network problems 2015-09-01</Timeline.Item>
+    <Timeline.Item>Technical testing 2015-09-01</Timeline.Item>
+    <Timeline.Item>Network problems being solved 2015-09-01</Timeline.Item>
+  </Timeline>,
+  mountNode);
+````
+"""
+script= """
+const { Timeline } = window['choerodon-ui'];
+
+ReactDOM.render(
+  <Timeline>
+    <Timeline.Item>Create a services site 2015-09-01</Timeline.Item>
+    <Timeline.Item>Solve initial network problems 2015-09-01</Timeline.Item>
+    <Timeline.Item>Technical testing 2015-09-01</Timeline.Item>
+    <Timeline.Item>Network problems being solved 2015-09-01</Timeline.Item>
+  </Timeline>,
+  document.getElementById('timeline-demo-basic'));
+"""

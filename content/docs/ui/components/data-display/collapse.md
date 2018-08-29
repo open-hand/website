@@ -14,66 +14,7 @@ weight = 6
 
 ## 代码演示
 
-<div class="c7n-row">
-    <div class="c7n-row-12">
-        <section class="code-box">
-            <section class="code-box-demo"><div id="collapse-demo-basic"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>折叠面板</a></div>
-                <div>
-                    <p>可以同时展开多个面板，这个例子默认展开了第一个。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="collapse-demo-accordion"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>手风琴</a></div>
-                <div>
-                    <p>手风琴，每次只打开一个tab。默认打开第一个。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="collapse-demo-mix"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>面板嵌套</a></div>
-                <div>
-                    <p>嵌套折叠面板。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="collapse-demo-simple"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>简洁风格</a></div>
-                <div>
-                    <p>一套没有边框的简洁样式。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="collapse-demo-custom"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>自定义面板</a></div>
-                <div>
-                    <p>自定义各个面板的背景色、圆角和边距。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="collapse-demo-arrow"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>隐藏箭头</a></div>
-                <div>
-                    <p>你可以通过 <code>showArrow={false}</code> 隐藏 <code>CollapsePanel</code> 组件的箭头图标。</p>
-                </div>
-            </section>
-        </section>
-    </div>
-</div>
-
-{{< components-collapse >}}
+{{< components data-display collapse true>}}
 
 ## API
 

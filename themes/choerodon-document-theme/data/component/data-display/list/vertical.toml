@@ -1,0 +1,106 @@
+id= "list-demo-vertical"
+weight= 4
+name= "竖排列表样式"
+description= "通过设置 `itemLayout` 属性为 `vertical` 可实现竖排列表样式。"
+code= """
+````jsx
+import { List, Avatar, Icon } from 'choerodon-ui';
+
+const listData = [];
+for (let i = 0; i < 5; i++) {
+  listData.push({
+    href: 'https://github.com/choerodon',
+    title: `Choerodon part ${i}`,
+    avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+    description: 'Choerodon猪齿鱼是一个开源企业服务平台，是基于Kubernetes的容器编排和管理能力，整合DevOps工具链、微服务和移动应用框架，来帮助企业实现敏捷化的应用交付和自动化的运营管理，并提供IoT、支付、数据、智能洞察、企业应用市场等业务组件，来帮助企业聚焦于业务，加速数字化转型。',
+  });
+}
+
+const pagination = {
+  pageSize: 10,
+  current: 1,
+  total: listData.length,
+  onChange: (() => {}),
+};
+
+const IconText = ({ type, text }) => (
+  <span>
+    <Icon type={type} style={{ marginRight: 8 }} />
+    {text}
+  </span>
+);
+
+ReactDOM.render(
+  <List
+    itemLayout="vertical"
+    size="large"
+    pagination={pagination}
+    dataSource={listData}
+    renderItem={item => (
+      <List.Item
+        key={item.title}
+        actions={[<IconText type="star-o" text="156" />, <IconText type="like-o" text="156" />, <IconText type="message" text="2" />]}
+        extra={<img width={272} alt="logo" src="https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png" />}
+      >
+        <List.Item.Meta
+          avatar={<Avatar src={item.avatar} />}
+          title={<a href={item.href}>{item.title}</a>}
+          description={item.description}
+        />
+        {item.content}
+      </List.Item>
+    )}
+  />,
+  mountNode);
+````
+"""
+script= """
+const { List, Avatar, Icon } = window['choerodon-ui'];
+
+const listData = [];
+for (let i = 0; i < 5; i++) {
+  listData.push({
+    href: 'https://github.com/choerodon',
+    title: `Choerodon part ${i}`,
+    avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+    description: 'Choerodon猪齿鱼是一个开源企业服务平台，是基于Kubernetes的容器编排和管理能力，整合DevOps工具链、微服务和移动应用框架，来帮助企业实现敏捷化的应用交付和自动化的运营管理，并提供IoT、支付、数据、智能洞察、企业应用市场等业务组件，来帮助企业聚焦于业务，加速数字化转型。',
+  });
+}
+
+const pagination = {
+  pageSize: 10,
+  current: 1,
+  total: listData.length,
+  onChange: (() => {}),
+};
+
+const IconText = ({ type, text }) => (
+  <span>
+    <Icon type={type} style={{ marginRight: 8 }} />
+    {text}
+  </span>
+);
+
+ReactDOM.render(
+  <List
+    itemLayout="vertical"
+    size="large"
+    pagination={pagination}
+    dataSource={listData}
+    renderItem={item => (
+      <List.Item
+        key={item.title}
+        actions={[<IconText type="star-o" text="156" />, <IconText type="like-o" text="156" />, <IconText type="message" text="2" />]}
+        extra={<img width={272} alt="logo" src="https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png" />}
+      >
+        <List.Item.Meta
+          avatar={<Avatar src={item.avatar} />}
+          title={<a href={item.href}>{item.title}</a>}
+          description={item.description}
+        />
+        {item.content}
+      </List.Item>
+    )}
+  />,
+  document.getElementById('list-demo-vertical'));
+"""

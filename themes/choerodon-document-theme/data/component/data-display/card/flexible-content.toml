@@ -1,0 +1,40 @@
+id= "card-demo-flexible-content"
+weight= 4
+name= "更灵活的内容展示"
+description= "可以利用 `Card.Meta` 支持更灵活的内容。"
+code= """
+````jsx
+import { Card } from 'choerodon-ui';
+const { Meta } = Card;
+
+ReactDOM.render(
+  <Card
+    hoverable
+    style={{ width: 240 }}
+    cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
+  >
+    <Meta
+      title="Europe Street beat"
+      description="www.instagram.com"
+    />
+  </Card>,
+  mountNode);
+````
+"""
+script= """
+const { Card } = window['choerodon-ui'];
+const { Meta } = Card;
+
+ReactDOM.render(
+  <Card
+    hoverable
+    style={{ width: 240 }}
+    cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
+  >
+    <Meta
+      title="Europe Street beat"
+      description="www.instagram.com"
+    />
+  </Card>,
+  document.getElementById('card-demo-flexible-content'));
+"""

@@ -15,50 +15,8 @@ weight = 5
 
 ## 代码演示
 
-<div class="c7n-row">
-    <div class="c7n-row-6">
-        <section class="code-box">
-            <section class="code-box-demo"><div id="carousel-demo-basic"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>基本</a></div>
-                <div>
-                    <p>最简单的用法。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="carousel-demo-fade"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>渐显</a></div>
-                <div>
-                    <p>切换效果为渐显。</p>
-                </div>
-            </section>
-        </section>
-    </div>
-    <div class="c7n-row-6">
-        <section class="code-box">
-            <section class="code-box-demo"><div id="carousel-demo-vertical"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>垂直</a></div>
-                <div>
-                    <p>垂直显示。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="carousel-demo-switch"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>自动切换</a></div>
-                <div>
-                    <p>定时切换下一张。</p>
-                </div>
-            </section>
-        </section>
-    </div>
-</div>
+{{< components data-display carousel>}}
 
-{{< components-carousel >}}
 ## API
 
 | 参数 | 说明 | 类型 | 默认值 |

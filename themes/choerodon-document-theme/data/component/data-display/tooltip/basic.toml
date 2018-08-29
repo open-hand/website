@@ -1,0 +1,25 @@
+id= "tooltip-demo-basic"
+weight= 1
+left = true
+name= "基本"
+description= "最简单的用法。"
+code= """
+````jsx
+import { Tooltip } from 'choerodon-ui';
+
+ReactDOM.render(
+  <Tooltip title="prompt text">
+    <span>Tooltip will show when mouse enter.</span>
+  </Tooltip>,
+  mountNode);
+````
+"""
+script= """
+const { Tooltip } = window['choerodon-ui'];
+
+ReactDOM.render(
+  <Tooltip title="prompt text">
+    <span>Tooltip will show when mouse enter.</span>
+  </Tooltip>,
+  document.getElementById('tooltip-demo-basic'));
+"""

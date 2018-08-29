@@ -1,0 +1,44 @@
+id= "card-demo-in-column"
+weight= 5
+name= "栅格卡片"
+description= "在系统概览页面常常和栅格进行配合。"
+code= """
+````jsx
+import { Card, Col, Row } from 'choerodon-ui';
+
+ReactDOM.render(
+  <div style={{ background: '#ECECEC', padding: '30px' }}>
+    <Row gutter={16}>
+      <Col span={8}>
+        <Card title="Card title" bordered={false}>Card content</Card>
+      </Col>
+      <Col span={8}>
+        <Card title="Card title" bordered={false}>Card content</Card>
+      </Col>
+      <Col span={8}>
+        <Card title="Card title" bordered={false}>Card content</Card>
+      </Col>
+    </Row>
+  </div>,
+  mountNode);
+````
+"""
+script= """
+const { Card, Col, Row } = window['choerodon-ui'];
+
+ReactDOM.render(
+  <div style={{ background: '#ECECEC', padding: '30px' }}>
+    <Row gutter={16}>
+      <Col span={8}>
+        <Card title="Card title" bordered={false}>Card content</Card>
+      </Col>
+      <Col span={8}>
+        <Card title="Card title" bordered={false}>Card content</Card>
+      </Col>
+      <Col span={8}>
+        <Card title="Card title" bordered={false}>Card content</Card>
+      </Col>
+    </Row>
+  </div>,
+  document.getElementById('card-demo-in-column'));
+"""
