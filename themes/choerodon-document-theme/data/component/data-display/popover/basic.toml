@@ -1,0 +1,39 @@
+id= "popover-demo-basic"
+weight= 1
+left = true
+name= "基本"
+description= "最简单的用法，浮层的大小由内容区域决定。"
+code= """
+````jsx
+import { Popover, Button } from 'choerodon-ui';
+
+const content = (
+  <div>
+    <p>Content</p>
+    <p>Content</p>
+  </div>
+);
+
+ReactDOM.render(
+  <Popover content={content} title="Title">
+    <Button type="primary">Hover me</Button>
+  </Popover>,
+  mountNode);
+````
+"""
+script= """
+const { Popover, Button } = window['choerodon-ui'];
+
+const content = (
+  <div>
+    <p>Content</p>
+    <p>Content</p>
+  </div>
+);
+
+ReactDOM.render(
+  <Popover content={content} title="Title">
+    <Button type="primary">Hover me</Button>
+  </Popover>,
+  document.getElementById('popover-demo-basic'));
+"""

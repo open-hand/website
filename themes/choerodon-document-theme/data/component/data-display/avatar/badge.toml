@@ -1,0 +1,35 @@
+id= "avatar-demo-badge"
+right= true
+weight= 2
+name= "带徽标的头像"
+description= "通常用于消息提示。"
+code= """
+````jsx
+import { Avatar, Badge } from 'choerodon-ui';
+
+ReactDOM.render(
+  <div>
+    <span style={{ marginRight: 24 }}>
+      <Badge count={1}><Avatar shape="square" icon="user" /></Badge>
+    </span>
+    <span>
+      <Badge dot><Avatar shape="square" icon="user" /></Badge>
+    </span>
+  </div>,
+  mountNode);
+````
+"""
+script= """
+const { Avatar, Badge } = window['choerodon-ui'];
+
+ReactDOM.render(
+  <div>
+    <span style={{ marginRight: 24 }}>
+      <Badge count={1}><Avatar shape="square" icon="user" /></Badge>
+    </span>
+    <span>
+      <Badge dot><Avatar shape="square" icon="user" /></Badge>
+    </span>
+  </div>,
+  document.getElementById('avatar-demo-badge'));
+"""

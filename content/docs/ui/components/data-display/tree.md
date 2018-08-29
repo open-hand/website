@@ -11,68 +11,7 @@ weight = 14
 
 ## 代码演示
 
-<div class="c7n-row">
-    <div class="c7n-row-6">
-        <section class="code-box">
-            <section class="code-box-demo"><div id="tree-demo-basic"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>基本用法</a></div>
-                <div>
-                    <p>最简单的用法，展示可勾选，可选中，禁用，默认展开等功能。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="tree-demo-drag"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>拖动示例</a></div>
-                <div>
-                    <p>将节点拖拽到其他节点内部或前后。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="tree-demo-search"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>可搜索树</a></div>
-                <div>
-                    <p>可搜索的树。</p>
-                </div>
-            </section>
-        </section>
-    </div>
-    <div class="c7n-row-6">
-        <section class="code-box">
-            <section class="code-box-demo"><div id="tree-demo-controller"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>受控操作示例</a></div>
-                <div>
-                    <p>受控操作示例</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="tree-demo-load"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>异步数据加载</a></div>
-                <div>
-                    <p>点击展开节点，动态加载数据。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="tree-demo-line"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>连接线</a></div>
-                <div>
-                    <p>带连接线的树。</p>
-                </div>
-            </section>
-        </section>
-    </div>
-</div>
-
-{{< components-tree >}}
+{{< components data-display tree>}}
 
 ## API
 

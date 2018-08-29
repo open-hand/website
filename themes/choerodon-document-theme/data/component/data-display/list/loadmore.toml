@@ -1,0 +1,188 @@
+id= "list-demo-loadmore"
+weight= 3
+name= "加载更多"
+description= "可通过 `loadMore` 属性实现加载更多功能。"
+code= """
+````jsx
+import { List, Avatar, Button, Spin } from 'choerodon-ui';
+
+import reqwest from 'reqwest';
+
+const fakeDataUrl = 'https://randomuser.me/api/?results=5&inc=name,gender,email,nat&noinfo';
+
+class LoadMoreList extends React.Component {
+  state = {
+    loading: true,
+    loadingMore: false,
+    showLoadingMore: true,
+    data: [],
+  }
+
+  componentDidMount() {
+    this.getData((res) => {
+      this.setState({
+        loading: false,
+        data: res.results,
+      });
+    });
+  }
+
+  getData = (callback) => {
+    reqwest({
+      url: fakeDataUrl,
+      type: 'json',
+      method: 'get',
+      contentType: 'application/json',
+      success: (res) => {
+        callback(res);
+      },
+    });
+  }
+
+  onLoadMore = () => {
+    this.setState({
+      loadingMore: true,
+    });
+    this.getData((res) => {
+      const data = this.state.data.concat(res.results);
+      this.setState({
+        data,
+        loadingMore: false,
+      }, () => {
+        window.dispatchEvent(new Event('resize'));
+      });
+    });
+  }
+
+  render() {
+    const { loading, loadingMore, showLoadingMore, data } = this.state;
+    const loadMore = showLoadingMore ? (
+      <div style={{ textAlign: 'center', marginTop: 12, height: 32, lineHeight: '32px' }}>
+        {loadingMore && <Spin />}
+        {!loadingMore && <Button onClick={this.onLoadMore}>loading more</Button>}
+      </div>
+    ) : null;
+    return (
+      <List
+        className="demo-loadmore-list"
+        loading={loading}
+        itemLayout="horizontal"
+        loadMore={loadMore}
+        dataSource={data}
+        renderItem={item => (
+          <List.Item actions={[<a>edit</a>, <a>more</a>]}>
+            <List.Item.Meta
+              avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
+              title={<a href="https://github.com/choerodon">{item.name.last}</a>}
+              description="Choerodon猪齿鱼是一个开源企业服务平台，是基于Kubernetes的容器编排和管理能力，整合DevOps工具链、微服务和移动应用框架，来帮助企业实现敏捷化的应用交付和自动化的运营管理，并提供IoT、支付、数据、智能洞察、企业应用市场等业务组件，来帮助企业聚焦于业务，加速数字化转型。"
+            />
+            <div>content</div>
+          </List.Item>
+        )}
+      />
+    );
+  }
+}
+
+ReactDOM.render(<LoadMoreList />, mountNode);
+````
+"""
+script= """
+const { List, Avatar, Button, Spin } = window['choerodon-ui'];
+
+var reqwest = window["reqwest"];
+
+const fakeDataUrl = 'https://randomuser.me/api/?results=5&inc=name,gender,email,nat&noinfo';
+
+class LoadMoreList extends React.Component {
+  state = {
+    loading: true,
+    loadingMore: false,
+    showLoadingMore: true,
+    data: [],
+  }
+
+  componentDidMount() {
+    this.getData((res) => {
+      this.setState({
+        loading: false,
+        data: res.results,
+      });
+    });
+  }
+
+  getData = (callback) => {
+    reqwest({
+      url: fakeDataUrl,
+      type: 'json',
+      method: 'get',
+      contentType: 'application/json',
+      success: (res) => {
+        callback(res);
+      },
+    });
+  }
+
+  onLoadMore = () => {
+    this.setState({
+      loadingMore: true,
+    });
+    this.getData((res) => {
+      const data = this.state.data.concat(res.results);
+      this.setState({
+        data,
+        loadingMore: false,
+      }, () => {
+        window.dispatchEvent(new Event('resize'));
+      });
+    });
+  }
+
+  render() {
+    const { loading, loadingMore, showLoadingMore, data } = this.state;
+    const loadMore = showLoadingMore ? (
+      <div style={{ textAlign: 'center', marginTop: 12, height: 32, lineHeight: '32px' }}>
+        {loadingMore && <Spin />}
+        {!loadingMore && <Button onClick={this.onLoadMore}>loading more</Button>}
+      </div>
+    ) : null;
+    return (
+      <List
+        className="demo-loadmore-list"
+        loading={loading}
+        itemLayout="horizontal"
+        loadMore={loadMore}
+        dataSource={data}
+        renderItem={item => (
+          <List.Item actions={[<a>edit</a>, <a>more</a>]}>
+            <List.Item.Meta
+              avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
+              title={<a href="https://github.com/choerodon">{item.name.last}</a>}
+              description="Choerodon猪齿鱼是一个开源企业服务平台，是基于Kubernetes的容器编排和管理能力，整合DevOps工具链、微服务和移动应用框架，来帮助企业实现敏捷化的应用交付和自动化的运营管理，并提供IoT、支付、数据、智能洞察、企业应用市场等业务组件，来帮助企业聚焦于业务，加速数字化转型。"
+            />
+            <div>content</div>
+          </List.Item>
+        )}
+      />
+    );
+  }
+}
+
+ReactDOM.render(<LoadMoreList />, document.getElementById('list-demo-loadmore'));
+"""
+css ="""
+.demo-infinite-container {
+  border: 1px solid #e8e8e8;
+  border-radius: 4px;
+  overflow: auto;
+  padding: 8px 24px;
+  height: 300px;
+}
+.demo-loading {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+}
+"""
+[file]
+script = ["/js/ui-components/reqwest.js"]

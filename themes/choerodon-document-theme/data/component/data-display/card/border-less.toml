@@ -1,0 +1,32 @@
+id= "card-demo-border-less"
+weight= 2
+name= "无边框"
+description= "在灰色背景上使用无边框的卡片。"
+code= """
+````jsx
+import { Card } from 'choerodon-ui';
+
+ReactDOM.render(
+  <div style={{ background: '#ECECEC', padding: '30px' }}>
+    <Card title="Card title" bordered={false} style={{ width: 300 }}>
+      <p>Card content</p>
+      <p>Card content</p>
+      <p>Card content</p>
+    </Card>
+  </div>,
+  mountNode);
+````
+"""
+script= """
+const { Card } = window['choerodon-ui'];
+
+ReactDOM.render(
+  <div style={{ background: '#ECECEC', padding: '30px' }}>
+    <Card title="Card title" bordered={false} style={{ width: 300 }}>
+      <p>Card content</p>
+      <p>Card content</p>
+      <p>Card content</p>
+    </Card>
+  </div>,
+  document.getElementById('card-demo-border-less'));
+"""

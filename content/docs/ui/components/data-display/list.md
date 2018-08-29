@@ -11,77 +11,9 @@ weight = 7
 
 最基础的列表展示，可承载文字、列表、图片、段落，常用于后台数据展示页面。
 
-<div class="c7n-row">
-    <div class="c7n-row-12">
-        <section class="code-box">
-            <section class="code-box-demo"><div id="list-demo-simple"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>简单列表</a></div>
-                <div>
-                    <p>列表拥有大、中、小三种尺寸。</p>
-                    <p>通过设置 <code>size</code> 为 <code>large</code> <code>small</code> 分别把按钮设为大、小尺寸。若不设置 <code>size</code>，则尺寸为中。</p>
-                    <p>可通过设置 <code>header</code> 和 <code>footer</code>，来自定义列表头部和尾部。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="list-demo-basic"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>基础列表</a></div>
-                <div>
-                    <p>基础列表。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="list-demo-more"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>加载更多</a></div>
-                <div>
-                    <p>可通过 <code>loadMore</code> 属性实现加载更多功能。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="list-demo-vertical"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>竖排列表样式</a></div>
-                <div>
-                    <p>通过设置 <code>itemLayout</code> 属性为 <code>vertical</code> 可实现竖排列表样式。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="list-demo-grid"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>栅格列表</a></div>
-                <div>
-                    <p>可以通过设置 <code>List</code> 的 <code>grid</code> 属性来实现栅格列表，<code>column</code> 可设置期望显示的列数。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="list-demo-response"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>响应式的栅格列表</a></div>
-                <div>
-                    <p>响应式的栅格列表。尺寸与 <a>Layout Grid</a> 保持一致。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="list-demo-load"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>滚动加载</a></div>
-                <div>
-                    <p>结合 <a href="https://github.com/CassetteRocks/react-infinite-scroller">react-infinite-scroller</a> 实现滚动自动加载列表。</p>
-                </div>
-            </section>
-        </section>
-    </div>
-</div>
+## 代码演示
 
-{{< components-list >}}
+{{< components data-display list true>}}
 
 ## API
 

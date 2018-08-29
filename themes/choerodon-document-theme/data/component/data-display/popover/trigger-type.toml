@@ -1,0 +1,55 @@
+id= "popover-demo-trigger-type"
+weight= 1
+right = true
+name= "三种触发方式"
+description= "鼠标移入、聚集、点击。"
+code= """
+````jsx
+import { Popover, Button } from 'choerodon-ui';
+
+const content = (
+  <div>
+    <p>Content</p>
+    <p>Content</p>
+  </div>
+);
+
+ReactDOM.render(
+  <div>
+    <Popover content={content} title="Title" trigger="hover">
+      <Button>Hover me</Button>
+    </Popover>
+    <Popover content={content} title="Title" trigger="focus">
+      <Button>Focus me</Button>
+    </Popover>
+    <Popover content={content} title="Title" trigger="click">
+      <Button>Click me</Button>
+    </Popover>
+  </div>,
+  mountNode);
+````
+"""
+script= """
+const { Popover, Button } = window['choerodon-ui'];
+
+const content = (
+  <div>
+    <p>Content</p>
+    <p>Content</p>
+  </div>
+);
+
+ReactDOM.render(
+  <div>
+    <Popover content={content} title="Title" trigger="hover">
+      <Button>Hover me</Button>
+    </Popover>
+    <Popover content={content} title="Title" trigger="focus">
+      <Button>Focus me</Button>
+    </Popover>
+    <Popover content={content} title="Title" trigger="click">
+      <Button>Click me</Button>
+    </Popover>
+  </div>,
+  document.getElementById('popover-demo-trigger-type'));
+"""

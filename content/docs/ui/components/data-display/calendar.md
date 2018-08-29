@@ -13,48 +13,7 @@ weight = 3
 
 ## 代码演示
 
-<div class="c7n-row">
-    <div class="c7n-row-12">
-        <section class="code-box">
-            <section class="code-box-demo"><div id="calendar-demo-basic"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>基本</a></div>
-                <div>
-                    <p>一个通用的日历面板，支持年/月切换。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="calendar-demo-notice"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>通知事项日历</a></div>
-                <div>
-                    <p>一个复杂的应用示例，用 <code>dateCellRender</code> 和 <code>monthCellRender</code> 函数来自定义需要渲染的数据。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="calendar-demo-card"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>卡片模式</a></div>
-                <div>
-                    <p>用于嵌套在空间有限的容器中。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="calendar-demo-select"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>选择功能</a></div>
-                <div>
-                    <p>一个通用的日历面板，支持年/月切换。</p>
-                </div>
-            </section>
-        </section>
-    </div>
-</div>
-
-{{< components-calendar >}}
+{{< components data-display calendar true>}}
 
 ## API
 

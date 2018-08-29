@@ -1,0 +1,24 @@
+id= "card-demo-loading"
+weight= 6
+name= "预加载的卡片"
+description= "数据读入前会有文本块样式。"
+code= """
+````jsx
+import { Card } from 'choerodon-ui';
+
+ReactDOM.render(
+  <Card loading title="Card title" style={{ width: '34%' }}>
+    Whatever content
+  </Card>,
+  mountNode);
+````
+"""
+script= """
+const { Card } = window['choerodon-ui'];
+
+ReactDOM.render(
+  <Card loading title="Card title" style={{ width: '34%' }}>
+    Whatever content
+  </Card>,
+  document.getElementById('card-demo-loading'));
+"""

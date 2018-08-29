@@ -1,0 +1,29 @@
+id= "badge-demo-link"
+left= true
+weight= 3
+name= "可点击"
+description= "用 a 标签进行包裹即可。"
+code= """
+````jsx
+import { Badge } from 'choerodon-ui';
+
+ReactDOM.render(
+  <a href="#">
+    <Badge count={5}>
+      <span className="head-example" />
+    </Badge>
+  </a>,
+  mountNode);
+````
+"""
+script= """
+const { Badge } = window['choerodon-ui'];
+
+ReactDOM.render(
+  <a href="#">
+    <Badge count={5}>
+      <span className="head-example" />
+    </Badge>
+  </a>,
+  document.getElementById('badge-demo-link'));
+"""

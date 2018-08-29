@@ -1,0 +1,28 @@
+id= "card-demo-basic"
+weight= 1
+name= "典型卡片"
+description= "包含标题、内容、操作区域。"
+code= """
+````jsx
+import { Card } from 'choerodon-ui';
+
+ReactDOM.render(
+  <Card title="Card title" extra={<a href="#">More</a>} style={{ width: 300 }}>
+    <p>Card content</p>
+    <p>Card content</p>
+    <p>Card content</p>
+  </Card>,
+  mountNode);
+````
+"""
+script= """
+const { Card } = window['choerodon-ui'];
+
+ReactDOM.render(
+  <Card title="Card title" extra={<a href="#">More</a>} style={{ width: 300 }}>
+    <p>Card content</p>
+    <p>Card content</p>
+    <p>Card content</p>
+  </Card>,
+  document.getElementById('card-demo-basic'));
+"""
