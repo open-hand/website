@@ -20,7 +20,7 @@ type = "docs"
 
 1. 在操作之前保证[系统配置](../../user-guide/system-configuration)已经配置完全。
 
-1. 用户必须属于组织层。
+1. 用户须属于组织层，且为组织管理员角色。
 
 ## 创建应用模板
 
@@ -30,31 +30,43 @@ type = "docs"
 
 1. 进入`应用管理`后，点击`应用模板`。
 
+    ![enter app template](/docs/quick-start/image/enter_app_template.png)
+
 1. 进入`应用模板`页面后，点击`创建应用模板`，系统会从右侧滑出创建应用模板页面，输入应用模板编码、应用模板名称、应用模板描述和选择应用模板的来源模板。
 
+    ![create app template](/docs/quick-start/image/create_app_template.png)
+    
     字段名 |说明| 输入值
     ---|---|--- 
     编码 | 应用模板的编码 | `choerodon-app-temp`
     名称 | 应用模板的名称 | `猪齿鱼应用模板`
     描述 | 应用模板的描述 | `猪齿鱼应用模板示例`
     复制于 | 应用模板的来源模板，选择并复制当前列表内的一个已有模板 | 
+    
+    ![fill app template](/docs/quick-start/image/fill_app_template.png)
      
 1. 当应用模板创建成功，可在`应用管理`模块，点击`应用模板` 界面查看到新建的应用模板。
 
 1. 在创建应用的同时，系统会对应在`Gitlab`中创建一个仓库，选择`应用管理`点击`应用模板`，找到创建好的应用模板，点击`地址`，链接到`Gitlab`新建的仓库。
+
+    ![check app template](/docs/quick-start/image/check_app_template.png)
  
 ## 开发应用模板
 
 应用创建完成之后，可以视具体情况修改模板内容。以后端模板为例，具体的操作步骤如下：
 
- 1. 目录结构如下：
-
-        |--src
-        ｜--main 
-            ｜--docker        
-            ｜--dockerfile
+ 1. 编写一个 dockerfile：
  
- 1. 编写一个 dockerfile；
+    目录结构如下：
+ 
+    ```
+    |--src
+    |--main 
+       ｜--docker        
+          ｜--dockerfile
+    ```
+    
+    dockerfile 文件内容
 
     ```
     FROM registry.choerodon.io/choerodon-cloud/base
@@ -63,6 +75,8 @@ type = "docs"
 
     ENTRYPOINT [ "java", "-jar", "/app.jar"] 
     ```
+    
+    此为后端模板的 dockerfile，应视模板具体语言的对其进行修改。
 
  1. [编写 Gitlab-ci 文件](https://docs.gitlab.com/ee/ci/)
 
@@ -70,8 +84,8 @@ type = "docs"
     image: registry.cn-hangzhou.aliyuncs.com/choerodon-tools/cibase:0.6.0
            
     stages:
-      - mvn-package
-      - docker-build
+      - mvn-package # mvn-package 这一阶段为后端应用需要的 ci 阶段，可根据模板具体情况进行修改
+      - docker-build # docker-build 为 Choerodon 构建镜像版本等的必要步骤，不建议修改
     
     maven-test-build:
       stage: mvn-package
@@ -86,6 +100,12 @@ type = "docs"
       script:
         - docker_build
         - chart_build
+      only:
+        - master
+        - tags
+        - develop
+        - /^hotfix-.*$/
+        - /^release-.*$/
     
     .auto_devops: &auto_devops |
         curl -o .auto_devops.sh \
@@ -97,6 +117,7 @@ type = "docs"
         source .auto_devops.sh
         function docker_build(){
             cp /cache/${CI_PROJECT_NAME}-${CI_PROJECT_ID}-${CI_COMMIT_REF_NAME}-${CI_COMMIT_SHA}/app.jar ${1:-"src/main/docker"}/app.jar || true
+            docker login -u ${DOCKER_USER} -p ${DOCKER_PWD} ${DOCKER_REGISTRY}
             docker build --pull -t ${DOCKER_REGISTRY}/${GROUP_NAME}/${PROJECT_NAME}:${CI_COMMIT_TAG} ${1:-"src/main/docker"}
             docker push ${DOCKER_REGISTRY}/${GROUP_NAME}/${PROJECT_NAME}:${CI_COMMIT_TAG}
             rm -rf /cache/${CI_PROJECT_NAME}-${CI_PROJECT_ID}-${CI_COMMIT_REF_NAME}-${CI_COMMIT_SHA}
@@ -106,21 +127,25 @@ type = "docs"
       - *auto_devops
     ```
 
- 1. 编写 charts 模块
+ 1. [编写 charts 模块](/docs/development-guide/basic/helm-chart.md)
       
       目录结构如下：
-
-        |--charts
-           ｜--model-service    
-              ｜--templates               
-                ｜--_helper.tpl
-                ｜--deplopment.yaml
-                ｜--pre-config-congig.yaml
-                ｜--pre-config-db.yaml
-                ｜--service.yaml
-              ｜--.helmignore
-              ｜--Chart.yaml
-              ｜--values.yaml  
+      ```
+      |--charts
+         ｜--model-service    
+            ｜--templates               
+            ｜ ｜--_helper.tpl
+            ｜ ｜--deplopment.yaml
+            ｜ ｜--pre-config-congig.yaml
+            ｜ ｜--pre-config-db.yaml
+            ｜ ｜--service.yaml
+            ｜--.helmignore
+            ｜--Chart.yaml
+            ｜--values.yaml  
+      ```
+      
+      Choerodon 会在使用模板创建应用时，对文档的相关变量进行替换。例如，charts 文件夹下的 model-service 文件夹的名称，会替换为对应的应用名称。
+      
       `templates`为模板文件，将模板文件渲染成实际文件，然后发送给 Kubernetes。
       
       `values.yaml`为模板的预定义变量。                      
