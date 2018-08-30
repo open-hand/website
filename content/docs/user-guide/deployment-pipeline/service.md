@@ -89,5 +89,6 @@ weight = 5
 - [环境流水线](../environment-pipeline)
 - [容器管理](../container)
 - [实例管理](../instance)
+- [证书管理](../certificate)
 
 

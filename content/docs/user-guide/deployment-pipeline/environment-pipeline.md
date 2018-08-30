@@ -154,5 +154,7 @@ weight = 2
 - [应用部署](../application-deployment)
 - [实例管理](../instance)
 - [网络管理](../service)
+- [容器管理](../container)
+- [证书管理](../certificate)
 
  

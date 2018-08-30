@@ -80,52 +80,52 @@ type = "docs"
 
  1. [编写 Gitlab-ci 文件](https://docs.gitlab.com/ee/ci/)
 
-    ```yaml
-    image: registry.cn-hangzhou.aliyuncs.com/choerodon-tools/cibase:0.6.0
-           
-    stages:
-      - mvn-package # mvn-package 这一阶段为后端应用需要的 ci 阶段，可根据模板具体情况进行修改
-      - docker-build # docker-build 为 Choerodon 构建镜像版本等的必要步骤，不建议修改
-    
-    maven-test-build:
-      stage: mvn-package
-      script:
-        - update_pom_version
-        - mvn package -U -DskipTests=false
-        - mkdir -p /cache/${CI_PROJECT_NAME}-${CI_PROJECT_ID}-${CI_COMMIT_REF_NAME}-${CI_COMMIT_SHA} 
-        - cp target/app.jar /cache/${CI_PROJECT_NAME}-${CI_PROJECT_ID}-${CI_COMMIT_REF_NAME}-${CI_COMMIT_SHA}/app.jar
-    
-    docker-build:
-      stage: docker-build
-      script:
-        - docker_build
-        - chart_build
-      only:
-        - master
-        - tags
-        - develop
-        - /^hotfix-.*$/
-        - /^release-.*$/
-    
-    .auto_devops: &auto_devops |
-        curl -o .auto_devops.sh \
-            "${CHOERODON_URL}/devops/ci?token=${Token}&type=microservice"
-        if [ $? -ne 0 ];then
-          cat .auto_devops.sh
-          exit 1
-        fi
-        source .auto_devops.sh
-        function docker_build(){
-            cp /cache/${CI_PROJECT_NAME}-${CI_PROJECT_ID}-${CI_COMMIT_REF_NAME}-${CI_COMMIT_SHA}/app.jar ${1:-"src/main/docker"}/app.jar || true
-            docker login -u ${DOCKER_USER} -p ${DOCKER_PWD} ${DOCKER_REGISTRY}
-            docker build --pull -t ${DOCKER_REGISTRY}/${GROUP_NAME}/${PROJECT_NAME}:${CI_COMMIT_TAG} ${1:-"src/main/docker"}
-            docker push ${DOCKER_REGISTRY}/${GROUP_NAME}/${PROJECT_NAME}:${CI_COMMIT_TAG}
-            rm -rf /cache/${CI_PROJECT_NAME}-${CI_PROJECT_ID}-${CI_COMMIT_REF_NAME}-${CI_COMMIT_SHA}
-        }
-    
-    before_script:
-      - *auto_devops
-    ```
+      ```yaml
+      image: registry.cn-hangzhou.aliyuncs.com/choerodon-tools/cibase:0.6.0
+             
+      stages:
+        - mvn-package # mvn-package 这一阶段为后端应用需要的 ci 阶段，可根据模板具体情况进行修改
+        - docker-build # docker-build 为 Choerodon 构建镜像版本等的必要步骤，不建议修改
+      
+      maven-test-build:
+        stage: mvn-package
+        script:
+          - update_pom_version
+          - mvn package -U -DskipTests=false
+          - mkdir -p /cache/${CI_PROJECT_NAME}-${CI_PROJECT_ID}-${CI_COMMIT_REF_NAME}-${CI_COMMIT_SHA} 
+          - cp target/app.jar /cache/${CI_PROJECT_NAME}-${CI_PROJECT_ID}-${CI_COMMIT_REF_NAME}-${CI_COMMIT_SHA}/app.jar
+      
+      docker-build:
+        stage: docker-build
+        script:
+          - docker_build
+          - chart_build
+        only:
+          - master
+          - tags
+          - develop
+          - /^hotfix-.*$/
+          - /^release-.*$/
+      
+      .auto_devops: &auto_devops |
+          curl -o .auto_devops.sh \
+              "${CHOERODON_URL}/devops/ci?token=${Token}&type=microservice"
+          if [ $? -ne 0 ];then
+            cat .auto_devops.sh
+            exit 1
+          fi
+          source .auto_devops.sh
+          function docker_build(){
+              cp /cache/${CI_PROJECT_NAME}-${CI_PROJECT_ID}-${CI_COMMIT_REF_NAME}-${CI_COMMIT_SHA}/app.jar ${1:-"src/main/docker"}/app.jar || true
+              docker login -u ${DOCKER_USER} -p ${DOCKER_PWD} ${DOCKER_REGISTRY}
+              docker build --pull -t ${DOCKER_REGISTRY}/${GROUP_NAME}/${PROJECT_NAME}:${CI_COMMIT_TAG} ${1:-"src/main/docker"}
+              docker push ${DOCKER_REGISTRY}/${GROUP_NAME}/${PROJECT_NAME}:${CI_COMMIT_TAG}
+              rm -rf /cache/${CI_PROJECT_NAME}-${CI_PROJECT_ID}-${CI_COMMIT_REF_NAME}-${CI_COMMIT_SHA}
+          }
+      
+      before_script:
+        - *auto_devops
+      ```
 
  1. [编写 charts 模块](/docs/development-guide/basic/helm-chart.md)
       
