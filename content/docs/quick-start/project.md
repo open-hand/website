@@ -25,13 +25,19 @@ type = "docs"
 
  具体操作步骤如下：
 
-   **1.** 使用组织管理员的角色登录Choerodon系统，系统会默认一个组织，点击该组织，弹出组织/项目选择界面。
+   **1.** 使用组织管理员的角色登录Choerodon系统，此时进入平台Dashboard界面，点击选择项目，弹出组织/项目选择界面。  
+   ![Choose_project](/docs/quick-start/image/Project1.png)
 
-   **2.** 点击组织`choerodon`，选择`组织管理`模块。
+   **2.** 点击选择组织`Choerodon`。  
+   ![Choose_Choerodon](/docs/quick-start/image/Project2.png)
 
-   **3.** 进入`组织管理`后，点击`项目管理`。
+   **3.** 点击左上菜单按钮，选择`组织设置`后，点击`项目管理`。  
+   ![Manage_project](/docs/quick-start/image/Project3.png)  
+          进入项目管理页面后，点击 `创建项目`  
+          ![Create_project](/docs/quick-start/image/Project4.png)
 
-   **4.** 进入项目管理页面后，点击`创建项目`，系统会从右侧滑出创建项目页面，输入项目编码和项目名称。
+   **4.** 从右侧滑出创建项目页面后，输入项目编码和项目名称。  
+   ![ProjectInfo](/docs/quick-start/image/Project5.png)
 
  - 项目编码：choerodon-dev 
  - 项目名称：猪齿鱼研发
@@ -40,25 +46,29 @@ type = "docs"
     项目编码 必须输入，且编码只能包含字母，数字，下划线，空格， '_', '.', "——",只能以字母，数字，下划线开头
 </blockquote>
 
-   **5.** 填写完成后，点击``创建``，即可创建新的项目。
+   **5.** 填写完成后，点击``创建``，即可创建新的项目。  
+   ![Create_button](/docs/quick-start/image/Project6.png)
 
-   **6.** 当项目创建成功，Choerodon同时会在Gitlab中创建一个Group和Issue库。我们可以登录到Gitlab检查创建。
+   **6.** 当项目创建成功，Choerodon同时会在Gitlab中创建一个gitops环境库和应用库。我们可以登录到Gitlab检查创建情况。  
+   ![Gitlab_groups](/docs/quick-start/image/Project7.png)
 
  <blockquote class="note">
-  Gitlab Group 的名称是 choerodon-choerodon-dev，为组织编码 -项目编码。
+  Gitlab Group 的名称是 Choerodon-猪齿鱼研发，为组织名称 -项目名称。
  </blockquote>
 
 ## 角色分配
 
 项目创建完成之后，需要为相关人员分配权限。具体的操作步骤如下：
 
-**1.**  使用项目所有者的角色登录系统，并切换到已经创建的项目下，例如`Choerodon`下的`猪齿鱼研发`。
+**1.**  使用项目所有者的角色登录系统，并切换到已经创建的项目下，例如`Choerodon`下的`猪齿鱼研发`。  
+ ![Choerodon](/docs/quick-start/image/Project8.png)
 
-**2.**  选择`项目设置`模块，点击`项目角色分配`，进入角色分配操作界面。
-
-**3.**  点击`添加`，系统会从右侧滑出添加成员角色页面，输入相关信息，有成员、角色。
-
-**4.** 信息填写完成后，点击`添加`即可。
+**2.**  点击左上菜单按钮，选择`项目设置`模块，点击`项目角色分配`，进入角色分配操作界面。  
+ ![Role](/docs/quick-start/image/Project9.png)  
+  点击`添加`
+ ![Role_add](/docs/quick-start/image/Project10.png)
+**3.**  从右侧滑出添加成员角色页面后，输入相关信息，有成员、角色。信息填写完成后，点击`添加`即可。  
+ ![Add_Role](/docs/quick-start/image/Project11.png)
 
 与项目相关的角色权限如下表：
 
@@ -76,46 +86,9 @@ type = "docs"
 项目所有者、项目成员、部署管理员需在[角色分配](../../user-guide/system-configuration/platform/role)中配置好对应的权限。
 {{< /note >}}
 
-## 创建环境
-
-环境是一个应用被部署的地方。例如，项目A经过一个冲刺产生了应用B的最新版本1.0.1，此时在项目A下面定义了两个环境，即测试环境和正式环境，项目A按照既定的项目管理流程现将应用B的最新版本1.0.1在测试环境中部署，以供测试人员测试。当测试通过，再将1.01版本在正式环境中部署。
-
- **1. 前置条件**
-
- - 本机安装kubectl
- - 本机安装helm
-     <blockquote class="warning">
-        helm需要先初始化。
-    </blockquote>
-
-**2. 具体的创建步骤如下：**
-
- - 使用项目创建者角色登录系统，进入项目层，选择一个项目，例如``choerodon``下的``猪齿鱼研发``。
- - 选择`部署流水线`模块 ，选择`环境流水线`。
- -  点击`创建`，系统会滑出创建环境页面，输入相关信息，有环境编码、环境名称、环境描述。
-
-    环境编码：dev-env
-
-    环境名称：开发环境
-
-    环境描述：开发环境
 
 
-    <blockquote class="note">
-        根据用途配置不同的环境，常见的有开发环境，集成测试环境，用户访问测试环境及正式环境。
-    </blockquote>
 
- -  填写完成后，点击`创建`。
- -  复制Kubectl命令至kubernetes中运行，与平台建立连接。
-     <blockquote class="note">
-        运行前需要先初始化helm helm init ,helm repo update。
-    </blockquote>
-	     <blockquote class="warning">
-        helm 的版本必须与服务器上helm版本一致。
-    </blockquote>
- -  创建成功后，环境状态为运行中。
-
-
-## 总结
-
-项目是Choerodon最重要的概念，它是开发区组织资源的基本形式。通过本章节简单的学习，我们可以在Choerodon系统中创建自己的项目以及设置相关环境和权限等。用户可以根据自己具体的情况来创建项目，根据DevOps和敏捷管理的思想，Choerodon 建议按照一个Scrum中Develop团队的规模（6-9个人）来划分项目。例如，我们可能研发一个产品需要分成3个小团队，分别负责3个产品子模块，每个项目负责改模块下的后端及前端应用，具体情况需视产品大小及范围而定。
+## 相关文档  
+- [系统配置](../../user-guide/system-configuration)  
+- [角色分配](../../user-guide/system-configuration/platform/role)
