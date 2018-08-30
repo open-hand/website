@@ -304,6 +304,8 @@ i.note-number[data-value]::after {
     background: #FFFFFF;
     box-shadow: 0 2px 6px 0 rgba(0,0,0,0.20);
     border-radius: 0 0 5px 5px;
+    height: 0.8rem;
+    width: 2.6rem;
 }
 
 .tutorial-img .tutorial .tutorial-footer .content{
@@ -318,7 +320,8 @@ i.note-number[data-value]::after {
 .tutorial-img .tutorial .tutorial-footer .content .description{
     font-size: 0.13rem;
     color: rgba(0,0,0,0.65);
-    
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 

@@ -14,4 +14,8 @@ weight = 6
 - **菜单路径**：敏捷管理>报告
 - **默认角色**：项目成员
 
+## 视频介绍
+
+{{< tutorial agile report>}}
+
 {{< docdir >}}
