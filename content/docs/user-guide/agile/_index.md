@@ -53,30 +53,7 @@ weight = 3
 
 ## 视频介绍
 
-<div class="tutorial-img" id="tutorial-img">
-    <div class="col-lg-4 col-md-4 col-xs-12 tutorial" data-src="h07358jaa5q">
-        <div class="tutorial-head" style="background: url(/img/docs/quick-start/video/agile.svg)no-repeat center 100%;    background-size: cover;">
-            <div class="title">敏捷管理</div>
-            <div class="time">
-                <div class="content">
-                    <i class="iconfont icon-play-button"></i>
-                    <div>22分43秒</div>
-                </div>
-            </div>
-        </div>
-        <div class="tutorial-footer">
-            <div class="content">
-                <div class="title">敏捷管理</div>
-                <div class="description">围绕敏捷的Scrum模型，阐述如何使用Choerodon的敏捷管理来管理项目。</div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="tutorial-video" id="tutorial-video">
-    <div class="bg"></div>
-    <iframe frameborder="0" src='' allowfullscreen="true" quality="high"></iframe>
-    <div class="iconfont icon-guanbi"></div>
-</div>
+{{< tutorial agile overview>}}
 
 {{< docdir >}}
 

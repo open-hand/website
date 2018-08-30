@@ -38,6 +38,10 @@ weight = 4
 - 影响版本：影响版本一般适用于bug类型的issue，指发现该bug的版本。
 - 修复版本：修复版本指该issue生效的版本，因为issue本身有问题的含义，所以这里用修复的版本来说明问题的生效。
 
+## 视频介绍
+
+{{< tutorial agile release>}}
+
 ## 相关操作
 
 {{< docdir >}}

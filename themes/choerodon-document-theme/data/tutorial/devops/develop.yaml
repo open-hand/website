@@ -1,0 +1,5 @@
+src: "f0735vcyhgm"
+background: "/img/docs/quick-start/video/devops.svg"
+title: "开发流水线"
+time: "15分14秒"
+description: "以创建单接口调用的应用示例来介绍持续交付中开发流水线使用方法"

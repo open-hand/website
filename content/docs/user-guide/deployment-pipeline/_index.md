@@ -56,29 +56,6 @@ weight = 7
 
 ## 视频介绍
 
-<div class="tutorial-img" id="tutorial-img">
-    <div class="col-lg-4 col-md-4 col-xs-12 tutorial" data-src="y0735zgqr1j">
-        <div class="tutorial-head" style="background: url(/img/docs/quick-start/video/devops.svg)no-repeat center 100%;    background-size: cover;">
-            <div class="title">部署流水线</div>
-            <div class="time">
-                <div class="content">
-                    <i class="iconfont icon-play-button"></i>
-                    <div>6分18秒</div>
-                </div>
-            </div>
-        </div>
-        <div class="tutorial-footer">
-            <div class="content">
-                <div class="title">部署流水线</div>
-                <div class="description">以部署并访问应用示例来介绍持续交付中部署流水线使用方法</div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="tutorial-video" id="tutorial-video">
-    <div class="bg"></div>
-    <iframe frameborder="0" src='' allowfullscreen="true" quality="high"></iframe>
-    <div class="iconfont icon-guanbi"></div>
-</div>
+{{< tutorial devops deploy>}}
 
 {{< docdir >}}
