@@ -15,7 +15,7 @@ weight = 7
 
 ## 支持环境
 
-* 现代浏览器和 IE9 及以上（需要 [polyfills](./quick-start#兼容性)）。
+* 现代浏览器和 IE9 及以上（需要 polyfills）。
 * 支持服务端渲染。
 * [Electron](http://electron.atom.io/)
 
