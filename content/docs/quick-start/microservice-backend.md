@@ -14,7 +14,7 @@ type = "docs"
 
 ## 目标
 
-本章节将从创建后端应用、开发后端应用、部署应用等方面介绍，让读者能够熟悉使用Choerodon创建应用后端应用的步骤和流程，并且学会如何利用Choerodon部署应用等。
+本章节将从创建后端应用开发、后端应用、提交代码、生成版本到部署应用等方面介绍，让读者能够熟悉使用Choerodon创建应用后端应用的步骤和流程，并且学会如何利用Choerodon部署应用等。
 
 ## 前置条件
 
@@ -22,15 +22,21 @@ type = "docs"
 
 **2.** 完成[创建项目](../project)操作。本章节使用在前面章节创建的项目`猪齿鱼研发`。
 
-**3.** 完成[创建环境](../../user-guide/deployment-pipeline/environment-pipeline)，环境流水线中有状态为运行中的环境。
+**３.** 完成[创建环境](../../user-guide/deployment-pipeline/environment-pipeline)，环境流水线中有状态为运行中的环境。
 
 ## 创建后端应用
 
-**1.** 使用项目所有者的角色用户登录Choerodon系统，选择项目``猪齿鱼研发``。
+**1.** 使用项目所有者的角色用户登录Choerodon系统,创建项目的人即为项目所有者,如果使用其它创建的用户请先给该用户在``猪齿鱼研发``项目下分配项目所有者角色,然后登录选择项目``猪齿鱼研发``。
+ 
+ ![](/docs/quick-start/image/enter-project.png)
 
 **2.** 选择`应用管理`模块，点击`应用`，进入应用管理页面。
+      
+ ![](/docs/quick-start/image/enter-app.png)
 
-**3.** 点击`创建应用`，系统会从右边滑出页面，在页面中输入`应用编码`、`应用名称`，`应用模板`，`应用模板`选择`MicroService`。点击`创建`，即可创建一个后端应用。
+**3.** 点击[创建应用](../../user-guide/application-management/application)，系统会从右边滑出页面，在页面中输入`应用编码`、`应用名称`，`应用模板`，`应用模板`选择`MicroService`。点击`创建`，即可创建一个后端应用。
+
+ ![](/docs/quick-start/image/create_app.png)
 
 字段名 | 输入值
 ---|--- 
@@ -40,9 +46,13 @@ type = "docs"
  
 > 当应用模板不符合您的需求，您可手动创建一个[应用模板](../../user-guide/application-management/application-template/)。
 
-**4.** 当应用创建成功，可在`应用管理`模块，点击`应用` 界面查看到新建的应用。
+**4.** 当应用创建成功,可在`应用管理`模块，点击`应用` 界面查看到新建的应用,当应用的状态是启用时,表示应用创建成功。
 
-**5.** 在创建应用的同时，系统会对应在`Gitlab`中创建一个仓库，选择 `开发流水线`点击`代码仓库`，找到创建好的应用，点击`仓库地址`，链接到`Gitlab`新建的仓库。
+![](/docs/quick-start/image/app-list.png)
+
+**5.** 在创建应用的同时，系统会对应在`Gitlab`中创建一个仓库,点击仓库地址,可以链接到应用对应在`Gitlab`的代码仓库。
+
+![](/docs/quick-start/image/app-repository.png)
 
 Choerodon 名词 | 对应Gitlab 名词 | 举例
 ---|---|---
@@ -56,59 +66,78 @@ Choerodon 名词 | 对应Gitlab 名词 | 举例
 
 **1. 创建`Feature`分支**
 
-在 `开发流水线` -> `分支` 界面，选择应用`choerodon-todo-service``。点击`创建分支`，选择对应的`issue` 问题。分支来源选择`master`。填写`issue`号，如`feature-1`。点击`创建`，即可创建一个分支。
+在 `开发流水线` -> `分支` 界面，选择应用``choerodon-todo-service``。点击`创建分支`。如果没有`issue`可选择，则先[创建issue](../../user-guide/agile/issue/create-issue/),
+选择对应的`issue`。分支来源选择`master`。填写`issue`号，如`feature-1`。点击`创建`，即可创建一个分支。
+
+![](/docs/quick-start/image/create_branch1.png)
+
+![](/docs/quick-start/image/create_branch2.png)
 
 Choerodon 采用 [`github-flow`](https://guides.github.com/introduction/flow/)作为我们的分支管理策略的主体。并在此基础上，参考了一些其他策略，对开发者的开发分支做了一定程度上的细分。更多相关信息参考[分支管理](../../user-guide/development-pipeline/branch/)。
 
 **2. 拉取代码仓库**
 
-在`开发流水线` -> `代码仓库` 找到`choerodon-todo-service` 的`仓库地址`。通过`git` 命令拉取生成的项目代码。然后切换到对应分支进行本地开发。
+在`开发流水线` -> `代码仓库` 找到`choerodon-todo-service` 的`仓库地址`,复制仓库地址，本地通过`git` 命令拉取生成的项目代码。然后切换到对应分支进行本地开发。
+
+![](/docs/quick-start/image/copy_repository.png)
 
 ``` bash
 $ git clone `仓库地址`
 $ cd ./choerodon-todo-service
-$ git checkout feature-1
+$ git checkout feature-choerodon-dev-1
 ```
- 
-**3. 本地开发**
+克隆代码时候,会让输入用户名,密码。用户名为平台用户名，密码为部署[持续交互](../../installation-configuration/steps/parts/choerodon-devops/)服务时候的变量值 
+  
+![](/docs/quick-start/image/clone_repository.png)
 
-将代码克隆到本地后，就可以在本地进行开发。
+![](/docs/quick-start/image/gitlab_password.png)
+
+**3. 本地开发**
 
 通过Choerodon 提供的`MicroService` 应用模板，会生成一个最简单的`spring boot` 应用。
 
-模板本身生成的应用可以直接运行在平台上。更多具体的开发参考[后端开发手册](../../development-guide/backend/)。
+将代码克隆到本地后，就可以在本地进行开发。
 
-**4. 修改`ci` 文件**
+模板本身生成的应用可以直接运行在平台上,如需拓展更多功能,可具体参考[后端开发手册](../../development-guide/backend/)。
 
-通过Choerodon 提供的默认模板，会创建`.gitlab-ci.yml`。
+**4. `ci` 文件**
 
-`.gitlab-ci.yml`定义 `Gitlab CI` 的阶段，Choerodon 缺省的 CI 流程包含了`编译`，`打包`，`生成镜像`，`生成helm 包`几个阶段。	
+通过Choerodon 提供的`MicroService`应用模板，会创建`.gitlab-ci.yml`。
+
+`.gitlab-ci.yml`定义 `Gitlab CI` 的阶段，通过MicroService模板 的 CI 流程包含了`编译`，`打包`，`生成镜像`，`生成helm 包`几个阶段。	
 
 有关`.gitlab-ci.yml` 的编写参考[应用模板](../../user-guide/application-management/application-template/)。
 
-**5. 修改`charts` 文件**
+![](/docs/quick-start/image/gitlab-ci.png)
 
-通过Choerodon 提供的默认模板，会创建`charts` 文件夹。
+**5. `charts` 文件**
 
-`charts`模块用于创建应用时生成创建 `k8s` 对象，包含了`部署的模板`，`chart values`。
+通过Choerodon 提供的`MicroService`应用模板，会创建`charts` 文件夹。charts文件目录用于生成charts包,部署时会用到。
+
+`charts`文件夹里面包含了`k8s` 对象的模板文件以及渲染这些对象文件的参数值文件`values.yaml`。
 
 有关`charts` 的编写参考[应用模板](../../user-guide/application-management/application-template/)。
 
-**6. 修改`Dockerfile` 文件**
+![](/docs/quick-start/image/charts.png)
 
-Choerodon 使用`docker` 来运行应用。你可以通过修改`Dockerfile` 来修改应用的运行环境。
+**6. `Dockerfile` 文件**
+
+Choerodon 使用`docker` 来打包应用镜像。你可以通过修改`Dockerfile` 来打包镜像的方式。
 
 有关`Dockerfile` 的编写参考[应用模板](../../user-guide/application-management/application-template/)。
 
+![](/docs/quick-start/image/docker-file.png)
+
 **7. 提交代码**
 
-当本地修改结束后，需要将本地仓库的代码提交到远程分支上。
+当本地做了相关修改之后，需要将本地仓库的代码提交到远程分支上。提交的用户名密码同克隆代码库的一样。
 
 ``` bash
 $ git add .
 $ git commit -m "[ADD] init todo-service"
-$ git push origin feature-1
+$ git push origin feature-choerodon-dev-1
 ```
+![](/docs/quick-start/image/push.png)
 
 提交时需要遵循Choerodon 的规范:
 
@@ -124,13 +153,21 @@ $ git push origin feature-1
 
 在`开发流水线` -> `持续集成` 页面，找到`choerodon-todo-service`。点击阶段跳转到`Gitlab` 查看`ci`执行情况。
 
+![](/docs/quick-start/image/pipeline.png)
+
 **10. 合并分支**　
 
 当`ci`执行通过以后，可以将`feature`分支合并到`master`分支上。
 
-在`开发流水线` -> `合并请求` 页面，选择应用`choerodon-todo-service`。点击`创建合并请求`，跳转到`Gitlab`。 分别选择源分支为`feature-1` ，目标分支为`master`。并提交合并请求。等待`ci流水线`通过后，点击合并分支。。
+在`开发流水线` -> `合并请求` 页面，选择应用`choerodon-todo-service`。点击`创建合并请求`，跳转到`Gitlab`。 分别选择源分支为`feature-1` ，目标分支为`master`。并提交合并请求。等待`ci流水线`通过后，点击合并分支。
+
+![](/docs/quick-start/image/merge_request.png)
+
+![](/docs/quick-start/image/merge_request2.png)
 
 当`master` 分支的`ci流水线` 通过以后。在`应用管理` -> `应用版本` 可以找到`choerodon-front-demo`生成的对应版本。接下来就可以部署了。
+
+![](/docs/quick-start/image/version.png)
 
 ## 部署应用
 
@@ -138,26 +175,44 @@ $ git push origin feature-1
 
 > 在部署前，请先确定服务所需要的数据库，kafka，注册中心，配置中心等都已经正常运行启动。
 
-**1.** 使用部署管理员的角色登录Choerodon系统，选择项目`猪齿鱼研发`。
+**1.** 使用部署管理员的角色的用户登录,创建项目的人自动分配为部署管理员角色,如果向使用其它用户,请给其它用户在该项目下分配部署管理员角色之后,在用其它用户登录Choerodon系统，然后选择项目`猪齿鱼研发`。
 
 **2.** 进入`部署流水线`模块，选择`应用部署`，进入应用部署界面。
 
 **3.** 点击`选择应用`，找到已经提交的`choerodon-todo-service`。点击`选择版本`，选择`choerodon-todo-service` 最新的版本，点击下一步。
 
+![](/docs/quick-start/image/deploy1.png)
+
 **4.** 点击`选择环境`，选择一个环境。部署的环境信息会展现在底下。如果没有环境，请先完成[创建环境](../../user-guide/deployment-pipeline/environment-pipeline)。
 
-**5.** 根据实际的配置，配置部署应用所需的配置信息。然后点击下一步。
+
+**5.** 根据实际的配置，配置部署应用所需的配置信息。
+替换掉一些参数文件值，参数文件值为部署choerodon系统时的生成的参数值，详细见[一键部署](../../installation-configuration/steps/choerodon/)或者[分布部署](../../installation-configuration/steps/parts/),然后点击下一步。
+
+![](/docs/quick-start/image/values1.png)
+
+![](/docs/quick-start/image/values2.png)
 
 **6.** 选择`新建实例`。如果环境中已有一个实例，则可以选择`替换实例`。点击下一步，生成预览信息。
+
+![](/docs/quick-start/image/deploy3.png)
 
 **7.** 确认信息无误后，可以点击`部署` 来部署应用，页面自动跳转到`实例`页面。
 
 **8.** 选择已经部署的应用，右侧的`查看实例详情`，可以查看到阶段信息及日志。
 
+![](/docs/quick-start/image/query_instance1.png)
+
+![](/docs/quick-start/image/jobs.png)
+
+
+
 > **如何判断某版本的应用已经部署成功并通过？**
 >
 >* 当实例出现在列表中，且实例名称后没有报错提示`icon`即为部署成功生成实例；
 >* 当容器状态条为绿色，且容器状态显示为`1/1`时，表示新部署的实例通过健康检查。
+
+![](/docs/quick-start/image/query_instance.png)
 
 ## 注册服务
 
@@ -167,12 +222,55 @@ $ git push origin feature-1
 
 **2.** 如果注册中心和部署的应用不在同一项目下，需要在注册中心所属的项目下，进入`部署流水线`模块，选择部署`实例` 界面，找到注册中心，选择右侧的修改配置信息。
 
+![](/docs/quick-start/image/modify_regi.png)
+
 **3.** 给 `env.open.REGISTER_SERVICE_NAMESPACE` 变量添加自己服务所部署的`namespace`，用`,` 和其他的分隔开。
+
+![](/docs/quick-start/image/modify_regi2.png)
+
 
 **4.** 修改完毕后，点击`重新部署`。
 
-**5.** 等待实例重启结束，通过`http://register-server:8000/eureka/apps` 查看是否成功注册。
+**5.** 等待实例重启结束，通过`xxxx/eureka/apps` 查看是否成功注册。xxxx为部署register-server时建的域名，详细见[一键部署](../../installation-configuration/steps/choerodon/)或者[分布部署](../../installation-configuration/steps/parts/)
 
-## 总结
+![](/docs/quick-start/image/regi-instances.png)
 
-通过上述的步骤，就可以很快速的在Choerodon 中创建并部署一个后端的服务。  
+**６.** 服务注册成功后，用平台管理员给该服务添加路由，将其api暴露在swagger上,就可以在swagger-ui访问服务的api。swagger-ui前缀为gateway地址，具体值详见[一键部署](../../installation-configuration/steps/choerodon/)或者[分布部署](../../installation-configuration/steps/parts/)
+
+![](/docs/quick-start/image/create_luyou.png)
+
+![](/docs/quick-start/image/create_luyou2.png)
+
+![](/docs/quick-start/image/swagger1.png)
+
+然后就可以访问部署好之后服务的api了，自此一个后端服务部署开发完成！
+
+![](/docs/quick-start/image/api1.png)
+
+![](/docs/quick-start/image/api2.png)
+
+## 相关文档链接
+
+- [系统配置](../../user-guide/system-configuration)
+
+- [创建项目](../project)
+
+- [创建环境](../../user-guide/deployment-pipeline/environment-pipeline)
+
+- [创建应用](../../user-guide/application-management/application)
+
+- [应用模板](../../user-guide/application-management/application-template/)
+
+- [创建issue](../../user-guide/agile/issue/create-issue/)
+
+- [github-flow](https://guides.github.com/introduction/flow/)
+
+- [分支管理](../../user-guide/development-pipeline/branch/)
+
+- [持续交互](../../installation-configuration/steps/parts/choerodon-devops/)
+
+- [后端开发手册](../../development-guide/backend/)
+
+- [一键部署](../../installation-configuration/steps/choerodon/)
+
+- [分布部署](../../installation-configuration/steps/parts/)
