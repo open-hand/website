@@ -1,6 +1,6 @@
 +++
 title = "分支管理"
-description = "description = "介绍了Choerodon的分支管理，从创建分支、创建合并请求来介绍如何快速了解分支管理的操作"
+description = "介绍了Choerodon的分支管理，从创建分支、创建合并请求来介绍如何快速了解分支管理的操作"
 weight = 10
 type = "docs"
 
