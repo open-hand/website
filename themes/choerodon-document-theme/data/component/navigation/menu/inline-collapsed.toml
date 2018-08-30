@@ -1,11 +1,7 @@
 id= "menu-inline-collapsed"
 weight= 3
 name= "缩起内嵌菜单"
-description= """
-内嵌菜单可以被缩起/展开。
-
-你可以在 [Layout](/components/layout/#components-layout-demo-side) 里查看侧边布局结合的完整示例。
-"""
+description= "内嵌菜单可以被缩起/展开。"
 code= """
 ````jsx
 import { Menu, Icon, Button } from 'choerodon-ui';
