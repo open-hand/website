@@ -1,8 +1,8 @@
 +++
 title = "分支管理"
 description = "介绍了Choerodon的分支管理，从创建分支、创建合并请求来介绍如何快速了解分支管理的操作"
-weight = 10
-type = "docs"
+weight = 1
+type = "docs0"
 
 +++
 
@@ -15,9 +15,7 @@ type = "docs"
 
 ## 前置条件
 
-**1.** 在操作之前保证[系统配置](../../user-guide/system-configuration)已经配置完全。特别在本章节用到的角色、环境管理等配置。
-
-**2.** 完成[创建项目](../project)操作。本章节使用在前面章节创建的项目`猪齿鱼研发`。
+**1.** 在操作之前保证[系统配置](../user-guide/system-configuration)已经配置完全。特别在本章节用到的角色、环境管理等配置。
 
 ## Git相关
 
