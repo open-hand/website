@@ -77,13 +77,11 @@ type = "docs"
 项目成员 | 应用管理（仅查看）、分支管理（仅有developer权限）、持续集成、应用版本、应用发布（仅查看）、应用市场（仅查看）、环境流水线（仅查看）、应用部署（仅查看）、网络管理（仅查看）、域名管理（仅查看）、容器管理 | 项目层
 部署管理员 | 应用市场、环境流水线、应用部署、网络管理、域名管理、容器管理| 项目层
 
-
-<blockquote class="note">
+{{< note >}}
   项目角色分配仅项目所有者可操作。  
-    
-  项目所有者、项目成员、部署管理员需在[角色分配](../../user-guide/system-configuration/platform/role)中配置好对应的权限。
- </blockquote>
 
+  项目所有者、项目成员、部署管理员需在[角色分配](../../user-guide/system-configuration/platform/role)中配置好对应的权限。
+{{< /note >}}
 
 
 
