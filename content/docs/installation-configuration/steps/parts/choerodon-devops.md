@@ -106,7 +106,7 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
         --set env.open.SERVICES_GATEWAY_URL=http://api.example.choerodon.io \
         --set env.open.SERVICES_SONARQUBE_URL=http://sonarqube.example.choerodon.io \
         --set env.open.SECURITY_IGNORED="/ci\,/webhook\,/v2/api-docs\,/agent/**\,/ws/**\,/webhook/**" \
-        --set env.open.AGENT_VERSION="0.9.5" \
+        --set env.open.AGENT_VERSION="0.9.6" \
         --set env.open.AGENT_REPOURL="https://openchart.choerodon.com.cn/choerodon/c7n/" \
         --set env.open.AGENT_SERVICEURL="ws://devops.service.example.choerodon.io/agent/" \
         --set env.open.TEMPLATE_VERSION_MICROSERVICE="0.9.0" \
@@ -118,7 +118,7 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
         --set persistence.enabled=true \
         --set persistence.existingClaim="devops-service-pvc" \
         --name=devops-service \
-        --version=0.9.2 --namespace=choerodon-devops-prod
+        --version=0.9.3 --namespace=choerodon-devops-prod
     ```
     参数名 | 含义 
     --- |  --- 

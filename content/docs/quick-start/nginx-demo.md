@@ -65,7 +65,7 @@ spec:
 
  - 在项目根目录下添加 `.gitlab-ci.yml` 文件，内容如下下:
 
-        image: registry.choerodon.com.cn/tools/cibase:0.5.0
+        image: registry.choerodon.com.cn/tools/cibase:0.6.0
 
         stages:
           - chart_build
@@ -73,15 +73,19 @@ spec:
         chart_build:
           stage: chart_build
           script:
-            - docker login ${DOCKER_REGISTRY} -u admin -p Harbor12345
+            - docker login ${DOCKER_REGISTRY} -u ${DOCKER_USER} -p ${DOCKER_PWD}
             - docker build --pull -t ${DOCKER_REGISTRY}/${GROUP_NAME}/${PROJECT_NAME}:${CI_COMMIT_TAG} .
             - docker push ${DOCKER_REGISTRY}/${GROUP_NAME}/${PROJECT_NAME}:${CI_COMMIT_TAG}
             - chart_build
 
         .auto_devops: &auto_devops |
-            curl -o .auto_devops.sh \
-                "${CHOERODON_URL}/devops/ci?token=${Token}&type=front"
-            source .auto_devops.sh
+          http_status_code=`curl -o .auto_devops.sh -s -m 10 --connect-timeout 10 -w %{http_code} "${CHOERODON_URL}/devops/ci?token=${Token}"`
+          if [ "$http_status_code" != "200" ]; then
+            cat .auto_devops.sh
+            exit 1
+          fi
+          source .auto_devops.sh
+
 
         before_script:
           - *auto_devops
