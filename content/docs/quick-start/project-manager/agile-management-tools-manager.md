@@ -1,60 +1,64 @@
-﻿使用敏捷管理工具
+﻿# 使用敏捷管理工具
 
-一、创建一个版本
+## 一、创建一个版本
+
 版本是指向客户发布的软件版本，一个版本可能包括多个史诗，以及很多个问题。
+
 点击`待办事项`菜单，进入到待办事项页面，在页面左侧展开版本tab页，可快速创建一个版本。
 
-![燃尽图](/img/agile/version_create.png)
+![创建版本](../image/agile/version_create.png)
 
 也可在`发布版本`菜单页面上方点击`创建发布版本`按钮创建。
 
-![燃尽图](/img/agile/version_create2.png)
+![创建版本2](../image/agile/version_create2.png)
 
 点击创建版本会弹出如下图片的创建页面，在此页面中填写版本详情，包括名称（必输）、描述（可选）、开始日期（可选）、发布日期（可选），随后单击新建即可创建一个新版本。
 
-![燃尽图](/img/agile/version_create_detail.png)
+![版本创建详情](../image/agile/version_create_detail.png)
 
 创建成功后，可在版本列表中看到此版本
 
 
-![燃尽图](/img/agile/version_list.png)
+![版本列表](../image/agile/version_list.png)
 
 
  - 点击详情，会在右侧显示出该版本下的问题列表。 
  - 展开版本，会显示出该版本的开始日期、发布日期、当前版本中的问题总数、未完成问题数及预估故事点等。
 
 
-二、创建一个史诗
+## 二、创建一个史诗
+
 史诗是指更大的工作，涉及到很多的问题，一个版本可能包含多个史诗。
+
 进入到待办事项页面，展开史诗tab页，	点击创建史诗会弹出下图创建页面。
 
-![燃尽图](/img/agile/epic_create.png)
+![创建史诗](../image/agile/epic_create.png)
 
 输入史诗名称，以及概要，点击新建，史诗创建成功。
  相关操作：
 1、进入史诗列表，点击某个史诗名称，会显示出该史诗问题总数、已完成问题数、未预估问题数及预估故事点
 
-![燃尽图](/img/agile/epic_list.png)
+![史诗列表](../image/agile/epic_list.png)
 
 2、点击详情，会在右侧显示出该史诗下的问题列表。 
 
 
-![燃尽图](/img/agile/epic_detail.png)
+![史诗详情](../image/agile/epic_detail.png)
 
 3、点击史诗名称后的三角小标识，可为该史诗选择一个对应颜色、对史诗名称进行编辑，以及查看史诗详情。 
 
 
 
-![燃尽图](/img/agile/epic_edit.png)
+![编辑史诗](../image/agile/epic_edit.png)
 
 
-三、创建一个冲刺
+## 三、创建一个冲刺
 冲刺阶段是团队处理事务的一段短期迭代周期，我们通常用冲刺的目标来定义冲刺，每个冲刺都发生在一定的时间期限之内，有明确的开始日期和结束日期，冲刺必须短，长度在一周到一个月之间，长度一般应当保持一致，在这个时间段内，团队需要以稳定的步调完成一组与冲刺目标一致的工作。
 进入到`待办事项`菜单内，在页面上方点击`创建冲刺`，即可创建一个冲刺。冲刺名称默认为：冲刺+递增的编号，点击名称可自行进行修改。
 
-![燃尽图](/img/agile/sprint_create.png)
+![创建冲刺](../image/agile/sprint_create.png)
 
-![燃尽图](/img/agile/sprint_detail.png)
+![冲刺详情](../image/agile/sprint_detail.png)
 
 
 3、显示参与该冲刺的项目成员。
@@ -66,17 +70,17 @@
 9、可选择仅我的问题或者仅故事对所有待办事项进行快速搜索。
 
 
-五、配置看板
-添加列
+## 四、配置看板
+ ### 添加列
 进入到看板配置页面，点击`添加列`，新增看板列
 
 
-![燃尽图](/img/agile/column_add.png)
+![添加列](../image/agile/column_add.png)
 
 
 输入列名称与类别，点击创建即可
 
-![燃尽图](/img/agile/column_add_detail.png)
+![添加列详情](../image/agile/column_add_detail.png)
 
 
 
@@ -87,32 +91,32 @@
  - 创建处理中的列：处理中的列可以有多个，所以创建好的处理中的列会直接放在已完成列之前。 
  - 创建已完成的列：若看板中已存在已完成列，则系统会跳过创建已完成的列，改为创建处理中的列。
 
-添加状态：
+ ### 添加状态：
 进入到看板配置页面，点击`添加状态`，新增状态
 
 
-![燃尽图](/img/agile/status_add.png)
+![添加状态](../image/agile/status_add.png)
 
 
 输入状态名称与类别，并且状态名称在该项目下唯一，即可创建一个新的状态。
 
-![燃尽图](/img/agile/status_add_detail.png)
+![添加状态详情](../image/agile/status_add_detail.png)
 
 
 创建成功后，该状态位于`未对应的状态`区域中。
 
 
-![燃尽图](/img/agile/status_add_result.png)
+![添加状态结果](../image/agile/status_add_result.png)
 
 
 说明：一个列可以包含一个或多个状态，列里的状态可拖拽到其他任意列中，也可拖拽到未对应区域中，若拖拽到未对应区域中则该状态不会在看板上显示
 
-设置列约束
+ ### 设置列约束
 列约束是指对该列的问题个数进行设置，这样可以管理问题在不同列中的流动。
 如果开启列约束，则可以针对每一列对问题的最大数量和最小数量进行设置，
 可以为所有列指定约束，或者只指定其中的一些列。如果问题数量超出了此列的约束，在看板中，此列将限制问题的移除或移入。
 
-![燃尽图](/img/agile/column_constraint.png)
+![列约束](../image/agile/column_constraint.png)
 
 
 说明：
@@ -122,28 +126,28 @@
  - 问题计数，不包括子任务与问题计数同理，唯一不同的是列的问题计数不包括子任务在内。 
 
 
-六、模块管理
+## 五、模块管理
 模块是项目的一部分，通过模块可以将项目的问题分成比史诗更小的一部分，但是模块是独立于史诗存在的，可以跨域多个版本和史诗，每一个模块都可以划分对应的负责人，在配置后，可以将项目中的问题归类到对应的模块中，比如将一个开发项目分为前端模块和后端模块。
 进入到`模块管理`菜单内，在页面上方点击`创建模块`，输入模块名称（必输）、负责人（必输）、模块描述（可选）、默认经办人（必输）等字段即可创建一个新模块
 
-![燃尽图](/img/agile/component_create.png)
+![创建模块](../image/agile/component_create.png)
 
 创建成功后
 
 
 
-![燃尽图](/img/agile/component_list.png)
+![模块列表](../image/agile/component_list.png)
 
 进入到某个问题详情内，可以选择到该模块，表示将该问题归类到此模块中。
 
 
-![燃尽图](/img/agile/component_apply.png)
+![模块应用](../image/agile/component_apply.png)
 
-七、结束冲刺
+## 六、结束冲刺
 当冲刺完成迭代后，可在`活跃冲刺`页面右上角点击‘完成冲刺’按钮完成冲刺。此时会弹出冲刺的统计界面，如下图所示：
 
 
-![燃尽图](/img/agile/sprint_complete.png)
+![结束冲刺](../image/agile/sprint_complete.png)
 
 说明：
  
@@ -153,12 +157,14 @@
 4、最后点击结束按钮即可。
  
 
-八、发布版本
-发布版本
+## 七、发布版本
+
+###发布版本
+
 进入到`发布版本`菜单中，点击版本右侧按钮，或者点击版本名进入版本详情页面，点击版本名称旁边的发布按钮。
 点击发布后，会跳出版本发布页面，如下图所示。
 
-![燃尽图](/img/agile/version_release.png)
+![发布版本](../image/agile/version_release.png)
 
 
 说明：
@@ -170,63 +176,58 @@
 4.点击确定即可发布
 
 
-撤销发布
+### 撤销发布
 用户可根据自身需求撤销版本发布，点击版本右侧喵点，找到撤销发布
 
 
-![燃尽图](/img/agile/version_revoke.png)
+![撤销版本](../image/agile/version_revoke.png)
 
 
 点击撤销发布后，版本将更改状态为规划中
 
 
-![燃尽图](/img/agile/version_revoke_result.png)
+![撤销版本结果](../image/agile/version_revoke_result.png)
 
 
 
-归档
+### 归档
 将已发布的版本变更为归档，点击版本右侧喵点，找到归档
 
-![燃尽图](/img/agile/version_pigeonhole.png)
+![版本归档](../image/agile/version_pigeonhole.png)
 
 
 点击归档，版本将更改状态为归档
 
 
 
-九、设置
-项目设置
+## 八、设置
+### 项目设置
 项目设置主要设置问题编码的项目前缀、以及项目的默认优先级、默认经办人策略。
 1、项目code设置
      进入到`设置`菜单的项目设置中，找到项目code，修改项目code
 
-![燃尽图](/img/agile/project_code_setting.png)
+![项目code设置](../image/agile/project_code_setting.png)
 
 
 修改后，此项目上的所有问题编号的前缀将同步修改
 
 
-![燃尽图](/img/agile/project_code_setting_result.png)
+![项目code设置结果](../image/agile/project_code_setting_result.png)
 
 
 
 2、设置默认优先级
       找到默认优先级设置选项
 
-![燃尽图](/img/agile/priority_setting.png)
+![优先级设置](../image/agile/priority_setting.png)
 
 修改成功后，创建问题时系统默认填了优先级。
 
-
-![燃尽图](/img/agile/priority_setting_result.png)
-
-
+![优先级设置结果](../image/agile/priority_setting_result.png)
 
 3、默认经办人策略
 
-![燃尽图](/img/agile/assignee_setting.png)
-
-
+![默认经办人策略设置](../image/agile/assignee_setting.png)
 
 说明：
 选择默认经办人策略，提供三种策略：
@@ -235,39 +236,33 @@
  - 指定经办人: 设置此项后，创建问题时若未指定经办人，系统将默认经办人为该指定的经办人。
  - 若选择指定经办人，可在此输入经办人。
 
-问题链接
+### 问题链接
 用户可以在问题详情以及创建问题的时候选择链接类型链接对应的问题。
 进入到`设置`菜单下的问题链接，可看到问题链接列表
 
-![燃尽图](/img/agile/issue_link.png)
-
+![问题链接](../image/agile/issue_link.png)
 
 系统内置链接包含: 阻塞、复制、关联。
 除此之外用户还可以设置功能自定义链接类型。 
 
-快速搜索
+### 快速搜索
+
 快速搜索可以让用户自定义定制筛选条件，满足了不同用户对于问题的筛选需求。
 进入到`设置`菜单下的快速搜索
 
-
-![燃尽图](/img/agile/quick_filter.png)
-
+![快速搜索](../image/agile/quick_filter.png)
 
 点击页面上方的`创建快速搜索`按钮，在弹出的创建框中输入名称（必输）、筛选条件（包括属性、关系、值，可支持多个条件共同搜索）、关系（若有多个筛选条件，需要添加此关系）、描述（可选项）
 
-
-![燃尽图](/img/agile/quick_filter_create.png)
-
+![创建快速搜索](../image/agile/quick_filter_create.png)
 
 点击创建即可成功创建。
 
-![燃尽图](/img/agile/quick_filter_result.png)
-
+![创建搜索创建成功](../image/agile/quick_filter_result.png)
 
 回到`待办事项`菜单或者`活跃冲刺`菜单，应用此快速搜索
 
-
-![燃尽图](/img/agile/quick_filter_apply.png)
+![应用快速搜索](../image/agile/quick_filter_apply.png)
 
 
 
