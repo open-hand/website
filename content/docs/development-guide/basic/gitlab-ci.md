@@ -21,9 +21,8 @@ weight = 2
 
 ```yaml
 .auto_devops: &auto_devops |
-  curl -o .auto_devops.sh \
-    "${CHOERODON_URL}/devops/ci?token=${Token}type=microservice"
-  if [ $? -ne 0 ];then
+  http_status_code=`curl -o .auto_devops.sh -s -m 10 --connect-timeout 10 -w %{http_code} "${CHOERODON_URL}/devops/ci?token=${Token}"`
+  if [ "$http_status_code" != "200" ]; then
     cat .auto_devops.sh
     exit 1
   fi
@@ -41,8 +40,6 @@ before_script:
     export GROUP_NAME={{ GROUP_NAME }}
     # 获取的应用名称
     export PROJECT_NAME={{ PROJECT_NAME }}
-    # 获取当前提交版本号，具体规则请查阅：https://github.com/choerodon/cibase
-    export CI_COMMIT_TAG=$(GetVersion)
     # 更新maven项目本版本号
     function update_pom_version(){
         mvn versions:set -DnewVersion=${CI_COMMIT_TAG} || \
