@@ -55,7 +55,7 @@ weight = 9
         
 ## 删除证书
 
-点击列表目标证书列最后的删除按钮，可以删除域名。
+点击列表目标证书列最后的删除按钮，可以删除证书。
 
 ![delete certificate](/docs/user-guide/deployment-pipeline/image/delete_certificate.png) 
 
