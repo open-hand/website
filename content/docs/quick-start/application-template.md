@@ -1,7 +1,7 @@
 +++
 title = "创建一个应用模板"
 description = "创建应用模板的介绍"
-weight = 22
+weight = 2
 type = "docs"
 
 +++
