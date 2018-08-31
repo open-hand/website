@@ -24,9 +24,13 @@ type = "docs"
 
 ## 创建应用模板
 
-1. 使用组织管理员的角色登录Choerodon系统，系统会默认一个组织，点击该组织，弹出组织/项目选择界面。
+1. 使用组织管理员的角色登录Choerodon系统，此时进入平台Dashboard界面，点击选择项目，弹出组织/项目选择界面。
 
+    ![Choose_project](/docs/quick-start/image/Project1.png)
+    
 1. 点击组织`choerodon`，选择`应用管理`模块。
+
+    ![Choose_Choerodon](/docs/quick-start/image/Project2.png)
 
 1. 进入`应用管理`后，点击`应用模板`。
 
@@ -127,7 +131,7 @@ type = "docs"
         - *auto_devops
       ```
 
- 1. [编写 charts 模块](/docs/development-guide/basic/helm-chart.md)
+ 1. [编写 charts 模块](../../development-guide/basic/helm-chart)
       
       目录结构如下：
       ```
@@ -160,6 +164,12 @@ type = "docs"
       
  1. 提交改动至 `master` 分支。
 
-## 总结
+## 相关文档  
 
-通过上述的步骤，就可以很快速的在 `Choerodon` 中创建应用模板。  
+- [系统配置](../../user-guide/system-configuration)  
+
+- [应用模板](../../user-guide/application-management/application-template/)
+
+- [编写 charts 模块](../../development-guide/basic/helm-chart)
+
+- [GitLab Continuous Integration (GitLab CI/CD)](https://docs.gitlab.com/ee/ci/)
