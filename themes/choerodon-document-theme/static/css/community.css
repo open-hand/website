@@ -63,7 +63,6 @@
 .community .forum-background{
     background:url(../img/socials/forum.svg) no-repeat center;
     width: 100%;
-    height: 5.7rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -79,7 +78,6 @@
 }
 .community .forum-data{
     width: 10.6rem;
-    height: 5.1rem;
     position: relative;
     margin: 0 auto;
     display: flex;
@@ -93,7 +91,6 @@
 
 .community .forum-button{
     width: 100%;
-    height: 0.6rem;
     align-items: center;
     display: flex;
     color: #3670E3;
@@ -109,9 +106,7 @@
 .community .btn:hover{
     color: #3670E3;
 }
-.community .forum-entr{
 
-}
 .community .choose{
     background: #3670E3;
     border-radius: 6px;
@@ -122,7 +117,6 @@
 }
 .community .forum-table{
     width: 100%;
-    height: 4.5rem;
     border-radius: 0 0 0.06rem 0.06rem;
     padding-top: 0.15rem;
 }
@@ -166,6 +160,109 @@
     width: 1.2rem;
     text-align: right;
 }
+/* live */
+.community .live{
+    background: #F7F7F7;
+}
+
+.community > .live > .head{
+    font-size: 0.24rem;
+    color: rgba(0,0,0,0.87);
+    line-height: 1;
+    text-align: center;
+    padding-top: 0.6rem;
+}
+
+.community > .live > .content{
+    margin: 1.3rem 1.2rem 1rem 1.2rem;
+}
+
+.community > .live > .content > .row + .row{
+    margin-top: 1.5rem;
+}
+
+.community > .live > .content .card{
+    width: 3.53rem;
+    /* height: 1.72rem; */
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    justify-content: space-between;
+}
+
+.community > .live > .content .card + .card{
+    margin-left: 0.71rem;
+}
+
+.community > .live > .content .card.blue-card{
+    background:url(/img/socials/live/bg-blue.png) no-repeat;
+    background-size: cover;
+}
+
+.community > .live > .content .card.yellow-card{
+    background:url(/img/socials/live/bg-yellow.png) no-repeat;
+    background-size: cover;
+}
+
+.community > .live > .content .card > .content{
+    padding: 0.4rem 0.1rem 0.15rem 0.1rem;
+    z-index: 1;
+    max-width: 2rem;
+}
+.community > .live > .content .card .title{
+    font-size: 0.18rem;
+    color: #FFFFFF;
+}
+
+.community > .live > .content .card .description{
+    margin-top: 0.1rem;
+    font-size: 0.14rem;
+    /* height:0.6rem; */
+    /* max-width: 1.5rem; */
+    color: #FFFFFF;
+    min-height: 0.71rem;
+}
+
+.community > .live > .content .card .play{
+    color: #FFFFFF;
+    margin-top: 0.1rem;
+    /* height: 0.22rem; */
+    padding: 0 0.05rem;
+    background: #FF4D4F;
+    display: flex;
+    min-width: 0.84rem;
+    max-width: 6em;
+}
+
+.community > .live > .content .card .play > i{
+    font-size: 0.12rem;
+    margin: auto;
+    text-align: center;
+}
+
+.community > .live > .content .card .lecturer{
+    max-width: 1.8rem;
+    /* max-height: 0.8rem; */
+    background: #FFFFFF;
+    padding: 0.09rem 0.15rem;
+    margin-top: auto;
+    z-index: 1;
+    margin-bottom: 0.1rem;
+}
+.community > .live > .content .card .lecturer > .position,
+.community > .live > .content .card .lecturer > .name{
+    color: #000000;
+    font-weight: 500;
+}
+
+.community > .live > .content .card > img{
+    /* height: 2.42rem; */
+    width: 2rem;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+/* live end */
 
 @media (max-width: 767px) {
     .community{
@@ -213,6 +310,37 @@
     }
     .community .forum{
         display: none;
+    }
+    .community .live{
+        background-color: #FFFFFF;
+        height: auto;
+    }
+    .community > .live > .content{
+        margin: 1.2rem 0.1rem;
+    }
+    .community > .live > .content .row{
+        margin: auto;
+    }
+    .community > .live > .content .card{
+        width: 3.15rem;
+    }
+    .community > .live > .content .card + .card{
+        margin-top: 1rem;
+        margin-left: 0;
+    }
+    .community > .live > .content > .row + .row{
+        margin-top: 1rem;
+    }
+    .community > .live > .content .card > img{
+        width: 1.5rem;
+    }
+    .community > .live > .content .card .lecturer{
+        width: 1.5rem;
+        padding-bottom: 0.1rem;
+        max-height: 0.75rem;
+    }
+    .community > .live > .content .card .description{
+        min-height: 0.6rem;
     }
 
 }
