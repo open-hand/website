@@ -28,7 +28,7 @@ type = "docs"
 
     ![Choose_project](/docs/quick-start/image/Project1.png)
     
-1. 点击组织`choerodon`，选择`应用管理`模块。
+1. 点击组织`choerodon`。
 
     ![Choose_Choerodon](/docs/quick-start/image/Project2.png)
 
