@@ -79,9 +79,9 @@ type = "docs"
 
 
 <blockquote class="note">
-  项目角色分配仅项目所有者可操作。
-
-项目所有者、项目成员、部署管理员需在[角色分配](../../user-guide/system-configuration/platform/role)中配置好对应的权限。
+  项目角色分配仅项目所有者可操作。  
+    
+  项目所有者、项目成员、部署管理员需在[角色分配](../../user-guide/system-configuration/platform/role)中配置好对应的权限。
  </blockquote>
 
 
