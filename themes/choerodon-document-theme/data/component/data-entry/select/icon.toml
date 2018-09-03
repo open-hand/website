@@ -1,0 +1,21 @@
+id= "select-demo-icon"
+right= true
+weight= 6
+name= "图标下拉框"
+description= "图标下拉框。"
+code= """
+````jsx
+import { IconSelect } from 'choerodon-ui';
+
+ReactDOM.render(
+  <IconSelect style={{ width: '300px' }} defaultValue={['root']} />,
+  mountNode);
+````
+"""
+script= """
+const { IconSelect } = window['choerodon-ui'];
+
+ReactDOM.render(
+  <IconSelect style={{ width: '300px' }} defaultValue={['root']} />,
+  document.getElementById('select-demo-icon'));
+"""

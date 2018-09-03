@@ -1,0 +1,33 @@
+id= "rate-demo-character"
+right= true
+weight= 3
+name= "其他字符"
+description= "可以将星星替换为其他字符，比如字母，数字，字体图标甚至中文。"
+code= """
+````jsx
+import { Rate, Icon } from 'choerodon-ui';
+
+ReactDOM.render(
+  <div>
+    <Rate character={<Icon type="heart" />} allowHalf />
+    <br />
+    <Rate character="A" allowHalf style={{ fontSize: 36 }} />
+    <br />
+    <Rate character="好" allowHalf />
+  </div>,
+  mountNode);
+````
+"""
+script= """
+const { Rate, Icon } = window['choerodon-ui'];
+
+ReactDOM.render(
+  <div>
+    <Rate character={<Icon type="heart" />} allowHalf />
+    <br />
+    <Rate character="A" allowHalf style={{ fontSize: 36 }} />
+    <br />
+    <Rate character="好" allowHalf />
+  </div>,
+  document.getElementById('rate-demo-character'));
+"""

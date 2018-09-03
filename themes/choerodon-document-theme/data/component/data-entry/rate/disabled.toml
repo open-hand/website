@@ -1,0 +1,17 @@
+id= "rate-demo-disabled"
+right= true
+weight= 2
+name= "只读"
+description= "只读，无法进行鼠标交互。"
+code= """
+````jsx
+import { Rate } from 'choerodon-ui';
+
+ReactDOM.render(<Rate disabled defaultValue={2} />, mountNode);
+````
+"""
+script= """
+const { Rate } = window['choerodon-ui'];
+
+ReactDOM.render(<Rate disabled defaultValue={2} />, document.getElementById('rate-demo-disabled'));
+"""

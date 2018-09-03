@@ -1,0 +1,101 @@
+id= "upload-demo-picture-style"
+left= true
+weight= 4
+name= "图片列表样式"
+description= "上传文件为图片，可展示本地缩略图。`IE8/9` 不支持浏览器本地缩略图展示（[Ref](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsDataURL)），可以写 `thumbUrl` 属性来代替。"
+code= """
+````jsx
+import { Upload, Button, Icon } from 'choerodon-ui';
+
+const fileList = [{
+  uid: -1,
+  name: 'xxx.png',
+  status: 'done',
+  url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
+  thumbUrl: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
+}, {
+  uid: -2,
+  name: 'yyy.png',
+  status: 'done',
+  url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
+  thumbUrl: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
+}];
+
+const props = {
+  action: '//jsonplaceholder.typicode.com/posts/',
+  listType: 'picture',
+  defaultFileList: [...fileList],
+};
+
+const props2 = {
+  action: '//jsonplaceholder.typicode.com/posts/',
+  listType: 'picture',
+  defaultFileList: [...fileList],
+  className: 'upload-list-inline',
+};
+
+ReactDOM.render(
+  <div>
+    <Upload {...props}>
+      <Button>
+        <Icon type="file_upload" /> upload
+      </Button>
+    </Upload>
+    <br />
+    <br />
+    <Upload {...props2}>
+      <Button>
+        <Icon type="file_upload" /> upload
+      </Button>
+    </Upload>
+  </div>,
+  mountNode);
+````
+"""
+script= """
+const { Upload, Button, Icon } = window['choerodon-ui'];
+
+const fileList = [{
+  uid: -1,
+  name: 'xxx.png',
+  status: 'done',
+  url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
+  thumbUrl: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
+}, {
+  uid: -2,
+  name: 'yyy.png',
+  status: 'done',
+  url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
+  thumbUrl: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
+}];
+
+const props = {
+  action: '//jsonplaceholder.typicode.com/posts/',
+  listType: 'picture',
+  defaultFileList: [...fileList],
+};
+
+const props2 = {
+  action: '//jsonplaceholder.typicode.com/posts/',
+  listType: 'picture',
+  defaultFileList: [...fileList],
+  className: 'upload-list-inline',
+};
+
+ReactDOM.render(
+  <div>
+    <Upload {...props}>
+      <Button>
+        <Icon type="file_upload" /> upload
+      </Button>
+    </Upload>
+    <br />
+    <br />
+    <Upload {...props2}>
+      <Button>
+        <Icon type="file_upload" /> upload
+      </Button>
+    </Upload>
+  </div>,
+  document.getElementById('upload-demo-picture-style'));
+"""

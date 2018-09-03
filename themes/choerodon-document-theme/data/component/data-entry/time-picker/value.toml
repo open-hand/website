@@ -1,0 +1,47 @@
+id= "time-picker-demo-value"
+right= true
+weight= 1
+name= "受控组件"
+description= "value 和 onChange 需要配合使用。"
+code= """
+````jsx
+import { TimePicker } from 'choerodon-ui';
+
+class Demo extends React.Component {
+  state = {
+    value: null,
+  };
+
+  onChange = (time) => {
+    console.log(time);
+    this.setState({ value: time });
+  }
+
+  render() {
+    return <TimePicker value={this.state.value} onChange={this.onChange} />;
+  }
+}
+
+ReactDOM.render(<Demo />, mountNode);
+````
+"""
+script= """
+const { TimePicker } = window['choerodon-ui'];
+
+class Demo extends React.Component {
+  state = {
+    value: null,
+  };
+
+  onChange = (time) => {
+    console.log(time);
+    this.setState({ value: time });
+  }
+
+  render() {
+    return <TimePicker value={this.state.value} onChange={this.onChange} />;
+  }
+}
+
+ReactDOM.render(<Demo />, document.getElementById('time-picker-demo-value'));
+"""

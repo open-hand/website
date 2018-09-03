@@ -1,0 +1,65 @@
+id= "upload-demo-basic"
+left= true
+weight= 1
+name= "点击上传"
+description= "经典款式，用户点击按钮弹出文件选择框。"
+code= """
+````jsx
+import { Upload, message, Button, Icon } from 'choerodon-ui';
+
+const props = {
+  name: 'file',
+  action: '//jsonplaceholder.typicode.com/posts/',
+  headers: {
+    authorization: 'authorization-text',
+  },
+  onChange(info) {
+    if (info.file.status !== 'uploading') {
+      console.log(info.file, info.fileList);
+    }
+    if (info.file.status === 'done') {
+      message.success(`${info.file.name} file uploaded successfully`);
+    } else if (info.file.status === 'error') {
+      message.error(`${info.file.name} file upload failed.`);
+    }
+  },
+};
+
+ReactDOM.render(
+  <Upload {...props}>
+    <Button>
+      <Icon type="file_upload" /> Click to Upload
+    </Button>
+  </Upload>,
+  mountNode);
+````
+"""
+script= """
+const { Upload, message, Button, Icon } = window['choerodon-ui'];
+
+const props = {
+  name: 'file',
+  action: '//jsonplaceholder.typicode.com/posts/',
+  headers: {
+    authorization: 'authorization-text',
+  },
+  onChange(info) {
+    if (info.file.status !== 'uploading') {
+      console.log(info.file, info.fileList);
+    }
+    if (info.file.status === 'done') {
+      message.success(`${info.file.name} file uploaded successfully`);
+    } else if (info.file.status === 'error') {
+      message.error(`${info.file.name} file upload failed.`);
+    }
+  },
+};
+
+ReactDOM.render(
+  <Upload {...props}>
+    <Button>
+      <Icon type="file_upload" /> Click to Upload
+    </Button>
+  </Upload>,
+  document.getElementById('upload-demo-basic'));
+"""

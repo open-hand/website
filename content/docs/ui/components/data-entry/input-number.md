@@ -13,50 +13,7 @@ weight = 6
 
 ## 代码演示
 
-<div class="c7n-row">
-    <div class="c7n-row-6">
-        <section class="code-box">
-            <section class="code-box-demo"><div id="inputNumber-demo-basic"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>基础</a></div>
-                <div>
-                    <p>数字输入框。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="inputNumber-demo-disabled"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>不可用</a></div>
-                <div>
-                    <p>点击按钮切换可用状态。</p>
-                </div>
-            </section>
-        </section>
-    </div>
-    <div class="c7n-row-6">
-        <section class="code-box">
-            <section class="code-box-demo"><div id="inputNumber-demo-point"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>小数</a></div>
-                <div>
-                    <p>和原生的数字输入框一样，value 的精度由 step 的小数位数决定。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="inputNumber-demo-format"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>格式化展现</a></div>
-                <div>
-                    <p>通过 <code>formatter</code> 格式化数字，以展示具有具体含义的数据，往往需要配合 <code>parser</code> 一起使用。</p>
-                </div>
-            </section>
-        </section>
-    </div>
-</div>
-
-{{< components-inputNumber >}}
+{{< components data-entry input-number>}}
 
 ## API
 

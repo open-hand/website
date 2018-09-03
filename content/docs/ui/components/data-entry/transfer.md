@@ -15,48 +15,8 @@ weight = 16
 其中，左边一栏为 `source`，右边一栏为 `target`，API 的设计也反映了这两个概念。
 
 ## 代码演示
-<div class="c7n-row">
-    <div class="c7n-row-12">
-        <section class="code-box">
-            <section class="code-box-demo"><div id="transfer-demo-basic"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>基本用法</a></div>
-                <div>
-                    <p>最基本的用法，展示了 <code>dataSource</code>、<code>targetKeys</code>、每行的渲染函数 <code>render</code> 以及回调函数 <code>onChange</code> <code>onSelectChange</code> <code>onScroll</code> 的用法。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="transfer-demo-search"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>带搜索框</a></div>
-                <div>
-                    <p>带搜索框的穿梭框，可以自定义搜索函数。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="transfer-demo-high"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>高级用法</a></div>
-                <div>
-                    <p>穿梭框高级用法，可配置操作文案，可定制宽高，可对底部进行自定义渲染。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="transfer-demo-custom"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>自定义渲染行目标</a></div>
-                <div>
-                    <p>自定义渲染每一个 Transfer Item，可用于渲染复杂数据。</p>
-                </div>
-            </section>
-        </section>
-    </div>
-</div>
 
-{{< components-transfer >}}
+{{< components data-entry transfer true>}}
 
 ## API
 

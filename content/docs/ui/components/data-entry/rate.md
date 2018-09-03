@@ -14,68 +14,7 @@ weight = 9
 
 ## 代码演示
 
-<div class="c7n-row">
-    <div class="c7n-row-6">
-        <section class="code-box">
-            <section class="code-box-demo"><div id="rate-demo-basic"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>基本</a></div>
-                <div>
-                    <p>最简单的用法。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="rate-demo-text"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>文案展现</a></div>
-                <div>
-                    <p>给评分组件加上文案展示。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="rate-demo-delete"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>清除</a></div>
-                <div>
-                    <p>支持允许或者禁用清除。</p>
-                </div>
-            </section>
-        </section>
-    </div>
-    <div class="c7n-row-6">
-        <section class="code-box">
-            <section class="code-box-demo"><div id="rate-demo-half"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>半星</a></div>
-                <div>
-                    <p>支持选中半星。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="rate-demo-readonly"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>只读</a></div>
-                <div>
-                    <p>只读，无法进行鼠标交互。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="rate-demo-other"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>其他字符</a></div>
-                <div>
-                    <p>可以将星星替换为其他字符，比如字母，数字，字体图标甚至中文。</p>
-                </div>
-            </section>
-        </section>
-    </div>
-</div>
-
-{{< components-rate >}}
+{{< components data-entry rate>}}
 
 ## API
 

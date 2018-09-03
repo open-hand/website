@@ -1,0 +1,29 @@
+id= "switch-demo-text"
+left= true
+weight= 2
+name= "文字和图标"
+description= "带有文字和图标。"
+code= """
+````jsx
+import { Switch } from 'choerodon-ui';
+
+ReactDOM.render(
+  <div>
+    <Switch checkedChildren="开" unCheckedChildren="关" defaultChecked />
+    <br />
+    <Switch checkedChildren="1" unCheckedChildren="0" />
+  </div>,
+  mountNode);
+````
+"""
+script= """
+const { Switch } = window['choerodon-ui'];
+
+ReactDOM.render(
+  <div>
+    <Switch checkedChildren="开" unCheckedChildren="关" defaultChecked />
+    <br />
+    <Switch checkedChildren="1" unCheckedChildren="0" />
+  </div>,
+  document.getElementById('switch-demo-text'));
+"""

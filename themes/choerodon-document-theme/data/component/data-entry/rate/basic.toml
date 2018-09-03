@@ -1,0 +1,17 @@
+id= "rate-demo-basic"
+left= true
+weight= 1
+name= "基本"
+description= "最简单的用法。"
+code= """
+````jsx
+import { Rate } from 'choerodon-ui';
+
+ReactDOM.render(<Rate />, mountNode);
+````
+"""
+script= """
+const { Rate } = window['choerodon-ui'];
+
+ReactDOM.render(<Rate />, document.getElementById('rate-demo-basic'));
+"""

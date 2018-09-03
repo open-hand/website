@@ -1,0 +1,52 @@
+id= "input-demo-search"
+left= true
+weight= 3
+name= "搜索框"
+description= "带有搜索按钮的输入框。"
+code= """
+````jsx
+import { Input } from 'choerodon-ui';
+const Search = Input.Search;
+
+ReactDOM.render(
+  <div>
+    <Search
+      placeholder="input search text"
+      onSearch={value => console.log(value)}
+      style={{ width: 200 }}
+    />
+    <br /><br />
+    <Search
+      placeholder="input search text"
+      onSearch={value => console.log(value)}
+      enterButton
+    />
+    <br /><br />
+    <Search placeholder="input search text" enterButton="Search" size="large" />
+  </div>,
+  mountNode);
+````
+"""
+script= """
+const { Input } = window['choerodon-ui'];
+
+const Search = Input.Search;
+
+ReactDOM.render(
+  <div>
+    <Search
+      placeholder="input search text"
+      onSearch={value => console.log(value)}
+      style={{ width: 200 }}
+    />
+    <br /><br />
+    <Search
+      placeholder="input search text"
+      onSearch={value => console.log(value)}
+      enterButton
+    />
+    <br /><br />
+    <Search placeholder="input search text" enterButton="Search" size="large" />
+  </div>,
+  document.getElementById('input-demo-search'));
+"""

@@ -1,0 +1,83 @@
+id= "auto-complete-demo-basic"
+left= true
+weight= 1
+name= "基本使用"
+description= "基本使用。通过 dataSource 设置自动完成的数据源"
+code= """
+````jsx
+import { AutoComplete } from 'choerodon-ui';
+
+function onSelect(value) {
+  console.log('onSelect', value);
+}
+
+class Complete extends React.Component {
+  state = {
+    dataSource: [],
+  }
+
+  handleSearch = (value) => {
+    this.setState({
+      dataSource: !value ? [] : [
+        value,
+        value + value,
+        value + value + value,
+      ],
+    });
+  }
+
+  render() {
+    const { dataSource } = this.state;
+    return (
+      <AutoComplete
+        dataSource={dataSource}
+        style={{ width: 200 }}
+        onSelect={onSelect}
+        onSearch={this.handleSearch}
+        placeholder="input here"
+      />
+    );
+  }
+}
+
+ReactDOM.render(<Complete />, mountNode);
+````
+"""
+script= """
+const { AutoComplete } = window['choerodon-ui'];
+
+function onSelect(value) {
+  console.log('onSelect', value);
+}
+
+class Complete extends React.Component {
+  state = {
+    dataSource: [],
+  }
+
+  handleSearch = (value) => {
+    this.setState({
+      dataSource: !value ? [] : [
+        value,
+        value + value,
+        value + value + value,
+      ],
+    });
+  }
+
+  render() {
+    const { dataSource } = this.state;
+    return (
+      <AutoComplete
+        dataSource={dataSource}
+        style={{ width: 200 }}
+        onSelect={onSelect}
+        onSearch={this.handleSearch}
+        placeholder="input here"
+      />
+    );
+  }
+}
+
+ReactDOM.render(<Complete />, document.getElementById('auto-complete-demo-basic'));
+"""

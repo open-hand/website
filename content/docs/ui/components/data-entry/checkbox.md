@@ -14,68 +14,7 @@ weight = 3
 
 ## 代码演示
 
-<div class="c7n-row">
-    <div class="c7n-row-6">
-        <section class="code-box">
-            <section class="code-box-demo"><div id="checkbox-basic"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>基本用法</a></div>
-                <div>
-                    <p>简单的 checkbox。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="checkbox-controller"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>受控的 Checkbox</a></div>
-                <div>
-                    <p>联动 checkbox。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="checkbox-all"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>全选</a></div>
-                <div>
-                    <p>在实现全选效果时，你可能会用到 <code>indeterminate</code> 属性。</p>
-                </div>
-            </section>
-        </section>
-    </div>
-    <div class="c7n-row-6">
-        <section class="code-box">
-            <section class="code-box-demo"><div id="checkbox-disabled"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>不可用</a></div>
-                <div>
-                    <p>checkbox 不可用。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="checkbox-group"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>Checkbox 组</a></div>
-                <div>
-                    <p>方便的从数组生成 Checkbox 组。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="checkbox-layout"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>布局</a></div>
-                <div>
-                    <p>Checkbox.Group 内嵌 Checkbox 并与 Grid 组件一起使用，可以实现灵活的布局。</p>
-                </div>
-            </section>
-        </section>
-    </div>
-</div>
-
-{{< components-checkbox >}}
+{{< components data-entry checkbox >}}
 
 ## API
 
