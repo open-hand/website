@@ -1,4 +1,9 @@
-﻿# 使用敏捷管理工具
+﻿+++
+title = "使用敏捷管理工具"
+weight = 11
+description = ""
++++
+# 使用敏捷管理工具
 
 
 ## 一、创建问题
@@ -6,11 +11,11 @@
  
 点击创建问题，选择问题类型，输入问题概要即可快速创建一个问题。
 
-![创建问题](../image/agile/issue_create.png)
+![创建问题](/docs/quick-start/image/agile/issue_create.png)
 
 点击创建好的问题，会弹出问题详情编辑页面，可对问题的优先级、模块、标签、经办人等进行编辑，同时能对问题进行描述，上传附件、添加评论和创建子任务。
 
-![问题详情](../image/agile/issue_detail.png)
+![问题详情](/docs/quick-start/image/agile/issue_detail.png)
 
 
  - 版本归属：按住 shift 键同时鼠标选中某个或某几个问题，将其拖动至版本列表的某一版本下，则这些问题将归属到此版本，同时问题名称下会显示出该版本名称的标签。 
@@ -20,7 +25,7 @@
 ## 二、问题处理
 问题处理是指对一个问题进行具体操作，包括查看、设置标签、添加描述等，通过此页面您将了解到如何寻找到一个问题、对问题进行具体处理，以及如何与团队展开关于这个问题的合作。
 
-![问题处理](../image/agile/issue_deal.png)
+![问题处理](/docs/quick-start/image/agile/issue_deal.png)
 
 1、点击此处创建一个新问题。
 
@@ -81,7 +86,7 @@
  
  
  
- ![工作日志](../image/agile/worklog.png)
+ ![工作日志](/docs/quick-start/image/agile/worklog.png)
 
  
  
@@ -103,11 +108,11 @@
  
  用户可在`活跃冲刺`菜单下创建多个看板
  
-  ![多看版](../image/agile/many_board.png)
+  ![多看版](/docs/quick-start/image/agile/many_board.png)
 
  输入相应的看板名称即可
 
-   ![创建看板](../image/agile/board_create.png)
+   ![创建看板](/docs/quick-start/image/agile/board_create.png)
 
  
  
@@ -122,12 +127,12 @@
   点击`活跃冲刺`菜单进入到看板。
  
  
-  ![看板页](../image/agile/board_page.png)
+  ![看板页](/docs/quick-start/image/agile/board_page.png)
 
  
  看板具体使用详解：
 
-  ![看板使用详情](../image/agile/board_use_detail.png)
+  ![看板使用详情](/docs/quick-start/image/agile/board_use_detail.png)
 
  
  
@@ -160,14 +165,14 @@
  进入到问题详情页下，找到开发选项
  
  
-   ![分支](../image/agile/branch.png)
+   ![分支](/docs/quick-start/image/agile/branch.png)
 
  
  ### 说明：
   - 点击此处创建分支，过选择应用、分支来源，修改分支类型及分支名称，即可为该问题创建关联的分支。
  
  
-   ![创建分支](../image/agile/branch_create.png)
+   ![创建分支](/docs/quick-start/image/agile/branch_create.png)
 
  
  1 、应用名称：选择项目下的应用
@@ -182,7 +187,7 @@
  - 单击问题页面下方的提交跳转到关联分支页面，可看到
 
  
-  ![关联分支](../image/agile/branch_link.png)
+  ![关联分支](/docs/quick-start/image/agile/branch_link.png)
 
  
  
@@ -194,13 +199,13 @@
   
   状态：分支状态，包括开放，已合并，结束。
   
-  ![关联合并请求](../image/agile/merge_request_create_icon.png)创建合并请求图标：跳转到gitlab页面的合并请求创建页面，在gitlab上创建合并请求。
+  ![关联合并请求](/docs/quick-start/image/agile/merge_request_create_icon.png)创建合并请求图标：跳转到gitlab页面的合并请求创建页面，在gitlab上创建合并请求。
         
   跳转到gitlab页面创建合并请求后，在问题详情页面的创建分支下将产生一条合并请求数据，包括合并请求数量、状态、更新情况以及更新时间等。点击该合并请求的链接将跳转到关联合并请求界面。
  
   - 点击合并请求进入关联合并请求页面，展示该问题关联的所有合并请求相关信息，及查看合并请求详情。
  
-   ![关联合并请求](../image/agile/link_merge_request.png)
+   ![关联合并请求](/docs/quick-start/image/agile/link_merge_request.png)
 
  页面展示信息如下：
  
@@ -214,7 +219,7 @@
       
    - 更新时间：合并请求最后更新时间
       
-   - ![关联合并请求](../image/agile/merge_request_icon.png)合并请求图标：跳转到gitlab界面查看合并请求界面的详细信息，之后可在gitlab界面上操作。
+   - ![关联合并请求](/docs/quick-start/image/agile/merge_request_icon.png)合并请求图标：跳转到gitlab界面查看合并请求界面的详细信息，之后可在gitlab界面上操作。
  
  
  

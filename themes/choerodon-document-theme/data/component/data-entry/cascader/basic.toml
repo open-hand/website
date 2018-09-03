@@ -1,0 +1,77 @@
+id= "cascader-demo-basic"
+left= true
+weight= 1
+name= "基本"
+description= "省市区级联。"
+code= """
+````jsx
+import { Cascader } from 'choerodon-ui';
+
+const options = [{
+  value: 'zhejiang',
+  label: 'Zhejiang',
+  children: [{
+    value: 'hangzhou',
+    label: 'Hangzhou',
+    children: [{
+      value: 'xihu',
+      label: 'West Lake',
+    }],
+  }],
+}, {
+  value: 'jiangsu',
+  label: 'Jiangsu',
+  children: [{
+    value: 'nanjing',
+    label: 'Nanjing',
+    children: [{
+      value: 'zhonghuamen',
+      label: 'Zhong Hua Men',
+    }],
+  }],
+}];
+
+function onChange(value) {
+  console.log(value);
+}
+
+ReactDOM.render(
+  <Cascader label="cascader" options={options} onChange={onChange} placeholder="Please select" />,
+  mountNode);
+````
+"""
+script= """
+const { Cascader } = window['choerodon-ui'];
+
+const options = [{
+  value: 'zhejiang',
+  label: 'Zhejiang',
+  children: [{
+    value: 'hangzhou',
+    label: 'Hangzhou',
+    children: [{
+      value: 'xihu',
+      label: 'West Lake',
+    }],
+  }],
+}, {
+  value: 'jiangsu',
+  label: 'Jiangsu',
+  children: [{
+    value: 'nanjing',
+    label: 'Nanjing',
+    children: [{
+      value: 'zhonghuamen',
+      label: 'Zhong Hua Men',
+    }],
+  }],
+}];
+
+function onChange(value) {
+  console.log(value);
+}
+
+ReactDOM.render(
+  <Cascader label="cascader" options={options} onChange={onChange} placeholder="Please select" />,
+  document.getElementById('cascader-demo-basic'));
+"""

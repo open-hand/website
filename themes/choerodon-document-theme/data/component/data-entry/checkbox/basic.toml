@@ -1,0 +1,29 @@
+id= "checkbox-demo-basic"
+left= true
+weight= 1
+name= "基本用法"
+description= "简单的 checkbox。"
+code= """
+````jsx
+import { Checkbox } from 'choerodon-ui';
+
+function onChange(e) {
+  console.log(`checked = ${e.target.checked}`);
+}
+
+ReactDOM.render(
+  <Checkbox onChange={onChange}>Checkbox</Checkbox>,
+  mountNode);
+````
+"""
+script= """
+const { Checkbox } = window['choerodon-ui'];
+
+function onChange(e) {
+  console.log(`checked = ${e.target.checked}`);
+}
+
+ReactDOM.render(
+  <Checkbox onChange={onChange}>Checkbox</Checkbox>,
+  document.getElementById('checkbox-demo-basic'));
+"""

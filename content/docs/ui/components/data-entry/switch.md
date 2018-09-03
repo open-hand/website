@@ -14,59 +14,7 @@ weight = 13
 
 ## 代码演示
 
-<div class="c7n-row">
-    <div class="c7n-row-6">
-        <section class="code-box">
-            <section class="code-box-demo"><div id="switch-demo-basic"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>基本</a></div>
-                <div>
-                    <p>最简单的用法。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="switch-demo-icon"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>文字和图标</a></div>
-                <div>
-                    <p>带有文字和图标。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="switch-demo-load"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>加载中</a></div>
-                <div>
-                    <p>标识开关操作仍在执行中。</p>
-                </div>
-            </section>
-        </section>
-    </div>
-    <div class="c7n-row-6">
-        <section class="code-box">
-            <section class="code-box-demo"><div id="switch-demo-disabled"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>不可用</a></div>
-                <div>
-                    <p>Switch 失效状态。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="switch-demo-size"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>两种大小</a></div>
-                <div>
-                    <p><code>size="small"</code> 表示小号开关。</p>
-                </div>
-            </section>
-        </section>
-    </div>
-</div>
-
-{{< components-switch >}}
+{{< components data-entry switch>}}
 
 ## API
 

@@ -226,7 +226,7 @@ $ git push origin feature-choerodon-dev-1
 
 **3.** 给 `env.open.REGISTER_SERVICE_NAMESPACE` 变量添加自己服务所部署的`namespace`，用`,` 和其他的分隔开。
 
-![](/docs/quick-start/image/modify_regi2.png)
+![](/docs/quick-start/image/modify-regi2.png)
 
 
 **4.** 修改完毕后，点击`重新部署`。

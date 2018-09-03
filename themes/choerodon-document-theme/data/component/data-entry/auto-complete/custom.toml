@@ -1,0 +1,103 @@
+id= "auto-complete-demo-custom"
+left= true
+weight= 2
+name= "自定义输入组件"
+description= "自定义输入组件。"
+code= """
+````jsx
+import { AutoComplete, Input } from 'choerodon-ui';
+const { TextArea } = Input;
+
+function onSelect(value) {
+  console.log('onSelect', value);
+}
+
+class Complete extends React.Component {
+  state = {
+    dataSource: [],
+  }
+
+  handleSearch = (value) => {
+    this.setState({
+      dataSource: !value ? [] : [
+        value,
+        value + value,
+        value + value + value,
+      ],
+    });
+  }
+
+  handleKeyPress = (ev) => {
+    console.log('handleKeyPress', ev);
+  }
+
+  render() {
+    const { dataSource } = this.state;
+    return (
+      <AutoComplete
+        dataSource={dataSource}
+        style={{ width: 200 }}
+        onSelect={onSelect}
+        onSearch={this.handleSearch}
+      >
+        <TextArea
+          placeholder="input here"
+          className="custom"
+          onKeyPress={this.handleKeyPress}
+        />
+      </AutoComplete>
+    );
+  }
+}
+
+ReactDOM.render(<Complete />, mountNode);
+````
+"""
+script= """
+const { AutoComplete, Input } = window['choerodon-ui'];
+const { TextArea } = Input;
+
+function onSelect(value) {
+  console.log('onSelect', value);
+}
+
+class Complete extends React.Component {
+  state = {
+    dataSource: [],
+  }
+
+  handleSearch = (value) => {
+    this.setState({
+      dataSource: !value ? [] : [
+        value,
+        value + value,
+        value + value + value,
+      ],
+    });
+  }
+
+  handleKeyPress = (ev) => {
+    console.log('handleKeyPress', ev);
+  }
+
+  render() {
+    const { dataSource } = this.state;
+    return (
+      <AutoComplete
+        dataSource={dataSource}
+        style={{ width: 200 }}
+        onSelect={onSelect}
+        onSearch={this.handleSearch}
+      >
+        <TextArea
+          placeholder="input here"
+          className="custom"
+          onKeyPress={this.handleKeyPress}
+        />
+      </AutoComplete>
+    );
+  }
+}
+
+ReactDOM.render(<Complete />, document.getElementById('auto-complete-demo-custom'));
+"""

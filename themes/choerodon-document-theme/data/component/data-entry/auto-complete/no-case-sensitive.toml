@@ -1,0 +1,43 @@
+id= "auto-complete-demo-no-case-sensitive"
+right= true
+weight= 2
+name= "不区分大小写"
+description= "不区分大小写的 AutoComplete"
+code= """
+````jsx
+import { AutoComplete } from 'choerodon-ui';
+
+const dataSource = ['Burns Bay Road', 'Downing Street', 'Wall Street'];
+
+function Complete() {
+  return (
+    <AutoComplete
+      style={{ width: 200 }}
+      dataSource={dataSource}
+      placeholder="try to type `b`"
+      filterOption={(inputValue, option) => option.props.children.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1}
+    />
+  );
+}
+
+ReactDOM.render(<Complete />, mountNode);
+````
+"""
+script= """
+const { AutoComplete } = window['choerodon-ui'];
+
+const dataSource = ['Burns Bay Road', 'Downing Street', 'Wall Street'];
+
+function Complete() {
+  return (
+    <AutoComplete
+      style={{ width: 200 }}
+      dataSource={dataSource}
+      placeholder="try to type `b`"
+      filterOption={(inputValue, option) => option.props.children.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1}
+    />
+  );
+}
+
+ReactDOM.render(<Complete />, document.getElementById('auto-complete-demo-no-case-sensitive'));
+"""

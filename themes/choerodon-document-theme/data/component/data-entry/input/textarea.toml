@@ -1,0 +1,19 @@
+id= "input-demo-textarea"
+right= true
+weight= 2
+name= "文本域"
+description= "用于多行输入。"
+code= """
+````jsx
+import { Input } from 'choerodon-ui';
+const { TextArea } = Input;
+
+ReactDOM.render(<TextArea rows={4} maxLength={20} label="textarea" placeholder="textarea usage" />, mountNode);
+````
+"""
+script= """
+const { Input } = window['choerodon-ui'];
+const { TextArea } = Input;
+
+ReactDOM.render(<TextArea rows={4} maxLength={20} label="textarea" placeholder="textarea usage" />, document.getElementById('input-demo-textarea'));
+"""

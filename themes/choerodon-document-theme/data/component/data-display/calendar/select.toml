@@ -40,7 +40,6 @@ ReactDOM.render(<App />, mountNode);
 """
 script= """
 const { Calendar, Alert } = window['choerodon-ui'];
-import moment from 'moment';
 
 class App extends React.Component {
   state = {
@@ -72,6 +71,3 @@ class App extends React.Component {
 
 ReactDOM.render(<App />, document.getElementById('calendar-demo-select'));
 """
-
-[file]
-script = ["/js/ui-components/moment.js"]

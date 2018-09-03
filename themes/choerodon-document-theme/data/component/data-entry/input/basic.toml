@@ -1,0 +1,35 @@
+id= "input-demo-basic"
+left= true
+weight= 1
+name= "基本使用"
+description= "基本使用。"
+code= """
+````jsx
+import { Input, Row, Col } from 'choerodon-ui';
+
+ReactDOM.render(
+  <Row gutter={8}>
+    <Col span={12}>
+      <Input placeholder="Basic usage" maxLength={50} required label="Basic" copy />
+    </Col>
+    <Col span={12}>
+      <Input defaultValue="123" placeholder="Basic usage" maxLength={20} required label="Basic" disabled />
+    </Col>
+  </Row>,
+  mountNode);
+````
+"""
+script= """
+const { Input, Row, Col } = window['choerodon-ui'];
+
+ReactDOM.render(
+  <Row gutter={8}>
+    <Col span={12}>
+      <Input placeholder="Basic usage" maxLength={50} required label="Basic" copy />
+    </Col>
+    <Col span={12}>
+      <Input defaultValue="123" placeholder="Basic usage" maxLength={20} required label="Basic" disabled />
+    </Col>
+  </Row>,
+  document.getElementById('input-demo-basic'));
+"""

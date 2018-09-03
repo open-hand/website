@@ -1,0 +1,22 @@
+id= "time-picker-demo-disabled"
+right= true
+weight= 2
+name= "禁用"
+description= "禁用时间选择。"
+code= """
+````jsx
+import { TimePicker } from 'choerodon-ui';
+import moment from 'moment';
+
+ReactDOM.render(
+  <TimePicker defaultValue={moment('12:08:23', 'HH:mm:ss')} disabled />,
+  mountNode);
+````
+"""
+script= """
+const { TimePicker } = window['choerodon-ui'];
+
+ReactDOM.render(
+  <TimePicker defaultValue={moment('12:08:23', 'HH:mm:ss')} disabled />,
+  document.getElementById('time-picker-demo-disabled'));
+"""

@@ -1,0 +1,44 @@
+id= "date-picker-demo-disabled"
+left= true
+weight= 3
+name= "禁用"
+description= "选择框的不可用状态。"
+code= """
+````jsx
+import { DatePicker } from 'choerodon-ui';
+import moment from 'moment';
+const { MonthPicker, RangePicker } = DatePicker;
+
+const dateFormat = 'YYYY-MM-DD';
+ReactDOM.render(
+  <div>
+    <DatePicker defaultValue={moment('2015-06-06', dateFormat)} disabled />
+    <br />
+    <MonthPicker defaultValue={moment('2015-06', 'YYYY-MM')} disabled />
+    <br />
+    <RangePicker
+      defaultValue={[moment('2015-06-06', dateFormat), moment('2015-06-06', dateFormat)]}
+      disabled
+    />
+  </div>,
+  mountNode);
+````
+"""
+script= """
+const { DatePicker } = window['choerodon-ui'];
+const { MonthPicker, RangePicker } = DatePicker;
+
+const dateFormat = 'YYYY-MM-DD';
+ReactDOM.render(
+  <div>
+    <DatePicker defaultValue={moment('2015-06-06', dateFormat)} disabled />
+    <br />
+    <MonthPicker defaultValue={moment('2015-06', 'YYYY-MM')} disabled />
+    <br />
+    <RangePicker
+      defaultValue={[moment('2015-06-06', dateFormat), moment('2015-06-06', dateFormat)]}
+      disabled
+    />
+  </div>,
+  document.getElementById('date-picker-demo-disabled'));
+"""

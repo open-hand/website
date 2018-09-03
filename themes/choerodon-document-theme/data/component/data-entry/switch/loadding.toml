@@ -1,0 +1,29 @@
+id= "switch-demo-loadding"
+left= true
+weight= 3
+name= "加载中"
+description= "标识开关操作仍在执行中。"
+code= """
+````jsx
+import { Switch } from 'choerodon-ui';
+
+ReactDOM.render(
+  <div>
+    <Switch loading defaultChecked />
+    <br />
+    <Switch size="small" loading />
+  </div>,
+  mountNode);
+````
+"""
+script= """
+const { Switch } = window['choerodon-ui'];
+
+ReactDOM.render(
+  <div>
+    <Switch loading defaultChecked />
+    <br />
+    <Switch size="small" loading />
+  </div>,
+  document.getElementById('switch-demo-loadding'));
+"""

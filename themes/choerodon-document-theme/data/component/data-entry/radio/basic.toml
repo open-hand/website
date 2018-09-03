@@ -1,0 +1,17 @@
+id= "radio-demo-basic"
+left= true
+weight= 1
+name= "基本"
+description= "最简单的用法。"
+code= """
+````jsx
+import { Radio } from 'choerodon-ui';
+
+ReactDOM.render(<Radio>Radio</Radio>, mountNode);
+````
+"""
+script= """
+const { Radio } = window['choerodon-ui'];
+
+ReactDOM.render(<Radio>Radio</Radio>, document.getElementById('radio-demo-basic'));
+"""

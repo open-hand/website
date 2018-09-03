@@ -1,0 +1,77 @@
+id= "cascader-demo-change-on-select"
+right= true
+weight= 3
+name= "选择即改变"
+description= "这种交互允许只选中父级选项。"
+code= """
+````jsx
+import { Cascader } from 'choerodon-ui';
+
+const options = [{
+  value: 'zhejiang',
+  label: 'Zhejiang',
+  children: [{
+    value: 'hangzhou',
+    label: 'Hanzhou',
+    children: [{
+      value: 'xihu',
+      label: 'West Lake',
+    }],
+  }],
+}, {
+  value: 'jiangsu',
+  label: 'Jiangsu',
+  children: [{
+    value: 'nanjing',
+    label: 'Nanjing',
+    children: [{
+      value: 'zhonghuamen',
+      label: 'Zhong Hua Men',
+    }],
+  }],
+}];
+
+function onChange(value) {
+  console.log(value);
+}
+
+ReactDOM.render(
+  <Cascader options={options} onChange={onChange} changeOnSelect />,
+  mountNode);
+````
+"""
+script= """
+const { Cascader } = window['choerodon-ui'];
+
+const options = [{
+  value: 'zhejiang',
+  label: 'Zhejiang',
+  children: [{
+    value: 'hangzhou',
+    label: 'Hanzhou',
+    children: [{
+      value: 'xihu',
+      label: 'West Lake',
+    }],
+  }],
+}, {
+  value: 'jiangsu',
+  label: 'Jiangsu',
+  children: [{
+    value: 'nanjing',
+    label: 'Nanjing',
+    children: [{
+      value: 'zhonghuamen',
+      label: 'Zhong Hua Men',
+    }],
+  }],
+}];
+
+function onChange(value) {
+  console.log(value);
+}
+
+ReactDOM.render(
+  <Cascader options={options} onChange={onChange} changeOnSelect />,
+  document.getElementById('cascader-demo-change-on-select'));
+"""

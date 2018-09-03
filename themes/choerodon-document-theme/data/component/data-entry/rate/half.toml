@@ -1,0 +1,17 @@
+id= "rate-demo-half"
+right= true
+weight= 1
+name= "半星"
+description= "支持选中半星。"
+code= """
+````jsx
+import { Rate } from 'choerodon-ui';
+
+ReactDOM.render(<Rate allowHalf defaultValue={2.5} />, mountNode);
+````
+"""
+script= """
+const { Rate } = window['choerodon-ui'];
+
+ReactDOM.render(<Rate allowHalf defaultValue={2.5} />, document.getElementById('rate-demo-half'));
+"""

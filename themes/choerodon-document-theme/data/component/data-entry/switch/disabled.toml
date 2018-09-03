@@ -1,0 +1,61 @@
+id= "switch-demo-disabled"
+right= true
+weight= 1
+name= "不可用"
+description= "Switch 失效状态。"
+code= """
+````jsx
+import { Switch, Button } from 'choerodon-ui';
+
+class App extends React.Component {
+  state = {
+    disabled: true,
+  }
+
+  toggle = () => {
+    this.setState({
+      disabled: !this.state.disabled,
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        <Switch disabled={this.state.disabled} defaultChecked />
+        <br />
+        <Button type="primary" onClick={this.toggle}>Toggle disabled</Button>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<App />, mountNode);
+````
+"""
+script= """
+const { Switch, Button } = window['choerodon-ui'];
+
+class App extends React.Component {
+  state = {
+    disabled: true,
+  }
+
+  toggle = () => {
+    this.setState({
+      disabled: !this.state.disabled,
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        <Switch disabled={this.state.disabled} defaultChecked />
+        <br />
+        <Button type="primary" onClick={this.toggle}>Toggle disabled</Button>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<App />, document.getElementById('switch-demo-disabled'));
+"""

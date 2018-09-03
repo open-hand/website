@@ -1,0 +1,37 @@
+id= "time-picker-demo-12hours"
+right= true
+weight= 4
+name= "12 小时制"
+description= "12 小时制的时间选择器，默认的 format 为 `h:mm:ss a`。"
+code= """
+````jsx
+import { TimePicker } from 'choerodon-ui';
+
+function onChange(time, timeString) {
+  console.log(time, timeString);
+}
+
+ReactDOM.render(
+  <div>
+    <TimePicker use12Hours onChange={onChange} />
+    <TimePicker use12Hours format="h:mm:ss A" onChange={onChange} />
+    <TimePicker use12Hours format="h:mm a" onChange={onChange} />
+  </div>,
+  mountNode);
+````
+"""
+script= """
+const { TimePicker } = window['choerodon-ui'];
+
+function onChange(time, timeString) {
+  console.log(time, timeString);
+}
+
+ReactDOM.render(
+  <div>
+    <TimePicker use12Hours onChange={onChange} />
+    <TimePicker use12Hours format="h:mm:ss A" onChange={onChange} />
+    <TimePicker use12Hours format="h:mm a" onChange={onChange} />
+  </div>,
+  document.getElementById('time-picker-demo-12hours'));
+"""

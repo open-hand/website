@@ -1,4 +1,9 @@
-﻿# 查看敏捷报告
+﻿+++
+title = "查看敏捷报告"
+weight = 3
+description = ""
++++
+# 查看敏捷报告
 
 ## 1、燃尽图：
 
@@ -6,7 +11,7 @@
 
 进入到`报告`菜单，选择燃尽图报告
 
-![燃尽图](../image/agile/burndown_report.png)
+![燃尽图](/docs/quick-start/image/agile/burndown_report.png)
 
 - 横坐标代表时间
 
@@ -14,7 +19,7 @@
  
 日志信息
 
-![燃尽图日志信息](../image/agile/burndown_log_report.png)
+![燃尽图日志信息](/docs/quick-start/image/agile/burndown_log_report.png)
 
 - 日期：表示活动日志记录时间 
 
@@ -38,7 +43,7 @@
 
 图表信息
 
-![冲刺报告](../image/agile/sprint_report.png)
+![冲刺报告](/docs/quick-start/image/agile/sprint_report.png)
 
 说明：
 
@@ -46,7 +51,7 @@
 
 纵坐标代表问题数量
 
-![冲刺报告问题信息](../image/agile/sprint_log_report.png)
+![冲刺报告问题信息](/docs/quick-start/image/agile/sprint_log_report.png)
 
 说明：
  
@@ -70,7 +75,7 @@
 
 图表
 
-![累积流图](../image/agile/accumulate_flow_report.png)
+![累积流图](/docs/quick-start/image/agile/accumulate_flow_report.png)
 
 说明：
 
@@ -85,7 +90,7 @@
 进入到`报告`菜单，选择版本报告
 
 
-![版本报告](../image/agile/version_report.png)
+![版本报告](/docs/quick-start/image/agile/version_report.png)
 
 说明：
 
@@ -110,7 +115,7 @@
 进入到`报告`菜单，选择迭代速度图报告
 
 
-![迭代速度图](../image/agile/velocity_report.png)
+![迭代速度图](/docs/quick-start/image/agile/velocity_report.png)
 
 说明：
 
@@ -141,7 +146,7 @@
 进入到`报告`菜单，选择史诗报告图
 
 
-![史诗报告图](../image/agile/epic_report.png)
+![史诗报告图](/docs/quick-start/image/agile/epic_report.png)
 
 说明：
 
@@ -174,7 +179,7 @@
 
 进入到`报告`菜单，选择统计图
 
-![统计图](../image/agile/statistics_report.png)
+![统计图](/docs/quick-start/image/agile/statistics_report.png)
 
 说明：
  

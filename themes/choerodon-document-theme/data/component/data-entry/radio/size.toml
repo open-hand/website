@@ -1,0 +1,76 @@
+id= "radio-demo-size"
+right= true
+weight= 4
+name= "大小"
+description= "大中小三种组合，可以和表单输入框进行对应配合。"
+code= """
+````jsx
+import { Radio } from 'choerodon-ui';
+const RadioButton = Radio.Button;
+const RadioGroup = Radio.Group;
+
+ReactDOM.render(
+  <div>
+    <div>
+      <RadioGroup defaultValue="a" size="large">
+        <RadioButton value="a">Hangzhou</RadioButton>
+        <RadioButton value="b">Shanghai</RadioButton>
+        <RadioButton value="c">Beijing</RadioButton>
+        <RadioButton value="d">Chengdu</RadioButton>
+      </RadioGroup>
+    </div>
+    <div style={{ marginTop: 16 }}>
+      <RadioGroup defaultValue="a">
+        <RadioButton value="a">Hangzhou</RadioButton>
+        <RadioButton value="b">Shanghai</RadioButton>
+        <RadioButton value="c">Beijing</RadioButton>
+        <RadioButton value="d">Chengdu</RadioButton>
+      </RadioGroup>
+    </div>
+    <div style={{ marginTop: 16 }}>
+      <RadioGroup defaultValue="a" size="small">
+        <RadioButton value="a">Hangzhou</RadioButton>
+        <RadioButton value="b">Shanghai</RadioButton>
+        <RadioButton value="c">Beijing</RadioButton>
+        <RadioButton value="d">Chengdu</RadioButton>
+      </RadioGroup>
+    </div>
+  </div>,
+  mountNode);
+````
+"""
+script= """
+const { Radio } = window['choerodon-ui'];
+
+const RadioButton = Radio.Button;
+const RadioGroup = Radio.Group;
+
+ReactDOM.render(
+  <div>
+    <div>
+      <RadioGroup defaultValue="a" size="large">
+        <RadioButton value="a">Hangzhou</RadioButton>
+        <RadioButton value="b">Shanghai</RadioButton>
+        <RadioButton value="c">Beijing</RadioButton>
+        <RadioButton value="d">Chengdu</RadioButton>
+      </RadioGroup>
+    </div>
+    <div style={{ marginTop: 16 }}>
+      <RadioGroup defaultValue="a">
+        <RadioButton value="a">Hangzhou</RadioButton>
+        <RadioButton value="b">Shanghai</RadioButton>
+        <RadioButton value="c">Beijing</RadioButton>
+        <RadioButton value="d">Chengdu</RadioButton>
+      </RadioGroup>
+    </div>
+    <div style={{ marginTop: 16 }}>
+      <RadioGroup defaultValue="a" size="small">
+        <RadioButton value="a">Hangzhou</RadioButton>
+        <RadioButton value="b">Shanghai</RadioButton>
+        <RadioButton value="c">Beijing</RadioButton>
+        <RadioButton value="d">Chengdu</RadioButton>
+      </RadioGroup>
+    </div>
+  </div>,
+  document.getElementById('radio-demo-size'));
+"""

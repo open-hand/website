@@ -1,0 +1,42 @@
+id= "mention-demo-mutilines"
+right= true
+weight= 4
+name= "多行"
+description= "多行模式，多行模式必须指定高度。"
+code= """
+````jsx
+import { Mention } from 'choerodon-ui';
+const { toString } = Mention;
+
+function onChange(editorState) {
+  console.log(toString(editorState));
+}
+
+ReactDOM.render(
+  <Mention
+    style={{ width: '100%', height: 100 }}
+    onChange={onChange}
+    suggestions={['afc163', 'benjycui', 'yiminghe', 'jljsj33', 'dqaria', 'RaoHai']}
+    multiLines
+  />,
+  mountNode);
+````
+"""
+script= """
+const { Mention } = window['choerodon-ui'];
+
+const { toString } = Mention;
+
+function onChange(editorState) {
+  console.log(toString(editorState));
+}
+
+ReactDOM.render(
+  <Mention
+    style={{ width: '100%', height: 100 }}
+    onChange={onChange}
+    suggestions={['afc163', 'benjycui', 'yiminghe', 'jljsj33', 'dqaria', 'RaoHai']}
+    multiLines
+  />,
+  document.getElementById('mention-demo-mutilines'));
+"""

@@ -51,6 +51,9 @@
                         {{.code|markdownify}}
                       </section>
                       <script type="text/babel">{{.script|safeHTML}}</script>
+                      {{range .file.script}}
+                      <script src="{{.}}"></script>
+                      {{end}}
                       <style>{{print .css | safeCSS}}</style>
                     </section>
                   {{ end }}

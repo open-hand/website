@@ -1,0 +1,71 @@
+id= "radio-demo-disabled"
+right= true
+weight= 1
+name= "不可用"
+description= "Radio 不可用。"
+code= """
+````jsx
+import { Radio, Button } from 'choerodon-ui';
+
+class App extends React.Component {
+  state = {
+    disabled: true,
+  }
+
+  toggleDisabled = () => {
+    this.setState({
+      disabled: !this.state.disabled,
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        <Radio defaultChecked={false} disabled={this.state.disabled}>Disabled</Radio>
+        <br />
+        <Radio defaultChecked disabled={this.state.disabled}>Disabled</Radio>
+        <div style={{ marginTop: 20 }}>
+          <Button type="primary" onClick={this.toggleDisabled}>
+            Toggle disabled
+          </Button>
+        </div>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<App />, mountNode);
+````
+"""
+script= """
+const { Radio, Button } = window['choerodon-ui'];
+
+class App extends React.Component {
+  state = {
+    disabled: true,
+  }
+
+  toggleDisabled = () => {
+    this.setState({
+      disabled: !this.state.disabled,
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        <Radio defaultChecked={false} disabled={this.state.disabled}>Disabled</Radio>
+        <br />
+        <Radio defaultChecked disabled={this.state.disabled}>Disabled</Radio>
+        <div style={{ marginTop: 20 }}>
+          <Button type="primary" onClick={this.toggleDisabled}>
+            Toggle disabled
+          </Button>
+        </div>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<App />, document.getElementById('radio-demo-disabled'));
+"""
