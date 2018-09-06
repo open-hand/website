@@ -8,7 +8,7 @@ weight = 10
 
 ## 前置要求与约定
 
-- 约定：Master(s)节点为Kubernetes主节点、Worker(s)节点为Kubernetes普通节点、Etcd节点为将部署Etcd的节点，按本教程安装Master(s)节点与Etcd节点必须一致。
+- 约定：Master(s)节点为Kubernetes主节点、Worker(s)节点为Kubernetes普通节点、Etcd节点为将部署Etcd的节点，按本教程安装Master(s)节点与Etcd节点必须一致，Etcd官方建议Etcd集群节点个数为奇数个（比如1、3、5）以防止脑裂。
 
 - 按本教程安装Kubernetes集群只会在Master(s)节点上安装kubectl命令。
 
@@ -34,7 +34,7 @@ weight = 10
 ### 检测防火墙状态
 
 - 检测firewall-cmd状态
-<pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> firewall-cmd --state</span>
+<pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> firewall-cmd ----state</span>
 <span style="color: #ff0000;">not running</span>
 </code></pre>
 

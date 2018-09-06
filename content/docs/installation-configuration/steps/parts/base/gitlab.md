@@ -207,23 +207,47 @@ CentOS各发行版中SSH端口默认为22，如果正式做站或其它用途，
 
 ### 添加Gitlab SSH Service
 
-1. 在Master节点新建`gitlab-ssh-svc.yml`文件，添加以下信息：
+1. 确认Gitlab版本
 
-        apiVersion: v1
-        kind: Service
-        metadata:
-          name: gitlab-ssh
-          namespace: choerodon-devops-prod
-        spec:
-          externalIPs:
-          - 192.168.1.1 #请修改这里的IP为第一步设置SSH端口号的节点IP
-          ports:
-          - name: http
-            port: 22
-            protocol: TCP
-            targetPort: 22
-          selector:
-              choerodon.io/infra: gitlab
+    - 登录Gitlab
+    - 访问`http://gitlab.example.choerodon.io/help`页面查看版本号。
+
+1. 在Master节点新建`gitlab-ssh-svc.yml`文件，按版本号添加以下信息：
+    - 版本号为`GitLab Community Edition 10.*.*`，添加以下信息：
+
+            apiVersion: v1
+            kind: Service
+            metadata:
+              name: gitlab-ssh
+              namespace: choerodon-devops-prod
+            spec:
+              externalIPs:
+              - 192.168.1.1 #请修改这里的IP为第一步设置SSH端口号的节点IP
+              ports:
+              - name: http
+                port: 22
+                protocol: TCP
+                targetPort: 22
+              selector:
+                  app: gitlab
+              
+    - 版本号为`GitLab Community Edition 11.*.*`，添加以下信息：
+
+            apiVersion: v1
+            kind: Service
+            metadata:
+              name: gitlab-ssh
+              namespace: choerodon-devops-prod
+            spec:
+              externalIPs:
+              - 192.168.1.1 #请修改这里的IP为第一步设置SSH端口号的节点IP
+              ports:
+              - name: http
+                port: 22
+                protocol: TCP
+                targetPort: 22
+              selector:
+                  choerodon.io/infra: gitlab
 
 1. 使Gitlab SSH Service生效
 
