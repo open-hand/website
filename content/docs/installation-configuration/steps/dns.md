@@ -100,7 +100,7 @@ helm install c7n/dnsmasq \
       namespace: kube-system
     data:
       stubDomains: |
-        {"example.choerodon.io": ["192.168.1.1"]} 
+        {"example.choerodon.io": ["192.168.1.1"]}
     ```
 
 - 应用kube-dns配置文件
