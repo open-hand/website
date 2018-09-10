@@ -120,6 +120,7 @@ helm install c7n/gitlab \
     --set env.config.SMTP_TLS=true \
     --set env.config.PROMETHEUS_ENABLE=false \
     --set env.config.NODE_EXPORTER_ENABLE=false \
+    --set service.enabled=true \
     --set ingress.enabled=true \
     --set ingress.hosts={gitlab.example.choerodon.io} \
     --name=gitlab --namespace=choerodon-devops-prod 
