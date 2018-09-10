@@ -67,7 +67,7 @@ weight = 11
 ### 部署DNS(请勿直接复制命令执行)
 
 假如您想在使用`example.choerodon.io`这个域名，则在参数中设置`config."example\.choerodon\.io"={集群ip}`，具体参数请参考下面的参数解释。
-kubernetest service是一个面向微服务架构的设计，它从k8s本身解决了容器集群的负载均衡，并开放式地支持了用户所需要的各种负载均衡方案和使用场景。由于k8s中的pod在每次创建之后的ip都不一定相同，所以这里需要指定一个service并绑定一个主机ip，使得可以使用主机ip+端口访问dns服务器。
+kubernetes service是一个面向微服务架构的设计，它从k8s本身解决了容器集群的负载均衡，并开放式地支持了用户所需要的各种负载均衡方案和使用场景。由于k8s中的pod在每次创建之后的ip都不一定相同，所以这里需要指定一个service并绑定一个主机ip，使得可以使用主机ip+端口访问dns服务器。
 
 <blockquote class="warning">
 service绑定的主机必须开放53端口，若未开放，请参照Kubernetes集群部署文档中的“开放指定端口”操作进行开放。
