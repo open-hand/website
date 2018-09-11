@@ -1,0 +1,37 @@
+parent= "components-pagination-demo-mini"
+id= "pagination-tiny"
+weight= 6
+name= "微型"
+description= "微型版本。"
+code= """
+````jsx
+import { Pagination } from 'choerodon-ui';
+
+function showTotal(total) {
+  return `Total ${total} items`;
+}
+
+ReactDOM.render(
+  <div>
+    <Pagination total={50} />
+    <Pagination total={50} showSizeChanger showQuickJumper />
+    <Pagination total={50} showTotal={showTotal} />
+  </div>,
+  mountNode);
+````
+"""
+script= """
+const { Pagination } = window['choerodon-ui'];
+
+function showTotal(total) {
+  return `Total ${total} items`;
+}
+
+ReactDOM.render(
+  <div>
+    <Pagination total={50} />
+    <Pagination total={50} showSizeChanger showQuickJumper />
+    <Pagination total={50} showTotal={showTotal} />
+  </div>,
+  document.getElementById('pagination-tiny'));
+"""

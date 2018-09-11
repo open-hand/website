@@ -1,0 +1,31 @@
+id= "alert-demo-type"
+right= true
+weight= 1
+name= "四种样式"
+description= "共有四种样式 `success`、`info`、`warning`、`error`。"
+code= """
+````jsx
+import { Alert } from 'choerodon-ui';
+
+ReactDOM.render(
+  <div>
+    <Alert message="Success Text" type="success" />
+    <Alert message="Info Text" type="info" />
+    <Alert message="Warning Text" type="warning" />
+    <Alert message="Error Text" type="error" />
+  </div>,
+  mountNode);
+````
+"""
+script= """
+const { Alert } = window['choerodon-ui'];
+
+ReactDOM.render(
+  <div>
+    <Alert message="Success Text" type="success" />
+    <Alert message="Info Text" type="info" />
+    <Alert message="Warning Text" type="warning" />
+    <Alert message="Error Text" type="error" />
+  </div>,
+  document.getElementById('alert-demo-type'));
+"""

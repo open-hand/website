@@ -1,0 +1,30 @@
+id= "switch-demo-basic"
+left= true
+weight= 1
+name= "基本"
+description= "最简单的用法。"
+code= """
+````jsx
+import { Switch } from 'choerodon-ui';
+
+function onChange(checked) {
+  console.log(`switch to ${checked}`);
+}
+
+ReactDOM.render(
+  <Switch defaultChecked onChange={onChange} />,
+  mountNode
+);
+````
+"""
+script= """
+const { Switch } = window['choerodon-ui'];
+
+function onChange(checked) {
+  console.log(`switch to ${checked}`);
+}
+
+ReactDOM.render(
+  <Switch defaultChecked onChange={onChange} />,
+  document.getElementById('switch-demo-basic'));
+"""

@@ -1,0 +1,41 @@
+id= "dropdown-context-menu"
+left= true
+weight= 5
+name= "右键菜单"
+description= "默认是移入触发菜单，可以点击触发。"
+code= """
+````jsx
+import { Menu, Dropdown } from 'choerodon-ui';
+
+const menu = (
+  <Menu>
+    <Menu.Item key="1">1st menu item</Menu.Item>
+    <Menu.Item key="2">2nd menu item</Menu.Item>
+    <Menu.Item key="3">3rd menu item</Menu.Item>
+  </Menu>
+);
+
+ReactDOM.render(
+  <Dropdown overlay={menu} trigger={['contextMenu']}>
+    <span style={{ userSelect: 'none' }}>Right Click on Me</span>
+  </Dropdown>,
+  mountNode);
+````
+"""
+script= """
+const { Menu, Dropdown } = window['choerodon-ui'];
+
+const menu = (
+  <Menu>
+    <Menu.Item key="1">1st menu item</Menu.Item>
+    <Menu.Item key="2">2nd menu item</Menu.Item>
+    <Menu.Item key="3">3rd menu item</Menu.Item>
+  </Menu>
+);
+
+ReactDOM.render(
+  <Dropdown overlay={menu} trigger={['contextMenu']}>
+    <span style={{ userSelect: 'none' }}>Right Click on Me</span>
+  </Dropdown>,
+  document.getElementById('dropdown-context-menu'));
+"""

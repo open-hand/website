@@ -1,0 +1,55 @@
+id= "select-demo-automatic-tokenization"
+left= true
+weight= 6
+name= "自动分词"
+description= "试下复制 `露西,杰克` 到输入框里。只在 tags 和 multiple 模式下可用。"
+code= """
+````jsx
+import { Select } from 'choerodon-ui';
+const Option = Select.Option;
+
+const children = [];
+for (let i = 10; i < 36; i++) {
+  children.push(<Option key={i.toString(36) + i}>{i.toString(36) + i}</Option>);
+}
+
+function handleChange(value) {
+  console.log(`selected ${value}`);
+}
+
+ReactDOM.render(
+  <Select
+    mode="tags"
+    style={{ width: '100%' }}
+    onChange={handleChange}
+    tokenSeparators={[',']}
+  >
+    {children}
+  </Select>,
+  mountNode);
+````
+"""
+script= """
+const { Select } = window['choerodon-ui'];
+const Option = Select.Option;
+
+const children = [];
+for (let i = 10; i < 36; i++) {
+  children.push(<Option key={i.toString(36) + i}>{i.toString(36) + i}</Option>);
+}
+
+function handleChange(value) {
+  console.log(`selected ${value}`);
+}
+
+ReactDOM.render(
+  <Select
+    mode="tags"
+    style={{ width: '100%' }}
+    onChange={handleChange}
+    tokenSeparators={[',']}
+  >
+    {children}
+  </Select>,
+  document.getElementById('select-demo-automatic-tokenization'));
+"""

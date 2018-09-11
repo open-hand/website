@@ -13,50 +13,7 @@ weight = 14
 
 ## 代码演示
 
-<div class="c7n-row">
-    <div class="c7n-row-6">
-        <section class="code-box">
-            <section class="code-box-demo"><div id="treeSelect-demo-basic"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>基本</a></div>
-                <div>
-                    <p>最简单的用法。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="treeSelect-demo-data"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>从数据直接生成</a></div>
-                <div>
-                    <p>使用 <code>treeData</code> 把 JSON 数据直接生成树结构。</p>
-                </div>
-            </section>
-        </section>
-    </div>
-    <div class="c7n-row-6">
-        <section class="code-box">
-            <section class="code-box-demo"><div id="treeSelect-demo-mutilselect"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>多选</a></div>
-                <div>
-                    <p>多选的树选择。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="treeSelect-demo-select"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>可勾选</a></div>
-                <div>
-                    <p>使用勾选框实现多选功能。</p>
-                </div>
-            </section>
-        </section>
-    </div>
-</div>
-
-{{< components-treeSelect >}}
+{{< components data-entry tree-select>}}
 
 ## API
 

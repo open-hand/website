@@ -43,31 +43,7 @@ return <LocaleProvider locale={locales.en_US}><App /></LocaleProvider>;
 
 ## 代码演示
 
-<div class="c7n-row">
-    <div class="c7n-row-12">
-        <section class="code-box">
-            <section class="code-box-demo"><div id="localeProvider-demo-basic"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>国际化</a></div>
-                <div>
-                    <p>用 <code>LocaleProvider</code> 包裹你的应用，并引用对应的语言包。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="localeProvider-demo-all"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>所有组件</a></div>
-                <div>
-                    <p>此处列出 Ant Design 中需要国际化支持的组件，你可以在演示里切换语言。</p>
-                </div>
-            </section>
-        </section>
-    </div>
-</div>
-
-{{< components-localeProvider-basic >}}
-{{< components-localeProvider-all >}}
+{{< components other locale-provider true >}}
 
 ## API
 

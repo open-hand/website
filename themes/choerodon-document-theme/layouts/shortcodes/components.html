@@ -24,6 +24,9 @@
                       {{.code|markdownify}}
                     </section>
                     <script type="text/babel">{{.script|safeHTML}}</script>
+                    {{range .file.script}}
+                    <script src="{{.}}"></script>
+                    {{end}}
                     <style>{{print .css | safeCSS}}</style>
                   </section>
                 {{ end }}
@@ -34,7 +37,7 @@
               <div class="c7n-row-6">
                 {{ range ( sort . "weight") }}
                   {{ if .right }}
-                    <section class="code-box">
+                    <section class="code-box" id="{{.parent}}">
                       <section class="code-box-demo"><div id="{{.id}}"></div></section>
                       <section class="code-box-meta">
                           <div class="code-box-title"><a>{{.name}}</a></div>
@@ -48,6 +51,9 @@
                         {{.code|markdownify}}
                       </section>
                       <script type="text/babel">{{.script|safeHTML}}</script>
+                      {{range .file.script}}
+                      <script src="{{.}}"></script>
+                      {{end}}
                       <style>{{print .css | safeCSS}}</style>
                     </section>
                   {{ end }}

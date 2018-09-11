@@ -13,68 +13,7 @@ weight = 1
 
 ## 代码演示
 
-<div class="c7n-row">
-    <div class="c7n-row-6">
-        <section class="code-box">
-            <section class="code-box-demo"><div id="autoComplete-basic"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>基本使用</a></div>
-                <div>
-                    <p>基本使用。通过 dataSource 设置自动完成的数据源</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="autoComplete-input"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>自定义输入组件</a></div>
-                <div>
-                    <p>自定义输入组件。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="autoComplete-certain"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>查询模式-确定类目</a></div>
-                <div>
-                    <p>查询模式: 确定类目示例。</p>
-                </div>
-            </section>
-        </section>
-    </div>
-    <div class="c7n-row-6">
-        <section class="code-box">
-            <section class="code-box-demo"><div id="autoComplete-custom"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>自定义选项</a></div>
-                <div>
-                    <p>也可以直接传 <code>AutoComplete.Option</code> 作为 <code>AutoComplete</code> 的 <code>children</code>，而非使用 <code>dataSource</code>。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="autoComplete-non-sensitive"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>不区分大小写</a></div>
-                <div>
-                    <p>不区分大小写的 AutoComplete</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="autoComplete-uncertain"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>查询模式: 不确定类目</a></div>
-                <div>
-                    <p>查询模式: 不确定类目示例。</p>
-                </div>
-            </section>
-        </section>
-    </div>
-</div>
-
-{{< components-autoComplete >}}
+{{< components data-entry auto-complete >}}
 
 ## API
 

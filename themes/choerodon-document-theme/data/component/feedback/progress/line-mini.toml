@@ -1,0 +1,31 @@
+id= "progress-demo-line-mini"
+left= true
+weight= 2
+name= "小型进度条"
+description= "适合放在较狭窄的区域内。"
+code= """
+````jsx
+import { Progress } from 'choerodon-ui';
+
+ReactDOM.render(
+  <div style={{ width: 170 }}>
+    <Progress percent={30} size="small" />
+    <Progress percent={50} size="small" status="active" />
+    <Progress percent={70} size="small" status="exception" />
+    <Progress percent={100} size="small" />
+  </div>,
+  mountNode);
+````
+"""
+script= """
+const { Progress } = window['choerodon-ui'];
+
+ReactDOM.render(
+  <div style={{ width: 170 }}>
+    <Progress percent={30} size="small" />
+    <Progress percent={50} size="small" status="active" />
+    <Progress percent={70} size="small" status="exception" />
+    <Progress percent={100} size="small" />
+  </div>,
+  document.getElementById('progress-demo-line-mini'));
+"""

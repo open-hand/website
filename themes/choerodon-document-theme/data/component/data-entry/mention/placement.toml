@@ -1,0 +1,52 @@
+id= "mention-demo-placement"
+right= true
+weight= 1
+name= "向上展开"
+description= "向上展开建议。"
+code= """
+````jsx
+import { Mention } from 'choerodon-ui';
+const { toString } = Mention;
+
+function onChange(contentState) {
+  console.log(toString(contentState));
+}
+
+function onSelect(suggestion) {
+  console.log('onSelect', suggestion);
+}
+
+ReactDOM.render(
+  <Mention
+    style={{ width: '100%' }}
+    onChange={onChange}
+    suggestions={['afc163', 'benjycui', 'yiminghe', 'RaoHai', '中文', 'にほんご']}
+    onSelect={onSelect}
+    placement="top"
+  />,
+  mountNode);
+````
+"""
+script= """
+const { Mention } = window['choerodon-ui'];
+
+const { toString } = Mention;
+
+function onChange(contentState) {
+  console.log(toString(contentState));
+}
+
+function onSelect(suggestion) {
+  console.log('onSelect', suggestion);
+}
+
+ReactDOM.render(
+  <Mention
+    style={{ width: '100%' }}
+    onChange={onChange}
+    suggestions={['afc163', 'benjycui', 'yiminghe', 'RaoHai', '中文', 'にほんご']}
+    onSelect={onSelect}
+    placement="top"
+  />,
+  document.getElementById('mention-demo-placement'));
+"""

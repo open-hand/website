@@ -1,0 +1,29 @@
+id= "message-demo-info"
+left= true
+weight= 1
+name= "普通提示"
+description= "信息提醒反馈。"
+code= """
+````jsx
+import { message, Button } from 'choerodon-ui';
+
+const info = () => {
+  message.info('This is a normal message');
+};
+
+ReactDOM.render(
+  <Button type="primary" onClick={info}>Display normal message</Button>,
+  mountNode);
+````
+"""
+script= """
+const { message, Button } = window['choerodon-ui'];
+
+const info = () => {
+  message.info('This is a normal message');
+};
+
+ReactDOM.render(
+  <Button type="primary" onClick={info}>Display normal message</Button>,
+  document.getElementById('message-demo-info'));
+"""

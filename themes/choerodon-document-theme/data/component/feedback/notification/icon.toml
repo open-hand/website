@@ -1,0 +1,45 @@
+id= "notification-demo-icon"
+left= true
+weight= 2
+name= "带有图标的通知提醒框"
+description= "通知提醒框左侧有图标。"
+code= """
+````jsx
+import { Button, notification } from 'choerodon-ui';
+
+const openNotificationWithIcon = (type) => {
+  notification[type]({
+    message: 'Notification Title',
+    description: 'This is the content of the notification. This is the content of the notification. This is the content of the notification.',
+  });
+};
+
+ReactDOM.render(
+  <div>
+    <Button onClick={() => openNotificationWithIcon('success')}>Success</Button>
+    <Button onClick={() => openNotificationWithIcon('info')}>Info</Button>
+    <Button onClick={() => openNotificationWithIcon('warning')}>Warning</Button>
+    <Button onClick={() => openNotificationWithIcon('error')}>Error</Button>
+  </div>,
+  mountNode);
+````
+"""
+script= """
+const { Button, notification } = window['choerodon-ui'];
+
+const openNotificationWithIcon = (type) => {
+  notification[type]({
+    message: 'Notification Title',
+    description: 'This is the content of the notification. This is the content of the notification. This is the content of the notification.',
+  });
+};
+
+ReactDOM.render(
+  <div>
+    <Button onClick={() => openNotificationWithIcon('success')}>Success</Button>
+    <Button onClick={() => openNotificationWithIcon('info')}>Info</Button>
+    <Button onClick={() => openNotificationWithIcon('warning')}>Warning</Button>
+    <Button onClick={() => openNotificationWithIcon('error')}>Error</Button>
+  </div>,
+  document.getElementById('notification-demo-icon'));
+"""

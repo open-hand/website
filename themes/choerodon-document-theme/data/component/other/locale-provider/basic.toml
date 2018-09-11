@@ -1,0 +1,41 @@
+id= "locale-provider-demo-basic"
+weight= 1
+name= "国际化"
+description= "用 `LocaleProvider` 包裹你的应用，并引用对应的语言包。"
+code= """
+````jsx
+import { Pagination, LocaleProvider } from 'choerodon-ui';
+import enUS from 'choerodon-ui/lib/locale-provider/en_US';
+
+const App = () => (
+  <div>
+    <Pagination defaultCurrent={1} total={50} showSizeChanger />
+  </div>
+);
+
+ReactDOM.render(
+  <LocaleProvider locale={enUS}>
+    <App />
+  </LocaleProvider>,
+  mountNode);
+````
+"""
+script= """
+const { Pagination, LocaleProvider } = window['choerodon-ui'];
+var enUS = require('choerodon-ui/lib/locale-provider/en_US');
+
+const App = () => (
+  <div>
+    <Pagination defaultCurrent={1} total={50} showSizeChanger />
+  </div>
+);
+
+ReactDOM.render(
+  <LocaleProvider locale={enUS}>
+    <App />
+  </LocaleProvider>,
+  document.getElementById('locale-provider-demo-basic'));
+"""
+
+[file]
+script = ["/js/ui-components/locale-provider/en-us.js"]

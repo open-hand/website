@@ -1,0 +1,35 @@
+id= "date-picker-demo-extra-footer"
+left= true
+weight= 5
+name= "额外的页脚"
+description= "在浮层中加入额外的页脚，以满足某些定制信息的需求。"
+code= """
+````jsx
+import { DatePicker } from 'choerodon-ui';
+const { RangePicker, MonthPicker } = DatePicker;
+
+ReactDOM.render(
+  <div>
+    <DatePicker renderExtraFooter={() => 'extra footer'} />
+    <DatePicker renderExtraFooter={() => 'extra footer'} showTime />
+    <RangePicker renderExtraFooter={() => 'extra footer'} />
+    <RangePicker renderExtraFooter={() => 'extra footer'} showTime />
+    <MonthPicker renderExtraFooter={() => 'extra footer'} placeholder="Select month" />
+  </div>,
+  mountNode);
+````
+"""
+script= """
+const { DatePicker } = window['choerodon-ui'];
+const { MonthPicker, RangePicker } = DatePicker;
+
+ReactDOM.render(
+  <div>
+    <DatePicker renderExtraFooter={() => 'extra footer'} />
+    <DatePicker renderExtraFooter={() => 'extra footer'} showTime />
+    <RangePicker renderExtraFooter={() => 'extra footer'} />
+    <RangePicker renderExtraFooter={() => 'extra footer'} showTime />
+    <MonthPicker renderExtraFooter={() => 'extra footer'} placeholder="Select month" />
+  </div>,
+  document.getElementById('date-picker-demo-extra-footer'));
+"""

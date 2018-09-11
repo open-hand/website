@@ -1,0 +1,53 @@
+id= "badge-demo-status"
+left= true
+weight= 4
+name= "状态点"
+description= "用于表示状态的小圆点。"
+code= """
+````jsx
+import { Badge } from 'choerodon-ui';
+
+ReactDOM.render(
+  <div>
+    <Badge status="success" />
+    <Badge status="error" />
+    <Badge status="default" />
+    <Badge status="processing" />
+    <Badge status="warning" />
+    <br />
+    <Badge status="success" text="Success" />
+    <br />
+    <Badge status="error" text="Error" />
+    <br />
+    <Badge status="default" text="Default" />
+    <br />
+    <Badge status="processing" text="Processing" />
+    <br />
+    <Badge status="warning" text="Warning" />
+  </div>,
+  mountNode);
+````
+"""
+script= """
+const { Badge } = window['choerodon-ui'];
+
+ReactDOM.render(
+  <div>
+    <Badge status="success" />
+    <Badge status="error" />
+    <Badge status="default" />
+    <Badge status="processing" />
+    <Badge status="warning" />
+    <br />
+    <Badge status="success" text="Success" />
+    <br />
+    <Badge status="error" text="Error" />
+    <br />
+    <Badge status="default" text="Default" />
+    <br />
+    <Badge status="processing" text="Processing" />
+    <br />
+    <Badge status="warning" text="Warning" />
+  </div>,
+  document.getElementById('badge-demo-status'));
+"""

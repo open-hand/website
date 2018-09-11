@@ -1,0 +1,58 @@
+id= "tabs-demo-card-top"
+weight= 10
+name= "卡片式页签容器"
+description= "用于容器顶部，需要一点额外的样式覆盖。"
+code= """
+````jsx
+import { Tabs } from 'choerodon-ui';
+const TabPane = Tabs.TabPane;
+
+ReactDOM.render(
+  <div className="card-container">
+    <Tabs type="card">
+      <TabPane tab="Tab Title 1" key="1">
+        <p>Content of Tab Pane 1</p>
+        <p>Content of Tab Pane 1</p>
+        <p>Content of Tab Pane 1</p>
+      </TabPane>
+      <TabPane tab="Tab Title 2" key="2">
+        <p>Content of Tab Pane 2</p>
+        <p>Content of Tab Pane 2</p>
+        <p>Content of Tab Pane 2</p>
+      </TabPane>
+      <TabPane tab="Tab Title 3" key="3">
+        <p>Content of Tab Pane 3</p>
+        <p>Content of Tab Pane 3</p>
+        <p>Content of Tab Pane 3</p>
+      </TabPane>
+    </Tabs>
+  </div>,
+  mountNode);
+````
+"""
+script= """
+const { Tabs } = window['choerodon-ui'];
+const TabPane = Tabs.TabPane;
+
+ReactDOM.render(
+  <div className="card-container">
+    <Tabs type="card">
+      <TabPane tab="Tab Title 1" key="1">
+        <p>Content of Tab Pane 1</p>
+        <p>Content of Tab Pane 1</p>
+        <p>Content of Tab Pane 1</p>
+      </TabPane>
+      <TabPane tab="Tab Title 2" key="2">
+        <p>Content of Tab Pane 2</p>
+        <p>Content of Tab Pane 2</p>
+        <p>Content of Tab Pane 2</p>
+      </TabPane>
+      <TabPane tab="Tab Title 3" key="3">
+        <p>Content of Tab Pane 3</p>
+        <p>Content of Tab Pane 3</p>
+        <p>Content of Tab Pane 3</p>
+      </TabPane>
+    </Tabs>
+  </div>,
+  document.getElementById('tabs-demo-card-top'));
+"""

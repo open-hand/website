@@ -1,0 +1,29 @@
+id= "input-number-demo-basic"
+left= true
+weight= 1
+name= "基础"
+description= "数字输入框。"
+code= """
+````jsx
+import { InputNumber } from 'choerodon-ui';
+
+function onChange(value) {
+  console.log('changed', value);
+}
+
+ReactDOM.render(
+  <InputNumber label="数字" min={1} max={10} defaultValue={3} onChange={onChange} />,
+  mountNode);
+````
+"""
+script= """
+const { InputNumber } = window['choerodon-ui'];
+
+function onChange(value) {
+  console.log('changed', value);
+}
+
+ReactDOM.render(
+  <InputNumber label="数字" min={1} max={10} defaultValue={3} onChange={onChange} />,
+  document.getElementById('input-number-demo-basic'));
+"""

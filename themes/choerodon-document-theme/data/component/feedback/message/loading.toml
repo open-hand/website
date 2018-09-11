@@ -1,0 +1,33 @@
+id= "message-demo-loading"
+right= true
+weight= 2
+name= "加载中"
+description= "进行全局 loading，异步自行移除。"
+code= """
+````jsx
+import { message, Button } from 'choerodon-ui';
+
+const success = () => {
+  const hide = message.loading('Action in progress..', 0);
+  // Dismiss manually and asynchronously
+  setTimeout(hide, 2500);
+};
+
+ReactDOM.render(
+  <Button onClick={success}>Display a loading indicator</Button>,
+  mountNode);
+````
+"""
+script= """
+const { message, Button } = window['choerodon-ui'];
+
+const success = () => {
+  const hide = message.loading('Action in progress..', 0);
+  // Dismiss manually and asynchronously
+  setTimeout(hide, 2500);
+};
+
+ReactDOM.render(
+  <Button onClick={success}>Display a loading indicator</Button>,
+  document.getElementById('message-demo-loading'));
+"""

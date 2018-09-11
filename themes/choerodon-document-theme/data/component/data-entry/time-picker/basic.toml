@@ -1,0 +1,39 @@
+id= "time-picker-demo-basic"
+left= true
+weight= 1
+name= "基本"
+description= "点击 TimePicker，然后可以在浮层中选择或者输入某一时间。"
+code= """
+````jsx
+import { TimePicker } from 'choerodon-ui';
+import moment from 'moment';
+
+function onChange(time, timeString) {
+  console.log(time, timeString);
+}
+
+ReactDOM.render(
+  <TimePicker
+    label="时间选择框"
+    onChange={onChange}
+    defaultOpenValue={moment('00:00:00', 'HH:mm:ss')}
+  />,
+  mountNode
+);
+````
+"""
+script= """
+const { TimePicker } = window['choerodon-ui'];
+
+function onChange(time, timeString) {
+  console.log(time, timeString);
+}
+
+ReactDOM.render(
+  <TimePicker
+    label="时间选择框"
+    onChange={onChange}
+    defaultOpenValue={moment('00:00:00', 'HH:mm:ss')}
+  />,
+  document.getElementById('time-picker-demo-basic'));
+"""

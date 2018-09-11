@@ -1,0 +1,33 @@
+id= "progress-demo-line"
+left= true
+weight= 1
+name= "进度条"
+description= "标准的进度条。"
+code= """
+````jsx
+import { Progress } from 'choerodon-ui';
+
+ReactDOM.render(
+  <div>
+    <Progress percent={30} />
+    <Progress percent={50} status="active" />
+    <Progress percent={70} status="exception" />
+    <Progress percent={100} />
+    <Progress percent={50} showInfo={false} />
+  </div>,
+  mountNode);
+````
+"""
+script= """
+const { Progress } = window['choerodon-ui'];
+
+ReactDOM.render(
+  <div>
+    <Progress percent={30} />
+    <Progress percent={50} status="active" />
+    <Progress percent={70} status="exception" />
+    <Progress percent={100} />
+    <Progress percent={50} showInfo={false} />
+  </div>,
+  document.getElementById('progress-demo-line'));
+"""

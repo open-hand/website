@@ -1,0 +1,81 @@
+id= "date-picker-demo-date-render"
+left= true
+weight= 6
+name= "定制日期单元格"
+description= "使用 `dateRender` 可以自定义日期单元格的内容和样式。"
+code= """
+````jsx
+import { DatePicker } from 'choerodon-ui';
+const { RangePicker } = DatePicker;
+
+ReactDOM.render(
+  <div>
+    <DatePicker
+      dateRender={(current) => {
+        const style = {};
+        if (current.date() === 1) {
+          style.border = '1px solid #1890ff';
+          style.borderRadius = '50%';
+        }
+        return (
+          <div className="ant-calendar-date" style={style}>
+            {current.date()}
+          </div>
+        );
+      }}
+    />
+    <RangePicker
+      dateRender={(current) => {
+        const style = {};
+        if (current.date() === 1) {
+          style.border = '1px solid #1890ff';
+          style.borderRadius = '50%';
+        }
+        return (
+          <div className="ant-calendar-date" style={style}>
+            {current.date()}
+          </div>
+        );
+      }}
+    />
+  </div>,
+  mountNode);
+````
+"""
+script= """
+const { DatePicker } = window['choerodon-ui'];
+const { RangePicker } = DatePicker;
+
+ReactDOM.render(
+  <div>
+    <DatePicker
+      dateRender={(current) => {
+        const style = {};
+        if (current.date() === 1) {
+          style.border = '1px solid #1890ff';
+          style.borderRadius = '50%';
+        }
+        return (
+          <div className="ant-calendar-date" style={style}>
+            {current.date()}
+          </div>
+        );
+      }}
+    />
+    <RangePicker
+      dateRender={(current) => {
+        const style = {};
+        if (current.date() === 1) {
+          style.border = '1px solid #1890ff';
+          style.borderRadius = '50%';
+        }
+        return (
+          <div className="ant-calendar-date" style={style}>
+            {current.date()}
+          </div>
+        );
+      }}
+    />
+  </div>,
+  document.getElementById('date-picker-demo-date-render'));
+"""

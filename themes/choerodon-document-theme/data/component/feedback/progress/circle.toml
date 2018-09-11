@@ -1,0 +1,31 @@
+id= "progress-demo-circle"
+right= true
+weight= 1
+name= "进度圈"
+description= "标准的进度条。"
+code= """
+````jsx
+import { Progress } from 'choerodon-ui';
+
+ReactDOM.render(
+  <div>
+    <Progress type="circle" percent={75} />
+    <Progress type="circle" percent={70} status="exception" />
+    <Progress type="circle" percent={100} />
+    <Progress type="loading" />
+  </div>,
+  mountNode);
+````
+"""
+script= """
+const { Progress } = window['choerodon-ui'];
+
+ReactDOM.render(
+  <div>
+    <Progress type="circle" percent={75} />
+    <Progress type="circle" percent={70} status="exception" />
+    <Progress type="circle" percent={100} />
+    <Progress type="loading" />
+  </div>,
+  document.getElementById('progress-demo-circle'));
+"""

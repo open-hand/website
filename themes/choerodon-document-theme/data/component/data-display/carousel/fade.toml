@@ -1,0 +1,31 @@
+id= "carousel-demo-fade"
+left= true
+weight= 2
+name= "渐显"
+description= "切换效果为渐显。"
+code= """
+````jsx
+import { Carousel } from 'choerodon-ui';
+
+ReactDOM.render(
+  <Carousel effect="fade">
+    <div><h3>1</h3></div>
+    <div><h3>2</h3></div>
+    <div><h3>3</h3></div>
+    <div><h3>4</h3></div>
+  </Carousel>,
+  mountNode);
+````
+"""
+script= """
+const { Carousel } = window['choerodon-ui'];
+
+ReactDOM.render(
+  <Carousel effect="fade">
+    <div><h3>1</h3></div>
+    <div><h3>2</h3></div>
+    <div><h3>3</h3></div>
+    <div><h3>4</h3></div>
+  </Carousel>,
+  document.getElementById('carousel-demo-fade'));
+"""

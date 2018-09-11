@@ -1,0 +1,30 @@
+id= "pagination-more"
+weight= 2
+name= "更多"
+description= "更多分页。"
+code= """
+````jsx
+import { Pagination } from 'choerodon-ui';
+
+ReactDOM.render(
+  <Pagination
+    defaultCurrent={6}
+    total={500}
+    tiny={false}
+    showTotal={false}
+    showSizeChanger={false}
+  />, mountNode);
+````
+"""
+script= """
+const { Pagination } = window['choerodon-ui'];
+
+ReactDOM.render(
+  <Pagination
+    defaultCurrent={6}
+    total={500}
+    tiny={false}
+    showTotal={false}
+    showSizeChanger={false}
+  />, document.getElementById('pagination-more'));
+"""

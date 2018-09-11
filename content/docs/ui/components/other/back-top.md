@@ -14,32 +14,7 @@ weight = 2
 
 ## 代码演示
 
-<div class="c7n-row">
-    <div class="c7n-row-6">
-        <section class="code-box">
-            <section class="code-box-demo"><div id="backTop-demo-basic"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>基本</a></div>
-                <div>
-                    <p>最简单的用法。</p>
-                </div>
-            </section>
-        </section>
-    </div>
-    <div class="c7n-row-6">
-        <section class="code-box">
-            <section class="code-box-demo"><div id="backTop-demo-custom"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>自定义样式</a></div>
-                <div>
-                    <p>可以自定义回到顶部按钮的样式，限制宽高：<code>40px * 40px</code>。</p>
-                </div>
-            </section>
-        </section>
-    </div>
-</div>
-
-{{< components-backTop >}}
+{{< components other back-top >}}
 
 ## API
 

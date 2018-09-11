@@ -1,0 +1,37 @@
+id= "anchor-demo-location"
+right= true
+weight= 1
+name= "静态位置"
+description= "不浮动，状态不随页面滚动变化。"
+code= """
+````jsx
+import { Anchor } from 'choerodon-ui';
+const { Link } = Anchor;
+
+ReactDOM.render(
+  <Anchor affix={false}>
+    <Link href="#anchor-demo-basic" title="Basic demo" />
+    <Link href="#anchor-demo-location" title="Fixed demo" />
+    <Link href="#api" title="API">
+      <Link href="#anchor-props" title="Anchor Props" />
+      <Link href="#link-props" title="Link Props" />
+    </Link>
+  </Anchor>,
+  mountNode);
+````
+"""
+script= """
+const { Anchor } = window['choerodon-ui'];
+const { Link } = Anchor;
+
+ReactDOM.render(
+  <Anchor affix={false}>
+    <Link href="#anchor-demo-basic" title="Basic demo" />
+    <Link href="#anchor-demo-location" title="Fixed demo" />
+    <Link href="#api" title="API">
+      <Link href="#anchor-props" title="Anchor Props" />
+      <Link href="#link-props" title="Link Props" />
+    </Link>
+  </Anchor>,
+  document.getElementById('anchor-demo-location'));
+"""

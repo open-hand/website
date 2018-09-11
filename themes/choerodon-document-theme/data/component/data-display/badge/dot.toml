@@ -1,0 +1,41 @@
+id= "badge-demo-dot"
+right= true
+weight= 2
+name= "讨嫌的小红点"
+description= "没有具体的数字。"
+code= """
+````jsx
+import { Badge, Icon } from 'choerodon-ui';
+
+ReactDOM.render(
+  <div>
+    <Badge dot>
+      <Icon type="notification" />
+    </Badge>
+    <Badge count={0} dot>
+      <Icon type="notification" />
+    </Badge>
+    <Badge dot>
+      <a href="#">Link something</a>
+    </Badge>
+  </div>,
+  mountNode);
+````
+"""
+script= """
+const { Badge, Icon } = window['choerodon-ui'];
+
+ReactDOM.render(
+  <div>
+    <Badge dot>
+      <Icon type="notification" />
+    </Badge>
+    <Badge count={0} dot>
+      <Icon type="notification" />
+    </Badge>
+    <Badge dot>
+      <a href="#">Link something</a>
+    </Badge>
+  </div>,
+  document.getElementById('badge-demo-dot'));
+"""

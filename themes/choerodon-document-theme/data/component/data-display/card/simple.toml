@@ -1,0 +1,28 @@
+id= "card-demo-simple"
+weight= 3
+name= "简洁卡片"
+description= "只包含内容区域。"
+code= """
+````jsx
+import { Card } from 'choerodon-ui';
+
+ReactDOM.render(
+  <Card style={{ width: 300 }}>
+    <p>Card content</p>
+    <p>Card content</p>
+    <p>Card content</p>
+  </Card>,
+  mountNode);
+````
+"""
+script= """
+const { Card } = window['choerodon-ui'];
+
+ReactDOM.render(
+  <Card style={{ width: 300 }}>
+    <p>Card content</p>
+    <p>Card content</p>
+    <p>Card content</p>
+  </Card>,
+  document.getElementById('card-demo-simple'));
+"""

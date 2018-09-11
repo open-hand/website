@@ -1,0 +1,31 @@
+id= "carousel-demo-autoplay"
+right= true
+weight= 2
+name= "自动切换"
+description= "定时切换下一张。"
+code= """
+````jsx
+import { Carousel } from 'choerodon-ui';
+
+ReactDOM.render(
+  <Carousel autoplay>
+    <div><h3>1</h3></div>
+    <div><h3>2</h3></div>
+    <div><h3>3</h3></div>
+    <div><h3>4</h3></div>
+  </Carousel>,
+  mountNode);
+````
+"""
+script= """
+const { Carousel } = window['choerodon-ui'];
+
+ReactDOM.render(
+  <Carousel autoplay>
+    <div><h3>1</h3></div>
+    <div><h3>2</h3></div>
+    <div><h3>3</h3></div>
+    <div><h3>4</h3></div>
+  </Carousel>,
+  document.getElementById('carousel-demo-autoplay'));
+"""

@@ -1,0 +1,29 @@
+id= "progress-demo-circle-mini"
+right= true
+weight= 2
+name= "小型进度圈"
+description= "小一号的圈形进度。"
+code= """
+````jsx
+import { Progress } from 'choerodon-ui';
+
+ReactDOM.render(
+  <div>
+    <Progress type="circle" percent={30} width={80} />
+    <Progress type="circle" percent={70} width={80} status="exception" />
+    <Progress type="circle" percent={100} width={80} />
+  </div>,
+  mountNode);
+````
+"""
+script= """
+const { Progress } = window['choerodon-ui'];
+
+ReactDOM.render(
+  <div>
+    <Progress type="circle" percent={30} width={80} />
+    <Progress type="circle" percent={70} width={80} status="exception" />
+    <Progress type="circle" percent={100} width={80} />
+  </div>,
+  document.getElementById('progress-demo-circle-mini'));
+"""

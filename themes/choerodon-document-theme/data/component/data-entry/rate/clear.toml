@@ -1,0 +1,29 @@
+id= "rate-demo-clear"
+left= true
+weight= 3
+name= "清除"
+description= "支持允许或者禁用清除。"
+code= """
+````jsx
+import { Rate } from 'choerodon-ui';
+
+ReactDOM.render(
+  <div>
+    <Rate defaultValue={3} /> allowClear: true
+    <br />
+    <Rate allowClear={false} defaultValue={3} /> allowClear: false
+  </div>,
+  mountNode);
+````
+"""
+script= """
+const { Rate } = window['choerodon-ui'];
+
+ReactDOM.render(
+  <div>
+    <Rate defaultValue={3} /> allowClear: true
+    <br />
+    <Rate allowClear={false} defaultValue={3} /> allowClear: false
+  </div>,
+  document.getElementById('rate-demo-clear'));
+"""

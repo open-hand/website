@@ -1,0 +1,79 @@
+id= "cascader-demo-disabled-option"
+left= true
+weight= 3
+name= "禁用选项"
+description= "通过指定 options 里的 `disabled` 字段。"
+code= """
+````jsx
+import { Cascader } from 'choerodon-ui';
+
+const options = [{
+  value: 'zhejiang',
+  label: 'Zhejiang',
+  children: [{
+    value: 'hangzhou',
+    label: 'Hangzhou',
+    children: [{
+      value: 'xihu',
+      label: 'West Lake',
+    }],
+  }],
+}, {
+  value: 'jiangsu',
+  label: 'Jiangsu',
+  disabled: true,
+  children: [{
+    value: 'nanjing',
+    label: 'Nanjing',
+    children: [{
+      value: 'zhonghuamen',
+      label: 'Zhong Hua Men',
+    }],
+  }],
+}];
+
+function onChange(value) {
+  console.log(value);
+}
+
+ReactDOM.render(
+  <Cascader options={options} onChange={onChange} />,
+  mountNode);
+````
+"""
+script= """
+const { Cascader } = window['choerodon-ui'];
+
+const options = [{
+  value: 'zhejiang',
+  label: 'Zhejiang',
+  children: [{
+    value: 'hangzhou',
+    label: 'Hangzhou',
+    children: [{
+      value: 'xihu',
+      label: 'West Lake',
+    }],
+  }],
+}, {
+  value: 'jiangsu',
+  label: 'Jiangsu',
+  disabled: true,
+  children: [{
+    value: 'nanjing',
+    label: 'Nanjing',
+    children: [{
+      value: 'zhonghuamen',
+      label: 'Zhong Hua Men',
+    }],
+  }],
+}];
+
+function onChange(value) {
+  console.log(value);
+}
+
+ReactDOM.render(
+  <Cascader options={options} onChange={onChange} />,
+  document.getElementById('cascader-demo-disabled-option'));
+"""

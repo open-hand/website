@@ -32,7 +32,7 @@ $(".navbar-buttons button").on("click", function () {
 jQuery('.navbar-collapse .haschildren').hover(function (e) {
     $(this).children('ul').toggleClass("none block");
 }, function (e) {
-    $(this).children('ul').toggleClass("none block");
+    $(this).children('ul').removeClass("block");
 });
 // 导航栏子菜单结束
 // 导航栏动态渲染
@@ -564,9 +564,10 @@ jQuery('.navbar .global-language').hover(function (e) {
 // 移除html锚点的移动效果
 jQuery(document).ready(function () {
     if (isPC && window.location.hash){
-        var navHeight = $("#navigation").css("height");
-    
-        $("html, body").animate({ scrollTop: $(decodeURIComponent(window.location.hash)).offset().top - navHeight.split("px")[0] }, 500);
+        $(".content-post a").click(function () {
+            var navHeight = $("#navigation").css("height");
+            $("html, body").animate({ scrollTop: $(decodeURIComponent(window.location.hash)).offset().top - navHeight.split("px")[0] }, 500);
+        });
     }
 });
 

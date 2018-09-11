@@ -65,4 +65,6 @@ weight = 2
 - [容器管理](../container)
 - [网络管理](../service)
 - [实例管理](../instance)
+- [容器管理](../container)
+- [证书管理](../certificate)
 

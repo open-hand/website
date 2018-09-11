@@ -1,0 +1,72 @@
+id= "card-demo-inner"
+weight= 8
+name= "内部卡片"
+description= "可以放在普通卡片内部，展示多层级结构的信息。"
+code= """
+````jsx
+import { Card } from 'choerodon-ui';
+
+ReactDOM.render(
+  <Card title="Card title">
+    <p
+      style={{
+        fontSize: 14,
+        color: 'rgba(0, 0, 0, 0.85)',
+        marginBottom: 16,
+        fontWeight: 500,
+      }}
+    >
+      Group title
+    </p>
+    <Card
+      type="inner"
+      title="Inner Card title"
+      extra={<a href="#">More</a>}
+    >
+      Inner Card content
+    </Card>
+    <Card
+      style={{ marginTop: 16 }}
+      type="inner"
+      title="Inner Card title"
+      extra={<a href="#">More</a>}
+    >
+      Inner Card content
+    </Card>
+  </Card>,
+  mountNode);
+````
+"""
+script= """
+const { Card } = window['choerodon-ui'];
+
+ReactDOM.render(
+  <Card title="Card title">
+    <p
+      style={{
+        fontSize: 14,
+        color: 'rgba(0, 0, 0, 0.85)',
+        marginBottom: 16,
+        fontWeight: 500,
+      }}
+    >
+      Group title
+    </p>
+    <Card
+      type="inner"
+      title="Inner Card title"
+      extra={<a href="#">More</a>}
+    >
+      Inner Card content
+    </Card>
+    <Card
+      style={{ marginTop: 16 }}
+      type="inner"
+      title="Inner Card title"
+      extra={<a href="#">More</a>}
+    >
+      Inner Card content
+    </Card>
+  </Card>,
+  document.getElementById('card-demo-inner'));
+"""

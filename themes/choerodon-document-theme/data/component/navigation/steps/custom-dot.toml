@@ -1,0 +1,44 @@
+id= "steps-custom-dot"
+weight= 9
+name= "自定义点状步骤条"
+description= "为点状步骤条增加自定义展示。"
+code= """
+````jsx
+import { Steps, Popover } from 'choerodon-ui';
+const Step = Steps.Step;
+
+const customDot = (dot, { status, index }) => (
+  <Popover content={<span>step {index} status: {status}</span>}>
+    {dot}
+  </Popover>
+);
+
+ReactDOM.render(
+  <Steps current={1} progressDot={customDot}>
+    <Step title="Finished" description="You can hover on the dot." />
+    <Step title="In Progress" description="You can hover on the dot." />
+    <Step title="Waiting" description="You can hover on the dot." />
+    <Step title="Waiting" description="You can hover on the dot." />
+  </Steps>,
+  mountNode);
+````
+"""
+script= """
+const { Steps, Popover } = window['choerodon-ui'];
+const Step = Steps.Step;
+
+const customDot = (dot, { status, index }) => (
+  <Popover content={<span>step {index} status: {status}</span>}>
+    {dot}
+  </Popover>
+);
+
+ReactDOM.render(
+  <Steps current={1} progressDot={customDot}>
+    <Step title="Finished" description="You can hover on the dot." />
+    <Step title="In Progress" description="You can hover on the dot." />
+    <Step title="Waiting" description="You can hover on the dot." />
+    <Step title="Waiting" description="You can hover on the dot." />
+  </Steps>,
+  document.getElementById('steps-custom-dot'));
+"""

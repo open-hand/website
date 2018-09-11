@@ -1,0 +1,29 @@
+id= "input-number-demo-digit"
+right= true
+weight= 1
+name= "小数"
+description= "和原生的数字输入框一样，value 的精度由 step 的小数位数决定。"
+code= """
+````jsx
+import { InputNumber } from 'choerodon-ui';
+
+function onChange(value) {
+  console.log('changed', value);
+}
+
+ReactDOM.render(
+  <InputNumber label="小数" min={0} max={10} step={0.1} onChange={onChange} />,
+  mountNode);
+````
+"""
+script= """
+const { InputNumber } = window['choerodon-ui'];
+
+function onChange(value) {
+  console.log('changed', value);
+}
+
+ReactDOM.render(
+  <InputNumber label="小数" min={0} max={10} step={0.1} onChange={onChange} />,
+  document.getElementById('input-number-demo-digit'));
+"""

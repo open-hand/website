@@ -17,77 +17,7 @@ weight = 4
 
 ## 代码演示
 
-<div class="c7n-row">
-    <div class="c7n-row-6">
-        <section class="code-box">
-            <section class="code-box-demo"><div id="notification-demo-basic"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>基本</a></div>
-                <div>
-                    <p>最简单的用法，4.5 秒后自动关闭。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="notification-demo-icon"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>带有图标的通知提醒框</a></div>
-                <div>
-                    <p>通知提醒框左侧有图标。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="notification-demo-custom"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>自定义图标</a></div>
-                <div>
-                    <p>图标可以被自定义。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="notification-demo-style"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>自定义样式</a></div>
-                <div>
-                    <p>使用 style 和 className 来定义样式。</p>
-                </div>
-            </section>
-        </section>
-    </div>
-    <div class="c7n-row-6">
-        <section class="code-box">
-            <section class="code-box-demo"><div id="notification-demo-delay"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>自定义关闭的延时</a></div>
-                <div>
-                    <p>自定义通知框自动关闭的延时，默认<code>4.5s</code>，取消自动关闭只要将该值设为 <code>0</code> 即可。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="notification-demo-button"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>自定义按钮</a></div>
-                <div>
-                    <p>自定义关闭按钮的样式和文字。</p>
-                </div>
-            </section>
-        </section>
-        <section class="code-box">
-            <section class="code-box-demo"><div id="notification-demo-location"></div></section>
-            <section class="code-box-meta">
-                <div class="code-box-title"><a>位置</a></div>
-                <div>
-                    <p>可以设置通知从右上角、右下角、左下角、左上角弹出。</p>
-                </div>
-            </section>
-        </section>
-    </div>
-</div>
-
-{{< components-notification >}}
+{{< components feedback notification >}}
 
 ## API
 

@@ -1,0 +1,37 @@
+id= "anchor-demo-basic"
+left= true
+weight= 1
+name= "基本"
+description= "最简单的用法。"
+code= """
+````jsx
+import { Anchor } from 'choerodon-ui';
+const { Link } = Anchor;
+
+ReactDOM.render(
+  <Anchor>
+    <Link href="#anchor-demo-basic" title="Basic demo" />
+    <Link href="#anchor-demo-location" title="Fixed demo" />
+    <Link href="#api" title="API">
+      <Link href="#anchor-props" title="Anchor Props" />
+      <Link href="#link-props" title="Link Props" />
+    </Link>
+  </Anchor>,
+  mountNode);
+````
+"""
+script= """
+const { Anchor } = window['choerodon-ui'];
+const { Link } = Anchor;
+
+ReactDOM.render(
+  <Anchor>
+    <Link href="#anchor-demo-basic" title="Basic demo" />
+    <Link href="#anchor-demo-location" title="Fixed demo" />
+    <Link href="#api" title="API">
+      <Link href="#anchor-props" title="Anchor Props" />
+      <Link href="#link-props" title="Link Props" />
+    </Link>
+  </Anchor>,
+  document.getElementById('anchor-demo-basic'));
+"""

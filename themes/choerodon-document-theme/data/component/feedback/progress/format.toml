@@ -1,0 +1,27 @@
+id= "progress-demo-format"
+left= true
+weight= 4
+name= "自定义文字格式"
+description= "`format` 属性指定格式。"
+code= """
+````jsx
+import { Progress } from 'choerodon-ui';
+
+ReactDOM.render(
+  <div>
+    <Progress type="circle" percent={75} format={percent => `${percent} Days`} />
+    <Progress type="circle" percent={100} format={() => 'Done'} />
+  </div>,
+  mountNode);
+````
+"""
+script= """
+const { Progress } = window['choerodon-ui'];
+
+ReactDOM.render(
+  <div>
+    <Progress type="circle" percent={75} format={percent => `${percent} Days`} />
+    <Progress type="circle" percent={100} format={() => 'Done'} />
+  </div>,
+  document.getElementById('progress-demo-format'));
+"""

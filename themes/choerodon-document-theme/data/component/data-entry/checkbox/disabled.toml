@@ -1,0 +1,29 @@
+id= "checkbox-demo-disabled"
+right= true
+weight= 1
+name= "不可用"
+description= "checkbox 不可用。"
+code= """
+````jsx
+import { Checkbox } from 'choerodon-ui';
+
+ReactDOM.render(
+  <div>
+    <Checkbox defaultChecked={false} disabled />
+    <br />
+    <Checkbox defaultChecked disabled />
+  </div>,
+  mountNode);
+````
+"""
+script= """
+const { Checkbox } = window['choerodon-ui'];
+
+ReactDOM.render(
+  <div>
+    <Checkbox defaultChecked={false} disabled />
+    <br />
+    <Checkbox defaultChecked disabled />
+  </div>,
+  document.getElementById('checkbox-demo-disabled'));
+"""
