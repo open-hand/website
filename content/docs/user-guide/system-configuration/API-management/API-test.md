@@ -27,6 +27,9 @@ API测试需要与应用程序的API进行交互，测试时通过工具调用�
 
 1. 在列表的过滤框中，输入关键字搜索controller。
 1. 点击controller，展开该controller下的所有API接口，API接口的信息如下：
+
+    <img class="no-border" src="/docs/user-guide/system-configuration/API-management/image/api1.png"/>
+
     - 方法：
         - GET（SELECT）：从服务器取出资源（一项或多项）。
         - POST（CREATE）：在服务器新建一个资源。
@@ -59,6 +62,7 @@ API的测试要点：
 步骤：
 
 1. 点击API接口的查看详情按钮→<img class="no-border" src="/docs/user-guide/system-configuration/API-management/image/particulars.png"/>,进入到API测试页面。
+    <img class="no-border" src="/docs/user-guide/system-configuration/API-management/image/api2.png"/>
 
 1. 点击接口详情，可以查看API接口的详细信息，包括接口基本信息、请求参数信息、响应数据信息。
     - 接口信息：
@@ -81,6 +85,7 @@ API的测试要点：
         响应数据以json的格式进行定义。展示了返回的参数和参数值的数据类型的信息。并且添加了注释，使用户能参照参数的说明
 
 1. 点击接口测试，可以输入请求参数值进行接口测试。
+     <img class="no-border" src="/docs/user-guide/system-configuration/API-management/image/api3.png"/>
 
 1. 如果参数名称有红色星号，则表示该参数为必输项。根据请求数据的类型填入合适的请求数据。路径默认为接口信息的路径，用户也可以根据需求修改路径。
 

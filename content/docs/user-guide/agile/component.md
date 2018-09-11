@@ -1,7 +1,7 @@
 ﻿+++
 title = "模块管理"
 description = "根据项目需求，可以分拆为多个模块，每个模块可以进行负责人划分，配置后可以将项目中的问题归类到对应的模块中。例如“后端任务”，“基础架构”等等"
-weight = 5
+weight = 6
 +++
 
 # 模块管理
@@ -14,7 +14,7 @@ weight = 5
 
 ## 创建模块
 
-![enter description here](/docs/user-guide/agile/imge/image32.png)
+![enter description here](/docs/user-guide/agile/imge/component.png)
 
 1.点击页面上方`创建模块`按钮，右侧会滑出创建模块的页面，输入模块名称（必输）、负责人（必输）、模块描述（可选）、默认经办人（必输），点击`确定`即可创建一个新的模块。
 

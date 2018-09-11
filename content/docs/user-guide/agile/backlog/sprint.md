@@ -16,7 +16,7 @@ weight = 5
 
 ## 创建冲刺
 
-![enter description here](/docs/user-guide/agile/imge/image19.png)
+![enter description here](/docs/user-guide/agile/imge/create-springt.png)
 
 1. 点击`创建冲刺`按钮，直接在`待办事项`页面里创建一个冲刺。
 

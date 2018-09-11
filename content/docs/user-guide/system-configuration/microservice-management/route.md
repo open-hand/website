@@ -16,6 +16,8 @@ description = "用于管理平台路由"
 
 输入`路由名称`，`路径`，`对应微服务`，创建默认最简路由，步骤如下。
 
+![](/docs/user-guide/system-configuration/microservice-management/image/create-route.png) 
+
 1. 点击`创建路由`按钮；
 1. 输入`路由名称`，`路径`，`对应微服务`，点击创建按钮；
 
@@ -25,8 +27,10 @@ description = "用于管理平台路由"
 
 
 ## 修改路由
-1. 预定义路由无法修改；
-1. 点击`修改路由`→ ![修改按钮](/docs/user-guide/system-configuration/microservice-management/image/update.png) 按钮 ，进行路由信息的修改。
+
+点击`修改路由`→ ![修改按钮](/docs/user-guide/system-configuration/microservice-management/image/update.png) 按钮 ，进行路由信息的修改。
+
+![](/docs/user-guide/system-configuration/microservice-management/image/fix-route.png) 
 
 不可修改字段：
 
@@ -41,6 +45,10 @@ description = "用于管理平台路由"
 - 是否过滤敏感头信息：选中是，表示有敏感头信息；选中否，表示无敏感头信息。有敏感头信息时，需要填写敏感头信息。
 - 敏感头信息：请求转发时，会将Headers中的敏感信息随HTTP转发，如果想过滤一些敏感信息，请选则是，并填写敏感头信息。填写后按回车键表示一个敏感头。可以填写一个或多个敏感头。
 - Helper服务名：该路由规则对应的自定义网关处理器服务，默认为gateway-helper。
+
+<blockquote class="note">
+           预定义路由无法修改。
+      </blockquote>
 
 ## 删除路由
 

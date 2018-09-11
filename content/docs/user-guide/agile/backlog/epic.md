@@ -14,7 +14,7 @@ weight = 4
 
 ## 创建史诗
 
-![enter description here](/docs/user-guide/agile/imge/image16.png)
+![enter description here](/docs/user-guide/agile/imge/epic.png)
 
  1. 进入史诗列表，点击某个史诗名称，会显示出该史诗问题总数、已完成问题数、未预估问题数及预估故事点
  2. 点击`详情`，会在右侧显示出该史诗下的问题列表。

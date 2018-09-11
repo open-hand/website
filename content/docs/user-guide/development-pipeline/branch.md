@@ -24,6 +24,8 @@ weight = 2
 
 我们主要采用 [`github-flow`](https://guides.github.com/introduction/flow/) 作为我们的分支管理策略的主体。并在此基础上，参考了一些其他策略，对开发者的开发分支做了一定程度上的细分。
 
+![](/docs/user-guide/development-pipeline/image/flow.jpg) 
+
 具体介绍如下。
 
 1. 主分支 `master`

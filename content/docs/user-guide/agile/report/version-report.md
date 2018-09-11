@@ -30,6 +30,8 @@ weight = 4
     - `已完成故事点`：版本下的已完成问题故事点总和
     - `未预估问题的百分比`：版本下的未预估问题占问题总数的百分比
 
+    ![image](/docs/user-guide/agile/report/img/version.png)
+
 ### 报告详情
 
 - **报告详情模块**

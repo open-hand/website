@@ -10,7 +10,7 @@ weight = 3
 
 它提供了可以设置（或拒绝）的各种权限，例如“查看”权限（查看页面的能力），“编辑”权限（编辑页面内容的能力），“删除”权限（删除页面的能力）或“管理”权限（管理页面的能力）等。
 
-![enter description here](/docs/user-guide/wiki/image/image17.png)
+![enter description here](/docs/user-guide/wiki/image/page-hierarchy.png)
 
 1. 显示小组团队列表。
 2. 点击`user`可切换至用户权限设置。

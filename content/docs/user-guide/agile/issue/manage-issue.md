@@ -8,7 +8,7 @@ weight = 2
 
 问题处理是指对一个问题进行具体操作，包括查看、设置标签、添加描述等，通过此页面您将了解到如何寻找到一个问题、对问题进行具体处理，以及如何与团队展开关于这个问题的合作。
 
-![enter description here](/docs/user-guide/agile/imge/image6.png "image6")
+![enter description here](/docs/user-guide/agile/imge/manage-issue.png "image6")
 
 1. 点击此处[创建一个新问题](../create-issue)。
 2. 显示问题状态，默认有`待处理`、`处理中`、`已完成`三种，用户可自定义状态，详情请参考[设置列](../../sprint/manage-kanban#设置列)。
@@ -90,7 +90,7 @@ weight = 2
 - 在编辑一个问题时，您可以为该问题设置一个预计的处理时间，该时间会以剩余时间的形式显示在问题详情页面的问题概要下方。
 - 您可以通过`登记工作`或`登记工作日志`来记录您每次处理问题所耗时间，系统会自动核减时间，显示出该问题最新的剩余时间。
 
-![enter description here](/docs/user-guide/agile/imge/image20.png)
+![enter description here](/docs/user-guide/agile/imge/estimated-time.png)
 
 1. 登记您此次工作所用时间。
 2. 选择此次工作开始的日期。
@@ -135,7 +135,7 @@ weight = 2
 - 点击issue详情页面的![enter description here](/docs/user-guide/agile/imge/image1.png "image1")图标，找到`复制问题`。
 - 点击`复制问题`弹出详情框，输入问题`概要`（必输），故事点、描述、剩余时间、模块、标签、版本。
 - 若该问题有子任务、冲刺、链接，复制问题时将弹出选择框，用户可根据需求选择是否一起复制子任务、冲刺或链接。
-![enter description here](/docs/user-guide/agile/imge/image52.png)
+![enter description here](/docs/user-guide/agile/imge/copy-issue.png)
 - 复制成功的问题将生成跟原来的问题的复制链接。
 
 ## 导出问题

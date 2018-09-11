@@ -15,7 +15,7 @@ weight = 2
 
 点击发布后，会跳出版本发布页面，如下图所示。
 
-![enter description here](/docs/user-guide/agile/imge/image37.png)
+![enter description here](/docs/user-guide/agile/imge/release-version1.png)
 
 1.显示该版本仍未解决的问题数量。
 

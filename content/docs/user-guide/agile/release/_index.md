@@ -1,7 +1,7 @@
 ﻿+++
 title = "发布版本"
 description = "根据项目周期，您可以对软件项目追踪不同的版本，同时可以将对应的问题分配到版本中"
-weight = 4
+weight = 5
 +++
 
 ## 发布版本
@@ -15,7 +15,7 @@ weight = 4
 
 打开版本发布页面，将看到项目中所有的版本，同时，版本列表将展示出：版本、版本状态、开始日期、结束日期、描述。
 
-![enter description here](/docs/user-guide/agile/imge/image53.png)
+![enter description here](/docs/user-guide/agile/imge/release-version.png)
 
 1.点击`创建发布版本`按钮进入到创建页面，输入版本名称（必输）、开始日期（必输）、结束日期（必输）、版本描述（可选）即可创建一个新的版本。
 

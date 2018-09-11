@@ -8,7 +8,7 @@ weight = 2
 
 通过此页面，您将了解到如何对页面进行编辑以及一些编辑功能的使用方法。
 
-![enter description here](/docs/user-guide/wiki/image/image10.png)
+![enter description here](/docs/user-guide/wiki/image/edict-page.png)
 
 1. 此处可以修改页面的标题。
 2. 通过富文本编辑器，可以编辑和修改Wiki页面的内容。
@@ -26,7 +26,7 @@ weight = 2
 
 您可以通过工具栏为文本添加特殊效果，添加图像，插入链接，添加宏等，在此仅介绍几种效果。
 
-![enter description here](/docs/user-guide/wiki/image/image11.png)
+![enter description here](/docs/user-guide/wiki/image/toolbar.png)
 
 1. 在文本中插入分割线。
 2. 插入文本背景模块，可以选择不同颜色样式。

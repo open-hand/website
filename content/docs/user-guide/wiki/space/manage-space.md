@@ -12,7 +12,7 @@ weight = 2
 
 编辑空间主要是对空间的图标、位置以及主页描述进行更改。
 
-![enter description here](/docs/user-guide/wiki/image/image7.png)
+![enter description here](/docs/user-guide/wiki/image/edict-space.png)
 
 1. 描述，用于描述空间情况。
 2. 添加条目，在此选择添加希望展示在空间主页上的条目。包括：页面标题、页面名称、位置、最近编辑者、创建者、产品数据、创建数据、空间动态、附件、图片。
@@ -23,7 +23,7 @@ weight = 2
 
 在空间主页右上角，点击`更多`，会显示出空间管理菜单。
 
-![enter description here](/docs/user-guide/wiki/image/image8.png)
+![enter description here](/docs/user-guide/wiki/image/manage-page.png)
 
  1. Manage：包括Administer page（页面权限管理）、复制、重命名、删除。
  2. Action：导出、打印预览、查看源码、邮件分享。
@@ -33,11 +33,11 @@ weight = 2
 
 目前支持四种导出模式HTML，PDF，RTF（适用于MS Office）和XAR（XWiki Archive）。
 
-![enter description here](/docs/user-guide/wiki/image/image22.png)
+![enter description here](/docs/user-guide/wiki/image/export.png)
 
 ### 评论
 
-![enter description here](/docs/user-guide/wiki/image/image23.png)
+![enter description here](/docs/user-guide/wiki/image/comment.png)
 
 1. 页面下方会显示出评论者和评论日期等信息。
 2. 点击回复某条评论。

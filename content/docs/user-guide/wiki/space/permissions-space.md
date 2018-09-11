@@ -13,7 +13,7 @@ weight = 4
 
 下图为空间是树状层次结构图。
 
-![enter description here](/docs/user-guide/wiki/image/image21.png)
+![enter description here](/docs/user-guide/wiki/image/pemission-space.png)
 
 1. 点击`空间`会跳出空间树状结构，您可以选择自己想要浏览的空间。
 

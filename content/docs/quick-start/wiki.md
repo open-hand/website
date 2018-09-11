@@ -27,7 +27,7 @@ Choerodon知识管理服务是一个轻量级的强大Wiki平台，允许用户�
  
 空间是wiki页面的集成，一个空间可以包括很多项目和页面。
 
-![enter description here](/docs/user-guide/wiki/image/image3.png)
+![enter description here](/docs/user-guide/wiki/image/create-space.png)
 
 1. 在组织设置菜单栏中点击`wiki管理`，进入wiki管理页面
 2. 点击`创建空间`，会弹出空间创建页面，选择空间图标，填写空间名称，单击创建即可。
@@ -42,7 +42,7 @@ Choerodon知识管理服务是一个轻量级的强大Wiki平台，允许用户�
 
 在空间主页右上角，点击`更多`，会显示出空间管理菜单。
 
-![enter description here](/docs/user-guide/wiki/image/image8.png)
+![enter description here](/docs/user-guide/wiki/image/manage-page.png)
 
  1. Manage：包括Administer page（页面权限管理）、复制、重命名、删除。
  2. Action：导出、打印预览、查看源码、邮件分享。
@@ -56,7 +56,7 @@ Choerodon知识管理服务是一个轻量级的强大Wiki平台，允许用户�
 
 在空间主页中，您能快速创建一个页面，并对页面进行编辑和管理。想要了解更多关于编辑、管理页面的内容，请点击[编辑页面](../../user-guide/wiki/page/edict-page) 查看。
 
-![enter description here](/docs/user-guide/wiki/image/image9.png)
+![enter description here](/docs/user-guide/wiki/image/create-page.png)
 
 1. 点击`创建`，进入创建的页面。
 2. 填写页面标题。
@@ -69,7 +69,7 @@ Choerodon知识管理服务是一个轻量级的强大Wiki平台，允许用户�
 
 通过此页面，您将了解到如何对页面进行编辑以及一些编辑功能的使用方法。
 
-![enter description here](/docs/user-guide/wiki/image/image10.png)
+![enter description here](/docs/user-guide/wiki/image/edict-page.png)
 
 1. 此处可以修改页面的标题。
 2. 通过富文本编辑器，可以编辑和修改Wiki页面的内容。
@@ -87,7 +87,7 @@ Choerodon知识管理服务是一个轻量级的强大Wiki平台，允许用户�
 
 点击页面右上角的`更多`，然后点击`Administer page`会跳转至页面管理页面。
 
-![enter description here](/docs/user-guide/wiki/image/image12.png)
+![enter description here](/docs/user-guide/wiki/image/manage-page1.png)
  
 1. 外观和感觉：更改wiki的外观和布局。
 2. 用户和权限：管理用户、小组及其访问权限。
@@ -98,7 +98,7 @@ Choerodon知识管理服务是一个轻量级的强大Wiki平台，允许用户�
 
 点击页面右上角的`更多`，然后点击`Administer page`跳转至页面管理页面，点击`Users & Rights`。
 
-![enter description here](/docs/user-guide/wiki/image/image17.png)
+![enter description here](/docs/user-guide/wiki/image/page-hierarchy.png)
 
 1. 显示小组团队列表。
 2. 点击`user`可切换至用户权限设置。

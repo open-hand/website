@@ -28,7 +28,7 @@ weight = 2
 看板包括问题泳道和流程列，一个板显示了一个或多个项目的问题，给你一种灵活的观察和管理方式，对工作进行进度管理。
 
 
-![enter description here](/docs/user-guide/agile/imge/image21.png)
+![enter description here](/docs/user-guide/agile/imge/kanban.png)
 
 1. 点击此处[创建一个新看板](../sprint/create-kanban)
 2. 点击此处下拉菜单选择你想要查看的看板。
