@@ -18,7 +18,7 @@ weight = 1
 
 在空间主页中，您能快速创建一个页面，并对页面进行编辑和管理。想要了解更多关于编辑、管理页面的内容，请点击[编辑页面](../edict-page) 查看。
 
-![enter description here](/docs/user-guide/wiki/image/image9.png)
+![enter description here](/docs/user-guide/wiki/image/create-page.png)
 
 1. 点击`创建`，进入创建的页面。
 2. 填写页面标题。

@@ -8,7 +8,7 @@ weight = 1
 
 通过此页面，您将了解看板各功能，以及如何使用一块看板去管理项目工作。
 
-![enter description here](/docs/user-guide/agile/imge/image22.png)
+![enter description here](/docs/user-guide/agile/imge/use-kanban.png)
 
 1. 页面上方`创建看板`旁边的下拉框可切换项目下的不同看板。
 2. 看板中，所有问题都可从某一列拖拽至其他列的任一状态中，同时该问题的状态也会随之更改。 

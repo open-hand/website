@@ -18,26 +18,30 @@ LDAP是轻量目录访问协议。LDAP管理是对组织应用的LDAP信息设�
 
 #### 服务器设置
 
-- 目录类型：平台目前提供了两种常用的目录类型可供选择。
+  ![](/docs/user-guide/system-configuration/tenant/image/setting-server.png)
 
-    1. Microsoft Active Director：微软Windows Server中，负责架构中大型网络环境的集中式目录管理服务。
+1. 目录类型：平台目前提供了两种常用的目录类型可供选择。
 
-    1. OpenLDAP：由OpenLDAP项目开发的轻量级目录访问协议（LDAP）的免费开源实现。
+    - Microsoft Active Director：微软Windows Server中，负责架构中大型网络环境的集中式目录管理服务。
 
-- 主机名：运行 LDAP 的服务器主机名。例如，ldap.example.com。
-- 是否使用SSL：此选项会影响端口号。
-- 端口号：使用SSL时，端口号是636，不使用SSL时，端口号是389。
-- 基准DN：从LDAP根节点搜索用户。例如，cn=users,dc=example,dc=com。
-- 管理员登录名：拥有LDAP管理员权限的用户登录到 LDAP的登录名。例如，user@domain.name 或 cn =用户, dc =域、dc =名称。
-- 管理员密码：拥有LDAP管理员权限的用户登录到LDAP的密码。
+    - OpenLDAP：由OpenLDAP项目开发的轻量级目录访问协议（LDAP）的免费开源实现。
+
+1. 主机名：运行 LDAP 的服务器主机名。例如，ldap.example.com。
+1. 是否使用SSL：此选项会影响端口号。
+1. 端口号：使用SSL时，端口号是636，不使用SSL时，端口号是389。
+1. 基准DN：从LDAP根节点搜索用户。例如，cn=users,dc=example,dc=com。
+1. 管理员登录名：拥有LDAP管理员权限的用户登录到 LDAP的登录名。例如，user@domain.name 或 cn =用户, dc =域、dc =名称。
+1. 管理员密码：拥有LDAP管理员权限的用户登录到LDAP的密码。
 
 #### 用户属性设置
 
-- 用户对象类:加载用户时使用的LDAP用户对象类。
-- 登录名属性：与平台中用户的登录名相匹配的LDAP字段。例如，cn、sAMAccountName、LoginName。
-- 邮箱属性：与用户的邮箱属性相匹配的LDAP字段。例如，email。
-- 用户名属性：与用户的用户名相匹配的LDAP字段。例如，username。
-- 手机号属性：与用户的手机号相匹配的LDAP字段。例如，phonenumber。
+  ![](/docs/user-guide/system-configuration/tenant/image/setting-attribute.png)
+
+1. 用户对象类:加载用户时使用的LDAP用户对象类。
+1. 登录名属性：与平台中用户的登录名相匹配的LDAP字段。例如，cn、sAMAccountName、LoginName。
+1. 邮箱属性：与用户的邮箱属性相匹配的LDAP字段。例如，email。
+1. 用户名属性：与用户的用户名相匹配的LDAP字段。例如，username。
+1. 手机号属性：与用户的手机号相匹配的LDAP字段。例如，phonenumber。
 
 ## 测试连接
 

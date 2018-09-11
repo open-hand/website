@@ -11,7 +11,7 @@ weight = 2
 在待办事项中，您能快速创建一个问题，并对问题进行编辑和分配，将其划分到某一版本和史诗中。想要了解更多关于创建、编辑和协作问题的内容，请点击[问题管理](../../issue) 查看。
 
 
-![enter description here](/docs/user-guide/agile/imge/image18.png)
+![enter description here](/docs/user-guide/agile/imge/create-issue.png)
 
 1. 点击`创建问题`，选择问题类型，输入问题概要即可快速创建一个问题。
 2. 点击创建好的问题，会弹出问题详情编辑页面，可对问题的优先级、模块、标签、经办人等进行编辑，同时能对问题进行描述，上传附件、添加评论和创建子任务。

@@ -13,7 +13,7 @@ weight = 2
 
 ## 创建一个空间
 
-![enter description here](/docs/user-guide/wiki/image/image3.png)
+![enter description here](/docs/user-guide/wiki/image/create-space.png)
 
 1. 在组织设置菜单栏中点击`wiki管理`，进入wiki管理页面
 2. 点击`创建空间`，会弹出空间创建页面，选择空间图标，填写空间名称，单击创建即可。

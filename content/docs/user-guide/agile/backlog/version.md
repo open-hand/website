@@ -14,7 +14,7 @@ weight = 3
 
 ## 创建版本
 
-![enter description here](/docs/user-guide/agile/imge/image15.png)
+![enter description here](/docs/user-guide/agile/imge/create-version.png)
 
  1. 进入项目版本列表，点击某个项目，会显示出该版本的开始日期、发布日期、当前版本中的问题总数、未完成问题数及预估故事点。
  2. 点击`详情`，会在右侧显示出该版本下的问题列表。

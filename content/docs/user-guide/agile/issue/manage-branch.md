@@ -12,7 +12,7 @@ weight = 4
 
 更多关于开发分支的介绍，请查看[**开发流水线分支管理**](../../../development-pipeline)
 
-![enter description here](/docs/user-guide/agile/imge/image49.png)
+![enter description here](/docs/user-guide/agile/imge/manage-branch.png)
 
 1. 点击此处创建分支
 2. 点击`提交`进入关联分支页面
@@ -24,7 +24,7 @@ weight = 4
 
 点击创建分支，可看到分支创建界面
 
-![enter description here](/docs/user-guide/agile/imge/image48.png )
+![enter description here](/docs/user-guide/agile/imge/create-branch.png )
 
 1. `应用名称`：选择项目下的应用 
 2. `分支来源`：选择一个项目下已有的分支，新建的分支将依据此来源分支创建。
@@ -48,7 +48,7 @@ weight = 4
 - `分支`：关联的分支名称
 - `提交数`:该分支提交次数
 - `状态`：分支状态，包括开放，已合并，结束。
-- ![enter description here](/docs/user-guide/agile/imge/image50.png )`创建合并请求图标`：跳转到gitlab页面的合并请求创建页面，在gitlab上创建合并请求。
+- ![enter description here](/docs/user-guide/agile/imge/link-branch.png )`创建合并请求图标`：跳转到gitlab页面的合并请求创建页面，在gitlab上创建合并请求。
     
     跳转到gitlab页面创建合并请求后，在问题详情页面的`创建分支`下将产生一条合并请求数据，包括合并请求数量、状态、更新情况以及更新时间等。点击该合并请求的链接将跳转到[**关联合并请求**](../../../development-pipeline/merge-request)界面。
 
@@ -64,7 +64,7 @@ weight = 4
 - `状态`: 当前合并请求状态
 - `审查人`: 合并请求最后审核人
 - `更新时间`：合并请求最后更新时间
-- ![enter description here](/docs/user-guide/agile/imge/image51.png )`合并请求图标`：跳转到gitlab界面查看[**合并请求**](../../../development-pipeline/merge-request)界面的详细信息，之后可在gitlab界面上操作。
+- ![enter description here](/docs/user-guide/agile/imge/merge-request.png )`合并请求图标`：跳转到gitlab界面查看[**合并请求**](../../../development-pipeline/merge-request)界面的详细信息，之后可在gitlab界面上操作。
 
 ## 更多操作
 - [创建一个问题](../create-issue)

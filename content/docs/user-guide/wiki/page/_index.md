@@ -17,7 +17,7 @@ weight = 1
 页面是Wiki中的基本内容单元，作为内容的承载。
 
 页面通常分为这几个区域。
-![enter description here](/docs/user-guide/wiki/image/image18.png)
+![enter description here](/docs/user-guide/wiki/image/page.png)
 
 1. 显示页面修改信息，包括最后修改时间和修改者。
 2. 页面内容展示。

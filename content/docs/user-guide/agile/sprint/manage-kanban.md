@@ -12,7 +12,7 @@ weight = 3
 
 包括添加列、删除列、移动列以及对列的问题数进行约束设置。
 
-![enter description here](/docs/user-guide/agile/imge/image23.png)
+![enter description here](/docs/user-guide/agile/imge/set-column.png)
 
 ### 1.添加列
 
@@ -61,7 +61,7 @@ weight = 3
 
 ## 设置状态
 
-![enter description here](/docs/user-guide/agile/imge/image24.png)
+![enter description here](/docs/user-guide/agile/imge/set-status.png)
 
 ### 1.添加状态
 
@@ -97,7 +97,7 @@ weight = 3
 
 泳道是指看板中一横排的主板，基于横排对问题进行状态的流转。泳道类型可以在下面进行修改，并将自动保存。注意：修改泳道会修改看板的分组维度，同时修改看板样式。
 
-![enter description here](/docs/user-guide/agile/imge/image45.png)
+![enter description here](/docs/user-guide/agile/imge/set-lane.png)
 
 1. 进入到看板配置界面，点击`泳道`配置。
 2. 点击`基础泳道`下拉框，可看到能配置的`泳道`选项:

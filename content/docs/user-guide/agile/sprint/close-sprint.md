@@ -10,7 +10,7 @@ weight = 5
 
 当冲刺完成迭代后，可在页面右上角点击‘完成冲刺’按钮完成冲刺。此时会弹出冲刺的统计界面，如下图所示：
 
-![enter description here](/docs/user-guide/agile/imge/image35.png)
+![enter description here](/docs/user-guide/agile/imge/end-sprint.png)
 
 1. 显示该冲刺中已完成的问题数量。
 2. 显示该冲刺中未完成的问题数量。

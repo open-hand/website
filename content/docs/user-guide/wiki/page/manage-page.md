@@ -10,7 +10,7 @@ weight = 3
 
 单击页面主页上方的`更多`按钮。
 
-![enter description here](/docs/user-guide/wiki/image/image8.png)
+![enter description here](/docs/user-guide/wiki/image/manage-page.png)
 
  1. Manage：包括Administer page（页面管理）、复制、重命名、删除。
  2. Action：导出、打印预览、查看源码、邮件分享。
@@ -19,7 +19,7 @@ weight = 3
 ## 页面管理
 点击`Administer page`会跳转至页面管理页面。
 
-![enter description here](/docs/user-guide/wiki/image/image12.png)
+![enter description here](/docs/user-guide/wiki/image/manage-page1.png)
  
 1. 外观和感觉：更改wiki的外观和布局。
 2. 用户和权限：管理用户、小组及其访问权限。
@@ -28,7 +28,7 @@ weight = 3
 
 **1.主题：自定义颜色和图标主题，皮肤和标志**
 
-![enter description here](/docs/user-guide/wiki/image/image13.png)
+![enter description here](/docs/user-guide/wiki/image/manage-page2.png)
 
   1. 色彩主题：选择默认使用的颜色主题。
   2. 图标主题：选择默认使用的图标主题，图标来源于Choerodon UI库。
@@ -40,7 +40,7 @@ weight = 3
 
 - **面板布局**
 
-![enter description here](/docs/user-guide/wiki/image/image14.png)
+![enter description here](/docs/user-guide/wiki/image/manage-page3.png)
 
 1. 选择页面布局，可以选择`无边栏`、`右边栏`、`左边栏`和`两列`。
 2. 可以设置左面板栏的宽度，分别有小、中、大三种可选。
@@ -55,7 +55,7 @@ weight = 3
 
 您可以拖放面板以在列中或列之间重新排列它们，要添加或删除面板，分别将面板从可用面板列表中拖到其中一个列中，或者从列中拖到面板列表中。
 
-![enter description here](/docs/user-guide/wiki/image/image15.png)
+![enter description here](/docs/user-guide/wiki/image/manage-page4.png)
 
 1. 面板列表，包括：INFORMATION（信息）、NAVIGATION（导航）、TOOLS（工具）、ADMINISTRATION（管理）、OTHER。
 2. 单击TOOLS（工具）作为示例，您可以将工具面板列表中的`搜索`面板拖入`New Page`这个新页面。
@@ -64,7 +64,7 @@ weight = 3
 
 **3.显示：选择可见的页标签并配置页眉和页脚**
 
-![enter description here](/docs/user-guide/wiki/image/image16.png)
+![enter description here](/docs/user-guide/wiki/image/manage-page5.png)
 
 1. 设置页面选项卡，选择`是`或`否`，包括：文档注释、文档评论、文档附件、文档历史、文档信息。
 2. 定义浏览器看到的页面标题格式。

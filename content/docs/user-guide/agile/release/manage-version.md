@@ -12,7 +12,7 @@ weight = 1
 
 单击版本名称，您将进入版本详情页面，如图所示。
 
-![enter description here](/docs/user-guide/agile/imge/image36.png)
+![enter description here](/docs/user-guide/agile/imge/manage-version.png)
 
 1. 显示该版本的当前状态，`规划中`或者`已发布`。
 2. 显示当前版本的问题数量，包括`已完成`、`正在处理`和`待处理`的问题数量。

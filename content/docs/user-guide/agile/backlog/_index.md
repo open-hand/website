@@ -18,7 +18,7 @@ weight = 1
 
 待办事项（Backlog）是未开始进行的问题列表。您可以创建一个新的待办事项，或者对现有的待办事项进行处理，包括查询、排序、优先级别评估。另外，您也可以为任一史诗创建、分配待办事项，并将该待办事项归属到不同的版本。最重要的是，您可以使用待办事项来计划冲刺，选择优先级高的待办事项作为工作任务，并且估算完成时间、分配经办人、发表评论，以及拆分子任务等。
 
-![enter description here](/docs/user-guide/agile/imge/image14.png "image14")
+![enter description here](/docs/user-guide/agile/imge/backlog.png "backlog")
 
 1. 点击此处可显示项目版本列表，且可创建版本
 2. 点击此处可显示史诗列表，且可创建史诗

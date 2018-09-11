@@ -23,7 +23,7 @@ weight = 3
 
 累积流程图是一个区域图，水平x轴表示时间，垂直y轴表示问题计数，图中不同颜色的区域代表看板中不同的列。
 
-![](/docs/user-guide/agile/imge/image46.png)
+![](/docs/user-guide/agile/imge/cumulative-flow.png)
 
 1. 点击此处切换列表
 2. 修改报告时间，包括`周期`（显示日期的范围）、`开始日期`（报告开始统计的日期）和`结束日期`（报告结束统计的日期）

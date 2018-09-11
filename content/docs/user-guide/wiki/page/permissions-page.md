@@ -10,11 +10,11 @@ weight = 4
 
 例如，你可以在一个页面“Wiki”里面再创建一个“Wiki产品文档”的页面，因此你可以看到页面位置关于如图所示。
 
-![enter description here](/docs/user-guide/wiki/image/image19.png)
+![enter description here](/docs/user-guide/wiki/image/page-permission1.png)
 
 您还能通过页面左侧的树状图，查看当前空间中页面的完整组织层次结构。
 
-![enter description here](/docs/user-guide/wiki/image/image20.png)
+![enter description here](/docs/user-guide/wiki/image/page-permission2.png)
 
 
 ## 更多操作

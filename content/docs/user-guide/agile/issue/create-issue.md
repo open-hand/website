@@ -10,7 +10,7 @@ weight =1
 
 ### 快速创建问题
 
-![enter description here](/docs/user-guide/agile/imge/image12.png )
+![enter description here](/docs/user-guide/agile/imge/create-issue1.png )
 
 1. 点击`创建问题`按钮（在`问题管理`页面上部）进行问题详细创建
 2. 点击问题列表下部的`创建问题`按钮可进行问题快速创建，单击输入问题概要和选择问题类型。
@@ -21,7 +21,7 @@ weight =1
 ### 详细创建问题
 点击`创建问题`按钮（在`问题管理`页面上部）后，会弹出创建问题详情页面，页面如图所示，字段说明见图下方。
 
-![enter description here](/docs/user-guide/agile/imge/image11.png )
+![enter description here](/docs/user-guide/agile/imge/create-issue2.png )
 
 1. 问题类型：选择问题类型，可选`故事`、`故障`、`史诗`、`任务`
 2. 问题概要：问题的标题

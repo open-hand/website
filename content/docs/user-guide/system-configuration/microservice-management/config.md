@@ -21,7 +21,7 @@ description = "配置管理用来集中管理应用的当前环境的配置，�
 
 配置必须以已有的配置为模版，在配置模版基础上进行修改从而生成一个新的配置。创建配置步骤如下。
 
-1. 点击创建配置按钮。
+1. 点击`创建配置`按钮。
 
 1. 选择微服务及填写配置基本信息
 
@@ -29,9 +29,13 @@ description = "配置管理用来集中管理应用的当前环境的配置，�
     - 选择一个配置模版：选择一个属于该微服务的配置，则新配置以该配置为模版，用户可在配置模版的基础上进行修改。
     - 填写配置版本：系统会自动生成一个配置版本，用户也可根据需求自定义配置版本。
 
+    ![](/docs/user-guide/system-configuration/microservice-management/image/config-basic.png) 
+
 1. 修改配置信息
 
     - yml文件从上一步所选的配置模版中获取。用户可基于该yml文件修改配置信息。
+
+    ![](/docs/user-guide/system-configuration/microservice-management/image/config-updata.png) 
 
 1. 确认信息并创建
 
@@ -39,6 +43,8 @@ description = "配置管理用来集中管理应用的当前环境的配置，�
     - 配置ID：系统自动生成，全平台唯一，是配置的标志，用户无法修改。配置版本：用户自定义。所属微服务：新创建的配置属于的微服务。
     - 配置yml详细信息：上一步中配置的yml文件，确认信息时为只读形式，如需修改请返回上一步进行修改。
     - 确认信息无误后，点击‘创建’按钮。
+
+    ![](/docs/user-guide/system-configuration/microservice-management/image/config-confirm.png) 
 
 ## 基于一个已有配置创建
 
@@ -56,6 +62,8 @@ description = "配置管理用来集中管理应用的当前环境的配置，�
     - yml文件从上一步所选的配置模版中获取。用户可基于该yml文件修改配置信息。
 
 1. 确认信息并创建
+
+![](/docs/user-guide/system-configuration/microservice-management/image/config.png) 
 
 ## 设置默认配置
 

@@ -8,6 +8,10 @@ weight = 7
 
 欢迎使用 Choerodon 猪齿鱼部署流水线用户手册，如果您是部署管理员，项目成员或者项目所有者，这些文档将对您有用。
 
+借助部署流水线，用户客户可以方便地管理各种使用Choerodon开发部署的应用服务，包括应用启停、状态监控，以及应用对应的版本控制、容器管理等，同时还包括应用涉及到的各种资源管理，例如网络、域名、数据库服务、缓存服务等。
+
+![](/docs/user-guide/development-pipeline/image/ci.png) 
+
 本节将围绕部署流水线各个功能的使用进行详细的介绍，包括 [环境流水线](./environment-pipeline)、[应用部署](./application-deployment)、[实例管理](./instance)、[网络管理](./service)、[域名管理](./ingress)，[容器管理](./container)将涵盖您使用Choerodon猪齿鱼部署流水线过程中所有可能进行的操作。
 
 - `环境流水线` 用于创建agent环境客户端，用于后续操作,也可以在agent环境客户端版本落后时升级客户端，以及停用启用环境。

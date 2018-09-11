@@ -18,7 +18,7 @@ weight = 1
 
 空间相当于一个分组，页面隶属于空间之下。空间和页面有两个主要属性，名称（name）和标题（titile），Name是唯一标识，用做相互关联。Title是页面或空间的显示标题，用作显示。
 
-![enter description here](/docs/user-guide/wiki/image/image1.png "image1")
+![enter description here](/docs/user-guide/wiki/image/space.png "image1")
 
 1. 点击此处进入相关组织。
 2. 点击此处[创建空间](../space/create-space)。

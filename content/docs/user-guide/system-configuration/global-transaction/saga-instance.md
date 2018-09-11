@@ -16,6 +16,8 @@ description = "实际运行的事务定义"
 
 事务实例列表展示了事务实例的基本信息。
 
+<img class="no-border" src="/docs/user-guide/system-configuration/global-transaction/image/instance-list.png"/>
+
 - ID：事务实例的ID，是事务实例的标识，具有唯一性。
 - 状态：事务实例的运行状态。共有`进行中`、`完成`、`失败`三种状态。
 - 起始时间：事务实例开始运行的时间。以年-月-日 时:分:秒的形式展示。
@@ -27,6 +29,8 @@ description = "实际运行的事务定义"
 查看实例列表可以查看所有实例。选择查看失败实例，可以查看所有运行失败的实例，可以点击详情查看失败的具体情况并选择重试。
 
 ## 事务实例详情
+
+<img class="no-border" src="/docs/user-guide/system-configuration/global-transaction/image/instance.png"/>
 
 - 点击事务实例列表的操作按钮→<img class="no-border" src="/docs/user-guide/system-configuration/global-transaction/image/particulars.png"/>可查看事务实例运行的详情。
 

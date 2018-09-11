@@ -16,7 +16,7 @@ weight = 1
 
 ## 操作步骤
 
-![enter description here](/docs/user-guide/agile/imge/image47.png)
+![enter description here](/docs/user-guide/agile/imge/project-setting.png)
 
 1. 填写`项目Code`
 2. 选择项目`默认优先级`，在项目里创建问题时会默认给问题赋值一个优先级，用户可自行修改。
