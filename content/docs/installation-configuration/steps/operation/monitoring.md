@@ -41,28 +41,43 @@ helm repo update
         --name monitoring-pv --namespace=monitoring
     ```
 <blockquote class="note">
-创建pvc时注意在nfs中创建对应的目录
+创建pvc时注意在nfs中创建对应的目录，并且赋予该文件夹可执行权限
 </blockquote>
+
+- 授权 
+
+   在nfs服务器中执行:
+
+   ```bash
+   chmod 755 /u01/monitoring
+   ```
 
 - 安装监控
 
     ```bash
     helm install c7n/choerodon-monitoring \
-    --set global.storageType=nfs \
-    --set grafana.host=grafana.example.com \
-    --set global.persistence.existingClaim=monitoring-pvc \
-    --set global.clusterName=example \
+    --set grafana.persistence.enabled=true \
+    --set grafana.persistence.existingClaim=monitoring-pvc \
+    --set grafana.ingress.enabled=true \
+    --set "grafana.ingress.hosts[0]"=grafana.example.com \
+    --set alertmanager.persistence.enabled=true \
+    --set alertmanager.persistence.existingClaim=monitoring-pvc \
+    --set prometheus.persistence.enabled=true \
+    --set prometheus.persistence.existingClaim=monitoring-pvc \
+    --set prometheus.clusterName=your_cluster_name \
+    --name=choerodon-monitorin \
+    --version=0.6.0 \
     --namespace=monitoring
     ```
 
     参数名 | 含义 
     --- |  --- 
-    global.storageType|存储类型
-    grafana.host|配置grafana的域名
-    global.persistence.existingClaim|存储的pvc
+    x.persistence.enabled|启用持久化存储
+    grafana.ingress.hosts[0]|配置grafana的域名
+    prometheus.clusterName|为了区分多集群指定一个集群名称，可以是任意字母组合
 
 <blockquote class="note">
-执行之后需要一定的时间等待服务启动和自动导入grafana模板
+执行之后需要一定的时间等待服务启动和自动导入grafana模板,首次登陆密码为 admin/admin, 登陆会提示修改密码，请同样使用 admin 作为新密码，等待dashboard有内容之后再修改为其他密码。
 </blockquote>
 
 - 查看监控
