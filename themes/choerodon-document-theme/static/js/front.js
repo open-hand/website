@@ -1,11 +1,11 @@
 //判断是否为PC端
 function IsPC() {
     var userAgentInfo = navigator.userAgent;
-    var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod");
+    var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod");    
     var flag = true;
     for (var v = 0; v < Agents.length; v++) {
         if (userAgentInfo.indexOf(Agents[v]) > 0) { flag = false; break; }
-    }
+    }    
     return flag;
 }
 var isPC = IsPC();
@@ -263,33 +263,49 @@ jQuery(document).ready(function () {
         }, 300)
     })
 
-    // 社区页面动态效果
-    jQuery('.social-img').hover(function (e) {
-        var wWidth = remWidth;
-        if (wWidth >= 768) {
-            if ($(this).attr('data-hover')) {
-                $(this).children('img').attr('src', $(this).attr('data-hover-url'));
+    // 社区页面 二维码动态效果
+    if (isPC){                
+        jQuery('.social-follow-type').hover(function (e) {        
+            if ($(this).attr('data-hover')){
+                $('#social-code').toggleClass('none flex');
+                var level = getChildrenIndex(this);
+                var top = 42 * (level - 1);
+                $('#social-code').css('transform','translateY('+top+'px)');
             }
-        }
-    }, function () {
-        var wWidth = remWidth;
-        if (wWidth >= 768) {
-            $(this).children('img').attr('src', $(this).attr('data-img-url'));
-        }
-    });
+        }, function () {
+            if ($(this).attr('data-hover')){
+                $('#social-code').toggleClass('none flex');
+            }
+        });
+    }
+
+    function getChildrenIndex(ele){ 
+        //IE is simplest and fastest 
+        if(ele.sourceIndex){ 
+            return ele.sourceIndex - ele.parentNode.sourceIndex - 1; 
+        } 
+        //other browsers 
+            var i=0; 
+            while(ele = ele.previousElementSibling){ 
+            i++; 
+        } 
+        return i; 
+    } 
+
+    
     // 社区页面移动端动态效果
     var startPointTop, endPointTop;
-    $('.social-single').on('touchstart', function () {
+    $('.social-follow-type').on('touchstart', function () {
         startPointTop = $(window).scrollTop();
     })
-    $('.social-single').on('touchend', function () {
+    $('.social-follow-type').on('touchend', function () {
         endPointTop = $(window).scrollTop();
         if (startPointTop == endPointTop) {
             if (!$(this).attr('href')) {
                 var thisObj = $(this);
                 setTimeout(function () {
                     stopBodyScroll(true);
-                    var imgSrc = thisObj.find('.social-img').attr('data-hover-url');
+                    var imgSrc = thisObj.attr('data-hover');
                     $('.black-big-img img').attr('src', imgSrc);
                     $('.black-big-img').css('display', 'flex');
                 }, 300)

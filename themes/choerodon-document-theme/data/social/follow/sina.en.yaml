@@ -1,7 +1,6 @@
-weight: 3
+weight: 2
 name: "Sina"
-icon: "/img/socials/sina.svg"
+icon: "icon-sina"
 hover: "/img/socials/sina_code.png"
-description: "Get the latest news and updates"
 url: "https://weibo.com/choerodon"
 language: en

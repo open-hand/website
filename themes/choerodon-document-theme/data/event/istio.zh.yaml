@@ -1,0 +1,5 @@
+weight: 1
+title: "选择Istio作为我们的服务治理"
+description: "经过我们开发团队研究决定，Choerodon将使用Istio作为微服务架构中的服务治理方案"
+button: "了解详情"
+img: "/img/socials/event/istio.svg"

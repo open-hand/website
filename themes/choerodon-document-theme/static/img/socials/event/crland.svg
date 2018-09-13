@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="150px" height="108px" viewBox="0 0 150 108" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51 (57462) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 10</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="社区页" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="社区页面" transform="translate(-330.000000, -1584.000000)">
+            <rect fill="#FFFFFF" x="0" y="0" width="1440" height="3373"></rect>
+            <g id="Group-10" transform="translate(330.000000, 1584.000000)">
+                <path d="M1,1 L1,87.6666667 L139,87.6666667 L139,17.3333333 L73.0877074,17.3333333 C70.8270496,17.3333333 68.7055537,16.2415735 67.3915731,14.4020007 L59.3142933,3.09380903 C58.3757357,1.77982842 56.8603815,1 55.245626,1 L1,1 Z" id="Rectangle-8" stroke="#979797" stroke-width="2" fill="#F5F5F5"></path>
+                <rect id="Rectangle-10" fill="#6694EF" x="13" y="33" width="72" height="32" rx="4"></rect>
+                <path d="M1,30 L1,96.5 L139,96.5 L139,46.3333333 L73.0877074,46.3333333 C70.8270496,46.3333333 68.7055537,45.2415735 67.3915731,43.4020007 L59.3142933,32.093809 C58.3757357,30.7798284 56.8603815,30 55.245626,30 L1,30 Z" id="Rectangle-8" stroke="#979797" stroke-width="2" fill="#FFFFFF" transform="translate(70.000000, 63.250000) scale(-1, 1) translate(-70.000000, -63.250000) "></path>
+                <rect id="Rectangle-9" fill="#FFFFFF" x="114" y="37" width="24" height="5"></rect>
+                <rect id="Rectangle-39" fill="#FFD666" x="96" y="68" width="54" height="40" rx="6"></rect>
+                <polygon id="Fill-114" fill="#FFFFFF" points="118 95 132 88 118 81"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

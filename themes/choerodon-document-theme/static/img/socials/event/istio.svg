@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="143px" height="123px" viewBox="0 0 143 123" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51 (57462) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 3</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="社区页" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="社区页面" transform="translate(-330.000000, -1075.000000)">
+            <rect fill="#FFFFFF" x="0" y="0" width="1440" height="3373"></rect>
+            <g id="Group-3" transform="translate(330.000000, 1075.000000)">
+                <rect id="Rectangle-35" stroke="#979797" stroke-width="2" x="1" y="1" width="110" height="98"></rect>
+                <rect id="Rectangle-35-Copy-3" stroke="#979797" stroke-width="2" fill="#FFFFFF" x="11" y="11" width="110" height="98"></rect>
+                <rect id="Rectangle-37" fill="#F5F5F5" x="12" y="12" width="56" height="96"></rect>
+                <rect id="Rectangle" stroke="#979797" stroke-width="2" x="23" y="25" width="37" height="5"></rect>
+                <rect id="Rectangle-Copy" stroke="#E3E3E3" stroke-width="2" x="23" y="40" width="37" height="5"></rect>
+                <rect id="Rectangle-41" fill="#6694EF" x="22" y="54" width="19" height="5"></rect>
+                <rect id="Rectangle-41-Copy" fill="#6694EF" x="22" y="67" width="19" height="5"></rect>
+                <rect id="Rectangle-6" fill="#FFFFFF" x="105" y="94" width="20" height="15"></rect>
+                <polygon id="Polygon" fill="#FFD666" transform="translate(114.311901, 74.052881) rotate(30.000000) translate(-114.311901, -74.052881) " points="114.311901 46.2993603 138.347155 60.1761207 138.347155 87.9296414 114.311901 101.806402 90.2766469 87.9296414 90.2766469 60.1761207"></polygon>
+                <polygon id="Path" fill="#FFFFFF" points="123.108667 66 126.124967 68.96385 112.069009 82.79515 103 73.9036 106.0163 70.93975 112.069009 76.86745"></polygon>
+                <polygon id="Rectangle-36" fill="#FFD666" points="100.62 102 128.62 102 128.62 123 114.62 112.5 100.62 123"></polygon>
+                <path d="M24,80 C22.9,80 22,80.9 22,82 C22,83.1 22.9,84 24,84 C25.1,84 26,83.1 26,82 C26,80.9 25.1,80 24,80 L24,80 Z M36,80 C34.9,80 34,80.9 34,82 C34,83.1 34.9,84 36,84 C37.1,84 38,83.1 38,82 C38,80.9 37.1,80 36,80 L36,80 Z M30,80 C28.9,80 28,80.9 28,82 C28,83.1 28.9,84 30,84 C31.1,84 32,83.1 32,82 C32,80.9 31.1,80 30,80 L30,80 Z" id="Fill-199" fill="#6694EF"></path>
+            </g>
+        </g>
+    </g>
+</svg>
