@@ -1,3 +1,4 @@
 [submodule "content/blog"]
 	path = content/blog
 	url = ../website-blog.git
+	branch = master
