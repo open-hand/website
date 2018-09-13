@@ -77,10 +77,11 @@
     transform: rotate(45deg);
     position: relative;
     top: 45px;
-    left: 10px;
+    left: 18px;
 }
 .community .social-detail .content .code .dropdown-code{
     height: 1rem;
+    width: 1rem;
     padding: 0.05rem;
     background-color: #FFC627;
     z-index: 1;
