@@ -471,15 +471,48 @@ body {
 .white-button:focus{
     color: #326DE6;
 }
+
+/* button */
+.button{
+    border: 1px solid #3371E3;
+    border-radius: 6px;
+    color: #3371E3;
+    line-height: 0.4rem;
+    padding: 0 0.16rem;
+    display: flex;
+    flex-direction: row;
+    width: max-content;
+}
+.button:hover{
+    background-color: #3371E3;
+    color: #FFFFFF;
+}
+.button:hover .icon-arrow-right{
+    -webkit-transform: translateX(4px);
+    -ms-transform: translateX(4px);
+    transform: translateX(4px);
+}
+
+.button .icon-arrow-right{
+    margin-left: 0.05rem;
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+    -webkit-transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+}
+/* button end */
 .no-border{
     border: none !important;
 }
 .none {
-    display: none;
+    display: none !important;
 }
 
 .block{
     display: block;
+}
+
+.flex{
+    display: flex !important;
 }
 
 a {
@@ -936,14 +969,6 @@ p {
     }
 
     /* 导航栏结束 */
-    .social-detail {
-        flex-wrap: wrap;
-    }
-    .social-detail a {
-        width: 100%;
-        margin-left: 0;
-        margin-bottom: 0.5rem;
-    }
 /* general banner */
     .header-nav {
         height: 2.85rem;

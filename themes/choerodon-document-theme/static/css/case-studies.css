@@ -98,26 +98,8 @@
     color: rgba(0, 0, 0, 0.65);
     text-align: left;
     line-height: 1.75;
-    margin: 0;
+    margin: 0 0 0.15rem 0;
     flex: 1;
-}
-
-.case-study .case-list-content .button {
-    font-size: 0.14rem;
-    color: #326DE6;
-    text-align: left;
-    display: flex;
-    flex-direction: row;
-    line-height: 1.43;
-    align-items: center;
-    flex-shrink: 0;
-}
-
-
-.case-study .case-list-content .button .single-icon {
-    background: url(../img/see-more-ico.svg) no-repeat center;
-    height: 0.3rem;
-    width: 0.3rem;
 }
 
 /* 案例详情页 */
@@ -334,6 +316,7 @@
         margin: 0 auto;
         width: 2.45rem;
         height: auto;
+        margin-bottom: 0.35rem;
     }
 
     .case-studies-section .case-study .case-list-content h3{
@@ -349,11 +332,6 @@
         line-height: 1.5;
         margin-bottom: 0.2rem;
         height: 1.05rem;
-    }
-    .case-studies-section .case-study .case-list-content .button{
-        margin-bottom: 0.35rem;
-        font-size: 0.14rem;
-        font-weight: 500;
     }
 
     /* 案例详情 */

@@ -1,0 +1,25 @@
+{{ $.Scratch.Set "language" .Site.Language.Lang }}
+<link rel="stylesheet" href="/css/event.css">
+<section class="event">
+    <div class="content">
+        <div class="title">最新，最重要的活动通知</div>
+        <div class="cards">
+            {{ range (sort .Site.Data.event "weight") }}
+            {{ if eq ($.Scratch.Get "language") .language }}
+            <div class="card">
+                <img src="{{ .img }}"  class="head"/>
+                <div class="text">
+                    <div class="card-title">{{ .title }}</div>
+                    <div class="description">{{ .description }}</div>
+                    <a class="button" {{ if .href }} href="{{.href}}"{{ end }}>
+                        <div>{{ .button }}</div>
+                        <i class="iconfont icon-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            {{ end }}
+            {{ end }}
+        </div>
+    </div>
+</section>
+

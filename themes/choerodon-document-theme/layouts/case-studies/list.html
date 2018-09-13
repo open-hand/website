@@ -22,9 +22,9 @@
                         <div class="case-list-content">
                             <h3>{{ .Params.title }}</h3>
                             <p class="summary">{{ .Params.summary }}</p>
-                            <a class="button" {{ if .Params.unfinshed }} {{ else }} href="{{ .RelPermalink }}" {{ end }}>
+                            <a class="button"  {{ if .Params.unfinshed }} {{ else }} href="{{ .RelPermalink }}" {{ end }}>
                                 <div>{{ i18n "readmore"}}</div>
-                                <div class="single-icon"></div>
+                                <i class="iconfont icon-arrow-right"></i>
                             </a>
                         </div>
                     </div>

@@ -1,7 +1,6 @@
-weight: 3
+weight: 2
 name: "新浪微博"
-icon: "/img/socials/sina.svg"
+icon: "icon-sina"
 hover: "/img/socials/sina_code.png"
-description: "获取最新的新闻和动态"
 url: "https://weibo.com/choerodon"
 language: zh
