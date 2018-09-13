@@ -1,6 +1,6 @@
 +++
 title = "Choerodon UI of React"
-weight = 7
+weight = 8
 +++
 
 # Choerodon UI of React
