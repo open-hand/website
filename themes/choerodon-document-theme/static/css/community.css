@@ -91,7 +91,7 @@
     display: flex;
     flex-direction: row;
     color: #3371E3;
-    font-size: 0.14rem;
+    font-size: 0.16rem;
 }
 .community .social-detail a.type + a.type{
     padding-top: 0.2rem;
