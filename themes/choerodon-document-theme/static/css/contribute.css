@@ -31,6 +31,14 @@
     margin-bottom: 0.16rem;
     max-width: 4rem;
 }
+.contribute .cards .card .buttons{
+    display: flex; 
+    flex-direction: row
+}
+
+.contribute .cards .card .buttons .button + .button{
+    margin-left: 0.2rem;
+}
 
 .contribute .cards .card img{
     margin-top: 0.28rem;

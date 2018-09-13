@@ -44,6 +44,7 @@
     color: rgba(0,0,0,0.87);
 }
 .event .content .cards .card .description{
+    margin-bottom: 0.15rem;
     margin-top: 0.2rem;
     color: rgba(0,0,0,0.87);
     width: 5.9rem;
