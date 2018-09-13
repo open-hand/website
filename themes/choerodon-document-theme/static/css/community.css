@@ -19,64 +19,115 @@
 }
 
 .community .social-detail {
-    margin: 0.8rem 2.85rem 1.4rem 2.85rem;
+    margin: 0.8rem 2.85rem;
     display: flex;
     justify-content: space-between;
 }
 
-.community .social-detail .social-single {
+.community .social-detail .block{
+    width: 3.8rem;
+}
+
+.community .social-detail .block + .block{
+    margin-left: 0.4rem;
+}
+
+.community .social-detail img.follow,
+.community .social-detail img.discuss{
+    height: 0.8rem;
+    margin-bottom: 0.3rem;
+}
+
+.community .social-detail .title{
+    font-size: 0.18rem;
+    color: #000000;
+    text-align: left;
+    margin-bottom: 0.1rem;
+}
+
+.community .social-detail .description{
+    font-size: 0.14rem;
+    color: #000000;
+    text-align: left;
+    margin-bottom: 0.3rem;
+}
+
+.community .social-detail .content{
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
 }
 
-.community .social-detail .social-img {
-    width: 1.5rem;
-    height: 1.5rem;
+.community .social-detail .content .code{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: row;
+    will-change: transform;
+    transition: .25s;
+    transform: translateY(50px);
+    -webkit-transition-property: -webkit-transform;
+    transition-property: -webkit-transform;
+    transition-property: transform;
+    transition-property: transform,-webkit-transform;
+    -webkit-transition-duration: .25s;
 }
 
-.community .social-detail .social-name {
-    font-size: 0.16rem;
-    color: #5CC2F2;
-    margin-bottom: 0.16rem;
+.community .social-detail .content .code .dropdown-arrow{
+    width: 0.25rem;
+    height: 0.15rem;
+    background: #FFC627;
+    transform: rotate(45deg);
+    position: relative;
+    top: 45px;
+    left: 10px;
+}
+.community .social-detail .content .code .dropdown-code{
+    height: 1rem;
+    padding: 0.05rem;
+    background-color: #FFC627;
+    z-index: 1;
 }
 
-.community .social-detail .social-description {
-    font-size: 0.16rem;
-    color: #333333;
+.community .social-detail a.type{
+    display: flex;
+    flex-direction: row;
+    color: #3371E3;
+    font-size: 0.14rem;
+}
+.community .social-detail a.type + a.type{
+    padding-top: 0.2rem;
 }
 
-.community .social-detail img{
-    margin-left: 0;
-    width: 70%;
-    height: 65%;
+.community .social-detail a.type:hover{
+    color:#FFC627;
 }
-.community .forum {
+.community .social-detail a.type i.iconfont {
+    margin-right: 0.1rem;
+}
+.community .social-detail a.type .name{
+    text-align: left;
+}
+.forum {
     background-image: linear-gradient(-1deg, #003DAC 0%, #3371E3 100%);
     width: 100%;
     height: 5.7rem;
     margin-bottom: 2.03rem;
 }
-.community .forum-background{
+.forum-background{
     background:url(../img/socials/forum.svg) no-repeat center;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.community .forum-title{
+.forum-title{
     margin: 0.4rem 0 0.2rem 0;
     font-size: 24px;
     color: #FFFFFF;
 }
-.community .forum-description{
+.forum-description{
     font-size: 16px;
     color: #FFFFFF;
 }
-.community .forum-data{
+.forum-data{
     width: 10.6rem;
     position: relative;
     margin: 0 auto;
@@ -89,7 +140,7 @@
     background: #FFFFFF;
 }
 
-.community .forum-button{
+.forum-button{
     width: 100%;
     align-items: center;
     display: flex;
@@ -115,57 +166,57 @@
 .community .choose:hover{
     color: #FFFFFF;
 }
-.community .forum-table{
+.forum-table{
     width: 100%;
     border-radius: 0 0 0.06rem 0.06rem;
     padding-top: 0.15rem;
 }
 
-.community .forum-table table{
+.forum-table table{
     width: 100%;
 }
-.community .forum-table table tr {
+.forum-table table tr {
     display: block;
     border-bottom: 0.01rem solid #ddd;
     margin: 0 0.25rem;
 }
-.community .forum-table table tr:last-child{
+.forum-table table tr:last-child{
     border-bottom: none;
 }
 
-.community .forum-table td {
+.forum-table td {
     padding: 0;
     font-size: 0.14rem;
     color: rgba(0,0,0,0.65);
     height: 0.45rem;
 }
 
-.community .forum-table .td1 {
+.forum-table .td1 {
     width: 1.5rem;
     text-align: left;
 }
-.community .forum-table .td2 {
+.forum-table .td2 {
     text-align: left;
     width: 5.5rem;
 }
-.community .forum-table .td3 {
+.forum-table .td3 {
     width: 1rem;
     text-align: center;
 }
-.community .forum-table .td4 {
+.forum-table .td4 {
     width: 1rem;
     text-align: center;
 }
-.community .forum-table .td5 {
+.forum-table .td5 {
     width: 1.2rem;
     text-align: right;
 }
 /* live */
-.community .live{
+.live{
     background: #F7F7F7;
 }
 
-.community > .live > .head{
+.live > .head{
     font-size: 0.24rem;
     color: rgba(0,0,0,0.87);
     line-height: 1;
@@ -173,15 +224,15 @@
     padding-top: 0.6rem;
 }
 
-.community > .live > .content{
+.live > .content{
     margin: 1.3rem 1.2rem 1rem 1.2rem;
 }
 
-.community > .live > .content > .row + .row{
+.live > .content > .row + .row{
     margin-top: 1.5rem;
 }
 
-.community > .live > .content .card{
+.live > .content .card{
     width: 3.53rem;
     /* height: 1.72rem; */
     display: flex;
@@ -190,31 +241,31 @@
     justify-content: space-between;
 }
 
-.community > .live > .content .card + .card{
+.live > .content .card + .card{
     margin-left: 0.71rem;
 }
 
-.community > .live > .content .card.blue-card{
+.live > .content .card.blue-card{
     background:url(/img/socials/live/bg-blue.png) no-repeat;
     background-size: cover;
 }
 
-.community > .live > .content .card.yellow-card{
+.live > .content .card.yellow-card{
     background:url(/img/socials/live/bg-yellow.png) no-repeat;
     background-size: cover;
 }
 
-.community > .live > .content .card > .content{
+.live > .content .card > .content{
     padding: 0.4rem 0.1rem 0.15rem 0.1rem;
     z-index: 1;
     max-width: 2rem;
 }
-.community > .live > .content .card .title{
+.live > .content .card .title{
     font-size: 0.18rem;
     color: #FFFFFF;
 }
 
-.community > .live > .content .card .description{
+.live > .content .card .description{
     margin-top: 0.1rem;
     font-size: 0.14rem;
     /* height:0.6rem; */
@@ -223,7 +274,7 @@
     min-height: 0.71rem;
 }
 
-.community > .live > .content .card .play{
+.live > .content .card .play{
     color: #FFFFFF;
     margin-top: 0.1rem;
     /* height: 0.22rem; */
@@ -234,13 +285,13 @@
     max-width: 6em;
 }
 
-.community > .live > .content .card .play > i{
+.live > .content .card .play > i{
     font-size: 0.12rem;
     margin: auto;
     text-align: center;
 }
 
-.community > .live > .content .card .lecturer{
+.live > .content .card .lecturer{
     max-width: 1.8rem;
     /* max-height: 0.8rem; */
     background: #FFFFFF;
@@ -249,13 +300,13 @@
     z-index: 1;
     margin-bottom: 0.1rem;
 }
-.community > .live > .content .card .lecturer > .position,
-.community > .live > .content .card .lecturer > .name{
+.live > .content .card .lecturer > .position,
+.live > .content .card .lecturer > .name{
     color: #000000;
     font-weight: 500;
 }
 
-.community > .live > .content .card > img{
+.live > .content .card > img{
     /* height: 2.42rem; */
     width: 2rem;
     position: absolute;
@@ -270,7 +321,7 @@
         margin: 0 0.2rem;
     }
     .community .talk-text{
-        margin-top: 0.25rem;
+        margin-top: 0.6rem;
     }
     .community .talk-text p {
         line-height: 1.5;
@@ -280,67 +331,54 @@
     .community .talk-text p + p {
         margin-top: 0;
     }
-    .community .social-detail {
-        margin: 0.35rem 0.15rem;
-        padding: 0;
-    }
-    .community .social-detail .social-single {
-        justify-content: center;
-        width: 100%;
-        height: 2.1rem;
-        box-shadow: 0 0.02rem 0.06rem 0 rgba(0,0,0,0.20);
-        border-radius: 0.08rem;
-        margin-bottom: 0.35rem;
-    }
-    .community .social-detail .social-img {
-        width: 1rem;
-        height: 0.96rem;
-    }
-    .community .social-detail .social-name {
-        font-size: 0.14rem;
-        /*color: #5CC2F2;*/
-        margin-bottom: 0.225rem;
-        color: #000000;
-        letter-spacing: 0.00325rem;
-    }
-    .community .social-detail .social-description {
-        font-size: 0.14rem;
-        color: #000000;
-        line-height: 1.5;
-    }
-    .community .forum{
+    .forum{
         display: none;
     }
-    .community .live{
+    .live{
         background-color: #FFFFFF;
         height: auto;
     }
-    .community > .live > .content{
+    .live > .head{
+        padding-top: 0.3rem;
+    }
+    .live > .content{
         margin: 1.2rem 0.1rem;
     }
-    .community > .live > .content .row{
+    .live > .content .row{
         margin: auto;
     }
-    .community > .live > .content .card{
+    .live > .content .card{
         width: 3.15rem;
     }
-    .community > .live > .content .card + .card{
+    .live > .content .card + .card{
         margin-top: 1rem;
         margin-left: 0;
     }
-    .community > .live > .content > .row + .row{
+    .live > .content > .row + .row{
         margin-top: 1rem;
     }
-    .community > .live > .content .card > img{
-        width: 1.5rem;
+    .live > .content .card > img{
+        width: 2rem;
     }
-    .community > .live > .content .card .lecturer{
+    .live > .content .card .lecturer{
         width: 1.5rem;
         padding-bottom: 0.1rem;
         max-height: 0.75rem;
     }
-    .community > .live > .content .card .description{
+    .live > .content .card .description{
         min-height: 0.6rem;
     }
-
+    .community .social-detail {
+        margin: 0.6rem 0.15rem;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+    }
+    .community .social-detail .block{
+        width: 100%;
+    }
+    .community .social-detail .block + .block{
+        margin: 0;
+        margin-top: 0.8rem;
+    }
 }
