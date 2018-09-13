@@ -504,7 +504,7 @@ body {
     border: none !important;
 }
 .none {
-    display: none !important;
+    display: none;
 }
 
 .block{
@@ -515,6 +515,9 @@ body {
     display: flex !important;
 }
 
+.im-none{
+    display: none !important;
+}
 a {
     color: #1890ff;
 }

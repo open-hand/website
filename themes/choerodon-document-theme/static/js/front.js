@@ -267,14 +267,14 @@ jQuery(document).ready(function () {
     if (isPC){                
         jQuery('.social-follow-type').hover(function (e) {        
             if ($(this).attr('data-hover')){
-                $('#social-code').toggleClass('none flex');
+                $('#social-code').toggleClass('im-none flex');
                 var level = getChildrenIndex(this);
                 var top = 42 * (level - 1);
                 $('#social-code').css('transform','translateY('+top+'px)');
             }
         }, function () {
             if ($(this).attr('data-hover')){
-                $('#social-code').toggleClass('none flex');
+                $('#social-code').toggleClass('im-none flex');
             }
         });
     }
