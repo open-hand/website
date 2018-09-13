@@ -1,17 +1,18 @@
 +++
-title = "Restful Api 规范"
-description = "Restful Api 规范"
-weight = 4
+title = "RESTful API 规范"
+description = "RESTful API 规范"
+weight = 3
 +++
 
 
-# Restful Api 规范
+# RESTful Api 规范
+---
 
 Choerodon 符合 `REST` 原则，它是一个RESTful 架构。
 
 ## RESTful API Design 名词定义
 
-* Resource:  一个简单的实例。有一些属性或者一些子资源，子资源可以是 一个简单的资源或者一组资源例如：book, user
+* Resource:  一个简单的实例。有一些属性或者一些子资源，子资源可以是一个简单的资源或者一组资源例如：book, user
 * Collection: 一组同类的资源对象。例如：books, users
 * HTTP: 网络协议
 
@@ -26,7 +27,7 @@ Choerodon 符合 `REST` 原则，它是一个RESTful 架构。
 
 ### 设计流程
 
-1. 确定一个api提供什么类型的资源
+1. 确定一个API提供什么类型的资源
 2. 确定资源之间的依赖关系
 3. 基于类型和依赖关系确定资源的命名
 4. 确定资源的结构
@@ -38,7 +39,7 @@ Choerodon 符合 `REST` 原则，它是一个RESTful 架构。
 
 一个资源名应该由Resource ID，Collection ID 和API Service 名组成。
 
-例1：存储服务有 `buckets` 的集合,其中每个桶包含一个 `objects` 集合。
+例1：存储服务有 `buckets` 的集合，其中每个桶包含一个 `objects` 集合。
 
 API Service Name | Collection ID | Resource ID | Sub-Collection ID | Sub-Resource ID
 --- | --- | --- | --- | ---
@@ -58,7 +59,7 @@ API Service Name | Collection ID | Resource ID | Sub-Collection ID | Sub-Resourc
 
 * Resource ID 标识着资源属于父资源中。
 * Resource ID 可能不止一个单词，也有可能是一个相对路径。
-* Resource ID 必须清楚地被记录，无论是客户端,服务器,或第三方。
+* Resource ID 必须清楚地被记录，无论是客户端，服务器，或第三方。
 
 ### Collection ID
 
@@ -90,7 +91,7 @@ Description | Action Name	| HTTP Mapping | HTTP Request Body | HTTP Response Bod
 
 #### List
 
-`List` 方法接受一个 `Collection id`  和0或多个参数作为输入,并返回一个列表的资源。
+`List` 方法接受一个 `Collection id`  和0或多个参数作为输入，并返回一个列表的资源。
 
 * `List` 必须使用 `GET` 方法
 * 接口必须以 `collection id ` 结尾。
@@ -100,7 +101,7 @@ Description | Action Name	| HTTP Mapping | HTTP Request Body | HTTP Response Bod
 
 #### Query
 
-`Query` 方法接受一个 `Resource name` 和0或多个参数,并返回指定的资源。
+`Query` 方法接受一个 `Resource name` 和0或多个参数，并返回指定的资源。
 
 * `Query` 必须使 `GET` 方法。
 * 请求url 必须包含 `Resource name`。
@@ -111,7 +112,7 @@ Description | Action Name	| HTTP Mapping | HTTP Request Body | HTTP Response Bod
 
 #### Create
 
-`Create` 方法接受一个 `Collection id` ,一个资源,和0或多个参数。它创建一个新的资源在指定的父资源下,并返回新创建的资源。
+`Create` 方法接受一个 `Collection id` ，一个资源，和0或多个参数。它创建一个新的资源在指定的父资源下，并返回新创建的资源。
 
 * `Create` 必须使用 `POST` 方法。
 * 应该包含父资源名用于指定资源创建的位置。
@@ -130,7 +131,7 @@ Description | Action Name	| HTTP Mapping | HTTP Request Body | HTTP Response Bod
 
 #### Delete
 
-`Delete` 方法接受一个`Resource Name` 和0或多个参数,并删除指定的资源。
+`Delete` 方法接受一个`Resource Name` 和0或多个参数，并删除指定的资源。
 
 * `Delete` 必须使用 `DELETE` 方法。
 * `Resource Name` 必须包含在请求的url中。
@@ -142,7 +143,7 @@ Description | Action Name	| HTTP Mapping | HTTP Request Body | HTTP Response Bod
 
 ## 自定义方法
 
-自定义的方法应该参考5个基本方法。应该用于基本方法不能实现的功能性方法。可能需要一个任意请求并返回一个任意的响应,也可能是流媒体请求和响应。
+自定义的方法应该参考5个基本方法，应该用于基本方法不能实现的功能性方法。可能需要一个任意请求并返回一个任意的响应，也可能是流媒体请求和响应。
 
 可以对应a resource, a collection 甚至 a service。
 
@@ -209,7 +210,7 @@ Description | Action Name | HTTP Mapping | HTTP Request Body | HTTP Response Bod
 
 * 对于collection的所有查询`Action Name`，都需要以list开头。
 * 查询的条件中，如果条件为一到两个，使用`By`和`And`。eg.: listByUserIdAndName
-* 如果查询条件大于3个，则使用`ByOptions`，查询条件作为请求体传入。eg.: `listByOptions`
+* 如果查询条件大于3个，则使用`ByOptions`，查询条件作为请求体传入。eg: `listByOptions`
 
 
 ## 版本控制
@@ -219,7 +220,7 @@ Description | Action Name | HTTP Mapping | HTTP Request Body | HTTP Response Bod
 版本兼容的修改：
 
 * 添加一个服务接口
-* 添加一个api方法
+* 添加一个API方法
 * 添加一个请求字段
 * 添加一个相应字段
 * 添加一个字段的枚举值
