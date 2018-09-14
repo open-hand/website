@@ -78,9 +78,7 @@
 }
 
 .case-study .case-list-content {
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
+    display: inline-block;
     width: 4.91rem;
     margin-right: 0.6rem;
 }

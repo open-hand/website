@@ -477,11 +477,8 @@ body {
     border: 1px solid #3371E3;
     border-radius: 6px;
     color: #3371E3;
-    line-height: 0.4rem;
-    padding: 0 0.16rem;
-    display: flex;
-    flex-direction: row;
-    width: max-content;
+    padding: 0.1rem 0.16rem;
+    display: inline-flex;
 }
 .button:hover{
     background-color: #3371E3;
