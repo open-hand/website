@@ -14,7 +14,7 @@ weight = 1
 
 ## 参考示例
 
-代码参考示例请移步 [**此篇**] (../../../quick-start/nginx-demo)
+代码参考示例请移步 [**此篇**] (../../../quick-start/project-member/nginx-demo)
 
 ## 配置解析
 

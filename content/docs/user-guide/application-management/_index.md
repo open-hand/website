@@ -18,7 +18,7 @@ icon = "icon-application-market"
 
 ## 前置条件
 
- - Choerodon的应用管理是基于整体项目的，在使用Choerodon应用管理之前，需要先了解和学习[Choerodon的项目管理](../../quick-start/project)。
+ - Choerodon的应用管理是基于整体项目的，在使用Choerodon应用管理之前，需要先了解和学习[Choerodon的项目管理](../../quick-start/admin/project)。
  - 系统用户必须具有`项目所有者`，或者`项目成员`角色，才能是使用应用管理服务。所以，在使用应用管理之前，您需要为您的用户分配`项目所有者`，或者`项目成员`角色。关于权限管理，请参阅[项目角色分配](.././system-configuration/project/role-assignment/)。
 
 ## 权限说明
