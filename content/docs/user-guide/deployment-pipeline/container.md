@@ -47,4 +47,3 @@ weight = 7
 - [环境流水线](../environment-pipeline)
 - [应用部署](../application-deployment)
 - [实例管理](../instance)
-- [证书管理](../certificate)
