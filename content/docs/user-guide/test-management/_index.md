@@ -15,12 +15,12 @@ Choerodon的测试管理为用户提供敏捷化的持续测试工具，包括�
 
 ## 快速开始
 
-- 如果您是第一次使用接触Choerodon测试管理，在学习阅读本章节之前，请阅读[快速入门手册](../../quick-start/test-management/)或观看对应[视频教程](../../quick-start/video-tutorial/)。
+- 如果您是第一次使用接触Choerodon测试管理，在学习阅读本章节之前，请阅读[快速入门手册](../../quick-start/project-member/test-manager/)或观看对应[视频教程](../../quick-start/video-tutorial/)。
 - 如果您对Choerodon测试管理已经非常熟悉，请使用文档搜索功能，查找您需要了解的内容。
 
 ## 前置条件
 
-- Choerodon的测试管理是基于项目的，在使用Choerodon测试管理之前，需要先了解和学习Choerodon的[项目管理](../../quick-start/project)。
+- Choerodon的测试管理是基于项目的，在使用Choerodon测试管理之前，需要先了解和学习Choerodon的[项目管理](../../quick-start/admin/project)。
 - 系统用户必须具有`项目所有者`或者`项目成员`角色，才能使用测试管理服务。所以在使用测试管理之前，您需要为您的用户分配`项目所有者`或者`项目成员`角色。关于权限管理，请参阅[项目角色分配](.././system-configuration/project/role-assignment/)。
 - 本文档中不包含测试理论等相关知识,如果要深入的了解测试相关的知识，您可以阅读相关的书籍，或参加相关的培训。
 
