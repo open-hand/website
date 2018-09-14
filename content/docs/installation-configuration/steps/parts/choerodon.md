@@ -262,7 +262,7 @@ helm repo update
     - 验证命令
 
         ```
-        curl -s $(kubectl get po -n choerodon-devops-prod -l choerodon.io/release=notify-service -o jsonpath="{.items[0].status.podIP}"):18085/health | jq -r .status
+        curl -s $(kubectl get po -n choerodon-devops-prod -l choerodon.io/release=notify-service -o jsonpath="{.items[0].status.podIP}"):18086/health | jq -r .status
         ```
     - 出现以下类似信息即为成功部署
         ```
