@@ -42,6 +42,7 @@
 
 .contribute .cards .card img{
     margin-top: 0.28rem;
+    display: block;
 }
 
 @media (max-width: 767px) {

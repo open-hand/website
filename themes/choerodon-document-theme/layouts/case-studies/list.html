@@ -23,7 +23,7 @@
                             <h3>{{ .Params.title }}</h3>
                             <p class="summary">{{ .Params.summary }}</p>
                             <a class="button"  {{ if .Params.unfinshed }} {{ else }} href="{{ .RelPermalink }}" {{ end }}>
-                                <div>{{ i18n "readmore"}}</div>
+                                <span>{{ i18n "readmore"}}</span>
                                 <i class="iconfont icon-arrow-right"></i>
                             </a>
                         </div>
