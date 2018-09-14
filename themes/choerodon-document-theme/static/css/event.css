@@ -5,6 +5,7 @@
 .event .content {
     padding-top: 0.6rem;
     padding-bottom: 0.8rem;
+    text-align: center;
 }
 
 .event .content .title{
@@ -17,16 +18,14 @@
 
 .event .content .cards{
     margin: 0.6rem auto 0 auto;
-    width: max-content;
 }
 
 .event .content .cards .card{
     background-color: #FFFFFF;
-    display: flex;
+    display: inline-flex;
     flex-direction: row;
     padding: 0.4rem 0.3rem;
     border-radius: 7px;
-    width: max-content;
 }
 .event .content .cards .card + .card{
     margin-top: 0.5rem;
@@ -34,10 +33,10 @@
 
 .event .content .cards .card .text{
     margin-left: 0.3rem;
+    text-align: left;
 }
 .event .content .cards .card img.head{
     width: 1.4rem;
-    height: 1.2rem;
 }
 .event .content .cards .card .card-title{
     font-size: 0.18rem;
