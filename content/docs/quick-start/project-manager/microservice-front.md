@@ -102,7 +102,7 @@ $ git checkout feature-choerodon-dev-1
 
 将代码克隆到本地后，就可以在本地进行开发。
 
-Choerodon 提供的`MicroServiceFront` 应用模板本身生成的应用可以直接运行在平台上。更多具体的开发参考[前端开发手册](../../development-guide/front/)。
+Choerodon 提供的`MicroServiceFront` 应用模板本身生成的应用可以直接运行在平台上。更多具体的开发参考[前端开发手册](../../../development-guide/)。
 
 **第四步：修改`ci` 文件**
 
