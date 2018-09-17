@@ -455,7 +455,7 @@ git push -u origin master # 提交所有代码
 
 ![enter description here](/docs/transference-guide/image/create-environment.png)
 
-3.保存时，系统会跳出来另一个对话框，如下图，需要将这段命令在步骤“应用系统环境搭建”中创建的Kubernetes环境中运行，以安装Choerodon Agent。这一步是必须要执行的，关于Choerodon Agent可以参考官网 [Choerodon Agent](./concept/choerodon-agent/)。
+3.保存时，系统会跳出来另一个对话框，如下图，需要将这段命令在步骤“应用系统环境搭建”中创建的Kubernetes环境中运行，以安装Choerodon Agent。这一步是必须要执行的，关于Choerodon Agent可以参考官网 [Choerodon Agent](../../concept/choerodon-agent/)。
 
 ![enter description here](/docs/transference-guide/image/copy-instruction.png)
 

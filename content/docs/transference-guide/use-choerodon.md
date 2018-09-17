@@ -15,7 +15,7 @@ weight = 4
 
 **资料**：
 
-- [知识管理快速入门](../../quick-start/wiki/)
+- [知识管理快速入门](../../quick-start/project-member/wiki-manager/)
 
 - [知识管理用户手册](../../user-guide/wiki/)
 
