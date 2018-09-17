@@ -13,7 +13,7 @@ description = "介绍如何快速创建一个Wiki页面"
 
 ## 目标
 
-本页面主要介绍 Choerodon 的知识管理中如何创建一个 Wiki 页面。
+本页面的目的是指导您如何在 Choerodon 的知识管理中创建一个 Wiki 页面 —— 知识管理初步使用。
 
 ## 前置条件
 
@@ -27,15 +27,15 @@ description = "介绍如何快速创建一个Wiki页面"
 
 **第二步:** 创建页面的填写。
 
-![create-page-process](/docs/quick-start/image/create-page-process.png)
+![create-page-process](/img/docs/quick-start/project-member/wiki-manager/create-page/create-page-process.png)
 
- - 填写页面标题。
- - 点击此处可以选择页面层次结构。
- - 选择要创建的页面类型模板，单击`创建`按钮即可。
+ - 填写页面标题 “知识管理初步使用” 。
+ - 选择要创建的页面模板为`空白页`，单击`创建`按钮即可。
 
-**第三步:** 创建完成之后，进入到编辑页面，完成文章的编写之后，点击页面下方的`保存并查看`按钮，便完成了一个页面的创建。
+**第三步:** 创建完成之后，进入到编辑页面，在编辑框中编写内容，点击页面下方的`保存并查看`按钮，便完成了一个页面的创建。
 
-![create-page-result](/docs/quick-start/image/create-page-result.png)
+![create-page-result-1](/img/docs/quick-start/project-member/wiki-manager/create-page/create-page-result-1.png)
+![create-page-result-2](/img/docs/quick-start/project-member/wiki-manager/create-page/create-page-result-2.png)
 
 ## 相关文档
 
