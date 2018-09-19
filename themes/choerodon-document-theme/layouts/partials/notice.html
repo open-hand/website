@@ -1,0 +1,15 @@
+{{ $.Scratch.Set "language" .Site.Language.Lang }}
+<div class="notice">
+    {{ range (sort .Site.Data.event "weight") }}
+    {{ if eq ($.Scratch.Get "language") .language }}
+    <a class="card" {{ if .href }} href='/{{ $.Scratch.Get "language" }}{{.href}}'{{ end }}>
+        <img src="{{ .homeImg }}" class="head dark"/>
+        <img src="{{ .img }}" class="head light"/>
+        <div class="text">
+            <div class="title">{{ .minTitle }}</div>
+            <div class="description">{{ .minDescription }}</div>
+        </div>
+    </a>
+    {{ end }}
+    {{ end }}
+</div>

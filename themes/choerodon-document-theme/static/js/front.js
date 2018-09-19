@@ -600,3 +600,18 @@ $(".code-expand-icon").on("click", function (e) {
     $(this).parent().parents(".code-box").children(".code-box-code").toggleClass("none block");
     
 })
+
+// home notice img hover
+// jQuery(document).ready(function () {
+//     // 案例hover更换图片
+//     jQuery('.notice .card').hover(function (e) {
+//         var img = $(this).children('img.head');
+//         var imgSrc = img.attr('src');
+//         var hoverImg = img.attr('data-hover');
+//         img.attr('src',hoverImg);
+//     }, function (e) {
+//         var img = $(this).children('img.head');
+//         var imgSrc = img.attr('src');
+//         img.attr('src',imgSrc);
+//     });
+// });
