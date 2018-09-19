@@ -79,7 +79,7 @@ helm repo update
         --set env.DB_DATABASE=xwiki \
         --set env.OIDC_ENDPOINT_AUTHORIZATION=http://api.example.choerodon.io/oauth/oauth/authorize \
         --set env.OIDC_ENDPOINT_TOKEN=http://api.example.choerodon.io/oauth/oauth/token \
-        --set env.OIDC_ENDPOINT_USERINFO=http://api.example.choerodon.io/oauth/api/user \
+        --set env.OIDC_ENDPOINT_USERINFO=http://api.example.choerodon.io/iam/v1/users/self \
         --set env.OIDC_ENDPOINT_LOGOUT=http://api.example.choerodon.io/oauth/logout \
         --set env.OIDC_CLIENTID=wiki \
         --set env.OIDC_SECRET=secret \
