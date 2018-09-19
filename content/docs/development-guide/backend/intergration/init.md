@@ -67,7 +67,7 @@ mysql> show databases;
 ``` bash
 $ mkdir -p tmp
 $ cd tmp
-$ touch init-manager-service.sh
+$ touch init-local-database.sh
 ```
 
 2.修改初始化脚本。
