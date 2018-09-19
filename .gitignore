@@ -8,3 +8,5 @@ node_modules/
 **/docslunr.json
 **/lunr.json
 package-lock.json
+*.scssc
+*.css.map

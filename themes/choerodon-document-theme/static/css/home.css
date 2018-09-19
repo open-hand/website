@@ -257,7 +257,7 @@
 }
 /* carousel.html */
 .carousels-section {
-	padding-top: 0.8rem;
+	padding-top: 1rem;
 	background:url(../img/banner.svg)no-repeat,linear-gradient(0deg, #003DAC,#3371E3);
 	background:url(../img/banner.svg)no-repeat,-webkit-linear-gradient(0deg, #003DAC,#3371E3);
 	background:url(../img/banner.svg)no-repeat,-moz-linear-gradient(0deg, #003DAC,#3371E3);
@@ -288,7 +288,7 @@
 	margin-bottom: 0.20rem;
 }
 .carousels-section .carousel-box-flex .carousel-button{
-	margin-bottom: 0.5rem;
+	margin-bottom: 0.8rem;
 }
 
 

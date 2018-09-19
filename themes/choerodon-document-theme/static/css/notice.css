@@ -1,0 +1,67 @@
+.notice {
+  padding: 0.15rem 0;
+  background-color: #F5F8FD;
+  text-align: center; }
+  @media (max-width: 767px) {
+    .notice {
+      padding: 0.1rem 0;
+      display: inline-flex; } }
+  .notice .card {
+    padding: 0 0.3rem;
+    display: inline-block; }
+    @media (max-width: 767px) {
+      .notice .card {
+        display: block;
+        padding: 0.1rem 0.02rem;
+        text-align: center; } }
+    .notice .card .head {
+      width: 0.6rem;
+      vertical-align: middle; }
+      @media (max-width: 767px) {
+        .notice .card .head {
+          width: 0.4rem; } }
+    .notice .card .light {
+      display: none; }
+    .notice .card .text {
+      margin-left: 0.3rem;
+      text-align: left;
+      color: rgba(0, 0, 0, 0.45);
+      display: inline-block;
+      vertical-align: middle; }
+      @media (max-width: 767px) {
+        .notice .card .text {
+          margin: 0; } }
+      .notice .card .text .title {
+        font-weight: 500; }
+        @media (max-width: 767px) {
+          .notice .card .text .title {
+            font-size: 0.1rem;
+            color: rgba(0, 0, 0, 0.54);
+            margin-top: 0.1rem;
+            width: 1.2rem;
+            text-align: center; } }
+        .notice .card .text .title + .description {
+          margin-top: 0.08rem; }
+      .notice .card .text .description {
+        width: 2.42rem;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+        min-height: 0.4rem; }
+        @media (max-width: 768px) {
+          .notice .card .text .description {
+            width: 3rem; } }
+        @media (max-width: 767px) {
+          .notice .card .text .description {
+            display: none; } }
+    .notice .card:hover .light {
+      display: inline; }
+    .notice .card:hover .dark {
+      display: none; }
+    .notice .card:hover .text .title {
+      color: #326DE6; }
+  .notice .card + .card {
+    border-left: 1px solid #d9d9d9; }
+
+/*# sourceMappingURL=notice.css.map */
