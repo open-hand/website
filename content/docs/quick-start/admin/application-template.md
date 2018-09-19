@@ -138,11 +138,10 @@ type = "docs"
         - *auto_devops
       ```
 
-<<<<<<< Updated upstream
- 1. [编写 charts 模块](../../../development-guide/basic/helm-chart)
-=======
+
+
 **第三步：** [编写 charts 模块](../../development-guide/basic/helm-chart)
->>>>>>> Stashed changes
+
       
       目录结构如下：
       ```
