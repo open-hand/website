@@ -13,19 +13,25 @@ description = "介绍如何快速编辑一个Wiki页面"
 
 ## 目标
 
-本页面目的是指导您在 Choerodon 的知识管理中编辑一个已存在的Wiki页面。
+本页面目的是指导您在 Choerodon 的知识管理中编辑一个已存在的Wiki页面 ———— 知识管理初步使用。
 
 ## 前置条件
 
-编辑的用户必须有需要编辑页面的`编辑`权限，也就是可以看到`编辑`按钮 —— 知识管理初步使用。
-
-## 编辑一个页面
-
-**第一步:** 进入到需要编辑的页面 —— 知识管理初步使用，点击右上角的`编辑`按钮，就可以进入到文档的编辑页面。
+编辑的用户必须有需要编辑页面的`编辑`权限，也就是在“知识管理初步使用”这个页面内可以看到`编辑`按钮。
 
 ![edit-page-start](/img/docs/quick-start/project-member/wiki-manager/edit-page/edit-page-start.png)
 
-**第二步:** 在编辑框中修改页面内容。编辑完成文档之后，点击页面下方的`保存并继续编辑`或`保存并查看`按钮即完成了文档编辑。
+## 编辑一个页面
+
+**第一步:** 进入到需要编辑的页面，例如 ：“知识管理初步使用” 这个页面，点击右上角的`编辑`按钮，就可以进入到文档的编辑页面。
+
+![edit-page-process-1](/img/docs/quick-start/project-member/wiki-manager/edit-page/edit-page-process-1.png)
+
+**第二步:** 在编辑框中修改页面内容, 例如： 添加一句 “现在我们修改第一个创建的页面。” 。编辑完成文档之后，点击页面下方的`保存并继续编辑`或`保存并查看`按钮即完成了文档编辑。
+
+![edit-page-process-2](/img/docs/quick-start/project-member/wiki-manager/edit-page/edit-page-process-2.png)
+
+**第三部:** 编辑完成之后，我们就可以看到 “知识管理初步使用” 这个页面的内容被我们修改成功了。
 
 ![edit-page-result](/img/docs/quick-start/project-member/wiki-manager/edit-page/edit-page-result.png)
 

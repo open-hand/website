@@ -17,25 +17,34 @@ description = "介绍如何快速创建一个Wiki页面"
 
 ## 前置条件
 
-创建的用户必须当前空间下`创建页面`的权限，也就是能看到`创建`的按钮。
+创建的用户必须有当前空间下的`创建页面`权限，也就是能看到`创建`的按钮。
 
 ## 创建一个页面
 
-**第一步：** 在空间主页点击`创建`按钮，进入到创建页面。
+**第一步：** 在项目层的 "项目管理" -> “Wiki管理” 中点击需要创建页面的`空间地址`，进入到空间主页。
 
 ![create-page-start](/img/docs/quick-start/project-member/wiki-manager/create-page/create-page-start.png)
 
-**第二步:** 创建页面的填写。
+**第二步：** 在空间主页点击`创建`按钮，进入到创建页面。
 
-![create-page-process](/img/docs/quick-start/project-member/wiki-manager/create-page/create-page-process.png)
+![create-page-process-1](/img/docs/quick-start/project-member/wiki-manager/create-page/create-page-process-1.png)
 
- - 填写页面标题 “知识管理初步使用” 。
- - 选择要创建的页面模板为`空白页`，单击`创建`按钮即可。
+**第三步:** 在创建页面的区域填写页面名字等内容，然后点击`创建`即可。例如：
 
-**第三步:** 创建完成之后，进入到编辑页面，在编辑框中编写内容，点击页面下方的`保存并查看`按钮，便完成了一个页面的创建。
+* 页面标题：知识管理初步使用
+* 页面位置：不需要修改（可以通过这个修改创建的页面所在的位置，这里使用默认位置）
+* 页面模板：选择空白页（wiki会提供各种不同的模板，这里我们使用最简单的空白页来创建第一个页面）
+* 是否为终端页面：不勾选（勾选了终端页面之后，在这个页面下就不能够创建子页面了）
 
-![create-page-result-1](/img/docs/quick-start/project-member/wiki-manager/create-page/create-page-result-1.png)
-![create-page-result-2](/img/docs/quick-start/project-member/wiki-manager/create-page/create-page-result-2.png)
+![create-page-process-2](/img/docs/quick-start/project-member/wiki-manager/create-page/create-page-process-2.png)
+
+**第四步:** 创建完成之后，进入到编辑页面，在编辑框中编写内容，如：“这是创建的第一个wiki页面”，点击页面下方的`保存并查看`按钮，便完成了一个页面的创建。
+
+![create-page-process-3](/img/docs/quick-start/project-member/wiki-manager/create-page/create-page-process-3.png)
+
+**第五步:** 保存页面之后，我们就可以看到新创建的页面内容了。 
+
+![create-page-result](/img/docs/quick-start/project-member/wiki-manager/create-page/create-page-result.png)
 
 ## 相关文档
 
