@@ -8,7 +8,7 @@
                 <rect id="Rectangle-10" fill="#6694EF" x="13" y="33" width="72" height="32" rx="4"></rect>
                 <path d="M1,30 L1,96.5 L139,96.5 L139,46.3333333 L73.0877074,46.3333333 C70.8270496,46.3333333 68.7055537,45.2415735 67.3915731,43.4020007 L59.3142933,32.093809 C58.3757357,30.7798284 56.8603815,30 55.245626,30 L1,30 Z" id="Rectangle-8" stroke="#979797" stroke-width="2" fill="#FFFFFF" transform="translate(70.000000, 63.250000) scale(-1, 1) translate(-70.000000, -63.250000) "></path>
                 <rect id="Rectangle-9" fill="#FFFFFF" x="114" y="37" width="24" height="5"></rect>
-                <rect class="sign" fill="#FFD666" x="96" y="68" width="54" height="40" rx="6"></rect>
+                <rect class="sign" fill="#D9D9D9" x="96" y="68" width="54" height="40" rx="6"></rect>
                 <polygon id="Fill-114" fill="#FFFFFF" points="118 95 132 88 118 81"></polygon>
             </g>
         </g>

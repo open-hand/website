@@ -1,7 +1,10 @@
 weight: 2
 title: "与大家分享Kubernetes知识"
+minTitle: "分享Kubernetes知识"
 description: "打造最新最全的Kubernetes知识分享系列文章以及Choerodon的使用经验，持续更新中"
+minDescription: "打造最新、最全的Kubernetes知识分享系列文章"
 button: "开始学习"
 img: "/img/socials/event/kubernetes.svg"
-href: "../blog/kubernetes-basic/"
+homeImg: "/img/home/notice/share.svg"
+href: "/blog/kubernetes-basic/"
 language: zh

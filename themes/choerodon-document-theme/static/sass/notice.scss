@@ -1,0 +1,81 @@
+.notice {
+    padding: 0.15rem 0;
+    background-color: #F5F8FD;
+    text-align: center;
+    @media (max-width: 767px) {
+        padding: 0.1rem 0;
+        display: inline-flex;
+    }
+    .card {
+        padding: 0 0.3rem;
+        display:  inline-block;
+        @media (max-width: 767px) {
+            display: block;
+            padding: 0.1rem 0.02rem;
+            text-align: center;
+        }
+        .head {
+            width: 0.6rem;
+            vertical-align: middle;
+            @media (max-width: 767px) {
+                width: 0.4rem;
+            }
+        }
+        .light {
+            display: none;
+        }
+        .text {
+            margin-left: 0.3rem;
+            text-align: left;
+            color: rgba(0, 0, 0, 0.45);
+            display: inline-block;
+            vertical-align: middle;
+            @media (max-width: 767px) {
+                margin:0;
+            }
+            .title {
+                font-weight: 500;
+                @media (max-width: 767px) {
+                    font-size: 0.1rem;
+                    color: rgba(0, 0, 0, 0.54);
+                    margin-top: 0.1rem;
+                    width: 1.2rem;
+                    text-align: center;
+                }
+                +.description {
+                    margin-top: 0.08rem;
+                }
+            }
+            .description {
+                width: 2.42rem;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+                overflow: hidden;
+                min-height: 0.4rem;
+                @media (max-width: 768px) {
+                    width: 3rem;
+                }
+                @media (max-width: 767px) {
+                    display: none;
+                }
+            }
+        }
+        &:hover {
+            .light {
+                display: inline;
+            }
+            .dark {
+                display: none;
+            }
+            .text {
+                .title {
+                    color: #326DE6;
+                }
+            }
+        }
+    }
+    .card+.card {
+        border-left: 1px solid #d9d9d9;
+    }
+}

@@ -11,7 +11,7 @@
                 <div class="text">
                     <div class="card-title">{{ .title }}</div>
                     <div class="description">{{ .description }}</div>
-                    <a class="button" {{ if .href }} href="{{.href}}"{{ end }}>
+                    <a class="button" {{ if .href }} href='/{{ $.Scratch.Get "language" }}{{.href}}'{{ end }}>
                         <span>{{ .button }}</span>
                         <i class="iconfont icon-arrow-right"></i>
                     </a>
