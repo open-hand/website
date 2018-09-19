@@ -15,7 +15,7 @@ type = "docs"
 
 ## 目标
 
-本章节将从创建应用模板介绍，让读者能够熟悉使用Choerodon创建应用模板的步骤和流程。
+本章节将以应用模板“猪齿鱼应用模板”的创建为例展开介绍，让读者能够熟悉使用Choerodon创建应用模板的步骤和流程。
 
 ## 前置条件
 
@@ -25,29 +25,48 @@ type = "docs"
 
 ## 创建应用模板
 
- 具体操作步骤如下：
+**第一步：** 使用组织管理员的角色登录Choerodon系统，此时进入平台Dashboard界面，点击选择项目，弹出组织/项目选择界面。
 
-   **第一步：** 使用组织管理员的角色登录Choerodon系统，此时进入平台Dashboard界面，点击选择项目，弹出组织/项目选择界面。
-   
-   **第二步：** 点击组织`choerodon`。进入`应用管理`后，点击`应用模板`。
+    
+**第二步：** 点击组织`choerodon`。
 
- ![enter app template](/docs/quick-start/image/enter_app_template1.png)
+**第三步：** 进入`应用管理`后，点击`应用模板`。
 
-   **第三步：** 在[应用模板](../../../user-guide/application-management/application-template)界面中，点击`创建应用模板`，系统会从右侧滑出创建应用模板页面，输入应用模板编码、应用模板名称、应用模板描述和选择应用模板的来源模板。
-      
- ![fill app template](/docs/quick-start/image/fill_app_template1.png)
-     
-   **第四步：** 当应用模板创建成功，可在`应用管理`模块，点击`应用模板` 界面查看到新建的应用模板。
+ ![enter app template](/docs/quick-start/image/Application_template.gif)
 
-   **第五步：** 在创建应用的同时，系统会对应在`Gitlab`中创建一个仓库，选择`应用管理`点击`应用模板`，找到创建好的应用模板，点击`地址`，链接到`Gitlab`新建的仓库。
+**第四步：** 进入`应用模板`页面后，点击`创建应用模板`，系统会从右侧滑出创建应用模板页面，输入应用模板编码、应用模板名称、应用模板描述和选择应用模板的来源模板。例如：   
 
- ![check app template](/docs/quick-start/image/check_app_template2.png)
+- 编码：choerodon-app-temp  
+- 名称：猪齿鱼应用模板  
+- 描述：猪齿鱼应用模板示例    
+
+
+    ![create app template](/docs/quick-start/image/Create_template.png)   
+
+    ![fill app template](/docs/quick-start/image/Create_template2.png)
+    
+    字段名 |说明 
+    ---|---
+    编码 | 应用模板的编码 | 
+    名称 | 应用模板的名称 | 
+    描述 | 应用模板的描述 | 
+    复制于 | 应用模板的来源模板，选择并复制当前列表内的一个已有模板 | 
+    
+    
+       
+
+
+**第五步：** 当应用模板创建成功，可在`应用管理`模块，点击`应用模板` 界面查看到新建的应用模板。
+
+**第六步：** 在创建应用的同时，系统会对应在`Gitlab`中创建一个仓库，选择`应用管理`点击`应用模板`，找到创建好的应用模板，点击`地址`，链接到`Gitlab`新建的仓库。
+
+![check app template](/docs/quick-start/image/check_app_template.png)
  
 ## 开发应用模板
 
 应用创建完成之后，可以视具体情况修改模板内容。以后端模板为例，具体的操作步骤如下：
 
- 1. 编写一个 dockerfile：
+ **第一步：** 编写一个 dockerfile：
  
     目录结构如下：
  
@@ -70,7 +89,7 @@ type = "docs"
     
     此为后端模板的 dockerfile，应视模板具体语言的对其进行修改。
 
- 1. [编写 Gitlab-ci 文件](https://docs.gitlab.com/ee/ci/)
+ **第二步：** [编写 Gitlab-ci 文件](https://docs.gitlab.com/ee/ci/)
 
       ```yaml
       image: registry.cn-hangzhou.aliyuncs.com/choerodon-tools/cibase:0.6.0
@@ -119,7 +138,11 @@ type = "docs"
         - *auto_devops
       ```
 
+<<<<<<< Updated upstream
  1. [编写 charts 模块](../../../development-guide/basic/helm-chart)
+=======
+**第三步：** [编写 charts 模块](../../development-guide/basic/helm-chart)
+>>>>>>> Stashed changes
       
       目录结构如下：
       ```
@@ -150,7 +173,7 @@ type = "docs"
 
       `_helpers.tpl`：放置模板助手的地方，您可以在整个 chart 中重复使用。
       
- 1. 提交改动至 `master` 分支。
+**第四步：** 提交改动至 `master` 分支。通过这些步骤，便能快速的在Choerodon里创建应用模板了。
 
 ## 相关文档  
 

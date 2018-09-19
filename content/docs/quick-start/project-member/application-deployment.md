@@ -3,6 +3,7 @@ title = "部署一个应用"
 description = "介绍了如何部署一个应用"
 weight = 4
 type = "docs"
++++
 
 +++
 
@@ -12,8 +13,12 @@ type = "docs"
 部署应用指将应用的某一个版本部署至指定环境的操作，提供可视化、一键式部署应用，支持并行部署和流水线无缝集成，实现部署环境标准化和部署过程自动化。
 
 ## 目标
+<<<<<<< Updated upstream:content/docs/quick-start/project-member/application-deployment.md
 本章节将从应用部署的方面进行展开，在具体的步骤中让读者了解如何在环境中去部署一个应用。
 
+=======
+本章节将以应用“choerodon-front-demo”的部署为例进行展开，在具体的步骤中让读者了解如何在环境中去部署一个应用。
+>>>>>>> Stashed changes:content/docs/quick-start/project member/application-deployment.md
 ## 前置条件
 **1.** 在操作之前保证[系统配置](../../../user-guide/system-configuration)已经配置完全。特别在本章节用到的角色、环境管理等配置。
 
@@ -76,7 +81,8 @@ type = "docs"
 >
 >* 当实例出现在列表中，且实例名称后没有报错提示`icon`即为部署成功生成实例；
 >* 当容器状态条为绿色，且容器状态显示为`1/1`时，表示新部署的实例通过健康检查。
-
+  
+  完成了该应用的部署之后，您就可以进行后续的添加网络、添加域名等操作，以便您能通过浏览器来访问所部署的应用。
 ## 相关文档
 - [系统配置](../../../user-guide/system-configuration)  
 - [创建环境](../../../user-guide/deployment-pipeline/environment-pipeline)
