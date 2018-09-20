@@ -12,9 +12,9 @@ type = "docs"
 ## 概述
 后端应用(Backend Application)采用`Spring Boot`、`Spring Cloud` 作为应用的开发框架，利用丰富的文档、社区活跃和一套完整的应用框架解决方案提供技术支持。
 
-## 目标
+## 目标  
 
-本章节将从创建后端应用开发、后端应用、提交代码、生成版本到部署应用等方面介绍，让读者能够熟悉使用Choerodon创建应用后端应用的步骤和流程，并且学会如何利用Choerodon部署应用等。
+本章节将以创建后端应用 "猪齿鱼Todo服务" 为例,从后端应用开发、提交代码、生成版本到部署应用等方面展开介绍，让读者能够熟悉使用Choerodon创建应用后端应用的步骤和流程，并且学会如何利用Choerodon部署应用等。
 
 ## 前置条件
 
@@ -32,13 +32,11 @@ type = "docs"
       
  ![](/docs/quick-start/image/enter-app.png)
 
-**第三步：** 点击[创建应用](../../../user-guide/application-management/application)，系统会从右边滑出页面，在页面中输入`应用编码`、`应用名称`，`应用模板`，`应用模板`选择`MicroService`。点击`创建`，即可创建一个后端应用。
+**第三步：** 点击[创建应用](../../../user-guide/application-management/application)，系统会从右边滑出页面，在页面中输入`应用编码`、`应用名称`，`应用模板`，`应用模板`选择`MicroService`。点击`创建`，即可创建一个后端应用,创建成功后,您可以进行后续的后端应用开发。
 
-字段名 | 输入值
----|--- 
-应用编码 | `choerodon-todo-servie`
-应用名称 | `猪齿鱼Todo服务`
-选择应用模板 | `MicroService`
+- 应用编码: `choerodon-todo-servie`
+- 应用名称: `猪齿鱼Todo服务`
+- 应用模板: `MicroService`
 
  ![](/docs/quick-start/image/create_app.png)
 
@@ -65,7 +63,12 @@ Choerodon 名词 | 对应Gitlab 名词 | 举例
 **第一步： 创建`Feature`分支**
 
 在 `开发流水线` -> `分支` 界面，选择应用``choerodon-todo-service``。点击`创建分支`。如果没有`issue`可选择，则先[创建issue](../../../user-guide/agile/issue/create-issue/),
-选择对应的`issue`。分支来源选择`master`。填写`issue`号，如`feature-1`。点击`创建`，即可创建一个分支。
+选择对应的`issue`。分支来源选择`master`。填写`issue`号，如`feature-1`。点击`创建`，即可创建一个分支。创建完分支之后,　您就可以进行后续的本地开发。
+
+- 问题名称: `choerodon-dev-1 猪齿鱼快速入门文档`
+- 分支来源: `master`
+- 分支类型: `feature` 
+- 分支名称: `feature-choerodon-dev-1`
 
 ![](/docs/quick-start/image/create_branch2.png)
 
@@ -219,7 +222,14 @@ $ git push origin feature-choerodon-dev-1
 
 ![](/docs/quick-start/image/regi-instances.png)
 
-**第六步：** 服务注册成功后，用平台管理员给该服务添加路由，路径为点击管理->微服务管理->路由管理，将其api暴露在swagger上,就可以在swagger-ui访问服务的api。swagger-ui前缀为gateway地址，具体值详见[一键部署](../../../installation-configuration/steps/choerodon/)或者[分布部署](../../../installation-configuration/steps/parts/)
+**第六步：** 服务注册成功后，用平台管理员给该服务添加路由，路径为点击管理->微服务管理->路由管理，将其api暴露在swagger上,创建为路由之后，您就可以在swagger-ui访问服务的api。swagger-ui前缀为gateway地址，
+
+- 路由名称: `choerodon-todo-service`
+- 路径: `/todo/**`
+- 对应微服务: `choerodon-todo-service`
+
+
+具体值详见[一键部署](../../../installation-configuration/steps/choerodon/)或者[分布部署](../../../installation-configuration/steps/parts/)
 
 ![](/docs/quick-start/image/create_luyou2.png)
 
