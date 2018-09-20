@@ -236,7 +236,8 @@ Description | Action Name | HTTP Mapping | HTTP Request Body | HTTP Response Bod
 
 ``` java
 
-@RestController("/v1/users")
+@RestController
+@RequestMapping("/v1/users")
 public class UserController {
 
     @GetMapping("/")
