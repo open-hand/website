@@ -108,3 +108,7 @@ $ sh ./init-local-database.sh
 ```
 
 4.命令执行成功之后，刷新数据库，会出现初始化脚本中的表以及初始化数据。
+
+{{< warning >}}
+本地需要的`manager-service` 和`iam-service` 尽量以最新版本的`tag` 为主。如果初始化数据库失败，可以下载最新版本的`choerodon-tool-liquibase.jar` 并重命名覆盖`./bin/choerodon-tool-liquibase.jar`，然后重新执行`init-local-database.sh` 脚本
+{{< /warning >}}
