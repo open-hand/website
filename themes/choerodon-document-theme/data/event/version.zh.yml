@@ -2,7 +2,7 @@ weight: 3
 title: "开源企业级数字化服务平台——Choerodon猪齿鱼发布0.9版本"
 minTitle: "0.9版本发布"
 description: "2018年8月24日，发布了0.9版本,采用GitOps模型，可以轻松使对象进行恢复和迁移。"
-minDescription: "0.9版本采用GitOps模型，轻松使对象进行恢复和迁移。"
+minDescription: "2018年8月24日，发布了0.9版本"
 button: "了解详情"
 img: "/img/socials/event/version.svg"
 homeImg: "/img/home/notice/version.svg"
