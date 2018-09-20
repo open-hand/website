@@ -7,7 +7,7 @@ language: zh
 
 childIcon1: "/img/home/microservice-illustrator-1.svg"
 childTitle1: "服务注册发现"
-childDescription1: "基于Zookeeper的服务注册与发现"
+childDescription1: "基于Kubernetes的服务注册与发现"
 
 childIcon2: "/img/home/microservice-illustrator-2.svg"
 childTitle2: "高可用管控和实时监控"
@@ -15,7 +15,7 @@ childDescription2: "限流降级、流量管控，及系统和服务级监控"
 
 childIcon3: "/img/home/microservice-illustrator-3.svg"
 childTitle3: "事件一致性"
-childDescription3: "采用可靠事件模式来保证数据的一致性"
+childDescription3: "采用Saga来保证数据的一致性"
 
 childIcon4: "/img/home/microservice-illustrator-4.svg"
 childTitle4: "通用模块和快速开发"
