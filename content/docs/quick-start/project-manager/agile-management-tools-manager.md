@@ -16,15 +16,6 @@ type = "docs"
 
 本章内容旨在引导项目管理者如何使用敏捷管理工具来管理项目。
 
-以如下系统为例：
-
- - 系统名称：Choerodon机器人
-
- - 系统描述：Choerodon机器人是Choerodon猪齿鱼社区开发一个介绍Choerodon猪齿鱼、解答相关问题、以及发布Choerodon猪齿鱼新闻事件的智能机器人系统。
-
- - 功能模块：自我介绍、问题解答、新闻事件等
-
-
 ## 前置条件
 
 **1.** 在操作之前保证系统配置已经配置完全。
@@ -38,28 +29,17 @@ type = "docs"
 
 操作步骤如下：
 
-**第一步：** 点击`待办事项`菜单，进入到待办事项页面，在页面左侧展开版本tab页，可快速进入[创建版本](../../../user-guide/agile/backlog/version/)。也可在`发布版本`菜单页面上方点击`创建发布版本`按钮创建。(路径：待办事项 > 版本 > 创建版本)
- 
- ![创建版本](/docs/quick-start/image/agile/create_version.gif)
+**第一步：** 点击`待办事项`菜单，进入到待办事项页面，在页面左侧展开版本tab页，可快速进入[创建版本](../../../user-guide/agile/backlog/version/)。也可在`发布版本`菜单页面上方点击`创建发布版本`按钮创建。
 
 **第二步：** 点击`创建版本`会弹出如下图片的创建页面。在此页面中填写版本详情，包括`名称`（必输）、`描述`（可选）、`开始日期`（可选）、`发布日期`（可选）。
 
-  - `版本名称`：0.1.0
-  
-  - `开始时间`：2018-06-24
-  
-  - `结束时间`：2018-06-30
-  
-  - `版本描述`：v0.1.0
-  
- ![创建版本](/docs/quick-start/image/agile/version_create_re.png)
-
-
 **第三步：**随后单击`新建`即可创建一个新版本。
+
+![版本创建详情](/docs/quick-start/image/agile/version_create_detail-2.gif)
 
 创建成功后，可在版本列表中看到此版本
 
-![版本列表](/docs/quick-start/image/agile/version_list_re.png)
+![版本列表](/docs/quick-start/image/agile/version_list-1.png)
 
  - 点击`详情`，会在右侧显示出该版本下的问题列表。 
  
@@ -71,28 +51,15 @@ type = "docs"
 
 操作步骤如下：
 
-**第一步：** 点击`待办事项`菜单，进入到待办事项页面，在页面左侧展开版本tab页，可快速进入[创建史诗](../../../user-guide/agile/backlog/epic/)。(路径：待办事项 > 史诗 > 创建史诗)
-
- ![创建史诗](/docs/quick-start/image/agile/create_epic.gif)
+**第一步：** 点击`待办事项`菜单，进入到待办事项页面，在页面左侧展开版本tab页，可快速进入[创建史诗](../../../user-guide/agile/backlog/epic/)。
 
 **第二步：** 点击`创建史诗`会弹出如下图片的创建页面。在此页面中填写版本详情，包括`史诗名称`（必输）、`概要`（必输）。
 
-  在创建史诗界面，录入如下信息：
-  
-  - `问题类型`：史诗
-  
-  - `史诗名称`：概括介绍Choerodon
-  
-  - `概要`：Choerodon机器人能够介绍猪齿鱼的概况。
-
- ![史诗列表](/docs/quick-start/image/agile/epic_create_re.png)。
-
-
 **第三步：**随后单击`新建`即可创建一个新史诗。
 
-创建成功后，可在版本列表中看到此史诗
+创建成功后，可在版本列表中看到此版本
 
- ![史诗列表](/docs/quick-start/image/agile/epic_list_re.png)。
+ ![史诗列表](/docs/quick-start/image/agile/epic_list-1.png)。
 
  - 点击详情，会在右侧显示出该史诗下的问题列表。 
 
@@ -106,17 +73,11 @@ type = "docs"
 
 相关操作如下：
 
-**第一步：** 进入到`待办事项`菜单内，在页面上方点击`创建冲刺`，即可[创建冲刺](../../../user-guide/agile/backlog/sprint/)。(路径：待办事项 > 创建冲刺)
+**第一步：** 进入到`待办事项`菜单内，在页面上方点击`创建冲刺`，即可[创建冲刺](../../../user-guide/agile/backlog/sprint/)。
 
- ![创建冲刺](/docs/quick-start/image/agile/create_sprint.gif)
+**第二步：** 冲刺名称默认为：冲刺+递增的编号，点击名称可自行进行修改。
 
-**第二步：** 冲刺名称默认为：冲刺+递增的编号，点击名称修改为`v0-7guide 0625-0630`。
-
-![冲刺详情](/docs/quick-start/image/agile/sprint_create_re.png)
-
-**第三步：** 将创建好的问题`choerodon-2`和`choerodon-3`拖入冲刺`v0-7guide 0625-0630`中，并且开启冲刺
-
-![冲刺详情](/docs/quick-start/image/agile/sprint_detail_re.png)
+![冲刺详情](/docs/quick-start/image/agile/sprint_detail-1.png)
 
  1.可选择`仅我的问题`或者`仅故事`对所有待办事项进行快速搜索。
 
@@ -137,7 +98,7 @@ type = "docs"
 
 ## 配置看板
 
-![看板](/docs/quick-start/image/agile/setting.png)
+![看板](/docs/quick-start/image/agile/kanban.png)
 
 ### 配置列
  
@@ -145,20 +106,11 @@ type = "docs"
 
 相关操作如下：
 
-**第一步：** 点击`配置`进入到看板配置页面，点击`添加列`，新增看板列。(路径：活跃冲刺 > 配置 > 列配置 > 添加列)
-
- ![添加配置列](/docs/quick-start/image/agile/create_column.gif)
+**第一步：** 点击`配置`进入到看板配置页面，点击`添加列`，新增看板列。
 
 **第二步：** 输入`列名称`与`类别`，点击`创建`即可。创建成功后，系统默认创建一个与列同名的状态。
 
-  输入列信息：
-   
-   - `列名称`：待验证
-   
-   - `类别`：进行中
-
-![添加列详情](/docs/quick-start/image/agile/column_add_re.png)
-
+![添加列详情](/docs/quick-start/image/agile/column_add_detail-1.png)
 
 说明：添加一个新的列：单击页面右侧的添加列按钮，系统会保证列只有待处理、处理中、已完成3种类别。
  
@@ -172,23 +124,13 @@ type = "docs"
 
 相关操作如下：
  
-**第一步：** 进入到看板配置页面，点击`添加状态`，新增状态。(路径：活跃冲刺 > 配置 > 列配置 > 添加状态)
-
- ![添加状态](/docs/quick-start/image/agile/create_state.gif)
+**第一步：** 进入到看板配置页面，点击`添加状态`，新增状态。
 
 **第二步：** 输入`状态名称`与`类别`，并且状态名称在该项目下唯一，即可创建一个新的状态。
 
-  输入状态信息：
-   
-   - `状态名称`：已验证
-    
-   - `类别`：进行中
-   
- ![添加状态详情](/docs/quick-start/image/agile/status_create_re.png)
-
 **第三步：** 创建成功后，该状态位于`未对应的状态`区域中。
 
- ![添加状态成功](/docs/quick-start/image/agile/status_create_success_re.png)
+![添加列详情](/docs/quick-start/image/agile/column_add_detail-4.gif)
 
 说明：一个列可以包含一个或多个状态，列里的状态可拖拽到其他任意列中，也可拖拽到未对应区域中，若拖拽到未对应区域中则该状态不会在看板上显示
 
@@ -196,7 +138,7 @@ type = "docs"
  
 列约束是指对该列的问题个数进行设置，这样可以管理问题在不同列中的流动。
 
-如果开启列约束，则可以针对每一列对问题的最大数量和最小数量进行设置，可以为所有列指定约束，或者只指定其中的一些列。如果问题数量超出了此列的约束，在看板中，此列将限制问题的移除或移入。(路径：活跃冲刺 > 配置 > 列配置 > 列约束)
+如果开启列约束，则可以针对每一列对问题的最大数量和最小数量进行设置，可以为所有列指定约束，或者只指定其中的一些列。如果问题数量超出了此列的约束，在看板中，此列将限制问题的移除或移入。
 
 ![列约束](/docs/quick-start/image/agile/column_constraint.png)
 
@@ -214,28 +156,17 @@ type = "docs"
 
 相关操作如下：
 
-**第一步：** 进入到`模块管理`菜单内，在页面上方点击[创建模块](../../../user-guide/agile/component/)，输入`模块名称`（必输）、`负责人`（必输）、`模块描述`（可选）、`默认经办人`（必输）等字段即可创建一个新模块。(路径：模块管理 > 创建模块)
-
-  输入如下信息：
-  
-  - `模块名称`：自我介绍
-    
-  - `模块描述`：自我介绍功能
-  
-  - `默认经办人`：模块负责人
-  
-  ![模块列表](/docs/quick-start/image/agile/component_create_re.png)
+**第一步：** 进入到`模块管理`菜单内，在页面上方点击[创建模块](../../../user-guide/agile/component/)，输入`模块名称`（必输）、`负责人`（必输）、`模块描述`（可选）、`默认经办人`（必输）等字段即可创建一个新模块。
 
 **第二步：** 创建成功后，进入到某个问题详情内，可以选择到该模块，表示将该问题归类到此模块中。
 
-  ![模块应用](/docs/quick-start/image/agile/component_apply_re.png)
-
+![模块列表](/docs/quick-start/image/agile/component_list.png)
 
 ## 结束冲刺
 
-当冲刺完成迭代后，可在`活跃冲刺`页面右上角点击‘完成冲刺’按钮完成冲刺(路径：活跃冲刺 > 完成冲刺)。此时会弹出冲刺的统计界面，如下图所示：
+当冲刺完成迭代后，可在`活跃冲刺`页面右上角点击‘完成冲刺’按钮完成冲刺。此时会弹出冲刺的统计界面，如下图所示：
 
-![结束冲刺](/docs/quick-start/image/agile/sprint_complete_re.png)
+![结束冲刺](/docs/quick-start/image/agile/sprint_complete-1.png)
 
 说明：
  
@@ -250,32 +181,33 @@ type = "docs"
 
 ## 发布版本
 
-进入到`发布版本`菜单中，点击版本右侧按钮 → ![标识](/docs/quick-start/image/agile/detail_button.png)(路径：发布版本 > 发布)，或者点击`版本名`进入版本详情页面，点击版本名称旁边的`发布`按钮。
+进入到`发布版本`菜单中，点击版本右侧按钮 → ![标识](/docs/quick-start/image/agile/detail_button.png)，或者点击`版本名`进入版本详情页面，点击版本名称旁边的`发布`按钮。
 
-![发布](/docs/quick-start/image/agile/version_release_re.png)
+![发布](/docs/quick-start/image/agile/version_release1.png)
 
 点击发布后，会跳出版本发布页面，更多相关信息以及详细操作步骤参考[发布版本](../../../user-guide/agile/release/release-version)。
 
 ### 撤销发布
 
-用户可根据自身需求撤销版本发布，点击版本右侧右侧按钮 → ![标识](/docs/quick-start/image/agile/detail_button.png)，点击`撤销发布`后，版本将更改状态为规划中。(路径：发布版本 > 撤销发布)
+用户可根据自身需求撤销版本发布，点击版本右侧右侧按钮 → ![标识](/docs/quick-start/image/agile/detail_button.png)，点击`撤销发布`后，版本将更改状态为规划中。
 
+![撤销版本结果](/docs/quick-start/image/agile/version_revoke_result.png)
 
 
 ### 归档
 
 归档版本是指发布时间较久并且不再更改的版本，作为版本状态周期的标记使用，主要是业务标记。
 
-将已发布的版本变更为归档，点击版本右侧右侧按钮 → ![标识](/docs/quick-start/image/agile/detail_button.png)，点击`归档`，版本将更改状态为归档。(路径：发布版本 > 归档)
+将已发布的版本变更为归档，点击版本右侧右侧按钮 → ![标识](/docs/quick-start/image/agile/detail_button.png)，点击`归档`，版本将更改状态为归档。
 
-![版本归档](/docs/quick-start/image/agile/version_pigeonhole_re.png)
+![版本归档](/docs/quick-start/image/agile/version_pigeonhole.png)
 
 
 ## 设置
 
 ### 项目设置
 
-项目设置主要设置问题编码的项目前缀、以及项目的默认优先级、默认经办人策略。(路径：设置 > 项目设置)
+项目设置主要设置问题编码的项目前缀、以及项目的默认优先级、默认经办人策略。
 
 ![版本归档](/docs/quick-start/image/agile/project_setting1.png)
 
@@ -295,7 +227,7 @@ type = "docs"
 
 ### 问题链接
 
-用户可以在问题详情以及创建问题的时候选择链接类型链接对应的问题。进入到`设置`菜单下的`问题链接`，可看到问题链接列表。(路径：设置 > 问题链接)
+用户可以在问题详情以及创建问题的时候选择链接类型链接对应的问题。进入到`设置`菜单下的`问题链接`，可看到问题链接列表。
 
 <blockquote class="note">
  系统内置链接包含: 阻塞、复制、关联。除此之外用户还可以设置功能自定义链接类型。 
@@ -307,27 +239,15 @@ type = "docs"
 
 相关操作如下：
 
-**第一步：** 进入到`设置`菜单下的快速搜索，点击页面上方的`创建快速搜索`按钮。(路径：设置 > 快速搜索 > 创建快速搜索)
-
-![创建快速搜索](/docs/quick-start/image/agile/create_quick_search.gif)
+**第一步：** 进入到`设置`菜单下的快速搜索，点击页面上方的`创建快速搜索`按钮。
 
 **第二步：** 在弹出的创建框中`输入名称`（必输）、`筛选条件`（包括属性、关系、值，可支持多个条件共同搜索）、`关系`（若有多个筛选条件，需要添加此关系）、`描述`（可选项）。点击创建即可成功[创建快速搜索](../../../user-guide/agile/setup/quick-search/)。
 
-  输入如下信息：
-  
-  - `名称`：优先级为高
-  
-  - `属性`：优先级、 = 、 高
-  
-  - `描述`：优先级为高的快速搜索
-
-![快速搜索创建](/docs/quick-start/image/agile/quick_filter_create_re.png)
-
-![快速搜索创建](/docs/quick-start/image/agile/quick_filter_list_re.png)
+![快速搜索创建](/docs/quick-start/image/agile/quick_filter_apply3.gif)
 
 **第三步：** 回到`待办事项`菜单或者`活跃冲刺`菜单，应用此快速搜索。
 
-![应用快速搜索](/docs/quick-start/image/agile/quick_filter_apply_re.png)
+![应用快速搜索](/docs/quick-start/image/agile/quick_filter_apply4.png)
 
 ## 相关文档 
 
