@@ -47,7 +47,7 @@ description = ""
 
 如下图所示：
 
-![](/img/docs/quick-start/project-member/test-manager/test-report/report-1.jpeg)
+![](/img/docs/quick-start/project-member/test-manager/test-report/report-1.png)
 
 从要求出发的追踪性测试报告用于展示从普通需求（也就是敏捷的故事、任务等卡片）出发，到关联的测试用例，再到该测试用例所关联的测试执行，最后到执行关联的缺陷结束。完整的反映了一个需求从开始开发到结束开发的过程。
 
@@ -55,7 +55,7 @@ description = ""
 
 如下图所示：
 
-![](/img/docs/quick-start/project-member/test-manager/test-report/report-2.jpeg)
+![](/img/docs/quick-start/project-member/test-manager/test-report/report-2.png)
 
 从缺陷出发的追踪性报告用来展示从缺陷出发，到是那个测试执行关联了这个缺陷，再到这个测试用例，最后在需求上结束的整条链路。比较方便展示、查看当前项目有哪些BUG，以及这些BUG是因为什么引起的。
 
