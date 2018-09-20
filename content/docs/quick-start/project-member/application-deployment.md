@@ -5,7 +5,6 @@ weight = 4
 type = "docs"
 +++
 
-+++
 
 # 部署一个应用
 ---
@@ -14,7 +13,7 @@ type = "docs"
 
 ## 目标
 
-本章节将以应用“choerodon-front-demo”的部署为例进行展开，在具体的步骤中让读者了解如何在环境中去部署一个应用。
+本章节将以应用“`choerodon-front-demo`”的部署为例进行展开，在具体的步骤中让读者了解如何在环境中去部署一个应用。
 
 ## 前置条件
 **1.** 在操作之前保证[系统配置](../../../user-guide/system-configuration)已经配置完全。特别在本章节用到的角色、环境管理等配置。
@@ -24,13 +23,15 @@ type = "docs"
 
 ## 部署应用
 
+具体操作步骤如下：
+
 **第一步：** 使用部署管理员的角色登录Choerodon系统，选择项目`猪齿鱼研发`。
 
 **第二步：** 进入`部署流水线`模块，选择`应用部署` 进入应用部署界面。  
 
 ![选择应用部署](/docs/quick-start/image/microservice-front23.png)
 
-**第三步：** 点击`选择应用`，找到已经提交的`choerodon-front-demo`。点击`选择版本`，选择`choerodon-front-demo` 最新的版本，点击下一步。 
+**第三步：** 点击`选择应用`，找到已经提交的`choerodon-front-demo`。点击`选择版本`，选择`choerodon-front-demo` 最新的版本，点击`下一步`。 
 
 ![选择应用版本](/docs/quick-start/image/microservice-front24.png)
 
@@ -40,35 +41,34 @@ type = "docs"
 **第五步：** 根据实际的配置，配置部署应用所需的配置信息。然后点击下一步。  
  ![修改配置信息](/docs/quick-start/image/microservice-front26.png)
 
-**第六步：** 选择`新建实例`。如果环境中已有一个实例，则可以选择`替换实例`。点击下一步，生成预览信息。  
+**第六步：** 选择`新建实例`。如果环境中已有一个实例，则可以选择`替换实例`。点击`下一步`，生成预览信息。  
  ![新建实例](/docs/quick-start/image/microservice-front27.png)
 
 **第七步：** 确认信息无误后，可以点击`部署` 来部署应用，页面自动跳转到`实例`页面。  
  ![确认部署信息](/docs/quick-start/image/microservice-front28.png)  
 
-  **实例界面详情**，更多相关信息以及详细操作步骤参考[实例管理](../../../user-guide/deployment-pipeline/instance)。
+ >**实例界面详情**，更多相关信息以及详细操作步骤参考[实例管理](../../../user-guide/deployment-pipeline/instance)。
  
- > 1. 提供四种不同视图查看实例
+ > 1.提供四种不同视图查看实例
 
- > 2. 实例列表
+ > 2.实例列表
 
- > 3. 操作实例状态，同步提示或错误提示<br>
+ > 3.操作实例状态，同步提示或错误提示<br>
 
  > 同步提示<br>
  > ![同步中](/docs/quick-start/image/microservice-front34.png)<br>
  > 错误提示<br>
- > ![错误提示](/docs/quick-start/image/microservice-front30.png)
- > 4. 实例可进行的操作<br>
+ > ![错误提示](/docs/quick-start/image/microservice-front30-2.png)
+
+ > 4.实例可进行的操作<br>
  >
 
  实例列表具体字段含义如下：
 
- 字段名 | 含义
-|---|---|
-容器状态 | pod的运行个数和运行状态
-实例状态 | 实例的运行状态
-实例名称 | 实例的名称
-应用 | 实例所属应用实例部署的环境
+- 容器状态：pod的运行个数和运行状态
+- 实例状态：实例的运行状态
+- 实例名称：实例的名称
+- 应用：实例所属应用实例部署的环境
 
 
 **第八步：** 选择已经部署的应用，右侧的`查看实例详情`，可以查看到阶段信息及日志。  
