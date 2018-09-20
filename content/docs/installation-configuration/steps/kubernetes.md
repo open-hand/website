@@ -253,7 +253,7 @@ weight = 10
 #### 添加节点
 
 <blockquote class="warning">
-通过本小节教程添加的节点不能是Master或Etce节点，只能是普通的Work节点。若你使用的是NFS作为存储，建议你先<a href="../nfs/#客户端挂载nfs服务器共享目录" target="_blank">安装nfs-utils</a>
+通过本小节教程添加的节点不能是Master或Etcd节点，只能是普通的Work节点。若你使用的是NFS作为存储，建议你先<a href="../nfs/#客户端挂载nfs服务器共享目录" target="_blank">安装nfs-utils</a>
 </blockquote>
 
 - 若集群搭建完毕后还想再添加节点，请按以下方式进行添加：
@@ -382,7 +382,7 @@ weight = 10
 #### 添加节点
 
 <blockquote class="warning">
-通过本小节教程添加的节点不能是Master或Etce节点，只能是普通的Work节点。若你使用的是NFS作为存储，建议你先<a href="../nfs/#客户端挂载nfs服务器共享目录" target="_blank">安装nfs-utils</a>
+通过本小节教程添加的节点不能是Master或Etcd节点，只能是普通的Work节点。若你使用的是NFS作为存储，建议你先<a href="../nfs/#客户端挂载nfs服务器共享目录" target="_blank">安装nfs-utils</a>
 </blockquote>
 
 - 若集群搭建完毕后还想再添加节点，请按以下方式进行添加：
@@ -568,7 +568,7 @@ Etcd节点和Master节点需要在相同的机器。
 ### 添加节点
 
 <blockquote class="warning">
-通过本小节教程添加的节点不能是Master或Etce节点，只能是普通的Work节点。若你使用的是NFS作为存储，建议你先<a href="../nfs/#客户端挂载nfs服务器共享目录" target="_blank">安装nfs-utils</a>。
+通过本小节教程添加的节点不能是Master或Etcd节点，只能是普通的Work节点。若你使用的是NFS作为存储，建议你先<a href="../nfs/#客户端挂载nfs服务器共享目录" target="_blank">安装nfs-utils</a>。
 </blockquote>
 
 - 若集群搭建完毕后还想再添加节点，请按以下方式进行添加：
@@ -933,7 +933,7 @@ Etcd节点和Master节点必须一致。
 ### 添加节点
 
 <blockquote class="warning">
-通过本小节教程添加的节点不能是Master或Etce节点，只能是普通的Work节点。若你使用的是NFS作为存储，建议你先<a href="../nfs/#客户端挂载nfs服务器共享目录" target="_blank">安装nfs-utils</a>
+通过本小节教程添加的节点不能是Master或Etcd节点，只能是普通的Work节点。若你使用的是NFS作为存储，建议你先<a href="../nfs/#客户端挂载nfs服务器共享目录" target="_blank">安装nfs-utils</a>
 </blockquote>
 
 - 若集群搭建完毕后还想再添加节点，请按以下方式进行添加：
