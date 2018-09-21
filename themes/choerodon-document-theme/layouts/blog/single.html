@@ -97,11 +97,11 @@
     </div>
 
     {{ partial "scripts.html" . }}
-<!-- blog search -->
-<script src="/js/blog-search.js"></script>
-<!-- blog search end -->
 <!-- share -->
 <script src="https://cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
 <!-- share end -->
+{{ range .Site.Data.static.blog.js }}
+    <script src="{{ . }}"></script>
+{{ end }}
   </body>
 </html>

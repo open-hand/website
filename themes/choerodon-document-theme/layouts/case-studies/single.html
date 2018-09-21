@@ -27,7 +27,8 @@
     <!-- /#all -->
 
     {{ partial "scripts.html" . }}
-
-
+    {{ range .Site.Data.static.case.js }}
+        <script src="{{ . }}"></script>
+    {{ end }}
   </body>
 </html>

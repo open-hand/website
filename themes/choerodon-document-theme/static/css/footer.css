@@ -30,31 +30,24 @@
   color: #fff
 }
 
-.footer .social {
-    display: flex;
-    justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
+.footer .social .social-single{
+    margin: 0 0 0 .2rem;
 }
 
-.footer .social a {
-    color: #555555;
-    font-size: 0.25rem;
-    margin: 0 0 0 0.2rem;
-    display: inline-block;
-    background-repeat: no-repeat;
-    background-size: auto;
-    width: 0.5rem;
-    height: 0.5rem;
-    border-radius: 0.05rem;
+.footer .social i {
+    font-size: 50px;
+    background-color: #FFFFFF;
+    border-radius: 6px;
+    color: #3371E3;
 }
 
-.footer .social a:first-child {
+.footer .social i:hover{
+    background-color: #3371E3;
+    color:#FFFFFF;
+}
+
+.footer .social .social-single:first-child {
     margin: 0;
-}
-
-.footer .social a:hover {
-    color: #5CC2F2;
 }
 
 .footer .sina-hover,
@@ -63,46 +56,6 @@
     position: absolute;
     width: 1rem;
     height: 1rem;
-}
-
-.footer a.github {
-    background: url(/img/footer/github.svg) no-repeat center;
-    background-size: 100%;
-}
-
-.footer a.github:hover {
-    background: url(/img/footer/github-hover.svg) no-repeat center;
-    background-size: 100%;
-}
-
-.footer a.wechat {
-    background: url(/img/footer/wechat.svg) no-repeat center;
-    background-size: 100%;
-}
-
-.footer a.wechat:hover {
-    background: url(/img/footer/wechat-hover.svg) no-repeat center;
-    background-size: 100%;
-}
-
-.footer a.sina {
-    background: url(/img/footer/sina.svg) no-repeat center;
-    background-size: 100%;
-}
-
-.footer a.footer-forum {
-    background: url(/img/footer/forum.svg) no-repeat center;
-    background-size: 100%;
-}
-
-.footer a.footer-forum:hover {
-    background: url(/img/footer/forum-hover.svg) no-repeat center;
-    background-size: 100%;
-}
-
-.footer a.sina:hover {
-    background: url(/img/footer/sina-hover.svg) no-repeat center;
-    background-size: 100%;
 }
 
 .footer .copy-right {

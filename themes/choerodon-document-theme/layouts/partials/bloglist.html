@@ -97,9 +97,8 @@
     </div>
 
     {{ partial "scripts.html" . }}
-<!-- blog search -->
-<script src="/js/blog-search.js"></script>
-<!-- blog search end -->
-
+{{ range .Site.Data.static.blog.js }}
+    <script src="{{ . }}"></script>
+{{ end }}
   </body>
 </html>

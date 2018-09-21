@@ -1,5 +1,6 @@
+@import url("style.choerodon.css");
+@import url("footer.css");
 /* 案例 */
-
 .case-studies-header .top-white-nav.top-nav {
     box-shadow: none;
 }

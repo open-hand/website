@@ -1,3 +1,8 @@
+@import url("style.choerodon.css");
+@import url("footer.css");
+@import url("contribute.css");
+@import url("event.css");
+
 /* 社区页面 */
 .community .talk-text {
     display: flex;

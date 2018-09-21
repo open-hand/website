@@ -2,12 +2,12 @@
 <html>
 
 {{ partial "head.html" . }}
-<link rel="stylesheet" href="/css/notice.css">
 <body>
 
 <div id="home">
 
     <header id="header">
+        <link href="/css/home.css" rel="stylesheet">
 
         {{ partial "nav.html" . }}
 
@@ -34,5 +34,8 @@
 <!-- /#all -->
 
 {{ partial "scripts.html" . }}
+{{ range .Site.Data.static.home.js }}
+    <script src="{{ . }}"></script>
+{{ end }}
 </body>
 </html>
