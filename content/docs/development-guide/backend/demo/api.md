@@ -46,7 +46,8 @@ package io.choerodon.todo.api.controller.v1;
 
 // 省略 import
 
-@RestController("/v1/users")
+@RestController
+@RequestMapping(value = "/v1/users")
 public class UserController {
     private UserService userService;
 
@@ -71,7 +72,8 @@ package io.choerodon.todo.api.controller.v1;
 
 // 省略 import
 
-@RestController("/v1/tasks")
+@RestController
+@RequestMapping(value = "/v1/tasks")
 public class TaskController {
     private TaskService taskService;
 
