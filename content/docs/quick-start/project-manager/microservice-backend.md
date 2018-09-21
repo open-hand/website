@@ -154,8 +154,6 @@ $ git push origin feature-choerodon-dev-1
 
 在`开发流水线` -> `合并请求` 页面，选择应用`choerodon-todo-service`。点击`创建合并请求`，跳转到`Gitlab`。 分别选择源分支为`feature-1` ，目标分支为`master`。并提交合并请求。等待`ci流水线`通过后，点击合并分支。
 
-![](/docs/quick-start/image/merge_request2.png)
-
 当`master` 分支的`ci流水线` 通过以后。在`应用管理` -> `应用版本` 可以找到`choerodon-front-demo`生成的对应版本。接下来就可以部署了。
 
 ![](/docs/quick-start/image/version.png)
@@ -224,6 +222,8 @@ $ git push origin feature-choerodon-dev-1
 **第五步：** 等待实例重启结束，通过`xxxx/eureka/apps` 查看是否成功注册。`xxxx`为部署`register-server`时建的域名，详细见[一键部署](../../../installation-configuration/steps/choerodon/)或者[分布部署](../../../installation-configuration/steps/parts/)。
 
 ![](/docs/quick-start/image/regi-instances.png)
+ 
+确认是否正常注册成功，搜索是否存在choerodon-todo-service的记录，存在则表示注册成功
 
 **第六步：** 服务注册成功后，用平台管理员给该服务添加路由，路径为点击管理->微服务管理->路由管理，将其api暴露在swagger上,创建为路由之后，您就可以在swagger-ui访问服务的api。swagger-ui前缀为gateway地址，具体值详见[一键部署](../../../installation-configuration/steps/choerodon/)或者[分布部署](../../../installation-configuration/steps/parts/)。
 
