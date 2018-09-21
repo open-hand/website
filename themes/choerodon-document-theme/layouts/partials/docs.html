@@ -113,7 +113,7 @@
         {{ end }}
         
     </body>
-<!-- doc search -->
-<script src="/js/doc-search.js"></script>
-<!-- doc search end -->
+{{ range .Site.Data.static.docs.js }}
+    <script src="{{ . }}"></script>
+{{ end }}
 </html>

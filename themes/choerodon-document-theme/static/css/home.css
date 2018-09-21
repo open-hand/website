@@ -1,3 +1,6 @@
+@import url("style.choerodon.css");
+@import url("footer.css");
+@import url("notice.css");
 .no-active{
 	font-size: 0.2rem;
     width: 10.60rem;

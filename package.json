@@ -15,10 +15,14 @@
   "dependencies": {
     "grunt": "^1.0.3",
     "gulp-clean-css": "^3.10.0",
+    "gulp-concat": "^2.6.1",
     "gulp-uglify": "^3.0.1",
     "html-entities": "^1.2.1",
     "marked": "0.5.0",
     "string": "^3.3.3",
     "toml": "^2.3.3"
+  },
+  "devDependencies": {
+    "js-yaml": "^3.12.0"
   }
 }
