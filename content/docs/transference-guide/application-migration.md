@@ -6,7 +6,7 @@ weight = 3
 
 # 应用迁移
 
-应用迁移主要是将应用系统的代码迁移到Choerodon猪齿鱼中，并通过Choerodon猪齿鱼的开发流水线、部署流水线等进行应用系统的开发和部署等工作。应用迁移主要包括Choerodon猪齿鱼系统的创建项目、创建应用、改造原代码库、将原代码库迁移到Choerodon、生成新的应用版本、创建应用系统环境、部署版本、创建网络、创建域名和测试访问等步骤。请用户按照此步骤顺序进行。
+应用迁移主要是将应用系统的代码迁移到Choerodon猪齿鱼中，并通过Choerodon猪齿鱼的开发流水线、部署流水线等进行应用系统的开发和部署等工作。应用迁移主要包括Choerodon猪齿鱼系统的 **创建项目、创建应用、改造原代码库、将原代码库迁移到Choerodon、生成新的应用版本、创建应用系统环境、部署版本、创建网络、创建域名和测试访问**等步骤。请用户按照此步骤顺序进行。
 
 <blockquote class="note">
 如果是SaaS版本的用户需要先申请开通组织。
@@ -33,8 +33,8 @@ weight = 3
 
 例如，
 
-  - 项目编码：hand-rdc-halm
-  - 项目名称：汉得资产云平台
+  - 项目编码：**hand-rdc-halm**
+  - 项目名称：**汉得资产云平台**
 
 ![enter description here](/docs/transference-guide/image/managepage-createproject.png)
 
@@ -48,7 +48,7 @@ weight = 3
 
 > 关于如何创建应用，以及相关操作和信息等，可以参考Choerodon官网的[**应用管理**](../../user-guide/application-management/application/)。
 
-1.切换到项目层，例如“汉得资产云平台”。
+1.切换到项目层，例如“**汉得资产云平台**”。
 
 ![enter description here](/docs/transference-guide/image/managepage-createapplication.png)
 
@@ -60,9 +60,9 @@ weight = 3
 
 例如，
 
-  - 编码：halm-dev
-  - 名称：资产云应用
-  - 选择应用模板：MicroService
+  - 编码：**halm-dev**
+  - 名称：**资产云应用**
+  - 选择应用模板：**MicroService**
 
 > 关于Choerodon的应用模板，可以参考应用模板。如果是迁移原库的代码，则随便选择一个即可。
 
@@ -185,7 +185,7 @@ EXPOSE 80 443
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/supervisord.conf"]
 ```
 
-2.在项目根目录下执行命令进行应用基础镜像构建，构建好之后推送镜像到镜像仓库，例如registry.choerodon.com.cn/hand-rdc-halm仓库下（注意：用户也可以根据自身具体的需求，选择镜像库地址，例如DockerHub等），这个仓库在Choerodon创建项目时会自动创建：
+2.在 **项目根目录下**执行命令进行应用基础镜像构建，构建好之后推送镜像到镜像仓库，例如registry.choerodon.com.cn/hand-rdc-halm仓库下（**注意：用户也可以根据自身具体的需求，选择镜像库地址，例如DockerHub等**），这个仓库在Choerodon创建项目时会自动创建：
 
 ```
 docker build -t registry.choerodon.com.cn/hand-rdc-halm/php:ubuntu-16.04 -f Dockerfile.base .
@@ -259,7 +259,7 @@ CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/supervisord.conf"]
 
 **第一步：创建目录**
 
-在项目根目录下创建如下目录结构，首先创建一个名为chart的文件夹，再创建一个与应用名相同的文件夹，本事例为Helm Chart，在halm-dev文件夹中再创建一个templates目录。
+在项目根目录下创建如下目录结构，首先创建一个名为chart的文件夹，再创建一个与应用名相同的文件夹，本事例为 **Helm Chart**，在halm-dev文件夹中再创建一个templates目录。
 ```
 chart
 └── halm-dev
@@ -271,7 +271,7 @@ chart
 ```
 
 **第二步：编写_helpers.tpl文件**
-在templates文件夹下将一些公共的lable或值定义到 _helpers.tpl文件中：
+在 **templates**文件夹下将一些公共的lable或值定义到 _helpers.tpl文件中：
 ```
 {{/* vim: set filetype=mustache: */}}
 {{- /*
@@ -284,7 +284,7 @@ choerodon.io/release: {{ .Release.Name | quote }}
 ```
 
 **第三步：编写deployment.yml文件**
-在templates文件夹下创建一个名为deployment.yml的文件，内容如下：
+在 **templates**文件夹下创建一个名为 **deployment.yml**的文件，内容如下：
 ```
 apiVersion: apps/v1beta2
 kind: Deployment
@@ -322,7 +322,7 @@ spec:
 ```
 
 **第四步：编写Chart.yaml文件**
-在halm-dev文件夹中编写Chart.yaml文件，这个文件中写明应用的的相关信息。
+在halm-dev文件夹中编写 **Chart.yaml**文件，这个文件中写明应用的的相关信息。
 ```
 # api版本
 apiVersion: v1
@@ -431,17 +431,17 @@ git push -u origin master # 提交所有代码
 
 ## 生成新的版本
 
-当在上一步“将原来代码库替换到Choerodon代码库”中提交代码到Choerodon的远程新库的时候，Choerodon会自动生成一个master分支上的开发版本，即“2018.8.27-234043-master”，这个版本是可以部署运行的，当然，往往生成的第一个版本会由于各种BUG等，需要经过反复地调试才可以。
+当在上一步“将原来代码库替换到Choerodon代码库”中提交代码到Choerodon的远程新库的时候，Choerodon会自动生成一个master分支上的开发版本，即“**2018.8.27-234043-master**”，**这个版本是可以部署运行的**，当然，往往生成的第一个版本会由于各种BUG等，需要经过反复地调试才可以。
 
-可以进入到Choerodon系统中查看生成的版本，系统路径：“汉得研发”(组织)->“<你的项目>”->应用管理->应用版本。如下图所示。
+可以进入到Choerodon系统中查看生成的版本，系统路径：“**汉得研发”(组织)->“<你的项目>”->应用管理->应用版本**。如下图所示。
 
 ![enter description here](/docs/transference-guide/image/newversion.png)
 
 ## 创建一个环境
 
-有了可部署的版本之后，就可以把此版本部署到环境中去了。在步骤“应用系统环境搭建”中已经安装好了应用系统运行的Kubernetes集群环境，并且在“数据库迁移”步骤中已经安装部署好数据库。
+有了可部署的版本之后，就可以把此版本部署到环境中去了。在步骤“**应用系统环境搭建**”中已经安装好了应用系统运行的Kubernetes集群环境，并且在“**数据库迁移**”步骤中已经安装部署好数据库。
 
-1.进入到的Choerodon猪齿鱼创建环境页面，系统路径：“汉得研发”(组织)->“<你的项目>”->部署流水线->环境流水线。
+1.进入到的Choerodon猪齿鱼创建环境页面，系统路径：“**汉得研发”(组织)->“<你的项目>”->部署流水线->环境流水线**。
 
 ![enter description here](/docs/transference-guide/image/env-pipeline.png)
 
@@ -449,9 +449,9 @@ git push -u origin master # 提交所有代码
 
 例如，
 
-  - 环境编码：halm-dev
-  - 环境名称：开发环境
-  - 环境描述：开发环境
+  - 环境编码：**halm-dev**
+  - 环境名称：**开发环境**
+  - 环境描述：**开发环境**
 
 ![enter description here](/docs/transference-guide/image/create-environment.png)
 
@@ -473,7 +473,7 @@ helm install --repo=http://chart.choerodon.com.cn/choerodon/c7ncd/ \
     choerodon-agent
 ```
 
-5.如果在Kubernetes中执行成功，则可以看到“开发环境”显示“运行中”，否则就是不成功。
+5.如果在Kubernetes中执行成功，则可以看到“开发环境”显示“**运行中**”，否则就是不成功。
 
 ![enter description here](/docs/transference-guide/image/running.png)
 
@@ -481,7 +481,7 @@ helm install --repo=http://chart.choerodon.com.cn/choerodon/c7ncd/ \
 
 可部署版本就绪，环境就绪，现在就还要把可部署的版本部署到环境中。
 
-1.进入到的Choerodon猪齿鱼应用部署页面，系统路径：“汉得研发”(组织)->“<你的项目>”->部署流水线->应用部署。
+1.进入到的Choerodon猪齿鱼应用部署页面，系统路径：“**汉得研发”(组织)->“<你的项目>”->部署流水线->应用部署**。
 
 ![enter description here](/docs/transference-guide/image/deployment-app.png)
 
@@ -489,8 +489,8 @@ helm install --repo=http://chart.choerodon.com.cn/choerodon/c7ncd/ \
 
 例如，
 
-  - 选择应用：资产云应用(halm-dev)
-  - 选择版本：2018.8.27-234043-master
+  - 选择应用：**资产云应用(halm-dev)**
+  - 选择版本：**2018.8.27-234043-master**
 
 ![enter description here](/docs/transference-guide/image/chose-app.png)
 
@@ -498,7 +498,7 @@ helm install --repo=http://chart.choerodon.com.cn/choerodon/c7ncd/ \
 
 例如，
 
-  - 选择环境：开发环境
+  - 选择环境：**开发环境**
   - 还有，下面的配置信息可以根据自身需求修改。
 
 ![enter description here](/docs/transference-guide/image/chose-env.png)
@@ -507,7 +507,7 @@ helm install --repo=http://chart.choerodon.com.cn/choerodon/c7ncd/ \
 
 例如，
 
-  - 选择部署模式：新建实例
+  - 选择部署模式：**新建实例**
   - 对于第一次部署，需要选择“新建实例”。
 
 ![enter description here](/docs/transference-guide/image/add-case.png)
@@ -532,15 +532,15 @@ helm install --repo=http://chart.choerodon.com.cn/choerodon/c7ncd/ \
 
 例如，
 
-  - 环境：选择“开发环境”。
-  - 目标对象：选择“选择实例”。
-  - 应用名称：选择“资产云应用”
-  - 选择实例：选择“halm-dev-9fc8”，就是上一步部署生成的实例。
+  - 环境：选择“**开发环境**”。
+  - 目标对象：选择“**选择实例**”。
+  - 应用名称：选择“**资产云应用**”
+  - 选择实例：选择“**halm-dev-9fc8**”，就是上一步部署生成的实例。
   - 网络配置：选择“ClusterIP”
   - 外部IP：NULL
-  - 端口：80 ，镜像内部应用的端口
-  - 目标端口：80 ，K8s中已经部署的应用对外提供服务的端口
-  - 网络名称：halm-dev-3491
+  - 端口：**80** ，镜像内部应用的端口
+  - 目标端口：**80** ，K8s中已经部署的应用对外提供服务的端口
+  - 网络名称：**halm-dev-3491**
 
 ![enter description here](/docs/transference-guide/image/input-imf.png)
 
