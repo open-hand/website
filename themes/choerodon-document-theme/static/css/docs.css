@@ -1,5 +1,7 @@
-/* 代码块注释角标 */
+@import url("style.choerodon.css");
+@import url("footer.css");
 
+/* 代码块注释角标 */
 i.note-number[data-value] {
     display: inline-block;
     color: white !important;
