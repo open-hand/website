@@ -3,7 +3,6 @@ title = "分支管理"
 description = "介绍了Choerodon的分支管理，从创建分支、创建合并请求来介绍如何快速了解分支管理的操作"
 weight = 6
 type = "docs"
-
 +++
 
 # 分支管理
@@ -15,7 +14,7 @@ type = "docs"
 
 ## 目标
 
-本章节将从创建分支、创建合并请求等操作来介绍`Choerodon`的分支管理功能，让读者能够熟悉`Git`分支管理，并且学会使用`Choerodon`去创建、管理和操作应用分支。
+本章节以创建分支 "branch-management" 为例，从创建分支、创建合并请求等方面，展开介绍`Choerodon`的分支管理功能，让读者能够熟悉`Git`分支管理，并且学会使用`Choerodon`去创建、管理和操作应用分支。
 
 ## 前置条件
 
@@ -62,13 +61,18 @@ type = "docs"
  
 **第三步：** 点击上方的`创建分支`按钮并填写分支信息，问题名称一栏需要在 **敏捷管理** -> **待办事项** 中创建相应任务才会显示。
 
-填写完分支信息后点击`创建`按钮。
+例如，
+
+* 问题名称：choerodon-dev-2 分支管理
+* 分支来源：master
+* 分支类型：feature
+* 分支名称：choerodon-dev-2
  
 ![create_branch](/docs/quick-start/image/branch/create_branch.png)
 
 > 关于分支类型如何选择，请参阅用户手册中 [分支管理策略](../../../user-guide/development-pipeline/branch/) 部分   
  
- 至此，我们就完成了分支的创建，接下来就可以在分支上进行开发，然后合并到其他分支。
+ 创建成功后，您就可以在分支上进行开发，然后有选择地合并到其他分支。
 
 ## 创建合并请求
 
@@ -97,7 +101,7 @@ type = "docs"
 ![accept_merge_req](/docs/quick-start/image/branch/accept_merge_req.png) 
 
 <blockquote class="note">
-    一般来说我们是需要删除掉已经合并到 master 分支上的特性分支，以保持分支的整洁，所以我们可以勾上Remove source branch when merge request is accepted选选项。
+    一般来说我们是需要删除掉已经合并到master分支上的特性分支，以保持分支的整洁，所以我们可以勾上Remove source branch when merge request is accepted选项。
 </blockquote>
 
 ## 相关文档
