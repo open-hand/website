@@ -14,7 +14,7 @@ type = "docs"
 
 ## 目标  
 
-本章节将以创建后端应用 "猪齿鱼Todo服务" 为例,从后端应用开发、提交代码、生成版本到部署应用等方面展开介绍，让读者能够熟悉使用Choerodon创建应用后端应用的步骤和流程，并且学会如何利用Choerodon部署应用等。
+本章节将以创建后端应用 “`猪齿鱼Todo服务`” 为例，从后端应用开发、提交代码、生成版本到部署应用等方面展开介绍，让读者能够熟悉使用Choerodon创建应用后端应用的步骤和流程，并且学会如何利用Choerodon部署应用等。
 
 ## 前置条件
 
@@ -78,7 +78,7 @@ Choerodon 名词 | 对应 Gitlab 名词 | 举例
 - 分支类型: feature
 - 分支名称: feature-choerodon-dev-1
 
-![](/docs/quick-start/image/create_branch2.png)
+![](/docs/quick-start/image/create_branch3.png)
 
 Choerodon 采用 [`github-flow`](https://guides.github.com/introduction/flow/)作为我们的分支管理策略的主体。并在此基础上，参考了一些其他策略，对开发者的开发分支做了一定程度上的细分。更多相关信息参考[分支管理](../../../user-guide/development-pipeline/branch/)。
 
@@ -91,9 +91,7 @@ $ git clone `仓库地址`
 $ cd ./choerodon-todo-service
 $ git checkout feature-choerodon-dev-1
 ```
-克隆代码时候,会让输入用户名,密码。用户名为平台用户名，密码为部署[持续交互](../../../installation-configuration/steps/parts/choerodon-devops/)服务时候的变量值 。
-  
-![](/docs/quick-start/image/clone_repository.png)
+克隆代码时候,会让输入用户名,密码。用户名为平台用户名，密码为部署[持续交互](../../../installation-configuration/steps/parts/choerodon-devops/)服务时候的变量值。
 
 ![](/docs/quick-start/image/gitlab_password.png)
 
@@ -130,7 +128,6 @@ $ git add .
 $ git commit -m "[ADD] init todo-service"
 $ git push origin feature-choerodon-dev-1
 ```
-![](/docs/quick-start/image/push.png)
 
 提交时需要遵循Choerodon 的规范：
 
