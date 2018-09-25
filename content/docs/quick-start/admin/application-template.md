@@ -64,113 +64,238 @@ type = "docs"
 
 具体的操作步骤如下：
 
- **第一步：** 编写一个 dockerfile：
+ **第一步：** 编写一个 Dockerfile文件：
  
-    目录结构如下：
- 
-    ```
-    |--src
-    |--main 
-       ｜--docker        
-          ｜--dockerfile
-    ```
-    
-    dockerfile 文件内容
+目录结构如下：
 
-    ```
-    FROM registry.choerodon.io/choerodon-cloud/base
+```
+|--src
+  |--main
+    ｜--docker
+      ｜--Dockerfile
+```
 
-    COPY app.jar /app.jar
+Dockerfile 文件内容
 
-    ENTRYPOINT [ "java", "-jar", "/app.jar"] 
-    ```
-    
-    此为后端模板的 dockerfile，应视模板具体语言的对其进行修改。
+```
+FROM registry.cn-hangzhou.aliyuncs.com/choerodon-tools/javabase:0.6.0
 
- **第二步：** [编写 Gitlab-ci 文件](https://docs.gitlab.com/ee/ci/)
+COPY app.jar /{{service.code}}.jar
 
-      ```yaml
-      image: registry.cn-hangzhou.aliyuncs.com/choerodon-tools/cibase:0.6.0
-             
-      stages:
-        - mvn-package # mvn-package 这一阶段为后端应用需要的 ci 阶段，可根据模板具体情况进行修改
-        - docker-build # docker-build 为 Choerodon 构建镜像版本等的必要步骤，不建议修改
-      
-      maven-test-build:
-        stage: mvn-package
-        script:
-          - update_pom_version
-          - mvn package -U -DskipTests=false
-          - mkdir -p /cache/${CI_PROJECT_NAME}-${CI_PROJECT_ID}-${CI_COMMIT_REF_NAME}-${CI_COMMIT_SHA} 
-          - cp target/app.jar /cache/${CI_PROJECT_NAME}-${CI_PROJECT_ID}-${CI_COMMIT_REF_NAME}-${CI_COMMIT_SHA}/app.jar
-      
-      docker-build:
-        stage: docker-build
-        script:
-          - docker_build
-          - chart_build
-        only:
-          - master
-          - tags
-          - develop
-          - /^hotfix-.*$/
-          - /^release-.*$/
-      
-      .auto_devops: &auto_devops |
-          curl -o .auto_devops.sh \
-              "${CHOERODON_URL}/devops/ci?token=${Token}&type=microservice"
-          if [ $? -ne 0 ];then
-            cat .auto_devops.sh
-            exit 1
-          fi
-          source .auto_devops.sh
-          function docker_build(){
-              cp /cache/${CI_PROJECT_NAME}-${CI_PROJECT_ID}-${CI_COMMIT_REF_NAME}-${CI_COMMIT_SHA}/app.jar ${1:-"src/main/docker"}/app.jar || true
-              docker login -u ${DOCKER_USER} -p ${DOCKER_PWD} ${DOCKER_REGISTRY}
-              docker build --pull -t ${DOCKER_REGISTRY}/${GROUP_NAME}/${PROJECT_NAME}:${CI_COMMIT_TAG} ${1:-"src/main/docker"}
-              docker push ${DOCKER_REGISTRY}/${GROUP_NAME}/${PROJECT_NAME}:${CI_COMMIT_TAG}
-              rm -rf /cache/${CI_PROJECT_NAME}-${CI_PROJECT_ID}-${CI_COMMIT_REF_NAME}-${CI_COMMIT_SHA}
-          }
-      
-      before_script:
-        - *auto_devops
-      ```
+ENTRYPOINT exec java $JAVA_OPTS  -jar /{{service.code}}.jar
+```
 
+{{< note >}}service.code是根据该模板创建应用时会使用服务编码替换{{< /note >}}
+  此为Java后端模板的 Dockerfile，应视模板具体语言的对其进行修改。
 
+ **第二步：** 项目根部录下[编写 .gitlab-ci.yml 文件](https://docs.gitlab.com/ee/ci/)
 
-**第三步：** [编写 charts 模块](../../../development-guide/basic/helm-chart)
+  ```yaml
+  image: registry.cn-hangzhou.aliyuncs.com/choerodon-tools/cibase:0.6.0
+          
+  stages:
+    - mvn-package # mvn-package 这一阶段为后端应用需要的 ci 阶段，可根据模板具体情况进行修改
+    - docker-build # docker-build 为 Choerodon 构建镜像版本等的必要步骤，不建议修改
+  
+  maven-test-build:
+    stage: mvn-package
+    script:
+      - update_pom_version
+      - mvn package -U -DskipTests=false
+      - mkdir -p /cache/${CI_PROJECT_NAME}-${CI_PROJECT_ID}-${CI_COMMIT_REF_NAME}-${CI_COMMIT_SHA} 
+      - cp target/app.jar /cache/${CI_PROJECT_NAME}-${CI_PROJECT_ID}-${CI_COMMIT_REF_NAME}-${CI_COMMIT_SHA}/app.jar
+  
+  docker-build:
+    stage: docker-build
+    script:
+      - docker_build
+      - chart_build
+    only:
+      - master
+      - tags
+      - develop
+      - /^hotfix-.*$/
+      - /^release-.*$/
+  
+  .auto_devops: &auto_devops |
+      curl -o .auto_devops.sh \
+          "${CHOERODON_URL}/devops/ci?token=${Token}&type=microservice"
+      if [ $? -ne 0 ];then
+        cat .auto_devops.sh
+        exit 1
+      fi
+      source .auto_devops.sh
+      function docker_build(){
+          cp /cache/${CI_PROJECT_NAME}-${CI_PROJECT_ID}-${CI_COMMIT_REF_NAME}-${CI_COMMIT_SHA}/app.jar ${1:-"src/main/docker"}/app.jar || true
+          docker build --pull -t ${DOCKER_REGISTRY}/${GROUP_NAME}/${PROJECT_NAME}:${CI_COMMIT_TAG} ${1:-"src/main/docker"}
+          docker push ${DOCKER_REGISTRY}/${GROUP_NAME}/${PROJECT_NAME}:${CI_COMMIT_TAG}
+          rm -rf /cache/${CI_PROJECT_NAME}-${CI_PROJECT_ID}-${CI_COMMIT_REF_NAME}-${CI_COMMIT_SHA}
+      }
+  
+  before_script:
+    - *auto_devops
+  ```
 
-      
-      目录结构如下：
-      ```
-      |--charts
-         ｜--model-service    
-            ｜--templates               
-            ｜ ｜--_helper.tpl
-            ｜ ｜--deplopment.yaml
-            ｜ ｜--pre-config-congig.yaml
-            ｜ ｜--pre-config-db.yaml
-            ｜ ｜--service.yaml
-            ｜--.helmignore
-            ｜--Chart.yaml
-            ｜--values.yaml  
-      ```
-      
-      Choerodon 会在使用模板创建应用时，对文档的相关变量进行替换。例如，charts 文件夹下的 model-service 文件夹的名称，会替换为对应的应用名称。
-      
-      `templates`为模板文件，将模板文件渲染成实际文件，然后发送给 Kubernetes。
-      
-      `values.yaml`为模板的预定义变量。                      
-      
-      `Chart.yaml`包含 chart 的版本信息说明，您可以从模板中访问它。
-      
-      `deployment.yaml`：创建 Kubernetes 部署的基本清单。
+**第三步：**[编写 charts 模块](../../../development-guide/basic/helm-chart)
 
-      `service.yaml`：为您的部署创建服务端点的基本清单。
+目录结构如下：
+```
+|--src
+|--charts
+    ｜--model-service
+      ｜--templates                     #为模板文件，将模板文件渲染成实际文件，然后发送给 Kubernetes。
+      ｜ ｜--_helper.tpl                #放置模板助手的地方，您可以在整个 chart 中重复使用。
+      ｜ ｜--deplopment.yaml            #创建 Kubernetes 部署的基本清单。
+      ｜--.helmignore
+      ｜--Chart.yaml                    #包含 chart 的版本信息说明，您可以从模板中访问它。
+      ｜--values.yaml                   #为模板的预定义变量。
+```
 
-      `_helpers.tpl`：放置模板助手的地方，您可以在整个 chart 中重复使用。
-      
-**第四步：** 提交改动至 `master` 分支。通过这些步骤，便能快速的在Choerodon里创建应用模板了。
+_helper.tpl：
+```
+{{/* vim: set filetype=mustache: */}}
+{{- /*
+service.labels.standard prints the standard service Helm labels.
+The standard labels are frequently used in metadata.
+*/ -}}
+{{- define "service.labels.standard" -}}
+choerodon.io/release: {{ .Release.Name | quote }}
+{{- end -}}
+```
+
+deplopment.yaml:
+```
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}
+  labels:
+{{ include "service.labels.standard" . | indent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+{{ include "service.labels.standard" . | indent 6 }}
+  template:
+    metadata:
+      labels:
+{{ include "service.labels.standard" . | indent 8 }}
+    spec:
+      containers:
+        - name: {{ .Release.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Chart.Version }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+{{- range $name, $value := .Values.env.open }}
+{{- if not (empty $value) }}
+          - name: {{ $name | quote }}
+            value: {{ $value | quote }}
+{{- end }}
+{{- end }}
+          ports:
+            - name: http
+              containerPort: {{ .Values.service.port }}
+              protocol: TCP
+          resources:
+{{ toYaml .Values.resources | indent 12 }}
+```
+
+Chart.yaml:
+```
+apiVersion: v1
+appVersion: "1.0"
+description: A Helm chart for Kubernetes
+name: {{service.code}}
+version: 0.1.0
+```
+
+values.yaml:
+```
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  repository: registry.choerodon.com.cn/choerodon/example-front
+  pullPolicy: Always
+
+service:
+  port: 80
+
+env:
+  open:
+    PRO_API_HOST: api.example.com
+resources: 
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources,such as Minikube. If you do want to specify resources,uncomment the following
+  # lines,adjust them as necessary,and remove the curly braces after 'resources:'.
+  limits:
+    # cpu: 100m
+    # memory: 2Gi
+  requests:
+    # cpu: 100m
+    # memory: 1Gi
+```
+
+Choerodon 会在使用模板创建应用时，对文档的相关变量进行替换。例如，charts 文件夹下的 model-service 文件夹的名称，会替换为对应的应用名称。   
+
+**第四步：** 编写pom.xml文件
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>{{group.name}}</groupId>
+	<artifactId>{{service.code}}</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.0.2.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+		<finalName>app</finalName>
+	</build>
+	
+</project>
+```
+
+{{< note >}}maven打包时指定文件名为app，与ci文件中一致。{{< /note >}}
+
+**第五步：** 提交改动至 `master` 分支。通过这些步骤，便能快速的在Choerodon里创建应用模板了。
 
 ## 相关文档  
 
