@@ -1,9 +1,10 @@
 weight: 1
 title: "华润置地案例实施分享直播"
 minTitle: "案例分享直播"
-description: "我们预计于10月11日下午2：00以直播的形式分享Choerodon在华润置地的落地实践案例"
-minDescription: "Choerodon在华润置地的落地实践案例分享直播"
+description: "我们预计于10月15日下午2：00以直播的形式分享Choerodon在华润置地的落地实践案例"
+minDescription: "10月15日下午2点直播华润置地的落地实践案例"
 button: "敬请期待"
 img: "/img/socials/event/crland.svg"
 homeImg: "/img/home/notice/live.svg"
+href: "/blog/crland-share"
 language: en
