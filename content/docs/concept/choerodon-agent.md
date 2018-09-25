@@ -1,6 +1,6 @@
 ﻿+++
 title = "Agent"
-description = "Choerodon Agent是猪齿鱼持续交付部分的一个核心组件，通过主动连接devops service(部署服务),并与Kubernetes集群进行直接交互。"
+description = "Choerodon Agent是猪齿鱼持续交付部分的一个核心组件，通过主动连接devops service(部署服务)，并与Kubernetes集群进行直接交互。"
 weight = 7
 
 +++
@@ -10,7 +10,7 @@ weight = 7
 
 ## 简介
 
-Choerodon Agent是猪齿鱼持续交付部分的一个核心组件，通过主动连接devops service(部署服务),并与Kubernetes集群进行直接交互。
+Choerodon Agent是猪齿鱼持续交付部分的一个核心组件，通过主动连接devops service(部署服务)，并与Kubernetes集群进行直接交互。
 本组件全部基于Go语言实现，轻量高效。作为一个集群环境的代理客户端，负责具体执行应用部署相关部分，通过在集群中部署一个Choerodon Agent，并指定猪齿鱼平台的部署服务的链接地址，即可以将该集群作为一个猪齿鱼平台的部署环境。
 
 ## 场景演示

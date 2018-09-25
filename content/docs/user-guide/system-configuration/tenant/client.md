@@ -16,14 +16,14 @@ description = "是对多个客户端信息设置的管理"
 
 列表字段：
 
-- **客户端编码**:客户端编码具有唯一性,是客户端的标识。
+- **客户端编码**:客户端编码具有唯一性，是客户端的标识。
 - 授权类型：客户端必须得到用户的授权（authorization grant），才能获得令牌（access token），进而凭令牌获取本平台资源。目前平台提供password、implicit、client_credentials、authorization_code和refresh_token五种授权方式。
 
 <h2 id="2">客户端查询</h2>
 
 可查询字段：
 
-- **客户端编码**:客户端编码具有唯一性,是客户端的标识。可根据客户端编码模糊搜索。
+- **客户端编码**:客户端编码具有唯一性，是客户端的标识。可根据客户端编码模糊搜索。
 
 <h2 id="3">创建客户端</h2>
 
@@ -35,7 +35,7 @@ description = "是对多个客户端信息设置的管理"
 
 必填字段:
 
-- **客户端编码**:客户端编码具有唯一性,是客户端的标识。
+- **客户端编码**:客户端编码具有唯一性，是客户端的标识。
 - 密钥：使用客户端的密码。例如用户登陆需要用户名和密码，密钥相当于密码。
 - 授权类型：客户端必须得到用户的授权（authorization grant），才能获得令牌（access token），进而凭令牌获取本平台资源。下面提供了五种授权方式：
     1. password：密码模式，用户向客户端提供自己的用户名和密码。客户端使用这些信息，向"服务商提供商"索要授权。
@@ -46,8 +46,8 @@ description = "是对多个客户端信息设置的管理"
 
 选填字段：
 
-- 访问授权超时：access_token_validity,assecc token的有效时间。
-- 授权超时：refresh_token_validity,refresh token的有效时间。
+- 访问授权超时：access_token_validity，assecc token的有效时间。
+- 授权超时：refresh_token_validity，refresh token的有效时间。
 - 重定向地址：用户的登陆后从登陆界面跳转的地址。
 - 附加信息：用json格式添加客户端的附加信息。如{ "description": "string"，"name": "string"}。
 
@@ -61,14 +61,14 @@ description = "是对多个客户端信息设置的管理"
 
 不可修改字段：
 
-- **客户端编码**:客户端编码具有唯一性,是客户端的标识。客户端创建成功后，客户端编码不可更改。
+- **客户端编码**:客户端编码具有唯一性，是客户端的标识。客户端创建成功后，客户端编码不可更改。
 
 可修改字段：
 
 - 密钥：使用客户端的密码。例如用户登陆需要用户名和密码，密钥相当于密码。
 - 授权类型：客户端必须得到用户的授权（authorization grant），才能获得令牌（access token），进而凭令牌获取本平台资源。
-- 访问授权超时：access_token_validity,assecc token的有效时间。
-- 授权超时：refresh_token_validity,refresh token的有效时间。
+- 访问授权超时：access_token_validity，assecc token的有效时间。
+- 授权超时：refresh_token_validity，refresh token的有效时间。
 - 重定向地址：用户的登陆后从登陆界面跳转的地址。
 - 附加信息：用json格式添加客户端的附加信息。如{ "description": "string"，"name": "string"}。
 

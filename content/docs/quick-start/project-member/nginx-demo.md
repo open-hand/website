@@ -11,10 +11,10 @@ type = "docs"
 
 ## 概述
 
-让我们从搭建一个最简单的nginx作为入门，开始我们的Choerodon 之旅吧。
+现在从搭建一个最简单的nginx作为入门，开始我们的 Choerodon 之旅吧。
 
 ## 目标
-搭建一个最简单的nginx。
+本章节将从创建应用、部署应用、配置网络、配置域名等操作，让读者能够学会使用Choerodon搭建一个最简单的nginx。
 
 ## 前置条件
 **1.** 在操作之前保证[系统配置](../../../user-guide/system-configuration)已经配置完全。
@@ -104,7 +104,7 @@ metrics:
 logs:
   parser: nginx
 ```
-在 chart/nginx-demo 目录下新建 templates 文件夹,然后在 templates 目录下创建 _helpers.tpl 文件，内容如下:
+在 chart/nginx-demo 目录下新建 templates 文件夹，然后在 templates 目录下创建 _helpers.tpl 文件，内容如下:
 ```
 {{- define "service.labels.standard" -}}
 choerodon.io/release: {{ .Release.Name | quote }}
@@ -210,7 +210,7 @@ data:
 
 - 进入`部署流水线`模块，选择`应用部署` 进入应用部署界面。
 
-- 选择应用,按照步骤条完成信息选择。选择`新建实例`。如果此应用在该环境中已有部署的实例，则可以选择`替换实例`，替换实例会更新该实例的镜像及配置信息，未修改配置信息或版本相同不可选择替换实例。
+- 选择应用，按照步骤条完成信息选择。选择`新建实例`。如果此应用在该环境中已有部署的实例，则可以选择`替换实例`，替换实例会更新该实例的镜像及配置信息，未修改配置信息或版本相同不可选择替换实例。
 
 - 点击部署按钮后，页面自动跳转到`实例`页面。
 

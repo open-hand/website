@@ -97,7 +97,7 @@ choerodon.io/metrics-port: {{ .Values.deployment.managementPort | quote }}
 choerodon.io/logs-parser: {{ .Values.logs.parser | quote }}
 {{- end -}}
 ```
-日志管理所需要的应用标签。该标签指定应用程序的日志格式，内置格式有`nginx`,`spring-boot`,`docker`如果没有合适您的应用的格式请使用`docker`，如果不需要收集日志请移除此段代码，并模板文件关于`service.logging.deployment.label`的引用。
+日志管理所需要的应用标签。该标签指定应用程序的日志格式，内置格式有`nginx`，`spring-boot`，`docker`如果没有合适您的应用的格式请使用`docker`，如果不需要收集日志请移除此段代码，并模板文件关于`service.logging.deployment.label`的引用。
 
 ##### pod 级:
 

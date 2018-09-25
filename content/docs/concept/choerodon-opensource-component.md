@@ -70,7 +70,7 @@ Choerodon 使用 Kubernetes 作为容器编排和管理工具。
 
 核心组件有：
 
-- **Kubernetes**：Kubernetes 是一个开源平台,用于跨主机群集自动部署,扩展和操作应用程序容器,提供以容器为中心的基础架构。
+- **Kubernetes**：Kubernetes 是一个开源平台，用于跨主机群集自动部署，扩展和操作应用程序容器，提供以容器为中心的基础架构。
 
 ## DevOps 平台使用的开源工具集
 
@@ -99,7 +99,7 @@ Choerodon 采用主流的 Git 和 Gitlab 作为代码的管理和托管工具，
 
 - **Git**：Git 是一个开源的分布式版本控制系统，可以有效、高速的处理从很小到非常大的项目版本管理。
 
-- **Gitlab**：GitLab 是一个基于 Git 的仓库管理程序,也是一个方便软件开发的强大完整应用。
+- **Gitlab**：GitLab 是一个基于 Git 的仓库管理程序，也是一个方便软件开发的强大完整应用。
 
 - **Maven**：Maven 项目对象模型(POM)，可以通过一小段描述信息来管理项目的构建，报告和文档的软件项目管理工具
 
@@ -121,7 +121,7 @@ Choerodon 采用多个代码检查和测试工具，其中，SonarQube 作为自
 
 - **JUnit**：JUnit 是一个 Java 语言的单元测试框架。
 
-- **Selenium**：Selenium 是一套完整的 web 应用程序测试系统，包含了测试的录制（selenium IDE）,编写及运行（Selenium Remote Control）和测试的并行处理（Selenium Grid）。
+- **Selenium**：Selenium 是一套完整的 web 应用程序测试系统，包含了测试的录制（selenium IDE），编写及运行（Selenium Remote Control）和测试的并行处理（Selenium Grid）。
 
 ### 部署和运营
 
@@ -129,9 +129,9 @@ Choerodon 融合使用 Docker、Kubernetes 和 Harbor 作为部署工具。
 
 核心组件有：
 
-- **Docker**：Docker 是一个开源的引擎,可以轻松的为任何应用创建一个轻量级的、可移植的、自给自足的容器。
+- **Docker**：Docker 是一个开源的引擎，可以轻松的为任何应用创建一个轻量级的、可移植的、自给自足的容器。
 
-- **Kubernetes**：Kubernetes 是一个开源平台,用于跨主机群集自动部署,扩展和操作应用程序容器,提供以容器为中心的基础架构。
+- **Kubernetes**：Kubernetes 是一个开源平台，用于跨主机群集自动部署，扩展和操作应用程序容器，提供以容器为中心的基础架构。
 
 - **Harbor**：Harbor 是一个企业级的 Docker Registry，可以实现 images 的私有存储和日志统计权限控制等功能，并支持创建多项目。
 
@@ -141,7 +141,7 @@ Choerodon 的监控包括了从用户故事开始到服务的运营全生命周�
 
 核心组件有：
 
-- **Zipkin**：Zipkin 为分布式链路调用监控系统,聚合各业务系统调用延迟数据,达到链路调用监控跟踪。
+- **Zipkin**：Zipkin 为分布式链路调用监控系统，聚合各业务系统调用延迟数据，达到链路调用监控跟踪。
 
 - **Grafana**：Grafana 是一个开箱即用的可视化工具，具有功能齐全的度量仪表盘和图形编辑器，有灵活丰富的图形化选项，可以混合多种风格，支持多个数据源特点。
 

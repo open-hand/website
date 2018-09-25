@@ -10,7 +10,7 @@ weight = 1
 
 ## 概述
 
-Choerodon 使用 `React` 作为前端应用框架，并且对前端的展示做了一定的封装和处理，能够让用户方便快捷地进行前端应用的开发和部署。Choerodon使用`Mobx`进行状态管理，同时为了使前端开发更加规范，合理进行，Choerodon提供了前端组件`Choerodon UI`，了解详情请前往[Choerodon UI](http://ui.choerodon.io/docs/react/introduce-cn)。
+Choerodon 使用 `React` 作为前端应用框架，并且对前端的展示做了一定的封装和处理，能够让用户方便快捷地进行前端应用的开发和部署。Choerodon使用`Mobx`进行状态管理，同时为了使前端开发更加规范，合理进行，Choerodon提供了前端组件`Choerodon UI`，了解详情请前往[Choerodon UI]( http://v0-10.website.staging.saas.hand-china.com/zh/docs/ui/)。
 
 ## 目标
 
@@ -42,9 +42,8 @@ Choerodon 使用 `React` 作为前端应用框架，并且对前端的展示做�
 
 ![创建应用](/docs/quick-start/image/microservice-front2.png)
 
-<blockquote class="note">
-  当应用模板不符合您的需求，您可手动创建一个应用模板，在此之前您必须拥有组织管理员角色权限。
- </blockquote>
+{{< note >}}当应用模板不符合您的需求，您可手动[创建一个应用模板](../../../quick-start/admin/application-template/)，在此之前您必须拥有组织管理员角色权限。
+ {{< /note >}} 
 
 **第四步：** 当应用创建成功，可在`应用管理` -> `应用` 界面查看到新建的应用。
 
@@ -83,7 +82,7 @@ Choerodon 名词 | 对应 Gitlab 名词 | 举例
  ![分支信息](/docs/quick-start/image/microservice-front11.png)
 
 <blockquote class="note">
-   Choerodon提供feature、bugfix、release、hotfix、custom五种分支类型，可根据问题选择对应分支类型。
+   Choerodon提供master、feature、bugfix、release、hotfix、custom六种分支类型，可根据问题选择对应分支类型。
  </blockquote>
 
 分支创建成功后，可在 `开发流水线` -> `分支` 界面查看创建的分支。
@@ -142,9 +141,9 @@ $ git push origin feature-choerodon-dev-1
 
 **第八步：代码集成**
 
-提交代码后，根据gitlab中`.gitlab-ci.yml`文件定义的阶段，生成一条CI流水线，可在`开发流水线` -> `持续集成`页面查看持续集成。
+提交代码后，根据gitlab中`.gitlab-ci.yml`文件定义的阶段，生成一条 CI 流水线，可在`开发流水线` -> `持续集成`页面查看持续集成。
 
-选择`猪齿鱼前端Demo应用`应用，查看持续集成，点击阶段跳转到`Gitlab` 查看`ci`进度。
+选择`猪齿鱼前端Demo应用`应用，查看持续集成，点击阶段跳转到`Gitlab` 查看 CI 进度。
 
  ![查看持续集成](/docs/quick-start/image/microservice-front14.png)
 
@@ -152,7 +151,7 @@ $ git push origin feature-choerodon-dev-1
 
 **第九步：合并分支**
 
-当`ci`执行通过以后，可以将`feature-choerodon-dev-1`分支合并到`master`分支上。合并后，分支可选择删除或保留继续开发。
+当 CI 执行通过以后，可以将`feature-choerodon-dev-1`分支合并到`master`分支上。合并后，分支可选择删除或保留继续开发。
 
 在`开发流水线` -> `合并请求` 页面，选择应用`猪齿鱼前端Demo应用`。点击`创建合并请求`，跳转到`Gitlab`。
 
@@ -180,7 +179,7 @@ gitlab中docker_build阶段日志也可查看相应版本。
 
 **第二步：** 进入`部署流水线`模块，选择`应用部署` 进入应用部署界面。
 
-**第三步：** 选择应用`猪齿鱼前端Demo应用`,按照步骤条完成信息选择。选择`新建实例`。如果此应用在该环境中已有部署的实例，则可以选择`替换实例`，替换实例会更新该实例的镜像及配置信息，未修改配置信息或版本相同不可选择替换实例。
+**第三步：** 选择应用`猪齿鱼前端Demo应用`，按照步骤条完成信息选择。选择`新建实例`。如果此应用在该环境中已有部署的实例，则可以选择`替换实例`，替换实例会更新该实例的镜像及配置信息，未修改配置信息或版本相同不可选择替换实例。
 
  ![部署应用步骤](/docs/quick-start/image/microservice-front45.png)
 

@@ -28,7 +28,7 @@ weight = 2
 
  2. 输入`应用编码`、`应用名称`进行数据校验，以及选择`应用模板`。
  ![](/docs/user-guide/application-management/image/Create Application.png "Create Application") 
-    - 应用编码：该字段是必输的, 编码只能由小写字母、数字、"-"组成，且以小写字母开头，不能以"-"结尾并且是唯一的。
+    - 应用编码：该字段是必输的，编码只能由小写字母、数字、"-"组成，且以小写字母开头，不能以"-"结尾并且是唯一的。
     - 应用名称：唯一，不能和其他应用相同。
     - 应用模板：系统预定义模板或组织自定义的模板快。
 
@@ -71,7 +71,7 @@ weight = 2
 
 ## 查看代码质量
 
- 点击 `代码质量`→ ![代码质量按钮](/docs/user-guide/development-pipeline/image/app_quality.png)，若平台部署了[sonarqube](https://www.sonarqube.org/)服务,并且CI集成sonarqube检查即可看见该应用的代码质量信息
+ 点击 `代码质量`→ ![代码质量按钮](/docs/user-guide/development-pipeline/image/app_quality.png)，若平台部署了[sonarqube](https://www.sonarqube.org/)服务，并且CI集成sonarqube检查即可看见该应用的代码质量信息
 
 ## 更多操作
 - [什么是应用模板](../application-template)

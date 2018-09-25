@@ -119,7 +119,7 @@ weight = 6
 
 `2018-05-12`
 
-- 🐞 `Table`: 修正当`childrenColumnName`属性不是`children`，所有数据中第一层的选择框禁用而其他数据的选择框是启用的时候, 全选选择框为禁用状态。
+- 🐞 `Table`: 修正当`childrenColumnName`属性不是`children`，所有数据中第一层的选择框禁用而其他数据的选择框是启用的时候，全选选择框为禁用状态。
 - 🐞 `Select`: Form下全选拿不到值。
 
 ## 0.1.7

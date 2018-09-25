@@ -28,11 +28,11 @@ type = "docs"
 
 具体的操作步骤如下：
 
-**第一步：** 使用项目所有者的角色用户登录Choerodon系统,创建项目的人即为项目所有者,如果使用其它创建的用户请先给该用户在``猪齿鱼研发``项目下分配项目所有者角色,然后登录选择项目``猪齿鱼研发``。
+**第一步：** 使用项目所有者的角色用户登录Choerodon系统，创建项目的人即为项目所有者，如果使用其它创建的用户请先给该用户在`猪齿鱼研发`项目下分配项目所有者角色，然后登录选择项目``猪齿鱼研发``。
  
 **第二步：** 选择`应用管理`模块，点击`应用`，进入应用管理页面。
 
-**第三步：** 点击[创建应用](../../../user-guide/application-management/application)，系统会从右边滑出页面，在页面中输入`应用编码`、`应用名称`，`应用模板`，`应用模板`选择`MicroService`。点击`创建`，即可创建一个后端应用,创建成功后,您可以进行后续的后端应用开发。
+**第三步：** 点击[创建应用](../../../user-guide/application-management/application)，系统会从右边滑出页面，在页面中输入`应用编码`、`应用名称`，`应用模板`，`应用模板`选择`MicroService`。点击`创建`，即可创建一个后端应用，创建成功后，您可以进行后续的后端应用开发。
 
 例如，
 
@@ -42,13 +42,12 @@ type = "docs"
 
  ![](/docs/quick-start/image/create_app.png)
 
-<blockquote class="note">
-  当应用模板不符合您的需求，您可手动创建一个应用模板。
- </blockquote> 
+{{< note >}}当应用模板不符合您的需求，您可手动[创建一个应用模板](../../../quick-start/admin/application-template/)，在此之前您必须拥有组织管理员角色权限。
+ {{< /note >}} 
 
-**第四步：** 当应用创建成功,可在`应用管理`模块，点击`应用` 界面查看到新建的应用,当应用的状态是启用时,表示应用创建成功。
+**第四步：** 当应用创建成功，可在`应用管理`模块，点击`应用` 界面查看到新建的应用，当应用的状态是启用时，表示应用创建成功。
 
-**第五步：** 在创建应用的同时，系统会对应在`Gitlab`中创建一个仓库,点击仓库地址,可以链接到应用对应在`Gitlab`的代码仓库。
+**第五步：** 在创建应用的同时，系统会对应在`Gitlab`中创建一个仓库，点击仓库地址，可以链接到应用对应在`Gitlab`的代码仓库。
 
 ![](/docs/quick-start/image/app-repository.png)
 
@@ -68,8 +67,8 @@ Choerodon 名词 | 对应 Gitlab 名词 | 举例
 
 **第一步： 创建`Feature`分支**
 
-在 `开发流水线` -> `分支` 界面，选择应用``choerodon-todo-service``。点击`创建分支`。如果没有`issue`可选择，则先[创建issue](../../../user-guide/agile/issue/create-issue/),
-选择对应的`issue`。分支来源选择`master`。填写`issue`号，如`feature-1`。点击`创建`，即可创建一个分支。创建完分支之后,　您就可以进行后续的本地开发。
+在 `开发流水线` -> `分支` 界面，选择应用``choerodon-todo-service``。点击`创建分支`，如果没有`issue`可选择，则先[创建issue](../../../user-guide/agile/issue/create-issue/)，
+选择对应的`issue`。分支来源选择`master`，填写`issue`号，如`feature-1`。点击`创建`，即可创建一个分支。创建完分支之后，您就可以进行后续的本地开发。
 
 例如，
 
@@ -84,14 +83,14 @@ Choerodon 采用 [`github-flow`](https://guides.github.com/introduction/flow/)�
 
 **第二步： 拉取代码仓库**
 
-在`开发流水线` -> `代码仓库` 找到`choerodon-todo-service` 的`仓库地址`,复制仓库地址，本地通过`git` 命令拉取生成的项目代码。然后切换到对应分支进行本地开发。
+在`开发流水线` -> `代码仓库` 找到`choerodon-todo-service` 的`仓库地址`，复制仓库地址，本地通过`git` 命令拉取生成的项目代码。然后切换到对应分支进行本地开发。
 
 ``` bash
 $ git clone `仓库地址`
 $ cd ./choerodon-todo-service
 $ git checkout feature-choerodon-dev-1
 ```
-克隆代码时候,会让输入用户名,密码。用户名为平台用户名，密码为部署[持续交互](../../../installation-configuration/steps/parts/choerodon-devops/)服务时候的变量值。
+克隆代码时候，会让输入用户名，密码。用户名为平台用户名，密码为部署[持续交互](../../../installation-configuration/steps/parts/choerodon-devops/)服务时候的变量值。
 
 ![](/docs/quick-start/image/gitlab_password.png)
 
@@ -99,7 +98,7 @@ $ git checkout feature-choerodon-dev-1
 
 将代码克隆到本地后，就可以在本地进行开发。
 
- - 通过Choerodon 提供的`MicroService` 应用模板，会生成一个最简单的`spring boot` 应用。模板本身生成的应用可以直接运行在平台上,如需拓展更多功能,可具体参考[后端开发手册](../../../development-guide/backend/)。
+ - 通过Choerodon 提供的`MicroService` 应用模板，会生成一个最简单的`spring boot` 应用。模板本身生成的应用可以直接运行在平台上，如需拓展更多功能，可具体参考[后端开发手册](../../../development-guide/backend/)。
 
 **第四步： `ci` 文件**
 
@@ -109,7 +108,7 @@ $ git checkout feature-choerodon-dev-1
 
 **第五步： `charts` 文件**
 
-通过Choerodon 提供的`MicroService`应用模板，会创建`charts` 文件夹。charts文件目录用于生成charts包,部署时会用到。有关`charts` 的编写参考[应用模板](../../../user-guide/application-management/application-template/)。
+通过Choerodon 提供的`MicroService`应用模板，会创建`charts` 文件夹。charts文件目录用于生成charts包，部署时会用到。有关`charts` 的编写参考[应用模板](../../../user-guide/application-management/application-template/)。
 
  - `charts`文件夹里面包含了`k8s` 对象的模板文件以及渲染这些对象文件的参数值文件`values.yaml`。
 
@@ -141,13 +140,13 @@ $ git push origin feature-choerodon-dev-1
 
 当代码提交到服务器之后，可以在页面查看持续集成。
 
-在`开发流水线` -> `持续集成` 页面，找到`choerodon-todo-service`。点击阶段跳转到`Gitlab` 查看`ci`执行情况。
+在`开发流水线` -> `持续集成` 页面，找到`choerodon-todo-service`。点击阶段跳转到`Gitlab` 查看 CI 执行情况。
 
 ![](/docs/quick-start/image/pipeline.png)
 
 **第九步： 合并分支**　
 
-当`ci`执行通过以后，可以将`feature`分支合并到`master`分支上。
+当 CI 执行通过以后，可以将`feature`分支合并到`master`分支上。
 
 在`开发流水线` -> `合并请求` 页面，选择应用`choerodon-todo-service`。点击`创建合并请求`，跳转到`Gitlab`。 分别选择源分支为`feature-1` ，目标分支为`master`。并提交合并请求。等待`ci流水线`通过后，点击合并分支。
 
@@ -165,7 +164,7 @@ $ git push origin feature-choerodon-dev-1
 
 具体的操作步骤如下：
 
-**第一步：** 使用部署管理员的角色的用户登录,创建项目的人自动分配为部署管理员角色,如果向使用其它用户,请给其它用户在该项目下分配部署管理员角色之后,在用其它用户登录Choerodon系统，然后选择项目`猪齿鱼研发`。
+**第一步：** 使用部署管理员的角色的用户登录，创建项目的人自动分配为部署管理员角色，如果向使用其它用户，请给其它用户在该项目下分配部署管理员角色之后，在用其它用户登录Choerodon系统，然后选择项目`猪齿鱼研发`。
 
 **第二步：** 进入`部署流水线`模块，选择`应用部署`，进入应用部署界面。
 
@@ -174,7 +173,7 @@ $ git push origin feature-choerodon-dev-1
 **第四步：** 点击`选择环境`，选择一个环境。部署的环境信息会展现在底下。如果没有环境，请先完成[创建环境](../../../user-guide/deployment-pipeline/environment-pipeline)。
 
 **第五步：** 根据实际的配置，配置部署应用所需的配置信息。
-替换掉一些参数文件值，参数文件值为部署choerodon系统时的生成的参数值，详细见[一键部署](../../../installation-configuration/steps/choerodon/)或者[分布部署](../../../installation-configuration/steps/parts/),然后点击`下一步`。
+替换掉一些参数文件值，参数文件值为部署choerodon系统时的生成的参数值，详细见[一键部署](../../../installation-configuration/steps/choerodon/)或者[分布部署](../../../installation-configuration/steps/parts/)，然后点击`下一步`。
 
 ![](/docs/quick-start/image/values1.png)
 
@@ -209,7 +208,7 @@ $ git push origin feature-choerodon-dev-1
 
 ![](/docs/quick-start/image/modify_regi.png)
 
-**第三步：** 给 `env.open.REGISTER_SERVICE_NAMESPACE` 变量添加自己服务所部署的`namespace`，用`,` 和其他的分隔开。
+**第三步：** 给 `env.open.register_service_namespace` 变量添加自己服务所部署的`namespace`，用`，` 和其他的分隔开。
 
 ![](/docs/quick-start/image/modify-regi2.png)
 
@@ -222,7 +221,7 @@ $ git push origin feature-choerodon-dev-1
  
 确认是否正常注册成功，搜索是否存在choerodon-todo-service的记录，存在则表示注册成功
 
-**第六步：** 服务注册成功后，用平台管理员给该服务添加路由，路径为点击管理->微服务管理->路由管理，将其api暴露在swagger上,创建为路由之后，您就可以在swagger-ui访问服务的api。swagger-ui前缀为gateway地址，具体值详见[一键部署](../../../installation-configuration/steps/choerodon/)或者[分布部署](../../../installation-configuration/steps/parts/)。
+**第六步：** 服务注册成功后，用平台管理员给该服务添加路由，路径为点击管理->微服务管理->路由管理，将其api暴露在swagger上，创建为路由之后，您就可以在swagger-ui访问服务的api。swagger-ui前缀为gateway地址，具体值详见[一键部署](../../../installation-configuration/steps/choerodon/)或者[分布部署](../../../installation-configuration/steps/parts/)。
 
 例如，
 

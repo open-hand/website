@@ -29,8 +29,8 @@ LDAP是轻量目录访问协议。LDAP管理是对组织应用的LDAP信息设�
 1. 主机名：运行 LDAP 的服务器主机名。例如，ldap.example.com。
 1. 是否使用SSL：此选项会影响端口号。
 1. 端口号：使用SSL时，端口号是636，不使用SSL时，端口号是389。
-1. 基准DN：从LDAP根节点搜索用户。例如，cn=users,dc=example,dc=com。
-1. 管理员登录名：拥有LDAP管理员权限的用户登录到 LDAP的登录名。例如，user@domain.name 或 cn =用户, dc =域、dc =名称。
+1. 基准DN：从LDAP根节点搜索用户。例如，cn=users，dc=example，dc=com。
+1. 管理员登录名：拥有LDAP管理员权限的用户登录到 LDAP的登录名。例如，user@domain.name 或 cn =用户， dc =域、dc =名称。
 1. 管理员密码：拥有LDAP管理员权限的用户登录到LDAP的密码。
 
 #### 用户属性设置

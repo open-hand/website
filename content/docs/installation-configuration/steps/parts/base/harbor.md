@@ -132,7 +132,7 @@ Harbor启动速度较慢请等待所有Pod都为Running后进行界面查看。
   </blockquote>
 
 - 第一步：通过certbot生成证书(此方法每次只有3个月有效时间)
-    - 执行以下命令,注意更换域名地址，过程中提示输入邮箱，完成之后证书在/etc/letsencrypt目录下
+    - 执行以下命令，注意更换域名地址，过程中提示输入邮箱，完成之后证书在/etc/letsencrypt目录下
 
         ```
         docker run --rm -ti \

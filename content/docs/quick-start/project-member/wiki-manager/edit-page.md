@@ -29,7 +29,7 @@ description = "介绍如何快速编辑一个Wiki页面"
 
 ![edit-page-process-1](/img/docs/quick-start/project-member/wiki-manager/edit-page/edit-page-process-1.png)
 
-**第二步：** 在编辑框中修改页面内容, 例如： 添加一句 “`现在我们修改第一个创建的页面。`” 。编辑完成文档之后，点击页面下方的`保存并继续编辑`或`保存并查看`按钮即完成了文档编辑。
+**第二步：** 在编辑框中修改页面内容，例如： 添加一句 “`现在我们修改第一个创建的页面。`” 。编辑完成文档之后，点击页面下方的`保存并继续编辑`或`保存并查看`按钮即完成了文档编辑。
 
 ![edit-page-process-2](/img/docs/quick-start/project-member/wiki-manager/edit-page/edit-page-process-2.png)
 

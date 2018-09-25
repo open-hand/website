@@ -1,6 +1,6 @@
 ﻿+++
 title = "应用版本"
-description = "由于 Choerodon 采用 GitLab 管理分支，所以对于版本的控制也是根据 Feature、Release、Hotfix、Bugfix、custom 等分支在 GitLab 的 CI/CD 进行的, 针对具体分支上提交可以生成相应的版本。"
+description = "由于 Choerodon 采用 GitLab 管理分支，所以对于版本的控制也是根据 Feature、Release、Hotfix、Bugfix、custom 等分支在 GitLab 的 CI/CD 进行的， 针对具体分支上提交可以生成相应的版本。"
 weight = 3
 +++
 
@@ -34,7 +34,7 @@ weight = 3
 
     变量|说明  
     --- | ---
-    C7N_COMMIT_TIME|本地Commit代码的时间，格式为`年.月.日-时分秒`, 例如 `2018.7.9-192511`
+    C7N_COMMIT_TIME|本地Commit代码的时间，格式为`年.月.日-时分秒`，例如 `2018.7.9-192511`
     C7N_COMMIT_SHA|Commit的Sha值前八位
     C7N_BRANCH|当前提交分支名
     C7N_VERSION|Choerodon平台提供的默认版本号，格式为：`C7N_COMMIT_TIME-C7N_BRANCH`。若为切出的 tag 则为 tag 的值。

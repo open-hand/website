@@ -36,7 +36,7 @@ weight = 8
 *    3. roles ：设置可访问用户角色，此为数组
 *    4. permissionPublic ：设置任意访问。
 * `@ApiOperation` ，显示在swagger ui上的接口注释，同时与该接口对应的权限表中的描述字段对应(iam_permission.description)
-* `@GetMapping` ，是一个组合注解，是`@RequestMapping(mathod = RequestMethod.GET) `的缩写,`@PostMapping`等同理。建议使用组合注解。
+* `@GetMapping` ，是一个组合注解，是`@RequestMapping(mathod = RequestMethod.GET) `的缩写，`@PostMapping`等同理。建议使用组合注解。
 * `@CustomPageRequest` ，自定义swagger界面page、size、sort三个字段的格式。
 
 ### `UserController.java`代码

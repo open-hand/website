@@ -14,7 +14,7 @@ description = "定义分布式系统中分布式事务"
 
 <img class="no-border" src="/docs/user-guide/system-configuration/global-transaction/image/saga-definition.png"/>
 
-Saga采用了BASE（Basic Availability, Soft, Eventual consistency，即基本的可用性，柔性，最终的一致性）事务的方式，也就是走向最终一致性的柔性事务，来避免消耗大量资源的同步、锁定。这与ACID事务，（Atomicity、Consistency、Isolation、Durability，即原子性，一致性，隔离性，持久性），要么一起成功，要么一起失败的方式是不同的。和ACID相比，BASE不能轻易的回滚，只能通过补偿（Compensating）操作达到最终一致性。
+Saga采用了BASE（Basic Availability， Soft， Eventual consistency，即基本的可用性，柔性，最终的一致性）事务的方式，也就是走向最终一致性的柔性事务，来避免消耗大量资源的同步、锁定。这与ACID事务，（Atomicity、Consistency、Isolation、Durability，即原子性，一致性，隔离性，持久性），要么一起成功，要么一起失败的方式是不同的。和ACID相比，BASE不能轻易的回滚，只能通过补偿（Compensating）操作达到最终一致性。
 
 - **菜单层次**：全局层
 - **菜单路径**：全局事务 > 事务定义
