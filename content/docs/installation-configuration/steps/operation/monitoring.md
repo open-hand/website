@@ -15,7 +15,7 @@ weight = 26
 ## 部署监控组件
 
 <blockquote class="note">
-监控非平台运行的必要组件，安装监控组件可以查看集群各个服务cpu,内存和网络等状态，便于优化和提高资源利用率。
+监控非平台运行的必要组件，安装监控组件可以查看集群各个服务cpu，内存和网络等状态，便于优化和提高资源利用率。
 </blockquote>
 
 ### 添加choerodon chart仓库
@@ -77,7 +77,7 @@ helm repo update
     prometheus.clusterName|为了区分多集群指定一个集群名称，可以是任意字母组合
 
 <blockquote class="note">
-执行之后需要一定的时间等待服务启动和自动导入grafana模板,首次登陆密码为 admin/admin, 登陆会提示修改密码，请同样使用 admin 作为新密码，等待dashboard有内容之后再修改为其他密码。
+执行之后需要一定的时间等待服务启动和自动导入grafana模板，首次登陆密码为 admin/admin， 登陆会提示修改密码，请同样使用 admin 作为新密码，等待dashboard有内容之后再修改为其他密码。
 </blockquote>
 
 - 查看监控

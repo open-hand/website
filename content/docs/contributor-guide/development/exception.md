@@ -14,7 +14,7 @@ JAVA中有三种一般类型的可抛类：**检查性异常(checked exceptions)
 
 1. `Checked exceptions`：必须通过方法进行声明。这些异常都继承自`Exception` 类。一个`Checked exception` 声明了一些预期可能发生的异常。
 
-2. `Unchecked exceptions`：不需要声明的异常。大多继承自`RuntimeException`。例如`NullPointerException`, `ArrayOutOfBoundsException`。同时这样的异常不应该捕获，而应该打印出堆栈信息。
+2. `Unchecked exceptions`：不需要声明的异常。大多继承自`RuntimeException`。例如`NullPointerException`， `ArrayOutOfBoundsException`。同时这样的异常不应该捕获，而应该打印出堆栈信息。
 
 3. `Errors`：大多是一些运行环境的问题，这些问题可能会导致系统无法运行。例如`OutOfMemoryError`，`StackOverflowError`
 

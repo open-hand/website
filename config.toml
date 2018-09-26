@@ -7,7 +7,7 @@ defaultContentLanguage = "zh"
 defaultContentLanguageInSubdir= "true"
 prettyurls=true
 # Define the number of posts per page
-paginate = 10
+paginate = 5
 # Open highlight
 #pygmentsCodeFences = true
 

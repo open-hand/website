@@ -65,10 +65,10 @@ git config --global user.email "Your Email"
 
 1. 在IDEA官网下载安装包
 2. 本地执行安装文件，安装IDEA
-1. 菜单栏File > Setting打开设置, Editor > Code Style > Line separator (for new lines): Unix and OS X (n)
+1. 菜单栏File > Setting打开设置， Editor > Code Style > Line separator (for new lines): Unix and OS X (n)
 2. 确保idea使用utf-8编码
 3. 安装Docker插件。在File-Settings-Plugins中，搜索Docker integration，点击Install安装，并重启软件加载插件
-4. IDEA中配置Docker，在File-Settings-Build,Execution,Deployment-Clouds中，点击加号新建，会自动读取docker信息，直接保存即可
+4. IDEA中配置Docker，在File-Settings-Build，Execution，Deployment-Clouds中，点击加号新建，会自动读取docker信息，直接保存即可
 
 ## 其他软件安装
 

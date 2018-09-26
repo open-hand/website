@@ -37,12 +37,12 @@ weight = 6
      
       </blockquote>
 
- - 创建成功后，域名将会出现在域名管理列表中,然后根据域名就可以访问服务。
+ - 创建成功后，域名将会出现在域名管理列表中，然后根据域名就可以访问服务。
   
 
 ## 编辑域名信息
 
-点击页面右侧 ![修改环境按钮](/docs/user-guide/deployment-pipeline/image/update_network_button.png) 按钮，进入修改域名界面后,对域名信息进行修改,最后`保存`。
+点击页面右侧 ![修改环境按钮](/docs/user-guide/deployment-pipeline/image/update_network_button.png) 按钮，进入修改域名界面后，对域名信息进行修改，最后`保存`。
 <blockquote class="note">
 域名修改中选择的网络不能包含状态不正常的网络。
 </blockquote>

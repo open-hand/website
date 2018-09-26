@@ -9,20 +9,20 @@ weight = 14
 ##  概念
 
 Span：基本工作单元，一次链路调用(可以是 RPC，DB 等没有特定的限制)创建一个 span，通过一个64位 ID 标识它， 
-span 通过还有其他的数据，例如描述信息，时间戳，key-value 对的(Annotation) tag 信息，parent-id 等,其中 parent-id 可以表示 span 调用链路来源，通俗的理解 span 就是一次请求信息
+span 通过还有其他的数据，例如描述信息，时间戳，key-value 对的(Annotation) tag 信息，parent-id 等，其中 parent-id 可以表示 span 调用链路来源，通俗的理解 span 就是一次请求信息
 
 Trace：类似于树结构的 Span 集合，表示一条调用链路，存在唯一标识
 
-Annotation：注解,用来记录请求特定事件相关信息(例如时间)，通常包含四个注解信息
+Annotation：注解，用来记录请求特定事件相关信息(例如时间)，通常包含四个注解信息
 
 ```
-cs - Client Start,表示客户端发起请求
+cs - Client Start，表示客户端发起请求
 
-sr - Server Receive,表示服务端收到请求
+sr - Server Receive，表示服务端收到请求
 
-ss - Server Send,表示服务端完成处理，并将结果发送给客户端
+ss - Server Send，表示服务端完成处理，并将结果发送给客户端
 
-cr - Client Received,表示客户端获取到服务端返回信息
+cr - Client Received，表示客户端获取到服务端返回信息
 ```
 
 
@@ -30,7 +30,7 @@ BinaryAnnotation：提供一些额外信息，一般已 key-value 对出现
 
 ##  页面介绍
 
-上图是 zipkin 的筛选菜单,有以下几个过滤维度：
+上图是 zipkin 的筛选菜单，有以下几个过滤维度：
 
 1，服务名
 

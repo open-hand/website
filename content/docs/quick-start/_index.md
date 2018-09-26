@@ -13,7 +13,7 @@ Choerodon 猪齿鱼是一个开源企业服务平台，帮助企业实现敏捷�
 ## 前置条件
 - Choerodon 使用 Kubernetes 来管理和部署服务。关于 Kubernetes，请参考 [Kubernetes](https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/) 概览。
 - 系统用户必须具有Choerodon平台的角色，才能根据角色权限进行Choerodon的使用。所以，在使用Choerodon之前，如果您是管理者或者项目经理，您需要为您的用户分配项目所有者等角色。关于角色管理，请参阅用户手册中[角色管理](../user-guide/system-configuration/platform/role/)。
-- 本文档中不包含Choerodon功能理论等相关知识,如果要深入的了解Choerodon相关的知识，您可以阅读[用户手册](../user-guide/)，或参加相关的培训。
+- 本文档中不包含Choerodon功能理论等相关知识，如果要深入的了解Choerodon相关的知识，您可以阅读[用户手册](../user-guide/)，或参加相关的培训。
 
 ## 权限了解
 角色|平台角色|权限描述

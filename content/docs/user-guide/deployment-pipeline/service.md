@@ -26,7 +26,7 @@ weight = 5
 
     - 选择实例：选择应用名称然后选择实例以关联网络，这里的应用只能选择到在该环境下存在实例的；
     
-    - 填写标签：填写标签以应用到 `service.spec.selector` , 供 k8s 关联实例。
+    - 填写标签：填写标签以应用到 `service.spec.selector` ，供 k8s 关联实例。
  
  1. 选择`网络配置`，选择类型为 `ClusterIP` 或是 `NodePort` ；
  

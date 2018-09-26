@@ -9,7 +9,7 @@ weight = 1
 Choerodon 使用GitHub 来记录bugs 和feature requests，如果您想要提出一个issue，请遵循如下建议：
 
 * 在您记录一个bug之前，请先在Github中检索是否有已经有人提过同样的问题
-* 如果这个issue不存在，请创建一个新的issue, 并添加对应的标签
+* 如果这个issue不存在，请创建一个新的issue， 并添加对应的标签
 * 请尽可能地提供多的信息和问题说明，同时提供您正在使用的版本，以及您的操作系统和JVM版本
 * 如果您要提供代码，请使用Markdown格式
 

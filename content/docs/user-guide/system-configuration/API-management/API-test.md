@@ -19,7 +19,7 @@ API测试需要与应用程序的API进行交互，测试时通过工具调用�
 1. 点击所属微服务选择框。
 1. 输入关键字搜索微服务。
 1. 选择微服务。
-1. 列表显示该微服务下的controller,信息如下：
+1. 列表显示该微服务下的controller，信息如下：
     - controller名称：controller的名称，在同一个微服务下是唯一的。
     - 描述：描述controller的功能。
 
@@ -61,7 +61,7 @@ API的测试要点：
 
 步骤：
 
-1. 点击API接口的查看详情按钮→<img class="no-border" src="/docs/user-guide/system-configuration/API-management/image/particulars.png"/>,进入到API测试页面。
+1. 点击API接口的查看详情按钮→<img class="no-border" src="/docs/user-guide/system-configuration/API-management/image/particulars.png"/>，进入到API测试页面。
     <img class="no-border" src="/docs/user-guide/system-configuration/API-management/image/api2.png"/>
 
 1. 点击接口详情，可以查看API接口的详细信息，包括接口基本信息、请求参数信息、响应数据信息。

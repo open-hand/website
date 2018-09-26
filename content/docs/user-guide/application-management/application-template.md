@@ -38,7 +38,7 @@ weight = 1
 
       > Charts 模块: 用于创建应用时生成创建 k8s 对象 
 
-      如: Deployment job service ingress ,部署时配置信息里的 Key-value 值会被应用到对应的 k8s 对象中用于部署。
+      如: Deployment job service ingress ，部署时配置信息里的 Key-value 值会被应用到对应的 k8s 对象中用于部署。
 
 ## 创建前端应用模板
  

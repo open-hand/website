@@ -74,11 +74,11 @@ choerodon-front-iam
 
 ```
 
-- assets 中css存放模块通用样式表,images存放图片资源
+- assets 中css存放模块通用样式表，images存放图片资源
 - containers 存放前端的页面
 - stores 存放前端状态管理文件
 - common 存放公共的配置文件
 - components 存放的是公共的组件
 - local 存放模块多语言文件
-- config 存放Menu.yml配置文件(包括菜单的code, icon, 跳转Route, 菜单的权限)和language中的中英文yml(zh.yml, en.yml)
+- config 存放Menu.yml配置文件(包括菜单的code， icon， 跳转Route，菜单的权限)和language中的中英文yml(zh.yml， en.yml)
 - test 存放测试文件
