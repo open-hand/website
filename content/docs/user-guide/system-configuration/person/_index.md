@@ -1,7 +1,7 @@
 ﻿+++
 title = "个人中心"
 description = "个人中心是用户管理个人设置的模块"
-weight = 7
+weight = 8
 +++
 
 # 个人中心
