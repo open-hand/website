@@ -58,7 +58,7 @@ before_script:
   - *auto_devops
 ```
 在项目根目录下创建 chart/nginx 文件夹目录，注意这里的 nginx 要与应用名相同。
-在 chart/nginx-demo 目录下创建 Chart.yaml 文件，内容如下:
+在 chart/nginx 目录下创建 Chart.yaml 文件，内容如下:
 ```
 apiVersion: v1
 appVersion: "1.0"
@@ -66,7 +66,7 @@ description: A Helm chart for Kubernetes
 name: nginx
 version: 0.1.2
 ```
-在 chart/nginx-demo 目录下创建 .helmignore 文件，内容如下:
+在 chart/nginx 目录下创建 .helmignore 文件，内容如下:
 ```
 # Patterns to ignore when building packages.
 # This supports shell glob matching, relative path matching, and
@@ -90,7 +90,7 @@ version: 0.1.2
 .idea/
 *.tmproj
 ```
-在 chart/nginx-demo 目录下创建 values.yaml 文件，内容如下:
+在 chart/nginx 目录下创建 values.yaml 文件，内容如下:
 ```
 replicaCount: 1
 
@@ -104,7 +104,7 @@ metrics:
 logs:
   parser: nginx
 ```
-在 chart/nginx-demo 目录下新建 templates 文件夹，然后在 templates 目录下创建 _helpers.tpl 文件，内容如下:
+在 chart/nginx 目录下新建 templates 文件夹，然后在 templates 目录下创建 _helpers.tpl 文件，内容如下:
 ```
 {{- define "service.labels.standard" -}}
 choerodon.io/release: {{ .Release.Name | quote }}
