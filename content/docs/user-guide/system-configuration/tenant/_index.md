@@ -13,6 +13,7 @@ weight = 5
 {{< docdir >}}
 
 ## 更多操作
+
 - [平台设置](..//platform)
-- [API管理](..//api-management)
-- [全局事务](..//global-transaction)
+- [API管理](../..//microservice-development/api-management)
+- [全局事务](../..//microservice-development/global-transaction)

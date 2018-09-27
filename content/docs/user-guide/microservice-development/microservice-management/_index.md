@@ -15,4 +15,4 @@ description = "开发中对微服务、实例、配置、路由的管理"
 ## 更多操作
 - [API管理](..//api-management)
 - [全局事务](..//global-transaction)
-- [组织设置](..//tenant)
+- [组织设置](../..//system-configuration/tenant)

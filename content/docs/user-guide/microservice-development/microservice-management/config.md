@@ -29,13 +29,13 @@ description = "配置管理用来集中管理应用的当前环境的配置，�
     - 选择一个配置模版：选择一个属于该微服务的配置，则新配置以该配置为模版，用户可在配置模版的基础上进行修改。
     - 填写配置版本：系统会自动生成一个配置版本，用户也可根据需求自定义配置版本。
 
-    ![](/docs/user-guide/system-configuration/microservice-management/image/config-basic.png) 
+    ![](/docs/user-guide/microservice-development/microservice-management/image/config-basic.png) 
 
 1. 修改配置信息
 
     - yml文件从上一步所选的配置模版中获取。用户可基于该yml文件修改配置信息。
 
-    ![](/docs/user-guide/system-configuration/microservice-management/image/config-updata.png) 
+    ![](/docs/user-guide/microservice-development/microservice-management/image/config-updata.png) 
 
 1. 确认信息并创建
 
@@ -44,7 +44,7 @@ description = "配置管理用来集中管理应用的当前环境的配置，�
     - 配置yml详细信息：上一步中配置的yml文件，确认信息时为只读形式，如需修改请返回上一步进行修改。
     - 确认信息无误后，点击‘创建’按钮。
 
-    ![](/docs/user-guide/system-configuration/microservice-management/image/config-confirm.png) 
+    ![](/docs/user-guide/microservice-development/microservice-management/image/config-confirm.png) 
 
 ## 基于一个已有配置创建
 
@@ -63,7 +63,7 @@ description = "配置管理用来集中管理应用的当前环境的配置，�
 
 1. 确认信息并创建
 
-![](/docs/user-guide/system-configuration/microservice-management/image/config.png) 
+![](/docs/user-guide/microservice-development/microservice-management/image/config.png) 
 
 ## 设置默认配置
 

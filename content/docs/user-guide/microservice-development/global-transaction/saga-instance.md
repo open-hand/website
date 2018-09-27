@@ -16,7 +16,7 @@ description = "实际运行的事务定义"
 
 事务实例列表展示了事务实例的基本信息。
 
-<img class="no-border" src="/docs/user-guide/system-configuration/global-transaction/image/instance-list.png"/>
+<img class="no-border" src="/docs/user-guide/microservice-development/global-transaction/image/instance-list.png"/>
 
 - ID：事务实例的ID，是事务实例的标识，具有唯一性。
 - 状态：事务实例的运行状态。共有`进行中`、`完成`、`失败`三种状态。

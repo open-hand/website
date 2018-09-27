@@ -13,6 +13,6 @@ description = "全局事务用于实现分布式环境下高性能事务一致�
 {{< docdir >}}
 
 ## 更多操作
-- [平台设置](..//platform)
+- [平台设置](../..//system-configuration/platform)
 - [API管理](..//api-management)
-- [组织设置](..//tenant)
+- [组织设置](../..//system-configuration/tenant)

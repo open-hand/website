@@ -16,7 +16,7 @@ description = "用于管理平台路由"
 
 输入`路由名称`，`路径`，`对应微服务`，创建默认最简路由，步骤如下。
 
-![](/docs/user-guide/system-configuration/microservice-management/image/create-route.png) 
+![](/docs/user-guide/microservice-development/microservice-management/image/create-route.png) 
 
 1. 点击`创建路由`按钮；
 1. 输入`路由名称`，`路径`，`对应微服务`，点击创建按钮；

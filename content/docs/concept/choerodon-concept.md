@@ -82,6 +82,6 @@ Choerodon 是将服务和应用构建在 Kubernetes 上，后端服务使用 Spr
 
 提供一整套完整的运营管理工具，在软件交付生产的各个环节建立数据收集和度量，监控主要包含开发类指标、服务器日志、应用系统日志和微服务调用链等信息；同时，提供各种分析报告，帮助用户优化 IT 资源配置。
 
-<img class="no-border" src="/docs/concept/image/microserver-icon.png"> [**微服务开发**](../../user-guide/system-configuration/microservice-management)
+<img class="no-border" src="/docs/concept/image/microserver-icon.png"> [**微服务开发**](../../user-guide/microservice-development)
 
 基于 Spring Cloud 的微服务应用开发框架，方便快捷的构建应用服务，简化开发，提高IT系统对业务的支撑能力。
