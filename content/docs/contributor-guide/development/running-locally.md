@@ -35,4 +35,4 @@ weight = 2
 
 ## 数据来源
 
-当您需要知晓API的数据结构时，您可以根据平台中的[API测试功能](../../../user-guide/system-configuration/api-management/api-test/)查看详细的接口说明。
+当您需要知晓API的数据结构时，您可以根据平台中的[API测试功能](../../../user-guide/microservice-development/api-management/api-test/)查看详细的接口说明。

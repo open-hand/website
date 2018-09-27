@@ -32,7 +32,18 @@ LDAP用户的登录账户和密码从该用户所属的组织下配置的LDAP服
 
 如果登录安全策略中开启了锁定，您的密码在输错一定次数后，将锁定您的账户，在一定时间内无法登录平台。
 
-## 更多操作
-- [登出](../logout)
-- [组织项目切换](../tenant_switch)
-- [仪表盘](../dashboard)
+<h2 id="5">忘记密码</h2>
+
+如果您登录时忘记了密码，你可以点击`登录`界面下方的`忘记密码`，来进行密码重置。
+
+1.输入您的用户邮箱，点击`发送验证码`获取验证码。输入正确的验证码。
+
+![邮箱验证](/docs/user-guide/system-configuration/common/image/email-verification.png)
+
+2.重置密码，输入您的新密码，并且确认。
+
+![重置密码](/docs/user-guide/system-configuration/common/image/reset-password.png)
+
+3.完成密码重置，您可以直接登录。
+
+![直接登录](/docs/user-guide/system-configuration/common/image/finish-password.jpg)

@@ -1,7 +1,7 @@
 ﻿+++
 title = "消息中心"
 description = " 对系统与用户之间必要交互的方式、内容进行管理，主要有创建消息模板、发送设置 "
-weight = 6
+weight = 7
 +++
 
 # 消息中心
@@ -12,14 +12,12 @@ weight = 6
 
 - 在左侧导航栏里，点击`消息中心`进入消息中心。
 
-<h2 id="2">功能</h2>
 
-- [**邮件模板**](./email-template) 用于管理和编辑发送邮件的内容样式。
+{{< docdir >}}
 
-- [**邮箱配置**](./email-config) 对平台所使用的发件邮箱服务器信息进行管理。
 
 ## 更多操作
-- [全局事务](..//global-transaction)
+- [全局事务](../..//microservice-development/global-transaction)
 - [个人中心](..//person)
 - [通用功能](..//common)
 
