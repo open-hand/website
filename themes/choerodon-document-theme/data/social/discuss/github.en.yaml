@@ -1,5 +1,5 @@
-weight: 1
+weight: 2
 name: "Github"
 icon: "icon-github"
-url: "https://github.com/choerodon/choerodon/issues/new"
+url: "https://github.com/choerodon"
 language: en
