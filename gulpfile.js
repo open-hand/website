@@ -55,9 +55,7 @@ gulp.task('default', function() {
 
     // js
     var modules = fs.readdirSync(dataPath)
-    .filter(function(file) {
-        console.log(file);
-        
+    .filter(function(file) {        
       return path.join(dataPath, file);
     });
     
