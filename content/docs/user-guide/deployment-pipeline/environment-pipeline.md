@@ -142,7 +142,7 @@ weight = 2
 
 ![应用环境](/docs/user-guide/deployment-pipeline/image/environment.png)
  
-- 在环境卡片中，点击`复制指令`→ ![复制指令按钮](/docs/user-guide/deployment-pipeline/image/copy_button.png) ，复制代码至Kubernetes运行，与平台建立链接。
+- 在环境卡片中，点击`复制指令`→ ![复制指令按钮](/docs/user-guide/deployment-pipeline/image/copy_button.png) ，复制代码至Kubernetes运行，与平台建立链接，以此来激活环境。
 - 在环境卡片中，点击`修改环境`→ ![修改环境按钮](/docs/user-guide/deployment-pipeline/image/update_env_button.png) ，修改环境名称、描述以及所在分组。
 -  在环境卡片中，点击`禁用环境`→ ![停用按钮](/docs/user-guide/deployment-pipeline/image/stop_button.png) ，当点击确认后，该环境将被禁用。
  <blockquote class="warning">

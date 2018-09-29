@@ -17,7 +17,7 @@ weight = 8
 </blockquote>
 
 ## 创建证书  
-![创建证书](/docs/user-guide/deployment-pipeline/image/.png)
+![创建证书](/docs/user-guide/deployment-pipeline/image/c-create.png)
  
  1. 点击 `创建证书` ；
 
@@ -29,7 +29,8 @@ weight = 8
  
  4. 选择`参数配置`，选择类型为 `申请证书` 或是 `上传证书` ；
  
-    - 申请证书:
+    - 申请证书:  
+    ![申请证书](/docs/user-guide/deployment-pipeline/image/c-apply.png)
     
         - 选择了申请证书之后，只需输入域名。
     
@@ -38,7 +39,8 @@ weight = 8
             </blockquote>
 
         
-    - 上传证书:
+    - 上传证书:  
+    ![上传证书](/docs/user-guide/deployment-pipeline/image/c-upload.png)
     
         - 若选择上传证书，需要输入域名，并且上传与该域名关联的证书文件：包括一个key文件和一个cert文件。
               
@@ -55,7 +57,13 @@ weight = 8
  1. 进`部署流水线`后，点击`证书管理`，进入证书界面。通过列表，可以查看到证书名称、域名地址、所处的环境的名称、证书的有效期；
  2. 点击查看证书详情→ ![证书详情按钮](/docs/user-guide/deployment-pipeline/image/del_net_button.png)，可以查看证书的CommonName与DNS names。
 
-  ![certificate](/docs/user-guide/deployment-pipeline/image/.png) 
+  ![certificate](/docs/user-guide/deployment-pipeline/image/c-more.png)     
+  
+  - 证书名称：所创建的证书的名称。
+  - 域名地址：所创证书的CommonName。  
+  - 环境名称：该证书所处的环境的名称。
+  - 有效期：该证书的有效期限。
+
 
 <blockquote class="note">
  
