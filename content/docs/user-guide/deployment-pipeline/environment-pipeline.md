@@ -40,7 +40,7 @@ weight = 2
   
   ![创建环境](/docs/user-guide/deployment-pipeline/image/envcreate.png)
  
--  点击`创建`，系统会滑出创建环境页面，输入相关信息，有环境编码、环境名称、环境描述。
+-  点击`创建环境`，系统会滑出创建环境页面，输入相关信息，有环境编码、环境名称、环境描述。
 	
 	环境编码:集群中产生的环境客户端的名称，限制60个字符。
 	     <blockquote class="warning">
@@ -49,7 +49,8 @@ weight = 2
 
 	环境名称：平台环境的显示名称。现在为10个字符。
 	
-	环境描述：环境的描述，限制为60字符。
+	环境描述：环境的描述，限制为60字符。  
+	环境分组：环境的分组，只能从已创建的分组中进行选择，从而将此环境放入该分组中。
 
     <blockquote class="note">
         根据用途配置不同的环境，常见的有开发环境，集成测试环境，用户访问测试环境及正式环境。新环境默认新增在环境流水线的最后一个节点。
@@ -141,8 +142,8 @@ weight = 2
 
 ![应用环境](/docs/user-guide/deployment-pipeline/image/environment.png)
  
-- 在环境卡片中，点击`复制指令`→ ![复制指令按钮](/docs/user-guide/deployment-pipeline/image/copy_button.png) ，复制代码至Kubernetes运行，与平台建立链接。
-- 在环境卡片中，点击`修改环境`→ ![修改环境按钮](/docs/user-guide/deployment-pipeline/image/update_env_button.png) ，修改环境名称及描述。
+- 在环境卡片中，点击`复制指令`→ ![复制指令按钮](/docs/user-guide/deployment-pipeline/image/copy_button.png) ，复制代码至Kubernetes运行，与平台建立链接，以此来激活环境。
+- 在环境卡片中，点击`修改环境`→ ![修改环境按钮](/docs/user-guide/deployment-pipeline/image/update_env_button.png) ，修改环境名称、描述以及所在分组。
 -  在环境卡片中，点击`禁用环境`→ ![停用按钮](/docs/user-guide/deployment-pipeline/image/stop_button.png) ，当点击确认后，该环境将被禁用。
  <blockquote class="warning">
     当环境中有运行中的实例，网络，域名时，环境不可禁用！
@@ -154,8 +155,18 @@ weight = 2
 
 ## 环境停用区 
 
-可在环境停用区查看已被停用的环境，点击卡片右上角`启用按钮` → ![启用按钮](/docs/user-guide/deployment-pipeline/image/start_button.png) 重新启用，重新启用后默认加至流水线最后一个节点。
+可在环境停用区查看已被停用的环境，点击卡片右上角`启用按钮` → ![启用按钮](/docs/user-guide/deployment-pipeline/image/start_button.png) 重新启用，重新启用后默认加至流水线最后一个节点。  
+**5. 创建分组**  
 
+![创建分组](/docs/user-guide/deployment-pipeline/image/environment.png)  
+
+-   点击`创建分组`，系统中会弹出创建环境分组的窗口，需要输入分组名称。
+	
+	分组名称:限制为20个字符。
+
+
+	
+ 
 ## 更多操作
 - [环境总览](../environments-overview)
 - [应用部署](../application-deployment)
