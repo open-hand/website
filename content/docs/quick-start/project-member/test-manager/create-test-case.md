@@ -29,12 +29,13 @@ description = "介绍如何快速创建测试用例"
 
 **第一步：** 在`测试用例管理`页面点击`创建测试用例`或`创建问题`按钮。
 
-**第二步：** 输入概要(必填)、优先级（必填）、描述（可选）、经办人（可选）。
+**第二步：** 输入概要(必填)、优先级（必填）、描述（可选）、版本（必填）、文件夹（可选）、经办人（可选）。
 
 例如，
 
  - 概要：自我介绍模块测试用例
  - 优先级：高
+ - 版本：0.10.0
 
 **第三步：** 点击`创建`即可创建一个新的测试用例。
 
@@ -63,26 +64,27 @@ description = "介绍如何快速创建测试用例"
 
 具体操作步骤如下：
 
-**第一步：** 点击目标测试用例，在测试用例详情页点击`执行测试`→ ![](/img/docs/quick-start/project-member/test-manager/create-test-case/test-exec-1.png)按钮。
+**第一步：** 点击版本后的`创建文件夹`，以创建一个文件夹
 
-**第二步：** 选择目标版本与测试循环。
+![](/img/docs/quick-start/project-member/test-manager/create-test-case/create-folder.png)
 
-例如，
+**第二步：** 在目标文件夹内创建一个测试用例。
 
- - 版本：0.1.0
- - 测试循环：临时
+![](/img/docs/quick-start/project-member/test-manager/create-test-case/create-issue.png)
 
-**第三步：** 点击`执行`即可将之前创建的测试用例添加到目标循环中。
+**第三步：** 在测试计划页面在对应版本的一个循环下添加一个测试阶段，并将测试阶段关联用例所在的文件夹。
 
-**第四步：** 添加执行后，可在测试用例详情页的`测试执行`表格中可以看到添加的测试执行。
+![](/img/docs/quick-start/project-member/test-manager/create-test-case/create-stage.png)
 
-![](/img/docs/quick-start/project-member/test-manager/create-test-case/test-case-7.png)
+**第四步：** 添加阶段后，文件夹内的用例会自动添加相应的执行。
+
+![](/img/docs/quick-start/project-member/test-manager/create-test-case/create-done.png)
 
 ## 执行测试
 
 具体操作步骤如下：
 
-**第一步：** 在测试用例详情页的`测试执行`表格中可以看到上文中添加的测试执行，在测试执行列表里点击对应执行的 ![](/img/docs/user-guide/test-management/case-management/execution-button.jpg) 按钮。
+**第一步：** 在测试执行页选中对应阶段，在右侧的`测试执行`表格中可以看到上文中添加的测试执行，在测试执行列表里点击对应执行的 ![](/img/docs/user-guide/test-management/case-management/execution-button.jpg) 按钮。
 
 **第二步：** 按照`测试详细信息`栏中的测试步骤进行测试，测试完每一步后，点击表格进行步骤详情记录。
 
@@ -92,7 +94,7 @@ description = "介绍如何快速创建测试用例"
 
 **第五步：** 并且可以在`执行记录中`看到执行的信息变更记录。
 
-![](/img/docs/quick-start/project-member/test-manager/create-test-case/test-case-4.png)
+![](/img/docs/quick-start/project-member/test-manager/create-test-case/create-show.png)
 
 ## 相关文档
 
