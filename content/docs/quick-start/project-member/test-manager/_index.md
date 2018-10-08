@@ -22,4 +22,4 @@ Choerodon为您带来持续交付的高效开发的同时也为您提供了测�
 
 - [测试用例管理](../../../user-guide/test-management/case-management)
 
-- [测试循环](../../../user-guide/test-management/test-cycle/)
+- [测试计划](../../../user-guide/test-management/test-plan/)
