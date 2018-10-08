@@ -10,3 +10,5 @@ node_modules/
 package-lock.json
 *.scssc
 *.css.map
+desktop.ini
+.vscode/
