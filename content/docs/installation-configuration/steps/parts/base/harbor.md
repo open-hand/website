@@ -103,7 +103,7 @@ Harbor启动速度较慢请等待所有Pod都为Running后进行界面查看。
 
     ```
     # 执行命令后有返回结果则说明已部署
-    kubectl get secret --all-namespaces | grep kube-lego-account
+    kubectl get deployment --all-namespaces | grep kube-lego-account
     ```
 
 - 编辑harbor的ingress对象
