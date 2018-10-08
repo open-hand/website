@@ -96,20 +96,20 @@
         {{ partial "footer.html" . }}
         {{ partial "scripts.html" . }}
         <!-- highlight.js -->
-        <link href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/atom-one-light.min.css" rel="stylesheet">
-        <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script>
         <!-- Choerodon UI 引用 -->
         {{ if (strings.Contains .Path "/components/") }}
             <link href="/css/choerodon-ui.min.css" rel="stylesheet">
-            <script src="https://cdn.bootcss.com/react/16.4.0/umd/react.development.js"></script>
-            <script src="https://cdn.bootcss.com/react-dom/16.4.0/umd/react-dom.development.js"></script>
-            <script src="https://cdn.bootcss.com/babel-standalone/6.26.0/babel.min.js"></script>
-            <script src="https://cdn.bootcss.com/moment.js/2.22.1/moment.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.4.0/umd/react.development.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.4.0/umd/react-dom.development.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment.min.js"></script>
             <script src="/js/choerodon-ui.min.js"></script>
-            <script src="https://cdn.bootcss.com/reqwest/2.0.5/reqwest.js"></script>
-            <script src="https://cdn.bootcss.com/classnames/2.2.5/dedupe.js"></script>
-            <script src="https://cdn.bootcss.com/fetch-jsonp/1.1.3/fetch-jsonp.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/reqwest/2.0.5/reqwest.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/classnames/2.2.5/dedupe.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch-jsonp/1.1.3/fetch-jsonp.js"></script>
         {{ end }}
         
     </body>
