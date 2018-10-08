@@ -35,8 +35,8 @@ weight = 15
     # 设置部署的namespace，请按："组织Code-项目Code-环境Code" 格式进行设置，以方便后期将应用自动扫描到数据库中。
     # 比如：组织Code为choerodon，项目Code为demo，环境Code为prod，那么最终定义的namespace为：choerodon-devops-prod
     NAMESPACE="choerodon-devops-prod"
-    # 提供NFS服务的主机地址（可以为IP地址）
-    NFS_SERVER_HOST="nfs.example.choerodon.io"
+    # 提供NFS服务的主机内网IP
+    NFS_SERVER_HOST="192.168.1.1"
     #######################  choerodon配置  ##########################
     # 搭建服务时镜像仓库前缀，默认"registry.cn-shanghai.aliyuncs.com/choerodon"
     #IMAGE_REPO_PRE="registry.cn-shanghai.aliyuncs.com/choerodon"
@@ -159,7 +159,7 @@ weight = 15
         =======================================================================================
         ```
 
-- [设置Gitlab启用SSH协议(必须开启)](../parts/base/gitlab/#启用SSH协议)
+- [设置Gitlab启用SSH协议(必须开启)](../parts/base/gitlab/#启用ssh协议)
 - [设置Harbor启用HTTPS](../parts/base/harbor/#启用https)
 - [克隆模板仓库到自己的Gitlab中](../parts/base/gitlab/#克隆模板仓库)
 
