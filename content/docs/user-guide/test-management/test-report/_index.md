@@ -1,6 +1,6 @@
 +++
 title = "测试报告"
-weight = 4
+weight = 5
 description = "提供从不同维度，不同角度的测试分析报告"
 +++
 
