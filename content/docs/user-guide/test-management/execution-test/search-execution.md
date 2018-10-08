@@ -16,4 +16,3 @@ description = "快速从树状图中检索要寻找的循环"
 ## 更多操作
 
 - [执行测试](../execution)
-- [临时执行](../temp-execution)
