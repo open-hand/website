@@ -1,6 +1,6 @@
 +++
 title = "设置"
-weight = 5
+weight = 6
 description = "设置测试管理的配置项"
 +++
 # 设置

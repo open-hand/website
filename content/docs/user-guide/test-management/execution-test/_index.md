@@ -1,6 +1,6 @@
 +++
 title = "执行测试"
-weight = 3
+weight = 4
 description = "介绍了如何执行测试的相关操作"
 +++
 
