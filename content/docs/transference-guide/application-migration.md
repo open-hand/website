@@ -565,4 +565,4 @@ helm install --repo=http://chart.choerodon.com.cn/choerodon/c7ncd/ \
 
 ## 更多资料
 
-[**介绍与学习资源汇集**](../use-choerodon)
+[**介绍与学习资源汇集**](../../concept/use-choerodon)
