@@ -15,7 +15,7 @@ description = "本贡迁移手册介绍了Choerodon如何将一个一般应用�
 - [**应用环境搭建**](./setup-application-environment)
 - [**数据库迁移**](./database-migration)
 - [**应用迁移**](./application-migration)
-- [**介绍和学习资源汇集**](./use-choerodon)
+- [**介绍和学习资源汇集**](../concept/use-choerodon)
 
 <blockquote class="note">
 本手册使用的Choerodon猪齿鱼版本是0.9版本。

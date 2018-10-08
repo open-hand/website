@@ -7,4 +7,3 @@ button: "开始学习"
 img: "/img/socials/event/kubernetes.svg"
 homeImg: "/img/home/notice/share.svg"
 href: "/blog/kubernetes-basic/"
-language: zh

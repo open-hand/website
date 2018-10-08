@@ -19,7 +19,8 @@
       vertical-align: middle; }
       @media (max-width: 767px) {
         .notice .card .head {
-          width: 0.4rem; } }
+          width: 0.4rem;
+          height: 0.288rem; } }
     .notice .card .light {
       display: none; }
     .notice .card .text {

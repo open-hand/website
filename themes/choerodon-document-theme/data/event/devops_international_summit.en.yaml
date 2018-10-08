@@ -1,0 +1,10 @@
+weight: 2
+title: "Choerodon猪齿鱼DevOps实践 | DevOps峰会企业专场"
+minTitle: "DevOps国际企业实践分享"
+description: "2018年DevOps国际将于11月2日-3日在深圳举办，Choerodon社区高级架构师蒋尚勤将作为嘉宾，带来《基于Choerodon猪齿鱼构建企业IT研发体系》的分享。"
+minDescription: "分享基于Choerodon猪齿鱼构建企业IT研发体系"
+button: "敬请期待"
+img: "/img/socials/event/devops_international_summit.svg"
+homeImg: "/img/home/notice/devops_international_summit.svg"
+href: "/blog/devops_international_summit/"
+language: en
