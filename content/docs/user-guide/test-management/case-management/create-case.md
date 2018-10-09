@@ -19,7 +19,7 @@ description = "详细阐述了如何创建测试用例"
 ## 详情创建测试用例
 
 点击`创建问题`按钮后，会弹出创建用户案例详情页面，页面如图所示，字段说明见图下方。
-![](/img/docs/user-guide/test-management/case-management/create-detail.png)
+<img src="/img/docs/user-guide/test-management/case-management/create-detail.png" width="500" />
 
 1. 概要：测试用例的概要
 <blockquote class="note">用户自行填写，上限44字。</blockquote>
