@@ -28,23 +28,11 @@ Choerodon猪齿鱼支持本地化部署，也支持公用云部署。Kubernetes�
 
 ## 安装Kubernetes集群
 
-Kubernetes集群的安装采用标准安装方式即可，Choerodon猪齿鱼整理了详细方便的[Kubernetes安装文档](../../installation-configuration/steps/kubernetes)，可供参考。其中一共提供三种安装方式，即简化模式、测试环境模式和正式环境模式，用户可以根据自身需求选择。
+Kubernetes集群的安装采用标准安装方式即可，Choerodon猪齿鱼整理了详细方便的[Kubernetes安装文档](../../installation-configuration/steps/kubernetes)，可供参考。用户可以根据自身需求选择。
 
 > 1.Choerodon猪齿鱼整理了详细方便的[Kubernetes安装文档](../../installation-configuration/steps/kubernetes)。
 
 > 2.在安装时，请详细阅读安装文档前部分，其中涉及到前置要求与约定、防火墙及端口检测、同步服务器时区和同步服务器时间等。
-
-### 简化模式
-
-简化模式指的是在本地模拟安装，并非在服务器上进行部署。在服务器上部署请查阅测试环境模式或正式环境模式。
-
-### 测试环境模式
-
-测试环境模式指的是在私有云或非生产级集群中部署，与正式环境模式的区别在于部署网络时使用的网络模式。
-
-### 正式环境模式
-
-正式环境模式是指在公有云或生产级环境的部署。
 
 ## 下一步
 
