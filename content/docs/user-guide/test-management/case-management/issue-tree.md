@@ -9,8 +9,7 @@ description = "阐述了什么是测试用例树"
 测试用例树将测试用例进行分类，表明了一个测试用例所处的版本和文件夹。
 
 ## 测试用例树的结构
-
-![](/img/docs/user-guide/test-management/issue-tree/tree-shape.png)
+<img src="/img/docs/user-guide/test-management/issue-tree/tree-shape.png" width="400" />
 
 1. 版本对应的状态
 1. 版本
@@ -31,7 +30,8 @@ description = "阐述了什么是测试用例树"
 ## 测试用例拖动
 
 测试用例可以进行拖动来改变文件夹。
-![](/img/docs/user-guide/test-management/issue-tree/issue-drag.png)
+
+<img src="/img/docs/user-guide/test-management/issue-tree/issue-drag.png" width="500" />
 
 1. 当前拖动用例数
 3. 目标文件夹
