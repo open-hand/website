@@ -27,5 +27,4 @@ description = "本节解释了测试用例及其必要性"
 ## 更多操作
 
 - [创建测试用例](../create-case)
-- [在测试循环中添加执行](../../test-cycle/add-execution)
 - [查看测试报告](../../test-report/)

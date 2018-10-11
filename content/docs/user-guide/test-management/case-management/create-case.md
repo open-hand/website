@@ -46,5 +46,4 @@ description = "详细阐述了如何创建测试用例"
 ## 更多操作
 
 - [创建测试用例](../create-case)
-- [在测试循环中添加执行](../../test-cycle/add-execution)
 - [查看测试报告](../../test-report/)

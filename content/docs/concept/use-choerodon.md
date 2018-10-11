@@ -10,7 +10,21 @@ weight = 9
 
 本部分包含项目管理、开发、发布版本、部署等操作，其中没有具体的步骤，而是把相关的学习和介绍资源汇集在一起，方便用户查找和学习。
 
+## 迁移手册
+
+迁移手册主要介绍了Choerodon如何将一个一般应用迁移到Choerodon中，并使用Choerodon作为开发、发布和部署的支撑平台。
+
+**资料**：
+
+- [应用环境搭建](../../transference-guide/setup-application-environment)
+
+- [数据库迁移](../../transference-guide/database-migration)
+
+- [应用迁移](../../transference-guide/application-migration)
+
+
 ## 知识管理
+
 知识管理主要是提供Wiki的功能，用户可以使用知识管理做项目的立项、需求分析、应用设计等，同时也可以用于记录Scrum的回顾会议等，总之，**其可以作为项目日常文档编辑与共享的媒介**。
 
 **资料**：

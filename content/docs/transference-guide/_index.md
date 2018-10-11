@@ -2,7 +2,7 @@
 title = "迁移手册"
 weight = 6
 alwaysopen=false
-description = "本贡迁移手册介绍了Choerodon如何将一个一般应用迁移到Choerodon中，并使用Choerodon作为开发、发布和部署的支撑平台。"
+description = "本迁移手册介绍了Choerodon如何将一个一般应用迁移到Choerodon中，并使用Choerodon作为开发、发布和部署的支撑平台。"
 +++
 
 
