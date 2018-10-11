@@ -42,5 +42,4 @@ description = "阐述了什么是测试用例树"
 ## 更多操作
 
 - [创建测试用例](../create-case)
-- [在测试循环中添加执行](../../test-cycle/add-execution)
 - [查看测试报告](../../test-report/)

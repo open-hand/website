@@ -16,11 +16,11 @@ weight = 9
 
 **资料**：
 
-- [应用环境搭建](../setup-application-environment)
+- [应用环境搭建](../../transference-guide/setup-application-environment)
 
-- [数据库迁移](../database-migration)
+- [数据库迁移](../../transference-guide/database-migration)
 
-- [应用迁移](../application-migration)
+- [应用迁移](../../transference-guide/application-migration)
 
 
 ## 知识管理
