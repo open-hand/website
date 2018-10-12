@@ -60,7 +60,7 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_REDIS_HOST=c7n-redis.c7n-system.svc \
         --set env.open.SPRING_REDIS_DATABASE=5 \
         --name test-manager-service \
-        --version 0.10.0 \
+        --version 0.10.2 \
         --namespace c7n-system
     ```
     参数名 | 含义 
@@ -95,7 +95,18 @@ helm install c7n/mysql-client \
 若为第一次部署，请忽略本小节。本小节旨在修复老版本已产生的数据适配测试管理模块
 </blockquote>
 
-- 在访问搭建好的Choerodon的api，`api.example.choerodon.io/manager/swagger-ui.html`，选择`test_manager_service` -> `test-cycle-controller` -> `数据修复`
+- 当从0.7升级至0.8时的数据升级：数据升级会在每一个版本下生成一个临时循环，以下是修复步骤，在访问搭建好的Choerodon的api，`api.example.choerodon.io/manager/swagger-ui.html`，选择`test_manager_service` -> `test-cycle-controller` -> `数据升级`
   - 认证请使用用户名：admin，密码：admin
   - 在project_id字段输入一个存在的项目id 例如：1
   - 提交执行，即可修复数据。
+
+- 当从0.9升级至0.10时的数据升级：此次数据升级将会把执行逆向生成用例，不同文件夹下的相同用例将复制，并在每一个版本下生成一个临时文件夹，以下是修复步骤
+  - 进入`example.choerodon.io/#/iam/api-test`选择`test_manager_service` -> `test-cycle-controller` 
+  
+  ![](/img/docs/installation-configuration/parts/data_fix1.png)
+
+  - 点击`/v1/projects/{project_id}/cycle/fix`右侧按钮进入API测试页面
+
+  ![](/img/docs/installation-configuration/parts/data_fix2.png)
+
+  - 填入一个存在的project_id点击发送即可，等待日志中出现`fixed data successful`，数据即升级成功，如果日志中抛出了异常，则重试即可。
