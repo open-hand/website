@@ -86,6 +86,7 @@ helm install c7n/mysql-client \
 
     参数名 | 含义 
     --- |  --- 
+    env.JAVA_OPTS | JVM相关运行参数
     env.DB_USER | 数据库用户名
     env.DB_PASSWORD|数据库密码
     env.DB_HOST|数据库地址
@@ -94,6 +95,8 @@ helm install c7n/mysql-client \
     env.OIDC_ENDPOINT_TOKEN|OIDC TOKEN校验地址
     env.OIDC_ENDPOINT_USERINFO|OIDC用户信息地址
     env.OIDC_ENDPOINT_LOGOUT|OAuth登出地址
+    env.CHOERODON_REQUEST_API_URL| 网关的域名地址
+    env.CHOERODON_REQUEST_FRONT_URL| 前端地址
     env.OIDC_CLIENTID|OIDC客户端
     env.OIDC_SECRET|OIDC秘钥
     env.OIDC_WIKI_TOKEN|OIDC TOKEN
@@ -148,7 +151,8 @@ helm install c7n/mysql-client \
 
 - 同步已有项目和组织
 
-    服务部署完成之后，访问Swagger-ui,在服务选择列表中选择wiki-service,打开wiki-scanning-controller，使用同步方法。
-    1.同步指定的组织和项目：根据组织id同步该组织以及组织下的项目到wiki。
-    2.扫描组织和项目：同步所有的组织和项目到wiki。
-    注：同步会在后台执行，请耐心等待同步完成。
+    1. 服务部署完成之后，进入`Choerodon`平台，选择菜单`API管理`下的`API测试`。
+    1. 选择微服务`wiki-service`，打开`wiki-scanning-controller`，使用`同步指定组织和项目`接口，点击`搜索`按钮跳转页面。点击`接口测试`，点击`发送`之后，就会根据组织id同步该组织以及组织下的项目到wiki。
+    2. 选择微服务`wiki-service`，打开`wiki-scanning-controller`，使用`同步组织和项目`接口，点击`搜索`按钮跳转页面。点击`接口测试`，点击`发送`之后，就会同步所有的组织和项目到wiki。
+    
+        注：同步会在后台执行，请耐心等待同步完成。
