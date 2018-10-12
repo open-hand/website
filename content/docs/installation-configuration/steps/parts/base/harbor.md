@@ -19,8 +19,8 @@ helm repo update
 
 ```shell
 helm install c7n/harbor \
-    --set externalURL=https://registry.example.choerodon.io\
-    --set ingress.hosts.core=registry.example.choerodon.io\
+    --set externalURL=https://registry.example.choerodon.io \
+    --set ingress.hosts.core=registry.example.choerodon.io \
     --set database.internal.volumes.data.storageClass="nfs-provisioner" \
     --set registry.volumes.data.storageClass="nfs-provisioner" \
     --set redis.master.persistence.storageClass="nfs-provisioner" \
