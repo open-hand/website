@@ -1,7 +1,7 @@
 +++
-title = "第二步：Kubernetes集群部署"
-description = "第二步：Kubernetes集群部署"
-weight = 10
+title = "第一步：Kubernetes集群部署"
+description = "第一步：Kubernetes集群部署"
+weight = 5
 +++
 
 # Kubernetes集群部署
