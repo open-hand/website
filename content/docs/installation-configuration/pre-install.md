@@ -60,4 +60,4 @@ Choerodon采用Spring Cloud作为微服务框架，运行在Docker上，以Kuber
 
 ## 约定
 - 非特别说明，请使用具有root权限的用户进行安装操作
-- 部署教程以NFS类型的PV为例进行创建，所有非集群级对象都创建在`choerodon-devops-prod`命名空间下
+- 部署教程以NFS类型的PV为例进行创建，所有非集群级对象都创建在`c7n-system`命名空间下

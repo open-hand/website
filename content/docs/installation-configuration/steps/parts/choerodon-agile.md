@@ -19,29 +19,21 @@ helm repo update
 
 ## 创建数据库
 
-- 进入数据库
-
-    ```bash
-    # 获取pod的名称
-    kubectl get po -n choerodon-devops-prod
-    # 进入pod
-    kubectl exec -it [mysql pod name] -n choerodon-devops-prod bash
-    # 进入mysql命令行
-    mysql -uroot -p${MYSQL_ROOT_PASSWORD}
-    ```
-
-- 创建choerodon所需数据库及用户并授权
-
-    <blockquote class="note">
-    部署完成后请注意保存用户名和密码。
-    </blockquote>
-
-    ```sql
-    CREATE USER IF NOT EXISTS 'choerodon'@'%' IDENTIFIED BY "password";
-    CREATE DATABASE IF NOT EXISTS agile_service DEFAULT CHARACTER SET utf8;
-    GRANT ALL PRIVILEGES ON agile_service.* TO choerodon@'%';
-    FLUSH PRIVILEGES;
-    ```
+```
+helm install c7n/mysql-client \
+    --set env.MYSQL_HOST=c7n-mysql.c7n-system.svc \
+    --set env.MYSQL_PORT=3306 \
+    --set env.MYSQL_USER=root \
+    --set env.MYSQL_PASS=password \
+    --set env.SQL_SCRIPT="\
+          CREATE USER IF NOT EXISTS 'choerodon'@'%' IDENTIFIED BY 'password';\
+          CREATE DATABASE IF NOT EXISTS agile_service DEFAULT CHARACTER SET utf8;\
+          GRANT ALL PRIVILEGES ON agile_service.* TO choerodon@'%';\
+          FLUSH PRIVILEGES;" \
+    --version 0.1.0 \
+    --name create-c7nagile-db \
+    --namespace c7n-system
+```
 
 ## 部署agile service
 
@@ -49,28 +41,32 @@ helm repo update
 
     ``` 
     helm install c7n/agile-service \
-        --set preJob.preConfig.mysql.host=choerodon-mysql \
+        --set env.open.JAVA_OPTS="-Xms256M -Xmx512M" \
+        --set preJob.preConfig.mysql.host=c7n-mysql.c7n-system.svc \
         --set preJob.preConfig.mysql.port=3306 \
         --set preJob.preConfig.mysql.database=manager_service \
         --set preJob.preConfig.mysql.username=choerodon \
         --set preJob.preConfig.mysql.password=password \
-        --set preJob.preInitDB.mysql.host=choerodon-mysql \
+        --set preJob.preInitDB.mysql.host=c7n-mysql.c7n-system.svc \
         --set preJob.preInitDB.mysql.port=3306 \
         --set preJob.preInitDB.mysql.database=agile_service \
         --set preJob.preInitDB.mysql.username=choerodon \
         --set preJob.preInitDB.mysql.password=password \
-        --set env.open.SPRING_DATASOURCE_URL="jdbc:mysql://choerodon-mysql:3306/agile_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
+        --set env.open.SPRING_DATASOURCE_URL="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/agile_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
         --set env.open.SPRING_DATASOURCE_USERNAME=choerodon \
         --set env.open.SPRING_DATASOURCE_PASSWORD=password \
-        --set env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE="http://register-server.choerodon-devops-prod:8000/eureka/" \
-        --set env.open.CHOERODON_EVENT_CONSUMER_KAFKA_BOOTSTRAP_SERVERS="kafka-0.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-1.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-2.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092" \
-        --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS="kafka-0.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-1.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-2.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092" \
-        --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES="zookeeper-0.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181\,zookeeper-1.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181\,zookeeper-2.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181" \
+        --set env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE="http://register-server.c7n-system:8000/eureka/" \
+        --set env.open.CHOERODON_EVENT_CONSUMER_KAFKA_BOOTSTRAP_SERVERS="kafka-0.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-1.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-2.kafka-headless.c7n-system.svc.cluster.local:9092" \
+        --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS="kafka-0.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-1.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-2.kafka-headless.c7n-system.svc.cluster.local:9092" \
+        --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES="zookeeper-0.zookeeper-headless.c7n-system.svc.cluster.local:2181\,zookeeper-1.zookeeper-headless.c7n-system.svc.cluster.local:2181\,zookeeper-2.zookeeper-headless.c7n-system.svc.cluster.local:2181" \
         --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
-        --set env.open.SPRING_CLOUD_CONFIG_URI="http://config-server.choerodon-devops-prod:8010/" \
-        --set env.open.SERVICES_ATTACHMENT_URL="https://minio.example.choerodon.io/agile-service/" \
-        --name=agile-service \
-        --version=0.9.1 --namespace=choerodon-devops-prod
+        --set env.open.SPRING_CLOUD_CONFIG_URI="http://config-server.c7n-system:8010/" \
+        --set env.open.SERVICES_ATTACHMENT_URL="http://minio.example.choerodon.io/agile-service/" \
+        --set env.open.SPRING_REDIS_HOST=c7n-redis.c7n-system.svc \
+        --set env.open.SPRING_REDIS_DATABASE=4 \
+        --name agile-service \
+        --version 0.10.1 \
+        --namespace c7n-system
     ```
     参数名 | 含义 
     --- |  --- 
@@ -91,7 +87,7 @@ helm repo update
     - 验证命令
 
         ```
-        curl -s $(kubectl get po -n choerodon-devops-prod -l choerodon.io/release=agile-service -o jsonpath="{.items[0].status.podIP}"):8379/health | jq -r .status
+        curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=agile-service -o jsonpath="{.items[0].status.podIP}"):8379/health | jq -r .status
         ```
     - 出现以下类似信息即为成功部署
         ```

@@ -19,34 +19,20 @@ helm repo update
 
 ## 创建数据库
 
-- 进入数据库
-
-    ```bash
-    # 获取pod的名称
-    kubectl get po -n choerodon-devops-prod
-    # 进入pod
-    kubectl exec -it [mysql pod name] -n choerodon-devops-prod bash
-    # 进入mysql命令行
-    mysql -uroot -p${MYSQL_ROOT_PASSWORD}
-    ```
-
-- 创建choerodon所需数据库及用户并授权
-
-    <blockquote class="note">
-    部署完成后请注意保存用户名和密码。
-    </blockquote>
-
-    ```sql
-    CREATE USER IF NOT EXISTS 'choerodon'@'%' IDENTIFIED BY "password";
-    CREATE DATABASE IF NOT EXISTS test_manager_service DEFAULT CHARACTER SET utf8;
-    GRANT ALL PRIVILEGES ON test_manager_service.* TO choerodon@'%';
-    FLUSH PRIVILEGES;
-    ```
-
-## 部署test manager service所需Redis
-
-```shell
-helm install c7n/redis --name=test-manager-service-redis --namespace=choerodon-devops-prod
+```
+helm install c7n/mysql-client \
+    --set env.MYSQL_HOST=c7n-mysql.c7n-system.svc \
+    --set env.MYSQL_PORT=3306 \
+    --set env.MYSQL_USER=root \
+    --set env.MYSQL_PASS=password \
+    --set env.SQL_SCRIPT="\
+          CREATE USER IF NOT EXISTS 'choerodon'@'%' IDENTIFIED BY 'password';\
+          CREATE DATABASE IF NOT EXISTS test_manager_service DEFAULT CHARACTER SET utf8;\
+          GRANT ALL PRIVILEGES ON test_manager_service.* TO choerodon@'%';\
+          FLUSH PRIVILEGES;" \
+    --version 0.1.0 \
+    --name create-c7ntest-db \
+    --namespace c7n-system
 ```
 
 ## 部署test manager service
@@ -55,28 +41,27 @@ helm install c7n/redis --name=test-manager-service-redis --namespace=choerodon-d
 
     ``` 
     helm install c7n/test-manager-service \
-        --set preJob.preConfig.mysql.host=choerodon-mysql \
-        --set preJob.preConfig.mysql.port=3306 \
-        --set preJob.preConfig.mysql.database=manager_service \
-        --set preJob.preConfig.mysql.username=choerodon \
-        --set preJob.preConfig.mysql.password=password \
-        --set preJob.preInitDB.mysql.host=choerodon-mysql \
-        --set preJob.preInitDB.mysql.port=3306 \
-        --set preJob.preInitDB.mysql.database=test_manager_service \
-        --set preJob.preInitDB.mysql.username=choerodon \
-        --set preJob.preInitDB.mysql.password=password \
-        --set env.open.SPRING_DATASOURCE_URL="jdbc:mysql://choerodon-mysql:3306/test_manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
+        --set env.open.JAVA_OPTS="-Xms256M -Xmx512M" \
+        --set preJob.preConfig.datasource.url="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
+        --set preJob.preConfig.datasource.username=choerodon \
+        --set preJob.preConfig.datasource.password=password \
+        --set preJob.preInitDB.datasource.url="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/test_manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
+        --set preJob.preInitDB.datasource.username=choerodon \
+        --set preJob.preInitDB.datasource.password=password \
+        --set env.open.SPRING_DATASOURCE_URL="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/test_manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
         --set env.open.SPRING_DATASOURCE_USERNAME=choerodon \
         --set env.open.SPRING_DATASOURCE_PASSWORD=password \
-        --set env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE="http://register-server.choerodon-devops-prod:8000/eureka/" \
-        --set env.open.CHOERODON_EVENT_CONSUMER_KAFKA_BOOTSTRAP_SERVERS="kafka-0.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-1.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-2.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092" \
-        --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS="kafka-0.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-1.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-2.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092" \
-        --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES="zookeeper-0.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181\,zookeeper-1.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181\,zookeeper-2.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181" \
+        --set env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE="http://register-server.c7n-system:8000/eureka/" \
+        --set env.open.CHOERODON_EVENT_CONSUMER_KAFKA_BOOTSTRAP_SERVERS="kafka-0.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-1.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-2.kafka-headless.c7n-system.svc.cluster.local:9092" \
+        --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS="kafka-0.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-1.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-2.kafka-headless.c7n-system.svc.cluster.local:9092" \
+        --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES="zookeeper-0.zookeeper-headless.c7n-system.svc.cluster.local:2181\,zookeeper-1.zookeeper-headless.c7n-system.svc.cluster.local:2181\,zookeeper-2.zookeeper-headless.c7n-system.svc.cluster.local:2181" \
         --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
-        --set env.open.SPRING_CLOUD_CONFIG_URI="http://config-server.choerodon-devops-prod:8010/" \
-        --set env.open.SPRING_REDIS_HOST=test-manager-service-redis.choerodon-devops-prod \
-        --name=test-manager-service \
-        --version=0.9.2 --namespace=choerodon-devops-prod
+        --set env.open.SPRING_CLOUD_CONFIG_URI="http://config-server.c7n-system:8010/" \
+        --set env.open.SPRING_REDIS_HOST=c7n-redis.c7n-system.svc \
+        --set env.open.SPRING_REDIS_DATABASE=5 \
+        --name test-manager-service \
+        --version 0.10.0 \
+        --namespace c7n-system
     ```
     参数名 | 含义 
     --- |  --- 
@@ -97,7 +82,7 @@ helm install c7n/redis --name=test-manager-service-redis --namespace=choerodon-d
     - 验证命令
 
         ```
-        curl -s $(kubectl get po -n choerodon-devops-prod -l choerodon.io/release=test-manager-service -o jsonpath="{.items[0].status.podIP}"):8094/health | jq -r .status
+        curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=test-manager-service -o jsonpath="{.items[0].status.podIP}"):8094/health | jq -r .status
         ```
     - 出现以下类似信息即为成功部署
         ```

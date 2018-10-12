@@ -19,106 +19,81 @@ helm repo update
 
 ## 创建数据库
 
-- 进入数据库
-
-    ```bash
-    # 获取pod的名称
-    kubectl get po -n choerodon-devops-prod
-    # 进入pod
-    kubectl exec -it [mysql pod name] -n choerodon-devops-prod bash
-    # 进入mysql命令行
-    mysql -uroot -p${MYSQL_ROOT_PASSWORD}
-    ```
-
-- 创建choerodon所需数据库及用户并授权
-
-    <blockquote class="note">
-    部署完成后请注意保存用户名和密码。
-    </blockquote>
-
-    ```sql
-    CREATE USER IF NOT EXISTS 'choerodon'@'%' IDENTIFIED BY "password";
-    CREATE DATABASE IF NOT EXISTS devops_service DEFAULT CHARACTER SET utf8;
-    CREATE DATABASE IF NOT EXISTS gitlab_service DEFAULT CHARACTER SET utf8;
-    GRANT ALL PRIVILEGES ON devops_service.* TO choerodon@'%';
-    GRANT ALL PRIVILEGES ON gitlab_service.* TO choerodon@'%';
-    FLUSH PRIVILEGES;
-    ```
+```
+helm install c7n/mysql-client \
+    --set env.MYSQL_HOST=c7n-mysql.c7n-system.svc \
+    --set env.MYSQL_PORT=3306 \
+    --set env.MYSQL_USER=root \
+    --set env.MYSQL_PASS=password \
+    --set env.SQL_SCRIPT="\
+          CREATE USER IF NOT EXISTS 'choerodon'@'%' IDENTIFIED BY 'password';\
+          CREATE DATABASE IF NOT EXISTS devops_service DEFAULT CHARACTER SET utf8;\
+          CREATE DATABASE IF NOT EXISTS gitlab_service DEFAULT CHARACTER SET utf8;\
+          GRANT ALL PRIVILEGES ON devops_service.* TO choerodon@'%';\
+          GRANT ALL PRIVILEGES ON gitlab_service.* TO choerodon@'%';\
+          FLUSH PRIVILEGES;" \
+    --version 0.1.0 \
+    --name create-c7ncd-db \
+    --namespace c7n-system
+```
 
 ## 部署devops service
 
 <blockquote class="warning">
-choerodon devops service需要与Chartmuseum共用存储，所以choerodon devops service的PV物理目录与Chartmuseum的PV物理目录必须一致。
+choerodon devops service需要与Chartmuseum共用存储，所以choerodon devops service的PVC与Chartmuseum的PVC必须一致。
 </blockquote>
-
-- 创建CRD
-    - 在任意master节点新建`C7NHelmRelease.yaml`文件，粘贴以下信息：
-
-            apiVersion: apiextensions.k8s.io/v1beta1
-            kind: CustomResourceDefinition
-            metadata:
-              name: c7nhelmreleases.choerodon.io
-            spec:
-              group: choerodon.io
-              names:
-                kind: C7NHelmRelease
-                listKind: C7NHelmReleaseList
-                plural: c7nhelmreleases
-                singular: c7nhelmrelease
-              scope: Namespaced
-              version: v1alpha1
-    - 执行以下命令进行部署：
-
-            kubectl apply -f C7NHelmRelease.yaml
 
 - 部署服务
 
     ``` 
     helm install c7n/devops-service \
-        --set preJob.preConfig.mysql.host=choerodon-mysql \
+        --set env.open.JAVA_OPTS="-Xms256M -Xmx512M" \
+        --set preJob.preConfig.mysql.host=c7n-mysql.c7n-system.svc \
         --set preJob.preConfig.mysql.port=3306 \
         --set preJob.preConfig.mysql.database=manager_service \
         --set preJob.preConfig.mysql.username=choerodon \
         --set preJob.preConfig.mysql.password=password \
-        --set preJob.preInitDB.mysql.host=choerodon-mysql \
+        --set preJob.preInitDB.mysql.host=c7n-mysql.c7n-system.svc \
         --set preJob.preInitDB.mysql.port=3306 \
         --set preJob.preInitDB.mysql.database=devops_service \
         --set preJob.preInitDB.mysql.username=choerodon \
         --set preJob.preInitDB.mysql.password=password \
-        --set env.open.SPRING_DATASOURCE_URL="jdbc:mysql://choerodon-mysql:3306/devops_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
+        --set env.open.SPRING_DATASOURCE_URL="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/devops_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
         --set env.open.SPRING_DATASOURCE_USERNAME=choerodon \
         --set env.open.SPRING_DATASOURCE_PASSWORD=password \
-        --set env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE="http://register-server.choerodon-devops-prod:8000/eureka/" \
-        --set env.open.SPRING_REDIS_HOST=devops-redis \
-        --set env.open.CHOERODON_EVENT_CONSUMER_KAFKA_BOOTSTRAP_SERVERS="kafka-0.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-1.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-2.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092" \
-        --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS="kafka-0.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-1.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-2.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092" \
-        --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES="zookeeper-0.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181\,zookeeper-1.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181\,zookeeper-2.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181" \
+        --set env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE="http://register-server.c7n-system:8000/eureka/" \
+        --set env.open.SPRING_REDIS_HOST=c7n-redis.c7n-system.svc \
+        --set env.open.SPRING_REDIS_DATABASE=3 \
+        --set env.open.CHOERODON_EVENT_CONSUMER_KAFKA_BOOTSTRAP_SERVERS="kafka-0.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-1.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-2.kafka-headless.c7n-system.svc.cluster.local:9092" \
+        --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS="kafka-0.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-1.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-2.kafka-headless.c7n-system.svc.cluster.local:9092" \
+        --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES="zookeeper-0.zookeeper-headless.c7n-system.svc.cluster.local:2181\,zookeeper-1.zookeeper-headless.c7n-system.svc.cluster.local:2181\,zookeeper-2.zookeeper-headless.c7n-system.svc.cluster.local:2181" \
         --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
-        --set env.open.SPRING_CLOUD_CONFIG_URI="http://config-server.choerodon-devops-prod:8010/" \
-        --set env.open.SERVICES_HARBOR_BASEURL="https://harbor.example.choerodon.io" \
+        --set env.open.SPRING_CLOUD_CONFIG_URI="http://config-server.c7n-system:8010/" \
+        --set env.open.SERVICES_HARBOR_BASEURL="https://registry.example.choerodon.io" \
         --set env.open.SERVICES_HARBOR_USERNAME=admin \
         --set env.open.SERVICES_HARBOR_PASSWORD="Harbor12345" \
         --set env.open.SERVICES_HELM_URL="http://chart.example.choerodon.io" \
-        --set env.open.SERVICES_GITLAB_URL="http://code.example.choerodon.io" \
-        --set env.open.SERVICES_GITLAB_SSHURL="code.example.choerodon.io" \
+        --set env.open.SERVICES_GITLAB_URL="http://gitlab.example.choerodon.io" \
+        --set env.open.SERVICES_GITLAB_SSHURL="gitlab.example.choerodon.io" \
         --set env.open.SERVICES_GITLAB_PASSWORD=password \
         --set env.open.SERVICES_GITLAB_PROJECTLIMIT=100 \
         --set env.open.SERVICES_GATEWAY_URL=http://api.example.choerodon.io \
         --set env.open.SERVICES_SONARQUBE_URL=http://sonarqube.example.choerodon.io \
         --set env.open.SECURITY_IGNORED="/ci\,/webhook\,/v2/api-docs\,/agent/**\,/ws/**\,/webhook/**" \
-        --set env.open.AGENT_VERSION="0.9.6" \
+        --set env.open.AGENT_VERSION="0.10.0" \
         --set env.open.AGENT_REPOURL="https://openchart.choerodon.com.cn/choerodon/c7n/" \
-        --set env.open.AGENT_SERVICEURL="ws://devops.service.example.choerodon.io/agent/" \
-        --set env.open.TEMPLATE_VERSION_MICROSERVICE="0.9.0" \
-        --set env.open.TEMPLATE_VERSION_MICROSERVICEFRONT="0.9.0" \
-        --set env.open.TEMPLATE_VERSION_JAVALIB="0.9.0" \
+        --set env.open.AGENT_SERVICEURL="ws://devops.example.choerodon.io/agent/" \
+        --set env.open.TEMPLATE_VERSION_MICROSERVICE="0.10.0" \
+        --set env.open.TEMPLATE_VERSION_MICROSERVICEFRONT="0.10.0" \
+        --set env.open.TEMPLATE_VERSION_JAVALIB="0.10.0" \
         --set ingress.enable=true \
-        --set ingress.host=devops.service.example.choerodon.io \
+        --set ingress.host=devops.example.choerodon.io \
         --set service.enable=true \
         --set persistence.enabled=true \
-        --set persistence.existingClaim="devops-service-pvc" \
-        --name=devops-service \
-        --version=0.9.3 --namespace=choerodon-devops-prod
+        --set persistence.existingClaim="chartmuseum-pvc" \
+        --name devops-service \
+        --version 0.10.0 \
+        --namespace c7n-system
     ```
     参数名 | 含义 
     --- |  --- 
@@ -156,7 +131,7 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
     - 验证命令
 
         ```
-        curl -s $(kubectl get po -n choerodon-devops-prod -l choerodon.io/release=devops-service -o jsonpath="{.items[0].status.podIP}"):8061/health | jq -r .status
+        curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=devops-service -o jsonpath="{.items[0].status.podIP}"):8061/health | jq -r .status
         ```
     - 出现以下类似信息即为成功部署
         ```
@@ -168,29 +143,31 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
 
     ```
     helm install c7n/gitlab-service \
-        --set preJob.preConfig.mysql.host=choerodon-mysql \
+        --set env.open.JAVA_OPTS="-Xms256M -Xmx512M" \
+        --set preJob.preConfig.mysql.host=c7n-mysql.c7n-system.svc \
         --set preJob.preConfig.mysql.port=3306 \
         --set preJob.preConfig.mysql.database=manager_service \
         --set preJob.preConfig.mysql.username=choerodon \
         --set preJob.preConfig.mysql.password=password \
-        --set preJob.preInitDB.mysql.host=choerodon-mysql \
+        --set preJob.preInitDB.mysql.host=c7n-mysql.c7n-system.svc \
         --set preJob.preInitDB.mysql.port=3306 \
         --set preJob.preInitDB.mysql.database=gitlab_service \
         --set preJob.preInitDB.mysql.username=choerodon \
         --set preJob.preInitDB.mysql.password=password \
-        --set env.open.SPRING_DATASOURCE_URL="jdbc:mysql://choerodon-mysql:3306/gitlab_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
+        --set env.open.SPRING_DATASOURCE_URL="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/gitlab_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
         --set env.open.SPRING_DATASOURCE_USERNAME=choerodon \
         --set env.open.SPRING_DATASOURCE_PASSWORD=password \
-        --set env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE="http://register-server.choerodon-devops-prod:8000/eureka/" \
-        --set env.open.CHOERODON_EVENT_CONSUMER_KAFKA_BOOTSTRAP_SERVERS="kafka-0.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-1.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-2.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092" \
-        --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS="kafka-0.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-1.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092\,kafka-2.kafka-headless.choerodon-devops-prod.svc.cluster.local:9092" \
-        --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES="zookeeper-0.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181\,zookeeper-1.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181\,zookeeper-2.zookeeper-headless.choerodon-devops-prod.svc.cluster.local:2181" \
+        --set env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE="http://register-server.c7n-system:8000/eureka/" \
+        --set env.open.CHOERODON_EVENT_CONSUMER_KAFKA_BOOTSTRAP_SERVERS="kafka-0.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-1.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-2.kafka-headless.c7n-system.svc.cluster.local:9092" \
+        --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS="kafka-0.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-1.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-2.kafka-headless.c7n-system.svc.cluster.local:9092" \
+        --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES="zookeeper-0.zookeeper-headless.c7n-system.svc.cluster.local:2181\,zookeeper-1.zookeeper-headless.c7n-system.svc.cluster.local:2181\,zookeeper-2.zookeeper-headless.c7n-system.svc.cluster.local:2181" \
         --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
-        --set env.open.SPRING_CLOUD_CONFIG_URI="http://config-server.choerodon-devops-prod:8010/" \
-        --set env.open.GITLAB_URL="https://code.example.choerodon.io" \
-        --set env.open.GITLAB_PRIVATETOKEN="choerodon-gitlab-token" \
-        --name=gitlab-service \
-        --version=0.9.1 --namespace=choerodon-devops-prod
+        --set env.open.SPRING_CLOUD_CONFIG_URI="http://config-server.c7n-system:8010/" \
+        --set env.open.GITLAB_URL="http://gitlab.example.choerodon.io" \
+        --set env.open.GITLAB_PRIVATETOKEN="GEuRhgb6kG9y3prFosSb" \
+        --name gitlab-service \
+        --version 0.10.0 \
+        --namespace c7n-system
     ```
     参数名 | 含义 
     --- |  --- 
@@ -211,7 +188,7 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
     - 验证命令
 
         ```
-        curl -s $(kubectl get po -n choerodon-devops-prod -l choerodon.io/release=gitlab-service -o jsonpath="{.items[0].status.podIP}"):8071/health | jq -r .status
+        curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=gitlab-service -o jsonpath="{.items[0].status.podIP}"):8071/health | jq -r .status
         ```
     - 出现以下类似信息即为成功部署
         ```

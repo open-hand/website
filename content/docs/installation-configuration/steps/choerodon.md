@@ -1,8 +1,8 @@
-+++
-title = "第四步：一键部署Choerodon"
-description = "第四步：一键部署Choerodon"
-weight = 15
-+++
+<!-- +++
+title = "第五步：一键部署Choerodon"
+description = "第五步：一键部署Choerodon"
+weight = 18
++++ -->
 
 # 部署Choerodon
 
@@ -14,11 +14,9 @@ weight = 15
 
 <blockquote class="warning">
   <ul>
-  <li>请确认以下所有域名是否已映射到将要部署的集群中</li>
-  <li>以下环境变量请逐个确认，默认所有组件都通过脚本进行安装</li>
-  <li>本安装脚本基于NFS存储进行搭建，非NFS存储不能使用本脚本</li>
-  <li>请确认集群中每个节点都安装了nfs-utils，若未安装请进行<a href="../nfs/#客户端挂载nfs服务器共享目录" target="_blank">安装</a></li>
-  <li>请注意所有目录都是基于NFS Server主机的根目录，并非mount到的主机上的根目录，请清楚之间的关系，NFS相关信息请参考<a href="../nfs" target="_blank">这里</a></li>
+  <li>部署时请逐个确认环境变量</li>
+  <li>部署时请确认设置的域名是否已映射到将要部署的集群中</li>
+  <li>安装命令基于NFS动态后端存储卷，若有其他StorageClass也可以进行使用</li>
   </ul>
 </blockquote>
 
@@ -33,8 +31,8 @@ weight = 15
     # Helm release 前缀，解决release冲突问题（必须是小写字母，不能以数字开头，不能有特殊字符）
     #RELEASE_PREFIX="prefix"
     # 设置部署的namespace，请按："组织Code-项目Code-环境Code" 格式进行设置，以方便后期将应用自动扫描到数据库中。
-    # 比如：组织Code为choerodon，项目Code为demo，环境Code为prod，那么最终定义的namespace为：choerodon-devops-prod
-    NAMESPACE="choerodon-devops-prod"
+    # 比如：组织Code为choerodon，项目Code为demo，环境Code为prod，那么最终定义的namespace为：c7n-system
+    NAMESPACE="c7n-system"
     # 提供NFS服务的主机内网IP
     NFS_SERVER_HOST="192.168.1.1"
     #######################  choerodon配置  ##########################

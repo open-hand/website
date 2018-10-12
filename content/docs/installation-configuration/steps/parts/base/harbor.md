@@ -8,78 +8,38 @@ weight = 50
 
 ## 仓库设置
 
-1. 本地添加远程仓库
+## 添加choerodon chart仓库并同步
 
-    ```
-    helm repo add c7n https://openchart.choerodon.com.cn/choerodon/c7n/
-    ```
-1. 更新本地仓库信息
-
-    ```
-    helm repo update 
-    ```
+```
+helm repo add c7n https://openchart.choerodon.com.cn/choerodon/c7n/
+helm repo update
+```
 
 ## 部署Harbor
 
-<blockquote class="note">
-启用持久化存储请执行提前创建所对应的物理目录，PV和PVC可使用以下语句进行创建；可在部署命令中添加--debug --dry-run参数，进行渲染预览不进行部署。
-</blockquote>
-
-### 创建harbor所需PV和PVC
-
-```shell
-helm install c7n/create-pv \
-    --set type=nfs \
-    --set pv.name=harbor-adminserver-pv \
-    --set nfs.path=/u01/io-choerodon/harbor/adminserver \
-    --set nfs.server=nfs.example.choerodon.io \
-    --set pvc.enable=false \
-    --set size=5Gi \
-    --set accessModes={ReadWriteOnce} \
-    --name harbor-adminserver-pv --namespace=choerodon-devops-prod
-    
-helm install c7n/create-pv \
-    --set type=nfs \
-    --set pv.name=harbor-harbor-db-pv \
-    --set nfs.path=/u01/io-choerodon/harbor/harbor-db \
-    --set nfs.server=nfs.example.choerodon.io \
-    --set pvc.enable=false \
-    --set size=5Gi \
-    --set accessModes={ReadWriteOnce} \
-    --name harbor-harbor-db-pv --namespace=choerodon-devops-prod
-    
-helm install c7n/create-pv \
-    --set type=nfs \
-    --set pv.name=harbor-registry-pv \
-    --set nfs.path=/u01/io-choerodon/harbor/registry \
-    --set nfs.server=nfs.example.choerodon.io \
-    --set pvc.enable=false \
-    --set size=5Gi \
-    --set accessModes={ReadWriteOnce} \
-    --name harbor-registry-pv --namespace=choerodon-devops-prod
-```
-
-### 部署harbor
-
 ```shell
 helm install c7n/harbor \
-    --set externalDomain=registry.example.choerodon.io \
+    --set externalURL=https://registry.example.choerodon.io\
+    --set ingress.hosts.core=registry.example.choerodon.io\
+    --set database.internal.volumes.data.storageClass="nfs-provisioner" \
+    --set registry.volumes.data.storageClass="nfs-provisioner" \
+    --set redis.master.persistence.storageClass="nfs-provisioner" \
     --set harborAdminPassword=Harbor12345 \
-    --set adminserver.volumes.config.selector.pv="harbor-adminserver-pv" \
-    --set database.internal.volumes.config.selector.pv="harbor-harbor-db-pv" \
-    --set registry.volumes.config.selector.pv="harbor-registry-pv" \
-    --name=harbor --namespace=choerodon-devops-prod
+    --version 0.3.0 \
+    --name harbor \
+    --namespace c7n-system
 ```
 
 - 参数：
 
     参数 | 含义 
     --- |  --- 
-    externalDomain|Harbor域名
-    harborAdminPassword|admin用户密码
-    adminserver.volumes.config.selector|adminserver创建的pvc选pv的选择器值，为pv的label
-    database.volumes.config.selector|harbor mysql创建的pvc选pv的选择器值，为pv的label
-    registry.volumes.config.selector|registry创建的pvc选pv的选择器值，为pv的label
+    externalURL|Harbor域名
+    ingress.hosts.core|不带协议的Harbor域名
+    database.internal.volumes.data.storageClass|数据库的存储类名
+    registry.volumes.data.storageClass|registry的存储类名
+    redis.master.persistence.storageClass|redis的存储类名
+    harborAdminPassword|管理员密码
 
 ## 验证部署
 
@@ -103,13 +63,13 @@ Harbor启动速度较慢请等待所有Pod都为Running后进行界面查看。
 
     ```
     # 执行命令后有返回结果则说明已部署
-    kubectl get deployment --all-namespaces | grep kube-lego-account
+    kubectl get deployment --all-namespaces | grep kube-lego
     ```
 
 - 编辑harbor的ingress对象
 
     ```
-    kubectl edit ingress -n choerodon-devops-prod harbor-harbor-ingress
+    kubectl edit ingress -n c7n-system harbor-harbor-ingress
     ```
 
     - 为ingress添加注解`kubernetes.io/tls-acme: "true"`
@@ -156,7 +116,7 @@ Harbor启动速度较慢请等待所有Pod都为Running后进行界面查看。
 
     - 修改ingress配置，添加secretName属性值:
 
-            kubectl edit ingress -n choerodon-devops-prod harbor-harbor-ingress
+            kubectl edit ingress -n c7n-system harbor-harbor-ingress
 
     - 为ingress添加添加`spec.tls`属性及其值
 

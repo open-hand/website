@@ -1,6 +1,6 @@
 +++
-title = "第六步：Gitlab Runner部署"
-description = "第六步：Gitlab Runner部署"
+title = "第七步：Gitlab Runner部署"
+description = "第七步：Gitlab Runner部署"
 weight = 25
 +++
 
@@ -85,7 +85,7 @@ Gitlab Runner，用于代码提交后自动进行代码测试、构建服务的�
         --set pvc.name=runner-maven-pvc \
         --set size=5Gi \
         --set accessModes={ReadWriteMany} \
-        --name runner-maven-pv --namespace=choerodon-devops-prod
+        --name runner-maven-pv --namespace=c7n-system
 
     helm install c7n/create-pv \
         --set type=nfs \
@@ -95,7 +95,7 @@ Gitlab Runner，用于代码提交后自动进行代码测试、构建服务的�
         --set pvc.name=runner-cache-pvc \
         --set size=5Gi \
         --set accessModes={ReadWriteMany} \
-        --name runner-cache-pv --namespace=choerodon-devops-prod
+        --name runner-cache-pv --namespace=c7n-system
     ```
 
 - 部署Runner
@@ -116,7 +116,7 @@ Gitlab Runner，用于代码提交后自动进行代码测试、构建服务的�
         --set env.environment.CHOERODON_URL=http://api.example.choerodon.io \
         --set env.persistence.runner-maven-pvc="/root/.m2" \
         --set env.persistence.runner-cache-pvc="/cache" \
-        --name=runner --namespace=choerodon-devops-prod 
+        --name=runner --namespace=c7n-system 
     ```
 
 - 参数：

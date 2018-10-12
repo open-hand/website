@@ -14,24 +14,24 @@ weight = 11
 - 命令格式为： `kubectl scale deployment -n [namespace] --replicas=0 [deployment name]`
 
     ```shell
-    kubectl scale deployment -n choerodon-devops-prod --replicas=0 register-server
-    kubectl scale deployment -n choerodon-devops-prod --replicas=0 config-server
-    kubectl scale deployment -n choerodon-devops-prod --replicas=0 manager-service
-    kubectl scale deployment -n choerodon-devops-prod --replicas=0 iam-service
-    kubectl scale deployment -n choerodon-devops-prod --replicas=0 api-gateway
-    kubectl scale deployment -n choerodon-devops-prod --replicas=0 gateway-helper
-    kubectl scale deployment -n choerodon-devops-prod --replicas=0 oauth-server
-    kubectl scale deployment -n choerodon-devops-prod --replicas=0 event-store-service
-    kubectl scale deployment -n choerodon-devops-prod --replicas=0 file-service
-    kubectl scale deployment -n choerodon-devops-prod --replicas=0 choerodon-front-iam
-    kubectl scale deployment -n choerodon-devops-prod --replicas=0 devops-service
-    kubectl scale deployment -n choerodon-devops-prod --replicas=0 gitlab-service
-    kubectl scale deployment -n choerodon-devops-prod --replicas=0 agile-service
-    kubectl scale deployment -n choerodon-devops-prod --replicas=0 test-manager-service
-    kubectl scale deployment -n choerodon-devops-prod --replicas=0 wiki-service
-    kubectl scale deployment -n choerodon-devops-prod --replicas=0 asgard-service
-    kubectl scale deployment -n choerodon-devops-prod --replicas=0 notify-service
-    kubectl scale deployment -n choerodon-devops-prod --replicas=0 choerodon-front
+    kubectl scale deployment -n c7n-system --replicas=0 register-server
+    kubectl scale deployment -n c7n-system --replicas=0 config-server
+    kubectl scale deployment -n c7n-system --replicas=0 manager-service
+    kubectl scale deployment -n c7n-system --replicas=0 iam-service
+    kubectl scale deployment -n c7n-system --replicas=0 api-gateway
+    kubectl scale deployment -n c7n-system --replicas=0 gateway-helper
+    kubectl scale deployment -n c7n-system --replicas=0 oauth-server
+    kubectl scale deployment -n c7n-system --replicas=0 event-store-service
+    kubectl scale deployment -n c7n-system --replicas=0 file-service
+    kubectl scale deployment -n c7n-system --replicas=0 choerodon-front-iam
+    kubectl scale deployment -n c7n-system --replicas=0 devops-service
+    kubectl scale deployment -n c7n-system --replicas=0 gitlab-service
+    kubectl scale deployment -n c7n-system --replicas=0 agile-service
+    kubectl scale deployment -n c7n-system --replicas=0 test-manager-service
+    kubectl scale deployment -n c7n-system --replicas=0 wiki-service
+    kubectl scale deployment -n c7n-system --replicas=0 asgard-service
+    kubectl scale deployment -n c7n-system --replicas=0 notify-service
+    kubectl scale deployment -n c7n-system --replicas=0 choerodon-front
     ```
 
 ## 启动Choerodon
@@ -40,21 +40,21 @@ weight = 11
 请一定按以下启动顺序执行，确认启动的服务启动成功后再启动下一个服务。
 </blockquote>
 
-1. `kubectl scale deployment -n choerodon-devops-prod --replicas=1 register-server`
-1. `kubectl scale deployment -n choerodon-devops-prod --replicas=1 config-server`
-1. `kubectl scale deployment -n choerodon-devops-prod --replicas=1 manager-service`
-1. `kubectl scale deployment -n choerodon-devops-prod --replicas=1 iam-service`
-1. `kubectl scale deployment -n choerodon-devops-prod --replicas=1 api-gateway`
-1. `kubectl scale deployment -n choerodon-devops-prod --replicas=1 gateway-helper`
-1. `kubectl scale deployment -n choerodon-devops-prod --replicas=1 oauth-server`
-1. `kubectl scale deployment -n choerodon-devops-prod --replicas=1 event-store-service`
-1. `kubectl scale deployment -n choerodon-devops-prod --replicas=1 file-service`
-1. `kubectl scale deployment -n choerodon-devops-prod --replicas=1 choerodon-front-iam`
-1. `kubectl scale deployment -n choerodon-devops-prod --replicas=1 devops-service`
-1. `kubectl scale deployment -n choerodon-devops-prod --replicas=1 gitlab-service`
-1. `kubectl scale deployment -n choerodon-devops-prod --replicas=1 agile-service`
-1. `kubectl scale deployment -n choerodon-devops-prod --replicas=1 test-manager-service`
-1. `kubectl scale deployment -n choerodon-devops-prod --replicas=1 wiki-service`
-1. `kubectl scale deployment -n choerodon-devops-prod --replicas=1 asgard-service`
-1. `kubectl scale deployment -n choerodon-devops-prod --replicas=1 notify-service`
-1. `kubectl scale deployment -n choerodon-devops-prod --replicas=1 choerodon-front`
+1. `kubectl scale deployment -n c7n-system --replicas=1 register-server`
+1. `kubectl scale deployment -n c7n-system --replicas=1 config-server`
+1. `kubectl scale deployment -n c7n-system --replicas=1 manager-service`
+1. `kubectl scale deployment -n c7n-system --replicas=1 iam-service`
+1. `kubectl scale deployment -n c7n-system --replicas=1 api-gateway`
+1. `kubectl scale deployment -n c7n-system --replicas=1 gateway-helper`
+1. `kubectl scale deployment -n c7n-system --replicas=1 oauth-server`
+1. `kubectl scale deployment -n c7n-system --replicas=1 event-store-service`
+1. `kubectl scale deployment -n c7n-system --replicas=1 file-service`
+1. `kubectl scale deployment -n c7n-system --replicas=1 choerodon-front-iam`
+1. `kubectl scale deployment -n c7n-system --replicas=1 devops-service`
+1. `kubectl scale deployment -n c7n-system --replicas=1 gitlab-service`
+1. `kubectl scale deployment -n c7n-system --replicas=1 agile-service`
+1. `kubectl scale deployment -n c7n-system --replicas=1 test-manager-service`
+1. `kubectl scale deployment -n c7n-system --replicas=1 wiki-service`
+1. `kubectl scale deployment -n c7n-system --replicas=1 asgard-service`
+1. `kubectl scale deployment -n c7n-system --replicas=1 notify-service`
+1. `kubectl scale deployment -n c7n-system --replicas=1 choerodon-front`
