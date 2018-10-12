@@ -8,8 +8,8 @@
                     {{- range $value := (split (replaceRE "[(]{1}[0-9]+[)]{1}" "$0" (trim $value "\n")) "\n") -}}
                     <div style="display: flex;">
                         {{- if (findRE "[(]{1}[0-9]+[)]{1}" $value) -}}
-                            <div>
-                                {{- replaceRE "[(]{1}[0-9]+[)]{1}" "" $value -}}
+                            <div style="display: flex;">
+                                <div>{{- replaceRE "[(]{1}[0-9]+[)]{1}" "" $value -}}</div>
                                 <i class="note-number" data-value='{{- add $index 1 -}}' style="align-self: flex-end;margin: 0"></i>
                             </div>
                             {{- else -}}
