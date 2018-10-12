@@ -105,17 +105,18 @@ helm install c7n/mysql-client \
 
     ```bash
     helm install c7n/wiki-service \
-        --set preJob.preConfig.mysql.host=choerodon-mysql \
+        --set env.open.JAVA_OPTS="-Xms256M -Xmx512M" \
+        --set preJob.preConfig.mysql.host=c7n-mysql.c7n-system.svc \
         --set preJob.preConfig.mysql.port=3306 \
         --set preJob.preConfig.mysql.database=manager_service \
         --set preJob.preConfig.mysql.username=choerodon \
         --set preJob.preConfig.mysql.password=password \
-        --set preJob.preInitDB.mysql.host=choerodon-mysql \
+        --set preJob.preInitDB.mysql.host=c7n-mysql.c7n-system.svc \
         --set preJob.preInitDB.mysql.port=3306 \
         --set preJob.preInitDB.mysql.database=wiki_service \
         --set preJob.preInitDB.mysql.username=choerodon \
         --set preJob.preInitDB.mysql.password=password \
-        --set env.open.SPRING_DATASOURCE_URL="jdbc:mysql://choerodon-mysql:3306/wiki_service?useUnicode=true&  characterEncoding=utf-8&useSSL=false" \
+        --set env.open.SPRING_DATASOURCE_URL="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/wiki_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
         --set env.open.SPRING_DATASOURCE_USERNAME=choerodon \
         --set env.open.SPRING_DATASOURCE_PASSWORD=password \
         --set env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE="http://register-server.c7n-system:8000/eureka/" \
@@ -131,9 +132,9 @@ helm install c7n/mysql-client \
         --set env.open.WIKI_URL=http://wiki.example.choerodon.io \
         --set env.open.WIKI_TOKEN=Choerodon \
         --set env.open.WIKI_DEFAULT_GROUP=XWikiAllGroup \
-        --name=wiki-service \
-        --version=0.9.1 \
-        --namespace=c7n-system
+        --name wiki-service \
+        --version 0.10.1 \
+        --namespace c7n-system
     ```
 
     参数名 | 含义 
