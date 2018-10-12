@@ -56,18 +56,13 @@ Gitlab Runner，用于代码提交后自动进行代码测试、构建服务的�
 
 ![WX20180120-203636@2x.png](https://i.loli.net/2018/01/20/5a6337e86bb92.png)
 
-## 仓库设置
 
-1. 本地添加远程仓库
+## 添加choerodon chart仓库
 
-    ```bash
-    helm repo add c7n https://openchart.choerodon.com.cn/choerodon/c7n/
-    ```
-1. 更新本地仓库信息
-
-    ```bash
-    helm repo update 
-    ```
+```
+helm repo add c7n https://openchart.choerodon.com.cn/choerodon/c7n/
+helm repo update
+```
 
 ## 部署Runner
 <blockquote class="note">
@@ -77,25 +72,21 @@ Gitlab Runner，用于代码提交后自动进行代码测试、构建服务的�
 - 创建缓存所需PV和PVC
 
     ```bash
-    helm install c7n/create-pv \
-        --set type=nfs \
-        --set pv.name=runner-maven-pv \
-        --set nfs.path=/u01/io-choerodon/runner/maven \
-        --set nfs.server=nfs.example.choerodon.io \
-        --set pvc.name=runner-maven-pvc \
-        --set size=5Gi \
+    helm install c7n/persistentvolumeclaim \
         --set accessModes={ReadWriteMany} \
-        --name runner-maven-pv --namespace=c7n-system
+        --set requests.storage=5Gi \
+        --set storageClassName="nfs-provisioner" \
+        --version 0.1.0 \
+        --name runner-maven-pvc \
+        --namespace c7n-system
 
-    helm install c7n/create-pv \
-        --set type=nfs \
-        --set pv.name=runner-cache-pv \
-        --set nfs.path=/u01/io-choerodon/runner/cache \
-        --set nfs.server=nfs.example.choerodon.io \
-        --set pvc.name=runner-cache-pvc \
-        --set size=5Gi \
+    helm install c7n/persistentvolumeclaim \
         --set accessModes={ReadWriteMany} \
-        --name runner-cache-pv --namespace=c7n-system
+        --set requests.storage=5Gi \
+        --set storageClassName="nfs-provisioner" \
+        --version 0.1.0 \
+        --name runner-cache-pvc \
+        --namespace c7n-system
     ```
 
 - 部署Runner
@@ -116,7 +107,8 @@ Gitlab Runner，用于代码提交后自动进行代码测试、构建服务的�
         --set env.environment.CHOERODON_URL=http://api.example.choerodon.io \
         --set env.persistence.runner-maven-pvc="/root/.m2" \
         --set env.persistence.runner-cache-pvc="/cache" \
-        --name=runner --namespace=c7n-system 
+        --name runner \
+        --namespace c7n-system
     ```
 
 - 参数：
