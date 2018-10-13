@@ -47,6 +47,7 @@ helm install c7n/mysql-client \
         --set preJob.preConfig.mysql.database=manager_service \
         --set preJob.preConfig.mysql.username=choerodon \
         --set preJob.preConfig.mysql.password=password \
+        --set preJob.preInitDB.enable=true \
         --set preJob.preInitDB.mysql.host=c7n-mysql.c7n-system.svc \
         --set preJob.preInitDB.mysql.port=3306 \
         --set preJob.preInitDB.mysql.database=agile_service \
