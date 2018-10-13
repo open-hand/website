@@ -97,34 +97,34 @@ weight = 18
     bash install.sh choerodon.cfg
     ```
 
-    - 部署完成后你将看到如下类似信息，请注意保存。
+- 部署完成后你将看到如下类似信息，请注意保存。
 
-        ```shell
-                                        Welcome to use Choerodon
+    ```shell
+                                    Welcome to use Choerodon
 
-        Note: The following information is displayed only once, please make a backup.
+    Note: The following information is displayed only once, please make a backup.
 
-        =======================================================================================
-        Choerodon URL: http://c7n.example.choerodon.io
-        Choerodon API URL: http://api.example.choerodon.io/manager/swagger-ui.html
-        Choerodon Devops Service WebSocket URL(only for choerodon-agent):
-        ws://devops.example.choerodon.io
-        Choerodon Wiki URL: http://wiki.example.choerodon.io
-        =======================================================================================
-        ------------------------------------ Gitlab Information -------------------------------
-        Gitlab URL: http://gitlab.example.choerodon.io
-        username: root       password: password
-        root private token: zyRFg8xW6V-_3q9oocQs
-        ------------------------------------ Harbor Information -------------------------------
-        Harbor URL: http://registry.example.choerodon.io
-        username: admin      password: Password123
-        ------------------------------------ Minio Information  -------------------------------
-        Minio URL: http://minio.example.choerodon.io
-        minio access key: admin      minio secret key: password
-        ---------------------------------- Chartmuseum Information ----------------------------
-        Chartmuseum URL: http://charts.example.choerodon.io
-        =======================================================================================
-        ```
+    =======================================================================================
+    Choerodon URL: http://c7n.example.choerodon.io
+    Choerodon API URL: http://api.example.choerodon.io/manager/swagger-ui.html
+    Choerodon Devops Service WebSocket URL(only for choerodon-agent):
+    ws://devops.example.choerodon.io
+    Choerodon Wiki URL: http://wiki.example.choerodon.io
+    =======================================================================================
+    ------------------------------------ Gitlab Information -------------------------------
+    Gitlab URL: http://gitlab.example.choerodon.io
+    username: root       password: password
+    root private token: zyRFg8xW6V-_3q9oocQs
+    ------------------------------------ Harbor Information -------------------------------
+    Harbor URL: http://registry.example.choerodon.io
+    username: admin      password: Password123
+    ------------------------------------ Minio Information  -------------------------------
+    Minio URL: http://minio.example.choerodon.io
+    minio access key: admin      minio secret key: password
+    ---------------------------------- Chartmuseum Information ----------------------------
+    Chartmuseum URL: http://charts.example.choerodon.io
+    =======================================================================================
+    ```
 
 - [设置Gitlab启用SSH协议(必须开启)](../parts/base/gitlab/#启用ssh协议)
 - [设置Harbor启用HTTPS](../parts/base/harbor/#启用https)

@@ -16,7 +16,7 @@ Gitlab Runner，用于代码提交后自动进行代码测试、构建服务的�
 
 ### 进入Gitlab管理界面
 
-![WX20180120-200145@2x.png](https://i.loli.net/2018/05/28/5b0ba4f33e5d4.png)
+![](/docs/installation-configuration/image/runners-reg.png)
 
 ## 注册Runner
 
@@ -40,7 +40,7 @@ Gitlab Runner，用于代码提交后自动进行代码测试、构建服务的�
     cat /etc/gitlab-runner/config.toml
     ```
 
-![WX20180120-201422@2x.png](https://i.loli.net/2018/06/03/5b138f368904d.png)
+    ![](/docs/installation-configuration/image/runner-reg.png)
 
 ### 方式2
 
@@ -54,7 +54,7 @@ Gitlab Runner，用于代码提交后自动进行代码测试、构建服务的�
 注册完成后在Gitlab管理界面获取Runner的token、name和url
 </blockquote>
 
-![WX20180120-203636@2x.png](https://i.loli.net/2018/01/20/5a6337e86bb92.png)
+![](/docs/installation-configuration/image/runners-info.png)
 
 
 ## 添加choerodon chart仓库
