@@ -8,35 +8,25 @@ weight = 55
 
 ## 仓库设置
 
-1. 本地添加远程仓库
+## 添加choerodon chart仓库并同步
 
-    ```
-    helm repo add c7n https://openchart.choerodon.com.cn/choerodon/c7n/
-    ```
-1. 更新本地仓库信息
-
-    ```
-    helm repo update 
-    ```
+```
+helm repo add c7n https://openchart.choerodon.com.cn/choerodon/c7n/
+helm repo update
+```
 
 ## 部署Gitlab
-
-<blockquote class="note">
-启用持久化存储请执行提前创建所对应的物理目录，PV和PVC可使用以下语句进行创建；可在部署命令中添加--debug --dry-run参数，进行渲染预览不进行部署。
-</blockquote>
 
 ### 创建mysql所需PV和PVC
 
 ```shell
-helm install c7n/create-pv \
-    --set type=nfs \
-    --set pv.name=gitlab-mysql-pv \
-    --set nfs.path=/u01/io-choerodon/gitlab/mysql \
-    --set nfs.server=nfs.example.choerodon.io \
-    --set pvc.name=gitlab-mysql-pvc \
-    --set size=3Gi \
+helm install c7n/persistentvolumeclaim \
     --set accessModes={ReadWriteOnce} \
-    --name gitlab-mysql-pv --namespace=choerodon-devops-prod
+    --set requests.storage=2Gi \
+    --set storageClassName=nfs-provisioner \
+    --version 0.1.0 \
+    --name gitlab-mysql-pvc \
+    --namespace c7n-system
 ```
 
 ### 部署mysql
@@ -45,69 +35,56 @@ helm install c7n/create-pv \
 helm install c7n/mysql \
     --set persistence.enabled=true \
     --set persistence.existingClaim=gitlab-mysql-pvc \
-    --set env.open.MYSQL_ROOT_PASSWORD=password \
-    --set service.port=3306 \
-    --name=gitlab-mysql --namespace=choerodon-devops-prod
+    --set env.MYSQL_ROOT_PASSWORD=password \
+    --set env.MYSQL_DATABASE=gitlabhq_production \
+    --set args="{--character-set-server=utf8mb4,--collation-server=utf8mb4_general_ci}" \
+    --set config.innodb_large_prefix=1 \
+    --set config.innodb_file_per_table=1 \
+    --set config.innodb_file_format=Barracuda \
+    --set config.log_bin_trust_function_creators=1 \
+    --set service.enabled=ture \
+    --version 0.1.0 \
+    --name gitlab-mysql \
+    --namespace c7n-system
 ```
-
-### 创建数据库
-- 进入数据库
-
-    ```shell
-    # 进入pod
-    kubectl exec -it $(kubectl get po -n choerodon-devops-prod -l release=gitlab-mysql -o jsonpath='{.items[0].metadata.name}') -n choerodon-devops-prod bash
-    # 进入mysql命令行
-    mysql -uroot -p${MYSQL_ROOT_PASSWORD}
-    ```
-- 数据库创建语句
-
-    ```sql
-    CREATE USER 'gitlab'@'%' IDENTIFIED BY "password";
-    CREATE DATABASE gitlabhq_production DEFAULT CHARACTER SET utf8;
-    GRANT ALL PRIVILEGES ON gitlabhq_production.* TO gitlab@'%';
-    FLUSH PRIVILEGES;
-    ```
 
 ### 部署gitlab所需Redis
 
 ```shell
-helm install c7n/redis --name=gitlab-redis --namespace=choerodon-devops-prod
+helm install c7n/redis \
+    --set service.enabled=true \
+    --version 0.1.0 \
+    --name gitlab-redis \
+    --namespace c7n-system
 ```
 
 ### 创建gitlab所需PV和PVC
 
 ```shell
-helm install c7n/create-pv \
-    --set type=nfs \
-    --set pv.name=gitlab-pv \
-    --set nfs.path=/u01/io-choerodon/gitlab/data \
-    --set nfs.server=nfs.example.choerodon.io \
-    --set pvc.name=gitlab-pvc \
-    --set size=3Gi \
+helm install c7n/persistentvolumeclaim \
     --set accessModes={ReadWriteOnce} \
-    --name gitlab-pv --namespace=choerodon-devops-prod
+    --set requests.storage=2Gi \
+    --set storageClassName=nfs-provisioner \
+    --version 0.1.0 \
+    --name gitlab-pvc \
+    --namespace c7n-system
 ```
 
 ### 部署gitlab
-<blockquote class="note">
-参数GITLAB_EXTERNAL_URL和ingress.hosts[]这两个地址的域名必须一致，但写法不能一样，GITLAB_EXTERNAL_URL必须写上http://前缀，ingress.hosts[]不能带上http://前缀，这两个参数使用的地方是不同的GITLAB_EXTERNAL_URL是Gitlab内置参数，ingress.hosts[]是创建k8s中ingress对象所要使用的。
-</blockquote>
 
 ```shell
 helm install c7n/gitlab \
     --set persistence.enabled=true \
     --set persistence.existingClaim=gitlab-pvc \
-    --set env.config.GITLAB_EXTERNAL_URL=http://gitlab.example.choerodon.io \
+    --set env.config.GITLAB_EXTERNAL_URL=http://gitlab.example.choerodon.io\
     --set env.config.GITLAB_TIMEZONE=Asia/Shanghai \
     --set env.config.CHOERODON_OMNIAUTH_ENABLED=false \
     --set env.config.GITLAB_DEFAULT_CAN_CREATE_GROUP=true \
-    --set env.config.MYSQL_HOST=gitlab-mysql \
-    --set env.config.MYSQL_PORT=3306 \
-    --set env.config.MYSQL_USERNAME=gitlab \
+    --set env.config.MYSQL_HOST=gitlab-mysql.c7n-system.svc \
+    --set env.config.MYSQL_USERNAME=root \
     --set env.config.MYSQL_PASSWORD=password \
     --set env.config.MYSQL_DATABASE=gitlabhq_production \
-    --set env.config.REDIS_HOST=gitlab-redis \
-    --set env.config.REDIS_PORT=6379 \
+    --set env.config.REDIS_HOST=gitlab-redis.c7n-system.svc \
     --set env.config.SMTP_ENABLE=true \
     --set env.config.SMTP_ADDRESS=smtp.mxhichina.com \
     --set env.config.SMTP_PORT=465 \
@@ -122,8 +99,9 @@ helm install c7n/gitlab \
     --set env.config.NODE_EXPORTER_ENABLE=false \
     --set service.enabled=true \
     --set ingress.enabled=true \
-    --set ingress.hosts={gitlab.example.choerodon.io} \
-    --name=gitlab --namespace=choerodon-devops-prod 
+    --version 0.2.0 \
+    --name gitlab \
+    --namespace c7n-system
 ```
 
 - 参数
@@ -158,8 +136,7 @@ helm install c7n/gitlab \
     env.config.PROMETHEUS_ENABLE|是否开启prometheus
     env.config.NODE_EXPORTER_ENABLE|是否开启node_exporter_enable
     ingress.enabled|是否开启ingress 
-    ingress.hosts|gitlab的域名
-
+    service.enabled|是否开启service
 
 ### 验证部署
 
@@ -197,7 +174,7 @@ Gitlab需要绑定22端口，所以需要更换SSH端口为非22端口，否则C
             kind: Service
             metadata:
               name: gitlab-ssh
-              namespace: choerodon-devops-prod
+              namespace: c7n-system
             spec:
               externalIPs:
               - 192.168.1.1 #请修改这里的IP为第一步设置SSH端口号的节点IP
@@ -215,7 +192,7 @@ Gitlab需要绑定22端口，所以需要更换SSH端口为非22端口，否则C
             kind: Service
             metadata:
               name: gitlab-ssh
-              namespace: choerodon-devops-prod
+              namespace: c7n-system
             spec:
               externalIPs:
               - 192.168.1.1 #请修改这里的IP为第一步设置SSH端口号的节点IP
@@ -236,67 +213,6 @@ kubectl apply -f gitlab-ssh-svc.yml
 ### 域名映射
 
 你需要在DNS运营商提供的控制面板上添加一条Gitlab域名与第一步设置SSH端口号的节点IP的记录。
-
-## 克隆模板仓库
-
-1. 克隆该组织下所有仓库
-
-    ```url
-    https://code.choerodon.com.cn/app_template
-    ```
-
-1. 推送到搭建的Gitlab中（下面语句请注意替换相应值）
-
-    <blockquote class="warning">
-    请不要修改仓库组织名称和仓库名称，这里的app_template就是仓库组织名称，***为仓库名称，只修改域名gitlab.example.choerodon.io。
-    </blockquote>
-
-    ```shell
-    git remote set-url origin http://gitlab.example.choerodon.io/app_template/***.git
-    git push origin master:master
-    ```
-
-## Gitlab数据库优化
-
-- 如果在gitlab中需要使用`emoji`图标(比如在issue、comment、merge request区域),那么需要做以下配置。首先，需要对数据库表编码和行类型进行转换,如果一开始创建表时就使用`utf8mb4`格式，会造成初始化时列的长度超出限制的错误(767/4)。所以先使用utf8初始化完成后，在用sql进行转换。
-    1. 修改数据库参数
-
-        ```sql
-        --Aliyun RDS通过界面控制台修改:
-        innodb_large_prefix = ON
-
-        --自建Mysql执行以下sql
-        set global innodb_file_format = `BARRACUDA`;
-        set global innodb_large_prefix = `ON`;
-        ```
-
-    1. 执行下边sql,并复制返回结果执行，然后就会将表的行格式设置为动态类型:
-
-        ```sql
-        SELECT
-            CONCAT( 'ALTER TABLE `', TABLE_NAME, '` ROW_FORMAT=DYNAMIC;' ) AS 'Copy & run these SQL statements:' 
-        FROM
-            INFORMATION_SCHEMA.TABLES 
-        WHERE
-            TABLE_SCHEMA = "gitlabhq_production" 
-            AND TABLE_TYPE = "BASE TABLE" 
-            AND ROW_FORMAT != "Dynamic";
-        ```
-
-    1. 继续执行sql，并复制返回结果执行,把表的编码进行转换:
-
-        ```sql
-        SELECT
-            CONCAT( 'ALTER TABLE `', TABLE_NAME, '` CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;' ) AS 'Copy & run these SQL statements:' 
-        FROM
-            INFORMATION_SCHEMA.TABLES 
-        WHERE
-            TABLE_SCHEMA = "gitlabhq_production" 
-            AND TABLE_COLLATION != "utf8mb4_general_ci" 
-            AND TABLE_TYPE = "BASE TABLE";
-        ```
-
-    现在gitlab里就可以使用`emoji`图标了。对于`postgresql`是可以直接使用`utf8mb4`编码的。而在`mysql5.7`中可以将`ROW_FORMAT = "Dynamic"`这一值设置为默认属性，因此可能不会遇到这个问题。
 
 ## 配置Choerodon Oauth认证
 
@@ -320,7 +236,8 @@ kubectl apply -f gitlab-ssh-svc.yml
         --set env.config.OMNIAUTH_BLOCK_AUTO_CREATED_USERS=false \
         --set env.config.CHOERODON_API_URL=http://api.example.choerodon.io \
         --set env.config.CHOERODON_CLIENT_ID=gitlab \
-        --namespace=choerodon-devops-prod 
+        --version 0.2.0 \
+        --namespace c7n-system
 
 ### 添加Gitlab Client
 
@@ -347,11 +264,21 @@ kubectl apply -f gitlab-ssh-svc.yml
 
 ### 添加外部用户关联
 
-- 在Gitlab数据库执行下边sql语句添加关联:
+- 执行下面语句进行关联:
 
-    ```sql
-    INSERT INTO `gitlabhq_production`.`identities`(`extern_uid`, `provider`, `user_id`, `created_at`, `updated_at`) 
-    VALUES ('1', 'oauth2_generic', 1, NOW(), NOW());
+    ```
+    helm install c7n/mysql-client \
+        --set env.MYSQL_HOST=gitlab-mysql.c7n-system.svc \
+        --set env.MYSQL_PORT=3306 \
+        --set env.MYSQL_USER=root \
+        --set env.MYSQL_PASS=password \
+        --set env.SQL_SCRIPT="\
+            INSERT INTO gitlabhq_production.identities(extern_uid\, provider\, user_id\, created_at\, updated_at) \
+            VALUES ('1'\, 'oauth2_generic'\, 1\, NOW()\, NOW()); \
+            UPDATE gitlabhq_production.application_settings SET allow_local_requests_from_hooks_and_services = 1;" \
+        --version 0.1.0 \
+        --name gitlab-user-identities \
+        --namespace c7n-system
     ```
 
 ### 验证更新

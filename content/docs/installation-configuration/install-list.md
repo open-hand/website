@@ -30,25 +30,25 @@ Gitlab-Runner|CI/CD 运行环境|10.7.2
 
 以下是通过本部署教程将会在安装的Choerodon各服务及其版本信息。
 
-<blockquote class="note">
+<blockquote class="note"> 
 部署Choerodon前端可不部署其他服务前端，Choerodon前端功能包括了其他服务前端所有功能。
 </blockquote>
 
 组件|描述| 版本
 ---|---|---
-register server|注册服务|0.9.0
-config server|配置服务|0.9.0
-manager service|管理服务|0.9.0
-iam service|IAM服务|0.9.0
-api gateway|网关服务|0.9.0
-gateway helper|网关helper|0.9.0
-oauth server|认证服务|0.9.0
-file service|文件服务|0.9.0
-notify service|通知服务|0.9.0
-asgard service|事务服务|0.9.0
-gitlab service|Gitlab 服务|0.9.1
-devops service|Devops 服务|0.9.3
-agile service|敏捷管理|0.9.1
-wiki service|知识管理服务|0.9.1
-test manager service|测试管理服务|0.9.2
-choerodon front|Choerodon 前端|0.9.1
+register server|注册服务|0.10.0
+config server|配置服务|0.10.0
+manager service|管理服务|0.10.0
+iam service|IAM服务|0.10.1
+api gateway|网关服务|0.10.0
+gateway helper|网关helper|0.10.0
+oauth server|认证服务|0.10.0
+file service|文件服务|0.10.0
+notify service|通知服务|0.10.0
+asgard service|事务服务|0.10.0
+gitlab service|Gitlab 服务|0.10.0
+devops service|Devops 服务|0.10.0
+agile service|敏捷管理|0.10.1
+wiki service|知识管理服务|0.10.1
+test manager service|测试管理服务|0.10.0
+choerodon front|Choerodon 前端|0.10.0

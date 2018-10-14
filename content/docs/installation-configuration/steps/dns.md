@@ -1,7 +1,7 @@
 +++
-title = "第三步：域名解析"
-description = "第三步：域名解析"
-weight = 11
+title = "第四步：域名解析"
+description = "第四步：域名解析"
+weight = 16
 +++
 
 # 域名解析
@@ -49,23 +49,12 @@ weight = 11
 
 - 已按本站Kubernetes部署文档部署好整个集群。
 
-<blockquote class="warning">
-在进行此之前，你应该先安装Helm，安装Helm的方式请参考<a href='../parts/base/helm/'>这里</a>
-</blockquote>
-
 ### 仓库设置
 
-1. 本地添加远程仓库
-
-    ```shell
-    helm repo add c7n https://openchart.choerodon.com.cn/choerodon/c7n/
-    ```
-
-1. 更新本地仓库信息
-
-    ```shell
-    helm repo update 
-    ```
+```
+helm repo add c7n https://openchart.choerodon.com.cn/choerodon/c7n/
+helm repo update
+```
 
 ### 部署DNS(请勿直接复制命令执行)
 
@@ -81,7 +70,9 @@ helm install c7n/dnsmasq \
     --set service.enable=true \
     --set service.externalIPs={192.168.1.1} \
     --set config."example\.choerodon\.io"=192.168.1.1 \
-    --name dnsmasq --namespace=choerodon-devops-prod
+    --version 0.1.0 \
+    --name dnsmasq \
+    --namespace c7n-system
 ```
 
 - 参数解释：
@@ -127,7 +118,7 @@ helm install c7n/dnsmasq \
 - 执行以下命令出现以下结果即成功
 
     ```console
-    $ kubectl exec -n choerodon-devops-prod $(kubectl get po -n choerodon-devops-prod -l choerodon.io/infra=dnsmasq -o jsonpath="{.items[0].metadata.name}") host example.choerodon.io
+    $ kubectl exec -n c7n-system $(kubectl get po -n c7n-system -l choerodon.io/infra=dnsmasq -o jsonpath="{.items[0].metadata.name}") host example.choerodon.io
 
     example.choerodon.io has address 192.168.1.1
     ```
