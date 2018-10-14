@@ -58,7 +58,7 @@ description = "介绍如何快速创建测试用例"
 
 **第四步：** 添加完成后，可在用例详情页面的`测试详细信息`栏中看到新添加的测试步骤。并可在表格中直接对内容进行编辑。
 
-![](/img/docs/quick-start/project-member/test-manager/create-test-case/test-case-8.png)
+![](/img/docs/quick-start/project-member/test-manager/create-test-case/create-test-case-done.png)
 
 ## 添加测试用例到测试循环中
 
