@@ -22,7 +22,7 @@
                     <li class='haschildren'>
                         <a  {{ if .Post }} target="_blank" {{ end }} href="{{ .URL }}">{{ .Name }} {{ .Pre }}</a>
                         <ul class="sub-menus none">
-                            {{ range .Children }}
+                            {{ range .Children.ByWeight.Reverse }}
                                 <li>
                                     <a  {{ if .Post }} target="_blank" {{ end }} href="{{ .URL }}">{{ .Name }} </a>
                                 </li>
