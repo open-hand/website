@@ -179,7 +179,7 @@ weight = 5
     ```
 1. 查看时间确保同步`timedatectl`。
 
-## 本地虚拟机安装模式
+## 本地虚拟机安装示例
 
 <blockquote class="note">
 本地虚拟机安装指的是在本地模拟安装。在服务器上部署请查阅服务器安装模式或云环境安装模式。
@@ -311,7 +311,7 @@ weight = 5
     ansible-playbook -i inventory/hosts -e @inventory/vars scale.yml
     ```
 
-## 私有云安装模式
+## 私有云安装示例
 
 <blockquote class="note">
 私有云安装模式指的是在公司内部或非生产级集群中部署，与公有云安装模式的区别在于部署网络时使用的网络模式。
@@ -448,7 +448,7 @@ Etcd节点和Master节点需要在相同的机器。
         ansible-playbook -i inventory/hosts -e @inventory/vars scale.yml -K
         ```
 
-## 公有云安装模式
+## 公有云安装示例
 
 <blockquote class="note">
 公有云安装以阿里云ECS为例进行讲解，其它公有云可参考本教程，但具体安装方式请咨相应云提供商。目前只支持Centos 7.2及以上版本。
@@ -507,9 +507,21 @@ Etcd节点和Master节点必须一致。
     ```
     {{< note >}}ansible_host指节点内网IP，IP指Kubernetes目标绑定网卡IP{{< /note >}}
 
-### 修改变量
+### 修改`kubeadm-ansible/inventory/vars`变量文件
 
-- 网段选择，如果ECS服务器用的是专有网络，pod和service的网段不能与vpc网段重叠，示例参考：
+<blockquote class="note">
+本文档部署的网络类型为flannel类型
+</blockquote>
+
+- 在使用VPC网络的ECS上部署k8s时，flannel网络的Backend类型需要是`ali-vpc`。在本脚本中默认使用的是`vxlan`类型，虽然在vpc环境下网络能通，但是不稳定波动较大。所以推荐使用`ali-vpc`的类型。
+
+- 因此，首先需要设置默认的flannel网络不部署，通过在`kubeadm-ansible/inventory/vars`文件中添加变量：
+
+    ```shell
+    flannel_enable: false
+    ```
+
+- 网段选择，如果ECS服务器用的是专有网络，pod和service的网段不能与vpc网段重叠，若有重叠请配置kube_pods_subnet和kube_service_addresses变量设置pod和service的网段，示例参考：
 
     ```
     # 如果vpc网段为`192.168.*`
@@ -526,173 +538,167 @@ Etcd节点和Master节点必须一致。
     docker_proxy_enable: true
     ```
 
-### 网络部署
+### 部署
 
-<blockquote class="note">
-本文档部署的网络类型为flannel类型
-</blockquote>
-
-- 在使用VPC网络的ECS上部署k8s时，flannel网络的Backend类型需要是`ali-vpc`。在本脚本中默认使用的是`vxlan`类型，虽然在vpc环境下网络能通，但是不稳定波动较大。所以推荐使用`ali-vpc`的类型。
-
-- 因此，首先需要设置默认的flannel网络不部署，通过在`kubeadm-ansible/inventory/vars`文件中添加变量：
+- 下面开始部署集群：
 
     ```shell
-    flannel_enable: false
+    export ANSIBLE_HOST_KEY_CHECKING=False
+    ansible-playbook -i inventory/hosts -e @inventory/vars cluster.yml -K
     ```
 
-- 接下来就可以[使用Ansible进行部署集群](../kubernetes/#部署-1)了，部署完成后再继续本节操作。
+    <blockquote class="note">
+    如果你配置的是root用户则无需添加-K参数
+    </blockquote>
 
-- 集群部署成功后手动部署flannel网络插件，在任意一个Master节点创建配置文件`kube-flannel-aliyun.yml`：
-
-        kind: ClusterRole
-        apiVersion: rbac.authorization.k8s.io/v1beta1
-        metadata:
-          name: flannel
-        rules:
-          - apiGroups:
-              - ""
-            resources:
-              - pods
-            verbs:
-              - get
-          - apiGroups:
-              - ""
-            resources:
-              - nodes
-            verbs:
-              - list
-              - watch
-          - apiGroups:
-              - ""
-            resources:
-              - nodes/status
-            verbs:
-              - patch
-        ---
-        kind: ClusterRoleBinding
-        apiVersion: rbac.authorization.k8s.io/v1beta1
-        metadata:
-          name: flannel
-        roleRef:
-          apiGroup: rbac.authorization.k8s.io
-          kind: ClusterRole
-          name: flannel
-        subjects:
-        - kind: ServiceAccount
-          name: flannel
-          namespace: kube-system
-        ---
-        apiVersion: v1
-        kind: ServiceAccount
-        metadata:
-          name: flannel
-          namespace: kube-system
-        ---
-        kind: ConfigMap
-        apiVersion: v1
-        metadata:
-          name: kube-flannel-cfg
-          namespace: kube-system
-          labels:
-            tier: node
-            app: flannel
-        data:
-          cni-conf.json: |
-            {
-              "name": "cbr0",
-              "type": "flannel",
-              "delegate": {
-                "isDefaultGateway": true
-              }
-            }
-          net-conf.json: |
-            {
-              "Network": "172.16.0.0/20",
-              "Backend": {
-                "Type": "ali-vpc"
-              }
-            }
-        ---
-        apiVersion: extensions/v1beta1
-        kind: DaemonSet
-        metadata:
-          name: kube-flannel-ds
-          namespace: kube-system
-          labels:
-            tier: node
-            app: flannel
-        spec:
-          template:
-            metadata:
-              labels:
-                tier: node
-                app: flannel
-            spec:
-              hostNetwork: true
-              nodeSelector:
-                beta.kubernetes.io/arch: amd64
-              tolerations:
-              - key: node-role.kubernetes.io/master
-                operator: Exists
-                effect: NoSchedule
-              serviceAccountName: flannel
-              initContainers:
-              - name: install-cni
-                image: registry.cn-hangzhou.aliyuncs.com/google-containers/flannel:v0.9.0
-                command:
-                - cp
-                args:
-                - -f
-                - /etc/kube-flannel/cni-conf.json
-                - /etc/cni/net.d/10-flannel.conf
-                volumeMounts:
-                - name: cni
-                  mountPath: /etc/cni/net.d
-                - name: flannel-cfg
-                  mountPath: /etc/kube-flannel/
-              containers:
-              - name: kube-flannel
-                image: registry.cn-hangzhou.aliyuncs.com/google-containers/flannel:v0.9.0
-                command: [ "/opt/bin/flanneld", "--ip-masq", "--kube-subnet-mgr" ]
-                securityContext:
-                  privileged: true
-                env:
-                - name: POD_NAME
-                  valueFrom:
-                    fieldRef:
-                      fieldPath: metadata.name
-                - name: POD_NAMESPACE
-                  valueFrom:
-                    fieldRef:
-                      fieldPath: metadata.namespace
-                - name: ACCESS_KEY_ID
-                  value: YOUR_ACCESS_KEY_ID
-                - name: ACCESS_KEY_SECRET
-                  value: YOUR_ACCESS_KEY_SECRET
-                volumeMounts:
-                - name: run
-                  mountPath: /run
-                - name: flannel-cfg
-                  mountPath: /etc/kube-flannel/
-              volumes:
-                - name: run
-                  hostPath:
-                    path: /run
-                - name: cni
-                  hostPath:
-                    path: /etc/cni/net.d
-                - name: flannel-cfg
-                  configMap:
-                    name: kube-flannel-cfg
-
-- 请注意修改配置中的参数值：
-    - `Network`：为修改变量中配置的pod网段。
-    - `ACCESS_KEY_ID`：将示例中的`YOUR_ACCESS_KEY_ID`更改为您阿里云中创建的 ACCESS_KEY_ID；
-    - `ACCESS_KEY_SECRET`：将示例中的`YOUR_ACCESS_KEY_SECRET`更改为您阿里云中创建的 YOUR_ACCESS_KEY_SECRET；
-
-- 该ACCESS_KEY的用户需要拥有以下权限：
+- [获取阿里云ACCESS_KEY](https://help.aliyun.com/knowledge_detail/38738.html)，该`ACCESS_KEY`需要拥有以下权限：
     - 只读访问云服务器(ECS)的权限
     - 管理专有网络(VPC)的权限
+
+- 手动部署flannel网络插件，在任意一个Master节点创建配置文件`kube-flannel-aliyun.yml`：
+
+    {{< annotation shell "配置的pod网段，即变量文件kubeadm-ansible/inventory/vars中的kube_pods_subnet值" "阿里云中创建的 ACCESS_KEY_ID" "阿里云中创建的 ACCESS_KEY_SECRET">}}
+kind: ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1beta1
+metadata:
+  name: flannel
+rules:
+  - apiGroups:
+      - ""
+    resources:
+      - pods
+    verbs:
+      - get
+  - apiGroups:
+      - ""
+    resources:
+      - nodes
+    verbs:
+      - list
+      - watch
+  - apiGroups:
+      - ""
+    resources:
+      - nodes/status
+    verbs:
+      - patch
+---
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1beta1
+metadata:
+  name: flannel
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: flannel
+subjects:
+- kind: ServiceAccount
+  name: flannel
+  namespace: kube-system
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: flannel
+  namespace: kube-system
+---
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: kube-flannel-cfg
+  namespace: kube-system
+  labels:
+    tier: node
+    app: flannel
+data:
+  cni-conf.json: |
+    {
+      "name": "cbr0",
+      "type": "flannel",
+      "delegate": {
+        "isDefaultGateway": true
+      }
+    }
+  net-conf.json: |
+    {
+      "Network": "172.16.0.0/20",(1)
+      "Backend": {
+        "Type": "ali-vpc"
+      }
+    }
+---
+apiVersion: extensions/v1beta1
+kind: DaemonSet
+metadata:
+  name: kube-flannel-ds
+  namespace: kube-system
+  labels:
+    tier: node
+    app: flannel
+spec:
+  template:
+    metadata:
+      labels:
+        tier: node
+        app: flannel
+    spec:
+      hostNetwork: true
+      nodeSelector:
+        beta.kubernetes.io/arch: amd64
+      tolerations:
+      - key: node-role.kubernetes.io/master
+        operator: Exists
+        effect: NoSchedule
+      serviceAccountName: flannel
+      initContainers:
+      - name: install-cni
+        image: registry.cn-hangzhou.aliyuncs.com/google-containers/flannel:v0.9.0
+        command:
+        - cp
+        args:
+        - -f
+        - /etc/kube-flannel/cni-conf.json
+        - /etc/cni/net.d/10-flannel.conf
+        volumeMounts:
+        - name: cni
+          mountPath: /etc/cni/net.d
+        - name: flannel-cfg
+          mountPath: /etc/kube-flannel/
+      containers:
+      - name: kube-flannel
+        image: registry.cn-hangzhou.aliyuncs.com/google-containers/flannel:v0.9.0
+        command: [ "/opt/bin/flanneld", "--ip-masq", "--kube-subnet-mgr" ]
+        securityContext:
+          privileged: true
+        env:
+        - name: POD_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: POD_NAMESPACE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        - name: ACCESS_KEY_ID
+          value: YOUR_ACCESS_KEY_ID(1)
+        - name: ACCESS_KEY_SECRET
+          value: YOUR_ACCESS_KEY_SECRET(1)
+        volumeMounts:
+        - name: run
+          mountPath: /run
+        - name: flannel-cfg
+          mountPath: /etc/kube-flannel/
+      volumes:
+        - name: run
+          hostPath:
+            path: /run
+        - name: cni
+          hostPath:
+            path: /etc/cni/net.d
+        - name: flannel-cfg
+          configMap:
+            name: kube-flannel-cfg
+{{< /annotation >}}
 
 - 然后使用kubectl命令部署，部署成功后在vpc的路由表中会添加多条路由条目，下一跳分别为每个节点的pod ip段：
 
@@ -707,19 +713,6 @@ Etcd节点和Master节点必须一致。
     允许 | 全部 | -1/-1 | 地址段访问 | 192.168.0.0/20
     允许 | 全部 | 443/443 | 地址段访问 | 0.0.0.0/0
     允许 | 全部 | 80/80 | 地址段访问 | 0.0.0.0/0
-
-### 部署
-
-- 执行：
-
-    ```shell
-    export ANSIBLE_HOST_KEY_CHECKING=False
-    ansible-playbook -i inventory/hosts -e @inventory/vars cluster.yml -K
-    ```
-
-    <blockquote class="note">
-    如果你配置的是root用户则无需添加-K参数
-    </blockquote>
 
 - 查看等待pod的状态为runnning：
 
