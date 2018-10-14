@@ -1,4 +1,4 @@
-baseurl = "http://v0-9.choerodon.io/"
+baseurl = "http://v0-10.choerodon.io/"
 title = "Choerodon | 企业级数字服务平台"
 theme = "choerodon-document-theme"
 # themesDir = "../.."
@@ -73,15 +73,15 @@ paginate = 5
     identifier = "github"
 
 [[languages.zh.menu.main]]
-    name = "v0.9"
+    name = "v0.10"
     url  = "/zh/"
     weight = 6
     identifier = "version"
     pre = "<i class='iconfont'>&#xe600;</i>"
 
     [[languages.zh.menu.main]]
-    name = "latest"
-    url  = "http://choerodon.io/zh/"
+    name = "v0.10"
+    url  = "http://v0-10.choerodon.io/zh/"
     weight = 4
     parent = "version"
 
@@ -89,6 +89,18 @@ paginate = 5
     name = "v0.9"
     url  = "http://v0-9.choerodon.io/zh/"
     weight = 3
+    parent = "version"
+
+    [[languages.zh.menu.main]]
+    name = "v0.8"
+    url  = "http://v0-8.choerodon.io/zh/"
+    weight = 2
+    parent = "version"
+
+    [[languages.zh.menu.main]]
+    name = "v0.7"
+    url  = "http://v0-7.choerodon.io/zh/"
+    weight = 1
     parent = "version"
 
 [params]
