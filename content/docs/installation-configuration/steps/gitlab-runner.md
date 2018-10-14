@@ -54,7 +54,7 @@ Gitlab Runner，用于代码提交后自动进行代码测试、构建服务的�
 注册完成后在Gitlab管理界面获取Runner的token、name和url
 </blockquote>
 
-![](/docs/installation-configuration/image/runners-info.png)
+![](/docs/installation-configuration/image/runner-info.png)
 
 
 ## 添加choerodon chart仓库
