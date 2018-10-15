@@ -15,8 +15,9 @@ weight = 18
 <blockquote class="warning">
   <ul>
   <li>部署时请逐个确认环境变量</li>
-  <li>部署时请确认设置的域名是否已映射到将要部署的集群中</li>
-  <li>安装命令基于NFS动态后端存储卷，若有其他StorageClass也可以进行使用</li>
+  <li>部署时请确认设置的域名已映射到将要部署的集群中</li>
+  <li>进行一键部署的前提是已有NFS服务端，若没有请<a href="../nfs-server" target="_blank">自行搭建</a></li>
+  <li>确认每个节点都<a href="../nfs/#客户端挂载nfs服务器共享目录" target="_blank">安装了nfs-utils</a></li>
   </ul>
 </blockquote>
 

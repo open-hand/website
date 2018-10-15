@@ -76,7 +76,7 @@ helm install c7n/persistentvolumeclaim \
 helm install c7n/gitlab \
     --set persistence.enabled=true \
     --set persistence.existingClaim=gitlab-pvc \
-    --set env.config.GITLAB_EXTERNAL_URL=http://gitlab.example.choerodon.io\
+    --set env.config.GITLAB_EXTERNAL_URL=http://gitlab.example.choerodon.io \
     --set env.config.GITLAB_TIMEZONE=Asia/Shanghai \
     --set env.config.CHOERODON_OMNIAUTH_ENABLED=false \
     --set env.config.GITLAB_DEFAULT_CAN_CREATE_GROUP=true \
@@ -144,6 +144,13 @@ helm install c7n/gitlab \
 
     ![](/docs/installation-configuration/image/gitlab.png)
 
+## 允许向本地网络发送hook请求
+
+<blockquote class="warning">
+Devops Service为了同步Gitlab相关数据，使用了Gitlab WebHook相关功能，请在Gitlab管理员界面 Settings 菜单中打开 Outbound requests 选项。
+</blockquote>
+
+![](/docs/installation-configuration/image/gitlab-webhook.png)
 
 ## 启用SSH协议
 
@@ -152,12 +159,32 @@ helm install c7n/gitlab \
 </blockquote>
 
 ### 修改节点SSH默认端口
-CentOS各发行版中SSH端口默认为22，为了开启Gitlab的SSH需要修改掉默认的22端口号。
+CentOS各发行版中SSH端口默认为22，为了开启Gitlab的SSH需要修改掉默认的22端口号。Gitlab需要绑定22端口，所以需要更换SSH端口为非22端口，否则Choerodon的持续部署将无法正常使用。
 
-Gitlab需要绑定22端口，所以需要更换SSH端口为非22端口，否则Choerodon的持续部署将无法正常使用。
+1. 修改配置文件：`/etc/ssh/sshd_config` ，找到以下行：
+
+    ```
+    #port 22
+    ```
+
+1. 先将`Port 22`前面的 `#` 号去掉，并另起一行。如定义SSH端口号为33322，自定义端口选择建议在万位的端口（如：10000-65535之间），则输入：
+
+    ```
+    Port 33322
+    ```
+
+1. 修改完毕后，重启SSH服务，并退出当前连接的SSH端口。
+
+    ```
+    service sshd restart
+    ```
+
+1. 重启完毕，尝试使用新端口登陆
+
+1. 若能正常访问，返回第一步，根据第二步的操作将原`port 22`整段注释或删掉，再按第三步重启SSH即可。
 
 <blockquote class="warning">
-如果您启用了防火墙iptables或者安全组，那么必须先添加新开的SSH端口
+如果您启用了防火墙iptables或者安全组，那么必须先添加新开的33322端口
 </blockquote>
 
 ### 添加Gitlab SSH Service
@@ -262,7 +289,13 @@ kubectl apply -f gitlab-ssh-svc.yml
         }
         ```
 
-### 添加外部用户关联
+### 验证更新
+
+- 访问设置的Gitlab域名出现以下界面即更新成功
+
+    ![](/docs/installation-configuration/image/gitlab-oauth.png)
+
+## 添加管理员用户关联
 
 - 执行下面语句进行关联:
 
@@ -274,15 +307,8 @@ kubectl apply -f gitlab-ssh-svc.yml
         --set env.MYSQL_PASS=password \
         --set env.SQL_SCRIPT="\
             INSERT INTO gitlabhq_production.identities(extern_uid\, provider\, user_id\, created_at\, updated_at) \
-            VALUES ('1'\, 'oauth2_generic'\, 1\, NOW()\, NOW()); \
-            UPDATE gitlabhq_production.application_settings SET allow_local_requests_from_hooks_and_services = 1;" \
+            VALUES ('1'\, 'oauth2_generic'\, 1\, NOW()\, NOW());" \
         --version 0.1.0 \
         --name gitlab-user-identities \
         --namespace c7n-system
     ```
-
-### 验证更新
-
-- 访问设置的Gitlab域名出现以下界面即更新成功
-
-    ![](/docs/installation-configuration/image/gitlab-oauth.png)
