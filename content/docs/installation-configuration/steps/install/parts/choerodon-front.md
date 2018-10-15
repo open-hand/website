@@ -55,6 +55,29 @@ helm repo update
     ingress.enable|创建ingress对象
     ingress.host|域名地址，此处不能带http://
 
+- 添加oauth client
+
+    ```
+    helm install c7n/mysql-client \
+        --set env.MYSQL_HOST=c7n-mysql.c7n-system.svc \
+        --set env.MYSQL_PORT=3306 \
+        --set env.MYSQL_USER=root \
+        --set env.MYSQL_PASS=password \
+        --set env.SQL_SCRIPT="\
+                INSERT INTO iam_service.oauth_client (\
+                name\,organization_id\,resource_ids\,secret\,scope\,\
+                authorized_grant_types\,web_server_redirect_uri\,\
+                access_token_validity\,refresh_token_validity\,\
+                additional_information\,auto_approve\,object_version_number\,\
+                created_by\,creation_date\,last_updated_by\,last_update_date)\
+                VALUES('choerodon'\,1\,'default'\,'secret'\,'default'\,\
+                'password\,implicit\,client_credentials\,authorization_code\,refresh_token'\,\
+                'http://c7n.example.choerodon.io'\,3600\,3600\,'{}'\,'default'\,1\,0\,NOW()\,0\,NOW());" \
+        --version 0.1.0 \
+        --name c7n-front-client \
+        --namespace c7n-system
+    ```
+
 - 验证部署
     - 验证命令
 
@@ -65,25 +88,4 @@ helm repo update
 
         ```html
         <!DOCTYPE html><html><head><meta http-equiv="Content-type"content="text/html; charset=utf-8"><title>Choerodon</title><link rel="shortcut icon"href="favicon.ico"></head><body><div id="app"></div><script type="text/javascript"src="app/vendor_19e4b950.js"></script><script type="text/javascript"src="app/main_19e4b950.js"></script></body></html>
-        ```
-
-- 在访问搭建好的Choerodon的api，`api.example.choerodon.io/manager/swagger-ui.html`，选择`iam_service` -> `client-controller` -> `创建client`
-  - 认证请使用用户名：admin，密码：admin
-  - 提交以下数据，注意正式搭建时请替换以下值为真实值
-      
-        ```json
-        {
-            "accessTokenValidity": 60,
-            "additionalInformation": "",
-            "authorizedGrantTypes": "implicit,client_credentials,authorization_code,refresh_token",
-            "autoApprove": "default",
-            "name": "choerodon",
-            "objectVersionNumber": 0,
-            "organizationId": 1,
-            "refreshTokenValidity": 60,
-            "resourceIds": "default",
-            "scope": "default",
-            "secret": "secret",
-            "webServerRedirectUri": "http://c7n.example.choerodon.io"
-        }
         ```
