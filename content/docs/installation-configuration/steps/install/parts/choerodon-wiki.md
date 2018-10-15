@@ -104,6 +104,29 @@ helm install c7n/mysql-client \
     ingress.enable|创建ingress对象
     ingress.hosts|wiki域名地址
 
+- 添加oauth client
+
+    ```
+    helm install c7n/mysql-client \
+        --set env.MYSQL_HOST=c7n-mysql.c7n-system.svc \
+        --set env.MYSQL_PORT=3306 \
+        --set env.MYSQL_USER=root \
+        --set env.MYSQL_PASS=password \
+        --set env.SQL_SCRIPT="\
+                INSERT INTO iam_service.oauth_client (\
+                name\,organization_id\,resource_ids\,secret\,scope\,\
+                authorized_grant_types\,web_server_redirect_uri\,\
+                access_token_validity\,refresh_token_validity\,\
+                additional_information\,auto_approve\,object_version_number\,\
+                created_by\,creation_date\,last_updated_by\,last_update_date)\
+                VALUES('wiki'\,1\,'default'\,'secret'\,'default'\,\
+                'password\,implicit\,client_credentials\,authorization_code\,refresh_token'\,\
+                'http://wiki.example.choerodon.io/oidc/authenticator/callback'\,3600\,3600\,'{}'\,'default'\,1\,0\,NOW()\,0\,NOW());" \
+        --version 0.1.0 \
+        --name c7n-wiki-client \
+        --namespace c7n-system
+    ```
+
 - 部署知识管理后端
 
     ```bash
