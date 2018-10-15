@@ -103,7 +103,6 @@ weight = 18
 
     =======================================================================================
     Choerodon URL: http://c7n.example.choerodon.io
-    Choerodon API URL: http://api.example.choerodon.io/manager/swagger-ui.html
     Choerodon Devops Service WebSocket URL(only for choerodon-agent):
     ws://devops.example.choerodon.io
     Choerodon Wiki URL: http://wiki.example.choerodon.io
