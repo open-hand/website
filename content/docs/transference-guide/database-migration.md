@@ -17,7 +17,7 @@ weight = 2
 具体操作如下：
 
 1. 确定需要备份的数据，如配置，数据等，具体内存请根据实际数据库进行调整。
-2. 部署新数据库到新集群中。建议使用helm部署，具体操作可以参照[mysql部署](../../installation-configuration/steps/parts/base/mysql/)。
+2. 部署新数据库到新集群中。建议使用helm部署，具体操作可以参照[mysql部署](../../installation-configuration/steps/install/parts/base/mysql/)。
 3. 使用数据库自带工具恢复数据到新数据库。
 4. 检查数据库是否正常运行。
 

@@ -90,7 +90,7 @@ $ git clone `仓库地址`
 $ cd ./choerodon-todo-service
 $ git checkout feature-choerodon-dev-1
 ```
-克隆代码时候，会让输入用户名，密码。用户名为平台用户名，密码为部署[持续交互](../../../installation-configuration/steps/parts/choerodon-devops/)服务时候的变量值。
+克隆代码时候，会让输入用户名，密码。用户名为平台用户名，密码为部署[持续交互](../../../installation-configuration/steps/install/parts/choerodon-devops/)服务时候的变量值。
 
 ![](/docs/quick-start/image/gitlab_password.png)
 
@@ -173,7 +173,7 @@ $ git push origin feature-choerodon-dev-1
 **第四步：** 点击`选择环境`，选择一个环境。部署的环境信息会展现在底下。如果没有环境，请先完成[创建环境](../../../user-guide/deployment-pipeline/environment-pipeline)。
 
 **第五步：** 根据实际的配置，配置部署应用所需的配置信息。
-替换掉一些参数文件值，参数文件值为部署choerodon系统时的生成的参数值，详细见[一键部署](../../../installation-configuration/steps/choerodon/)或者[分布部署](../../../installation-configuration/steps/parts/)，然后点击`下一步`。
+替换掉一些参数文件值，参数文件值为部署choerodon系统时的生成的参数值，详细见[一键部署](../../../installation-configuration/steps/install/choerodon/)或者[分布部署](../../../installation-configuration/steps/install/parts/)，然后点击`下一步`。
 
 ![](/docs/quick-start/image/values1.png)
 
@@ -215,13 +215,13 @@ $ git push origin feature-choerodon-dev-1
 
 **第四步：** 修改完毕后，点击`重新部署`。
 
-**第五步：** 等待实例重启结束，通过`xxxx/eureka/apps` 查看是否成功注册。`xxxx`为部署`register-server`时建的域名，详细见[一键部署](../../../installation-configuration/steps/choerodon/)或者[分布部署](../../../installation-configuration/steps/parts/)。
+**第五步：** 等待实例重启结束，通过`xxxx/eureka/apps` 查看是否成功注册。`xxxx`为部署`register-server`时建的域名，详细见[一键部署](../../../installation-configuration/steps/install/choerodon/)或者[分布部署](../../../installation-configuration/steps/install/parts/)。
 
 ![](/docs/quick-start/image/regi-instances.png)
  
 确认是否正常注册成功，搜索是否存在choerodon-todo-service的记录，存在则表示注册成功
 
-**第六步：** 服务注册成功后，用平台管理员给该服务添加路由，路径为点击管理->微服务管理->路由管理，将其api暴露在swagger上，创建为路由之后，您就可以在swagger-ui访问服务的api。swagger-ui前缀为gateway地址，具体值详见[一键部署](../../../installation-configuration/steps/choerodon/)或者[分布部署](../../../installation-configuration/steps/parts/)。
+**第六步：** 服务注册成功后，用平台管理员给该服务添加路由，路径为点击管理->微服务管理->路由管理，将其api暴露在swagger上，创建为路由之后，您就可以在swagger-ui访问服务的api。swagger-ui前缀为gateway地址，具体值详见[一键部署](../../../installation-configuration/steps/install/choerodon/)或者[分布部署](../../../installation-configuration/steps/install/parts/)。
 
 例如，
 
@@ -255,10 +255,10 @@ $ git push origin feature-choerodon-dev-1
 
 - [分支管理](../../../user-guide/development-pipeline/branch/)
 
-- [持续交互](../../../installation-configuration/steps/parts/choerodon-devops/)
+- [持续交互](../../../installation-configuration/steps/install/parts/choerodon-devops/)
 
 - [后端开发手册](../../../development-guide/backend/)
 
-- [一键部署](../../../installation-configuration/steps/choerodon/)
+- [一键部署](../../../installation-configuration/steps/install/choerodon/)
 
-- [分布部署](../../../installation-configuration/steps/parts/)
+- [分布部署](../../../installation-configuration/steps/install/parts/)

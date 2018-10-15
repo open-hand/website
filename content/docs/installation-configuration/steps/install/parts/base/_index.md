@@ -1,9 +1,9 @@
 +++
-title = "第六步：分步部署Choerodon"
-description = "第六步：分步部署Choerodon"
+title = "基础组件部署"
+description = "基础组件部署"
 date = 2018-03-30T13:06:38+08:00
 draft = false
-weight = 20
+weight = 1
 +++
 
 # 部署与配置
@@ -11,12 +11,12 @@ weight = 20
 Choerodon采用Spring Cloud作为微服务框架，运行在Docker上，以Kubernetes作为容器的编排工具。理论上只要服务器资源允许，可以运行Kubernetes，就可以运行Choerodon。Choerodon不是一个单体应用系统，而是一个包含多个微服务的分布式系统，所以部署相对比较复杂。目前，我们提供基于Helm的部署方式，以提高部署效率。
 
 ---
+
 <blockquote class="warning">
   <ul>
   <li>部署时请逐个确认环境变量</li>
   <li>部署时请确认设置的域名是否已映射到将要部署的集群中</li>
-  <li>进行一键部署的前提是已有NFS服务端，若没有请<a href="../nfs-server" target="_blank">自行搭建</a></li>
-  <li>确认每个节点都<a href="../nfs/#客户端挂载nfs服务器共享目录" target="_blank">安装了nfs-utils</a></li>
+  <li>安装命令基于NFS动态后端存储卷，若有其他StorageClass也可以进行使用</li>
   </ul>
 </blockquote>
 
@@ -30,7 +30,7 @@ Choerodon采用Spring Cloud作为微服务框架，运行在Docker上，以Kuber
     <blockquote class="note">
     只要现有节点内存与CPU总和大于上述节点要求即可。
     </blockquote>
-
+    
 - 软件要求：
     - 系统版本：CentOS7.2及以上
     - Kubernetes：1.8.5及以上
@@ -40,15 +40,11 @@ Choerodon采用Spring Cloud作为微服务框架，运行在Docker上，以Kuber
 
 ## 开始部署
 
-1. [Chartmuseum部署](./base/chartmuseum)
-1. [Minio部署](./base/minio)
-1. [Redis部署](./base/redis)
-1. [Mysql部署](./base/mysql)
-1. [Zookeeper部署](./base/zookeeper)
-1. [kafka部署](./base/kafka)
-1. [Harbor部署](./base/harbor)
-1. [Gitlab部署](./base/gitlab)
-1. [微服务开发框架部署](./choerodon)
-1. [持续交付部署](./choerodon-devops)
-1. [敏捷管理部署](./choerodon-agile)
-1. [整合前端部署](./choerodon-front)
+1. [Chartmuseum部署](./chartmuseum)
+1. [Minio部署](./minio)
+1. [Redis部署](./redis)
+1. [Mysql部署](./mysql)
+1. [Zookeeper部署](./zookeeper)
+1. [kafka部署](./kafka)
+1. [Harbor部署](./harbor)
+1. [Gitlab部署](./gitlab)

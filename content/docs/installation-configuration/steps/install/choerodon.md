@@ -1,13 +1,13 @@
 +++
-title = "第五步：一键部署Choerodon"
-description = "第五步：一键部署Choerodon"
+title = "方式一：一键部署Choerodon"
+description = "方式一：一键部署Choerodon"
 weight = 18
 +++
 
 # 部署Choerodon
 
 <blockquote class="note">
-执行一键部署Choerodon命令的主机能够管理该kubernetes集群建议在Master节点执行，且该集群每个节点都安装有NFS客户端程序。执行一键部署Choerodon请忽略分步部署Choerodon步骤。
+执行一键部署Choerodon命令的主机能够管理该kubernetes集群建议在Master节点执行，且该集群每个节点都安装有NFS客户端程序。
 </blockquote>
 
 ## 通过脚本部署
@@ -16,8 +16,6 @@ weight = 18
   <ul>
   <li>部署时请逐个确认环境变量</li>
   <li>部署时请确认设置的域名已映射到将要部署的集群中</li>
-  <li>进行一键部署的前提是已有NFS服务端，若没有请<a href="../nfs-server" target="_blank">自行搭建</a></li>
-  <li>确认每个节点都<a href="../nfs/#客户端挂载nfs服务器共享目录" target="_blank">安装了nfs-utils</a></li>
   </ul>
 </blockquote>
 
@@ -41,10 +39,8 @@ weight = 18
 
     ```
     #########################  全局配置  ############################
-    # 提供NFS服务的主机内网IP
-    NFS_SERVER_HOST='192.168.12.114'
-    # NFS服务共享的目录，需在NFS服务器上手动创建该目录
-    NFS_SHARE_PATH='/u01/prod'
+    # 动态存储类
+    STORAGE_CLASS_NAME="nfs-provisioner"
     #######################  choerodon配置  ##########################
     # 搭建服务时镜像仓库前缀，默认"registry.cn-shanghai.aliyuncs.com/choerodon"
     # IMAGE_REPO_PRE="registry.cn-shanghai.aliyuncs.com/choerodon"
