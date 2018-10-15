@@ -90,7 +90,7 @@ $ git clone `仓库地址`
 $ cd ./choerodon-todo-service
 $ git checkout feature-choerodon-dev-1
 ```
-克隆代码时候，会让输入用户名，密码。用户名为平台用户名，密码为部署[持续交互](../../../installation-configuration/steps/parts/choerodon-devops/)服务时候的变量值。
+克隆代码时候，会让输入用户名，密码。用户名为平台用户名，密码为部署[持续交互](../../../installation-configuration/steps/install/parts/choerodon-devops/)服务时候的变量值。
 
 ![](/docs/quick-start/image/gitlab_password.png)
 
