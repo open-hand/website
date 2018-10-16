@@ -74,7 +74,7 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
         --set env.open.SERVICES_HARBOR_PASSWORD="Harbor12345" \
         --set env.open.SERVICES_HELM_URL="http://chart.example.choerodon.io" \
         --set env.open.SERVICES_GITLAB_URL="http://gitlab.example.choerodon.io" \
-        --set env.open.SERVICES_GITLAB_SSHURL="gitlab.example.choerodon.io" \
+        --set env.open.SERVICES_GITLAB_SSHURL="git@gitlab.example.choerodon.io" \
         --set env.open.SERVICES_GITLAB_PASSWORD=password \
         --set env.open.SERVICES_GITLAB_PROJECTLIMIT=100 \
         --set env.open.SERVICES_GATEWAY_URL=http://api.example.choerodon.io \
@@ -92,7 +92,7 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
         --set persistence.enabled=true \
         --set persistence.existingClaim="chartmuseum-pvc" \
         --name devops-service \
-        --version 0.10.0 \
+        --version 0.10.2 \
         --namespace c7n-system
     ```
     参数名 | 含义 
