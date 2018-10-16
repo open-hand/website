@@ -48,6 +48,8 @@ weight = 18
     CHOERODON_API_EXTERNAL_URL="api.example.choerodon.io"
     # Choerodon devops service地址（仅为域名地址，不能为IP地址）
     CHOERODON_DEVOPS_EXTERNAL_URL="devops.example.choerodon.io"
+    # Choerodon notify service地址（仅为域名地址，不能为IP地址）
+    CHOERODON_NOTIFY_EXTERNAL_URL="notify.example.choerodon.io"
     # Choerodon前端访问地址（仅为域名地址，不能为IP地址）
     CHOERODON_FRONT_EXTERNAL_URL="c7n.example.choerodon.io"
     # 知识管理前端
@@ -105,6 +107,8 @@ weight = 18
     Choerodon URL: http://c7n.example.choerodon.io
     Choerodon Devops Service WebSocket URL(only for choerodon-agent):
     ws://devops.example.choerodon.io
+    Choerodon Notify Service WebSocket URL:
+    ws://notify.example.choerodon.io
     Choerodon Wiki URL: http://wiki.example.choerodon.io
     =======================================================================================
     ------------------------------------ Gitlab Information -------------------------------

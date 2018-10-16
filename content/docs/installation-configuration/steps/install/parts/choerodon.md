@@ -288,6 +288,10 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES="zookeeper-0.zookeeper-headless.c7n-system.svc.cluster.local:2181\,zookeeper-1.zookeeper-headless.c7n-system.svc.cluster.local:2181\,zookeeper-2.zookeeper-headless.c7n-system.svc.cluster.local:2181" \
         --set env.open.SPRING_REDIS_HOST=c7n-redis.c7n-system.svc \
         --set env.open.SPRING_REDIS_DATABASE=1 \
+        --set service.enable=true \
+        --set service.name=notify-service \
+        --set ingress.enable=true \
+        --set ingress.host=notify.example.choerodon.io \
         --name notify-service \
         --version 0.10.0 \
         --namespace c7n-system
