@@ -30,26 +30,14 @@ helm repo update
 - 创建存储卷pv和pvc
 
     ```bash
-    helm install c7n/create-pv \
-        --set type=nfs \
-        --set pv.name=elasticsearch-pv\
-        --set nfs.path=/u01/elasticsearch \
-        --set nfs.server=nfs.example.com \
-        --set pvc.name=elasticsearch-pvc \
-        --set size=100Gi \
+    helm install c7n/persistentvolumeclaim \
         --set accessModes={ReadWriteMany} \
-        --name elasticsearch-pv --namespace=logging
+        --set requests.storage=100Gi \
+        --set storageClassName="nfs-provisioner" \
+        --version 0.1.0 \
+        --name elasticsearch-pvc \
+        --namespace logging
     ```
-
-- 为nfs相关文件授权
-
-    ```bash 
-    chmod -R 777 /u01/elasticsearch
-    ```
-
-<blockquote class="note">
-创建pvc时注意在nfs中创建对应的目录
-</blockquote>
 
 - 安装Elasticsearch
 
@@ -71,8 +59,8 @@ helm repo update
     ```bash
     helm install c7n/choerodon-logging \
         --set fluentd.elasticsearch.host="elasticsearch-elasticsearch.logging" \
-        --namespace=logging \
         --name=choerodon-logging \
+        --namespace=logging
     ```
 
 - 安装kibana
@@ -82,7 +70,7 @@ helm repo update
         --set elasticsearch.host="elasticsearch-elasticsearch.logging" \
         --set service.enabled=true \
         --set ingress.enabled=true \
-        --set ingress.host=kibana.example.com \
+        --set ingress.host=kibana.example.choerodon.io \
         --namespace=logging \
         --name=kibana
     ```

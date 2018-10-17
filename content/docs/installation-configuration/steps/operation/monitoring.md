@@ -30,44 +30,31 @@ helm repo update
 - 创建存储卷pv和pvc
 
     ```bash
-    helm install c7n/create-pv \
-        --set type=nfs \
-        --set pv.name=monitoring-pv \
-        --set nfs.path=/u01/monitoring \
-        --set nfs.server=nfs.example.com \
-        --set pvc.name=monitoring-pvc \
-        --set size=50Gi \
-        --set accessModes={ReadWriteOnce} \
-        --name monitoring-pv --namespace=monitoring
+    helm install c7n/persistentvolumeclaim \
+        --set accessModes={ReadWriteMany} \
+        --set requests.storage=50Gi \
+        --set storageClassName="nfs-provisioner" \
+        --version 0.1.0 \
+        --name monitoring-pvc \
+        --namespace monitoring
     ```
-<blockquote class="note">
-创建pvc时注意在nfs中创建对应的目录，并且赋予该文件夹可执行权限
-</blockquote>
-
-- 授权 
-
-   在nfs服务器中执行:
-
-   ```bash
-   chmod 755 /u01/monitoring
-   ```
 
 - 安装监控
 
     ```bash
     helm install c7n/choerodon-monitoring \
-    --set grafana.persistence.enabled=true \
-    --set grafana.persistence.existingClaim=monitoring-pvc \
-    --set grafana.ingress.enabled=true \
-    --set "grafana.ingress.hosts[0]"=grafana.example.com \
-    --set alertmanager.persistence.enabled=true \
-    --set alertmanager.persistence.existingClaim=monitoring-pvc \
-    --set prometheus.persistence.enabled=true \
-    --set prometheus.persistence.existingClaim=monitoring-pvc \
-    --set prometheus.clusterName=your_cluster_name \
-    --name=choerodon-monitorin \
-    --version=0.6.0 \
-    --namespace=monitoring
+        --set grafana.persistence.enabled=true \
+        --set grafana.persistence.existingClaim=monitoring-pvc \
+        --set grafana.ingress.enabled=true \
+        --set "grafana.ingress.hosts[0]"=grafana.example.com \
+        --set alertmanager.persistence.enabled=true \
+        --set alertmanager.persistence.existingClaim=monitoring-pvc \
+        --set prometheus.persistence.enabled=true \
+        --set prometheus.persistence.existingClaim=monitoring-pvc \
+        --set prometheus.clusterName=your_cluster_name \
+        --name=choerodon-monitorin \
+        --version=0.6.0 \
+        --namespace=monitoring
     ```
 
     参数名 | 含义 
