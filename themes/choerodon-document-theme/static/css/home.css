@@ -352,9 +352,11 @@
 	border: none;
 }
 
-.product-box .product-head img{
+.product-box .product-head .iconfont{
 	margin: 0.3rem;
-	height: 0.6rem;
+	font-size: 60px;
+	height: 60px;
+	width: 60px;
 }
 .product-title{
 	font-size: 0.2rem;

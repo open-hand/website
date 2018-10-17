@@ -1,6 +1,7 @@
 weight: 4 
 name: "开发流水线"
-icon: "/img/home/development-icon.svg"
+icon: "icon-development"
+iconColor: "#7E60EA"
 description: "以DevOps理念为指引，借助Gitlab CI作为持续集成工具，结合Gitlab的分支管理，提供持续集成的流水线，可以简化应用开发、应用生命周期，以及快速迭代，同时还能提高团队效率，保持高质量；并且高效频繁地将软件的新版本，交付给质量团队或者用户。"
 summary: "提供持续集成的流水线，可以简化应用开发、应用生命周期，以及快速迭代"
 language: zh
