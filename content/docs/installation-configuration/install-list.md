@@ -50,5 +50,5 @@ gitlab service|Gitlab 服务|0.10.0
 devops service|Devops 服务|0.10.2
 agile service|敏捷管理|0.10.1
 wiki service|知识管理服务|0.10.1
-test manager service|测试管理服务|0.10.0
+test manager service|测试管理服务|0.10.3
 choerodon front|Choerodon 前端|0.10.0
