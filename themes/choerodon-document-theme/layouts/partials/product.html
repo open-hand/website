@@ -7,7 +7,7 @@
                 {{ if eq ($.Scratch.Get "language") $element.language }}
                     <div class="product-box">
                         <div class="product-head">
-                            <img src="{{ $element.icon }}"/>
+                            <i class="iconfont {{ $element.icon }}" style='color: {{ $element.iconColor}} '></i>
                             <div>
                                 <div class="product-title">{{ $element.name }}</div>
                                 <div class="product-summary">{{ $element.summary }}</div>

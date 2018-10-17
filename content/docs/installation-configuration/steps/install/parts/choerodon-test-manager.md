@@ -60,7 +60,7 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_REDIS_HOST=c7n-redis.c7n-system.svc \
         --set env.open.SPRING_REDIS_DATABASE=5 \
         --name test-manager-service \
-        --version 0.10.2 \
+        --version 0.10.3 \
         --namespace c7n-system
     ```
     参数名 | 含义 

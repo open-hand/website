@@ -1,5 +1,23 @@
-weight: 2
-name: "Continuous integration & continuous delivery"
-icon: "/img/home/assemblyline-icon.svg"
-description: "Using Gitlab CI as a continuous integration tool, combined with Gitlab's Gitflow branching model, provides a continuous integration pipeline that allows products to be rapidly iterated while maintaining high quality; and delivers new versions of the software to quality teams or users efficiently and frequently"
+weight: 4 
+name: "开发流水线"
+icon: "icon-development"
+iconColor: "#7E60EA"
+description: "以DevOps理念为指引，借助Gitlab CI作为持续集成工具，结合Gitlab的分支管理，提供持续集成的流水线，可以简化应用开发、应用生命周期，以及快速迭代，同时还能提高团队效率，保持高质量；并且高效频繁地将软件的新版本，交付给质量团队或者用户。"
+summary: "提供持续集成的流水线，可以简化应用开发、应用生命周期，以及快速迭代"
 language: en
+
+childIcon1: "/img/home/development-1.svg"
+childTitle1: "代码托管"
+childDescription1: "集成Gitlab，作为代码托管的仓库"
+
+childIcon2: "/img/home/development-2.svg"
+childTitle2: "持续集成"
+childDescription2: "借助Gitlab CI作为持续集成工具"
+
+childIcon3: "/img/home/development-3.svg"
+childTitle3: "分支管理"
+childDescription3: "借助Gitlab进行分支的管理"
+
+childIcon4: "/img/home/development-4.svg"
+childTitle4: "合并请求"
+childDescription4: "合并请求的创建、查看、审核和合并等"

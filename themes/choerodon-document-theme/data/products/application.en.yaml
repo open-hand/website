@@ -4,7 +4,7 @@ icon: "icon-application"
 iconColor: "#4292E8"
 description: "借助应用管理，开发人员可以方便地进行应用创建，进行灵活的应用版本控制，同时可以将开发的应用发布至其他项目使用，并且通过应用市场可以便捷地查看项目以及组织内部所有的应用，以及进行应用部署等。"
 summary: "管理应用的创建、版本，以及发布和部署等"
-language: zh
+language: en
 
 childIcon1: "/img/home/application-1.svg"
 childTitle1: "应用"
