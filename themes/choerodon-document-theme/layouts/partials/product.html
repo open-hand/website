@@ -17,7 +17,7 @@
                             <div class="product-description">{{ $element.description }}</div>
                             <div class="product-childs">
                                 <div class="product-child">
-                                    <img src="{{ $element.childIcon1 }}"/>
+                                    <img {{ if eq $index 0}} src = "{{ $element.childIcon1 }}"{{ end }} data-src="{{ $element.childIcon1 }}"/>
                                     <div class="product-child-content">
                                         <div class="product-child-title">{{ $element.childTitle1 }}</div>
                                         <div class="product-child-description">{{ $element.childDescription1 }}</div>
@@ -25,21 +25,21 @@
                                     
                                 </div>
                                 <div class="product-child">
-                                    <img src="{{ $element.childIcon2 }}"/>
+                                    <img {{ if eq $index 0}} src = "{{ $element.childIcon2 }}"{{ end }} data-src="{{ $element.childIcon2 }}"/>
                                     <div class="product-child-content">
                                         <div class="product-child-title">{{ $element.childTitle2 }}</div>
                                         <div class="product-child-description">{{ $element.childDescription2 }}</div>
                                     </div>
                                 </div>
                                 <div class="product-child">
-                                    <img src="{{ $element.childIcon3 }}"/>
+                                    <img {{ if eq $index 0}} src = "{{ $element.childIcon3 }}"{{ end }} data-src="{{ $element.childIcon3 }}"/>
                                     <div class="product-child-content">
                                         <div class="product-child-title">{{ $element.childTitle3 }}</div>
                                         <div class="product-child-description">{{ $element.childDescription3 }}</div>
                                     </div>
                                 </div>
                                 <div class="product-child">
-                                    <img src="{{ $element.childIcon4 }}"/>
+                                    <img {{ if eq $index 0}} src = "{{ $element.childIcon4 }}"{{ end }} data-src="{{ $element.childIcon4 }}"/>
                                     <div class="product-child-content">
                                         <div class="product-child-title">{{ $element.childTitle4 }}</div>
                                         <div class="product-child-description">{{ $element.childDescription4 }}</div>
