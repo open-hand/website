@@ -1,7 +1,13 @@
 jQuery(document).ready(function () {
     // 产品特性点击收缩
     $(".product-head").click(function () {
-        $(this).parent(".product-box").children(".product-detail").toggleClass("none block");
+        var detail=$(this).parent(".product-box").children(".product-detail");
+        if(detail.find("img[src]").length==0){
+            Array.from(detail.find("img[data-src]")).forEach(function (item) {
+                $(item).attr("src",$(item).attr("data-src"));
+            });
+        }
+        detail.toggleClass("none block");
     });
     // 案例hover更换图片
     jQuery('.clients-section .customers a').hover(function (e) {
