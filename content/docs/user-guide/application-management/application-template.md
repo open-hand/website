@@ -226,9 +226,7 @@ weight = 1
      - update_pom_version
     
      - mvn package -U -DskipTests=false
-    
-     - mvn --batch-mode verify sonar:sonar -Dsonar.host.url=${SONAR_URL}- Dsonar.analysis.mode=preview -Dsonar.gitlab.commit_sha=${CI_COMMIT_SHA} -Dsonar.gitlab.ref_name=${CI_COMMIT_REF_NAME} -Dsonar.gitlab.project_id=${CI_PROJECT_ID}
-    
+        
     only:
     
      - /^feature-.*$/
@@ -318,7 +316,6 @@ weight = 1
       script:
         - update_pom_version
         - mvn clean && mvn package -U -DskipTests=false
-        - mvn --batch-mode verify sonar:sonar -Dsonar.host.url=${SONAR_URL} -Dsonar.analysis.mode=preview -Dsonar.gitlab.commit_sha=${CI_COMMIT_SHA} -Dsonar.gitlab.ref_name=${CI_COMMIT_REF_NAME} -Dsonar.gitlab.project_id=${CI_PROJECT_ID}
       only:
         - develop
         - /^release-.*$/
