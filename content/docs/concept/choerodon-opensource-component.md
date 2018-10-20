@@ -113,11 +113,9 @@ Choerodon 在构建阶段，采用 Gitlab CI 作为持续集成工具，Harbor �
 
 ### 测试
 
-Choerodon 采用多个代码检查和测试工具，其中，SonarQube 作为自动化代码检查工具；JUnit 作为后端 Java 代码的测试工具；Selenium 作为前端测试的工具。
+Choerodon 采用多个代码检查和测试工具，其中，JUnit 作为后端 Java 代码的测试工具；Selenium 作为前端测试的工具。
 
 核心组件有：
-
-- **SonarQube**：SonarQube 是一个用于代码质量管理的开源平台，用于管理源代码的质量，可以从七个维度检测代码质量搜索。通过插件形式，可以支持包括 java，C#，C/C++，PL/SQL，Cobol，JavaScrip，Groovy 等等二十几种编程语言的代码质量管理与检测
 
 - **JUnit**：JUnit 是一个 Java 语言的单元测试框架。
 

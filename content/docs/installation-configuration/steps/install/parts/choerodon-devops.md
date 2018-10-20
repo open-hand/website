@@ -78,7 +78,6 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
         --set env.open.SERVICES_GITLAB_PASSWORD=password \
         --set env.open.SERVICES_GITLAB_PROJECTLIMIT=100 \
         --set env.open.SERVICES_GATEWAY_URL=http://api.example.choerodon.io \
-        --set env.open.SERVICES_SONARQUBE_URL=http://sonarqube.example.choerodon.io \
         --set env.open.SECURITY_IGNORED="/ci\,/webhook\,/v2/api-docs\,/agent/**\,/ws/**\,/webhook/**" \
         --set env.open.AGENT_VERSION="0.10.0" \
         --set env.open.AGENT_REPOURL="https://openchart.choerodon.com.cn/choerodon/c7n/" \
@@ -112,6 +111,7 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
     env.open.SERVICES_HARBOR_USERNAME|harbor用户名
     env.open.SERVICES_HARBOR_PASSWORD|harbor密码
     env.open.SERVICES_HELM_URL|chartmuseum地址
+    env.open.SERVICES_SONARQUBE_URL|sonarqube地址，若未部署请忽略
     env.open.SERVICES_GITLAB_URL|gitlab地址
     env.open.SERVICES_GITLAB_PASSWORD|通过choerodon平台创建的gitlab用户初始密码
     env.open.SERVICES_GITLAB_PROJECTLIMIT|通过choerodon平台创建的gitlab可创建项目上限
