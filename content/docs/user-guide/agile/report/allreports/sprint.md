@@ -20,12 +20,12 @@ weight = 2
 
 ## 迭代冲刺
 * `迭代冲刺`：当前项目所有的冲刺，包括已完成和未完成的冲刺
-
+* `显示非工作日`：选择时，非工作日的`期望值`、`剩余值`都在冲刺报告中显示出来
 ## 图表
 * 横坐标代表时间
 * 纵坐标代表问题数量
 
-![](/docs/user-guide/agile/report/img/sprint-chart.jpg)
+![](/docs/user-guide/agile/report/img/sprint-chart.png)
 
 ## 报告详情
 1. 报告详情总共有三个模块，分别为`已完成的问题`，`未完成的问题`，`从Sprint中删除的问题`

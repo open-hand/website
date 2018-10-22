@@ -57,3 +57,10 @@ weight = 2
     {{< warning >}}删除后将无法使用该快速搜索{{< /warning >}}
 * 拖动快速搜索  
     1. 可以点击快速搜索项，向上或向下拖动，交换搜索项的排列顺序
+
+
+## 更多操作
+
+- [问题链接](../issue-link)
+- [项目设置](../project-setting)
+- [消息通知](../message-notification_set)

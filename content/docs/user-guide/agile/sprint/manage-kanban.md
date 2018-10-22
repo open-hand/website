@@ -97,7 +97,7 @@ weight = 3
 
 泳道是指看板中一横排的主板，基于横排对问题进行状态的流转。泳道类型可以在下面进行修改，并将自动保存。注意：修改泳道会修改看板的分组维度，同时修改看板样式。
 
-![enter description here](/docs/user-guide/agile/imge/set-lane.png)
+<img src="/docs/user-guide/agile/imge/set-lane.png"  height="432" width="600"><br/>
 
 1. 进入到看板配置界面，点击`泳道`配置。
 2. 点击`基础泳道`下拉框，可看到能配置的`泳道`选项:
@@ -108,6 +108,20 @@ weight = 3
 - `无`：无泳道配置。
 
 未添加泳道的问题将在看板`所有问题`中显示。
+
+## 工作日历
+
+工作日历是用于配置当前冲刺的工作日期，此工作日历的修改会导致当前冲刺报表数据的变动。
+
+![](/docs/user-guide/agile/sprint/img/working_calendar.png)
+
+
+此工作日历能反映出本冲刺具体工作时间，对日历中日期进行点选，可以更改工作时间。
+<blockquote class="note">
+日历中蓝色边框日期为当日，字体颜色黑色为工作日，红色为休息日，带![](/docs/user-guide/agile/sprint/img/working_calendar_blackIco.png)图标为法定节假日补班，带![](/docs/user-guide/agile/sprint/img/working_calendar_redIco.png)图标为法定节假日;
+</blockquote>
+
+
 
 ## 下一步
 

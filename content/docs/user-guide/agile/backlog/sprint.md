@@ -16,7 +16,7 @@ weight = 5
 
 ## 创建冲刺
 
-![enter description here](/docs/user-guide/agile/imge/create-springt.png)
+![enter description here](/docs/user-guide/agile/imge/create-springt.png)<br/>
 
 1. 点击`创建冲刺`按钮，直接在`待办事项`页面里创建一个冲刺。
 
@@ -30,22 +30,45 @@ weight = 5
 
 6. 显示该冲刺下处于`待处理`、`进行中`、`已完成`三个状态类别中的问题数量。
 
-7. 冲刺里添加完问题后，可在冲刺右上角点击`开启冲刺`按钮开启此冲刺。
 
-    <blockquote class="note">
-    这里每个项目只能同时开启一个冲刺，需要输入冲刺名称（必输）、目标（可选）、周期（可选）、开始时间（必输）、结束时间（必输）。
-</blockquote>
+7. 可选择`仅我的问题`或者`仅故事`对所有待办事项进行快速搜索。
 
-
-8. 冲刺开启后，冲刺状态会变更为`活跃`，点击`活跃冲刺`菜单可进行查看，同时冲刺里的问题会同步显示到看板中，与看板中的状态对应。
-
-9. 可选择`仅我的问题`或者`仅故事`对所有待办事项进行快速搜索。
-
-10. 点击问题，可以对问题的优先级、模块、标签、经办人等进行编辑，同时能对问题进行描述，上传附件、添加评论和创建子任务。
+8. 点击问题，可以对问题的优先级、模块、标签、经办人等进行编辑，同时能对问题进行描述，上传附件、添加评论和创建子任务。
 
     <blockquote class="note">
     创建完成的问题，可从待办事项里直接拖拽到指定的冲刺里，此时这个问题便属于该指定的冲刺。
 </blockquote>
+
+
+## 开启冲刺
+
+<img src="/docs/user-guide/agile/backlog/img/start-springt.png"  height="301" width="700">
+<br/>
+<br/>
+<img src="/docs/user-guide/agile/backlog/img/start-springt2.png"  height="474" width="600">
+<br/>
+<br/>
+<img src="/docs/user-guide/agile/backlog/img/start-springt3.png" height="298.8" width="600" >
+
+1. 冲刺里添加完问题后，可在冲刺右上角点击`开启冲刺`按钮；
+2. 在页面的右边弹出`开启冲刺`的窗口中编辑本冲刺的名称和目标；
+3. 设置本冲刺的`周期`，选择`自定义`、`一周`、`两周`、`四周`中的一个；
+    <blockquote class="note">
+    默认周期为`自定义`，当选择了周期时，开始日期可自选，结束日期会根据周期自动配置
+    </blockquote>
+4. 选择冲刺`开启日期`和`结束日期`(必填)；
+5. 设置了`开启日期`和`结束日期`，`设置当前冲刺工作日`按钮才会出现，点击该按钮可在日历中选择冲刺的具体工作日期；
+<blockquote class="note">
+    默认按照工作日历设置，出现特殊情况可以点选日历，设置自己的工作日期，蓝色边框日期为当日，选中日期（红色字体）为非工作日，未选中日期（黑色字体）为工作日，带![](/docs/user-guide/agile/backlog/img/working_calendar_blackIco.png)图标为法定节假日补班，带![](/docs/user-guide/agile/backlog/img/working_calendar_redIco.png)图标为法定节假日;
+    </blockquote>
+    <img src="/docs/user-guide/agile/backlog/img/start-springt-workday.png"  height="400" width="400">
+
+6. 点击`开启`按钮开启冲刺
+
+7. 冲刺开启后，冲刺状态会变更为`活跃`，点击`活跃冲刺`菜单可进行查看，同时冲刺里的问题会同步显示到看板中，与看板中的状态对应。
+
+
+
 
 ## 规划冲刺
 
@@ -75,6 +98,8 @@ weight = 5
 
 报告人一般默认为问题创建人；经办人则是问题处理人。
 
+## 修改冲刺
+  冲刺开启后想要修改活跃冲刺的工作日期，请到[看板配置](../../sprint/manage-kanban)的`工作日历`中修改
 
 ## 删除冲刺
 进入到待办事项页面，在冲刺右上角标识符找到`删除`，即可删除一个冲刺。
