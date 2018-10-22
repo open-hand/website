@@ -30,3 +30,10 @@ weight = 3
     2. 选择是否关联到其他连接
         {{< warning >}}若选择不关联到别的连接，则删除后相关联的任务都会消失{{< /warning >}}
     3. 点击`删除`按钮
+
+## 更多操作
+
+- [项目设置](../project-setting)
+- [快速搜索](../quick-search)
+- [消息通知](../message-notification_set)
+

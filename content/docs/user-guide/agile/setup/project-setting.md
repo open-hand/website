@@ -39,6 +39,7 @@ weight = 1
 
 ## 更多操作
 
-- [快速搜索](../quick-search)
 - [问题链接](../issue-link)
+- [快速搜索](../quick-search)
+- [消息通知](../message-notification_set)
 
