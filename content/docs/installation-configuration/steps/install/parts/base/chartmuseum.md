@@ -43,7 +43,7 @@ helm install c7n/chartmuseum \
     --set persistence.enabled=true \
     --set persistence.existingClaim=chartmuseum-pvc \
     --set ingress.enabled=true \
-    --set ingress.hosts=chart.alpha.saas.hand-china.com \
+    --set ingress.hosts=chart.example.choerodon.io \
     --set env.open.DISABLE_API=false \
     --set env.open.DEPTH=2 \
     --version 1.6.1 \

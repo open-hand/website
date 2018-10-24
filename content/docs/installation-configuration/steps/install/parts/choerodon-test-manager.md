@@ -41,7 +41,7 @@ helm install c7n/mysql-client \
 
     ``` 
     helm install c7n/test-manager-service \
-        --set env.open.JAVA_OPTS="-Xms256M -Xmx512M" \
+        --set env.open.JAVA_OPTS="-Xms256m -Xmx512m" \
         --set preJob.preConfig.datasource.url="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
         --set preJob.preConfig.datasource.username=choerodon \
         --set preJob.preConfig.datasource.password=password \
@@ -109,4 +109,4 @@ helm install c7n/mysql-client \
 
   ![](/img/docs/installation-configuration/parts/data_fix2.png)
 
-  - 填入一个存在的project_id点击发送即可，等待日志中出现`fixed data successful`，数据即升级成功，如果日志中抛出了异常，则重试即可。
+  - 填入一个存在的project_id点击发送即可，等待日志中出现`fix data successful`，数据即升级成功，如果日志中抛出了异常，则重试即可。

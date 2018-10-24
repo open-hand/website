@@ -102,8 +102,8 @@ helm repo update
         --set env.url=http://gitlab.example.choerodon.io \
         --set env.token=token_token \
         --set env.environment.DOCKER_REGISTRY=registry.example.choerodon.io \
-        --set env.environment.DOCKER_USER=username \
-        --set env.environment.DOCKER_PWD=password \
+        --set env.environment.DOCKER_USER=admin \
+        --set env.environment.DOCKER_PWD=Harbor12345 \
         --set env.environment.CHOERODON_URL=http://api.example.choerodon.io \
         --set env.persistence.runner-maven-pvc="/root/.m2" \
         --set env.persistence.runner-cache-pvc="/cache" \
