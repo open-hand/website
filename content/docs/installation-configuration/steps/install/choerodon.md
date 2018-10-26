@@ -127,7 +127,7 @@ weight = 18
     ```
 
 - [设置Gitlab启用SSH协议(必须开启)](../parts/base/gitlab/#启用ssh协议)
-- [设置Harbor启用HTTPS](../parts/base/harbor/#启用https)
+- [设置Harbor证书(必须设置)](../parts/base/harbor/#证书配置)
 
 ## 部署失败操作
 

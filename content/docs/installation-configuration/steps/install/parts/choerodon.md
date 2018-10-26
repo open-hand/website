@@ -133,7 +133,7 @@ helm install c7n/mysql-client \
     ```
     helm install c7n/config-server \
         --set service.enable=true \
-        --set env.open.JAVA_OPTS="-Xms256M -Xmx512M" \
+        --set env.open.JAVA_OPTS="-Xms256m -Xmx512m" \
         --set env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE="http://register-server.c7n-system:8000/eureka/" \
         --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS="kafka-0.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-1.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-2.kafka-headless.c7n-system.svc.cluster.local:9092" \
         --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES="zookeeper-0.zookeeper-headless.c7n-system.svc.cluster.local:2181\,zookeeper-1.zookeeper-headless.c7n-system.svc.cluster.local:2181\,zookeeper-2.zookeeper-headless.c7n-system.svc.cluster.local:2181" \
@@ -164,7 +164,7 @@ helm install c7n/mysql-client \
 
     ```
     helm install c7n/manager-service \
-        --set env.open.JAVA_OPTS="-Xms256M -Xmx512M" \
+        --set env.open.JAVA_OPTS="-Xms256m -Xmx512m" \
         --set preJob.preInitDB.datasource.url="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
         --set preJob.preInitDB.datasource.username=choerodon \
         --set preJob.preInitDB.datasource.password=password \
@@ -215,7 +215,7 @@ helm install c7n/mysql-client \
 
     ```
     helm install c7n/asgard-service \
-        --set env.open.JAVA_OPTS="-Xms256M -Xmx512M" \
+        --set env.open.JAVA_OPTS="-Xms256m -Xmx512m" \
         --set preJob.preConfig.datasource.url="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
         --set preJob.preConfig.datasource.username=choerodon \
         --set preJob.preConfig.datasource.password=password \
@@ -269,7 +269,7 @@ helm install c7n/mysql-client \
 
     ```
     helm install c7n/notify-service \
-        --set env.open.JAVA_OPTS="-Xms256M -Xmx512M" \
+        --set env.open.JAVA_OPTS="-Xms256m -Xmx512m" \
         --set preJob.preConfig.datasource.url="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
         --set preJob.preConfig.datasource.username=choerodon \
         --set preJob.preConfig.datasource.password=password \
@@ -327,7 +327,7 @@ helm install c7n/mysql-client \
 
     ```
     helm install c7n/iam-service \
-        --set env.open.JAVA_OPTS="-Xms256M -Xmx512M" \
+        --set env.open.JAVA_OPTS="-Xms256m -Xmx512m" \
         --set preJob.preConfig.datasource.url="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
         --set preJob.preConfig.datasource.username=choerodon \
         --set preJob.preConfig.datasource.password=password \
@@ -379,7 +379,7 @@ helm install c7n/mysql-client \
 
     ```
     helm install c7n/api-gateway \
-        --set env.open.JAVA_OPTS="-Xms256M -Xmx512M" \
+        --set env.open.JAVA_OPTS="-Xms256m -Xmx512m" \
         --set preJob.preConfig.datasource.url="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
         --set preJob.preConfig.datasource.username=choerodon \
         --set preJob.preConfig.datasource.password=password \
@@ -423,7 +423,7 @@ helm install c7n/mysql-client \
 
     ```
     helm install c7n/gateway-helper \
-        --set env.open.JAVA_OPTS="-Xms256M -Xmx512M" \
+        --set env.open.JAVA_OPTS="-Xms256m -Xmx512m" \
         --set preJob.preConfig.datasource.url="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
         --set preJob.preConfig.datasource.username=choerodon \
         --set preJob.preConfig.datasource.password=password \
@@ -467,7 +467,7 @@ helm install c7n/mysql-client \
 
     ```
     helm install c7n/oauth-server \
-        --set env.open.JAVA_OPTS="-Xms256M -Xmx512M" \
+        --set env.open.JAVA_OPTS="-Xms256m -Xmx512m" \
         --set preJob.preConfig.datasource.url="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
         --set preJob.preConfig.datasource.username=choerodon \
         --set preJob.preConfig.datasource.password=password \
@@ -515,12 +515,12 @@ helm install c7n/mysql-client \
 
     ```
     helm install c7n/file-service \
-        --set env.open.JAVA_OPTS="-Xms256M -Xmx512M" \
+        --set env.open.JAVA_OPTS="-Xms256m -Xmx512m" \
         --set preJob.preConfig.datasource.url="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
         --set preJob.preConfig.datasource.username=choerodon \
         --set preJob.preConfig.datasource.password=password \
         --set env.open.MINIO_ENDPOINT="http://minio.example.choerodon.io" \
-        --set env.open.MINIO_ACCESSKEY=username \
+        --set env.open.MINIO_ACCESSKEY=admin \
         --set env.open.MINIO_SECRETKEY=password \
         --set env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE="http://register-server.c7n-system:8000/eureka/" \
         --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \

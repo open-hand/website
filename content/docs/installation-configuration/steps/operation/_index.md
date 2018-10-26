@@ -25,6 +25,7 @@ weight = 27
 - 硬件要求：
     - 核心数量：2核2线程及以上
     - 内存信息：4G及以上
+    - 磁盘: ssd或高速存储介质50G及以上(根据实际情况增加磁盘)
     - 节点数量：3+       
     <blockquote class="note">
     由于Elasticsearch大量的io操作，部署Elasticsearch时会将Elasticseach分别部署在不同的节点。即使某节点有很大的内存剩余也不会部署两个Elasticsearch到同一节点上。

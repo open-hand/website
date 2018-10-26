@@ -25,7 +25,7 @@ helm install c7n/harbor \
     --set registry.volumes.data.storageClass="nfs-provisioner" \
     --set redis.master.persistence.storageClass="nfs-provisioner" \
     --set harborAdminPassword=Harbor12345 \
-    --version 0.3.0 \
+    --version 0.3.2 \
     --name harbor \
     --namespace c7n-system
 ```
@@ -51,9 +51,9 @@ Harbor启动速度较慢请等待所有Pod都为Running后进行界面查看。
 
     ![](/docs/installation-configuration/image/harbor.png)
 
-## 启用HTTPS
+## 证书配置
 
-### 使用[kube-lego](https://github.com/jetstack/kube-lego)申请证书
+### 有公网域名时使用[kube-lego](https://github.com/jetstack/kube-lego)申请证书
 
 <blockquote class="note">
 以下讲解为通过<a href="https://github.com/jetstack/kube-lego" target="_blank">kube-lego</a>创建证书，kube-lego会自动申请证书。通过本站Kubernetes部署教程部署的集群默认是安装kube-lego的。若集群中未安装kube-lego请忽略以下本节操作。
@@ -64,6 +64,12 @@ Harbor启动速度较慢请等待所有Pod都为Running后进行界面查看。
     ```
     # 执行命令后有返回结果则说明已部署
     kubectl get deployment --all-namespaces | grep kube-lego
+    ```
+
+- 删除自签名证书secret
+
+    ```
+    kubectl delete secret -n c7n-system harbor-harbor-ingress
     ```
 
 - 编辑harbor的ingress对象
@@ -80,48 +86,23 @@ Harbor启动速度较慢请等待所有Pod都为Running后进行界面查看。
             kubernetes.io/tls-acme: "true"
         ```
 
-### 手动申请证书
+### 没有公网域名时使用自签名证书
 
-  <blockquote class="note">
-  使用certbot生成证书需要注意几点:
-  <ul>
-  <li>1.将域名解析到需要执行生成证书命令的机器上</li>
-  <li>2.确保该机器上的80和443端口不能被占用</li>
-  <li>3.该机器上已装有docker环境</li>
-  </ul>
-  </blockquote>
+<blockquote class="warning">
+没有公网域名是无法申请证书的，故只能配置本地Docker信任Harbor自签名证书，此方法需将会使用到该Harbor的主机都进行自签名证书信任配置。
+</blockquote>
 
-- 第一步：通过certbot生成证书(此方法每次只有3个月有效时间)
-    - 执行以下命令，注意更换域名地址，过程中提示输入邮箱，完成之后证书在/etc/letsencrypt目录下
+- 在任意一台master节点执行下面操作：
 
-        ```
-        docker run --rm -ti \
-            --network host \
-            -v /etc/letsencrypt:/etc/letsencrypt \
-            -v /var/lib/letsencrypt:/var/lib/letsencrypt \
-            certbot/certbot:v0.19.0 \
-            certonly --standalone \
-            -d registry.example.choerodon.io
-        ```
+    {{< annotation shell "registry.example.choerodon.io为Harbor的域名，前面的目录不要更改" "c7n-system为Harbor部署的namespace，harbor-harbor-ingress为自签名证书的secret名称" "registry.example.choerodon.io为Harbor的域名，前面的目录不要更改；ca.crt为证书文件的名称，请勿修改" >}}
+sudo mkdir -p /etc/docker/certs.d/registry.example.choerodon.io(1)
 
-- 第二步：创建secret并修改ingress
+kubectl get secret \
+    --namespace c7n-system harbor-harbor-ingress \(1)
+    -o jsonpath="{.data.ca\.crt}" | base64 --decode | \
+    sudo tee /etc/docker/certs.d/registry.example.choerodon.io/ca.crt(1)
+{{< /annotation >}}
 
-    - 进入到证书目录下执行以下命令创建secret
+- 分发`ca.crt`证书文件
 
-        ```
-        # 参数 --key 后指定证书私钥的路径
-        # 参数 --cert 后指定证书的路径
-        kubectl create secret tls harbor-cert --key privkey.pem --cert fullchain.pem -n harbor
-        ```
-
-    - 修改ingress配置，添加secretName属性值:
-
-            kubectl edit ingress -n c7n-system harbor-harbor-ingress
-
-    - 为ingress添加添加`spec.tls`属性及其值
-
-            spec:
-              tls:
-              - hosts:
-                - registry.example.choerodon.io
-                secretName: harbor-cert
+将得到的`ca.crt`证书文件拷贝至其他会使用到该Harbor的主机上（也放在`/etc/docker/certs.d/registry.example.choerodon.io`目录下即可）。

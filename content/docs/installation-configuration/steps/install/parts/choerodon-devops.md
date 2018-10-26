@@ -47,7 +47,7 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
 
     ``` 
     helm install c7n/devops-service \
-        --set env.open.JAVA_OPTS="-Xms256M -Xmx512M" \
+        --set env.open.JAVA_OPTS="-Xms256m -Xmx512m" \
         --set preJob.preConfig.mysql.host=c7n-mysql.c7n-system.svc \
         --set preJob.preConfig.mysql.port=3306 \
         --set preJob.preConfig.mysql.database=manager_service \
@@ -74,7 +74,7 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
         --set env.open.SERVICES_HARBOR_PASSWORD="Harbor12345" \
         --set env.open.SERVICES_HELM_URL="http://chart.example.choerodon.io" \
         --set env.open.SERVICES_GITLAB_URL="http://gitlab.example.choerodon.io" \
-        --set env.open.SERVICES_GITLAB_SSHURL="git@gitlab.example.choerodon.io" \
+        --set env.open.SERVICES_GITLAB_SSHURL="gitlab.example.choerodon.io" \
         --set env.open.SERVICES_GITLAB_PASSWORD=password \
         --set env.open.SERVICES_GITLAB_PROJECTLIMIT=100 \
         --set env.open.SERVICES_GATEWAY_URL=http://api.example.choerodon.io \
@@ -143,7 +143,7 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
 
     ```
     helm install c7n/gitlab-service \
-        --set env.open.JAVA_OPTS="-Xms256M -Xmx512M" \
+        --set env.open.JAVA_OPTS="-Xms256m -Xmx512m" \
         --set preJob.preConfig.mysql.host=c7n-mysql.c7n-system.svc \
         --set preJob.preConfig.mysql.port=3306 \
         --set preJob.preConfig.mysql.database=manager_service \
@@ -182,7 +182,7 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
     env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS|kafk地址
     env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES|zookeeper地址
     env.open.GITLAB_URL|gitlab地址
-    env.open.GITLAB_PRIVATETOKEN|gitlab admin用户token
+    env.open.GITLAB_PRIVATETOKEN|gitlab 具有api、read_use、sudo权限的用户token
 
 - 验证部署
     - 验证命令

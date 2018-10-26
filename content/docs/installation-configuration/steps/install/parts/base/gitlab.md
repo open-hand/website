@@ -187,55 +187,33 @@ CentOS各发行版中SSH端口默认为22，为了开启Gitlab的SSH需要修改
 如果您启用了防火墙iptables或者安全组，那么必须先添加新开的33322端口
 </blockquote>
 
-### 添加Gitlab SSH Service
+### 修改Gitlab SSH Service
 
-1. 确认Gitlab版本
+- 在Master节点编辑`gitlab-ssh`Service
 
-    - 登录Gitlab
-    - 访问`http://gitlab.example.choerodon.io/help`页面查看版本号。
+        kubectl edit svc -n c7n-system gitlab-ssh
 
-1. 在Master节点新建`gitlab-ssh-svc.yml`文件，按版本号添加以下信息：
-    - 版本号为`GitLab Community Edition 10.*.*`，添加以下信息：
+- 按下面提示进行修改
 
-            apiVersion: v1
-            kind: Service
-            metadata:
-              name: gitlab-ssh
-              namespace: c7n-system
-            spec:
-              externalIPs:
-              - 192.168.1.1 #请修改这里的IP为第一步设置SSH端口号的节点IP
-              ports:
-              - name: http
-                port: 22
-                protocol: TCP
-                targetPort: 22
-              selector:
-                  app: gitlab
-              
-    - 版本号为`GitLab Community Edition 11.*.*`，添加以下信息：
-
-            apiVersion: v1
-            kind: Service
-            metadata:
-              name: gitlab-ssh
-              namespace: c7n-system
-            spec:
-              externalIPs:
-              - 192.168.1.1 #请修改这里的IP为第一步设置SSH端口号的节点IP
-              ports:
-              - name: http
-                port: 22
-                protocol: TCP
-                targetPort: 22
-              selector:
-                  choerodon.io/infra: gitlab
-
-1. 使Gitlab SSH Service生效
-
-```
-kubectl apply -f gitlab-ssh-svc.yml
-```
+        apiVersion: v1
+        kind: Service
+        metadata:
+          name: gitlab-ssh
+          namespace: c7n-system
+          labels:
+            choerodon.io/release: "gitlab"
+            choerodon.io/infra: "gitlab"
+        spec:
+          type: ClusterIP
+          externalIPs:
+          - 192.168.1.1      #请修改这里的IP为第一步设置SSH端口号的节点IP
+          ports:
+            - port: 22       #请将这里原本2289修改为22
+              targetPort: ssh
+          selector:
+            choerodon.io/release: "gitlab"
+            choerodon.io/infra: "gitlab"
+    
 
 ### 域名映射
 
@@ -246,7 +224,7 @@ kubectl apply -f gitlab-ssh-svc.yml
 <blockquote class="warning">
   <ul>
   <li>以下操作须将Choerodon搭建完成后再继续进行，若未搭建，请跳过。</li>
-  <li>配置Choerodon的Oauth认证后Gitlab的root用户是无法再通过界面进行登录的了。</li>
+  <li>配置Choerodon的Oauth认证后Gitlab的root用户是无法再通过Gitlab自有的界面进行登录的了。</li>
   </ul>
 </blockquote>
 
@@ -292,6 +270,7 @@ kubectl apply -f gitlab-ssh-svc.yml
 ### 验证更新
 
 - 访问设置的Gitlab域名出现以下界面即更新成功
+{{< warning >}}执行完添加管理员用户关联步骤前请不要登录{{< /warning >}}
 
     ![](/docs/installation-configuration/image/gitlab-oauth.png)
 
