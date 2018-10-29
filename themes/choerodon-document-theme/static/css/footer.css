@@ -56,6 +56,16 @@
     position: absolute;
     width: 1rem;
     height: 1rem;
+    background-color: #FFFFFF;
+}
+.footer .wechat-hover img,
+.footer .sina-hover img{
+    width: 100%;
+    height: 100%;
+}
+
+.footer .load-img [data-loader='circle']{
+    margin: 0.375rem;
 }
 
 .footer .copy-right {
