@@ -46,4 +46,4 @@ description = "测试计划用于以结构化方式设置测试用例"
 - [创建测试用例](../case-management/create-case)
 - [执行测试](../execution-test/execution)
 - [设置状态](../setting/status)
-- [查看测试报告](../test-report/)
+- [查看测试报告](../../report/test-report/)

@@ -5,6 +5,7 @@ var cleanCSS = require('gulp-clean-css');
 var uglify = require('gulp-uglify');
 var yaml = require('js-yaml');
 var fs   = require('fs');
+var htmlmin = require('gulp-htmlmin');
 
 var cssPath = 'themes/choerodon-document-theme/static/css';
 var home_css = ['style.choerodon.css','footer.css','home.css','notice.css'];
@@ -73,4 +74,13 @@ gulp.task('default', function() {
 
         fs.writeFileSync(dataPath+module,yaml.safeDump(home),'utf8');
      });
+});
+
+gulp.task('html', function() {
+    // file
+    gulp.src('public/**/*.html')
+    .pipe(htmlmin({
+        collapseWhitespace: true
+    }))
+    .pipe(gulp.dest('./public/'));
 });

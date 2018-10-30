@@ -29,4 +29,4 @@ description = "使用测试用例管理可以创建测试用例，分配给测�
 - [创建测试循环](../test-plan/create-cycle)
 - [执行测试](../execution-test/execution)
 - [设置状态](../setting/status)
-- [查看测试报告](../test-report/)
+- [查看测试报表](../../report/test-report/)

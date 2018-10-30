@@ -19,4 +19,4 @@ description = "设置测试管理的配置项"
 - [创建测试用例](../case-management/create-case)
 - [创建测试循环](../test-plan/create-cycle)
 - [执行测试](../execution-test/execution)
-- [查看测试报告](../test-report/)
+- [查看测试报告](../../report/test-report/)

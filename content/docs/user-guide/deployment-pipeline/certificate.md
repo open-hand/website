@@ -65,13 +65,10 @@ weight = 8
   - 有效期：该证书的有效期限。
 
 
-<blockquote class="note">
- 
-</blockquote>
 
 ## 删除证书
 
-点击`删除证书` → ![删除证书按钮](/docs/user-guide/deployment-pipeline/image/del_net_button.png) 对在证书进行删除。
+点击`删除证书` → ![删除证书按钮](/docs/user-guide/deployment-pipeline/image/del_net_button.png) 对该证书进行删除。
 
 <blockquote class="note">
   环境状态为未连接时或网络状态是处理中时不可操作

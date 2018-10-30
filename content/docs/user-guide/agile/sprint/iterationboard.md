@@ -40,7 +40,7 @@ weight = 6
 
 用于跟踪记录所有问题的剩余工作工作时间，预估完成冲刺任务的可能性，回顾总结迭代过程中的经验与不足。
 
-详情情查看[燃尽图](../../report/allreports/burn-down/)
+详情情查看[燃尽图](../../../report/agile-report/burn-down/)
 
 5-8部分，如下图所示：
 
