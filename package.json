@@ -23,6 +23,7 @@
     "toml": "^2.3.3"
   },
   "devDependencies": {
+    "gulp-htmlmin": "^5.0.1",
     "js-yaml": "^3.12.0"
   }
 }

@@ -34,4 +34,4 @@ description = "详细介绍了测试详情页的查看和修改操作"
 ## 更多操作
 
 - [创建测试用例](../create-case)
-- [查看测试报告](../../test-report/)
+- [查看测试报告](../../../report/test-report/)

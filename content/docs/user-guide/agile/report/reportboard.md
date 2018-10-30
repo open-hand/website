@@ -26,19 +26,19 @@ weight = 8
      
 累积流量是一个综合的价值流度量方法，可以通过它得到不同维度的信息，反应WIP的状态、项目的步调、并且快速识别出交付时间存在的风险以及瓶颈。
 
-详情请查看[累积流量图](../allreports/cumulative-flow/)
+详情请查看[累积流量图](../../../report/agile-report/cumulative-flow/)
 
 ### 2.经办人分布
 
 以经办人的维度统计问题数量与所占百分比，统计包括具体经办人或未分配的相关数据。以饼图的形式展示数据。帮助用户实时了解团队成员的工作量。
 
-详情可以通过[统计图](../allreports/statistical)>经办人 进行查看
+详情可以通过[统计图](../../../report/agile-report/statistical)>经办人 进行查看
 
 ### 3.版本进度
 
 以版本为横坐标，问题数量百分比为纵坐标，统计`待处理`、`处理中`、`已完成`等状态类别下的问题数量百分比。 有利于用户查看项目下各个版本的进度。
 
-详情可以通过[版本报告](../allreports/version-report) 进行查看
+详情可以通过[版本报告](../../../report/agile-report//version-report) 进行查看
 
 4-8部分，如下图所示：
 
@@ -48,25 +48,25 @@ weight = 8
     
 以史诗为横坐标，已完成问题数量百分比为纵坐标，统计各个史诗的已完成问题数量百分比。 有利于用户查看项目下各个史诗的进度。
 
-详情可以通过[史诗报告](../allreports/epic-report) 进行查看
+详情可以通过[史诗报告](../../../report/agile-report//epic-report) 进行查看
 
 ### 5.问题类型分布
 
 统计各个问题类型（包括Epic、故事、任务、故障、子任务）下的问题数量，以及所占百分比。以饼图的形式展现。有利于用户查看项目下各个问题类型下的问题数量。
 
-详情可以通过[统计图](../allreports/statistical)>问题类型 进行查看
+详情可以通过[统计图](../../../report/agile-report//statistical)>问题类型 进行查看
 
 ### 6.状态分布
 
 统计各个状态类别（包括待处理、处理中、已完成）下的问题数量，以及所占百分比。以饼图的形式展现。有利于用户查看项目下各个状态类型下的问题数量。
 
-详情可以通过[统计图](../allreports/statistical)>状态 进行查看
+详情可以通过[统计图](../../../report/agile-report//statistical)>状态 进行查看
 
 ### 7.优先级分布
 
 统计各个优先级（包括高、中、低）下的已完成问题数量/总计数。有利于用户查看项目下各个优先级下的问题完成情况。
 
-详情可以通过[统计图](../allreports/statistical)>优先级 进行查看
+详情可以通过[统计图](../../../report/agile-report//statistical)>优先级 进行查看
 
 ### 8.问题类型状态分布
 
@@ -76,7 +76,7 @@ weight = 8
 
 迭代速度图是用于跟踪当前项目下所有冲刺已完成的工时量。这有助于您确定团队的开发速度并预估在未来迭代中能完成的工作量。
 
-详情请查看[迭代速度图](../allreports/iterative-chart/)
+详情请查看[迭代速度图](../../../report/agile-report//iterative-chart/)
 
 ![reportboard-iterative](/docs/user-guide/agile/report/img/reportboard-iterative.png)
 

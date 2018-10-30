@@ -42,4 +42,4 @@ description = "阐述了什么是测试用例树"
 ## 更多操作
 
 - [创建测试用例](../create-case)
-- [查看测试报告](../../test-report/)
+- [查看测试报告](../../../report/test-report/)
