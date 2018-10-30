@@ -27,7 +27,7 @@ description = ""
 
 ## 查看测试摘要
 
-测试摘要中主要分`总数统计`、`分类统计`、`时间统计`三个模块。测试摘要详细讲解请移步[测试摘要](../../../user-guide/test-management/test-report/summary/)。如下图所示，测试摘要页面可以获取到如下信息：
+测试摘要中主要分`总数统计`、`分类统计`、`时间统计`三个模块。测试摘要详细讲解请移步[测试摘要](../../../user-guide/report/test-report/summary/)。如下图所示，测试摘要页面可以获取到如下信息：
 
 ![](/img/docs/quick-start/project-member/test-manager/test-report/summary-1.png)
 
@@ -41,7 +41,7 @@ description = ""
 
 ## 查看测试报告
 
-测试报告分为两种，一种是从要求出发关联到缺陷，另一种则是从缺陷出发关联到要求。您可以根据自己的需求选择对应类型的报表进行查看。追踪性报告详细讲解请移步[测试报告](../../../user-guide/test-management/test-report/report/)。
+测试报告分为两种，一种是从要求出发关联到缺陷，另一种则是从缺陷出发关联到要求。您可以根据自己的需求选择对应类型的报表进行查看。追踪性报告详细讲解请移步[测试报告](../../../user-guide/report/test-report/report/)。
 
 
 ### 从要求到缺陷
@@ -62,4 +62,4 @@ description = ""
 
 ## 相关文档
 
-- [测试报告](../../../user-guide/test-management/test-report/)
+- [测试报告](../../../user-guide/report/test-report/report/)

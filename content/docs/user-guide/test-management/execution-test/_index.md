@@ -17,4 +17,4 @@ description = "介绍了如何执行测试的相关操作"
 - [创建测试用例](../case-management/create-case)
 - [创建测试循环](../test-plan/create-cycle)
 - [设置状态](../setting/status)
-- [查看测试报告](../test-report/)
+- [查看测试报告](../../report/test-report/)
