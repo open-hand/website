@@ -9,6 +9,12 @@ jQuery(document).ready(function () {
         }
         detail.toggleClass("none block");
     });
+
+    // 案例详情图片加载等待
+    $('.product-child>img').on('load', function() {
+        $(this).parent(".product-child").children("[data-loader='circle']").attr("data-loader","");
+    });
+
     // 案例hover更换图片
     jQuery('.clients-section .customers a').hover(function (e) {
         $(this).children().children('.title').css("display", "flex");

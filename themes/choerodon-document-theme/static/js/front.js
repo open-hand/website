@@ -120,9 +120,12 @@ jQuery(document).ready(function () {
         var wWidth = remWidth;
         if (wWidth >= 768) {
             var rem = calRem();
-            var top = $('.icon-wechat-footer').offset().top - parseInt($(".wechat-hover").css("height")) - 20;
-            var left = document.documentElement.clientWidth / 2 - parseInt($('.wechat-hover').css("width")) + parseInt($('.icon-wechat-footer').css("margin-left"));
-            $('.wechat-hover').css("display", "block").css("top", top / rem + "rem").css("left", left / rem + "rem").fadeIn("fast");
+            var hover = $(".wechat-hover");
+            var img = hover.children("img");
+            var top = $(this).offset().top - parseInt(hover.css("height")) - 20;
+            var left = document.documentElement.clientWidth / 2 - parseInt(hover.css("width")) + parseInt($(this).css("margin-left"));
+            img.attr("src",img.attr("data-src"));
+            hover.css("display", "block").css("top", top / rem + "rem").css("left", left / rem + "rem").fadeIn("fast");
         }
     }, function () {
         var wWidth = remWidth;
@@ -131,13 +134,21 @@ jQuery(document).ready(function () {
         }
     });
 
+    // 二维码图片加载等待
+    $('.social .load-img>img').on('load', function() {       
+        $(this).parent(".load-img").children("[data-loader='circle']").attr("data-loader","");
+    });
+
     jQuery('.icon-sina-footer').hover(function (e) {
         var wWidth = remWidth;
         if (wWidth >= 768) {
             var rem = calRem();
-            var top = $('.icon-sina-footer').offset().top - parseInt($(".sina-hover").css("height")) - 20;
-            var left = $('.icon-sina-footer').offset().left - parseInt($('.sina-hover').css("width")) / 2 + parseInt($('.icon-sina-footer').css("width")) / 2;
-            $('.sina-hover').css("display", "block").css("top", top / rem + "rem").css("left", left / rem + "rem").fadeIn("fast");
+            var hover = $(".sina-hover");
+            var img = hover.children("img");
+            var top = $(this).offset().top - parseInt(hover.css("height")) - 20;
+            var left = $(this).offset().left - parseInt(hover.css("width")) / 2 + parseInt($(this).css("width")) / 2;
+            img.attr("src",img.attr("data-src"));
+            hover.css("display", "block").css("top", top / rem + "rem").css("left", left / rem + "rem").fadeIn("fast");
         }
     }, function () {
         var wWidth = remWidth;
@@ -150,7 +161,7 @@ jQuery(document).ready(function () {
     $('.icon-wechat-footer').on('touchstart', function () {
         setTimeout(function () {
             stopBodyScroll(true);
-            $('.black-big-img img').attr('src', $(".wechat-hover").attr("src"));
+            $('.black-big-img img').attr('src', $(".wechat-hover>img").attr("data-src"));
             $('.black-big-img').css('display', 'flex');
         }, 300)
     })
