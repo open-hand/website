@@ -20,8 +20,9 @@ description = "与角色关联进行特定功能开发"
 - 层级：角色标签的层级。角色标签的层级与角色的层级相对应。角色标签只能在具有相同层级的角色下可被选择。
 - 描述：角色标签的描述。用于展示角色标签的功能。如：
     - project.owner：当用户创建项目时会自动为其分配拥有该角色标签的角色。如项目所有者。
-    - gitlab.owner：当给某用户在某项目下分配拥有该标签的角色后，平台会为该用户在gitlab对应的group下分配owner角色。
-    - gitlab.developer：当给某用户在某项目下分配拥有该标签的角色后，平台会为该用户在gitlab对应的group下分配developer的角色。
+    - organization.owner：用户在创建角色的的时候选择此角色标签，当用户创建组织时会自动为其分配此角色标签下的角色。
+    - project.gitlab.owner：当给某用户在某项目下分配拥有该标签的角色后，平台会为该用户在gitlab对应的group下分配owner角色。
+    - project.gitlab.developer：当给某用户在某项目下分配拥有该标签的角色后，平台会为该用户在gitlab对应的group下分配developer的角色。
 
 ## 更多操作
 - [角色管理](../role)

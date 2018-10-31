@@ -167,7 +167,7 @@ eureka:
       VERSION: v1
   client:
     serviceUrl:
-      defaultZone: ttp://localhost:8000/eureka/
+      defaultZone: http://localhost:8000/eureka/
     registryFetchIntervalSeconds: 10
 mybatis:
   mapperLocations: classpath*:/mapper/*.xml
