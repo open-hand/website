@@ -31,4 +31,4 @@ description = "查看使用模板发送消息的列表记录及状态"
 
 ## 重发
 
-- 发送失败的短信，用户可以点击列表中的`图标`→![重发](/docs/user-guide/system-configuration/message/image/detail_button.png)重发此邮件。
+- 发送失败的短信，用户可以点击列表中的`图标`→![重发](/docs/user-guide/system-configuration/message/image/redo.png)重发此邮件。
