@@ -479,6 +479,7 @@ body {
     color: #3371E3;
     padding: 0.1rem 0.16rem;
     display: inline-flex;
+    align-items: center;
 }
 .button:hover{
     background-color: #3371E3;
