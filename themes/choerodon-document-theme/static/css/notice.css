@@ -1,19 +1,23 @@
 .notice {
   padding: 0.15rem 0;
   background-color: #F5F8FD;
-  text-align: center; }
+  display: flex;
+  justify-content: center; }
   @media (max-width: 767px) {
     .notice {
       padding: 0.1rem 0;
-      display: inline-flex; } }
+      display: flex;
+      justify-content: center; } }
   .notice .card {
     padding: 0 0.3rem;
-    display: inline-block; }
+    display: flex;
+    align-items: center; }
     @media (max-width: 767px) {
       .notice .card {
-        display: block;
         padding: 0.1rem 0.02rem;
-        text-align: center; } }
+        display: flex;
+        flex-direction: column;
+        align-items: center; } }
     .notice .card .head {
       width: 0.6rem;
       vertical-align: middle; }
