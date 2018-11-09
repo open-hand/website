@@ -1,10 +1,10 @@
 weight: 1
-title: "华润置地案例实施分享直播"
-minTitle: "案例分享直播"
-description: "我们预计于10月15日下午2：00以直播的形式分享Choerodon在华润置地的落地实践案例"
-minDescription: "10月15日下午2点直播华润置地的落地实践案例"
+title: "票易通和Choerodon猪齿鱼团队技术交流"
+minTitle: "社区技术交流"
+description: "11月8日下午，票易通CIO李耿带领技术研发团队成员来到汉得研发中心，同Choerodon猪齿鱼社区核心研发团队进行了一场围绕Choerodon的技术交流。"
+minDescription: "11月8日下午票易通同社区核心研发团队进行了技术交流"
 button: "了解详情"
 img: "/img/socials/event/crland.svg"
 homeImg: "/img/home/notice/live.svg"
-href: "/blog/crland-share"
+href: "/blog/xforceplus-community"
 language: zh
