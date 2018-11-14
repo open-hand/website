@@ -42,19 +42,32 @@ weight = 2
 任何试图编辑被锁定页面的人都会看到“页面被锁定”的警告消息，让您知道该页面已被锁定并且还强制锁定。
 
 ## 宏的使用
-在编辑页面，选择XWiki的宏，会显示一些常用的宏，在此我们将介绍下面宏的作用。
+1. 在编辑页面，选择下面红框处的图标，会显示XWiki一些常用的宏，在此我们将介绍下面宏的作用。
+![enter description here](/docs/user-guide/wiki/image/macros-navigation.jpg)
+
+1. XWiki宏弹出界面，目前我们筛选了8种常用的宏。
 ![enter description here](/docs/user-guide/wiki/image/macros.jpg)
 
-下面列举了宏使用的对应效果图
+1. 下面列举了XWiki宏使用的对应效果图，并对其中几种宏做出了文字说明。
 ![enter description here](/docs/user-guide/wiki/image/macros-use.png)
 
-1.选择`代码块`宏，宏里面各种代码将显示高亮效果。
+    - 选择`代码块`宏(上面标记1)，宏里面各种代码将显示高亮效果。
+    - 选择`公式`宏，显示数学公式(上面标记3)，要遵循LaTeX语法的数学公式。
+    - 选择`块引用`宏(上面标记4)，将输入的内容放入一块区域内，可以输入标题、CSS样式、宽度和插入图片。
+    - 选择`子页面`宏(上面标记5)，显示当前页面的子页面树状浏览器。
 
-3.选择`公式`宏，显示数学公式，要遵循LaTeX语法的数学公式。
+## 插入issue
+1. 在编辑页面，选择下面红框处的图标，会显示敏捷创建的issue。
+![enter description here](/docs/user-guide/wiki/image/issue-navigation.png)
 
-4.选择`块引用`宏，将输入的内容放入一块区域内，可以输入标题、CSS样式、宽度和插入图片。
+1. 选择项目会显示项目下创建的issue，您可以翻页查看更多的issue，也可以模糊搜索具体的issue。
+![enter description here](/docs/user-guide/wiki/image/issue.png)
 
-5.选择`子页面`宏，显示当前页面的子页面树状浏览器。
+1. 选择项目下某个issue，然后点击`确定`，会在编辑器内容里面显示这条issue。双击会显示issue的链接地址。
+![enter description here](/docs/user-guide/wiki/image/issue-select.png)
+
+1. 点击`创建`，选择`项目`和`问题类型`，然后输入摘要，就可以创建一条新的issue。
+![enter description here](/docs/user-guide/wiki/image/issue-insert.png)
 
 ## 下一步
 
