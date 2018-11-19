@@ -85,7 +85,7 @@ helm install c7n/gitlab \
     --set env.config.MYSQL_PASSWORD=password \
     --set env.config.MYSQL_DATABASE=gitlabhq_production \
     --set env.config.REDIS_HOST=gitlab-redis.c7n-system.svc \
-    --set env.config.SMTP_ENABLE=true \
+    --set env.config.SMTP_ENABLE=false \
     --set env.config.SMTP_ADDRESS=smtp.mxhichina.com \
     --set env.config.SMTP_PORT=465 \
     --set env.config.SMTP_USER_NAME=git.sys@example.com \
@@ -99,7 +99,7 @@ helm install c7n/gitlab \
     --set env.config.NODE_EXPORTER_ENABLE=false \
     --set service.enabled=true \
     --set ingress.enabled=true \
-    --version 0.2.0 \
+    --version 0.2.1 \
     --name gitlab \
     --namespace c7n-system
 ```
@@ -241,7 +241,7 @@ CentOS各发行版中SSH端口默认为22，为了开启Gitlab的SSH需要修改
         --set env.config.OMNIAUTH_BLOCK_AUTO_CREATED_USERS=false \
         --set env.config.CHOERODON_API_URL=http://api.example.choerodon.io \
         --set env.config.CHOERODON_CLIENT_ID=gitlab \
-        --version 0.2.0 \
+        --version 0.2.1 \
         --namespace c7n-system
 
 ### 添加Gitlab Client
