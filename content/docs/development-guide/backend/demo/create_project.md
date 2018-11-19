@@ -180,7 +180,7 @@ mybatis:
 在`src/main/java`中创建TodoServiceApplication。
 ``` bash
 $ mkdir -p src/main/java/io/choerodon/todo
-$ touch src/main/java/io/choerodon/todo/TodoServiceApplication
+$ touch src/main/java/io/choerodon/todo/TodoServiceApplication.java
 ```
 
 添加`main` 函数。
