@@ -14,7 +14,7 @@ weight = 5
 
 - [端口要求](../../pre-install/#需开放的端口号)
 
-- 使用本教程部署后会安装以下组件
+- 使用本教程部署后会为您的服务器安装以下组件
 
     **组件名称**|**组件版本**
     :-----:|:-----:
@@ -31,7 +31,10 @@ weight = 5
 
 ## 防火墙及端口检测
 
+
 ### 检测防火墙状态
+
+ <span style="font-weight:bold;">请检测防火墙状态，确认防火墙未开启。如果防火墙已开启请仔细阅读[端口要求](../../pre-install/#需开放的端口号)并开放指定的端口</span>
 
 - 检测firewall-cmd状态
 
@@ -181,13 +184,11 @@ weight = 5
 
 ## 本地虚拟机安装示例
 
-<blockquote class="note">
-本地虚拟机安装指的是在本地模拟安装。在服务器上部署请查阅服务器安装模式或云环境安装模式。
-</blockquote>
+- 本地虚拟机安装指的是在个人电脑上模拟安装。一般情况下个人电脑无法满足安装choerodon的要求，如果你需要在个人电脑上安装choerodon请确认CPU8核以上，内存48G以上。
 
-<blockquote class="warning">
-安装前请确认已开启CPU虚拟化支持。
-</blockquote>
+- 安装前请确认已开启<span style="color:red">CPU虚拟化支持</span>。如果您没有启用CPU虚拟化，安装操作将会失败。
+
+- 请不要在虚拟机中执行此脚本，如服务商提供的虚拟机，包括但不限于主流服务商及公司it部门提供的虚拟机，或是您在个人电脑中创建的虚拟机。 在虚拟机中安装请参阅`私有云安装示例`
 
 #### 环境准备
 - 部署[Virtualbox 5.1.34](https://www.virtualbox.org/wiki/Download_Old_Builds_5_1)
@@ -246,9 +247,7 @@ weight = 5
 
 #### 添加节点
 
-<blockquote class="warning">
-通过本小节教程添加的节点不能是Master或Etcd节点，只能是普通的Work节点。若你使用的是NFS作为存储，建议你先<a href="../nfs/#客户端挂载nfs服务器共享目录" target="_blank">安装nfs-utils</a>
-</blockquote>
+- 通过本小节教程添加的节点不能是Master或Etcd节点，只能是普通的Work节点。若你使用的是NFS作为存储，建议你先<a href="../nfs/#客户端挂载nfs服务器共享目录" target="_blank">安装nfs-utils</a>
 
 - 若集群搭建完毕后还想再添加节点，请按以下方式进行添加：
     - 修改kubeadm-ansible/inventory/hosts文件，在`[all]`分区按照原有格式添加新增节点信息，在`[kube-node]`分区添加新增节点名，其他分区请一定不要改动。比如原有信息如下，我们添加一个ip为192.168.56.14，k8s目标绑定网卡ip为192.168.56.14的node4节点：
@@ -313,9 +312,7 @@ weight = 5
 
 ## 私有云安装示例
 
-<blockquote class="note">
-私有云安装模式指的是在公司内部或非生产级集群中部署，与公有云安装模式的区别在于部署网络时使用的网络模式。
-</blockquote>
+私有云安装模式指的是在已有的虚拟机中安装，绝大部分centos 7.3+的虚拟机可以通过执行下述命令进行安装，如果你需要安装choerodno请确认集群总内存在48G以上，CPU总核心数大于8核。
 
 ### 环境准备
 
@@ -346,11 +343,15 @@ weight = 5
 
 ### 修改hosts文件
 
-<blockquote class="warning">
-Etcd节点和Master节点需要在相同的机器。
-</blockquote>
+在修改配置文件前请注意以下几点:
 
-- 编辑项目下的`kubeadm-ansible/inventory/hosts`文件，修改各机器的访问地址、用户名、密码，并维护好各节点与角色的关系，前面的名称为机器的hostname。该用户必须是具有root权限的用户。但<span style="color: #ff0000;">并非</span>要求一定是root用户，其他<span style="color: #ff0000;">具有root权限</span>的用户也可以。比如，想要部署单节点集群，只需要这样配置(参考)：
+- 注意Etcd节点和Master节点需要在相同的机器。
+- 示例中的node1为主机的hostname
+- ansible_host为目标主机的连接地址，比如您可以通过`192.168.56.11`这个ip连接到`node1`的ssh服务，则此处填写`192.168.56.11`
+- ip为目标主机的`内网网卡对应的ip`及内网ip
+- 请勿将外网ip配置到ip字段中，否则极有可能部署失败
+
+- 编辑项目下的`kubeadm-ansible/inventory/hosts`文件，修改各机器的访问地址、用户名、密码，并维护好各节点与角色的关系，node1为机器的hostname。该用户必须是具有root权限的用户。但<span style="color: #ff0000;">并非</span>要求一定是root用户，其他<span style="color: #ff0000;">具有root权限</span>的用户也可以。比如，想要部署单节点集群，只需要这样配置(参考)：
 
     ```shell
     [all]
@@ -486,11 +487,17 @@ Etcd节点和Master节点需要在相同的机器。
 在阿里云的ECS的控制面板上修改ECS实例的hostname，名称最好只包含小写字母、数字和中划线。并保持与inventory/hosts中的名称与ECS控制台上的名称保持一致，重启生效。
 </blockquote>
 
-<blockquote class="warning">
-Etcd节点和Master节点必须一致。
-</blockquote>
+执行下一步前请注意以下几点：
 
-- 编辑项目下的`kubeadm-ansible/inventory/hosts`文件，修改各机器的访问地址、用户名、密码，并维护好各节点与角色的关系，前面的名称为机器的hostname。该用户必须是具有root权限的用户。但<span style="color: #ff0000;">并非</span>要求一定是root用户，其他<span style="color: #ff0000;">具有root权限</span>的用户也可以。比如，想要部署单节点集群，只需要这样配置(参考)：
+- 注意Etcd节点和Master节点需要在相同的机器。
+- 示例中的node1为主机的hostname
+- ansible_host为目标主机的连接地址，比如您可以通过`192.168.56.11`这个ip连接到`node1`的ssh服务，则此处填写`192.168.56.11`
+- ip为目标主机的`内网网卡对应的ip`及内网ip
+- 请勿将外网ip配置到ip字段中，否则极有可能部署失败
+
+开始安装
+
+- 编辑项目下的`kubeadm-ansible/inventory/hosts`文件，修改各机器的访问地址、用户名、密码，并维护好各节点与角色的关系。该用户必须是具有root权限的用户。但<span style="color: #ff0000;">并非</span>要求一定是root用户，其他<span style="color: #ff0000;">具有root权限</span>的用户也可以。比如，想要部署单节点集群，只需要这样配置(参考)：
 
     ```shell
     [all]
