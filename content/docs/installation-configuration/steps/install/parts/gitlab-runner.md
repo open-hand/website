@@ -1,7 +1,7 @@
 +++
-title = "第六步：Gitlab Runner部署"
-description = "第六步：Gitlab Runner部署"
-weight = 25
+title = "Gitlab Runner部署"
+description = "Gitlab Runner部署"
+weight = 80
 +++
 
 # Gitlab Runner部署

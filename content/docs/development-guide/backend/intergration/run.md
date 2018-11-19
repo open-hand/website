@@ -97,19 +97,6 @@ permissionPublic | 公开接口，默认为false
 }
 ```
 
-## swagger 测试
-
-将程序部署到线上以后，可以通过`swagger` 来对接口进行测试。
-
-* 打开 `http:、/api.example.com/manager/swagger-ui.html`。其中`http://api.example.com` 为平台网关对外的域名。
-
-![](/docs/development-guide/backend/intergration/images/swaggerTest1.png)
-
-* 打开任意一个`api`，点击右边红色的叹号对调用该`api`进行授权（勾选`default scope`）
-* 在弹出界面输入用户名密码，输入管理员账号密码 admin/admin
-
-![](/docs/development-guide/backend/intergration/images/swaggerTest4.png)
-
 ## 启动相关服务
 
 如果需要启动其他模块，可以再[github](https://github.com/choerodon/)上获取到对应服务的最新代码，克隆到本地，将`./src/main/resources/application.yml` 复制一份出来，修改里面的默认值。根据本地环境信息，修改数据库和kafka连接。
