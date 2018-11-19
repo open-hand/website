@@ -6,6 +6,12 @@ weight = 45
 
 # Kafka部署
 
+## 预备知识
+
+如果你不知道Kafka是做什么的，那么请参考下面链接（包括但不限于）进行学习：
+
+- [Kafka](http://kafka.apache.org/)
+
 ## 仓库设置
 
 ## 添加choerodon chart仓库并同步

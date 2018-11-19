@@ -47,7 +47,7 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
 
     ``` 
     helm install c7n/devops-service \
-        --set env.open.JAVA_OPTS="-Xms1024M -Xmx1024M" \
+        --set env.open.JAVA_OPTS="-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap" \
         --set preJob.preConfig.mysql.host=c7n-mysql.c7n-system.svc \
         --set preJob.preConfig.mysql.port=3306 \
         --set preJob.preConfig.datasource.url="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager-service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
@@ -63,7 +63,7 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
         --set env.open.SPRING_DATASOURCE_PASSWORD=password \
         --set env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE="http://register-server.c7n-system:8000/eureka/" \
         --set env.open.SPRING_REDIS_HOST=c7n-redis.c7n-system.svc \
-        --set env.open.SPRING_REDIS_DATABASE=3 \
+        --set env.open.SPRING_REDIS_DATABASE=6 \
         --set env.open.CHOERODON_EVENT_CONSUMER_KAFKA_BOOTSTRAP_SERVERS="kafka-0.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-1.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-2.kafka-headless.c7n-system.svc.cluster.local:9092" \
         --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS="kafka-0.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-1.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-2.kafka-headless.c7n-system.svc.cluster.local:9092" \
         --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES="zookeeper-0.zookeeper-headless.c7n-system.svc.cluster.local:2181\,zookeeper-1.zookeeper-headless.c7n-system.svc.cluster.local:2181\,zookeeper-2.zookeeper-headless.c7n-system.svc.cluster.local:2181" \
@@ -143,7 +143,7 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
 
     ```
     helm install c7n/gitlab-service \
-        --set env.open.JAVA_OPTS="-Xms1024M -Xmx1024M" \
+        --set env.open.JAVA_OPTS="-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap" \
         --set preJob.preConfig.mysql.host=c7n-mysql.c7n-system.svc \
         --set preJob.preConfig.mysql.port=3306 \
         --set preJob.preConfig.mysql.database=manager_service \
@@ -182,7 +182,7 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
     env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS|kafk地址
     env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES|zookeeper地址
     env.open.GITLAB_URL|gitlab地址
-    env.open.GITLAB_PRIVATETOKEN|gitlab 具有api、read_use、sudo权限的用户token
+    env.open.GITLAB_PRIVATETOKEN|gitlab 具有api、read_use、sudo权限的用户token，如何获取请[查阅](http://forum.choerodon.io/t/topic/1155/2)
 
 - 验证部署
     - 验证命令

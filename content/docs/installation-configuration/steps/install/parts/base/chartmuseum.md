@@ -6,6 +6,12 @@ weight = 20
 
 # Chartmuseum部署
 
+## 预备知识
+
+如果你不知道Chartmuseum是做什么的，那么请参考下面链接（包括但不限于）进行学习：
+
+- [Chartmuseum](https://github.com/helm/chartmuseum#chartmuseum)
+
 ## 添加choerodon chart仓库并同步
 
 ```

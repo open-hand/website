@@ -6,6 +6,12 @@ weight = 25
 
 # minio部署
 
+## 预备知识
+
+如果你不知道Minio是做什么的，那么请参考下面链接（包括但不限于）进行学习：
+
+- [Minio](https://github.com/minio/minio#minio-quickstart-guide)
+
 ## 添加choerodon chart仓库并同步
 
 ```

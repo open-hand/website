@@ -8,19 +8,35 @@ weight = 80
 
 Gitlab Runner，用于代码提交后自动进行代码测试、构建服务的镜像及生成helm chart并将结果发回给Choerodon。它与GitLab CI一起使用，Gitlab CI是Gitlab中包含的开源持续集成服务，用于协调作业。
 
-## 获取Runner注册Token
+## 预备知识
+
+如果你不知道Gitlab Runner是做什么的，那么请参考下面链接（包括但不限于）进行学习：
+- [Gitlab Runner](https://docs.gitlab.com/runner/)
+
+
+## 一键安装Runner
+
+若你使用一键部署安装的猪齿鱼，那么请执行下面命令一键安装runner。
+
+```bash
+./c7n config gitlab runner -c config.yml
+```
+
+## 手动安装Runner
+
+### 获取Runner注册Token
 
 <blockquote class="note">
 此教程注册的Runner属性为共享，若需注册私有Runner或者无法进入Gitlab管理界面，注册Token请在Git项目仓库 Settings > CI/CD > Runners settings 菜单中获取。
 </blockquote>
 
-### 进入Gitlab管理界面
+#### 进入Gitlab管理界面
 
 ![](/docs/installation-configuration/image/runners-reg.png)
 
-## 注册Runner
+### 注册Runner
 
-### 方式1
+#### 方式1
 
 - 运行Runner，进入容器
 
@@ -42,7 +58,7 @@ Gitlab Runner，用于代码提交后自动进行代码测试、构建服务的�
 
     ![](/docs/installation-configuration/image/runner-reg.png)
 
-### 方式2
+#### 方式2
 
 - 运行Runner并注册
 
@@ -57,14 +73,14 @@ Gitlab Runner，用于代码提交后自动进行代码测试、构建服务的�
 ![](/docs/installation-configuration/image/runner-info.png)
 
 
-## 添加choerodon chart仓库
+### 添加choerodon chart仓库
 
 ```
 helm repo add c7n https://openchart.choerodon.com.cn/choerodon/c7n/
 helm repo update
 ```
 
-## 部署Runner
+### 部署Runner
 <blockquote class="note">
 启用持久化存储请执行提前创建所对应的物理目录，PV和PVC可使用以下语句进行创建；可在部署命令中添加--debug --dry-run参数，进行渲染预览不进行部署。
 </blockquote>
@@ -100,7 +116,7 @@ helm repo update
         --set rbac.create=true \
         --set env.concurrent=3 \
         --set env.url=http://gitlab.example.choerodon.io \
-        --set env.token=token_token \
+        --set env.token=注册Runner后得到的token \
         --set env.environment.DOCKER_REGISTRY=registry.example.choerodon.io \
         --set env.environment.DOCKER_USER=admin \
         --set env.environment.DOCKER_PWD=Harbor12345 \

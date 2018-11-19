@@ -43,7 +43,7 @@ helm install c7n/mysql-client \
 
     ``` 
     helm install c7n/agile-service \
-        --set env.open.JAVA_OPTS="-Xms1024M -Xmx1024M" \
+        --set env.open.JAVA_OPTS="-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap" \
         --set preJob.preConfig.mysql.host=c7n-mysql.c7n-system.svc \
         --set preJob.preConfig.mysql.port=3306 \
         --set preJob.preConfig.mysql.database=manager_service \

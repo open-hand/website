@@ -6,6 +6,13 @@ weight = 5
 
 # Kubernetes集群部署
 
+## 预备知识
+
+如果你不知道以下是做什么的，那么请参考下面链接（包括但不限于）进行学习：
+
+- [Kubernetes](http://docs.kubernetes.org.cn/)
+- [Ansible](https://github.com/ansible/ansible#ansible)
+
 ## 前置要求与约定
 
 - 约定：Master(s)节点为Kubernetes主节点、Worker(s)节点为Kubernetes普通节点、Etcd节点为将部署Etcd的节点，按本教程安装Master(s)节点与Etcd节点必须一致，Etcd官方建议Etcd集群节点个数为奇数个（比如1、3、5）以防止脑裂。
@@ -31,10 +38,9 @@ weight = 5
 
 ## 防火墙及端口检测
 
+<span style="font-weight:bold;">请检测防火墙状态，如果防火墙已开启请仔细阅读[端口要求](../../pre-install/#需开放的端口号)并按下面方式开放指定的端口；若未开启防火墙请跳过本节操作。</span>
 
 ### 检测防火墙状态
-
- <span style="font-weight:bold;">请检测防火墙状态，确认防火墙未开启。如果防火墙已开启请仔细阅读[端口要求](../../pre-install/#需开放的端口号)并开放指定的端口</span>
 
 - 检测firewall-cmd状态
 
@@ -263,7 +269,7 @@ weight = 5
         node2
         node3
 
-
+        # 请与kube-master节点一致
         [etcd]
         node1
         node2
@@ -289,7 +295,7 @@ weight = 5
         node2
         node3
 
-
+        # 请与kube-master节点一致
         [etcd]
         node1
         node2
@@ -359,7 +365,7 @@ weight = 5
 
     [kube-master]
     node1
-
+    # 请与kube-master节点一致
     [etcd]
     node1
 
@@ -418,7 +424,7 @@ weight = 5
 
         [kube-master]
         node1
-
+        # 请与kube-master节点一致
         [etcd]
         node1
 
@@ -434,7 +440,7 @@ weight = 5
 
         [kube-master]
         node1
-
+        # 请与kube-master节点一致
         [etcd]
         node1
 
@@ -505,7 +511,7 @@ weight = 5
 
     [kube-master]
     node1
-
+    # 请与kube-master节点一致
     [etcd]
     node1
 
@@ -748,7 +754,7 @@ spec:
 
         [kube-master]
         node1
-
+        # 请与kube-master节点一致
         [etcd]
         node1
 
@@ -764,7 +770,7 @@ spec:
 
         [kube-master]
         node1
-
+        # 请与kube-master节点一致
         [etcd]
         node1
 
@@ -780,6 +786,8 @@ spec:
         ```
 
 ## Kubernetes网络测试
+
+集群搭建完成后请一定进行以下测试步骤进行测试。
 
 ### 集群访问公网测试
 
@@ -862,14 +870,14 @@ spec:
 
     Service Name: default-http-backend.kube-system.svc
 
-    Service Cluster IP: 10.233.48.173
+    Service Cluster IP: 172.16.17.173 (可通过`kubectl get svc default-http-backend -n kube-system`进行查看)
 
     Service Port: 80
 
 - 通过向`default-http-backend`的`healthz`api执行curl命令进行网络延迟测试
 
     ```Bash
-    $ curl "http://10.233.48.173/healthz"
+    $ curl "http://172.16.17.173/healthz"
     ok
     ```
 
@@ -880,7 +888,7 @@ spec:
     ```bash
     docker run -it --rm --net=host \
         registry.cn-hangzhou.aliyuncs.com/choerodon-tools/network-and-cluster-perfermance-test:0.1.0 \
-        curls http://10.233.48.173/healthz
+        curls http://172.16.17.173/healthz
     ```
 
 - 测试结果
@@ -949,12 +957,14 @@ spec:
         iperf -s -p 12345 -i 1 -M
     ```
 
+**注意：** 此时该服务端命令会前台运行，一直等待客户端请求，请另起一个终端窗口进行执行客户端命令。
+
 - 客户端命令：
 
     ```bash
     docker run -it --rm --net=host \
         registry.cn-hangzhou.aliyuncs.com/choerodon-tools/network-and-cluster-perfermance-test:0.1.0 \
-        iperf -c ${服务端主机IP} -p 12345 -i 1 -t 10 -w 20K
+        iperf -c 服务端主机IP -p 12345 -i 1 -t 10 -w 20K
     ```
 
 - 测试结果
@@ -985,7 +995,7 @@ spec:
         -- bash -c "sleep 3; ifconfig eth0; iperf -s -p 12345 -i 1 -M"
     ```
 
-**注意：** 查看输出的日志，替换下面客户端命令中POD的IP
+**注意：** 此时该服务端命令会前台运行，一直等待客户端请求，请另起一个终端窗口进行执行客户端命令。查看输出的日志，替换下面客户端命令中POD的IP
 
 - 客户端命令：
 
@@ -994,7 +1004,7 @@ spec:
         -it --quiet --rm --restart=Never \
         --overrides='{"spec":{"template":{"spec":{"nodeName":"指定客户端运行的节点"}}}}' \
         --image='registry.cn-hangzhou.aliyuncs.com/choerodon-tools/network-and-cluster-perfermance-test:0.1.0' \
-        -- iperf -c ${服务端POD的IP} -p 12345 -i 1 -t 10 -w 20K
+        -- iperf -c 服务端POD的IP -p 12345 -i 1 -t 10 -w 20K
     ```
 
 - 测试结果
@@ -1024,6 +1034,8 @@ spec:
         iperf -s -p 12345 -i 1 -M
     ```
 
+**注意：** 此时该服务端命令会前台运行，一直等待客户端请求，请另起一个终端窗口进行执行客户端命令。
+
 - 客户端命令：
 
     ```bash
@@ -1031,7 +1043,7 @@ spec:
         -it --quiet --rm --restart=Never \
         --overrides='{"spec":{"template":{"spec":{"nodeName":"指定客户端运行的节点"}}}}' \
         --image='registry.cn-hangzhou.aliyuncs.com/choerodon-tools/network-and-cluster-perfermance-test:0.1.0' \
-        -- iperf -c ${服务端主机IP} -p 12345 -i 1 -t 10 -w 20K
+        -- iperf -c 服务端主机IP -p 12345 -i 1 -t 10 -w 20K
     ```
 
 - 测试结果

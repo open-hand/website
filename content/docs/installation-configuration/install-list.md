@@ -23,7 +23,7 @@ Mysql|数据库|5.7.22
 Zookeeper|分布式应用程序协调服务|3.4.10
 Kafka|消息中间件|1.0.0
 Harbor|容器的镜像库|1.4.0
-Gitlab|代码托管|10.2.8
+Gitlab|代码托管|11.0.1
 Gitlab-Runner|CI/CD 运行环境|10.7.2
 
 ## Choerodon服务列表

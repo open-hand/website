@@ -37,7 +37,7 @@ FROM nginx:1.13.5-alpine
 
 在项目根目录下添加 .gitlab-ci.yml 文件，内容如下:
 ```
-image: registry.choerodon.com.cn/tools/cibase:0.5.0
+image: registry.cn-hangzhou.aliyuncs.com/choerodon-tools/cibase:0.7.0
 
 stages:
   - chart_build
@@ -45,25 +45,29 @@ stages:
 chart_build:
   stage: chart_build
   script:
+    - docker login -u ${DOCKER_USER} -p ${DOCKER_PWD} ${DOCKER_REGISTRY}
     - docker build --pull -t ${DOCKER_REGISTRY}/${GROUP_NAME}/${PROJECT_NAME}:${CI_COMMIT_TAG} .
     - docker push ${DOCKER_REGISTRY}/${GROUP_NAME}/${PROJECT_NAME}:${CI_COMMIT_TAG}
     - chart_build
 
 .auto_devops: &auto_devops |
-    curl -o .auto_devops.sh \
-        "${CHOERODON_URL}/devops/ci?token=${Token}&type=front"
+    http_status_code=`curl -o .auto_devops.sh -s -m 10 --connect-timeout 10 -w %{http_code} "${CHOERODON_URL}/devops/ci?token=${Token}"`
+    if [ "$http_status_code" != "200" ]; then
+      cat .auto_devops.sh
+      exit 1
+    fi
     source .auto_devops.sh
 
 before_script:
   - *auto_devops
 ```
-在项目根目录下创建 chart/nginx 文件夹目录，注意这里的 nginx 要与应用名相同。
+在项目根目录下创建 chart/nginx 文件夹目录，注意这里的 nginx 要与应用名相同，若不同这以应用名为准，即 chart/应用名 为目录。
 在 chart/nginx 目录下创建 Chart.yaml 文件，内容如下:
 ```
 apiVersion: v1
 appVersion: "1.0"
 description: A Helm chart for Kubernetes
-name: nginx
+name: nginx #此值也必须与应用名相同
 version: 0.1.2
 ```
 在 chart/nginx 目录下创建 .helmignore 文件，内容如下:
