@@ -6,7 +6,7 @@ weight = 2
 
 # 环境流水线
 
-环境是一个客户端，是部署流水线和k8s信息交互的桥梁，实质上也是一个实例，只不过该实例是直接用helm部署在集群中，有了环境，我们就可以部署实例，部署网络，部署域名。
+环境是一个客户端，是部署流水线和k8s信息交互的桥梁，实质上也是一个实例，不过该实例是直接用helm部署在集群中，有了环境，我们就可以部署实例，部署网络，部署域名。
 
 环境可以部署在不同的集群中，由此就会产生不同的环境。比如开发测试环境、预生产环境、生产环境等。使系统的开发，测试，上线变的更加可视化，流程化。
 
@@ -17,14 +17,14 @@ weight = 2
   
   - **菜单路径**：部署流水线 > 环境流水线
   
-  - **默认角色**：项目所有者、项目成员、部署管理员
+  - **默认角色**：项目所有者
   
 <blockquote class="note">
- 项目所有者和项目成员对环境流水线只有查看界面的权限，不可进行编辑修改。
+ 只有项目所有者对环境流水线有查看和编辑操作的权限。
 </blockquote>
 
 <blockquote class="note">
-不能对环境进行删除操作，如果想停止使用当前环境，只能对该环境进行停用操作。
+ 支持停用未连接的环境或不含运行中实例的环境，但只能对停用区的环境进行删除操作。
 </blockquote>
 
 ## 环境流水线
@@ -40,9 +40,10 @@ weight = 2
   
   ![创建环境](/docs/user-guide/deployment-pipeline/image/envcreate.png)
  
--  点击`创建环境`，系统会滑出创建环境页面，输入相关信息，有环境编码、环境名称、环境描述。
+-  点击`创建环境`，系统会滑出创建环境页面，输入或选择相关信息，包括集群、环境编码、环境名称、环境描述；同时，项目所有者需要为该环境分配特定的操作人员，且操作人员只能从本项目下进行选择。  
+    选择集群：此处只能选择已对该项目授权的集群进行连接；连接后，环境的状态由所连的集群决定，若集群是运行中，则该环境也是运行中的状态，集群未连接，则环境也是未连接；若想激活环境，只有先将集群激活。
 	
-	环境编码:集群中产生的环境客户端的名称，限制60个字符。
+	环境编码：集群中产生的环境客户端的名称，限制60个字符。
 	     <blockquote class="warning">
        只能由小写字母、数字、"-"组成，且以小写字母开头，不能以"-"结尾
     	</blockquote>
@@ -50,91 +51,17 @@ weight = 2
 	环境名称：平台环境的显示名称。现在为10个字符。
 	
 	环境描述：环境的描述，限制为60字符。  
-	环境分组：环境的分组，只能从已创建的分组中进行选择，从而将此环境放入该分组中。
+	环境分组：环境的分组，只能从已创建的分组中进行选择，从而将此环境放入该分组中。  
+	环境权限分配：为该环境分配特定的操作人员，配置后，只有被勾选的项目成员才能在该环境下进行部署相关的操作。列表中的成员是该项目下所有的项目成员。项目下所有的项目所有者直接默认为该项目下全部环境的管理员，并且可以对环境进行权限分配。
 
     <blockquote class="note">
-        根据用途配置不同的环境，常见的有开发环境，集成测试环境，用户访问测试环境及正式环境。新环境默认新增在环境流水线的最后一个节点。
+        根据用途配置不同的环境，常见的有开发环境，集成测试环境，用户访问测试环境及正式环境。同时，可以为这些环境分别配置特定的操作人员，配置后，只有被勾选的成员才能在对应的环境下进行部署相关的操作。新环境默认新增在环境流水线的最后一个节点。
      </blockquote>
 
--  填写完成后，点击`创建`，界面会自动生成可执行的shell脚本命令，其中各个参数已经由后端服务自动生成。
-	``` 
-	if ! [ -x "$(command -v kubectl)" ]; then
-  	echo 'Error: kubectl is not installed.' >&2
-  	exit 1
-	fi
-	if ! [ -x "$(command -v helm)" ]; then
- 	 echo 'Error: helm is not installed.' >&2
-  	exit 1
-	fi
-	helm install --repo=http://chart.choerodon.com.cn/choerodon/c7ncd/ \
-    --namespace=younger-env \
-    --version=0.8.0-dev.20180710092530 \
-    --set config.connect=ws://devops-service.alpha.saas.hand-china.com/agent/ \
-    --set config.token=3c7e95f3-1de7-40b4-8859-69c697f65574 \
-    --set config.envId=17 \
-    --set rbac.create=true \
-    choerodon-agent
-	```
-	- shell命令介绍：shell命令由2个if判断命令和一个kubectl命令以及helm命令组成
-		
-		- if判断: 判断集群中是否支持kubectl命令以及是否支持helm命令
-		
-		- kubectl: 在集群中创建一个命名空间，命名空间的名字为创建环境时候的编码
-
-		- helm: 在集群中的kubectl创建的命名空间内通过helm install部署一个环境客户端的releas，等同于平台的实例。参数有：
-
-			- repo: chart仓库地址，取值为部署持续交互时的环境变量`env.open.AGENT_REPOURL`
-			- namespace: 所属命名空间，取值为环境编码
-			- name: release name，取值为环境编码
-			- version: chart version，取值为署持续交互时的环境变量`env.open.AGENT_VERSION`
-			- config: 环境变量
-				connect:取值为部署持续交互时的环境变量`env.open.AGENT_SERVICEURL` 
-				token：生成环境时自动生成
-				envId: 环境的唯一性标识
-				rbac.create: 用于控制kubectl权限     
-			- choerodon-agent: chart name
+-  填写完成后，点击`创建`，回到环境流水线界面；若所连接的集群状态为运行中，则该环境的状态为运行中，如果对应集群未连接，那么该环境也是未连接。若想激活环境，只有先将集群激活。
 
 
--  复制脚本命令至集群中运行，与平台建立连接。
-     <blockquote class="note">
-        运行前需要先初始化helm helm init ，helm repo update。
-    </blockquote>
-	     <blockquote class="warning">
-        helm 的版本必须与服务器上helm版本一致。
-    </blockquote>
-
-
-- 执行成功后到环境流水线界面可以看到我们之前创建好的环境状态为连接状态。
-	    
-**3. 升级环境**
-
-- 当运行中的环境的版本低于部署持续交互devops-service环境变量`env.open.AGENT_VERSION`的值时，此时环境会自动置成未连接状态，并提示`版本过低，请升级！`，然后点击激活环境，会自动生成升级环境的shell命令，升级命令和创建命令的参数是一样的，只不过是操作由helm install变为了helm upgrade。
-
-	``` 
-	if ! [ -x "$(command -v kubectl)" ]; then
-  	echo 'Error: kubectl is not installed.' >&2
-  	exit 1
-	fi
-	if ! [ -x "$(command -v helm)" ]; then
- 	 echo 'Error: helm is not installed.' >&2
-  	exit 1
-	fi
-	helm upgrade --repo=http://chart.choerodon.com.cn/choerodon/c7ncd/ \
-    --namespace=younger-env \
-    --version=0.8.0-dev.20180710092530 \
-    --set config.connect=ws://devops-service.alpha.saas.hand-china.com/agent/ \
-    --set config.token=3c7e95f3-1de7-40b4-8859-69c697f65574 \
-    --set config.envId=17 \
-    --set rbac.create=true \
-    younger-env \
-    choerodon-agent
-	```
-- 复制脚本命令至集群中运行，环境重新置为已连接。
-	 <blockquote class="warning">
-       	当环境状态是未连接，提示要升级时，实例，网络，域名只能查看，不能操作！
-    	</blockquote>
-
-**4. 查看环境流水线详情**
+**3. 查看环境流水线详情**
 
  1. 进入`部署流水线`后，点击 `环境流水线` 页签；
 
@@ -142,21 +69,15 @@ weight = 2
 
 ![应用环境](/docs/user-guide/deployment-pipeline/image/environment.png)
  
-- 在环境卡片中，点击`复制指令`→ ![复制指令按钮](/docs/user-guide/deployment-pipeline/image/copy_button.png) ，复制代码至Kubernetes运行，与平台建立链接，以此来激活环境。
+
 - 在环境卡片中，点击`修改环境`→ ![修改环境按钮](/docs/user-guide/deployment-pipeline/image/update_env_button.png) ，修改环境名称、描述以及所在分组。
--  在环境卡片中，点击`禁用环境`→ ![停用按钮](/docs/user-guide/deployment-pipeline/image/stop_button.png) ，当点击确认后，该环境将被禁用。
+- 在环境卡片中，点击`禁用环境`→ ![停用按钮](/docs/user-guide/deployment-pipeline/image/stop_button.png) ，当点击确认后，该环境将被禁用。
+- 在环境卡片中，点击`权限分配`→ ![权限分配按钮](/docs/user-guide/deployment-pipeline/image/authority_button.png)，进入权限分配界面，为此环境分配特定的操作人员。
  <blockquote class="warning">
-    当环境中有运行中的实例，网络，域名时，环境不可禁用！
-    </blockquote>
- 
-## 环境客户端补充说明
+    运行中的环境，若里面存在实例、网络或域名时，环境不可禁用！否则，皆可以直接禁用。
+    </blockquote>  
 
-环境客户端使用了平台的 [Choerodon-Agent](../../../concept/choerodon-agent/) 技术，通过 websocket 方式连接到猪齿鱼平台。双方通过 `command/response` 方式来进行交互，来完成 `helm release` 的管理、网络管理、 k8s 对象监听和容器日志和 shell 等功能。 
-
-## 环境停用区 
-
-可在环境停用区查看已被停用的环境，点击卡片右上角`启用按钮` → ![启用按钮](/docs/user-guide/deployment-pipeline/image/start_button.png) 重新启用，重新启用后默认加至流水线最后一个节点。  
-**5. 创建分组**  
+**4. 创建分组**  
 
 ![创建分组](/docs/user-guide/deployment-pipeline/image/environment.png)  
 
@@ -164,8 +85,23 @@ weight = 2
 	
 	分组名称:限制为20个字符。
 
+**5. 环境权限分配**   
+![环境权限分配](/docs/user-guide/deployment-pipeline/image/authority_management.jpg)  
 
-	
+- 在环境流水线首页选择某个环境，并在该环境卡片上面点击权限分配按钮，进入到权限分配界面。  
+-  在权限分配界面，可以在该项目下所有的项目成员中挑选出特定的环境操作人员，并通过勾选的方式，授予该成员在此环境中相关的操作权限。若取消勾选，那么该成员不再有此环境的操作权限。  
+-  权限配置成功后，该项目成员便可在该环境中进行应用部署、实例管理、网络管理、域名管理以及证书管理的操作。
+
+## 环境客户端补充说明
+
+环境客户端使用了平台的 [Choerodon-Agent](../../../concept/choerodon-agent/) 技术，通过 websocket 方式连接到猪齿鱼平台。双方通过 `command/response` 方式来进行交互，来完成 `helm release` 的管理、网络管理、 k8s 对象监听和容器日志和 shell 等功能。 
+
+## 环境停用区 
+
+- 可在环境停用区查看已被停用的环境，点击卡片右上角`启用按钮` → ![启用按钮](/docs/user-guide/deployment-pipeline/image/start_button.png) 重新启用，重新启用后默认加至流水线最后一个节点。  
+- 可以对停用区的环境进行删除操作。  
+
+
  
 ## 更多操作
 - [环境总览](../environments-overview)
