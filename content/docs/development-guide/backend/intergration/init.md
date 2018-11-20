@@ -24,10 +24,15 @@ $ docker exec -ti mysql mysql -u choerodon -p
 
 3.创建用户和数据库。
 ```sql
-CREATE DATABASE iam_service DEFAULT CHARACTER SET utf8;
-CREATE DATABASE manager_service DEFAULT CHARACTER SET utf8;
-GRANT ALL PRIVILEGES ON iam_service.* TO choerodon@'%';
-GRANT ALL PRIVILEGES ON manager_service.* TO choerodon@'%';
+CREATE USER 'choerodon'@'%' IDENTIFIED BY "123456";
+CREATE DATABASE IF NOT EXISTS iam_service DEFAULT CHARACTER SET utf8;
+CREATE DATABASE IF NOT EXISTS manager_service DEFAULT CHARACTER SET utf8;
+CREATE DATABASE IF NOT EXISTS asgard_service DEFAULT CHARACTER SET utf8;
+CREATE DATABASE IF NOT EXISTS notify_service DEFAULT CHARACTER SET utf8;
+GRANT ALL PRIVILEGES ON iam_service.* TO choerodon@'%';\
+GRANT ALL PRIVILEGES ON manager_service.* TO choerodon@'%';\
+GRANT ALL PRIVILEGES ON asgard_service.* TO choerodon@'%';\
+GRANT ALL PRIVILEGES ON notify_service.* TO choerodon@'%';\
 FLUSH PRIVILEGES;
 ```
 
@@ -47,15 +52,17 @@ mysql> show databases;
 +-----------------------------+
 | Database                    |
 +-----------------------------+
+| asgard_service              |
 | information_schema          |
 | iam_service                 |
 | manager_service             |
+| notify_service              |
 | todo_service                |
 | mysql                       |
 | performance_schema          |
 | sys                         |
 +-----------------------------+
-7 rows in set (0.01 sec)
+9 rows in set (0.01 sec)
 
 ```
 
