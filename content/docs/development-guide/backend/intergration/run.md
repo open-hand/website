@@ -10,11 +10,11 @@ weight = 3
 * 开发环境配置：[开发环境安装](../../develop-env/)
 * 数据环境准备：[数据初始化](../init/)
 * Demo程序已经开发完毕，详见 [开发Demo程序](../../demo/)
-* 启动 `mysql`，`redis`，`kafka`等容器
+* 启动 `mysql`，`redis`等容器
 
 ## 介绍
 
-本小节介绍如何在本地通过choerodon 来进行微服务开发。
+本小节介绍如何在本地通过 `Choerodon` 来进行微服务开发。
 
 ## 启动`todo` 服务
 
@@ -89,7 +89,7 @@ permissionPublic | 公开接口，默认为false
 * gateway-helper
 * oauth-server
 
-**3.** 然后通过`api-gateway` 的输出日志，获取登录用户的`jwt_token`。然后添加请求头。
+**3.** 然后通过`api-gateway` 的输出日志，获取登录用户的 `jwt_token`。然后添加请求头。
 
 ``` json
 {
@@ -99,7 +99,7 @@ permissionPublic | 公开接口，默认为false
 
 ## 启动相关服务
 
-如果需要启动其他模块，可以再[github](https://github.com/choerodon/)上获取到对应服务的最新代码，克隆到本地，将`./src/main/resources/application.yml` 复制一份出来，修改里面的默认值。根据本地环境信息，修改数据库和kafka连接。
+如果需要启动其他模块，可以在[github](https://github.com/choerodon/)上获取到对应服务的最新代码，克隆到本地，将`./src/main/resources/application.yml` 复制一份出来，修改里面的默认值。根据本地环境信息，修改数据库和kafka连接。
 
 ``` bash
 $ cp ./src/main/resources/application.yml ./src/main/resources/application-default.yml
@@ -111,52 +111,6 @@ $ mvn clean spring-boot:run
 ``` yaml
 version: "3"
 services:
-  zookeeper-0:
-    container_name: zookeeper-0
-    image: registry.saas.hand-china.com/tools/zookeeper:3.4.10
-    hostname: zookeeper-0
-    environment:
-    - ZK_REPLICAS=1
-    - ZK_HEAP_SIZE=2G
-    - ZK_TICK_TIME=2000
-    - ZK_INIT_LIMIT=10
-    - ZK_SYNC_LIMIT=5
-    - ZK_MAX_CLIENT_CNXNS=60
-    - ZK_SNAP_RETAIN_COUNT=3
-    - ZK_PURGE_INTERVAL=1
-    - ZK_LOG_LEVEL=INFO
-    - ZK_CLIENT_PORT=2181
-    - ZK_SERVER_PORT=2888
-    - ZK_ELECTION_PORT=3888
-    ports:
-    - "2181:2181"
-    - "2888:2888"
-    - "3888:3888"
-    command:
-    - sh
-    - -c
-    - zkGenConfig.sh && exec zkServer.sh start-foreground
-    volumes:
-    - "./kafka/zk:/var/lib/zookeeper"
-  kafka-0:
-    container_name: kafka-0
-    image: registry.cn-hangzhou.aliyuncs.com/choerodon-tools/kafka:1.0.0
-    hostname: kafka-0
-    depends_on:
-    - zookeeper-0
-    links:
-    - zookeeper-0
-    ports:
-    - "9092:9092"
-    command:
-    - sh
-    - -c
-    - "/opt/kafka/bin/kafka-server-start.sh config/server.properties \
-           --override zookeeper.connect=zookeeper-0:2181 \
-           --override log.dirs=/opt/kafka/data/logs \
-           --override broker.id=0 "
-    volumes:
-    - "./kafka/kafka:/opt/kafka/data"
   mysql:
     container_name: mysql
     image: registry.cn-hangzhou.aliyuncs.com/choerodon-tools/mysql:5.7.17
@@ -176,10 +130,7 @@ services:
     image: registry.cn-shanghai.aliyuncs.com/choerodon/eureka-server:0.6.0
     ports:
     - "8000:8000"
-    links:
-    - kafka-0
     environment:
-    - spring.kafka.bootstrap-servers=kafka-0:9092
     - eureka.client.serviceUrl.defaultZone=http://127.0.0.1:8000/eureka/
     - eureka.client.register-with-eureka=false
     - eureka.client.fetch-registry=false
@@ -191,7 +142,7 @@ services:
     - "8000"
   api-gateway:
     container_name: api-gateway
-    image: registry.cn-shanghai.aliyuncs.com/choerodon/api-gateway:0.6.0
+    image: registry.cn-shanghai.aliyuncs.com/choerodon/api-gateway:0.11.0
     links: 
     - eureka-server
     depends_on:
@@ -211,7 +162,7 @@ services:
     - "8080"
   gateway-helper:
     container_name: gateway-helper
-    image: registry.cn-shanghai.aliyuncs.com/choerodon/gateway-helper:0.6.0
+    image: registry.cn-shanghai.aliyuncs.com/choerodon/gateway-helper:0.11.0
     depends_on:
     - eureka-server
     - mysql
@@ -231,20 +182,17 @@ services:
     - logging.level=WARN
   iam-service:
     container_name: iam-service
-    image: registry.cn-shanghai.aliyuncs.com/choerodon/iam-service:0.6.0
+    image: registry.cn-shanghai.aliyuncs.com/choerodon/iam-service:0.11.0
     depends_on:
     - eureka-server
     - mysql
-    - kafka-0
     links: 
     - eureka-server
     - mysql
-    - kafka-0
     ports:
     - "8030:8030"
     environment:
     - eureka.client.serviceUrl.defaultZone=http://eureka-server:8000/eureka/
-    - spring.kafka.bootstrap-servers=kafka-0:9092
     - spring.datasource.url=jdbc:mysql://mysql/iam_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
     - spring.datasource.username=root
     - spring.datasource.password=root
@@ -254,7 +202,7 @@ services:
     - logging.level=WARN
   manager-service:
     container_name: manager-service
-    image: registry.cn-shanghai.aliyuncs.com/choerodon/manager-service:0.6.0
+    image: registry.cn-shanghai.aliyuncs.com/choerodon/manager-service:0.11.0
     depends_on:
     - eureka-server
     - mysql
@@ -277,7 +225,7 @@ services:
     - logging.level=WARN
   oauth-server:
     container_name: oauth-server
-    image: registry.cn-shanghai.aliyuncs.com/choerodon/oauth-server:0.6.0
+    image: registry.cn-shanghai.aliyuncs.com/choerodon/oauth-server:0.11.0
     depends_on:
     - eureka-server
     - mysql
@@ -297,7 +245,7 @@ services:
     - logging.level=WARN
   manager-service:
     container_name: manager-service
-    image: registry.cn-shanghai.aliyuncs.com/choerodon/manager-service:0.6.0
+    image: registry.cn-shanghai.aliyuncs.com/choerodon/manager-service:0.11.0
     depends_on:
     - eureka-server
     - mysql
