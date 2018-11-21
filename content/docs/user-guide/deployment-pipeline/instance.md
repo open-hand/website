@@ -82,14 +82,14 @@ Ingress|name, hosts, address, ports, age|name是指Ingress的名称，hosts是�
 点击页面右侧 ![详情按钮](/docs/user-guide/development-pipeline/image/detail_button.png) 按钮，再点击`升级实例`，当运行中的实例的应用版本不是最新时，可以升级实例，升级实例是简化了 **应用版本**的替换实例操作，点击升级即可实现滚动更新，只有项目所有者和被分配权限的项目成员能进行此操作。
 
 ## 重新部署
-点击页面右侧 ![详情按钮](/docs/user-guide/development-pipeline/image/detail_button.png) 按钮 ，再点击`重新部署`，便能按照当前的配置参数重新部署该实例，适用于因为网络等原因部署失败的情况。只有部署管理员有权限。只有项目所有者和被分配权限的项目成员能进行此操作。
+点击页面右侧 ![详情按钮](/docs/user-guide/development-pipeline/image/detail_button.png) 按钮 ，再点击`重新部署`，便能按照当前的配置参数重新部署该实例，适用于因为网络等原因部署失败的情况。只有项目所有者和被分配权限的项目成员能进行此操作。
 
 ## 停止实例
 点击页面右侧 ![详情按钮](/docs/user-guide/development-pipeline/image/detail_button.png) 按钮 ，再点击`停止实例`，该实例即为停止状态，且容器状态停止。容器状态为“0”时，实例存在，实质是实例的Pod被删掉。只有项目所有者和被分配权限的项目成员能进行此操作。
 
 
 ## 重启实例
-点击页面右侧 ![详情按钮](/docs/user-guide/development-pipeline/image/detail_button.png) 按钮 ，再点击`重启实例`，当实例状态为已停止时候，可以点击重启实例，使实例重新启动，实质是实例的Pod重新创建。只有部署管理员有权限。只有项目所有者和被分配权限的项目成员能进行此操作。
+点击页面右侧 ![详情按钮](/docs/user-guide/development-pipeline/image/detail_button.png) 按钮 ，再点击`重启实例`，当实例状态为已停止时候，可以点击重启实例，使实例重新启动，实质是实例的Pod重新创建。只有项目所有者和被分配权限的项目成员能进行此操作。
 
 ## 删除实例
 点击页面右侧 ![详情按钮](/docs/user-guide/development-pipeline/image/detail_button.png) 按钮，再点击`删除实例`，该实例被删除，状态置为已删除。只有项目所有者和被分配权限的项目成员能进行此操作。
