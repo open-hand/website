@@ -106,15 +106,16 @@ $ cp ./src/main/resources/application.yml ./src/main/resources/application-defau
 $ mvn clean spring-boot:run
 ```
 
-这里提供一份`docker-compose.yaml`仅供参考，具体根据配置修改本地程序的配置。
+这里提供一份`docker-compose.yaml`仅供参考，具体根据配置修改本地程序的配置。服务启动之前，请确保
+`iam-service` 和 `manager-service` 的数据库已初始化完成
 
 ``` yaml
 version: "3"
 services:
   mysql:
     container_name: mysql
-    image: registry.cn-hangzhou.aliyuncs.com/choerodon-tools/mysql:5.7.17
     hostname: mysql
+    image: registry.cn-hangzhou.aliyuncs.com/choerodon-tools/mysql:5.7.17
     ports:
     - "3306:3306"
     environment:
@@ -124,24 +125,31 @@ services:
     - ./mysql/mysql_db.cnf:/etc/mysql/conf.d/mysql_db.cnf
     expose:
     - "3306"
+  redis:
+    container_name: redis
+    hostname: redis
+    image: redis:4.0.11
+    ports:
+    - "6379:6379"
+    expose:
+    - "6379"
   eureka-server:
     container_name: eureka-server
     hostname: eureka-server
-    image: registry.cn-shanghai.aliyuncs.com/choerodon/eureka-server:0.6.0
+    image: registry.choerodon.com.cn/choerodon-framework/eureka-server:0.9.0
     ports:
     - "8000:8000"
     environment:
-    - eureka.client.serviceUrl.defaultZone=http://127.0.0.1:8000/eureka/
+    - eureka.client.serviceUrl.defaultZone=http://eureka-server:8000/eureka/
     - eureka.client.register-with-eureka=false
     - eureka.client.fetch-registry=false
-    - hystrix.stream.queue.enabled=false
-    - spring.cloud.bus.enabled=false
-    - spring.sleuth.stream.enabled=false
     - logging.level=WARN
+    - JAVA_OPTS=-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -Xms256M -Xmx512M
     expose:
     - "8000"
   api-gateway:
     container_name: api-gateway
+    hostname: api-gateway
     image: registry.cn-shanghai.aliyuncs.com/choerodon/api-gateway:0.11.0
     links: 
     - eureka-server
@@ -150,14 +158,16 @@ services:
     ports:
     - "8080:8080"
     environment:
-    - zuul.addHostHeader=true
-    - zuul.routes.dev.path=/todo/**
-    - zuul.routes.dev.serviceId=choerodon-todo-service
-    - eureka.client.serviceUrl.defaultZone=http://eureka-server:8000/eureka/
+    - spring.cloud.config.enabled=false
     - hystrix.stream.queue.enabled=false
     - spring.cloud.bus.enabled=false
     - spring.sleuth.stream.enabled=false
     - logging.level=WARN
+    - eureka.client.serviceUrl.defaultZone=http://eureka-server:8000/eureka/
+    - zuul.addHostHeader=true
+    - zuul.routes.dev.path=/todo/**
+    - zuul.routes.dev.serviceId=choerodon-todo-service
+    - JAVA_OPTS=-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -Xms512M -Xmx768M
     expose:
     - "8080"
   gateway-helper:
@@ -166,20 +176,30 @@ services:
     depends_on:
     - eureka-server
     - mysql
+    - redis
     links: 
     - eureka-server
     - mysql
+    - redis
     ports:
     - "9180:9180"
     environment:
-    - eureka.client.serviceUrl.defaultZone=http://eureka-server:8000/eureka/
-    - spring.datasource.url=jdbc:mysql://mysql/iam_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
-    - spring.datasource.username=root
-    - spring.datasource.password=root
+    - spring.cloud.config.enabled=false
     - hystrix.stream.queue.enabled=false
     - spring.cloud.bus.enabled=false
     - spring.sleuth.stream.enabled=false
     - logging.level=WARN
+    - eureka.client.serviceUrl.defaultZone=http://eureka-server:8000/eureka/
+    - spring.datasource.url=jdbc:mysql://mysql:3306/iam_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    - spring.datasource.username=choerodon
+    - spring.datasource.password=123456
+    - spring.cache.multi.l1.enabled=true
+    - spring.cache.multi.l2.enabled=false
+    - spring.redis.host=redis
+    - spring.redis.port=6379
+    - spring.redis.database=4
+    - choerodon.helper.permission.check.multiply.match=false
+    - JAVA_OPTS=-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -Xms512M -Xmx768M
   iam-service:
     container_name: iam-service
     image: registry.cn-shanghai.aliyuncs.com/choerodon/iam-service:0.11.0
@@ -192,79 +212,73 @@ services:
     ports:
     - "8030:8030"
     environment:
-    - eureka.client.serviceUrl.defaultZone=http://eureka-server:8000/eureka/
-    - spring.datasource.url=jdbc:mysql://mysql/iam_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
-    - spring.datasource.username=root
-    - spring.datasource.password=root
+    - spring.cloud.config.enabled=false
     - hystrix.stream.queue.enabled=false
     - spring.cloud.bus.enabled=false
     - spring.sleuth.stream.enabled=false
     - logging.level=WARN
+    - eureka.client.serviceUrl.defaultZone=http://eureka-server:8000/eureka/
+    - spring.datasource.url=jdbc:mysql://mysql:3306/iam_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    - spring.datasource.username=choerodon
+    - spring.datasource.password=123456
+    - choerodon.saga.consumer.enabled=false
+    - choerodon.schedule.consumer.enabled=false
+    - JAVA_OPTS=-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -Xms512M -Xmx768M
   manager-service:
     container_name: manager-service
     image: registry.cn-shanghai.aliyuncs.com/choerodon/manager-service:0.11.0
     depends_on:
     - eureka-server
     - mysql
-    - kafka-0
     links: 
     - eureka-server
     - mysql
-    - kafka-0
     ports:
     - "8963:8963"
     environment:
-    - spring.kafka.bootstrap-servers=kafka-0:9092
-    - eureka.client.serviceUrl.defaultZone=http://eureka-server:8000/eureka/
-    - spring.datasource.url=jdbc:mysql://mysql/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
-    - spring.datasource.username=root
-    - spring.datasource.password=root
+    - spring.cloud.config.enabled=false
     - hystrix.stream.queue.enabled=false
     - spring.cloud.bus.enabled=false
     - spring.sleuth.stream.enabled=false
     - logging.level=WARN
+    - eureka.client.serviceUrl.defaultZone=http://eureka-server:8000/eureka/
+    - spring.datasource.url=jdbc:mysql://mysql:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    - spring.datasource.username=choerodon
+    - spring.datasource.password=123456
+    - choerodon.swagger.client=client
+    - choerodon.swagger.oauth.url=http://api-gateway:8080/oauth/oauth/authorize
+    - choerodon.gateway.domain=api-gateway:8080
+    - JAVA_OPTS=-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -Xms512M -Xmx768M
   oauth-server:
     container_name: oauth-server
     image: registry.cn-shanghai.aliyuncs.com/choerodon/oauth-server:0.11.0
     depends_on:
     - eureka-server
     - mysql
+    - redis
     links: 
     - eureka-server
     - mysql
+    - redis
     ports:
     - "8020:8020"
     environment:
-    - eureka.client.serviceUrl.defaultZone=http://eureka-server:8000/eureka/
-    - spring.datasource.username=root
-    - spring.datasource.url=jdbc:mysql://mysql/iam_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
-    - spring.datasource.password=root
+    - spring.cloud.config.enabled=false
     - hystrix.stream.queue.enabled=false
     - spring.cloud.bus.enabled=false
     - spring.sleuth.stream.enabled=false
     - logging.level=WARN
-  manager-service:
-    container_name: manager-service
-    image: registry.cn-shanghai.aliyuncs.com/choerodon/manager-service:0.11.0
-    depends_on:
-    - eureka-server
-    - mysql
-    links: 
-    - eureka-server
-    - mysql
-    environment:
     - eureka.client.serviceUrl.defaultZone=http://eureka-server:8000/eureka/
-    - spring.datasource.username=root
-    - spring.datasource.url=jdbc:mysql://mysql/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
-    - spring.datasource.password=root
-    - hystrix.stream.queue.enabled=false
-    - spring.cloud.bus.enabled=false
-    - spring.sleuth.stream.enabled=false
-    - choerodon.swagger.oauth.url=http://oauth-server8020/oauth/oauth/authorize
-    - choerodon.gateway.domain=http://api-gateway:8080
-    - logging.level=WARN
-    ports:
-    - "8963:8963"
+    - spring.datasource.url=jdbc:mysql://mysql:3306/iam_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    - spring.datasource.username=choerodon
+    - spring.datasource.password=123456
+    - spring.redis.host=redis
+    - spring.redis.port=6379
+    - spring.redis.database=2
+    - choerodon.default.redirect.url=http://localhost:9000
+    - choerodon.oauth.login.path=/login
+    - choerodon.oauth.login.ssl=false
+    - JAVA_OPTS=-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -Xms512M -Xmx768M
 ```
 
 > 有关Docker的更多信息请见[此处](https://docs.docker.com/)
