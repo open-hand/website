@@ -88,6 +88,20 @@ character_set_server=utf8
 max_connections=500
 ```
 
+``` sql
+/** init_user.sql */
+CREATE USER 'choerodon'@'%' IDENTIFIED BY "123456";
+CREATE DATABASE IF NOT EXISTS iam_service DEFAULT CHARACTER SET utf8;
+CREATE DATABASE IF NOT EXISTS manager_service DEFAULT CHARACTER SET utf8;
+CREATE DATABASE IF NOT EXISTS asgard_service DEFAULT CHARACTER SET utf8;
+CREATE DATABASE IF NOT EXISTS notify_service DEFAULT CHARACTER SET utf8;
+GRANT ALL PRIVILEGES ON iam_service.* TO choerodon@'%';\
+GRANT ALL PRIVILEGES ON manager_service.* TO choerodon@'%';\
+GRANT ALL PRIVILEGES ON asgard_service.* TO choerodon@'%';\
+GRANT ALL PRIVILEGES ON notify_service.* TO choerodon@'%';\
+FLUSH PRIVILEGES;
+```
+
 ``` yaml
 # docker-compose.yaml
 version: "3"
@@ -103,12 +117,24 @@ services:
     volumes:
     - ./mysql/mysql_data:/var/lib/mysql
     - ./mysql/mysql_db.cnf:/etc/mysql/conf.d/mysql_db.cnf
+    - ./mysql/init_user.sql:/docker-entrypoint-initdb.d/init_user.sql
+    expose:
+    - "3306"
+    networks:
+    - "c7nNetwork"
   redis:
     container_name: redis
     hostname: redis
     image: redis:4.0.11
     ports:
     - "6379:6379"
+    expose:
+    - "6379"
+    networks:
+    - "c7nNetwork"
+networks:
+  c7nNetwork:
+    driver: bridge
 ```
 
 停止容器通过命令`docker-compose down`。
