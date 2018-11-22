@@ -185,10 +185,12 @@ services:
     - eureka-server
     - redis
     - mysql
+    - redis
     links: 
     - eureka-server
     - redis
     - mysql
+    - redis
     ports:
     - "9180:9180"
     environment:
@@ -270,10 +272,12 @@ services:
     - eureka-server
     - redis
     - mysql
+    - redis
     links: 
     - eureka-server
     - redis
     - mysql
+    - redis
     ports:
     - "8020:8020"
     environment:
