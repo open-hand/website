@@ -147,9 +147,9 @@ public interface TaskMapper extends BaseMapper<TaskDO> {
 <mapper namespace="io.choerodon.todo.infra.mapper.TaskMapper">
 
     <select id="queryByTaskNumber" resultType="io.choerodon.todo.infra.dataobject.TaskDO">
-        SELECT * FROM todo_task 
+        SELECT * FROM TODO_TASK 
         WHERE
-        task_number=#{taskNumber} limit 1
+        TASH_NUMBER=#{taskNumber} limit 1
     </select>
 </mapper>
 ```

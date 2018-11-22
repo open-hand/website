@@ -7,7 +7,7 @@ weight = 2
 
 ## 介绍
 
-项目是基于spring boot的maven项目。
+项目是基于 `Spring boot` 的 `maven` 项目。
 
 1. 新建maven项目
 2. 添加项目依赖
@@ -41,13 +41,13 @@ $ touch pom.xml
     <parent>
         <groupId>io.choerodon</groupId>
         <artifactId>choerodon-framework-parent</artifactId>
-        <version>0.6.0.RELEASE</version>
+        <version>0.8.0.RELEASE</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <!--choerodon-starters dependency-->
     <properties>
-        <choerodon.starters.version>0.5.2.RELEASE</choerodon.starters.version>
+        <choerodon.starters.version>0.7.0.RELEASE</choerodon.starters.version>
     </properties>
     <dependencies>
         <!--spring boot-->
@@ -104,8 +104,8 @@ $ touch pom.xml
 
 根据子级模块所需jar包添加需要的依赖。
 
-* (必须)choerodon-starter-core，核心工具包。提供了一些基础类用于开发过程中使用。以及主要帮助获取自定义的userDetail和一些通用的方法。
-* (必须)choerodon-starter-oauth-resource，oauth资源服务工具包，主要提供了服务controller的异常统一捕获，并转换成用户语言对应的描述信息，以及配置了服务在接受请求时对jwt token的验证规则。
+* (必须)choerodon-starter-core，核心工具包。提供了一些基础类用于开发过程中使用。以及主要帮助获取自定义的 `userDetail` 和一些通用的方法。
+* (必须)choerodon-starter-oauth-resource，oauth资源服务工具包，主要提供了服务`controller` 的异常统一捕获，并转换成用户语言对应的描述信息，以及配置了服务在接受请求时对jwt token的验证规则。
 * choerodon-starter-mybatis-mapper，通用mapper和分页插件集成，扩展多语言、审计字段等功能。
 
 更多`choerodon-starter`的依赖可以参考[choerodon-starters](https://github.com/choerodon/choerodon-starters)。
@@ -129,7 +129,8 @@ $ touch bootstrap.yml
 ```
 
 - `bootstrap.yml`: 存放不会通过环境变量替换和必须在bootstrap中指定的变量。包括项目端口，应用名，`config-server`地址等。
-- `application.yml`: 存放项目的基础配置，包含数据库连接配置，`kafka`配置，注册中心地址等，这些变量可以通过`profile`或者环境变量修改。
+- `application.yml`: 存放项目的基础配置，包含默认的线上数据库连接配置，`kafka`配置，注册中心地址等，这些变量可以通过`profile`或者环境变量修改。
+- `application-default.yml`: 本地开发配置文件，需要将该文件添加到`.gitignore`。包含本地一些差异化的配置，如数据库连接配置，注册中心地址等。
 
 ``` yml
 # bootstrap.yml
@@ -253,4 +254,4 @@ status: "UP",
 
 在浏览器输入：```http://localhost:18080/hello```，页面打印 `hello world`。
 
-这样，一个简单的`spring boot` 应用就已经搭建成功。
+这样，一个简单的`Spring boot` 应用就已经搭建成功。

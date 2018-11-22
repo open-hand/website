@@ -16,8 +16,7 @@ weight = 1
 - Docker for Windows
 - IDE
 - Mysql
-- Kafka
-- Phpmyadmin (可选)
+- Redis
 
 ## Git 安装
 
@@ -72,7 +71,7 @@ git config --global user.email "Your Email"
 
 ## 其他软件安装
 
-除了基本的软件之外，其他基础软件可以通过官网下载安装包，也可以通过docker启动镜像。choerodon建议通过docker 启动。
+除了基本的软件之外，其他基础软件可以通过官网下载安装包，也可以通过docker 启动镜像。Choerodon 建议通过docker 启动。
 
 1. 在本地创建docker-compose的运行路径
 2. 编写docker-compose.yaml 文件
@@ -89,56 +88,24 @@ character_set_server=utf8
 max_connections=500
 ```
 
+``` sql
+/** init_user.sql */
+CREATE USER 'choerodon'@'%' IDENTIFIED BY "123456";
+CREATE DATABASE IF NOT EXISTS iam_service DEFAULT CHARACTER SET utf8;
+CREATE DATABASE IF NOT EXISTS manager_service DEFAULT CHARACTER SET utf8;
+CREATE DATABASE IF NOT EXISTS asgard_service DEFAULT CHARACTER SET utf8;
+CREATE DATABASE IF NOT EXISTS notify_service DEFAULT CHARACTER SET utf8;
+GRANT ALL PRIVILEGES ON iam_service.* TO choerodon@'%';\
+GRANT ALL PRIVILEGES ON manager_service.* TO choerodon@'%';\
+GRANT ALL PRIVILEGES ON asgard_service.* TO choerodon@'%';\
+GRANT ALL PRIVILEGES ON notify_service.* TO choerodon@'%';\
+FLUSH PRIVILEGES;
+```
+
 ``` yaml
 # docker-compose.yaml
 version: "3"
 services:
-  zookeeper-0:
-    container_name: zookeeper-0
-    image: registry.cn-hangzhou.aliyuncs.com/choerodon-tools/zookeeper:3.4.10
-    hostname: zookeeper-0
-    environment:
-    - ZK_REPLICAS=1
-    - ZK_HEAP_SIZE=2G
-    - ZK_TICK_TIME=2000
-    - ZK_INIT_LIMIT=10
-    - ZK_SYNC_LIMIT=5
-    - ZK_MAX_CLIENT_CNXNS=60
-    - ZK_SNAP_RETAIN_COUNT=3
-    - ZK_PURGE_INTERVAL=1
-    - ZK_LOG_LEVEL=INFO
-    - ZK_CLIENT_PORT=2181
-    - ZK_SERVER_PORT=2888
-    - ZK_ELECTION_PORT=3888
-    ports:
-    - "2181:2181"
-    - "2888:2888"
-    - "3888:3888"
-    command:
-    - sh
-    - -c
-    - zkGenConfig.sh && exec zkServer.sh start-foreground
-    volumes:
-    - "./kafka/zk:/var/lib/zookeeper"
-  kafka-0:
-    container_name: kafka-0
-    image: registry.cn-hangzhou.aliyuncs.com/choerodon-tools/kafka:1.0.0
-    hostname: 127.0.0.1
-    depends_on:
-    - zookeeper-0
-    links:
-    - zookeeper-0
-    ports:
-      - "9092:9092"
-    command:
-    - sh
-    - -c
-    - "/opt/kafka/bin/kafka-server-start.sh config/server.properties \
-           --override zookeeper.connect=zookeeper-0:2181 \
-           --override log.dirs=/opt/kafka/data/logs \
-           --override broker.id=0 "
-    volumes:
-    - "./kafka/kafka:/opt/kafka/data"
   mysql:
     container_name: mysql
     hostname: mysql
@@ -150,6 +117,24 @@ services:
     volumes:
     - ./mysql/mysql_data:/var/lib/mysql
     - ./mysql/mysql_db.cnf:/etc/mysql/conf.d/mysql_db.cnf
+    - ./mysql/init_user.sql:/docker-entrypoint-initdb.d/init_user.sql
+    expose:
+    - "3306"
+    networks:
+    - "c7nNetwork"
+  redis:
+    container_name: redis
+    hostname: redis
+    image: redis:4.0.11
+    ports:
+    - "6379:6379"
+    expose:
+    - "6379"
+    networks:
+    - "c7nNetwork"
+networks:
+  c7nNetwork:
+    driver: bridge
 ```
 
 停止容器通过命令`docker-compose down`。

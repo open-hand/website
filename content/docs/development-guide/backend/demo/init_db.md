@@ -55,16 +55,16 @@ $ touch todo_user.groovy todo_task.groovy
 package script.db
 
 databaseChangeLog(logicalFilePath: 'todo_user.groovy') {
-    changeSet(id: '2017-05-29-todo_user', author: 'your.email@email.com') {
-        createTable(tableName: "todo_user") {
-            column(name: 'id', type: 'BIGINT UNSIGNED', remarks: 'ID', autoIncrement: true) {
+    changeSet(id: '2018-11-20-todo_user', author: 'your.email@email.com') {
+        createTable(tableName: "TODO_USER") {
+            column(name: 'ID', type: 'BIGINT UNSIGNED', remarks: 'ID', autoIncrement: true) {
                 constraints(primaryKey: true)
             }
-            column(name: 'employee_name', type: 'VARCHAR(32)', remarks: '员工名')
-            column(name: 'employee_number', type: 'VARCHAR(32)', remarks: '员工号') {
+            column(name: 'EMPLOYEE_NAME', type: 'VARCHAR(32)', remarks: '员工名')
+            column(name: 'EMPLOYEE_NUMBER', type: 'VARCHAR(32)', remarks: '员工号') {
                 constraints(unique: true)
             }
-            column(name: 'email', type: 'VARCHAR(32)', remarks: '邮箱')
+            column(name: 'EMAIL', type: 'VARCHAR(32)', remarks: '邮箱')
 
             column(name: "OBJECT_VERSION_NUMBER", type: "BIGINT", defaultValue: "1")
             column(name: "CREATED_BY", type: "BIGINT", defaultValue: "-1")
@@ -81,17 +81,17 @@ databaseChangeLog(logicalFilePath: 'todo_user.groovy') {
 package script.db
 
 databaseChangeLog(logicalFilePath: 'todo_task.groovy') {
-    changeSet(id: '2017-05-29-todo_task', author: 'your.email@email.com') {
-        createTable(tableName: "todo_task") {
-            column(name: 'id', type: 'BIGINT UNSIGNED', remarks: 'ID', autoIncrement: true) {
+    changeSet(id: '2018-11-20-todo_task', author: 'your.email@email.com') {
+        createTable(tableName: "TODO_TASK") {
+            column(name: 'ID', type: 'BIGINT UNSIGNED', remarks: 'ID', autoIncrement: true) {
                 constraints(primaryKey: true)
             }
-            column(name: 'employee_id', type: 'BIGINT', remarks: '员工ID')
-            column(name: 'state', type: 'VARCHAR(36)', remarks: '状态')
-            column(name: 'task_number', type: 'VARCHAR(64)', remarks: '任务编号') {
+            column(name: 'EMPLOYEE_ID', type: 'BIGINT', remarks: '员工ID')
+            column(name: 'STATE', type: 'VARCHAR(36)', remarks: '状态')
+            column(name: 'TASK_NUMBER', type: 'VARCHAR(64)', remarks: '任务编号') {
                 constraints(unique: true)
             }
-            column(name: 'task_description', type: 'VARCHAR(256)', remarks: '任务描述')
+            column(name: 'TASH_DESCRIPTION', type: 'VARCHAR(256)', remarks: '任务描述')
 
             column(name: "OBJECT_VERSION_NUMBER", type: "BIGINT", defaultValue : "1")
             column(name: "CREATED_BY", type: "BIGINT", defaultValue : "-1")
@@ -115,10 +115,11 @@ $ touch init-local-database.sh
 
 ```bash
 #!/bin/bash
+version="0.7.0.RELEASE"
 mkdir -p bin
 if [ ! -f bin/choerodon-tool-liquibase.jar ]
 then
-    curl https://oss.sonatype.org/content/groups/public/io/choerodon/choerodon-tool-liquibase/0.6.3.RELEASE/choerodon-tool-liquibase-0.6.3.RELEASE.jar -o ./bin/choerodon-tool-liquibase.jar
+    curl https://oss.sonatype.org/content/groups/public/io/choerodon/choerodon-tool-liquibase/${version}/choerodon-tool-liquibase-${version}.jar -o ./bin/choerodon-tool-liquibase.jar
 fi
 java -Dspring.datasource.url="jdbc:mysql://localhost:3306/todo_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
  -Dspring.datasource.username=choerodon \
@@ -137,14 +138,14 @@ $ sh ./init-local-database.sh
 ```bash
 数据库初始化任务完成
 ```
-脚本执行程序会自动扫描resources中的groovy数据库初始化文件以及excel初始化数据。
+脚本执行程序会自动扫描`resources` 中的`groovy` 数据库初始化文件以及`excel` 初始化数据。
 
 执行 `init-local-database.sh` 脚本，若出现错误：
 ```bash
 Error: Invalid or corrupt jarfile target/choerodon-tool-liquibase.jar
 ```
 
-则自行下载 [choerodon-tool-liquibase.jar](https://oss.sonatype.org/content/groups/public/io/choerodon/choerodon-tool-liquibase) 并重命名覆盖./bin/choerodon-tool-liquibase.jar 并重新执行`init-local-database.sh` 脚本
+则自行下载最新版本的 [choerodon-tool-liquibase.jar](https://oss.sonatype.org/content/groups/public/io/choerodon/choerodon-tool-liquibase) 并重命名覆盖./bin/choerodon-tool-liquibase.jar 并重新执行`init-local-database.sh` 脚本
 
 ## 验证表结构
 
