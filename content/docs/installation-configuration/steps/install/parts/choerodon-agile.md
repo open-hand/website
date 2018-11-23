@@ -28,7 +28,9 @@ helm install c7n/mysql-client \
     --set env.SQL_SCRIPT="\
           CREATE USER IF NOT EXISTS 'choerodon'@'%' IDENTIFIED BY 'password';\
           CREATE DATABASE IF NOT EXISTS agile_service DEFAULT CHARACTER SET utf8;\
-          GRANT ALL PRIVILEGES ON agile_service.* TO choerodon@'%';\
+          CREATE DATABASE IF NOT EXISTS state_machine_service DEFAULT CHARACTER SET utf8;\
+          GRANT ALL PRIVILEGES ON agile_service.* TO choerodon@'%'; \
+          GRANT ALL PRIVILEGES ON state_machine_service.* TO choerodon@'%';\
           FLUSH PRIVILEGES;" \
     --version 0.1.0 \
     --name create-c7nagile-db \
@@ -41,7 +43,7 @@ helm install c7n/mysql-client \
 
     ``` 
     helm install c7n/agile-service \
-        --set env.open.JAVA_OPTS="-Xms256m -Xmx512m" \
+        --set env.open.JAVA_OPTS="-Xms1024M -Xmx1024M" \
         --set preJob.preConfig.mysql.host=c7n-mysql.c7n-system.svc \
         --set preJob.preConfig.mysql.port=3306 \
         --set preJob.preConfig.mysql.database=manager_service \
@@ -66,7 +68,7 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_REDIS_HOST=c7n-redis.c7n-system.svc \
         --set env.open.SPRING_REDIS_DATABASE=4 \
         --name agile-service \
-        --version 0.10.1 \
+        --version 0.11.0 \
         --namespace c7n-system
     ```
     参数名 | 含义 
@@ -94,3 +96,118 @@ helm install c7n/mysql-client \
         ```
         UP
         ```
+
+## 部署state machine service
+
+- 部署服务
+
+    ``` 
+    helm install c7n/state-machine-service \
+        --set env.open.JAVA_OPTS="-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap" \
+        --set preJob.preConfig.configFile="application.yml" \
+        --set preJob.preConfig.mysql.host=c7n-mysql.c7n-system.svc \
+        --set preJob.preConfig.mysql.port=3306 \
+        --set preJob.preConfig.mysql.database=manager_service \
+        --set preJob.preConfig.mysql.username=choerodon \
+        --set preJob.preConfig.mysql.password=password \
+        --set preJob.preInitDB.mysql.host=c7n-mysql.c7n-system.svc \
+        --set preJob.preInitDB.mysql.port=3306 \
+        --set preJob.preInitDB.mysql.database=state_machine_service \
+        --set preJob.preInitDB.mysql.username=choerodon \
+        --set preJob.preInitDB.mysql.password=password \
+        --set deployment.managementPort=8385 \
+        --set env.open.SPRING_DATASOURCE_URL="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/state_machine_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
+        --set env.open.SPRING_DATASOURCE_USERNAME=choerodon \
+        --set env.open.SPRING_DATASOURCE_PASSWORD=password \
+        --set env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE="http://register-server.c7n-system:8000/eureka/" \
+        --set env.open.SPRING_KAFKA_BOOTSTRAP_SERVERS="kafka-0.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-1.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-2.kafka-headless.c7n-system.svc.cluster.local:9092" \
+        --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS="kafka-0.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-1.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-2.kafka-headless.c7n-system.svc.cluster.local:9092" \
+        --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES="zookeeper-0.zookeeper-headless.c7n-system.svc.cluster.local:2181\,zookeeper-1.zookeeper-headless.c7n-system.svc.cluster.local:2181\,zookeeper-2.zookeeper-headless.c7n-system.svc.cluster.local:2181" \
+        --set env.open.SPRING_KAFKA_PRODUCER_VALUE_SERIALIZER="org.apache.kafka.common.serialization.ByteArraySerializer" \
+        --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
+        --set env.open.SPRING_CLOUD_CONFIG_URI="http://config-server.c7n-system:8010/" \
+        --set env.open.CHOERODON_EVENT_CONSUMER_KAFKA_BOOTSTRAP_SERVERS="kafka-0.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-1.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-2.kafka-headless.c7n-system.svc.cluster.local:9092" \
+        --name state-machine-service \
+        --version 0.11.0 \
+        --namespace c7n-system
+    ```
+    参数名 | 含义 
+    --- |  --- 
+    preJob.preConfig.configFile|初始化配置文件名
+    preJob.preConfig.mysql{}|初始化配置所需manager-service数据库信息
+    preJob.preInitDB.mysql{}|初始化数据库所需数据库信息
+    env.open.SPRING_DATASOURCE_URL|数据库链接地址
+    env.open.SPRING_DATASOURCE_USERNAME|数据库用户名
+    env.open.SPRING_DATASOURCE_PASSWORD|数据库密码
+    deployment.managementPort|开放端口号
+    env.open.SPRING_CLOUD_CONFIG_ENABLED|启用配置中心
+    env.open.SPRING_CLOUD_CONFIG_URI|配置中心地址
+    env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE|注册服务地址
+    env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS|kafk地址
+    env.open.SPRING_KAFKA_BOOTSTRAP_SERVERS|kafk地址
+    env.open.CHOERODON_EVENT_CONSUMER_KAFKA_BOOTSTRAP_SERVERS|kafk地址
+    env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES|zookeeper地址
+    env.open.SPRING_KAFKA_PRODUCER_VALUE_SERIALIZER|Kafka参数，无需修改
+
+
+## 部署issue service
+
+- 部署服务
+
+    ``` 
+    helm install c7n/issue-service \
+        --set env.open.JAVA_OPTS="-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap" \
+        --set preJob.preConfig.configFile="application.yml" \
+        --set preJob.iamge="registry.cn-hangzhou.aliyuncs.com/choerodon-tools/dbtool:0.5.2" \
+        --set preJob.preConfig.enable=true \
+        --set preJob.preConfig.mysql.host=c7n-mysql.c7n-system.svc \
+        --set preJob.preConfig.mysql.port=3306 \
+        --set preJob.preConfig.mysql.database=manager_service \
+        --set preJob.preConfig.mysql.username=choerodon \
+        --set preJob.preConfig.mysql.password=password \
+        --set preJob.preInitDB.mysql.host=c7n-mysql.c7n-system.svc \
+        --set preJob.preInitDB.mysql.port=3306 \
+        --set preJob.preInitDB.mysql.database=agile_service \
+        --set preJob.preInitDB.mysql.username=choerodon \
+        --set preJob.preInitDB.mysql.password=password \
+        --set env.open.SPRING_DATASOURCE_URL="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/agile_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowMultiQueries=true" \
+        --set env.open.SPRING_DATASOURCE_USERNAME=choerodon \
+        --set env.open.SPRING_DATASOURCE_PASSWORD=password \
+        --set env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE="http://register-server.c7n-system:8000/eureka/" \
+        --set env.open.SPRING_KAFKA_BOOTSTRAP_SERVERS="kafka-0.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-1.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-2.kafka-headless.c7n-system.svc.cluster.local:9092" \
+        --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS="kafka-0.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-1.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-2.kafka-headless.c7n-system.svc.cluster.local:9092" \
+        --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES="zookeeper-0.zookeeper-headless.c7n-system.svc.cluster.local:2181\,zookeeper-1.zookeeper-headless.c7n-system.svc.cluster.local:2181\,zookeeper-2.zookeeper-headless.c7n-system.svc.cluster.local:2181" \
+        --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
+        --set env.open.SPRING_CLOUD_CONFIG_URI="http://config-server.c7n-system:8010/" \
+        --set env.open.SERVICE_ATTACHMENT_URL="http://minio.example.choerodon.io/agile-service" \
+        --set env.open.SPRING_REDIS_HOST=c7n-redis.c7n-system.svc \
+        --set env.open.SPRING_REDIS_POST=6379 \
+        --set env.open.WORKH_TYPE="juhe" \
+        --set env.open.WORKH_ENABLED=true \
+        --set env.open.WORKH_CRON="59 59 23 15 12 *" \
+        --set env.open.JUST_FOR_RESTART=1 \
+        --set env.open.WORKH_APIKEY="dc135fefba469b4e48d07f7100af31e2" \
+        --name issue-service \
+        --version 0.11.0 \
+        --namespace c7n-system
+    ```
+    参数名 | 含义 
+    --- |  --- 
+    preJob.preConfig.configFile|初始化配置文件名
+    preJob.iamge|preJob镜像地址
+    preJob.preConfig.enable|是否开启初始化配置
+    preJob.preConfig.mysql{}|初始化配置所需manager-service数据库信息
+    preJob.preInitDB.mysql{}|初始化数据库所需数据库信息
+    env.open.SPRING_DATASOURCE_URL|数据库链接地址
+    env.open.SPRING_DATASOURCE_USERNAME|数据库用户名
+    env.open.SPRING_DATASOURCE_PASSWORD|数据库密码
+    env.open.SPRING_CLOUD_CONFIG_ENABLED|启用配置中心
+    env.open.SPRING_CLOUD_CONFIG_URI|配置中心地址
+    env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE|注册服务地址
+    env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS|kafk地址
+    env.open.SPRING_KAFKA_BOOTSTRAP_SERVERS|kafk地址
+    env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES|zookeeper地址
+    env.open.env.open.SERVICE_ATTACHMENT_URL|minio地址
+    env.open.SPRING_REDIS_HOST|Redis数据库地址
+    env.open.SPRING_REDIS_POST|Redis数据库端口
+    

@@ -37,7 +37,7 @@ helm repo update
         --set service.enable=true \
         --set ingress.enable=true \
         --name choerodon-front \
-        --version 0.10.0 \
+        --version 0.11.1 \
         --namespace c7n-system
     ```
     参数名 | 含义 

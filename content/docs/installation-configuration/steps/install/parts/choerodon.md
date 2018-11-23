@@ -57,7 +57,7 @@ helm install c7n/mysql-client \
         --set env.open.REGISTER_SERVICE_NAMESPACE="c7n-system" \
         --set env.open.KAFKA_ADDRESSES="kafka-0.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-1.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-2.kafka-headless.c7n-system.svc.cluster.local:9092" \
         --name register-server \
-        --version 0.10.0 \
+        --version 0.11.0 \
         --namespace c7n-system
     ```
 
@@ -133,12 +133,12 @@ helm install c7n/mysql-client \
     ```
     helm install c7n/config-server \
         --set service.enable=true \
-        --set env.open.JAVA_OPTS="-Xms256m -Xmx512m" \
+        --set env.open.JAVA_OPTS="-Xms2048M -Xmx2048M" \
         --set env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE="http://register-server.c7n-system:8000/eureka/" \
         --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS="kafka-0.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-1.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-2.kafka-headless.c7n-system.svc.cluster.local:9092" \
         --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES="zookeeper-0.zookeeper-headless.c7n-system.svc.cluster.local:2181\,zookeeper-1.zookeeper-headless.c7n-system.svc.cluster.local:2181\,zookeeper-2.zookeeper-headless.c7n-system.svc.cluster.local:2181" \
         --name config-server \
-        --version 0.10.0 \
+        --version 0.11.0 \
         --namespace c7n-system
     ```
     参数名 | 含义 
@@ -164,7 +164,7 @@ helm install c7n/mysql-client \
 
     ```
     helm install c7n/manager-service \
-        --set env.open.JAVA_OPTS="-Xms256m -Xmx512m" \
+        --set env.open.JAVA_OPTS="-Xms2048M -Xmx2048M" \
         --set preJob.preInitDB.datasource.url="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
         --set preJob.preInitDB.datasource.username=choerodon \
         --set preJob.preInitDB.datasource.password=password \
@@ -180,7 +180,7 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS="kafka-0.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-1.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-2.kafka-headless.c7n-system.svc.cluster.local:9092" \
         --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES="zookeeper-0.zookeeper-headless.c7n-system.svc.cluster.local:2181\,zookeeper-1.zookeeper-headless.c7n-system.svc.cluster.local:2181\,zookeeper-2.zookeeper-headless.c7n-system.svc.cluster.local:2181" \
         --name manager-service \
-        --version 0.10.0 \
+        --version 0.11.1 \
         --namespace c7n-system
     ```
     参数名 | 含义 
@@ -215,7 +215,7 @@ helm install c7n/mysql-client \
 
     ```
     helm install c7n/asgard-service \
-        --set env.open.JAVA_OPTS="-Xms256m -Xmx512m" \
+        --set env.open.JAVA_OPTS="-Xms1024M -Xmx1024M" \
         --set preJob.preConfig.datasource.url="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
         --set preJob.preConfig.datasource.username=choerodon \
         --set preJob.preConfig.datasource.password=password \
@@ -227,14 +227,11 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_DATASOURCE_PASSWORD=password \
         --set env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE="http://register-server.c7n-system:8000/eureka/" \
         --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
-        --set env.open.CHOERODON_ASGARD_ISLOCAL=false \
         --set env.open.SPRING_CLOUD_CONFIG_URI="http://config-server.c7n-system:8010/" \
-        --set env.open.CHOERODON_EVENT_CONSUMER_KAFKA_BOOTSTRAP_SERVERS="kafka-0.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-1.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-2.kafka-headless.c7n-system.svc.cluster.local:9092" \
         --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS="kafka-0.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-1.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-2.kafka-headless.c7n-system.svc.cluster.local:9092" \
-        --set env.open.SPRING_KAFKA_BOOTSTRAP_SERVERS="kafka-0.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-1.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-2.kafka-headless.c7n-system.svc.cluster.local:9092" \
         --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES="zookeeper-0.zookeeper-headless.c7n-system.svc.cluster.local:2181\,zookeeper-1.zookeeper-headless.c7n-system.svc.cluster.local:2181\,zookeeper-2.zookeeper-headless.c7n-system.svc.cluster.local:2181" \
         --name asgard-service \
-        --version 0.10.0 \
+        --version 0.11.1 \
         --namespace c7n-system
     ```
     参数名 | 含义 
@@ -247,8 +244,6 @@ helm install c7n/mysql-client \
     env.open.SPRING_CLOUD_CONFIG_ENABLED|启用配置中心
     env.open.SPRING_CLOUD_CONFIG_URI|配置中心地址
     env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE|注册服务地址
-    env.open.SPRING_KAFKA_BOOTSTRAP_SERVERS|kafk地址
-    env.open.CHOERODON_EVENT_CONSUMER_KAFKA_BOOTSTRAP_SERVERS|kafk地址
     env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS|kafk地址
     env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES|zookeeper地址
 
@@ -269,7 +264,7 @@ helm install c7n/mysql-client \
 
     ```
     helm install c7n/notify-service \
-        --set env.open.JAVA_OPTS="-Xms256m -Xmx512m" \
+        --set env.open.JAVA_OPTS="-Xms1024M -Xmx1024M" \
         --set preJob.preConfig.datasource.url="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
         --set preJob.preConfig.datasource.username=choerodon \
         --set preJob.preConfig.datasource.password=password \
@@ -287,13 +282,13 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_KAFKA_BOOTSTRAP_SERVERS="kafka-0.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-1.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-2.kafka-headless.c7n-system.svc.cluster.local:9092" \
         --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES="zookeeper-0.zookeeper-headless.c7n-system.svc.cluster.local:2181\,zookeeper-1.zookeeper-headless.c7n-system.svc.cluster.local:2181\,zookeeper-2.zookeeper-headless.c7n-system.svc.cluster.local:2181" \
         --set env.open.SPRING_REDIS_HOST=c7n-redis.c7n-system.svc \
-        --set env.open.SPRING_REDIS_DATABASE=1 \
+        --set env.open.SPRING_REDIS_DATABASE=2 \
         --set service.enable=true \
         --set service.name=notify-service \
         --set ingress.enable=true \
         --set ingress.host=notify.example.choerodon.io \
         --name notify-service \
-        --version 0.10.0 \
+        --version 0.11.0 \
         --namespace c7n-system
     ```
     参数名 | 含义 
@@ -327,7 +322,7 @@ helm install c7n/mysql-client \
 
     ```
     helm install c7n/iam-service \
-        --set env.open.JAVA_OPTS="-Xms256m -Xmx512m" \
+        --set env.open.JAVA_OPTS="-Xms1024M -Xmx1024M" \
         --set preJob.preConfig.datasource.url="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
         --set preJob.preConfig.datasource.username=choerodon \
         --set preJob.preConfig.datasource.password=password \
@@ -345,7 +340,7 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_KAFKA_BOOTSTRAP_SERVERS="kafka-0.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-1.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-2.kafka-headless.c7n-system.svc.cluster.local:9092" \
         --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES="zookeeper-0.zookeeper-headless.c7n-system.svc.cluster.local:2181\,zookeeper-1.zookeeper-headless.c7n-system.svc.cluster.local:2181\,zookeeper-2.zookeeper-headless.c7n-system.svc.cluster.local:2181" \
         --name iam-service \
-        --version 0.10.1 \
+        --version 0.11.0 \
         --namespace c7n-system
     ```
     参数名 | 含义 
@@ -379,7 +374,7 @@ helm install c7n/mysql-client \
 
     ```
     helm install c7n/api-gateway \
-        --set env.open.JAVA_OPTS="-Xms256m -Xmx512m" \
+        --set env.open.JAVA_OPTS="-Xms1024M -Xmx1024M" \
         --set preJob.preConfig.datasource.url="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
         --set preJob.preConfig.datasource.username=choerodon \
         --set preJob.preConfig.datasource.password=password \
@@ -392,7 +387,7 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS="kafka-0.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-1.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-2.kafka-headless.c7n-system.svc.cluster.local:9092" \
         --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES="zookeeper-0.zookeeper-headless.c7n-system.svc.cluster.local:2181\,zookeeper-1.zookeeper-headless.c7n-system.svc.cluster.local:2181\,zookeeper-2.zookeeper-headless.c7n-system.svc.cluster.local:2181" \
         --name api-gateway \
-        --version 0.10.0 \
+        --version 0.11.0 \
         --namespace c7n-system
     ```
     参数名 | 含义 
@@ -423,7 +418,7 @@ helm install c7n/mysql-client \
 
     ```
     helm install c7n/gateway-helper \
-        --set env.open.JAVA_OPTS="-Xms256m -Xmx512m" \
+        --set env.open.JAVA_OPTS="-Xms1024M -Xmx1024M" \
         --set preJob.preConfig.datasource.url="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
         --set preJob.preConfig.datasource.username=choerodon \
         --set preJob.preConfig.datasource.password=password \
@@ -435,8 +430,13 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_CLOUD_CONFIG_URI="http://config-server.c7n-system:8010/" \
         --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS="kafka-0.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-1.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-2.kafka-headless.c7n-system.svc.cluster.local:9092" \
         --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES="zookeeper-0.zookeeper-headless.c7n-system.svc.cluster.local:2181\,zookeeper-1.zookeeper-headless.c7n-system.svc.cluster.local:2181\,zookeeper-2.zookeeper-headless.c7n-system.svc.cluster.local:2181" \
+        --set env.open.SPRING_CACHE_MULTI_L1_ENABLED=true \
+        --set env.open.SPRING_CACHE_MULTI_L2_ENABLED=false \
+        --set env.open.SPRING_REDIS_HOST=c7n-redis.c7n-system.svc \
+        --set env.open.SPRING_REDIS_PORT=6379 \
+        --set env.open.SPRING_REDIS_DATABASE=4 \
         --name gateway-helper \
-        --version 0.10.0 \
+        --version 0.11.1 \
         --namespace c7n-system
     ```
     参数名 | 含义 
@@ -450,6 +450,12 @@ helm install c7n/mysql-client \
     env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE|注册服务地址
     env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS|kafk地址
     env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES|zookeeper地址
+    env.open.SPRING_CACHE_MULTI_L1_ENABLED|启用L1缓存
+    env.open.SPRING_CACHE_MULTI_L2_ENABLED|启用L2缓存
+    env.open.SPRING_REDIS_HOST|Redis数据库地址
+    env.open.SPRING_REDIS_PORT|Redis数据库端口
+    env.open.SPRING_REDIS_DATABASE|Redis数据库
+
 
 - 验证部署
     - 验证命令
@@ -467,7 +473,7 @@ helm install c7n/mysql-client \
 
     ```
     helm install c7n/oauth-server \
-        --set env.open.JAVA_OPTS="-Xms256m -Xmx512m" \
+        --set env.open.JAVA_OPTS="-Xms1024M -Xmx1024M" \
         --set preJob.preConfig.datasource.url="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
         --set preJob.preConfig.datasource.username=choerodon \
         --set preJob.preConfig.datasource.password=password \
@@ -483,7 +489,7 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS="kafka-0.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-1.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-2.kafka-headless.c7n-system.svc.cluster.local:9092" \
         --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES="zookeeper-0.zookeeper-headless.c7n-system.svc.cluster.local:2181\,zookeeper-1.zookeeper-headless.c7n-system.svc.cluster.local:2181\,zookeeper-2.zookeeper-headless.c7n-system.svc.cluster.local:2181" \
         --name oauth-server \
-        --version 0.10.0 \
+        --version 0.11.0 \
         --namespace c7n-system
     ```
     参数名 | 含义 
@@ -494,6 +500,8 @@ helm install c7n/mysql-client \
     env.open.SPRING_DATASOURCE_PASSWORD|数据库密码
     env.open.SPRING_CLOUD_CONFIG_ENABLED|启用配置中心
     env.open.CHOERODON_DEFAULT_REDIRECT_URL|默认重定向地址
+    env.open.SPRING_REDIS_HOST|Redis数据库地址
+    env.open.SPRING_REDIS_DATABASE|Redis数据库
     env.open.SPRING_CLOUD_CONFIG_URI|配置中心地址
     env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE|注册服务地址
     env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS|kafk地址
@@ -515,7 +523,7 @@ helm install c7n/mysql-client \
 
     ```
     helm install c7n/file-service \
-        --set env.open.JAVA_OPTS="-Xms256m -Xmx512m" \
+        --set env.open.JAVA_OPTS="-Xms1024M -Xmx1024M" \
         --set preJob.preConfig.datasource.url="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
         --set preJob.preConfig.datasource.username=choerodon \
         --set preJob.preConfig.datasource.password=password \
@@ -528,7 +536,7 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS="kafka-0.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-1.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-2.kafka-headless.c7n-system.svc.cluster.local:9092" \
         --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES="zookeeper-0.zookeeper-headless.c7n-system.svc.cluster.local:2181\,zookeeper-1.zookeeper-headless.c7n-system.svc.cluster.local:2181\,zookeeper-2.zookeeper-headless.c7n-system.svc.cluster.local:2181" \
         --name file-service \
-        --version 0.10.0 \
+        --version 0.11.0 \
         --namespace c7n-system
     ```
     参数名 | 含义 

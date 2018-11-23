@@ -80,7 +80,7 @@ helm install c7n/mysql-client \
         --set "ingress.hosts[0]"=wiki.example.choerodon.io \
         --timeout 3000 \
         --name xwiki \
-        --version 0.10.0 \
+        --version 0.11.0 \
         --namespace c7n-system
     ```
 
@@ -131,7 +131,7 @@ helm install c7n/mysql-client \
 
     ```bash
     helm install c7n/wiki-service \
-        --set env.open.JAVA_OPTS="-Xms256m -Xmx512m" \
+        --set env.open.JAVA_OPTS="-Xms1024M -Xmx1024M" \
         --set preJob.preConfig.mysql.host=c7n-mysql.c7n-system.svc \
         --set preJob.preConfig.mysql.port=3306 \
         --set preJob.preConfig.mysql.database=manager_service \
@@ -159,7 +159,7 @@ helm install c7n/mysql-client \
         --set env.open.WIKI_TOKEN=Choerodon \
         --set env.open.WIKI_DEFAULT_GROUP=XWikiAllGroup \
         --name wiki-service \
-        --version 0.10.1 \
+        --version 0.11.0 \
         --namespace c7n-system
     ```
 
