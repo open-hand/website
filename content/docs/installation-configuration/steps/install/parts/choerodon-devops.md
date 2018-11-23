@@ -47,15 +47,15 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
 
     ``` 
     helm install c7n/devops-service \
-        --set env.open.JAVA_OPTS="-Xms256m -Xmx512m" \
+        --set env.open.JAVA_OPTS="-Xms1024M -Xmx1024M" \
         --set preJob.preConfig.mysql.host=c7n-mysql.c7n-system.svc \
         --set preJob.preConfig.mysql.port=3306 \
-        --set preJob.preConfig.mysql.database=manager_service \
-        --set preJob.preConfig.mysql.username=choerodon \
-        --set preJob.preConfig.mysql.password=password \
+        --set preJob.preConfig.datasource.url="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager-service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
+        --set preJob.preConfig.datasource.username=choerodon \
+        --set preJob.preConfig.datasource.password=password \
         --set preJob.preInitDB.mysql.host=c7n-mysql.c7n-system.svc \
         --set preJob.preInitDB.mysql.port=3306 \
-        --set preJob.preInitDB.mysql.database=devops_service \
+        --set preJob.preInitDB.datasource.url="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/devops_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
         --set preJob.preInitDB.mysql.username=choerodon \
         --set preJob.preInitDB.mysql.password=password \
         --set env.open.SPRING_DATASOURCE_URL="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/devops_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
@@ -79,26 +79,26 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
         --set env.open.SERVICES_GITLAB_PROJECTLIMIT=100 \
         --set env.open.SERVICES_GATEWAY_URL=http://api.example.choerodon.io \
         --set env.open.SECURITY_IGNORED="/ci\,/webhook\,/v2/api-docs\,/agent/**\,/ws/**\,/webhook/**" \
-        --set env.open.AGENT_VERSION="0.10.0" \
+        --set env.open.AGENT_VERSION="0.11.0" \
         --set env.open.AGENT_REPOURL="https://openchart.choerodon.com.cn/choerodon/c7n/" \
         --set env.open.AGENT_SERVICEURL="ws://devops.example.choerodon.io/agent/" \
-        --set env.open.TEMPLATE_VERSION_MICROSERVICE="0.10.0" \
-        --set env.open.TEMPLATE_VERSION_MICROSERVICEFRONT="0.10.0" \
-        --set env.open.TEMPLATE_VERSION_JAVALIB="0.10.0" \
+        --set env.open.TEMPLATE_VERSION_MICROSERVICE="0.11.0" \
+        --set env.open.TEMPLATE_VERSION_MICROSERVICEFRONT="0.11.0" \
+        --set env.open.TEMPLATE_VERSION_JAVALIB="0.11.0" \
         --set ingress.enable=true \
         --set ingress.host=devops.example.choerodon.io \
         --set service.enable=true \
         --set persistence.enabled=true \
         --set persistence.existingClaim="chartmuseum-pvc" \
         --name devops-service \
-        --version 0.10.4 \
+        --version 0.11.0 \
         --namespace c7n-system
     ```
     参数名 | 含义 
     --- |  --- 
     service.enable|是否创建service
-    preJob.preConfig.mysql{}|初始化配置所需manager_service数据库信息
-    preJob.preInitDB.mysql{}|初始化数据库所需数据库信息
+    preJob.preConfig.datasource{}|初始化配置所需manager_service数据库信息
+    preJob.preInitDB.datasource{}|初始化数据库所需数据库信息
     env.open.SPRING_DATASOURCE_URL|数据库链接地址
     env.open.SPRING_DATASOURCE_USERNAME|数据库用户名
     env.open.SPRING_DATASOURCE_PASSWORD|数据库密码
@@ -143,7 +143,7 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
 
     ```
     helm install c7n/gitlab-service \
-        --set env.open.JAVA_OPTS="-Xms256m -Xmx512m" \
+        --set env.open.JAVA_OPTS="-Xms1024M -Xmx1024M" \
         --set preJob.preConfig.mysql.host=c7n-mysql.c7n-system.svc \
         --set preJob.preConfig.mysql.port=3306 \
         --set preJob.preConfig.mysql.database=manager_service \
@@ -166,7 +166,7 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
         --set env.open.GITLAB_URL="http://gitlab.example.choerodon.io" \
         --set env.open.GITLAB_PRIVATETOKEN="GEuRhgb6kG9y3prFosSb" \
         --name gitlab-service \
-        --version 0.10.0 \
+        --version 0.11.1 \
         --namespace c7n-system
     ```
     参数名 | 含义 
