@@ -39,10 +39,6 @@ metadata:
   namespace: c7n-system  # 指定命名空间安装choerodon
 spec:
   persistence:
-#   nfs:                         
-#      server: 98dbe4b804-yxc75.cn-zhangjiakou.nas.aliyuncs.com
-#      rootPath: /u01
-#   如果您有自己的nfs服务器并且支持v4版本，可以注释storageClassName并配置您的的nfs,某些NFS服务器可能存在程序无法获取到正确权限的问题
     storageClassName: nfs-provisioner
   resources:
     mysql:
@@ -103,19 +99,6 @@ spec:
 - [设置Gitlab启用SSH协议(必须开启)](../parts/base/gitlab/#启用ssh协议)
 - [设置Harbor证书(必须设置)](../parts/base/harbor/#证书配置)
 
-<<<<<<< HEAD
-## 启用runner
-
-Gitlab Runner，用于代码提交后自动进行代码测试、构建服务的镜像及生成helm chart并将结果发回给Choerodon。它与GitLab CI一起使用，Gitlab CI是Gitlab中包含的开源持续集成服务，用于协调作业。安装程序可以快速启用一个runner:
-
-```bash
-./c7n config gitlab runner -c config.yml
-```
-
-如果您想获取更多关于runner的配置信息请参考[此处](../parts//gitlab-runner/)。
-
-=======
->>>>>>> [IMP]添加预备知识
 ## 常见问题
 
 - 停留在等待slaver启动过程中

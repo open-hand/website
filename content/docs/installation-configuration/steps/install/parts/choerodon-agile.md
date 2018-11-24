@@ -68,7 +68,7 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_REDIS_HOST=c7n-redis.c7n-system.svc \
         --set env.open.SPRING_REDIS_DATABASE=4 \
         --name agile-service \
-        --version 0.11.0 \
+        --version 0.11.1 \
         --namespace c7n-system
     ```
     参数名 | 含义 
@@ -128,7 +128,7 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_CLOUD_CONFIG_URI="http://config-server.c7n-system:8010/" \
         --set env.open.CHOERODON_EVENT_CONSUMER_KAFKA_BOOTSTRAP_SERVERS="kafka-0.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-1.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-2.kafka-headless.c7n-system.svc.cluster.local:9092" \
         --name state-machine-service \
-        --version 0.11.0 \
+        --version 0.11.1 \
         --namespace c7n-system
     ```
     参数名 | 含义 
@@ -188,7 +188,7 @@ helm install c7n/mysql-client \
         --set env.open.JUST_FOR_RESTART=1 \
         --set env.open.WORKH_APIKEY="dc135fefba469b4e48d07f7100af31e2" \
         --name issue-service \
-        --version 0.11.0 \
+        --version 0.11.1 \
         --namespace c7n-system
     ```
     参数名 | 含义 
