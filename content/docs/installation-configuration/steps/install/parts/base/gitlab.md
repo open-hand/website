@@ -6,6 +6,12 @@ weight = 55
 
 # Gitlab部署
 
+## 预备知识
+
+如果你不知道Gitlab是做什么的，那么请参考下面链接（包括但不限于）进行学习：
+
+- [Gitlab](https://about.gitlab.com/what-is-gitlab/)
+
 ## 仓库设置
 
 ## 添加choerodon chart仓库并同步
@@ -17,7 +23,7 @@ helm repo update
 
 ## 部署Gitlab
 
-### 创建mysql所需PV和PVC
+### 部署mysql
 
 ```shell
 helm install c7n/persistentvolumeclaim \
@@ -28,8 +34,6 @@ helm install c7n/persistentvolumeclaim \
     --name gitlab-mysql-pvc \
     --namespace c7n-system
 ```
-
-### 部署mysql
 
 ```shell
 helm install c7n/mysql \
@@ -51,9 +55,21 @@ helm install c7n/mysql \
 ### 部署gitlab所需Redis
 
 ```shell
-helm install c7n/redis \
-    --set service.enabled=true \
+helm install c7n/persistentvolumeclaim \
+    --set accessModes={ReadWriteOnce} \
+    --set requests.storage=256Mi \
+    --set storageClassName=nfs-provisioner \
     --version 0.1.0 \
+    --name gitlab-redis-pvc \
+    --namespace c7n-system
+```
+
+```shell
+helm install c7n/redis \
+    --set persistence.enabled=true \
+    --set persistence.existingClaim=gitlab-redis-pvc \
+    --set service.enabled=true \
+    --version 0.2.0 \
     --name gitlab-redis \
     --namespace c7n-system
 ```
@@ -144,47 +160,10 @@ helm install c7n/gitlab \
 
     ![](/docs/installation-configuration/image/gitlab.png)
 
-## 允许向本地网络发送hook请求
-
-<blockquote class="warning">
-Devops Service为了同步Gitlab相关数据，使用了Gitlab WebHook相关功能，请在Gitlab管理员界面 Settings 菜单中打开 Outbound requests 选项。
-</blockquote>
-
-![](/docs/installation-configuration/image/gitlab-webhook.png)
-
 ## 启用SSH协议
 
 <blockquote class="warning">
 必须开启SSH协议功能
-</blockquote>
-
-### 修改节点SSH默认端口
-CentOS各发行版中SSH端口默认为22，为了开启Gitlab的SSH需要修改掉默认的22端口号。Gitlab需要绑定22端口，所以需要更换SSH端口为非22端口，否则Choerodon的持续部署将无法正常使用。
-
-1. 修改配置文件：`/etc/ssh/sshd_config` ，找到以下行：
-
-    ```
-    #port 22
-    ```
-
-1. 先将`Port 22`前面的 `#` 号去掉，并另起一行。如定义SSH端口号为33322，自定义端口选择建议在万位的端口（如：10000-65535之间），则输入：
-
-    ```
-    Port 33322
-    ```
-
-1. 修改完毕后，重启SSH服务，并退出当前连接的SSH端口。
-
-    ```
-    service sshd restart
-    ```
-
-1. 重启完毕，尝试使用新端口登陆
-
-1. 若能正常访问，返回第一步，根据第二步的操作将原`port 22`整段注释或删掉，再按第三步重启SSH即可。
-
-<blockquote class="warning">
-如果您启用了防火墙iptables或者安全组，那么必须先添加新开的33322端口
 </blockquote>
 
 ### 修改Gitlab SSH Service
@@ -205,19 +184,18 @@ CentOS各发行版中SSH端口默认为22，为了开启Gitlab的SSH需要修改
             choerodon.io/infra: "gitlab"
         spec:
           type: ClusterIP
-          externalIPs:
-          - 192.168.1.1      #请修改这里的IP为第一步设置SSH端口号的节点IP
+          externalIPs:       #请添加externalIPs属性
+          - 192.168.1.1      #填写Gitlab域名指向的主机的内网IP
           ports:
-            - port: 22       #请将这里原本2289修改为22
+            - port: 2289
               targetPort: ssh
           selector:
             choerodon.io/release: "gitlab"
             choerodon.io/infra: "gitlab"
     
-
-### 域名映射
-
-你需要在DNS运营商提供的控制面板上添加一条Gitlab域名与第一步设置SSH端口号的节点IP的记录。
+<blockquote class="warning">
+如果您启用了防火墙iptables或者安全组，那么必须添加新开的2289端口
+</blockquote>
 
 ## 配置Choerodon Oauth认证
 
@@ -267,14 +245,9 @@ CentOS各发行版中SSH端口默认为22，为了开启Gitlab的SSH需要修改
         --namespace c7n-system
 ```
 
-### 验证更新
+### 添加管理员用户关联
 
-- 访问设置的Gitlab域名出现以下界面即更新成功
-{{< warning >}}执行完添加管理员用户关联步骤前请不要登录{{< /warning >}}
-
-    ![](/docs/installation-configuration/image/gitlab-oauth.png)
-
-## 添加管理员用户关联
+{{< warning >}}执行完添加管理员用户关联步骤前请不要去Gitlab界面进行登录操作{{< /warning >}}
 
 - 执行下面语句进行关联:
 
@@ -291,3 +264,9 @@ CentOS各发行版中SSH端口默认为22，为了开启Gitlab的SSH需要修改
         --name gitlab-user-identities \
         --namespace c7n-system
     ```
+
+### 验证更新
+
+- 访问设置的Gitlab域名出现以下界面即更新成功
+
+    ![](/docs/installation-configuration/image/gitlab-oauth.png)

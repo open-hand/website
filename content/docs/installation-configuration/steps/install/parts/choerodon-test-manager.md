@@ -41,7 +41,7 @@ helm install c7n/mysql-client \
 
     ``` 
     helm install c7n/test-manager-service \
-        --set env.open.JAVA_OPTS="-Xms1024M -Xmx1024M" \
+        --set env.open.JAVA_OPTS="-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap" \
         --set preJob.preConfig.datasource.url="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
         --set preJob.preConfig.datasource.username=choerodon \
         --set preJob.preConfig.datasource.password=password \

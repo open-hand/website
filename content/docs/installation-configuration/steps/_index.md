@@ -14,4 +14,13 @@ weight = 8
 
 ---
 
+## 前置学习内容
+在安装之前，你需要了解一些基本知识及概念，下面提供了一些学习资料(包括但不限于)的链接，请一定了解他们。
+
+- [域名](https://baike.baidu.com/item/%E5%9F%9F%E5%90%8D)
+- [NFS](https://baike.baidu.com/item/NFS/812203)
+- [Docker](https://baike.baidu.com/item/Docker)
+- [Kubernetes](http://docs.kubernetes.org.cn/)
+- [Helm](https://www.helm.sh/)
+
 {{< docdir >}}

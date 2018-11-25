@@ -6,6 +6,12 @@ weight = 50
 
 # Harbor部署
 
+## 预备知识
+
+如果你不知道Harbor是做什么的，那么请参考下面链接（包括但不限于）进行学习：
+
+- [Harbor](https://github.com/goharbor/harbor#harbor)
+
 ## 仓库设置
 
 ## 添加choerodon chart仓库并同步
@@ -80,10 +86,30 @@ Harbor启动速度较慢请等待所有Pod都为Running后进行界面查看。
 
     - 为ingress添加注解`kubernetes.io/tls-acme: "true"`
 
-        ```
+        ```yaml
         metadata:
           annotations:
             kubernetes.io/tls-acme: "true"
+        ```
+
+- 编辑harbor-ui的deployment对象
+
+    ```
+    kubectl edit deployment -n c7n-system harbor-harbor-ui
+    ```
+
+    - 修改deployment中volumes属性的`ca-download`为`emptyDir: {}`
+
+        ```yaml
+        volumes:
+        - name: ca-download
+          #secret:
+          #  defaultMode: 420
+          #  items:
+          #  - key: ca.crt
+          #    path: ca.crt
+          #  secretName: harbor-harbor-ingress
+          emptyDir: {}
         ```
 
 ### 没有公网域名时使用自签名证书

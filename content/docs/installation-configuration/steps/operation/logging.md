@@ -10,7 +10,7 @@ weight = 26
 
 - 内存: 12G及以上(3个节点每个节点空闲4G以上)
 - 磁盘: ssd或高速存储介质50G及以上(根据实际情况增加磁盘)
-- CPU: 2核2线程及以上
+- CPU: 4核4线程及以上
 
 ## 部署日志组件
 
@@ -25,33 +25,33 @@ helm repo add c7n https://openchart.choerodon.com.cn/choerodon/c7n/
 helm repo update
 ```
 
+### 创建日志存储卷（绑定SSD磁盘）
+
+- 粘贴命令前注意修改<span style="color: red">your-node-name</span>为您ssd磁盘所在主机的名称
+
+```bash
+helm install c7n/nfs-provisioner \
+    --set rbac.create=true \
+    --set service.enabled=true \
+    --set persistence.enabled=true \
+    --set persistence.nodeName=clusternode4 \
+    --set storageClass.name=ssd \
+    --set storageClass.provisioner="choerodon.io/ssd" \
+    --set persistence.hostPath="/ssd" \
+    --version 0.1.0 \
+    --name ssd \
+    --namespace logging
+```
+
 ### 安装日志组件
-
-- 创建存储卷pv和pvc
-
-    ```bash
-    helm install c7n/persistentvolumeclaim \
-        --set accessModes={ReadWriteMany} \
-        --set requests.storage=100Gi \
-        --set storageClassName="nfs-provisioner" \
-        --version 0.1.0 \
-        --name elasticsearch-pvc \
-        --namespace logging
-    ```
 
 - 安装Elasticsearch
 
     ```bash
     helm install c7n/elasticsearch \
-        --set data.storageType=nfs \
-        --set replicaCount=3 \
-        --set minimumMasterNodes=2 \
-        --set persistence.enabled=true \
-        --set persistence.existingClaim=elasticsearch-pvc \
-        --set clusterName=example \
-        --set service.enabled=true \
-        --name=elasticsearch \
-        --namespace=logging
+         --name elasticsearch \
+         --set data.persistence.storageClass=ssd,data.storage=20Gi \
+         --set master.persistence.storageClass=ssd,data.storage=5Gi 
     ```
 
 - 安装日志收集服务

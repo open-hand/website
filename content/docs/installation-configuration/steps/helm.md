@@ -6,6 +6,11 @@ weight = 10
 
 # Helm部署
 
+## 预备知识
+
+如果你不知道Helm是做什么的，那么请参考下面链接（包括但不限于）进行学习：
+- [Helm](https://helm.sh/)
+
 ## 约定
 
 - [部署kubernetes集群](../kubernetes)使用的是Choerodon提供的文档进行部署的
