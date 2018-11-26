@@ -123,7 +123,7 @@ helm install c7n/nfs-client-provisioner \
 
 - 验证是否正常
 
-pod状态为`Completed`则为正常，若长时间为`ContainerCreating`状态则为不正常，请确认安装操作步骤是否正确。
+  pod状态为`Completed`则为正常，若长时间为`ContainerCreating`状态则为不正常，请确认安装操作步骤是否正确。
 
     ```console
     $ kubectl get po
