@@ -13,6 +13,7 @@ weight = 15
 ## 预备知识
 
 如果你不知道NFS是做什么的，那么请参考下面链接（包括但不限于）进行学习：
+
 - [NFS](https://baike.baidu.com/item/NFS/812203)
 
 ## 添加choerodon chart仓库
@@ -34,13 +35,12 @@ helm repo update
 {{< annotation shell "集群内提供存储的节点的Node Name，可通过 kubectl get node 命令查看" "该节点的物理目录，需手动创建">}}
 helm install c7n/nfs-provisioner \
     --set rbac.create=true \
-    --set service.enabled=true \
     --set persistence.enabled=true \
     --set persistence.nodeName=node1 \(1)
-    --set persistence.hostPath=/u01/prod \(1)
-    --version 0.1.0 \
+    --set persistence.hostPath=/export \(1)
+    --version 0.2.0 \
     --name nfs-provisioner \
-    --namespace c7n-system
+    --namespace kube-system
 {{< /annotation >}}
 
 ## 有NFS服务器
@@ -55,7 +55,7 @@ Exports list on NFS服务器IP地址:
 /u01
 ```
 
-若有以上类似返回则有NFS服务，若出现`showmount: Cannot retrieve info from host:...`则无NFS服务。
+若有以上类似返回则有NFS服务，若出现`showmount: Cannot retrieve info from host:...`则无NFS服务,请按照`没有NFS服务服务器`步骤操作。
 
 - 在集群每一个节点安装`nfs-utils`
 
@@ -73,7 +73,7 @@ helm install c7n/nfs-client-provisioner \
     --set persistence.nfsPath=/u01/prod \(1)
     --version 0.1.0 \
     --name nfs-client-provisioner \
-    --namespace c7n-system
+    --namespace kube-system
 {{< /annotation >}}
 
 ## 验证安装

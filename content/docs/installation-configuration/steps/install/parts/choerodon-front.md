@@ -28,6 +28,7 @@ helm repo update
         --set env.open.PRO_API_HOST="api.example.choerodon.io" \
         --set env.open.PRO_DEVOPS_HOST="ws://devops.example.choerodon.io" \
         --set env.open.PRO_AGILE_HOST="http://minio.example.choerodon.io/agile-service/" \
+        --set env.open.PRO_WEBSOCKET_SERVER="ws://notify.example.choerodon.io" \
         --set env.open.PRO_CLIENT_ID="choerodon" \
         --set env.open.PRO_TITLE_NAME="Choerodon" \
         --set env.open.PRO_HEADER_TITLE_NAME="Choerodon" \
