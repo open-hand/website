@@ -100,17 +100,15 @@ Harbor启动速度较慢请等待所有Pod都为Running后进行界面查看。
 
     - 修改deployment中volumes属性的`ca-download`为`emptyDir: {}`
 
-        ```yaml
-        volumes:
-        - name: ca-download
-          #secret:
-          #  defaultMode: 420
-          #  items:
-          #  - key: ca.crt
-          #    path: ca.crt
-          #  secretName: harbor-harbor-ingress
-          emptyDir: {}
-        ```
+            volumes:
+            - name: ca-download
+              #secret:
+              #  defaultMode: 420
+              #  items:
+              #  - key: ca.crt
+              #    path: ca.crt
+              #  secretName: harbor-harbor-ingress
+              emptyDir: {}
 
 ### 没有公网域名时使用自签名证书
 
