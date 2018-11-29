@@ -2,9 +2,6 @@ stages:
 - docker_build
 - broken_link_check
 
-variables:
-  GIT_SUBMODULE_STRATEGY: recursive
-
 docker_build:
   stage: docker_build
   image: registry.cn-hangzhou.aliyuncs.com/choerodon-tools/cibase:0.6.0
@@ -41,4 +38,6 @@ broken_link_check:
   source .auto_devops.sh
 
 before_script:
+- git submodule sync --recursive
+- git submodule update --init --recursive --remote 
 - *auto_devops

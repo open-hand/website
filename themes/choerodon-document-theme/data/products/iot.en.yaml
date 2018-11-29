@@ -2,22 +2,22 @@ weight: 7
 name: "运营管理"
 icon: "icon-operation"
 iconColor: "#1CAFE8"
-description: "借助运营管理工具，在软件交付生产的各个环节建立数据收集和度量，使得团队能够根据交付过程当中的瓶颈做出必要的改进，监控主要包含开发类指标、服务器日志，应用系统日志和微服务调用链等信息；同时，提供各种分析报告，帮助用户优化IT资源配置。"
-summary: "监控软件交付各阶段的度量，发现瓶颈及帮助用户优化IT资源配置"
+description: "通过对目标环境和容器编排调度的管理，网络、路由和存储的管理，基础设施到应用的全堆栈监控管理，应用状态的探针检测管理，360°及时反馈应用及相关状态，实现主动式服务。"
+summary: "支持平台实时监控，提供分析报告，帮助用户发现瓶颈，优化IT资源配置。"
 language: en
 
 childIcon1: "/img/home/operation-illustrator-1.svg"
-childTitle1: "开发监控"
-childDescription1: "监控开发各个阶段的度量指标"
+childTitle1: "服务器监控"
+childDescription1: "监控服务器的内存、CPU、硬盘和网络使用情况，和数据库、中间件的资源消耗情况"
 
 childIcon2: "/img/home/operation-illustrator-2.svg"
-childTitle2: "服务器日志"
-childDescription2: "监控服务级别的日志，例如CPU、内存、硬盘和网络"
+childTitle2: "日志查看"
+childDescription2: "提供日志的筛选展现及各种不同的图标、表格，能够很轻易地展现高级数据分析"
 
 childIcon3: "/img/home/operation-illustrator-3.svg"
-childTitle3: "应用系统日志"
-childDescription3: "监控系统级别的日志，例如Tomcat日志等"
+childTitle3: "应用状态监测"
+childDescription3: "检测不同维度下应用的状态信息及相关网络、域名、证书等资源的情况"
 
 childIcon4: "/img/home/operation-illustrator-4.svg"
 childTitle4: "调用链分析"
-childDescription4: "微服务调用链日志"
+childDescription4: "展现分布式应用服务请求从发出到被响应所经历的组件、服务、请求总时长及每个组件所花时长等"
