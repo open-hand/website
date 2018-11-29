@@ -3,7 +3,7 @@ name: "部署流水线"
 icon: "icon-deployment"
 iconColor: "#5D6FD4"
 description: "借助部署流水线，用户客户可以方便地管理各种使用Choerodon开发部署的应用服务，包括应用启停、状态监控，以及应用对应的版本控制、容器管理等，同时还包括应用涉及到的各种资源管理，例如网络、域名、数据库服务、缓存服务等。"
-summary: "方便地管理各种使用开发部署的应用服务和资源"
+summary: "应用启停，状态监控，容器管理，实现流水线式多环境一键部署。"
 language: zh
 
 childIcon1: "/img/home/deployment-1.svg"
@@ -19,5 +19,5 @@ childTitle3: "实例"
 childDescription3: "查看管理已部署应用的容器、实例等"
 
 childIcon4: "/img/home/deployment-4.svg"
-childTitle4: "资源"
-childDescription4: "定义网络、域名、数据库服务、缓存服务等"
+childTitle4: "应用配置"
+childDescription4: "定义实例、网络、域名、存储等，并及时反馈应用配置在目标环境的状态"

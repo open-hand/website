@@ -1,30 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="142px" height="144px" viewBox="0 0 142 144" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 47 (45396) - http://www.bohemiancoding.com/sketch -->
-    <title>knowledge-3</title>
+<svg width="154px" height="104px" viewBox="0 0 154 104" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>operation-illustrator-3</title>
     <desc>Created with Sketch.</desc>
     <defs>
-        <rect id="path-1" x="0" y="74" width="62" height="62" rx="5"></rect>
-        <filter x="-16.1%" y="-12.9%" width="132.3%" height="132.3%" filterUnits="objectBoundingBox" id="filter-2">
+        <rect id="path-1" x="0" y="0" width="148" height="98" rx="5"></rect>
+        <filter x="-3.7%" y="-3.6%" width="107.4%" height="111.2%" filterUnits="objectBoundingBox" id="filter-2">
             <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
-            <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
-            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.16 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+            <feGaussianBlur stdDeviation="1.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.0792161481   0 0 0 0 0.0823091442   0 0 0 0 0.101589073  0 0 0 0.308423913 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
         </filter>
+        <polygon id="path-3" points="0 0 20 0 20 20 0 20"></polygon>
     </defs>
-    <g id="产品模块" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g transform="translate(-773.000000, -472.000000)" id="knowledge-3">
-            <g transform="translate(779.000000, 472.000000)">
-                <rect id="Rectangle-4-Copy-15" fill="#FFFFFF" x="0" y="0" width="62" height="62" rx="5"></rect>
-                <g id="Rectangle-4-Copy-18">
-                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
-                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="operation-illustrator-3" transform="translate(3.000000, 1.000000)">
+            <g id="Rectangle-4-Copy-22">
+                <g id="path-1-link" fill-rule="nonzero">
+                    <g id="path-1">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                        <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    </g>
                 </g>
-                <rect id="Rectangle-4-Copy-17" fill="#FFFFFF" x="74" y="0" width="62" height="62" rx="5"></rect>
-                <path d="M106.96,30.2941176 L116.853333,30.2941176 L116.853333,32.4117647 L106.96,32.4117647 L106.96,30.2941176 Z M106.96,26.7647059 L116.853333,26.7647059 L116.853333,28.8823529 L106.96,28.8823529 L106.96,26.7647059 Z M106.96,33.8235294 L116.853333,33.8235294 L116.853333,35.9411765 L106.96,35.9411765 L106.96,33.8235294 Z M118.266667,19 L92.8266667,19 C91.272,19 90,20.2705882 90,21.8235294 L90,40.1764706 C90,41.7294118 91.272,43 92.8266667,43 L118.266667,43 C119.821333,43 121.093333,41.7294118 121.093333,40.1764706 L121.093333,21.8235294 C121.093333,20.2705882 119.821333,19 118.266667,19 L118.266667,19 Z M118.266667,40.1764706 L105.546667,40.1764706 L105.546667,21.8235294 L118.266667,21.8235294 L118.266667,40.1764706 L118.266667,40.1764706 Z" id="Shape" fill="#9BE8EF"></path>
-                <polyline id="Fill-140" fill="#F8F1A1" points="30.7368421 39.5031579 39.8442105 45 37.4273684 34.64 45.4736842 27.6694737 34.8778947 26.7705263 30.7368421 17 26.5957895 26.7705263 16 27.6694737 24.0463158 34.64 21.6294737 45 30.7368421 39.5031579"></polyline>
-                <path d="M42.25,86 L19.75,86 C17.6875,86 16,87.6875 16,89.75 L16,119.75 C16,121.8125 17.6875,123.5 19.75,123.5 L42.25,123.5 C44.3125,123.5 46,121.8125 46,119.75 L46,89.75 C46,87.6875 44.3125,86 42.25,86 L42.25,86 Z M19.75,89.75 L29.125,89.75 L29.125,104.75 L24.4375,101.9375 L19.75,104.75 L19.75,89.75 L19.75,89.75 Z" id="Fill-168" fill="#6694EF"></path>
-                <rect id="Rectangle-4-Copy-19" fill-opacity="0.6" fill="#FFFFFF" x="74" y="74" width="62" height="62" rx="5"></rect>
-                <path d="M88,106.029 L98.024,106.029 L98.024,94 L88,94 L88,106.029 Z M88,120.063 L98.024,120.063 L98.024,108.034 L88,108.034 L88,120.063 Z M100.029,120.063 L110.053,120.063 L110.053,108.034 L100.029,108.034 L100.029,120.063 Z M112.059,120.063 L122.083,120.063 L122.083,108.034 L112.059,108.034 L112.059,120.063 Z M100.029,106.029 L110.053,106.029 L110.053,94 L100.029,94 L100.029,106.029 Z M112.059,106.029 L122.083,106.029 L122.083,94 L112.059,94 L112.059,106.029 Z" id="Fill-33" fill="#ECECEC"></path>
+                <g id="path-1-link" fill="#FFFFFF">
+                    <rect id="path-1" x="0" y="0" width="148" height="98" rx="5"></rect>
+                </g>
+            </g>
+            <path d="M5,0 L143,0 C145.761424,-5.07265313e-16 148,2.23857625 148,5 L148,11 L0,11 L0,5 C-3.38176876e-16,2.23857625 2.23857625,5.07265313e-16 5,0 Z" id="Rectangle-4-Copy-23" fill="#B7B7B7" fill-rule="nonzero"></path>
+            <rect id="Rectangle-2-Copy-19" fill="#6694EF" fill-rule="nonzero" x="16" y="29" width="57" height="6" rx="3"></rect>
+            <rect id="Rectangle-2-Copy-20" fill="#9BE8EF" fill-rule="nonzero" x="16" y="51" width="57" height="6" rx="3"></rect>
+            <rect id="Rectangle-2-Copy-21" fill="#E2E2E2" fill-rule="nonzero" x="16" y="75" width="100" height="6" rx="3"></rect>
+            <rect id="Rectangle-2-Copy-22" fill="#B7B7B7" fill-rule="nonzero" x="16" y="40" width="21" height="6" rx="3"></rect>
+            <rect id="Rectangle-2-Copy-23" fill="#B7B7B7" fill-rule="nonzero" x="42" y="40" width="60" height="6" rx="3"></rect>
+            <rect id="Rectangle-2-Copy-24" fill="#F8F1A1" fill-rule="nonzero" x="16" y="62" width="39" height="6" rx="3"></rect>
+            <rect id="Rectangle-2-Copy-25" fill="#E2E2E2" fill-rule="nonzero" x="60" y="62" width="48" height="6" rx="3"></rect>
+            <g id="Page-1" transform="translate(112.000000, 53.000000)">
+                <mask id="mask-4" fill="white">
+                    <use xlink:href="#path-3"></use>
+                </mask>
+                <g id="Clip-2"></g>
+                <path d="M0,20 L1.17003763,15.3116525 L4.68779398,18.8311469 L0,20 Z M16.1200611,0.364678646 C16.6068909,-0.121559549 17.3935795,-0.121559549 17.8786453,0.364678646 L19.6366416,2.12383787 C20.1211195,2.60948811 20.1211195,3.3967589 19.6366416,3.88240914 L16.9996472,6.51938412 L13.4836548,3.00282953 L16.1200611,0.364678646 Z M2.05726717,14.4326609 L12.6046566,3.88182119 L16.1206491,7.39896373 L5.57325964,17.9509793 L2.05726717,14.4326609 Z" id="Fill-1" fill="#6694EF" mask="url(#mask-4)"></path>
             </g>
         </g>
     </g>
