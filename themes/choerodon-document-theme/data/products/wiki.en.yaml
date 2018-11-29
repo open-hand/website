@@ -3,21 +3,21 @@ name: "知识管理"
 icon: "icon-wiki"
 iconColor: "#0EC5F0"
 description: "知识管理服务是一个轻量级的强大Wiki平台，允许用户根据自己的特定需求自定义Wiki，为企业、IT团队提供方便的项目协作平台和强大的项目内容管理平台，集中式管理产品相关内容等，例如需求收集、架构设计、功能设计、开发规范、命名规范、会议记录、计划安排等。"
-summary: "便捷的项目协作平台和强大的项目内容管理平台"
+summary: "在线自定义编辑，团队协同共享，集中管理创意，需求和设计。"
 language: en
 
 childIcon1: "/img/home/wiki-1.svg"
 childTitle1: "知识沉淀"
-childDescription1: "沉淀软件开发过程中的需求、设计、规范等知识文档"
+childDescription1: "沉淀软件开发过程中的用户需求分析、产品设计、开发规范等知识文档"
 
 childIcon2: "/img/home/wiki-2.svg"
 childTitle2: "项目协同"
-childDescription2: "有效管理项目中的计划安排，会议记录等，加强项目成员之间的合作"
+childDescription2: "轻松分享文档内容、追踪编辑、评论动态、加强项目成员之间的合作"
 
 childIcon3: "/img/home/wiki-3.svg"
-childTitle3: "产品文档"
-childDescription3: "便捷地编写软件产品的概念说明、用户手册、快速入门等产品文档"
+childTitle3: "在线编辑"
+childDescription3: "便捷地编写会议记录、计划、安排、培训素材，支持多种文件格式的导入导出"
 
 childIcon4: "/img/home/wiki-4.svg"
-childTitle4: "培训教材"
-childDescription4: "方便地编写软件功能使用等培训材料，甚至视频教程等"
+childTitle4: "文档模板"
+childDescription4: "预置产品需求和敏捷回顾会议记录等文档模板，可以直接进行编辑，简化编辑排版"
