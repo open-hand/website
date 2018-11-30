@@ -31,7 +31,7 @@ weight = 3
 
 
 ## 图表  
-![部署次数图](/docs/user-guide/report/image/deploy-frequency1.png)  
+![部署次数图](/docs/user-guide/report/image/deploy-frequency1.jpg)  
 
 -	横坐标代表时间
 -	纵坐标代表部署次数
@@ -43,7 +43,7 @@ weight = 3
 
 
 ## 表格详情  
-![部署表格图](/docs/user-guide/report/image/deploy-frequency2.png)  
+![部署表格图](/docs/user-guide/report/image/deploy-frequency2.jpg)  
 
 -	状态：表示某一次部署的状态，包括成功、失败？
 -	部署时间：表示每次部署的具体时间。

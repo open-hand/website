@@ -31,8 +31,8 @@ weight = 1
 
 
 ## 图表  
-![代码提交图](/docs/user-guide/report/image/code-commits1.png)  
-![代码提交图2](/docs/user-guide/report/image/code-commits2.png) 
+![代码提交图](/docs/user-guide/report/image/code-commits1.jpg)  
+![代码提交图2](/docs/user-guide/report/image/code-commits2.jpg) 
 
 * 横坐标代表时间
 * 纵坐标均代表提交次数

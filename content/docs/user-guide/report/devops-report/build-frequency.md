@@ -29,7 +29,7 @@ weight = 2
 </blockquote>
 
 ## 图表  
-![构建次数图](/docs/user-guide/report/image/build-frequency1.png)
+![构建次数图](/docs/user-guide/report/image/build-frequency1.jpg)
 
 * 横坐标代表时间
 * 纵坐标代表构建次数
@@ -42,7 +42,7 @@ weight = 2
 
 
 ## 表格详情  
-![构建表格图](/docs/user-guide/report/image/build-frequency2.png)
+![构建表格图](/docs/user-guide/report/image/build-frequency2.jpg)
 
 * 状态：表示某一次构建中pipeline当前的状态，包括：Created, Pending, Running, Failed, Passed, Canceled, Skipped, Manual。
 * 版本：表示每次构建之后生成的对应的版本。若表格内显示“未生成版本”，那就表示此次的构建并未生成版本或者构建尚未完成以致当前无版本生成。
