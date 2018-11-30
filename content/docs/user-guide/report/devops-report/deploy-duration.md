@@ -42,7 +42,7 @@ weight = 3
 
 
 ## 表格详情  
-![部署表格图](/docs/user-guide/report/image/deploy-duration2.png)  
+![部署表格图](/docs/user-guide/report/image/deploy-duration2.jpg)  
 
 -	状态：表示某一次部署的状态，包括成功、失败与处理中。
 -	部署时间：表示每次部署的具体时间。

@@ -29,7 +29,7 @@ weight = 2
 </blockquote>
 
 ## 图表  
-![构建时长图](/docs/user-guide/report/image/build-duration1.png)  
+![构建时长图](/docs/user-guide/report/image/build-duration1.jpg)  
 
 * 横坐标代表每一次构建触发的分支名加上commit sha
 * 纵坐标代表构建时长
@@ -39,7 +39,7 @@ weight = 2
 
 
 ## 表格详情    
-![构建表格图](/docs/user-guide/report/image/build-duration2.png)
+![构建表格图](/docs/user-guide/report/image/build-duration2.jpg)
 
 * 状态：表示某一次构建中pipeline当前的状态，包括：Created, Pending, Running, Failed,   
 Passed, Canceled, Skipped, Manual。
