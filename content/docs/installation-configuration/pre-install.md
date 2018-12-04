@@ -40,7 +40,7 @@ Choerodon采用Spring Cloud作为微服务框架，运行在Docker上，以Kuber
 
     协议|方向|端口范围|目的
     ---|---|---|---
-    TCP	|入方向|6443*|Kubernetes API server
+    TCP	|入方向|6443|Kubernetes API server
     TCP	|入方向|2379-2380|etcd server client API
     TCP	|入方向|10250|Kubelet API
     TCP	|入方向|10251|kube-scheduler
@@ -53,7 +53,7 @@ Choerodon采用Spring Cloud作为微服务框架，运行在Docker上，以Kuber
     ---|---|---|---
     TCP|入方向|10250	|Kubelet API
     TCP|入方向|10255	|Read-only Kubelet API
-    TCP|入方向|30000-32767|	NodePort Services**
+    TCP|入方向|30000-32767|	NodePort Services
 
 ## 域名要求
 - Choerodon必须通过域名访问，用户需要将自己的域名指向搭建的Kubernetes任意主节点。

@@ -48,16 +48,12 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
     ``` 
     helm install c7n/devops-service \
         --set env.open.JAVA_OPTS="-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap" \
-        --set preJob.preConfig.mysql.host=c7n-mysql.c7n-system.svc \
-        --set preJob.preConfig.mysql.port=3306 \
         --set preJob.preConfig.datasource.url="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager-service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
         --set preJob.preConfig.datasource.username=choerodon \
         --set preJob.preConfig.datasource.password=password \
-        --set preJob.preInitDB.mysql.host=c7n-mysql.c7n-system.svc \
-        --set preJob.preInitDB.mysql.port=3306 \
         --set preJob.preInitDB.datasource.url="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/devops_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
-        --set preJob.preInitDB.mysql.username=choerodon \
-        --set preJob.preInitDB.mysql.password=password \
+        --set preJob.preInitDB.datasource.username=choerodon \
+        --set preJob.preInitDB.datasource.password=password \
         --set env.open.SPRING_DATASOURCE_URL="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/devops_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
         --set env.open.SPRING_DATASOURCE_USERNAME=choerodon \
         --set env.open.SPRING_DATASOURCE_PASSWORD=password \
