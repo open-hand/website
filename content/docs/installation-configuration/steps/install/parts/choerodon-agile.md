@@ -29,8 +29,10 @@ helm install c7n/mysql-client \
           CREATE USER IF NOT EXISTS 'choerodon'@'%' IDENTIFIED BY 'password';\
           CREATE DATABASE IF NOT EXISTS agile_service DEFAULT CHARACTER SET utf8;\
           CREATE DATABASE IF NOT EXISTS state_machine_service DEFAULT CHARACTER SET utf8;\
+          CREATE DATABASE IF NOT EXISTS issue_service DEFAULT CHARACTER SET utf8;\
           GRANT ALL PRIVILEGES ON agile_service.* TO choerodon@'%'; \
           GRANT ALL PRIVILEGES ON state_machine_service.* TO choerodon@'%';\
+          GRANT ALL PRIVILEGES ON issue_service.* TO choerodon@'%';\
           FLUSH PRIVILEGES;" \
     --version 0.1.0 \
     --name create-c7nagile-db \
@@ -167,10 +169,10 @@ helm install c7n/mysql-client \
         --set preJob.preConfig.mysql.password=password \
         --set preJob.preInitDB.mysql.host=c7n-mysql.c7n-system.svc \
         --set preJob.preInitDB.mysql.port=3306 \
-        --set preJob.preInitDB.mysql.database=agile_service \
+        --set preJob.preInitDB.mysql.database=issue_service \
         --set preJob.preInitDB.mysql.username=choerodon \
         --set preJob.preInitDB.mysql.password=password \
-        --set env.open.SPRING_DATASOURCE_URL="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/agile_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowMultiQueries=true" \
+        --set env.open.SPRING_DATASOURCE_URL="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/issue_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowMultiQueries=true" \
         --set env.open.SPRING_DATASOURCE_USERNAME=choerodon \
         --set env.open.SPRING_DATASOURCE_PASSWORD=password \
         --set env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE="http://register-server.c7n-system:8000/eureka/" \
@@ -180,13 +182,6 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
         --set env.open.SPRING_CLOUD_CONFIG_URI="http://config-server.c7n-system:8010/" \
         --set env.open.SERVICE_ATTACHMENT_URL="http://minio.example.choerodon.io/agile-service" \
-        --set env.open.SPRING_REDIS_HOST=c7n-redis.c7n-system.svc \
-        --set env.open.SPRING_REDIS_POST=6379 \
-        --set env.open.WORKH_TYPE="juhe" \
-        --set env.open.WORKH_ENABLED=true \
-        --set env.open.WORKH_CRON="59 59 23 15 12 *" \
-        --set env.open.JUST_FOR_RESTART=1 \
-        --set env.open.WORKH_APIKEY="dc135fefba469b4e48d07f7100af31e2" \
         --name issue-service \
         --version 0.11.1 \
         --namespace c7n-system
