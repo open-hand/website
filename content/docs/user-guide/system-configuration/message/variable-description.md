@@ -16,6 +16,8 @@ description = "模板中所有可用参数变量的解释说明"
 | ${verifyCode} | 验证码 |  模板：您的验证码为`${verifyCode}`。<br>发送参数：`verifyCode=123456`。<br>发送信息：您的验证码为123456。 |
 | ${addCount} | 添加的用户数量 | 模板：您已成功添加`${addCount}`名用户。<br>发送参数：`addCount=1`。<br>发送信息：你已成功添加1名用户。 |
 | ${summary} | 敏捷管理的issue编码名称 | 模板：`${summary}`已解决。<br>发送参数：`summary=No-1 编写变量说明文档`。<br>发送信息：No-1 编写变量说明文档已解决。 |
+| ${organizationName} | 组织名称 | 模板：`${organizationName}`组织已启用。<br>发送参数：`organizationName=Choerodon`。<br>发送消息：Choerodon组织已启用。 |
+| ${projectName} | 项目名称 | 模板：`${projectName}`项目已启用。<br>发送参数：`organizationName=Choerodon`。<br>发送消息：Choerodon项目已启用。 |
 
 模板中的参数变量通过`${}`进行替换，在发送时，将`${}`替换成对应的实际变量。
 
