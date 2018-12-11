@@ -18,7 +18,7 @@ Saga采用了BASE（Basic Availability， Soft， Eventual consistency，即基�
 
 - **菜单层次**：全局层
 - **菜单路径**：全局事务 > 事务定义
-- **默认角色**：平台管理员
+- **默认角色**：平台管理员、平台开发者
 
 ## 事务定义列表
 
