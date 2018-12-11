@@ -1,6 +1,6 @@
 +++
 title = "变量说明"
-weight = 8
+weight = 9
 description = "模板中所有可用参数变量的解释说明"
 +++
 
