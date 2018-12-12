@@ -52,7 +52,8 @@ helm install c7n/nfs-provisioner \
          --version=1.13.2 \
          --name elasticsearch \
          --set data.persistence.storageClass=ssd,data.storage=20Gi \
-         --set master.persistence.storageClass=ssd,data.storage=5Gi 
+         --set master.persistence.storageClass=ssd,data.storage=5Gi \
+         --namespace logging
     ```
 
    有关elasticsearch chart的介绍可在此处查询[helm charts](https://github.com/helm/charts/tree/master/stable/elasticsearch)
