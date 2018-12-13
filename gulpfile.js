@@ -17,7 +17,7 @@ var community_css = ['style.choerodon.css','footer.css','community.css','contrib
 var staticPath = 'themes/choerodon-document-theme/static/';
 var dataPath = 'themes/choerodon-document-theme/data/static/';
 
-gulp.task('default', function() {
+gulp.task('default', function(df) {
     // css
     gulp.src(home_css.map(function(file){
         return path.join(cssPath,file);
@@ -74,13 +74,15 @@ gulp.task('default', function() {
 
         fs.writeFileSync(dataPath+module,yaml.safeDump(home),'utf8');
      });
+     df();
 });
 
-gulp.task('html', function() {
+gulp.task('html', function(html) {
     // file
     gulp.src('public/**/*.html')
     .pipe(htmlmin({
         collapseWhitespace: true
     }))
     .pipe(gulp.dest('./public/'));
+    html();
 });
