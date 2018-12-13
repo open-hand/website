@@ -3,3 +3,4 @@ background: "/img/docs/quick-start/video/devops.svg"
 title: "部署流水线"
 time: "6分18秒"
 description: "以部署并访问应用示例来介绍持续交付中部署流水线使用方法"
+weight: 20

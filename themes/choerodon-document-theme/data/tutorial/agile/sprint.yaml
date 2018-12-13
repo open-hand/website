@@ -3,3 +3,4 @@ background: "/img/docs/quick-start/video/agile.svg"
 title: "活跃冲刺"
 time: "04分24秒"
 description: "了解冲刺，看板的管理，配置和使用。"
+weight: 30

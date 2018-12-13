@@ -3,3 +3,4 @@ src: "h07358jaa5q"
 background: "/img/docs/quick-start/video/agile.svg"
 time: "22分43秒"
 description: "围绕敏捷的Scrum模型，阐述如何使用Choerodon的敏捷管理来管理项目。"
+weight: 10

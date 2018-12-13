@@ -3,3 +3,4 @@ background: "/img/docs/quick-start/video/test.svg"
 title: "测试报告"
 time: "5分18秒"
 description: "以讲解两种测试报表的方式来介绍测试管理的报表展现的含义"
+weight: 20
