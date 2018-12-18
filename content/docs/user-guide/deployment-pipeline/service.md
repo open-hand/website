@@ -9,14 +9,14 @@ weight = 5
 网络是一种管理内部服务连通方式的策略，实现容器内部资源的负载均衡以及流量转发。配置后，平台会将网络流量定向转发到指定的单个或者多个实例容器组，完成服务的连通与流转。应用可以访问的两个必要条件：网络注册、应用部署。
     
   - **菜单层次**：项目层
-  - **菜单路径**：部署流水线 > 网络
+  - **菜单路径**：部署流水线 > 资源 > 网络
   - **默认角色**：项目所有者、项目成员（环境成员）
 <blockquote class="note">
 项目所有者和项目成员对网络只有查看界面的权限，不可进行编辑修改。
 </blockquote>
 
 ## 创建网络
-![创建环网络](/docs/user-guide/deployment-pipeline/image/create network.png)
+![创建网络](/docs/user-guide/deployment-pipeline/image/create-service.jpg)
  
  1. 点击 `创建网络` ；
 
@@ -62,7 +62,7 @@ weight = 5
 ## 查看网络
  进`部署流水线`后，点击`网络` ；查看项目应用的网络配置信息。
 
-  ![service](/docs/user-guide/deployment-pipeline/image/service.png) 
+  ![service](/docs/user-guide/deployment-pipeline/image/service.jpg) 
 
 ## 修改网络
 
