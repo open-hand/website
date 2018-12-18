@@ -61,16 +61,15 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_DATASOURCE_USERNAME=choerodon \
         --set env.open.SPRING_DATASOURCE_PASSWORD=password \
         --set env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE="http://register-server.c7n-system:8000/eureka/" \
-        --set env.open.CHOERODON_EVENT_CONSUMER_KAFKA_BOOTSTRAP_SERVERS="kafka-0.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-1.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-2.kafka-headless.c7n-system.svc.cluster.local:9092" \
-        --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS="kafka-0.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-1.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-2.kafka-headless.c7n-system.svc.cluster.local:9092" \
-        --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES="zookeeper-0.zookeeper-headless.c7n-system.svc.cluster.local:2181\,zookeeper-1.zookeeper-headless.c7n-system.svc.cluster.local:2181\,zookeeper-2.zookeeper-headless.c7n-system.svc.cluster.local:2181" \
         --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
         --set env.open.SPRING_CLOUD_CONFIG_URI="http://config-server.c7n-system:8010/" \
         --set env.open.SERVICES_ATTACHMENT_URL="http://minio.example.choerodon.io/agile-service/" \
+        --set env.open.SERVICES_WIKI_HOST="http://wiki.example.choerodon.io" \
+        --set env.open.SERVICES_WIKI_TOKEN="Choerodon" \
         --set env.open.SPRING_REDIS_HOST=c7n-redis.c7n-system.svc \
         --set env.open.SPRING_REDIS_DATABASE=4 \
         --name agile-service \
-        --version 0.11.1 \
+        --version 0.12.0 \
         --namespace c7n-system
     ```
     参数名 | 含义 
@@ -84,9 +83,9 @@ helm install c7n/mysql-client \
     env.open.SPRING_CLOUD_CONFIG_ENABLED|启用配置中心
     env.open.SPRING_CLOUD_CONFIG_URI|配置中心地址
     env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE|注册服务地址
-    env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS|kafk地址
-    env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES|zookeeper地址
     env.open.SERVICES_ATTACHMENT_URL|minio地址，地址中agile-service为minio bucket
+    env.open.SERVICES_WIKI_HOST|wiki地址
+    env.open.SERVICES_WIKI_TOKEN|wiki OIDC TOKEN，必须与xwiki中的env.OIDC_WIKI_TOKEN参数值和wiki-service中的env.open.WIKI_TOKEN参数值一致
 
 - 验证部署
     - 验证命令
@@ -122,15 +121,10 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_DATASOURCE_USERNAME=choerodon \
         --set env.open.SPRING_DATASOURCE_PASSWORD=password \
         --set env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE="http://register-server.c7n-system:8000/eureka/" \
-        --set env.open.SPRING_KAFKA_BOOTSTRAP_SERVERS="kafka-0.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-1.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-2.kafka-headless.c7n-system.svc.cluster.local:9092" \
-        --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS="kafka-0.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-1.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-2.kafka-headless.c7n-system.svc.cluster.local:9092" \
-        --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES="zookeeper-0.zookeeper-headless.c7n-system.svc.cluster.local:2181\,zookeeper-1.zookeeper-headless.c7n-system.svc.cluster.local:2181\,zookeeper-2.zookeeper-headless.c7n-system.svc.cluster.local:2181" \
-        --set env.open.SPRING_KAFKA_PRODUCER_VALUE_SERIALIZER="org.apache.kafka.common.serialization.ByteArraySerializer" \
         --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
         --set env.open.SPRING_CLOUD_CONFIG_URI="http://config-server.c7n-system:8010/" \
-        --set env.open.CHOERODON_EVENT_CONSUMER_KAFKA_BOOTSTRAP_SERVERS="kafka-0.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-1.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-2.kafka-headless.c7n-system.svc.cluster.local:9092" \
         --name state-machine-service \
-        --version 0.11.1 \
+        --version 0.12.0 \
         --namespace c7n-system
     ```
     参数名 | 含义 
@@ -145,11 +139,17 @@ helm install c7n/mysql-client \
     env.open.SPRING_CLOUD_CONFIG_ENABLED|启用配置中心
     env.open.SPRING_CLOUD_CONFIG_URI|配置中心地址
     env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE|注册服务地址
-    env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS|kafk地址
-    env.open.SPRING_KAFKA_BOOTSTRAP_SERVERS|kafk地址
-    env.open.CHOERODON_EVENT_CONSUMER_KAFKA_BOOTSTRAP_SERVERS|kafk地址
-    env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES|zookeeper地址
-    env.open.SPRING_KAFKA_PRODUCER_VALUE_SERIALIZER|Kafka参数，无需修改
+
+- 验证部署
+    - 验证命令
+
+        ```
+        curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=state-machine-service -o jsonpath="{.items[0].status.podIP}"):8385/health | jq -r .status
+        ```
+    - 出现以下类似信息即为成功部署
+        ```
+        UP
+        ```
 
 
 ## 部署issue service
@@ -176,14 +176,11 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_DATASOURCE_USERNAME=choerodon \
         --set env.open.SPRING_DATASOURCE_PASSWORD=password \
         --set env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE="http://register-server.c7n-system:8000/eureka/" \
-        --set env.open.SPRING_KAFKA_BOOTSTRAP_SERVERS="kafka-0.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-1.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-2.kafka-headless.c7n-system.svc.cluster.local:9092" \
-        --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS="kafka-0.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-1.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-2.kafka-headless.c7n-system.svc.cluster.local:9092" \
-        --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES="zookeeper-0.zookeeper-headless.c7n-system.svc.cluster.local:2181\,zookeeper-1.zookeeper-headless.c7n-system.svc.cluster.local:2181\,zookeeper-2.zookeeper-headless.c7n-system.svc.cluster.local:2181" \
         --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
         --set env.open.SPRING_CLOUD_CONFIG_URI="http://config-server.c7n-system:8010/" \
         --set env.open.SERVICE_ATTACHMENT_URL="http://minio.example.choerodon.io/agile-service" \
         --name issue-service \
-        --version 0.11.1 \
+        --version 0.12.0 \
         --namespace c7n-system
     ```
     参数名 | 含义 
@@ -199,10 +196,18 @@ helm install c7n/mysql-client \
     env.open.SPRING_CLOUD_CONFIG_ENABLED|启用配置中心
     env.open.SPRING_CLOUD_CONFIG_URI|配置中心地址
     env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE|注册服务地址
-    env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS|kafk地址
-    env.open.SPRING_KAFKA_BOOTSTRAP_SERVERS|kafk地址
-    env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES|zookeeper地址
     env.open.env.open.SERVICE_ATTACHMENT_URL|minio地址
     env.open.SPRING_REDIS_HOST|Redis数据库地址
     env.open.SPRING_REDIS_POST|Redis数据库端口
     
+
+- 验证部署
+    - 验证命令
+
+        ```
+        curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=issue-service -o jsonpath="{.items[0].status.podIP}"):8381/health | jq -r .status
+        ```
+    - 出现以下类似信息即为成功部署
+        ```
+        UP
+        ```

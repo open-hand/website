@@ -44,7 +44,5 @@ Choerodon采用Spring Cloud作为微服务框架，运行在Docker上，以Kuber
 1. [Minio部署](./minio)
 1. [Redis部署](./redis)
 1. [Mysql部署](./mysql)
-1. [Zookeeper部署](./zookeeper)
-1. [kafka部署](./kafka)
 1. [Harbor部署](./harbor)
 1. [Gitlab部署](./gitlab)

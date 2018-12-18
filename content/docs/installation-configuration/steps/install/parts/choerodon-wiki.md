@@ -80,7 +80,7 @@ helm install c7n/mysql-client \
         --set "ingress.hosts[0]"=wiki.example.choerodon.io \
         --timeout 3000 \
         --name xwiki \
-        --version 0.11.0 \
+        --version 0.12.0 \
         --namespace c7n-system
     ```
 
@@ -99,7 +99,7 @@ helm install c7n/mysql-client \
     env.CHOERODON_REQUEST_FRONT_URL| 前端地址
     env.OIDC_CLIENTID|OIDC客户端
     env.OIDC_SECRET|OIDC秘钥
-    env.OIDC_WIKI_TOKEN|OIDC TOKEN
+    env.OIDC_WIKI_TOKEN|OIDC TOKEN，必须agile-service中的env.open.SERVICES_WIKI_TOKEN参数值一致
     service.enabled|创建service对象
     ingress.enable|创建ingress对象
     ingress.hosts|wiki域名地址
@@ -147,11 +147,6 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_DATASOURCE_PASSWORD=password \
         --set env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE="http://register-server.c7n-system:8000/eureka/" \
         --set env.open.EUREKA_DEFAULT_ZONE=http://register-server.c7n-system:8000/eureka/ \
-        --set env.open.CHOERODON_EVENT_CONSUMER_KAFKA_BOOTSTRAP_SERVERS="kafka-0.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-1.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-2.kafka-headless.c7n-system.svc.cluster.local:9092" \
-        --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS="kafka-0.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-1.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-2.kafka-headless.c7n-system.svc.cluster.local:9092" \
-        --set env.open.SPRING_KAFKA_BOOTSTRAP_SERVERS="kafka-0.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-1.kafka-headless.c7n-system.svc.cluster.local:9092\,kafka-2.kafka-headless.c7n-system.svc.cluster.local:9092" \
-        --set env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES="zookeeper-0.zookeeper-headless.c7n-system.svc.cluster.local:2181\,zookeeper-1.zookeeper-headless.c7n-system.svc.cluster.local:2181\,zookeeper-2.zookeeper-headless.c7n-system.svc.cluster.local:2181" \
-        --set env.open.SPRING_KAFKA_PRODUCER_VALUE_SERIALIZER=org.apache.kafka.common.serialization.ByteArraySerializer \
         --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
         --set env.open.SPRING_CLOUD_CONFIG_URI=http://config-server.c7n-system:8010/ \
         --set env.open.WIKI_CLIENT=xwiki \
@@ -169,8 +164,7 @@ helm install c7n/mysql-client \
     env.open.SPRING_CLOUD_CONFIG_ENABLED|启用配置中心
     env.open.SPRING_CLOUD_CONFIG_URI|配置中心地址
     env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE|注册服务地址
-    env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS|kafk地址
-    env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES|zookeeper地址
+    env.open.WIKI_TOKEN|wiki OIDC TOKEN，必须与xwiki中的env.OIDC_WIKI_TOKEN参数值和agile-service中的env.open.SERVICES_WIKI_TOKEN参数值一致
 
 - 同步已有项目和组织
 
