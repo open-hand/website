@@ -12,13 +12,13 @@ weight = 6
 目前**Web前端**需配置域名，若不配置域名，不能进行外网访问该前端，只能查看系统提供的 Pod IP。
 
   - **菜单层次**：项目层
-  - **菜单路径**：部署流水线 > 域名
+  - **菜单路径**：部署流水线 > 资源 > 域名
   - **默认角色**：项目所有者、项目成员（环境成员）
     <blockquote class="note">
          项目所有者和项目成员对域名只有查看界面的权限，不可进行编辑修改。
       </blockquote>
 
-    ![ingress](/docs/user-guide/deployment-pipeline/image/ingress.png) 
+    ![ingress](/docs/user-guide/deployment-pipeline/image/ingress.jpg) 
 
 ## 创建域名
 - 点击 `创建域名`；

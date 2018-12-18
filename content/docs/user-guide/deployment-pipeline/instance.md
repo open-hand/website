@@ -19,7 +19,7 @@ weight = 4
 
 #### 应用部署情况
     
-![single env](/docs/user-guide/deployment-pipeline/image/instance4.jpg)
+![single env](/docs/user-guide/deployment-pipeline/image/instance1.jpg)
 
 
   - 应用：选择相应环境下的应用。
@@ -28,7 +28,8 @@ weight = 4
 
   - 应用版本：应用的版本。  
   
-  - 点击页面左侧![展开按钮](/docs/user-guide/deployment-pipeline/image/arrow_button.jpg) 按钮 ，页面展开，会显示该实例下Deployments的相关信息，其中包括Deployment的名称与创建时间，ReplicaSet的上限数、当前实际数以及可用数。同时，还显示了其中Pods的数量与状态，并能在此跳转查看Pods的详情。
+  - 点击页面左侧![展开按钮](/docs/user-guide/deployment-pipeline/image/arrow_button.jpg) 按钮 ，页面展开，会显示该实例下Deployments的相关信息，其中包括Deployment的名称与创建时间，ReplicaSet的上限数、当前实际数以及可用数。同时，还显示了其中Pods的数量与状态，并能在此跳转查看Pods的详情。此外，点击下方的`查看更多详情`，会从右侧展开显示更多关于deployment详情。如：端口、数据卷、健康检查、主机设置、环境变量、标签。  
+  ![deployment-more](/docs/user-guide/deployment-pipeline/image/instance8.jpg)
 
   - 点击页面右侧 ![详情按钮](/docs/user-guide/development-pipeline/image/detail_button.png) 按钮 ，再点击`查看实例详情`，进入实例详情后观察其运行详情和部署详情。
 
@@ -59,7 +60,7 @@ weight = 4
 ## 运行详情
 Chart 里定义的各个资源对象列表及参数信息。
 
-  ![instance details](/docs/user-guide/deployment-pipeline/image/instance3.png)
+  ![instance details](/docs/user-guide/deployment-pipeline/image/instance3.jpg)
 
 资源对象|参数信息|参数介绍
 :----|----|----
@@ -69,10 +70,10 @@ ReplicaSet |name, desired, current, ready, age|name是ReplicaSet的名称，desi
 Service|name, type, cluster-ip, external-ip, port, age|name是指Service的名称，type是指service的类型,cluster-ip是节点ip，external-ip是指外部ip，port是指端口，age是指创建时间
 Ingress|name, hosts, address, ports, age|name是指Ingress的名称，hosts是指Ingress主机host，address是指地址，ports是指端口
 
-## 部署详情
-包括报错信息、配置信息、阶段及日志。
+## 实例事件
+包括该实例最近四个版本的job与deployments的事件及其对应的日志；同时，还能点击查看这些版本对应的部署配置信息。
        
-  ![stage log](/docs/user-guide/deployment-pipeline/image/instance2.png)
+  ![stage log](/docs/user-guide/deployment-pipeline/image/instance2.jpg)
 
 
 ## 修改配置信息

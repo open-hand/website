@@ -12,16 +12,17 @@ weight = 7
 **容器管理**便于您查看和管理系统中的容器化实例，可以实时查看相关 Pod 的状态以确定应用是否正常运行，同时可以查看对应的 Pod 日志进行错误定位和状态监控。
 
   - **菜单层次**：项目层
-  - **菜单路径**：部署流水线 > 容器
+  - **菜单路径**：部署流水线 > 资源 > 容器
   - **默认角色**：项目所有者、项目成员（环境成员）
 
 ## 查看容器管理详情
 
  1. 进入容器界面，通过列表信息观察容器状态、容器地址、可用情况、创建时间；
 
- 1. 点击`容器日志`→ ![容器日志按钮](/docs/user-guide/deployment-pipeline/image/container_log_button.png) 查看容器日志。
+ 1. 点击`容器日志`→ ![容器日志按钮](/docs/user-guide/deployment-pipeline/image/container_log_button.png) 查看容器日志。  
+ 3. 点击`运行命令`→ ![运行命令按钮](/docs/user-guide/deployment-pipeline/image/shell.jpg) 即可使用shell命令操作该容器。
 
-![container](/docs/user-guide/deployment-pipeline/image/container.png) 
+![container](/docs/user-guide/deployment-pipeline/image/container.jpg) 
 
  - 状态：容器的状态分为以下五种，分别为 Pending、Running、Succeeded、Failed 和 Unknown。
 

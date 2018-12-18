@@ -10,7 +10,7 @@ weight = 8
 域名证书是受法律认可的证书文件，用电子文书的形式，确定了域名注册者对域名的拥有权以及拥有时限，对于确立域名的归属有决定性的作用。您在每个环境中添加的所有域名都需要有域名证书。
     
   - **菜单层次**：项目层
-  - **菜单路径**：部署流水线 > 证书管理
+  - **菜单路径**：部署流水线 > 资源 > 证书
   - **默认角色**：项目所有者、项目成员（环境成员）
 <blockquote class="note">
 项目所有者和项目成员对域名证书只有查看界面的权限，不可进行创建和删除操作。
@@ -27,29 +27,33 @@ weight = 8
  <blockquote class="warning">  证书名称：由小写字母、数字或‘-’组成，并且必须以字母或数字开始和结束！环境下唯一。</blockquote>
 
  
- 4. 选择`参数配置`，选择类型为 `申请证书` 或是 `上传证书` ；
+ 4. 选择`参数配置`，选择类型为 `申请证书`、`上传证书`或是`选择证书` ；
  
     - 申请证书:  
-    ![申请证书](/docs/user-guide/deployment-pipeline/image/c-apply.png)
+    ![申请证书](/docs/user-guide/deployment-pipeline/image/c-apply.jpg)
     
-        - 选择了申请证书之后，只需输入域名。
-    
+        - 选择了申请证书之后，只需输入域名。但若是所选环境对应的集群并未安装CrtManager，则不能进行申请证书的操作。
+
             <blockquote class="warning">
-              域名由小写字母，数字，'-'或'.'组成，以字母、数字开始和结束
+              此处的CrtManager为二开版本，并非官方版本；但自0.12.0版本后，CertManager的安装被集成到了agent里，agent会根据设置自行安装对应版本的CertManager。
             </blockquote>
 
         
     - 上传证书:  
-    ![上传证书](/docs/user-guide/deployment-pipeline/image/c-upload.png)
-    
-        - 若选择上传证书，需要输入域名，并且上传与该域名关联的证书文件：包括一个key文件和一个cert文件。
+    ![上传证书](/docs/user-guide/deployment-pipeline/image/c-upload.jpg)
+     
+        - 若选择上传证书，需要输入域名，并且粘贴上传与该域名关联的证书文件内容：包括一个key文件和一个cert文件。
               
             <blockquote class="warning">
               此处输入的域名必须与上传的证书文件相匹配
             </blockquote>
 
-
+    - 选择证书:  
+    ![选择证书](/docs/user-guide/deployment-pipeline/image/c-choose.jpg)
     
+        - 勾选选择证书的选项后，首先需要在中已被组织授权的证书中选择一个证书，再在此证书的基础上添加域名。
+              
+          
  5. 点击 `创建`完成证书的创建。
 
 
