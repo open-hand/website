@@ -74,6 +74,7 @@ spec:
       password: admin   # 前端 默认密码为admin，暂不能修改
     xwiki:
       domain: wiki.example.com
+      schema: http
 ```
 
 ## 开始部署

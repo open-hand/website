@@ -20,8 +20,6 @@ Chartmuseum|Kubernetes应用私有包仓库|0.5.2
 Minio|对象存储服务|RELEASE.2018-05-25T19-49-13Z
 Redis|缓存数据库|4.0.2
 Mysql|数据库|5.7.22
-Zookeeper|分布式应用程序协调服务|3.4.10
-Kafka|消息中间件|1.0.0
 Harbor|容器的镜像库|1.4.0
 Gitlab|代码托管|11.0.1
 Gitlab-Runner|CI/CD 运行环境|10.7.2
@@ -36,21 +34,21 @@ Gitlab-Runner|CI/CD 运行环境|10.7.2
 
 组件|描述| 版本
 ---|---|---
-register server|注册服务|0.11.0
-config server|配置服务|0.11.0
-manager service|管理服务|0.11.1
-iam service|IAM服务|0.11.0
-api gateway|网关服务|0.11.0
-gateway helper|网关helper|0.11.1
-oauth server|认证服务|0.11.0
-file service|文件服务|0.11.0
-notify service|通知服务|0.11.0
-asgard service|事务服务|0.11.1
-gitlab service|Gitlab 服务|0.11.1
-devops service|Devops 服务|0.11.0
-agile service|敏捷管理|0.11.0
-state-machine-service|状态机服务|0.11.0
-issue-service|issue服务|0.11.0
-wiki service|知识管理服务|0.11.0
-test manager service|测试管理服务|0.11.0
-choerodon front|Choerodon 前端|0.11.1
+register server|注册服务|0.12.0
+config server|配置服务|0.12.0
+manager service|管理服务|0.12.0
+iam service|IAM服务|0.12.0
+api gateway|网关服务|0.12.0
+gateway helper|网关helper|0.12.0
+oauth server|认证服务|0.12.0
+file service|文件服务|0.12.0
+notify service|通知服务|0.12.0
+asgard service|事务服务|0.12.0
+gitlab service|Gitlab 服务|0.12.0
+devops service|Devops 服务|0.12.0
+agile service|敏捷管理|0.12.0
+state machine service|状态机服务|0.12.0
+issue service|issue服务|0.12.0
+wiki service|知识管理服务|0.12.0
+test manager service|测试管理服务|0.12.0
+choerodon front|Choerodon 前端|0.12.0
