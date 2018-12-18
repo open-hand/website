@@ -7,7 +7,7 @@ weight = 10
 # 分步部署微服务开发框架
 
 <blockquote class="warning">
-在此之前，应该准备好Mysql、Harbor、Kafka、Zookeeper、Gitlab、Minio，Chartmuseum这些组件的信息。按以下搭建顺序进行搭建，请不要随意调整搭建顺序。
+在此之前，应该准备好Mysql、Harbor、Gitlab、Minio，Chartmuseum这些组件的信息。按以下搭建顺序进行搭建，请不要随意调整搭建顺序。
 以下验证部署是否成功如未特别说明则执行验证的环境为任意一台集群Master节点。
 </blockquote>
 
@@ -442,7 +442,7 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
         --set env.open.SPRING_CLOUD_CONFIG_URI="http://config-server.c7n-system:8010/" \
         --name oauth-server \
-        --version 0.11.0 \
+        --version 0.12.0 \
         --namespace c7n-system
     ```
     参数名 | 含义 
@@ -492,8 +492,6 @@ helm install c7n/mysql-client \
     env.open.SPRING_CLOUD_CONFIG_ENABLED|启用配置中心
     env.open.SPRING_CLOUD_CONFIG_URI|配置中心地址
     env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE|注册服务地址
-    env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS|kafk地址
-    env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES|zookeeper地址
     env.open.MINIO_ENDPOINT|minio地址
     env.open.MINIO_ACCESSKEY|minio access key
     env.open.MINIO_SECRETKEY|minio secret key

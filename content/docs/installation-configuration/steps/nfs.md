@@ -35,10 +35,11 @@ helm repo update
 {{< annotation shell "集群内提供存储的节点的Node Name，可通过 kubectl get node 命令查看" "该节点的物理目录，需手动创建">}}
 helm install c7n/nfs-provisioner \
     --set rbac.create=true \
+    --set service.enabled=true \
     --set persistence.enabled=true \
     --set persistence.nodeName=node1 \(1)
     --set persistence.hostPath=/export \(1)
-    --version 0.2.0 \
+    --version 0.1.0 \
     --name nfs-provisioner \
     --namespace kube-system
 {{< /annotation >}}
