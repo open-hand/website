@@ -154,7 +154,7 @@ helm install c7n/mysql-client \
         --set env.open.WIKI_TOKEN=Choerodon \
         --set env.open.WIKI_DEFAULT_GROUP=XWikiAllGroup \
         --name wiki-service \
-        --version 0.11.0 \
+        --version 0.12.0 \
         --namespace c7n-system
     ```
 

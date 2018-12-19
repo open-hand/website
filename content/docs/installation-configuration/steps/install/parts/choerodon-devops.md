@@ -48,7 +48,7 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
     ``` 
     helm install c7n/devops-service \
         --set env.open.JAVA_OPTS="-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap" \
-        --set preJob.preConfig.datasource.url="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager-service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
+        --set preJob.preConfig.datasource.url="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
         --set preJob.preConfig.datasource.username=choerodon \
         --set preJob.preConfig.datasource.password=password \
         --set preJob.preInitDB.datasource.url="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/devops_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
