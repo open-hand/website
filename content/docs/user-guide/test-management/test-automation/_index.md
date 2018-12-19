@@ -23,4 +23,5 @@ description = "自动化测试功能可以运行自动化测试并查看测试�
 - [测试计划](../test-plan)
 - [测试执行](../test-execute)
 - [执行测试](../execution-test)
-- 创建测试类型应用
+- [Mocha框架应用模板使用](../../application-management/application-template/)
+- [创建测试类型应用](../../application-management/application/)
