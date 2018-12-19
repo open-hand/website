@@ -15,9 +15,9 @@ weight = 2
   - **默认角色**：项目所有者、项目成员
 
     <blockquote class="note">
-      项目所有者对分支管理权限对应 gitlab 的 Master 权限。
+      项目所有者对分支的管理权限对应 gitlab 的 Master 权限。
 
-      项目成员对分支管理权限对应 gitlab 仅有 Developer 权限。
+      被分配应用权限的项目成员对分支管理的权限对应 gitlab 仅有 Maintainer 权限。
     </blockquote>
 
 ## 分支管理策略

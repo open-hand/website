@@ -73,7 +73,11 @@ Ingress|name, hosts, address, ports, age|name是指Ingress的名称，hosts是�
 ## 实例事件
 包括该实例最近四个版本的job与deployments的事件及其对应的日志；同时，还能点击查看这些版本对应的部署配置信息。
        
-  ![stage log](/docs/user-guide/deployment-pipeline/image/instance2.jpg)
+  ![stage log](/docs/user-guide/deployment-pipeline/image/instance2.jpg)  
+
+<blockquote class="note">
+  鼠标移动到某个job模块时，在右上角会hover出该job的日志详情按钮，点击即可进入查看job日志。
+</blockquote>
 
 
 ## 修改配置信息
