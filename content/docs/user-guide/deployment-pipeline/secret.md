@@ -60,6 +60,6 @@ weight = 10
 - [环境总览](../environments-overview)
 - [环境流水线](../environment-pipeline)
 - [容器管理](../container)
-- [配置映射](../configmap)
+- [配置映射](../config-map)
 
 
