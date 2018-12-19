@@ -12,5 +12,5 @@ weight = 12
 </blockquote>
 
 - 命令格式为： `helm delete [flags] RELEASE_NAME [...]`，详细请参考[Helm官方文档](https://docs.helm.sh/helm/#helm-delete)
-- 删除`helm list | grep c7n-system | xargs helm delete --purge`
+- 删除`helm list | grep c7n-system | awk '{print $1}' | xargs helm delete --purge`
 - 如有需要最后可将`namespace`一并删除，`kubectl delete ns [namespace]`。
