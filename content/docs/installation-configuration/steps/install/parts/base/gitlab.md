@@ -197,6 +197,21 @@ helm install c7n/gitlab \
 如果您启用了防火墙iptables或者安全组，那么必须添加新开的2289端口
 </blockquote>
 
+### 验证是否启用成功
+
+- 在Master节点执行
+
+  ```
+  kubectl get svc -n c7n-system gitlab-ssh
+  ```
+  
+  出现类似内容即说明启用成功。
+
+  ```
+  NAMESPACE      NAME          TYPE        CLUSTER-IP      EXTERNAL-IP     PORT(S)    AGE
+  gitlab         gitlab-ssh    ClusterIP   10.233.12.57    192.168.1.1     2289/TCP   1d
+  ```
+
 ## 配置Choerodon Oauth认证
 
 <blockquote class="warning">
