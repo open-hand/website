@@ -15,7 +15,68 @@ weight = 1
   - **默认角色**：组织管理员
 
 ## 预置应用模板
-系统中已经预置了几种应用模板，其中包括 `JavaLib(jar库)`、`MicroServiceFront(web前端应用模板)`、`MicroService(微服务应用模板)`在创建应用时可以根据自己的需求选择应用模板，进行快速开发，预定义模板不可操作。
+系统中已经预置了几种应用模板，其中包括 `JavaLib(jar库)`、`MicroServiceFront(web前端应用模板)`、`MicroService(微服务应用模板)`、`ChoerodonMochaTemplate(mocha测试框架模板)`在创建应用时可以根据自己的需求选择应用模板，进行快速开发，预定义模板不可操作。
+
+### 测试应用模板的使用
+
+mocha api 测试框架为 `Nodejs` 类型的前端项目，下面会介绍一下项目结构与使用方法。
+
+项目结构如下
+
+    |--charts
+        ｜--model-service    
+          ｜--templates               
+            ｜--automation-test.yaml
+          ｜--.helmignore
+          ｜--Chart.yaml
+          ｜--values.yaml
+    |--test
+        |--apiFunction
+            |--statusService
+                |--statusFunction.js
+        |--apiTest
+            |--statusService
+                |--statusApi.test.js
+            |--index.js
+    |--.babelrc
+    |--.dockerignore
+    |--.eslintrc.json
+    |--.gitignore
+    |--.gitlab-ci.yml
+    |--Dockerfile
+    |--Utils.js
+    |--config.yaml
+    |--package.json
+    |--run.sh
+
+其中需要说明的有如下几点：
+
+1. helm chart 包中的 `values.yaml` 文件修改之前请谨慎阅读readme文件，以防修改错误导致自动化测试执行失败。
+2. `Dockerfile` 以及 `run.sh` 请谨慎修改。自动化测试的基本原理为：在所需环境执行自动化测试，然后调用测试管理服务接口将测试报告打包回传。如修改这两个文件可能会对结果解析产生未知影响。
+3. `config.yaml` 文件为本地启动测试应用使用，在自动化应用部署的时候以 `values.yaml` 文件为准。
+4. `Utils.js` 文件负责对环境变量进行解析，请谨慎修改。
+5. `package.json` 中已经引用了的包请谨慎删除或升级版本。
+6. 测试代码的业务逻辑应写在 `test` 文件夹中，模板中已有一个示例，为 `iam-service` 的 `self` 接口。如下：
+
+    ```
+    describe('Status Api-SELF', () => {
+      it('[GET] 查询自身状态', () => {
+        
+        /**
+        * @data  用户token
+        * @expect  正确的用户状态
+        * 
+        */
+        return statusFunc.getStatus();
+      });
+    });
+    ```
+
+    在解析测试结果的过程中，每一个 `describe` 会对应生成一个测试用例，每一个 `it` 会对应生成一个测试步骤。 `@data` 后的内容会转化为测试步骤的测试数据， `@expect` 后的内容会被转化为测试步骤的预期结果。如无这两项注释会造成测试步骤中 `测试数据` 以及 `测试结果` 的缺失。
+
+7. `.gitlab-ci.yml` 中定义了两个ci步骤，分别为：下载依赖、使用devops服务生成版本号打镜像。测试应用使用ci版本号是为了通过使用相同镜像可以保证测试逻辑不变，从而复用已导入的测试用例。
+
+**如对模板有任何疑问，请上论坛提问，谢谢。**
 
 ## 创建应用模板
 
