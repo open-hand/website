@@ -86,4 +86,4 @@ API的测试要点：
     - 响应头部：服务器与客户端通信的暗码，告诉客户端该怎么执行某些操作。
     - CURL：是一个利用URL语法在命令行下工作的文件传输工具。复制CURL得内容可在终端运行页面上得请求。
 
-![结果](/docs/user-guide/microservice-development/API-management/image/API测试结果.png)
+![结果](/docs/user-guide/microservice-development/API-management/image/API4.png)
