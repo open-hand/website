@@ -10,15 +10,15 @@ description = "本节介绍了自动化测试功能的使用方法"
 
 ### 点击新建测试
 
-<img src="/img/docs/user-guide/test-management/test-automation/create-automation-test-1.png" width="680"/>
+<img src="/img/docs/user-guide/test-management/test-automation/create-automation-test-1.png" width="550"/>
 
 1. 点击此处`选择应用`
 2. 点击进入`创建测试`步骤
 
 ### 选择测试实例
 
-<img src="/img/docs/user-guide/test-management/test-automation/create-automation-test-2.png" width="600"/>
-<img src="/img/docs/user-guide/test-management/test-automation/create-automation-test-3.png" width="820"/>
+<img src="/img/docs/user-guide/test-management/test-automation/create-automation-test-2.png" width="450"/>
+<img src="/img/docs/user-guide/test-management/test-automation/create-automation-test-3.png" width="700"/>
 
 3. 点击`打开应用列表`
 
@@ -35,7 +35,7 @@ description = "本节介绍了自动化测试功能的使用方法"
 
 ### 修改配置信息
 
-<img src="/img/docs/user-guide/test-management/test-automation/create-automation-test-4.png" width="550"/>
+<img src="/img/docs/user-guide/test-management/test-automation/create-automation-test-4.png" width="430"/>
 
 1. 在此编辑框内编辑配置信息，**与默认值不同的配置会被标注高亮**，如果有误，错误部分会红色高亮
 2. 点击`下一步`
@@ -54,7 +54,7 @@ description = "本节介绍了自动化测试功能的使用方法"
 
 ## 查看测试结果
 
-<img src="/img/docs/user-guide/test-management/test-automation/automation-test-result-1.png" width="620"/>
+<img src="/img/docs/user-guide/test-management/test-automation/automation-test-result-1.png"/>
 
 1. 查看测试结果概要，包括`运行状态`、`环境`、`执行方`、`测试框架`（目前仅支持`mocha`）、`应用版本`、`时长`、`执行时间`和`执行结果`。若`运行状态`或`测试结果`长期没有变化，请尝试刷新。
 
@@ -88,13 +88,13 @@ description = "本节介绍了自动化测试功能的使用方法"
 
 ### 测试报告
 
-<img src="/img/docs/user-guide/test-management/test-automation/automation-test-result-5.png" width="560"/>
+<img src="/img/docs/user-guide/test-management/test-automation/automation-test-result-5.png" width="450"/>
 
 
 1. 测试用例通过与未通过数量比例统计（饼状图）
 2. 本次自动化测试运行详情数据
 
-<img src="/img/docs/user-guide/test-management/test-automation/automation-test-result-6.png" width="700"/>
+<img src="/img/docs/user-guide/test-management/test-automation/automation-test-result-6.png" width="600"/>
 
 
 3. 测试用例测试时长统计（柱状图），鼠标悬停在某一用例上可以显示该用例的名称和时长
