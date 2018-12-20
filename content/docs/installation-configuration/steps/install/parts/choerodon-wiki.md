@@ -166,6 +166,18 @@ helm install c7n/mysql-client \
     env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE|注册服务地址
     env.open.WIKI_TOKEN|wiki OIDC TOKEN，必须与xwiki中的env.OIDC_WIKI_TOKEN参数值和agile-service中的env.open.SERVICES_WIKI_TOKEN参数值一致
 
+- 验证部署
+    - 验证命令
+
+        ```
+        curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=wiki-service -o jsonpath="{.items[0].status.podIP}"):9991/health | jq -r .status
+        ```
+    - 出现以下类似信息即为成功部署
+        ```
+        UP
+        ```
+
+
 - 同步已有项目和组织
 
     1. 服务部署完成之后，进入`Choerodon`平台，选择菜单`API管理`下的`API测试`。
