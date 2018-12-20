@@ -74,8 +74,8 @@ weight = 5
 
     ```bash
     $ iptables -A INPUT -p tcp --dport 6443 -j ACCEPT      # 开放6443端口
-    $ iptables -A INPUT -p tcp --dport 2379:2378 -j ACCEPT # 开放2379到2380端口
-    $ iptables save && service iptables restart            # 保存并重启iptables
+    $ iptables -A INPUT -p tcp --dport 2379:2380 -j ACCEPT # 开放2379到2380端口
+    $ iptables-save > /etc/sysconfig/iptables && service iptables restart            # 保存并重启iptables
     ```
 
 
@@ -246,6 +246,7 @@ weight = 5
 
     ```shell
     cd /vagrant
+    #在kubeadm-ansible/目录下执行
     ansible-playbook -i inventory/hosts -e @inventory/vars cluster.yml
     ```
 
@@ -311,6 +312,7 @@ weight = 5
 
     ```shell
     cd /vagrant
+    #在kubeadm-ansible/目录下执行
     ansible-playbook -i inventory/hosts -e @inventory/vars scale.yml
     ```
 
@@ -386,6 +388,7 @@ weight = 5
 
     ```shell
     export ANSIBLE_HOST_KEY_CHECKING=False
+    #在kubeadm-ansible/目录下执行
     ansible-playbook -i inventory/hosts -e @inventory/vars cluster.yml -K 
     ```
 
@@ -402,6 +405,7 @@ weight = 5
 - 如果部署失败，想要重置集群(所有数据)，执行：
 
     ```shell
+    #在kubeadm-ansible/目录下执行
     ansible-playbook -i inventory/hosts reset.yml -K
     ```
 
@@ -448,6 +452,7 @@ weight = 5
     - 执行添加节点命令
 
         ```shell
+        #在kubeadm-ansible/目录下执行
         ansible-playbook -i inventory/hosts -e @inventory/vars scale.yml -K
         ```
 
@@ -551,6 +556,7 @@ weight = 5
 
     ```shell
     export ANSIBLE_HOST_KEY_CHECKING=False
+    #在kubeadm-ansible/目录下执行
     ansible-playbook -i inventory/hosts -e @inventory/vars cluster.yml -K
     ```
 
@@ -730,6 +736,7 @@ spec:
 - 如果部署失败，想要重置集群(所有数据)，执行：
 
     ```shell
+    #在kubeadm-ansible/目录下执行
     ansible-playbook -i inventory/hosts reset.yml -K
     ```
 
@@ -776,6 +783,7 @@ spec:
     - 执行添加节点命令
 
         ```shell
+        #在kubeadm-ansible/目录下执行
         ansible-playbook -i inventory/hosts -e @inventory/vars scale.yml -K
         ```
 

@@ -139,7 +139,7 @@ helm install c7n/gitlab \
     env.config.MYSQL_PASSWORD|mysql用户密码 
     env.config.REDIS_HOST|redis地址 
     env.config.REDIS_PORT|redis端口号
-    env.config.SMTP_ENABLE|是否开启smtp 
+    env.config.SMTP_ENABLE|是否开启smtp，若为false，以下SMTP参数都不生效
     env.config.SMTP_ADDRESS|smtp地址
     env.config.SMTP_PORT|smtp端口号 
     env.config.SMTP_USER_NAME|stmp用户
