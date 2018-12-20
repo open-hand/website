@@ -1,6 +1,6 @@
 +++
 title = "组织信息"
-weight = 3
+weight = 4
 description = "用户所在的组织及在组织中的角色"
 +++
 

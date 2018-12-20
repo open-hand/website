@@ -1,6 +1,6 @@
 +++
 title = "API测试"
-weight = 1
+weight = 2
 description = "API测试过工具调用特定的API，获取输出，并记录系统的响应"
 +++
 
@@ -14,21 +14,11 @@ API测试需要与应用程序的API进行交互，测试时通过工具调用�
 - **菜单路径**：API管理 > API测试
 - **默认角色**：平台管理员、平台开发者
 
-## 查看微服务下的controller
+## 查看各服务下的API接口
 
-1. 点击所属微服务选择框。
-1. 输入关键字搜索微服务。
-1. 选择微服务。
-1. 列表显示该微服务下的controller，信息如下：
-    - controller名称：controller的名称，在同一个微服务下是唯一的。
-    - 描述：描述controller的功能。
-
-## 查看controller下的API接口
-
-1. 在列表的过滤框中，输入关键字搜索controller。
-1. 点击controller，展开该controller下的所有API接口，API接口的信息如下：
-
-    <img class="no-border" src="/docs/user-guide/system-configuration/API-management/image/api1.png"/>
+1. 选择您想要查看的API所属微服务。
+2. 选择对应的版本。
+3. 点击API接口所在的controller，展开该controller下的所有API接口。
 
     - 方法：
         - GET（SELECT）：从服务器取出资源（一项或多项）。
@@ -37,8 +27,10 @@ API测试需要与应用程序的API进行交互，测试时通过工具调用�
         - PATCH（UPDATE）：在服务器更新资源（客户端提供改变的属性）。
         - DELETE（DELETE）：从服务器删除资源。
         - OPTIONS：获取信息，关于资源的哪些属性是客户端可以改变的。
-    - 路径：给API发送请求需要访问的URL。
-    - 描述：API接口的功能描述。
+4. 点击任意API接口，就可以查看该API接口的详情。
+
+![api](/docs/user-guide/microservice-development/API-management/image/apitest.png)
+
 
 ## 测试API接口
 
@@ -61,9 +53,9 @@ API的测试要点：
 
 步骤：
 
-1. 点击API接口的查看详情按钮→<img class="no-border" src="/docs/user-guide/microservice-development/API-management/image/particulars.png"/>,进入到API测试页面。
+1. 点击API接口查看详情。
 
-1. 点击接口详情，可以查看API接口的详细信息，包括接口基本信息、请求参数信息、响应数据信息。
+1. 可以查看API接口的详细信息，包括接口基本信息、请求参数信息、响应数据信息。
     - 接口信息：
         - 请求方式：即API接口的方法，如GET、POST、PUT、DELETE。
         - 路径：给API发送请求需要访问的URL。
@@ -83,8 +75,8 @@ API的测试要点：
     - 响应数据信息：
         响应数据以json的格式进行定义。展示了返回的参数和参数值的数据类型的信息。并且添加了注释，使用户能参照参数的说明
 
-1. 点击接口测试，可以输入请求参数值进行接口测试。
-     <img class="no-border" src="/docs/user-guide/microservice-development/API-management/image/api3.png"/>
+1. 输入请求参数值，点击发送按钮进行接口测试。
+     <img class="no-border" src="/docs/user-guide/microservice-development/API-management/image/apitest2.png"/>
 
 1. 如果参数名称有红色星号，则表示该参数为必输项。根据请求数据的类型填入合适的请求数据。路径默认为接口信息的路径，用户也可以根据需求修改路径。
 
@@ -93,3 +85,5 @@ API的测试要点：
     - 响应主体：传递服务器响应给客户端要显示的内容，可以是下载文件或者显示界面。
     - 响应头部：服务器与客户端通信的暗码，告诉客户端该怎么执行某些操作。
     - CURL：是一个利用URL语法在命令行下工作的文件传输工具。复制CURL得内容可在终端运行页面上得请求。
+
+![结果](/docs/user-guide/microservice-development/API-management/image/API测试结果.png)

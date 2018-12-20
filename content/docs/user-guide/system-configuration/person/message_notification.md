@@ -1,6 +1,6 @@
 ﻿+++
 title="消息通知"
-weight = 5
+weight = 6
 description = "显示收到的所有消息以及可以对消息进行处理"
 +++
 
