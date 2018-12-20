@@ -23,7 +23,7 @@ description = "本节介绍了自动化测试功能的使用方法"
 3. 点击`打开应用列表`
 
     <blockquote class="note">
-    此处只能选到测试类型的应用，关于如何创建应用请参考[创建应用](../../application-management/application/)
+    此处只能选到测试类型的应用，关于如何创建应用请参考[创建应用](../../../application-management/application/)
     </blockquote class="note">
 
 4. 点击选择`应用名称`
