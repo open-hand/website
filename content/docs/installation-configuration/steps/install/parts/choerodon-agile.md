@@ -67,7 +67,7 @@ helm install c7n/mysql-client \
         --set env.open.SERVICES_WIKI_HOST="http://wiki.example.choerodon.io" \
         --set env.open.SERVICES_WIKI_TOKEN="Choerodon" \
         --set env.open.SPRING_REDIS_HOST=c7n-redis.c7n-system.svc \
-        --set env.open.SPRING_REDIS_DATABASE=4 \
+        --set env.open.SPRING_REDIS_DATABASE=9 \
         --name agile-service \
         --version 0.12.0 \
         --namespace c7n-system
