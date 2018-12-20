@@ -50,7 +50,7 @@ description = "配置不同触发类型的发送规则"
 
 ## 修改发送设置
 
-1.点击`修改`→![修改发送设置](/docs/user-guide/system-configuration/message/image/update.png) 对该触发类型的发送设置进行修改；
+1.点击`修改`→![修改发送设置](/docs/user-guide/system-configuration/message/image/update.png) 对该触发类型的发送设置进行修改。
 
 2.选择对应的`应用邮件模板`；您可以在[邮件模板](../email-template)编写邮件模板。
 
@@ -62,7 +62,7 @@ description = "配置不同触发类型的发送规则"
 
 6.选择是否`允许配置接收`。如果允许，那么用户可以在`接收设置`页面配置接收此触发类型下的消息。
 
-4.点击`保存`完成修改发送设置。
+7.点击`保存`完成修改发送设置。
 
 ![修改发送设置](/docs/user-guide/system-configuration/message/image/update-send.png)
 

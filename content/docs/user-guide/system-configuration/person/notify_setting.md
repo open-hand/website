@@ -1,6 +1,6 @@
 +++
 title="接收设置"
-weight = 6
+weight = 7
 description = "设置是否接收某组织或项目的某一类消息"
 +++
 

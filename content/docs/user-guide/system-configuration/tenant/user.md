@@ -78,6 +78,13 @@ description = "是对用户进行系统的管理"
 - 停用用户：点击列表中`停用`→![停用按钮](/docs/user-guide/system-configuration/tenant/image/stop_button.png)，用户被停用之后，无法被分配角色，无法登录系统。
 - 启用用户：点击列表中`启用`→![启用按钮](/docs/user-guide/system-configuration/tenant/image/start_button.png)，用户被启用之后，可以被分配角色，可以登录系统。
 
+## 重置密码
+
+点击重置密码，如果该组织开启了密码策略，该用户密码被重置为组织默认密码。如果组织未开启密码策略，则被重置为平台密码策略。
+<blockquote class="note">
+          只能重置非LDAP用户的密码。
+      </blockquote>
+
 ## 解锁用户
 
 当密码策略中的登录安全策略被启用时，如果用户输错密码的次数大于登录安全策略中设置的最大密码输错次数，则用户被锁住，在一定时间内无法登录平台。

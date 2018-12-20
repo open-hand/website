@@ -1,6 +1,6 @@
 ﻿+++
 title = "项目信息"
-weight = 4
+weight = 5
 description = "用户所在的项目及在项目中的角色"
 +++
 
