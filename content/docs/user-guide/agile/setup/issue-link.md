@@ -11,9 +11,9 @@ weight = 3
 
 * 菜单层次：项目层
 * 菜单路径：敏捷管理>设置>问题链接
-* 默认角色：项目成员
+* 默认角色：项目管理员
 
-系统内置链接包含: 阻塞、复制、关联，除此之外用户还可以设置功能自定义链接类型。
+系统内置链接包含: 阻塞(两个问题互斥)、复制、关联，除此之外用户还可以设置功能自定义链接类型。
 ![](/docs/user-guide/agile/setup/img/issue-link.jpg)
 
 ## 操作步骤
@@ -33,6 +33,7 @@ weight = 3
 
 ## 更多操作
 
+- [创建问题链接](../../issue/manage-issue)
 - [项目设置](../project-setting)
 - [快速搜索](../quick-search)
 - [消息通知](../message-notification_set)
