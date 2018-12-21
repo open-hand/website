@@ -80,27 +80,14 @@ paginate = 5
     pre = "<i class='iconfont'>&#xe600;</i>"
 
     [[languages.zh.menu.main]]
+        name = "latest"
+        url  = "http://choerodon.io/zh/"
+        weight = 6
+        parent = "version"
+    [[languages.zh.menu.main]]
     name = "v0.11"
     url  = "http://v0-11.choerodon.io/zh/"
     weight = 5
-    parent = "version"
-
-    [[languages.zh.menu.main]]
-    name = "v0.10"
-    url  = "http://v0-10.choerodon.io/zh/"
-    weight = 4
-    parent = "version"
-
-    [[languages.zh.menu.main]]
-    name = "v0.9"
-    url  = "http://v0-9.choerodon.io/zh/"
-    weight = 3
-    parent = "version"
-
-    [[languages.zh.menu.main]]
-    name = "v0.8"
-    url  = "http://v0-8.choerodon.io/zh/"
-    weight = 2
     parent = "version"
 
 [params]
