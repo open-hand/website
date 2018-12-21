@@ -115,7 +115,7 @@ helm install c7n/gitlab \
     --set env.config.NODE_EXPORTER_ENABLE=false \
     --set service.enabled=true \
     --set ingress.enabled=true \
-    --version 0.2.1 \
+    --version 0.3.0 \
     --name gitlab \
     --namespace c7n-system
 ```
