@@ -11,6 +11,9 @@ weight = 10
 以下验证部署是否成功如未特别说明则执行验证的环境为任意一台集群Master节点。
 </blockquote>
 
+- 如果您的主机性能或网络较差，建议您添加额外的参数以延长超时时间`--set preJob.timeout=1000`,其中1000表示1000秒后超时。
+
+
 <blockquote class="note">
 部署成功后Choerodon平台默认登录名为admin，默认密码为admin。
 </blockquote>
@@ -172,7 +175,7 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_REDIS_PORT=6379 \
         --set env.open.SPRING_REDIS_DATABASE=1 \
         --name manager-service \
-        --version 0.12.0 \
+        --version 0.12.1 \
         --namespace c7n-system
     ```
     参数名 | 含义 
@@ -217,7 +220,7 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
         --set env.open.SPRING_CLOUD_CONFIG_URI="http://config-server.c7n-system:8010/" \
         --name asgard-service \
-        --version 0.12.0 \
+        --version 0.12.1 \
         --namespace c7n-system
     ```
     参数名 | 含义 
@@ -267,7 +270,7 @@ helm install c7n/mysql-client \
         --set ingress.enable=true \
         --set ingress.host=notify.example.choerodon.io \
         --name notify-service \
-        --version 0.12.0 \
+        --version 0.12.1 \
         --namespace c7n-system
     ```
     参数名 | 含义 
@@ -310,7 +313,7 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
         --set env.open.SPRING_CLOUD_CONFIG_URI="http://config-server.c7n-system:8010/" \
         --name iam-service \
-        --version 0.12.0 \
+        --version 0.12.1 \
         --namespace c7n-system
     ```
     参数名 | 含义 
