@@ -168,8 +168,7 @@ helm install c7n/mysql-client \
 
 - 同步已有项目和组织
 
-    1. 服务部署完成之后，进入`Choerodon`平台，选择菜单`API管理`下的`API测试`。
-    1. 选择微服务`wiki-service`，打开`wiki-scanning-controller`，使用`同步指定组织和项目`接口，点击`搜索`按钮跳转页面。点击`接口测试`，点击`发送`之后，就会根据组织id同步该组织以及组织下的项目到wiki。
-    2. 选择微服务`wiki-service`，打开`wiki-scanning-controller`，使用`同步组织和项目`接口，点击`搜索`按钮跳转页面。点击`接口测试`，点击`发送`之后，就会同步所有的组织和项目到wiki。
+    1. 服务部署完成之后，使用有平台管理员角色的用户登录`Choerodon`平台，点击顶部导航栏的管理按钮，选择`API管理`菜单下的`API测试`。
+    2. 找到微服务`wiki-service`下0.12.0版本的接口，打开`wiki-scanning-controller`，使用`/v1/site/scan`接口，点击`发送`之后，就会同步所有的组织和项目到新部署的wiki。
     
         注：同步会在后台执行，请耐心等待同步完成。
