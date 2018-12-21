@@ -11,8 +11,8 @@ Gitlab Runner，用于代码提交后自动进行代码测试、构建服务的�
 ## 预备知识
 
 如果你不知道Gitlab Runner是做什么的，那么请参考下面链接（包括但不限于）进行学习：
-- [Gitlab Runner](https://docs.gitlab.com/runner/)
 
+- [Gitlab Runner](https://docs.gitlab.com/runner/)
 
 ## 一键安装Runner
 
@@ -30,48 +30,7 @@ Gitlab Runner，用于代码提交后自动进行代码测试、构建服务的�
 此教程注册的Runner属性为共享，若需注册私有Runner或者无法进入Gitlab管理界面，注册Token请在Git项目仓库 Settings > CI/CD > Runners settings 菜单中获取。
 </blockquote>
 
-#### 进入Gitlab管理界面
-
 ![](/docs/installation-configuration/image/runners-reg.png)
-
-### 注册Runner
-
-#### 方式1
-
-- 运行Runner，进入容器
-
-    ```bash
-    docker run -it --rm --entrypoint=bash gitlab/gitlab-runner:alpine-v10.7.2
-    ```
-
-- 进行注册
-
-    ```bash
-    gitlab-runner register
-    ```
-
-- 注册成功后查看生成的token
-
-    ```bash
-    cat /etc/gitlab-runner/config.toml
-    ```
-
-    ![](/docs/installation-configuration/image/runner-reg.png)
-
-#### 方式2
-
-- 运行Runner并注册
-
-    ```bash
-    docker run -it --rm gitlab/gitlab-runner:alpine-v10.7.2 register
-    ```
-
-<blockquote class="note">
-注册完成后在Gitlab管理界面获取Runner的token、name和url
-</blockquote>
-
-![](/docs/installation-configuration/image/runner-info.png)
-
 
 ### 添加choerodon chart仓库
 
@@ -115,8 +74,8 @@ helm repo update
     helm install c7n/gitlab-runner \
         --set rbac.create=true \
         --set env.concurrent=3 \
-        --set env.url=http://gitlab.example.choerodon.io \
-        --set env.token=注册Runner后得到的token \
+        --set env.gitlabUrl=http://gitlab.xn--0zwm56d.example.com/ \
+        --set env.runnerRegistrationToken=xwxobLNoPQUzyMt_4RGF \
         --set env.environment.DOCKER_REGISTRY=registry.example.choerodon.io \
         --set env.environment.DOCKER_USER=admin \
         --set env.environment.DOCKER_PWD=Harbor12345 \
@@ -124,6 +83,7 @@ helm repo update
         --set env.persistence.runner-maven-pvc="/root/.m2" \
         --set env.persistence.runner-cache-pvc="/cache" \
         --name runner \
+        --version 0.2.0 \
         --namespace c7n-system
     ```
 
@@ -135,8 +95,8 @@ helm repo update
     --- |  --- 
     rbac.create|创建sa及授权
     env.concurrent|可以同时进行的CI数量
-    env.url|Gitlab地址
-    env.token|注册Runner后得到的token
+    env.gitlabUrl|Gitlab地址
+    env.runnerRegistrationToken|Runner注册token
     env.environment.DOCKER_REGISTRY|Docker镜像仓库地址
     env.environment.DOCKER_USER|Docker镜像仓库用户名
     env.environment.DOCKER_PWD|Docker镜像仓库用户密码

@@ -59,7 +59,7 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
         --set env.open.SPRING_DATASOURCE_PASSWORD=password \
         --set env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE="http://register-server.c7n-system:8000/eureka/" \
         --set env.open.SPRING_REDIS_HOST=c7n-redis.c7n-system.svc \
-        --set env.open.SPRING_REDIS_DATABASE=6 \
+        --set env.open.SPRING_REDIS_DATABASE=11 \
         --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
         --set env.open.SPRING_CLOUD_CONFIG_URI="http://config-server.c7n-system:8010/" \
         --set env.open.SERVICES_HARBOR_BASEURL="https://registry.example.choerodon.io" \
@@ -78,7 +78,7 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
         --set env.open.TEMPLATE_VERSION_MICROSERVICE="0.9.0" \
         --set env.open.TEMPLATE_VERSION_MICROSERVICEFRONT="0.9.0" \
         --set env.open.TEMPLATE_VERSION_JAVALIB="0.9.0" \
-        --set env.open.TEMPLATE_VERSION_CHOERODONMOCHATEMPLATE="0.9.0" \
+        --set env.open.TEMPLATE_VERSION_CHOERODONMOCHATEMPLATE="0.12.1" \
         --set env.open.AGENT_CERTMANAGERURL="https://openchart.choerodon.com.cn/choerodon/infra/" \
         --set ingress.enable=true \
         --set ingress.host=devops.example.choerodon.io \
@@ -86,7 +86,7 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
         --set persistence.enabled=true \
         --set persistence.existingClaim="chartmuseum-pvc" \
         --name devops-service \
-        --version 0.12.0 \
+        --version 0.12.1 \
         --namespace c7n-system
     ```
     参数名 | 含义 

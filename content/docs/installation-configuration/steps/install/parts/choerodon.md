@@ -170,7 +170,7 @@ helm install c7n/mysql-client \
         --set env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE="http://register-server.c7n-system:8000/eureka/" \
         --set env.open.SPRING_REDIS_HOST=c7n-redis.c7n-system.svc \
         --set env.open.SPRING_REDIS_PORT=6379 \
-        --set env.open.SPRING_REDIS_DATABASE=4 \
+        --set env.open.SPRING_REDIS_DATABASE=1 \
         --name manager-service \
         --version 0.12.0 \
         --namespace c7n-system
@@ -261,7 +261,7 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
         --set env.open.SPRING_CLOUD_CONFIG_URI="http://config-server.c7n-system:8010/" \
         --set env.open.SPRING_REDIS_HOST=c7n-redis.c7n-system.svc \
-        --set env.open.SPRING_REDIS_DATABASE=2 \
+        --set env.open.SPRING_REDIS_DATABASE=3 \
         --set service.enable=true \
         --set service.name=notify-service \
         --set ingress.enable=true \
@@ -392,7 +392,7 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_CACHE_MULTI_L2_ENABLED=false \
         --set env.open.SPRING_REDIS_HOST=c7n-redis.c7n-system.svc \
         --set env.open.SPRING_REDIS_PORT=6379 \
-        --set env.open.SPRING_REDIS_DATABASE=4 \
+        --set env.open.SPRING_REDIS_DATABASE=5 \
         --name gateway-helper \
         --version 0.12.0 \
         --namespace c7n-system
@@ -436,7 +436,7 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_DATASOURCE_USERNAME=choerodon \
         --set env.open.SPRING_DATASOURCE_PASSWORD=password \
         --set env.open.SPRING_REDIS_HOST=c7n-redis.c7n-system.svc \
-        --set env.open.SPRING_REDIS_DATABASE=2 \
+        --set env.open.SPRING_REDIS_DATABASE=7 \
         --set env.open.CHOERODON_DEFAULT_REDIRECT_URL="http://c7n.example.choerodon.io" \
         --set env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE="http://register-server.c7n-system:8000/eureka/" \
         --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \

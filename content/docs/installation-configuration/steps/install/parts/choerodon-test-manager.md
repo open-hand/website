@@ -55,7 +55,7 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
         --set env.open.SPRING_CLOUD_CONFIG_URI="http://config-server.c7n-system:8010/" \
         --set env.open.SPRING_REDIS_HOST=c7n-redis.c7n-system.svc \
-        --set env.open.SPRING_REDIS_DATABASE=5 \
+        --set env.open.SPRING_REDIS_DATABASE=13 \
         --name test-manager-service \
         --version 0.12.0 \
         --namespace c7n-system

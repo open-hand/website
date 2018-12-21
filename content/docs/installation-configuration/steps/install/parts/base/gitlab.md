@@ -115,7 +115,7 @@ helm install c7n/gitlab \
     --set env.config.NODE_EXPORTER_ENABLE=false \
     --set service.enabled=true \
     --set ingress.enabled=true \
-    --version 0.2.1 \
+    --version 0.3.0 \
     --name gitlab \
     --namespace c7n-system
 ```
@@ -139,7 +139,7 @@ helm install c7n/gitlab \
     env.config.MYSQL_PASSWORD|mysql用户密码 
     env.config.REDIS_HOST|redis地址 
     env.config.REDIS_PORT|redis端口号
-    env.config.SMTP_ENABLE|是否开启smtp 
+    env.config.SMTP_ENABLE|是否开启smtp，若为false，以下SMTP参数都不生效
     env.config.SMTP_ADDRESS|smtp地址
     env.config.SMTP_PORT|smtp端口号 
     env.config.SMTP_USER_NAME|stmp用户
@@ -196,6 +196,21 @@ helm install c7n/gitlab \
 <blockquote class="warning">
 如果您启用了防火墙iptables或者安全组，那么必须添加新开的2289端口
 </blockquote>
+
+### 验证是否启用成功
+
+- 在Master节点执行
+
+  ```
+  kubectl get svc -n c7n-system gitlab-ssh
+  ```
+  
+  出现类似内容即说明启用成功。
+
+  ```
+  NAMESPACE      NAME          TYPE        CLUSTER-IP      EXTERNAL-IP     PORT(S)    AGE
+  gitlab         gitlab-ssh    ClusterIP   10.233.12.57    192.168.1.1     2289/TCP   1d
+  ```
 
 ## 配置Choerodon Oauth认证
 
