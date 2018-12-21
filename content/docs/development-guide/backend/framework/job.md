@@ -4,10 +4,9 @@ weight = 2
 description = "讲述了如何在choerodon平台上自定义定时任务"
 +++
 
-
 ## 前置条件
 
-在开始使用定时任务之前，要确保服务的choerodon-starters依赖在 0.6.3.RELEASE 版本及之上。
+在开始使用定时任务之前，要确保服务的choerodon-starters依赖在`0.6.3.RELEASE`版本及之上，推荐最新版`0.8.1.RELEASE`。
 
 ## 介绍
 
@@ -23,6 +22,17 @@ description = "讲述了如何在choerodon平台上自定义定时任务"
     <artifactId>choerodon-starter-asgard</artifactId>
     <version>${choerodon.starters.version}</version>
 </dependency>
+```
+
+### 消费端的配置
+
+```yaml
+choerodon:
+  schedule:
+    consumer:
+      enabled: true # 启用任务调度消费端
+      thread-num: 1 # 任务调度消费线程数
+      poll-interval-ms: 1000 # 拉取间隔，默认1000毫秒
 ```
 
 ### 添加消费端方法
@@ -54,16 +64,58 @@ public class Task {
 }
 ```
 
-### 消费端的配置
-
-```yaml
-choerodon:
-  schedule:
-    consumer:
-      enabled: true # 启用任务调度消费端
-      thread-num: 1 # 任务调度消费线程数
-      poll-interval-ms: 1000 # 拉取间隔，默认1000毫秒
-```
-
 ### 创建定时任务
 在前端页面的`任务调度` --> `任务明细` --> `创建任务`，填入任务执行参数以及扫描到的服务执行方法后创建任务。
+
+## @TimedTask定时任务
+`@JobTask`只是定义一个可执行程序，具体触发时间要在前端页面创建定时任务，而@TimedTask注解可以定义一个带有触发时间的可执行程序，无需在页面创建
+
+### @TimedTask参数
+```java
+public @interface TimedTask {
+    /**
+     * 定时任务名称
+     */
+    String name();
+    /**
+     * 定时任务描述
+     */
+    String description();
+    /**
+     * 是否只执行一次，true：只执行一次；false：每次部署时执行一次
+     */
+    boolean oneExecution();
+    /**
+     * 方法执行参数
+     */
+    TaskParam[] params();
+    /**
+     * simple-trigger的重复次数
+     */
+    int repeatCount();
+    /**
+     * simple-trigger的重复间隔值：重复间隔形如 '100SECONDS' 则为100
+     */
+    long repeatInterval();
+    /**
+     * simple-trigger的重复间隔单位：重复间隔形如 '100SECONDS' 则为SECONDS
+     */
+    QuartzDefinition.SimpleRepeatIntervalUnit repeatIntervalUnit();
+}
+
+```
+### @TimedTask使用
+```java
+@Component
+public class Task {
+
+     @TimedTask(name = "同步LDAP用户", description = "自定义定时任务", oneExecution = true,
+            repeatCount = 0, repeatInterval = 100, repeatIntervalUnit = QuartzDefinition.SimpleRepeatIntervalUnit.HOURS, params = {
+            @TaskParam(name = "organizationCode", value = "hand")
+    })
+    public void syncLdapUserSite(Map<String, Object> map) {
+        // 执行方法
+    }
+
+}
+```
