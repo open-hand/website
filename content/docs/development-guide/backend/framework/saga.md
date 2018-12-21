@@ -1,12 +1,13 @@
 +++
-title = "使用Saga"
-description = ""
+title = "使用saga"
 weight = 1
+description = "讲述了Choerodon平台上的数据一致性支持"
 +++
+
 
 ## 前置条件
 
-在开始使用`Saga`之前，要确保服务的`choerodon-starters`依赖在 `0.6.0.RELEASE` 版本之上。同时需要对`Saga` 有一定的了解。可以参考[Choerodon猪齿鱼平台中的微服务数据一致性解决方案](https://mp.weixin.qq.com/s?__biz=MzU4OTQ3NTQ0OQ==&mid=2247483880&idx=1&sn=f6f94cf64f0e91f460325011f5c8f152&chksm=fdcdbafecaba33e80b22e062724a3775ad3f9349c0503fc2241ba9df5c798e207bfd2305d98f&scene=0#rd)。
+在开始使用`Saga`之前，要确保服务的`choerodon-starters-asgard`依赖在`0.6.3.RELEASE`版本及之上, 推荐最新版`0.8.1.RELEASE`。同时需要对`Saga` 有一定的了解。可以参考[Choerodon猪齿鱼平台中的微服务数据一致性解决方案](https://mp.weixin.qq.com/s?__biz=MzU4OTQ3NTQ0OQ==&mid=2247483880&idx=1&sn=f6f94cf64f0e91f460325011f5c8f152&chksm=fdcdbafecaba33e80b22e062724a3775ad3f9349c0503fc2241ba9df5c798e207bfd2305d98f&scene=0#rd)。
 
 ## 介绍
 
@@ -28,19 +29,19 @@ weight = 1
         <artifactId>choerodon-starter-asgard</artifactId>
         <version>${choerodon.starters.version}</version>
     </dependency>
-    <dependency>
-        <groupId>io.choerodon</groupId>
-        <artifactId>choerodon-starter-core</artifactId>
-        <version>${choerodon.starters.version}</version>
-    </dependency>
-    <dependency>
-        <groupId>io.choerodon</groupId>
-        <artifactId>choerodon-starter-swagger</artifactId>
-        <version>${choerodon.starters.version}</version>
-    </dependency>
 ```
 
-其中`choerodon.starters.version` 的版本在`0.6.0.RELEASE` 之上。
+## 消费者端配置
+
+```yaml
+choerodon:
+  saga:
+    consumer:
+      thread-num: 5 # saga消息消费线程池大小
+      max-poll-size: 200 # 每次拉取消息最大数量
+      enabled: true # 启动消费端，如果服务中不存在@SagaTask，可设置为false，避免资源浪费
+      poll-interval-ms: 1000 # 拉取间隔，默认1000毫秒
+```
 
 ## 注解
 
@@ -67,7 +68,7 @@ weight = 1
 
 ### `@SagaTask`
 
-在方法上添加`@SagaTask`注解。
+在方法上添加`@SagaTask`注解，@SagaTask本身封装了事务，无需再使用@Transacional声明事务
 ``` java
 @SagaTask(code = "devopsCreateUser",
     description = "devops创建用户",
@@ -87,8 +88,6 @@ weight = 1
 `concurrentLimitNum` | 并发数，当`concurrentLimitPolicy`不为NONE时生效
 `concurrentLimitPolicy` | 并发策略，默认为NONE
 `outputSchemaClass` |  默认将`@SagaTask`的返回类型生成输出，也可通过此属性指定
-`transactionTimeout` | `Saga`超时时间，默认用不超时
-`transactionReadOnly` | 是否为只读`Saga`
 `transactionIsolation` | 事务的隔离级别
 `transactionManager` | 使用的事务管理器
 
@@ -111,6 +110,8 @@ weight = 1
      2. `userId`: 方便追踪用户。`DetailsHelper.getUserDetails().getUserId()`传入
      3. `refType`: 关联业务类型，比如`project`，`user`这些。非必须，该字段用于并发策略
      4. `refId`: 关联业务类型，比如`projectId`，`userId`这些。非必须，该字段用于并发策略
+     5. `level`: 层级。取值"site"、"organization"、"project"、"user"。
+     6. `sourceId`: 资源id。比如项目层就为项目id，设置了level和sourceId之后，就可以对应的层级下看到事务实例信息，否则默认全局层，只能在全局层页面看到该事务运行实例信息。
 
 请确保`@EnableFeignClients`包含`io.choerodon.asgard.saga`，否则扫描不到该`feignClient`。例如：`@EnableFeignClients("io.choerodon")`
 
@@ -123,19 +124,6 @@ weight = 1
     }
 ```
 
-## 消费者
-
-启动一个`Saga` 之后，需要有对应的处理逻辑。在消费端进行添加如下配置：
-
-```yaml
-choerodon:
-  saga:
-    consumer:
-      thread-num: 5 # saga消息消费线程池大小
-      max-poll-size: 200 # 每次拉取消息最大数量
-      enabled: true # 启动消费端
-      poll-interval-ms: 1000 # 拉取间隔，默认1000毫秒
-```
 
 同时在代码中添加如下处理逻辑：
 
@@ -212,8 +200,6 @@ public AsgardUser iamCreateUser(String data) {
 
 字段 | 作用
 --- | ---
-`transactionTimeout` | 事务超时时间，默认用不超时
-`transactionReadOnly` | 是否为只读事务
 `transactionIsolation` | 事务的隔离级别
 `transactionManager` | 使用的事务管理器
 `
@@ -266,14 +252,5 @@ public AsgardUser iamCreateUser(String data) {
 * 当消息实例锁为空时，消费端拉取该条消息并更新实例锁，更新成功，则拉取可以成功
 
 * 当消息实例锁不为空时，查询消息实例是否为拉取的消费端实例，是则允许拉取不是则不允许拉取该条消息。
-
-``` java
-StringLockProvider.Mutex mutex = stringLockProvider.getMutex(code.getSagaCode() + ":" + code.getTaskCode());
-synchronized (mutex) {
-}
-
-```
-
-并发策略为`TYPE_AND_ID`或者为`TYPE`的消息，按创建`id`排序，每次只可以取到`@SagaTask`设置的`concurrentLimitNum`数目。
 
 更多有关的信息可以从[`asgard-service`](https://github.com/choerodon/asgard-service)获取。
