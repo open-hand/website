@@ -104,6 +104,10 @@ helm install c7n/mysql-client \
     ingress.enable|创建ingress对象
     ingress.hosts|wiki域名地址
 
+
+    - 校验安装：
+    安装完成后打开配置的域名如果安装成功会返回xwiki的界面。
+
 - 添加oauth client
 
     ```
@@ -178,7 +182,7 @@ helm install c7n/mysql-client \
         ```
 
 
-- 同步已有项目和组织
+## 同步已有项目和组织
 
     1. 服务部署完成之后，使用有平台管理员角色的用户登录`Choerodon`平台，点击顶部导航栏的管理按钮，选择`API管理`菜单下的`API测试`。
     2. 找到微服务`wiki-service`下0.12.0版本的接口，打开`wiki-scanning-controller`，使用`/v1/site/scan`接口，点击`发送`之后，就会同步所有的组织和项目到新部署的wiki。
