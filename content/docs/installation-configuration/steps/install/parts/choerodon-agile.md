@@ -41,7 +41,10 @@ helm install c7n/mysql-client \
 
 ## 部署agile service
 
+
 - 部署服务
+    
+    - 在部署知识管理前您没有`SERVICES_WIKI_TOKEN`请预设一个随机字符串并注意记录，部署知识管理时请使用您设置的token
 
     ``` 
     helm install c7n/agile-service \
