@@ -34,11 +34,11 @@ helm install c7n/nfs-provisioner \
     --set rbac.create=true \
     --set service.enabled=true \
     --set persistence.enabled=true \
-    --set persistence.nodeName=clusternode4 \
+    --set persistence.nodeName=your-node-name \
     --set storageClass.name=ssd \
     --set storageClass.provisioner="choerodon.io/ssd" \
     --set persistence.hostPath="/ssd" \
-    --version 0.1.0 \
+    --version 0.2.0 \
     --name ssd \
     --namespace logging
 ```
@@ -57,24 +57,28 @@ helm install c7n/nfs-provisioner \
     ```
 
    有关elasticsearch chart的介绍可在此处查询[helm charts](https://github.com/helm/charts/tree/master/stable/elasticsearch)
+   elasticsearch启动速度与您的网络磁盘性能有关。
 
 - 安装日志收集服务
 
     ```bash
     helm install c7n/choerodon-logging \
-        --set fluentd.elasticsearch.host="elasticsearch-elasticsearch.logging" \
+        --set fluent-bit.elasticsearch.host="elasticsearch.logging" \
         --name=choerodon-logging \
-        --namespace=logging
+        --namespace=logging \
+        --version=0.8.0
     ```
 
 - 安装kibana
 
     ```bash
     helm install c7n/kibana \
-        --set elasticsearch.host="elasticsearch-elasticsearch.logging" \
+        --set elasticsearch.host="elasticsearch.logging" \
         --set service.enabled=true \
         --set ingress.enabled=true \
-        --set ingress.host=kibana.example.choerodon.io \
+        --set ingress.host=kibana.example.com \
         --namespace=logging \
         --name=kibana
     ```
+
+部署完成后打开kibana按照提示创建index即可查看相应的日志
