@@ -43,7 +43,7 @@ var $results, INDEX_DATA={};
         for (var page in INDEX_DATA) {
             if ((index = INDEX_DATA[page].body.toLowerCase().indexOf(keyword.toLowerCase())) !== -1) {
                 results.push({
-                    url: INDEX_DATA[page].url,
+                    url: INDEX_DATA[page].url.toLowerCase(),
                     title: INDEX_DATA[page].title,
                     body: INDEX_DATA[page].body.substr(Math.max(0, index - 50), MAX_DESCRIPTION_SIZE).replace(new RegExp('(' + escapeReg(keyword) + ')', 'gi'), '<span style="background:#ff0;">$1</span>')
                 });

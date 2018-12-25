@@ -45,7 +45,7 @@ var $results, INDEX_DATA={};
         for (var page in INDEX_DATA) {
             if ((index = INDEX_DATA[page].body.toLowerCase().indexOf(keyword.toLowerCase())) !== -1) {
                 results.push({
-                    url: INDEX_DATA[page].url,
+                    url: INDEX_DATA[page].url.toLowerCase(),
                     title: INDEX_DATA[page].title,
                     date: INDEX_DATA[page].date,
                     author: INDEX_DATA[page].author,
