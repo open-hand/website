@@ -264,18 +264,16 @@ mocha api 测试框架为 `Nodejs` 类型的前端项目，下面会介绍一下
     image: registry.cn-hangzhou.aliyuncs.com/choerodon-tools/cibase:0.5.0   
     ```
     image 指 ci 运行基础镜像。
-
-    ```yaml
-    stages:
-
-     - maven-package
-
-     - docker-build 
-    ```
+    
+      ```yaml
+        stages:
+        -  node_build
+        -  docker_build
+      ``` 
 
     stages 指包含 maven-package 和 docker-build 两个阶段。
     
-    ```yaml
+	  ```yaml
     maven-feature:
     
     stage: maven-package
@@ -354,7 +352,7 @@ mocha api 测试框架为 `Nodejs` 类型的前端项目，下面会介绍一下
  
 1. 选择组织后，在组织层的`应用管理`模块，选择`应用模板`；
 
-2. 点击`创建应用模板`，输入相关信息进行数据校验，点击`创建`，即可创建一个模板；
+1. 点击`创建应用模板`，输入相关信息进行数据校验，点击`创建`，即可创建一个模板；
       
 3. 创建完成以后，会生成一个 Gitlab 地址，点击该地址；
      
@@ -395,22 +393,22 @@ mocha api 测试框架为 `Nodejs` 类型的前端项目，下面会介绍一下
       
     except 指不会触发的分支。
  
-   ``` yaml
-.auto_devops: &auto_devops |
-           curl -o .auto_devops.sh \
-                 "${CHOERODON_URL}/devops/ci?token=${Token}&type=lib"
-            source .auto_devops.sh
-  ```
-  .auto_devops：从指定仓库地址中拉取 script 脚本  用于 docker-build 阶段。
+	   ``` yaml
+			.auto_devops: &auto_devops |
+			           curl -o .auto_devops.sh \
+			                 "${CHOERODON_URL}/devops/ci?token=${Token}&type=lib"
+			            source .auto_devops.sh
+	  ```
+  	.auto_devops：从指定仓库地址中拉取 script 脚本  用于 docker-build 阶段。
 
-  ```yaml
-before_script:
-
- - *auto_devops
-  ```
-  before_script：指 ci 执行前所执行的命令。
+	  ```yaml
+			before_script:
+			
+			 - *auto_devops
+	  ```
+  	before_script：指 ci 执行前所执行的命令。
 	   
-7. 提交代码。
+1. 提交代码。
 
 ## 查看应用模板详情
 
