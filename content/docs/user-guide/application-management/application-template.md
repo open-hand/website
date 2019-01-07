@@ -273,22 +273,22 @@ mocha api 测试框架为 `Nodejs` 类型的前端项目，下面会介绍一下
 
     stages 指包含 maven-package 和 docker-build 两个阶段。
     
-	  ```yaml
-    maven-feature:
-    
-    stage: maven-package
-    
-    script:
-    
-     - git_merge develop
-    
-     - update_pom_version
-    
-     - mvn package -U -DskipTests=false
-        
-    only:
-    
-     - /^feature-.*$/
+    ```yaml
+		maven-feature:
+		
+		stage: maven-package
+		
+		script:
+		
+		 - git_merge develop
+		
+		 - update_pom_version
+		
+		 - mvn package -U -DskipTests=false
+		    
+		only:
+		
+		 - /^feature-.*$/
     ```
 
     maven-feature 指 job 名称。
@@ -310,9 +310,9 @@ mocha api 测试框架为 `Nodejs` 类型的前端项目，下面会介绍一下
     .auto_devops: 从指定仓库地址中拉取 script 脚本  用于 docker-build 阶段。
     
     ```yaml
-    before_script:
-    
-     - *auto_devops
+	    before_script:
+	    
+	     - *auto_devops
     ```
     
     before_script：ci 执行前所执行的命令
@@ -394,17 +394,17 @@ mocha api 测试框架为 `Nodejs` 类型的前端项目，下面会介绍一下
     except 指不会触发的分支。
  
 	   ``` yaml
-			.auto_devops: &auto_devops |
-			           curl -o .auto_devops.sh \
-			                 "${CHOERODON_URL}/devops/ci?token=${Token}&type=lib"
-			            source .auto_devops.sh
+		.auto_devops: &auto_devops |
+		           curl -o .auto_devops.sh \
+		                 "${CHOERODON_URL}/devops/ci?token=${Token}&type=lib"
+		            source .auto_devops.sh
 	  ```
   	.auto_devops：从指定仓库地址中拉取 script 脚本  用于 docker-build 阶段。
 
 	  ```yaml
-			before_script:
+		before_script:
 			
-			 - *auto_devops
+		 - *auto_devops
 	  ```
   	before_script：指 ci 执行前所执行的命令。
 	   
