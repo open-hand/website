@@ -12,3 +12,4 @@ package-lock.json
 *.css.map
 desktop.ini
 .vscode/
+.project
