@@ -40,11 +40,12 @@ description = "本节介绍了用excel操作issue的方法"
 ### 上传excel文件
 
 ![](/img/docs/user-guide/test-management/case-management/excel-import-2.png)
-s
+
+
 1. 点击`上传`按钮打开导入用例弹窗。
-1. 点击选取导入目的地为某一版本的`导入`文件夹(由系统默认创建)下。
-1. 点击选取被导入的excel表单
-1. 点击`上传`完成excel导入。
+2. 点击选取导入目的地为某一版本的`导入`文件夹(由系统默认创建)下。
+3. 点击选取被导入的excel表单
+4. 点击`上传`完成excel导入。
 
 ### 导入完成
 
