@@ -24,7 +24,7 @@ weight = 7
 
 ![container](/docs/user-guide/deployment-pipeline/image/container.jpg) 
 
- - 状态：容器的状态分为以下五种，分别为 Pending、Running、Succeeded、Failed 和 Unknown。
+ - 状态：Pod的状态分为以下五种，分别为 Pending、Running、Succeeded、Failed 和 Unknown。
 
     1. Pending：Kubernetes 已经开始创建容器，但是容器中的一个或多个容器还没有被启动。比如容器正处在应该被分配到哪个节点上这个调度过程中，或者 Kubernetes 还在从镜像仓库中下载容器中容器镜像这个下载过程中。
 
@@ -36,12 +36,15 @@ weight = 7
 
     5. Unknown：由于一些特殊情况无法获取容器状态，比如由于网络原因无法同容器所在的主机通讯等。
 
- - 容器名称：容器的名称；
+ - Pod名称：Pod的名称；
+ - 容器：即Pod中所含的Container；
  - 应用：容器中对应的应用；
- - 环境：容器所在环境信息；
- - 容器地址：容器的地址；
- - 可用：容器是否可用;
- - 已创建：容器创建的时间；
+ - Pod IP：Pod的地址；
+ - 已创建：容器创建的时间；  
+
+<blockquote class="note">
+Pod与Container名称前的状态标志表示了各自的可用状态，只有当Pod内所有Container均可用时，Pod才为可用状态；而Pod的运行中状态与可用状态无特别联系。
+</blockquote>
 
 ## 更多操作
 - [环境总览](../environments-overview)
