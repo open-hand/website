@@ -23,7 +23,7 @@ helm repo add c7n https://openchart.choerodon.com.cn/choerodon/c7n/
 helm repo update
 ```
 
-## 没有NFS服务服务器
+## 如果您没有NFS服务服务器
 
 - 在集群每一个节点安装`nfs-utils`
 
@@ -44,7 +44,15 @@ helm install c7n/nfs-provisioner \
     --namespace kube-system
 {{< /annotation >}}
 
-## 有NFS服务器
+- 检查nfs状态
+
+  ```bash
+  kubectl get po -n kube-system | grep nfs-provisioner
+  ```
+
+  请等待状态为running之后再执行后续步骤，下一步[域名解析](../dns)
+
+## 如果您有NFS服务器
 
 若已执行上面`没有NFS服务服务器`安装命令请忽略本节操作。
 
