@@ -15,7 +15,7 @@ weight = 6
   - **菜单路径**：部署流水线 > 资源 > 域名
   - **默认角色**：项目所有者、项目成员（环境成员）
     <blockquote class="note">
-         项目所有者和项目成员对域名只有查看界面的权限，不可进行编辑修改。
+         只有项目所有者和被分配环境权限的项目成员才能对域名进行查看和编辑操作。
       </blockquote>
 
     ![ingress](/docs/user-guide/deployment-pipeline/image/ingress.jpg) 
