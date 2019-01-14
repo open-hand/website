@@ -4,3 +4,4 @@ background: "/img/docs/quick-start/video/wiki.svg"
 time: "12分07秒"
 description: "以如何创建和管理产品文档的示例来介绍知识管理的使用方法。"
 weight: 10
+name: "overview"

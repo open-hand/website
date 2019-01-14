@@ -4,3 +4,4 @@ background: "/img/docs/quick-start/video/agile.svg"
 time: "02分45秒"
 description: "关于如何创建问题、处理问题，甚至通过问题管理代码"
 weight: 40
+name: "issue"
