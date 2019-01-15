@@ -72,13 +72,11 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
         --set env.open.SERVICES_GITLAB_PROJECTLIMIT=100 \
         --set env.open.SERVICES_GATEWAY_URL=http://api.example.choerodon.io \
         --set env.open.SECURITY_IGNORED="/ci\,/webhook\,/v2/api-docs\,/agent/**\,/ws/**\,/webhook/**" \
-        --set env.open.AGENT_VERSION="0.12.0" \
+        --set env.open.AGENT_VERSION="0.13.0" \
         --set env.open.AGENT_REPOURL="https://openchart.choerodon.com.cn/choerodon/c7n/" \
         --set env.open.AGENT_SERVICEURL="ws://devops.example.choerodon.io/agent/" \
-        --set env.open.TEMPLATE_VERSION_MICROSERVICE="0.9.0" \
-        --set env.open.TEMPLATE_VERSION_MICROSERVICEFRONT="0.9.0" \
-        --set env.open.TEMPLATE_VERSION_JAVALIB="0.9.0" \
-        --set env.open.TEMPLATE_VERSION_CHOERODONMOCHATEMPLATE="0.12.1" \
+        --set env.open.TEMPLATE_VERSION="0.13.0" \
+        --set env.open.TEMPLATE_URL="https://github.com/choerodon/choerodon-devops-templates.git" \
         --set env.open.AGENT_CERTMANAGERURL="https://openchart.choerodon.com.cn/choerodon/infra/" \
         --set ingress.enable=true \
         --set ingress.host=devops.example.choerodon.io \
@@ -86,7 +84,7 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
         --set persistence.enabled=true \
         --set persistence.existingClaim="chartmuseum-pvc" \
         --name devops-service \
-        --version 0.12.2 \
+        --version 0.13.0 \
         --namespace c7n-system
     ```
     参数名 | 含义 
@@ -111,9 +109,8 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
     env.open.AGENT_VERSION|与当前Devops Service相匹配的Agent版本，不需要修改
     env.open.AGENT_REPOURL|Agent Chart包远程仓库，不需要修改
     env.open.AGENT_SERVICEURL|Agent与Devops Service进行链接的webSocket地址，主机域名与ingress.host相同
-    env.open.TEMPLATE_VERSION_MICROSERVICE| 预定义微服务后端模板的版本
-    env.open.TEMPLATE_VERSION_MICROSERVICEFRONT| 预定义微服务前端模板的版本
-    env.open.TEMPLATE_VERSION_JAVALIB| 预定义java lib的版本
+    env.open.TEMPLATE_VERSION| 预定义微服务后端模板的版本
+    env.open.TEMPLATE_URL| 微服务后端模板的地址
     persistence.enabled|启用持久化存储
     persistence.existingClaim|一定与chartmuseum挂载出来的目录相同
     service.enable|启用service
@@ -158,7 +155,7 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
         --set env.open.GITLAB_URL="http://gitlab.example.choerodon.io" \
         --set env.open.GITLAB_PRIVATETOKEN="GEuRhgb6kG9y3prFosSb" \
         --name gitlab-service \
-        --version 0.12.0 \
+        --version 0.13.0 \
         --namespace c7n-system
     ```
     参数名 | 含义 
