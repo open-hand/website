@@ -44,6 +44,7 @@ helm install c7n/mysql \
     --set config.lower_case_table_names=1 \
     --set config.character_set_server=utf8 \
     --set config.max_connections=500 \
+    --set config.max_allowed_packet=32M \
     --version 0.1.0 \
     --name c7n-mysql \
     --namespace c7n-system
