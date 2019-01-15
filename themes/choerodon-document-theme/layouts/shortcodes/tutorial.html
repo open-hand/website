@@ -3,8 +3,8 @@
 {{ range $key, $index := $.Site.Data.tutorial }}
   {{ if eq ($.Scratch.Get "top") $key }}
   <div class="tutorial-img" id="tutorial-img">
-    {{ range $key,$index := sort . "weight" }}
-      {{ if or (eq $key ($.Scratch.Get "bottom")) (eq ($.Scratch.Get "bottom") "all") }}
+    {{ range $key ,$index := sort . "weight" }}
+      {{ if or (eq .name ($.Scratch.Get "bottom")) (eq ($.Scratch.Get "bottom") "all") }}
       <div class="col-lg-4 col-md-4 col-xs-12 tutorial" data-src="{{.src}}">
         <div class="tutorial-head" style="background: url({{.background}})no-repeat center 100%;    background-size: cover;">
             <div class="title">{{.title}}</div>
