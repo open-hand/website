@@ -8,16 +8,13 @@ weight = 3
 
 此页面中您将了解到如何管理页面，对页面外观如面板布局等进行自定义。
 
-单击页面主页上方的`更多`按钮。
+单击页面主页上方的`更多`按钮,`更多`中包括了对页面的管理，复制，移动，删除，导出页面，显示页面注释和邮件分享页面等功能。
 
 ![enter description here](/docs/user-guide/wiki/image/manage-page.png)
 
- 1. Manage：包括Administer page（页面管理）、复制、重命名、删除。
- 2. Action：导出、打印预览、查看源码、邮件分享。
- 3. Viewers：子空间、评论、附件、记录、信息。
 
 ## 页面管理
-点击`Administer page`会跳转至页面管理页面。
+点击`管理`会跳转至页面管理页面。
 
 ![enter description here](/docs/user-guide/wiki/image/manage-page1.png)
  
