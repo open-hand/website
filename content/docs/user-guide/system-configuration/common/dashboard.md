@@ -10,7 +10,10 @@ description = "展示主要概览信息"
 
 ## 仪表盘的分层
 
-仪表盘配置中，卡片具有层级性。用户进入到某一个组织或项目后，点击导航栏左上角平台名称，或点击导航栏左上角菜单图标后点击主页选项，即可进入到组织或项目层的仪表盘。若用户未进入任一组织或项目，则进入到无层级测仪表盘。
+仪表盘配置中，卡片具有层级性。
+
+1. 用户进入到某一个组织或项目后，点击导航栏左上角平台名称，即可进入到所在层级的仪表盘。
+1. 点击导航栏左上角菜单图标后点击主页选项，即可进入到平台层的仪表盘。
 
 <img class="no-border" src="/docs/user-guide/system-configuration/common/image/dashboard-entrance.png"/>
 
@@ -18,24 +21,33 @@ description = "展示主要概览信息"
 
 用户可以根据需求，对仪表盘中卡片的顺序进行调整。
 
-1. 在卡片图标及标题所在的水平范围内，待箭头变为十字形，长按住卡片进行拖拽。
-1. 进行拖拽时，所有卡片按顺序排列为等高等宽的矩形。通过蓝色实心水平线，可以预判松开卡片后，卡片所在的位置。
+1. 点击仪表盘右上角的`自定义`按钮。
+
+    <img class="no-border" src="/docs/user-guide/system-configuration/common/image/visible1.png"/>
+1. 长按住卡片可以立即进行拖拽。
+1. 进行拖拽时，通过灰色背景的位置，可以预判松开卡片后，卡片所在的位置。
 1. 松开卡片，完成位置调整。
 
-<img class="no-border" src="/docs/user-guide/system-configuration/common/image/movecard.gif"/>
-
-## 设置卡片可见性
+## 删除卡片
 
 用户可以根据需求，对仪表盘中卡片进行隐藏或显示的设置。
 
 1. 点击仪表盘右上角的`自定义`按钮。
-
-    <img class="no-border" src="/docs/user-guide/system-configuration/common/image/visible1.png"/>
-
-1. 点击卡片右上角的开关。点击开关左边为隐藏卡片，卡片为灰色禁用状态；点击开关右边为显示卡片。
-1. 设置完卡片的可见性后，点击`完成`，保持更改。
+1. 点击卡片右上角的垃圾桶。可以删除卡片。
+1. 删除卡片后，点击`完成`，保持更改。
 
     <img class="no-border" src="/docs/user-guide/system-configuration/common/image/visible2.png"/>
+
+## 添加卡片
+
+- 点击`添加`按钮可以添加已删除的卡片。
+
+## 重置仪表盘
+
+- 点击`重置`按钮可以重置仪表盘。
+<blockquote class="note">
+          重置仪表盘是将仪表盘重置为初始化状态。
+      </blockquote>
 
 ## 更多操作
 - [登录](../login)

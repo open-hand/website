@@ -28,5 +28,4 @@ description = "非LDAP用户可以修改自己的登录密码"
 
 ## 更多操作
 - [个人信息](../information)
-- [组织信息](../org-info)
-- [项目信息](../pro-info)
+- [组织信息](../role-info)

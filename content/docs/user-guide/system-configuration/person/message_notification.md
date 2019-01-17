@@ -45,5 +45,5 @@ description = "显示收到的所有消息以及可以对消息进行处理"
 ## 更多操作
 - [个人信息](../information)
 - [修改密码](../secret_change)
-- [项目信息](../pro-info)
-- [组织信息](../org-info)
+- [项目信息](../role-info)
+
