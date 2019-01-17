@@ -41,7 +41,6 @@ description = "仪表盘配置用于预置用户可见的仪表盘卡片"
 
 - 停用仪表盘：点击列表中`停用`→![停用按钮](/docs/user-guide/system-configuration/platform/image/stop_button.png)，仪表盘状态变为停用状态。仪表盘的启用状态为启用时，可进行停用仪表盘的操作。停用仪表盘后，仪表盘的启用状态变为停用，用户将不能在主页看到此仪表盘。
 - 启用组织：点击列表中`启用`→![启用按钮](/docs/user-guide/system-configuration/platform/image/start_button.png)，组织状态为启用状态。组织的启用状态为停用时，可进行启用组织的操作。启用组织后，组织的启用状态变为启用，可进入该组织进行组织的用户管理、项目管理等操作。
-- 
 
 ## 更多操作
 - [菜单配置](../menu_configuration)
