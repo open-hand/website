@@ -63,6 +63,7 @@ helm install c7n/mysql-client \
         --set env.DB_USER=choerodon \
         --set env.DB_PASSWORD=password \
         --set env.DB_HOST=c7n-mysql.c7n-system.svc \
+        --set env.DB_PORT=3306 \
         --set env.DB_DATABASE=xwiki \
         --set env.OIDC_ENDPOINT_AUTHORIZATION=http://api.example.choerodon.io/oauth/oauth/authorize \
         --set env.OIDC_ENDPOINT_TOKEN=http://api.example.choerodon.io/oauth/oauth/token \
@@ -90,6 +91,7 @@ helm install c7n/mysql-client \
     env.DB_USER | 数据库用户名
     env.DB_PASSWORD|数据库密码
     env.DB_HOST|数据库地址
+    env.DB_PORT|数据库端口，默认3306
     env.DB_DATABASE|数据库
     env.OIDC_ENDPOINT_AUTHORIZATION|OIDC认证地址
     env.OIDC_ENDPOINT_TOKEN|OIDC TOKEN校验地址
@@ -168,7 +170,7 @@ helm install c7n/mysql-client \
     env.open.SPRING_CLOUD_CONFIG_ENABLED|启用配置中心
     env.open.SPRING_CLOUD_CONFIG_URI|配置中心地址
     env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE|注册服务地址
-    env.open.WIKI_TOKEN|wiki OIDC TOKEN，必须与xwiki中的env.OIDC_WIKI_TOKEN参数值和agile-service中的env.open.SERVICES_WIKI_TOKEN参数值一致
+    env.open.WIKI_TOKEN|wiki-service的env.open.WIKI_TOKEN，必须与xwiki中的env.OIDC_WIKI_TOKEN参数值和agile-service中的env.open.SERVICES_WIKI_TOKEN参数值一致
 
 - 验证部署
     - 验证命令
@@ -184,7 +186,7 @@ helm install c7n/mysql-client \
 
 ## 同步已有项目和组织
 
-    1. 服务部署完成之后，使用有平台管理员角色的用户登录`Choerodon`平台，点击顶部导航栏的管理按钮，选择`API管理`菜单下的`API测试`。
-    2. 找到微服务`wiki-service`下0.13.0版本的接口，打开`wiki-scanning-controller`，使用`/v1/site/scan`接口，点击`发送`之后，就会同步所有的组织和项目到新部署的wiki。
+1. 服务部署完成之后，使用有平台管理员角色的用户登录`Choerodon`平台，点击顶部导航栏的管理按钮，选择`API管理`菜单下的`API测试`。
+2. 找到微服务`wiki-service`下0.13.0版本的接口，打开`wiki-scanning-controller`，使用`/v1/site/scan`接口，点击`发送`之后，就会同步所有的组织和项目到新部署的wiki。
     
         注：同步会在后台执行，请耐心等待同步完成。
