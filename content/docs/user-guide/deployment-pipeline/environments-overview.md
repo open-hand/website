@@ -48,11 +48,11 @@ weight = 2
 
 ## 日志
 
-在部署方式改为 GitOps 操作后，日志页面用于展示目前代码的提交同步情况，同时列举出操作同步过程中产生的错误信息。
+因为目前的部署方式为GitOps 操作，日志页面用于展示目前代码的提交同步情况，同时列举出操作同步过程中产生的错误信息。
 
 ![env_overview_log](/docs/user-guide/deployment-pipeline/image/env_overview_error_logs.png)
 
-- 由于部署方式统一改成了 [`GitOps`](http://choerodon.io/zh/blog/gitops/) 操作，因此在过程中可以对一些不当的操作进行错误的追踪。而产生报错日志显示在日志页签下。
+- 由于目前的部署方式为 [`GitOps`](http://choerodon.io/zh/blog/gitops/) 操作，因此在过程中可以对一些不当的操作进行错误的追踪。而产生报错日志显示在日志页签下。
 
 - 提交同步情况：由于 `GitOps` 对部署信息进行异步处理，提交同步情况可以查看当前对部署信息的解析进度。点击提交的 `commit SHA` 可以查看对应的 GitOps 代码仓库。
 
