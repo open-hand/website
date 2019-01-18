@@ -4,16 +4,18 @@
     display: none;
     list-style: none;
     position: absolute;
-    padding: 0.05rem;
-    right: 0.3rem;
+    padding: 0.15rem;
     top: 0.5rem;
     border-radius: 0.05rem;
+    white-space: nowrap;
 }
+
 
 .sub-menus li a{
     color: #FFFFFF;
     font-size: 0.16rem;
     letter-spacing: 0.08em;
+    
 }
 .sub-menus li a:hover{
     opacity: 0.7;

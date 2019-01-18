@@ -38,6 +38,18 @@ paginate = 5
     name = "Community"
     url  = "/en/community/"
     weight = 4
+    
+    [[languages.en.menu.main]]
+	        name = "社区"
+	        url  = "/zh/community/"
+	        weight = 4
+	        parent = "community"
+	
+	[[languages.en.menu.main]]
+	        name = "知识分"
+	        url  = "/zh/knowledge-sharing"
+	        weight = 3
+	        parent = "community" 
 
 [[languages.en.menu.main]]
     name = "Github"
@@ -64,7 +76,20 @@ paginate = 5
     name = "社区"
     url  = "/zh/community/"
     weight = 4
-
+    identifier = "community"
+    
+	[[languages.zh.menu.main]]
+	        name = "社区"
+	        url  = "/zh/community/"
+	        weight = 4
+	        parent = "community"
+	
+	[[languages.zh.menu.main]]
+	        name = "知识分享"
+	        url  = "/zh/knowledge-sharing"
+	        weight = 3
+	        parent = "community"        
+	        
 [[languages.zh.menu.main]]
     name = "GITHUB"
     url  = "https://github.com/choerodon/"

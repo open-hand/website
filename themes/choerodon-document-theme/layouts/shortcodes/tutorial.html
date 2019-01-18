@@ -1,5 +1,6 @@
 {{ $.Scratch.Set "top" (.Get 0) }} 
 {{ $.Scratch.Set "bottom" (.Get 1) }} 
+
 {{ range $key, $index := $.Site.Data.tutorial }}
   {{ if eq ($.Scratch.Get "top") $key }}
   <div class="tutorial-img" id="tutorial-img">
@@ -25,6 +26,7 @@
       {{ end }}
     {{ end }}
   </div>
+  
   {{ end }}
 {{ end }}
 

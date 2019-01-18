@@ -114,3 +114,14 @@
 - id: go to homepage
   translation: "返回首页"
 # 404页面 结束
+
+# 知识分享页面
+- id: tech-ca
+  translation: "技术类"
+  
+- id: welcome to knowledge sharing
+  translation:  "欢迎来到知识分享页"
+  
+- id: zother
+  translation:  "其他类"
+# 知识分享页面结束
