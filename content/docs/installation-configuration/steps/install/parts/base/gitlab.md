@@ -239,6 +239,9 @@ helm install c7n/gitlab \
 
 ### 添加Gitlab Client
 
+- 在执行里面前请根据实际情况修改参数
+- 记得修改`http://gitlab.example.choerodon.io`的地址为实际的gitlab地址
+
 ```
     helm install c7n/mysql-client \
         --set env.MYSQL_HOST=c7n-mysql.c7n-system.svc \
