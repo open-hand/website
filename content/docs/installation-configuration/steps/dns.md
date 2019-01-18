@@ -25,7 +25,7 @@ weight = 16
 
 ## 域名注册
 
-如果您希望对外提供服务，必须注册一个域名并正确配置解析。如果仅用于测试或内部使用，可以使用[自主搭建DNS](#自主搭建dns)伪造一个域名暂时跳过域名注册环节。使用自建DNS服务需要所有用户设置自己电脑的DNS，强烈建议注册一个自己的域名。
+如果您希望对外提供服务，必须注册一个域名并正确配置解析。
 
 ### 域名注册流程
 
@@ -41,92 +41,6 @@ weight = 16
 
 如果你现在外网环境下使用域名访问系统，请解析到master节点对应的外网ip，并非所有主机都有外网ip。具体请咨询您的网络服务商。
 
-## 自主搭建DNS
+## 使用免费域名
 
-如果您不想注册域名，请参考本节，使用自己搭建的DNS服务器，需要<span style="color: #ff0000;"><strong>所有用户</strong></span>手动配置DNS解析以访问相关服务。
-
-### 前置要求
-
-- 已按本站Kubernetes部署文档部署好整个集群。
-
-### 仓库设置
-
-```
-helm repo add c7n https://openchart.choerodon.com.cn/choerodon/c7n/
-helm repo update
-```
-
-### 部署DNS(请勿直接复制命令执行)
-
-假如您想在使用`example.choerodon.io`这个域名，则在参数中设置`config."example\.choerodon\.io"={集群ip}`，具体参数请参考下面的参数解释。
-kubernetes service是一个面向微服务架构的设计，它从k8s本身解决了容器集群的负载均衡，并开放式地支持了用户所需要的各种负载均衡方案和使用场景。由于k8s中的pod在每次创建之后的ip都不一定相同，所以这里需要指定一个service并绑定一个主机ip，使得可以使用主机ip+端口访问dns服务器。
-
-<blockquote class="warning">
-service绑定的主机必须开放53端口，若未开放，请参照Kubernetes集群部署文档中的“开放指定端口”操作进行开放。
-</blockquote>
-
-```shell
-helm install c7n/dnsmasq \
-    --set service.enable=true \
-    --set service.externalIPs={192.168.1.1} \
-    --set config."example\.choerodon\.io"=192.168.1.1 \
-    --version 0.1.0 \
-    --name dnsmasq \
-    --namespace c7n-system
-```
-
-- 参数解释：
-
-    | 参数 | 含义
-    | --- |  --- | 
-    service.enable|是否开启service
-    service.externalIPs|service外部IP，这里请填写任意一台master节点IP
-    config."example\\.choerodon\\.io"|引号中间的字符为你要设置的域名后缀，这里请将“.”用“\”进行转义，等号后面的值可以为`service.externalIPs`的值，也可为另一master节点的IP
-
-### 配置k8s集群中的kube-dns服务
-
-- 新建名为`kube-dns.cm.yml`的文件，粘贴以下内容，<span style="color: #ff0000;"><strong>注意修改</strong></span>相应信息：
-
-    - 这里的`192.168.1.1`替换为上一步填写`service.externalIPs`的值
-
-    ```yaml
-    apiVersion: v1
-    kind: ConfigMap
-    metadata:
-      name: kube-dns
-      namespace: kube-system
-    data:
-      stubDomains: |
-        {"example.choerodon.io": ["192.168.1.1"]}
-    ```
-
-- 应用kube-dns配置文件
-
-    ```bash
-    kubectl apply -f kube-dns.cm.yml
-    ```
-
-- 重启kube-dns服务
-
-    ```bash
-    kubectl scale deployment kube-dns -n kube-system --replicas=0
-    kubectl scale deployment kube-dns -n kube-system --replicas=1
-    ```
-
-## 验证部署
-
-- 执行以下命令出现以下结果即成功
-
-    ```console
-    $ kubectl exec -n c7n-system $(kubectl get po -n c7n-system -l choerodon.io/infra=dnsmasq -o jsonpath="{.items[0].metadata.name}") host example.choerodon.io
-
-    example.choerodon.io has address 192.168.1.1
-    ```
-
-- 部署完成后您的DNS服务器即为您设置的`externalIP`
-
-## 设置主机DNS
-
-- [Mac设置DNS](https://jingyan.baidu.com/article/6525d4b1887abaac7d2e94ec.html)
-- [Linux设置DNS](https://jingyan.baidu.com/article/d3b74d64e80e281f77e609f6.html)
-- [Windows设置DNS](https://jingyan.baidu.com/article/b7001fe1a7a8c60e7282dd82.html)
+如果您不想注册域名，可以使用如nip.io提供的服务 具体详情可以进入[http://nip.io/](http://nip.io/)查看具体说明，需要注意的是此类域名一般未在中国大陆备案，根据政策法规，将会限制使用中国大陆的公有云服务器外网地址。
