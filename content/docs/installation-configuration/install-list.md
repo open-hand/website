@@ -47,7 +47,7 @@ asgard service|事务服务|0.13.0
 gitlab service|Gitlab 服务|0.13.0
 devops service|Devops 服务|0.13.0
 agile service|敏捷管理|0.13.0
-state machine service|状态机服务|0.13.0
+state machine service|状态机服务|0.13.1
 issue service|issue服务|0.13.0
 wiki service|知识管理服务|0.13.0
 test manager service|测试管理服务|0.13.0
