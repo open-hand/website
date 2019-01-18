@@ -38,17 +38,17 @@ register server|注册服务|0.13.0
 config server|配置服务|0.13.0
 manager service|管理服务|0.13.0
 iam service|IAM服务|0.13.0
-api gateway|网关服务|0.13.0
+api gateway|网关服务|0.13.1
 gateway helper|网关helper|0.13.0
 oauth server|认证服务|0.13.0
 file service|文件服务|0.13.0
 notify service|通知服务|0.13.0
 asgard service|事务服务|0.13.0
 gitlab service|Gitlab 服务|0.13.0
-devops service|Devops 服务|0.13.0
+devops service|Devops 服务|0.13.2
 agile service|敏捷管理|0.13.0
 state machine service|状态机服务|0.13.1
 issue service|issue服务|0.13.0
 wiki service|知识管理服务|0.13.0
 test manager service|测试管理服务|0.13.0
-choerodon front|Choerodon 前端|0.13.0
+choerodon front|Choerodon 前端|0.13.1
