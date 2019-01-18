@@ -234,7 +234,7 @@ helm install c7n/gitlab \
         --set env.config.OMNIAUTH_BLOCK_AUTO_CREATED_USERS=false \
         --set env.config.CHOERODON_API_URL=http://api.example.choerodon.io \
         --set env.config.CHOERODON_CLIENT_ID=gitlab \
-        --version 0.2.1 \
+        --version 0.3.0 \
         --namespace c7n-system
 
 ### 添加Gitlab Client
