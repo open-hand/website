@@ -45,7 +45,7 @@ file service|文件服务|0.13.0
 notify service|通知服务|0.13.0
 asgard service|事务服务|0.13.0
 gitlab service|Gitlab 服务|0.13.0
-devops service|Devops 服务|0.13.2
+devops service|Devops 服务|0.13.3
 agile service|敏捷管理|0.13.0
 state machine service|状态机服务|0.13.1
 issue service|issue服务|0.13.0
