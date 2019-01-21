@@ -4,4 +4,4 @@ description = "介绍了0.13中新增了文档个人空间、文档分类收藏�
 weight = 993
 +++
 
-{{< readfile file="/static/release/CHANGELOG_v0.12.0_zh.md" markdown="true" >}}
+{{< readfile file="/static/release/CHANGELOG_v0.13.0_zh.md" markdown="true" >}}
