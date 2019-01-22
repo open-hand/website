@@ -8,7 +8,7 @@ home = true
 +++
 
 ## 快速入门
-Choerodon 猪齿鱼是一个开源企业服务平台，帮助企业实现敏捷化的应用交付和自动化的运营管理。在本节快速入门中，将分别从管理者、项目经理和项目成员的角度让您快速进入Choerodon 的操作。
+Choerodon 猪齿鱼是一个开源多云应用平台，帮助企业实现敏捷化的应用交付和自动化的运营管理。在本节快速入门中，将分别从管理者、项目经理和项目成员的角度让您快速进入Choerodon 的操作。
 
 ## 前置条件
 - Choerodon 使用 Kubernetes 来管理和部署服务。关于 Kubernetes，请参考 [Kubernetes](https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/) 概览。
