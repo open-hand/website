@@ -86,13 +86,13 @@
 - id: choerodon has increased the agility of the enterprise
   translation: "Choerodon has increased the agility of the enterprise information system in responding to the market and demand"
 
-- id: welcome to choerodon community
+- id: readmore
   translation: "Read More"
 # 案例 结束
 
 # 社区
-- id: welcome to knowledge sharing
-  translation: "Welcome to knowledge sharing"
+- id: welcome to choerodon community
+  translation: "Welcome to choerodon community"
 
 - id: people committed to technology sharing
   translation: "A group of zealous, friendly, diversified, intelligent people committed to technology sharing, grow together with the Choerodon."
@@ -119,6 +119,10 @@
 - id: tech-ca
   translation: "Technology"
 
+- id: zother
+  translation:  "other"
+
 - id: welcome to knowledge sharing
-  translation:  "welcome to knowledge sharing page"
+  translation:  "welcome to knowledge sharing"
+  
 # 知识分享结束

@@ -38,18 +38,19 @@ paginate = 5
     name = "Community"
     url  = "/en/community/"
     weight = 4
+    identifier = "en-community"
     
     [[languages.en.menu.main]]
-	        name = "社区"
-	        url  = "/zh/community/"
+	        name = "Community"
+	        url  = "/en/community/"
 	        weight = 4
-	        parent = "community"
+	        parent = "en-community"
 	
 	[[languages.en.menu.main]]
-	        name = "知识分"
-	        url  = "/zh/knowledge-sharing"
+	        name = "knowledge-sharing"
+	        url  = "/en/knowledge-sharing"
 	        weight = 3
-	        parent = "community" 
+	        parent = "en-community" 
 
 [[languages.en.menu.main]]
     name = "Github"
@@ -130,6 +131,7 @@ paginate = 5
 [params]
     viewMorePostLink = "/blog/"
     author = "Choerodon"
+    ajaxhref = "http://microclass.staging.saas.hand-china.com/topic/apply"
     defaultKeywords = ["devops"]
     defaultDescription = ""
     # Format dates with Go's time formatting

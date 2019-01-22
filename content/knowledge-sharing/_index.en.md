@@ -1,10 +1,9 @@
 +++
-title = "文档"
+title = "knowledge-sharing"
 description = ""
-video = "asdasd1"
 +++
 
 
-{{< sharing >}}
+{{< share >}}
 
 
