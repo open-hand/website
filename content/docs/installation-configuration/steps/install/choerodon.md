@@ -80,7 +80,7 @@ spec:
 ## 开始部署
 
 - 在安装过程中，会提示设置某些组件用户名及密码，注意保存
-- 如果安装失败，再次执行命令即可
+- 如果安装失败，根据提示操作后，再次执行命令即可
 - 执行部署命令
 
 ```bash
@@ -98,8 +98,8 @@ spec:
 
 - 安装完成后您可以访问您配置的`choerodon-front`域名，默认用户名和密码都为admin
 - [设置Gitlab启用SSH协议(必须开启)](../parts/base/gitlab/#启用ssh协议)
+- 登录一次Gitlab，第一次登录会提示设置root用户密码，随后会跳转到Choerodon认证，使用admin/admin登录即可，如果使用root/admin用户拉取代码用户名为root，密码为界面设置的密码，其他用户默认密码为`password`
 - [设置Harbor证书(必须设置)](../parts/base/harbor/#证书配置)
-- [配置使用choerodon登录gitlab](../parts/base/gitlab/#配置Choerodon Oauth认证)
 - [配置同步wiki](../parts/choerodon-wiki/#同步已有项目和组织)
 
 ## 常见问题
@@ -107,3 +107,7 @@ spec:
 - 停留在等待slaver启动过程中
 
   请确认每个节点都安装了nfs-utils
+
+- 提示job已存在
+
+  根据提示执行删除命令后，重新执行安装命令
