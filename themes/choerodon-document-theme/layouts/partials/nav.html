@@ -1,4 +1,4 @@
-<div class='navbar {{ if or (in .URL "blog") (in .URL "categories") (in .URL "tags") (and (in .URL "case-studies") (eq .Name "案例")) (in .URL "docs") }} top-white-nav {{ end }} top-nav' role="navigation" id="navbar">
+<div class='navbar {{ if or (in .URL "blog") (in .URL "categories") (in .URL "tags") (and (in .URL "case-studies") (eq .Name "案例")) (and (in .URL "case-studies") (eq .Name "Case Studies")) (in .URL "docs") }} top-white-nav {{ end }} top-nav' role="navigation" id="navbar">
     {{ if in .URL "docs" }}
         <div class="navbar-left-buttons">
             <button type="button" class="navbar-toggle btn-template-main">

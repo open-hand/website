@@ -10,12 +10,19 @@
     white-space: nowrap;
 }
 
+.sub-menus li{
+	text-align: center;
+}
+.navbar ul.nav>li:nth-child(4)>a{
+	margin-left: 0.34rem;
+	margin-right: 0.34rem;
+}
 
 .sub-menus li a{
     color: #FFFFFF;
     font-size: 0.16rem;
     letter-spacing: 0.08em;
-    
+   
 }
 .sub-menus li a:hover{
     opacity: 0.7;

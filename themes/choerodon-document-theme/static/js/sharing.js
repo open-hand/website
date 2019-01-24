@@ -7,16 +7,17 @@
  	 	if(name_val.trim() != ''){
 		if(Name_reg.test(name_val)){
 		$(".sign-message").eq(0).css('border-bottom','1px solid #979797')
+		$('.err-message').eq(0).css('visibility','hidden')
 		}else {
-		$('#namemsg').val("");
-		$('#namemsg').attr('placeholder','请输入正确的姓名');
-		$(".sign-message").eq(0).css('border-bottom','1px solid #CC0000');
+		$('.err-message').eq(0).css('visibility','visible')
+		$('.errmsg').eq(0).val('姓名格式错误')
+		$(".sign-message").eq(0).css('border-bottom','1px solid red');
 		
 		}
 		}else{
-			$('#namemsg').val("");
-		$('#namemsg').attr('placeholder','内容不能为空');
-		$(".sign-message").eq(0).css('border-bottom','1px solid #CC0000');
+		$('.err-message').eq(0).css('visibility','visible')
+		$('.errmsg').eq(0).val('内容不能为空')
+		$(".sign-message").eq(0).css('border-bottom','1px solid red');
 		}
  	 }
  	
@@ -33,16 +34,17 @@
 		if(tel.trim() != ''){
 		if(regEx.test(tel)){
 		$(".sign-message").eq(1).css('border-bottom','1px solid #979797')
+		$('.err-message').eq(1).css('visibility','hidden')
 		}else{
-		
-		$('#iphoneNumbermsg').val("");
-		$('#iphoneNumbermsg').attr('placeholder','请输入正确的手机号码');
-		$(".sign-message").eq(1).css('border-bottom','1px solid #CC0000');
+		$('.err-message').eq(1).css('visibility','visible')
+		$('.errmsg').eq(1).val('请输入正确的手机号码')
+		$(".sign-message").eq(1).css('border-bottom','1px solid red');
 		}
 		}else{
-			$('#iphoneNumbermsg').val("");
-		$('#iphoneNumbermsg').attr('placeholder','内容不能为空');
-		$(".sign-message").eq(1).css('border-bottom','1px solid #CC0000');
+
+		$('.err-message').eq(1).css('visibility','visible')
+		$('.errmsg').eq(1).val('内容不能为空')
+		$(".sign-message").eq(1).css('border-bottom','1px solid red');
 		}
 		};
  	
@@ -89,14 +91,15 @@
  		$(".sign-message").eq(1).css('border-bottom','1px solid #979797');
  		$('#namemsg').attr('placeholder','请输入姓名');
  		$('#iphoneNumbermsg').attr('placeholder','请输入手机号码');
+ 		$('.err-message').eq(0).css('visibility','hidden')
+ 		$('.err-message').eq(1).css('visibility','hidden')
  		
  	})
+ 	
  	$("#close-sign").click(function(){
  		$(".sign-up").fadeOut(300)
  	})
- 	$(".sign-up .iconfont").click(function(){
- 		$(".sign-up").fadeOut(300)
- 	})
+ 
  	
  	
 // 	ajax请求
@@ -115,7 +118,7 @@ function submsg(){
  	var description = $("#descriptionmsg").val()
  	
  	
- 	if(name==""||topic==""||iphoneNumber==""||description==""){
+ 	if(name==""||topic==""||iphoneNumber==""||description==""||$('.err-message').eq(0).css("visibility")=="visible"||$('.err-message').eq(1).css("visibility")=="visible"){
  		
  		alert("请输入完整的信息")
  		
@@ -138,12 +141,21 @@ function submsg(){
                         alert("SUCCESS");
                     }
                     ;
+                    $(".sign-up").fadeOut(100);
+                    $('.sign-success').fadeIn(500);
+                    setTimeout(function () {
+                     $(".sign-success").fadeOut();
+                     					   }, 1500)
+                    
                 },
                 error : function(e) {
                     console.log(e.responseText)
                 }
             });
-            alert('报名成功')
+          
+           
+            	
+             
  	}
    
 

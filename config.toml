@@ -47,16 +47,49 @@ paginate = 5
 	        parent = "en-community"
 	
 	[[languages.en.menu.main]]
-	        name = "knowledge-sharing"
+	        name = "Knowledge-Sharing"
 	        url  = "/en/knowledge-sharing"
 	        weight = 3
 	        parent = "en-community" 
+
 
 [[languages.en.menu.main]]
     name = "Github"
     url  = "https://github.com/choerodon/choerodon"
     weight = 5
     post= true
+
+[[languages.en.menu.main]]
+    name = "v0.12"
+    url  = "/en/"
+    weight = 6
+    identifier = "version"
+    pre = "<i class='iconfont'>&#xe600;</i>"
+
+    [[languages.en.menu.main]]
+        name = "v0.12"
+        url  = "http://v0-12.choerodon.io/en/"
+        weight = 6
+        parent = "version"
+
+    [[languages.en.menu.main]]
+    name = "v0.11"
+    url  = "http://v0-11.choerodon.io/en/"
+    weight = 5
+    parent = "version"
+
+    [[languages.en.menu.main]]
+    name = "v0.10"
+    url  = "http://v0-10.choerodon.io/en/"
+    weight = 4
+    parent = "version"
+
+    [[languages.en.menu.main]]
+    name = "v0.9"
+    url  = "http://v0-9.choerodon.io/en/"
+    weight = 3
+    parent = "version"
+
 
 [[languages.zh.menu.main]]
     name = "文档"

@@ -92,7 +92,7 @@
 
 # 社区
 - id: welcome to choerodon community
-  translation: "Welcome to choerodon community"
+  translation: "Welcome to Choerodon Community"
 
 - id: people committed to technology sharing
   translation: "A group of zealous, friendly, diversified, intelligent people committed to technology sharing, grow together with the Choerodon."
@@ -123,6 +123,6 @@
   translation:  "other"
 
 - id: welcome to knowledge sharing
-  translation:  "welcome to knowledge sharing"
+  translation:  "Welcome to Knowledge Sharing"
   
 # 知识分享结束

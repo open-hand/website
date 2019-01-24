@@ -176,12 +176,12 @@
 
 .sign-up .sign {
     z-index: 1005;
-    width: 40%;
+    width: 46%;
     height: 550px;
     background: white;
     position: absolute;
     top: 10%;
-    left: 30%;
+    left: 27%;
     border-radius: 10px;
     
    
@@ -195,27 +195,30 @@
 	margin: 0 auto ;
 	border-bottom: 1px solid #979797;
 	width: 70%;
-	height:45px;
-	margin-top: 10px;
+	height:35px;
+
 	
 }
 .sign-up .sign-message div{
 	float: left;
 }
 .sign-up .sign-message .left-content{
-	width: 25%;
+	width: 20%;
 	height: 100%;
 	line-height: 100%;
+	display: flex;
+	align-items: center;
 }
 .sign-up .sign-message .left-content a{
-	font-family: "arial, helvetica, sans-serif";
+	
 	color: #404245;
-	font-size: 14px;
-	position: relative;
-	top: 40%;
+	font-size: 16px;
+	white-space: nowrap;
+	
+	
 }
 .sign-up .sign-message .right-content{
-	width: 75%;
+	width: 80%;
 	height: 100%;
 	
 }
@@ -224,9 +227,54 @@
 	height: 100%;
 	border: 0px;
 	background: transparent;
-	font-size: 14px;
+	font-size: 16px;
 	outline: none;
-	padding-top: 20px;
+	
+}
+.err-message{
+	
+	width:70% ;
+	height: 25px;
+	margin: 0 auto;
+	visibility: hidden;
+	}
+.visi-hidden{
+	visibility: hidden;
+}
+.visi-visible{
+	visibility: visible;
+}
+.err-message div{
+	float: left;
+}
+.err-message .left-content{
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	height: 100%;
+	width: 20%;
+	
+}
+.err-message .left-content .iconfont{
+	
+	font-size: 14px;
+	color: red;
+}
+
+
+.err-message .err-content{
+	height: 100%;
+	width: 80%;
+}
+.err-message .err-content input{
+	width: 100%;
+	height: 100%;
+	border: 0px;
+	background: transparent;
+	font-size: 16px;
+	outline: none;
+	color: red;
+	
 }
 .sign-up .message-area{
 	width: 70%;
@@ -282,7 +330,70 @@
 .sign-up .iconfont{
 	color: gainsboro;
 }
+/*弹出报名成功*/
+.sign-success{
+	z-index: 1007;
+	position: fixed;
+	top: 10%;
+	left: 0;
+	right: 0;
+	margin-left: auto;
+	margin-right: auto;
+	width: 150px;
+	height: 60px;
+	border-radius: 5px;
+	background: white;
+	display: none;
+}
+.sign-success div{
+	float: left;
+	height: 100%;
+}
+.sign-success .success-left{
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	width: 35%;
+}
+.sign-success .success-left .iconfont{
+	font-size: 30px;
+	color: blue;
+}
+.sign-success .success-right{
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+}
 /*移动端分享报名*/
+@media screen and (min-width: 768px) and (max-width: 991px) { 
+ 	
+ 	.sign-up .sign{
+		position: absolute;
+		top: 10%;
+		left: 15%;
+		;
+		width: 70%;
+		height: 100%;
+	}
+	
+	.sign-up .sign-message .left-content{
+		width: 20%;
+		height: 100%;
+		line-height: 100%;
+	}
+	
+	.sign-up .sign-message .right-content{
+		width: 80%;
+		height: 100%;
+		
+	}
+	.err-message .left-content{
+	font-size: medium;
+	vertical-align: center;
+}
+	
+}
+
 @media (max-width: 767px){
 	.sign-up .sign{
 		position: absolute;
@@ -295,6 +406,17 @@
 	
 	#tutorial-video .iconfont{
 		color: gainsboro;
+	}
+	.sign-up .sign-message .left-content{
+		width: 20%;
+		height: 100%;
+		line-height: 100%;
+	}
+	
+	.sign-up .sign-message .right-content{
+		width: 80%;
+		height: 100%;
+		
 	}
 	
 }
