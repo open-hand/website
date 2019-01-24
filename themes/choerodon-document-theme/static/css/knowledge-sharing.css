@@ -61,6 +61,10 @@
 	padding-right: 20px;
 
 }
+.sharing-main .sharing-footer .icon-player-hover1:before {
+  content: "\e605";
+  color: #326DE6;
+}
 .sharing-main .sharing-footer a{
 	height: 42px;
 	line-height:42px ;
