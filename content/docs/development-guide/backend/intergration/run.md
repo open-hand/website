@@ -171,7 +171,7 @@ services:
     - LOGGING_LEVEL=WARN
     - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8000/eureka/
     - ZUUL_ADDHOSTHEADER=true
-    - SPRING_APPLICATION_JSON='{"zuul":{"routes":{"dev":{"path":"/todo/**", "serviceId":"choerodon-todo-service"}}}}'
+    - SPRING_APPLICATION_JSON={"zuul":{"routes":{"dev":{"path":"/todo/**", "serviceId":"choerodon-todo-service"}}}}
     - JAVA_OPTS=-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -Xms512M -Xmx768M
     expose:
     - "8080"
@@ -207,7 +207,7 @@ services:
     - SPRINT_REDIS_HOST=redis
     - SPRING_REDIS_PORT=6379
     - SPRING_REDIS_DATABASE=4
-    - SPRING_APPLICATION_JSON='{"zuul":{"routes":{"dev":{"path":"/todo/**", "serviceId":"choerodon-todo-service"}}}}'
+    - SPRING_APPLICATION_JSON={"zuul":{"routes":{"dev":{"path":"/todo/**", "serviceId":"choerodon-todo-service"}}}}
     - JAVA_OPTS=-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -Xms512M -Xmx768M
     networks:
     - "c7nNetwork"
