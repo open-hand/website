@@ -51,7 +51,7 @@ description = "对系统的名称、logo等平台标志进行自定义设置"
 
 系统配置项的默认值：
 
-- **平台徽标**：![logo](/docs/user-guide/system-configuration/platform/image/favicon.ico) 
+- **平台徽标**：![logo](/img/favicon.ico) 
 
 - **平台全称**：`Choerodon`
 
