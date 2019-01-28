@@ -26,7 +26,7 @@ LDAP是轻量目录访问协议。LDAP管理是对组织应用的LDAP信息设�
 
     - OpenLDAP：由OpenLDAP项目开发的轻量级目录访问协议（LDAP）的免费开源实现。
 
-1. 主机名：运行 LDAP 的服务器主机名。例如，ldap.example.com。
+1. 主机名：运行 LDAP 的服务器主机名。例如：ldap://example.com。
 1. 是否使用SSL：此选项会影响端口号。
 1. 端口号：使用SSL时，端口号是636，不使用SSL时，端口号是389。
 1. 基准DN：从LDAP根节点搜索用户。例如，cn=users，dc=example，dc=com。
