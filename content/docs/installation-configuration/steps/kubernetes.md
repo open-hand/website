@@ -225,18 +225,10 @@ weight = 5
 - 在node1中部署ansible环境
 
     ```shell
-    # 安装 epel 源并更新
-    sudo yum install epel-release -y && sudo yum update -y
-    # 安装python
-    sudo yum install git python sshpass python-pip -y
-    # pip安装ansible(国内如果安装太慢可以直接用pip阿里云加速)
-    # sudo pip install pip --upgrade
-    # sudo pip install ansible==2.7.5 netaddr
-    sudo pip install pip --upgrade -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
-    sudo pip install --no-cache-dir ansible==2.7.5 netaddr -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
-
-    # 查看ansible版本（version>=2.4.0.0）
-    ansible --version
+    sudo yum install epel-release -y 
+    sudo yum install git python36 sshpass -y
+    sudo python3.6 -m ensurepip
+    sudo /usr/local/bin/pip3 install --no-cache-dir ansible==2.7.5 netaddr -i https://mirrors.aliyun.com/pypi/simple/
     ```
 <blockquote class="note">
 若修改了Vagrantfile中启动的虚拟机数量，请删除kubeadm-ansible/inventory/hosts文件中未启动的虚拟机信息。
@@ -325,18 +317,10 @@ weight = 5
 - 在要执行ansible脚本的机器上部署ansible运行需要的环境：
 
     ```shell
-    # 安装 epel 源并更新
-    sudo yum install epel-release -y && sudo yum update -y
-    # 安装python
-    sudo yum install git python sshpass python-pip -y
-    # pip安装ansible(国内如果安装太慢可以直接用pip阿里云加速)
-    # sudo pip install pip --upgrade
-    # sudo pip install ansible==2.7.5 netaddr
-    sudo pip install pip --upgrade -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
-    sudo pip install --no-cache-dir ansible==2.7.5 netaddr -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
-
-    # 查看ansible版本（version>=2.4.0.0）
-    ansible --version
+    sudo yum install epel-release -y 
+    sudo yum install git python36 sshpass -y
+    sudo python3.6 -m ensurepip
+    sudo /usr/local/bin/pip3 install --no-cache-dir ansible==2.7.5 netaddr -i https://mirrors.aliyun.com/pypi/simple/
     ```
 
 - 克隆项目：
@@ -467,18 +451,10 @@ weight = 5
 - 在要执行ansible脚本的机器上部署ansible运行需要的环境：
 
     ```shell
-    # 安装 epel 源并更新
-    sudo yum install epel-release -y && sudo yum update -y
-    # 安装python
-    sudo yum install git python sshpass python-pip -y
-    # pip安装ansible(国内如果安装太慢可以直接用pip阿里云加速)
-    # sudo pip install pip --upgrade
-    # sudo pip install ansible==2.7.5 netaddr
-    sudo pip install pip --upgrade -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
-    sudo pip install --no-cache-dir ansible==2.7.5 netaddr -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
-
-    # 查看ansible版本（version>=2.4.0.0）
-    ansible --version
+    sudo yum install epel-release -y 
+    sudo yum install git python36 sshpass -y
+    sudo python3.6 -m ensurepip
+    sudo /usr/local/bin/pip3 install --no-cache-dir ansible==2.7.5 netaddr -i https://mirrors.aliyun.com/pypi/simple/
     ```
 
 - 克隆项目：
