@@ -1,4 +1,4 @@
-baseurl = "http://v0-13.choerodon.io/"
+baseurl = "//v0-13.choerodon.io/"
 title = "Choerodon | 开源多云应用平台"
 theme = "choerodon-document-theme"
 # themesDir = "../.."
