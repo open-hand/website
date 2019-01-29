@@ -31,13 +31,23 @@
 	color: white;
 	border-radius:10px 10px 0px 0px ;
 	padding-left: 16px;
-	font-size: 18px;
+	padding-right: 16px;
+	font-size: 16px;
 	padding-top: 7px;
 	padding-bottom: 7px;
+
+	
 }
 .sharing-main p{
 	margin: 0;
 	padding: 0;
+	height: 36px;
+	height: 100%;
+	width: 100%;
+	text-overflow: ellipsis;
+	white-space: nowrap; 
+	overflow: hidden;
+	
 }
 
 .sharing-main .sharing-body{
@@ -48,6 +58,9 @@
 	height: 82px;
 	border-left: 1px solid gainsboro;
 	border-right: 1px solid gainsboro;
+}
+.sharing-main .sharing-body h5{
+	letter-spacing: 0.47px;
 }
 
 .sharing-main .sharing-footer{
@@ -181,18 +194,18 @@
 .sign-up .sign {
     z-index: 1005;
     width: 46%;
-    height: 550px;
+    height: 530px;
     background: white;
     position: absolute;
-    top: 10%;
+    top: 7%;
     left: 27%;
     border-radius: 10px;
     
    
 }
 .sign-up .sign h4{
-	margin-top: 25px;
-	margin-bottom: 0px;
+	margin-top: 35px;
+	margin-bottom: 10px;
 	text-align: center;
 }
 .sign-up .sign-message{
@@ -288,12 +301,13 @@
 }
 .sign-up .message-area .top-content{
 	width: 70%;
+	margin-top: 20px;
 	margin-bottom: 10px;
 	
 }
 .sign-up .message-area .top-content a{
 	color: #404245;
-	font-size: 14px;
+	font-size: 16px;
 	
 	white-space: nowrap;
 	

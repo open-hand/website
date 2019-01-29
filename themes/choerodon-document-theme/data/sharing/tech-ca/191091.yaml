@@ -1,0 +1,5 @@
+src: "q0831jo2rpq"
+background: "/img/knowledge-sharing/agile-1.png"
+title: "从Java到go"
+description: "介绍Java与Go语言的区别以及Go并发模型"
+weight: 10

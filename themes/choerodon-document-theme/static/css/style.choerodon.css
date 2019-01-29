@@ -8,18 +8,19 @@
     top: 0.5rem;
     border-radius: 0.05rem;
     white-space: nowrap;
+    background: white;
 }
 
 .sub-menus li{
 	text-align: center;
 }
-.navbar ul.nav>li:nth-child(4)>a{
-	margin-left: 0.34rem;
-	margin-right: 0.34rem;
+.navbar ul.nav>li:nth-child(4)>ul{
+	left: -15px;
+	right:-15px;
 }
 
 .sub-menus li a{
-    color: #FFFFFF;
+    color: #000000;
     font-size: 0.16rem;
     letter-spacing: 0.08em;
    
