@@ -85,7 +85,7 @@
 	$.ajax({
             //几个参数需要注意一下
                 type: "get",//方法类型
-                url: "http://microclass.staging.saas.hand-china.com/video/query" ,//url
+                url: "https://share.choerodon.com.cn/video/query" ,//url
                 contentType: "application/json; charset=utf-8",
                 success: function (result) {
                     
@@ -126,7 +126,7 @@
  	$.ajax({
             
         type: "post",//方法类型
-        url: "http://microclass.staging.saas.hand-china.com/video/like/"+likeInput.attr("id") ,//url
+        url: "https://share.choerodon.com.cn/video/like/"+likeInput.attr("id") ,//url
         contentType: "application/json; charset=utf-8",
        
         success: function (result) {
@@ -143,7 +143,7 @@
  	$.ajax({
             
                 type: "post",//方法类型
-                url: "http://microclass.staging.saas.hand-china.com/video/like/1" ,//url
+                url: "https://share.choerodon.com.cn/video/like/1" ,//url
                 contentType: "application/json; charset=utf-8",
                
                 success: function (result) {
@@ -192,7 +192,7 @@ function submsg(){
  		 $.ajax({
             //几个参数需要注意一下
                 type: "post",//方法类型
-                url: "http://microclass.staging.saas.hand-china.com/topic/apply" ,//url
+                url: "https://share.choerodon.com.cn/topic/apply" ,//url
                 contentType: "application/json; charset=utf-8",
                 data: JSON.stringify({
 				  "topic": topic,

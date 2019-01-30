@@ -165,8 +165,8 @@ paginate = 5
 [params]
     viewMorePostLink = "/blog/"
     author = "Choerodon"
-    ajaxhref = "http://microclass.staging.saas.hand-china.com/topic/apply"
-    praisenumber ="http://microclass.staging.saas.hand-china.com/video/query"
+    ajaxhref = "https://share.choerodon.com.cn/topic/apply"
+    praisenumber ="https://share.choerodon.com.cn/video/query"
     defaultKeywords = ["devops"]
     defaultDescription = ""
     # Format dates with Go's time formatting
