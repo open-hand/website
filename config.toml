@@ -118,8 +118,7 @@ paginate = 5
 	        name = "社区"
 	        url  = "/zh/community/"
 	        weight = 4
-	        parent = "community"
-	
+	        parent = "community"	
 	[[languages.zh.menu.main]]
 	        name = "知识分享"
 	        url  = "/zh/knowledge-sharing"
