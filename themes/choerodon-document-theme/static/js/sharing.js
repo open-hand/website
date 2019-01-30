@@ -76,18 +76,30 @@
  			$(this).attr("class","iconfont icon-player1 pull-right")
  		}
  		
- 	)
+ 	);
 //点赞
+   $('.praise i').click(function(){
+   	$(this).attr("class","iconfont icon-praised pull-left add-like")
+   	
+   })
+	$.ajax({
+            //几个参数需要注意一下
+                type: "get",//方法类型
+                url: "http://microclass.staging.saas.hand-china.com/video/query" ,//url
+                contentType: "application/json; charset=utf-8",
+                success: function (result) {
+                    
+                  for(var i=0;i<result.length;i++){
+					$('#'+result[i].id).val(result[i].likeNumber)
+                  }
+               
+                    
+                },
+                error : function(e) {
+                    console.log(e.responseText)
+                }
+            });
 
-    $('.praise i').click(function(){
-    	if($(this).hasClass('iconfont icon-praise pull-left')){
-    	$(this).attr('class','iconfont icon-praised pull-left');	
-    	}else{
-    	$(this).attr('class','iconfont icon-praise pull-left');	
-    	}
-    	
-    	
-    })
 // 	报名窗口弹出
  	$("#jion-share").click(function(){
  		$(".sign-up").fadeIn(300);
@@ -107,15 +119,46 @@
  	$("#close-sign").click(function(){
  		$(".sign-up").fadeOut(300)
  	})
- 
- 	
- 	
-// 	ajax请求
-
- 
- 	
  })
  
+ $('.add-like').on('click',function(e){
+ 	var likeInput = $(this).siblings('.like');
+ 	$.ajax({
+            
+        type: "post",//方法类型
+        url: "http://microclass.staging.saas.hand-china.com/video/like/"+likeInput.attr("id") ,//url
+        contentType: "application/json; charset=utf-8",
+       
+        success: function (result) {
+            likeInput.val(parseInt(likeInput.val())+1);
+        },
+        error : function(e) {
+            console.log(e.responseText)
+        }
+    });
+ })
+ function prai(e){
+ 	console.log($(this));
+ 	
+ 	$.ajax({
+            
+                type: "post",//方法类型
+                url: "http://microclass.staging.saas.hand-china.com/video/like/1" ,//url
+                contentType: "application/json; charset=utf-8",
+               
+                success: function (result) {
+                    console.log(result);//打印服务端返回的数据(调试用)
+                    if (result.resultCode == 200) {
+                        alert("SUCCESS");
+                    }
+                  
+                    
+                },
+                error : function(e) {
+                    console.log(e.responseText)
+                }
+            });
+ }
 	 	
 // 	ajax请求
  

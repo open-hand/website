@@ -163,14 +163,15 @@
 		  				</div>
 		  				<div class="sharing-footer">
 		  					<div class="praise">
-		  						<i class="iconfont icon-praise pull-left"></i>
+		  						
 		  						
 		  					
-		  				 	    <form action="" method="post">
-		  							<input type="text" name="" id="" value="2" disabled="disabled" style="text-align: center;"/>
+		  				 	    <form action="{{.Site.Params.praisenumber}}" method="get">
+		  				 	    	<i class="iconfont icon-praise pull-left add-like"></i>
+		  							<input type="text" class="like"  id="{{.id}}" value="" disabled="disabled" style="text-align: center;"/>
 		  							
 		  						</form>
-		  						<input type="" name="" id="" value="人" disabled="disabled"/>
+		  						
 		  					</div>
 	  						<div class="footer-right">
 	  							<i class="iconfont icon-player1 pull-right" data-src="{{.src}}"></i>

@@ -86,6 +86,9 @@
   content: "\e605";
   color: #326DE6;
 }
+.sharing-footer i{
+	cursor: pointer;
+}
 .sharing-footer .praise .icon-praise{
 	font-size: 25px;
 }
