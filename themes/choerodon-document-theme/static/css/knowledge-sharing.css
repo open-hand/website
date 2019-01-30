@@ -74,10 +74,26 @@
 	padding-right: 20px;
 
 }
+.sharing-footer .praise input{
+	width: 30px; 
+	float: left; 
+	height:25px;
+	background: transparent;
+	border: none;
+	
+}
 .sharing-main .sharing-footer .icon-player-hover1:before {
   content: "\e605";
   color: #326DE6;
 }
+.sharing-footer .praise .icon-praise{
+	font-size: 25px;
+}
+.sharing-footer .praise .icon-praised{
+	font-size: 25px;
+	color: blue;
+}
+
 .sharing-main .sharing-footer a{
 	height: 42px;
 	line-height:42px ;
@@ -297,11 +313,9 @@
 	width: 70%;
 	height: 100%;
 	margin: 0 auto;
-	margin-top: 20px;
 }
 .sign-up .message-area .top-content{
 	width: 70%;
-	margin-top: 20px;
 	margin-bottom: 10px;
 	
 }

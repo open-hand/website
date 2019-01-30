@@ -47,9 +47,23 @@
 		$(".sign-message").eq(1).css('border-bottom','1px solid red');
 		}
 		};
- 	
+//主题不为空验证 	
+    var Topic = document.getElementById('topicmsg');
+     
+     Topic.onchange = function (){
+		var topicval = Topic.value;
+		if(topicval.trim() != ''){
+		$(".sign-message").eq(2).css('border-bottom','1px solid #979797')
+		$('.err-message').eq(2).css('visibility','hidden')
+		}else{
+
+		$('.err-message').eq(2).css('visibility','visible')
+		$('.errmsg').eq(2).val('内容不能为空')
+		$(".sign-message").eq(2).css('border-bottom','1px solid red');
+		}
+		};
 // 	播放按钮改变
- 	$(".sharing-footer i").mouseover(
+ 	$(".footer-right i").mouseover(
  		function(){
  			$(this).attr("class","iconfont icon-player-hover1 pull-right");
  			$(this).attr("class","iconfont icon-player-hover1 pull-right")
@@ -57,28 +71,22 @@
  		}
  		
  	)
- 	$(".sharing-footer i").mouseout(
+ 	$(".footer-right i").mouseout(
  		function(){
  			$(this).attr("class","iconfont icon-player1 pull-right")
  		}
  		
  	)
-// 	视频窗口弹出
- 	$('.sharing-footer i').on('click', function (e) {
-        if (isPC){
-            var src = "https://v.qq.com/iframe/player.html?vid="+ $(this).attr('data-src') +"&tiny=0&auto=1";
-            $('#tutorial-video iframe').attr("src", src);
-            $('#tutorial-video').css("display", "flex");
-        } else {
-            var src = "https://v.qq.com/x/page/" + $(this).attr('data-src')+".html";
-            window.location.href=src;
-        }
-    })
-    $('#tutorial-video').on('click', function (e) {
-        if ($(e.target).hasClass("bg") || $(e.target).hasClass("icon-guanbi")) {
-            $('#tutorial-video').css("display", "none");
-            $('#tutorial-video iframe').attr("src", "");
-        }
+//点赞
+
+    $('.praise i').click(function(){
+    	if($(this).hasClass('iconfont icon-praise pull-left')){
+    	$(this).attr('class','iconfont icon-praised pull-left');	
+    	}else{
+    	$(this).attr('class','iconfont icon-praise pull-left');	
+    	}
+    	
+    	
     })
 // 	报名窗口弹出
  	$("#jion-share").click(function(){
@@ -118,9 +126,23 @@ function submsg(){
  	var description = $("#descriptionmsg").val()
  	
  	
- 	if(name==""||topic==""||iphoneNumber==""||description==""||$('.err-message').eq(0).css("visibility")=="visible"||$('.err-message').eq(1).css("visibility")=="visible"){
+ 	if(name==""||topic==""||iphoneNumber==""||$('.err-message').eq(0).css("visibility")=="visible"||$('.err-message').eq(1).css("visibility")=="visible"||$('.err-message').eq(2).css("visibility")=="visible"){
  		
- 		alert("请输入完整的信息")
+ 		if(name==""){
+ 			$('.err-message').eq(0).css('visibility','visible')
+		$('.errmsg').eq(0).val('内容不能为空')
+		$(".sign-message").eq(0).css('border-bottom','1px solid red');
+ 		}
+ 		if(iphoneNumber==""){
+ 			$('.err-message').eq(1).css('visibility','visible')
+		$('.errmsg').eq(1).val('内容不能为空')
+		$(".sign-message").eq(1).css('border-bottom','1px solid red');
+ 		}
+ 		if(topic==""){
+ 			$('.err-message').eq(2).css('visibility','visible')
+		$('.errmsg').eq(2).val('内容不能为空')
+		$(".sign-message").eq(2).css('border-bottom','1px solid red');
+ 		}
  		
  	}else{
  		

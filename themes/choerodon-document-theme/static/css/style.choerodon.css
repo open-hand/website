@@ -4,7 +4,7 @@
     display: none;
     list-style: none;
     position: absolute;
-    padding: 0.15rem;
+    padding: 0.05rem 0.15rem;
     top: 0.5rem;
     border-radius: 0.05rem;
     white-space: nowrap;
@@ -12,6 +12,7 @@
 }
 
 .sub-menus li{
+	margin: 5px 0px;
 	text-align: center;
 }
 .navbar ul.nav>li:nth-child(4)>ul{
