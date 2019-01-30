@@ -38,12 +38,59 @@ paginate = 5
     name = "Community"
     url  = "/en/community/"
     weight = 4
+    identifier = "en-community"
+    pre = "<i class='iconfont'>&#xe600;</i>"
+    
+    [[languages.en.menu.main]]
+	        name = "Community"
+	        url  = "/en/community/"
+	        weight = 4
+	        parent = "en-community"
+	
+	[[languages.en.menu.main]]
+	        name = "Knowledge-Sharing"
+	        url  = "/en/knowledge-sharing"
+	        weight = 3
+	        parent = "en-community" 
+
 
 [[languages.en.menu.main]]
     name = "Github"
     url  = "https://github.com/choerodon/choerodon"
     weight = 5
     post= true
+
+[[languages.en.menu.main]]
+    name = "v0.12"
+    url  = "/en/"
+    weight = 6
+    identifier = "version"
+    pre = "<i class='iconfont'>&#xe600;</i>"
+
+    [[languages.en.menu.main]]
+        name = "v0.12"
+        url  = "http://v0-12.choerodon.io/en/"
+        weight = 6
+        parent = "version"
+
+    [[languages.en.menu.main]]
+    name = "v0.11"
+    url  = "http://v0-11.choerodon.io/en/"
+    weight = 5
+    parent = "version"
+
+    [[languages.en.menu.main]]
+    name = "v0.10"
+    url  = "http://v0-10.choerodon.io/en/"
+    weight = 4
+    parent = "version"
+
+    [[languages.en.menu.main]]
+    name = "v0.9"
+    url  = "http://v0-9.choerodon.io/en/"
+    weight = 3
+    parent = "version"
+
 
 [[languages.zh.menu.main]]
     name = "文档"
@@ -64,7 +111,20 @@ paginate = 5
     name = "社区"
     url  = "/zh/community/"
     weight = 4
-
+    identifier = "community"
+    pre = "<i class='iconfont'>&#xe600;</i>"
+    
+	[[languages.zh.menu.main]]
+	        name = "社区"
+	        url  = "/zh/community/"
+	        weight = 4
+	        parent = "community"	
+	[[languages.zh.menu.main]]
+	        name = "知识分享"
+	        url  = "/zh/knowledge-sharing"
+	        weight = 3
+	        parent = "community"        
+	        
 [[languages.zh.menu.main]]
     name = "GITHUB"
     url  = "https://github.com/choerodon/"
@@ -105,6 +165,8 @@ paginate = 5
 [params]
     viewMorePostLink = "/blog/"
     author = "Choerodon"
+    ajaxhref = "https://share.choerodon.com.cn/topic/apply"
+    praisenumber ="https://share.choerodon.com.cn/video/query"
     defaultKeywords = ["devops"]
     defaultDescription = ""
     # Format dates with Go's time formatting

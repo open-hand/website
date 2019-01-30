@@ -1,0 +1,6 @@
+src: "o0833mkrhim"
+background: "/img/knowledge-sharing/agile-1.png"
+title: "监控与应用集成"
+description: "介绍Prometheus，如何查看监控和监控集成。"
+weight: 60
+id: 4

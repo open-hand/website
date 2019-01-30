@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60px" height="60px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>播放</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="修改页面" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="微课堂-copy-3" transform="translate(-1035.000000, -712.000000)">
+            <g id="播放" transform="translate(1035.000000, 712.000000)">
+                <circle id="Oval" fill="#326DE6" cx="30" cy="30" r="30"></circle>
+                <g transform="translate(21.000000, 18.000000)" fill="#FFFFFF" fill-rule="nonzero" id="Shape">
+                    <path d="M17.7799208,8.84822858 C20.7399152,10.7588335 20.7401376,13.8564325 17.7799208,15.7671893 L5.35952199,23.7843167 C2.39955533,25.6949217 0,24.1994914 0,20.4437331 L0,4.17168474 C0,0.41610861 2.39933301,-1.07965563 5.35954979,0.83110113 L17.7799208,8.84822858 Z"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

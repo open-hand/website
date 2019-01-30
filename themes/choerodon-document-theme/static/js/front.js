@@ -10,9 +10,11 @@ function IsPC() {
 }
 var isPC = IsPC();
 
+
 // 导航栏版本选择
-$("#version").on("click", function () {
-    $("#select-menu").toggleClass("none block");
+$(".navbar-collapse .select").on("click", function () {
+	$(this).next(".select-menu").toggleClass("none block");
+   
 })
 // 导航栏版本选择 end
 // 移动端导航栏点击隐藏

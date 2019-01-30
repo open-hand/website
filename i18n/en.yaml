@@ -114,3 +114,15 @@
 - id: go to homepage
   translation: "Go to Homepage"
 # 404页面 结束
+
+# 知识分享
+- id: tech-ca
+  translation: "Technology"
+
+- id: zother
+  translation:  "other"
+
+- id: welcome to knowledge sharing
+  translation:  "Welcome to Knowledge Sharing"
+  
+# 知识分享结束

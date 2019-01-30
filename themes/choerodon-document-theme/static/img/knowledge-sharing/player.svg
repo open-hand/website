@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="34px" height="34px" viewBox="0 0 34 34" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>播放</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="修改页面" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="微课堂-copy-3" transform="translate(-653.000000, -1114.000000)" fill="#979797" fill-rule="nonzero">
+            <g id="Group-4" transform="translate(119.000000, 938.000000)">
+                <g id="Group-20" transform="translate(308.000000, 64.000000)">
+                    <g id="播放" transform="translate(226.000000, 112.000000)">
+                        <path d="M17,33 C25.836556,33 33,25.836556 33,17 C33,8.163444 25.836556,1 17,1 C8.163444,1 1,8.163444 1,17 C1,25.836556 8.163444,33 17,33 Z M17,34 C7.61115925,34 0,26.3888407 0,17 C0,7.61115925 7.61115925,0 17,0 C26.3888407,0 34,7.61115925 34,17 C34,26.3888407 26.3888407,34 17,34 Z" id="Oval"></path>
+                        <path d="M21.7789564,14.955008 C23.4069534,16.0249468 23.4070757,17.7596022 21.7789564,18.829626 L14.9477371,23.3192174 C13.3197554,24.3891561 12,23.5517152 12,21.4484905 L12,12.3361435 C12,10.2330208 13.3196332,9.39539285 14.9477524,10.4654166 L21.7789564,14.955008 Z" id="Shape"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
