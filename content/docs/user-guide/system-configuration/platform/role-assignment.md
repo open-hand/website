@@ -46,7 +46,7 @@ description = "对平台的角色进行分配"
 - 用户名：按用户的用户名查找。
 - 角色：按角色名称查找。
    
-<h3 id="3">添加成员角色</h3>
+### 添加成员角色
 
 1.点击`添加`→![添加](/docs/user-guide/system-configuration/platform/image/add.png) 添加成员角色；
 
@@ -60,13 +60,29 @@ description = "对平台的角色进行分配"
 
 3.点击`添加`完成添加成员角色。
 
+### 导入用户角色分配
+
+您也可以通过Excel表格批量导入您要分配的用户角色对应关系。
+
+1. 首先您需要点击`下载模板`按钮下载Excel模板。你所上传的角色分配Excel表必须完全按照模板样式。您填写的内容必须按照模板说明：
+
+ - 填写导入用户的用户名和对应角色编码。
+ - 点击此处查看[角色编码](../role)
+
+1. 点击`上传`按钮，打开导入用户页面。
+
+1. 点击上传，选择您要上传的角色分配Excel表。
+
+1. 您可以在此页查看导入结果。
+
+
 ## 客户端角色分配
 
 <blockquote class="note">
        成员类型选择客户端。
       </blockquote>  
 
-<h3 id="1">成员角色列表</h3>
+### 成员角色列表
 
 列表查看方式：
 
@@ -82,14 +98,14 @@ description = "对平台的角色进行分配"
 
 - 角色/成员：列表的列表项为角色名称。列表项展开后的子列表为角色下的客户端名称
 
-<h3 id="2">成员角色查询</h3>
+### 成员角色查询
 
 可查询字段:
 
 - 客户端：按客户端名称查找。
 - 角色：按角色名称查找。
    
-<h3 id="3">添加成员角色</h3>
+### 添加成员角色
 
 1.点击`添加`→![添加](/docs/user-guide/system-configuration/platform/image/add.png) 添加成员角色；
 
@@ -111,7 +127,7 @@ description = "对平台的角色进行分配"
 
 
 
-<h2 id="4">移除成员角色</h2>
+## 移除成员角色
 
 点击`移除`→![移除](/docs/user-guide/system-configuration/platform/image/del.png) 移除成员角色；
 
@@ -120,13 +136,13 @@ description = "对平台的角色进行分配"
 - 按成员查看时：勾选一或多个成员，点击移除，批量删除所选成员和成员下所有角色的关联关系。
 - 按角色查看时：勾选一或多个角色，点击移除，批量删除所选角色和角色下所有成员的关联关系。
 
-<h2 id="5">删除成员角色</h2>
+## 删除成员角色
 
 - 按成员查看时，点击`删除`→![删除按钮](/docs/user-guide/system-configuration/platform/image/del_button.png)，可直接删除与该成员有关联的角色，即删除了一个成员角色关联。
 - 按角色查看时，点击`删除`→![删除按钮](/docs/user-guide/system-configuration/platform/image/del_button.png)，可直接删除与该角色有关联的成员，即删除了一个成员角色关联。
 - 按成员或角色查看时，点击编辑图标，进入编辑成员的角色界面，点击`删除`→![删除按钮](/docs/user-guide/system-configuration/platform/image/del_button.png)，可删除与成员有关联的一个角色。
 
-<h2 id="6">修改成员的角色</h2>
+## 修改成员的角色
 
 点击`编辑`→![修改](/docs/user-guide/system-configuration/platform/image/update.png)，进入编辑一个成员的所有角色界面，可编辑该成员的角色关联。即可以删除角色，更改已有角色，添加其他角色。只有上一个角色已选时才可以继续添加其他角色。
 
