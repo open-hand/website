@@ -89,7 +89,7 @@ zh.yml文件内容:
 
 在项目根目录下，执行
 ``` bash
-$ python ./demo/node_modules/choerodon-front-boot/structure/configAuto.py demo
+$ python ./demo/node_modules/choerodon-front-boot/structure/menu/__init__.py -o yml -m demo
 ```
 >(确保python版本为2.7.x,以及本地安装pyyaml包)脚本。
 
@@ -97,7 +97,7 @@ $ python ./demo/node_modules/choerodon-front-boot/structure/configAuto.py demo
 
 然后再执行命令
 ``` bash
-$ python ./demo/node_modules/choerodon-front-boot/structure/sql.py -i ip地址 -p 端口号 -u 用户名 -s 密码
+$ python ./demo/node_modules/choerodon-front-boot/structure/menu/__init__.py -o sql -m demo -i ip地址 -p 端口号 -u 用户名 -s 密码
 ```
 在部署时候也可通过环境变量进行传递参数
 
