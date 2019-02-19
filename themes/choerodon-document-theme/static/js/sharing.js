@@ -90,7 +90,14 @@
                 success: function (result) {
                     
                   for(var i=0;i<result.length;i++){
-					$('#'+result[i].id).val(result[i].likeNumber)
+                  	if(result[i].likeNumber>=9999){
+                  		$('#'+result[i].id).val('9999+')
+                  	}else{
+                  		$('#'+result[i].id).val(result[i].likeNumber)
+                  		}
+                  		
+                  		
+					
                   }
                
                     
@@ -109,8 +116,6 @@
  		$('#descriptionmsg').val("");
  		$(".sign-message").eq(0).css('border-bottom','1px solid #979797');
  		$(".sign-message").eq(1).css('border-bottom','1px solid #979797');
- 		$('#namemsg').attr('placeholder','请输入姓名');
- 		$('#iphoneNumbermsg').attr('placeholder','请输入手机号码');
  		$('.err-message').eq(0).css('visibility','hidden')
  		$('.err-message').eq(1).css('visibility','hidden')
  		
@@ -120,7 +125,7 @@
  		$(".sign-up").fadeOut(300)
  	})
  })
- 
+// 点赞加一
  $('.add-like').on('click',function(e){
  	var likeInput = $(this).siblings('.like');
  	$.ajax({
@@ -130,7 +135,13 @@
         contentType: "application/json; charset=utf-8",
        
         success: function (result) {
-            likeInput.val(parseInt(likeInput.val())+1);
+        	if(parseInt(likeInput.val())>=9999){
+        		
+        	}
+        else{
+        	likeInput.val(parseInt(likeInput.val())+1);
+        }
+            
         },
         error : function(e) {
             console.log(e.responseText)

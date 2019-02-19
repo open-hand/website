@@ -2,202 +2,194 @@
 @import url("footer.css");
 @import url("notice.css");
 
-
 /*知识分享开始*/
-  
-  
 
-   
-   
-
-.sharing-main{
+.sharing-main {
 	padding-top: 30px;
 	padding-bottom: 50px;
 }
 
-.sharing-main .sharing-box{
+.sharing-main .sharing-box {
 	padding-top: 15px;
 	padding-bottom: 15px;
 }
 
-.sharing-main .sharing-bar{
+.sharing-main .sharing-bar {
 	margin-top: 10px;
-	
 }
 
-.sharing-main .sharing-head{
-	height: 36px;
-	
+.sharing-main .sharing-head {
+	height: 33px;
 	color: white;
-	border-radius:10px 10px 0px 0px ;
-	padding-left: 16px;
-	padding-right: 16px;
-	font-size: 16px;
+	border-radius: 10px 10px 0px 0px;
+	padding-left: 12px;
+	padding-right: 18px;
+	font-size: 14px;
 	padding-top: 7px;
 	padding-bottom: 7px;
-
-	
 }
-.sharing-main p{
+
+.sharing-main p {
 	margin: 0;
 	padding: 0;
 	height: 36px;
 	height: 100%;
 	width: 100%;
 	text-overflow: ellipsis;
-	white-space: nowrap; 
+	white-space: nowrap;
 	overflow: hidden;
-	
 }
 
-.sharing-main .sharing-body{
-	padding: 10px 10px 10px 10px;
+.sharing-main .sharing-body {
+	padding: 10px 10px 5px 10px;
 }
 
-.sharing-main .sharing-body{
-	height: 82px;
+.sharing-main .sharing-body {
+	height: 70px;
 	border-left: 1px solid gainsboro;
 	border-right: 1px solid gainsboro;
 }
-.sharing-main .sharing-body h5{
-	letter-spacing: 0.47px;
+
+.sharing-main .sharing-body h5 {
+	letter-spacing: 0.37px;
+	margin: 0px;
 }
 
-.sharing-main .sharing-footer{
-	height: 42px;
+.sharing-main .sharing-footer {
+	height: 40px;
 	border-left: 1px solid gainsboro;
 	border-right: 1px solid gainsboro;
 	border-bottom: 1px solid gainsboro;
 }
-.sharing-main .sharing-footer{
-	padding-left: 16px;
-	padding-right: 20px;
 
+.sharing-main .sharing-footer {
+	padding-left: 10px;
+	padding-right: 16px;
 }
 
-.sharing-footer .praise input{
-	width: 30px; 
-	float: left; 
-	height:25px;
+.sharing-footer .praise input {
+	width: 45px;
+	float: left;
+	height: 25px;
 	background: transparent;
 	border: none;
-	
 }
-.sharing-footer .footer-right i{
+
+.sharing-footer .footer-right i {
 	margin-top: -10px;
 }
+
 .sharing-main .sharing-footer .icon-player1:before {
-  content: "\e605";
-  color: #C8C8C8;
-  
+	color: #C8C8C8;
 }
+
 .sharing-main .sharing-footer .icon-player-hover1:before {
-  content: "\e605";
-  color: #326DE6;
+	content: "\e605";
+	color: #326DE6;
 }
-.sharing-footer i{
+
+.sharing-footer i {
 	cursor: pointer;
 }
-.sharing-footer .praise .icon-praise{
+
+.sharing-footer .praise .icon-praise {
 	color: #C8C8C8;
 	font-size: 25px;
 }
-.sharing-footer .praise .icon-praised{
-	font-size: 25px;
-	color: blue;
-}
 
-.sharing-main .sharing-footer a{
+.sharing-main .sharing-footer a {
 	height: 42px;
-	line-height:42px ;
+	line-height: 42px;
 	width: 100px;
 }
-
-.sharing-main .iconfont{
-	
+.sharing-footer .praise .icon-praised {
+    font-size: 25px;
+    color: blue;
+}
+.sharing-main .iconfont {
 	font-size: 34px;
 	line-height: inherit;
 	margin-top: -5px;
 }
+
+
 /*sharing-banner*/
+
 .sharing-header-nav {
-    background: linear-gradient(0deg, #003DAC, #3371E3);
-    background: -webkit-linear-gradient(0deg, #003DAC, #3371E3);
-    background:-moz-linear-gradient(0deg, #003DAC, #3371E3);
-    background: -o-linear-gradient(0deg, #003DAC, #3371E3);
-    background:-ms-linear-gradient(0deg, #003DAC, #3371E3);
-    background-size: 14.4rem;
-    width: 100%;
-    height: 2.8rem;
-    color: #FFFFFF;
-    padding: 0;
-    display: flex;
-    flex-direction: row;
-   
-}
-.sharing-header-nav .sharing-banner-text{
-    font-size: 0.36rem;
-    font-weight: 300;
-    justify-content: center;
-    align-items: flex-start;
-    display: flex;
-    flex-direction: column;
-    margin-left: 1.9rem;
-    margin-top: 0.3rem;
+	background: linear-gradient(0deg, #003DAC, #3371E3);
+	background: -webkit-linear-gradient(0deg, #003DAC, #3371E3);
+	background: -moz-linear-gradient(0deg, #003DAC, #3371E3);
+	background: -o-linear-gradient(0deg, #003DAC, #3371E3);
+	background: -ms-linear-gradient(0deg, #003DAC, #3371E3);
+	background-size: 14.4rem;
+	width: 100%;
+	height: 2.8rem;
+	color: #FFFFFF;
+	padding: 0;
+	display: flex;
+	flex-direction: row;
 }
 
-
-
-.sharing-header-nav img{
-    margin-right: 1.9rem;
-    margin-top: 0.6rem;
-    width: 3.86rem;
-    height: 1.99rem;
-    margin-left: 1rem;
+.sharing-header-nav .sharing-banner-text {
+	font-size: 0.36rem;
+	font-weight: 300;
+	justify-content: center;
+	align-items: flex-start;
+	display: flex;
+	flex-direction: column;
+	margin-left: 1.9rem;
+	margin-top: 0.3rem;
 }
 
-.sharing-header-nav a{
+.sharing-header-nav img {
+	margin-right: 1.9rem;
+	margin-top: 0.6rem;
+	width: 3.86rem;
+	height: 1.99rem;
+	margin-left: 1rem;
+}
+
+.sharing-header-nav a {
 	cursor: pointer;
-    font-size: 0.16rem;
-    margin-top: 0.15rem;
+	font-size: 0.16rem;
+	margin-top: 0.15rem;
 }
 
 
 /*移动端视频播放样式*/
-@media (max-width: 767px){
+
+@media (max-width: 767px) {
 	.sharing-header-nav {
-        height: 2.85rem;
-    }
-    .sharing-header-nav .sharing-banner-text{
-        margin: 0.4rem 0.2rem 0 0.2rem;
-        text-align: center;
-        padding-left: 20px;
-    }
-    
-    .sharing-header-nav .sharing-banner-text a{
-        margin: 0.15rem auto 0;
-    }
-    
-    .sharing-header-nav img{
-        display: none;
-    }
+		height: 2.85rem;
+	}
+	.sharing-header-nav .sharing-banner-text {
+		margin: 0.4rem 0.2rem 0 0.2rem;
+		text-align: center;
+		padding-left: 20px;
+	}
+	.sharing-header-nav .sharing-banner-text a {
+		margin: 0.15rem auto 0;
+	}
+	.sharing-header-nav img {
+		display: none;
+	}
 }
 
 
 /*演讲报名*/
 
-.sign-up{
-    z-index: 1002;
-    width: 10.6rem;
-    margin: auto;
-    justify-content: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    align-items: center;
-    display: none;
+.sign-up {
+	z-index: 1002;
+	width: 10.6rem;
+	margin: auto;
+	justify-content: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	align-items: center;
+	display: none;
 }
 
 .sign-up .sign form {
@@ -205,114 +197,115 @@
 }
 
 .sign-up .icon-guanbi {
-    font-size: 0.5rem;
-    position: absolute;
-    right: 0.2rem;
-    top: 0;
-    z-index: 1002;
+	font-size: 0.5rem;
+	position: absolute;
+	right: 0.2rem;
+	top: 0;
+	z-index: 1002;
 }
 
 .sign-up .bg1 {
-    background-color: #000;
-    opacity: 0.3;
-    position: absolute;
-    width: 100%;
-    height: 100%;
+	background-color: #000;
+	opacity: 0.3;
+	position: absolute;
+	width: 100%;
+	height: 100%;
 }
 
 .sign-up .sign {
-    z-index: 1005;
-    width: 46%;
-    height: 530px;
-    background: white;
-    position: absolute;
-    top: 7%;
-    left: 27%;
-    border-radius: 10px;
-    
-   
+	z-index: 1005;
+	width: 46%;
+	height: 530px;
+	background: white;
+	position: absolute;
+	top: 7%;
+	left: 27%;
+	border-radius: 10px;
 }
-.sign-up .sign h4{
+
+.sign-up .sign h4 {
 	margin-top: 35px;
 	margin-bottom: 10px;
 	text-align: center;
 }
-.sign-up .sign-message{
-	margin: 0 auto ;
+
+.sign-up .sign-message {
+	margin: 0 auto;
 	border-bottom: 1px solid #979797;
 	width: 70%;
-	height:35px;
-
-	
+	height: 35px;
 }
-.sign-up .sign-message div{
+
+.sign-up .sign-message div {
 	float: left;
 }
-.sign-up .sign-message .left-content{
+
+.sign-up .sign-message .left-content {
 	width: 20%;
 	height: 100%;
 	line-height: 100%;
 	display: flex;
 	align-items: center;
 }
-.sign-up .sign-message .left-content a{
-	
+
+.sign-up .sign-message .left-content a {
 	color: #404245;
 	font-size: 16px;
 	white-space: nowrap;
-	
-	
 }
-.sign-up .sign-message .right-content{
+
+.sign-up .sign-message .right-content {
 	width: 80%;
 	height: 100%;
-	
 }
-.sign-up .sign-message .right-content input{
+
+.sign-up .sign-message .right-content input {
 	width: 100%;
 	height: 100%;
 	border: 0px;
 	background: transparent;
 	font-size: 16px;
 	outline: none;
-	
 }
-.err-message{
-	
-	width:70% ;
+
+.err-message {
+	width: 70%;
 	height: 25px;
 	margin: 0 auto;
 	visibility: hidden;
-	}
-.visi-hidden{
+}
+
+.visi-hidden {
 	visibility: hidden;
 }
-.visi-visible{
+
+.visi-visible {
 	visibility: visible;
 }
-.err-message div{
+
+.err-message div {
 	float: left;
 }
-.err-message .left-content{
+
+.err-message .left-content {
 	display: flex;
 	align-items: center;
 	justify-content: flex-end;
 	height: 100%;
 	width: 20%;
-	
 }
-.err-message .left-content .iconfont{
-	
+
+.err-message .left-content .iconfont {
 	font-size: 14px;
 	color: red;
 }
 
-
-.err-message .err-content{
+.err-message .err-content {
 	height: 100%;
 	width: 80%;
 }
-.err-message .err-content input{
+
+.err-message .err-content input {
 	width: 100%;
 	height: 100%;
 	border: 0px;
@@ -320,47 +313,47 @@
 	font-size: 16px;
 	outline: none;
 	color: red;
-	
 }
-.sign-up .message-area{
+
+.sign-up .message-area {
 	width: 70%;
 	height: 100%;
 	margin: 0 auto;
 }
-.sign-up .message-area .top-content{
+
+.sign-up .message-area .top-content {
 	width: 70%;
-	margin-bottom: 10px;
-	
+	margin-bottom: 7px;
 }
-.sign-up .message-area .top-content a{
+
+.sign-up .message-area .top-content a {
 	color: #404245;
 	font-size: 16px;
-	
 	white-space: nowrap;
-	
 }
-.sign-up .message-area .bottom-content{
+
+.sign-up .message-area .bottom-content {
 	width: 100%;
 	height: 100%;
-
 }
-.sign-up .message-area .bottom-content textarea{
+
+.sign-up .message-area .bottom-content textarea {
 	width: 100%;
 	height: 80%;
 	border-color: 1px solid #979797;
 	font-size: 14px;
-	
 }
-.sign-up .message-sub{
+
+.sign-up .message-sub {
 	width: 70%;
 	height: 30%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	margin: 0 auto;
-	
 }
-.sign-up .message-sub input{
+
+.sign-up .message-sub input {
 	width: 60px;
 	height: 45px;
 	color: #6B6B6B;
@@ -368,15 +361,19 @@
 	background: transparent;
 	border: 0px;
 }
-.sign-up .message-sub input:hover{
+
+.sign-up .message-sub input:hover {
 	color: #326DE6;
-	
 }
-.sign-up .iconfont{
+
+.sign-up .iconfont {
 	color: gainsboro;
 }
+
+
 /*弹出报名成功*/
-.sign-success{
+
+.sign-success {
 	z-index: 1007;
 	position: fixed;
 	top: 10%;
@@ -390,29 +387,35 @@
 	background: white;
 	display: none;
 }
-.sign-success div{
+
+.sign-success div {
 	float: left;
 	height: 100%;
 }
-.sign-success .success-left{
+
+.sign-success .success-left {
 	display: flex;
 	align-items: center;
 	justify-content: flex-end;
 	width: 35%;
 }
-.sign-success .success-left .iconfont{
+
+.sign-success .success-left .iconfont {
 	font-size: 30px;
 	color: blue;
 }
-.sign-success .success-right{
+
+.sign-success .success-right {
 	display: flex;
 	align-items: center;
 	justify-content: flex-start;
 }
+
+
 /*移动端分享报名*/
-@media screen and (min-width: 768px) and (max-width: 991px) { 
- 	
- 	.sign-up .sign{
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+	.sign-up .sign {
 		position: absolute;
 		top: 10%;
 		left: 15%;
@@ -420,27 +423,23 @@
 		width: 70%;
 		height: 100%;
 	}
-	
-	.sign-up .sign-message .left-content{
+	.sign-up .sign-message .left-content {
 		width: 20%;
 		height: 100%;
 		line-height: 100%;
 	}
-	
-	.sign-up .sign-message .right-content{
+	.sign-up .sign-message .right-content {
 		width: 80%;
 		height: 100%;
-		
 	}
-	.err-message .left-content{
-	font-size: medium;
-	vertical-align: center;
-}
-	
+	.err-message .left-content {
+		font-size: medium;
+		vertical-align: center;
+	}
 }
 
-@media (max-width: 767px){
-	.sign-up .sign{
+@media (max-width: 767px) {
+	.sign-up .sign {
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -448,66 +447,66 @@
 		width: 100%;
 		height: 100%;
 	}
-	
-	#tutorial-video .iconfont{
+	#tutorial-video .iconfont {
 		color: gainsboro;
 	}
-	.sign-up .sign-message .left-content{
+	.sign-up .sign-message .left-content {
 		width: 20%;
 		height: 100%;
 		line-height: 100%;
 	}
-	
-	.sign-up .sign-message .right-content{
+	.sign-up .sign-message .right-content {
 		width: 80%;
 		height: 100%;
-		
 	}
-	
 }
 
+
 /*视频播放*/
+
 .tutorial-video {
-    z-index: 1002;
-    width: 10.6rem;
-    margin: auto;
-    justify-content: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    align-items: center;
-    display: none;
+	z-index: 1002;
+	width: 10.6rem;
+	margin: auto;
+	justify-content: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	align-items: center;
+	display: none;
 }
 
 .tutorial-video .icon-guanbi {
-    font-size: 0.5rem;
-    position: absolute;
-    right: 0.2rem;
-    top: 0;
-    z-index: 1002;
+	font-size: 0.5rem;
+	position: absolute;
+	right: 0.2rem;
+	top: 0;
+	z-index: 1002;
 }
 
 .tutorial-video .bg {
-    background-color: #000;
-    opacity: 0.3;
-    position: absolute;
-    width: 100%;
-    height: 100%;
+	background-color: #000;
+	opacity: 0.3;
+	position: absolute;
+	width: 100%;
+	height: 100%;
 }
 
 .tutorial-video iframe {
-    z-index: 1002;
-    display: flex;
-    align-items: center;
-    width: 7.68rem;
-    height: 5.76rem;
+	z-index: 1002;
+	display: flex;
+	align-items: center;
+	width: 7.68rem;
+	height: 5.76rem;
 }
 
-#tutorial-video .iconfont{
-		color: gainsboro;
-	}
+#tutorial-video .iconfont {
+	color: gainsboro;
+}
+
+
 /*视频播结束/
 
 
