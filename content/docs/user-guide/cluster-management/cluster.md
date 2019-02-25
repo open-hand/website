@@ -6,7 +6,7 @@ weight = 2
 
 # 集群
 
-Kubernetes集群是一个用于运行Kubernetes的托管群组。有了集群，我们就可以以此来统一调配资源，管理环境。每个集群可以对组织下各个项目设置是否公开，配置后，只有被勾选项目中的环境才能连接到该集群。
+Kubernetes集群是一个用于运行Kubernetes的托管群组。有了集群，我们就可以以此来统一调配资源，管理环境。在每个集群中，您可以设置是否对组织下各个项目公开，配置后，只有被勾选项目中的环境才能连接到该集群。  
 同时，自0.12.0版本后，CertManager的安装被集成到了agent里，agent会根据设置自行安装对应版本的CertManager。集群中安装了CrtManager后，便能在连接该集群的环境下正常进行申请证书的操作。
 
 
@@ -112,24 +112,34 @@ Kubernetes集群是一个用于运行Kubernetes的托管群组。有了集群，
 - 复制脚本命令至集群中运行，集群重新置为已连接。
 	 <blockquote class="warning">
        	当集群状态是未连接，提示要升级时，所有相关联的环境均为未连接状态！
-    	</blockquote>
+    	</blockquote>  
+          
+
 
 **4. 查看集群详情**
 
- 1. 进入`集群管理`后，点击 `集群` 页签；
+ (1). 进入`集群管理`后，点击 `集群` 页签；
 
- 2. 查看集群的运行情况。
+ (2). 查看集群的运行情况。运行中的集群会统一分布在列表的上部分，而状态为未连接的集群则聚集在列表的下半部分。
 
-![集群](/docs/user-guide/cluster-management/image/cluster.jpg)
+![集群](/docs/user-guide/cluster-management/image/cluster.png)
  
 
-- 在集群卡片中，点击`编辑集群`→ ![修改环境按钮](/docs/user-guide/deployment-pipeline/image/update_env_button.png) ，修改集群名称、描述以及集群公开范围。
-- 在集群卡片中，点击`删除集群`→ ![删除按钮](/docs/user-guide/cluster-management/image/del_button.png) ，会弹出复制删除指令的提示框，当复制指令去k8s运行后，再回到平台点击“已执行，删除”，该集群将被彻底删除。
-
+- 在集群列表中，点击`编辑集群`→ ![编辑集群](/docs/user-guide/deployment-pipeline/image/update_env_button.png) ，修改集群名称、描述以及集群公开范围。
+- 在集群列表中，点击`删除集群`→ ![删除按钮](/docs/user-guide/cluster-management/image/del_button.png) ，会弹出复制删除指令的提示框，当复制指令去k8s运行后，再回到平台点击“已执行，删除”，该集群将被彻底删除。   
  <blockquote class="warning">
     只有未连接状态且其中不含关联环境的集群才能被删除！
     </blockquote>
- 
+   
+- 在集群列表中，找一个未连接状态的集群，点击 `激活集群`→ ![激活按钮](/docs/user-guide/cluster-management/image/active_button.jpg) ，会从界面右侧弹出激活集群的指令，复制该脚本命令至集群中运行，成功后，集群状态会置为已连接。    
+
+(3). 查看运行中集群的所有节点详情  
+
+- 在集群列表中，每一个处于运行中状态的集群下方都会展示出该集群下部分节点的信息，点击`全部节点`，查看该集群下所有节点的相关信息；若想查看某个节点的详细信息，点击该节点的名称即可。  
+![集群节点](/docs/user-guide/cluster-management/image/cluster-node.png)
+
+- 同时，在某个节点的详情界面， 能查看到此节点中的资源分配情况和其中的节点Pods详情。  
+![集群节点](/docs/user-guide/cluster-management/image/cluster-pod.png)
 
 
  

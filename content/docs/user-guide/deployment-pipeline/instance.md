@@ -55,20 +55,8 @@ weight = 4
 重启中|✔| | | |
 重启完成|✔|✔|✔| |✔|✔
 重启失败|✔|✔||✔| |✔
-删除中|✔|
+删除中|✔|  
 
-## 运行详情
-Chart 里定义的各个资源对象列表及参数信息。
-
-  ![instance details](/docs/user-guide/deployment-pipeline/image/instance3.jpg)
-
-资源对象|参数信息|参数介绍
-:----|----|----
-Pod |name, ready, status, restarts, age|name为Pod的名称，ready是是否可用，status是状态，restarts是重启过几次，age是创建时间
-Deployment |name, desired, current, uo-to-date, available, age|name是Deployment的名称，desired是期望创建ReplicaSet的数量,current是指当前ReplicaSet的数量.up-to-date是达到配置中要求ReplicaSet的数量,available是指可用的ReplicaSet的数量，age是指创建时间
-ReplicaSet |name, desired, current, ready, age|name是ReplicaSet的名称，desired是期望创建Pod的数量,current是指当前Pod的数量,ready是指可的Pod的数量，age是指创建时间
-Service|name, type, cluster-ip, external-ip, port, age|name是指Service的名称，type是指service的类型,cluster-ip是节点ip，external-ip是指外部ip，port是指端口，age是指创建时间
-Ingress|name, hosts, address, ports, age|name是指Ingress的名称，hosts是指Ingress主机host，address是指地址，ports是指端口
 
 ## 实例事件
 包括该实例最近四个版本的job与deployments的事件及其对应的日志；同时，还能点击查看这些版本对应的部署配置信息。
@@ -78,6 +66,24 @@ Ingress|name, hosts, address, ports, age|name是指Ingress的名称，hosts是�
 <blockquote class="note">
   鼠标移动到某个job模块时，在右上角会hover出该job的日志详情按钮，点击即可进入查看job日志。
 </blockquote>
+
+## 运行详情
+Chart 里定义的各个资源对象列表及参数信息。
+
+  ![instance details](/docs/user-guide/deployment-pipeline/image/instance3.png)
+
+资源对象|参数信息|参数介绍
+:----|----|----
+Pod |name, ready, status, restarts, age|name为Pod的名称，ready是是否可用，status是状态，restarts是重启过几次，age是创建时间
+Deployment |name, desired, current, uo-to-date, available, age|name是Deployment的名称，desired是期望创建ReplicaSet的数量,current是指当前ReplicaSet的数量.up-to-date是达到配置中要求ReplicaSet的数量,available是指可用的ReplicaSet的数量，age是指创建时间
+ReplicaSet |name, desired, current, ready, age|name是ReplicaSet的名称，desired是期望创建Pod的数量,current是指当前Pod的数量,ready是指可的Pod的数量，age是指创建时间
+Service|name, type, cluster-ip, external-ip, port, age|name是指Service的名称，type是指service的类型,cluster-ip是节点ip，external-ip是指外部ip，port是指端口，age是指创建时间
+Ingress|name, hosts, address, ports, age|name是指Ingress的名称，hosts是指Ingress主机host，address是指地址，ports是指端口  
+
+## 操作日志
+能在此界面查看该实例的操作日志，即展示出该实例自创建产生至今所有的操作记录；包括：部署实例、更新实例（升级、修改配置信息以及重新部署）、停止实例和重启实例，同时还能在此界面查看执行操作的人员与具体时间。
+       
+  ![operation log](/docs/user-guide/deployment-pipeline/image/instance5.png)  
 
 
 ## 修改配置信息
