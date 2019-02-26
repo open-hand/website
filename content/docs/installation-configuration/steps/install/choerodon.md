@@ -33,7 +33,7 @@ vim config.yml
 粘贴以下内容，并将域名修改为你自己的域名
 
 ```yml
-version: 0.13
+version: 0.14
 metadata:
   name: install-choerodon 
   namespace: c7n-system  # 指定命名空间安装choerodon
@@ -84,7 +84,7 @@ spec:
 - 执行部署命令，<b style="color:red">安装过程中如果遇到问题，请先查看本文最后一节关于常见问题的介绍</b>，如果未能解决你的问题，可以到[论坛](//forum.choerodon.io)中提问。
 
 ```bash
-./c7nctl install -c config.yml --no-timeout --version=0.13
+./c7nctl install -c config.yml --no-timeout --version=0.14
 ```
 
 - 参数解释
@@ -101,6 +101,7 @@ spec:
 - 登录一次Gitlab，第一次登录会提示设置root用户密码，随后会跳转到Choerodon认证，使用admin/admin登录即可，如果使用root/admin用户拉取代码用户名为root，密码为界面设置的密码，其他用户默认密码为`password`
 - [设置Harbor证书(必须设置)](../parts/base/harbor/#证书配置)
 - [配置同步wiki](../parts/choerodon-wiki/#同步已有项目和组织)
+- [安装Gitlab-Runner](../)
 
 ## 常见问题
 

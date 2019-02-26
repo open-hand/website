@@ -59,7 +59,7 @@ helm install c7n/mysql-client \
         --set service.name=register-server \
         --set env.open.REGISTER_SERVICE_NAMESPACE="c7n-system" \
         --name register-server \
-        --version 0.13.0 \
+        --version 0.14.0 \
         --namespace c7n-system
     ```
 
@@ -101,26 +101,11 @@ helm install c7n/mysql-client \
                     "name": "MyOwn",
                     "@class": "com.netflix.appinfo.InstanceInfo$DefaultDataCenterInfo"
                 },
-                "leaseInfo": {
-                    "renewalIntervalInSecs": 10,
-                    "durationInSecs": 90,
-                    "registrationTimestamp": 1528201698,
-                    "lastRenewalTimestamp": 1528201698,
-                    "evictionTimestamp": 0,
-                    "serviceUpTimestamp": 1528201698
-                },
+                ...
                 "metadata": {
-                    "VERSION": "0.7.0"
+                    "VERSION": "0.14.0"
                 },
-                "homePageUrl": "http://192.168.3.19:8000/",
-                "statusPageUrl": "http://192.168.3.19:8000/info",
-                "healthCheckUrl": "http://192.168.3.19:8000/health",
-                "vipAddress": "go-register-server",
-                "secureVipAddress": "go-register-server",
-                "isCoordinatingDiscoveryServer": true,
-                "lastUpdatedTimestamp": 1528201698,
-                "lastDirtyTimestamp": 1528201698,
-                "actionType": "ADDED"
+                ...
                 }
             ]
         }
@@ -136,7 +121,7 @@ helm install c7n/mysql-client \
         --set service.enable=true \
         --set env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE="http://register-server.c7n-system:8000/eureka/" \
         --name config-server \
-        --version 0.13.0 \
+        --version 0.14.0 \
         --namespace c7n-system
     ```
     参数名 | 含义 
@@ -167,7 +152,7 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_DATASOURCE_USERNAME=choerodon \
         --set env.open.SPRING_DATASOURCE_PASSWORD=password \
         --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
-        --set env.open.SPRING_CLOUD_CONFIG_URI="http://config-server.c7n-system:8010/" \
+        --set env.open.SPRING_CLOUD_CONFIG_URI="http://register-server.c7n-system:8000/" \
         --set env.open.CHOERODON_GATEWAY_DOMAIN="api.example.choerodon.io" \
         --set env.open.CHOERODON_SWAGGER_OAUTH_URL="http://api.example.choerodon.io/oauth/oauth/authorize" \
         --set env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE="http://register-server.c7n-system:8000/eureka/" \
@@ -175,7 +160,7 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_REDIS_PORT=6379 \
         --set env.open.SPRING_REDIS_DATABASE=1 \
         --name manager-service \
-        --version 0.13.0 \
+        --version 0.14.0 \
         --namespace c7n-system
     ```
     参数名 | 含义 
@@ -218,9 +203,9 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_DATASOURCE_PASSWORD=password \
         --set env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE="http://register-server.c7n-system:8000/eureka/" \
         --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
-        --set env.open.SPRING_CLOUD_CONFIG_URI="http://config-server.c7n-system:8010/" \
+        --set env.open.SPRING_CLOUD_CONFIG_URI="http://register-server.c7n-system:8000/" \
         --name asgard-service \
-        --version 0.13.0 \
+        --version 0.14.0 \
         --namespace c7n-system
     ```
     参数名 | 含义 
@@ -262,7 +247,7 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_DATASOURCE_PASSWORD=password \
         --set env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE="http://register-server.c7n-system:8000/eureka/" \
         --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
-        --set env.open.SPRING_CLOUD_CONFIG_URI="http://config-server.c7n-system:8010/" \
+        --set env.open.SPRING_CLOUD_CONFIG_URI="http://register-server.c7n-system:8000/" \
         --set env.open.SPRING_REDIS_HOST=c7n-redis.c7n-system.svc \
         --set env.open.SPRING_REDIS_DATABASE=3 \
         --set service.enable=true \
@@ -270,7 +255,7 @@ helm install c7n/mysql-client \
         --set ingress.enable=true \
         --set ingress.host=notify.example.choerodon.io \
         --name notify-service \
-        --version 0.13.0 \
+        --version 0.14.0 \
         --namespace c7n-system
     ```
     参数名 | 含义 
@@ -311,9 +296,9 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_DATASOURCE_PASSWORD=password \
         --set env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE="http://register-server.c7n-system:8000/eureka/" \
         --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
-        --set env.open.SPRING_CLOUD_CONFIG_URI="http://config-server.c7n-system:8010/" \
+        --set env.open.SPRING_CLOUD_CONFIG_URI="http://register-server.c7n-system:8000/" \
         --name iam-service \
-        --version 0.13.0 \
+        --version 0.14.0 \
         --namespace c7n-system
     ```
     参数名 | 含义 
@@ -351,9 +336,9 @@ helm install c7n/mysql-client \
         --set ingress.host=api.example.choerodon.io \
         --set env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE="http://register-server.c7n-system:8000/eureka/" \
         --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
-        --set env.open.SPRING_CLOUD_CONFIG_URI="http://config-server.c7n-system:8010/" \
+        --set env.open.SPRING_CLOUD_CONFIG_URI="http://register-server.c7n-system:8000/" \
         --name api-gateway \
-        --version 0.13.1 \
+        --version 0.14.0 \
         --namespace c7n-system
     ```
     参数名 | 含义 
@@ -390,14 +375,14 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_DATASOURCE_PASSWORD=password \
         --set env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE="http://register-server.c7n-system:8000/eureka/" \
         --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
-        --set env.open.SPRING_CLOUD_CONFIG_URI="http://config-server.c7n-system:8010/" \
+        --set env.open.SPRING_CLOUD_CONFIG_URI="http://register-server.c7n-system:8000/" \
         --set env.open.SPRING_CACHE_MULTI_L1_ENABLED=true \
         --set env.open.SPRING_CACHE_MULTI_L2_ENABLED=false \
         --set env.open.SPRING_REDIS_HOST=c7n-redis.c7n-system.svc \
         --set env.open.SPRING_REDIS_PORT=6379 \
         --set env.open.SPRING_REDIS_DATABASE=5 \
         --name gateway-helper \
-        --version 0.13.0 \
+        --version 0.14.0 \
         --namespace c7n-system
     ```
     参数名 | 含义 
@@ -443,9 +428,9 @@ helm install c7n/mysql-client \
         --set env.open.CHOERODON_DEFAULT_REDIRECT_URL="http://c7n.example.choerodon.io" \
         --set env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE="http://register-server.c7n-system:8000/eureka/" \
         --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
-        --set env.open.SPRING_CLOUD_CONFIG_URI="http://config-server.c7n-system:8010/" \
+        --set env.open.SPRING_CLOUD_CONFIG_URI="http://register-server.c7n-system:8000/" \
         --name oauth-server \
-        --version 0.13.0 \
+        --version 0.14.0 \
         --namespace c7n-system
     ```
     参数名 | 含义 
@@ -484,9 +469,9 @@ helm install c7n/mysql-client \
         --set env.open.MINIO_SECRETKEY=password \
         --set env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE="http://register-server.c7n-system:8000/eureka/" \
         --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
-        --set env.open.SPRING_CLOUD_CONFIG_URI="http://config-server.c7n-system:8010/" \
+        --set env.open.SPRING_CLOUD_CONFIG_URI="http://register-server.c7n-system:8000/" \
         --name file-service \
-        --version 0.13.0 \
+        --version 0.14.0 \
         --namespace c7n-system
     ```
     参数名 | 含义 
