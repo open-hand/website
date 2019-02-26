@@ -76,6 +76,12 @@ description = "是对项目的信息和启用状态的管理"
 - 停用项目：点击列表中`停用`→![停用按钮](/docs/user-guide/system-configuration/tenant/image/stop_button.png)，项目的启用状态为启用时，可进行停用项目的操作。停用项目后，项目的启用状态变为停用，不可进入该项目。
 - 启用项目：点击列表中`启用`→![启用按钮](/docs/user-guide/system-configuration/tenant/image/start_button.png)项目的启用状态为停用时，可进行启用项目的操作。启用项目后，项目的启用状态变为启用，可进入该项目进行项目设置、项目角色分配等操作。
 
+## 跳转至项目
+
+- 您可以点击项目名称，即可跳转至对应项目的首页。
+
+- 您可以点击`跳转`→![跳转按钮](/docs/user-guide/system-configuration/tenant/image/dirct.png)，跳转至对应项目的首页。
+
 ## 更多操作
 - [用户管理](../user)
 - [组织角色分配](../role-assignment)
