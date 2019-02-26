@@ -117,23 +117,23 @@ description = "角色是一组特定权限的集合，通过给成员分配角�
 ## 预定义角色权限说明
 
 
-角色|模块|权限
-| --- | --- | --- |
-平台管理员|平台层所有模块|全部操作权限
-平台开发者|任务调度|全部操作权限
-||全局事务|全部操作权限|
-||API管理|全部操作权限|
-||微服务管理|全部操作权限|
-组织管理员|组织层所有模块|全部操作权限
-组织成员|wiki管理|空间和页面的创建、编辑、删除、修改、查看、管理和权限分配，评论等。<br>详情见[知识管理](/zh/docs/user-guide/wiki)
-项目所有者|项目层的所有模块|全部操作权限
-项目成员|敏捷管理|不能进行版本管理、不能配置状态、不能管理模块、不能进行项目设置、不能删除看板和issue。<br>除此之外其他权限都可以。详情见[敏捷管理](/zh/docs/user-guide/agile)
-||应用管理|仅能查看列表和阶段详情。详情见[应用管理](/zh/docs/user-guide/application-management)
-||开发流水线|不能删除标记，其他均有权限。详情见[开发流水线](/zh/docs/user-guide/development-pipeline)
-||部署流水线|未分配此权限。详情见[部署流水线](/zh/docs/user-guide/deployment-pipeline)
-||测试管理|全部操作权限|
-||wiki管理|空间和页面的创建、编辑、删除、修改、查看、管理和权限分配，评论等。<br>详情见[知识管理](/zh/docs/user-guide/wiki)
-||报表|全部操作权限|
+角色|角色编码|模块|权限
+| --- | --- | --- | --- |
+平台管理员|role/site/default/administrator|平台层所有模块|全部操作权限
+平台开发者|role/site/default/developer|任务调度|全部操作权限
+|||全局事务|全部操作权限|
+|||API管理|全部操作权限|
+|||微服务管理|全部操作权限|
+组织管理员|role/organization/default/administrator|组织层所有模块|全部操作权限
+组织成员|role/organization/default/organization-member|wiki管理|空间和页面的创建、编辑、删除、修改、查看、管理和权限分配，评论等。<br>详情见[知识管理](/zh/docs/user-guide/wiki)
+项目所有者|role/project/default/project-owner|项目层的所有模块|全部操作权限
+项目成员|role/project/default/project-member|敏捷管理|不能进行版本管理、不能配置状态、不能管理模块、不能进行项目设置、不能删除看板和issue。<br>除此之外其他权限都可以。详情见[敏捷管理](/zh/docs/user-guide/agile)
+|||应用管理|仅能查看列表和阶段详情。详情见[应用管理](/zh/docs/user-guide/application-management)
+|||开发流水线|不能删除标记，其他均有权限。详情见[开发流水线](/zh/docs/user-guide/development-pipeline)
+|||部署流水线|未分配此权限。详情见[部署流水线](/zh/docs/user-guide/deployment-pipeline)
+|||测试管理|全部操作权限|
+|||wiki管理|空间和页面的创建、编辑、删除、修改、查看、管理和权限分配，评论等。<br>详情见[知识管理](/zh/docs/user-guide/wiki)
+|||报表|全部操作权限|
 
 ## 更多操作
 - [角色标签](../role-label)
