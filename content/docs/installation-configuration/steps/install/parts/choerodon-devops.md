@@ -72,10 +72,10 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
         --set env.open.SERVICES_GITLAB_PROJECTLIMIT=100 \
         --set env.open.SERVICES_GATEWAY_URL=http://api.example.choerodon.io \
         --set env.open.SECURITY_IGNORED="/ci\,/webhook\,/v2/api-docs\,/agent/**\,/ws/**\,/webhook/**" \
-        --set env.open.AGENT_VERSION="0.13.2" \
+        --set env.open.AGENT_VERSION="0.14.0" \
         --set env.open.AGENT_REPOURL="https://openchart.choerodon.com.cn/choerodon/c7n/" \
         --set env.open.AGENT_SERVICEURL="ws://devops.example.choerodon.io/agent/" \
-        --set env.open.TEMPLATE_VERSION="0.13.0" \
+        --set env.open.TEMPLATE_VERSION="0.14.0" \
         --set env.open.TEMPLATE_URL="https://github.com/choerodon/choerodon-devops-templates.git" \
         --set env.open.AGENT_CERTMANAGERURL="https://openchart.choerodon.com.cn/choerodon/infra/" \
         --set ingress.enable=true \
@@ -84,7 +84,7 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
         --set persistence.enabled=true \
         --set persistence.existingClaim="chartmuseum-pvc" \
         --name devops-service \
-        --version 0.13.3 \
+        --version 0.14.0 \
         --namespace c7n-system
     ```
     参数名 | 含义 
@@ -155,7 +155,7 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
         --set env.open.GITLAB_URL="http://gitlab.example.choerodon.io" \
         --set env.open.GITLAB_PRIVATETOKEN="GEuRhgb6kG9y3prFosSb" \
         --name gitlab-service \
-        --version 0.13.0 \
+        --version 0.14.0 \
         --namespace c7n-system
     ```
     参数名 | 含义 
