@@ -192,121 +192,8 @@ weight = 5
 
 - 本地虚拟机安装指的是在个人电脑上模拟安装。一般情况下个人电脑无法满足安装choerodon的要求，如果你需要在个人电脑上安装choerodon请确认CPU8核以上，内存48G以上。
 
-- 安装前请确认已开启<span style="color:red">CPU虚拟化支持</span>。如果您没有启用CPU虚拟化，安装操作将会失败。
-
-- 请不要在虚拟机中执行此脚本，如服务商提供的虚拟机，包括但不限于主流服务商及公司it部门提供的虚拟机，或是您在个人电脑中创建的虚拟机。 在虚拟机中安装请参阅`私有云安装示例`
-
-#### 环境准备
-- 部署[Virtualbox 5.1.34](https://www.virtualbox.org/wiki/Download_Old_Builds_5_1)
-- 部署[Vagrant 2.0.1](https://releases.hashicorp.com/vagrant/2.0.1/)
-
-#### 搭建Kubernetes集群
-- 克隆搭建脚本，并进入项目中
-
-    ```shell
-    git clone https://github.com/choerodon/kubeadm-ansible.git && cd kubeadm-ansible
-    ```
-<blockquote class="note">
-默认启动3个虚拟机，若PC内存不足，请降低Vagrantfile中第6行循环次数。
-</blockquote>
-
-- 启动虚拟机
-
-    ```shell
-    vagrant up
-    ```
-
-- 进入虚拟机node1
-
-    ```shell
-    vagrant ssh node1
-    ```
-
-- 在node1中部署ansible环境
-
-    ```shell
-    sudo yum install epel-release -y 
-    sudo yum install git python36 sshpass -y
-    sudo python3.6 -m ensurepip
-    sudo /usr/local/bin/pip3 install --no-cache-dir ansible==2.7.5 netaddr -i https://mirrors.aliyun.com/pypi/simple/
-    ```
-<blockquote class="note">
-若修改了Vagrantfile中启动的虚拟机数量，请删除kubeadm-ansible/inventory/hosts文件中未启动的虚拟机信息。
-</blockquote>
-
-- 在node1中部署集群  
-
-    ```shell
-    cd /vagrant
-    #在kubeadm-ansible/目录下执行
-    ansible-playbook -i inventory/hosts -e @inventory/vars cluster.yml
-    ```
-
-#### 添加节点
-
-- 通过本小节教程添加的节点不能是Master或Etcd节点，只能是普通的Work节点。若你使用的是NFS作为存储，建议你先<a href="../nfs/#客户端挂载nfs服务器共享目录" target="_blank">安装nfs-utils</a>
-
-- 若集群搭建完毕后还想再添加节点，请按以下方式进行添加：
-    - 修改kubeadm-ansible/inventory/hosts文件，在`[all]`分区按照原有格式添加新增节点信息，在`[kube-node]`分区添加新增节点名，其他分区请一定不要改动。比如原有信息如下，我们添加一个ip为192.168.56.14，k8s目标绑定网卡ip为192.168.56.14的node4节点：
-
-        ```
-        [all]
-        node1 ansible_host=192.168.56.11 ip=192.168.56.11 ansible_user=root ansible_ssh_pass=vagrant ansible_become=true
-        node2 ansible_host=192.168.56.12 ip=192.168.56.12 ansible_user=root ansible_ssh_pass=vagrant ansible_become=true
-        node3 ansible_host=192.168.56.13 ip=192.168.56.13 ansible_user=root ansible_ssh_pass=vagrant ansible_become=true
-
-        [kube-master]
-        node1
-        node2
-        node3
-
-        # 请与kube-master节点一致
-        [etcd]
-        node1
-        node2
-        node3
-
-
-        [kube-node]
-        node1
-        node2
-        node3
-        ```
-    - 修改后信息如下：
-
-        ```
-        [all]
-        node1 ansible_host=192.168.56.11 ip=192.168.56.11 ansible_user=root ansible_ssh_pass=vagrant ansible_become=true
-        node2 ansible_host=192.168.56.12 ip=192.168.56.12 ansible_user=root ansible_ssh_pass=vagrant ansible_become=true
-        node3 ansible_host=192.168.56.13 ip=192.168.56.13 ansible_user=root ansible_ssh_pass=vagrant ansible_become=true
-        node4 ansible_host=192.168.56.14 ip=192.168.56.14 ansible_user=root ansible_ssh_pass=vagrant ansible_become=true
-
-        [kube-master]
-        node1
-        node2
-        node3
-
-        # 请与kube-master节点一致
-        [etcd]
-        node1
-        node2
-        node3
-
-
-        [kube-node]
-        node1
-        node2
-        node3
-        node4
-        ```
-
-    - 在node1中添加节点 
-
-    ```shell
-    cd /vagrant
-    #在kubeadm-ansible/目录下执行
-    ansible-playbook -i inventory/hosts -e @inventory/vars scale.yml
-    ```
+- 安装[Docker](https://docs.docker.com/)
+- 安装和配置[Kind](https://github.com/kubernetes-sigs/kind)
 
 ## 私有云安装示例
 
@@ -442,9 +329,9 @@ weight = 5
 
 ## 公有云安装示例
 
-<blockquote class="note">
+
 公有云安装以阿里云ECS为例进行讲解，其它公有云可参考本教程，但具体安装方式请咨相应云提供商。目前只支持Centos 7.2及以上版本。
-</blockquote>
+
 
 ### 环境准备
 

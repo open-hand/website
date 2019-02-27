@@ -298,7 +298,7 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
         --set env.open.SPRING_CLOUD_CONFIG_URI="http://register-server.c7n-system:8000/" \
         --name iam-service \
-        --version 0.14.0 \
+        --version 0.14.1 \
         --namespace c7n-system
     ```
     参数名 | 含义 
