@@ -193,7 +193,7 @@ weight = 5
 - 本地虚拟机安装指的是在个人电脑上模拟安装。一般情况下个人电脑无法满足安装choerodon的要求，如果你需要在个人电脑上安装choerodon请确认CPU8核以上，内存48G以上。
 
 - 安装[Docker](https://docs.docker.com/)
-- 安装和配置[Kind](https://github.com/kubernetes-sigs/kind)
+- 使用k3s创建一个本地集群(https://github.com/rancher/k3s)
 
 ## 私有云安装示例
 
