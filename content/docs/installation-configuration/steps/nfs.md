@@ -29,14 +29,22 @@ NFS 允许系统将其目录和文件共享给网络上的其他系统。通过 
     ```
 
 ### 配置nfs-server
+- 创建共享目录
+
+    ``` bash
+    mkdir -p /u01/prod
+    ```
+
 - 编辑`/etc/exports`文件添加需要共享目录，每个目录的设置独占一行，编写格式如下：
 
-    `NFS共享目录路径    客户机IP或者名称(参数1,参数2,...,参数n)`
+    ``` bash
+    NFS共享目录路径 客户机IP段(参数1,参数2,...,参数n)
+    ```
 
 - 例如：
 
     ``` bash
-    /u01 192.168.1.*(rw,sync,insecure,no_subtree_check,no_root_squash)
+    /u01 192.168.1.1/16(rw,sync,insecure,no_subtree_check,no_root_squash)
     ```
 
     | 参数 | 说明 |
@@ -60,7 +68,7 @@ NFS 允许系统将其目录和文件共享给网络上的其他系统。通过 
     | anonuid=xxx | 指定nfs服务器/etc/passwd文件中匿名用户的UID |
     | anongid=xxx | 指定nfs服务器/etc/passwd文件中匿名用户的GID |
 
-    + 注1：尽量指定主机名或IP或IP段最小化授权可以访问NFS 挂载的资源的客户端
+    + 注1：尽量指定IP段最小化授权可以访问NFS 挂载的资源的客户端
     + 注2：经测试参数insecure必须要加，否则客户端挂载出错mount.nfs: access denied by server while mounting
 
 ### 启动NFS服务
@@ -74,7 +82,7 @@ NFS 允许系统将其目录和文件共享给网络上的其他系统。通过 
 
 ### 检查NFS服务提供是否正常
 
-- 执行showmount命令进行检查
+- 到客户机上执行showmount命令进行检查
 
     ```console
     $ showmount -e <NFS服务器IP地址>
