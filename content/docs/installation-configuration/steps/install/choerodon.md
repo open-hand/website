@@ -21,7 +21,8 @@ weight = 18
 如果您的主机没有配置kubernetes连接信息，则您需要到k8s服器中的master执行安装，如果您的主机已经配置了kubernetes的连接信息，并且可以正常执行`kubectl`命令，您可以在您的主机上执行安装，在安装之前您需要下载安装工具，目前支持Linux及MacOS:
 
 ```bash
-curl -L https://file.choerodon.com.cn/choerodon-install/c7nctl/0.13.1/c7nctl-0.13.1-`uname -s`-amd64.tar.gz | tar -xz && cd c7nctl-0.13.1
+export VERSION=0.14.0
+curl -L https://file.choerodon.com.cn/choerodon-install/c7nctl/${VERSION}/c7nctl-${VERSION}-`uname -s`-amd64.tar.gz | tar -xz && cd c7nctl-${VERSION}
 ```
 
 ## 创建并编辑配置文件
