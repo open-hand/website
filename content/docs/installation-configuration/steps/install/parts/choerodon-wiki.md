@@ -81,7 +81,7 @@ helm install c7n/mysql-client \
         --set "ingress.hosts[0]"=wiki.example.choerodon.io \
         --timeout 3000 \
         --name xwiki \
-        --version 0.14.0 \
+        --version 0.14.1 \
         --namespace c7n-system
     ```
 
