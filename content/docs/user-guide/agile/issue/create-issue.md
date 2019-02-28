@@ -21,7 +21,7 @@ weight =1
 ### 详细创建问题
 点击`创建问题`按钮（在`问题管理`页面上部）后，会弹出创建问题详情页面，页面如图所示，字段说明见图下方。
 
-<img src="/docs/user-guide/agile/imge/create-issue2.png"  height="640" width="400"><br/>
+<img src="/docs/user-guide/agile/imge/create-issue2.png" width="400"><br/>
 
 1. 问题类型：选择问题类型，可选`故事`、`故障`、`史诗`、`任务`
 2. 问题概要：问题的标题

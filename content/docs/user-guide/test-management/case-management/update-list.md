@@ -34,7 +34,8 @@ description = "详细介绍了测试详情页的查看和修改操作"
 
 ## 测试步骤操作
 
-![](/img/docs/user-guide/test-management/case-management/case-detail3.png)
+
+<img src="/img/docs/user-guide/test-management/case-management/case-detail3.png"  width="600"><br/>
 
 1. 添加测试步骤：点击`添加测试信息`按钮,出现测试步骤行
 2. 编辑测试步骤：在多出的一列测试步骤行中填写`测试步骤`、`测试数据`、`预期结果`，上传附件，点击`小勾`图标完成添加测试步骤。
@@ -45,7 +46,7 @@ description = "详细介绍了测试详情页的查看和修改操作"
 
 ## 编辑测试用例详情
 
-<img src="/img/docs/user-guide/test-management/case-management/case-detail4.png"  height="650" width="250"><br/>
+<img src="/img/docs/user-guide/test-management/case-management/case-detail4.png"  width="300"><br/>
 
 1. 用例详情属性：属性包括状态、优先级、版本、文件夹、模块、标签、报告人、被指定人
 2. 日期：显示处用例创建和更新时间
