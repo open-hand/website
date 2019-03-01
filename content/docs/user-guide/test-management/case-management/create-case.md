@@ -10,7 +10,7 @@ description = "详细阐述了如何创建测试用例"
 
 ## 快速创建测试用例
 
-![](/img/docs/user-guide/test-management/case-management/create-case.jpg)
+![](/img/docs/user-guide/test-management/case-management/create-case.png)
 
 1. 点击`创建问题`按钮进行测试用例详细创建
 1. 点击测试用例列表下部的`创建问题`按钮可进行测试用例快速创建，单击输入测试用例概要。
