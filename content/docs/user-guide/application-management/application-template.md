@@ -19,6 +19,8 @@ weight = 1
 
 ### 测试应用模板的使用
 
+#### mocha框架
+
 mocha api 测试框架为 `Nodejs` 类型的前端项目，下面会介绍一下项目结构与使用方法。
 
 项目结构如下
@@ -75,6 +77,73 @@ mocha api 测试框架为 `Nodejs` 类型的前端项目，下面会介绍一下
     在解析测试结果的过程中，每一个 `describe` 会对应生成一个测试用例，每一个 `it` 会对应生成一个测试步骤。 `@data` 后的内容会转化为测试步骤的测试数据， `@expect` 后的内容会被转化为测试步骤的预期结果。如无这两项注释会造成测试步骤中 `测试数据` 以及 `测试结果` 的缺失。
 
 7. `.gitlab-ci.yml` 中定义了两个ci步骤，分别为：下载依赖、使用devops服务生成版本号打镜像。测试应用使用ci版本号是为了通过使用相同镜像可以保证测试逻辑不变，从而复用已导入的测试用例。
+
+#### TestNG 框架
+
+TestNG + Assured 的api测试框架为 `Spring Boot` 类型的后端项目，下面会介绍一下项目结构与使用方法。
+
+项目结构如下
+
+    |--charts
+        ｜--model-service    
+          ｜--templates               
+            ｜--automation-test.yaml
+          ｜--.helmignore
+          ｜--Chart.yaml
+          ｜--values.yaml
+    |--src
+      |--test
+          |--java
+              |--io
+                  |--choerodon
+                    |--testng
+                      |--config
+                        |--domain
+                          |--BodyMatcherExtend.java
+                          |--TestConfigure.java
+                        |--utils
+                          |--LoginUtil.java
+                          |--ReporterUtil.java
+                          |--TestConfigureParse.java
+                        |--TestBase.java
+                      |--demo
+                        |--assured
+                          |--ApiTest.java
+                          |--ApiTest2.java
+                        |--ngnative
+                          |--AnnotationTest.java
+                          |--FactoryTest.java
+                          |--FactoryTestIntance.java
+                          |--GroupTest.java
+                          |--ParallelTest.java
+                          |--UnitTest.java
+                      |--TestExecution.java
+          |--resources
+              |--suite
+                  |--suite1.xml
+                  |--suite2.xml
+              |--assembly.xml
+              |--configuration.yaml
+              |--testng.xml
+    |--.gitignore
+    |--.gitlab-ci.yml
+    |--Dockerfile
+    |--pom.xml
+    |--run.sh
+
+其中需要说明的有如下几点：
+
+1. helm chart 包中的 `values.yaml` 文件修改之前请谨慎阅读readme文件，以防修改错误导致自动化测试执行失败。
+2. `Dockerfile` 以及 `run.sh` 请谨慎修改。自动化测试的基本原理为：在所需环境执行自动化测试，然后调用测试管理服务接口将测试报告打包回传。如修改这两个文件可能会对结果解析产生未知影响。
+3. `.gitlab-ci.yml` 中定义了两个ci步骤，分别为：下载依赖、使用devops服务生成版本号打镜像。测试应用使用ci版本号是为了通过使用相同镜像可以保证测试逻辑不变，从而复用已导入的测试用例。
+4. `src/test/resources/` 目录中 `suite` 目录及 `testng.xml` 文件为 `TestNG` 框架配置文件；`assembly.xml` 为 `Assured` 工具配置文件；`configuration.yaml` 为本地启动测试应用使用的变量配置文件，在自动化应用部署的时候以 `values.yaml` 文件为准。
+5. `src/test/java/io/choerodon/testng/TestExecution.java` 类为模板项目中的启动主类。因Dockerfile配置的是 `java -jar` 模式启动，所以不要随意更改项目的启动模式。
+6. `src/test/java/io/choerodon/testng/config` 包中提供了三个工具类，分别是：
+  - 适用于Choerodon登录校验的`LoginUtil`
+  - 封装了`Reporter.log`方法的`ReporterUtil`，此工具类的inputData，expectData两个方法产生的日志数据会用于渲染测试管理模块中测试步骤中对应的`测试数据`、`预期结果`两个字段。
+  - 用于加载 `configuration.yaml` 配置文件的 `TestConfigureParse` 配置类
+7. `/src/test/java/io/choerodon/testng/demo` 包中提供了诸多基于Assured以及TestNG原生的测试代码用于编写测试项目时进行参考。
+
 
 **如对模板有任何疑问，请上[论坛](https://forum.choerodon.io/)提问**
 
