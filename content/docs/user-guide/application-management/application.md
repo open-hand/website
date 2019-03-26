@@ -32,7 +32,8 @@ weight = 2
     
     - 应用编码：该字段是必输的，编码只能由小写字母、数字、"-"组成，且以小写字母开头，不能以"-"结尾并且是唯一的。
     - 应用名称：在项目下唯一，不能和其他应用相同。
-    - 应用模板：系统预定义模板或组织自定义的模板，包括：微服务-MicroService；web前端-MicroServiceFront；Java库-JavaLib；Java库-SpringBoot；Go库-GoTemplate；自动化测试Mocha-ChoerodonMochaTemplate。
+    - 应用模板：系统预定义模板或组织自定义的模板，包括：微服务-MicroService；web前端-MicroServiceFront；Java库-JavaLib；Java库-SpringBoot；Go库-GoTemplate；自动化测试Mocha-ChoerodonMochaTemplate。  
+    - 高级设置：创建应用时，系统会给出默认的Helm库与Docker库；若有实质需求，可以在此选择项目下已有的自定义的组件配置。若将默认的Docker仓库改为了自定义的Docker仓库，那么之后此应用生成的镜像均会存放在新的仓库中，但之前的镜像会保留在原来的仓库之中；同理，更改Helm仓库后，之后生成的charts包也将存放在新的Helm仓库之中。
     - 应用权限分配：可选择所有项目成员或者特定项目成员为此应用的的开发人员。一般默认为项目下所有成员，即该项目下所有项目成员都能对此应用进行开发操作；若选择特定项目成员，则只有被勾选的项目成员才有权限在此应用下进行开发。项目所有者默认拥有此项目下所有应用的权限。  
   ![应用权限分配](/docs/user-guide/application-management/image/app-auth.png) 
 
@@ -59,6 +60,7 @@ weight = 2
      - 应用编码：在校验获取到对应的应用后，需要填写此应用的`应用编码`，编码只能由小写字母、数字、"-"组成，且以小写字母开头，不能以"-"结尾并且是唯一的。  
      - 应用名称：在项目下唯一，不能和其他应用名称相同。  
      - 应用模板：系统预定义模板或组织自定义的模板，包括：微服务-MicroService；web前端-MicroServiceUI；Java库-JavaLib；Java库-SpringBoot；Go库-GoTemplate；自动化测试Mocha-ChoerodonMochaTemplate。  
+     - 高级设置：导入应用时，系统会给出此应用默认的Helm库与Docker库；若有实质需求，可以在此选择项目下已有的自定义的组件配置。若将默认的Docker仓库改为了自定义的Docker仓库，那么之后此应用生成的镜像均会存放在新的仓库中，但之前的镜像会保留在原来的仓库内。同理，更改Helm仓库后，之后生成的charts包也将存放在新的Helm仓库之中。  
      - 应用权限分配：可选择所有项目成员或者特定项目成员为此应用的的开发人员。一般默认为项目下所有成员，即该项目下所有项目成员都能对此应用进行开发操作；若选择特定项目成员，则只有被勾选的项目成员才有权限在此应用下进行开发。项目所有者默认拥有此项目下所有应用的权限。    
 
   ![应用权限分配](/docs/user-guide/application-management/image/app-auth.png) 
@@ -69,7 +71,7 @@ weight = 2
  4. 应用导入成功后，可在 Gitlab 中查看已创建的代码库。
 
 <blockquote class="note">
-  - 导入的应用，应用类型默认为普通应用。其次，在导入应用选择应用来源时，若选择了GitLab私库，则需要填写该仓库的私有Token，同时需要至GitLab中去将用户设置里的授权Token设置为允许可读。
+  导入的应用，应用类型默认为普通应用。其次，在导入应用选择应用来源时，若选择了GitLab私库，则需要填写该仓库的私有Token，同时需要至GitLab中去将用户设置里的授权Token设置为允许可读。
 </blockquote>
 
 ## 查看应用详情
@@ -89,7 +91,7 @@ weight = 2
 
 ## 修改应用信息
 
-点击`修改应用`→ ![修改应用按钮](/docs/user-guide/development-pipeline/image/update_app_button.png) 对应用信息进行修改。同时还能对应用的权限进行重新配置。
+点击`修改应用`→ ![修改应用按钮](/docs/user-guide/development-pipeline/image/update_app_button.png) 对应用信息进行修改或者对应用的权限进行重新配置。此外，页面中的高级设置支持修改默认的Docker仓库和Helm仓库为项目下已有的自定义的组件配置，修改后，此应用之后生成的镜像均会存储于新的仓库之中。
 
 ## 停用/启用应用
 
