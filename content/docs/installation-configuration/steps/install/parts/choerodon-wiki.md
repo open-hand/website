@@ -81,7 +81,7 @@ helm install c7n/mysql-client \
         --set "ingress.hosts[0]"=wiki.example.choerodon.io \
         --timeout 3000 \
         --name xwiki \
-        --version 0.14.1 \
+        --version 0.15.0 \
         --namespace c7n-system
     ```
 
@@ -160,7 +160,7 @@ helm install c7n/mysql-client \
         --set env.open.WIKI_TOKEN=Choerodon \
         --set env.open.WIKI_DEFAULT_GROUP=XWikiAllGroup \
         --name wiki-service \
-        --version 0.14.0 \
+        --version 0.15.0 \
         --namespace c7n-system
     ```
 
@@ -187,6 +187,6 @@ helm install c7n/mysql-client \
 ## 同步已有项目和组织
 
 1. 服务部署完成之后，使用有平台管理员角色的用户登录`Choerodon`平台，点击顶部导航栏的管理按钮，选择`API管理`菜单下的`API测试`。
-2. 找到微服务`wiki-service`下0.14.0版本的接口，打开`wiki-scanning-controller`，使用`/v1/site/scan`接口，点击`发送`之后，就会同步所有的组织和项目到新部署的wiki。
+2. 找到微服务`wiki-service`下0.15.0版本的接口，打开`wiki-scanning-controller`，使用`/v1/site/scan`接口，点击`发送`之后，就会同步所有的组织和项目到新部署的wiki。
     
         注：同步会在后台执行，请耐心等待同步完成。
