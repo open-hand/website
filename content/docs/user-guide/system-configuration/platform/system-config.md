@@ -1,6 +1,6 @@
 +++
 title = "系统配置"
-weight = 8
+weight = 10
 description = "对系统的名称、logo等平台标志进行自定义设置"
 +++
 
