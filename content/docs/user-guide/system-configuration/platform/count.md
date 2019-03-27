@@ -1,6 +1,6 @@
 +++
 title = "平台统计"
-weight = 9
+weight = 8
 description = "统计系统的菜单点击量"
 +++
 
