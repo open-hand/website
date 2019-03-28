@@ -8,9 +8,15 @@ description = "用于对平台中任务的查看，创建，启停用等管理"
 
 任务，按时间点或者周期性执行的任务。它实现了任务执行程序和触发器之间的关联。一个具体的任务，配置任务的触发时间，调度器会根据触发时间规则来安排执行此任务。
 
+<<<<<<< Updated upstream
 - **菜单层次**：全局层、组织层、项目层
 - **菜单路径**：任务调度 > 任务明细
 - **默认角色**：平台管理员、平台开发者、组织管理员、项目管理员
+=======
+- **菜单层次**：全局层
+- **菜单路径**：任务调度 > 任务明细
+- **默认角色**：平台管理员
+>>>>>>> Stashed changes
 
 ![任务](/docs/user-guide/microservice-development/job/image/job.jpg)
 
@@ -26,7 +32,11 @@ description = "用于对平台中任务的查看，创建，启停用等管理"
 
 ## 创建任务
 
+<<<<<<< Updated upstream
 1.点击`创建任务`→![创建任务](/docs/user-guide/microservice-development/job/image/create.png)创建一个任务。
+=======
+1.点击`创建任务`→![创建任务](/docs/user-guide/microservice-development/job/image/create.png)创建一个任务；
+>>>>>>> Stashed changes
 
 2.输入`任务名称`、`任务描述`。
 
@@ -34,6 +44,7 @@ description = "用于对平台中任务的查看，创建，启停用等管理"
 
 4.选择`触发类型`。我们提供两种任务触发类型:`简单任务`、`Cron任务`。
 
+<<<<<<< Updated upstream
 - 简单任务： 当需要在规定的时间执行一次或在规定的时间段以一定的时间间隔重复触发执行Job时，SimpleTrigger就可以满足要求； 
 
 - Cron任务： 支持比 SimpleTrigger 更具体的调度，而且也不是很复杂。基于 cron 表达式，CronTrigger 支持类似日历的重复间隔，而不是单一的时间间隔。
@@ -64,19 +75,52 @@ description = "用于对平台中任务的查看，创建，启停用等管理"
 9.选择通知对象。
 
 10.点击创建，完成任务的创建。
+=======
+简单任务  当需要在规定的时间执行一次或在规定的时间段以一定的时间间隔重复触发执行Job时，SimpleTrigger就可以满足要求； 
+
+Cron任务  支持比 SimpleTrigger 更具体的调度，而且也不是很复杂。基于 cron 表达式，CronTrigger 支持类似日历的重复间隔，而不是单一的时间间隔。
+
+5.输入任务执行的触发时间规则。
+
+如果是`简单任务`，则输入`重复间隔`、`重复次数`。
+
+开始时间 + 重发间隔 × 次数 > 结束时间时，以结束时间为准，更改成对的次数;  
+开始时间 + 重发间隔 × 次数 < 结束时间时，以次数为准；  
+开始时间 + 结束时间不为空时，重发间隔和次数可以选填，两个至少填一个；  
+开始时间 + 结束时间为空时，重发间隔和次数均必填。  
+
+如果是`Cron任务`,则输入`cron表达式`。
+
+您可以点击cron表达式解析按钮→![解析表达式](/docs/user-guide/microservice-development/job/image/cron.png)对cron表达式进行解析。
+
+6.选择`服务名`和`任务程序`。
+
+7.编辑对应任务程序的参数。当不更改参数时，默认使用默认值。
+
+8.点击创建，完成任务的创建。
+>>>>>>> Stashed changes
 
 ## 查看任务详情
 
 - 点击任务的查看详情按钮→![详情](/docs/user-guide/microservice-development/job/image/particulars.png),进入到任务详情页面。
 
 您可以在任务详情页查看`任务信息`和`任务日志`。
+<<<<<<< Updated upstream
 通过`任务信息`，您可以了解`任务名称`，`任务描述`，起止时间，`触发类型`，触发时间规则，执行策略，`上次执行时间`，`下次执行时间`，`任务程序名`，任务参数详情，通知对象。
+=======
+通过`任务信息`，您可以了解`任务名称`，`任务描述`，起止时间，`触发类型`，触发时间规则，`上次执行时间`，`下次执行时`间`，`任务程序名`，任务参数详情。
+>>>>>>> Stashed changes
 通过`任务日志`，你可以了解任务执行的`状态`，`实例ID`，`计划执行时间`和`实际执行时间`。
 
 ## 启停用任务
 
+<<<<<<< Updated upstream
 - 点击任务的停用按钮→![停用](/docs/user-guide/microservice-development/job/image/stop.png)，停用该任务。
 - 点击任务的启用按钮→![启用](/docs/user-guide/microservice-development/job/image/start.png)，启用该任务。
+=======
+- 点击任务的停用按钮→![停用](/docs/user-guide/microservice-development/job/image/stop.png),停用该任务。
+- 点击任务的启用按钮→![启用](/docs/user-guide/microservice-development/job/image/start.png),启用该任务。
+>>>>>>> Stashed changes
 
 ## 删除任务
 
