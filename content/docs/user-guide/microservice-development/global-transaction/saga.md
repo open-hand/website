@@ -32,8 +32,11 @@ Saga采用了BASE（Basic Availability， Soft， Eventual consistency，即基�
 
 ## 事务定义详情
 
+<<<<<<< Updated upstream:content/docs/user-guide/microservice-development/global-transaction/saga.md
 <img class="no-border" src="/docs/user-guide/microservice-development/global-transaction/image/saga.png"/>
 
+=======
+>>>>>>> Stashed changes:content/docs/user-guide/microservice-development/global-transaction/saga.md
 - 点击事务定义列表的操作按钮→<img class="no-border" src="/docs/user-guide/microservice-development/global-transaction/image/particulars.png"/>可查看事务定义的详情。
 
 - 查看事务定义的详情一共有视图和Json文件两种查看方式。图根据Json文件内容所生成。点击流程图中的节点可查看该节点的详细信息。
