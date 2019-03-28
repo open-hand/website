@@ -53,7 +53,11 @@ API的测试要点：
 
 步骤：
 
+<<<<<<< Updated upstream:content/docs/user-guide/microservice-development/API-management/API-test.md
 1. 点击API接口查看详情。
+=======
+1. 点击API接口的查看详情按钮→<img class="no-border" src="/docs/user-guide/microservice-development/API-management/image/particulars.png"/>,进入到API测试页面。
+>>>>>>> Stashed changes:content/docs/user-guide/microservice-development/API-management/API-test.md
 
 1. 可以查看API接口的详细信息，包括接口基本信息、请求参数信息、响应数据信息。
     - 接口信息：
