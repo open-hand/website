@@ -1,10 +1,6 @@
 +++
 title = "消息记录"
-<<<<<<< Updated upstream
 weight = 5
-=======
-weight = 7
->>>>>>> Stashed changes
 description = "查看使用模板发送消息的列表记录及状态"
 +++
 
@@ -12,15 +8,9 @@ description = "查看使用模板发送消息的列表记录及状态"
 
 消息记录是在平台使用已定义模板发送邮件的状态回执。通过此功能，用户可以了解使用服务器发送的邮件状态、邮件数量、失败原因。用户可以选择重发发送失败的邮件。
 
-<<<<<<< Updated upstream
 - **菜单层次**：全局层
 - **菜单路径**：消息中心 > 消息记录
 - **默认角色**：平台管理员
-=======
-- **菜单层次**：全局层、组织层
-- **菜单路径**：消息中心 > 消息记录
-- **默认角色**：平台管理员、组织管理员
->>>>>>> Stashed changes
 
 ## 消息记录列表
 
@@ -41,8 +31,4 @@ description = "查看使用模板发送消息的列表记录及状态"
 
 ## 重发
 
-<<<<<<< Updated upstream
 - 发送失败的短信，用户可以点击列表中的`图标`→![重发](/docs/user-guide/system-configuration/message/image/redo.png)重发此邮件。
-=======
-- 发送失败的短信，用户可以点击列表中的`图标`→![重发](/docs/user-guide/system-configuration/message/image/detail_button.png)重发此邮件。
->>>>>>> Stashed changes

@@ -43,7 +43,6 @@ description = "用于管理和编辑发送站内信的内容样式"
 2.输入`模板编码`、`模板名称`，选择`站内信类型`。
 
 3.输入`站内信标题`、`站内信内容`。填写模板所需的文字和参数。模板中的参数变量通过`${}`进行替换，在发送时，将`${}`替换成对应的实际变量。
-<<<<<<< Updated upstream
 
     例如：
     模板:`${userName}`您好。
@@ -53,12 +52,6 @@ description = "用于管理和编辑发送站内信的内容样式"
 更多的变量信息，请查看[变量说明](../variable-description)
 
 
-=======
-    例如：
-    模板:`${username}`您好。
-    发送参数：`username=张三`。
-    发送信息：张三您好。
->>>>>>> Stashed changes
 
 4.点击`创建`完成创建站内信模板。
 
@@ -84,7 +77,7 @@ description = "用于管理和编辑发送站内信的内容样式"
 
 ## 修改站内信模板
 
-1.点击列表中的`图标`→![更多操作](/docs/user-guide/system-configuration/message/image/detail_button.png)，选中`修改`;
+1.点击列表中的`图标`→![更多操作](/docs/user-guide/system-configuration/message/image/update.png)，选中`修改`;
 
 2.输入`站内信标题`、`站内信内容`。
 
@@ -92,7 +85,7 @@ description = "用于管理和编辑发送站内信的内容样式"
 
 ## 删除站内信模板
 
-- 点击列表中的`图标`→![更多操作](/docs/user-guide/system-configuration/message/image/detail_button.png)，选中`删除`。
+- 点击列表中的`图标`→![更多操作](/docs/user-guide/system-configuration/message/image/del_button.png)，选中`删除`。
 <blockquote class="note">
           只能够删除自定义模板，不能删除预置模板。
       </blockquote>

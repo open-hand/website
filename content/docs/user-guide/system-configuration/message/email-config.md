@@ -1,10 +1,6 @@
 +++
 title = "邮箱配置"
-<<<<<<< Updated upstream
 weight = 4
-=======
-weight = 5
->>>>>>> Stashed changes
 description = "对平台所使用的发件邮箱服务器信息进行管理"
 +++
 
