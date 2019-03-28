@@ -33,7 +33,6 @@ description = "模板中所有可用参数变量的解释说明"
 | ${defaultPassword} | 初始密码 | 模板：您的初始密码为${defaultPassword}。<br>发送参数：`defaultPassword=abc123`。<br>发送信息：您的初始密码为abc123。 |
 | ${verifyCode} | 验证码 |  模板：您的验证码为${verifyCode}。<br>发送参数：`verifyCode=123456`。<br>发送信息：您的验证码为123456。 |
 
-
 模板中的参数变量通过`${}`进行替换，在发送时，将`${}`替换成对应的实际变量。
 
 例如：
