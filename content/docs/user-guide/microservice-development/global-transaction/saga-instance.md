@@ -80,7 +80,7 @@ description = "实际运行的事务定义"
 
 1. 点击事务实例的详情按钮→<img class="no-border" src="/docs/user-guide/microservice-development/global-transaction/image/particulars.png"/>。
 1. 出现事务实例的事务执行流程图后，点击要解锁的任务。
-1. 出现任务运行情况后，在运行情况底部点击解锁按钮→<img class="no-border" src="/docs/user-guide/microservice-development/global-transaction/image/unlock.png"/>。
+1. 出现任务运行情况后，在运行情况顶部点击解锁按钮→<img class="no-border" src="/docs/user-guide/microservice-development/global-transaction/image/unlock.png"/>。
 
 
 ## 重试任务
@@ -89,8 +89,14 @@ description = "实际运行的事务定义"
 
 1. 点击事务实例的详情按钮→<img class="no-border" src="/docs/user-guide/microservice-development/global-transaction/image/particulars.png"/>。
 1. 出现事务实例的事务执行流程图后，点击要重试的任务。
-<<<<<<< Updated upstream:content/docs/user-guide/microservice-development/global-transaction/saga-instance.md
-1. 出现任务运行情况后，在运行情况底部点击解锁按钮→<img class="no-border" src="/docs/user-guide/microservice-development/global-transaction/image/retry.png"/>。
-=======
-1. 出现任务运行情况后，在运行情况底部点击解锁按钮→<img class="no-border" src="/docs/user-guide/microservice-development/global-transaction/image/retry.png"/>。
->>>>>>> Stashed changes:content/docs/user-guide/microservice-development/global-transaction/saga-instance.md
+1. 出现任务运行情况后，在运行情况顶部点击重试按钮→<img class="no-border" src="/docs/user-guide/microservice-development/global-transaction/image/retry.png"/>。
+
+
+## 强制失败
+
+当任务执行状态为进行中或者等待被拉取的状态时，用户可以强制将任务置为失败状态
+
+1. 点击事务实例的详情按钮→<img class="no-border" src="/docs/user-guide/microservice-development/global-transaction/image/particulars.png"/>。
+1. 出现事务实例的事务执行流程图后，点击要强制失败的任务。
+
+1. 出现任务运行情况后，在运行情况顶部部点击强制失败按钮→<img class="no-border" src="/docs/user-guide/microservice-development/global-transaction/image/fail.png"/>。
