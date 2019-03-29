@@ -77,7 +77,7 @@ description = "用于管理和编辑发送站内信的内容样式"
 
 ## 修改站内信模板
 
-1.点击列表中的`图标`→![更多操作](/docs/user-guide/system-configuration/message/image/detail_button.png)，选中`修改`;
+1.点击列表中的`图标`→![更多操作](/docs/user-guide/system-configuration/message/image/update.png)，选中`修改`;
 
 2.输入`站内信标题`、`站内信内容`。
 
@@ -85,7 +85,7 @@ description = "用于管理和编辑发送站内信的内容样式"
 
 ## 删除站内信模板
 
-- 点击列表中的`图标`→![更多操作](/docs/user-guide/system-configuration/message/image/detail_button.png)，选中`删除`。
+- 点击列表中的`图标`→![更多操作](/docs/user-guide/system-configuration/message/image/del_button.png)，选中`删除`。
 <blockquote class="note">
           只能够删除自定义模板，不能删除预置模板。
       </blockquote>

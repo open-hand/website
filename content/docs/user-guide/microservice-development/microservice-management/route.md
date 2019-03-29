@@ -64,4 +64,3 @@ description = "用于管理平台路由"
 ## 更多操作
 - [什么是微服务](../microservice)
 - [实例管理](../instance)
-- [配置管理](../config)

@@ -31,5 +31,4 @@ description = "查看微服务下的实例以及实例详情"
 
 ## 更多操作
 - [什么是微服务](../microservice)
-- [配置管理](../config)
 - [路由管理](../route)

@@ -30,5 +30,4 @@ description = "微服务列表"
 
 ## 更多操作
 - [实例管理](../instance)
-- [配置管理](../config)
 - [路由管理](../route)

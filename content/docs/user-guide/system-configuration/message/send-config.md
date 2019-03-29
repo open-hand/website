@@ -31,7 +31,6 @@ description = "配置不同触发类型的发送规则"
 添加/导入新用户 | adduser | 管理员添加或导入新用户时，新用户收到自己的账户信息
 添加新功能 | addfunction | 系统添加新功能时，给用户发送新功能的介绍和操作指南
 修改密码 | modifypassword | 用户在平台修改密码后反馈密码修改成功的通知，确认是否是用户的操作
-注册组织 | registerOrganization | 新用户注册组织，发送邮箱验证进行验证
 停用组织 | disableOrganization | 管理员停用组织，向成员发送通知
 启用组织 | enableOrganization | 管理员启用组织，向成员发送通知
 停用项目 | disableProject | 管理员停用项目，向成员发送通知
@@ -41,8 +40,9 @@ description = "配置不同触发类型的发送规则"
 问题分配 | issueAssignee | 问题分配，给相关用户发送通知
 问题已解决 | issueSolve | 问题已解决，给相关用户发送通知
 事务实例失败通知 | sagaInstanceFail | 当事务实例失败时，向触发者发送消息提醒
-
-
+平台任务状态通知 | jobStatusSite | 平台层定时任务状态发生变化，给相关用户发送通知。
+组织任务状态通知 | jobStatusOrganization | 组织层定时任务状态发生变化，给相关用户发送通知。
+项目任务状态通知 | jobStatusProject | 项目层定时任务状态发生变化，给相关用户发送通知。
 
 ## 触发类型查询
 
