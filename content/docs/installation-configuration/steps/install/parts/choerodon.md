@@ -59,7 +59,7 @@ helm install c7n/mysql-client \
         --set service.name=register-server \
         --set env.open.REGISTER_SERVICE_NAMESPACE="c7n-system" \
         --name register-server \
-        --version 0.15.0 \
+        --version 0.15.1 \
         --namespace c7n-system
     ```
 
@@ -103,7 +103,7 @@ helm install c7n/mysql-client \
                 },
                 ...
                 "metadata": {
-                    "VERSION": "0.15.0"
+                    "VERSION": "0.15.1"
                 },
                 ...
                 }
