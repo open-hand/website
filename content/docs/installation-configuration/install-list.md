@@ -34,16 +34,16 @@ Gitlab-Runner|CI/CD 运行环境|10.7.2
 
 组件|描述| 版本
 ---|---|---
-register server|注册服务|0.15.1
-config server|配置服务|0.15.0
-manager service|管理服务|0.15.0
-iam service|IAM服务|0.15.0
-api gateway|网关服务|0.15.0
-gateway helper|网关helper|0.15.0
-oauth server|认证服务|0.15.0
-file service|文件服务|0.15.0
-notify service|通知服务|0.15.0
-asgard service|事务服务|0.15.0
+register server|注册服务|0.15.0
+config server|配置服务|0.15.1
+manager service|管理服务|0.15.1
+iam service|IAM服务|0.15.1
+api gateway|网关服务|0.15.1
+gateway helper|网关helper|0.15.1
+oauth server|认证服务|0.15.1
+file service|文件服务|0.15.1
+notify service|通知服务|0.15.1
+asgard service|事务服务|0.15.1
 gitlab service|Gitlab 服务|0.15.0
 devops service|Devops 服务|0.15.3
 agile service|敏捷管理|0.15.0

@@ -59,7 +59,7 @@ helm install c7n/mysql-client \
         --set service.name=register-server \
         --set env.open.REGISTER_SERVICE_NAMESPACE="c7n-system" \
         --name register-server \
-        --version 0.15.1 \
+        --version 0.15.0 \
         --namespace c7n-system
     ```
 
@@ -121,7 +121,7 @@ helm install c7n/mysql-client \
         --set service.enable=true \
         --set env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE="http://register-server.c7n-system:8000/eureka/" \
         --name config-server \
-        --version 0.15.0 \
+        --version 0.15.1 \
         --namespace c7n-system
     ```
     参数名 | 含义 
@@ -160,7 +160,7 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_REDIS_PORT=6379 \
         --set env.open.SPRING_REDIS_DATABASE=1 \
         --name manager-service \
-        --version 0.15.0 \
+        --version 0.15.1 \
         --namespace c7n-system
     ```
     参数名 | 含义 
@@ -205,7 +205,7 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
         --set env.open.SPRING_CLOUD_CONFIG_URI="http://register-server.c7n-system:8000/" \
         --name asgard-service \
-        --version 0.15.0 \
+        --version 0.15.1 \
         --namespace c7n-system
     ```
     参数名 | 含义 
@@ -255,7 +255,7 @@ helm install c7n/mysql-client \
         --set ingress.enable=true \
         --set ingress.host=notify.example.choerodon.io \
         --name notify-service \
-        --version 0.15.0 \
+        --version 0.15.1 \
         --namespace c7n-system
     ```
     参数名 | 含义 
@@ -298,7 +298,7 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
         --set env.open.SPRING_CLOUD_CONFIG_URI="http://register-server.c7n-system:8000/" \
         --name iam-service \
-        --version 0.15.0 \
+        --version 0.15.1 \
         --namespace c7n-system
     ```
     参数名 | 含义 
@@ -339,7 +339,7 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
         --set env.open.SPRING_CLOUD_CONFIG_URI="http://config-server.c7n-system:8010/" \
         --name api-gateway \
-        --version 0.15.0 \
+        --version 0.15.1 \
         --namespace c7n-system
     ```
     参数名 | 含义 
@@ -384,7 +384,7 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_REDIS_PORT=6379 \
         --set env.open.SPRING_REDIS_DATABASE=5 \
         --name gateway-helper \
-        --version 0.15.0 \
+        --version 0.15.1 \
         --namespace c7n-system
     ```
     参数名 | 含义 
@@ -432,7 +432,7 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
         --set env.open.SPRING_CLOUD_CONFIG_URI="http://register-server.c7n-system:8000/" \
         --name oauth-server \
-        --version 0.15.0 \
+        --version 0.15.1 \
         --namespace c7n-system
     ```
     参数名 | 含义 
@@ -473,7 +473,7 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
         --set env.open.SPRING_CLOUD_CONFIG_URI="http://register-server.c7n-system:8000/" \
         --name file-service \
-        --version 0.15.0 \
+        --version 0.15.1 \
         --namespace c7n-system
     ```
     参数名 | 含义 
