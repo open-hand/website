@@ -83,6 +83,7 @@ spec:
 - 在安装过程中，会提示设置某些组件用户名及密码，注意保存
 - 如果安装失败，根据提示操作后，再次执行命令即可
 - 执行部署命令，<b style="color:red">安装过程中如果遇到问题，请先查看本文最后一节关于常见问题的介绍</b>，如果未能解决你的问题，可以到[论坛](//forum.choerodon.io)中提问。
+- 更多关于c7nctl的配置请参考[此处](https://blog.vinkdong.com/c7nctl%E8%AF%A6%E8%A7%A3/)
 
 ```bash
 ./c7nctl install -c config.yml --no-timeout --version=0.15
