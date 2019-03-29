@@ -130,3 +130,12 @@ kubectl get secret \
 - 分发`ca.crt`证书文件
 
 将得到的`ca.crt`证书文件拷贝至其他会使用到该Harbor的主机上（也放在`/etc/docker/certs.d/registry.example.choerodon.io`目录下即可）。
+
+<blockquote class="warning">
+如果使用自签名证书，在部署devops-service服务的时候需要跳过harbor证书安全校验，即部署的时候增加变量
+
+```
+--set env.open.SERVICES_HARBOR_INSECURESKIPTLSVERIFY="true"
+
+```
+</blockquote>
