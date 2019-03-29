@@ -44,7 +44,7 @@ helm install c7n/minio \
     --set env.open.MINIO_SECRET_KEY=password \
     --set ingress.enabled=true \
     --set ingress.hosts=minio.example.choerodon.io \
-    --set image.tag=RELEASE.2019-03-27T22-35-21Z
+    --set image.tag=RELEASE.2019-03-27T22-35-21Z \
     --version 0.1.0 \
     --name minio \
     --namespace c7n-system
