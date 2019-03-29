@@ -13,11 +13,11 @@ weight = 5
 
 组件|描述| 版本
 ---|---|---
-Docker|应用容器引擎|17.05.0-ce
-Kubernetes|容器的编排和管理|1.8.5
-Helm|Kubernetes应用包管理工具|17.05.0-ce
+Docker|应用容器引擎|18.03.1-ce
+Kubernetes|容器的编排和管理|v1.10.12
+Helm|Kubernetes应用包管理工具|2.8.2
 Chartmuseum|Kubernetes应用私有包仓库|0.5.2
-Minio|对象存储服务|RELEASE.2018-05-25T19-49-13Z
+Minio|对象存储服务|RELEASE.2019-03-27T22-35-21Z
 Redis|缓存数据库|4.0.2
 Mysql|数据库|5.7.22
 Harbor|容器的镜像库|1.4.0
@@ -34,21 +34,21 @@ Gitlab-Runner|CI/CD 运行环境|10.7.2
 
 组件|描述| 版本
 ---|---|---
-register server|注册服务|0.13.0
-config server|配置服务|0.13.0
-manager service|管理服务|0.13.0
-iam service|IAM服务|0.13.0
-api gateway|网关服务|0.13.1
-gateway helper|网关helper|0.13.0
-oauth server|认证服务|0.13.0
-file service|文件服务|0.13.0
-notify service|通知服务|0.13.0
-asgard service|事务服务|0.13.0
-gitlab service|Gitlab 服务|0.13.0
-devops service|Devops 服务|0.13.3
-agile service|敏捷管理|0.13.0
-state machine service|状态机服务|0.13.1
-issue service|issue服务|0.13.0
-wiki service|知识管理服务|0.13.0
-test manager service|测试管理服务|0.13.0
-choerodon front|Choerodon 前端|0.13.1
+register server|注册服务|0.15.1
+config server|配置服务|0.15.0
+manager service|管理服务|0.15.0
+iam service|IAM服务|0.15.0
+api gateway|网关服务|0.15.0
+gateway helper|网关helper|0.15.0
+oauth server|认证服务|0.15.0
+file service|文件服务|0.15.0
+notify service|通知服务|0.15.0
+asgard service|事务服务|0.15.0
+gitlab service|Gitlab 服务|0.15.0
+devops service|Devops 服务|0.15.3
+agile service|敏捷管理|0.15.0
+state machine service|状态机服务|0.15.0
+issue service|issue服务|0.15.0
+wiki service|知识管理服务|0.15.0
+test manager service|测试管理服务|0.15.0
+choerodon front|Choerodon 前端|0.15.2
