@@ -103,7 +103,7 @@ helm install c7n/mysql-client \
                 },
                 ...
                 "metadata": {
-                    "VERSION": "0.15.1"
+                    "VERSION": "0.15.0"
                 },
                 ...
                 }
@@ -132,7 +132,7 @@ helm install c7n/mysql-client \
     - 验证命令
 
         ```
-        curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=config-server -o jsonpath="{.items[0].status.podIP}"):8011/health | jq -r .status
+        curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=config-server -o jsonpath="{.items[0].status.podIP}"):8011/actuator/health | jq -r .status
         ```
     - 出现以下类似信息即为成功部署
         ```
@@ -179,7 +179,7 @@ helm install c7n/mysql-client \
     - 验证命令
 
         ```
-        curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=manager-service -o jsonpath="{.items[0].status.podIP}"):8964/health | jq -r .status
+        curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=manager-service -o jsonpath="{.items[0].status.podIP}"):8964/actuator/health | jq -r .status
         ```
     - 出现以下类似信息即为成功部署
         ```
@@ -223,7 +223,7 @@ helm install c7n/mysql-client \
     - 验证命令
 
         ```
-        curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=asgard-service -o jsonpath="{.items[0].status.podIP}"):18081/health | jq -r .status
+        curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=asgard-service -o jsonpath="{.items[0].status.podIP}"):18081/actuator/health | jq -r .status
         ```
     - 出现以下类似信息即为成功部署
         ```
@@ -273,7 +273,7 @@ helm install c7n/mysql-client \
     - 验证命令
 
         ```
-        curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=notify-service -o jsonpath="{.items[0].status.podIP}"):18086/health | jq -r .status
+        curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=notify-service -o jsonpath="{.items[0].status.podIP}"):18086/actuator/health | jq -r .status
         ```
     - 出现以下类似信息即为成功部署
         ```
@@ -316,7 +316,7 @@ helm install c7n/mysql-client \
     - 验证命令
 
         ```
-        curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=iam-service -o jsonpath="{.items[0].status.podIP}"):8031/health | jq -r .status
+        curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=iam-service -o jsonpath="{.items[0].status.podIP}"):8031/actuator/health | jq -r .status
         ```
     - 出现以下类似信息即为成功部署
         ```
@@ -356,7 +356,7 @@ helm install c7n/mysql-client \
     - 验证命令
 
         ```
-        curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=api-gateway -o jsonpath="{.items[0].status.podIP}"):8081/health | jq -r .status
+        curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=api-gateway -o jsonpath="{.items[0].status.podIP}"):8081/actuator/health | jq -r .status
         ```
     - 出现以下类似信息即为成功部署
         ```
@@ -407,7 +407,7 @@ helm install c7n/mysql-client \
     - 验证命令
 
         ```
-        curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=gateway-helper -o jsonpath="{.items[0].status.podIP}"):9181/health | jq -r .status
+        curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=gateway-helper -o jsonpath="{.items[0].status.podIP}"):9181/actuator/health | jq -r .status
         ```
     - 出现以下类似信息即为成功部署
         ```
@@ -451,7 +451,7 @@ helm install c7n/mysql-client \
     - 验证命令
 
         ```
-        curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=oauth-server -o jsonpath="{.items[0].status.podIP}"):8021/health | jq -r .status
+        curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=oauth-server -o jsonpath="{.items[0].status.podIP}"):8021/actuator/health | jq -r .status
         ```
     - 出现以下类似信息即为成功部署
         ```
@@ -490,7 +490,7 @@ helm install c7n/mysql-client \
     - 验证命令
 
         ```
-        curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=file-service -o jsonpath="{.items[0].status.podIP}"):9091/health | jq -r .status
+        curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=file-service -o jsonpath="{.items[0].status.podIP}"):9091/actuator/health | jq -r .status
         ```
     - 出现以下类似信息即为成功部署
         ```
