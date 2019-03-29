@@ -1,5 +1,53 @@
 /* 导航栏 */
 /* 子菜单 */
+.trybtn{
+	height: 0.6rem;
+	
+	display: flex;
+	align-items: center;
+	padding-left: .5rem;
+	margin-right: 0;
+}
+.trybtn a{
+	display: block;
+	font-size: .16rem;
+	text-decoration: none;
+	border-radius: .02rem;
+}
+.top-nav .trybtn a{
+	display: block;
+	width: .6rem;
+	height: .3rem;
+	line-height: .3rem;
+	color: white;
+	border: .01rem solid white;
+	text-align: center;
+}
+
+.fixed-nav .trybtn a{
+	
+	display: block;
+	width: .6rem;
+	height: .3rem;
+	line-height: .3rem;
+	color:#3371E3;
+	border: .01rem solid #3371E3;
+	
+	text-align: center;
+}
+.top-white-nav .trybtn a{
+	display: block;
+	width: .6rem;
+	height: .3rem;
+	line-height: .3rem;
+	color:#3371E3;
+	border: .01rem solid #3371E3;
+	text-align: center;
+	
+}
+.top-nav .trybtn a:hover,.fixed-nav .trybtn a:hover,.top-white-nav .trybtn a:hover{
+	opacity: 0.7;
+}
 .sub-menus{
     display: none;
     list-style: none;
