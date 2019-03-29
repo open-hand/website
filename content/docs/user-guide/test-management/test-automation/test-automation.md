@@ -6,7 +6,7 @@ description = "本节介绍了自动化测试功能的使用方法"
 
 ## 执行自动化测试
 
-我们提供了自动化测试功能，但目前版本仅支持`mocha`框架，后续版本会逐步增加对其他自动化测试框架的支持。执行自动化测试需要如下几个步骤：
+我们提供了自动化测试功能，但目前版本支持 `mocha + chai` 以及 `TestNG + Assured` 两种API测试框架，后续版本会逐步增加对其他自动化测试框架的支持。执行自动化测试需要如下几个步骤：
 
 ### 点击新建测试
 
@@ -84,9 +84,15 @@ description = "本节介绍了自动化测试功能的使用方法"
 
     * `测试循环`：点击跳转到测试执行页，查看该测试对应的测试循环
 
+        <blockquote class="note">
+        因 `TestNG` 框架支持通过配置文件运行多 `Test Suite` 的模式，所以一次自动化执行可能对应多个测试循环。
+        </blockquote class="note">
+
     * `测试报告`：点击查看测试结果报表
 
 ### 测试报告
+
+#### mocah框架
 
 <img src="/img/docs/user-guide/test-management/test-automation/automation-test-result-5.png" width="450"/>
 
@@ -100,3 +106,14 @@ description = "本节介绍了自动化测试功能的使用方法"
 3. 测试用例测试时长统计（柱状图），鼠标悬停在某一用例上可以显示该用例的名称和时长
 4. 拖动滑块，可以调整柱状图的X轴长度，在用例数量很多时，可以通过调节X轴长度，只关注部分用例的执行情况
 5. 显示用例执行详情，包括`用例名称`、`执行状态`和`用时`
+
+#### TestNG框架
+
+<img src="/img/docs/user-guide/test-management/test-automation/automation-test-result-7.png" width="600"/>
+
+TestNG框架的测试报告基于 `ReporterNG` 组件生成的页面报告进行重新设计，类原生TestNG报告。
+
+1. 点击 `总览` 进行测试情况查看，可按层级展示测试类、方法的测试状态、分组、耗时、输入数据等内容。
+2. 点击 `日志` 可以查看测试代码中通过 `org.testng.Reporter` 类输出的日志数据。
+3. 点击 `Suite` 下拉框可以对报告根据测试Suite进行筛选。
+4. 点击 `Group` 下拉框可以对报告根据测试Group进行筛选。
