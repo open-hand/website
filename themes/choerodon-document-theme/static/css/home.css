@@ -729,7 +729,17 @@
 	}
 	/* 案例 结束 */
 	/*移动端试用按钮*/
+	.carousels-section .carousel-box-flex .carousel-button a:nth-child(1){
+		border-radius: .02rem;
+	}
 	.carousels-section .carousel-box-flex .carousel-button a:nth-child(2){
 	display: inline-block;
+	color: #FFB100;
+	background:none;
+	width: .98rem;
+	border: 1px solid #FFB100;
+	margin-left: .06rem;
+	border-radius: .02rem;
 	}
+	
 }
