@@ -293,7 +293,9 @@
 .carousels-section .carousel-box-flex .carousel-button{
 	margin-bottom: 0.8rem;
 }
-
+.carousels-section .carousel-box-flex .carousel-button a:nth-child(2){
+	display: none;
+}
 
 /* carousel.html end */
 /* product.html */
@@ -726,4 +728,8 @@
 			margin-right: auto;
 	}
 	/* 案例 结束 */
+	/*移动端试用按钮*/
+	.carousels-section .carousel-box-flex .carousel-button a:nth-child(2){
+	display: inline-block;
+	}
 }
