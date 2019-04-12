@@ -27,21 +27,38 @@ helm repo update
 
 ### 创建日志存储卷（绑定SSD磁盘）
 
-- 粘贴命令前注意修改<span style="color: red">your-node-name</span>为您ssd磁盘所在主机的名称
+- 在有<span style="color: red">SSD磁盘</span>的主机上配置NFS Server
+    - 假设SSD磁盘挂载到目录 `/ssd` 上
+    - 编辑`/etc/exports`文件添加需要共享目录及参数
 
-```bash
-helm install c7n/nfs-provisioner \
+        ``` bash
+        /ssd 192.168.1.1/16(rw,sync,insecure,no_subtree_check,no_root_squash)
+        ```
+
+- 配置完成后，启动 NFS Server：
+
+    ``` bash
+    sudo systemctl enable nfs-server
+    sudo systemctl start nfs-server
+    ```
+
+- 在可执行helm命令的主机上，使用helm命令安装`ssd-nfs-client-provisioner`
+{{< annotation shell "提供NFS服务的主机IP地址或域名" "NFS服务共享的目录">}}
+helm install c7n/nfs-client-provisioner \
     --set rbac.create=true \
-    --set service.enabled=true \
     --set persistence.enabled=true \
-    --set persistence.nodeName=your-node-name \
     --set storageClass.name=ssd \
-    --set storageClass.provisioner="choerodon.io/ssd" \
-    --set persistence.hostPath="/ssd" \
-    --version 0.2.0 \
+    --set storageClass.provisioner=choerodon.io/ssd-nfs-client-provisioner \
+    --set persistence.nfsServer=127.0.0.1 \(1)
+    --set persistence.nfsPath=/ssd \(1)
+    --version 0.1.0 \
     --name ssd \
     --namespace logging
-```
+{{< /annotation >}}
+
+<blockquote class="note">
+更多详情可参考<a href="../../nfs" target="_blank">NFS动态存储卷</a>搭建
+</blockquote>
 
 ### 安装日志组件
 
