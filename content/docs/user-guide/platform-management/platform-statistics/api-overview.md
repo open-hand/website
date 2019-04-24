@@ -34,4 +34,4 @@ description = "查看平台中api的调用情况"
 
 - [事务定义](../saga)
 - [事务实例](../saga-instance)
-- [菜单分析](../menu_statistics)
+- [菜单分析](../menu-statistics)

@@ -105,4 +105,4 @@ description = "实际运行的事务定义"
 
 - [事务定义](../saga)
 - [API概览](../api-overview)
-- [菜单分析](../menu_statistics)
+- [菜单分析](../menu-statistics)

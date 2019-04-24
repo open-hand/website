@@ -55,4 +55,4 @@ Saga采用了BASE（Basic Availability， Soft， Eventual consistency，即基�
 - [事务定义](../saga)
 - [事务实例](../saga-instance)
 - [API概览](../api-overview)
-- [菜单分析](../menu_statistics)
+- [菜单分析](../menu-statistics)
