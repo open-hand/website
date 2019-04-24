@@ -1,18 +1,20 @@
 +++
-title = "API测试"
-weight = 2
+title = "接口管理"
+weight = 4
 description = "API测试过工具调用特定的API，获取输出，并记录系统的响应"
 +++
 
-# API测试
+# 平台接口
 
-API是Application Programming Interface的简写。实现了两个或多个独立系统或模块间的通信和数据交换能力。
-
-API测试需要与应用程序的API进行交互，测试时通过工具调用特定的API，获取输出，并记录系统的响应。
+Choerodon 平台的接口可以在这里进行查阅，并进行自动化测试。
 
 - **菜单层次**：全局层
-- **菜单路径**：API管理 > API测试
+- **菜单路径**：平台服务 > 平台接口
 - **默认角色**：平台管理员、平台开发者
+
+## API测试
+
+API测试需要与应用程序的API进行交互，测试时通过工具调用特定的API，获取输出，并记录系统的响应。
 
 ## 查看各服务下的API接口
 
@@ -29,7 +31,7 @@ API测试需要与应用程序的API进行交互，测试时通过工具调用�
         - OPTIONS：获取信息，关于资源的哪些属性是客户端可以改变的。
 4. 点击任意API接口，就可以查看该API接口的详情。
 
-![api](/docs/user-guide/microservice-development/API-management/image/apitest.png)
+![api](/docs/user-guide/platform-management/platform-service/image/apitest.png)
 
 
 ## 测试API接口
@@ -76,7 +78,7 @@ API的测试要点：
         响应数据以json的格式进行定义。展示了返回的参数和参数值的数据类型的信息。并且添加了注释，使用户能参照参数的说明
 
 1. 输入请求参数值，点击发送按钮进行接口测试。
-     <img class="no-border" src="/docs/user-guide/microservice-development/API-management/image/apitest2.png"/>
+     <img class="no-border" src="/docs/user-guide/platform-management/platform-service/image/apitest2.png"/>
 
 1. 如果参数名称有红色星号，则表示该参数为必输项。根据请求数据的类型填入合适的请求数据。路径默认为接口信息的路径，用户也可以根据需求修改路径。
 
@@ -86,4 +88,9 @@ API的测试要点：
     - 响应头部：服务器与客户端通信的暗码，告诉客户端该怎么执行某些操作。
     - CURL：是一个利用URL语法在命令行下工作的文件传输工具。复制CURL得内容可在终端运行页面上得请求。
 
-![结果](/docs/user-guide/microservice-development/API-management/image/API4.png)
+![结果](/docs/user-guide/platform-management/platform-service/image/API4.png)
+
+## 更多操作
+- [微服务管理](../microservice)
+- [实例管理](../instance)
+- [路由管理](../route)

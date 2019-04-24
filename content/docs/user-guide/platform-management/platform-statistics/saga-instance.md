@@ -9,7 +9,7 @@ description = "实际运行的事务定义"
 事务实例是实际运行的事务定义。一个事务定义可以有多个事务实例。
 
 - **菜单层次**：全局层、组织层、项目层
-- **平台层菜单路径**：全局事务 > 事务实例  
+- **平台层菜单路径**：平台统计 > 事务实例  
 - **组织层菜单路径**：组织设置 > 组织事务实例
 - **项目层菜单路径**：项目设置 > 项目事务实例
 - **默认角色**：平台管理员、平台开发者、组织管理员、项目管理员
@@ -26,7 +26,7 @@ description = "实际运行的事务定义"
 
 ### 按事务视图查看事务实例
 
-<img class="no-border" src="/docs/user-guide/microservice-development/global-transaction/image/saga1.png"/>
+<img class="no-border" src="/docs/user-guide/platform-management/platform-statistics/image/saga1.png"/>
 
 - ID：事务实例的ID，是事务实例的标识，具有唯一性。
 - 状态：事务实例的运行状态。共有`进行中`、`完成`、`失败`三种状态。
@@ -52,7 +52,7 @@ description = "实际运行的事务定义"
 
 ## 事务实例详情
 
-- 点击事务实例列表的操作按钮→<img class="no-border" src="/docs/user-guide/microservice-development/global-transaction/image/particulars.png"/>可查看事务实例运行的详情。
+- 点击事务实例列表的操作按钮→<img class="no-border" src="/docs/user-guide/platform-management/platform-statistics/image/particulars.png"/>可查看事务实例运行的详情。
 
 - 详情页以图的形式展示实例的实际运行情况。图展示了按执行顺序执行的任务及输入、输出。
 
@@ -78,25 +78,31 @@ description = "实际运行的事务定义"
 
 如果锁住任务的微服务实例出现异常，但任务没有接收到异常信息时，任务将保持锁住状态，此时，可以在界面将任务解锁，解锁后，任务可以被同一微服务的其他实例进行锁定。解锁步骤如下：
 
-1. 点击事务实例的详情按钮→<img class="no-border" src="/docs/user-guide/microservice-development/global-transaction/image/particulars.png"/>。
+1. 点击事务实例的详情按钮→<img class="no-border" src="/docs/user-guide/platform-management/platform-statistics/image/particulars.png"/>。
 1. 出现事务实例的事务执行流程图后，点击要解锁的任务。
-1. 出现任务运行情况后，在运行情况顶部点击解锁按钮→<img class="no-border" src="/docs/user-guide/microservice-development/global-transaction/image/unlock.png"/>。
+1. 出现任务运行情况后，在运行情况顶部点击解锁按钮→<img class="no-border" src="/docs/user-guide/platform-management/platform-statistics/image/unlock.png"/>。
 
 
 ## 重试任务
 
 当任务的执行出现异常时，系统将会自动进行重试，当已重试次数达到最大重试次数的值时，该任务的状态将从运行中变为失败，允许用户可在界面上进行手动重试操作。重试步骤如下：
 
-1. 点击事务实例的详情按钮→<img class="no-border" src="/docs/user-guide/microservice-development/global-transaction/image/particulars.png"/>。
+1. 点击事务实例的详情按钮→<img class="no-border" src="/docs/user-guide/platform-management/platform-statistics/image/particulars.png"/>。
 1. 出现事务实例的事务执行流程图后，点击要重试的任务。
-1. 出现任务运行情况后，在运行情况顶部点击重试按钮→<img class="no-border" src="/docs/user-guide/microservice-development/global-transaction/image/retry.png"/>。
+1. 出现任务运行情况后，在运行情况顶部点击重试按钮→<img class="no-border" src="/docs/user-guide/platform-management/platform-statistics/image/retry.png"/>。
 
 
 ## 强制失败
 
 当任务执行状态为进行中或者等待被拉取的状态时，用户可以强制将任务置为失败状态
 
-1. 点击事务实例的详情按钮→<img class="no-border" src="/docs/user-guide/microservice-development/global-transaction/image/particulars.png"/>。
+1. 点击事务实例的详情按钮→<img class="no-border" src="/docs/user-guide/platform-management/platform-statistics/image/particulars.png"/>。
 1. 出现事务实例的事务执行流程图后，点击要强制失败的任务。
 
-1. 出现任务运行情况后，在运行情况顶部部点击强制失败按钮→<img class="no-border" src="/docs/user-guide/microservice-development/global-transaction/image/fail.png"/>。
+1. 出现任务运行情况后，在运行情况顶部部点击强制失败按钮→<img class="no-border" src="/docs/user-guide/platform-management/platform-statistics/image/fail.png"/>。
+
+## 更多操作
+
+- [事务定义](../saga)
+- [API概览](../api-overview)
+- [菜单分析](../menu_statistics)
