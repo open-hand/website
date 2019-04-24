@@ -13,6 +13,6 @@ weight = 1
 
 ## 更多操作
 
-- [全局事务](../..//microservice-development/global-transaction)
+- [平台管理](../../platform-management)
 - [组织设置](..//tenant)
 - [项目设置](..//project)

@@ -35,7 +35,7 @@ description = "用于展示任务可以调用的可执行程序"
 
 步骤：
 
-- 点击可执行程序的查看详情按钮→![详情](/docs/user-guide/microservice-development/job/image/particulars.png),进入到参数详情页面。
+- 点击可执行程序的查看详情按钮→![详情](/docs/user-guide/platform-management/job/image/particulars.png),进入到参数详情页面。
 
 ### JSON：
 
