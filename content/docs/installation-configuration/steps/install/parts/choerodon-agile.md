@@ -27,9 +27,9 @@ helm install c7n/mysql-client \
     --set env.MYSQL_PASS=password \
     --set env.SQL_SCRIPT="\
           CREATE USER IF NOT EXISTS 'choerodon'@'%' IDENTIFIED BY 'password';\
-          CREATE DATABASE IF NOT EXISTS agile_service DEFAULT CHARACTER SET utf8;\
-          CREATE DATABASE IF NOT EXISTS state_machine_service DEFAULT CHARACTER SET utf8;\
-          CREATE DATABASE IF NOT EXISTS issue_service DEFAULT CHARACTER SET utf8;\
+          CREATE DATABASE IF NOT EXISTS agile_service DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;\
+          CREATE DATABASE IF NOT EXISTS state_machine_service DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;\
+          CREATE DATABASE IF NOT EXISTS issue_service DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;\
           GRANT ALL PRIVILEGES ON agile_service.* TO choerodon@'%'; \
           GRANT ALL PRIVILEGES ON state_machine_service.* TO choerodon@'%';\
           GRANT ALL PRIVILEGES ON issue_service.* TO choerodon@'%';\

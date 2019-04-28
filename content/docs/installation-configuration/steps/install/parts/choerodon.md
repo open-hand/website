@@ -35,10 +35,10 @@ helm install c7n/mysql-client \
     --set env.MYSQL_PASS=password \
     --set env.SQL_SCRIPT="\
           CREATE USER IF NOT EXISTS 'choerodon'@'%' IDENTIFIED BY 'password';\
-          CREATE DATABASE IF NOT EXISTS iam_service DEFAULT CHARACTER SET utf8;\
-          CREATE DATABASE IF NOT EXISTS manager_service DEFAULT CHARACTER SET utf8;\
-          CREATE DATABASE IF NOT EXISTS asgard_service DEFAULT CHARACTER SET utf8;\
-          CREATE DATABASE IF NOT EXISTS notify_service DEFAULT CHARACTER SET utf8;\
+          CREATE DATABASE IF NOT EXISTS iam_service DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;\
+          CREATE DATABASE IF NOT EXISTS manager_service DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;\
+          CREATE DATABASE IF NOT EXISTS asgard_service DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;\
+          CREATE DATABASE IF NOT EXISTS notify_service DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;\
           GRANT ALL PRIVILEGES ON iam_service.* TO choerodon@'%';\
           GRANT ALL PRIVILEGES ON manager_service.* TO choerodon@'%';\
           GRANT ALL PRIVILEGES ON asgard_service.* TO choerodon@'%';\

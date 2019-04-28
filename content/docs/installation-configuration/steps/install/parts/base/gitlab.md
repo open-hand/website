@@ -55,10 +55,11 @@ helm install c7n/mysql \
     --set persistence.existingClaim=gitlab-mysql-pvc \
     --set env.MYSQL_ROOT_PASSWORD=password \
     --set env.MYSQL_DATABASE=gitlabhq_production \
-    --set args="{--character-set-server=utf8mb4,--collation-server=utf8mb4_general_ci}" \
     --set config.innodb_large_prefix=1 \
     --set config.innodb_file_per_table=1 \
     --set config.log_bin_trust_function_creators=1 \
+    --set config.character_set_server=utf8mb4 \
+    --set config.collation_server=utf8mb4_general_ci \
     --set service.enabled=ture \
     --version 0.1.0 \
     --name gitlab-mysql \
