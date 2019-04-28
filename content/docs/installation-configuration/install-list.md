@@ -24,7 +24,7 @@ kube-flannel|网络插件|v0.10.0-amd64
 kubernetes-dashboard|kubernetes-dashboard|v1.8.3
 nginx-ingress-controller|nginx-ingress-controller|0.9.0-beta.17
 default-http-backend|default-http-backend|1.4
-Helm|Kubernetes应用包管理工具|2.8.2
+Helm|Kubernetes应用包管理工具|2.13.1
 Chartmuseum|Kubernetes应用私有包仓库|0.5.2
 Minio|对象存储服务|RELEASE.2019-03-27T22-35-21Z
 Redis|缓存数据库|4.0.2

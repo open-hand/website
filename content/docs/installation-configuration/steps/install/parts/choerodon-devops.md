@@ -60,7 +60,7 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
         --set env.open.SPRING_REDIS_HOST=c7n-redis.c7n-system.svc \
         --set env.open.SPRING_REDIS_DATABASE=11 \
         --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
-        --set env.open.SPRING_CLOUD_CONFIG_URI="http://config-server.c7n-system:8010/" \
+        --set env.open.SPRING_CLOUD_CONFIG_URI="http://register-server.c7n-system:8000/" \
         --set env.open.SERVICES_HARBOR_BASEURL="https://registry.example.choerodon.io" \
         --set env.open.SERVICES_HARBOR_USERNAME=admin \
         --set env.open.SERVICES_HARBOR_PASSWORD="Harbor12345" \
@@ -72,10 +72,10 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
         --set env.open.SERVICES_GITLAB_PROJECTLIMIT=100 \
         --set env.open.SERVICES_GATEWAY_URL=http://api.example.choerodon.io \
         --set env.open.SECURITY_IGNORED="/ci\,/webhook\,/v2/api-docs\,/agent/**\,/ws/**\,/webhook/**" \
-        --set env.open.AGENT_VERSION="0.15.1" \
+        --set env.open.AGENT_VERSION="0.16.0" \
         --set env.open.AGENT_REPOURL="https://openchart.choerodon.com.cn/choerodon/c7n/" \
         --set env.open.AGENT_SERVICEURL="ws://devops.example.choerodon.io/agent/" \
-        --set env.open.TEMPLATE_VERSION="0.15.0" \
+        --set env.open.TEMPLATE_VERSION="0.16.0" \
         --set env.open.TEMPLATE_URL="https://github.com/choerodon/choerodon-devops-templates.git" \
         --set env.open.AGENT_CERTMANAGERURL="https://openchart.choerodon.com.cn/choerodon/infra/" \
         --set ingress.enable=true \
@@ -146,7 +146,7 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
         --set env.open.SPRING_DATASOURCE_PASSWORD=password \
         --set env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE="http://register-server.c7n-system:8000/eureka/" \
         --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
-        --set env.open.SPRING_CLOUD_CONFIG_URI="http://config-server.c7n-system:8010/" \
+        --set env.open.SPRING_CLOUD_CONFIG_URI="http://register-server.c7n-system:8000/" \
         --set env.open.GITLAB_URL="http://gitlab.example.choerodon.io" \
         --set env.open.GITLAB_PRIVATETOKEN="GEuRhgb6kG9y3prFosSb" \
         --name gitlab-service \

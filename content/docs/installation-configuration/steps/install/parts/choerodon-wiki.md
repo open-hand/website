@@ -149,7 +149,7 @@ helm install c7n/mysql-client \
         --set env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE="http://register-server.c7n-system:8000/eureka/" \
         --set env.open.EUREKA_DEFAULT_ZONE=http://register-server.c7n-system:8000/eureka/ \
         --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
-        --set env.open.SPRING_CLOUD_CONFIG_URI=http://config-server.c7n-system:8010/ \
+        --set env.open.SPRING_CLOUD_CONFIG_URI=http://register-server.c7n-system:8000/ \
         --set env.open.WIKI_CLIENT=xwiki \
         --set env.open.WIKI_URL=http://wiki.example.choerodon.io \
         --set env.open.WIKI_TOKEN=Choerodon \
