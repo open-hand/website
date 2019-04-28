@@ -93,7 +93,7 @@ Harbor启动速度较慢请等待所有Pod都为Running后进行界面查看。
     kubectl edit deployment -n c7n-system harbor-harbor-core
     ```
 
-    - 删除下面注释的内容
+    - **删除**下面注释的内容
         ```
         ......
         volumeMounts:

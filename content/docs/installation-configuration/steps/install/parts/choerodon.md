@@ -59,7 +59,7 @@ helm install c7n/mysql-client \
         --set service.name=register-server \
         --set env.open.REGISTER_SERVICE_NAMESPACE="c7n-system" \
         --name register-server \
-        --version 0.15.0 \
+        --version 0.16.0 \
         --namespace c7n-system
     ```
 
@@ -121,7 +121,7 @@ helm install c7n/mysql-client \
         --set service.enable=true \
         --set env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE="http://register-server.c7n-system:8000/eureka/" \
         --name config-server \
-        --version 0.15.1 \
+        --version 0.16.0 \
         --namespace c7n-system
     ```
     参数名 | 含义 
@@ -160,12 +160,12 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_REDIS_PORT=6379 \
         --set env.open.SPRING_REDIS_DATABASE=1 \
         --name manager-service \
-        --version 0.15.1 \
+        --version 0.16.0 \
         --namespace c7n-system
     ```
     参数名 | 含义 
     --- |  --- 
-    preJob.preInitDB.mysql{}|初始化数据库所需数据库信息
+    preJob.preInitDB.datasource{}|初始化数据库所需数据库信息
     env.open.SPRING_DATASOURCE_URL|数据库链接地址
     env.open.SPRING_DATASOURCE_USERNAME|数据库用户名
     env.open.SPRING_DATASOURCE_PASSWORD|数据库密码
@@ -205,13 +205,13 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
         --set env.open.SPRING_CLOUD_CONFIG_URI="http://register-server.c7n-system:8000/" \
         --name asgard-service \
-        --version 0.15.1 \
+        --version 0.16.0 \
         --namespace c7n-system
     ```
     参数名 | 含义 
     --- |  --- 
-    preJob.preConfig.mysql{}|初始化配置所需manager_service数据库信息
-    preJob.preInitDB.mysql{}|初始化数据库所需数据库信息
+    preJob.preConfig.datasource{}|初始化配置所需manager_service数据库信息
+    preJob.preInitDB.datasource{}|初始化数据库所需数据库信息
     env.open.SPRING_DATASOURCE_URL|数据库链接地址
     env.open.SPRING_DATASOURCE_USERNAME|数据库用户名
     env.open.SPRING_DATASOURCE_PASSWORD|数据库密码
@@ -255,13 +255,13 @@ helm install c7n/mysql-client \
         --set ingress.enable=true \
         --set ingress.host=notify.example.choerodon.io \
         --name notify-service \
-        --version 0.15.1 \
+        --version 0.16.0 \
         --namespace c7n-system
     ```
     参数名 | 含义 
     --- |  --- 
-    preJob.preConfig.mysql{}|初始化配置所需manager_service数据库信息
-    preJob.preInitDB.mysql{}|初始化数据库所需数据库信息
+    preJob.preConfig.datasource{}|初始化配置所需manager_service数据库信息
+    preJob.preInitDB.datasource{}|初始化数据库所需数据库信息
     env.open.SPRING_DATASOURCE_URL|数据库链接地址
     env.open.SPRING_DATASOURCE_USERNAME|数据库用户名
     env.open.SPRING_DATASOURCE_PASSWORD|数据库密码
@@ -298,13 +298,13 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
         --set env.open.SPRING_CLOUD_CONFIG_URI="http://register-server.c7n-system:8000/" \
         --name iam-service \
-        --version 0.15.1 \
+        --version 0.16.0 \
         --namespace c7n-system
     ```
     参数名 | 含义 
     --- |  --- 
-    preJob.preConfig.mysql{}|初始化配置所需manager_service数据库信息
-    preJob.preInitDB.mysql{}|初始化数据库所需数据库信息
+    preJob.preConfig.datasource{}|初始化配置所需manager_service数据库信息
+    preJob.preInitDB.datasource{}|初始化数据库所需数据库信息
     env.open.SPRING_DATASOURCE_URL|数据库链接地址
     env.open.SPRING_DATASOURCE_USERNAME|数据库用户名
     env.open.SPRING_DATASOURCE_PASSWORD|数据库密码
@@ -339,12 +339,12 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
         --set env.open.SPRING_CLOUD_CONFIG_URI="http://config-server.c7n-system:8010/" \
         --name api-gateway \
-        --version 0.15.1 \
+        --version 0.16.0 \
         --namespace c7n-system
     ```
     参数名 | 含义 
     --- |  --- 
-    preJob.preConfig.mysql{}|初始化配置所需manager_service数据库信息
+    preJob.preConfig.datasource{}|初始化配置所需manager_service数据库信息
     service.enable|创建service对象
     ingress.enable|创建ingress对象
     ingress.host|域名地址，此处不能带http://
@@ -384,12 +384,12 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_REDIS_PORT=6379 \
         --set env.open.SPRING_REDIS_DATABASE=5 \
         --name gateway-helper \
-        --version 0.15.1 \
+        --version 0.16.0 \
         --namespace c7n-system
     ```
     参数名 | 含义 
     --- |  --- 
-    preJob.preConfig.mysql{}|初始化配置所需manager_service数据库信息
+    preJob.preConfig.datasource{}|初始化配置所需manager_service数据库信息
     env.open.SPRING_DATASOURCE_URL|数据库链接地址
     env.open.SPRING_DATASOURCE_USERNAME|数据库用户名
     env.open.SPRING_DATASOURCE_PASSWORD|数据库密码
@@ -432,12 +432,12 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
         --set env.open.SPRING_CLOUD_CONFIG_URI="http://register-server.c7n-system:8000/" \
         --name oauth-server \
-        --version 0.15.1 \
+        --version 0.16.0 \
         --namespace c7n-system
     ```
     参数名 | 含义 
     --- |  --- 
-    preJob.preConfig.mysql{}|初始化配置所需manager_service数据库信息
+    preJob.preConfig.datasource{}|初始化配置所需manager_service数据库信息
     env.open.SPRING_DATASOURCE_URL|数据库链接地址
     env.open.SPRING_DATASOURCE_USERNAME|数据库用户名
     env.open.SPRING_DATASOURCE_PASSWORD|数据库密码
@@ -473,12 +473,12 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
         --set env.open.SPRING_CLOUD_CONFIG_URI="http://register-server.c7n-system:8000/" \
         --name file-service \
-        --version 0.15.1 \
+        --version 0.16.0 \
         --namespace c7n-system
     ```
     参数名 | 含义 
     --- |  --- 
-    preJob.preConfig.mysql{}|初始化配置所需manager_service数据库信息
+    preJob.preConfig.datasource{}|初始化配置所需manager_service数据库信息
     env.open.SPRING_CLOUD_CONFIG_ENABLED|启用配置中心
     env.open.SPRING_CLOUD_CONFIG_URI|配置中心地址
     env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE|注册服务地址
