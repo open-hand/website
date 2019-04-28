@@ -23,8 +23,22 @@ helm repo update
 
 ## 部署Gitlab
 
-### 部署mysql
+### 部署数据库
 
+<details open><summary>使用PostgreSql数据库</summary>
+```shell
+helm install c7n/postgresql \
+    --set persistence.enabled=true \
+    --set persistence.storageClass=nfs-provisioner \
+    --set postgresqlPassword=password \
+    --set postgresqlDatabase=gitlabhq_production  \
+    --version 3.9.1 \
+    --name gitlab-postgresql \
+    --namespace c7n-system
+```
+</details>
+
+<details><summary>使用MySql数据库</summary>
 ```shell
 helm install c7n/persistentvolumeclaim \
     --set accessModes={ReadWriteOnce} \
@@ -44,13 +58,13 @@ helm install c7n/mysql \
     --set args="{--character-set-server=utf8mb4,--collation-server=utf8mb4_general_ci}" \
     --set config.innodb_large_prefix=1 \
     --set config.innodb_file_per_table=1 \
-    --set config.innodb_file_format=Barracuda \
     --set config.log_bin_trust_function_creators=1 \
     --set service.enabled=ture \
     --version 0.1.0 \
     --name gitlab-mysql \
     --namespace c7n-system
 ```
+</details>
 
 ### 部署gitlab所需Redis
 
@@ -88,6 +102,7 @@ helm install c7n/persistentvolumeclaim \
 
 ### 部署gitlab
 
+<details open><summary>使用PostgreSql数据库</summary>
 ```shell
 helm install c7n/gitlab \
     --set persistence.enabled=true \
@@ -96,10 +111,12 @@ helm install c7n/gitlab \
     --set env.config.GITLAB_TIMEZONE=Asia/Shanghai \
     --set env.config.CHOERODON_OMNIAUTH_ENABLED=false \
     --set env.config.GITLAB_DEFAULT_CAN_CREATE_GROUP=true \
-    --set env.config.MYSQL_HOST=gitlab-mysql.c7n-system.svc \
-    --set env.config.MYSQL_USERNAME=root \
-    --set env.config.MYSQL_PASSWORD=password \
-    --set env.config.MYSQL_DATABASE=gitlabhq_production \
+    --set env.config.DB_ADAPTER=postgresql \
+    --set env.config.DB_HOST=gitlab-postgresql-postgresql.c7n-system.svc \
+    --set env.config.DB_PORT=5432 \
+    --set env.config.DB_USERNAME=postgres \
+    --set env.config.DB_PASSWORD=password \
+    --set env.config.DB_DATABASE=gitlabhq_production \
     --set env.config.REDIS_HOST=gitlab-redis.c7n-system.svc \
     --set env.config.SMTP_ENABLE=false \
     --set env.config.SMTP_ADDRESS=smtp.mxhichina.com \
@@ -115,10 +132,47 @@ helm install c7n/gitlab \
     --set env.config.NODE_EXPORTER_ENABLE=false \
     --set service.enabled=true \
     --set ingress.enabled=true \
-    --version 0.3.0 \
+    --version 0.4.0 \
     --name gitlab \
     --namespace c7n-system
 ```
+</details>
+
+<details><summary>使用MySql数据库</summary>
+```shell
+helm install c7n/gitlab \
+    --set persistence.enabled=true \
+    --set persistence.existingClaim=gitlab-pvc \
+    --set env.config.GITLAB_EXTERNAL_URL=http://gitlab.example.choerodon.io \
+    --set env.config.GITLAB_TIMEZONE=Asia/Shanghai \
+    --set env.config.CHOERODON_OMNIAUTH_ENABLED=false \
+    --set env.config.GITLAB_DEFAULT_CAN_CREATE_GROUP=true \
+    --set env.config.DB_ADAPTER=mysql2 \
+    --set env.config.DB_HOST=gitlab-mysql.c7n-system.svc \
+    --set env.config.DB_PORT=3306 \
+    --set env.config.DB_USERNAME=root \
+    --set env.config.DB_PASSWORD=password \
+    --set env.config.DB_DATABASE=gitlabhq_production \
+    --set env.config.REDIS_HOST=gitlab-redis.c7n-system.svc \
+    --set env.config.SMTP_ENABLE=false \
+    --set env.config.SMTP_ADDRESS=smtp.mxhichina.com \
+    --set env.config.SMTP_PORT=465 \
+    --set env.config.SMTP_USER_NAME=git.sys@example.com \
+    --set env.config.SMTP_PASSWORD=password \
+    --set env.config.SMTP_DOMAIN=smtp.mxhichina.com \
+    --set env.config.SMTP_AUTHENTICATION=login \
+    --set env.config.GITLAB_EMAIL_FROM=git.sys@example.com \
+    --set env.config.SMTP_ENABLE_STARTTLS_AUTO=true \
+    --set env.config.SMTP_TLS=true \
+    --set env.config.PROMETHEUS_ENABLE=false \
+    --set env.config.NODE_EXPORTER_ENABLE=false \
+    --set service.enabled=true \
+    --set ingress.enabled=true \
+    --version 0.4.0 \
+    --name gitlab \
+    --namespace c7n-system
+```
+</details>
 
 - 参数
 
@@ -133,10 +187,11 @@ helm install c7n/gitlab \
     env.config.OMNIAUTH_BLOCK_AUTO_CREATED_USERS|是否自动创建用户 
     env.config.CHOERODON_API_URL|choerodon的Api地址
     env.config.CHOERODON_CLIENT_ID|在choerodon上申请的client id
-    env.config.MYSQL_HOST|mysql地址 
-    env.config.MYSQL_PORT|mysql端口号 
-    env.config.MYSQL_USERNAME|mysql用户名 
-    env.config.MYSQL_PASSWORD|mysql用户密码 
+    env.config.DB_ADAPTER|数据库类型 
+    env.config.DB_HOST|数据库地址 
+    env.config.DB_PORT|数据库端口号 
+    env.config.DB_USERNAME|数据库用户名 
+    env.config.DB_PASSWORD|数据库用户密码 
     env.config.REDIS_HOST|redis地址 
     env.config.REDIS_PORT|redis端口号
     env.config.SMTP_ENABLE|是否开启smtp，若为false，以下SMTP参数都不生效
@@ -234,7 +289,7 @@ helm install c7n/gitlab \
         --set env.config.OMNIAUTH_BLOCK_AUTO_CREATED_USERS=false \
         --set env.config.CHOERODON_API_URL=http://api.example.choerodon.io \
         --set env.config.CHOERODON_CLIENT_ID=gitlab \
-        --version 0.3.0 \
+        --version 0.4.0 \
         --namespace c7n-system
 
 ### 添加Gitlab Client
@@ -242,7 +297,7 @@ helm install c7n/gitlab \
 - 在执行里面前请根据实际情况修改参数
 - 记得修改`http://gitlab.example.choerodon.io`的地址为实际的gitlab地址
 
-```
+    ```
     helm install c7n/mysql-client \
         --set env.MYSQL_HOST=c7n-mysql.c7n-system.svc \
         --set env.MYSQL_PORT=3306 \
@@ -261,7 +316,7 @@ helm install c7n/gitlab \
         --version 0.1.0 \
         --name gitlab-client \
         --namespace c7n-system
-```
+    ```
 
 ### 添加管理员用户关联
 
@@ -269,6 +324,23 @@ helm install c7n/gitlab \
 
 - 执行下面语句进行关联:
 
+    <details open><summary>使用PostgreSql数据库</summary>
+    ```
+    helm install c7n/postgresql-client \
+        --set env.PG_HOST=gitlab-postgresql-postgresql.c7n-system.svc \
+        --set env.PG_PORT=5432 \
+        --set env.PG_USER=postgres \
+        --set env.PG_PASS=password \
+        --set env.PG_DBNAME=gitlabhq_production \
+        --set env.SQL_SCRIPT="\
+            INSERT INTO identities(extern_uid\, provider\, user_id\, created_at\, updated_at) \
+            VALUES ('1'\, 'oauth2_generic'\, 1\, NOW()\, NOW());" \
+        --version 0.1.0 \
+        --name gitlab-user-identities \
+        --namespace c7n-system
+    ```
+    </details>
+    <details><summary>使用MySql数据库</summary>
     ```
     helm install c7n/mysql-client \
         --set env.MYSQL_HOST=gitlab-mysql.c7n-system.svc \
@@ -282,6 +354,7 @@ helm install c7n/gitlab \
         --name gitlab-user-identities \
         --namespace c7n-system
     ```
+    </details>
 
 ### 验证更新
 
