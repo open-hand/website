@@ -65,7 +65,7 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
         --set env.open.SERVICES_HARBOR_BASEURL="https://registry.example.choerodon.io" \
         --set env.open.SERVICES_HARBOR_USERNAME=admin \
         --set env.open.SERVICES_HARBOR_PASSWORD="Harbor12345" \
-        --set env.open.SERVICES_HELM_URL="http://chart.example.com" \
+        --set env.open.SERVICES_HELM_URL="http://chart.example.choerodon.io" \
         --set env.open.SERVICES_GITLAB_URL="http://gitlab.example.choerodon.io" \
         --set env.open.SERVICES_GITLAB_SSHURL="gitlab.example.choerodon.io:2289" \
         --set env.open.SERVICES_GITLAB_PASSWORD=password \
