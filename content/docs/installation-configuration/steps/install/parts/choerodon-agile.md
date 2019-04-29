@@ -88,7 +88,7 @@ helm install c7n/mysql-client \
     - 验证命令
 
         ```
-        curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=agile-service -o jsonpath="{.items[0].status.podIP}"):8379/health | jq -r .status
+        curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=agile-service -o jsonpath="{.items[0].status.podIP}"):8379/actuator/health | jq -r .status
         ```
     - 出现以下类似信息即为成功部署
         ```
@@ -133,7 +133,7 @@ helm install c7n/mysql-client \
     - 验证命令
 
         ```
-        curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=state-machine-service -o jsonpath="{.items[0].status.podIP}"):8385/health | jq -r .status
+        curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=state-machine-service -o jsonpath="{.items[0].status.podIP}"):8385/actuator/health | jq -r .status
         ```
     - 出现以下类似信息即为成功部署
         ```
@@ -182,7 +182,7 @@ helm install c7n/mysql-client \
     - 验证命令
 
         ```
-        curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=issue-service -o jsonpath="{.items[0].status.podIP}"):8381/health | jq -r .status
+        curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=issue-service -o jsonpath="{.items[0].status.podIP}"):8381/actuator/health | jq -r .status
         ```
     - 出现以下类似信息即为成功部署
         ```

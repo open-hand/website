@@ -171,7 +171,7 @@ helm install c7n/mysql-client \
     - 验证命令
 
         ```
-        curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=wiki-service -o jsonpath="{.items[0].status.podIP}"):9991/health | jq -r .status
+        curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=wiki-service -o jsonpath="{.items[0].status.podIP}"):9991/actuator/health | jq -r .status
         ```
     - 出现以下类似信息即为成功部署
         ```

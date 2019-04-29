@@ -29,19 +29,18 @@ helm install c7n/mysql-client \
           CREATE USER IF NOT EXISTS 'choerodon'@'%' IDENTIFIED BY 'password';\
           CREATE DATABASE IF NOT EXISTS devops_service DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;\
           CREATE DATABASE IF NOT EXISTS gitlab_service DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;\
+          CREATE DATABASE IF NOT EXISTS workflow_service DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;\
           GRANT ALL PRIVILEGES ON devops_service.* TO choerodon@'%';\
           GRANT ALL PRIVILEGES ON gitlab_service.* TO choerodon@'%';\
+          GRANT ALL PRIVILEGES ON workflow_service.* TO choerodon@'%';\
           FLUSH PRIVILEGES;" \
     --version 0.1.0 \
     --name create-c7ncd-db \
     --namespace c7n-system
 ```
 
-## 部署devops service
 
-<blockquote class="warning">
-choerodon devops service需要与Chartmuseum共用存储，所以choerodon devops service的PVC与Chartmuseum的PVC必须一致。
-</blockquote>
+## 部署devops service
 
 - 部署服务
 
@@ -121,7 +120,7 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
     - 验证命令
 
         ```
-        curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=devops-service -o jsonpath="{.items[0].status.podIP}"):8061/health | jq -r .status
+        curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=devops-service -o jsonpath="{.items[0].status.podIP}"):8061/actuator/health | jq -r .status
         ```
     - 出现以下类似信息即为成功部署
         ```
@@ -170,7 +169,56 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
     - 验证命令
 
         ```
-        curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=gitlab-service -o jsonpath="{.items[0].status.podIP}"):8071/health | jq -r .status
+        curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=gitlab-service -o jsonpath="{.items[0].status.podIP}"):8071/actuator/health | jq -r .status
+        ```
+    - 出现以下类似信息即为成功部署
+        ```
+        UP
+        ```
+
+
+## 部署workflow service
+
+- 部署服务
+
+    ``` 
+    helm install c7n/workflow_service \
+        --set preJob.preConfig.datasource.url="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
+        --set preJob.preConfig.datasource.username=choerodon \
+        --set preJob.preConfig.datasource.password=password \
+        --set preJob.preInitDB.datasource.url="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/workflow_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
+        --set preJob.preInitDB.datasource.username=choerodon \
+        --set preJob.preInitDB.datasource.password=password \
+        --set env.open.SPRING_DATASOURCE_URL="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/workflow_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
+        --set env.open.SPRING_DATASOURCE_USERNAME=choerodon \
+        --set env.open.SPRING_DATASOURCE_PASSWORD=password \
+        --set env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE="http://register-server.c7n-system:8000/eureka/" \
+        --set env.open.SPRING_REDIS_HOST=c7n-redis.c7n-system.svc \
+        --set env.open.SPRING_REDIS_DATABASE=11 \
+        --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
+        --set env.open.SPRING_CLOUD_CONFIG_URI="http://register-server.c7n-system:8000/" \
+        --name workflow-service \
+        --version 0.16.0 \
+        --namespace c7n-system 
+    ```
+    参数名 | 含义 
+    --- |  --- 
+    service.enable|是否创建service
+    preJob.preConfig.datasource{}|初始化配置所需manager_service数据库信息
+    preJob.preInitDB.datasource{}|初始化数据库所需数据库信息
+    env.open.SPRING_DATASOURCE_URL|数据库链接地址
+    env.open.SPRING_DATASOURCE_USERNAME|数据库用户名
+    env.open.SPRING_DATASOURCE_PASSWORD|数据库密码
+    env.open.SPRING_CLOUD_CONFIG_ENABLED|启用配置中心
+    env.open.SPRING_CLOUD_CONFIG_URI|配置中心地址
+    env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE|注册服务地址
+
+
+- 验证部署
+    - 验证命令
+
+        ```
+        curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=workflow-service -o jsonpath="{.items[0].status.podIP}"):8066/actuator/health | jq -r .status
         ```
     - 出现以下类似信息即为成功部署
         ```
