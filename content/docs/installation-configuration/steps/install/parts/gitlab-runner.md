@@ -74,7 +74,7 @@ helm repo update
     helm install c7n/gitlab-runner \
         --set rbac.create=true \
         --set env.concurrent=3 \
-        --set env.gitlabUrl=http://gitlab.xn--0zwm56d.example.com/ \
+        --set env.gitlabUrl=http://gitlab.example.choerodon.io/ \
         --set env.runnerRegistrationToken=xwxobLNoPQUzyMt_4RGF \
         --set env.environment.DOCKER_REGISTRY=registry.example.choerodon.io \
         --set env.environment.DOCKER_USER=admin \
