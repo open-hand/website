@@ -111,34 +111,6 @@ helm install c7n/mysql-client \
         }
         ```
 
-
-## 部署config server
-
-- 部署服务
-
-    ```
-    helm install c7n/config-server \
-        --set service.enable=true \
-        --set env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE="http://register-server.c7n-system:8000/eureka/" \
-        --name config-server \
-        --version 0.16.0 \
-        --namespace c7n-system
-    ```
-    参数名 | 含义 
-    --- |  --- 
-    env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE|注册服务地址
-
-- 验证部署
-    - 验证命令
-
-        ```
-        curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=config-server -o jsonpath="{.items[0].status.podIP}"):8011/actuator/health | jq -r .status
-        ```
-    - 出现以下类似信息即为成功部署
-        ```
-        UP
-        ```
-
 ## 部署manager service
 
 - 部署服务

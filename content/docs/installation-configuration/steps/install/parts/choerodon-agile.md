@@ -30,9 +30,11 @@ helm install c7n/mysql-client \
           CREATE DATABASE IF NOT EXISTS agile_service DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;\
           CREATE DATABASE IF NOT EXISTS state_machine_service DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;\
           CREATE DATABASE IF NOT EXISTS issue_service DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;\
+          CREATE DATABASE IF NOT EXISTS foundation_service DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;\
           GRANT ALL PRIVILEGES ON agile_service.* TO choerodon@'%'; \
           GRANT ALL PRIVILEGES ON state_machine_service.* TO choerodon@'%';\
           GRANT ALL PRIVILEGES ON issue_service.* TO choerodon@'%';\
+          GRANT ALL PRIVILEGES ON foundation_service.* TO choerodon@'%';\
           FLUSH PRIVILEGES;" \
     --version 0.1.0 \
     --name create-c7nagile-db \
