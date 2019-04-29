@@ -61,7 +61,7 @@ weight = 2
 
 
 ## 更多操作
-- [环境流水线](../environment-pipeline)
+- [环境管理](../environment-pipeline)
 - [容器管理](../container)
 - [网络管理](../service)
 - [实例管理](../instance)
