@@ -52,8 +52,9 @@ weight = 10
     1. 初始化Helm
 {{< annotation shell "若集群没有开启RBAC权限认证，请删除命令中 --service-account=helm-tiller 参数">}}
 helm init \
+    --history-max=3 \
     --tiller-image=gcr.azk8s.cn/kubernetes-helm/tiller:v2.13.1 \
-    --stable-repo-url https://mirror.azure.cn/kubernetes/charts/ \
+    --stable-repo-url=https://mirror.azure.cn/kubernetes/charts/ \
     --service-account=helm-tiller(1)
 {{< /annotation >}}
 
