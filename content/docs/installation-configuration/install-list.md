@@ -55,7 +55,7 @@ notify service|通知服务|0.16.0
 asgard service|事务服务|0.16.0
 gitlab service|Gitlab 服务|0.16.1
 devops service|Devops 服务|0.16.3
-workflow service|Workflow 服务|0.16.1
+workflow service|Workflow 服务|0.16.2
 agile service|敏捷管理|0.16.0
 state machine service|状态机服务|0.16.0
 issue service|issue服务|0.16.0
