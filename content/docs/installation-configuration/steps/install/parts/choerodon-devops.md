@@ -83,7 +83,7 @@ helm install c7n/mysql-client \
         --set persistence.enabled=true \
         --set persistence.existingClaim="chartmuseum-pvc" \
         --name devops-service \
-        --version 0.16.1 \
+        --version 0.16.3 \
         --namespace c7n-system 
     ```
     参数名 | 含义 
