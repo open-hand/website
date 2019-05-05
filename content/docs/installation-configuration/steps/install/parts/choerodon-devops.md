@@ -182,7 +182,7 @@ helm install c7n/mysql-client \
 - 部署服务
 
     ``` 
-    helm install c7n/workflow_service \
+    helm install c7n/workflow-service \
         --set preJob.preConfig.datasource.url="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
         --set preJob.preConfig.datasource.username=choerodon \
         --set preJob.preConfig.datasource.password=password \
