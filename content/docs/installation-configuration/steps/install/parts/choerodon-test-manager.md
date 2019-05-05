@@ -27,7 +27,7 @@ helm install c7n/mysql-client \
     --set env.MYSQL_PASS=password \
     --set env.SQL_SCRIPT="\
           CREATE USER IF NOT EXISTS 'choerodon'@'%' IDENTIFIED BY 'password';\
-          CREATE DATABASE IF NOT EXISTS test_manager_service DEFAULT CHARACTER SET utf8;\
+          CREATE DATABASE IF NOT EXISTS test_manager_service DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;\
           GRANT ALL PRIVILEGES ON test_manager_service.* TO choerodon@'%';\
           FLUSH PRIVILEGES;" \
     --version 0.1.0 \
@@ -41,7 +41,6 @@ helm install c7n/mysql-client \
 
     ``` 
     helm install c7n/test-manager-service \
-        --set env.open.JAVA_OPTS="-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap" \
         --set preJob.preConfig.datasource.url="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
         --set preJob.preConfig.datasource.username=choerodon \
         --set preJob.preConfig.datasource.password=password \
@@ -53,18 +52,18 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_DATASOURCE_PASSWORD=password \
         --set env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE="http://register-server.c7n-system:8000/eureka/" \
         --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
-        --set env.open.SPRING_CLOUD_CONFIG_URI="http://config-server.c7n-system:8010/" \
+        --set env.open.SPRING_CLOUD_CONFIG_URI="http://register-server.c7n-system:8000/" \
         --set env.open.SPRING_REDIS_HOST=c7n-redis.c7n-system.svc \
         --set env.open.SPRING_REDIS_DATABASE=13 \
         --name test-manager-service \
-        --version 0.15.0 \
+        --version 0.16.0 \
         --namespace c7n-system
     ```
     参数名 | 含义 
     --- |  --- 
     service.enable|是否创建service
-    preJob.preConfig.mysql{}|初始化配置所需manager_service数据库信息
-    preJob.preInitDB.mysql{}|初始化数据库所需数据库信息
+    preJob.preConfig.datasource{}|初始化配置所需manager_service数据库信息
+    preJob.preInitDB.datasource{}|初始化数据库所需数据库信息
     env.open.SPRING_DATASOURCE_URL|数据库链接地址
     env.open.SPRING_DATASOURCE_USERNAME|数据库用户名
     env.open.SPRING_DATASOURCE_PASSWORD|数据库密码
@@ -77,7 +76,7 @@ helm install c7n/mysql-client \
     - 验证命令
 
         ```
-        curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=test-manager-service -o jsonpath="{.items[0].status.podIP}"):8094/health | jq -r .status
+        curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=test-manager-service -o jsonpath="{.items[0].status.podIP}"):8094/actuator/health | jq -r .status
         ```
     - 出现以下类似信息即为成功部署
         ```

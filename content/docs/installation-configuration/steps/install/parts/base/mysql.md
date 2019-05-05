@@ -41,10 +41,11 @@ helm install c7n/mysql \
     --set persistence.existingClaim=c7n-mysql-pvc \
     --set env.MYSQL_ROOT_PASSWORD=password \
     --set service.enabled=ture \
-    --set config.lower_case_table_names=1 \
-    --set config.character_set_server=utf8 \
     --set config.max_connections=500 \
     --set config.max_allowed_packet=32M \
+    --set config.lower_case_table_names=1 \
+    --set config.character_set_server=utf8mb4 \
+    --set config.collation_server=utf8mb4_general_ci \
     --version 0.1.0 \
     --name c7n-mysql \
     --namespace c7n-system

@@ -25,27 +25,22 @@ helm repo update
 
 ```shell
 helm install c7n/harbor \
+    --set expose.ingress.hosts.core=registry.example.choerodon.io \
     --set externalURL=https://registry.example.choerodon.io \
-    --set ingress.hosts.core=registry.example.choerodon.io \
-    --set database.internal.volumes.data.storageClass="nfs-provisioner" \
-    --set registry.volumes.data.storageClass="nfs-provisioner" \
-    --set redis.master.persistence.storageClass="nfs-provisioner" \
+    --set persistence.persistentVolumeClaim.registry.storageClass=nfs-provisioner \
+    --set persistence.persistentVolumeClaim.jobservice.storageClass=nfs-provisioner \
+    --set persistence.persistentVolumeClaim.database.storageClass=nfs-provisioner \
+    --set persistence.persistentVolumeClaim.redis.storageClass=nfs-provisioner \
+    --set chartmuseum.enabled=false \
+    --set clair.enabled=false \
+    --set notary.enabled=false \
     --set harborAdminPassword=Harbor12345 \
-    --version 0.3.2 \
+    --version 1.0.1 \
     --name harbor \
     --namespace c7n-system
 ```
 
-- 参数：
-
-    参数 | 含义 
-    --- |  --- 
-    externalURL|Harbor域名
-    ingress.hosts.core|不带协议的Harbor域名
-    database.internal.volumes.data.storageClass|数据库的存储类名
-    registry.volumes.data.storageClass|registry的存储类名
-    redis.master.persistence.storageClass|redis的存储类名
-    harborAdminPassword|管理员密码
+- 更多参数及含义请参考[Harbor官网](https://github.com/goharbor/harbor-helm/tree/1.0.1#helm-chart-for-harbor)
 
 ## 验证部署
 
@@ -92,23 +87,29 @@ Harbor启动速度较慢请等待所有Pod都为Running后进行界面查看。
             kubernetes.io/tls-acme: "true"
         ```
 
-- 编辑harbor-ui的deployment对象
+- 编辑 harbor-core 的 deployment 对象
 
     ```
-    kubectl edit deployment -n c7n-system harbor-harbor-ui
+    kubectl edit deployment -n c7n-system harbor-harbor-core
     ```
 
-    - 修改deployment中volumes属性的`ca-download`为`emptyDir: {}`
-
-            volumes:
-            - name: ca-download
-              #secret:
-              #  defaultMode: 420
-              #  items:
-              #  - key: ca.crt
-              #    path: ca.crt
-              #  secretName: harbor-harbor-ingress
-              emptyDir: {}
+    - **删除**下面注释的内容
+        ```
+        ......
+        volumeMounts:
+        # - name: ca-download
+        #   mountPath: /etc/core/ca/ca.crt
+        #   subPath: ca.crt
+        ......
+        volumes:
+        # - name: ca-download
+        #   secret:
+        #     secretName: "harbor-harbor-ingress"
+        #     items:
+        #       - key: ca.crt
+        #         path: ca.crt
+        ......
+        ```
 
 ### 没有公网域名时使用自签名证书
 
@@ -116,26 +117,11 @@ Harbor启动速度较慢请等待所有Pod都为Running后进行界面查看。
 没有公网域名是无法申请证书的，故只能配置本地Docker信任Harbor自签名证书，此方法需将会使用到该Harbor的主机都进行自签名证书信任配置。
 </blockquote>
 
-- 在任意一台master节点执行下面操作：
+- 访问 Harbor ，进入 library 项目，点击 `注册证书` 下载ca证书
 
-    {{< annotation shell "registry.example.choerodon.io为Harbor的域名，前面的目录不要更改" "c7n-system为Harbor部署的namespace，harbor-harbor-ingress为自签名证书的secret名称" "registry.example.choerodon.io为Harbor的域名，前面的目录不要更改；ca.crt为证书文件的名称，请勿修改" >}}
-sudo mkdir -p /etc/docker/certs.d/registry.example.choerodon.io(1)
-
-kubectl get secret \
-    --namespace c7n-system harbor-harbor-ingress \(1)
-    -o jsonpath="{.data.ca\.crt}" | base64 --decode | \
-    sudo tee /etc/docker/certs.d/registry.example.choerodon.io/ca.crt(1)
-{{< /annotation >}}
+    ![](/docs/installation-configuration/image/get-harbor-cert.png)
 
 - 分发`ca.crt`证书文件
 
-将得到的`ca.crt`证书文件拷贝至其他会使用到该Harbor的主机上（也放在`/etc/docker/certs.d/registry.example.choerodon.io`目录下即可）。
-
-<blockquote class="warning">
-如果使用自签名证书，在部署devops-service服务的时候需要跳过harbor证书安全校验，即部署的时候增加变量
-
-```
---set env.open.SERVICES_HARBOR_INSECURESKIPTLSVERIFY="true"
-
-```
-</blockquote>
+    - 将得到的`ca.crt`证书文件拷贝至其他会使用到该Harbor的主机上
+    - 证书放置于`/etc/docker/certs.d/<Harbor域名>`目录下（eg. 若Harbor域名为registry.example.choerodon.io，则将`ca.crt`证书文件放于`/etc/docker/certs.d/registry.example.choerodon.io`目录下即可）

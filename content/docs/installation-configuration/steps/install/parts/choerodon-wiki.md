@@ -27,8 +27,8 @@ helm install c7n/mysql-client \
     --set env.MYSQL_PASS=password \
     --set env.SQL_SCRIPT="\
             CREATE USER IF NOT EXISTS 'choerodon'@'%' IDENTIFIED BY 'password';\
-            CREATE DATABASE IF NOT EXISTS wiki_service DEFAULT CHARACTER SET utf8;\
-            CREATE DATABASE IF NOT EXISTS xwiki DEFAULT CHARACTER SET utf8;\
+            CREATE DATABASE IF NOT EXISTS wiki_service DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;\
+            CREATE DATABASE IF NOT EXISTS xwiki DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;\
             GRANT ALL PRIVILEGES ON wiki_service.* TO choerodon@'%';\
             GRANT ALL PRIVILEGES ON xwiki.* TO choerodon@'%';\
             FLUSH PRIVILEGES;" \
@@ -81,7 +81,7 @@ helm install c7n/mysql-client \
         --set "ingress.hosts[0]"=wiki.example.choerodon.io \
         --timeout 3000 \
         --name xwiki \
-        --version 0.15.1 \
+        --version 0.16.0 \
         --namespace c7n-system
     ```
 
@@ -137,36 +137,31 @@ helm install c7n/mysql-client \
 
     ```bash
     helm install c7n/wiki-service \
-        --set env.open.JAVA_OPTS="-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap" \
-        --set preJob.preConfig.mysql.host=c7n-mysql.c7n-system.svc \
-        --set preJob.preConfig.mysql.port=3306 \
-        --set preJob.preConfig.mysql.database=manager_service \
-        --set preJob.preConfig.mysql.username=choerodon \
-        --set preJob.preConfig.mysql.password=password \
-        --set preJob.preInitDB.mysql.host=c7n-mysql.c7n-system.svc \
-        --set preJob.preInitDB.mysql.port=3306 \
-        --set preJob.preInitDB.mysql.database=wiki_service \
-        --set preJob.preInitDB.mysql.username=choerodon \
-        --set preJob.preInitDB.mysql.password=password \
+        --set preJob.preConfig.datasource.url="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
+        --set preJob.preConfig.datasource.username=choerodon \
+        --set preJob.preConfig.datasource.password=password \
+        --set preJob.preInitDB.datasource.url="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/wiki_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
+        --set preJob.preInitDB.datasource.username=choerodon \
+        --set preJob.preInitDB.datasource.password=password \
         --set env.open.SPRING_DATASOURCE_URL="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/wiki_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
         --set env.open.SPRING_DATASOURCE_USERNAME=choerodon \
         --set env.open.SPRING_DATASOURCE_PASSWORD=password \
         --set env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE="http://register-server.c7n-system:8000/eureka/" \
         --set env.open.EUREKA_DEFAULT_ZONE=http://register-server.c7n-system:8000/eureka/ \
         --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
-        --set env.open.SPRING_CLOUD_CONFIG_URI=http://config-server.c7n-system:8010/ \
+        --set env.open.SPRING_CLOUD_CONFIG_URI=http://register-server.c7n-system:8000/ \
         --set env.open.WIKI_CLIENT=xwiki \
         --set env.open.WIKI_URL=http://wiki.example.choerodon.io \
         --set env.open.WIKI_TOKEN=Choerodon \
         --set env.open.WIKI_DEFAULT_GROUP=XWikiAllGroup \
         --name wiki-service \
-        --version 0.15.0 \
+        --version 0.16.0 \
         --namespace c7n-system
     ```
 
     参数名 | 含义 
     --- |  --- 
-    preJob.preConfig.mysql{}|初始化配置所需manager_service数据库信息
+    preJob.preConfig.datasource{}|初始化配置所需manager_service数据库信息
     env.open.SPRING_CLOUD_CONFIG_ENABLED|启用配置中心
     env.open.SPRING_CLOUD_CONFIG_URI|配置中心地址
     env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE|注册服务地址
@@ -176,7 +171,7 @@ helm install c7n/mysql-client \
     - 验证命令
 
         ```
-        curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=wiki-service -o jsonpath="{.items[0].status.podIP}"):9991/health | jq -r .status
+        curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=wiki-service -o jsonpath="{.items[0].status.podIP}"):9991/actuator/health | jq -r .status
         ```
     - 出现以下类似信息即为成功部署
         ```

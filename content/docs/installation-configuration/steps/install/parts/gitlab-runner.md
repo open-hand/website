@@ -14,7 +14,7 @@ Gitlab Runner，用于代码提交后自动进行代码测试、构建服务的�
 
 - [Gitlab Runner](https://docs.gitlab.com/runner/)
 
-## 一键安装Runner
+## 方式一：一键安装Runner
 
 若你使用一键部署安装的猪齿鱼，可以使用下面命令一键部署Gitlab-Runner。
 
@@ -22,7 +22,7 @@ Gitlab Runner，用于代码提交后自动进行代码测试、构建服务的�
 ./c7nctl config gitlab runner -c config.yml
 ```
 
-## 手动安装Runner
+## 方式二：手动安装Runner
 
 ### 获取Runner注册Token
 
@@ -74,7 +74,7 @@ helm repo update
     helm install c7n/gitlab-runner \
         --set rbac.create=true \
         --set env.concurrent=3 \
-        --set env.gitlabUrl=http://gitlab.xn--0zwm56d.example.com/ \
+        --set env.gitlabUrl=http://gitlab.example.choerodon.io/ \
         --set env.runnerRegistrationToken=xwxobLNoPQUzyMt_4RGF \
         --set env.environment.DOCKER_REGISTRY=registry.example.choerodon.io \
         --set env.environment.DOCKER_USER=admin \

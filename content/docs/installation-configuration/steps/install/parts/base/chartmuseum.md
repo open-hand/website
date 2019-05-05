@@ -43,7 +43,7 @@ helm install c7n/persistentvolumeclaim \
 
 ### 进行部署
 
-- 注意替换`chart.example.com`为您实际的域名
+- 注意替换`chart.example.choerodon.io`为您实际的域名
 
 ```shell
 helm install c7n/chartmuseum \
@@ -51,7 +51,7 @@ helm install c7n/chartmuseum \
     --set persistence.enabled=true \
     --set persistence.existingClaim=chartmuseum-pvc \
     --set ingress.enabled=true \
-    --set ingress.hosts=chart.example.com \
+    --set ingress.hosts=chart.example.choerodon.io \
     --set env.open.DISABLE_API=false \
     --set env.open.DEPTH=2 \
     --version 1.6.1 \

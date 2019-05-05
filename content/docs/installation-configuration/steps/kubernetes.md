@@ -21,21 +21,6 @@ weight = 5
 
 - [端口要求](../../pre-install/#需开放的端口号)
 
-- 使用本教程部署后会为您的服务器安装以下组件
-
-    **组件名称**|**组件版本**
-    :-----:|:-----:
-    kube-flannel|v0.9.0
-    kube-lego|0.1.5
-    kubernetes-dashboard|v1.7.1
-    nginx-ingress-controller|0.9.0-beta.17
-    default-http-backend|1.4
-    kube-proxy|v1.8.5
-    kube-apiserver|v1.8.5
-    kube-dns|1.14.5
-    kube-controller-manager|v1.8.5
-    kube-scheduler|v1.8.5
-
 ## 防火墙及端口检测
 
 <span style="font-weight:bold;">请检测防火墙状态，如果防火墙已开启请仔细阅读[端口要求](../../pre-install/#需开放的端口号)并按下面方式开放指定的端口；若未开启防火墙请跳过本节操作。</span>
