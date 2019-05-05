@@ -60,7 +60,7 @@ weight = 4
 ## 更多操作
 - [流水线管理](../pipeline-management)
 - [流水线执行总览](../pipeline-record)
-- [应用部署](../application-deployment)
+- [应用部署](/zh/docs/user-guide/deployment-pipeline/application-deployment)
 
 
 
