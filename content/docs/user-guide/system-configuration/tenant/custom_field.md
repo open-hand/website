@@ -64,7 +64,7 @@ weight = 9
 
 ![](/docs/user-guide/system-configuration/tenant/image/custom-field-3.png)
 
-点击 `编辑` 按钮（该字段最后的 `“笔”` 标识）进行字段编辑。
+点击 `编辑` 按钮 -> ![修改](/docs/user-guide/system-configuration/tenant/image/update.png)进行字段编辑。
 
 ![](/docs/user-guide/system-configuration/tenant/image/custom-field-4.png)
 
@@ -97,7 +97,7 @@ weight = 9
 
 ### 页面字段编辑
 
-点击编辑按钮（页面列表最后的“笔”标识），进入页面字段编辑，在此页面您可以编辑字段在此类页面中是否显示、调整字段顺序等功能。
+点击编辑按钮 -> ![修改](/docs/user-guide/system-configuration/tenant/image/update.png) ，进入页面字段编辑，在此页面您可以编辑字段在此类页面中是否显示、调整字段顺序等功能。
 
 ### 编辑页面字段列表
 
