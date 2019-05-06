@@ -64,9 +64,34 @@ weight = 9
 
 ![](/docs/user-guide/system-configuration/tenant/image/custom-field-3.png)
 
-点击 `编辑` 按钮 -> ![修改](/docs/user-guide/system-configuration/tenant/image/update.png)进行字段编辑。
+点击添加字段按钮（在编辑方案页面上部）进行字段添加。
 
 ![](/docs/user-guide/system-configuration/tenant/image/custom-field-4.png)
+
+1. 编码：字段编码是唯一的，不可以重复。
+
+{{< note >}}
+只允许数字、字母以及下划线，上限10个字。
+{{</ note >}}
+
+2. 名称：字段名称是唯一的，不可以重复。
+
+{{< note >}}
+用户自行填写，上限15字。
+{{</ note >}}
+
+3. 字段类型：选择字段类型，可选 `单选框` 、 `复选框` 、 `时间选择器` 、 `日期时间选择器` 、 `数字输入框` 、 `文本框（单行）` 、 `文本框（多行）` 、 `选择器（单选）` 、 `选择器（多选）` 。
+4. 显示范围：选择字段显示范围，可选 `全局` 、 `特性` 、 `史诗` 、 `故事` 、 `缺陷` 、 `任务` 、 `子任务` 。
+
+## 编辑字段
+
+编辑字段是指对一个添加的字段进行具体操作，包括查看、设置默认值、添加值等。
+
+![](/docs/user-guide/system-configuration/tenant/image/custom-field-5.png)
+
+点击 `编辑` 按钮 -> ![修改](/docs/user-guide/system-configuration/tenant/image/update.png)进行字段编辑。
+
+![](/docs/user-guide/system-configuration/tenant/image/custom-field-6.png)
 
 1. 添加：添加字段的值。
 2. 默认值：设置字段默认的值，可选项为下方文本框中用户自行添加的值。
@@ -87,7 +112,7 @@ weight = 9
 系统默认字段不能设置。
 {{</ note >}}
 
-![](/docs/user-guide/system-configuration/tenant/image/custom-field-5.png)
+![](/docs/user-guide/system-configuration/tenant/image/custom-field-7.png)
 
 1. 筛选器：可以按照名称对页面进行筛选。
 2. 页面名称：可编辑字段页面名称。
@@ -101,7 +126,7 @@ weight = 9
 
 ### 编辑页面字段列表
 
-![](/docs/user-guide/system-configuration/tenant/image/custom-field-6.png)
+![](/docs/user-guide/system-configuration/tenant/image/custom-field-8.png)
 
 1. 字段：字段名称是唯一的，不可以重复。
 2. 显示范围：字段可显示范围包括 `全局` 、 `特性` 、 `史诗` 、 `故事` 、 `缺陷` 、 `任务` 、 `子任务` 七种范围。
