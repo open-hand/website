@@ -39,6 +39,39 @@ description = "介绍如何创建循环，并且分类测试用例，添加执�
 同一个循环下不允许出现同名阶段
 {{</ note >}}
 
+## 批量克隆循环
+
+项目成员可以对本页中的测试循环/阶段进行批量克隆，减少不同迭代中的重复测试再次创建。
+
+![](/img/docs/user-guide/test-management/test-plan/batch-clone-1.png)
+
+
+![](/img/docs/user-guide/test-management/test-plan/batch-clone-2.png)
+
+点击批量克隆按钮（在测试计划页面上部）进入“批量克隆”页面。
+
+1. 选择要克隆的测试版本；
+2. 选择将测试克隆到的版本；
+3. 对选择的批量操作，可全选和不选；
+4. 可选中要克隆的`测试循环`；
+5. 可选中要克隆的`测试阶段`；
+6. 当选择完要克隆的测试时，点击`确定`进行克隆
+
+{{< note >}}
+未选择任何阶段/循环时，`确定`按钮无法点击。
+{{</ note >}}
+
+{{< note >}}
+选中的循环/阶段与克隆到的版本中的循环/阶段重名时，无法进行克隆。
+{{</ note >}}
+
+![](/img/docs/user-guide/test-management/test-plan/batch-clone-3.png)
+
+
+![](/img/docs/user-guide/test-management/test-plan/batch-clone-4.png)
+
+1. 克隆完成后，克隆到的版本中展现克隆完成的测试循环/阶段。
+
 ## 更多操作
 
 - [测试阶段](../test-stage)
