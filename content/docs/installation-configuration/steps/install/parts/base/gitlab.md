@@ -31,8 +31,11 @@ helm install c7n/postgresql \
     --set persistence.enabled=true \
     --set persistence.storageClass=nfs-provisioner \
     --set postgresqlPassword=password \
-    --set postgresqlDatabase=gitlabhq_production  \
-    --version 3.9.1 \
+    --set postgresqlDatabase=gitlabhq_production \
+    --set initdbScripts.'init\.sql'='
+        \\c gitlabhq_production;
+        CREATE EXTENSION IF NOT EXISTS pg_trgm;' \
+    --version 3.18.4 \
     --name gitlab-postgresql \
     --namespace c7n-system
 ```
