@@ -37,7 +37,7 @@ weight = 3
 
 
 ## 更多操作
-- [环境流水线](../environment-pipeline)
+- [环境管理](../environment-pipeline)
 - [应用部署](../application-deployment)
 - [实例管理](../instance)
 

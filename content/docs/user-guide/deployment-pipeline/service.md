@@ -47,7 +47,7 @@ weight = 5
             </blockquote>
     - NodePort:
     
-        - 节点端口为节点对外提供的端口，端口号为实例service端口号，目标端口号为实例Pod端口号，用以配置网络的端口映射转发。
+        - 节点端口为节点对外提供的端口，端口号为实例service端口号，目标端口号为实例Pod端口号，用以配置网络的端口映射转发。最后，可选择网络协议为TCP或UDP。
               
             <blockquote class="warning">
               节点端口号必须在30000-32767之间，端口号必须是数字且大小在0-65535之间
@@ -94,7 +94,7 @@ weight = 5
 
 ## 更多操作
 - [环境总览](../environments-overview)
-- [环境流水线](../environment-pipeline)
+- [环境管理](../environment-pipeline)
 - [容器管理](../container)
 - [实例管理](../instance)
 

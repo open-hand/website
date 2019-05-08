@@ -22,7 +22,7 @@ type = "docs"
 
 **2.** 完成[创建项目](../../admin/project)操作。本章节使用在前面章节创建的项目`猪齿鱼研发`。
 
-**3.** 完成[创建环境](../../../user-guide/deployment-pipeline/environment-pipeline)，环境流水线中有状态为运行中的环境。
+**3.** 完成[创建环境](../../../user-guide/deployment-pipeline/environment-pipeline)，环境管理中有状态为运行中的环境。
 
 ## 创建后端应用
 

@@ -85,7 +85,7 @@ weight = 8
 ## 更多操作
 - [域名管理](../ingress)
 - [环境总览](../environments-overview)
-- [环境流水线](../environment-pipeline)
+- [环境管理](../environment-pipeline)
 - [容器管理](../container)
 - [实例管理](../instance)
 

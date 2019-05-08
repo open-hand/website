@@ -12,11 +12,11 @@ weight = 7
 
 ![](/docs/user-guide/development-pipeline/image/ci.png) 
 
-本节将围绕部署流水线各个功能的使用进行详细的介绍，包括 [环境总览](./environments-overview)、[环境流水线](./environment-pipeline)、[应用部署](./application-deployment)、[部署总览](./deployment-overview)、[实例管理](./instance)、[网络管理](./service)、[域名管理](./ingress)、[容器管理](./container)、[证书管理](./certificate)、[配置映射](./config-map)与[密文](./secret)将涵盖您使用Choerodon猪齿鱼部署流水线过程中所有可能进行的操作。
+本节将围绕部署流水线各个功能的使用进行详细的介绍，包括 [环境总览](./environments-overview)、[环境管理](./environment-pipeline)、[应用部署](./application-deployment)、[部署总览](./deployment-overview)、[实例管理](./instance)、[网络管理](./service)、[域名管理](./ingress)、[容器管理](./container)、[证书管理](./certificate)、[配置映射](./config-map)与[密文](./secret)将涵盖您使用Choerodon猪齿鱼部署流水线过程中所有可能进行的操作。
 
 - `环境总览` 用于快速查看某个环境下的部署信息与相关资源  
 
-- `环境流水线` 用于在项目下创建环境来连接对应的集群客户端
+- `环境管理` 用于在项目下创建环境来连接对应的集群客户端
 
 - `应用部署` 用于应用生成版本之后的部署
 
@@ -47,7 +47,7 @@ weight = 7
  - Choerodon的部署流水线也是基于应用管理的，在使用Choerodon部署流水线之前，需要先了解和学习[Choerodon的应用管理](../application-management)。
  - Choerodon的部署流水线也是基于开发流水线的，在使用Choerodon部署流水线之前，需要先了解和学习[Choerodon的开发流水线](../development-pipeline)。
  - 系统用户必须具有`项目所有者`，或者已被分配环境权限的`项目成员`角色，才能使用部署流水线。所以，在使用部署流水线之前，您需要为您的用户分配上述。关于权限管理，请参阅[项目角色分配](.././system-configuration/project/role-assignment/)。
- - 由于在环境流水线中需要创建环境来连接agent集群客户端，因此请确保本机能够用ssh连接到系统所在的k8s集群且集群内安装好了helm客户端，有关[helm](https://docs.helm.sh/)和 [kubectl](https://kubernetes.io/docs/reference/kubectl/overview/)的相关知识请自行去对应官网理解
+ - 由于在环境管理中需要创建环境来连接agent集群客户端，因此请确保本机能够用ssh连接到系统所在的k8s集群且集群内安装好了helm客户端，有关[helm](https://docs.helm.sh/)和 [kubectl](https://kubernetes.io/docs/reference/kubectl/overview/)的相关知识请自行去对应官网理解
  - 由于部署流水线应用部署部分用到了Helm repository，请确保在部署Choerodon平台的时候已经部署好helm，详情请见 [Chartmuseum部署](../../installation-configuration/steps/install/parts/base/chartmuseum)
 
 ## 权限说明
@@ -56,7 +56,7 @@ weight = 7
     模块|操作
     |---|---|
     环境总览|总览环境下的所有部署信息，可以进行一些对应的快捷操作。
-    环境流水线|创建，停用，启用环境，修改环境信息以及权限分配。
+    环境管理|创建，停用，启用环境，修改环境信息以及权限分配。
     应用部署|选择应用和应用版本以及对应的环境，修改对应的values部署文件，分布创建或者替换实例
     实例|修改配置信息，升级，停止，重新部署，重启实例，查询实例详情，其中包括实例下的k8s对象，目前平台支持查询的有(Pod，Service，Ingress，Deployment，ReplicaSet)，实例部署时阶段信息（Job）以及上次部署的values的展示
     网络|为部署的应用的某个版本的实例在其部署的环境上创建网络，编辑网络
@@ -67,10 +67,12 @@ weight = 7
     密文|在某个环境中创建、编辑与删除密文
 
 2. 被分配有环境权限的`项目成员`，拥有对应环境下所有与部署相关的权限，但没有管理环境的权限；未被分配权限的`项目成员`无法进入部署流水线，没有任何编辑与查看权限，只有被分配了某个环境的权限后，才拥有该环境下的权限。
-以下将围绕部署流水线各个功能的使用进行详细的介绍，包括 **环境总览**、**环境流水线**、**应用部署**、**部署总览**、**实例**、**网络**、**域名**、**容器**、**证书**、**配置映射**与 **密文**。
+以下将围绕部署流水线各个功能的使用进行详细的介绍，包括 **环境总览**、**环境管理**、**应用部署**、**部署总览**、**实例**、**网络**、**域名**、**容器**、**证书**、**配置映射**与 **密文**。
 
 ## 视频介绍
 
 {{< tutorial devops deploy>}}
+
+
 
 {{< docdir >}}

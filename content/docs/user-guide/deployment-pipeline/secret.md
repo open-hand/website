@@ -58,7 +58,7 @@ weight = 10
 
 ## 更多操作
 - [环境总览](../environments-overview)
-- [环境流水线](../environment-pipeline)
+- [环境管理](../environment-pipeline)
 - [容器管理](../container)
 - [配置映射](../config-map)
 
