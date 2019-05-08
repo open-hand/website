@@ -61,33 +61,33 @@ paginate = 5
     post= true
 
 [[languages.en.menu.main]]
-    name = "v0.15"
+    name = "v0.16"
     url  = "/en/"
     weight = 6
     identifier = "version"
     pre = "<i class='iconfont'>&#xe600;</i>"
 
     [[languages.en.menu.main]]
-        name = "v0.15"
-        url  = "http://v0-15.choerodon.io/en/"
+        name = "v0.16"
+        url  = "http://v0-16.choerodon.io/en/"
         weight = 6
         parent = "version"
 
     [[languages.en.menu.main]]
+    name = "v0.15"
+    url  = "http://v0-15.choerodon.io/en/"
+    weight = 5
+    parent = "version"
+
+    [[languages.en.menu.main]]
     name = "v0.14"
     url  = "http://v0-14.choerodon.io/en/"
-    weight = 5
+    weight = 4
     parent = "version"
 
     [[languages.en.menu.main]]
     name = "v0.13"
     url  = "http://v0-13.choerodon.io/en/"
-    weight = 4
-    parent = "version"
-
-    [[languages.en.menu.main]]
-    name = "v0.12"
-    url  = "http://v0-12.choerodon.io/en/"
     weight = 3
     parent = "version"
 
@@ -133,32 +133,32 @@ paginate = 5
     identifier = "github"
 
 [[languages.zh.menu.main]]
-    name = "v0.15"
+    name = "v0.16"
     url  = "/zh/"
     weight = 6
     identifier = "version"
     pre = "<i class='iconfont'>&#xe600;</i>"
 
     [[languages.zh.menu.main]]
-        name = "v0.15"
-        url  = "http://v0-15.choerodon.io/zh/"
+        name = "v0.16"
+        url  = "http://v0-16.choerodon.io/zh/"
         weight = 7
         parent = "version"
     [[languages.zh.menu.main]]
-        name = "v0.14"
-        url  = "http://v0-14.choerodon.io/zh/"
+        name = "v0.15"
+        url  = "http://v0-15.choerodon.io/zh/"
         weight = 6
         parent = "version"
 
     [[languages.zh.menu.main]]
-    name = "v0.13"
-    url  = "http://v0-13.choerodon.io/zh/"
+    name = "v0.14"
+    url  = "http://v0-14.choerodon.io/zh/"
     weight = 5
     parent = "version"
 
     [[languages.zh.menu.main]]
-    name = "v0.12"
-    url  = "http://v0-12.choerodon.io/zh/"
+    name = "v0.13"
+    url  = "http://v0-13.choerodon.io/zh/"
     weight = 4
     parent = "version"
 
