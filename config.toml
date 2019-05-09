@@ -74,22 +74,11 @@ paginate = 5
         parent = "version"
 
     [[languages.en.menu.main]]
-    name = "v0.14"
-    url  = "http://v0-14.choerodon.io/en/"
+    name = "latest"
+    url  = "http://choerodon.io/en/"
     weight = 5
     parent = "version"
 
-    [[languages.en.menu.main]]
-    name = "v0.13"
-    url  = "http://v0-13.choerodon.io/en/"
-    weight = 4
-    parent = "version"
-
-    [[languages.en.menu.main]]
-    name = "v0.12"
-    url  = "http://v0-12.choerodon.io/en/"
-    weight = 3
-    parent = "version"
 
 
 [[languages.zh.menu.main]]
@@ -145,22 +134,11 @@ paginate = 5
         weight = 7
         parent = "version"
     [[languages.zh.menu.main]]
-        name = "v0.14"
-        url  = "http://v0-14.choerodon.io/zh/"
+        name = "latest"
+        url  = "http://choerodon.io/zh/"
         weight = 6
         parent = "version"
 
-    [[languages.zh.menu.main]]
-    name = "v0.13"
-    url  = "http://v0-13.choerodon.io/zh/"
-    weight = 5
-    parent = "version"
-
-    [[languages.zh.menu.main]]
-    name = "v0.12"
-    url  = "http://v0-12.choerodon.io/zh/"
-    weight = 4
-    parent = "version"
 
 [params]
     viewMorePostLink = "/blog/"
