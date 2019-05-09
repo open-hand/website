@@ -61,36 +61,23 @@ paginate = 5
     post= true
 
 [[languages.en.menu.main]]
-    name = "v0.12"
+    name = "v0.14"
     url  = "/en/"
     weight = 6
     identifier = "version"
     pre = "<i class='iconfont'>&#xe600;</i>"
 
     [[languages.en.menu.main]]
-        name = "v0.12"
-        url  = "http://v0-12.choerodon.io/en/"
+        name = "v0.14"
+        url  = "http://v0-14.choerodon.io/en/"
         weight = 6
         parent = "version"
 
     [[languages.en.menu.main]]
-    name = "v0.11"
-    url  = "http://v0-11.choerodon.io/en/"
+    name = "latest"
+    url  = "http://choerodon.io/en/"
     weight = 5
     parent = "version"
-
-    [[languages.en.menu.main]]
-    name = "v0.10"
-    url  = "http://v0-10.choerodon.io/en/"
-    weight = 4
-    parent = "version"
-
-    [[languages.en.menu.main]]
-    name = "v0.9"
-    url  = "http://v0-9.choerodon.io/en/"
-    weight = 3
-    parent = "version"
-
 
 [[languages.zh.menu.main]]
     name = "文档"
@@ -145,22 +132,10 @@ paginate = 5
         weight = 7
         parent = "version"
     [[languages.zh.menu.main]]
-        name = "v0.13"
-        url  = "http://v0-13.choerodon.io/zh/"
+        name = "latest"
+        url  = "http://choerodon.io/zh/"
         weight = 6
         parent = "version"
-
-    [[languages.zh.menu.main]]
-    name = "v0.12"
-    url  = "http://v0-12.choerodon.io/zh/"
-    weight = 5
-    parent = "version"
-
-    [[languages.zh.menu.main]]
-    name = "v0.11"
-    url  = "http://v0-11.choerodon.io/zh/"
-    weight = 4
-    parent = "version"
 
 [params]
     viewMorePostLink = "/blog/"
