@@ -145,22 +145,10 @@ paginate = 5
         weight = 7
         parent = "version"
     [[languages.zh.menu.main]]
-        name = "v0.12"
-        url  = "http://v0-12.choerodon.io/zh/"
+        name = "latest"
+        url  = "http://choerodon.io/zh/"
         weight = 6
         parent = "version"
-
-    [[languages.zh.menu.main]]
-    name = "v0.11"
-    url  = "http://v0-11.choerodon.io/zh/"
-    weight = 5
-    parent = "version"
-
-    [[languages.zh.menu.main]]
-    name = "v0.10"
-    url  = "http://v0-10.choerodon.io/zh/"
-    weight = 4
-    parent = "version"
 
 [params]
     viewMorePostLink = "/blog/"
