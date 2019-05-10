@@ -12,7 +12,7 @@ description = "用于对平台中任务的查看，创建，启停用等管理"
 - **菜单路径**：任务调度 > 任务明细
 - **默认角色**：平台管理员、平台开发者、组织管理员、项目管理员
 
-![任务](/docs/user-guide/microservice-development/job/image/job.jpg)
+![任务](/docs/user-guide/platform-management/job/image/job.jpg)
 
 ## 任务列表
 
@@ -26,7 +26,7 @@ description = "用于对平台中任务的查看，创建，启停用等管理"
 
 ## 创建任务
 
-1.点击`创建任务`→![创建任务](/docs/user-guide/microservice-development/job/image/create.png)创建一个任务。
+1.点击`创建任务`→![创建任务](/docs/user-guide/platform-management/job/image/create.png)创建一个任务。
 
 2.输入`任务名称`、`任务描述`。
 
@@ -49,7 +49,7 @@ description = "用于对平台中任务的查看，创建，启停用等管理"
 
 - 如果是`Cron任务`,则输入`cron表达式`。
 
-    您可以点击cron表达式解析按钮→![解析表达式](/docs/user-guide/microservice-development/job/image/cron.png)对cron表达式进行解析。
+    您可以点击cron表达式解析按钮→![解析表达式](/docs/user-guide/platform-management/job/image/cron.png)对cron表达式进行解析。
 
 6.选择超时策略，超时策略有`阻塞`、`串行`、`并行`三种。
 
@@ -67,7 +67,7 @@ description = "用于对平台中任务的查看，创建，启停用等管理"
 
 ## 查看任务详情
 
-- 点击任务的查看详情按钮→![详情](/docs/user-guide/microservice-development/job/image/particulars.png),进入到任务详情页面。
+- 点击任务的查看详情按钮→![详情](/docs/user-guide/platform-management/job/image/particulars.png),进入到任务详情页面。
 
 您可以在任务详情页查看`任务信息`和`任务日志`。
 通过`任务信息`，您可以了解`任务名称`，`任务描述`，起止时间，`触发类型`，触发时间规则，执行策略，`上次执行时间`，`下次执行时间`，`任务程序名`，任务参数详情，通知对象。
@@ -75,9 +75,9 @@ description = "用于对平台中任务的查看，创建，启停用等管理"
 
 ## 启停用任务
 
-- 点击任务的停用按钮→![停用](/docs/user-guide/microservice-development/job/image/stop.png)，停用该任务。
-- 点击任务的启用按钮→![启用](/docs/user-guide/microservice-development/job/image/start.png)，启用该任务。
+- 点击任务的停用按钮→![停用](/docs/user-guide/platform-management/job/image/stop.png)，停用该任务。
+- 点击任务的启用按钮→![启用](/docs/user-guide/platform-management/job/image/start.png)，启用该任务。
 
 ## 删除任务
 
-- 点击列表中的`删除图标`→![删除](/docs/user-guide/microservice-development/job/image/delete.png)，选中`删除`。
+- 点击列表中的`删除图标`→![删除](/docs/user-guide/platform-management/job/image/delete.png)，选中`删除`。

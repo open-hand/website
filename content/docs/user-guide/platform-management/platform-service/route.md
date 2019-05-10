@@ -1,22 +1,26 @@
 +++
 title = "路由管理"
-weight = 4
+weight = 3
 description = "用于管理平台路由"
 +++
 
 # 路由管理
 
-路由发送请求到网关，由网关处理发送到微服务。路由管理是对微服务中网关的所有路由进行管理。每一条路由规则包含一个唯一标志，路由的规则，和对应的微服务。多条路由规则可以指向同一个微服务下的不同接口。在平台中，路由分为自定义和预定义两种类型。用户在界面创建的路由为自定义路由，可以修改和删除。而平台预置的路由为预定义路由，用户不能修改和删除，只能查看预定义路由的详细信息。
+Choerodon 平台的后端接口，会通过网关路由到具体的微服务上。路由管理就是是对平台微服务中网关的所有路由进行管理。
 
 - **菜单层次**：全局层
-- **菜单路径**：微服务管理 > 路由管理
+- **菜单路径**：服务管理 > 路由管理
 - **默认角色**：平台管理员、平台开发者
+
+## 服务路由
+
+路由发送请求到网关，由网关处理发送到微服务。每一条路由规则包含一个唯一标志，路由的规则，和对应的微服务。多条路由规则可以指向同一个微服务下的不同接口。在平台中，路由分为自定义和预定义两种类型。用户在界面创建的路由为自定义路由，可以修改和删除。而平台预置的路由为预定义路由，用户不能修改和删除，只能查看预定义路由的详细信息。
 
 ## 创建路由
 
 输入`路由名称`，`路径`，`对应微服务`，创建默认最简路由，步骤如下。
 
-![](/docs/user-guide/microservice-development/microservice-management/image/create-route.png) 
+![](/docs/user-guide/platform-management/platform-service/image/create-route.png) 
 
 1. 点击`创建路由`按钮；
 1. 输入`路由名称`，`路径`，`对应微服务`，点击创建按钮；
@@ -28,7 +32,7 @@ description = "用于管理平台路由"
 
 ## 修改路由
 1. 预定义路由无法修改；
-1. 点击`修改路由`→ ![修改按钮](/docs/user-guide/microservice-development/microservice-management/image/update.png) 按钮 ，进行路由信息的修改。
+1. 点击`修改路由`→ ![修改按钮](/docs/user-guide/platform-management/platform-service/image/update.png) 按钮 ，进行路由信息的修改。
 
 不可修改字段：
 
@@ -52,7 +56,7 @@ description = "用于管理平台路由"
 
  1. 预定义路由无法删除；
 
- 1. 点击`删除路由`→ ![删除按钮](/docs/user-guide/microservice-development/microservice-management/image/del_button.png) 按钮，进行模板的删除。
+ 1. 点击`删除路由`→ ![删除按钮](/docs/user-guide/platform-management/platform-service/image/del_button.png) 按钮，进行模板的删除。
 <blockquote class="warning">
          若删除路由，该条数据将被永久删除，不可恢复!
       </blockquote>
@@ -62,5 +66,6 @@ description = "用于管理平台路由"
 平台预置的路由为预定义路由，用户无法删除、修改，只能查看路由详情。
 
 ## 更多操作
-- [什么是微服务](../microservice)
+- [微服务管理](../microservice)
 - [实例管理](../instance)
+- [接口管理](../api-test)

@@ -17,5 +17,5 @@ weight = 8
 ## 更多操作
 
 - [平台设置](..//platform)
-- [全局事务](../..//microservice-development/global-transaction)
+- [平台管理](../../platform-management)
 - [消息中心](..//message)

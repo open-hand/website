@@ -17,7 +17,7 @@ weight = 7
 
 
 ## 更多操作
-- [全局事务](../..//microservice-development/global-transaction)
+- [平台管理](../../platform-management)
 - [个人中心](..//person)
 - [通用功能](..//common)
 
