@@ -1,4 +1,4 @@
-+++
+﻿+++
 title = "配置看板"
 description = "了解如何配置看板从而更好的使用看板"
 weight = 2
