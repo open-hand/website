@@ -25,11 +25,16 @@ helm repo update
 
 ### 部署数据库
 
+<blockquote class="warning">
+注意：本 PostgreSql 数据库搭建教程仅为快速体验Gitlab而编写，由于使用了NFS存储故并不能保证其稳定运行或数据不丢失，您可以参照 PostgreSql 官网进行搭建。
+</blockquote>
+
 <details open><summary>使用PostgreSql数据库</summary>
 ```shell
 helm install c7n/postgresql \
     --set persistence.enabled=true \
     --set persistence.storageClass=nfs-provisioner \
+    --set image.tag=9.6.11 \
     --set postgresqlPassword=password \
     --set postgresqlDatabase=gitlabhq_production \
     --set initdbScripts.'init\.sql'='
