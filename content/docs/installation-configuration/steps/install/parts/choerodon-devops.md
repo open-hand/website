@@ -84,7 +84,7 @@ choerodon devops service需要与Chartmuseum共用存储，所以choerodon devop
         --set persistence.enabled=true \
         --set persistence.existingClaim="chartmuseum-pvc" \
         --name devops-service \
-        --version 0.15.1 \
+        --version 0.15.2 \
         --namespace c7n-system 
     ```
     参数名 | 含义 

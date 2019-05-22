@@ -45,10 +45,10 @@ file service|文件服务|0.15.1
 notify service|通知服务|0.15.1
 asgard service|事务服务|0.15.1
 gitlab service|Gitlab 服务|0.15.0
-devops service|Devops 服务|0.15.3
-agile service|敏捷管理|0.15.0
+devops service|Devops 服务|0.15.2
+agile service|敏捷管理|0.15.2
 state machine service|状态机服务|0.15.0
 issue service|issue服务|0.15.0
 wiki service|知识管理服务|0.15.0
 test manager service|测试管理服务|0.15.0
-choerodon front|Choerodon 前端|0.15.2
+choerodon front|Choerodon 前端|0.15.7
