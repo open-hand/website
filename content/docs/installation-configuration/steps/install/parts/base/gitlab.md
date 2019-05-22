@@ -139,9 +139,11 @@ helm install c7n/gitlab \
     --set env.config.SMTP_TLS=true \
     --set env.config.PROMETHEUS_ENABLE=false \
     --set env.config.NODE_EXPORTER_ENABLE=false \
+    --set env.config.UNICORN_WORKERS=3 \
+    --set env.config.UNICORN_TIMEOUT=60 \
     --set service.enabled=true \
     --set ingress.enabled=true \
-    --version 0.4.0 \
+    --version 0.4.1 \
     --name gitlab \
     --namespace c7n-system
 ```
@@ -175,9 +177,11 @@ helm install c7n/gitlab \
     --set env.config.SMTP_TLS=true \
     --set env.config.PROMETHEUS_ENABLE=false \
     --set env.config.NODE_EXPORTER_ENABLE=false \
+    --set env.config.UNICORN_WORKERS=3 \
+    --set env.config.UNICORN_TIMEOUT=60 \
     --set service.enabled=true \
     --set ingress.enabled=true \
-    --version 0.4.0 \
+    --version 0.4.1 \
     --name gitlab \
     --namespace c7n-system
 ```
@@ -215,6 +219,8 @@ helm install c7n/gitlab \
     env.config.SMTP_TLS|是否启用TLS 
     env.config.PROMETHEUS_ENABLE|是否开启prometheus
     env.config.NODE_EXPORTER_ENABLE|是否开启node_exporter_enable
+    env.config.UNICORN_WORKERS|unicorn workers的数量
+    env.config.UNICORN_TIMEOUT|设置unicorn workers进程的超时时间，单位秒
     ingress.enabled|是否开启ingress 
     service.enabled|是否开启service
 
