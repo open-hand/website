@@ -35,10 +35,10 @@ helm repo update
         --set env.open.PRO_HTTP="http" \
         --set env.open.PRO_FILE_SERVER="http://minio.example.choerodon.io" \
         --set ingress.host="c7n.example.choerodon.io" \
-        --set service.enable=true \
-        --set ingress.enable=true \
+        --set service.enabled=true \
+        --set ingress.enabled=true \
         --name choerodon-front \
-        --version 0.16.2 \
+        --version 0.17.0 \
         --namespace c7n-system
     ```
     参数名 | 含义 

@@ -27,15 +27,63 @@ helm install c7n/mysql-client \
     --set env.MYSQL_PASS=password \
     --set env.SQL_SCRIPT="\
             CREATE USER IF NOT EXISTS 'choerodon'@'%' IDENTIFIED BY 'password';\
+            CREATE DATABASE IF NOT EXISTS knowledgebase_service DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;\
             CREATE DATABASE IF NOT EXISTS wiki_service DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;\
             CREATE DATABASE IF NOT EXISTS xwiki DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;\
             GRANT ALL PRIVILEGES ON wiki_service.* TO choerodon@'%';\
             GRANT ALL PRIVILEGES ON xwiki.* TO choerodon@'%';\
+            GRANT ALL PRIVILEGES ON knowledgebase_service.* TO choerodon@'%';\
             FLUSH PRIVILEGES;" \
     --version 0.1.0 \
     --name create-c7nwiki-db \
     --namespace c7n-system
 ```
+
+## 部署基础知识服务
+
+
+- 部署服务
+
+    ``` 
+    helm install c7n/knowledgebase-service \
+        --set preJob.preConfig.datasource.url="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
+        --set preJob.preConfig.datasource.username=choerodon \
+        --set preJob.preConfig.datasource.password=password \
+        --set preJob.preInitDB.datasource.url="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/knowledgebase_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
+        --set preJob.preInitDB.datasource.username=choerodon \
+        --set preJob.preInitDB.datasource.password=password \
+        --set env.open.SPRING_DATASOURCE_URL="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/knowledgebase_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowMultiQueries=true" \
+        --set env.open.SPRING_DATASOURCE_USERNAME=choerodon \
+        --set env.open.SPRING_DATASOURCE_PASSWORD=password \
+        --set env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE="http://register-server.c7n-system:8000/eureka/" \
+        --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
+        --set env.open.SPRING_CLOUD_CONFIG_URI="http://register-server.c7n-system:8000/" \
+        --set env.open.SERVICE_ATTACHMENT_URL="http://minio.example.choerodon.io/knowledgebase-service/" \
+        --name knowledgebase-service \
+        --version 0.17.0 \
+        --namespace c7n-system
+    ```
+    参数名 | 含义 
+    --- |  --- 
+    preJob.preConfig.datasource{}|初始化配置所需manager-service数据库信息
+    preJob.preInitDB.datasource{}|初始化数据库所需数据库信息
+    env.open.SPRING_DATASOURCE_URL|数据库链接地址
+    env.open.SPRING_DATASOURCE_USERNAME|数据库用户名
+    env.open.SPRING_DATASOURCE_PASSWORD|数据库密码
+    env.open.SPRING_CLOUD_CONFIG_ENABLED|启用配置中心
+    env.open.SPRING_CLOUD_CONFIG_URI|配置中心地址
+    env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE|注册服务地址
+    
+- 验证部署
+    - 验证命令
+
+        ```
+        curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=foundation-service -o jsonpath="{.items[0].status.podIP}"):8387/actuator/health | jq -r .status
+        ```
+    - 出现以下类似信息即为成功部署
+        ```
+        UP
+        ```
 
 ## 部署xwiki
 
@@ -81,7 +129,7 @@ helm install c7n/mysql-client \
         --set "ingress.hosts[0]"=wiki.example.choerodon.io \
         --timeout 3000 \
         --name xwiki \
-        --version 0.16.0 \
+        --version 0.17.0 \
         --namespace c7n-system
     ```
 
@@ -155,7 +203,7 @@ helm install c7n/mysql-client \
         --set env.open.WIKI_TOKEN=Choerodon \
         --set env.open.WIKI_DEFAULT_GROUP=XWikiAllGroup \
         --name wiki-service \
-        --version 0.16.0 \
+        --version 0.17.0 \
         --namespace c7n-system
     ```
 
@@ -182,6 +230,6 @@ helm install c7n/mysql-client \
 ## 同步已有项目和组织
 
 1. 服务部署完成之后，使用有平台管理员角色的用户登录`Choerodon`平台，点击顶部导航栏的管理按钮，选择`API管理`菜单下的`API测试`。
-2. 找到微服务`wiki-service`下0.15.0版本的接口，打开`wiki-scanning-controller`，使用`/v1/site/scan`接口，点击`发送`之后，就会同步所有的组织和项目到新部署的wiki。
+2. 找到微服务`wiki-service`下0.17.0版本的接口，打开`wiki-scanning-controller`，使用`/v1/site/scan`接口，点击`发送`之后，就会同步所有的组织和项目到新部署的wiki。
     
         注：同步会在后台执行，请耐心等待同步完成。

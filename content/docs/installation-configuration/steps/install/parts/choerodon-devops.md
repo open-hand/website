@@ -71,10 +71,10 @@ helm install c7n/mysql-client \
         --set env.open.SERVICES_GITLAB_PROJECTLIMIT=100 \
         --set env.open.SERVICES_GATEWAY_URL=http://api.example.choerodon.io \
         --set env.open.SECURITY_IGNORED="/ci\,/webhook\,/v2/api-docs\,/agent/**\,/ws/**\,/webhook/**" \
-        --set env.open.AGENT_VERSION="0.16.0" \
+        --set env.open.AGENT_VERSION="0.17.0" \
         --set env.open.AGENT_REPOURL="https://openchart.choerodon.com.cn/choerodon/c7n/" \
         --set env.open.AGENT_SERVICEURL="ws://devops.example.choerodon.io/agent/" \
-        --set env.open.TEMPLATE_VERSION="0.16.0" \
+        --set env.open.TEMPLATE_VERSION="0.17.0" \
         --set env.open.TEMPLATE_URL="https://github.com/choerodon/choerodon-devops-templates.git" \
         --set env.open.AGENT_CERTMANAGERURL="https://openchart.choerodon.com.cn/choerodon/infra/" \
         --set ingress.enable=true \
@@ -83,7 +83,7 @@ helm install c7n/mysql-client \
         --set persistence.enabled=true \
         --set persistence.existingClaim="chartmuseum-pvc" \
         --name devops-service \
-        --version 0.16.4 \
+        --version 0.17.0 \
         --namespace c7n-system 
     ```
     参数名 | 含义 
@@ -149,7 +149,7 @@ helm install c7n/mysql-client \
         --set env.open.GITLAB_URL="http://gitlab.example.choerodon.io" \
         --set env.open.GITLAB_PRIVATETOKEN="GEuRhgb6kG9y3prFosSb" \
         --name gitlab-service \
-        --version 0.16.1 \
+        --version 0.17.0 \
         --namespace c7n-system
     ```
     参数名 | 含义 
@@ -198,7 +198,7 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
         --set env.open.SPRING_CLOUD_CONFIG_URI="http://register-server.c7n-system:8000/" \
         --name workflow-service \
-        --version 0.16.2 \
+        --version 0.17.0 \
         --namespace c7n-system 
     ```
     参数名 | 含义 
