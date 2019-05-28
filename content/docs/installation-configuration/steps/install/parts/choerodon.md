@@ -58,6 +58,7 @@ helm install c7n/mysql-client \
         --set service.enabled=true \
         --set service.name=register-server \
         --set env.open.REGISTER_SERVICE_NAMESPACE="c7n-system" \
+        --set rbac.craete=true \
         --name register-server \
         --version 0.17.0 \
         --namespace c7n-system
@@ -162,10 +163,14 @@ helm install c7n/mysql-client \
         --set env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE="http://register-server.c7n-system:8000/eureka/" \
         --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
         --set env.open.SPRING_CLOUD_CONFIG_URI="http://register-server.c7n-system:8000/" \
+        --set env.open.SPRING_REDIS_HOST=c7n-redis.c7n-system.svc \
+        --set env.open.SPRING_REDIS_PORT=6379 \
+        --set env.open.SPRING_REDIS_DATABASE=7 \
         --name asgard-service \
         --version 0.17.0 \
         --namespace c7n-system
     ```
+
     参数名 | 含义 
     --- |  --- 
     preJob.preConfig.datasource{}|初始化配置所需manager_service数据库信息
@@ -295,6 +300,14 @@ helm install c7n/mysql-client \
         --set env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE="http://register-server.c7n-system:8000/eureka/" \
         --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
         --set env.open.SPRING_CLOUD_CONFIG_URI="http://register-server.c7n-system:8000/" \
+        --set env.open.SPRING_DATASOURCE_URL="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/iam_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
+        --set env.open.SPRING_DATASOURCE_USERNAME=choerodon \
+        --set env.open.SPRING_DATASOURCE_PASSWORD=password \
+        --set env.open.SPRING_REDIS_HOST=c7n-redis.c7n-system.svc \
+        --set env.open.SPRING_REDIS_PORT=6379 \
+        --set env.open.SPRING_REDIS_DATABASE=4 \
+        --set env.SPRING_CACHE_MULTI_L1_ENABLED=true \
+        --set env.SPRING_CACHE_MULTI_L2_ENABLED=false \
         --name api-gateway \
         --version 0.17.0 \
         --namespace c7n-system
