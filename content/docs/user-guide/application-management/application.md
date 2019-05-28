@@ -91,7 +91,10 @@ weight = 2
 
 ## 修改应用信息
 
-点击`修改应用`→ ![修改应用按钮](/docs/user-guide/development-pipeline/image/update_app_button.png) 对应用信息进行修改或者对应用的权限进行重新配置。此外，页面中的高级设置支持修改默认的Docker仓库和Helm仓库为项目下已有的自定义的组件配置，修改后，此应用之后生成的镜像均会存储于新的仓库之中。
+点击`修改应用`→ ![修改应用按钮](/docs/user-guide/development-pipeline/image/update_app_button.png) 对应用信息进行修改或者对应用的权限进行重新配置。此外，页面中的高级设置支持修改默认的Docker仓库和Helm仓库为项目下已有的自定义的组件配置，修改后，此应用之后生成的镜像均会存储于新的仓库之中。  
+<blockquote class="warning">
+  从应用市场导入的应用无法分配应用权限。
+</blockquote>
 
 ## 停用/启用应用
 

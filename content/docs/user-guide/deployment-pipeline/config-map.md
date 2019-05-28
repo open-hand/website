@@ -26,8 +26,11 @@ weight = 9
  3. 填写`配置映射名称`与`配置映射描述`，为该配置映射填写一个名称并添加描述；
  <blockquote class="warning"> 配置映射名称：由小写字母、数字或‘-’组成，并且必须以字母或数字开始和结束！环境下唯一。</blockquote>
 
- 4. 填写`键值对`，或是直接粘贴多行“键=值”格式的字段至任何键框中，来批量输入键值对 ；  
- <blockquote class="warning"> 键：可以是任意的大小写字母，不能输入除"."、"-"和"_"以外的字符！且在同一个配置映射下键不能相同。</blockquote>  
+ 4. 填写`键值对`，或是直接粘贴多行“键=值”格式的字段至任何键框中，来批量输入键值对 ；或者直接点击`编辑YMAL`，便可以YMAL格式进行编辑； 
+ <blockquote class="warning">   
+  - 键：可以是任意的大小写字母，不能输入除"."、"-"和"_"以外的字符！且在同一个配置映射下键不能相同。  
+  - YMAL格式：YMAL格式与键值对格式仅可在正确格式的情况下进行切换。
+  </blockquote>  
  
  5. 点击 `创建`完成配置映射的创建。  
 <blockquote class="note">
@@ -41,7 +44,7 @@ weight = 9
   ![配置映射](/docs/user-guide/deployment-pipeline/image/configmap.png)  
   
 ## 编辑配置映射
-点击`编辑配置映射` → ![编辑配置映射按钮](/docs/user-guide/deployment-pipeline/image/update_env_button.png) 来编辑此配置映射中的键值对。  
+点击`编辑配置映射` → ![编辑配置映射按钮](/docs/user-guide/deployment-pipeline/image/update_env_button.png) 来编辑此配置映射中的键值对或YMAL文件。  
 ![编辑配置映射](/docs/user-guide/deployment-pipeline/image/edit-configmap.jpg)  
 
 ## 删除配置映射

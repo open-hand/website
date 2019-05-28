@@ -16,7 +16,9 @@ weight = 4
 
 进入应用发布界面，通过列表信息查看应用的发布状态；
 
-<h3 id="2"> 未发布应用 </h3>
+<h3 id="2"> 未发布应用 </h3>    
+
+![未发布应用](/docs/user-guide/application-management/image/app-not-release.jpg)   
   
  - 应用名称：可发布的应用的名称；
 
@@ -24,7 +26,9 @@ weight = 4
 
  - 发布应用：点击以发布应用→ ![发布图标](/docs/user-guide/development-pipeline/image/release_icon.png) ；
 
-<h3 id="3"> 已发布应用 </h3>
+<h3 id="3"> 已发布应用 </h3>    
+
+![已发布应用](/docs/user-guide/application-management/image/app-released.jpg) 
   
  - 应用名称：已发布的应用的名称；
 
