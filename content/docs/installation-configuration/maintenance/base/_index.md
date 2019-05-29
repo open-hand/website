@@ -9,7 +9,7 @@ weight = 9
 
 Choerodon平台基于依赖于组件正常运行。运营Choerodon需要对Kubernetes有深入的理解，同时了解各个组件的运行方式，文档仅提供最基本的安装方式，性能调优。
 
-## 如何查看日志
+#### 如何查看日志
 
 - 进入任意Master主机中
 - 执行如下命令获取服务POD名称(第一列)
@@ -24,7 +24,7 @@ Choerodon平台基于依赖于组件正常运行。运营Choerodon需要对Kuber
   kubectl logs -f  [PODNAME]  -n c7n-system
   ```
 
-## 如何停止服务
+#### 如何停止服务
 
 - 进入任意Master主机中
 
@@ -55,11 +55,11 @@ Choerodon平台基于依赖于组件正常运行。运营Choerodon需要对Kuber
    kubectl scale deployment your-application -n c7n-system --replicas=0 
    ```
 
-## 如何重新启动服务
+#### 如何重新启动服务
 
 将上节中的 `--replicas`值改为1即可。
 
-## 故障修复
+#### 故障修复
 
 不同的组件在不同的运行环境可能出现不一样的问题，一般情况下某个组件出现问题，请先确定该组件在Kubernetes中的状态。比如使用如下命令获取状态:
 
@@ -82,12 +82,13 @@ kubectl get po -n c7n-system | grep your-application
   一般为正在拉取镜像，通过 `kubectl describe pod [POD-NAME] -n c7n-system` 查看具体描述
 
 
-## 各个组件的官方地址
+#### 各个组件的官方地址
 
 |名称     |地址|
 |:-:     |:-:|
 |Gitlab   |https://docs.gitlab.com/ce/|
 |Harbor   |https://github.com/goharbor/harbor|
-
-{{< docdir >}}
+|Chartmeseum|https://chartmuseum.com|
+|Sonarqube|https://www.sonarqube.org|
+|Minio|https://min.io|
 
