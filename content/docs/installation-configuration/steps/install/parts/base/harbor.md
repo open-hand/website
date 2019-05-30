@@ -40,7 +40,7 @@ helm install c7n/harbor \
     --namespace c7n-system
 ```
 
-- 更多参数及含义请参考[Harbor官网](https://github.com/goharbor/harbor-helm/tree/1.0.1#helm-chart-for-harbor)
+- 更多参数及含义请参考[Harbor Chart](https://github.com/goharbor/harbor-helm/tree/7dfc2a629a58e61c0d0a03f1d3b5ae29a7d720be#helm-chart-for-harbor)
 
 ## 验证部署
 

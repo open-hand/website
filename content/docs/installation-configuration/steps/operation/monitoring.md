@@ -46,7 +46,7 @@ helm repo update
         --set grafana.persistence.enabled=true \
         --set grafana.persistence.existingClaim=monitoring-pvc \
         --set grafana.ingress.enabled=true \
-        --set "grafana.ingress.hosts[0]"=grafana.example.com \
+        --set "grafana.ingress.hosts[0]"=grafana.example.choerodon.io \
         --set alertmanager.persistence.enabled=true \
         --set alertmanager.persistence.existingClaim=monitoring-pvc \
         --set prometheus.persistence.enabled=true \

@@ -130,11 +130,11 @@ helm install c7n/gitlab \
     --set env.config.SMTP_ENABLE=false \
     --set env.config.SMTP_ADDRESS=smtp.mxhichina.com \
     --set env.config.SMTP_PORT=465 \
-    --set env.config.SMTP_USER_NAME=git.sys@example.com \
+    --set env.config.SMTP_USER_NAME=git.sys@example.choerodon.io \
     --set env.config.SMTP_PASSWORD=password \
     --set env.config.SMTP_DOMAIN=smtp.mxhichina.com \
     --set env.config.SMTP_AUTHENTICATION=login \
-    --set env.config.GITLAB_EMAIL_FROM=git.sys@example.com \
+    --set env.config.GITLAB_EMAIL_FROM=git.sys@example.choerodon.io \
     --set env.config.SMTP_ENABLE_STARTTLS_AUTO=true \
     --set env.config.SMTP_TLS=true \
     --set env.config.PROMETHEUS_ENABLE=false \
@@ -168,11 +168,11 @@ helm install c7n/gitlab \
     --set env.config.SMTP_ENABLE=false \
     --set env.config.SMTP_ADDRESS=smtp.mxhichina.com \
     --set env.config.SMTP_PORT=465 \
-    --set env.config.SMTP_USER_NAME=git.sys@example.com \
+    --set env.config.SMTP_USER_NAME=git.sys@example.choerodon.io \
     --set env.config.SMTP_PASSWORD=password \
     --set env.config.SMTP_DOMAIN=smtp.mxhichina.com \
     --set env.config.SMTP_AUTHENTICATION=login \
-    --set env.config.GITLAB_EMAIL_FROM=git.sys@example.com \
+    --set env.config.GITLAB_EMAIL_FROM=git.sys@example.choerodon.io \
     --set env.config.SMTP_ENABLE_STARTTLS_AUTO=true \
     --set env.config.SMTP_TLS=true \
     --set env.config.PROMETHEUS_ENABLE=false \
