@@ -36,13 +36,13 @@ weight = 10
     1. 根据系统下载所需版本  
 
         ```bash
-        curl -L -o helm-v2.13.1-linux-amd64.tar.gz http://mirror.azure.cn/kubernetes/helm/helm-v2.13.1-linux-amd64.tar.gz
+        curl -L -o helm-v2.14.0-linux-amd64.tar.gz http://mirror.azure.cn/kubernetes/helm/helm-v2.14.0-linux-amd64.tar.gz
         ```
 
     1. 解压压缩包（以linux-amd64为例）
 
         ```bash
-        tar -zxvf helm-v2.13.1-linux-amd64.tar.gz
+        tar -zxvf helm-v2.14.0-linux-amd64.tar.gz
         ```
     1. 将文件移动到PATH目录中（以linux-amd64为例）
 
@@ -53,7 +53,7 @@ weight = 10
 {{< annotation shell "若集群没有开启RBAC权限认证，请删除命令中 --service-account=helm-tiller 参数">}}
 helm init \
     --history-max=3 \
-    --tiller-image=gcr.azk8s.cn/kubernetes-helm/tiller:v2.13.1 \
+    --tiller-image=gcr.azk8s.cn/kubernetes-helm/tiller:v2.14.0 \
     --stable-repo-url=https://mirror.azure.cn/kubernetes/charts/ \
     --service-account=helm-tiller(1)
 {{< /annotation >}}
@@ -65,6 +65,6 @@ helm init \
     
     ```console
     $ helm version
-    Client: &version.Version{SemVer:"v2.13.1", GitCommit:"618447cbf203d147601b4b9bd7f8c37a5d39fbb4", GitTreeState:"clean"}
-    Server: &version.Version{SemVer:"v2.13.1", GitCommit:"618447cbf203d147601b4b9bd7f8c37a5d39fbb4", GitTreeState:"clean"}
+    Client: &version.Version{SemVer:"v2.14.0", GitCommit:"618447cbf203d147601b4b9bd7f8c37a5d39fbb4", GitTreeState:"clean"}
+    Server: &version.Version{SemVer:"v2.14.0", GitCommit:"618447cbf203d147601b4b9bd7f8c37a5d39fbb4", GitTreeState:"clean"}
     ```
