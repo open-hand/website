@@ -40,6 +40,8 @@ helm install c7n/sonarqube \
     --set ingress.'hosts[0]'=sonarqube.example.choerodon.io \
     --set plugins.'install[0]'=https://file.choerodon.com.cn/choerodon-install/sonarqube/sonar-auth-choerodonoauth-plugin-1.0-RELEASE.jar \
     --set plugins.'install[1]'=https://github.com/gabrie-allaigre/sonar-gitlab-plugin/releases/download/4.0.0/sonar-gitlab-plugin-4.0.0.jar \
+    --set plugins.'install[2]'=https://binaries.sonarsource.com/Distribution/sonar-java-plugin/sonar-java-plugin-5.12.1.17771.jar \
+    --set plugins.'install[3]'=https://binaries.sonarsource.com/Distribution/sonar-javascript-plugin/sonar-javascript-plugin-5.1.1.7506.jar \
     --version 0.15.0 \
     --name sonarqube \
     --namespace c7n-system
@@ -52,3 +54,4 @@ helm install c7n/sonarqube \
 - 访问设置的SonarQube域名出现以下界面即部署成功
 
     ![](/docs/installation-configuration/image/sonarqube.png)
+
