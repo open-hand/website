@@ -55,3 +55,56 @@ helm install c7n/sonarqube \
 
     ![](/docs/installation-configuration/image/sonarqube.png)
 
+## sonar 配置choerodon认证
+### 添加Sonar Client
+- 在执行里面前请根据实际情况修改参数
+- 记得修改http://localhost:9000为实际的sonarqube地址
+````
+helm install c7n/mysql-client \
+    --set env.MYSQL_HOST=c7n-mysql.c7n-system.svc \
+    --set env.MYSQL_PORT=3306 \
+    --set env.MYSQL_USER=root \
+    --set env.MYSQL_PASS=password \
+    --set env.SQL_SCRIPT="\
+        INSERT INTO iam_service.oauth_client ( \
+        name\,organization_id\,resource_ids\,secret\,scope\,\
+        authorized_grant_types\,web_server_redirect_uri\,\
+        access_token_validity\,refresh_token_validity\,\
+        additional_information\,auto_approve\,object_version_number\,\
+        created_by\,creation_date\,last_updated_by\,last_update_date)\
+        VALUES('sonar'\,1\,'default'\,'secret'\,'default'\,\
+        'password\,implicit\,client_credentials\,authorization_code\,refresh_token'\,\
+        'http://localhost:9000/oauth2/callback/choerodon'\,3600\,3600\,'{}'\,'default'\,1\,0\,NOW()\,0\,NOW());" \
+    --version 0.1.0 \
+    --name gitlab-client \
+    --namespace c7n-system
+````
+
+### 初始化sonarqube权限
+- 使用admin登录soanr
+- 配置默认新建项目为私有, 进入配置-》项目-》管理页面
+
+   ![](/docs/installation-configuration/image/sonarqube_1.png)
+   
+- 更改默认权限模板, 进入配置-》权限-》权限模板,去掉Anyone所有权限
+
+   ![](/docs/installation-configuration/image/sonarqube_2.png)
+   
+###  下载soanr-choerodon插件
+- 进入sonar安装目录，切换到目录：sonarqube\extensions\plugins
+- 下载soanr-choerodon插件
+````
+curl -o sonar-auth-choerodonoauth-plugin-1.0-RELEASE.jar https://file.choerodon.com.cn/choerodon-install/sonarqube/sonar-auth-choerodonoauth-plugin-1.0-RELEASE.jar
+````
+###  重启soanr服务
+- 使用docker命令：docker restart sonar
+- 或者使用admin登录，在配置-》系统界面，点击重启服务
+
+### 配置插件
+- 使用admin登录soanr
+- 进入配置-》choerodon
+- 更改choerodon url为当前使用的choerodon getaway地址 ；默认地址为：http://api.example.choerodon.io
+- 退出登录，测试使用choerodon登录,出现如下界面
+
+   ![](/docs/installation-configuration/image/sonarqube_3.png)
+   
