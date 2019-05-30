@@ -89,7 +89,8 @@ helm install c7n/sonarqube \
 
 ### 配置认证插件
 - 使用 admin 用户登录 SoanrQube
-- 进入 `Administration` -> `choerodon`
+- 进入 `Administration` -> `Configuration` ->`choerodon`
+- 更改 `Enabled` 为启用
 - 更改 `Choerodon url` 为当前使用的 `choerodon api getaway` 地址；默认地址为：`http://api.example.choerodon.io`
     ![](/docs/installation-configuration/image/sonarqube_4.png)
 - 退出登录，测试使用choerodon登录,出现如下界面
