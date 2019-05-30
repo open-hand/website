@@ -63,6 +63,7 @@ helm install c7n/sonarqube \
   </ul>
 </blockquote>
 
+### 添加Choerodon Client
 - 记得修改`http://sonarqube.example.choerodon.io`为实际的SonarQube地址
   
     ```
@@ -86,35 +87,19 @@ helm install c7n/sonarqube \
         --namespace c7n-system
     ```
 
-### 初始化sonarqube权限
-- 使用admin登录soanr
-- 配置默认新建项目为私有, 进入Administration -> Projects -> Management
-
-   ![](/docs/installation-configuration/image/sonarqube_1.png)
-   
-- 更改默认权限模板, 进入Administration -> Security -> Permission Templates,去掉sonar-users用户组所有权限
-
-   ![](/docs/installation-configuration/image/sonarqube_2.png)
-   ![](/docs/installation-configuration/image/sonarqube_3.png)
-   
-###  下载soanr-choerodon插件
-- 进入sonar安装目录，切换到目录：sonarqube\extensions\plugins
-- 下载soanr-choerodon插件
-````
-curl -o sonar-auth-choerodonoauth-plugin-1.0-RELEASE.jar https://file.choerodon.com.cn/choerodon-install/sonarqube/sonar-auth-choerodonoauth-plugin-1.0-RELEASE.jar
-````
-###  重启soanrQube服务
-- 使用docker命令：docker restart sonar
-- 或者使用admin登录，在Administration -> System界面，点击重启服务
-
-### 配置插件
-- 使用admin登录soanrQube
-- 进入Administration -> choerodon
-- 更改choerodon url为当前使用的choerodon getaway地址；默认地址为：http://api.example.choerodon.io
-
-   ![](/docs/installation-configuration/image/sonarqube_4.png)
-   
+### 配置认证插件
+- 使用 admin 用户登录 SoanrQube
+- 进入 `Administration` -> `choerodon`
+- 更改 `Choerodon url` 为当前使用的 `choerodon api getaway` 地址；默认地址为：`http://api.example.choerodon.io`
+    ![](/docs/installation-configuration/image/sonarqube_4.png)
 - 退出登录，测试使用choerodon登录,出现如下界面
+    ![](/docs/installation-configuration/image/sonarqube_5.png)
 
-   ![](/docs/installation-configuration/image/sonarqube_5.png)
+### 配置用户权限
+- 使用 admin 用户登录 SoanrQube
+- 配置默认新建项目为`Private`, 进入 `Administration` -> `Projects` -> `Management`
+    ![](/docs/installation-configuration/image/sonarqube_1.png)
    
+- 更改默认权限模板, 进入 `Administration` -> `Security` -> `Permission Templates` ,去掉 `sonar-users` 用户组所有权限
+    ![](/docs/installation-configuration/image/sonarqube_2.png)
+    ![](/docs/installation-configuration/image/sonarqube_3.png)
