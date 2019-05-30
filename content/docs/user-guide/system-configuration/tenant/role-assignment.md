@@ -11,7 +11,7 @@ description = "是对组织层的角色进行分配"
 ![](/docs/user-guide/system-configuration/tenant/image/member_role3.png)
 
   - **菜单层次**：组织层
-  - **菜单路径**：组织管理 > 组织角色分配
+  - **菜单路径**：组织设置 > 组织角色分配
   - **默认角色**：组织管理员
 
 
