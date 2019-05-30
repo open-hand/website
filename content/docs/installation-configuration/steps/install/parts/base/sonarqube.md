@@ -86,19 +86,35 @@ helm install c7n/sonarqube \
         --namespace c7n-system
     ```
 
-### 初始化SonarQube权限
-- 使用admin登录SonarQube
-- 配置默认新建项目为私有, 进入配置 -> 项目 -> 管理页面
-    ![](/docs/installation-configuration/image/sonarqube_1.png)
-   
-- 更改默认权限模板, 进入配置 -> 权限 -> 权限模板,去掉Anyone所有权限
-    ![](/docs/installation-configuration/image/sonarqube_2.png)
+### 初始化sonarqube权限
+- 使用admin登录soanr
+- 配置默认新建项目为私有, 进入Administration -> Projects -> Management
 
-## 配置插件
-- 使用admin用户登录SonarQube
-- 进入配置 -> choerodon
-- 更改Choerodon url为当前使用的choerodon api getaway地址 ；默认地址为：`http://api.example.choerodon.io`
+   ![](/docs/installation-configuration/image/sonarqube_1.png)
+   
+- 更改默认权限模板, 进入Administration -> Security -> Permission Templates,去掉sonar-users用户组所有权限
+
+   ![](/docs/installation-configuration/image/sonarqube_2.png)
+   ![](/docs/installation-configuration/image/sonarqube_3.png)
+   
+###  下载soanr-choerodon插件
+- 进入sonar安装目录，切换到目录：sonarqube\extensions\plugins
+- 下载soanr-choerodon插件
+````
+curl -o sonar-auth-choerodonoauth-plugin-1.0-RELEASE.jar https://file.choerodon.com.cn/choerodon-install/sonarqube/sonar-auth-choerodonoauth-plugin-1.0-RELEASE.jar
+````
+###  重启soanrQube服务
+- 使用docker命令：docker restart sonar
+- 或者使用admin登录，在Administration -> System界面，点击重启服务
+
+### 配置插件
+- 使用admin登录soanrQube
+- 进入Administration -> choerodon
+- 更改choerodon url为当前使用的choerodon getaway地址；默认地址为：http://api.example.choerodon.io
+
+   ![](/docs/installation-configuration/image/sonarqube_4.png)
+   
 - 退出登录，测试使用choerodon登录,出现如下界面
 
-    ![](/docs/installation-configuration/image/sonarqube_3.png)
+   ![](/docs/installation-configuration/image/sonarqube_5.png)
    
