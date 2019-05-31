@@ -4,17 +4,7 @@
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-    {{ if hasPrefix .URL "/case-studies" }}
-    <title>案例 | Choerodon</title>
-    {{ else if hasPrefix .URL "/docs"}}
-      <title>文档 | Choerodon</title>
-    {{ else if hasPrefix .URL "/blog"}}
-      <title>博客 | Choerodon</title>
-    {{ else if hasPrefix .URL "/community"}}
-      <title>社区 | Choerodon</title>
-    {{ else }}
-      <title>{{ .Title }}</title>
-  {{ end }}
+
   {{ if .Keywords }}
   <meta name="keywords" content="{{ delimit .Keywords ", " }}">
   {{ else if .Site.Params.DefaultKeywords }}
