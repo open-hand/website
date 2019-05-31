@@ -18,11 +18,10 @@ weight = 3
 
 ![标记列表](/docs/user-guide/development-pipeline/image/tag-list.jpg)
 
-- 应用选择器，切换应用并查看该应用下拥有的标记
 - 标记名称，使用[语义化版本](https://semver.org/lang/zh-CN/)规范
 - 提交编码，创建标记的来源分支上最新一次提交的编码，也是标记所引用的特定提交
 - 提交描述，创建标记的来源分支上最新一次提交的描述信息
-- 提交时间，创建标记的来源分支上最新一次提交的时间
+- 提交时间，创建标记的来源分支上最新一次提交的时间  
 - 删除操作，点击`删除按钮`→ ![删除按钮](/docs/user-guide/development-pipeline/image/del_net_button.png)，可以删除该标记
   <blockquote class="note">
     只有项目所有者可以进行标记删除操作。
@@ -35,19 +34,23 @@ weight = 3
 2. **次版本号**：当你做了向下兼容的功能性新增
 3. **修订号**：当你做了向下兼容的问题修正
 
-## 创建标记
+## 创建标记 
 
-1. **前置条件** - 应用中存在至少一个分支，否则无法创建标记。
+ 1. **前置条件**   
+   - 应用中存在至少一个分支，否则无法创建标记。    
+
+
 2. **创建标记**
 
-  ![创建标记](/docs/user-guide/development-pipeline/image/create-tag.png)
+  ![创建标记](/docs/user-guide/development-pipeline/image/create-tag.jpg)
 
 - 标记名称，必须符合[语义化版本](https://semver.org/lang/zh-CN/)规范
 - 标记来源，可以是该应用下任意的分支
   <blockquote class="warning">
     如果所选应用下没有任何分支，则无法创建标记，需要先去分支模块创建分支。
-  </blockquote>
-
+  </blockquote>  
+  
+- 发布日志，此处的发布日志用于编辑发布时需要填写的更新信息。
 ## 删除标记
 
 项目所有者可以删除标记，删除标记成功后，代码仓库中不再存在该标记，并且线上应用无法再使用该标记。
