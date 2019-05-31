@@ -93,7 +93,7 @@ helm install c7n/nfs-client-provisioner \
         --set elasticsearch.host="elasticsearch.logging" \
         --set service.enabled=true \
         --set ingress.enabled=true \
-        --set ingress.host=kibana.example.com \
+        --set ingress.host=kibana.example.choerodon.io \
         --namespace=logging \
         --name=kibana
     ```

@@ -45,36 +45,36 @@ spec:
     mysql:
       external: false
     gitlab:
-      domain: gitlab.example.com
+      domain: gitlab.example.choerodon.io
       external: false
       username: root     # gitlab 默认用户名为root，不能修改
       schema: http
     minio:
-      domain: minio.example.com
+      domain: minio.example.choerodon.io
       schema: http
     harbor:
-      domain: harbor.example.com
+      domain: harbor.example.choerodon.io
       schema: https
       username: admin    # harbor 默认用户名为admin，不能修改
     chartmuseum:
-      domain: chart.example.com
+      domain: chart.example.choerodon.io
       schema: http
     api-gateway:
-      domain: api.example.com
+      domain: api.example.choerodon.io
       schema: http
     notify-service:
-      domain: notify.example.com
+      domain: notify.example.choerodon.io
       schema: ws
     devops-service:
-      domain: devops.example.com
+      domain: devops.example.choerodon.io
       schema: ws
     choerodon-front:
-      domain: c7n.example.com
+      domain: c7n.example.choerodon.io
       schema: http
       username: admin   # 前端 默认用户名为admin，暂不能修改
       password: admin   # 前端 默认密码为admin，暂不能修改
     xwiki:
-      domain: wiki.example.com
+      domain: wiki.example.choerodon.io
       schema: http
 ```
 

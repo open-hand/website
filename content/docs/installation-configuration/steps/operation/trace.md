@@ -41,7 +41,7 @@ helm repo update
     helm install c7n/skywalking-ui \
     --set service.enabled=true \
     --set ingress.enabled=true \
-    --set ingress."hosts[0]"=skywalking.example.com \
+    --set ingress."hosts[0]"=skywalking.example.choerodon.io \
     --set env.JAVA_OPTS="-Xms2048M -Xmx2048M" \
     --version 0.1.1 \
     --name skywalking-ui \
