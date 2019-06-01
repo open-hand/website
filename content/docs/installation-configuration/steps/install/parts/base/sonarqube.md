@@ -86,6 +86,11 @@ helm install c7n/sonarqube \
     ```
 
 ### 配置用户权限
+
+<blockquote class="note">
+默认管理员用户名：admin，密码：admin
+</blockquote>
+
 - 使用管理员用户登录 SoanrQube
 - 配置默认新建项目为`Private`, 进入 `Administration` -> `Projects` -> `Management`
     ![](/docs/installation-configuration/image/sonarqube_1.png)
@@ -95,11 +100,6 @@ helm install c7n/sonarqube \
     ![](/docs/installation-configuration/image/sonarqube_3.png)
 
 ### 配置认证插件
-
-<blockquote class="note">
-默认管理员用户名：admin，密码：admin
-</blockquote>
-
 - 使用管理员用户登录 SoanrQube
 - 进入 `Administration` -> `Configuration` ->`choerodon`
 - 更改 `Enabled` 为启用
