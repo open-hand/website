@@ -85,10 +85,19 @@ helm install c7n/sonarqube \
         --namespace c7n-system
     ```
 
+### 配置用户权限
+- 使用管理员用户登录 SoanrQube
+- 配置默认新建项目为`Private`, 进入 `Administration` -> `Projects` -> `Management`
+    ![](/docs/installation-configuration/image/sonarqube_1.png)
+   
+- 更改默认权限模板, 进入 `Administration` -> `Security` -> `Permission Templates` ,去掉 `sonar-users` 用户组所有权限
+    ![](/docs/installation-configuration/image/sonarqube_2.png)
+    ![](/docs/installation-configuration/image/sonarqube_3.png)
+
 ### 配置认证插件
 
 <blockquote class="note">
-默认管理员用户名为：admin，密码：admin
+默认管理员用户名：admin，密码：admin
 </blockquote>
 
 - 使用管理员用户登录 SoanrQube
@@ -98,12 +107,3 @@ helm install c7n/sonarqube \
     ![](/docs/installation-configuration/image/sonarqube_4.png)
 - 退出登录，测试使用choerodon登录,出现如下界面
     ![](/docs/installation-configuration/image/sonarqube_5.png)
-
-### 配置用户权限
-- 使用管理员用户登录 SoanrQube
-- 配置默认新建项目为`Private`, 进入 `Administration` -> `Projects` -> `Management`
-    ![](/docs/installation-configuration/image/sonarqube_1.png)
-   
-- 更改默认权限模板, 进入 `Administration` -> `Security` -> `Permission Templates` ,去掉 `sonar-users` 用户组所有权限
-    ![](/docs/installation-configuration/image/sonarqube_2.png)
-    ![](/docs/installation-configuration/image/sonarqube_3.png)
