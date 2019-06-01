@@ -85,20 +85,25 @@ helm install c7n/sonarqube \
         --namespace c7n-system
     ```
 
-### 配置认证插件
-- 使用 admin 用户登录 SoanrQube
-- 进入 `Administration` -> `Configuration` ->`choerodon`
-- 更改 `Enabled` 为启用
-- 更改 `Choerodon url` 为当前使用的 `choerodon api getaway` 地址；默认地址为：`http://api.example.choerodon.io`
-    ![](/docs/installation-configuration/image/sonarqube_4.png)
-- 退出登录，测试使用choerodon登录,出现如下界面
-    ![](/docs/installation-configuration/image/sonarqube_5.png)
-
 ### 配置用户权限
-- 使用 admin 用户登录 SoanrQube
+
+<blockquote class="note">
+默认管理员用户名：admin，密码：admin
+</blockquote>
+
+- 使用管理员用户登录 SoanrQube
 - 配置默认新建项目为`Private`, 进入 `Administration` -> `Projects` -> `Management`
     ![](/docs/installation-configuration/image/sonarqube_1.png)
    
 - 更改默认权限模板, 进入 `Administration` -> `Security` -> `Permission Templates` ,去掉 `sonar-users` 用户组所有权限
     ![](/docs/installation-configuration/image/sonarqube_2.png)
     ![](/docs/installation-configuration/image/sonarqube_3.png)
+
+### 配置认证插件
+- 使用管理员用户登录 SoanrQube
+- 进入 `Administration` -> `Configuration` ->`choerodon`
+- 更改 `Enabled` 为启用
+- 更改 `Choerodon url` 为当前使用的 `choerodon api getaway` 地址；默认地址为：`http://api.example.choerodon.io`
+    ![](/docs/installation-configuration/image/sonarqube_4.png)
+- 退出登录，测试使用choerodon登录,出现如下界面
+    ![](/docs/installation-configuration/image/sonarqube_5.png)
