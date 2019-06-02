@@ -31,7 +31,7 @@ CREATE USER 'choerodon'@'%' IDENTIFIED BY "123456";
 
 用户创建成功之后，创建项目对应的数据库，并将新创建的数据库权限赋予用户。
 ```sql
-CREATE DATABASE todo_service DEFAULT CHARACTER SET utf8;
+CREATE DATABASE todo_service DEFAULT CHARACTER SET utf8mb4;
 GRANT ALL PRIVILEGES ON todo_service.* TO choerodon@'%';
 FLUSH PRIVILEGES;
 ```
@@ -55,7 +55,7 @@ $ touch todo_user.groovy todo_task.groovy
 package script.db
 
 databaseChangeLog(logicalFilePath: 'todo_user.groovy') {
-    changeSet(id: '2018-11-20-todo_user', author: 'your.email@email.com') {
+    changeSet(id: '2019-05-30-todo_user', author: 'your.email@email.com') {
         createTable(tableName: "TODO_USER") {
             column(name: 'ID', type: 'BIGINT UNSIGNED', remarks: 'ID', autoIncrement: true) {
                 constraints(primaryKey: true)
@@ -81,7 +81,7 @@ databaseChangeLog(logicalFilePath: 'todo_user.groovy') {
 package script.db
 
 databaseChangeLog(logicalFilePath: 'todo_task.groovy') {
-    changeSet(id: '2018-11-20-todo_task', author: 'your.email@email.com') {
+    changeSet(id: '2019-05-30-todo_task', author: 'your.email@email.com') {
         createTable(tableName: "TODO_TASK") {
             column(name: 'ID', type: 'BIGINT UNSIGNED', remarks: 'ID', autoIncrement: true) {
                 constraints(primaryKey: true)
@@ -91,16 +91,17 @@ databaseChangeLog(logicalFilePath: 'todo_task.groovy') {
             column(name: 'TASK_NUMBER', type: 'VARCHAR(64)', remarks: '任务编号') {
                 constraints(unique: true)
             }
-            column(name: 'TASH_DESCRIPTION', type: 'VARCHAR(256)', remarks: '任务描述')
+            column(name: 'TASK_DESCRIPTION', type: 'VARCHAR(256)', remarks: '任务描述')
 
-            column(name: "OBJECT_VERSION_NUMBER", type: "BIGINT", defaultValue : "1")
-            column(name: "CREATED_BY", type: "BIGINT", defaultValue : "-1")
-            column(name: "CREATION_DATE", type: "DATETIME", defaultValueComputed : "CURRENT_TIMESTAMP")
-            column(name: "LAST_UPDATED_BY", type: "BIGINT", defaultValue : "-1")
-            column(name: "LAST_UPDATE_DATE", type: "DATETIME", defaultValueComputed : "CURRENT_TIMESTAMP")
+            column(name: "OBJECT_VERSION_NUMBER", type: "BIGINT", defaultValue: "1")
+            column(name: "CREATED_BY", type: "BIGINT", defaultValue: "-1")
+            column(name: "CREATION_DATE", type: "DATETIME", defaultValueComputed: "CURRENT_TIMESTAMP")
+            column(name: "LAST_UPDATED_BY", type: "BIGINT", defaultValue: "-1")
+            column(name: "LAST_UPDATE_DATE", type: "DATETIME", defaultValueComputed: "CURRENT_TIMESTAMP")
         }
     }
 }
+
 ```
 
 ## 初始化表结构
@@ -114,24 +115,30 @@ $ touch init-local-database.sh
 修改初始化脚本。
 
 ```bash
-#!/bin/bash
-version="0.7.0.RELEASE"
-mkdir -p bin
-if [ ! -f bin/choerodon-tool-liquibase.jar ]
-then
-    curl https://oss.sonatype.org/content/groups/public/io/choerodon/choerodon-tool-liquibase/${version}/choerodon-tool-liquibase-${version}.jar -o ./bin/choerodon-tool-liquibase.jar
-fi
-java -Dspring.datasource.url="jdbc:mysql://localhost:3306/todo_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
+#!/usr/bin/env bash
+
+MAVEN_LOCAL_REPO=$(cd / && mvn help:evaluate -Dexpression=settings.localRepository -q -DforceStdout)
+TOOL_GROUP_ID=io.choerodon
+TOOL_ARTIFACT_ID=choerodon-tool-liquibase
+TOOL_VERSION=${1:-0.11.0.RELEASE}
+TOOL_JAR_PATH=${MAVEN_LOCAL_REPO}/${TOOL_GROUP_ID/\./\/}/${TOOL_ARTIFACT_ID}/${TOOL_VERSION}/${TOOL_ARTIFACT_ID}-${TOOL_VERSION}.jar
+mvn org.apache.maven.plugins:maven-dependency-plugin:get \
+ -Dartifact=${TOOL_GROUP_ID}:${TOOL_ARTIFACT_ID}:${TOOL_VERSION} \
+ -Dtransitive=false
+
+#java -Dspring.datasource.url="jdbc:oracle:thin:@127.0.0.1:1521:xe" \
+java -Dspring.datasource.url="jdbc:mysql://localhost/todo_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
  -Dspring.datasource.username=choerodon \
  -Dspring.datasource.password=123456 \
  -Ddata.drop=false -Ddata.init=true \
- -Ddata.dir=./src/main/resources \
- -jar ./bin/choerodon-tool-liquibase.jar
+ -Ddata.dir=src/main/resources \
+ -jar ${TOOL_JAR_PATH}
 ```
 
 进入根目录执行如下命令：
+
 ```bash
-$ sh ./init-local-database.sh
+$ sh init-local-database.sh [version]    #如未指定version，则默认使用tool version为0.11.0.
 ```
 
 控制台打印出如下信息，则表示初始化成功。
@@ -142,26 +149,29 @@ $ sh ./init-local-database.sh
 
 执行 `init-local-database.sh` 脚本，若出现错误：
 ```bash
-Error: Invalid or corrupt jarfile target/choerodon-tool-liquibase.jar
+Error: Unable to access jarfile
 ```
+则需自行检查脚本中`TOOL_JAR_PATH`路径是否正确。
 
-则自行下载最新版本的 [choerodon-tool-liquibase.jar](https://oss.sonatype.org/content/groups/public/io/choerodon/choerodon-tool-liquibase) 并重命名覆盖./bin/choerodon-tool-liquibase.jar 并重新执行`init-local-database.sh` 脚本
+您也可以手动下载最新版本的 [choerodon-tool-liquibase.jar](https://oss.sonatype.org/content/groups/public/io/choerodon/choerodon-tool-liquibase)，自行指定`TOOL_JAR_PATH`路径进行数据初始化。 
 
 ## 验证表结构
 
 登录数据库，查询现有的表结构。
 
 ```bash
+mysql> use todo_service;
+Database changed
 mysql> show tables;
-+---------------------------------------+
++------------------------+
 | Tables_in_todo_service |
-+---------------------------------------+
-| DATABASECHANGELOG                     |
-| DATABASECHANGELOGLOCK                 |
-| todo_task                             |
-| todo_user                             |
-+---------------------------------------+
-5 rows in set (0.00 sec)
++------------------------+
+| DATABASECHANGELOG      |
+| DATABASECHANGELOGLOCK  |
+| TODO_TASK              |
+| TODO_USER              |
++------------------------+
+4 rows in set (0.00 sec)
 ```
 
 ## 项目数据库配置
@@ -170,7 +180,7 @@ mysql> show tables;
 ``` xml
 <dependency>
     <groupId>io.choerodon</groupId>
-    <artifactId>choerodon-starter-mybatis-mapper</artifactId>
+    <artifactId>choerodon-starter-mybatis</artifactId>
     <version>${choerodon.starters.version}</version>
 </dependency>
 <dependency>

@@ -12,7 +12,7 @@ weight = 2
 
 创建一个简单的项目，实现记录待办事项的功能。
 
-具体功能包括：创建任务、根据任务Id获取任务、根据ID删除任务、根据任务编号删除任务、根据任务ID更新任务信息。
+具体功能包括：创建任务、根据任务Id获取任务、根据任务编号获取任务、根据ID删除任务、根据任务ID更新任务信息。
 
 ## 表结构
 
@@ -37,37 +37,43 @@ weight = 2
 
 ## 项目结构
 ```bash
-choerodon-todo-service-parent
-└─choerodon-todo-service
-   └─src
-      ├─main
-      │  ├─java
-      │  │  └─io
-      │  │      └─choerodon
-      │  │          └─todo
-      │  │              ├─api
-      │  │              │  ├─controller
-      │  │              │  │  └─v1
-      │  │              │  └─dto
-      │  │              ├─app
-      │  │              │  └─service
-      │  │              │      └─impl
-      │  │              ├─domain
-      │  │              │  ├─repository
-      │  │              │  ├─service
-      │  │              │  │  └─impl
-      │  │              │  └─todo
-      │  │              │      ├─convertor
-      │  │              │      └─entity
-      │  │              └─infra
-      │  │                  ├─dataobject
-      │  │                  ├─mapper
-      │  │                  └─repository
-      │  │                      └─impl
-      │  └─resources
-      │      ├─mapper
-      │      └─script
-      │          └─db
-      └─test
-          └─java
+choerodon-todo-service
+├── init-local-database.sh
+├── pom.xml
+└── src
+    └── main
+        ├── java
+        │   └── io
+        │       └── choerodon
+        │           └── todo
+        │               ├── TodoServiceApplication.java
+        │               ├── api
+        │               │   └── controller
+        │               │       └── v1
+        │               │           ├── TaskController.java
+        │               │           └── UserController.java
+        │               ├── app
+        │               │   └── service
+        │               │       ├── TaskService.java
+        │               │       ├── UserService.java
+        │               │       └── impl
+        │               │           ├── TaskServiceImpl.java
+        │               │           └── UserServiceImpl.java
+        │               └── infra
+        │                   ├── dto
+        │                   │   ├── TaskDTO.java
+        │                   │   └── UserDTO.java
+        │                   └── mapper
+        │                       ├── TaskMapper.java
+        │                       └── UserMapper.java
+        └── resources
+            ├── application.yml
+            ├── bootstrap.yml
+            ├── mapper
+            │   └── TaskMapper.xml
+            └── script
+                └── db
+                    ├── todo_task.groovy
+                    └── todo_user.groovy
+
 ```

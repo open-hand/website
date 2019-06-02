@@ -7,7 +7,7 @@ description = "讲述了Choerodon平台上的数据一致性支持"
 
 ## 前置条件
 
-在开始使用`Saga`之前，要确保服务的`choerodon-starters-asgard`依赖在`0.6.3.RELEASE`版本及之上, 推荐最新版`0.8.1.RELEASE`。同时需要对`Saga` 有一定的了解。可以参考[Choerodon猪齿鱼平台中的微服务数据一致性解决方案](https://mp.weixin.qq.com/s?__biz=MzU4OTQ3NTQ0OQ==&mid=2247483880&idx=1&sn=f6f94cf64f0e91f460325011f5c8f152&chksm=fdcdbafecaba33e80b22e062724a3775ad3f9349c0503fc2241ba9df5c798e207bfd2305d98f&scene=0#rd)。
+在开始使用`Saga`之前，要确保服务的`choerodon-starters-asgard`依赖在`0.6.3.RELEASE`版本及之上, 推荐最新版`0.11.0.RELEASE`。同时需要对`Saga` 有一定的了解。可以参考[Choerodon猪齿鱼平台中的微服务数据一致性解决方案](https://mp.weixin.qq.com/s?__biz=MzU4OTQ3NTQ0OQ==&mid=2247483880&idx=1&sn=f6f94cf64f0e91f460325011f5c8f152&chksm=fdcdbafecaba33e80b22e062724a3775ad3f9349c0503fc2241ba9df5c798e207bfd2305d98f&scene=0#rd)。
 
 ## 介绍
 
@@ -37,9 +37,9 @@ description = "讲述了Choerodon平台上的数据一致性支持"
 choerodon:
   saga:
     consumer:
-      thread-num: 5 # saga消息消费线程池大小
+      enabled: false # 启动消费端
+      thread-num: 2 # saga消息消费线程池大小
       max-poll-size: 200 # 每次拉取消息最大数量
-      enabled: true # 启动消费端，如果服务中不存在@SagaTask，可设置为false，避免资源浪费
       poll-interval-ms: 1000 # 拉取间隔，默认1000毫秒
 ```
 
@@ -56,7 +56,7 @@ choerodon:
 
 在方法或者类上添加`@Saga` 注解。
 ``` java
-@Saga(code = "asgard-create-user", description = "创建项目", inputSchemaClass = AsgardUser.class)
+@Saga(code = "asgard-create-user", description = "创建用户", inputSchemaClass = AsgardUser.class)
 ```
 
 字段 | 作用
@@ -83,11 +83,15 @@ choerodon:
 `code` | 该`task`的`code`，同一个`sagaCode`下的`taskCode`需要唯一
 `sagaCode` | 对应`@Saga`的`code`，表示订阅该`Saga`
 `seq` | 执行顺序，同一个`Saga`下的task将按照seq顺序一次消费，值越小消费顺序越高
+`enabledDbRecord` | 是否在数据库中记录消息消费,默认`否`
 `description` | 描述
-`maxRetryCount` | 最大自动重试次数
-`concurrentLimitNum` | 并发数，当`concurrentLimitPolicy`不为NONE时生效
+`maxRetryCount` | 最大自动重试次数，默认次数为1
 `concurrentLimitPolicy` | 并发策略，默认为NONE
+`concurrentLimitNum` | 并发数，当`concurrentLimitPolicy`不为NONE时生效
+`timeoutSeconds` | 超时时间
+`timeoutPolicy` | 超时策略，默认为重试
 `outputSchemaClass` |  默认将`@SagaTask`的返回类型生成输出，也可通过此属性指定
+`outputSchema` | 通过json字符串手动指定输出参数。比如{"name":"wang","age":23}
 `transactionIsolation` | 事务的隔离级别
 `transactionManager` | 使用的事务管理器
 
@@ -100,6 +104,9 @@ choerodon:
 
 当`Saga` 被定义好之后，可以通过服务自身，启动一个`Saga` 实例。
 
+### 启动Saga实例
+
+#### 通过Feign启动一个Saga（过时）
 * 注入`SagaClient`，通过`feign`调用`saga`。
 * 将业务代码和`sagaClient.startSaga()`放在一个事务中。
 * 当不需要消费端消费该`Saga`实例时，添加`choerodon.saga.consumer.enabled: false`配置，这样不会创建消费端拉取消息和消息消费的`bean`和线程。
@@ -123,6 +130,36 @@ choerodon:
          sagaClient.startSaga("asgard-create-user", new StartInstanceDTO(input, "", ""));
     }
 ```
+#### 通过TransactionalProducer启动一个Saga
+
+* 注入`TransactionalProducer`，通过`StartSagaBuilder`启动一个Saga
+* 将业务代码和`producer.applyAndReturn()`放在一个事务中。
+* 当不需要消费端消费该`Saga`实例时，添加`choerodon.saga.consumer.enabled: false`配置，这样不会创建消费端拉取消息和消息消费的`bean`和线程。
+* 方法
+    - `withSagaCode(String sagaCode)`: 传入要启用的`saga`的`code`字段，对应`@Saga`里的`code`
+    - `withLevel(ResourceLevel level)`: 传入层级。取值"site"、"organization"、"project"、"user"
+    - `withRefType(String refType)`: 传入关联业务类型，该字段用于并发策略
+    - `withRefId(String refId)`: 传入关联业务Id。非必须，该字段用于并发策略
+    - `withPayloadAndSerialize(Object payload)`: 传入输入对象
+    
+例如创建一个用户时，启动一个`Saga`：
+``` java
+producer.applyAndReturn(
+                StartSagaBuilder
+                        .newBuilder()
+                        .withLevel(ResourceLevel.ORGANIZATION)
+                        .withRefType("organization")
+                        .withSagaCode("asgard-create-user"),
+                builder -> {
+                    asgardService.createuser(user); 
+                    builder
+                            .withPayloadAndSerialize(sagaPayload)
+                            .withRefId(String.valueOf(orgId))
+                            .withSourceId(orgId);
+                    return sagaPayload;
+                });
+```
+
 
 
 同时在代码中添加如下处理逻辑：
@@ -145,7 +182,7 @@ public DevopsUser devopsCreateUser(String data) throws IOException {
 }
 ```
 
-方法返回值为该任务的输出，本次`agaTask`的输出是下一个`sagaTsk`的输入。
+方法返回值为该任务的输出，本次`sagaTask`的输出是下一个`sagaTask`的输入。
 
 里面执行封装了事务，不需要再加事务，如果需要加外部事务，可通过`@SagaTask`的`transactionDefinition`设置事务传播行为。
 

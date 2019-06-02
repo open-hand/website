@@ -25,7 +25,6 @@ mvn clean spring-boot:run
 ```
 
 > * 本地开发服务，如果不调用其他服务，则可以不需要启动注册中心，在`TodoServiceApplication`中不需要添加`@EnableEurekaClient` 注解。
-> * 如果不需要测试到kafka相关的，可以将kafka的相关的依赖注释掉。提交时再打开。
 
 ## 服务注册
 
@@ -43,36 +42,27 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8000/eureka/
 ```
+在`pom.xml`中添加相关依赖
 
-如果需要自动将该服务在线上添加到路由列表中，需在`xxx.infra.util`包下创建拓展数据配置类，并继承`ExtraDataManager`，以用于自动初始化路由。示例如下：
-```java
-@ChoerodonExtraData
-public class CustomExtraDataManager implements ExtraDataManager {
-    @Override
-    public ExtraData getData() {
-        ChoerodonRouteData choerodonRouteData = new ChoerodonRouteData();
-        choerodonRouteData.setName("todo");
-        choerodonRouteData.setPath("/todo/**");
-        choerodonRouteData.setServiceId("choerodon-todo-service");
-        extraData.put(ExtraData.ZUUL_ROUTE_DATA, choerodonRouteData);
-        return extraData;
-    }
-}
+```xml
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+</dependency>
 ```
-
-或者以管理员权限登录平台，在`管理` -> `微服务管理` -> `路由管理` 中添加对应服务的路由信息。
 
 ## 接口权限
 
-Choerodon 的接口权限遵循`RBAC`。需要在接口上添加`@Permission()`注解。
+Choerodon 的接口权限遵循`RBAC`。需要在接口上添加`@Permission`注解。
 
 包含如下参数。
 
 参数名 | 说明
 |---|---|
-level | 接口层级，ResourceLevel.SITE，ResourceLevel.ORGANIZATION，ResourceLevel.PROJECT三种
+type | 接口层级，ResourceType.SITE，ResourceType.ORGANIZATION，ResourceType.PROJECT三种
 permissionLogin | 登录允许访问，默认为false
 permissionPublic | 公开接口，默认为false
+permissionWithin | 是否为内部接口
 
 其中如果层级为组织层或项目层，则接口的`mapping` 中必须包含`organization_id` 或 `project_id` 作为变量。否则`gateway-helper`校验时不会识别该权限。
 
@@ -84,9 +74,8 @@ permissionPublic | 公开接口，默认为false
 
 **2.** 如果需要获取当前登录的用户信息，则需要在本地启动如下服务，进行登录。
 
-* register-server
+* eureka-server
 * api-gateway
-* gateway-helper
 * oauth-server
 
 **3.** 然后通过`api-gateway` 的输出日志，获取登录用户的 `jwt_token`。然后添加请求头。
@@ -99,7 +88,7 @@ permissionPublic | 公开接口，默认为false
 
 ## 启动相关服务
 
-如果需要启动其他模块，可以在[github](https://github.com/choerodon/)上获取到对应服务的最新代码，克隆到本地，将`./src/main/resources/application.yml` 复制一份出来，修改里面的默认值。根据本地环境信息，修改数据库和kafka连接。
+如果需要启动其他模块，可以在[github](https://github.com/choerodon/)上获取到对应服务的最新代码，克隆到本地，将`./src/main/resources/application.yml` 复制一份出来，修改里面的默认值。根据本地环境信息，修改数据库和redis连接。
 
 ``` bash
 $ cp ./src/main/resources/application.yml ./src/main/resources/application-default.yml
@@ -156,7 +145,7 @@ services:
   api-gateway:
     container_name: api-gateway
     hostname: api-gateway
-    image: registry.cn-shanghai.aliyuncs.com/choerodon/api-gateway:0.11.0
+    image: registry.cn-shanghai.aliyuncs.com/choerodon/api-gateway:0.17.1
     links: 
     - eureka-server
     depends_on:
@@ -177,43 +166,9 @@ services:
     - "8080"
     networks:
     - "c7nNetwork"
-  gateway-helper:
-    container_name: gateway-helper
-    image: registry.cn-shanghai.aliyuncs.com/choerodon/gateway-helper:0.11.0
-    depends_on:
-    - eureka-server
-    - redis
-    - mysql
-    - redis
-    links: 
-    - eureka-server
-    - redis
-    - mysql
-    - redis
-    ports:
-    - "9180:9180"
-    environment:
-    - SPRING_CLOUD_CONFIG_ENABLED=false
-    - HYSTRIX_STREAM_QUEUE_ENABLED=false
-    - SPRING_CLOUD_BUS_ENABLED=false
-    - SPRING_SLEUTH_STREAM_ENABLED=false
-    - LOGGING_LEVEL=WARN
-    - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8000/eureka/
-    - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/iam_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
-    - SPRING_DATASOURCE_USERNAME=choerodon
-    - SPRING_DATASOURCE_PASSWORD=123456
-    - SPRINT_CACHE_NULTI_L1_ENABLED=false
-    - SPRINT_CACHE_NULTI_L2_ENABLED=false
-    - SPRINT_REDIS_HOST=redis
-    - SPRING_REDIS_PORT=6379
-    - SPRING_REDIS_DATABASE=4
-    - SPRING_APPLICATION_JSON={"zuul":{"routes":{"dev":{"path":"/todo/**", "serviceId":"choerodon-todo-service"}}}}
-    - JAVA_OPTS=-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -Xms512M -Xmx768M
-    networks:
-    - "c7nNetwork"
   iam-service:
     container_name: iam-service
-    image: registry.cn-shanghai.aliyuncs.com/choerodon/iam-service:0.11.0
+    image: registry.cn-shanghai.aliyuncs.com/choerodon/iam-service:0.17.1
     depends_on:
     - eureka-server
     - mysql
@@ -239,7 +194,7 @@ services:
     - "c7nNetwork"
   manager-service:
     container_name: manager-service
-    image: registry.cn-shanghai.aliyuncs.com/choerodon/manager-service:0.11.0
+    image: registry.cn-shanghai.aliyuncs.com/choerodon/manager-service:0.17.1
     depends_on:
     - eureka-server
     - mysql
@@ -266,17 +221,15 @@ services:
     - "c7nNetwork"
   oauth-server:
     container_name: oauth-server
-    image: registry.cn-shanghai.aliyuncs.com/choerodon/oauth-server:0.11.0
+    image: registry.cn-shanghai.aliyuncs.com/choerodon/oauth-server:0.17.1
     depends_on:
     - eureka-server
     - redis
     - mysql
-    - redis
     links: 
     - eureka-server
     - redis
     - mysql
-    - redis
     ports:
     - "8020:8020"
     environment:
