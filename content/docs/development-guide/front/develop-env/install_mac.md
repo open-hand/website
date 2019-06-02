@@ -12,9 +12,6 @@ weight = 1
 
 - Git
 - Node.js 8.11.1及以上版本
-- python
-- PyYAML
-- PyMySQL
 
 ## 安装提前准备
 
@@ -31,12 +28,3 @@ weight = 1
 1. 在 [Node.js官网](https://nodejs.org/en/download/)下载用于Mac平台的安装包。
 2. 运行 `brew install node` 安装node。
 3. 配置完成后打开终端执行 `node --version`，有提示则说明环境安装成功。
-
-## 在Mac上安装python
-
-在项目中，python(2.7.X)用于执行功能性脚本。
-
-1. 在[python 官网](https://www.python.org/downloads/release/python-2712/) 下载2.7版本的python 安装包。
-2. 运行`brew install python@2` 安装python。
-3. 配置完成后打开 `git bash` 执行 `python`，有提示则说明环境安装成功。
-4. 通过`pip` 安装`PyYAML`，`PyMySQL`。打开 `git bash` 执行 `pip install PyYAML PyMySQL`，然后安装完成之后执行`pip list` 查看安装的版本。

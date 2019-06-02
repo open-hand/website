@@ -23,12 +23,14 @@ $ docker exec -ti mysql mysql -u choerodon -p
 ```
 
 3.创建用户和数据库。
-```sql
+
+``` sql
+/** init_user.sql */
 CREATE USER 'choerodon'@'%' IDENTIFIED BY "123456";
-CREATE DATABASE IF NOT EXISTS iam_service DEFAULT CHARACTER SET utf8;
-CREATE DATABASE IF NOT EXISTS manager_service DEFAULT CHARACTER SET utf8;
-CREATE DATABASE IF NOT EXISTS asgard_service DEFAULT CHARACTER SET utf8;
-CREATE DATABASE IF NOT EXISTS notify_service DEFAULT CHARACTER SET utf8;
+CREATE DATABASE IF NOT EXISTS iam_service DEFAULT CHARACTER SET utf8mb4;
+CREATE DATABASE IF NOT EXISTS manager_service DEFAULT CHARACTER SET utf8mb4;
+CREATE DATABASE IF NOT EXISTS asgard_service DEFAULT CHARACTER SET utf8mb4;
+CREATE DATABASE IF NOT EXISTS notify_service DEFAULT CHARACTER SET utf8mb4;
 GRANT ALL PRIVILEGES ON iam_service.* TO choerodon@'%';\
 GRANT ALL PRIVILEGES ON manager_service.* TO choerodon@'%';\
 GRANT ALL PRIVILEGES ON asgard_service.* TO choerodon@'%';\
@@ -38,32 +40,32 @@ FLUSH PRIVILEGES;
 
 4.查看用户与数据库。
 ```bash
-$ mysql> select User from mysql.user;
-+-----------+
-| User      |
-+-----------+
-| choerodon |
-| root      |
-| mysql.sys |
-+-----------+
-3 rows in set (0.00 sec)
+mysql> select User from mysql.user;
++---------------+
+| User          |
++---------------+
+| choerodon     |
+| mysql.session |
+| mysql.sys     |
+| root          |
++---------------+
+4 rows in set (0.00 sec)
 
 mysql> show databases;
-+-----------------------------+
-| Database                    |
-+-----------------------------+
-| asgard_service              |
-| information_schema          |
-| iam_service                 |
-| manager_service             |
-| notify_service              |
-| todo_service                |
-| mysql                       |
-| performance_schema          |
-| sys                         |
-+-----------------------------+
-9 rows in set (0.01 sec)
-
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| asgard_service     |
+| iam_service        |
+| manager_service    |
+| mysql              |
+| notify_service     |
+| performance_schema |
+| sys                |
+| todo_service       |
++--------------------+
+9 rows in set (0.00 sec)
 ```
 
 ## 初始化数据库
@@ -92,30 +94,36 @@ mkdir -p iam/script
 cp -r ./iam-service/src/main/resources/script/db ./iam/script
 rm -rf ./iam-service
 
+# get choerodon-tool-liquibase
+MAVEN_LOCAL_REPO=$(cd / && mvn help:evaluate -Dexpression=settings.localRepository -q -DforceStdout)
+TOOL_GROUP_ID=io.choerodon
+TOOL_ARTIFACT_ID=choerodon-tool-liquibase
+TOOL_VERSION=${1:-0.11.0.RELEASE}
+TOOL_JAR_PATH=${MAVEN_LOCAL_REPO}/${TOOL_GROUP_ID/\./\/}/${TOOL_ARTIFACT_ID}/${TOOL_VERSION}/${TOOL_ARTIFACT_ID}-${TOOL_VERSION}.jar
+mvn org.apache.maven.plugins:maven-dependency-plugin:get \
+ -Dartifact=${TOOL_GROUP_ID}:${TOOL_ARTIFACT_ID}:${TOOL_VERSION} \
+ -Dtransitive=false
+
 # init manager-service
 java -Dspring.datasource.url="jdbc:mysql://localhost:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
  -Dspring.datasource.username=choerodon \
  -Dspring.datasource.password=123456 \
- -Ddata.drop=false -Ddata.init=init \
+ -Ddata.drop=false -Ddata.init=true \
  -Ddata.dir=./manager \
- -jar ../bin/choerodon-tool-liquibase.jar
-
+ -jar ${TOOL_JAR_PATH}
+ 
 # init iam-service
 java -Dspring.datasource.url="jdbc:mysql://localhost:3306/iam_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
  -Dspring.datasource.username=choerodon \
  -Dspring.datasource.password=123456 \
- -Ddata.drop=false -Ddata.init=init \
+ -Ddata.drop=false -Ddata.init=true \
  -Ddata.dir=./iam \
- -jar ../bin/choerodon-tool-liquibase.jar
-```
+ -jar ${TOOL_JAR_PATH}
+ ```
 
 3.运行脚本。
-```
-$ sh ./init-local-database.sh
+```bash
+$ sh init-local-database.sh [version]    #如未指定version，则默认使用tool version为0.11.0.
 ```
 
 4.命令执行成功之后，刷新数据库，会出现初始化脚本中的表以及初始化数据。
-
-{{< warning >}}
-本地需要的`manager-service` 和`iam-service` 尽量以最新版本的`tag` 为主。如果初始化数据库失败，可以下载最新版本的`choerodon-tool-liquibase.jar` 并重命名覆盖`./bin/choerodon-tool-liquibase.jar`，然后重新执行`init-local-database.sh` 脚本
-{{< /warning >}}

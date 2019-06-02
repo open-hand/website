@@ -12,9 +12,6 @@ weight = 1
 
 - Git
 - Node.js 8.11.1及以上版本
-- python
-- PyYAML
-- PyMySQL
 
 ## Git 安装
 
@@ -30,14 +27,3 @@ weight = 1
 1. 在 [Node.js官网](https://nodejs.org/en/download/) 下载用于Windows平台的安装包。
 2. 本地执行安装文件。
 3. 配置完成后打开 git bash 执行 `node --version`，有提示则说明环境安装成功。
-
-## 在Windows上安装python
-
-Python是一种解释型、面向对象、动态数据类型的高级程序设计语言。
-
-在项目中，python用于执行功能性脚本。
-
-1. 在[python 官网](https://www.python.org/downloads/release/python-2712/) 下载2.7版本的python 安装包。
-2. 本地执行安装文件。
-3. 配置完成后打开 `git bash` 执行 `python`，有提示则说明环境安装成功。
-4. 通过`pip` 安装`PyYAML`，`PyMySQL`。打开 `git bash` 执行 `pip install PyYAML PyMySQL`，然后安装完成之后执行`pip list` 查看安装的版本。
