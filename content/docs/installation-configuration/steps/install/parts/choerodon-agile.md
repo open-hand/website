@@ -68,7 +68,7 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_REDIS_HOST=c7n-redis.c7n-system.svc \
         --set env.open.SPRING_REDIS_DATABASE=9 \
         --name agile-service \
-        --version 0.16.2 \
+        --version 0.16.4 \
         --namespace c7n-system
     ```
     参数名 | 含义 
