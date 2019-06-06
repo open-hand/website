@@ -53,6 +53,16 @@ helm install c7n/sonarqube \
 
     ![](/docs/installation-configuration/image/sonarqube.png)
 
+## 启用SonarQube
+- 在devops-service的envs添加，实际SonarQube地址，管理员用户名及密码
+
+    ```
+        SERVICES_SONARQUBE_URL: https://sonarqube.example.choerodon.io
+        SERVICES_SONARQUBE_USERNAME: admin
+        SERVICES_SONARQUBE_PASSWORD: admin
+    ```
+- 重新部署devops-service
+
 ## 配置 Choerodon 认证
 
 <blockquote class="warning">
@@ -81,7 +91,7 @@ helm install c7n/sonarqube \
             'password\,implicit\,client_credentials\,authorization_code\,refresh_token'\,\
             'http://sonarqube.example.choerodon.io/oauth2/callback/choerodon'\,3600\,3600\,'{}'\,'default'\,1\,0\,NOW()\,0\,NOW());" \
         --version 0.1.0 \
-        --name gitlab-client \
+        --name sonarqube-client \
         --namespace c7n-system
     ```
 
