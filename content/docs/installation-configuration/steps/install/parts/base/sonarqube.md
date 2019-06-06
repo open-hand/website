@@ -81,7 +81,7 @@ helm install c7n/sonarqube \
             'password\,implicit\,client_credentials\,authorization_code\,refresh_token'\,\
             'http://sonarqube.example.choerodon.io/oauth2/callback/choerodon'\,3600\,3600\,'{}'\,'default'\,1\,0\,NOW()\,0\,NOW());" \
         --version 0.1.0 \
-        --name gitlab-client \
+        --name sonarqube-client \
         --namespace c7n-system
     ```
 
