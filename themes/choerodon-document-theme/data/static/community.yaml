@@ -1,1 +1,2 @@
-js: ['/js/front.js','/js/community.js']
+js:
+  - /js/community.js

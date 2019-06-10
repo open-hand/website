@@ -1,1 +1,2 @@
-js: ['/js/front.js','/js/blog-search.js','/js/blog.js']
+js:
+  - /js/blog.js
