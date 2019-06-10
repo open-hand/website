@@ -1,5 +1,5 @@
 baseurl = "//v0-17.choerodon.io/"
-title = "Choerodon | 开源多云技术平台"
+title = "Choerodon | 开源多云集成平台"
 theme = "choerodon-document-theme"
 # themesDir = "../.."
 # Site language. Available translations in the theme's `/i18n` directory.
@@ -40,18 +40,18 @@ paginate = 5
     weight = 4
     identifier = "en-community"
     pre = "<i class='iconfont'>&#xe600;</i>"
-    
+
     [[languages.en.menu.main]]
 	        name = "Community"
 	        url  = "/en/community/"
 	        weight = 4
 	        parent = "en-community"
-	
+
 	[[languages.en.menu.main]]
 	        name = "Knowledge-Sharing"
 	        url  = "/en/knowledge-sharing"
 	        weight = 3
-	        parent = "en-community" 
+	        parent = "en-community"
 
 
 [[languages.en.menu.main]]
@@ -113,18 +113,18 @@ paginate = 5
     weight = 4
     identifier = "community"
     pre = "<i class='iconfont'>&#xe600;</i>"
-    
+
 	[[languages.zh.menu.main]]
 	        name = "社区"
 	        url  = "/zh/community/"
 	        weight = 4
-	        parent = "community"	
+	        parent = "community"
 	[[languages.zh.menu.main]]
 	        name = "知识分享"
 	        url  = "/zh/knowledge-sharing"
 	        weight = 3
-	        parent = "community"        
-	        
+	        parent = "community"
+
 [[languages.zh.menu.main]]
     name = "GITHUB"
     url  = "https://github.com/choerodon/"

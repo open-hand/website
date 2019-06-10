@@ -8,6 +8,7 @@ node_modules/
 **/docslunr.json
 **/lunr.json
 package-lock.json
+yarn.lock
 *.scssc
 *.css.map
 desktop.ini

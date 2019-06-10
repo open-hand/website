@@ -8,7 +8,7 @@
 
 # 首页
 - id: enterprise digital services platform
-  translation: "开源多云技术平台"
+  translation: "开源多云集成平台"
 
 - id: scrum application delivery and automated operations management
   translation: "多云应用技术集成平台"
@@ -68,7 +68,7 @@
 
 - id: nextpage
   translation: "下一篇"
-  
+
 - id: previouspage
   translation: "上一篇"
 # 博客 结束
@@ -118,10 +118,10 @@
 # 知识分享页面
 - id: tech-ca
   translation: "技术类"
-  
+
 - id: welcome to knowledge sharing
   translation:  "欢迎来到知识分享"
-  
+
 - id: zother
   translation:  "其他类"
 # 知识分享页面结束
