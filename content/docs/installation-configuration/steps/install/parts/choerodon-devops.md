@@ -77,9 +77,9 @@ helm install c7n/mysql-client \
         --set env.open.TEMPLATE_VERSION="0.17.0" \
         --set env.open.TEMPLATE_URL="https://github.com/choerodon/choerodon-devops-templates.git" \
         --set env.open.AGENT_CERTMANAGERURL="https://openchart.choerodon.com.cn/choerodon/infra/" \
-        --set ingress.enable=true \
+        --set ingress.enabled=true \
         --set ingress.host=devops.example.choerodon.io \
-        --set service.enable=true \
+        --set service.enabled=true \
         --set persistence.enabled=true \
         --set persistence.existingClaim="chartmuseum-pvc" \
         --name devops-service \
