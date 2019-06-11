@@ -19,7 +19,6 @@ kube-apiserver|kube-apiserver|v1.10.12
 kube-controller-manager|kube-controller-manager|v1.10.12
 kube-scheduler|kube-scheduler|v1.10.12
 kube-dns|kube-dns|1.14.8
-kube-lego|kube-lego|0.1.5
 kube-flannel|网络插件|v0.10.0-amd64
 kubernetes-dashboard|kubernetes-dashboard|v1.8.3
 nginx-ingress-controller|nginx-ingress-controller|0.9.0-beta.17

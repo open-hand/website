@@ -54,18 +54,9 @@ Harbor启动速度较慢请等待所有Pod都为Running后进行界面查看。
 
 ## 证书配置
 
-### 有公网域名时使用[kube-lego](https://github.com/jetstack/kube-lego)申请证书
+### 有公网域名
 
-<blockquote class="note">
-以下讲解为通过<a href="https://github.com/jetstack/kube-lego" target="_blank">kube-lego</a>创建证书，kube-lego会自动申请证书。通过本站Kubernetes部署教程部署的集群默认是安装kube-lego的。若集群中未安装kube-lego请忽略以下本节操作。
-</blockquote>
-
-- 检测是否安装有kube-lego:
-
-    ```
-    # 执行命令后有返回结果则说明已部署
-    kubectl get deployment --all-namespaces | grep kube-lego
-    ```
+请到域名服务商处获取对应域名nginx类型证书后执行以下操作：
 
 - 删除自签名证书secret
 
@@ -73,19 +64,11 @@ Harbor启动速度较慢请等待所有Pod都为Running后进行界面查看。
     kubectl delete secret -n c7n-system harbor-harbor-ingress
     ```
 
-- 编辑harbor的ingress对象
+- 创建域名证书secret，请注意替换命令中`${KEY_FILE} `、`${CERT_FILE}`为文件访问路径
 
     ```
-    kubectl edit ingress -n c7n-system harbor-harbor-ingress
+    kubectl create secret tls harbor-harbor-ingress --key ${KEY_FILE} --cert ${CERT_FILE}
     ```
-
-    - 为ingress添加注解`kubernetes.io/tls-acme: "true"`
-
-        ```yaml
-        metadata:
-          annotations:
-            kubernetes.io/tls-acme: "true"
-        ```
 
 - 编辑 harbor-core 的 deployment 对象
 
