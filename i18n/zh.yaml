@@ -1,64 +1,64 @@
 # 导航栏
 - id: navHome
-  translation: "跳到主页"
+  translation: '跳到主页'
 
 - id: navToggle
-  translation: "切换导航"
+  translation: '切换导航'
 # 导航栏 结束
 
 # 首页
 - id: enterprise digital services platform
-  translation: "开源多云集成平台"
+  translation: '开源多云技术平台'
 
 - id: scrum application delivery and automated operations management
-  translation: "多云应用技术集成平台"
+  translation: '多云应用技术集成平台'
 
 - id: quick start
-  translation: "快速开始"
+  translation: '快速开始'
 
 - id: know more
-  translation: "想了解更多吗?"
+  translation: '想了解更多吗?'
 
 - id: prepare more tutorials
-  translation: "我们为您准备了很多教程"
+  translation: '我们为您准备了很多教程'
 
 - id: go and see
-  translation: "去看看"
+  translation: '去看看'
 
 - id: product features
-  translation: "产品特性"
+  translation: '产品特性'
 
 - id: case
-  translation: "案例"
+  translation: '案例'
 # 首页 结束
 
 # 博客
 - id: categoriesTitle
-  translation: "全部分类"
+  translation: '全部分类'
 
 - id: search
-  translation: "搜索"
+  translation: '搜索'
 
 - id: search keys
-  translation: "请搜索关键字"
+  translation: '请搜索关键字'
 
 - id: tagsTitle
-  translation: "全部标签"
+  translation: '全部标签'
 
 - id: author
-  translation: "作者"
+  translation: '作者'
 
 - id: source
-  translation: "出处"
+  translation: '出处'
 
 - id: welcome to reprint
-  translation: "欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文链接。"
+  translation: '欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文链接。'
 
 - id: share
-  translation: "分享"
+  translation: '分享'
 
 - id: share to wechat
-  translation: "分享到微信"
+  translation: '分享到微信'
 
 - id: open wechat click discover
   translation: "打开微信，点击底部的'发现'，"
@@ -67,61 +67,61 @@
   translation: "使用'扫一扫'即可将网页分享至朋友圈。"
 
 - id: nextpage
-  translation: "下一篇"
+  translation: '下一篇'
 
 - id: previouspage
-  translation: "上一篇"
+  translation: '上一篇'
 # 博客 结束
 
 # 案例
 - id: they are using choerodon
-  translation: "他们正在使用猪齿鱼"
+  translation: '他们正在使用猪齿鱼'
 
 - id: to accelerate business remodeling
-  translation: "加速业务重塑"
+  translation: '加速业务重塑'
 
 - id: and digital transformation
-  translation: "和数字化转型"
+  translation: '和数字化转型'
 
 - id: choerodon has increased the agility of the enterprise
-  translation: "Choerodon猪齿鱼正在帮助他们提高企业信息化系统对市场和需求反应的敏捷度"
+  translation: 'Choerodon猪齿鱼正在帮助他们提高企业信息化系统对市场和需求反应的敏捷度'
 
 - id: readmore
-  translation: "查看详情"
+  translation: '查看详情'
 # 案例 结束
 
 # 社区
 - id: welcome to choerodon community
-  translation: "欢迎来到猪齿鱼社区"
+  translation: '欢迎来到猪齿鱼社区'
 
 - id: people committed to technology sharing
-  translation: "一群热诚、友善、多元化、智慧的人致力于技术分享，与猪齿鱼共同成长"
+  translation: '一群热诚、友善、多元化、智慧的人致力于技术分享，与猪齿鱼共同成长'
 
 - id: we hope you have more requests and suggestions
-  translation: "欢迎您多提需求及建议"
+  translation: '欢迎您多提需求及建议'
 
 - id: provides a steady stream of nutrients for choerodon
-  translation: "为Choerodon猪齿鱼的完善提供源源不断的养分"
+  translation: '为Choerodon猪齿鱼的完善提供源源不断的养分'
 # 社区 结束
 
 # 404页面
 - id: we are sorry
-  translation: "很抱歉 这个页面已经不在这里了"
+  translation: '很抱歉 这个页面已经不在这里了'
 
 - id: page not found
-  translation: "错误404页面未找到"
+  translation: '错误404页面未找到'
 
 - id: go to homepage
-  translation: "返回首页"
+  translation: '返回首页'
 # 404页面 结束
 
 # 知识分享页面
 - id: tech-ca
-  translation: "技术类"
+  translation: '技术类'
 
 - id: welcome to knowledge sharing
-  translation:  "欢迎来到知识分享"
+  translation: '欢迎来到知识分享'
 
 - id: zother
-  translation:  "其他类"
+  translation: '其他类'
 # 知识分享页面结束

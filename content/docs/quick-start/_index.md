@@ -8,14 +8,17 @@ home = true
 +++
 
 ## 快速入门
-Choerodon 猪齿鱼是开源多云应用平台，帮助企业实现敏捷化的应用交付和自动化的运营管理。在本节快速入门中，将分别从管理者、项目经理和项目成员的角度让您快速进入Choerodon 的操作。
+
+Choerodon 猪齿鱼是开源多云技术平台，帮助企业实现敏捷化的应用交付和自动化的运营管理。在本节快速入门中，将分别从管理者、项目经理和项目成员的角度让您快速进入 Choerodon 的操作。
 
 ## 前置条件
+
 - Choerodon 使用 Kubernetes 来管理和部署服务。关于 Kubernetes，请参考 [Kubernetes](https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/) 概览。
-- 系统用户必须具有Choerodon平台的角色，才能根据角色权限进行Choerodon的使用。所以，在使用Choerodon之前，如果您是管理者或者项目经理，您需要为您的用户分配项目所有者等角色。关于角色管理，请参阅用户手册中[角色管理](../user-guide/system-configuration/platform/role/)。
-- 本文档中不包含Choerodon功能理论等相关知识，如果要深入的了解Choerodon相关的知识，您可以阅读[用户手册](../user-guide/)，或参加相关的培训。
+- 系统用户必须具有 Choerodon 平台的角色，才能根据角色权限进行 Choerodon 的使用。所以，在使用 Choerodon 之前，如果您是管理者或者项目经理，您需要为您的用户分配项目所有者等角色。关于角色管理，请参阅用户手册中[角色管理](../user-guide/system-configuration/platform/role/)。
+- 本文档中不包含 Choerodon 功能理论等相关知识，如果要深入的了解 Choerodon 相关的知识，您可以阅读[用户手册](../user-guide/)，或参加相关的培训。
 
 ## 权限了解
+
 {{< table  0 1>}}
 角色|平台角色|权限描述
 ---|---|---|
