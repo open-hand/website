@@ -67,7 +67,7 @@ Harbor启动速度较慢请等待所有Pod都为Running后进行界面查看。
 - 创建域名证书secret，请注意替换命令中`${KEY_FILE} `、`${CERT_FILE}`为文件访问路径
 
     ```
-    kubectl create secret tls harbor-harbor-ingress --key ${KEY_FILE} --cert ${CERT_FILE}
+    kubectl create secret tls harbor-harbor-ingress -n c7n-system --key ${KEY_FILE} --cert ${CERT_FILE}
     ```
 
 - 编辑 harbor-core 的 deployment 对象
