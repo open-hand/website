@@ -165,7 +165,7 @@ paginate = 5
 [params]
     viewMorePostLink = "/blog/"
     author = "Choerodon"
-    tryhref = "https://organization.choerodon.com.cn/#/organization/register-organization"
+    tryhref = "https://choerodon.com.cn/#/organization/register-organization"
     ajaxhref = "https://share.choerodon.com.cn/topic/apply"
     praisenumber ="https://share.choerodon.com.cn/video/query"
     defaultKeywords = ["devops"]
