@@ -1,5 +1,5 @@
 baseurl = "//v0-17.choerodon.io/"
-title = "Choerodon | 开源多云集成平台"
+title = "Choerodon | 开源多云技术平台"
 theme = "choerodon-document-theme"
 # themesDir = "../.."
 # Site language. Available translations in the theme's `/i18n` directory.
