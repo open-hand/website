@@ -16,6 +16,12 @@
 - id: quick start
   translation: "Quick Start"
 
+- id: sign in
+  translation: 'Sign In'
+
+- id: sign up
+  translation: 'Sign Up'
+
 - id: know more
   translation: "Want to know more?"
 
@@ -124,5 +130,5 @@
 
 - id: welcome to knowledge sharing
   translation:  "Welcome to Knowledge Sharing"
-  
+
 # 知识分享结束
