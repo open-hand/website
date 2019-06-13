@@ -58,7 +58,7 @@ agile service|敏捷管理|0.17.2
 state machine service|状态机服务|0.17.1
 issue service|issue服务|0.17.1
 wiki service|知识管理服务|0.17.1
-test manager service|测试管理服务|0.17.3
+test manager service|测试管理服务|0.17.5
 choerodon front|Choerodon 前端|0.17.0
 knowledgebase service |基础知识服务|0.17.2
 foundation service |基础服务|0.17.1
