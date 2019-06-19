@@ -47,6 +47,11 @@ helm install c7n/sonarqube \
 
 - 更多参数及含义请参考[SonarQube Chart](https://github.com/helm/charts/tree/155659de436be352b0e8fd12d4954d82c62c7068/stable/sonarqube#sonarqube)
 
+## 安装SoanrQube插件
+- 此步骤用于之前已经安装过SonarQube，只需安装插件的情况（如已经执行过上一步可跳过此步骤）
+- 进入SonarQube安装目录，下载https://file.choerodon.com.cn/choerodon-install/sonarqube/sonar-auth-choerodonoauth-plugin-1.0-RELEASE.jar 插件到\data\sonarqube\extensions\plugins目录
+- 重启SoanrQube服务
+
 ## 验证部署
 
 - 访问设置的SonarQube域名出现以下界面即部署成功
