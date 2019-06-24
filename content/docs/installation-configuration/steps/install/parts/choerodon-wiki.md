@@ -60,7 +60,7 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_CLOUD_CONFIG_URI="http://register-server.c7n-system:8000/" \
         --set env.open.SERVICE_ATTACHMENT_URL="http://minio.example.choerodon.io/knowledgebase-service/" \
         --name knowledgebase-service \
-        --version 0.17.2 \
+        --version 0.18.0 \
         --namespace c7n-system
     ```
     参数名 | 含义 
@@ -203,7 +203,7 @@ helm install c7n/mysql-client \
         --set env.open.WIKI_TOKEN=Choerodon \
         --set env.open.WIKI_DEFAULT_GROUP=XWikiAllGroup \
         --name wiki-service \
-        --version 0.17.1 \
+        --version 0.18.0 \
         --namespace c7n-system
     ```
 
