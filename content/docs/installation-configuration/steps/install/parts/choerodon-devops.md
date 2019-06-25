@@ -39,7 +39,6 @@ helm install c7n/mysql-client \
     --namespace c7n-system
 ```
 
-
 ## 部署devops service
 
 - 部署服务
@@ -84,10 +83,11 @@ helm install c7n/mysql-client \
         --set persistence.existingClaim="chartmuseum-pvc" \
         --name devops-service \
         --version 0.18.0 \
-        --namespace c7n-system 
+        --namespace c7n-system
     ```
-    参数名 | 含义 
-    --- |  --- 
+
+    参数名 | 含义
+    --- |  ---
     service.enable|是否创建service
     preJob.preConfig.datasource{}|初始化配置所需manager_service数据库信息
     preJob.preInitDB.datasource{}|初始化数据库所需数据库信息
@@ -117,15 +117,17 @@ helm install c7n/mysql-client \
     ingress.host|设置域名，这里不要加http前缀
 
 - 验证部署
-    - 验证命令
 
-        ```
-        curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=devops-service -o jsonpath="{.items[0].status.podIP}"):8061/actuator/health | jq -r .status
-        ```
-    - 出现以下类似信息即为成功部署
-        ```
-        UP
-        ```
+  - 验证命令
+
+      ```
+      curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=devops-service -o jsonpath="{.items[0].status.podIP}"):8061/actuator/health | jq -r .status
+      ```
+
+  - 出现以下类似信息即为成功部署
+      ```
+      UP
+      ```
 
 ## 部署gitlab service
 - 部署服务
@@ -152,8 +154,9 @@ helm install c7n/mysql-client \
         --version 0.18.0 \
         --namespace c7n-system
     ```
-    参数名 | 含义 
-    --- |  --- 
+
+    参数名 | 含义
+    --- |  ---
     preJob.preConfig.datasource{}|初始化配置所需manager_service数据库信息
     preJob.preInitDB.datasource{}|初始化数据库所需数据库信息
     env.open.SPRING_DATASOURCE_URL|数据库链接地址
@@ -166,16 +169,17 @@ helm install c7n/mysql-client \
     env.open.GITLAB_PRIVATETOKEN|gitlab 具有api、read_use、sudo权限的用户token，如何获取请[查阅](http://forum.choerodon.io/t/topic/1155/2)
 
 - 验证部署
-    - 验证命令
+  - 验证命令
 
-        ```
-        curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=gitlab-service -o jsonpath="{.items[0].status.podIP}"):8071/actuator/health | jq -r .status
-        ```
-    - 出现以下类似信息即为成功部署
-        ```
-        UP
-        ```
+      ```
+      curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=gitlab-service -o jsonpath="{.items[0].status.podIP}"):8071/actuator/health | jq -r .status
+      ```
 
+  - 出现以下类似信息即为成功部署
+
+      ```
+      UP
+      ```
 
 ## 部署workflow service
 
@@ -199,10 +203,11 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_CLOUD_CONFIG_URI="http://register-server.c7n-system:8000/" \
         --name workflow-service \
         --version 0.18.0 \
-        --namespace c7n-system 
+        --namespace c7n-system
     ```
-    参数名 | 含义 
-    --- |  --- 
+
+    参数名 | 含义
+    --- |  ---
     service.enable|是否创建service
     preJob.preConfig.datasource{}|初始化配置所需manager_service数据库信息
     preJob.preInitDB.datasource{}|初始化数据库所需数据库信息
@@ -213,14 +218,15 @@ helm install c7n/mysql-client \
     env.open.SPRING_CLOUD_CONFIG_URI|配置中心地址
     env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE|注册服务地址
 
-
 - 验证部署
-    - 验证命令
+  - 验证命令
 
-        ```
-        curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=workflow-service -o jsonpath="{.items[0].status.podIP}"):8066/actuator/health | jq -r .status
-        ```
-    - 出现以下类似信息即为成功部署
-        ```
-        UP
-        ```
+      ```
+      curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=workflow-service -o jsonpath="{.items[0].status.podIP}"):8066/actuator/health | jq -r .status
+      ```
+
+  - 出现以下类似信息即为成功部署
+
+      ```
+      UP
+      ```

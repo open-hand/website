@@ -14,6 +14,7 @@ helm repo update
 ```
 
 ## 部署choerodon front
+
 - 部署服务
 
     ```
@@ -41,8 +42,9 @@ helm repo update
         --version 0.18.0 \
         --namespace c7n-system
     ```
-    参数名 | 含义 
-    --- |  --- 
+
+    参数名 | 含义
+    --- |  ---
     preJob.preConfig.db{}|初始化配置所需manager_service数据库信息
     env.open.PRO_API_HOST|api地址
     env.open.PRO_DEVOPS_HOST|devops service地址

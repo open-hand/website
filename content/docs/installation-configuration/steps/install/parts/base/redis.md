@@ -13,6 +13,7 @@ weight = 30
 - [Redis](https://redis.io/)
 
 ## 仓库设置
+
 ## 添加choerodon chart仓库并同步
 
 ```
@@ -46,6 +47,6 @@ helm install c7n/redis \
 
 - 参数：
 
-    参数 | 含义 
-    --- |  --- 
+    参数 | 含义
+    --- |  ---
     service.enabled|是否启用service

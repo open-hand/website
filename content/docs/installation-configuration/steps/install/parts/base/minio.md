@@ -52,8 +52,8 @@ helm install c7n/minio \
 
 - 参数：
 
-    参数 | 含义 
-    --- |  --- 
+    参数 | 含义
+    --- |  ---
     persistence.enabled|是否启用持久化存储
     persistence.existingClaim|PVC的名称
     ingress.enabled|是否启用ingress
@@ -65,4 +65,4 @@ helm install c7n/minio \
 
 - 访问设置的域名出现以下界面即部署成功
 
-    ![](/docs/installation-configuration/image/minio.png)
+![minio](/docs/installation-configuration/image/minio.png)
