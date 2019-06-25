@@ -52,7 +52,7 @@ weight = 2
     
      - 人工卡点：人工审核的任务；(1)选择人工卡点任务类型后，需要填写任务名称；(2)选择审核人员（可多选）;(3)最后选择审核模式，其中包括会签和或签，会签是指所选的审核人员全部审核通过后才算通过，其中有一人选择中止，则此任务中止；或签是指所选的审核人员中，一人审核通过后此任务便通过，一人选择中止则此任务中止，以其中第一个审核人员的审核结果为准。
 
-     - 部署：通过预设应用部署所需的元素，实现部署自动化；(1)选择部署任务类型后，需填写任务名称；(2)选择项目下的任一`应用`；(3)输入或选择`应用版本类型`(此处可以选择我们给出的版本类型或手动输入自定义的版本类型。若不填写此栏，则默认自动部署该应用的所有版本)；（4）选择`环境`，且只可选择运行中的环境；（5）选择`部署模式`（部署模式有新建实例和替换实例两种）；（6） 选择`部署配置`, 此处会根据您选的应用与环境自动匹配所有关联的部署配置，您可根据给出的配置信息进行选择。<blockquote class="warning">若修改了给出的配置信息后，所选的部署配置中的配置信息也将随之改动。
+     - 部署：通过预设应用部署所需的元素，实现部署自动化；(1)选择部署任务类型后，需填写任务名称；(2)选择项目下的任一`应用`；(3)输入或选择`应用版本类型`(此处可以选择我们给出的版本类型或手动输入自定义的版本类型。若不填写此栏，则默认自动部署该应用的所有版本)；（4）选择`环境`，且只可选择运行中的环境；（5）选择`部署模式`（部署模式有新建实例和替换实例两种）；（6） 选择`部署配置`, 此处会根据您选的应用与环境自动匹配所有关联的部署配置，您可根据给出的配置信息进行选择。若所选应用与环境暂无对应的部署配置，则需要在部署配置页面创建一个对应的部署配置。<blockquote class="warning">若修改了给出的配置信息后，所选部署配置中的配置信息也将随之改动。同时，若部署配置中的配置信息被修改后，那么流水线中已选择该部署配置的部署任务在之后的自动部署时，会直接使用最新的部署配置。
     </blockquote>
  
 
@@ -74,26 +74,34 @@ weight = 2
  
 ## 编辑流水线
 点击`编辑流水线` → ![编辑流水线按钮](/docs/user-guide/deployment-pipeline/image/update_env_button.png) 来编辑此条流水线，可以编辑修改流水线的触发方式（注意手动触发与自动触发的限制条件：自动触发流水线中阶段一的任务一不能为人工卡点）、流水线中的各个阶段与任务。 
-![编辑流水线](/docs/user-guide/deployment-pipeline/pipeline/image/edit-pipeline.jpg)   
+![编辑流水线](/docs/user-guide/deployment-pipeline/pipeline/image/edit-pipeline.jpg)     
+ <blockquote class="note">若流水线中包含了部署任务，则只有拥有所有部署任务对应的环境权限的成员才能编辑该条流水线。
+    </blockquote>
 
 ## 停用/启用流水线
 
  点击 `停用`→ ![停用按钮](/docs/user-guide/development-pipeline/image/stop_button.png) 即可停用流水线。若流水线已停用，则仅能进行以下操作：查看执行详情；启用；删除。
 
 
- 点击 `启用`→ ![启用按钮](/docs/user-guide/development-pipeline/image/start_button.png) 即可重新启用被停用的流水线，恢复相关操作。
+ 点击 `启用`→ ![启用按钮](/docs/user-guide/development-pipeline/image/start_button.png) 即可重新启用被停用的流水线，恢复相关操作。    
+ 
+   <blockquote class="note">只有项目所有者可以停用/启用流水线。
+    </blockquote>
 
 
 ## 删除流水线
 
-点击`删除流水线` → ![删除流水线按钮](/docs/user-guide/deployment-pipeline/image/del_net_button.png) 来删除此流水线。
+点击`删除流水线` → ![删除流水线按钮](/docs/user-guide/deployment-pipeline/image/del_net_button.png) 来删除此流水线。  
+
+ <blockquote class="note">只有项目所有者可以删除流水线。
+    </blockquote>
 
 
 
 
 ## 更多操作
 - [流水线执行总览](../pipeline-record)
-- [部署配置](../deployment-config)
+- [部署配置](/zh/docs/user-guide/deployment-pipeline/deployment-config)
 - [应用部署](/zh/docs/user-guide/deployment-pipeline/application-deployment)
 
 
