@@ -13,7 +13,6 @@ weight = 10
 
 - 如果您的主机性能或网络较差，建议您添加额外的参数以延长超时时间`--set preJob.timeout=1000`,其中1000表示1000秒后超时。
 
-
 <blockquote class="note">
 部署成功后Choerodon平台默认登录名为admin，默认密码为admin。
 </blockquote>
@@ -60,43 +59,44 @@ helm install c7n/mysql-client \
         --set env.open.REGISTER_SERVICE_NAMESPACE="c7n-system" \
         --set rbac.craete=true \
         --name register-server \
-        --version 0.17.0 \
+        --version 0.18.0 \
         --namespace c7n-system
     ```
 
-    参数名 | 含义 
-    --- |  --- 
+    参数名 | 含义
+    --- |  ---
     service.enable|是否创建service对象
     service.name|service对象的名称
     env.open.REGISTER_SERVICE_NAMESPACE|仅监听的namespace，多个namespace请用逗号隔开
 
 - 验证部署
-    - 验证命令
+  - 验证命令
 
-        ```
-        curl $(kubectl get svc register-server -o jsonpath="{.spec.clusterIP}" -n c7n-system):8000/eureka/apps
-        ```
-    - 出现以下类似信息即为成功部署
+      ```
+      curl $(kubectl get svc register-server -o jsonpath="{.spec.clusterIP}" -n c7n-system):8000/eureka/apps
+      ``
 
-        ```json
-        {
-            "name": "go-register-server",
-            "instance": [
-                {
-                "instanceId": "192.168.3.19:go-register-server:8000",
-                "hostName": "192.168.3.19",
-                "app": "go-register-server",
-                "ipAddr": "192.168.3.19",
-                "status": "UP",
-                ...
-                "metadata": {
-                    "VERSION": "0.17.0"
-                },
-                ...
-                }
-            ]
-        }
-        ```
+  - 出现以下类似信息即为成功部署
+
+      ```json
+      {
+          "name": "go-register-server",
+          "instance": [
+              {
+              "instanceId": "192.168.3.19:go-register-server:8000",
+              "hostName": "192.168.3.19",
+              "app": "go-register-server",
+              "ipAddr": "192.168.3.19",
+              "status": "UP",
+              ...
+              "metadata": {
+                  "VERSION": "0.18.0"
+              },
+              ...
+              }
+          ]
+      }
+      ```
 
 ## 部署manager service
 
@@ -119,11 +119,12 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_REDIS_PORT=6379 \
         --set env.open.SPRING_REDIS_DATABASE=1 \
         --name manager-service \
-        --version 0.17.1 \
+        --version 0.18.0 \
         --namespace c7n-system
     ```
-    参数名 | 含义 
-    --- |  --- 
+
+    参数名 | 含义
+    --- |  ---
     preJob.preInitDB.datasource{}|初始化数据库所需数据库信息
     env.open.SPRING_DATASOURCE_URL|数据库链接地址
     env.open.SPRING_DATASOURCE_USERNAME|数据库用户名
@@ -135,15 +136,17 @@ helm install c7n/mysql-client \
     env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE|注册服务地址
 
 - 验证部署
-    - 验证命令
+  - 验证命令
 
-        ```
-        curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=manager-service -o jsonpath="{.items[0].status.podIP}"):8964/actuator/health | jq -r .status
-        ```
-    - 出现以下类似信息即为成功部署
-        ```
-        UP
-        ```
+      ```
+      curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=manager-service -o jsonpath="{.items[0].status.podIP}"):8964/actuator/health | jq -r .status
+      ```
+
+  - 出现以下类似信息即为成功部署
+
+      ```
+      UP
+      ```
 
 ## 部署asgard service
 
@@ -167,12 +170,12 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_REDIS_PORT=6379 \
         --set env.open.SPRING_REDIS_DATABASE=7 \
         --name asgard-service \
-        --version 0.17.1 \
+        --version 0.18.0 \
         --namespace c7n-system
     ```
 
-    参数名 | 含义 
-    --- |  --- 
+    参数名 | 含义
+    --- |  ---
     preJob.preConfig.datasource{}|初始化配置所需manager_service数据库信息
     preJob.preInitDB.datasource{}|初始化数据库所需数据库信息
     env.open.SPRING_DATASOURCE_URL|数据库链接地址
@@ -183,15 +186,17 @@ helm install c7n/mysql-client \
     env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE|注册服务地址
 
 - 验证部署
-    - 验证命令
+  - 验证命令
 
-        ```
-        curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=asgard-service -o jsonpath="{.items[0].status.podIP}"):18081/actuator/health | jq -r .status
-        ```
-    - 出现以下类似信息即为成功部署
-        ```
-        UP
-        ```
+      ```
+      curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=asgard-service -o jsonpath="{.items[0].status.podIP}"):18081/actuator/health | jq -r .status
+      ```
+
+  - 出现以下类似信息即为成功部署
+
+      ```
+      UP
+      ```
 
 ## 部署notify service
 
@@ -218,11 +223,12 @@ helm install c7n/mysql-client \
         --set ingress.enabled=true \
         --set ingress.host=notify.example.choerodon.io \
         --name notify-service \
-        --version 0.17.1 \
+        --version 0.18.0 \
         --namespace c7n-system
     ```
-    参数名 | 含义 
-    --- |  --- 
+
+    参数名 | 含义
+    --- |  ---
     preJob.preConfig.datasource{}|初始化配置所需manager_service数据库信息
     preJob.preInitDB.datasource{}|初始化数据库所需数据库信息
     env.open.SPRING_DATASOURCE_URL|数据库链接地址
@@ -233,17 +239,20 @@ helm install c7n/mysql-client \
     env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE|注册服务地址
 
 - 验证部署
-    - 验证命令
+  - 验证命令
 
-        ```
-        curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=notify-service -o jsonpath="{.items[0].status.podIP}"):18086/actuator/health | jq -r .status
-        ```
-    - 出现以下类似信息即为成功部署
-        ```
-        UP
-        ```
+      ```
+      curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=notify-service -o jsonpath="{.items[0].status.podIP}"):18086/actuator/health | jq -r .status
+      ```
+
+  - 出现以下类似信息即为成功部署
+
+      ```
+      UP
+      ```
 
 ## 部署iam service
+
 - 部署服务
 
     ```
@@ -261,11 +270,12 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
         --set env.open.SPRING_CLOUD_CONFIG_URI="http://register-server.c7n-system:8000/" \
         --name iam-service \
-        --version 0.17.1 \
+        --version 0.18.1 \
         --namespace c7n-system
     ```
-    参数名 | 含义 
-    --- |  --- 
+
+    参数名 | 含义
+    --- |  ---
     preJob.preConfig.datasource{}|初始化配置所需manager_service数据库信息
     preJob.preInitDB.datasource{}|初始化数据库所需数据库信息
     env.open.SPRING_DATASOURCE_URL|数据库链接地址
@@ -276,17 +286,20 @@ helm install c7n/mysql-client \
     env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE|注册服务地址
 
 - 验证部署
-    - 验证命令
+  - 验证命令
 
-        ```
-        curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=iam-service -o jsonpath="{.items[0].status.podIP}"):8031/actuator/health | jq -r .status
-        ```
-    - 出现以下类似信息即为成功部署
-        ```
-        UP
-        ```
+      ```
+      curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=iam-service -o jsonpath="{.items[0].status.podIP}"):8031/actuator/health | jq -r .status
+      ```
+
+  - 出现以下类似信息即为成功部署
+
+      ```
+      UP
+      ```
 
 ## 部署api gateway
+
 - 部署服务
 
     ```
@@ -309,11 +322,12 @@ helm install c7n/mysql-client \
         --set env.SPRING_CACHE_MULTI_L1_ENABLED=true \
         --set env.SPRING_CACHE_MULTI_L2_ENABLED=false \
         --name api-gateway \
-        --version 0.17.1 \
+        --version 0.18.0 \
         --namespace c7n-system
     ```
-    参数名 | 含义 
-    --- |  --- 
+
+    参数名 | 含义
+    --- |  ---
     preJob.preConfig.datasource{}|初始化配置所需manager_service数据库信息
     service.enable|创建service对象
     ingress.enable|创建ingress对象
@@ -323,17 +337,20 @@ helm install c7n/mysql-client \
     env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE|注册服务地址
 
 - 验证部署
-    - 验证命令
+  - 验证命令
 
-        ```
-        curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=api-gateway -o jsonpath="{.items[0].status.podIP}"):8081/actuator/health | jq -r .status
-        ```
-    - 出现以下类似信息即为成功部署
-        ```
-        UP
-        ```
+      ```
+      curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=api-gateway -o jsonpath="{.items[0].status.podIP}"):8081/actuator/health | jq -r .status
+      ```
+
+  - 出现以下类似信息即为成功部署
+
+      ```
+      UP
+      ```
 
 ## 部署oauth server
+
 - 部署服务
 
     ```
@@ -351,11 +368,12 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
         --set env.open.SPRING_CLOUD_CONFIG_URI="http://register-server.c7n-system:8000/" \
         --name oauth-server \
-        --version 0.17.1 \
+        --version 0.18.0 \
         --namespace c7n-system
     ```
-    参数名 | 含义 
-    --- |  --- 
+
+    参数名 | 含义
+    --- |  ---
     preJob.preConfig.datasource{}|初始化配置所需manager_service数据库信息
     env.open.SPRING_DATASOURCE_URL|数据库链接地址
     env.open.SPRING_DATASOURCE_USERNAME|数据库用户名
@@ -367,17 +385,20 @@ helm install c7n/mysql-client \
     env.open.SPRING_CLOUD_CONFIG_URI|配置中心地址
     env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE|注册服务地址
 - 验证部署
-    - 验证命令
+  - 验证命令
 
-        ```
-        curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=oauth-server -o jsonpath="{.items[0].status.podIP}"):8021/actuator/health | jq -r .status
-        ```
-    - 出现以下类似信息即为成功部署
-        ```
-        UP
-        ```
+      ```
+      curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=oauth-server -o jsonpath="{.items[0].status.podIP}"):8021/actuator/health | jq -r .status
+      ```
+
+  - 出现以下类似信息即为成功部署
+
+      ```
+      UP
+      ```
 
 ## 部署file service
+
 - 部署服务
 
     ```
@@ -392,11 +413,12 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
         --set env.open.SPRING_CLOUD_CONFIG_URI="http://register-server.c7n-system:8000/" \
         --name file-service \
-        --version 0.17.1 \
+        --version 0.18.0 \
         --namespace c7n-system
     ```
-    参数名 | 含义 
-    --- |  --- 
+
+    参数名 | 含义
+    --- |  ---
     preJob.preConfig.datasource{}|初始化配置所需manager_service数据库信息
     env.open.SPRING_CLOUD_CONFIG_ENABLED|启用配置中心
     env.open.SPRING_CLOUD_CONFIG_URI|配置中心地址
@@ -406,12 +428,14 @@ helm install c7n/mysql-client \
     env.open.MINIO_SECRETKEY|minio secret key
 
 - 验证部署
-    - 验证命令
+  - 验证命令
 
-        ```
-        curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=file-service -o jsonpath="{.items[0].status.podIP}"):9091/actuator/health | jq -r .status
-        ```
-    - 出现以下类似信息即为成功部署
-        ```
-        UP
-        ```
+      ```
+      curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=file-service -o jsonpath="{.items[0].status.podIP}"):9091/actuator/health | jq -r .status
+      ```
+
+  - 出现以下类似信息即为成功部署
+
+      ```
+      UP
+      ```

@@ -53,8 +53,8 @@ helm install c7n/mysql \
 
 - 参数：
 
-    参数 | 含义 
-    --- |  --- 
+    参数 | 含义
+    --- |  ---
     persistence.enabled|是否启用持久化存储
     persistence.existingClaim|PVC的名称
     persistence.subPath|设置将数据存储到的子目录

@@ -68,11 +68,12 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_REDIS_HOST=c7n-redis.c7n-system.svc \
         --set env.open.SPRING_REDIS_DATABASE=9 \
         --name agile-service \
-        --version 0.17.2 \
+        --version 0.18.0 \
         --namespace c7n-system
     ```
-    参数名 | 含义 
-    --- |  --- 
+
+    参数名 | 含义
+    --- |  ---
     service.enable|是否创建service
     preJob.preConfig.datasource{}|初始化配置所需manager_service数据库信息
     preJob.preInitDB.datasource{}|初始化数据库所需数据库信息
@@ -87,15 +88,17 @@ helm install c7n/mysql-client \
     env.open.SERVICES_WIKI_TOKEN|wiki OIDC TOKEN，必须与xwiki中的env.OIDC_WIKI_TOKEN参数值和wiki-service中的env.open.WIKI_TOKEN参数值一致
 
 - 验证部署
-    - 验证命令
+  - 验证命令
 
-        ```
-        curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=agile-service -o jsonpath="{.items[0].status.podIP}"):8379/actuator/health | jq -r .status
-        ```
-    - 出现以下类似信息即为成功部署
-        ```
-        UP
-        ```
+      ```
+      curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=agile-service -o jsonpath="{.items[0].status.podIP}"):8379/actuator/health | jq -r .status
+      ```
+
+  - 出现以下类似信息即为成功部署
+
+      ```
+      UP
+      ```
 
 ## 部署state machine service
 
@@ -116,11 +119,12 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
         --set env.open.SPRING_CLOUD_CONFIG_URI="http://register-server.c7n-system:8000/" \
         --name state-machine-service \
-        --version 0.17.1 \
+        --version 0.18.0 \
         --namespace c7n-system
     ```
-    参数名 | 含义 
-    --- |  --- 
+
+    参数名 | 含义
+    --- |  ---
     preJob.preConfig.configFile|初始化配置文件名
     preJob.preConfig.datasource{}|初始化配置所需manager-service数据库信息
     preJob.preInitDB.datasource{}|初始化数据库所需数据库信息
@@ -132,16 +136,16 @@ helm install c7n/mysql-client \
     env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE|注册服务地址
 
 - 验证部署
-    - 验证命令
+  - 验证命令
 
-        ```
-        curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=state-machine-service -o jsonpath="{.items[0].status.podIP}"):8385/actuator/health | jq -r .status
-        ```
-    - 出现以下类似信息即为成功部署
-        ```
-        UP
-        ```
+      ```
+      curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=state-machine-service -o jsonpath="{.items[0].status.podIP}"):8385/actuator/health | jq -r .status
+      ```
 
+  - 出现以下类似信息即为成功部署
+      ```
+      UP
+      ```
 
 ## 部署issue service
 
@@ -163,11 +167,12 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_CLOUD_CONFIG_URI="http://register-server.c7n-system:8000/" \
         --set env.open.SERVICE_ATTACHMENT_URL="http://minio.example.choerodon.io/agile-service" \
         --name issue-service \
-        --version 0.17.1 \
+        --version 0.18.0 \
         --namespace c7n-system
     ```
-    参数名 | 含义 
-    --- |  --- 
+
+    参数名 | 含义
+    --- |  ---
     preJob.preConfig.datasource{}|初始化配置所需manager-service数据库信息
     preJob.preInitDB.datasource{}|初始化数据库所需数据库信息
     env.open.SPRING_DATASOURCE_URL|数据库链接地址
@@ -179,17 +184,19 @@ helm install c7n/mysql-client \
     env.open.env.open.SERVICE_ATTACHMENT_URL|minio地址
     env.open.SPRING_REDIS_HOST|Redis数据库地址
     env.open.SPRING_REDIS_POST|Redis数据库端口
-    
-- 验证部署
-    - 验证命令
 
-        ```
-        curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=issue-service -o jsonpath="{.items[0].status.podIP}"):8381/actuator/health | jq -r .status
-        ```
-    - 出现以下类似信息即为成功部署
-        ```
-        UP
-        ```
+- 验证部署
+  - 验证命令
+
+      ```
+      curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=issue-service -o jsonpath="{.items[0].status.podIP}"):8381/actuator/health | jq -r .status
+      ```
+
+  - 出现以下类似信息即为成功部署
+
+      ```
+      UP
+      ```
 
 ## 部署foundation service
 
@@ -210,11 +217,12 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
         --set env.open.SPRING_CLOUD_CONFIG_URI="http://register-server.c7n-system:8000/" \
         --name foundation-service \
-        --version 0.17.1 \
+        --version 0.18.0 \
         --namespace c7n-system
     ```
-    参数名 | 含义 
-    --- |  --- 
+
+    参数名 | 含义
+    --- |  ---
     preJob.preConfig.datasource{}|初始化配置所需manager-service数据库信息
     preJob.preInitDB.datasource{}|初始化数据库所需数据库信息
     env.open.SPRING_DATASOURCE_URL|数据库链接地址

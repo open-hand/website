@@ -143,7 +143,7 @@ helm install c7n/gitlab \
     --set env.config.UNICORN_TIMEOUT=60 \
     --set service.enabled=true \
     --set ingress.enabled=true \
-    --version 0.4.1 \
+    --version 0.4.2 \
     --name gitlab \
     --namespace c7n-system
 ```
@@ -181,7 +181,7 @@ helm install c7n/gitlab \
     --set env.config.UNICORN_TIMEOUT=60 \
     --set service.enabled=true \
     --set ingress.enabled=true \
-    --version 0.4.1 \
+    --version 0.4.2 \
     --name gitlab \
     --namespace c7n-system
 ```
@@ -304,7 +304,7 @@ helm install c7n/gitlab \
         --set env.config.OMNIAUTH_BLOCK_AUTO_CREATED_USERS=false \
         --set env.config.CHOERODON_API_URL=http://api.example.choerodon.io \
         --set env.config.CHOERODON_CLIENT_ID=gitlab \
-        --version 0.4.0 \
+        --version 0.4.2 \
         --namespace c7n-system
 
 ### 添加Gitlab Client

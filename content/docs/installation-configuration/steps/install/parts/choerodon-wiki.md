@@ -41,7 +41,6 @@ helm install c7n/mysql-client \
 
 ## 部署基础知识服务
 
-
 - 部署服务
 
     ``` 
@@ -60,11 +59,12 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_CLOUD_CONFIG_URI="http://register-server.c7n-system:8000/" \
         --set env.open.SERVICE_ATTACHMENT_URL="http://minio.example.choerodon.io/knowledgebase-service/" \
         --name knowledgebase-service \
-        --version 0.17.2 \
+        --version 0.18.0 \
         --namespace c7n-system
     ```
-    参数名 | 含义 
-    --- |  --- 
+
+    参数名 | 含义
+    --- |  ---
     preJob.preConfig.datasource{}|初始化配置所需manager-service数据库信息
     preJob.preInitDB.datasource{}|初始化数据库所需数据库信息
     env.open.SPRING_DATASOURCE_URL|数据库链接地址
@@ -73,17 +73,19 @@ helm install c7n/mysql-client \
     env.open.SPRING_CLOUD_CONFIG_ENABLED|启用配置中心
     env.open.SPRING_CLOUD_CONFIG_URI|配置中心地址
     env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE|注册服务地址
-    
-- 验证部署
-    - 验证命令
 
-        ```
-        curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=knowledgebase-service -o jsonpath="{.items[0].status.podIP}"):8281/actuator/health | jq -r .status
-        ```
-    - 出现以下类似信息即为成功部署
-        ```
-        UP
-        ```
+- 验证部署
+  - 验证命令
+
+      ```
+      curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=knowledgebase-service -o jsonpath="{.items[0].status.podIP}"):8281/actuator/health | jq -r .status
+      ```
+
+  - 出现以下类似信息即为成功部署
+
+      ```
+      UP
+      ```
 
 ## 部署xwiki
 
@@ -133,8 +135,8 @@ helm install c7n/mysql-client \
         --namespace c7n-system
     ```
 
-    参数名 | 含义 
-    --- |  --- 
+    参数名 | 含义
+    --- |  ---
     env.JAVA_OPTS | JVM相关运行参数
     env.DB_USER | 数据库用户名
     env.DB_PASSWORD|数据库密码
@@ -153,7 +155,6 @@ helm install c7n/mysql-client \
     service.enabled|创建service对象
     ingress.enable|创建ingress对象
     ingress.hosts|wiki域名地址
-
 
     - 校验安装：
     安装完成后打开配置的域名如果安装成功会返回xwiki的界面。
@@ -203,7 +204,7 @@ helm install c7n/mysql-client \
         --set env.open.WIKI_TOKEN=Choerodon \
         --set env.open.WIKI_DEFAULT_GROUP=XWikiAllGroup \
         --name wiki-service \
-        --version 0.17.1 \
+        --version 0.18.0 \
         --namespace c7n-system
     ```
 

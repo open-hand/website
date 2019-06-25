@@ -56,11 +56,12 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_REDIS_HOST=c7n-redis.c7n-system.svc \
         --set env.open.SPRING_REDIS_DATABASE=13 \
         --name test-manager-service \
-        --version 0.17.5 \
+        --version 0.18.0 \
         --namespace c7n-system
     ```
-    参数名 | 含义 
-    --- |  --- 
+
+    参数名 | 含义
+    --- |  ---
     service.enable|是否创建service
     preJob.preConfig.datasource{}|初始化配置所需manager_service数据库信息
     preJob.preInitDB.datasource{}|初始化数据库所需数据库信息
@@ -73,15 +74,17 @@ helm install c7n/mysql-client \
     env.open.SPRING_REDIS_HOST|redis 链接地址
 
 - 验证部署
-    - 验证命令
+  - 验证命令
 
-        ```
-        curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=test-manager-service -o jsonpath="{.items[0].status.podIP}"):8094/actuator/health | jq -r .status
-        ```
-    - 出现以下类似信息即为成功部署
-        ```
-        UP
-        ```
+      ```
+      curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=test-manager-service -o jsonpath="{.items[0].status.podIP}"):8094/actuator/health | jq -r .status
+      ```
+
+  - 出现以下类似信息即为成功部署
+
+      ```
+      UP
+      ```
 
 ## 数据兼容
 

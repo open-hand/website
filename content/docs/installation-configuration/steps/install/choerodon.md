@@ -4,8 +4,6 @@ description = "方式一：一键部署Choerodon"
 weight = 18
 +++
 
-
-
 # 一键部署Choerodon
 
 ## 前置条件
@@ -34,9 +32,9 @@ vim config.yml
 粘贴以下内容，并将域名修改为你自己的域名
 
 ```yml
-version: 0.17
+version: 0.18
 metadata:
-  name: install-choerodon 
+  name: install-choerodon
   namespace: c7n-system  # 指定命名空间安装choerodon
 spec:
   persistence:
@@ -86,7 +84,7 @@ spec:
 - 更多关于c7nctl的配置请参考[此处](https://blog.vinkdong.com/c7nctl%E8%AF%A6%E8%A7%A3/)
 
 ```bash
-./c7nctl install -c config.yml --no-timeout --version=0.17
+./c7nctl install -c config.yml --no-timeout --version=0.18
 ```
 
 - 参数解释
@@ -94,7 +92,7 @@ spec:
 | 参数 | 作用 | 说明
 | --- | --- |  ---
 | --no-timeout | 取消默认任务等待超时| 微服务安装时需要执行初始化任务，默认超时时长为300秒，添加此参数将超时时长设置为24小时
-| --debug | 输出调试信息 | 
+| --debug | 输出调试信息 |
 
 ## 后续步骤
 
@@ -122,7 +120,8 @@ spec:
 
 ##### Waiting xxx running
 
-  等待前置服务启动，服务启动需要拉取对应镜像，取决于你的网速，一般情况下需要等待1~2分钟，如果长时间未启动，执行命令`kubectl get po xxx -n [NAMESPACE]`查看对应服务的POD状态。
+等待前置服务启动，服务启动需要拉取对应镜像，取决于你的网速，一般情况下需要等待1~2分钟，如果长时间未启动，执行命令`kubectl get po xxx -n [NAMESPACE]`查看对应服务的POD状态。
 
-  - 如果为Pending状态，则执行命令`kubectl describe po xxx -n [NAMESPACE]`查看Pending的原因。一般为内存、CPU或磁盘不足和网路不通导致。
-  - 如果为ContainerCreating，一般为正在拉取镜像，请耐心等待。
+- 如果为Pending状态，则执行命令`kubectl describe po xxx -n [NAMESPACE]`查看Pending的原因。一般为内存、CPU或磁盘不足和网路不通导致。
+  
+- 如果为ContainerCreating，一般为正在拉取镜像，请耐心等待。
