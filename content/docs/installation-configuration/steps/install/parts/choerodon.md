@@ -58,7 +58,7 @@ helm install c7n/mysql-client \
         --set service.enabled=true \
         --set service.name=register-server \
         --set env.open.REGISTER_SERVICE_NAMESPACE="c7n-system" \
-        --set rbac.craete=true \
+        --set rbac.create=true \
         --name register-server \
         --version 0.17.0 \
         --namespace c7n-system
