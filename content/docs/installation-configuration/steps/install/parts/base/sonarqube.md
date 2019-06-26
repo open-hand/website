@@ -109,3 +109,10 @@ helm install c7n/sonarqube \
     ![sonarqube_4](/docs/installation-configuration/image/sonarqube_4.png)
 - 退出登录，测试使用choerodon登录,出现如下界面
     ![sonarqube_5](/docs/installation-configuration/image/sonarqube_5.png)
+
+### Choerodon应用关联SonarQube项目
+- 在.gitlab-ci.yml文件build阶段添加
+
+```- mvn --batch-mode  verify sonar:sonar  -Dsonar.host.url=$SONAR_URL -Dsonar.login=$SONAR_LOGIN -Dsonar.gitlab.project_id=$CI_PROJECT_PATH -Dsonar.gitlab.commit_sha=$CI_COMMIT_SHA -Dsonar.gitlab.ref_name=$CI_COMMIT_REF_NAME -Dsonar.analysis.serviceGroup=$GROUP_NAME -Dsonar.analysis.commitId=$CI_COMMIT_SHA -Dsonar.projectKey=${GROUP_NAME}:${PROJECT_NAME}```
+
+- sonar.projectKey=${GROUP_NAME}:${PROJECT_NAME}不可更改；否则，在查看代码质量时将获取不到对应数据
