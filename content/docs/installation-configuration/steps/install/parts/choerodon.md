@@ -57,7 +57,7 @@ helm install c7n/mysql-client \
         --set service.enabled=true \
         --set service.name=register-server \
         --set env.open.REGISTER_SERVICE_NAMESPACE="c7n-system" \
-        --set rbac.craete=true \
+        --set rbac.create=true \
         --name register-server \
         --version 0.18.0 \
         --namespace c7n-system
@@ -96,56 +96,6 @@ helm install c7n/mysql-client \
               }
           ]
       }
-      ```
-
-## 部署manager service
-
-- 部署服务
-
-    ```
-    helm install c7n/manager-service \
-        --set preJob.preInitDB.datasource.url="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
-        --set preJob.preInitDB.datasource.username=choerodon \
-        --set preJob.preInitDB.datasource.password=password \
-        --set env.open.SPRING_DATASOURCE_URL="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
-        --set env.open.SPRING_DATASOURCE_USERNAME=choerodon \
-        --set env.open.SPRING_DATASOURCE_PASSWORD=password \
-        --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
-        --set env.open.SPRING_CLOUD_CONFIG_URI="http://register-server.c7n-system:8000/" \
-        --set env.open.CHOERODON_GATEWAY_DOMAIN="api.example.choerodon.io" \
-        --set env.open.CHOERODON_SWAGGER_OAUTH_URL="http://api.example.choerodon.io/oauth/oauth/authorize" \
-        --set env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE="http://register-server.c7n-system:8000/eureka/" \
-        --set env.open.SPRING_REDIS_HOST=c7n-redis.c7n-system.svc \
-        --set env.open.SPRING_REDIS_PORT=6379 \
-        --set env.open.SPRING_REDIS_DATABASE=1 \
-        --name manager-service \
-        --version 0.18.0 \
-        --namespace c7n-system
-    ```
-
-    参数名 | 含义
-    --- |  ---
-    preJob.preInitDB.datasource{}|初始化数据库所需数据库信息
-    env.open.SPRING_DATASOURCE_URL|数据库链接地址
-    env.open.SPRING_DATASOURCE_USERNAME|数据库用户名
-    env.open.SPRING_DATASOURCE_PASSWORD|数据库密码
-    env.open.SPRING_CLOUD_CONFIG_ENABLED|启用配置中心
-    env.open.SPRING_CLOUD_CONFIG_URI|配置中心地址
-    env.open.CHOERODON_SWAGGER_OAUTH_URL|swagger授权地址
-    env.open.CHOERODON_GATEWAY_DOMAIN|平台api地址
-    env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE|注册服务地址
-
-- 验证部署
-  - 验证命令
-
-      ```
-      curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=manager-service -o jsonpath="{.items[0].status.podIP}"):8964/actuator/health | jq -r .status
-      ```
-
-  - 出现以下类似信息即为成功部署
-
-      ```
-      UP
       ```
 
 ## 部署asgard service
@@ -190,6 +140,55 @@ helm install c7n/mysql-client \
 
       ```
       curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=asgard-service -o jsonpath="{.items[0].status.podIP}"):18081/actuator/health | jq -r .status
+      ```
+
+  - 出现以下类似信息即为成功部署
+
+      ```
+      UP
+      ```
+
+## 部署manager service
+
+- 部署服务
+
+    ```
+    helm install c7n/manager-service \
+        --set preJob.preInitDB.datasource.url="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
+        --set preJob.preInitDB.datasource.username=choerodon \
+        --set preJob.preInitDB.datasource.password=password \
+        --set env.open.SPRING_DATASOURCE_URL="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
+        --set env.open.SPRING_DATASOURCE_USERNAME=choerodon \
+        --set env.open.SPRING_DATASOURCE_PASSWORD=password \
+        --set env.open.SPRING_CLOUD_CONFIG_URI="http://register-server.c7n-system:8000/" \
+        --set env.open.CHOERODON_GATEWAY_DOMAIN="api.example.choerodon.io" \
+        --set env.open.CHOERODON_SWAGGER_OAUTH_URL="http://api.example.choerodon.io/oauth/oauth/authorize" \
+        --set env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE="http://register-server.c7n-system:8000/eureka/" \
+        --set env.open.SPRING_REDIS_HOST=c7n-redis.c7n-system.svc \
+        --set env.open.SPRING_REDIS_PORT=6379 \
+        --set env.open.SPRING_REDIS_DATABASE=4 \
+        --name manager-service \
+        --version 0.18.0 \
+        --namespace c7n-system
+    ```
+
+    参数名 | 含义
+    --- |  ---
+    preJob.preInitDB.datasource{}|初始化数据库所需数据库信息
+    env.open.SPRING_DATASOURCE_URL|数据库链接地址
+    env.open.SPRING_DATASOURCE_USERNAME|数据库用户名
+    env.open.SPRING_DATASOURCE_PASSWORD|数据库密码
+    env.open.SPRING_CLOUD_CONFIG_ENABLED|启用配置中心
+    env.open.SPRING_CLOUD_CONFIG_URI|配置中心地址
+    env.open.CHOERODON_SWAGGER_OAUTH_URL|swagger授权地址
+    env.open.CHOERODON_GATEWAY_DOMAIN|平台api地址
+    env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE|注册服务地址
+
+- 验证部署
+  - 验证命令
+
+      ```
+      curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=manager-service -o jsonpath="{.items[0].status.podIP}"):8964/actuator/health | jq -r .status
       ```
 
   - 出现以下类似信息即为成功部署
@@ -270,7 +269,7 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
         --set env.open.SPRING_CLOUD_CONFIG_URI="http://register-server.c7n-system:8000/" \
         --name iam-service \
-        --version 0.18.1 \
+        --version 0.18.2 \
         --namespace c7n-system
     ```
 
