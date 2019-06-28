@@ -27,6 +27,16 @@ weight = 4
   - 实例名称：实例的名称。
 
   - 应用版本：应用的版本。  
+
+  - Networking：实例关联的网络与域名。  
+
+  - 点击Networking后面的角标按钮，会出现与此实例相关联的所有网络和域名的详情。同时，用户可在此页面为该实例创建关联得网络与域名。  
+  <blockquote class="note">
+  当某个实例没有关联的网络时，便不能在此创建关联的域名。
+  </blockquote>
+  
+
+  ![instance-networking](/docs/user-guide/deployment-pipeline/image/instance-networking.jpg)
   
   - 点击页面左侧![展开按钮](/docs/user-guide/deployment-pipeline/image/arrow_button.jpg) 按钮 ，页面展开，会显示该实例下Deployments的相关信息，其中包括Deployment的名称与创建时间，ReplicaSet的上限数、当前实际数以及可用数。同时，还显示了其中Pods的数量与状态，并能在此跳转查看Pods的详情。此外，点击下方的`查看更多详情`，会从右侧展开显示更多关于deployment详情。如：端口、数据卷、健康检查、主机设置、环境变量、标签。  
   ![deployment-more](/docs/user-guide/deployment-pipeline/image/instance8.jpg)
@@ -79,7 +89,7 @@ Deployment |name, desired, current, uo-to-date, available, age|name是Deployment
 ReplicaSet |name, desired, current, ready, age|name是ReplicaSet的名称，desired是期望创建Pod的数量,current是指当前Pod的数量,ready是指可的Pod的数量，age是指创建时间
 Service|name, type, cluster-ip, external-ip, port, age|name是指Service的名称，type是指service的类型,cluster-ip是节点ip，external-ip是指外部ip，port是指端口，age是指创建时间
 Ingress|name, hosts, address, ports, age|name是指Ingress的名称，hosts是指Ingress主机host，address是指地址，ports是指端口  
-
+ 
 ## 操作日志
 能在此界面查看该实例的操作日志，即展示出该实例自创建产生至今所有的操作记录；包括：部署实例、更新实例（升级、修改配置信息以及重新部署）、停止实例和重启实例，同时还能在此界面查看执行操作的人员与具体时间。
        
@@ -87,13 +97,32 @@ Ingress|name, hosts, address, ports, age|name是指Ingress的名称，hosts是�
 
 
 ## 修改配置信息
-点击页面右侧 ![详情按钮](/docs/user-guide/development-pipeline/image/detail_button.png) 按钮 ，再点击`修改配置信息`，进入修改配置信息界面后对实例配置信息进行修改后重新部署，只有项目所有者和被分配权限的项目成员能进行此操作。
+点击页面右侧 ![详情按钮](/docs/user-guide/development-pipeline/image/detail_button.png) 按钮 ，再点击`修改配置信息`，进入修改配置信息界面后对实例配置信息进行修改后重新部署，只有项目所有者和被分配权限的项目成员能进行此操作。  
+
+   - 在修改配置信息时，若此实例之前未曾选过部署配置，那么直接在编辑器中正常修改，点击部署按钮即可，操作与之前版本一致；  
+   
+   - 若此实例之前选了部署配置，在编辑器中修改好之后，点击部署时，会出现是否覆盖至部署配置的提示；如果选择覆盖，那么在之后的部署过程中便能直接使用到最新修改的部署配置。  
+
+<blockquote class="note">
+ 若先修改了某个实例对应部署配置中的配置信息，再点击‘修改配置信息’，此时界面中显示的是最新修改的配置信息。
+</blockquote>
 
 ## 升级实例
-点击页面右侧 ![详情按钮](/docs/user-guide/development-pipeline/image/detail_button.png) 按钮，再点击`升级实例`，当运行中的实例的应用版本不是最新时，可以升级实例，升级实例是简化了 **应用版本**的替换实例操作，点击升级即可实现滚动更新，只有项目所有者和被分配权限的项目成员能进行此操作。
+点击页面右侧 ![详情按钮](/docs/user-guide/development-pipeline/image/detail_button.png) 按钮，再点击`升级实例`，当运行中的实例的应用版本不是最新时，可以升级实例，升级实例是简化了 **应用版本**的替换实例操作，点击升级即可实现滚动更新，只有项目所有者和被分配权限的项目成员能进行此操作。  
+
+  - 在升级实例页面修改配置信息时，若此实例之前未曾选过部署配置，那么直接在编辑器中正常修改，点击部署按钮即可，操作与之前版本一致；  
+  
+  - 若此实例之前选了部署配置，在编辑器中修改好之后，点击部署时，会出现是否覆盖至部署配置的提示；如果选择覆盖，那么在之后的部署过程中便能直接使用到最新修改的部署配置。
+
+<blockquote class="note">
+ 若先修改了某个实例对应部署配置中的配置信息，再点击‘升级实例’，此时界面中显示的是最新修改的配置信息。若想查看某个实例当前的配置信息，需要在‘查看实例详情-实例事件-部署详情’中查看。 
+</blockquote>   
 
 ## 重新部署
-点击页面右侧 ![详情按钮](/docs/user-guide/development-pipeline/image/detail_button.png) 按钮 ，再点击`重新部署`，便能按照当前的配置参数重新部署该实例，适用于因为网络等原因部署失败的情况。只有项目所有者和被分配权限的项目成员能进行此操作。
+点击页面右侧 ![详情按钮](/docs/user-guide/development-pipeline/image/detail_button.png) 按钮 ，再点击`重新部署`，便能按照当前的配置参数重新部署该实例，适用于因为网络等原因部署失败的情况。只有项目所有者和被分配权限的项目成员能进行此操作。  
+<blockquote class="note">
+ 若先修改了某个实例对应部署配置中的配置信息，再点击‘重新部署’，此时会按照此部署配置中之前的配置信息进行重新部署。
+</blockquote>    
 
 ## 停止实例
 点击页面右侧 ![详情按钮](/docs/user-guide/development-pipeline/image/detail_button.png) 按钮 ，再点击`停止实例`，该实例即为停止状态，且容器状态停止。容器状态为“0”时，实例存在，实质是实例的Pod被删掉。只有项目所有者和被分配权限的项目成员能进行此操作。
