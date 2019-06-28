@@ -68,7 +68,7 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_REDIS_HOST=c7n-redis.c7n-system.svc \
         --set env.open.SPRING_REDIS_DATABASE=9 \
         --name agile-service \
-        --version 0.18.0 \
+        --version 0.18.2 \
         --namespace c7n-system
     ```
 
@@ -84,8 +84,6 @@ helm install c7n/mysql-client \
     env.open.SPRING_CLOUD_CONFIG_URI|配置中心地址
     env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE|注册服务地址
     env.open.SERVICES_ATTACHMENT_URL|minio地址，地址中agile-service为minio bucket
-    env.open.SERVICES_WIKI_HOST|wiki地址
-    env.open.SERVICES_WIKI_TOKEN|wiki OIDC TOKEN，必须与xwiki中的env.OIDC_WIKI_TOKEN参数值和wiki-service中的env.open.WIKI_TOKEN参数值一致
 
 - 验证部署
   - 验证命令
