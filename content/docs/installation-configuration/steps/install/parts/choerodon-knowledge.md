@@ -54,6 +54,8 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
         --set env.open.SPRING_CLOUD_CONFIG_URI="http://register-server.c7n-system:8000/" \
         --set env.open.SERVICES_ATTACHMENT_URL="http://minio.example.choerodon.io/knowledgebase-service/" \
+        --set env.open.WIKI_URL="http://wiki.example.com" \
+        --set env.open.WIKI_TOKEN="Choerodon" \
         --name knowledgebase-service \
         --version 0.18.2 \
         --namespace c7n-system
@@ -70,6 +72,8 @@ helm install c7n/mysql-client \
     env.open.SPRING_CLOUD_CONFIG_URI|配置中心地址
     env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE|注册服务地址
     env.open.SERVICES_ATTACHMENT_URL|minio地址，地址中knowledgebase-service为minio bucket
+    env.open.WIKI_URL|wiki地址
+    env.open.WIKI_TOKEN|wiki OIDC TOKEN，必须与xwiki中的env.OIDC_WIKI_TOKEN参数值和wiki-service中的env.open.WIKI_TOKEN参数值一致
 
 - 验证部署
   - 验证命令
