@@ -33,9 +33,8 @@ description = "对系统的名称、logo等平台标志进行自定义设置"
 
 - **平台默认语言**：选择系统语言。目前仅有中文一个选项。
 
-- **是否启用注册**：有`是`、`否`两种值。选择`是`时，启用账号注册，`注册页面链接`字段显示且为必填字段；否则，`注册页面链接`不显示，不可注册账号。
+- **重置gitlab密码页面链接**：设置修改gitlab仓库密码页面的跳转链接，用户可以点击修改密码页面的`修改仓库密码`→![修改仓库密码](/docs/user-guide/system-configuration/platform/image/gitlab.png)，跳转至GitLab仓库克隆密码的修改页面。
 
-- 注册页面链接：当`是否启用注册`为`是`时，该字段为必填字段。用户可通过该链接进行账号注册。
 
 ![logo](/docs/user-guide/system-configuration/platform/image/system1.png)
 
@@ -67,4 +66,9 @@ description = "对系统的名称、logo等平台标志进行自定义设置"
 
 - **平台默认语言**：`中文`
 
-- **是否启用注册**：`否`
+
+## 更多操作
+- [角色管理](../role)
+- [平台角色分配](../role-assignment)
+- [角色标签](../role-label)
+
