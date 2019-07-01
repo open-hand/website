@@ -29,6 +29,17 @@ weight = 5
 
 ![enter description here](/docs/user-guide/knowledge-management/document-management/img/document_2.png)
 
-1. 点击屏幕右上角的`附件、评论`按钮，进入到文档其他信息的查看。可以对文档进行附件上传下载、评论、日志的查看。
-2. 删除文中，仅自己可以删除自己创建的文档。
+1. 通过分享连接，可以让更多非项目成员查看文章。
+2. 点击屏幕右上角的`附件、评论`按钮，进入到文档其他信息的查看。可以对文档进行附件上传下载、评论、日志的查看。 
 3. 查看文档内部的目录结构。
+
+## 文档的其他操作
+
+在查看页面，通过点击右侧的更多操作按钮，进行以下操作，如图：
+![enter description here](/docs/user-guide/knowledge-management/document-management/img/document_3.png)
+
+1. 支持将文档进行导出，导出为pdf格式。
+2. 版本对比以及版本回滚。
+3. 记录了文档相关的所有日志。
+4. 删除文档，仅可以删除自己创建的文档。
+5. 支持word的导入，跳转到预览页，点击保存后创建成功。

@@ -46,7 +46,7 @@ weight = 5
 
 ### 开放指定端口
 
-如果防火墙已启用，则需要开放[指定端口](../../pre-install/#需开放的端口号)，下面分别列举使用firewalld和iptables设置开放端口命令。
+如果防火墙已启用，则需要开放[指定端口](../../pre-install/#需开放的端口号)，下面分别列举使用firewalld和iptables设置开放端口命令(不同发行版可能存在差异)。
 
 - firewalld
     
@@ -748,7 +748,7 @@ spec:
     ```bash
     kubectl run iperf-client \
         -it --quiet --rm --restart=Never \
-        --overrides='{"spec":{"template":{"spec":{"nodeName":"指定客户端运行的节点"}}}}' \
+        --overrides='{"spec":{"nodeName":"指定客户端运行的节点"}}' \
         --image='registry.cn-hangzhou.aliyuncs.com/choerodon-tools/network-and-cluster-perfermance-test:0.1.0' \
         -- iperf -c 服务端POD的IP -p 12345 -i 1 -t 10 -w 20K
     ```
@@ -787,7 +787,7 @@ spec:
     ```bash
     kubectl run iperf-client \
         -it --quiet --rm --restart=Never \
-        --overrides='{"spec":{"template":{"spec":{"nodeName":"指定客户端运行的节点"}}}}' \
+        --overrides='{"spec":{"nodeName":"指定客户端运行的节点"}}' \
         --image='registry.cn-hangzhou.aliyuncs.com/choerodon-tools/network-and-cluster-perfermance-test:0.1.0' \
         -- iperf -c 服务端主机IP -p 12345 -i 1 -t 10 -w 20K
     ```

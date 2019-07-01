@@ -51,14 +51,14 @@ oauth server|认证服务|0.17.1
 file service|文件服务|0.17.1
 notify service|通知服务|0.17.1
 asgard service|事务服务|0.17.1
-gitlab service|Gitlab 服务|0.17.0
-devops service|Devops 服务|0.17.2
-workflow service|Workflow 服务|0.17.0
-agile service|敏捷管理|0.17.2
-state machine service|状态机服务|0.17.1
-issue service|issue服务|0.17.1
-wiki service|知识管理服务|0.17.1
-test manager service|测试管理服务|0.17.5
+gitlab service|Gitlab 服务|0.18.0
+devops service|Devops 服务|0.18.2
+workflow service|Workflow 服务|0.18.0
+agile service|敏捷管理|0.18.2
+state machine service|状态机服务|0.18.0
+issue service|issue服务|0.18.0
+wiki service|知识管理服务|0.18.1
+test manager service|测试管理服务|0.18.0
 choerodon front|Choerodon 前端|0.17.0
-knowledgebase service |基础知识服务|0.17.2
-foundation service |基础服务|0.17.1
+knowledgebase service |基础知识服务|0.18.3
+foundation service |基础服务|0.18.1

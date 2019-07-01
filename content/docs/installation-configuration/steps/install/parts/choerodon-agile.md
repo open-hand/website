@@ -45,8 +45,6 @@ helm install c7n/mysql-client \
 
 
 - 部署服务
-    
-    - 在部署知识管理前您没有`SERVICES_WIKI_TOKEN`请预设一个随机字符串并注意记录，部署知识管理时请使用您设置的token
 
     ``` 
     helm install c7n/agile-service \
@@ -63,12 +61,10 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
         --set env.open.SPRING_CLOUD_CONFIG_URI="http://register-server.c7n-system:8000/" \
         --set env.open.SERVICES_ATTACHMENT_URL="http://minio.example.choerodon.io/agile-service/" \
-        --set env.open.SERVICES_WIKI_HOST="http://wiki.example.choerodon.io" \
-        --set env.open.SERVICES_WIKI_TOKEN="Choerodon" \
         --set env.open.SPRING_REDIS_HOST=c7n-redis.c7n-system.svc \
         --set env.open.SPRING_REDIS_DATABASE=9 \
         --name agile-service \
-        --version 0.18.0 \
+        --version 0.18.2 \
         --namespace c7n-system
     ```
 
@@ -84,8 +80,6 @@ helm install c7n/mysql-client \
     env.open.SPRING_CLOUD_CONFIG_URI|配置中心地址
     env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE|注册服务地址
     env.open.SERVICES_ATTACHMENT_URL|minio地址，地址中agile-service为minio bucket
-    env.open.SERVICES_WIKI_HOST|wiki地址
-    env.open.SERVICES_WIKI_TOKEN|wiki OIDC TOKEN，必须与xwiki中的env.OIDC_WIKI_TOKEN参数值和wiki-service中的env.open.WIKI_TOKEN参数值一致
 
 - 验证部署
   - 验证命令
@@ -165,7 +159,6 @@ helm install c7n/mysql-client \
         --set env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE="http://register-server.c7n-system:8000/eureka/" \
         --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
         --set env.open.SPRING_CLOUD_CONFIG_URI="http://register-server.c7n-system:8000/" \
-        --set env.open.SERVICE_ATTACHMENT_URL="http://minio.example.choerodon.io/agile-service" \
         --name issue-service \
         --version 0.18.0 \
         --namespace c7n-system
@@ -181,9 +174,6 @@ helm install c7n/mysql-client \
     env.open.SPRING_CLOUD_CONFIG_ENABLED|启用配置中心
     env.open.SPRING_CLOUD_CONFIG_URI|配置中心地址
     env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE|注册服务地址
-    env.open.env.open.SERVICE_ATTACHMENT_URL|minio地址
-    env.open.SPRING_REDIS_HOST|Redis数据库地址
-    env.open.SPRING_REDIS_POST|Redis数据库端口
 
 - 验证部署
   - 验证命令
@@ -217,7 +207,7 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
         --set env.open.SPRING_CLOUD_CONFIG_URI="http://register-server.c7n-system:8000/" \
         --name foundation-service \
-        --version 0.18.0 \
+        --version 0.18.1 \
         --namespace c7n-system
     ```
 
