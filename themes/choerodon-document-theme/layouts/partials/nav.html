@@ -23,7 +23,11 @@
       {{ range .Site.Menus.main }}
       {{ if .HasChildren }}
       <li class='haschildren'>
+        {{ if .URL }}
         <a {{ if .Post }} target="_blank" {{ end }} href="{{ .URL }}">{{ .Name }} {{ .Pre }}</a>
+        {{ else }}
+        <a>{{ .Name }} {{ .Pre }}</a>
+        {{ end }}
         <ul class="sub-menus none">
           {{ range .Children.ByWeight.Reverse }}
           <li>
