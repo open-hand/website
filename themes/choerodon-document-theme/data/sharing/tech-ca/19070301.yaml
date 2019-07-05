@@ -1,0 +1,8 @@
+src: "av577878382"
+aid: 57787838
+cid: 100849979
+background: "/img/knowledge-sharing/agile-1.png"
+title: "浅析Kubernetes网络"
+description: "介绍Kubernetes网络原理和实战应用。"
+weight: 300
+id: 35

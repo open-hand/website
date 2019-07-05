@@ -1,0 +1,8 @@
+src: "av57780207"
+aid: 57780207
+cid: 100759696
+background: "/img/knowledge-sharing/agile-2.png"
+title: "运用Jest构建前端自动化测试"
+description: "介绍Jest的定义和J特点，以及如何引入Jest构建前端自动化测试。"
+weight: 310
+id: 36
