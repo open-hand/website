@@ -4,7 +4,7 @@ weight = 3
 description = "查看平台中api的调用情况"
 +++
 
-# API概览
+# API统计
 
 通过API概览，您可以了解平台各服务API的数量，以及近30天内API的调用情况。
 

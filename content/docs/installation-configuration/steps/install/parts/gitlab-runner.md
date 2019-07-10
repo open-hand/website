@@ -10,13 +10,13 @@ Gitlab Runner，用于代码提交后自动进行代码测试、构建服务的�
 
 ## 预备知识
 
-如果你不知道Gitlab Runner是做什么的，那么请参考下面链接（包括但不限于）进行学习：
+如果你还不知道Gitlab Runner是做什么的，请参考下面链接进行学习：
 
 - [Gitlab Runner](https://docs.gitlab.com/runner/)
 
 ## 方式一：一键安装Runner
 
-若你使用一键部署安装的猪齿鱼，可以使用下面命令一键部署Gitlab-Runner。
+如你使用一键部署安装的猪齿鱼，在同一集群中可以使用下面命令一键部署Gitlab-Runner。
 
 ```bash
 ./c7nctl config gitlab runner -c config.yml

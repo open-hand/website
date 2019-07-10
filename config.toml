@@ -53,12 +53,24 @@ paginate = 5
 	        weight = 3
 	        parent = "en-community"
 
-
 [[languages.en.menu.main]]
-    name = "Github"
-    url  = "https://github.com/choerodon/choerodon"
+    name = "SourceCode"
     weight = 5
-    post= true
+    identifier = "source"
+    pre = "<i class='iconfont'>&#xe600;</i>"
+
+    [[languages.en.menu.main]]
+        name = "GITHUB"
+        post= true
+        url  = "https://github.com/choerodon/choerodon"
+        weight = 2
+        parent = "source"
+    [[languages.en.menu.main]]
+        name = "GITEE"
+        post= true
+        url  = "https://gitee.com/choerodon/choerodon"
+        weight = 1
+        parent = "source"
 
 [[languages.en.menu.main]]
     name = "v0.17"
@@ -68,26 +80,26 @@ paginate = 5
     pre = "<i class='iconfont'>&#xe600;</i>"
 
     [[languages.en.menu.main]]
-        name = "v0.17"
-        url  = "http://v0-17.choerodon.io/en/"
+        name = "v0.18"
+        url  = "http://v0-18.choerodon.io/en/"
         weight = 6
         parent = "version"
 
     [[languages.en.menu.main]]
+    name = "v0.17"
+    url  = "http://v0-17.choerodon.io/en/"
+    weight = 5
+    parent = "version"
+
+    [[languages.en.menu.main]]
     name = "v0.16"
     url  = "http://v0-16.choerodon.io/en/"
-    weight = 5
+    weight = 4
     parent = "version"
 
     [[languages.en.menu.main]]
     name = "v0.15"
     url  = "http://v0-15.choerodon.io/en/"
-    weight = 4
-    parent = "version"
-
-    [[languages.en.menu.main]]
-    name = "v0.14"
-    url  = "http://v0-14.choerodon.io/en/"
     weight = 3
     parent = "version"
 
@@ -126,41 +138,53 @@ paginate = 5
 	        parent = "community"
 
 [[languages.zh.menu.main]]
-    name = "GITHUB"
-    url  = "https://github.com/choerodon/"
+    name = "源码"
     weight = 5
-    post= true
-    identifier = "github"
+    identifier = "source"
+    pre = "<i class='iconfont'>&#xe600;</i>"
+
+    [[languages.zh.menu.main]]
+        name = "GITHUB"
+        post= true
+        url  = "https://github.com/choerodon/choerodon"
+        weight = 2
+        parent = "source"
+    [[languages.zh.menu.main]]
+        name = "GITEE"
+        post= true
+        url  = "https://gitee.com/choerodon/choerodon"
+        weight = 1
+        parent = "source"
 
 [[languages.zh.menu.main]]
-    name = "v0.17"
+    name = "v0.18"
     url  = "/zh/"
     weight = 6
     identifier = "version"
     pre = "<i class='iconfont'>&#xe600;</i>"
 
     [[languages.zh.menu.main]]
-        name = "v0.17"
-        url  = "http://v0-17.choerodon.io/zh/"
+        name = "v0.18"
+        url  = "http://v0-18.choerodon.io/zh/"
         weight = 7
         parent = "version"
     [[languages.zh.menu.main]]
-        name = "v0.16"
-        url  = "http://v0-16.choerodon.io/zh/"
+        name = "v0.17"
+        url  = "http://v0-17.choerodon.io/zh/"
         weight = 6
         parent = "version"
 
     [[languages.zh.menu.main]]
-    name = "v0.15"
-    url  = "http://v0-15.choerodon.io/zh/"
-    weight = 5
-    parent = "version"
+        name = "v0.16"
+        url  = "http://v0-16.choerodon.io/zh/"
+        weight = 5
+        parent = "version"
 
     [[languages.zh.menu.main]]
-    name = "v0.14"
-    url  = "http://v0-14.choerodon.io/zh/"
-    weight = 4
-    parent = "version"
+        name = "v0.15"
+        url  = "http://v0-15.choerodon.io/zh/"
+        weight = 4
+        parent = "version"
 
 [params]
     viewMorePostLink = "/blog/"

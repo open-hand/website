@@ -45,6 +45,12 @@ description = "配置不同触发类型的发送规则"
 组织任务状态通知 | jobStatusOrganization | 组织层定时任务状态发生变化，给相关用户发送通知  
 项目任务状态通知 | jobStatusProject | 项目层定时任务状态发生变化，给相关用户发送通知    
 资源删除确认通知 | resourceDeleteConfirmation | 删除Devops资源时，给相关用户发送验证码
+删除实例发送消息 | devopsDeleteInstance4Sms | 删除实例发送消息
+流水线或签任务通过通知 | pipelinepass | 流水线或签任务通过通知
+流水线审核通知 | pipelineaudit | 流水线审核通知
+流水线被终止通知 | pipelinestop | 流水线被终止通知
+流水线失败通知 | pipelinefailed | 流水线失败通知
+流水线成功通知 | pipelinesuccess | 流水线成功通知
 
 ## 触发类型查询
 
