@@ -1,2 +1,1 @@
-js:
-  - /js/case.js
+js: ['/js/front.js','/js/case.js']

@@ -61,22 +61,16 @@ jQuery(document).ready(function () {
     }
   };
 // 	播放按钮改变
-  $('.footer-right i').mouseover(
-    function () {
-      $(this).attr('class', 'iconfont icon-player-hover1 pull-right');
-      $(this).attr('class', 'iconfont icon-player-hover1 pull-right');
-
-    },
-  );
-  $('.footer-right i').mouseout(
-    function () {
-      $(this).attr('class', 'iconfont icon-player1 pull-right');
-    },
-  );
+  $('.footer-right i').mouseover(function () {
+    $(this).attr('class', 'iconfont icon-player-hover1 pull-right');
+    $(this).attr('class', 'iconfont icon-player-hover1 pull-right');
+  });
+  $('.footer-right i').mouseout(function () {
+    $(this).attr('class', 'iconfont icon-player1 pull-right');
+  });
 //点赞
   $('.praise i').click(function () {
     $(this).attr('class', 'iconfont icon-praised pull-left add-like');
-
   });
   $.ajax({
     //几个参数需要注意一下
@@ -207,6 +201,7 @@ function submsg() {
         if (result.resultCode == 200) {
           alert('SUCCESS');
         }
+        ;
         $('.sign-up').fadeOut(100);
         $('.sign-success').fadeIn(500);
         setTimeout(function () {
@@ -218,5 +213,7 @@ function submsg() {
         console.log(e.responseText);
       },
     });
+
   }
+
 }
