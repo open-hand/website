@@ -72,27 +72,27 @@ jQuery(document).ready(function () {
   $('.praise i').click(function () {
     $(this).attr('class', 'iconfont icon-praised pull-left add-like');
   });
-  $.ajax({
-    //几个参数需要注意一下
-    type: 'get',//方法类型
-    url: 'https://share.choerodon.com.cn/video/query',//url
-    contentType: 'application/json; charset=utf-8',
-    success: function (result) {
-
-      for (var i = 0; i < result.length; i++) {
-        if (result[i].likeNumber >= 9999) {
-          $('#' + result[i].id).val('9999+');
-        } else {
-          $('#' + result[i].id).val(result[i].likeNumber);
-        }
-
-      }
-
-    },
-    error: function (e) {
-      console.log(e.responseText);
-    },
-  });
+  // $.ajax({
+  //   //几个参数需要注意一下
+  //   type: 'get',//方法类型
+  //   url: 'https://share.choerodon.com.cn/video/query',//url
+  //   contentType: 'application/json; charset=utf-8',
+  //   success: function (result) {
+  //
+  //     for (var i = 0; i < result.length; i++) {
+  //       if (result[i].likeNumber >= 9999) {
+  //         $('#' + result[i].id).val('9999+');
+  //       } else {
+  //         $('#' + result[i].id).val(result[i].likeNumber);
+  //       }
+  //
+  //     }
+  //
+  //   },
+  //   error: function (e) {
+  //     console.log(e.responseText);
+  //   },
+  // });
 
 // 	报名窗口弹出
   $('#jion-share').click(function () {
@@ -201,7 +201,6 @@ function submsg() {
         if (result.resultCode == 200) {
           alert('SUCCESS');
         }
-        ;
         $('.sign-up').fadeOut(100);
         $('.sign-success').fadeIn(500);
         setTimeout(function () {
