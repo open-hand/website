@@ -81,7 +81,7 @@ helm install c7n/sonarqube \
             access_token_validity\,refresh_token_validity\,\
             additional_information\,auto_approve\,object_version_number\,\
             created_by\,creation_date\,last_updated_by\,last_update_date)\
-            VALUES('sonar'\,1\,'default'\,'secret'\,'default'\,\
+            VALUES('sonar'\,1\,'default'\,'sonar'\,'default'\,\
             'password\,implicit\,client_credentials\,authorization_code\,refresh_token'\,\
             'http://sonarqube.example.choerodon.io/oauth2/callback/choerodon'\,3600\,3600\,'{}'\,'default'\,1\,0\,NOW()\,0\,NOW());" \
         --version 0.1.0 \
