@@ -35,7 +35,7 @@ helm install c7n/harbor \
     --set clair.enabled=false \
     --set notary.enabled=false \
     --set harborAdminPassword=Harbor12345 \
-    --version 1.0.1 \
+    --version 1.1.1 \
     --name harbor \
     --namespace c7n-system
 ```
