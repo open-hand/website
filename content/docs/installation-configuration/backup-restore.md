@@ -55,7 +55,7 @@ weight = 10
 
     - 将`ports.port`字段修改为8080
 
-        ```yaml
+        ```
         ports:
         - name: http
             port: 8080
@@ -73,7 +73,7 @@ weight = 10
 
      - 将`ports.port`字段修改为其他非9000任意端口后并保存
 
-        ```yaml
+        ```
         ports:
         - name: http
             port: 12480
