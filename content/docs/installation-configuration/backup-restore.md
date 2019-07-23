@@ -36,7 +36,7 @@ weight = 10
     将挂载的所有目录数据备份，默认使用 NFS 存储，chartmuseum-pvc 挂载的目录是 `/nfs/mount/path/<namespace>-<pvc name>-<pvc volume>`
 
     ```bash
-    tar -cvzf chartmuseum.tar.gz /path/to/chartmuseum-pvc
+    tar -cvzf chartmuseum.tar.gz -C /path/to/chartmuseum-pvc .
     ```
 
     之后将打包的备份文件保存即可，这里使用 scp 命令下载备份文件的到本地。
@@ -90,7 +90,7 @@ weight = 10
     将挂载的所有目录数据备份，默认使用 NFS 存储，minio-pvc 挂载的目录是 `/nfs/mount/path/<namespace>-<pvc name>-<pvc volume>`
 
     ```bash
-    tar -cvzf minio.tar.gz /path/to/minio-pvc
+    tar -cvzf minio.tar.gz -C /path/to/minio-pvc .
     ```
 
     之后将打包的备份文件保存即可。
@@ -134,23 +134,57 @@ weight = 10
 
 3. 备份数据
 
-    将挂载的所有目录数据备份，默认使用 NFS 存储，会挂载 4 个 PVC，分别是 data-harbor-harbor-redis-0、database-data-harbor-harbor-database-0、harbor-harbor-jobservice、harbor-harbor-registry，挂载目录的格式是 `/nfs/mount/path/<namespace>-<pvc name>-<pvc value>`。我们需要将除了 redis 之外的所有 PVC 文件夹备份。
+    默认安装的 PostgreSQL 数据库是 ClusterIP模式，你可以修改成 NodePort 模式直接访问备份。
+
+    - 修改 harbor-harbor-database
+
+        ```bash
+        kubectl edit svc <mysql svc name> -n <namespace>
+        ```
+
+    - 修改 `spec.type` ,添加 `type.ports.nodePort`
+
+        ```bash
+        spec:
+        type: NodePort
+        ports:
+            nodePort: 30306
+        ```
+
+    使用其他工具备份数据库 registry，notarysigner，notaryserver。
+
+    使用 harbor 的镜像负责管理功能迁移镜像。[Harbor 镜像复制功能](https://blog.csdn.net/kozazyh/article/details/79829463)
+
+    将挂载的所有目录数据备份，默认使用 NFS 存储，会挂载 4 个 PVC，分别是 database-data-harbor-harbor-database-0、harbor-harbor-jobservice、harbor-harbor-registry，挂载目录的格式是 `/nfs/mount/path/<namespace>-<pvc name>-<pvc value>`。我们需要将除了 redis 之外的所有 PVC 文件夹备份。
 
     ```bash
-    tar -cvzf harbor-database.tar.gz /path/to/harbor-database-pvc
+    tar -cvzf harbor-database.tar.gz -C /path/to/harbor-database-pvc .
+    tar -cvzf harbor-registry.tar.gz -C /path/to/harbo-registry-pvc .
 
-    tar -cvzf harbor-registry.tar.gz /path/to/harbo-registry-pvc
+    tar -cvzf harbor-jobservice.tar.gz -C  /path/to/harbor-jobservice-pvc .
 
-    tar -cvzf harbor-jobservice.tar.gz /path/to/harbor-jobservice-pvc
-
-    tar -cvzf harbor-jobservice.tar.gz /path/to/harbor-redis-pvc
+    tar -cvzf harbor-redis.tar.gz -C /path/to/harbor-redis-pvc .
     ```
 
     [参考文档](https://github.com/goharbor/harbor/blob/master/docs/migration_guide.md)
 
     [安装文档](https://github.com/goharbor/harbor-helm)
 
-4. 恢复访问
+4. 备份密钥
+
+    - 获取存储证书的 secret 的名字
+
+        ```bash
+        kubectl get secret
+        ```
+
+    - 导出 secret
+
+        ```bash
+        kubectl get secret <secret-name-from-step-1> -o yaml > secret.yaml
+        ```
+
+5. 恢复访问
 
     ```bash
     kubectl apply -f harbor-ingress.yaml -n <namespace>
@@ -174,7 +208,13 @@ weight = 10
               port: 12480
         ```
 
-2. 创建备份
+2. 备份配置
+
+    ```bash
+    helm get values gitlab  > gitlab-helm-values.yaml
+    ```
+
+3. 创建备份
 
     - 进入Gitlab容器
 
@@ -209,18 +249,12 @@ weight = 10
     - 从容器中复制出备份文件
 
     ```bash
-    kubectl cp <namespaces>/<gitlab pod name>:/var/opt/gitlab/backups/* ./gitlab_backup
+    kubectl cp <namespaces>/<gitlab pod name>:/var/opt/gitlab/backups/ ./gitlab_backup
     ```
 
     [gitlab 备份与恢复](https://docs.gitlab.com/ee/raketasks/backup_restore.html)
 
     [ssh 备份](https://superuser.com/questions/532040/copy-ssh-keys-from-one-server-to-another-server/532079#532079)
-
-3. 备份配置
-
-    ```bash
-    helm get values gitlab  > gitlab-helm-values.yaml
-    ```
 
 4. 恢复访问
 
@@ -243,6 +277,23 @@ weight = 10
 备份前请按照 [启动文档](http://choerodon.io/zh/docs/installation-configuration/stop/) 停止需要备份的应用，备份完成之后启动应用。
 
 ### 备份数据库
+
+默认安装的 MySQL 数据库是 ClusterIP模式，你可以修改成 NodePort 模式直接访问备份。
+
+- 修改 MySQL Service
+
+    ```bash
+    kubectl edit svc <mysql svc name> -n <namespace>
+    ```
+
+- 修改 `spec.type` ,添加 `type.ports.nodePort`
+
+    ```bash
+    spec:
+      type: NodePort
+      ports:
+        nodePort: 30306
+    ```
 
 1. 微服务开发框架数据备份
 
@@ -322,7 +373,7 @@ weight = 10
     - manager service 配置备份
 
        ```bash
-       helm get values manager-server > manager-server-helm-values.yaml
+       helm get values manager-service > manager-service-helm-values.yaml
        ```
 
     - notify service 配置备份
@@ -360,13 +411,13 @@ weight = 10
     - devops-service 配置备份
 
         ```bash
-        helm get values devops-servcie > devops-service-helm-value.yaml
+        helm get values devops-service > devops-service-helm-value.yaml
         ```
 
     - gitlab servcie 配置备份
 
         ```bash
-        helm get values gitlab-servcie > gitlab-servcie-helm-values.yaml
+        helm get values gitlab-service > gitlab-servcie-helm-values.yaml
         ```
 
     - workflow servcie 配置备份
@@ -485,7 +536,7 @@ weight = 10
     - 复制备份文件到容器中
 
         ```bash
-        kubectl cp gitlab_backup/* <namespaces>/<pod name>:/var/opt/gitlab/backups/
+        kubectl cp gitlab_backup/ <namespaces>/<pod name>:/var/opt/gitlab/backups/
         ```
 
     - 恢复
@@ -496,22 +547,32 @@ weight = 10
         kubectl exec -it <gitlab pod name> -n <namespace> bash
         ```
 
+        移动备份文件到 backups 目录
+
+        ```bash
+        cp /var/opt/gitlab/backups/gitlab_backup/*gitlab_backup.tar /var/opt/gitlab/backups/
+        ```
+
         将你备份的ssh文件恢复到配置目录
 
         ```bash
-        cp /var/opt/gitlab/backups/ssh_host* /etc/ssh/
+        cp /var/opt/gitlab/backups/gitlab_backup/ssh_host* /etc/ssh/
         ```
 
         将你备份的私钥文件复制到配置目录
 
         ```bash
-        cp /var/opt/gitlab/backups/gitlab-secrets.json /etc/gitlab/gitlab-secrets.json
+        cp /var/opt/gitlab/backups/gitlab_backup/gitlab-secrets.json /etc/gitlab/gitlab-secrets.json
         ```
 
         恢复gitlab
 
         ```bash
-        gitlab:backup:restore RAILS_ENV=production
+        # 备份的所有者必须是 git
+        chown git.git /var/opt/gitlab/backups/1563811217_2019_07_23_11.6.11_gitlab_backup.tar
+
+        # 还原指定时间戳的备份
+        gitlab-rake gitlab:backup:restore BACKUP=1563811217_2019_07_23_11.6.11
         ```
 
       - 重启Gitlab
@@ -604,7 +665,7 @@ weight = 10
     - manager service 配置恢复
 
         ```bash
-        helm upgrade --install manager-server c7n/manager-server -f manager-server-helm-values.yaml
+        helm upgrade --install manager-service c7n/manager-service -f manager-service-helm-values.yaml
         ```
 
     - notify service 配置恢复
