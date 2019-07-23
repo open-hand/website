@@ -19,10 +19,10 @@ weight = 10
 
    - 将`ports.port`字段修改为其他非8080任意端口后并保存
 
-       ```yaml
+       ```
        ports:
        - name: http
-       port: 12480
+         port: 12480
        ```
 
 2. 备份配置
@@ -58,7 +58,7 @@ weight = 10
         ```
         ports:
         - name: http
-            port: 8080
+          port: 8080
         ```
 
 ## 备份minio
@@ -76,7 +76,7 @@ weight = 10
         ```
         ports:
         - name: http
-            port: 12480
+          port: 12480
         ```
 
 2. 备份配置
@@ -105,10 +105,10 @@ weight = 10
 
      - 将`ports.port`字段修改为9000
 
-        ```yaml
+        ```
         ports:
         - name: http
-            port: 9000
+          port: 9000
         ```
 
 ## 备份Harbor
@@ -152,7 +152,7 @@ weight = 10
         spec:
           type: NodePort
           ports:
-            nodePort: 30306
+          nodePort: 30306
         ```
 
     使用其他工具备份数据库 registry，notarysigner，notaryserver。
@@ -213,10 +213,10 @@ weight = 10
 
      - 将`ports.port`字段修改为其他非80、22任意端口后并保存
 
-        ```yaml
-            ports:
-            - name: http
-              port: 12480
+        ```
+        ports:
+        - name: http
+          port: 12480
         ```
 
 2. 备份配置
@@ -277,10 +277,10 @@ weight = 10
 
     - 将`ports.port`字段修改为80
 
-        ```yaml
+        ```
         ports:
         - name: http
-            port: 80
+          port: 80
         ```
 
 ## 备份Choerodon
@@ -303,7 +303,7 @@ weight = 10
     spec:
       type: NodePort
       ports:
-        nodePort: 30306
+      nodePort: 30306
     ```
 
 1. 微服务开发框架数据备份
