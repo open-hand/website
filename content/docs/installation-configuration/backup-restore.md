@@ -113,6 +113,10 @@ weight = 10
 
 ## 备份Harbor
 
+<blockquote class="warning">
+该组件备份不完善，请谨慎操作。
+</blockquote>
+
 1. 中断外部访问
     - 备份Harbor Ingress
 
@@ -132,7 +136,7 @@ weight = 10
     helm get values harbor > harbor-helm-values.yaml
     ```
 
-3. 备份数据
+3. 备份数据库
 
     默认安装的 PostgreSQL 数据库是 ClusterIP模式，你可以修改成 NodePort 模式直接访问备份。
 
@@ -146,19 +150,26 @@ weight = 10
 
         ```bash
         spec:
-        type: NodePort
-        ports:
+          type: NodePort
+          ports:
             nodePort: 30306
         ```
 
     使用其他工具备份数据库 registry，notarysigner，notaryserver。
 
+4. 备份镜像
+
     使用 harbor 的镜像负责管理功能迁移镜像。[Harbor 镜像复制功能](https://blog.csdn.net/kozazyh/article/details/79829463)
+
+    也可以参照下一步直接打包备份 harbor-registry-pvc 目录
+
+5. 冗余数据备份
 
     将挂载的所有目录数据备份，默认使用 NFS 存储，会挂载 4 个 PVC，分别是 database-data-harbor-harbor-database-0、harbor-harbor-jobservice、harbor-harbor-registry，挂载目录的格式是 `/nfs/mount/path/<namespace>-<pvc name>-<pvc value>`。我们需要将除了 redis 之外的所有 PVC 文件夹备份。
 
     ```bash
     tar -cvzf harbor-database.tar.gz -C /path/to/harbor-database-pvc .
+
     tar -cvzf harbor-registry.tar.gz -C /path/to/harbo-registry-pvc .
 
     tar -cvzf harbor-jobservice.tar.gz -C  /path/to/harbor-jobservice-pvc .
@@ -166,11 +177,7 @@ weight = 10
     tar -cvzf harbor-redis.tar.gz -C /path/to/harbor-redis-pvc .
     ```
 
-    [参考文档](https://github.com/goharbor/harbor/blob/master/docs/migration_guide.md)
-
-    [安装文档](https://github.com/goharbor/harbor-helm)
-
-4. 备份密钥
+6. 备份密钥
 
     - 获取存储证书的 secret 的名字
 
@@ -184,11 +191,15 @@ weight = 10
         kubectl get secret <secret-name-from-step-1> -o yaml > secret.yaml
         ```
 
-5. 恢复访问
+7. 恢复访问
 
     ```bash
     kubectl apply -f harbor-ingress.yaml -n <namespace>
     ```
+
+[参考文档](https://github.com/goharbor/harbor/blob/master/docs/migration_guide.md)
+
+[安装文档](https://github.com/goharbor/harbor-helm)
 
 ## 备份Gitlab
 
@@ -507,17 +518,12 @@ weight = 10
 
 ## 恢复Harbor
 
-1. 将备份的三个文件解压到挂载的对应 PVC 目录下。
+1. 将备份的数据库导入
+2. 证书配置参考 [harbor 证书配置](http://choerodon.io/zh/docs/installation-configuration/steps/install/parts/base/harbor/)，恢复证书。
 
-    ```bash
-    tar -xvzf harbor-database.tar.gz -C /path/to/harbor-database-pvc
+3. 迁移回同步的镜像 [Harbor 镜像复制功能](https://blog.csdn.net/kozazyh/article/details/79829463)，也可将备份的 harbor-registry.tar.gz 解压到 /path/to/harbor-registry-pvc 下。
 
-    tar -xvzf harbor-registry.tar.gz -C /path/to/harbor-registry-pvc
-
-    tar -xvzf harbor-jobservice.tar.gz -C /path/to/harbor-jobservice-pvc
-    ```
-
-2. 恢复配置
+4. 恢复配置
 
     ```bash
     helm upgrade --install harbor c7n/harbor -f harbor-helm-values.yaml
