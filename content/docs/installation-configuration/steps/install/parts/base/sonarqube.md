@@ -38,7 +38,7 @@ helm install c7n/sonarqube \
     --set postgresql.persistence.storageClass=nfs-provisioner \
     --set ingress.enabled=true \
     --set ingress.'hosts[0]'=sonarqube.example.choerodon.io \
-    --set plugins.'install[0]'=https://file.choerodon.com.cn/choerodon-install/sonarqube/sonar-auth-choerodonoauth-plugin-1.2-RELEASE.jar \
+    --set plugins.'install[0]'=https://file.choerodon.com.cn/choerodon-install/sonarqube/sonar-auth-choerodonoauth-plugin-1.3-RELEASE.jar \
     --version 0.15.0 \
     --name sonarqube \
     --namespace c7n-system
@@ -48,7 +48,7 @@ helm install c7n/sonarqube \
 
 ## 安装SoanrQube插件
 - 此步骤用于之前已经安装过SonarQube，只需安装插件的情况（如已经执行过上一步可跳过此步骤）
-- 进入SonarQube安装目录，下载https://file.choerodon.com.cn/choerodon-install/sonarqube/sonar-auth-choerodonoauth-plugin-1.2-RELEASE.jar 插件到\data\sonarqube\extensions\plugins目录
+- 进入SonarQube安装目录，下载https://file.choerodon.com.cn/choerodon-install/sonarqube/sonar-auth-choerodonoauth-plugin-1.3-RELEASE.jar 插件到\data\sonarqube\extensions\plugins目录
 - 重启SoanrQube服务
 
 ## 验证部署
