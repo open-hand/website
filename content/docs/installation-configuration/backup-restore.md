@@ -149,10 +149,10 @@ weight = 10
     - 修改 `spec.type` ,添加 `type.ports.nodePort`
 
         ```bash
-        spec:
-          type: NodePort
-          ports:
-            nodePort: 30306
+            spec:
+              type: NodePort
+              ports:
+              - nodePort: 30306
         ```
 
     使用其他工具备份数据库 registry，notarysigner，notaryserver。
@@ -300,10 +300,10 @@ weight = 10
 - 修改 `spec.type` ,添加 `type.ports.nodePort`
 
     ```bash
-    spec:
-      type: NodePort
-      ports:
-        nodePort: 30306
+        spec:
+          type: NodePort
+          ports:
+          - nodePort: 30306
     ```
 
 1. 微服务开发框架数据备份
