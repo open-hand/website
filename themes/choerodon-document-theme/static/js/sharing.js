@@ -68,31 +68,6 @@ jQuery(document).ready(function () {
   $('.footer-right i').mouseout(function () {
     $(this).attr('class', 'iconfont icon-player1 pull-right');
   });
-//点赞
-  $('.praise i').click(function () {
-    $(this).attr('class', 'iconfont icon-praised pull-left add-like');
-  });
-  // $.ajax({
-  //   //几个参数需要注意一下
-  //   type: 'get',//方法类型
-  //   url: 'https://share.choerodon.com.cn/video/query',//url
-  //   contentType: 'application/json; charset=utf-8',
-  //   success: function (result) {
-  //
-  //     for (var i = 0; i < result.length; i++) {
-  //       if (result[i].likeNumber >= 9999) {
-  //         $('#' + result[i].id).val('9999+');
-  //       } else {
-  //         $('#' + result[i].id).val(result[i].likeNumber);
-  //       }
-  //
-  //     }
-  //
-  //   },
-  //   error: function (e) {
-  //     console.log(e.responseText);
-  //   },
-  // });
 
 // 	报名窗口弹出
   $('#jion-share').click(function () {
@@ -110,28 +85,6 @@ jQuery(document).ready(function () {
 
   $('#close-sign').click(function () {
     $('.sign-up').fadeOut(300);
-  });
-});
-// 点赞加一
-$('.add-like').on('click', function (e) {
-  var likeInput = $(this).siblings('.like');
-  $.ajax({
-
-    type: 'post',//方法类型
-    url: 'https://share.choerodon.com.cn/video/like/' + likeInput.attr('id'),//url
-    contentType: 'application/json; charset=utf-8',
-
-    success: function (result) {
-      if (parseInt(likeInput.val()) >= 9999) {
-
-      } else {
-        likeInput.val(parseInt(likeInput.val()) + 1);
-      }
-
-    },
-    error: function (e) {
-      console.log(e.responseText);
-    },
   });
 });
 
@@ -186,7 +139,6 @@ function submsg() {
   } else {
 
     $.ajax({
-      //几个参数需要注意一下
       type: 'post',//方法类型
       url: 'https://share.choerodon.com.cn/topic/apply',//url
       contentType: 'application/json; charset=utf-8',
