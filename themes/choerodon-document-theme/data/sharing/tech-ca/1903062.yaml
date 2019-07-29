@@ -1,4 +1,6 @@
-src: "k0847w40b5v"
+src: "av54134613"
+aid: 54134613
+cid: 94677770
 background: "/img/knowledge-sharing/agile-1.png"
 title: "Spring Boot 启动原理简析"
 description: "Spring Boot 自动配置的原理和 启动过程概述。"

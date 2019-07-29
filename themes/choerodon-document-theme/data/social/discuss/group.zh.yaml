@@ -1,0 +1,5 @@
+weight: 4
+name: "微信群"
+icon: "icon-wechat"
+hover: "/img/socials/wechat_group.png"
+language: zh

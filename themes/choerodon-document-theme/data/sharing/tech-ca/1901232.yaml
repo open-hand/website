@@ -1,4 +1,6 @@
-src: "p0832263kw1"
+src: "av53934471"
+aid: 53934471
+cid: 94338637
 background: "/img/knowledge-sharing/agile-4.png"
 title: "分布式一致性算法：Paxos"
 description: "介绍什么是Paxos算法，以及Paxos的应用与衍生产品"

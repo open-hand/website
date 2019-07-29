@@ -1,0 +1,8 @@
+src: "av55388242"
+aid: 55388242
+cid: 96786594
+background: "/img/knowledge-sharing/agile-1.png"
+title: "Choerodon猪齿鱼的数据初始化之路"
+description: "介绍猪齿鱼数据初始化的设计思想和实现。"
+weight: 250
+id: 30

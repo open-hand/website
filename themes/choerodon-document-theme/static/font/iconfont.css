@@ -119,6 +119,10 @@
   content: "\e65a";
 }
 
+.icon-wechat-group:before {
+  content: "\e65a";
+}
+
 .icon-deployment:before {
   content: "\e680";
 }

@@ -1,6 +1,8 @@
-src: "r0855bg5ah9"
-background: "/img/knowledge-sharing/agile-4.png"
+src: "av54148596"
+aid: 54148596
+cid: 94717766
+background: "/img/knowledge-sharing/agile-1.png"
 title: "Docker存储驱动"
 description: "介绍镜像的分层特性， 容器读写层的工作原理和Docker存储驱动"
-weight: 160
-id: 18
+weight: 170
+id: 21

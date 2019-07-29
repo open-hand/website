@@ -1,211 +1,196 @@
 <!DOCTYPE html>
 <html>
+  {{ partial "head.html" . }}
+  <body>
+    <div id="home">
+      <header id="header">
+        <link href="/css/knowledge-sharing.css" rel="stylesheet" />
+        {{ partial "nav.html" . }}
 
-{{ partial "head.html" . }}
-<body>
-
-<div id="home">
-
-<header id="header">
-    <link href="/css/knowledge-sharing.css" rel="stylesheet">
-    {{ partial "nav.html" . }}
-
-	   		<div class="sharing-header-nav">
-	   			
-	   			<img src="/img/knowledge-sharing/banner.svg"/>
-        <div class="sharing-banner-text">
-            <div class="sharing-head">{{ i18n "welcome to knowledge sharing" }}</div>
-            <div class="center-block">
-            	<a class="white-button" id="jion-share">我要分享</a>
-         
+        <div class="sharing-header-nav">
+          <img src="/img/knowledge-sharing/banner.svg" />
+          <div class="sharing-banner-text">
+            <div class="sharing-head">
+              {{ i18n "welcome to knowledge sharing" }}
             </div>
-            
+            <div class="center-block">
+              <a class="white-button" id="jion-share">我要分享</a>
+            </div>
+          </div>
         </div>
-        
+      </header>
+      <div class="sign-success">
+        <div class="success-left">
+          <i class="iconfont icon-trues-active"></i>
+        </div>
+        <div class="success-right">
+          <h4>报名成功</h4>
+        </div>
+      </div>
+
+      <div class="sign-up" id="sign-up">
+        <div class="bg1"></div>
+
+        <div class="sign">
+          <h4>演讲报名</h4>
+
+          <form action="{{.Site.Params.ajaxhref}}" method="post">
+            <div class="sign-message">
+              <div class="left-content">
+                <a>姓名:</a>
+              </div>
+
+              <div class="right-content">
+                <input type="text" id="namemsg" value="" />
+              </div>
+            </div>
+
+            <div class="err-message visi-hidden">
+              <div class="left-content">
+                <i class="iconfont icon-error pull-right"></i>
+              </div>
+              <div class="err-content">
+                <input
+                  type=""
+                  name=""
+                  class="errmsg"
+                  value=""
+                  disabled="true"
+                />
+              </div>
+            </div>
+
+            <div class="sign-message">
+              <div class="left-content">
+                <a>手机号:</a>
+              </div>
+
+              <div class="right-content">
+                <input type="text" id="iphoneNumbermsg" />
+              </div>
+            </div>
+            <div class="err-message">
+              <div class="left-content">
+                <i class="iconfont icon-error pull-right"></i>
+              </div>
+              <div class="err-content">
+                <input
+                  type=""
+                  name=""
+                  class="errmsg"
+                  value=""
+                  disabled="true"
+                />
+              </div>
+            </div>
+
+            <div class="sign-message">
+              <div class="left-content">
+                <a>演讲主题:</a>
+              </div>
+
+              <div class="right-content">
+                <input type="text" id="topicmsg" value="" />
+              </div>
+            </div>
+            <div class="err-message">
+              <div class="left-content">
+                <i class="iconfont icon-error pull-right"></i>
+              </div>
+              <div class="err-content">
+                <input
+                  type=""
+                  name=""
+                  class="errmsg"
+                  value=""
+                  disabled="true"
+                />
+              </div>
+            </div>
+            <div class="message-area">
+              <div class="top-content">
+                <a>演讲概要:</a>
+              </div>
+              <div class="bottom-content">
+                <textarea
+                  id="descriptionmsg"
+                  rows=""
+                  cols=""
+                  placeholder="可选填"
+                ></textarea>
+              </div>
+            </div>
+
+            <div class="message-sub">
+              <input
+                type="button"
+                id="confirm-sign"
+                value="确定"
+                onclick="submsg()"
+              />
+              <input type="button" id="close-sign" value="取消" />
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="container sharing-main">
+        <div class="row">
+          {{ range $key, $index := $.Site.Data.sharing }}
+
+          <div class="col-xs-12 sharing-bar">
+            <h4>{{ i18n $key }}</h4>
+          </div>
+
+          {{ range $key,$index := sort . "weight" }}
+
+          <div class="col-md-3 col-sm-6 col-xs-12 sharing-box">
+            <div
+              class="sharing-head"
+              style="background: url({{.background}}); background-repeat: no-repeat; background-size: 100% 100%;"
+            >
+              <p title="{{.title}}">{{.title}}</p>
+            </div>
+
+            <div class="sharing-body">
+              <h5>{{.description}}</h5>
+            </div>
+            <div class="sharing-footer">
+              <div class="footer-right">
+                <i
+                  class="iconfont icon-player1 pull-right"
+                  data-src="{{.src}}"
+                  data-aid="{{.aid}}"
+                  data-cid="{{.cid}}"
+                ></i>
+              </div>
+            </div>
+          </div>
+
+          {{ end }}
+
+          {{ end }}
+        </div>
+      </div>
+
+      <div class="tutorial-video" id="tutorial-video">
+        <div class="bg"></div>
+        <iframe
+          frameborder="0"
+          src=""
+          allowfullscreen="true"
+          framespacing="0"
+          quality="high"
+        ></iframe>
+        <div class="iconfont icon-guanbi"></div>
+      </div>
+      {{ partial "footer.html" . }}
     </div>
-</header>
-    <div class="sign-success">
-			<div class="success-left">
-				<i class="iconfont icon-trues-active"></i>
-			</div>
-			<div class="success-right">
-				<h4>报名成功</h4>
-			</div>
-		</div>	  
+    <!-- /#all -->
 
- 
-	<div class="sign-up" id="sign-up">
-		
-		<div class="bg1">
-		</div>
-		
-			<div class="sign">
-				<h4>演讲报名</h4>
-				
-				<form action="{{.Site.Params.ajaxhref}}" method="post">
-					
-					<div class="sign-message">
-						<div class="left-content">
-							
-							<a>姓名:</a>
-						</div>
-						
-						<div class="right-content">
-							<input type="text"  id="namemsg" value=""/>
-						</div>
-						
-					</div>
-					
-					<div class="err-message visi-hidden">
-						<div class="left-content">
-							<i class="iconfont icon-error pull-right"></i>
-						</div>
-						<div class="err-content">
-							
-							<input type="" name="" class="errmsg" value="" disabled="true"/>
-						</div>
-						
-					</div>
-					
-		
-					<div class="sign-message">
-						<div class="left-content">
-							<a>手机号:</a>
-						</div>
-						
-						<div class="right-content">
-							<input type="text"  id="iphoneNumbermsg"/>
-						</div>
-						
-					</div>
-					<div class="err-message">
-						<div class="left-content">
-							
-								<i class="iconfont icon-error pull-right"></i>
-							
-							
-						</div>
-						<div class="err-content">
-							
-							<input type="" name="" class="errmsg" value="" disabled="true"/>
-						</div>
-						
-					</div>
-					
-					<div class="sign-message">
-						<div class="left-content">
-							<a>演讲主题:</a>
-						</div>
-						
-						<div class="right-content">
-							<input type="text" id="topicmsg" value=""/>
-						</div>
-						
-					</div>
-					<div class="err-message">
-						<div class="left-content">
-							
-								<i class="iconfont icon-error pull-right"></i>
-							
-							
-						</div>
-						<div class="err-content">
-							
-							<input type="" name="" class="errmsg" value="" disabled="true"/>
-						</div>
-						
-					</div>
-					<div class="message-area">
-						
-						<div class="top-content">
-							<a>演讲概要:</a>
-						</div>
-						<div class="bottom-content">
-							<textarea id="descriptionmsg" rows="" cols="" placeholder="可选填"></textarea>
-						</div>
-						
-						
-					</div>
-					
-					<div class="message-sub">
-						<input type="button" id="confirm-sign" value="确定" onclick="submsg()" />
-						<input type="button" id="close-sign" value="取消" />
-					</div>
-					
-				</form>
-			</div>  
-			  
-		
-		  
-	</div>
-
-
-        
-   
-<div class="container sharing-main">
-	<div class="row">
-		{{ range $key, $index := $.Site.Data.sharing }}
-		
-					<div class="col-xs-12 sharing-bar">
-						<h4>{{ i18n $key }}</h4>
-					</div>
-		
-			{{ range $key,$index := sort . "weight" }}
-			     
-			     	
-				    <div class="col-md-3 col-sm-6 col-xs-12 sharing-box">
-		  				<div class="sharing-head" style="background: url({{.background}}); background-repeat: no-repeat; background-size: 100% 100%;">
-		  				<p title="{{.title}}">{{.title}}</p>
-		  				</div>
-		  				
-		  				<div class="sharing-body">
-		  					<h5>{{.description}}</h5>
-		  				</div>
-		  				<div class="sharing-footer">
-		  					<div class="praise">
-		  						
-		  						
-		  					
-		  				 	    <form action="{{.Site.Params.praisenumber}}" method="get">
-		  				 	    	<i class="iconfont icon-praise pull-left add-like"></i>
-		  							<input type="text" class="like"  id="{{.id}}" value="" disabled="disabled" style="text-align: center;"/>
-		  							
-		  						</form>
-		  						
-		  					</div>
-	  						<div class="footer-right">
-	  							<i class="iconfont icon-player1 pull-right" data-src="{{.src}}"></i>
-	  						</div>
-		  					
-		  				
-		  				</div>
-		  				
-		     		</div>
-		     		
-		    {{ end }} 
-		    
-	
-	    {{ end }}
-</div>
-	
-</div>	
-            
-            
-		<div class="tutorial-video" id="tutorial-video">
-		  <div class="bg"></div>
-		  <iframe frameborder="0" src='' allowfullscreen="true" quality="high"></iframe>
-		  <div class="iconfont icon-guanbi"></div>
-		</div>
-		
-
-    {{ partial "footer.html" . }}
-
-</div>
-<!-- /#all -->
-
-{{ partial "scripts.html" . }}
-{{ range .Site.Data.static.sharing.js }}
+    {{ partial "scripts.html" . }}
+    {{ range.Site.Data.static.sharing.js }}
     <script src="{{ . }}"></script>
-{{ end }}
-</body>
+    {{ end }}
+  </body>
 </html>
