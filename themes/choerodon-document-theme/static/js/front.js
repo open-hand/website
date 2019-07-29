@@ -1,11 +1,11 @@
 //判断是否为PC端
 function IsPC() {
     var userAgentInfo = navigator.userAgent;
-    var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod");    
+    var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod");
     var flag = true;
     for (var v = 0; v < Agents.length; v++) {
         if (userAgentInfo.indexOf(Agents[v]) > 0) { flag = false; break; }
-    }    
+    }
     return flag;
 }
 var isPC = IsPC();
@@ -14,7 +14,7 @@ var isPC = IsPC();
 // 导航栏版本选择
 $(".navbar-collapse .select").on("click", function () {
 	$(this).next(".select-menu").toggleClass("none block");
-   
+
 })
 // 导航栏版本选择 end
 // 移动端导航栏点击隐藏
@@ -39,16 +39,16 @@ jQuery('.navbar-collapse .haschildren').hover(function (e) {
 // 导航栏子菜单结束
 // 导航栏动态渲染
 // 判断滚动结束后渲染导航栏
-var topValue = $(window).scrollTop(),// 上次滚动条到顶部的距离  
-    interval = null;// 定时器  
+var topValue = $(window).scrollTop(),// 上次滚动条到顶部的距离
+    interval = null;// 定时器
 document.onscroll = function () {
-    if (interval == null)// 未发起时，启动定时器，1秒1执行  
+    if (interval == null)// 未发起时，启动定时器，1秒1执行
 
         interval = setInterval("isScrolling()", 100);
     topValue = document.documentElement.scrollTop;
 }
 function isScrolling() {
-    // 判断此刻到顶部的距离是否和1秒前的距离相等  
+    // 判断此刻到顶部的距离是否和1秒前的距离相等
     if (document.documentElement.scrollTop == topValue) {
         // 首页导航栏变换
         if (navStatusTop) {
@@ -91,7 +91,7 @@ jQuery(document).ready(function () {
             $('.docs').css('left', '0');
         }
     }
-    
+
     // 导航栏点击事件
     jQuery('.navbar-buttons').on('click', function () {
         if ($(".navbar-left-buttons button.open").length == 1) {
@@ -125,7 +125,7 @@ jQuery(document).ready(function () {
             var hover = $(".wechat-hover");
             var img = hover.children("img");
             var top = $(this).offset().top - parseInt(hover.css("height")) - 20;
-            var left = document.documentElement.clientWidth / 2 - parseInt(hover.css("width")) + 2.5*parseInt($(this).css("margin-left"));
+            var left = document.documentElement.clientWidth / 2 - parseInt(hover.css("width")) + parseInt($(this).css("margin-left"));
             img.attr("src",img.attr("data-src"));
             hover.css("display", "block").css("top", top / rem + "rem").css("left", left / rem + "rem").fadeIn("fast");
         }
@@ -137,15 +137,15 @@ jQuery(document).ready(function () {
     });
 
     // 二维码图片加载等待
-    $('.social .load-img>img').on('load', function() {       
+    $('.social .load-img>img').on('load', function() {
         $(this).parent(".load-img").children("[data-loader='circle']").attr("data-loader","");
     });
 
-    jQuery('.icon-sina-footer').hover(function (e) {
+    jQuery('.icon-wechat-group').hover(function (e) {
         var wWidth = remWidth;
         if (wWidth >= 768) {
             var rem = calRem();
-            var hover = $(".sina-hover");
+            var hover = $(".wechat-group-hover");
             var img = hover.children("img");
             var top = $(this).offset().top - parseInt(hover.css("height")) - 20;
             var left = $(this).offset().left - parseInt(hover.css("width")) / 2 + parseInt($(this).css("width")) / 2;
@@ -155,7 +155,7 @@ jQuery(document).ready(function () {
     }, function () {
         var wWidth = remWidth;
         if (wWidth >= 768) {
-            $('.sina-hover').css("display", "none");
+            $('.wechat-group-hover').css("display", "none");
         }
     });
 

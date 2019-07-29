@@ -1,4 +1,4 @@
-baseurl = "//website-user.staging.saas.hand-china.com"
+baseurl = "//v0-18.choerodon.io/"
 title = "Choerodon | 开源多云技术平台"
 theme = "choerodon-document-theme"
 # themesDir = "../.."

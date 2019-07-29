@@ -4,14 +4,22 @@
         <img class="discuss" src="/img/socials/discuss.svg" />
         <div class="title">加入讨论</div>
         <div class="description">提出您的意见和问题，参与产品和技术的交流</div>
-        {{ range $index, $element := sort .Site.Data.social.discuss "weight"  }}
-            {{ if eq ($.Scratch.Get "language") $element.language }}
-                <a class="type" href="{{ $element.url }}">
+        <div class="content">
+            <div class="types">
+                {{ range $index, $element := sort .Site.Data.social.discuss "weight"  }}
+                {{ if eq ($.Scratch.Get "language") $element.language }}
+                <a class="type social-follow-type-left" {{ if $element.url }} href="{{ $element.url }}" {{ end }} data-hover="{{ $element.hover }}">
                     <i class="iconfont {{ $element.icon}}"></i>
                     <div class="name">{{ $element.name }}</div>
                 </a>
-            {{ end }}
-        {{ end }}
+                {{ end }}
+                {{ end }}
+            </div>
+            <div class="code im-none" id="wechat-code">
+                <div class="dropdown-arrow"></div>
+                <img class="dropdown-code" src="/img/socials/wechat_group.png"/>
+            </div>
+        </div>
     </div>
     <div class="block">
         <img class="follow" src="/img/socials/follow.svg" />
