@@ -141,7 +141,7 @@ jQuery(document).ready(function () {
         $(this).parent(".load-img").children("[data-loader='circle']").attr("data-loader","");
     });
 
-    jQuery('.icon-wechat-group').hover(function (e) {
+    jQuery('.icon-webcat-qun-footer').hover(function (e) {
         var wWidth = remWidth;
         if (wWidth >= 768) {
             var rem = calRem();
@@ -157,6 +157,15 @@ jQuery(document).ready(function () {
         if (wWidth >= 768) {
             $('.wechat-group-hover').css("display", "none");
         }
+    });
+
+    // footer 微信移动端动态效果
+    $('.icon-webcat-qun-footer').on('touchstart', function () {
+        setTimeout(function () {
+            stopBodyScroll(true);
+            $('.black-big-img img').attr('src', $(".wechat-group-hover>img").attr("data-src"));
+            $('.black-big-img').css('display', 'flex');
+        }, 300)
     });
 
     // footer 微信移动端动态效果
