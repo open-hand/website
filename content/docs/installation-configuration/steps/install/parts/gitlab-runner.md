@@ -82,8 +82,9 @@ helm repo update
         --set env.environment.CHOERODON_URL=http://api.example.choerodon.io \
         --set env.persistence.runner-maven-pvc="/root/.m2" \
         --set env.persistence.runner-cache-pvc="/cache" \
+        --set enabled_mount_host_docker_sock=true \
         --name runner \
-        --version 0.2.0 \
+        --version 0.2.2 \
         --namespace c7n-system
     ```
 
@@ -103,5 +104,6 @@ helm repo update
     env.environment.CHOERODON_URL|Choerodon API地址
     env.persistence.runner-maven-pvc|持久化数据，此处`runner-maven-pvc`为PVC名称，值为要挂载到Pod的`/root/.m2`目录
     env.persistence.runner-cache-pvc|持久化数据，此处`runner-cache-pvc`为PVC名称，值为要挂载到Pod的`/cache`目录
+    enabled_mount_host_docker_sock|是否将节点 `docker.sock` 文件挂载到Pod中，以便 build docker 镜像
 
 - 更多Runner设置请参考[官方文档](https://docs.gitlab.com/runner/)
