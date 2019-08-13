@@ -29,7 +29,6 @@ helm repo update
 注意：本 PostgreSql 数据库搭建教程仅为快速体验Gitlab而编写，由于使用了NFS存储故并不能保证其稳定运行或数据不丢失，您可以参照 PostgreSql 官网进行搭建。
 </blockquote>
 
-<details open><summary>使用PostgreSql数据库</summary>
 ```shell
 helm install c7n/postgresql \
     --set persistence.enabled=true \
@@ -44,36 +43,6 @@ helm install c7n/postgresql \
     --name gitlab-postgresql \
     --namespace c7n-system
 ```
-</details>
-
-<details><summary>使用MySql数据库</summary>
-```shell
-helm install c7n/persistentvolumeclaim \
-    --set accessModes={ReadWriteOnce} \
-    --set requests.storage=2Gi \
-    --set storageClassName=nfs-provisioner \
-    --version 0.1.0 \
-    --name gitlab-mysql-pvc \
-    --namespace c7n-system
-```
-
-```shell
-helm install c7n/mysql \
-    --set persistence.enabled=true \
-    --set persistence.existingClaim=gitlab-mysql-pvc \
-    --set env.MYSQL_ROOT_PASSWORD=password \
-    --set env.MYSQL_DATABASE=gitlabhq_production \
-    --set config.innodb_large_prefix=1 \
-    --set config.innodb_file_per_table=1 \
-    --set config.log_bin_trust_function_creators=1 \
-    --set config.character_set_server=utf8mb4 \
-    --set config.collation_server=utf8mb4_general_ci \
-    --set service.enabled=ture \
-    --version 0.1.0 \
-    --name gitlab-mysql \
-    --namespace c7n-system
-```
-</details>
 
 ### 部署gitlab所需Redis
 
@@ -111,7 +80,6 @@ helm install c7n/persistentvolumeclaim \
 
 ### 部署gitlab
 
-<details open><summary>使用PostgreSql数据库</summary>
 ```shell
 helm install c7n/gitlab \
     --set persistence.enabled=true \
@@ -142,50 +110,12 @@ helm install c7n/gitlab \
     --set env.config.UNICORN_WORKERS=3 \
     --set env.config.UNICORN_TIMEOUT=60 \
     --set service.enabled=true \
+    --set service.ssh.nodePort=32222 \
     --set ingress.enabled=true \
-    --version 0.4.2 \
+    --version 0.5.0 \
     --name gitlab \
     --namespace c7n-system
 ```
-</details>
-
-<details><summary>使用MySql数据库</summary>
-```shell
-helm install c7n/gitlab \
-    --set persistence.enabled=true \
-    --set persistence.existingClaim=gitlab-pvc \
-    --set env.config.GITLAB_EXTERNAL_URL=http://gitlab.example.choerodon.io \
-    --set env.config.GITLAB_TIMEZONE=Asia/Shanghai \
-    --set env.config.CHOERODON_OMNIAUTH_ENABLED=false \
-    --set env.config.GITLAB_DEFAULT_CAN_CREATE_GROUP=true \
-    --set env.config.DB_ADAPTER=mysql2 \
-    --set env.config.DB_HOST=gitlab-mysql.c7n-system.svc \
-    --set env.config.DB_PORT=3306 \
-    --set env.config.DB_USERNAME=root \
-    --set env.config.DB_PASSWORD=password \
-    --set env.config.DB_DATABASE=gitlabhq_production \
-    --set env.config.REDIS_HOST=gitlab-redis.c7n-system.svc \
-    --set env.config.SMTP_ENABLE=false \
-    --set env.config.SMTP_ADDRESS=smtp.mxhichina.com \
-    --set env.config.SMTP_PORT=465 \
-    --set env.config.SMTP_USER_NAME=git.sys@example.choerodon.io \
-    --set env.config.SMTP_PASSWORD=password \
-    --set env.config.SMTP_DOMAIN=smtp.mxhichina.com \
-    --set env.config.SMTP_AUTHENTICATION=login \
-    --set env.config.GITLAB_EMAIL_FROM=git.sys@example.choerodon.io \
-    --set env.config.SMTP_ENABLE_STARTTLS_AUTO=true \
-    --set env.config.SMTP_TLS=true \
-    --set env.config.PROMETHEUS_ENABLE=false \
-    --set env.config.NODE_EXPORTER_ENABLE=false \
-    --set env.config.UNICORN_WORKERS=3 \
-    --set env.config.UNICORN_TIMEOUT=60 \
-    --set service.enabled=true \
-    --set ingress.enabled=true \
-    --version 0.4.2 \
-    --name gitlab \
-    --namespace c7n-system
-```
-</details>
 
 - 参数
 
@@ -221,66 +151,15 @@ helm install c7n/gitlab \
     env.config.NODE_EXPORTER_ENABLE|是否开启node_exporter_enable
     env.config.UNICORN_WORKERS|unicorn workers的数量
     env.config.UNICORN_TIMEOUT|设置unicorn workers进程的超时时间，单位秒
-    ingress.enabled|是否开启ingress 
     service.enabled|是否开启service
+    service.ssh.nodePort|ssh 服务 node port
+    ingress.enabled|是否开启ingress 
 
 ### 验证部署
 
 - 访问设置的Gitlab域名出现以下界面即部署成功
 
     ![](/docs/installation-configuration/image/gitlab.png)
-
-## 启用SSH协议
-
-<blockquote class="warning">
-必须开启SSH协议功能
-</blockquote>
-
-### 修改Gitlab SSH Service
-
-- 在Master节点编辑`gitlab-ssh`Service
-
-        kubectl edit svc -n c7n-system gitlab-ssh
-
-- 按下面提示进行修改
-
-        apiVersion: v1
-        kind: Service
-        metadata:
-          name: gitlab-ssh
-          namespace: c7n-system
-          labels:
-            choerodon.io/release: "gitlab"
-            choerodon.io/infra: "gitlab"
-        spec:
-          type: ClusterIP
-          externalIPs:       #请添加externalIPs属性
-          - 192.168.1.1      #填写Gitlab域名指向的主机的内网IP
-          ports:
-            - port: 2289
-              targetPort: ssh
-          selector:
-            choerodon.io/release: "gitlab"
-            choerodon.io/infra: "gitlab"
-    
-<blockquote class="warning">
-如果您启用了防火墙iptables或者安全组，那么必须添加新开的2289端口
-</blockquote>
-
-### 验证是否启用成功
-
-- 在Master节点执行
-
-  ```
-  kubectl get svc -n c7n-system gitlab-ssh
-  ```
-  
-  出现类似内容即说明启用成功。
-
-  ```
-  NAMESPACE      NAME          TYPE        CLUSTER-IP      EXTERNAL-IP     PORT(S)    AGE
-  gitlab         gitlab-ssh    ClusterIP   10.233.12.57    192.168.1.1     2289/TCP   1d
-  ```
 
 ## 配置Choerodon Oauth认证
 
@@ -304,7 +183,8 @@ helm install c7n/gitlab \
         --set env.config.OMNIAUTH_BLOCK_AUTO_CREATED_USERS=false \
         --set env.config.CHOERODON_API_URL=http://api.example.choerodon.io \
         --set env.config.CHOERODON_CLIENT_ID=gitlab \
-        --version 0.4.2 \
+        --set env.config.CHOERODON_CLIENT_ID=secret \
+        --version 0.5.0 \
         --namespace c7n-system
 
 ### 添加Gitlab Client
@@ -339,7 +219,6 @@ helm install c7n/gitlab \
 
 - 执行下面语句进行关联:
 
-    <details open><summary>使用PostgreSql数据库</summary>
     ```
     helm install c7n/postgresql-client \
         --set env.PG_HOST=gitlab-postgresql-postgresql.c7n-system.svc \
@@ -354,22 +233,6 @@ helm install c7n/gitlab \
         --name gitlab-user-identities \
         --namespace c7n-system
     ```
-    </details>
-    <details><summary>使用MySql数据库</summary>
-    ```
-    helm install c7n/mysql-client \
-        --set env.MYSQL_HOST=gitlab-mysql.c7n-system.svc \
-        --set env.MYSQL_PORT=3306 \
-        --set env.MYSQL_USER=root \
-        --set env.MYSQL_PASS=password \
-        --set env.SQL_SCRIPT="\
-            INSERT INTO gitlabhq_production.identities(extern_uid\, provider\, user_id\, created_at\, updated_at) \
-            VALUES ('1'\, 'oauth2_generic'\, 1\, NOW()\, NOW());" \
-        --version 0.1.0 \
-        --name gitlab-user-identities \
-        --namespace c7n-system
-    ```
-    </details>
 
 ### 验证更新
 
