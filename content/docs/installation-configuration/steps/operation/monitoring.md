@@ -52,8 +52,8 @@ helm repo update
         --set prometheus.persistence.enabled=true \
         --set prometheus.persistence.existingClaim=monitoring-pvc \
         --set prometheus.clusterName=your_cluster_name \
-        --name=choerodon-monitorin \
-        --version=0.6.0 \
+        --name=choerodon-monitoring \
+        --version=0.7.2 \
         --namespace=monitoring
     ```
 

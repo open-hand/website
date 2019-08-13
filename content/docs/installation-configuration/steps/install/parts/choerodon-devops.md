@@ -151,7 +151,7 @@ helm install c7n/mysql-client \
         --set env.open.GITLAB_URL="http://gitlab.example.choerodon.io" \
         --set env.open.GITLAB_PRIVATETOKEN="GEuRhgb6kG9y3prFosSb" \
         --name gitlab-service \
-        --version 0.18.0 \
+        --version 0.18.1 \
         --namespace c7n-system
     ```
 

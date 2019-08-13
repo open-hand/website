@@ -169,7 +169,7 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_REDIS_PORT=6379 \
         --set env.open.SPRING_REDIS_DATABASE=7 \
         --name asgard-service \
-        --version 0.18.1 \
+        --version 0.18.2 \
         --namespace c7n-system
     ```
 
@@ -269,7 +269,7 @@ helm install c7n/mysql-client \
         --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
         --set env.open.SPRING_CLOUD_CONFIG_URI="http://register-server.c7n-system:8000/" \
         --name iam-service \
-        --version 0.18.4 \
+        --version 0.18.5 \
         --namespace c7n-system
     ```
 
