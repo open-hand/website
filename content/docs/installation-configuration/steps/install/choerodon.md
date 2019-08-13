@@ -97,7 +97,6 @@ spec:
 ## 后续步骤
 
 - 安装完成后您可以访问您配置的`choerodon-front`域名，默认用户名和密码都为admin
-- [设置Gitlab启用SSH协议(必须开启)](../parts/base/gitlab/#启用ssh协议)
 - 登录一次Gitlab，第一次登录会提示设置root用户密码，随后会跳转到Choerodon认证，使用admin/admin登录即可，如果使用root/admin用户拉取代码用户名为root，密码为界面设置的密码，其他用户默认密码为`password`
 - [设置Harbor证书(必须设置)](../parts/base/harbor/#证书配置)
 - [安装Gitlab-Runner](../parts/gitlab-runner)

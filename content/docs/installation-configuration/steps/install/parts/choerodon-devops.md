@@ -65,7 +65,7 @@ helm install c7n/mysql-client \
         --set env.open.SERVICES_HARBOR_INSECURESKIPTLSVERIFY="true" \
         --set env.open.SERVICES_HELM_URL="http://chart.example.choerodon.io" \
         --set env.open.SERVICES_GITLAB_URL="http://gitlab.example.choerodon.io" \
-        --set env.open.SERVICES_GITLAB_SSHURL="gitlab.example.choerodon.io:2289" \
+        --set env.open.SERVICES_GITLAB_SSHURL="gitlab.example.choerodon.io:32222" \
         --set env.open.SERVICES_GITLAB_PASSWORD=password \
         --set env.open.SERVICES_GITLAB_PROJECTLIMIT=100 \
         --set env.open.SERVICES_GATEWAY_URL=http://api.example.choerodon.io \
