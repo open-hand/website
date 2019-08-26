@@ -1,0 +1,8 @@
+src: "av62756661"
+aid: 62756661
+cid: 109014056
+background: "/img/knowledge-sharing/agile-3.png"
+title: "Choerodon猪齿鱼前端环境变量方案"
+description: "介绍猪齿鱼原环境变量方案的缺点和要求，以及新环境变量方案。"
+weight: 320
+id: 37
