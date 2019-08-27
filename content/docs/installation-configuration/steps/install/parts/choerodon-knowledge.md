@@ -57,7 +57,7 @@ helm install c7n/mysql-client \
         --set env.open.WIKI_URL="http://wiki.example.com" \
         --set env.open.WIKI_TOKEN="Choerodon" \
         --name knowledgebase-service \
-        --version 0.18.5 \
+        --version 0.18.6 \
         --namespace c7n-system
     ```
 
