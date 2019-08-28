@@ -60,5 +60,5 @@ issue service|issue服务|0.18.0
 wiki service|知识管理服务|0.18.1
 test manager service|测试管理服务|0.18.0
 choerodon front|Choerodon 前端|0.18.7
-knowledgebase service |基础知识服务|0.18.4
+knowledgebase service |基础知识服务|0.18.6
 foundation service |基础服务|0.18.1
