@@ -85,10 +85,9 @@ weight = 5
 - 在要执行ansible脚本的机器上部署ansible运行需要的环境：
 
     ```shell
-    sudo yum install epel-release -y 
-    sudo yum install git python36 sshpass -y
-    sudo python3.6 -m ensurepip
-    sudo /usr/local/bin/pip3 install --no-cache-dir ansible==2.7.5 netaddr -i https://mirrors.aliyun.com/pypi/simple/
+    sudo yum install epel-release -y
+    sudo yum install git python3-pip sshpass -y
+    pip3 install --no-cache-dir ansible==2.7.5 netaddr -i https://mirrors.aliyun.com/pypi/simple/
     ```
 
 - 克隆项目：
@@ -219,10 +218,9 @@ weight = 5
 - 在要执行ansible脚本的机器上部署ansible运行需要的环境：
 
     ```shell
-    sudo yum install epel-release -y 
-    sudo yum install git python36 sshpass -y
-    sudo python3.6 -m ensurepip
-    sudo /usr/local/bin/pip3 install --no-cache-dir ansible==2.7.5 netaddr -i https://mirrors.aliyun.com/pypi/simple/
+    sudo yum install epel-release -y
+    sudo yum install git python3-pip sshpass -y
+    pip3 install --no-cache-dir ansible==2.7.5 netaddr -i https://mirrors.aliyun.com/pypi/simple/
     ```
 
 - 克隆项目：
