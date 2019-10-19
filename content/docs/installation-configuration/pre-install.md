@@ -2,7 +2,6 @@
 title = "安装要求及约定"
 description = "详细介绍安装Choerodon时的硬件、软件、网络、端口、域名要求和基本约定"
 weight = 7
-
 +++
 
 # 要求与约定
@@ -32,28 +31,41 @@ Choerodon采用Spring Cloud作为微服务框架，运行在Docker上，以Kuber
 
 ## 需开放的端口号
 
-  <blockquote class="note">
-  如果您没有开启防火墙则无需在主机配置该项内容，如果你的服务器上游有安全组管控，请根据实际情况进行配置。
-  </blockquote>
-
-- Master(s)节点：Master(s)节点为Kubernetes主节点
-
-    协议|方向|端口范围|目的
-    ---|---|---|---
-    TCP	|入方向|6443|Kubernetes API server
-    TCP	|入方向|2379-2380|etcd server client API
-    TCP	|入方向|10250|Kubelet API
-    TCP	|入方向|10251|kube-scheduler
-    TCP	|入方向|10252|kube-controller-manager
-    TCP	|入方向|10255|Read-only Kubelet API
-    
-- Worker(s)节点：Worker(s)节点为Kubernetes普通节点
-
-    协议|方向|端口范围|目的
-    ---|---|---|---
-    TCP|入方向|10250	|Kubelet API
-    TCP|入方向|10255	|Read-only Kubelet API
-    TCP|入方向|30000-32767|	NodePort Services
+| **控制平面节点**  |      |             |                              |                     |
+| ----------------- | ---- | ----------- | ---------------------------- | ------------------- |
+| 协议              | 方向 | 端口范围    | 使用者                       | 用途                |
+| TCP               | 入站 | 6443        | Kubernetes APIserver         | All                 |
+| TCP               | 入站 | 2379-2380   | etcd server clientAPI        | kube-apiserver,etcd |
+| TCP               | 入站 | 10248,10250 | Kubelet API                  | Self,Controlplane   |
+| TCP               | 入站 | 10251,10259 | kube-scheduler               | Self                |
+| TCP               | 入站 | 10252,10257 | kube-controller-manager      | Self                |
+| **工作节点**      |      |             |                              |                     |
+| 协议              | 方向 | 端口范围    | 使用者                       | 用途                |
+| tcp               | 入站 | 80          | ingress-controller           | All                 |
+| tcp               | 入站 | 443         | ingress-controller           | All                 |
+| tcp               | 入站 | 30080       | ingress-controller           | All                 |
+| tcp               | 入站 | 30443       | ingress-controller           | All                 |
+| TCP               | 入站 | 10248,10250 | KubeletAPI                   | Self,Controlplane   |
+| TCP               | 入站 | 30000-32767 | NodePort Services*           | All                 |
+| TCP               | 入站 | 10256       | kube-proxy                   | 健康检查            |
+| **Flannel**       |      |             |                              |                     |
+| 协议              | 方向 | 端口范围    | 使用者                       | 用途                |
+| UDP               | 双向 | 8285        | flannel networking(UDP)      | 收发封装数据包      |
+| UDP               | 双向 | 8472        | flannel networking(VXLAN)    | 收发封装数据包      |
+| **Calico**        |      |             |                              |                     |
+| 协议              | 方向 | 端口范围    | 使用者                       | 用途                |
+| TCP               | 双向 | 179         | Calico networking(BGP)       | 收发封装数据包      |
+| TCP               | 双向 | 5473        | Calico networking with Typha | 收发封装数据包      |
+| **Kube-ovn**      |      |             |                              |                     |
+| 协议              | 方向 | 端口范围    | 使用者                       | 用途                |
+| udp               | 双向 | 6081        | kube-ovn                     | 收发封装数据包      |
+| tcp               | 入站 | 6641        | ovsdb-server                 | 数据存储            |
+| tcp               | 入站 | 6642        | ovsdb-server                 | 数据存储            |
+| **load-balancer** |      |             |                              |                     |
+| 协议              | 方向 | 端口范围    | 使用者                       | 用途                |
+| tcp               | 入站 | 8443        | nginx,haproxy,envoy          | lb kube-apiserver   |
+| tcp               | 入站 | 8081        | nginx,haproxy,envoy          | 健康检查            |
+| tcp               | 入站 | 9090        | haproxy,envoy                | 管理端口            |
 
 ## 域名要求
 - Choerodon必须通过域名访问，用户需要将自己的域名指向搭建的Kubernetes任意主节点。

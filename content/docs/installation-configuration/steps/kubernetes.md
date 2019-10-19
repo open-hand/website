@@ -10,538 +10,184 @@ weight = 5
 
 如果你不知道以下是做什么的，那么请参考下面链接（包括但不限于）进行学习：
 
-- [Kubernetes](http://docs.kubernetes.org.cn/)
 - [Ansible](https://github.com/ansible/ansible#ansible)
+- [Kubernetes](http://docs.kubernetes.org.cn/)
 
 ## 前置要求与约定
 
-- 约定：Master(s)节点为Kubernetes主节点、Worker(s)节点为Kubernetes普通节点、Etcd节点为将部署Etcd的节点，按本教程安装Master(s)节点与Etcd节点必须一致，Etcd官方建议Etcd集群节点个数为奇数个（比如1、3、5）以防止脑裂。
+1. 集群会使用到的[端口号](../../pre-install/#会使用到的端口号)。
 
-- 按本教程安装Kubernetes集群只会在Master(s)节点上安装kubectl命令。
+2. 各服务器时间与时区需一致，集群内服务器间时间差值不能大于1秒。
 
-- [端口要求](../../pre-install/#需开放的端口号)
+3. 文档以 4 个 CentOS 7.4 系统服务器安装高可用 Kubernetes 集群进行讲解。
 
-## 防火墙及端口检测
+4. 按照本文档安装 Kubernetes 集群时，Ansible 脚本会将服务器上防火墙关闭，请使用安全组进行网络权限控制。
 
-<span style="font-weight:bold;">请检测防火墙状态，如果防火墙已开启请仔细阅读[端口要求](../../pre-install/#需开放的端口号)并按下面方式开放指定的端口；若未开启防火墙请跳过本节操作。</span>
+5. Master(s) 服务器为 Kubernetes 控制服务器；Worker(s) 服务器为 Kubernetes 运算服务器；Etcd 服务器为组建Etcd 集群的服务器，Etcd 官方建议 Etcd 集群服务器个数为奇数个（比如1、3、5）以防止脑裂。
 
-### 检测防火墙状态(不同的发行版本具体操作可能不一样以供应商说明文档为准)
+6. 为安全考虑按本教程安装的 Kubernetes 集群只会在 Master(s) 服务器上配置 kubectl 命令所需 kubeconfig，故 Worker(s) 服务器默认是无法使用 kubectl 命令的。
 
-- 检测firewall-cmd状态
-
-    ```console
-    $ firewall-cmd --state
-    not running
-    ```
-
-    `not running`表示防火墙未启动,如果出现`running`则为启动状态。
-
-- 检测iptables状态
-
-    ```bash
-    service iptables status
-    ```
-
-    当状态为inactive或者提示`Unit iptables.service could not be found.`均表示iptables未启动。
-
-### 开放指定端口
-
-如果防火墙已启用，则需要开放[指定端口](../../pre-install/#需开放的端口号)，下面分别列举使用firewalld和iptables设置开放端口命令(不同发行版可能存在差异)。
-
-- firewalld
-    
-    ```bash
-    firewall-cmd --add-port=6443/tcp --permanent # 永久开放6443端口
-    firewall-cmd --reload                        # 重新加载firewall
-    ```
-
-- iptables
-
-    ```bash
-    $ iptables -A INPUT -p tcp --dport 6443 -j ACCEPT      # 开放6443端口
-    $ iptables -A INPUT -p tcp --dport 2379:2380 -j ACCEPT # 开放2379到2380端口
-    $ iptables-save > /etc/sysconfig/iptables && service iptables restart            # 保存并重启iptables
-    ```
-
-
-## 同步服务器时区
-
-时区和时间的同步性对于服务器很重要（例如您在更新数据库时，时间的准确性对业务的影响会非常大），为避免实例上运行的业务逻辑混乱和避免网络请求错误，您需要将一台或多台服务器设置在同一时区下，比如 Asia/Shanghai 或 America/Los Angeles。您可以根据自己的业务需求并参照本文为服务器设置或者修改时区。此外，NTP（Network Time Protocol）服务能保证您的服务器的时间与标准时间同步，您可以根据本文配置 NTP 服务。
-详细过程可以参考[此处](https://yq.aliyun.com/articles/359597)
-
-## 本地虚拟机安装示例
-
-- 本地虚拟机安装指的是在个人电脑上模拟安装。一般情况下个人电脑无法满足安装choerodon的要求，如果你需要在个人电脑上安装choerodon请确认CPU8核以上，内存48G以上。
-
-- 安装[Docker](https://docs.docker.com/)
-- 使用k3s创建一个本地集群(https://github.com/rancher/k3s)
-
-## 私有云安装示例
-
-私有云安装模式指的是在已有的虚拟机中安装，绝大部分centos 7.3+的虚拟机可以通过执行下述命令进行安装，如果你需要安装choerodno请确认集群总内存在48G以上，CPU总核心数大于8核。
+## 集群安装示例
 
 ### 环境准备
 
-- 在要执行ansible脚本的机器上部署ansible运行需要的环境：
+```console
+# 安装 git 命令行
+sudo yum install git -y
+# 克隆本项目代码
+git clone https://github.com/choerodon/kubeadm-ha.git
+# 进入项目目录
+cd kubeadm-ha
+# 安装 ansible 环境
+sudo ./install-ansible.sh
+```
 
-    ```shell
-    sudo yum install epel-release -y
-    sudo yum install git python3-pip sshpass -y
-    pip3 install --no-cache-dir ansible==2.7.5 netaddr -i https://mirrors.aliyun.com/pypi/simple/
-    ```
+### 配置 ansible inventory 文件
 
-- 克隆项目：
-
-    ```shell
-    git clone https://github.com/choerodon/kubeadm-ansible.git
-    ```
-
-### 修改hosts文件
-
-在修改配置文件前请注意以下几点:
-
-- 注意Etcd节点和Master节点需要在相同的机器。
-- 示例中的node1为主机的hostname
-- ansible_host为目标主机的连接地址，比如您可以通过`192.168.56.11`这个ip连接到`node1`的ssh服务，则此处填写`192.168.56.11`
-- ip为目标主机的`内网网卡对应的ip`及内网ip
-- 请勿将外网ip配置到ip字段中，否则极有可能部署失败
-
-- 编辑项目下的`kubeadm-ansible/inventory/hosts`文件，修改各机器的访问地址、用户名、密码，并维护好各节点与角色的关系，node1为机器的hostname。该用户必须是具有root权限的用户。但<span style="color: #ff0000;">并非</span>要求一定是root用户，其他<span style="color: #ff0000;">具有root权限</span>的用户也可以。比如，想要部署单节点集群，只需要这样配置(参考)：
-
-    ```shell
+- 项目 `example` 文件夹下提供了 6 个 ansible inventory 示例文件，请按需求进行选择并修改。
+- 拷贝项目下的 `example/hosts.m-master.ip.ini` 文件至项目根目录下，命名为 `inventory.ini`，修改各服务器的 IP 地址、用户名、密码，并维护好各服务器与角色的关系。
+    <blockquote class="warning">
+    </br>请使用服务器内网 IP 作为 ansible 目标服务器 IP，请勿使用服务器公网 IP。
+    </br>该用户必须是具有 root 权限的用户，但并非要求一定是 root 用户，其他具有 root 权限的用户也可以。
+    </blockquote>
+    <blockquote class="warning">
+    </br>克隆下来的本项目文件与 inventory.ini 文件很重要，涉及到后期的集群运维工作，请一定妥善保管。
+    </blockquote>
+    ```ini
+    ; 将所有节点的信息在这里填写
+    ;    第一个字段                  为节点内网IP，部署完成后为 kubernetes 节点 nodeName
+    ;    第二个字段 ansible_user     为节点远程登录用户名
+    ;    第三个字段 ansible_ssh_pass 为节点远程登录用户密码
     [all]
-    node1 ansible_host=192.168.56.11 ip=192.168.56.11 ansible_user=root ansible_ssh_pass=change_it ansible_become=true
+    192.168.56.11 ansible_user=vagrant ansible_ssh_pass=vagrant
+    192.168.56.12 ansible_user=vagrant ansible_ssh_pass=vagrant
+    192.168.56.13 ansible_user=vagrant ansible_ssh_pass=vagrant
+    192.168.56.14 ansible_user=vagrant ansible_ssh_pass=vagrant
+
+    ; 私有云：
+    ;    VIP 负载模式：
+    ;       也就是负载均衡器 + keepalived 模式，比如常用的 haproxy + keepalived。
+    ;       本脚本中负载均衡器有 nginx、haproxy、envoy 可供选择，设置 lb_mode 即可进行任意切换。
+    ;       设置 lb_kube_apiserver_ip 即表示启用 keepalived，请先与服务器提供部门协商保留一个IP作为 lb_kube_apiserver_ip，
+    ;       一般 lb 节点组中有两个节点就够了，lb节点组中第一个节点为 keepalived 的 master 节点，剩下的都为 backed 节点。
+    ;
+    ;    节点本地负载模式：
+    ;       只启动负载均衡器，不启用 keepalived（即不设置 lb_kube_apiserver_ip），
+    ;       此时 kubelet 链接 apiserver 地址为 127.0.0.1:lb_kube_apiserver_port。
+    ;       使用此模式时请将 lb 节点组置空。
+    ;
+    ; 公有云：
+    ;    不推荐使用 slb 模式，建议直接使用节点本地负载模式。
+    ;    若使用 slb 模式，请先使用节点本地负载模式进行部署，
+    ;    部署成功后再切换至 slb 模式：
+    ;       将 lb_mode 修改为 slb，将 lb_kube_apiserver_ip 设置为购买到的 slb 内网ip，
+    ;       修改 lb_kube_apiserver_port 为 slb 监听端口。
+    ;    再次运行初始化集群脚本即可切换至 slb 模式。
+    [lb]
+
+    ; 注意etcd集群必须是1,3,5,7...奇数个节点
+    [etcd]
+    192.168.56.11
+    192.168.56.12
+    192.168.56.13
 
     [kube-master]
-    node1
-    # 请与kube-master节点一致
-    [etcd]
-    node1
+    192.168.56.11
+    192.168.56.12
+    192.168.56.13
 
-    [kube-node]
-    node1
+    [kube-worker]
+    192.168.56.11
+    192.168.56.12
+    192.168.56.13
+    192.168.56.14
+
+    ; 预留组，后续添加master节点使用
+    [new-master]
+
+    ; 预留组，后续添加worker节点使用
+    [new-worker]
+
+    ; 预留组，后续添加etcd节点使用
+    [new-etcd]
+
+    ;-------------------------------------- 以下为变量配置 ------------------------------------;
+    [all:vars]
+    ; 是否跳过节点物理资源校验，Master节点要求2c2g以上，Worker节点要求2c4g以上
+    skip_verify_node=false
+    ; kubernetes版本
+    kube_version="1.15.5"
+    ; 负载均衡器
+    ;   有 nginx、haproxy、envoy 和 slb 四个选项，默认使用 nginx；
+    lb_mode="nginx"
+    ; 使用负载均衡后集群 apiserver ip，设置 lb_kube_apiserver_ip 变量，则启用负载均衡器 + keepalived
+    ; lb_kube_apiserver_ip="192.168.56.15"
+    ; 使用负载均衡后集群 apiserver port
+    lb_kube_apiserver_port="8443"
+    ; 网段选择：pod 和 service 的网段不能与服务器网段重叠，若有重叠请配置 `kube_pod_subnet` 和 `kube_service_subnet` 变量设置 pod 和 service 的网段，示例参考：
+    ;    如果服务器网段为：10.0.0.1/8
+    ;       pod 网段可设置为：192.168.0.0/18
+    ;       service 网段可设置为 192.168.64.0/18
+    ;    如果服务器网段为：172.16.0.1/12
+    ;       pod 网段可设置为：10.244.0.0/18
+    ;       service 网段可设置为 10.244.64.0/18
+    ;    如果服务器网段为：192.168.0.1/16
+    ;       pod 网段可设置为：10.244.0.0/18
+    ;       service 网段可设置为 10.244.64.0/18
+    ; 集群pod ip段
+    kube_pod_subnet="10.244.0.0/18"
+    ; 集群service ip段
+    kube_service_subnet="10.244.64.0/18"
+    ; 集群网络插件，目前支持flannel,calico,kube-ovn
+    network_plugin="flannel"
+    ; 若服务器磁盘分为系统盘与数据盘，请修改以下路径至数据盘自定义的目录。
+    ; Kubelet 根目录
+    kubelet_root_dir="/var/lib/kubelet"
+    ; docker容器存储目录
+    docker_storage_dir="/var/lib/docker"
     ```
 
-    {{< note >}}ansible_host指节点内网IP，IP指Kubernetes目标绑定网卡IP{{< /note >}}
-
-- 如果所有机器以`代理的方式`访问外网，请配置以下几个变量，否则请不要配置：
-
-    ```shell
-    http_proxy: http://1.2.3.4:3128
-    https_proxy: http://1.2.3.4:3128
-    no_proxy: localhost,127.0.0.0/8
-    docker_proxy_enable: true
-    ```
-
-### 部署
-
-- 执行：
-
-    ```shell
-    export ANSIBLE_HOST_KEY_CHECKING=False
-    #在kubeadm-ansible/目录下执行
-    ansible-playbook -i inventory/hosts -e @inventory/vars cluster.yml -K 
-    ```
-
-    <blockquote class="note">
-    如果你配置的是root用户则无需添加-K参数
-    </blockquote>
-
-- 查看等待pod的状态为runnning：
-
-    ```shell
-    kubectl get po -n kube-system
-    ```
-
-- 如果部署失败，想要重置集群(所有数据)，执行：
-
-    ```shell
-    #在kubeadm-ansible/目录下执行
-    ansible-playbook -i inventory/hosts reset.yml -K
-    ```
-
-### 添加节点
-
-<blockquote class="warning">
-通过本小节教程添加的节点不能是Master或Etcd节点，只能是普通的Work节点。若你使用的是NFS作为存储，建议你先<a href="../nfs/#客户端挂载nfs服务器共享目录" target="_blank">安装nfs-utils</a>。
-</blockquote>
-
-- 若集群搭建完毕后还想再添加节点，请按以下方式进行添加：
-    - 修改kubeadm-ansible/inventory/hosts文件，在`[all]`分区按照原有格式添加新增节点信息，在`[kube-node]`分区添加新增节点名，其他分区请一定不要改动。比如原有信息如下，我们添加一个ip为192.168.56.12的node2节点：
-
-        ```
-        [all]
-        node1 ansible_host=192.168.56.11 ip=192.168.56.11 ansible_user=root ansible_ssh_pass=vagrant ansible_become=true
-
-        [kube-master]
-        node1
-        # 请与kube-master节点一致
-        [etcd]
-        node1
-
-        [kube-node]
-        node1
-        ```
-    - 修改后信息如下：
-
-        ```
-        [all]
-        node1 ansible_host=192.168.56.11 ip=192.168.56.11 ansible_user=root ansible_ssh_pass=vagrant ansible_become=true
-        node2 ansible_host=192.168.56.12 ip=192.168.56.12 ansible_user=root ansible_ssh_pass=vagrant ansible_become=true
-
-        [kube-master]
-        node1
-        # 请与kube-master节点一致
-        [etcd]
-        node1
-
-        [kube-node]
-        node1
-        node2
-        ```
-
-    - 执行添加节点命令
-
-        ```shell
-        #在kubeadm-ansible/目录下执行
-        ansible-playbook -i inventory/hosts -e @inventory/vars scale.yml -K
-        ```
-
-## 公有云安装示例
-
-
-公有云安装以阿里云ECS为例进行讲解，其它公有云可参考本教程，但具体安装方式请咨相应云提供商。目前只支持Centos 7.2及以上版本。
-
-
-### 环境准备
-
-- 在要执行ansible脚本的机器上部署ansible运行需要的环境：
-
-    ```shell
-    sudo yum install epel-release -y
-    sudo yum install git python3-pip sshpass -y
-    pip3 install --no-cache-dir ansible==2.7.5 netaddr -i https://mirrors.aliyun.com/pypi/simple/
-    ```
-
-- 克隆项目：
-
-    ```shell
-    git clone https://github.com/choerodon/kubeadm-ansible.git
-    ```
-
-### 修改hosts文件
-<blockquote class="note">
-在阿里云的ECS的控制面板上修改ECS实例的hostname，名称最好只包含小写字母、数字和中划线。并保持与inventory/hosts中的名称与ECS控制台上的名称保持一致，重启生效。
-</blockquote>
-
-执行下一步前请注意以下几点：
-
-- 注意Etcd节点和Master节点需要在相同的机器。
-- 示例中的node1为主机的hostname
-- ansible_host为目标主机的连接地址，比如您可以通过`192.168.56.11`这个ip连接到`node1`的ssh服务，则此处填写`192.168.56.11`
-- ip为目标主机的`内网网卡对应的ip`及内网ip
-- 请勿将外网ip配置到ip字段中，否则极有可能部署失败
-
-开始安装
-
-- 编辑项目下的`kubeadm-ansible/inventory/hosts`文件，修改各机器的访问地址、用户名、密码，并维护好各节点与角色的关系。该用户必须是具有root权限的用户。但<span style="color: #ff0000;">并非</span>要求一定是root用户，其他<span style="color: #ff0000;">具有root权限</span>的用户也可以。比如，想要部署单节点集群，只需要这样配置(参考)：
-
-    ```shell
-    [all]
-    node1 ansible_host=192.168.56.11 ip=192.168.56.11 ansible_user=root ansible_ssh_pass=change_it ansible_become=true
-
-    [kube-master]
-    node1
-    # 请与kube-master节点一致
-    [etcd]
-    node1
-
-    [kube-node]
-    node1
-    ```
-    {{< note >}}ansible_host指节点内网IP，IP指Kubernetes目标绑定网卡IP{{< /note >}}
-
-### 修改`kubeadm-ansible/inventory/vars`变量文件
-
-<blockquote class="note">
-本文档部署的网络类型为flannel类型
-</blockquote>
-
-- 在使用VPC网络的ECS上部署k8s时，flannel网络的Backend类型需要是`ali-vpc`。在本脚本中默认使用的是`vxlan`类型，虽然在vpc环境下网络能通，但是不稳定波动较大。所以推荐使用`ali-vpc`的类型。
-
-- 因此，首先需要设置默认的flannel网络不部署，通过在`kubeadm-ansible/inventory/vars`文件中添加变量：
-
-    ```shell
-    flannel_enable: false
-    ```
-
-- 网段选择，如果ECS服务器用的是专有网络，pod和service的网段不能与vpc网段重叠，若有重叠请配置kube_pods_subnet和kube_service_addresses变量设置pod和service的网段，示例参考：
-
-    ```
-    # 如果vpc网段为`192.168.*`
-    kube_pods_subnet: 172.16.0.0/20
-    kube_service_addresses: 172.16.16.0/20
-    ```
-    
-- 如果所有机器以`代理的方式`访问外网，配置以下几个变量，否则请不要配置：
-
-    ```shell
-    http_proxy: http://1.2.3.4:3128
-    https_proxy: http://1.2.3.4:3128
-    no_proxy: localhost,127.0.0.0/8
-    docker_proxy_enable: true
-    ```
-
-### 部署
-
-- 下面开始部署集群：
-
-    ```shell
-    export ANSIBLE_HOST_KEY_CHECKING=False
-    #在kubeadm-ansible/目录下执行
-    ansible-playbook -i inventory/hosts -e @inventory/vars cluster.yml -K
-    ```
-
-    <blockquote class="note">
-    如果你配置的是root用户则无需添加-K参数
-    </blockquote>
-
-- [获取阿里云ACCESS_KEY](https://help.aliyun.com/knowledge_detail/38738.html)，该`ACCESS_KEY`需要拥有以下权限：
-    - 只读访问云服务器(ECS)的权限
-    - 管理专有网络(VPC)的权限
-
-- 手动部署flannel网络插件，在任意一个Master节点创建配置文件`kube-flannel-aliyun.yml`：
-
-    {{< annotation shell "配置的pod网段，即变量文件kubeadm-ansible/inventory/vars中的kube_pods_subnet值" "阿里云中创建的 ACCESS_KEY_ID" "阿里云中创建的 ACCESS_KEY_SECRET">}}
-kind: ClusterRole
-apiVersion: rbac.authorization.k8s.io/v1beta1
-metadata:
-  name: flannel
-rules:
-  - apiGroups:
-      - ""
-    resources:
-      - pods
-    verbs:
-      - get
-  - apiGroups:
-      - ""
-    resources:
-      - nodes
-    verbs:
-      - list
-      - watch
-  - apiGroups:
-      - ""
-    resources:
-      - nodes/status
-    verbs:
-      - patch
----
-kind: ClusterRoleBinding
-apiVersion: rbac.authorization.k8s.io/v1beta1
-metadata:
-  name: flannel
-roleRef:
-  apiGroup: rbac.authorization.k8s.io
-  kind: ClusterRole
-  name: flannel
-subjects:
-- kind: ServiceAccount
-  name: flannel
-  namespace: kube-system
----
-apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name: flannel
-  namespace: kube-system
----
-kind: ConfigMap
-apiVersion: v1
-metadata:
-  name: kube-flannel-cfg
-  namespace: kube-system
-  labels:
-    tier: node
-    app: flannel
-data:
-  cni-conf.json: |
-    {
-      "name": "cbr0",
-      "type": "flannel",
-      "delegate": {
-        "isDefaultGateway": true
-      }
-    }
-  net-conf.json: |
-    {
-      "Network": "172.16.0.0/20",(1)
-      "Backend": {
-        "Type": "ali-vpc"
-      }
-    }
----
-apiVersion: extensions/v1beta1
-kind: DaemonSet
-metadata:
-  name: kube-flannel-ds
-  namespace: kube-system
-  labels:
-    tier: node
-    app: flannel
-spec:
-  template:
-    metadata:
-      labels:
-        tier: node
-        app: flannel
-    spec:
-      hostNetwork: true
-      nodeSelector:
-        beta.kubernetes.io/arch: amd64
-      tolerations:
-      - key: node-role.kubernetes.io/master
-        operator: Exists
-        effect: NoSchedule
-      serviceAccountName: flannel
-      initContainers:
-      - name: install-cni
-        image: registry.cn-hangzhou.aliyuncs.com/google-containers/flannel:v0.9.0
-        command:
-        - cp
-        args:
-        - -f
-        - /etc/kube-flannel/cni-conf.json
-        - /etc/cni/net.d/10-flannel.conf
-        volumeMounts:
-        - name: cni
-          mountPath: /etc/cni/net.d
-        - name: flannel-cfg
-          mountPath: /etc/kube-flannel/
-      containers:
-      - name: kube-flannel
-        image: registry.cn-hangzhou.aliyuncs.com/google-containers/flannel:v0.9.0
-        command: [ "/opt/bin/flanneld", "--ip-masq", "--kube-subnet-mgr" ]
-        securityContext:
-          privileged: true
-        env:
-        - name: POD_NAME
-          valueFrom:
-            fieldRef:
-              fieldPath: metadata.name
-        - name: POD_NAMESPACE
-          valueFrom:
-            fieldRef:
-              fieldPath: metadata.namespace
-        - name: ACCESS_KEY_ID
-          value: YOUR_ACCESS_KEY_ID(1)
-        - name: ACCESS_KEY_SECRET
-          value: YOUR_ACCESS_KEY_SECRET(1)
-        volumeMounts:
-        - name: run
-          mountPath: /run
-        - name: flannel-cfg
-          mountPath: /etc/kube-flannel/
-      volumes:
-        - name: run
-          hostPath:
-            path: /run
-        - name: cni
-          hostPath:
-            path: /etc/cni/net.d
-        - name: flannel-cfg
-          configMap:
-            name: kube-flannel-cfg
-{{< /annotation >}}
-
-- 然后使用kubectl命令部署，部署成功后在vpc的路由表中会添加多条路由条目，下一跳分别为每个节点的pod ip段：
-
-    ```shell
-    kubectl apply -f kube-flannel-aliyun.yml
-    ```
-
-- 接下来需要在ECS安全组，在入方向规则中加上pod网段的地址。否则在pod容器中无法访问别的节点的pod的端口，比如：
-
-    授权策略 | 协议类型 | 端口范围 | 授权类型 | 授权对象
-    ---|---|---|---|---
-    允许 | 全部 | -1/-1 | 地址段访问 | 172.16.0.0/20
-    允许 | TCP | 443/443 | 地址段访问 | 0.0.0.0/0
-    允许 | TCP | 80/80 | 地址段访问 | 0.0.0.0/0
-
-- 查看等待pod的状态为runnning：
-
-    ```shell
-    kubectl get po -n kube-system
-    ```
-
-- 如果部署失败，想要重置集群(所有数据)，执行：
-
-    ```shell
-    #在kubeadm-ansible/目录下执行
-    ansible-playbook -i inventory/hosts reset.yml -K
-    ```
-
-### 添加节点
-
-<blockquote class="warning">
-通过本小节教程添加的节点不能是Master或Etcd节点，只能是普通的Work节点。若你使用的是NFS作为存储，建议你先<a href="../nfs/#客户端挂载nfs服务器共享目录" target="_blank">安装nfs-utils</a>
-</blockquote>
-
-- 若集群搭建完毕后还想再添加节点，请按以下方式进行添加：
-    - 修改kubeadm-ansible/inventory/hosts文件，在`[all]`分区按照原有格式添加新增节点信息，在`[kube-node]`分区添加新增节点名，其他分区请一定不要改动。比如原有信息如下，我们添加一个ip为192.168.56.12的node2节点：
-
-        ```
-        [all]
-        node1 ansible_host=192.168.56.11 ip=192.168.56.11 ansible_user=root ansible_ssh_pass=vagrant ansible_become=true
-
-        [kube-master]
-        node1
-        # 请与kube-master节点一致
-        [etcd]
-        node1
-
-        [kube-node]
-        node1
-        ```
-    - 修改后信息如下：
-
-        ```
-        [all]
-        node1 ansible_host=192.168.56.11 ip=192.168.56.11 ansible_user=root ansible_ssh_pass=vagrant ansible_become=true
-        node2 ansible_host=192.168.56.12 ip=192.168.56.12 ansible_user=root ansible_ssh_pass=vagrant ansible_become=true
-
-        [kube-master]
-        node1
-        # 请与kube-master节点一致
-        [etcd]
-        node1
-
-        [kube-node]
-        node1
-        node2
-        ```
-
-    - 执行添加节点命令
-
-        ```shell
-        #在kubeadm-ansible/目录下执行
-        ansible-playbook -i inventory/hosts -e @inventory/vars scale.yml -K
-        ```
-
-## Kubernetes网络测试
-
-集群搭建完成后请一定进行以下测试步骤进行测试。
+### 集群部署
+
+- 若有安全组则需要加上以下安全组策略，规则示例：
+
+| 授权策略 | 协议类型 | 端口范围    | 授权类型   | 授权对象      | 描述                    |
+| -------- | -------- | ----------- | ---------- | ------------- | ----------------------- |
+| 允许     | TCP      | 80/80       | 地址段访问 | 0.0.0.0/0     | http 协议访问集群       |
+| 允许     | TCP      | 443/443     | 地址段访问 | 0.0.0.0/0     | https 协议访问集群      |
+| 允许     | TCP      | 30000/32767 | 地址段访问 | 0.0.0.0/0     | NodePort 访问集群       |
+| 允许     | 全部     | -1/-1       | 地址段访问 | 10.244.0.0/18 | 跨节点 Pod 之间互相访问 |
+
+- 部署集群：
+  ```shell
+  # 在项目根目录下执行
+  ansible-playbook -i inventory.ini 90-init-cluster.yml
+  ```
+
+- 查看等待 pod 的状态为 runnning：
+  ```shell
+  # 任意master节点下执行
+  kubectl get po --all-namespaces -w
+  ```
+
+- 如果部署失败，想要重置集群，执行：
+  ```shell
+  # 在项目根目录下执行
+  ansible-playbook -i inventory.ini 99-reset-cluster.yml
+  ```
+
+- 其他集群运维操作请查阅项目[使用指南](https://github.com/choerodon/kubeadm-ha#使用指南)
+
+## 集群网络测试
 
 ### 集群访问公网测试
 
 **测试说明**
 
-- 镜像中将以下核心代码进行封装成为`curls`命令，使用方式`curls url [times]`，例如`curls choerodon.io 20`则为访问`choerodon.io`20次并打印测试出的时间指标，命令默认访问10次。
-
-    ```bash
-    curl -o /dev/null -s -w '%{time_connect} %{time_starttransfer} %{time_total}' "choerodon.io"
-    ```
+- 镜像中将以下核心代码进行封装成为 `curls` 命令，使用方式 `curls url [times]` ，例如 `curls choerodon.io 20` 则为访问 `choerodon.io` 20次并打印测试出的时间指标，命令默认访问 10 次。
+  ```bash
+  curl -o /dev/null -s -w '%{time_connect} %{time_starttransfer} %{time_total}' "choerodon.io"
+  ```
 
 - 时间指标说明
   - 单位：秒
@@ -549,7 +195,7 @@ spec:
   - time_starttransfer：在发出请求之后，Web 服务器返回数据的第一个字节所用的时间
   - time_total：完成请求所用的时间
 
-#### 场景一、 Kubernetes集群node节点访问公网
+#### 场景一、 Kubernetes集群node服务器访问公网
 
 - 测试命令
 
@@ -612,27 +258,26 @@ spec:
 
 - 测试数据
 
-    Service Name: default-http-backend.kube-system.svc
+    Service Name: ingress-nginx.ingress-controller.svc
 
-    Service Cluster IP: 172.16.17.173 (可通过`kubectl get svc default-http-backend -n kube-system`进行查看)
+    Service Cluster IP: 10.244.64.8 (可通过 `kubectl get svc ingress-nginx -n ingress-controller` 进行查看)
 
     Service Port: 80
 
-- 通过向`default-http-backend`的`healthz`api执行curl命令进行网络延迟测试
+- 通过向 `ingress-nginx` 的 `healthz` api执行curl命令进行网络延迟测试
 
-    ```Bash
-    $ curl "http://172.16.17.173/healthz"
-    ok
+    ```bash
+    curl "http://10.244.64.8/healthz"
     ```
 
-#### 场景一、 Kubernetes集群node节点上通过Service Cluster IP访问
+#### 场景一、 Kubernetes集群node服务器上通过Service Cluster IP访问
 
 - 测试命令
 
     ```bash
     docker run -it --rm --net=host \
         registry.cn-hangzhou.aliyuncs.com/choerodon-tools/network-and-cluster-perfermance-test:0.1.0 \
-        curls http://172.16.17.173/healthz
+        curls http://10.244.64.8/healthz
     ```
 
 - 测试结果
@@ -661,7 +306,7 @@ spec:
     kubectl run curl-test \
         -it --quiet --rm --restart=Never \
         --image='registry.cn-hangzhou.aliyuncs.com/choerodon-tools/network-and-cluster-perfermance-test:0.1.0' \
-        -- bash -c "sleep 3; curls http://default-http-backend.kube-system.svc/healthz"
+        -- bash -c "sleep 3; curls http://ingress-nginx.ingress-controller.svc/healthz"
     ```
 
 - 测试结果
@@ -682,14 +327,11 @@ spec:
 
 - 平均响应时间：112ms
 
-**注意：** 执行测试的node节点/Pod与Serivce所在的Pod的距离（是否在同一台主机上），对这两个场景可以能会有一定影响。
-
 ### 集群内部网络性能测试
 
 **测试说明**
 
-- 使用[iperf](https://docs.azure.cn/zh-cn/articles/azure-operations-guide/virtual-network/aog-virtual-network-iperf-bandwidth-test)进行测试.
-
+- 使用 [iperf](https://docs.azure.cn/zh-cn/articles/azure-operations-guide/virtual-network/aog-virtual-network-iperf-bandwidth-test) 进行测试.
 
 #### 场景一、主机之间
 
@@ -708,7 +350,7 @@ spec:
     ```bash
     docker run -it --rm --net=host \
         registry.cn-hangzhou.aliyuncs.com/choerodon-tools/network-and-cluster-perfermance-test:0.1.0 \
-        iperf -c 服务端主机IP -p 12345 -i 1 -t 10 -w 20K
+        iperf -c 服务端节点IP -p 12345 -i 1 -t 10 -w 20K
     ```
 
 - 测试结果
@@ -734,12 +376,12 @@ spec:
     ```bash
     kubectl run iperf-server \
         -it --quiet --rm --restart=Never \
-        --overrides='{"spec":{"template":{"spec":{"nodeName":"指定服务端运行的节点"}}}}' \
+        --overrides='{"spec":{"nodeName":"指定客户端运行的节点"}}' \
         --image='registry.cn-hangzhou.aliyuncs.com/choerodon-tools/network-and-cluster-perfermance-test:0.1.0' \
         -- bash -c "sleep 3; ifconfig eth0; iperf -s -p 12345 -i 1 -M"
     ```
 
-**注意：** 此时该服务端命令会前台运行，一直等待客户端请求，请另起一个终端窗口进行执行客户端命令。查看输出的日志，替换下面客户端命令中POD的IP
+**注意：** 此时该服务端命令会前台运行，一直等待客户端请求，请另起一个终端窗口进行执行客户端命令。查看输出的日志，替换下面客户端命令中Pod的IP
 
 - 客户端命令：
 
@@ -767,7 +409,7 @@ spec:
     [  3]  0.0-10.0 sec  13.5 GBytes  11.6 Gbits/sec
     ```
 
-#### 场景三、Node与非同主机的Pod之间
+#### 场景三、节点与其他点的 Pod 之间
 
 
 - 服务端命令：
@@ -787,7 +429,7 @@ spec:
         -it --quiet --rm --restart=Never \
         --overrides='{"spec":{"nodeName":"指定客户端运行的节点"}}' \
         --image='registry.cn-hangzhou.aliyuncs.com/choerodon-tools/network-and-cluster-perfermance-test:0.1.0' \
-        -- iperf -c 服务端主机IP -p 12345 -i 1 -t 10 -w 20K
+        -- iperf -c 服务端节点IP -p 12345 -i 1 -t 10 -w 20K
     ```
 
 - 测试结果
