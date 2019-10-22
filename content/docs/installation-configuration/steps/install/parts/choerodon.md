@@ -115,29 +115,27 @@ helm repo update
     preJob:
       timeout: 300
       preConfig:
-        updatePolicy: add
         datasource:
-          url: jdbc:mysql://localhost:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true
+          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true
           username: choerodon
           password: password
       preInitDB:
         datasource:
-          url: jdbc:mysql://localhost:3306/base_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true
+          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/base_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true
           username: choerodon
           password: password
     env:
       open:
         SPRING_CLOUD_CONFIG_ENABLED: true
-        SPRING_CLOUD_CONFIG_URI: http://register-server:8000
-        SPRING_DATASOURCE_URL: jdbc:mysql://localhost/base_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true
+        SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
+        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc/base_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true
         SPRING_DATASOURCE_USERNAME: choerodon
         SPRING_DATASOURCE_PASSWORD: password
-        SPRING_REDIS_HOST: localhost
+        SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
         SPRING_REDIS_PORT: 6379
         SPRING_REDIS_DATABASE: 1
-        CHOERODON_RESOURCE_JWT_IGNORE: /favicon.ico
-        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.io-choerodon:8000/eureka/
-        CHOERODON_GATEWAY_URL: http://api.staging.saas.hand-china.com
+        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
+        CHOERODON_GATEWAY_URL: http://api.example.choerodon.io
     ```
 - 部署服务
     ```shell
@@ -171,7 +169,7 @@ helm repo update
         SPRING_DATASOURCE_PASSWORD: password
         SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
         SPRING_DATASOURCE_USERNAME: choerodon
-        SPRING_REDIS_DATABASE: 4
+        SPRING_REDIS_DATABASE: 2
         SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
         SPRING_REDIS_PORT: 6379
     preJob:
@@ -214,12 +212,11 @@ helm repo update
         SPRING_DATASOURCE_PASSWORD: password
         SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/asgard_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
         SPRING_DATASOURCE_USERNAME: choerodon
-        SPRING_REDIS_DATABASE: 7
+        SPRING_REDIS_DATABASE: 3
         SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
         SPRING_REDIS_PORT: 6379
     preJob:
       preConfig:
-        updatePolicy: add
         datasource:
           password: password
           url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
@@ -265,14 +262,13 @@ helm repo update
         SPRING_DATASOURCE_PASSWORD: password
         SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/notify_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
         SPRING_DATASOURCE_USERNAME: choerodon
-        SPRING_REDIS_DATABASE: 3
+        SPRING_REDIS_DATABASE: 4
         SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
     ingress:
       enabled: true
       host: notify.example.choerodon.io
     preJob:
       preConfig:
-        updatePolicy: add
         datasource:
           password: password
           url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
@@ -319,7 +315,7 @@ helm repo update
         SPRING_DATASOURCE_PASSWORD: password
         SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/iam_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
         SPRING_DATASOURCE_USERNAME: choerodon
-        SPRING_REDIS_DATABASE: 4
+        SPRING_REDIS_DATABASE: 5
         SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
         SPRING_REDIS_PORT: 6379
         SPRING_CACHE_MULTI_L1_ENABLED: true
@@ -329,7 +325,6 @@ helm repo update
       host: api.example.choerodon.io
     preJob:
       preConfig:
-        updatePolicy: add
         datasource:
           password: password
           url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
@@ -372,11 +367,10 @@ helm repo update
         SPRING_DATASOURCE_PASSWORD: password
         SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/iam_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
         SPRING_DATASOURCE_USERNAME: choerodon
-        SPRING_REDIS_DATABASE: 7
+        SPRING_REDIS_DATABASE: 6
         SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
     preJob:
       preConfig:
-        updatePolicy: add
         datasource:
           password: password
           url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
@@ -418,7 +412,6 @@ helm repo update
         SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
     preJob:
       preConfig:
-        updatePolicy: **add**
         datasource:
           password: password
           url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false

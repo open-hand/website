@@ -20,15 +20,15 @@ helm repo update
     ```yaml
     env:
       open:
-        AGILE_HOST: http://minio.example.choerodon.io/agile-service/
         API_HOST: api.example.choerodon.io
         CLIENT_ID: choerodon
         DEVOPS_HOST: ws://devops.example.choerodon.io
         FILE_SERVER: http://minio.example.choerodon.io
         HEADER_TITLE_NAME: Choerodon
         HTTP: http
-        TITLE_NAME: Choerodon
         WEBSOCKET_SERVER: ws://notify.example.choerodon.io
+        COOKIE_SERVER:
+        CUSTOM_THEME_COLOR:
     ingress:
       enabled: true
       host: c7n.example.choerodon.io

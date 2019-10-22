@@ -74,7 +74,7 @@ helm repo update
         SPRING_DATASOURCE_PASSWORD: password
         SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/devops_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
         SPRING_DATASOURCE_USERNAME: choerodon
-        SPRING_REDIS_DATABASE: 11
+        SPRING_REDIS_DATABASE: 9
         SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
         TEMPLATE_URL: https://github.com/choerodon/choerodon-devops-templates.git
         TEMPLATE_VERSION: 0.17.0
@@ -175,7 +175,7 @@ helm repo update
         SPRING_DATASOURCE_PASSWORD: password
         SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/workflow_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
         SPRING_DATASOURCE_USERNAME: choerodon
-        SPRING_REDIS_DATABASE: 11
+        SPRING_REDIS_DATABASE: 10
         SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
     preJob:
       preConfig:

@@ -65,7 +65,7 @@ helm repo update
         SPRING_DATASOURCE_PASSWORD: password
         SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/agile_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
         SPRING_DATASOURCE_USERNAME: choerodon
-        SPRING_REDIS_DATABASE: 9
+        SPRING_REDIS_DATABASE: 13
         SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
         SPRING_APPLICATION_NAME: agile-service
         SERVICES_ATTACHMENT_URL: http://minio.example.choerodon.io
@@ -250,7 +250,7 @@ helm repo update
         SPRING_DATASOURCE_PASSWORD: password
         SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/test_manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
         SPRING_DATASOURCE_USERNAME: choerodon
-        SPRING_REDIS_DATABASE: 13
+        SPRING_REDIS_DATABASE: 14
         SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
     preJob:
       preConfig:
