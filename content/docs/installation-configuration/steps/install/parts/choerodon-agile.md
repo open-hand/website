@@ -67,7 +67,6 @@ helm repo update
         SPRING_DATASOURCE_USERNAME: choerodon
         SPRING_REDIS_DATABASE: 13
         SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
-        SPRING_APPLICATION_NAME: agile-service
         SERVICES_ATTACHMENT_URL: http://minio.example.choerodon.io
     preJob:
       preConfig:
@@ -87,7 +86,7 @@ helm repo update
     helm install c7n/agile-service \
       -f agile-service.yaml \
       --name agile-service \
-      --version 0.19.0 \
+      --version 2019.10.22-142024-release-0-19-0 \
       --namespace c7n-system
     ```
 
@@ -101,141 +100,6 @@ helm repo update
       ```
       UP
       ```
-
-## 部署 state machine service
-- 若需了解项目详情及各项参数含义，请移步 [choerodon/state-machine-service](https://github.com/choerodon/state-machine-service)。
-
-- 编写参数配置文件 `state-machine-service.yaml`
-    ```yaml
-    env:
-      open:
-        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
-        SPRING_CLOUD_CONFIG_ENABLED: true
-        SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
-        SPRING_DATASOURCE_PASSWORD: password
-        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/state_machine_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
-        SPRING_DATASOURCE_USERNAME: choerodon
-    preJob:
-      preConfig:
-        datasource:
-          password: password
-          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
-          username: choerodon
-      preInitDB:
-        datasource:
-          password: password
-          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/state_machine_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
-          username: choerodon
-    ```
-- 部署服务
-    ``` 
-    helm install c7n/state-machine-service \
-      -f state-machine-service.yaml \
-      --name state-machine-service \
-      --version 0.19.0 \
-      --namespace c7n-system
-    ```
-
-- 验证部署
-  - 验证命令
-      ```
-      curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=state-machine-service -o jsonpath="{.items[0].status.podIP}"):8385/actuator/health | jq -r .status
-      ```
-
-  - 出现以下类似信息即为成功部署
-      ```
-      UP
-      ```
-
-## 部署 issue service
-- 若需了解项目详情及各项参数含义，请移步 [choerodon/issue-service](https://github.com/choerodon/issue-service)。
-
-- 编写参数配置文件 `issue-service.yaml`
-    ```yaml
-    env:
-      open:
-        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
-        SPRING_CLOUD_CONFIG_ENABLED: true
-        SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
-        SPRING_DATASOURCE_PASSWORD: password
-        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/issue_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowMultiQueries=true
-        SPRING_DATASOURCE_USERNAME: choerodon
-    preJob:
-      preConfig:
-        datasource:
-          password: password
-          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
-          username: choerodon
-      preInitDB:
-        datasource:
-          password: password
-          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/issue_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
-          username: choerodon
-    ```
-- 部署服务
-
-    ``` 
-    helm install c7n/issue-service \
-      -f issue-service.yaml \
-      --name issue-service \
-      --version 0.19.0 \
-      --namespace c7n-system
-    ```
-
-- 验证部署
-  - 验证命令
-      ```
-      curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=issue-service -o jsonpath="{.items[0].status.podIP}"):8381/actuator/health | jq -r .status
-      ```
-
-  - 出现以下类似信息即为成功部署
-      ```
-      UP
-      ```
-
-## 部署 foundation service
-- 若需了解项目详情及各项参数含义，请移步 [choerodon/foundation-service](https://github.com/choerodon/foundation-service)。
-
-- 编写参数配置文件 `foundation-service.yaml`
-    ```yaml
-    env:
-      open:
-        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
-        SPRING_CLOUD_CONFIG_ENABLED: true
-        SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
-        SPRING_DATASOURCE_PASSWORD: password
-        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/foundation_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowMultiQueries=true
-        SPRING_DATASOURCE_USERNAME: choerodon
-    preJob:
-      preConfig:
-        datasource:
-          password: password
-          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
-          username: choerodon
-      preInitDB:
-        datasource:
-          password: password
-          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/foundation_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
-          username: choerodon
-    ```
-- 部署服务
-    ``` 
-    helm install c7n/foundation-service \
-      -f foundation-service.yaml \
-      --name foundation-service \
-      --version 0.19.0 \
-      --namespace c7n-system
-    ```
-
-- 验证部署
-    - 验证命令
-        ```
-        curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=foundation-service -o jsonpath="{.items[0].status.podIP}"):8387/actuator/health | jq -r .status
-        ```
-    - 出现以下类似信息即为成功部署
-        ```
-        UP
-        ```
 
 ## 部署 test manager service
 - 若需了解项目详情及各项参数含义，请移步 [choerodon/test-manager-service](https://github.com/choerodon/test-manager-service)。
@@ -269,7 +133,7 @@ helm repo update
     helm install c7n/test-manager-service \
       -f test-manager-service.yaml \
       --name test-manager-service \
-      --version 0.19.0 \
+      --version 0.19.1 \
       --namespace c7n-system
     ```
 
@@ -325,7 +189,7 @@ helm repo update
     helm install c7n/knowledgebase-service \
       -f knowledgebase-service.yaml \
       --name knowledgebase-service \
-      --version 0.19.0 \
+      --version 0.19.1 \
       --namespace c7n-system
     ```
 
