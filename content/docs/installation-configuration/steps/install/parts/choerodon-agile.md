@@ -19,119 +19,125 @@ helm repo update
 
 ## 创建数据库
 
-```
-helm install c7n/mysql-client \
-    --set env.MYSQL_HOST=c7n-mysql.c7n-system.svc \
-    --set env.MYSQL_PORT=3306 \
-    --set env.MYSQL_USER=root \
-    --set env.MYSQL_PASS=password \
-    --set env.SQL_SCRIPT="\
-          CREATE USER IF NOT EXISTS 'choerodon'@'%' IDENTIFIED BY 'password';\
-          CREATE DATABASE IF NOT EXISTS agile_service DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;\
-          CREATE DATABASE IF NOT EXISTS state_machine_service DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;\
-          CREATE DATABASE IF NOT EXISTS issue_service DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;\
-          CREATE DATABASE IF NOT EXISTS foundation_service DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;\
-          GRANT ALL PRIVILEGES ON agile_service.* TO choerodon@'%'; \
-          GRANT ALL PRIVILEGES ON state_machine_service.* TO choerodon@'%';\
-          GRANT ALL PRIVILEGES ON issue_service.* TO choerodon@'%';\
-          GRANT ALL PRIVILEGES ON foundation_service.* TO choerodon@'%';\
-          FLUSH PRIVILEGES;" \
-    --version 0.1.0 \
-    --name create-c7nagile-db \
-    --namespace c7n-system
-```
-
-## 部署agile service
-
-
-- 部署服务
-
-    ``` 
-    helm install c7n/agile-service \
-        --set preJob.preConfig.datasource.url="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
-        --set preJob.preConfig.datasource.username=choerodon \
-        --set preJob.preConfig.datasource.password=password \
-        --set preJob.preInitDB.datasource.url="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/agile_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
-        --set preJob.preInitDB.datasource.username=choerodon \
-        --set preJob.preInitDB.datasource.password=password \
-        --set env.open.SPRING_DATASOURCE_URL="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/agile_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
-        --set env.open.SPRING_DATASOURCE_USERNAME=choerodon \
-        --set env.open.SPRING_DATASOURCE_PASSWORD=password \
-        --set env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE="http://register-server.c7n-system:8000/eureka/" \
-        --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
-        --set env.open.SPRING_CLOUD_CONFIG_URI="http://register-server.c7n-system:8000/" \
-        --set env.open.SERVICES_ATTACHMENT_URL="http://minio.example.choerodon.io/agile-service/" \
-        --set env.open.SPRING_REDIS_HOST=c7n-redis.c7n-system.svc \
-        --set env.open.SPRING_REDIS_DATABASE=9 \
-        --name agile-service \
-        --version 0.18.5 \
-        --namespace c7n-system
+- 编写参数配置文件 `create-c7nagile-db.yaml`
+    ```yaml
+    env:
+      MYSQL_HOST: c7n-mysql.c7n-system.svc
+      MYSQL_PORT: "3306"
+      MYSQL_USER: root
+      MYSQL_PASS: password
+      SQL_SCRIPT: |
+        CREATE USER IF NOT EXISTS 'choerodon'@'%' IDENTIFIED BY 'password';
+        CREATE DATABASE IF NOT EXISTS agile_service DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+        CREATE DATABASE IF NOT EXISTS state_machine_service DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+        CREATE DATABASE IF NOT EXISTS issue_service DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+        CREATE DATABASE IF NOT EXISTS foundation_service DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+        CREATE DATABASE IF NOT EXISTS knowledgebase_service DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+        CREATE DATABASE IF NOT EXISTS test_manager_service DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+        GRANT ALL PRIVILEGES ON test_manager_service.* TO choerodon@'%';
+        GRANT ALL PRIVILEGES ON knowledgebase_service.* TO choerodon@'%';
+        GRANT ALL PRIVILEGES ON agile_service.* TO choerodon@'%'; 
+        GRANT ALL PRIVILEGES ON state_machine_service.* TO choerodon@'%';
+        GRANT ALL PRIVILEGES ON issue_service.* TO choerodon@'%';
+        GRANT ALL PRIVILEGES ON foundation_service.* TO choerodon@'%';
+        FLUSH PRIVILEGES;
     ```
 
-    参数名 | 含义
-    --- |  ---
-    service.enable|是否创建service
-    preJob.preConfig.datasource{}|初始化配置所需manager_service数据库信息
-    preJob.preInitDB.datasource{}|初始化数据库所需数据库信息
-    env.open.SPRING_DATASOURCE_URL|数据库链接地址
-    env.open.SPRING_DATASOURCE_USERNAME|数据库用户名
-    env.open.SPRING_DATASOURCE_PASSWORD|数据库密码
-    env.open.SPRING_CLOUD_CONFIG_ENABLED|启用配置中心
-    env.open.SPRING_CLOUD_CONFIG_URI|配置中心地址
-    env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE|注册服务地址
-    env.open.SERVICES_ATTACHMENT_URL|minio地址，地址中agile-service为minio bucket
+- 执行安装
+    ```shell
+    helm install c7n/mysql-client \
+      -f create-c7nagile-db.yaml \
+      --version 0.1.0 \
+      --name create-c7nagile-db \
+      --namespace c7n-system
+    ```
+
+## 部署 agile service
+- 若需了解项目详情及各项参数含义，请移步 [choerodon/agile-service](https://github.com/choerodon/agile-service)。
+
+- 编写参数配置文件 `agile-service.yaml`
+    ```yaml
+    env:
+      open:
+        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
+        SPRING_CLOUD_CONFIG_ENABLED: true
+        SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
+        SPRING_DATASOURCE_PASSWORD: password
+        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/agile_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
+        SPRING_DATASOURCE_USERNAME: choerodon
+        SPRING_REDIS_DATABASE: 9
+        SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
+        SPRING_APPLICATION_NAME: agile-service
+        SERVICES_ATTACHMENT_URL: http://minio.example.choerodon.io
+    preJob:
+      preConfig:
+        datasource:
+          password: password
+          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
+          username: choerodon
+      preInitDB:
+        datasource:
+          password: password
+          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/agile_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
+          username: choerodon
+    ```
+
+- 部署服务
+    ``` 
+    helm install c7n/agile-service \
+      -f agile-service.yaml \
+      --name agile-service \
+      --version 0.19.0 \
+      --namespace c7n-system
+    ```
 
 - 验证部署
   - 验证命令
-
       ```
       curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=agile-service -o jsonpath="{.items[0].status.podIP}"):8379/actuator/health | jq -r .status
       ```
 
   - 出现以下类似信息即为成功部署
-
       ```
       UP
       ```
 
-## 部署state machine service
+## 部署 state machine service
+- 若需了解项目详情及各项参数含义，请移步 [choerodon/state-machine-service](https://github.com/choerodon/state-machine-service)。
 
+- 编写参数配置文件 `state-machine-service.yaml`
+    ```yaml
+    env:
+      open:
+        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
+        SPRING_CLOUD_CONFIG_ENABLED: true
+        SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
+        SPRING_DATASOURCE_PASSWORD: password
+        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/state_machine_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
+        SPRING_DATASOURCE_USERNAME: choerodon
+    preJob:
+      preConfig:
+        datasource:
+          password: password
+          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
+          username: choerodon
+      preInitDB:
+        datasource:
+          password: password
+          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/state_machine_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
+          username: choerodon
+    ```
 - 部署服务
-
     ``` 
     helm install c7n/state-machine-service \
-        --set preJob.preConfig.datasource.url="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
-        --set preJob.preConfig.datasource.username=choerodon \
-        --set preJob.preConfig.datasource.password=password \
-        --set preJob.preInitDB.datasource.url="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/state_machine_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
-        --set preJob.preInitDB.datasource.username=choerodon \
-        --set preJob.preInitDB.datasource.password=password \
-        --set env.open.SPRING_DATASOURCE_URL="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/state_machine_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
-        --set env.open.SPRING_DATASOURCE_USERNAME=choerodon \
-        --set env.open.SPRING_DATASOURCE_PASSWORD=password \
-        --set env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE="http://register-server.c7n-system:8000/eureka/" \
-        --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
-        --set env.open.SPRING_CLOUD_CONFIG_URI="http://register-server.c7n-system:8000/" \
-        --name state-machine-service \
-        --version 0.18.0 \
-        --namespace c7n-system
+      -f state-machine-service.yaml \
+      --name state-machine-service \
+      --version 0.19.0 \
+      --namespace c7n-system
     ```
-
-    参数名 | 含义
-    --- |  ---
-    preJob.preConfig.configFile|初始化配置文件名
-    preJob.preConfig.datasource{}|初始化配置所需manager-service数据库信息
-    preJob.preInitDB.datasource{}|初始化数据库所需数据库信息
-    env.open.SPRING_DATASOURCE_URL|数据库链接地址
-    env.open.SPRING_DATASOURCE_USERNAME|数据库用户名
-    env.open.SPRING_DATASOURCE_PASSWORD|数据库密码
-    env.open.SPRING_CLOUD_CONFIG_ENABLED|启用配置中心
-    env.open.SPRING_CLOUD_CONFIG_URI|配置中心地址
-    env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE|注册服务地址
 
 - 验证部署
   - 验证命令
-
       ```
       curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=state-machine-service -o jsonpath="{.items[0].status.podIP}"):8385/actuator/health | jq -r .status
       ```
@@ -141,90 +147,88 @@ helm install c7n/mysql-client \
       UP
       ```
 
-## 部署issue service
+## 部署 issue service
+- 若需了解项目详情及各项参数含义，请移步 [choerodon/issue-service](https://github.com/choerodon/issue-service)。
 
+- 编写参数配置文件 `issue-service.yaml`
+    ```yaml
+    env:
+      open:
+        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
+        SPRING_CLOUD_CONFIG_ENABLED: true
+        SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
+        SPRING_DATASOURCE_PASSWORD: password
+        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/issue_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowMultiQueries=true
+        SPRING_DATASOURCE_USERNAME: choerodon
+    preJob:
+      preConfig:
+        datasource:
+          password: password
+          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
+          username: choerodon
+      preInitDB:
+        datasource:
+          password: password
+          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/issue_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
+          username: choerodon
+    ```
 - 部署服务
 
     ``` 
     helm install c7n/issue-service \
-        --set preJob.preConfig.datasource.url="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
-        --set preJob.preConfig.datasource.username=choerodon \
-        --set preJob.preConfig.datasource.password=password \
-        --set preJob.preInitDB.datasource.url="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/issue_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
-        --set preJob.preInitDB.datasource.username=choerodon \
-        --set preJob.preInitDB.datasource.password=password \
-        --set env.open.SPRING_DATASOURCE_URL="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/issue_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowMultiQueries=true" \
-        --set env.open.SPRING_DATASOURCE_USERNAME=choerodon \
-        --set env.open.SPRING_DATASOURCE_PASSWORD=password \
-        --set env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE="http://register-server.c7n-system:8000/eureka/" \
-        --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
-        --set env.open.SPRING_CLOUD_CONFIG_URI="http://register-server.c7n-system:8000/" \
-        --name issue-service \
-        --version 0.18.0 \
-        --namespace c7n-system
+      -f issue-service.yaml \
+      --name issue-service \
+      --version 0.19.0 \
+      --namespace c7n-system
     ```
-
-    参数名 | 含义
-    --- |  ---
-    preJob.preConfig.datasource{}|初始化配置所需manager-service数据库信息
-    preJob.preInitDB.datasource{}|初始化数据库所需数据库信息
-    env.open.SPRING_DATASOURCE_URL|数据库链接地址
-    env.open.SPRING_DATASOURCE_USERNAME|数据库用户名
-    env.open.SPRING_DATASOURCE_PASSWORD|数据库密码
-    env.open.SPRING_CLOUD_CONFIG_ENABLED|启用配置中心
-    env.open.SPRING_CLOUD_CONFIG_URI|配置中心地址
-    env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE|注册服务地址
 
 - 验证部署
   - 验证命令
-
       ```
       curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=issue-service -o jsonpath="{.items[0].status.podIP}"):8381/actuator/health | jq -r .status
       ```
 
   - 出现以下类似信息即为成功部署
-
       ```
       UP
       ```
 
-## 部署foundation service
+## 部署 foundation service
+- 若需了解项目详情及各项参数含义，请移步 [choerodon/foundation-service](https://github.com/choerodon/foundation-service)。
 
+- 编写参数配置文件 `foundation-service.yaml`
+    ```yaml
+    env:
+      open:
+        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
+        SPRING_CLOUD_CONFIG_ENABLED: true
+        SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
+        SPRING_DATASOURCE_PASSWORD: password
+        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/foundation_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowMultiQueries=true
+        SPRING_DATASOURCE_USERNAME: choerodon
+    preJob:
+      preConfig:
+        datasource:
+          password: password
+          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
+          username: choerodon
+      preInitDB:
+        datasource:
+          password: password
+          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/foundation_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
+          username: choerodon
+    ```
 - 部署服务
-
     ``` 
     helm install c7n/foundation-service \
-        --set preJob.preConfig.datasource.url="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
-        --set preJob.preConfig.datasource.username=choerodon \
-        --set preJob.preConfig.datasource.password=password \
-        --set preJob.preInitDB.datasource.url="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/foundation_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
-        --set preJob.preInitDB.datasource.username=choerodon \
-        --set preJob.preInitDB.datasource.password=password \
-        --set env.open.SPRING_DATASOURCE_URL="jdbc:mysql://c7n-mysql.c7n-system.svc:3306/foundation_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowMultiQueries=true" \
-        --set env.open.SPRING_DATASOURCE_USERNAME=choerodon \
-        --set env.open.SPRING_DATASOURCE_PASSWORD=password \
-        --set env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE="http://register-server.c7n-system:8000/eureka/" \
-        --set env.open.SPRING_CLOUD_CONFIG_ENABLED=true \
-        --set env.open.SPRING_CLOUD_CONFIG_URI="http://register-server.c7n-system:8000/" \
-        --name foundation-service \
-        --version 0.18.1 \
-        --namespace c7n-system
+      -f foundation-service.yaml \
+      --name foundation-service \
+      --version 0.19.0 \
+      --namespace c7n-system
     ```
 
-    参数名 | 含义
-    --- |  ---
-    preJob.preConfig.datasource{}|初始化配置所需manager-service数据库信息
-    preJob.preInitDB.datasource{}|初始化数据库所需数据库信息
-    env.open.SPRING_DATASOURCE_URL|数据库链接地址
-    env.open.SPRING_DATASOURCE_USERNAME|数据库用户名
-    env.open.SPRING_DATASOURCE_PASSWORD|数据库密码
-    env.open.SPRING_CLOUD_CONFIG_ENABLED|启用配置中心
-    env.open.SPRING_CLOUD_CONFIG_URI|配置中心地址
-    env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE|注册服务地址
-    
 - 验证部署
     - 验证命令
-
         ```
         curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=foundation-service -o jsonpath="{.items[0].status.podIP}"):8387/actuator/health | jq -r .status
         ```
@@ -232,3 +236,106 @@ helm install c7n/mysql-client \
         ```
         UP
         ```
+
+## 部署 test manager service
+- 若需了解项目详情及各项参数含义，请移步 [choerodon/test-manager-service](https://github.com/choerodon/test-manager-service)。
+
+- 编写参数配置文件 `test-manager-service.yaml`
+    ```yaml
+    env:
+      open:
+        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
+        SPRING_CLOUD_CONFIG_ENABLED: true
+        SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
+        SPRING_DATASOURCE_PASSWORD: password
+        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/test_manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
+        SPRING_DATASOURCE_USERNAME: choerodon
+        SPRING_REDIS_DATABASE: 13
+        SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
+    preJob:
+      preConfig:
+        datasource:
+          password: password
+          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
+          username: choerodon
+      preInitDB:
+        datasource:
+          password: password
+          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/test_manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
+          username: choerodon
+    ```
+- 部署服务
+    ``` 
+    helm install c7n/test-manager-service \
+      -f test-manager-service.yaml \
+      --name test-manager-service \
+      --version 0.19.0 \
+      --namespace c7n-system
+    ```
+
+- 验证部署
+  - 验证命令
+      ```
+      curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=test-manager-service -o jsonpath="{.items[0].status.podIP}"):8094/actuator/health | jq -r .status
+      ```
+
+  - 出现以下类似信息即为成功部署
+      ```
+      UP
+      ```
+
+## 部署 knowledgebase service
+
+- 若需了解项目详情及各项参数含义，请移步 [choerodon/knowledgebase-service](https://github.com/choerodon/knowledgebase-service)。
+
+- 安装 elasticsearch
+  ```
+  helm install c7n/elasticsearch-kb \
+    --version 0.19.0 \
+    --name elasticsearch-kb \
+    --namespace c7n-system
+  ```
+
+- 编写参数配置文件 `knowledgebase-service.yaml`
+    ```yaml
+    env:
+      open:
+        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
+        SERVICES_ATTACHMENT_URL: http://minio.example.choerodon.io/knowledgebase-service/
+        SPRING_CLOUD_CONFIG_ENABLED: true
+        SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
+        SPRING_DATASOURCE_PASSWORD: password
+        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/knowledgebase_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowMultiQueries=true
+        SPRING_DATASOURCE_USERNAME: choerodon
+        ELASTICSEARCH_IP: elasticsearch-kb.c7n-system:9200
+    preJob:
+      preConfig:
+        datasource:
+          password: password
+          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
+          username: choerodon
+      preInitDB:
+        datasource:
+          password: password
+          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/knowledgebase_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
+          username: choerodon
+    ```
+- 部署服务
+    ``` 
+    helm install c7n/knowledgebase-service \
+      -f knowledgebase-service.yaml \
+      --name knowledgebase-service \
+      --version 0.19.0 \
+      --namespace c7n-system
+    ```
+
+- 验证部署
+  - 验证命令
+      ```
+      curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=knowledgebase-service -o jsonpath="{.items[0].status.podIP}"):8281/actuator/health | jq -r .status
+      ```
+
+  - 出现以下类似信息即为成功部署
+      ```
+      UP
+      ```
