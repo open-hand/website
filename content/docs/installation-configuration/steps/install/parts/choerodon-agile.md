@@ -92,14 +92,16 @@ helm repo update
 
 - 验证部署
   - 验证命令
-      ```
-      curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=agile-service -o jsonpath="{.items[0].status.podIP}"):8379/actuator/health | jq -r .status
-      ```
+
+    ```
+    curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=agile-service -o jsonpath="{.items[0].status.podIP}"):8379/actuator/health | jq -r .status
+    ```
 
   - 出现以下类似信息即为成功部署
-      ```
-      UP
-      ```
+  
+    ```
+    UP
+    ```
 
 ## 部署 test manager service
 - 若需了解项目详情及各项参数含义，请移步 [choerodon/test-manager-service](https://github.com/choerodon/test-manager-service)。
@@ -139,14 +141,16 @@ helm repo update
 
 - 验证部署
   - 验证命令
-      ```
-      curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=test-manager-service -o jsonpath="{.items[0].status.podIP}"):8094/actuator/health | jq -r .status
-      ```
+  
+    ```
+    curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=test-manager-service -o jsonpath="{.items[0].status.podIP}"):8094/actuator/health | jq -r .status
+    ```
 
   - 出现以下类似信息即为成功部署
-      ```
-      UP
-      ```
+  
+    ```
+    UP
+    ```
 
 ## 部署 knowledgebase service
 
@@ -195,11 +199,13 @@ helm repo update
 
 - 验证部署
   - 验证命令
-      ```
-      curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=knowledgebase-service -o jsonpath="{.items[0].status.podIP}"):8281/actuator/health | jq -r .status
-      ```
+  
+    ```
+    curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=knowledgebase-service -o jsonpath="{.items[0].status.podIP}"):8281/actuator/health | jq -r .status
+    ```
 
   - 出现以下类似信息即为成功部署
-      ```
-      UP
-      ```
+  
+    ```
+    UP
+    ```

@@ -82,29 +82,31 @@ helm repo update
 
 - 验证部署
   - 验证命令
-      ```shell
-      curl $(kubectl get svc register-server -o jsonpath="{.spec.clusterIP}" -n c7n-system):8000/eureka/apps
-      ```
+  
+    ```shell
+    curl $(kubectl get svc register-server -o jsonpath="{.spec.clusterIP}" -n c7n-system):8000/eureka/apps
+    ```
   - 出现以下类似信息即为成功部署
-      ```json
-      {
-          "name": "go-register-server",
-          "instance": [
-              {
-              "instanceId": "192.168.3.19:go-register-server:8000",
-              "hostName": "192.168.3.19",
-              "app": "go-register-server",
-              "ipAddr": "192.168.3.19",
-              "status": "UP",
-              ...
-              "metadata": {
-                  "VERSION": "0.19.0"
-              },
-              ...
-              }
-          ]
-      }
-      ```
+  
+    ```json
+    {
+        "name": "go-register-server",
+        "instance": [
+            {
+            "instanceId": "192.168.3.19:go-register-server:8000",
+            "hostName": "192.168.3.19",
+            "app": "go-register-server",
+            "ipAddr": "192.168.3.19",
+            "status": "UP",
+            ...
+            "metadata": {
+                "VERSION": "0.19.0"
+            },
+            ...
+            }
+        ]
+    }
+    ```
 
 ## 部署 base service
 
@@ -147,13 +149,15 @@ helm repo update
     ```
 - 验证部署
   - 验证命令
-      ```shell
-      curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=base-service -o jsonpath="{.items[0].status.podIP}"):8031/actuator/health | jq -r .status
-      ```
+  
+    ```shell
+    curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=base-service -o jsonpath="{.items[0].status.podIP}"):8031/actuator/health | jq -r .status
+    ```
   - 出现以下类似信息即为成功部署
-      ```
-      UP
-      ```
+  
+    ```
+    UP
+    ```
 ## 部署 manager service
 
 - 若需了解项目详情及各项参数含义，请移步 [choerodon/manager-service](https://github.com/choerodon/manager-service)。
@@ -190,13 +194,15 @@ helm repo update
 
 - 验证部署
   - 验证命令
-      ```shell
-      curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=manager-service -o jsonpath="{.items[0].status.podIP}"):8964/actuator/health | jq -r .status
-      ```
+  
+    ```shell
+    curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=manager-service -o jsonpath="{.items[0].status.podIP}"):8964/actuator/health | jq -r .status
+    ```
   - 出现以下类似信息即为成功部署
-      ```
-      UP
-      ```
+
+    ```
+    UP
+    ```
 
 ## 部署 asgard service
 
@@ -239,14 +245,16 @@ helm repo update
 
 - 验证部署
   - 验证命令
-      ```shell
-      curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=asgard-service -o jsonpath="{.items[0].status.podIP}"):18081/actuator/health | jq -r .status
-      ```
+  
+    ```shell
+    curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=asgard-service -o jsonpath="{.items[0].status.podIP}"):18081/actuator/health | jq -r .status
+    ```
 
   - 出现以下类似信息即为成功部署
-      ```
-      UP
-      ```
+  
+    ```
+    UP
+    ```
 
 ## 部署 notify service
 
@@ -293,13 +301,15 @@ helm repo update
 
 - 验证部署
   - 验证命令
-      ```
-      curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=notify-service -o jsonpath="{.items[0].status.podIP}"):18086/actuator/health | jq -r .status
-      ```
+  
+    ```
+    curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=notify-service -o jsonpath="{.items[0].status.podIP}"):18086/actuator/health | jq -r .status
+    ```
   - 出现以下类似信息即为成功部署
-      ```
-      UP
-      ```
+  
+    ```
+    UP
+    ```
 
 ## 部署 api gateway
 
@@ -343,14 +353,16 @@ helm repo update
 
 - 验证部署
   - 验证命令
-      ```
-      curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=api-gateway -o jsonpath="{.items[0].status.podIP}"):8081/actuator/health | jq -r .status
-      ```
+
+    ```
+    curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=api-gateway -o jsonpath="{.items[0].status.podIP}"):8081/actuator/health | jq -r .status
+    ```
 
   - 出现以下类似信息即为成功部署
-      ```
-      UP
-      ```
+  
+    ```
+    UP
+    ```
 
 ## 部署 oauth server
 
@@ -387,14 +399,16 @@ helm repo update
 
 - 验证部署
   - 验证命令
-      ```
-      curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=oauth-server -o jsonpath="{.items[0].status.podIP}"):8021/actuator/health | jq -r .status
-      ```
+  
+    ```
+    curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=oauth-server -o jsonpath="{.items[0].status.podIP}"):8021/actuator/health | jq -r .status
+    ```
 
   - 出现以下类似信息即为成功部署
-      ```
-      UP
-      ```
+  
+    ```
+    UP
+    ```
 
 ## 部署 file service
 
@@ -429,11 +443,13 @@ helm repo update
 
 - 验证部署
   - 验证命令
-      ```
-      curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=file-service -o jsonpath="{.items[0].status.podIP}"):9091/actuator/health | jq -r .status
-      ```
+  
+    ```
+    curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=file-service -o jsonpath="{.items[0].status.podIP}"):9091/actuator/health | jq -r .status
+    ```
 
   - 出现以下类似信息即为成功部署
-      ```
-      UP
-      ```
+  
+    ```
+    UP
+    ```

@@ -44,28 +44,20 @@ helm install c7n/persistentvolumeclaim \
 ### 进行部署
 - 若需了解项目详情及各项参数含义，请移步 [helm/chartmuseum](https://github.com/helm/chartmuseum)。
 - 注意替换 `chart.example.choerodon.io` 为您实际的域名
-- 编写参数配置文件 `chartmuseum.yaml`
-    ```yaml
-    env:
-      open:
-        DEPTH: 2
-        DISABLE_API: false
-    ingress:
-      enabled: true
-      hosts: chart.example.choerodon.io
-    persistence:
-      enabled: true
-      existingClaim: chartmuseum-pvc
-    service:
-      enabled: true
-    ```
 - 执行部署
+  
     ```bash
     helm install c7n/chartmuseum \
-      -f chartmuseum.yaml \
-      --version 1.6.1 \
-      --name chartmuseum \
-      --namespace c7n-system
+        --set service.enabled=true \
+        --set persistence.enabled=true \
+        --set persistence.existingClaim=chartmuseum-pvc \
+        --set ingress.enabled=true \
+        --set ingress.hosts=chart.example.choerodon.io \
+        --set env.open.DISABLE_API=false \
+        --set env.open.DEPTH=2 \
+        --version 1.6.1 \
+        --name chartmuseum \
+        --namespace c7n-system
     ```
 
 ## 验证部署

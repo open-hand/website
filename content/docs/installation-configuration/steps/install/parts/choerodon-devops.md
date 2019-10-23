@@ -106,14 +106,16 @@ helm repo update
 
 - 验证部署
   - 验证命令
-      ```
-      curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=devops-service -o jsonpath="{.items[0].status.podIP}"):8061/actuator/health | jq -r .status
-      ```
+  
+    ```
+    curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=devops-service -o jsonpath="{.items[0].status.podIP}"):8061/actuator/health | jq -r .status
+    ```
 
   - 出现以下类似信息即为成功部署
-      ```
-      UP
-      ```
+  
+    ```
+    UP
+    ```
 
 ## 部署 gitlab service
 - 若需了解项目详情及各项参数含义，请移步 [choerodon/gitlab-service](https://github.com/choerodon/gitlab-service)。
@@ -153,14 +155,16 @@ helm repo update
 
 - 验证部署
   - 验证命令
-      ```
-      curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=gitlab-service -o jsonpath="{.items[0].status.podIP}"):8071/actuator/health | jq -r .status
-      ```
+  
+    ```
+    curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=gitlab-service -o jsonpath="{.items[0].status.podIP}"):8071/actuator/health | jq -r .status
+    ```
 
   - 出现以下类似信息即为成功部署
-      ```
-      UP
-      ```
+  
+    ```
+    UP
+    ```
 
 ## 部署 workflow service
 - 若需了解项目详情及各项参数含义，请移步 [choerodon/workflow-service](https://github.com/choerodon/workflow-service)。
@@ -200,11 +204,13 @@ helm repo update
 
 - 验证部署
   - 验证命令
-      ```
-      curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=workflow-service -o jsonpath="{.items[0].status.podIP}"):8066/actuator/health | jq -r .status
-      ```
+  
+    ```
+    curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=workflow-service -o jsonpath="{.items[0].status.podIP}"):8066/actuator/health | jq -r .status
+    ```
 
   - 出现以下类似信息即为成功部署
-      ```
-      UP
-      ```
+  
+    ```
+    UP
+    ```
