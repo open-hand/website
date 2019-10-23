@@ -133,7 +133,7 @@ helm repo update
     helm install c7n/test-manager-service \
       -f test-manager-service.yaml \
       --name test-manager-service \
-      --version 0.19.1 \
+      --version 2019.10.22-152846-hotfix-0-19-1 \
       --namespace c7n-system
     ```
 
@@ -189,7 +189,7 @@ helm repo update
     helm install c7n/knowledgebase-service \
       -f knowledgebase-service.yaml \
       --name knowledgebase-service \
-      --version 0.19.1 \
+      --version 2019.10.22-194932-hotfix-0-19-1 \
       --namespace c7n-system
     ```
 

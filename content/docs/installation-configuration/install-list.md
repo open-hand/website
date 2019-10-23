@@ -53,9 +53,6 @@ gitlab service|Gitlab 服务|0.19.0
 devops service|Devops 服务|0.19.0
 workflow service|Workflow 服务|0.19.0
 agile service|敏捷管理|0.19.0
-state machine service|状态机服务|0.19.0
-issue service|issue服务|0.19.0
-test manager service|测试管理服务|0.19.0
+test manager service|测试管理服务|0.19.1
 choerodon front|Choerodon 前端|0.19.0
-knowledgebase service |基础知识服务|0.19.0
-foundation service |基础服务|0.19.0
+knowledgebase service |基础知识服务|0.19.1
