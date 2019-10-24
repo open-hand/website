@@ -6,7 +6,7 @@ description = ""
 
 ## 前置条件
 
-在开始使用定时任务之前，要确保服务的choerodon-starters依赖在`0.6.4.RELEASE`版本及之上，推荐最新版`0.11.0.RELEASE`。
+在开始使用定时任务之前，要确保服务的choerodon-starters依赖在`0.6.4.RELEASE`版本及之上，推荐最新版`0.12.0.RELEASE`。
 
 ## 介绍
 

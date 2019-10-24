@@ -186,7 +186,7 @@ $ touch bootstrap.yml
 ```
 
 - `bootstrap.yml`: 存放不会通过环境变量替换和必须在bootstrap中指定的变量。包括项目端口，应用名，`config-server`地址等。
-- `application.yml`: 存放项目的基础配置，包含默认的线上数据库连接配置，`kafka`配置，注册中心地址等，这些变量可以通过`profile`或者环境变量修改。
+- `application.yml`: 存放项目的基础配置，包含默认的线上数据库连接配置，注册中心地址等，这些变量可以通过`profile`或者环境变量修改。
 - `application-default.yml`: 本地开发配置文件，需要将该文件添加到`.gitignore`。包含本地一些差异化的配置，如数据库连接配置，注册中心地址等。
 
 ``` yml
