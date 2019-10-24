@@ -252,13 +252,9 @@ data:
 
 ## 相关文档
 
-- [应用管理](../../../user-guide/application-management/application)
+- [应用管理](../../../user-guide/development/application-service)
 
-- [应用部署](../../../user-guide/application-management/application)
-
-- [网络管理](../../../user-guide/application-management/application)
-
-- [域名管理](../../../user-guide/application-management/application)
+- [应用部署](../../../user-guide/deploy/)
 
 
 

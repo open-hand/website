@@ -28,5 +28,7 @@ description = "了解用户在平台、组织、项目下的角色信息"
 
 
 ## 更多操作
+
 - [个人信息](../information)
-- [修改密码](../secret_change)
+- [Token管理](../token)
+- [接收设置](../notify_setting)

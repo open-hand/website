@@ -89,10 +89,6 @@ description = "角色是一组特定权限的集合，通过给成员分配角�
 
 - project.owner：项目所有者。用户创建项目时会自动为其分配拥有该角色标签的角色。
 - organization.owner：组织所有者。用户创建组织时会自动为其分配拥有该角色标签的角色。
-- organization.wiki.admin：组织层wiki管理员。
-- organization.wiki.user：组织层wiki用户。
-- project.wiki.admin：项目层wiki管理员。
-- project.wiki.user：项目层wiki用户。
 - organization.gitlab.owner：组织层gitlab所有者。
 - project.gitlab.developer：项目层gitlab开发者。当给某用户在某项目下分配拥有该标签的角色后，平台会为该用户在gitlab对应的group下分配developer的角色。
 - project.gitlab.owner：项目层gitlab所有者。当给某用户在某项目下分配拥有该标签的角色后，平台会为该用户在gitlab对应的group下分配owner角色。

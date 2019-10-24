@@ -48,5 +48,7 @@ weight = 1
 3.点击`保存`完成密码的修改。
 
 ## 更多操作
-- [修改密码](../secret_change)
-- [组织信息](../role-info)
+
+- [接收设置](../notify_setting)
+- [Token管理](../token)
+- [权限信息](../role-info)

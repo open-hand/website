@@ -35,7 +35,7 @@ type = "docs"
 
 ![选择应用版本](/docs/quick-start/image/microservice-front24.png)
 
-**第四步：** 点击`选择环境`，选择一个环境。部署的环境信息会展现在底下。如果没有环境，请先完成[创建环境](../../../user-guide/deployment-pipeline/environment-pipeline)。  
+**第四步：** 点击`选择环境`，选择一个环境。部署的环境信息会展现在底下。如果没有环境，请先完成[创建环境](../../../user-guide/deploy/env-config/)。  
 ![选择环境](/docs/quick-start/image/microservice-front25.png)
 
 **第五步：** 根据实际的配置，配置部署应用所需的配置信息。然后点击下一步。  
@@ -47,7 +47,7 @@ type = "docs"
 **第七步：** 确认信息无误后，可以点击`部署` 来部署应用，页面自动跳转到`实例`页面。  
  ![确认部署信息](/docs/quick-start/image/microservice-front28.png)  
 
- >**实例界面详情**，更多相关信息以及详细操作步骤参考[实例管理](../../../user-guide/deployment-pipeline/instance)。
+ >**实例界面详情**，更多相关信息以及详细操作步骤参考[实例管理](../../../user-guide/deploy/app-deploy/resource/ex-view/)。
  
  > 1.提供四种不同视图查看实例
 
@@ -80,6 +80,9 @@ type = "docs"
 >* 当容器状态条为绿色，且容器状态显示为`1/1`时，表示新部署的实例通过健康检查。
   
   完成了该应用的部署之后，您就可以进行后续的添加网络、添加域名等操作，以便您能通过浏览器来访问所部署的应用。
+
 ## 相关文档
-- [系统配置](../../../user-guide/system-configuration)  
-- [创建环境](../../../user-guide/deployment-pipeline/environment-pipeline)
+
+- [系统配置](../../../user-guide/system-configuration) 
+ 
+- [创建环境](../../../user-guide/deploy/env-config/)

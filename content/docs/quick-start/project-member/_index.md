@@ -16,8 +16,6 @@ weight = 3
 
 ## 您可以了解以下内容
 
-- [知识管理](../../quick-start/project-member/wiki-manager) 是一种内容管理系统，具有编辑、导航、链接和创建页面、搜索等功能。
-
 - [使用敏捷管理工具](../../quick-start/project-member/agile-management-tools-member) 引导项目成员使用敏捷管理工具来管理自己的任务和与其他成员协作。
 
 - [创建一个nginx示例](../../quick-start/project-member/nginx-demo) 搭建一个最简单的nginx作为入门，开始我们的 Choerodon 之旅。
@@ -32,8 +30,8 @@ weight = 3
 
 ## 更多内容
 
-- [使用 Choerodon 开发流水线](../../user-guide/development-pipeline)
+- [使用 Choerodon 开发流水线](../../user-guide/development/)
 
-- [使用Choerodon 测试管理](../../user-guide/test-management)
+- [使用Choerodon 测试管理](../../user-guide/test)
 
-- [使用 Choerodon 敏捷管理](../../user-guide/agile)
+- [使用 Choerodon 敏捷管理](../../user-guide/cooperation/)

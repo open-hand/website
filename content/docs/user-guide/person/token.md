@@ -30,3 +30,9 @@ ACCESS-TOKEN是您访问平台的密钥。您可以在此查看和管理您的�
 <blockquote class="note">
         不能删除当前token。
       </blockquote>
+
+## 更多操作
+
+- [个人信息](../information)
+- [接收设置](../notify_setting)
+- [权限信息](../role-info)

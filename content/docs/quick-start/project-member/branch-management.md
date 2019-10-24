@@ -21,7 +21,7 @@ type = "docs"
 在操作之前保证[系统配置](../../../user-guide/manager-guide/system-configuration)已经配置完全。特别是本章节用到的角色、环境管理等配置。
 
 ## Git相关
-如需了解`Git`相关的知识请参阅用户手册中[分支管理](../../../user-guide/development-pipeline/branch/) 文档。
+如需了解`Git`相关的知识请参阅用户手册中[分支管理](../../../user-guide/development/code-manage/manage-branch/) 文档。
 
 ## 创建应用
 
@@ -70,7 +70,7 @@ type = "docs"
  
 ![create_branch](/docs/quick-start/image/branch/create_branch.png)
 
-> 关于分支类型如何选择，请参阅用户手册中 [分支管理策略](../../../user-guide/development-pipeline/branch/) 部分   
+> 关于分支类型如何选择，请参阅用户手册中 [分支管理策略](../../../user-guide/development/code-manage/manage-branch/) 部分   
  
  创建成功后，您就可以在分支上进行开发，然后有选择地合并到其他分支。
 
@@ -110,8 +110,8 @@ type = "docs"
 
 - [创建项目](../../../quick-start/admin/project)
 
-- [创建环境](../../../user-guide/deployment-pipeline/environment-pipeline)
+- [创建环境](../../../user-guide/deploy/env-config/)
 
-- [创建应用](../../../user-guide/application-management/application)
+- [创建应用](../../../user-guide/development/application-service/)
 
-- [分支管理](../../../user-guide/development-pipeline/branch/)
+- [分支管理](../../../user-guide/development/code-manage/manage-branch/)

@@ -28,7 +28,7 @@ type = "docs"
 
 ## 创建网络
 
-为了访问应用实例的特定端口，首先需要创建一个网络。更多相关信息以及详细操作步骤参考[网络管理](../../../user-guide/deployment-pipeline/service)。
+为了访问应用实例的特定端口，首先需要创建一个网络。更多相关信息以及详细操作步骤参考[网络管理](../../../user-guide/deploy/app-deploy/resource/)。
 
 **第一步：** 使用拥有项目所有者或已被分配目标环境权限的项目成员角色角色的用户登录`Choerodon`系统，选择项目猪齿鱼研发。
 
@@ -82,7 +82,7 @@ type = "docs"
 
 ## 创建域名
 
-为了让用户能通过浏览器从外部访问系统内部应用程序，需要在网络的基础上配置域名。更多相关信息以及详细操作步骤参考[域名管理](../../../user-guide/deployment-pipeline/ingress)。
+为了让用户能通过浏览器从外部访问系统内部应用程序，需要在网络的基础上配置域名。更多相关信息以及详细操作步骤参考[域名管理](../../../user-guide/deploy/app-deploy/resource/)。
 
 **第一步：** 使用拥有项目所有者或已被分配目标环境权限的项目成员角色角色的用户登录`Choerodon`系统，选择项目`猪齿鱼研发`。
 
@@ -117,9 +117,9 @@ type = "docs"
 
 - [系统配置](../../../user-guide/manager-guide/system-configuration)
 
-- [创建环境](../../../user-guide/deployment-pipeline/environment-pipeline)
+- [创建环境](../../../user-guide/deploy/env-config/)
 
-- [创建网络](../../../user-guide/deployment-pipeline/service)
+- [创建网络](../../../user-guide/deploy/app-deploy/resource/)
 
-- [创建域名](../../../user-guide/deployment-pipeline/ingress)
+- [创建域名](../../../user-guide/deploy/app-deploy/resource/)
 

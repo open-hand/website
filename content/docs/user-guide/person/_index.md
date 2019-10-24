@@ -16,6 +16,5 @@ weight = 8
 
 ## 更多操作
 
-- [平台设置](..//platform)
-- [平台管理](../../platform-management)
-- [消息中心](..//message)
+- [平台管理](../manager-guide/system-configuration/)
+- [管理中心](../manager-guide/manager-center/)

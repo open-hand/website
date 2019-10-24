@@ -29,8 +29,8 @@ description = "管理者是基于平台的，作为管理者您必须具备 Choe
 
 - [项目管理](../../user-guide/manager-guide/manager-center)
 
-- [应用管理](../../user-guide/application-management/application)
+- [应用管理](../../user-guide/development/application-service)
 
-- [使用 Choerodon 敏捷管理](../../user-guide/agile)
+- [使用 Choerodon 敏捷管理](../../user-guide/cooperation)
 
-- [使用 Choerodon 测试管理](../../user-guide/test-management)
+- [使用 Choerodon 测试管理](../../user-guide/test)

@@ -25,8 +25,8 @@ weight = 2
 
 ## 更多内容
 
-- [使用 Choerodon 开发流水线](../../user-guide/development-pipeline)
+- [使用 Choerodon 开发流水线](../../user-guide/development)
 
-- [使用 Choerodon 部署流水线](../../user-guide/deployment-pipeline)
+- [使用 Choerodon 部署流水线](../../user-guide/deploy)
 
-- [使用 Choerodon 敏捷管理](../../user-guide/agile)
+- [使用 Choerodon 敏捷管理](../../user-guide/cooperation)

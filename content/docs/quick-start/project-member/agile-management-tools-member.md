@@ -10,7 +10,7 @@ weight = 2
 
 ## 概述
 
-敏捷管理可以用于项目团队成员记录任务，追踪任务完成情况，团队协作等。敏捷管理模块使用详情请移步[使用 Choerodon 敏捷管理](../../../user-guide/agile/)。
+敏捷管理可以用于项目团队成员记录任务，追踪任务完成情况，团队协作等。敏捷管理模块使用详情请移步[使用 Choerodon 敏捷管理](../../../user-guide/cooperation/)。
 
 ## 目标
 
@@ -34,7 +34,7 @@ weight = 2
 
 ## 创建问题
 
-问题是任何项目的基础，问题是项目中一项待完成的工作，英文为 Issue，不同的组织可以通过使用 Choerodon 来跟踪不同类型的问题，这些问题可以表示从软件缺陷到项目任务等任何事情。更多相关信息请参考[问题创建](../../../user-guide/agile/issue/create-issue)。
+问题是任何项目的基础，问题是项目中一项待完成的工作，英文为 Issue，不同的组织可以通过使用 Choerodon 来跟踪不同类型的问题，这些问题可以表示从软件缺陷到项目任务等任何事情。更多相关信息请参考[问题创建](../../../user-guide/cooperation/work-lists/problem)。
 
 具体操作步骤如下：
 
@@ -70,9 +70,9 @@ weight = 2
 
 ## 处理问题
 
-问题处理是指对一个问题进行具体操作，包括查看、设置标签、添加描述等。更多相关信息请参考[问题处理](../../../user-guide/agile/issue/manage-issue)。
+问题处理是指对一个问题进行具体操作，包括查看、设置标签、添加描述等。更多相关信息请参考[问题处理](../../../user-guide/cooperation/work-lists/problem)。
 
-- 显示问题状态，默认有待处理、处理中、已完成三种，用户可自定义状态，详情请参考[配置看板](../../../user-guide/agile/sprint/manage-kanban)。
+- 显示问题状态，默认有待处理、处理中、已完成三种，用户可自定义状态，详情请参考[配置看板](../../../user-guide/cooperation/iteration-plan/config/)。
 
 - 显示问题预计剩余时间，会根据工作日志登记的工作时间进行实时核减。
 
@@ -120,17 +120,17 @@ weight = 2
 
 ### 创建看板
 
-用户可在[活跃冲刺](../../../user-guide/agile/sprint)菜单下创建多个看板。点击页面上方的`创建看板`，输入相应的看板名称即可快速。(路径：活跃冲刺 > 创建看板)。更多相关信息请参考[创建看板](../../../user-guide/agile/sprint/create-kanban/)。
+用户可在[活跃冲刺](../../../user-guide/cooperation/work-lists/sprint/)菜单下创建多个看板。点击页面上方的`创建看板`，输入相应的看板名称即可快速。(路径：活跃冲刺 > 创建看板)。更多相关信息请参考[创建看板](../../../user-guide/cooperation/iteration-plan/)。
 
 ![创建看板](/docs/quick-start/image/agile/many_board1.png)
 
 ### 多看板
 
-多看板是指团队成员可以根据自身需求创建多个不同的看板，自行设置看板状态来管理与自己有关的工作。对于项目团队中的不同成员来说，一个看板可能难以满足自身任务计划的需求，并且，同一个任务可能对于不同的成员来说，进度状态可能是不同的，所以您可能需要在总冲刺看板之外，另建一块看板来单独管理你关心的问题。更多相关信息请参考[多看板](../../../user-guide/agile/sprint/kanban/)。
+多看板是指团队成员可以根据自身需求创建多个不同的看板，自行设置看板状态来管理与自己有关的工作。对于项目团队中的不同成员来说，一个看板可能难以满足自身任务计划的需求，并且，同一个任务可能对于不同的成员来说，进度状态可能是不同的，所以您可能需要在总冲刺看板之外，另建一块看板来单独管理你关心的问题。更多相关信息请参考[多看板](../../../user-guide/cooperation/iteration-plan/multi-board/)。
 
 ## 使用看板
 
-当项目下有一个活跃冲刺时，便可在看板中查看该冲刺的问题运行状态。通过看板的使用，实时推进项目，有效的完成冲刺。点击`活跃冲刺`菜单进入到看板。更多相关信息请参考[使用看板](../../../user-guide/agile/sprint/use-kanban/)。
+当项目下有一个活跃冲刺时，便可在看板中查看该冲刺的问题运行状态。通过看板的使用，实时推进项目，有效的完成冲刺。点击`活跃冲刺`菜单进入到看板。更多相关信息请参考[使用看板](../../../user-guide/cooperation/iteration-plan/useboard/)。
 
 ![使用看板](/docs/quick-start/image/agile/kanban-1.png)
 
@@ -147,7 +147,7 @@ weight = 2
 
 ## 分支管理
 
-使用 GitLab 进行分支管理，默认分支为 `master`，您可以在产品开发过程中对 `Feature`、`Bugfix`、`Release`、`Hotfix` 等分支进行管理。所有的提交将触发持续集成，可在持续集成菜单下查看代码集成情况。更多相关信息请参考[分支管理](../../../user-guide/development-pipeline/branch)。
+使用 GitLab 进行分支管理，默认分支为 `master`，您可以在产品开发过程中对 `Feature`、`Bugfix`、`Release`、`Hotfix` 等分支进行管理。所有的提交将触发持续集成，可在持续集成菜单下查看代码集成情况。更多相关信息请参考[分支管理](../../../user-guide/development/code-manage/manage-branch/)。
 
 具体操作步骤如下：
 
@@ -223,8 +223,8 @@ weight = 2
 
 ## 相关文档
 
-- [待办事项](../../../user-guide/agile/backlog)
+- [待办事项](../../../user-guide/cooperation/work-lists/)
 
-- [问题管理](../../../user-guide/agile/issue)
+- [问题管理](../../../user-guide/cooperation/work-lists/problem/)
 
-- [活跃冲刺](../../../user-guide/agile/sprint)
+- [活跃冲刺](../../../user-guide/cooperation/work-lists/sprint/)

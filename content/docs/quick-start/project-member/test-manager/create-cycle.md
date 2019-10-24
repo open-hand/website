@@ -21,7 +21,7 @@ description = "介绍如何快速创建测试循环"
 
 **2.** 用户必须拥有目标项目的`项目成员`或`项目所有者`的权限。
 
-**3.** 测试循环的创建是基于敏捷管理的版本，所以您必须先在敏捷管理中[创建对应的版本](../../../../user-guide/agile/release/release-version/)。
+**3.** 测试循环的创建是基于敏捷管理的版本，所以您必须先在敏捷管理中[创建对应的版本](../../../../user-guide/cooperation/work-lists/)。
 
 ## 创建一个测试循环
 
@@ -58,4 +58,4 @@ description = "介绍如何快速创建测试循环"
 
 ## 相关文档
 
-- [测试计划](../../../../user-guide/test-management/test-plan/)
+- [测试计划](../../../../user-guide/test/plan/)
