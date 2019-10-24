@@ -18,7 +18,7 @@ type = "docs"
 
 ## 前置条件
 
-**1.** 在操作之前保证[系统配置](../../../user-guide/system-configuration)已经配置完全。特别在本章节用到的角色、环境管理等配置。
+**1.** 在操作之前保证[系统配置](../../../user-guide/manager-guide/system-configuration)已经配置完全。特别在本章节用到的角色、环境管理等配置。
 
 **2.** 完成[创建项目](../../admin/project)操作。本章节使用在前面章节创建的项目`猪齿鱼研发`。
 
@@ -239,7 +239,7 @@ $ git push origin feature-choerodon-dev-1
 
 ## 相关文档
 
-- [系统配置](../../../user-guide/system-configuration)
+- [系统配置](../../../user-guide/manager-guide/system-configuration)
 
 - [创建项目](../../admin/project)
 

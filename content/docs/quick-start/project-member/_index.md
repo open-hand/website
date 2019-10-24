@@ -11,7 +11,7 @@ weight = 3
 
 ## 前置条件
 - 项目成员是基于项目的，作为管理者您必须具备 Choerodon 猪齿鱼平台中的`组织成员`或者`项目成员`的角色身份。
-- 在操作之前保证[系统配置](../../user-guide/system-configuration)已经配置完全。
+- 在操作之前保证[系统配置](../../user-guide/manager-guide/system-configuration)已经配置完全。
 - 本文档中不包含Choerodon功能理论等相关知识，如果要深入的了解Choerodon相关的知识，您可以阅读[用户手册](../../user-guide/)，或参加相关的培训。
 
 ## 您可以了解以下内容

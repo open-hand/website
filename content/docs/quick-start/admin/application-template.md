@@ -19,7 +19,7 @@ type = "docs"
 
 ## 前置条件
 
-**1.** 在操作之前保证[系统配置](../../../user-guide/system-configuration)已经配置完全。
+**1.** 在操作之前保证[系统配置](../../../user-guide/manager-guide/system-configuration)已经配置完全。
 
 **2.** 用户须属于组织层，且为组织管理员角色。
 
@@ -303,7 +303,7 @@ Choerodon 会在使用模板创建应用时，对文档的相关变量进行替�
 
 ## 相关文档  
 
-- [系统配置](../../../user-guide/system-configuration)  
+- [系统配置](../../../user-guide/manager-guide/system-configuration)  
 
 - [应用模板](../../../user-guide/application-management/application-template/)
 

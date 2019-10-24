@@ -17,7 +17,7 @@ type = "docs"
 本章节将从创建应用、部署应用、配置网络、配置域名等操作，让读者能够学会使用Choerodon搭建一个最简单的nginx。
 
 ## 前置条件
-**1.** 在操作之前保证[系统配置](../../../user-guide/system-configuration)已经配置完全。
+**1.** 在操作之前保证[系统配置](../../../user-guide/manager-guide/system-configuration)已经配置完全。
 
 **2.** 在本章节用到的角色、网络和域名、环境管理等已配置完全。
 

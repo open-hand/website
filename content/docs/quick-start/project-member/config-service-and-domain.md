@@ -19,7 +19,7 @@ type = "docs"
 
 ## 前置条件
 
-**1.** 在操作之前保证[系统配置](../../../user-guide/system-configuration)已经配置完全。特别在本章节用到的角色、环境管理、实例部署等配置。
+**1.** 在操作之前保证[系统配置](../../../user-guide/manager-guide/system-configuration)已经配置完全。特别在本章节用到的角色、环境管理、实例部署等配置。
 
 **2.** 配置网络和域名需要项目所有者或已被分配目标环境权限的项目成员角色，确保登陆用户有分配此角色。
 
@@ -115,7 +115,7 @@ type = "docs"
 
 ## 相关文档
 
-- [系统配置](../../../user-guide/system-configuration)
+- [系统配置](../../../user-guide/manager-guide/system-configuration)
 
 - [创建环境](../../../user-guide/deployment-pipeline/environment-pipeline)
 
