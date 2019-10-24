@@ -7,7 +7,7 @@ description = "讲述了Choerodon平台上的数据一致性支持"
 
 ## 前置条件
 
-在开始使用`Saga`之前，要确保服务的`choerodon-starters-asgard`依赖在`0.6.3.RELEASE`版本及之上, 推荐最新版`0.11.0.RELEASE`。同时需要对`Saga` 有一定的了解。可以参考[Choerodon猪齿鱼平台中的微服务数据一致性解决方案](https://mp.weixin.qq.com/s?__biz=MzU4OTQ3NTQ0OQ==&mid=2247483880&idx=1&sn=f6f94cf64f0e91f460325011f5c8f152&chksm=fdcdbafecaba33e80b22e062724a3775ad3f9349c0503fc2241ba9df5c798e207bfd2305d98f&scene=0#rd)。
+在开始使用`Saga`之前，要确保服务的`choerodon-starters-asgard`依赖在`0.6.3.RELEASE`版本及之上, 推荐最新版`0.12.0.RELEASE`。同时需要对`Saga` 有一定的了解。可以参考[Choerodon猪齿鱼平台中的微服务数据一致性解决方案](https://mp.weixin.qq.com/s?__biz=MzU4OTQ3NTQ0OQ==&mid=2247483880&idx=1&sn=f6f94cf64f0e91f460325011f5c8f152&chksm=fdcdbafecaba33e80b22e062724a3775ad3f9349c0503fc2241ba9df5c798e207bfd2305d98f&scene=0#rd)。
 
 ## 介绍
 

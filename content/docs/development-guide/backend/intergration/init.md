@@ -27,11 +27,11 @@ $ docker exec -ti mysql mysql -u choerodon -p
 ``` sql
 /** init_user.sql */
 CREATE USER 'choerodon'@'%' IDENTIFIED BY "123456";
-CREATE DATABASE IF NOT EXISTS iam_service DEFAULT CHARACTER SET utf8mb4;
+CREATE DATABASE IF NOT EXISTS base_service DEFAULT CHARACTER SET utf8mb4;
 CREATE DATABASE IF NOT EXISTS manager_service DEFAULT CHARACTER SET utf8mb4;
 CREATE DATABASE IF NOT EXISTS asgard_service DEFAULT CHARACTER SET utf8mb4;
 CREATE DATABASE IF NOT EXISTS notify_service DEFAULT CHARACTER SET utf8mb4;
-GRANT ALL PRIVILEGES ON iam_service.* TO choerodon@'%';\
+GRANT ALL PRIVILEGES ON base_service.* TO choerodon@'%';\
 GRANT ALL PRIVILEGES ON manager_service.* TO choerodon@'%';\
 GRANT ALL PRIVILEGES ON asgard_service.* TO choerodon@'%';\
 GRANT ALL PRIVILEGES ON notify_service.* TO choerodon@'%';\
@@ -57,7 +57,7 @@ mysql> show databases;
 +--------------------+
 | information_schema |
 | asgard_service     |
-| iam_service        |
+| base_service        |
 | manager_service    |
 | mysql              |
 | notify_service     |
@@ -70,7 +70,7 @@ mysql> show databases;
 
 ## 初始化数据库
 
-需初始化`manager-service`，`iam-service`两个数据库。
+需初始化`manager-service`，`base_service`两个数据库。
 
 1.新建初始化数据库临时目录，并创建初始化脚本。
 ``` bash
@@ -88,11 +88,11 @@ mkdir -p manager/script
 cp -r ./manager-service/src/main/resources/script/db ./manager/script
 rm -rf ./manager-service
 
-# get user-service
-git clone https://github.com/choerodon/iam-service.git iam-service
-mkdir -p iam/script
-cp -r ./iam-service/src/main/resources/script/db ./iam/script
-rm -rf ./iam-service
+# get base-service
+git clone https://github.com/choerodon/base_service.git base_service
+mkdir -p base/script
+cp -r ./base-service/src/main/resources/script/db ./base/script
+rm -rf ./base-service
 
 # get choerodon-tool-liquibase
 MAVEN_LOCAL_REPO=$(cd / && mvn help:evaluate -Dexpression=settings.localRepository -q -DforceStdout)
@@ -112,12 +112,12 @@ java -Dspring.datasource.url="jdbc:mysql://localhost:3306/manager_service?useUni
  -Ddata.dir=./manager \
  -jar ${TOOL_JAR_PATH}
  
-# init iam-service
-java -Dspring.datasource.url="jdbc:mysql://localhost:3306/iam_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
+# init base-service
+java -Dspring.datasource.url="jdbc:mysql://localhost:3306/base_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
  -Dspring.datasource.username=choerodon \
  -Dspring.datasource.password=123456 \
  -Ddata.drop=false -Ddata.init=true \
- -Ddata.dir=./iam \
+ -Ddata.dir=./base \
  -jar ${TOOL_JAR_PATH}
  ```
 

@@ -38,7 +38,7 @@ git config --global user.email "Your Email"
 1. 在 [Oracle 官网](https://www.oracle.com/technetwork/cn/java/javase/downloads/index.html) 下载对应平台的 JDK 1.8.0 以上的环境。
 2. 本地执行安装文件，安装 JDK 环境。
 3. Win 在环境变量系统变量中 配置环境变量 `JAVA_HOME` 指向JDK安装目录，并将 path 配置 JDK 的环境变量 指向 JDK 安装目录下 `JDK/bin`，
-4. 配置完成后打开 git bash 执行 `java` ，有提示则说明环境安装成功。(git bash执行会有乱码，cmd则正常)
+4. 配置完成后打开 git bash 执行 `javac` ，有提示则说明环境安装成功。(git bash执行会有乱码，cmd则正常)
 
 ## Maven 安装
 
@@ -91,11 +91,11 @@ max_connections=500
 ``` sql
 /** init_user.sql */
 CREATE USER 'choerodon'@'%' IDENTIFIED BY "123456";
-CREATE DATABASE IF NOT EXISTS iam_service DEFAULT CHARACTER SET utf8mb4;
+CREATE DATABASE IF NOT EXISTS base_service DEFAULT CHARACTER SET utf8mb4;
 CREATE DATABASE IF NOT EXISTS manager_service DEFAULT CHARACTER SET utf8mb4;
 CREATE DATABASE IF NOT EXISTS asgard_service DEFAULT CHARACTER SET utf8mb4;
 CREATE DATABASE IF NOT EXISTS notify_service DEFAULT CHARACTER SET utf8mb4;
-GRANT ALL PRIVILEGES ON iam_service.* TO choerodon@'%';\
+GRANT ALL PRIVILEGES ON base_service.* TO choerodon@'%';\
 GRANT ALL PRIVILEGES ON manager_service.* TO choerodon@'%';\
 GRANT ALL PRIVILEGES ON asgard_service.* TO choerodon@'%';\
 GRANT ALL PRIVILEGES ON notify_service.* TO choerodon@'%';\
