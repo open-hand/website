@@ -38,7 +38,7 @@ helm install c7n/sonarqube \
     --set postgresql.persistence.storageClass=nfs-provisioner \
     --set ingress.enabled=true \
     --set ingress.'hosts[0]'=sonarqube.example.choerodon.io \
-    --set plugins.'install[0]'=https://file.choerodon.com.cn/choerodon-install/sonarqube/sonar-auth-choerodonoauth-plugin-1.4-RELEASE.jar \
+    --set plugins.'install[0]'=https://file.choerodon.com.cn/choerodon-install/sonarqube/sonar-auth-choerodonoauth-plugin-1.5-RELEASE.jar \
     --version 0.15.0 \
     --name sonarqube \
     --namespace c7n-system
@@ -99,20 +99,26 @@ helm install c7n/sonarqube \
 - 配置默认新建项目为`Private`, 进入 `Administration` -> `Projects` -> `Management`
     ![](/docs/installation-configuration/image/sonarqube_1.png)
    
-- 更改默认权限模板, 进入 `Administration` -> `Security` -> `Permission Templates` ,去掉 `sonar-users` 用户组所有权限
-    ![](/docs/installation-configuration/image/sonarqube_2.png)
-    ![](/docs/installation-configuration/image/sonarqube_3.png)
-
 ### 配置认证插件
 - 使用管理员用户登录 SoanrQube
 - 进入 `Administration` -> `Configuration` ->`choerodon`
 - 更改 `Enabled` 为启用
 - 更改 `Choerodon url` 为当前使用的 `choerodon api getaway` 地址；默认地址为：`http://api.example.choerodon.io`
     ![](/docs/installation-configuration/image/sonarqube_4.png)
+    
+- 更改 `sonar url` 为当前使用的SonarQube实际地址
 - 退出登录，测试使用choerodon登录,出现如下界面
     ![](/docs/installation-configuration/image/sonarqube_5.png)
     
 ## Choerodon应用关联SonarQube项目
+- 部署devops-service时添加SonarQube环境变量
+
+```
+    SERVICES_SONARQUBE_URL: http://sonarqube.example.choerodon.io
+    SERVICES_SONARQUBE_USERNAME: admin
+    SERVICES_SONARQUBE_PASSWORD: admin
+```
+
 - 在.gitlab-ci.yml文件build阶段添加
 
 ```- mvn --batch-mode  verify sonar:sonar  -Dsonar.host.url=$SONAR_URL -Dsonar.login=$SONAR_LOGIN -Dsonar.gitlab.project_id=$CI_PROJECT_PATH -Dsonar.gitlab.commit_sha=$CI_COMMIT_SHA -Dsonar.gitlab.ref_name=$CI_COMMIT_REF_NAME -Dsonar.analysis.serviceGroup=$GROUP_NAME -Dsonar.analysis.commitId=$CI_COMMIT_SHA -Dsonar.projectKey=${GROUP_NAME}:${PROJECT_NAME}```
