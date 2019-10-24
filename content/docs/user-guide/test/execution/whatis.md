@@ -4,6 +4,8 @@ description = ""
 weight = 1
 +++
 
+# 什么是测试执行
+
 ## 1. 概述
 
 执行测试即为测试运行或执行时发生的事情提供一个高级的状态，并对其进行一些后续操作。
@@ -12,7 +14,7 @@ weight = 1
 
 ## 2. 为什么用测试执行
 
-使用测试执行可以:
+使用测试执行可以：
 
 - 提高测试的灵活性和规范性
 - 并且提高测试用例的复用性
@@ -46,7 +48,7 @@ weight = 1
 
 其他操作：
 
-- 点击用例行最右的![image](/docs/user-guide/test/execution/image/TestExecute-05.png)，可以切通过或失败的状态。
+- 点击用例行最右的![image](/docs/user-guide/test/execution/image/TestExecute-07.png)，可以切换通过或失败的状态。
 - 点击快速筛选处的下拉菜单`执行方`和`被指定人`可以对用例进行筛选。
 
 ## 6.  阅读更多

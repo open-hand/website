@@ -4,6 +4,8 @@ description = ""
 weight = 7
 +++
 
+# 使用迭代工作台
+
 ## 1. 概述
 
 迭代工作台以[冲刺](../../work-lists/sprint)为维度为用户快速展示某冲刺的各种统计信息，有利于项目管理者预估冲刺进度，并且及时评估项目存在的风险。
@@ -44,7 +46,6 @@ weight = 7
 ![image](/docs/user-guide/cooperation/iteration-plan/image/scrumboard-33.png)
 
 详情情查看[燃尽图](../../../operation/agile-report/burn-down)
-
 
 ## 6. 迭代问题类型分布图
 

@@ -4,6 +4,7 @@ description = ""
 weight = 2
 +++
 
+# 资源视图
 
 ## 1. 概述
 
@@ -15,8 +16,9 @@ weight = 2
 
 在资源视图的环境层中，主要展示了当前环境中所有资源的数量以及其中Pod对于CPU和内存资源的用量排行。以便运维人员能实时掌控各种资源的状态。
 
-> 仅项目所有者和被分配环境权限的项目成员能在此处查看到该环境的资源信息。
-
+<blockquote class="note"> 
+仅项目所有者和被分配环境权限的项目成员能在此处查看到该环境的资源信息。
+</blockquote>
 
 ### 2.1 查看资源数量
 
@@ -31,8 +33,11 @@ weight = 2
 用户可在此查看当前环境中Pod的CPU用量和内存用量的排行。
 
 ## 3. 资源列表层
+
 ### 3.1 资源操作
+
 #### 3.1.1 创建操作
+
 ##### 3.1.1.1 创建网络
 
 ![image](/docs/user-guide/deploy/app-deploy/resource/images/resource-34.png)
@@ -40,7 +45,7 @@ weight = 2
  1. 在树结构中点击进入网络列表页面，再点击顶部的`创建网络`按钮。
 
  2. 填写 `网络名称`。
- > 网络名称只能由小写字母、数字、"-"组成，并且以小写字母开头，不能以"-"结尾，网络名称是环境下唯一。
+    网络名称只能由小写字母、数字、"-"组成，并且以小写字母开头，不能以"-"结尾，网络名称是环境下唯一。
 
  3. 选择`目标对象`，选择类型为`选择实例`、`填写标签`或是 `Endpoints`
 
@@ -87,17 +92,17 @@ weight = 2
 
 1. 在树结构中点击进入域名列表页面，再点击顶部的 `创建域名`按钮。
 2. 在创建页面，输入`域名名称`。
-   > 域名名称由小写字母、数字、'-'组成，并且必须以字母、数字开始和结束。
+   域名名称由小写字母、数字、'-'组成，并且必须以字母、数字开始和结束。
 3. 选择网络协议。
-   > 目前支持选择 `普通协议`与 `加密协议`。若选择为 `普通协议`，则表示创建出的域名将不会使用特殊加密的安全方式，而选择为 `加密协议`后，则需要选择该项目下可用的域名证书，以此来作为域名加密的载体。
+   目前支持选择 `普通协议`与 `加密协议`。若选择为 `普通协议`，则表示创建出的域名将不会使用特殊加密的安全方式，而选择为 `加密协议`后，则需要选择该项目下可用的域名证书，以此来作为域名加密的载体。
 4. 填写域名地址。
-   > 域名地址不能随意填写，必须指向集群的泛域名。
+   域名地址不能随意填写，必须指向集群的泛域名。
 
 5. 填写路径、选择网络与端口。
     
-    >   - 路径: 即子路径，同时每条路径与域名地址会组成唯一性校验。
-    >   - 网络：资源视图中创建域名时，可选择该环境中所有的网络。
-    >   - 端口：此处的端口指的是网络端口，只能从所选网络对应的端口中进行选择。
+   - 路径: 即子路径，同时每条路径与域名地址会组成唯一性校验。
+   - 网络：资源视图中创建域名时，可选择该环境中所有的网络。
+   - 端口：此处的端口指的是网络端口，只能从所选网络对应的端口中进行选择。
 
 6. 域名创建成功后，将会出现在域名列表中，同时根据此域名就可以访问相应的服务。
 
@@ -108,22 +113,24 @@ weight = 2
 1. 在树结构中点击进入证书列表页面，再点击顶部的 `创建证书` ；
 
 2. 填写`证书名称`，为该证书填写一个名称；  
-   > 证书名称由小写字母、数字或‘-’组成，必须以字母或数字开始和结束；且在环境下唯一。
+    证书名称由小写字母、数字或‘-’组成，必须以字母或数字开始和结束；且在环境下唯一。
 
 3. 选择`参数配置`，选择类型为 `申请证书`、`上传证书`或是`选择证书` ；
  
     - 申请证书:  
-![image](/docs/user-guide/deploy/app-deploy/resource/images/resource-37.png)
+
+    ![image](/docs/user-guide/deploy/app-deploy/resource/images/resource-37.png)
          - 选择了申请证书之后，只需输入域名。但若是所选环境对应的集群并未安装CrtManager，则不能进行申请证书的操作。
             <blockquote class="note">此处的CrtManager为二开版本，并非官方版本；但自0.12.0版本后，CertManager的安装被集成到了agent里，agent会根据设置自行安装对应版本的CertManager。
             </blockquote>
 
         
     - 上传证书:  
-![image](/docs/user-guide/deploy/app-deploy/resource/images/resource-38.png)
+
+    ![image](/docs/user-guide/deploy/app-deploy/resource/images/resource-38.png)
       - 若选择上传证书，需要输入域名，并且粘贴上传与该域名关联的证书文件内容：包括一个key文件和一个cert文件。
               
-         > 此处输入的域名必须与上传的证书文件相匹配
+        此处输入的域名必须与上传的证书文件相匹配
     
 
     - 选择证书:  
@@ -140,16 +147,16 @@ weight = 2
 
 2. 填写`配置映射名称`与 `配置映射描述`，为该配置映射填写一个名称并添加描述；
 
-    > 配置映射名称由小写字母、数字或‘-’组成，必须以字母或数字开始和结束；且在环境下唯一。
+    - 配置映射名称由小写字母、数字或‘-’组成，必须以字母或数字开始和结束；且在环境下唯一。
 
 3. 填写`键值对`，或是直接粘贴多行“键=值”格式的字段至任何键框中，来批量输入键值对 ；或者直接点击`编辑YAML`，便可以YAML格式进行编辑； 
 
-    > - 键：可以是任意的大小写字母，不能输入除"."、"-"和"_"以外的字符！且在同一个配置映射下键不能相同。  
-    > - YAML格式：YAML格式与键值对格式仅可在正确格式的情况下进行切换。
+    - 键：可以是任意的大小写字母，不能输入除"."、"-"和"_"以外的字符！且在同一个配置映射下键不能相同。  
+    - YAML格式：YAML格式与键值对格式仅可在正确格式的情况下进行切换。
  
- 4. 点击 `创建`完成配置映射的创建。  
+4. 点击 `创建`完成配置映射的创建。  
 
-    >  高级功能：您可粘贴多行“键=值”格式的字段至任何键框中，以便于批量输入键值对。
+    - 高级功能：您可粘贴多行“键=值”格式的字段至任何键框中，以便于批量输入键值对。
 
 ##### 3.1.1.5 创建密文
 
@@ -158,16 +165,16 @@ weight = 2
 1. 在密文列表界面，点击顶部的 `创建密文` 按钮。
 2. 填写`密文名称`与 `密文描述`。
 
-    > 密文名称由小写字母、数字或‘-’组成，并且必须以字母或数字开始和结束。且在环境下唯一。
+    - 密文名称由小写字母、数字或‘-’组成，并且必须以字母或数字开始和结束。且在环境下唯一。
 
 3. 填写`键值对`，或是直接粘贴多行“键=值”格式的字段至任何键框中，来批量输入键值对 ； 
 
-    >  - 键可以是任意的大小写字母，不能输入除"."、"-"和"_"以外的字符，且在同一个配置映射下键不能相同。  
+    - 键可以是任意的大小写字母，不能输入除"."、"-"和"_"以外的字符，且在同一个配置映射下键不能相同。  
  
 
 4. 点击 `创建`完成密文的创建。  
 
-    > 高级功能：您可粘贴多行“键=值”格式的字段至任何键框中，以便于批量输入键值对。
+    - 高级功能：您可粘贴多行“键=值”格式的字段至任何键框中，以便于批量输入键值对。
 
 ##### 3.1.1.6 创建自定义资源
 
@@ -193,7 +200,9 @@ weight = 2
 - 在网络列表中，选择一个网络，点击该网络的名称，右侧会弹出网络的修改界面；此处支持修改网络的目标对象以及网络配置。
 - 或者在左侧的树结构中，点击某个网络名称后面的![image](https://minio.choerodon.com.cn/knowledgebase-service/file_4db3cb6300ca47369bbf2512d2eabf3d_blob.png)图标，选择 `修改`，同样可以对网络进行修改。
 
-> 若某个网络的目标对象不可用或是被删除后，需要在此手动修改其目标对象。
+<blockquote class="note"> 
+若某个网络的目标对象不可用或是被删除后，需要在此手动修改其目标对象。
+</blockquote>
 
 ##### 3.1.2.3 修改域名
 
@@ -230,14 +239,18 @@ weight = 2
 
 在左侧树结构中选择一个启用或停用状态的实例，点击该实例后面的![image](https://minio.choerodon.com.cn/knowledgebase-service/file_7671a4afc2b040c2b315cadbfa688727_blob.png)图标 ，选择 `删除实例`，操作成功后，该实例会从树结构中移除。
 
-> 删除实例会导致为该实例创建的service 和ingress 不可用，请谨慎操作！
+<blockquote class="warning"> 
+删除实例会导致为该实例创建的service 和ingress 不可用，请谨慎操作！
+</blockquote>
 
 ##### 3.1.2.2 删除网络
 
 - 在列表中选择一个网络，点击网络后的![image](https://minio.choerodon.com.cn/knowledgebase-service/file_4db3cb6300ca47369bbf2512d2eabf3d_blob.png)图标，选择 `删除`，即可删除对应的网络。
 -  或者在左侧的树结构中，点击某个网络名称后面的![image](https://minio.choerodon.com.cn/knowledgebase-service/file_7671a4afc2b040c2b315cadbfa688727_blob.png)图标，选择 `删除`，同样可以对网络进行删除。
 
-> 删除网络后，将导致与其关联的域名不可用！
+<blockquote class="warning"> 
+删除网络后，将导致与其关联的域名不可用！
+</blockquote>
 
 ##### 3.1.2.3 删除域名
 
@@ -264,6 +277,7 @@ weight = 2
 #### 3.2.1 实例列表
 
 ![image](/docs/user-guide/deploy/app-deploy/resource/images/resource-48.png)
+
 - 实例名称：即实例的名称。
 - 版本：实例中正在运行的应用服务版本。
 - 应用服务：实例对应的应用服务。
@@ -272,6 +286,7 @@ weight = 2
 #### 3.2.2 网络列表
 
 ![image](/docs/user-guide/deploy/app-deploy/resource/images/resource-49.png)
+
 - 网络名称：即网络的名称。
 - 目标对象类型：网络中配置的目标对象的类型，有 `实例`、`标签`和 `Endpoints`三种类型。
 - 目标对象：即具体目标对象的名称。
@@ -280,6 +295,7 @@ weight = 2
 #### 3.2.3 域名列表
 
 ![image](/docs/user-guide/deploy/app-deploy/resource/images/resource-50.png)
+
 - 域名名称：即域名的名称。
 - 地址：即域名的地址。
 - 路径：即域名中包含的所有路径。
@@ -288,6 +304,7 @@ weight = 2
 #### 3.2.4 证书列表
 
 ![image](/docs/user-guide/deploy/app-deploy/resource/images/resource-51.png)
+
 - 证书名称：证书的名称。
 - 域名地址：证书中对应的域名地址。
 - 有效期：即该证书的有效期限。
@@ -295,6 +312,7 @@ weight = 2
 #### 3.2.6 配置映射列表
 
 ![image](/docs/user-guide/deploy/app-deploy/resource/images/resource-52.png)
+
 - 配置映射：配置映射的名称与状态。
 - 键：配置映射中所有的键。
 - 更新时间：该配置映射最近的更新时间。
@@ -302,6 +320,7 @@ weight = 2
 #### 3.2.7 密文列表
 
 ![image](/docs/user-guide/deploy/app-deploy/resource/images/resource-53.png)
+
 - 密文：密文的名称与状态。
 - 键：密文中所有的键。
 - 更新时间：该密文最近的更新时间。
@@ -309,6 +328,7 @@ weight = 2
 #### 3.2.8 自定义资源列表
 
 ![image](/docs/user-guide/deploy/app-deploy/resource/images/resource-54.png)
+
 - 名称：自定义资源的名称。
 - 资源类型：自定义资源的类型。
 - 更新时间：自定义资源最近的更新时间。
@@ -325,7 +345,7 @@ weight = 2
 
 运行详情页面展示了Chart 里定义的资源对象的参数信息，其中主要包括：Deployment、StatefulSet、DaemonSet、PVC、Ingress 与Service。
 
-> 运行详情中支持显示以上资源对象的具体参数，但只会展示Chart包中已定义好的资源。
+运行详情中支持显示以上资源对象的具体参数，但只会展示Chart包中已定义好的资源。
 
 1. Deployment：包括Deployment的名称与创建时间，标签、端口号、ReplicaSet的上限数、当前实际数以及可用数。同时，还显示了其中Pods的数量与状态，并能在此页面直接完成Pod的增减。此外，点击下方的`查看更多详情`，会从右侧展开显示更多关于deployment详情。如：数据卷、健康检查、主机设置、环境变量。  
 2. StatefulSet：包括StatefulSet的名称、更新时间、状态和Pod的数量与状态。
@@ -351,24 +371,24 @@ Pod详情页面主要用于查看和管理系统中的容器化实例，用户�
 ![image](/docs/user-guide/deploy/app-deploy/resource/images/resource-57.png)
 
 1. 点击 `Pod详情`进入Pod与容器的管理界面，可以通过列表信息观察Pod与容器的状态、Pod IP、可用情况以及创建时间；
-    >  - Pod：此处包含了Pod的可用状态与名称；
-    >  - 容器：即Pod中所含的Container；
-    >  - Pod IP：Pod的地址；
-    >  - 创建时间：容器创建的时间；  
+    - Pod：此处包含了Pod的可用状态与名称；
+    - 容器：即Pod中所含的Container；
+    - Pod IP：Pod的地址；
+    - 创建时间：容器创建的时间；  
 
 2. 点击Pod名称后的![image](https://minio.choerodon.com.cn/knowledgebase-service/file_7671a4afc2b040c2b315cadbfa688727_blob.png)图标，选择 `容器日志`，即可查看对应Pod中所有容器的日志。  
  
-![image](/docs/user-guide/deploy/app-deploy/resource/images/resource-58.png)
+    ![image](/docs/user-guide/deploy/app-deploy/resource/images/resource-58.png)
  
 3. 点击Pod名称后的![image](https://minio.choerodon.com.cn/knowledgebase-service/file_7671a4afc2b040c2b315cadbfa688727_blob.png)图标，选择 `运行命令`， 即可使用shell命令操作该容器。
 
-![image](/docs/user-guide/deploy/app-deploy/resource/images/resource-59.png)
+    ![image](/docs/user-guide/deploy/app-deploy/resource/images/resource-59.png)
 
 #### 4.1.3.2 Pod 状态
 
 Pod的状态分为以下五种，分别为 Pending、Running、Succeeded、Failed 和 Unknown。
 
- 1. Pending：Kubernetes 已经开始创建容器，但是容器中的一个或多个容器还没有被启动。比如容器正处在应该被分配到哪个节点上这个调度过程中，或者 Kubernetes 还在从镜像仓库中下载容器中容器镜像这个下载过程中。
+1. Pending：Kubernetes 已经开始创建容器，但是容器中的一个或多个容器还没有被启动。比如容器正处在应该被分配到哪个节点上这个调度过程中，或者 Kubernetes 还在从镜像仓库中下载容器中容器镜像这个下载过程中。
 
 2. Running：Kubernetes 已经将容器分配到节点上，并且容器中的所有容器都启动了。还包括容器中至少有一个容器仍然在运行状态，或者正在重新启动状态。
 
@@ -412,7 +432,7 @@ Pod的状态分为以下五种，分别为 Pending、Running、Succeeded、Faile
 实例操作状态指的是该实例最近一次操作的状态，而不同的操作状态可以执行不同的操作。具体细节如下所示：
 
 操作状态|修改Values|重新部署|启用实例|停用实例|删除实例
-:----|:----:|:----:|:----:|:----:|:----:|:----:
+----|----|----|----|----|----
 创建中|✔|
 创建成功|✔|✔|✔| |✔|✔
 创建失败|✔|✔|✔| | |✔
@@ -444,6 +464,7 @@ Pod的状态分为以下五种，分别为 Pending、Running、Succeeded、Faile
 #### 4.2.2 负载
 
 ![image](/docs/user-guide/deploy/app-deploy/resource/images/resource-62.png)
+
 网络层的负载模块主要展示了与此网络相关的实例的状态与信息。
 
 > 只有目标对象为 `实例`的网络才会显示负载模块；即目标对象为 `标签`或 `Endpoints`的网络，将不可见此模块。
@@ -499,6 +520,6 @@ Pod的状态分为以下五种，分别为 Pending、Running、Succeeded、Faile
 
 ## 5. 阅读更多
 
-- [实例视图](同名)
-- [流水线](同名)
-- [环境配置](同名)
+- [部署](../../deploy)
+- [流水线](../../pipline)
+- [环境配置](../../../env-config)

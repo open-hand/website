@@ -4,6 +4,7 @@ description = ""
 weight = 8
 +++
 
+# 结束冲刺
 
 ## 1. 概述
 
@@ -13,13 +14,15 @@ weight = 8
 
 ## 2. 关闭冲刺
 
-* 方法一：点击迭代计划页面看板右上角`完成迭代`按钮
+* 方法一：点击`工作列表`页面右上角`关闭冲刺`按钮
 
-* 方法二：点击`工作列表`页面右上角`关闭冲刺`按钮
+* 方法二：点击迭代计划页面看板右上角`完成迭代`按钮
 
 ![image](/docs/user-guide/cooperation/iteration-plan/image/scrumboard-38.png)
 
-<blockquote class="note">注：关闭冲刺时，会弹出冲刺的统计界面，包括已经完成、未完成问题的总数量，您可以选择将未完成的问题移入下一个[冲刺](./../work-lists/sprint)或者[待办事项](../../work-lists)中。</blockquote>
+<blockquote class="note">
+关闭冲刺时，会弹出冲刺的统计界面，包括已经完成、未完成问题的总数量，您可以选择将未完成的问题移入下一个冲刺或者待办事项中。
+</blockquote>
 
 最后点击结束按钮即可。
 

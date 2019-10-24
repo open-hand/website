@@ -4,13 +4,16 @@ description = ""
 weight = 4
 +++
 
+# 冲刺
+
 ## 1. 概述
 
 冲刺是团队处理事务的一段短期迭代周期，通常用冲刺的目标来定义冲刺，每个冲刺都发生在一定的时间期限之内，有明确的开始日期和结束日期，冲刺必须短，长度在一周到一个月之间，长度一般应当保持一致，在这个时间段内，团队需要以稳定的步调完成一组与冲刺目标一致的工作。
 
 ## 2. 创建冲刺
 
-在待办事项页面上通过点击`创建冲刺`即可快速创建冲刺。  
+在待办事项页面上通过点击`创建冲刺`即可快速创建冲刺。
+
 ![image](/docs/user-guide/cooperation/work-lists/image/work-list-17.png) 
 
 具体操作如下：
@@ -29,6 +32,7 @@ weight = 4
 ## 3. 开启冲刺
 
 ![image](/docs/user-guide/cooperation/work-lists/image/work-list-18.png)
+s
 ![image](/docs/user-guide/cooperation/work-lists/image/work-list-19.png)
 
 * 冲刺里添加完问题后，可在冲刺右上角点击`开启冲刺`按钮

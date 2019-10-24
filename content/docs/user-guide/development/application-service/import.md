@@ -4,7 +4,9 @@ description = ""
 weight = 2
 +++
 
-## 1 概述
+# 导入应用服务
+
+## 1. 概述
 
 导入应用服务目前有3个来源，分别是：共享应用（组织内其他项目共享至本项目下的应用服务）、GitHub与GitLab。目的是从这些来源中导入已有的应用服务及其对应的[代码仓库](../../code-manage/repository)，并支持在已有应用服务的基础上进行开发，以此来避免重复造轮子的情况。
 
@@ -12,9 +14,10 @@ weight = 2
 
 > 仅项目所有者角色能使用此功能；想了解如何在项目下分配角色，请参考[团队成员](../../../cooperation/teammember)页面。
 
-## 2 具体来源与步骤
+## 2. 具体来源与步骤
 
-**共享应用**    
+### 2.1 共享应用 
+
 ![image](/docs/user-guide/development/application-service/image/app-service-03.png)
 
 1. 选择导入方式为`共享应用`，点击 `添加应用服务`按钮，右侧弹出选择应用服务的页面。
@@ -27,30 +30,32 @@ weight = 2
    > 
    > 服务版本：导入应用服务时，仅导入该服务对应的代码仓库，因此，此处的服务版本是指该服务版本对应的代码仓库。
 
+### 2.2 从GitHub导入 
 
-
-**从GitHub导入**  
 ![image](/docs/user-guide/development/application-service/image/app-service-04.png)
 
 1. 选择导入方式为 `从GitHub导入`，输入GitHub仓库地址。
 2. 输入应用服务名称；服务名称在项目下唯一。  
 3. 输入应用服务编码；服务编码在项目下唯一。
+
 >目前仅支持从GitHub公库导入应用服务；且不能导入空库。
 
-**从GitLab导入**   
+### 2.3 从GitLab导入 
+
 ![image](/docs/user-guide/development/application-service/image/app-service-05.png)
-1.  选择导入方式为 `从GitLab导入`，输入GitLab仓库地址。
+
+1. 选择导入方式为 `从GitLab导入`，输入GitLab仓库地址。
 2. 若为私库，还需输入私有Token。
 3. 输入应用服务名称；服务名称在项目下唯一。  
 4. 输入应用服务编码；服务编码在项目下唯一。
+ 
+<blockquote class="note">
+目前支持从GitLab的公库和私库导入应用服务；且不能导入空库。
+    </blockquote>
 
->目前支持从GitLab的公库和私库导入应用服务；且不能导入空库。
+## 3. 阅读更多
 
-
-
-
-## 2 阅读更多
 * [团队成员](../../../cooperation/teammember)
-*  [权限分配](../permission)
+* [权限分配](../permission)
 * [共享应用服务](../sharing)
 

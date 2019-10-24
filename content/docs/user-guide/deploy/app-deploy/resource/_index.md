@@ -4,6 +4,7 @@ description = ""
 weight = 2
 +++
 
+# 资源
 
 ## 1. 概述
 
@@ -106,7 +107,8 @@ weight = 2
 
 ![image](/docs/user-guide/deploy/app-deploy/resource/images/resource-13.png)
 
-## 阅读更多
+## 4. 阅读更多
+
 - [部署](../deploy)
 - [流水线](../pipline)
 - [环境配置](../../env-config)
