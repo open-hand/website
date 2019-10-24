@@ -29,17 +29,11 @@ helm repo update
       SQL_SCRIPT: |
         CREATE USER IF NOT EXISTS 'choerodon'@'%' IDENTIFIED BY 'password';
         CREATE DATABASE IF NOT EXISTS agile_service DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-        CREATE DATABASE IF NOT EXISTS state_machine_service DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-        CREATE DATABASE IF NOT EXISTS issue_service DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-        CREATE DATABASE IF NOT EXISTS foundation_service DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
         CREATE DATABASE IF NOT EXISTS knowledgebase_service DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
         CREATE DATABASE IF NOT EXISTS test_manager_service DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
         GRANT ALL PRIVILEGES ON test_manager_service.* TO choerodon@'%';
         GRANT ALL PRIVILEGES ON knowledgebase_service.* TO choerodon@'%';
-        GRANT ALL PRIVILEGES ON agile_service.* TO choerodon@'%'; 
-        GRANT ALL PRIVILEGES ON state_machine_service.* TO choerodon@'%';
-        GRANT ALL PRIVILEGES ON issue_service.* TO choerodon@'%';
-        GRANT ALL PRIVILEGES ON foundation_service.* TO choerodon@'%';
+        GRANT ALL PRIVILEGES ON agile_service.* TO choerodon@'%';
         FLUSH PRIVILEGES;
     ```
 
