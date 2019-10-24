@@ -139,7 +139,7 @@ helm repo update
         SPRING_DATASOURCE_PASSWORD: password
         SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
         SPRING_REDIS_PORT: 6379
-        SPRING_REDIS_DATABASE: 1
+        SPRING_REDIS_DATABASE: 6
         EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
         CHOERODON_GATEWAY_URL: http://api.example.choerodon.io
     ```
