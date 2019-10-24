@@ -87,7 +87,7 @@ weight = 9
 
 **资料**：
 
-- [部署流水线用户手册](../../user-guide/deployment/)
+- [部署流水线用户手册](../../user-guide/development/)
 
 - [官网视频资料](../../quick-start/video-tutorial/)
 
