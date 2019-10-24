@@ -20,7 +20,7 @@ helm repo update
     ```yaml
     env:
       open:
-        API_HOST: api.example.choerodon.io
+        API_HOST: http://api.example.choerodon.io
         CLIENT_ID: choerodon
         DEVOPS_HOST: ws://devops.example.choerodon.io
         FILE_SERVER: http://minio.example.choerodon.io
@@ -35,7 +35,7 @@ helm repo update
     preJob:
       preConfig:
         db:
-          dbname: iam_service
+          dbname: base_service
           enabledelete: true
           host: c7n-mysql.c7n-system.svc
           password: password
@@ -65,7 +65,7 @@ helm repo update
         MYSQL_PORT: 3306
         MYSQL_USER: root
         SQL_SCRIPT: |
-          INSERT INTO iam_service.oauth_client (name,organization_id,resource_ids,secret,scope,authorized_grant_types,web_server_redirect_uri,access_token_validity,refresh_token_validity,additional_information,auto_approve,object_version_number,created_by,creation_date,last_updated_by,last_update_date)VALUES('choerodon',1,'default','secret','default','password,implicit,client_credentials,authorization_code,refresh_token','http://c7n.example.choerodon.io',3600,3600,'{}','default',1,0,NOW(),0,NOW());
+          INSERT INTO base_service.oauth_client (name,organization_id,resource_ids,secret,scope,authorized_grant_types,web_server_redirect_uri,access_token_validity,refresh_token_validity,additional_information,auto_approve,object_version_number,created_by,creation_date,last_updated_by,last_update_date)VALUES('choerodon',1,'default','secret','default','password,implicit,client_credentials,authorization_code,refresh_token','http://c7n.example.choerodon.io',3600,3600,'{}','default',1,0,NOW(),0,NOW());
       ```
     - 部署服务
   
