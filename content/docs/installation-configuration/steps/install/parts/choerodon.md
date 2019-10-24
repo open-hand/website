@@ -23,6 +23,10 @@ weight = 10
 helm repo add c7n https://openchart.choerodon.com.cn/choerodon/c7n/
 helm repo update
 ```
+<blockquote class="warning">
+0.19以前的base-service的数据库为iam_service,0.19以后更名为base_service,对于配置文件中是使用iam_service还是base_service遵从一下标准：
+如果是新安装的版本，就使用base_service，如果是升级上来的版本，原版本数据库使用的是什么数据库名称，配置文件中就配置对应的数据库名称
+</blockquote>
 
 ## 创建数据库
 
@@ -135,7 +139,7 @@ helm repo update
         SPRING_DATASOURCE_PASSWORD: password
         SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
         SPRING_REDIS_PORT: 6379
-        SPRING_REDIS_DATABASE: 1
+        SPRING_REDIS_DATABASE: 6
         EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
         CHOERODON_GATEWAY_URL: http://api.example.choerodon.io
     ```
