@@ -35,11 +35,11 @@ helm repo update
       MYSQL_PASS: password
       SQL_SCRIPT: |
         CREATE USER IF NOT EXISTS 'choerodon'@'%' IDENTIFIED BY 'password';
-        CREATE DATABASE IF NOT EXISTS iam_service DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+        CREATE DATABASE IF NOT EXISTS base_service DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
         CREATE DATABASE IF NOT EXISTS manager_service DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
         CREATE DATABASE IF NOT EXISTS asgard_service DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
         CREATE DATABASE IF NOT EXISTS notify_service DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-        GRANT ALL PRIVILEGES ON iam_service.* TO choerodon@'%';
+        GRANT ALL PRIVILEGES ON base_service.* TO choerodon@'%';
         GRANT ALL PRIVILEGES ON manager_service.* TO choerodon@'%';
         GRANT ALL PRIVILEGES ON asgard_service.* TO choerodon@'%';
         GRANT ALL PRIVILEGES ON notify_service.* TO choerodon@'%';
@@ -323,7 +323,7 @@ helm repo update
         SPRING_CLOUD_CONFIG_ENABLED: true
         SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
         SPRING_DATASOURCE_PASSWORD: password
-        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/iam_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
+        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/base_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
         SPRING_DATASOURCE_USERNAME: choerodon
         SPRING_REDIS_DATABASE: 4
         SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
@@ -377,7 +377,7 @@ helm repo update
         SPRING_CLOUD_CONFIG_ENABLED: true
         SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
         SPRING_DATASOURCE_PASSWORD: password
-        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/iam_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
+        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/base_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
         SPRING_DATASOURCE_USERNAME: choerodon
         SPRING_REDIS_DATABASE: 6
         SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
