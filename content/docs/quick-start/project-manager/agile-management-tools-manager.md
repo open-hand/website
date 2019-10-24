@@ -28,7 +28,7 @@ type = "docs"
 
 ## 前置条件
 
-**1.** 在操作之前保证[系统配置](../../../user-guide/system-configuration)已经配置完全。
+**1.** 在操作之前保证[系统配置](../../../user-guide/manager-guide/system-configuration)已经配置完全。
 
 **2.** 用户必须拥有目标项目的`项目管理员`权限。
 

@@ -16,7 +16,7 @@ type = "docs"
 
 ## 前置条件
 
-**1.** 在操作之前保证[系统配置](../../../user-guide/system-configuration)已经配置完全。
+**1.** 在操作之前保证[系统配置](../../../user-guide/manager-guide/system-configuration)已经配置完全。
 
 **2.** 用户必须属于组织层，且属于唯一组织。
 
@@ -63,7 +63,7 @@ type = "docs"
 
 **第一步：**  使用项目所有者的角色登录系统，并切换到已经创建的项目下，例如`Choerodon`下的`猪齿鱼研发`。  
 
-**第二步：**  点击左上菜单按钮，选择`项目设置`模块，点击`项目角色分配`，进入[项目角色分配](../../../user-guide/system-configuration/project/role-assignment)操作界面，点击`添加`。    
+**第二步：**  点击左上菜单按钮，选择`项目设置`模块，点击`团队成员`，进入[团队成员](../../../user-guide/manager-guide/system-configuration/site-user)操作界面，点击`添加`。    
  ![Role](/docs/quick-start/image/Project9.png)  
  
   **第三步：**  从右侧滑出添加成员角色页面后，输入相关信息，有成员、角色。信息填写完成后，点击`添加`即可。
@@ -86,7 +86,7 @@ type = "docs"
 {{< note >}}
   项目角色分配仅项目所有者可操作。  
 
-  项目所有者、项目成员需在[角色分配](../../../user-guide/system-configuration/platform/role)中配置好对应的权限。同时，项目所有者需要为相应的项目成员配置相关
+  项目所有者、项目成员需在[角色分配](../../../user-guide/manager-guide/system-configuration/site-user)中配置好对应的权限。同时，项目所有者需要为相应的项目成员配置相关
 {{< /note >}}
 
 在创建好项目，分配完角色之后，您就可以进行应用的创建、开发以及其他更多的操作了。
@@ -95,5 +95,5 @@ type = "docs"
 
 
 ## 相关文档  
-- [系统配置](../../../user-guide/system-configuration)  
-- [角色分配](../../../user-guide/system-configuration/platform/role)
+- [系统配置](../../../user-guide/manager-guide/system-configuration)  
+- [角色分配](../../../user-guide/manager-guide/system-configuration/site-user)

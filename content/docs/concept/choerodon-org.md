@@ -22,7 +22,7 @@ Choerodon 的全局层中包含了系统的一些基本设置，例如组织管�
     全局层可以包含多个组织，例如运营组织。
 </blockquote>
 
-关于全局的具体操作，请查看用户手册[平台设置](../../user-guide/system-configuration/platform/)。
+关于全局的具体操作，请查看用户手册[平台管理](../../user-guide/manager-guide/system-configuration/)。
 
 ## 组织层
 
@@ -32,7 +32,7 @@ Choerodon 使用组织来管理用户、权限、项目、环境资源，以及�
     一个组织可以包含多个项目，例如智能监控。
 </blockquote>
 
-关于组织的具体操作，请查看用户手册[组织设置](../../user-guide/system-configuration/tenant/)。
+关于组织的具体操作，请查看用户手册[组织设置](../../user-guide/manager-guide/smanager-center/)。
 
 <blockquote class="note">
     运营组织是 Choerodon 自带的缺省组织，Choerodon 平台上所有的基础服务全部放在组织下面。例如，用户服务、权限服务、看板服务、Gitlab 服务等。
@@ -42,4 +42,4 @@ Choerodon 使用组织来管理用户、权限、项目、环境资源，以及�
 
 Choerodon 通过项目来管理软件的开发，项目属于组织。Choerodon 中项目的含义和现实项目的含义相似。在组织层我们提到零售公司的例子，需要开发门店管理服务、零售服务、支付服务、库存服务、商品服务等五个服务，我们有两个项目组来完成五个服务的开发，A 项目组开发门店管理服务、零售服务、支付服务，B 项目组负责库存服务、商品服务的开发，我们可以在零售公司组织下创建两个项目，A 项目和 B 项目，在 A 项目中创建门店管理服务、零售服务、支付服务三个服务，在 B 项目下创建库存服务、商品服务两个服务。当然，根据具体的业务系统来定义项目，例如多云应用平台项目，在此项目下创建门店管理服务、零售服务、支付服务、库存服务、商品服务等五个服务。
 
-关于项目的具体操作，请查看用户手册[项目设置](../../user-guide/system-configuration/project/)。
+关于项目的具体操作，请查看用户手册[项目设置](../../user-guide/manager-guide/smanager-center/)。

@@ -18,7 +18,7 @@ type = "docs"
 
 ## 前置条件
 
-在操作之前保证[系统配置](../../../user-guide/system-configuration)已经配置完全。特别是本章节用到的角色、环境管理等配置。
+在操作之前保证[系统配置](../../../user-guide/manager-guide/system-configuration)已经配置完全。特别是本章节用到的角色、环境管理等配置。
 
 ## Git相关
 如需了解`Git`相关的知识请参阅用户手册中[分支管理](../../../user-guide/development-pipeline/branch/) 文档。
@@ -106,7 +106,7 @@ type = "docs"
 
 ## 相关文档
 
-- [系统配置](../../../user-guide/system-configuration)
+- [系统配置](../../../user-guide/manager-guide/system-configuration)
 
 - [创建项目](../../../quick-start/admin/project)
 
