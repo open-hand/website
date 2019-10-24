@@ -74,7 +74,7 @@ weight = 3
 
 Choerodon有三种方式添加系统用户，即注册用户、手工添加用户、第三方认证系统用户。
 
-* [注册成为Choerodon用户](choerodon.io)
+* [注册成为Choerodon用户](http://choerodon.io/zh)
 * [管理员手工添加用户](../../manager-guide/manager-center/org-user/#cresteuser)
 * [与第三方认证系统集成](../../manager-guide/manager-center/setting/#ldap)
 

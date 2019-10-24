@@ -61,7 +61,7 @@ weight = 9
 
 - [创建一个前端应用](../../quick-start/project-manager/microservice-front/)
 
-- [应用管理用户手册](../../user-guide/application-management/)
+- [应用管理用户手册](../../user-guide/development/application-service/)
 
 - [开发流水线用户手册](../../user-guide/development/)
 
@@ -77,7 +77,7 @@ weight = 9
 
 - [使用测试管理](../../quick-start/project-member/test-manager/)
 
-- [测试管理用户手册](../../user-guide/tes/)
+- [测试管理用户手册](../../user-guide/test)
 
 - [官网视频资料](../../quick-start/video-tutorial/)
 

@@ -83,6 +83,6 @@ type = "docs"
 
 ## 相关文档
 
-- [系统配置](../../../user-guide/system-configuration) 
+- [平台管理](../../../user-guide/manager-guide/system-configuration) 
  
 - [创建环境](../../../user-guide/deploy/env-config/)
