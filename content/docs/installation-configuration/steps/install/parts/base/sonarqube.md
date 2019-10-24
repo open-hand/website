@@ -65,6 +65,11 @@ helm install c7n/sonarqube \
   </ul>
 </blockquote>
 
+<blockquote class="warning">
+0.19以前的base-service的数据库为iam_service,0.19以后更名为base_service,对于配置文件中是使用iam_service还是base_service遵从一下标准：
+如果是新安装的版本，就使用base_service，如果是升级上来的版本，原版本数据库使用的是什么数据库名称，配置文件中就配置对应的数据库名称
+</blockquote>
+
 ### 添加Choerodon Client
 - 记得修改`http://sonarqube.example.choerodon.io`为实际的SonarQube地址
   
@@ -75,7 +80,7 @@ helm install c7n/sonarqube \
         --set env.MYSQL_USER=root \
         --set env.MYSQL_PASS=password \
         --set env.SQL_SCRIPT="\
-            INSERT INTO iam_service.oauth_client ( \
+            INSERT INTO base_service.oauth_client ( \
             name\,organization_id\,resource_ids\,secret\,scope\,\
             authorized_grant_types\,web_server_redirect_uri\,\
             access_token_validity\,refresh_token_validity\,\
