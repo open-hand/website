@@ -1,10 +1,10 @@
 +++
-title = "整合前端"
-description = "整合前端"
+title = "前端"
+description = "前端"
 weight = 70
 +++
 
-# 部署整合前端
+# 部署前端
 
 ## 添加choerodon chart仓库
 
