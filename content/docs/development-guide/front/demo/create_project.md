@@ -14,9 +14,10 @@ weight = 1
 1. 新建Demo项目
 2. 新建Demo模块
 3. 编写config.js
-4. 编写package.json
-5. 编写demo入口文件
-6. 页面访问
+4. 编写.env
+5. 编写package.json
+6. 编写demo入口文件
+7. 页面访问
 
 ## 新建Demo项目
 
@@ -32,7 +33,7 @@ $ cd choerodon-todo-service
 创建新模块的文件夹
 
 ``` bash
-$ mkdir -p react/src/app/demo/containers
+$ mkdir -p react
 ```
 
 ## 编写config.js
@@ -47,16 +48,28 @@ $ touch config.js
 ```js
 // config.js
 const config = {
-  local: true, //是否为本地开发
-  server: 'http://api.staging.saas.hand-china.com', // 后端接口服务器地址
-  master: '@choerodon/master',
-  projectType: 'choerodon',
-  buildType: 'single',
-  dashboard: {},
+  master: './node_modules/@choerodon/master/lib/master.js',
+  modules: ['.'],
 };
 
 module.exports = config;
 ```
+
+## 编写.env
+
+在react文件夹下创建`.env`
+
+``` bash
+$ cd react
+$ touch .env
+```
+
+```
+// .env
+API_HOST=http://api.staging.saas.hand-china.com
+CLIENT_ID=localhost
+```
+
 
 ## 编写package.json
 
@@ -74,21 +87,21 @@ $ npm init
   "routeName": "demo",  // routeName为路由前缀（如空，取name为路由前缀）
   "version": "1.0.0",
   "description": "",
-  "main": "./react/src/app/demo/containers/DEMOIndex.js",  // main为入口index的路径（如空，当前模块不会被编译进去，一般只有总前端类型不设置）
+  "main": "./lib/index.js",
   "scripts": {
     "start": "choerodon-front-boot start --config ./react/config.js",
     "dist": "choerodon-front-boot dist --config ./react/config.js",
     "lint-staged": "lint-staged",
     "lint-staged:es": "eslint",
-    "compile": "gulp compile"
+    "compile": "choerodon-front-boot compile"
   },
   "contributors": [
     "choerodon"
   ],
   "license": "ISC",
   "dependencies": {
-    "@choerodon/boot": "0.17.x",
-    "@choerodon/master": "0.17.x"  // 表示进入页面后的部分，菜单、header和AutoRouter等，可自己配置
+    "@choerodon/boot": "0.19.x",
+    "@choerodon/master": "0.19.x"  // 表示进入页面后的部分，菜单、header和AutoRouter等，可自己配置
   },
   "files": [
     "lib"
@@ -115,34 +128,29 @@ $ npm init
 
 ## 编写demo入口文件
 
-在`containers`文件夹下创建`Index`文件，文件名为模块名大写+`Index`。
+在`react`文件夹下创建`index`文件。
 
-`containers`文件夹用于存放前端的页面。
+`routes`文件夹用于存放前端的页面。
 
 ``` bash
-$ touch react/src/app/demo/containers/DEMOIndex.js
+$ touch react/index.js
 ```
 
 ``` js
-// DEMOIndex.js
-import React from 'react';
+// index.js
+import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { inject } from 'mobx-react';
-import { asyncRouter, nomatch } from '@choerodon/boot';
+import { nomatch } from '@choerodon/boot';
 
-@inject('AppState')
-class DEMOIndex extends React.Component {
-  render() {
-    const { match, AppState } = this.props;
-    return (
-      <Switch>
-        <Route path="*" component={nomatch} />
-      </Switch>
-    );
-  }
+function Index({ match }) {
+  return (
+    <Switch>
+      <Route path="*" component={nomatch} />
+    </Switch>    
+  );
 }
 
-export default DEMOIndex;
+export default inject('AppState')(Index);
 ```
 
 ## 启动及页面访问

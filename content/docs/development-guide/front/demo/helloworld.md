@@ -14,56 +14,46 @@ weight = 2
 3. 页面访问
 
 ## 页面编写
-在项目的`react/src/app/demo/containers/organization(project, user, global)`目录下新建一个新的功能文件夹hello及其相关的JS文件。
+在项目的`react/routes`目录下新建一个新的功能文件夹hello及其相关的JS文件。
 
 ``` bash
 $ cd choerodon-todo-service
-$ mkdir -p react/src/app/demo/containers/organization/hello
-$ touch react/src/app/demo/containers/organization/hello/index.js
+$ mkdir -p react/routes/hello
+$ touch react/routes/hello/index.js
 ```
 
 ```js
 // hello/index.js
-import React, { Component } from 'react';
+import React from 'react';
 
-class Hello extends Component {
-  render() {
-    return (
-      <div>Hello, it is a demo!</div>
-    );
-  }
+export default function HelloIndex() {
+  return 'hello';
 }
-
-export default Hello;
 ```
 
 ## 配置异步路由
 
-在`react/src/app/demo/containers/DEMOIndex.js`文件中配置新建文件的访问路径：
+在`react/index.js`文件中配置新建文件的访问路径：
 
 ```js
-// DEMOIndex.js
+// index.js
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { inject } from 'mobx-react';
 import { asyncRouter, nomatch } from '@choerodon/boot';
 
-const HelloIndex = asyncRouter(() => import('./organization/hello'));
+const HelloIndex = asyncRouter(() => import('./routes/hello'));
 
-@inject('AppState')
-class DEMOIndex extends React.Component {
-  render() {
-    const { match, AppState } = this.props;
-    return (
-      <Switch>
-        <Route path={`${match.url}/hello`} component={HelloIndex} />
-        <Route path="*" component={nomatch} />
-      </Switch>
-    );
-  }
+function Index({ match }) {
+  return (
+    <Switch>
+      <Route path={`${match.url}/hello`} component={HelloIndex} />
+      <Route path="*" component={nomatch} />
+    </Switch>
+  );
 }
 
-export default DEMOIndex;
+export default inject('AppState')(Index);
 ```
 
 ## 页面访问
