@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="148px" height="139px" viewBox="0 0 148 139" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>cooperation-4</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="25" cy="25" r="25"></circle>
+        <filter x="-20.0%" y="-16.0%" width="140.0%" height="140.0%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.16 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="产品模块" transform="translate(-1028.000000, -442.000000)">
+            <g id="cooperation-4" transform="translate(1028.000000, 446.000000)">
+                <rect id="矩形" fill="#B7B7B7" x="14" y="129" width="120" height="6"></rect>
+                <rect id="矩形" fill="#9B9B9B" transform="translate(68.094147, 81.554809) rotate(-10.000000) translate(-68.094147, -81.554809) " x="67.5941473" y="56.0548089" width="1" height="51"></rect>
+                <rect id="矩形" fill="#9B9B9B" transform="translate(92.984810, 87.921348) rotate(29.000000) translate(-92.984810, -87.921348) " x="92.4848096" y="65.4213482" width="1" height="45"></rect>
+                <rect id="矩形" fill="#9B9B9B" transform="translate(52.485216, 97.541131) rotate(-42.000000) translate(-52.485216, -97.541131) " x="51.9852164" y="83.541131" width="1" height="28"></rect>
+                <rect id="矩形" fill="#9B9B9B" transform="translate(103.785837, 105.124079) rotate(59.000000) translate(-103.785837, -105.124079) " x="103.285837" y="98.1240786" width="1" height="14"></rect>
+                <path d="M24,129 L24,113 L62,113 C68.5254567,113 73.8343928,118.208544 73.9962001,124.695025 L74,125 C74,118.372583 79.372583,113 86,113 L86,113 L124,113 L124,129 L74,129 L24,129 Z" id="形状结合" fill="#6694EF"></path>
+                <g id="编组-12" transform="translate(35.000000, 0.000000)">
+                    <g id="Oval-5">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                        <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    </g>
+                    <path d="M33.2,12 L17.6,12 C16.17,12 15,13.17 15,14.6 L15,35.4 C15,36.83 16.17,38 17.6,38 L33.2,38 C34.63,38 35.8,36.83 35.8,35.4 L35.8,14.6 C35.8,13.17 34.63,12 33.2,12 L33.2,12 Z M17.6,14.6 L24.1,14.6 L24.1,25 L20.85,23.05 L17.6,25 L17.6,14.6 L17.6,14.6 Z" id="Fill-168" fill="#9BE8EF"></path>
+                </g>
+                <g id="编组-13" opacity="0.6" transform="translate(113.000000, 73.000000)">
+                    <circle id="Oval-5-Copy" fill="#FFFFFF" cx="17.5" cy="17.5" r="17.5"></circle>
+                    <path d="M10,17.2939882 L14.4115835,17.2939882 L14.4115835,12 L10,12 L10,17.2939882 Z M10,23.4703811 L14.4115835,23.4703811 L14.4115835,18.1763929 L10,18.1763929 L10,23.4703811 Z M15.2939882,23.4703811 L19.7055717,23.4703811 L19.7055717,18.1763929 L15.2939882,18.1763929 L15.2939882,23.4703811 Z M20.5884165,23.4703811 L25,23.4703811 L25,18.1763929 L20.5884165,18.1763929 L20.5884165,23.4703811 Z M15.2939882,17.2939882 L19.7055717,17.2939882 L19.7055717,12 L15.2939882,12 L15.2939882,17.2939882 Z M20.5884165,17.2939882 L25,17.2939882 L25,12 L20.5884165,12 L20.5884165,17.2939882 Z" id="Fill-33" fill="#ECECEC"></path>
+                </g>
+                <g id="编组-13" transform="translate(98.000000, 28.000000)">
+                    <circle id="Oval-5-Copy" fill="#FFFFFF" cx="17.5" cy="17.5" r="17.5"></circle>
+                    <path d="M18.2727273,17.1749571 L23.6818182,17.1749571 L23.6818182,18.3327616 L18.2727273,18.3327616 L18.2727273,17.1749571 Z M18.2727273,15.245283 L23.6818182,15.245283 L23.6818182,16.4030875 L18.2727273,16.4030875 L18.2727273,15.245283 Z M18.2727273,19.1046312 L23.6818182,19.1046312 L23.6818182,20.2624357 L18.2727273,20.2624357 L18.2727273,19.1046312 Z M24.4545455,11 L10.5454545,11 C9.69545455,11 9,11.6946827 9,12.5437393 L9,22.5780446 C9,23.4271012 9.69545455,24.1217839 10.5454545,24.1217839 L24.4545455,24.1217839 C25.3045455,24.1217839 26,23.4271012 26,22.5780446 L26,12.5437393 C26,11.6946827 25.3045455,11 24.4545455,11 L24.4545455,11 Z M24.4545455,22.5780446 L17.5,22.5780446 L17.5,12.5437393 L24.4545455,12.5437393 L24.4545455,22.5780446 L24.4545455,22.5780446 Z" id="Shape" fill="#FAD352"></path>
+                </g>
+                <g id="编组-13" transform="translate(0.000000, 54.000000)">
+                    <circle id="Oval-5-Copy" fill="#FFFFFF" cx="20" cy="20" r="20"></circle>
+                    <path d="M22,10 L14,10 C12.9,10 12.01,10.9 12.01,12 L12,28 C12,29.1 12.89,30 13.99,30 L26,30 C27.1,30 28,29.1 28,28 L28,16 L22,10 L22,10 Z M16,24 L24,24 L24,26 L16,26 L16,24 Z M16,20 L24,20 L24,22 L16,22 L16,20 Z M21,17 L21,11.5 L26.5,17 L21,17 L21,17 Z" id="Fill-159" fill="#F8F1A1"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

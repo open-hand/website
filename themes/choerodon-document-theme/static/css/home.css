@@ -344,7 +344,18 @@
 .product-box:last-child{
   border: none;
 }
-
+.product-box:nth-of-type(4) .product-child{
+  width: 3.15rem !important;
+}
+.product-box:nth-of-type(4) .product-child img{
+  width: 100%;
+}
+.product-box:nth-of-type(4) .product-child .product-child-content{
+  width: 2.5rem;
+}
+.product-box:nth-of-type(4) .product-child:nth-of-type(4){
+  display: none;
+}
 .product-box .product-head{
   display: flex;
   flex-direction: row;
