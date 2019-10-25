@@ -89,7 +89,7 @@ weight = 2
 
 配置映射的详情界面展示了其中键值对的内容。 
 
-![image](/docs/user-guide/deploy/app-deploy/resource/images/resource-11.png)
+
 
 #### 3.3.6 密文
 
@@ -97,7 +97,7 @@ weight = 2
  
 密文的详情界面以密文的形式展示了其中键值对的内容。
 
-![image](/docs/user-guide/deploy/app-deploy/resource/images/resource-12.png)
+
 
 #### 3.3.7 自定义资源
 

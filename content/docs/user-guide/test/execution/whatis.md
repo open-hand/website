@@ -55,4 +55,3 @@ weight = 1
 
 - [创建测试用例](../../store/create)
 - [管理测试用例](../../store/manage)
-- [执行测试](../../execution/)

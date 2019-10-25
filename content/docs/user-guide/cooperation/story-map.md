@@ -17,9 +17,9 @@ weight = 5
 
 ### 1.2 猪齿鱼中的故事地图
 
-猪齿鱼中的用户故事地图也是基于敏捷管理的理念设计的，但是整合了版本和[史诗](../work-lists/epic)两个维度对需求进行梳理，对故事进行编排，编排好的用户故事列表指引产品管理者和团队成员开展后续的[迭代](../iteration-plan)工作，印证了“地图”这一概念的作用。 
+猪齿鱼中的用户故事地图也是基于敏捷管理的理念设计的，但是整合了[版本](../work-lists)和[史诗](../work-lists/epic)两个维度对需求进行梳理，对故事进行编排，编排好的用户故事列表指引产品管理者和团队成员开展后续的[迭代](../iteration-plan)工作，印证了“地图”这一概念的作用。
 
-![image](/docs/user-guide/cooperation/image/storyMap-01.png)
+  ![image](/docs/user-guide/cooperation/image/storyMap-01.png)
 
 用户故事地图中主要包含故事地图主界面和工具栏：
 
@@ -31,9 +31,11 @@ weight = 5
 
 ### 2.1 什么是史诗
 
+<blockquote class="note">
 Note：史诗是属性类似的故事的集合，从一定程度上说，史诗是颗粒度更大的用户故事。史诗是编排用户故事地图的基础。
+</blockquote>
 
-&emsp; 关于史诗的相关内容，您还可以阅读 [什么是史诗](../work-lists/epic)
+关于史诗的相关内容，您还可以阅读 [什么是史诗](../work-lists/epic)
 
 ### 2.2 创建一个史诗
 
@@ -51,21 +53,25 @@ Note：史诗是属性类似的故事的集合，从一定程度上说，史诗�
  * 从需求池引入
  * 直接在用户故事主界面的泳道或者版本下创建问题
 
-> 什么是需求池：需求池，顾名思义，是需求的集合，但是不是所有的需求都会进入到需求池，需求池中只包含未被分配到史诗或者版本中的故事，不包含其他类型的需求。
+<blockquote class="note">
+什么是需求池：需求池，顾名思义，是需求的集合，但是不是所有的需求都会进入到需求池，需求池中只包含未被分配到史诗或者版本中的故事，不包含其他类型的需求。
+</blockquote>
 
 1.您可以通过点击`需求池`按钮，通过搜索帮助，选择合适的故事，拖拽到故事地图中，需求池中同样支持通过拖拽调整顺序：
 
-![image](/docs/user-guide/cooperation/image/storyMap-03.png)
+  ![image](/docs/user-guide/cooperation/image/storyMap-03.png)
 
-<blockquote class="note">Note：需求池：是用户所提出的所有需求的汇总，需要注意的是故事地图界面显示的需求池明细，只显示故事这种类型的需求，不显示任务、缺陷类型的问题。</blockquote>
+  <blockquote class="note">
+  需求池：是用户所提出的所有需求的汇总，需要注意的是故事地图界面显示的需求池明细，只显示故事这种类型的需求，不显示任务、缺陷类型的问题。
+  </blockquote>
 
 2.您可以在当前史诗或者版本中直接点击创建问题，编辑问题的描述、优先级、状态、经办人等信息，其中在版本泳道下创建的故事，系统会自动对应版本：
 
-![image](/docs/user-guide/cooperation/image/storyMap-04.png)
+  ![image](/docs/user-guide/cooperation/image/storyMap-04.png)
 
-![image](/docs/user-guide/cooperation/image/storyMap-05.png)
+  ![image](/docs/user-guide/cooperation/image/storyMap-05.png)
 
-关于更多用户故事的操作，请移步[什么是用户故事](../work-lists/user-story)
+  关于更多用户故事的操作，请移步[什么是用户故事](../work-lists/user-story)
 
 
 3.从需求池引入或者新建问题之后，您可以通过拖拽的方式对用户故事地图中已经编排的故事进行调整，比如调整故事的史诗，重新规划故事的版本，如下图：
@@ -89,20 +95,20 @@ Note：史诗是属性类似的故事的集合，从一定程度上说，史诗�
  * 版本泳道：版本泳道模式一般基于已规划的版本和史诗编排和显示用户故事，适用于当前产品已规划版本的情况
 
 
-1.您可以通过点击`工具栏`的`无泳道`按钮，通过选择泳道模式，决定故事地图的显示模式，以下是版本泳道模式：
+- 您可以通过点击`工具栏`的`无泳道`按钮，通过选择泳道模式，决定故事地图的显示模式，以下是版本泳道模式：
 
 ![image](/docs/user-guide/cooperation/image/storyMap-07.png)
 
 
 ## 5. 故事地图扩列
 
-1.当一个史诗下的故事卡片过多时，可以单列排列，也可以通过扩列的方式进行排列，如下图：
+- 当一个史诗下的故事卡片过多时，可以单列排列，也可以通过扩列的方式进行排列，如下图：
 
 ![image](/docs/user-guide/cooperation/image/storyMap-08.png)
 
 ## 6. 全屏显示故事地图
 
-1.用户故事编排结束之后，您可以通过点击`工具栏`的`全屏`按钮全屏显示用户故事地图：
+- 用户故事编排结束之后，您可以通过点击`工具栏`的`全屏`按钮全屏显示用户故事地图：
 
 ![image](/docs/user-guide/cooperation/image/storyMap-09.png)
 

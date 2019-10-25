@@ -37,7 +37,6 @@ choerodon:
 
 ### 添加消费端方法
 
-- 服务启动后，`asgard-service`通过kafka消息监听服务启动后主动拉取@JobTask定义的方法。
 - @JobTask注解的方法参数必须为Map<String, Object>。
 - @JobParam为执行参数, 类型需要为String，Integer，Long，Double，Boolean之一，如果没有设置默认值则创建定时任务时必须指定方法参数。
 - @JobTask注解的方法返回值为Map<String, Object>或者为void。如果返回值为void则传入的参数为前端传入，不会改变；如果为Map<String, Object>，则下一次的执行参数为上一次执行的返回值，可以动态改变。

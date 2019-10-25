@@ -112,7 +112,8 @@ weight = 2
 
 1. 在树结构中点击进入证书列表页面，再点击顶部的 `创建证书` ；
 
-2. 填写`证书名称`，为该证书填写一个名称；  
+2. 填写`证书名称`，为该证书填写一个名称；
+
     证书名称由小写字母、数字或‘-’组成，必须以字母或数字开始和结束；且在环境下唯一。
 
 3. 选择`参数配置`，选择类型为 `申请证书`、`上传证书`或是`选择证书` ；
@@ -120,22 +121,29 @@ weight = 2
     - 申请证书:  
 
     ![image](/docs/user-guide/deploy/app-deploy/resource/images/resource-37.png)
-         - 选择了申请证书之后，只需输入域名。但若是所选环境对应的集群并未安装CrtManager，则不能进行申请证书的操作。
-            <blockquote class="note">此处的CrtManager为二开版本，并非官方版本；但自0.12.0版本后，CertManager的安装被集成到了agent里，agent会根据设置自行安装对应版本的CertManager。
+
+    选择了申请证书之后，只需输入域名。但若是所选环境对应的集群并未安装CrtManager，则不能进行申请证书的操作。
+
+    <blockquote class="note">
+    此处的CrtManager为二开版本，并非官方版本；但自0.12.0版本后，CertManager的安装被集成到了agent里，agent会根据设置自行安装对应版本的CertManager。
             </blockquote>
 
         
     - 上传证书:  
 
     ![image](/docs/user-guide/deploy/app-deploy/resource/images/resource-38.png)
-      - 若选择上传证书，需要输入域名，并且粘贴上传与该域名关联的证书文件内容：包括一个key文件和一个cert文件。
-              
-        此处输入的域名必须与上传的证书文件相匹配
     
+    若选择上传证书，需要输入域名，并且粘贴上传与该域名关联的证书文件内容：包括一个key文件和一个cert文件。
+
+     <blockquote class="note">        
+    此处输入的域名必须与上传的证书文件相匹配
+    </blockquote>
 
     - 选择证书:  
-![image](/docs/user-guide/deploy/app-deploy/resource/images/resource-39.png)
-        - 勾选选择证书的选项后，首先需要在中已被组织授权的证书中选择一个证书，再在此证书的基础上添加域名。
+
+    ![image](/docs/user-guide/deploy/app-deploy/resource/images/resource-39.png)
+
+    勾选选择证书的选项后，首先需要在中已被组织授权的证书中选择一个证书，再在此证书的基础上添加域名。
               
 4. 点击 `创建`完成证书的创建。
 
@@ -171,7 +179,6 @@ weight = 2
 
     - 键可以是任意的大小写字母，不能输入除"."、"-"和"_"以外的字符，且在同一个配置映射下键不能相同。  
  
-
 4. 点击 `创建`完成密文的创建。  
 
     - 高级功能：您可粘贴多行“键=值”格式的字段至任何键框中，以便于批量输入键值对。
@@ -181,9 +188,11 @@ weight = 2
 ![image](/docs/user-guide/deploy/app-deploy/resource/images/resource-42.png)
  
 1. 在自定义资源的列表界面，点击顶部的 `创建自定义资源` 按钮。
+
 2. 选择 `添加模式`
      - 粘贴文件内容添加：直接将YAML文件中的内容粘贴在此处的输入框即可。
      - 直接上传文件添加：支持直接上传本地的YAML文件进行添加。
+
 3. 点击 `创建`，完成对自定义资源的添加。
  
 #### 3.1.2 修改操作
@@ -191,6 +200,7 @@ weight = 2
 ##### 3.1.2.1 修改实例Values与变更实例
 
 - 在实例的详情界面，点击顶部的 `修改Values`按钮，右侧会弹出配置信息的修改界面，修改后，点击下方的`部署`按钮，即可完成对该实例配置信息的修改。
+
 - 在实例的详情界面，点击顶部的 `变更实例`按钮，右侧会弹出变更实例的界面，您可在此升级或回滚实例对应的应用服务版本。
 
 ##### 3.1.2.2 修改网络
@@ -198,6 +208,7 @@ weight = 2
 ![image](/docs/user-guide/deploy/app-deploy/resource/images/resource-43.png)
 
 - 在网络列表中，选择一个网络，点击该网络的名称，右侧会弹出网络的修改界面；此处支持修改网络的目标对象以及网络配置。
+
 - 或者在左侧的树结构中，点击某个网络名称后面的![image](https://minio.choerodon.com.cn/knowledgebase-service/file_4db3cb6300ca47369bbf2512d2eabf3d_blob.png)图标，选择 `修改`，同样可以对网络进行修改。
 
 <blockquote class="note"> 
@@ -209,6 +220,7 @@ weight = 2
 ![image](/docs/user-guide/deploy/app-deploy/resource/images/resource-44.png)
 
 - 在域名列表中，选择一个域名并点击其名称，右侧会弹出域名的修改界面，此处支持修改域名的网络协议、路径、网络及端口。
+
 - 或者在左侧的树结构中，点击某个域名名称后面的![image](https://minio.choerodon.com.cn/knowledgebase-service/file_7671a4afc2b040c2b315cadbfa688727_blob.png)图标，选择 `修改`，同样可以对域名进行修改。
 
 
@@ -224,13 +236,15 @@ weight = 2
 ![image](/docs/user-guide/deploy/app-deploy/resource/images/resource-46.png)
 
 - 在密文列表中，选择一个密文并点击其名称，右侧会弹出密文的修改界面，此处支持修改密文中的键值对。  
+
 - 或者在左侧的树结构中，点击某个密文名称后面的![image](https://minio.choerodon.com.cn/knowledgebase-service/file_7671a4afc2b040c2b315cadbfa688727_blob.png)图标，选择 `修改`，同样可以对密文进行修改。
 
 ##### 3.1.2.6 修改自定义资源
 
 ![image](/docs/user-guide/deploy/app-deploy/resource/images/resource-47.png)
 
-- 在自定义资源的列表中，选择一个自定义资源并点击其名称，右侧会弹出自定义资源的修改界面，此处支持修改自定义资源YAML文件中的内容。  
+- 在自定义资源的列表中，选择一个自定义资源并点击其名称，右侧会弹出自定义资源的修改界面，此处支持修改自定义资源YAML文件中的内容。 
+
 - 或者在左侧的树结构中，点击某个自定义资源名称后面的![image](https://minio.choerodon.com.cn/knowledgebase-service/file_7671a4afc2b040c2b315cadbfa688727_blob.png)图标，选择 `修改`，同样可以对自定义资源进行修改。
 
 #### 3.1.3 删除操作
@@ -246,6 +260,7 @@ weight = 2
 ##### 3.1.2.2 删除网络
 
 - 在列表中选择一个网络，点击网络后的![image](https://minio.choerodon.com.cn/knowledgebase-service/file_4db3cb6300ca47369bbf2512d2eabf3d_blob.png)图标，选择 `删除`，即可删除对应的网络。
+
 -  或者在左侧的树结构中，点击某个网络名称后面的![image](https://minio.choerodon.com.cn/knowledgebase-service/file_7671a4afc2b040c2b315cadbfa688727_blob.png)图标，选择 `删除`，同样可以对网络进行删除。
 
 <blockquote class="warning"> 
@@ -255,21 +270,25 @@ weight = 2
 ##### 3.1.2.3 删除域名
 
 - 在列表中选择一个域名，点击域名后的![image](https://minio.choerodon.com.cn/knowledgebase-service/file_4db3cb6300ca47369bbf2512d2eabf3d_blob.png)图标，选择 `删除`，即可删除对应的域名。
+
 -  或者在左侧的树结构中，点击某个域名名称后面的![image](https://minio.choerodon.com.cn/knowledgebase-service/file_7671a4afc2b040c2b315cadbfa688727_blob.png)图标，选择 `删除`，同样可以对域名进行删除。
 
 ##### 3.1.2.4 删除配置映射
 
 - 在列表中选择一个配置映射，点击配置映射名称后的![image](https://minio.choerodon.com.cn/knowledgebase-service/file_4db3cb6300ca47369bbf2512d2eabf3d_blob.png)图标，选择 `删除`，即可删除对应的配置映射。
+
 -  或者在左侧的树结构中，点击某个配置映射名称后面的![image](https://minio.choerodon.com.cn/knowledgebase-service/file_7671a4afc2b040c2b315cadbfa688727_blob.png)图标，选择 `删除`，同样可以对配置映射进行删除。
 
 ##### 3.1.2.5 删除密文
 
 - 在列表中选择一个密文，点击密文后的![image](https://minio.choerodon.com.cn/knowledgebase-service/file_4db3cb6300ca47369bbf2512d2eabf3d_blob.png)图标，选择 `删除`，即可删除对应的密文。
+
 -  或者在左侧的树结构中，点击某个密文名称后面的![image](https://minio.choerodon.com.cn/knowledgebase-service/file_7671a4afc2b040c2b315cadbfa688727_blob.png)图标，选择 `删除`，同样可以对密文进行删除。
 
 ##### 3.1.2.6 删除自定义资源
 
 - 在列表中选择一个自定义资源，点击自定义资源后的![image](https://minio.choerodon.com.cn/knowledgebase-service/file_4db3cb6300ca47369bbf2512d2eabf3d_blob.png)图标，选择 `删除`，即可删除对应的自定义资源。
+
 -  或者在左侧的树结构中，点击某个自定义资源名称后面的![image](https://minio.choerodon.com.cn/knowledgebase-service/file_7671a4afc2b040c2b315cadbfa688727_blob.png)图标，选择 `删除`，同样可以对自定义资源进行删除。
 
 ### 3.2 资源列表查看
@@ -419,6 +438,7 @@ Pod的状态分为以下五种，分别为 Pending、Running、Succeeded、Faile
 #### 4.1.4.4 停用/启用实例
 
 1. 在左侧树结构中选择某个处于运行状态的实例，点击该实例后面的![image](https://minio.choerodon.com.cn/knowledgebase-service/file_7671a4afc2b040c2b315cadbfa688727_blob.png)图标 ，选择`停用实例`，操作成功后，该实例即为停用状态，且容器状态停止。
+
 2. 在左侧树结构中选择某个处于停用状态的实例，点击该实例后面的![image](https://minio.choerodon.com.cn/knowledgebase-service/file_7671a4afc2b040c2b315cadbfa688727_blob.png)图标 ，选择`启用实例`，操作成功后，该实例即为启用状态。
 
 #### 4.1.4.5 删除实例
