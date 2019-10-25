@@ -29,10 +29,6 @@ weight = 9
 
 **资料**：
 
-- [知识管理快速入门](../../quick-start/project-member/wiki-manager/)
-
-- [知识管理用户手册](../../user-guide/wiki/)
-
 - [官网视频资料](../../quick-start/video-tutorial/)
 
 - [知识管理视频](http://www.itdks.com/liveevent/zs/15196/2de8996b6e834a49ad0ef6732ff69ee6)
@@ -45,7 +41,7 @@ weight = 9
 
 - [敏捷管理快速入门](../../quick-start/project-member/agile-management-tools-member/)
 
-- [敏捷管理用户手册](../../user-guide/agile/)
+- [敏捷管理用户手册](../../user-guide/cooperation/)
 
 - [官网视频资料](../../quick-start/video-tutorial/)
 
@@ -65,9 +61,9 @@ weight = 9
 
 - [创建一个前端应用](../../quick-start/project-manager/microservice-front/)
 
-- [应用管理用户手册](../../user-guide/application-management/)
+- [应用管理用户手册](../../user-guide/development/application-service/)
 
-- [开发流水线用户手册](../../user-guide/development-pipeline/)
+- [开发流水线用户手册](../../user-guide/development/)
 
 - [官网视频资料](../../quick-start/video-tutorial/)
 
@@ -81,7 +77,7 @@ weight = 9
 
 - [使用测试管理](../../quick-start/project-member/test-manager/)
 
-- [测试管理用户手册](../../user-guide/test-management/)
+- [测试管理用户手册](../../user-guide/test)
 
 - [官网视频资料](../../quick-start/video-tutorial/)
 
@@ -91,7 +87,7 @@ weight = 9
 
 **资料**：
 
-- [部署流水线用户手册](../../user-guide/deployment-pipeline/)
+- [部署流水线用户手册](../../user-guide/development/)
 
 - [官网视频资料](../../quick-start/video-tutorial/)
 

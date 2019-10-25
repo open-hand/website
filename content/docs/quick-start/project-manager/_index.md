@@ -11,7 +11,7 @@ weight = 2
 
 ## 前置条件
 - 项目经理是基于项目的，作为项目经理您必须具备 Choerodon 猪齿鱼平台中的`项目所有者`的角色身份。
-- 在操作之前保证[系统配置](../../user-guide/system-configuration)已经配置完全。
+- 在操作之前保证[系统配置](../../user-guide/manager-guide/system-configuration)已经配置完全。
 - 本文档中不包含Choerodon功能理论等相关知识，如果要深入的了解Choerodon相关的知识，您可以阅读[用户手册](../../user-guide/)，或参加相关的培训。
 
 
@@ -25,8 +25,8 @@ weight = 2
 
 ## 更多内容
 
-- [使用 Choerodon 开发流水线](../../user-guide/development-pipeline)
+- [使用 Choerodon 开发流水线](../../user-guide/development)
 
-- [使用 Choerodon 部署流水线](../../user-guide/deployment-pipeline)
+- [使用 Choerodon 部署流水线](../../user-guide/deploy)
 
-- [使用 Choerodon 敏捷管理](../../user-guide/agile)
+- [使用 Choerodon 敏捷管理](../../user-guide/cooperation)

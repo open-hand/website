@@ -17,7 +17,7 @@ weight = 3
 
 项目是最小粒度的管理层次。在组织下创建项目，则创建的项目属于这个组织。
 
-> 关于Choerodon猪齿鱼中项目的详细信息，以及相关操作等可以参考[**项目管理**](../../user-guide/system-configuration/tenant/project/)。
+> 关于Choerodon猪齿鱼中项目的详细信息，以及相关操作等可以参考[**创建项目**](../../user-guide/createapp/)。
 
 1.使用“组织管理员”角色登录系统
 
@@ -46,7 +46,7 @@ weight = 3
 
 应用是满足用户某些需求的程序代码的集合，一个应用可以是一个单体应用，也可以是微服务系统的一个服务。服务端相关应用，例如Java、Python、C/C++/C#、Go、.NET等应用，以及前端相关应用，例如ReactJs、VueJs、AngularJs等等，理论上讲没有什么限制。
 
-> 关于如何创建应用，以及相关操作和信息等，可以参考Choerodon官网的[**应用管理**](../../user-guide/application-management/application/)。
+> 关于如何创建应用，以及相关操作和信息等，可以参考Choerodon官网的[**应用管理**](../../user-guide/development/application-service/)。
 
 1.切换到项目层，例如“**汉得资产云平台**”。
 

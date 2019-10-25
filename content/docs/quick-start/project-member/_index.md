@@ -11,12 +11,10 @@ weight = 3
 
 ## 前置条件
 - 项目成员是基于项目的，作为管理者您必须具备 Choerodon 猪齿鱼平台中的`组织成员`或者`项目成员`的角色身份。
-- 在操作之前保证[系统配置](../../user-guide/system-configuration)已经配置完全。
+- 在操作之前保证[系统配置](../../user-guide/manager-guide/system-configuration)已经配置完全。
 - 本文档中不包含Choerodon功能理论等相关知识，如果要深入的了解Choerodon相关的知识，您可以阅读[用户手册](../../user-guide/)，或参加相关的培训。
 
 ## 您可以了解以下内容
-
-- [知识管理](../../quick-start/project-member/wiki-manager) 是一种内容管理系统，具有编辑、导航、链接和创建页面、搜索等功能。
 
 - [使用敏捷管理工具](../../quick-start/project-member/agile-management-tools-member) 引导项目成员使用敏捷管理工具来管理自己的任务和与其他成员协作。
 
@@ -32,8 +30,8 @@ weight = 3
 
 ## 更多内容
 
-- [使用 Choerodon 开发流水线](../../user-guide/development-pipeline)
+- [使用 Choerodon 开发流水线](../../user-guide/development/)
 
-- [使用Choerodon 测试管理](../../user-guide/test-management)
+- [使用Choerodon 测试管理](../../user-guide/test)
 
-- [使用 Choerodon 敏捷管理](../../user-guide/agile)
+- [使用 Choerodon 敏捷管理](../../user-guide/cooperation/)

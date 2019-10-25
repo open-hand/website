@@ -55,34 +55,34 @@ Choerodon 是将服务和应用构建在 Kubernetes 上，后端服务使用 Spr
 
 ## Choerodon 关键特性说明
 
-<img class="no-border" src="/docs/concept/image/wiki-icon.png"> [**知识管理**](../../user-guide/wiki)
+<img class="no-border" src="/docs/concept/image/wiki-icon.png"> [**知识管理**](../../user-guide/cooperation/knowledge-base)
 
 根据需求自定义 wiki，提供方便的项目协作和强大的内容管理，集中式管理产品相关内容。
 
-<img class="no-border" src="/docs/concept/image/agile-icon.png"> [**敏捷管理**](../../user-guide/agile)
+<img class="no-border" src="/docs/concept/image/agile-icon.png"> [**敏捷管理**](../../user-guide/cooperation)
 
 通过故事地图、用户故事来管理用户故事和发布计划，通过迭代来管理冲刺，最后通过看板来可视化冲刺的执行，让需求、计划、执行一目了然，使整个软件开发流程管理规范化。
 
-<img class="no-border" src="/docs/concept/image/application-icon.png"> [**应用管理**](../../user-guide/application-management)
+<img class="no-border" src="/docs/concept/image/application-icon.png"> [**应用管理**](../../user-guide/development)
 
 方便地进行应用创建，灵活的版本控制，同时将开发的应用发布至应用市场，并部署应用市场中的项目。
 
-<img class="no-border" src="/docs/concept/image/development-icon.png"> [**开发流水线**](../../user-guide/development-pipeline)
+<img class="no-border" src="/docs/concept/image/development-icon.png"> [**开发流水线**](../../user-guide/deploy)
 
 借助 Gitlab CI 作为持续集成工具，提供持续集成的流水线，简化应用开发、缩短应用生命周期，快速迭代。
 
-<img class="no-border" src="/docs/concept/image/test-icon.png"> [**测试管理**](../../user-guide/test-management)
+<img class="no-border" src="/docs/concept/image/test-icon.png"> [**测试管理**](../../user-guide/test)
 
 通过测试用例管理、测试循环、测试分析有效的提高软件测试的效率和质量，提高测试灵活性和可视化水平。
 
-<img class="no-border" src="/docs/concept/image/deployment-icon.png"> [**部署流水线**](../../user-guide/deployment-pipeline)
+<img class="no-border" src="/docs/concept/image/deployment-icon.png"> [**部署流水线**](../../user-guide/deploy)
 
 方便地管理各种使用开发部署的应用服务和资源，包括应用启停、状态监控，以及应用对应的版本控制、容器管理等。
 
-<img class="no-border" src="/docs/concept/image/operation-icon.png">[**运营管理**](../../user-guide/operating-manage)
+<img class="no-border" src="/docs/concept/image/operation-icon.png">[**运营管理**](../../user-guide/report)
 
 提供一整套完整的运营管理工具，在软件交付生产的各个环节建立数据收集和度量，监控主要包含开发类指标、服务器日志、应用系统日志和微服务调用链等信息；同时，提供各种分析报告，帮助用户优化 IT 资源配置。
 
-<img class="no-border" src="/docs/concept/image/microserver-icon.png"> [**平台管理**](../../user-guide/platform-management)
+<img class="no-border" src="/docs/concept/image/microserver-icon.png"> [**平台管理**](../../user-guide/manager-guide/system-configuration)
 
 基于 Spring Cloud 的微服务应用开发框架，方便快捷的构建应用服务，简化开发，提高 IT 系统对业务的支撑能力。

@@ -82,7 +82,7 @@ permissionWithin | 是否为内部接口
 
 ``` json
 {
-  "Jwt_Token": jwt_token
+  "Authorization": jwt_token
 }
 ```
 
@@ -95,7 +95,7 @@ $ cp ./src/main/resources/application.yml ./src/main/resources/application-defau
 $ mvn clean spring-boot:run
 ```
 
-这里提供一份`docker-compose.yaml`仅供参考，具体根据配置修改本地程序的配置。服务启动之前，请确保`iam-service` 和 `manager-service` 的数据库已初始化完成。
+这里提供一份`docker-compose.yaml`仅供参考，具体根据配置修改本地程序的配置。服务启动之前，请确保`base-service` 和 `manager-service` 的数据库已初始化完成。
 
 ``` yaml
 version: "3"
@@ -145,7 +145,7 @@ services:
   api-gateway:
     container_name: api-gateway
     hostname: api-gateway
-    image: registry.cn-shanghai.aliyuncs.com/choerodon/api-gateway:0.17.1
+    image: registry.cn-shanghai.aliyuncs.com/choerodon/api-gateway:0.19.0
     links: 
     - eureka-server
     depends_on:
@@ -166,9 +166,9 @@ services:
     - "8080"
     networks:
     - "c7nNetwork"
-  iam-service:
-    container_name: iam-service
-    image: registry.cn-shanghai.aliyuncs.com/choerodon/iam-service:0.17.1
+  base-service:
+    container_name: base-service
+    image: registry.cn-shanghai.aliyuncs.com/choerodon/base-service:0.19.0
     depends_on:
     - eureka-server
     - mysql
@@ -184,7 +184,7 @@ services:
     - SPRING_SLEUTH_STREAM_ENABLED=false
     - LOGGING_LEVEL=WARN
     - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8000/eureka/
-    - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/iam_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/base_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
     - SPRING_DATASOURCE_USERNAME=choerodon
     - SPRING_DATASOURCE_PASSWORD=123456
     - CHOERODON_SAGA_CONSUMER_ENABLED=false
@@ -194,7 +194,7 @@ services:
     - "c7nNetwork"
   manager-service:
     container_name: manager-service
-    image: registry.cn-shanghai.aliyuncs.com/choerodon/manager-service:0.17.1
+    image: registry.cn-shanghai.aliyuncs.com/choerodon/manager-service:0.19.0
     depends_on:
     - eureka-server
     - mysql
@@ -221,7 +221,7 @@ services:
     - "c7nNetwork"
   oauth-server:
     container_name: oauth-server
-    image: registry.cn-shanghai.aliyuncs.com/choerodon/oauth-server:0.17.1
+    image: registry.cn-shanghai.aliyuncs.com/choerodon/oauth-server:0.19.0
     depends_on:
     - eureka-server
     - redis
@@ -239,7 +239,7 @@ services:
     - SPRING_SLEUTH_STREAM_ENABLED=false
     - LOGGING_LEVEL=WARN
     - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8000/eureka/
-    - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/iam_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/base_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
     - SPRING_DATASOURCE_USERNAME=choerodon
     - SPRING_DATASOURCE_PASSWORD=123456
     - SPRINT_REDIS_HOST=redis

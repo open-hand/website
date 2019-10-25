@@ -18,11 +18,11 @@ Choerodon 使用 `React` 作为前端应用框架，并且对前端的展示做�
 
 ## 前置条件
 
-**1.** 在操作之前保证[系统配置](../../../user-guide/system-configuration)已经配置完全。特别在本章节用到的角色、环境管理等配置。
+**1.** 在操作之前保证[系统配置](../../../user-guide/manager-guide/system-configuration)已经配置完全。特别在本章节用到的角色、环境管理等配置。
 
 **2.** 完成[创建项目](../../admin/project)操作。本章节使用在前面章节创建的项目`猪齿鱼研发`。
 
-**3.** 完成[创建环境](../../../user-guide/deployment-pipeline/environment-pipeline)，环境管理中有状态为运行中的环境。
+**3.** 完成[创建环境](../../../user-guide/deploy/env-config)，环境管理中有状态为运行中的环境。
 
 ## 创建前端应用
 
@@ -75,7 +75,7 @@ Choerodon 名词 | 对应 Gitlab 名词 | 举例
 
 **第一步：创建分支**
 
-分支是将开发工作从主线上分离开来，以免影响主线。 更多相关信息参考[分支管理](../../../user-guide/development-pipeline/branch/)。
+分支是将开发工作从主线上分离开来，以免影响主线。 更多相关信息参考[分支管理](../../../user-guide/development/code-manage/manage-branch/)。
 
 在 `开发流水线` -> `分支` 界面，选择应用`猪齿鱼前端Demo应用`，点击创建分支。选择对应的`issue` 问题，分支来源选择`master`，选择相应分支类型，填写分支名称，如`feature-choerodon-dev-1`。点击`创建`按钮，即可创建一个分支。
 
@@ -105,19 +105,19 @@ $ git checkout feature-choerodon-dev-1
 
 **第四步：修改`ci` 文件**
 
-模板中包含`.gitlab-ci.yml`文件。有关`.gitlab-ci.yml` 的编写参考[应用模板](../../../user-guide/application-management/application-template/)。
+模板中包含`.gitlab-ci.yml`文件。有关`.gitlab-ci.yml` 的编写参考[应用模板](../../../user-guide/development/application-service/)。
 
  - `.gitlab-ci.yml`定义 `Gitlab CI` 的阶段，Choerodon 缺省的 CI 流程包含了`编译`，`打包`，`生成镜像`，`生成helm 包`几个阶段。	
 
 **第五步：修改`charts` 文件**
 
-模板中包含`charts` 文件夹。有关`charts` 的编写参考[应用模板](../../../user-guide/application-management/application-template/)。
+模板中包含`charts` 文件夹。有关`charts` 的编写参考[应用模板](../../../user-guide/development/application-service/)。
 
  - `charts`模块用于创建应用时生成创建 `k8s` 对象，包含了`部署的模板`，`chart values`。
 
 **第六步：修改`Dockerfile` 文件**
 
-Choerodon 使用`docker` 来运行应用。有关`Dockerfile` 的编写参考[应用模板](../../../user-guide/application-management/application-template/)。
+Choerodon 使用`docker` 来运行应用。有关`Dockerfile` 的编写参考[应用模板](../../../user-guide/development/application-service/)。
 
  - 你可以通过修改`Dockerfile` 来修改应用的运行环境。
 
@@ -249,15 +249,12 @@ gitlab中docker_build阶段日志也可查看相应版本。
 ## 相关文档
 
 * [Choerodon UI](http://ui.choerodon.io/docs/react/introduce-cn)
-* [系统配置](../../../user-guide/system-configuration)
+* [系统配置](../../../user-guide/manager-guide/system-configuration)
 * [创建项目](../../admin/project)
-* [创建环境](../../../user-guide/deployment-pipeline/environment-pipeline)
-* [应用模板](../../../user-guide/application-management/application-template/)
-* [分支管理](../../../user-guide/development-pipeline/branch/)
+* [创建环境](../../../user-guide/deploy/env-config)
+* [分支管理](../../../user-guide/development/code-manage/manage-branch/)
 * [前端开发手册](../../../development-guide/front/)
-* [应用部署](../../../user-guide/deployment-pipeline/application-deployment/)
-* [域名管理](../../../user-guide/deployment-pipeline/ingress/)
-* [网络管理](../../../user-guide/deployment-pipeline/service/)
+* [应用部署](../../../user-guide/deploy/app-deploy/)
 * [应用部署](../../project-member/application-deployment/)
 * [配置网络和域名](../../project-member/config-service-and-domain/)
 

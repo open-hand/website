@@ -45,7 +45,7 @@ weight = 7
 
 ![image](/docs/user-guide/cooperation/iteration-plan/image/scrumboard-33.png)
 
-详情情查看[燃尽图](../../../operation/agile-report/burn-down)
+详情情查看[燃尽图](../../../report/agile-report)
 
 ## 6. 迭代问题类型分布图
 

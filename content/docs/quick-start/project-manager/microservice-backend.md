@@ -18,11 +18,11 @@ type = "docs"
 
 ## 前置条件
 
-**1.** 在操作之前保证[系统配置](../../../user-guide/system-configuration)已经配置完全。特别在本章节用到的角色、环境管理等配置。
+**1.** 在操作之前保证[系统配置](../../../user-guide/manager-guide/system-configuration)已经配置完全。特别在本章节用到的角色、环境管理等配置。
 
 **2.** 完成[创建项目](../../admin/project)操作。本章节使用在前面章节创建的项目`猪齿鱼研发`。
 
-**3.** 完成[创建环境](../../../user-guide/deployment-pipeline/environment-pipeline)，环境管理中有状态为运行中的环境。
+**3.** 完成[创建环境](../../../user-guide/deploy/env-config)，环境管理中有状态为运行中的环境。
 
 ## 创建后端应用
 
@@ -32,7 +32,7 @@ type = "docs"
  
 **第二步：** 选择`应用管理`模块，点击`应用`，进入应用管理页面。
 
-**第三步：** 点击[创建应用](../../../user-guide/application-management/application)，系统会从右边滑出页面，在页面中输入`应用编码`、`应用名称`，`应用模板`，`应用模板`选择`MicroService`。点击`创建`，即可创建一个后端应用，创建成功后，您可以进行后续的后端应用开发。
+**第三步：** 点击[创建应用](../../../user-guide/development/application-service/create-app-service)，系统会从右边滑出页面，在页面中输入`应用编码`、`应用名称`，`应用模板`，`应用模板`选择`MicroService`。点击`创建`，即可创建一个后端应用，创建成功后，您可以进行后续的后端应用开发。
 
 例如，
 
@@ -67,7 +67,7 @@ Choerodon 名词 | 对应 Gitlab 名词 | 举例
 
 **第一步： 创建`Feature`分支**
 
-在 `开发流水线` -> `分支` 界面，选择应用``choerodon-todo-service``。点击`创建分支`，如果没有`issue`可选择，则先[创建issue](../../../user-guide/agile/issue/create-issue/)，
+在 `开发流水线` -> `分支` 界面，选择应用``choerodon-todo-service``。点击`创建分支`，如果没有`issue`可选择，则先[创建issue](../../../user-guide/cooperation/work-lists/problem/)，
 选择对应的`issue`。分支来源选择`master`，填写`issue`号，如`feature-1`。点击`创建`，即可创建一个分支。创建完分支之后，您就可以进行后续的本地开发。
 
 例如，
@@ -79,7 +79,7 @@ Choerodon 名词 | 对应 Gitlab 名词 | 举例
 
 ![](/docs/quick-start/image/create_branch3.png)
 
-Choerodon 采用 [`github-flow`](https://guides.github.com/introduction/flow/)作为我们的分支管理策略的主体。并在此基础上，参考了一些其他策略，对开发者的开发分支做了一定程度上的细分。更多相关信息参考[分支管理](../../../user-guide/development-pipeline/branch/)。
+Choerodon 采用 [`github-flow`](https://guides.github.com/introduction/flow/)作为我们的分支管理策略的主体。并在此基础上，参考了一些其他策略，对开发者的开发分支做了一定程度上的细分。更多相关信息参考[分支管理](../../../user-guide/development/code-manage/manage-branch/)。
 
 **第二步： 拉取代码仓库**
 
@@ -102,19 +102,19 @@ $ git checkout feature-choerodon-dev-1
 
 **第四步： `ci` 文件**
 
-通过Choerodon 提供的`MicroService`应用模板，会创建`.gitlab-ci.yml`。有关`.gitlab-ci.yml` 的编写参考[应用模板](../../../user-guide/application-management/application-template/)。
+通过Choerodon 提供的`MicroService`应用模板，会创建`.gitlab-ci.yml`。有关`.gitlab-ci.yml` 的编写参考应用模板。
 
  - `.gitlab-ci.yml`定义 `Gitlab CI` 的阶段，通过MicroService模板 的 CI 流程包含了`编译`，`打包`，`生成镜像`，`生成helm 包`几个阶段。	
 
 **第五步： `charts` 文件**
 
-通过Choerodon 提供的`MicroService`应用模板，会创建`charts` 文件夹。charts文件目录用于生成charts包，部署时会用到。有关`charts` 的编写参考[应用模板](../../../user-guide/application-management/application-template/)。
+通过Choerodon 提供的`MicroService`应用模板，会创建`charts` 文件夹。charts文件目录用于生成charts包，部署时会用到。有关`charts` 的编写参考应用模板。
 
  - `charts`文件夹里面包含了`k8s` 对象的模板文件以及渲染这些对象文件的参数值文件`values.yaml`。
 
 **第六步： `Dockerfile` 文件**
 
-Choerodon 使用`docker` 来打包应用镜像。有关`Dockerfile` 的编写参考[应用模板](../../../user-guide/application-management/application-template/)。
+Choerodon 使用`docker` 来打包应用镜像。有关`Dockerfile` 的编写参考应用模板。
 
  - 你可以通过修改`Dockerfile` 来打包镜像的方式。
 
@@ -170,7 +170,7 @@ $ git push origin feature-choerodon-dev-1
 
 **第三步：** 点击`选择应用`，找到已经提交的`choerodon-todo-service`。点击`选择版本`，选择`choerodon-todo-service` 最新的版本，点击`下一步`。
 
-**第四步：** 点击`选择环境`，选择一个环境。部署的环境信息会展现在底下。如果没有环境，请先完成[创建环境](../../../user-guide/deployment-pipeline/environment-pipeline)。
+**第四步：** 点击`选择环境`，选择一个环境。部署的环境信息会展现在底下。如果没有环境，请先完成[创建环境](../../../user-guide/deploy/env-config)。
 
 **第五步：** 根据实际的配置，配置部署应用所需的配置信息。
 替换掉一些参数文件值，参数文件值为部署choerodon系统时的生成的参数值，详细见[一键部署](../../../installation-configuration/steps/install/choerodon/)或者[分布部署](../../../installation-configuration/steps/install/parts/)，然后点击`下一步`。
@@ -239,21 +239,19 @@ $ git push origin feature-choerodon-dev-1
 
 ## 相关文档
 
-- [系统配置](../../../user-guide/system-configuration)
+- [系统配置](../../../user-guide/manager-guide/system-configuration)
 
 - [创建项目](../../admin/project)
 
-- [创建环境](../../../user-guide/deployment-pipeline/environment-pipeline)
+- [创建环境](../../../user-guide/deploy/env-config)
 
-- [创建应用](../../../user-guide/application-management/application)
+- [创建应用](../../../user-guide/development/application-service/create-app-service)
 
-- [应用模板](../../../user-guide/application-management/application-template/)
-
-- [创建issue](../../../user-guide/agile/issue/create-issue/)
+- [创建issue](../../../user-guide/cooperation/work-lists/problem/)
 
 - [github-flow](https://guides.github.com/introduction/flow/)
 
-- [分支管理](../../../user-guide/development-pipeline/branch/)
+- [分支管理](../../../user-guide/development/code-manage/manage-branch/)
 
 - [持续交互](../../../installation-configuration/steps/install/parts/choerodon-devops/)
 
