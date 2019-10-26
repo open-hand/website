@@ -80,7 +80,7 @@ helm repo update
     helm install c7n/agile-service \
       -f agile-service.yaml \
       --name agile-service \
-      --version 0.19.0 \
+      --version 0.19.1 \
       --namespace c7n-system
     ```
 
@@ -129,7 +129,7 @@ helm repo update
     helm install c7n/test-manager-service \
       -f test-manager-service.yaml \
       --name test-manager-service \
-      --version 0.19.0 \
+      --version 0.19.1 \
       --namespace c7n-system
     ```
 
@@ -146,9 +146,9 @@ helm repo update
     UP
     ```
 
-## 部署 knowledgebase service
+## 安装 elasticsearch-kb
 
-- 若需了解项目详情及各项参数含义，请移步 [choerodon/knowledgebase-service](https://github.com/choerodon/knowledgebase-service)。
+- 若需了解项目详情及各项参数含义，请移步 [choerodon/elasticsearch-kb](https://github.com/choerodon/elasticsearch-kb)。
 
 - 安装 elasticsearch
   ```
@@ -157,6 +157,10 @@ helm repo update
     --name elasticsearch-kb \
     --namespace c7n-system
   ```
+
+## 部署 knowledgebase service
+
+- 若需了解项目详情及各项参数含义，请移步 [choerodon/knowledgebase-service](https://github.com/choerodon/knowledgebase-service)。
 
 - 编写参数配置文件 `knowledgebase-service.yaml`
     ```yaml
@@ -187,7 +191,7 @@ helm repo update
     helm install c7n/knowledgebase-service \
       -f knowledgebase-service.yaml \
       --name knowledgebase-service \
-      --version 0.19.0 \
+      --version 0.19.2 \
       --namespace c7n-system
     ```
 
