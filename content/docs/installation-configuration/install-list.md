@@ -56,4 +56,4 @@ agile service|敏捷管理|0.19.1
 test manager service|测试管理服务|0.19.1
 elasticsearch-kb |知识ES服务|0.19.0
 knowledgebase service |知识服务|0.19.2
-choerodon front|Choerodon 前端|0.19.0
+choerodon front|Choerodon 前端|0.19.1
