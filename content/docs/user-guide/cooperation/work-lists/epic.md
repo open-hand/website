@@ -12,7 +12,7 @@ weight = 3
 
 ## 2. 创建史诗
 
-您可以在工作列表待办事项中[史诗列表](../worklists)对史诗进行编辑，如图：  
+您可以在工作列表待办事项中史诗列表对史诗进行编辑，如图：  
 
 ![image](/docs/user-guide/cooperation/work-lists/image/work-list-15.png)
 

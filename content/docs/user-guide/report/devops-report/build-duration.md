@@ -51,8 +51,8 @@ Passed, Canceled, Skipped, Manual。
 阶段通过docker把应用生成镜像。
 * 时长：完成该条持续集成流水线的总时长。
 * 创建时间：创建该条持续集成流水线的时间。
-* ![重试按钮](/docs/user-guide/development-pipeline/image/retry_button.png) ：当处于 Skipped、Canceled、Failed 状态时，可以重新运行持续集成流水线。
-* ![取消按钮](/docs/user-guide/development-pipeline/image/cancle_button.png) ：当处于 Pending，Running 状态时，可以取消运行持续集成流水线。 
+* `重试按钮` ：当处于 Skipped、Canceled、Failed 状态时，可以重新运行持续集成流水线。
+* `取消按钮`：当处于 Pending，Running 状态时，可以取消运行持续集成流水线。 
  
 
 ## 报表过程
