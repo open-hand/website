@@ -21,18 +21,14 @@ weight = 4
 * 点击`创建冲刺`直接在待办事项列表中创建一个冲刺。
 * 冲刺名称默认为：冲刺+递增的编号，点击名称可自行进行修改。
 * 冲刺名称下面显示的头像为参与该冲刺的项目成
-* 点击冲刺名称下方![image](https://minio.choerodon.com.cn/knowledgebase-service/file_0c4ba56c819b49649112fbb24735ad8f_blob.png)标识，可以查看该冲刺经办人工作量，包括经办人、问题数量、StoryPoint（用户故事点）、剩余预估时间。标识，可以查看该冲刺经办人工作量，包括经办人、问题数量StoryPoint（用户故事点）、剩余预估时间
-* 一个冲刺迭代完成后，可在冲刺右上角点击`完成冲刺`，此时会弹出冲刺的统计界面，包括已经完成、未完成的问题的总数量，可以调整未完成的问题的放置位置，如可以选择其移动至[待办事项](../../work-lists)或者其它冲刺，最后点击`结束`按钮即可。
-* 显示该冲刺下处于`待处理`、`进行中`、`已完成`三个状态类别中的问题数量。
-* 可选择`仅我的问题`或者`仅故事`对所有待办事项进行快速搜索。
-* 点击问题，可以对问题的`优先级`、`模块`、`标签`、`经办人`等进行编辑，同时能对问题进行描述，上传附件、添加评论和创建子任务。
+* 点击冲刺名称下方![image](https://minio.choerodon.com.cn/knowledgebase-service/file_0c4ba56c819b49649112fbb24735ad8f_blob.png)标识，可以查看该冲刺经办人工作量，包括经办人、问题数量、StoryPoint（用户故事点）、剩余预估时间。
 
 <blockquote class="note">注：创建完成的问题，可从待办事项里直接拖拽到指定的冲刺里，此时这个问题便属于该指定的冲刺。</blockquote>
 
 ## 3. 开启冲刺
 
 ![image](/docs/user-guide/cooperation/work-lists/image/work-list-18.png)
-s
+
 ![image](/docs/user-guide/cooperation/work-lists/image/work-list-19.png)
 
 * 冲刺里添加完问题后，可在冲刺右上角点击`开启冲刺`按钮
@@ -56,7 +52,7 @@ s
 您有两种途径可以完成冲刺。
 
 * 方法一：点击`工作列表`页面右上角`完成冲刺`按钮
-* 方法二：点击迭代计划页面看板右上角`完成冲刺`按钮
+* 方法二：点击`迭代计划`页面看板右上角`完成冲刺`按钮
 
 ![image](/docs/user-guide/cooperation/work-lists/image/work-list-21.png)
 

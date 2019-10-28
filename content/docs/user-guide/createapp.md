@@ -1,7 +1,7 @@
 +++
 title = "创建项目"
-description = "Choerodon猪齿鱼中的项目主要用来管理开发团队，团队成员在项目中可以进行迭代规划、应用开发、应用部署、敏捷化测试等"
-weight = 1
+description = "介绍如何快速一个项目的创建。"
+weight = 2
 +++
 
 
@@ -26,11 +26,11 @@ Choerodon目前提供一种项目类型：
 1. 点击Choerodon平台顶部“项目”导航，进入项目列表。
 2. 点击“创建项目”按钮，系统会打开创建项目侧开页，如下图所示：
 
-![image](/docs/user-guide/image/projects-01.png)
+    ![image](/docs/user-guide/image/projects-01.png)
 
 3. 输入项目名称、编码等项目信息
 
-![image](/docs/user-guide/image/projects-02.png)
+    ![image](/docs/user-guide/image/projects-02.png)
 
 4. 点击“确定”，完成项目创建。随后您可以进入项目，开始进行协作、需求管理、代码管理、部署、测试、项目设置等工作。
 
@@ -45,5 +45,7 @@ Choerodon目前提供一种项目类型：
     详细的操作指南请参考[团队成员](../cooperation/teammember)
     
 ## 阅读更多
+
 - [如何管理团队成员](../cooperation/teammember)
+
 - [如何查看工作列表详情](../cooperation/work-lists)

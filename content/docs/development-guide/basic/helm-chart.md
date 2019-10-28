@@ -12,9 +12,6 @@ weight = 1
 
 **本篇示例代码皆引用自如下项目:**
 
-## 参考示例
-
-代码参考示例请移步 [**此篇**] (../../../quick-start/project-member/nginx-demo)
 
 ## 配置解析
 

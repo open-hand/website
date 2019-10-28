@@ -12,11 +12,11 @@ weight = 1
 
 ## 2. 问题创建
 
-方法一：点击列表中的`创建问题`按钮可进行问题快速创建，快速创建问题后，在问题列表单击问题，弹出编辑问题页面如图，可对问题详情进行进一步的编辑。
-
-方法二：点击页面上方创建问题按钮可以进行详细问题创建
+方法一：点击页面上方创建问题按钮可以进行详细问题创建
 
 ![image](/docs/user-guide/cooperation/work-lists/image/work-list-04.png)  
+ 
+方法二：点击列表中的`创建问题`按钮可进行问题快速创建，快速创建问题后，在问题列表单击问题，弹出编辑问题页面如图，可对问题详情进行进一步的编辑。
 
 ![image](/docs/user-guide/cooperation/work-lists/image/work-list-05.png)
 

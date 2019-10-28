@@ -1,6 +1,6 @@
 ﻿+++
 title = "管理指南"
-description = "为了让Choerodon的用户更便捷、科学地进行平台、组织管理"
+description = "介绍了用户使用系统管理功能需要进行的平台管理和组织管理。"
 weight = 1
 +++
 

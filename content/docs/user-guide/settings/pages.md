@@ -4,6 +4,8 @@ description = ""
 weight = 2
 +++
 
+# 页面
+
 ## 1. 概述
 
 在页面设置中，您可以对系统页面中的显示字段进行自定义。
@@ -19,9 +21,8 @@ weight = 2
 <blockquote class="note">注1：组织层字段列表只显示系统默认字段、组织层创建字段，不显示项目层创建字段。</blockquote>
 <blockquote class="note">注2：项目层字段列表显示系统默认字段、组织层创建字段以及<span style="color:#ab4642">当前项目创建字段</span></blockquote>
 
-
-
 ### 2.1 创建字段
+
 ![image](/docs/user-guide/settings/image/page-02.png)
 
 点击导航栏上方的`创建字段`按钮，会跳出创建字段页面，填写编码、名称、字段类型、问题类型、默认值，添加字段值后，即可创建新字段，如图：
@@ -53,3 +54,8 @@ weight = 2
 <blockquote class="note">注2：如果组织层编辑了页面字段后，没有字段定义的项目会同步组织成页面编辑所有操作，创建过字段的项目之会同步增加、删除的信息，不同步排序和显示。</blockquote>
 
 <blockquote class="note">注3：没有字段定义的项目，指项目创建后没有进行过项目层字段创建的项目。</blockquote>
+
+## 4. 阅读更多
+
+- [测试设置](../test)
+- [通用设置](../common)

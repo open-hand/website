@@ -371,8 +371,6 @@ i.note-number[data-value]::after {
   display: flex;
   flex-direction: column;
   color: #fafafa;
-  background: url(/docs/quick-start/video-tutorial/img/video-button.svg), no-repeat, linear-gradient(0deg, #003DAC, #3371E3);
-  background: url(/docs/quick-start/video-tutorial/img/video-button.svg), no-repeat, -webkit-linear-gradient(0deg, #003DAC, #3371E3);
   background: -moz-linear-gradient(0deg, #003DAC, #3371E3);
   background: -o-linear-gradient(0deg, #003DAC, #3371E3);
   background: -ms-linear-gradient(0deg, #003DAC, #3371E3);

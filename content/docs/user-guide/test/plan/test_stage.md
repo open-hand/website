@@ -19,7 +19,6 @@ weight = 3
 ![image](/docs/user-guide/test/plan/image/TestPlan-04.png)
 
 各字段含义如下：
-
 - 名称：阶段在树状图中显示的名称
 - 说明：阶段的详细解释
 - 关联文件夹：阶段关联的用例文件夹

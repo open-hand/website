@@ -23,29 +23,14 @@ weight = 9
 - [应用迁移](../../transference-guide/application-migration)
 
 
-## 知识管理
-
-知识管理主要是提供Wiki的功能，用户可以使用知识管理做项目的立项、需求分析、应用设计等，同时也可以用于记录Scrum的回顾会议等，总之，**其可以作为项目日常文档编辑与共享的媒介**。
-
-**资料**：
-
-- [官网视频资料](../../quick-start/video-tutorial/)
-
-- [知识管理视频](http://www.itdks.com/liveevent/zs/15196/2de8996b6e834a49ad0ef6732ff69ee6)
-
 ## 敏捷管理
 
 敏捷管理主要是提供项目管理的功能，包括需求管理（故事、用户故事地图、问题）、计划（待办事项、冲刺）、执行（活动冲刺、看板），以及项目管理涉及的数据分析，例如累计流图、燃尽图等。
 
 **资料**：
 
-- [敏捷管理快速入门](../../quick-start/project-member/agile-management-tools-member/)
-
 - [敏捷管理用户手册](../../user-guide/cooperation/)
 
-- [官网视频资料](../../quick-start/video-tutorial/)
-
-- [敏捷管理视频](http://www.itdks.com/liveevent/zs/15184/443cf4a4555d4c91bba3009dbe376fb8)
 
 ## 开发
 
@@ -53,21 +38,10 @@ weight = 9
 
 **资料**：
 
-- [创建一个项目](../../quick-start/admin/project/)
-
-- [创建一个Nginx应用](../../quick-start/project-member/nginx-demo/)
-
-- [创建一个后端应用](../../quick-start/project-manager/microservice-backend/)
-
-- [创建一个前端应用](../../quick-start/project-manager/microservice-front/)
 
 - [应用管理用户手册](../../user-guide/development/application-service/)
 
 - [开发流水线用户手册](../../user-guide/development/)
-
-- [官网视频资料](../../quick-start/video-tutorial/)
-
-- [开发视频](http://www.itdks.com/liveevent/zs/15190/fe57ad823e004c5389199f553986b64e)
 
 ## 测试
 
@@ -75,11 +49,7 @@ weight = 9
 
 **资料**：
 
-- [使用测试管理](../../quick-start/project-member/test-manager/)
-
 - [测试管理用户手册](../../user-guide/test)
-
-- [官网视频资料](../../quick-start/video-tutorial/)
 
 ## 持续发布与部署
 
@@ -88,7 +58,3 @@ weight = 9
 **资料**：
 
 - [部署流水线用户手册](../../user-guide/development/)
-
-- [官网视频资料](../../quick-start/video-tutorial/)
-
-- [持续交付视频](http://www.itdks.com/liveevent/zs/15190/fe57ad823e004c5389199f553986b64e)

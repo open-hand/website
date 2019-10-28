@@ -121,13 +121,17 @@ weight = 2
    ![image](/docs/user-guide/development/code-manage/image/code-management-20.png)
    
 * 使用 git rebase 命令。具体可以参考 [Tute Costa 的文章](https://thoughtbot.com/blog/git-interactive-rebase-squash-amend-rewriting-history)。
+
 ![image](/docs/user-guide/development/code-manage/image/code-management-21.png)
+
 将 squash 和 fixup 命令当作命令行参数使用，自动合并 commit 记录。具体可以参考 [Florent Lebreton 的文章](https://fle.github.io/git-tip-keep-your-branch-clean-with-fixup-and-autosquash.html)。
 
 ### 2.3 与主干同步分支
 
 * 分支开发的过程中，要经常保证分支与主干的同步。特别是分支推送前，强制要求同步主干。
+
 ![image](/docs/user-guide/development/code-manage/image/code-management-22.png)
+
 * 根据控制台反馈，可以看到 demo 示范的四个提交被重新应用于最新的 origin/master 并且更新了当前分支。
 
 ### 2.4 推送到远程仓库
@@ -148,7 +152,9 @@ weight = 2
     * 在代码审核通过后，接受合并请求，并删除该分支。（强烈建议此步由 reviewer 或是管理者操作）
 
 2. 在猪齿鱼平台中创建合并请求
+
 分支被推送到远程仓库之后，可以直接在猪齿鱼平台中创建分支合并请求，然后在Gitlab中进行分支合并。
+
 ![image](/docs/user-guide/development/code-manage/image/code-management-04.png)
 
 ## 3. 修改分支关联问题
@@ -160,6 +166,7 @@ weight = 2
 ## 4. 删除分支
 
 分支创建之后，若发现分支不必要，可以直接进行删除。但是需要注意的是，分支删除之后，分支上的代码也将一起被删除。
+
 ![image](/docs/user-guide/development/code-manage/image/code-management-05.png)
 
 ## 5. 注意事项

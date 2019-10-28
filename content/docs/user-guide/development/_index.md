@@ -1,6 +1,6 @@
 +++
 title = "开发"
-description = ""
+description = "开发是项目的重要步骤，包括应用服务、迭代计划、代码管理，将涵盖您在开发过程中所有可在平台中进行的操作。"
 weight = 3
 +++
 
@@ -20,6 +20,6 @@ weight = 3
 
 ## 3. 代码管理
 
-代码管理包含了与开发过程相关的一系列操作及流程，其中包括 [分支管理](./code-manage/manage-branch)、[合并请求](./code-manage/merge-request)、[持续集成](./code-manage/integration)、[标记](./code-manage/sign)以及[代码质量](./code-manage/code-quality)
+代码管理包含了与开发过程相关的一系列操作及流程，其中包括 [分支管理](./code-manage/manage-branch)、[合并请求](./code-manage/merge-request)、[持续集成](./code-manage/integration)、[标记](./code-manage/sign)以及[代码质量](./code-manage/code-quality)。
 
-了解如何用Choerodon代码管理模块进行开发，详情请查看[代码管理](./code-manage)
+了解如何用Choerodon代码管理模块进行开发，详情请查看[代码管理](./code-manage)。

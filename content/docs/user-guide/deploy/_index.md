@@ -1,6 +1,6 @@
 +++
 title = "部署"
-description = ""
+description = "包括应用部署、环境配置、集群和市场发布，将涵盖您使用Choerodon猪齿鱼部署模块过程中所有可能进行的操作。"
 weight = 5
 +++
 
