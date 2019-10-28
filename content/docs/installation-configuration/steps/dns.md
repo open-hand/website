@@ -37,7 +37,7 @@ weight = 16
 
 ### 设置域名解析
 
-您需要将你的域名解析到你集群中任意一台master节点的IP。解析包括后边安装文档中<span style="color: #ff0000;"><strong>所有</strong></span>您定义的域名。设置域名解析的方法，请参考[如何设置域名解析](https://help.aliyun.com/document_detail/29716.html?spm=a2c4g.11186623.2.13.IZnRtO)。
+您需要将你的域名解析到你集群中任意一台<span style="color: #ff0000;">Worker</span>节点的IP。解析包括后边安装文档中<span style="color: #ff0000;"><strong>所有</strong></span>您定义的域名。设置域名解析的方法，请参考[如何设置域名解析](https://help.aliyun.com/document_detail/29716.html?spm=a2c4g.11186623.2.13.IZnRtO)。
 
 如果你现在外网环境下使用域名访问系统，请解析到master节点对应的外网ip，并非所有主机都有外网ip。具体请咨询您的网络服务商。
 

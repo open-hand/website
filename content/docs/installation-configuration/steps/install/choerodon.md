@@ -1,5 +1,5 @@
 +++
-title = "方式一：一键部署Choerodon"
+title = "方式一：一键部署Choerodon[建议]"
 description = "方式一：一键部署Choerodon"
 weight = 18
 +++
@@ -71,9 +71,6 @@ spec:
       schema: http
       username: admin   # 前端 默认用户名为admin，暂不能修改
       password: admin   # 前端 默认密码为admin，暂不能修改
-    xwiki:
-      domain: wiki.example.choerodon.io
-      schema: http
 ```
 
 ## 开始部署
