@@ -1,6 +1,6 @@
 +++
 title = "管理中心"
-description = "管理当前组织中的用户，事务以及组织设置"
+description = "管理当前组织中的用户，事务以及组织设置。"
 weight = 2
 +++
 
