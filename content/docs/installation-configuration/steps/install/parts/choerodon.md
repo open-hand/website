@@ -243,7 +243,7 @@ helm repo update
     helm install c7n/asgard-service \
         -f asgard-service.yaml \
         --name asgard-service \
-        --version 0.19.0 \
+        --version 0.19.2 \
         --namespace c7n-system
     ```
 
@@ -351,7 +351,7 @@ helm repo update
     helm install c7n/api-gateway \
         -f api-gateway.yaml \
         --name api-gateway \
-        --version 0.19.0 \
+        --version 0.19.1 \
         --namespace c7n-system
     ```
 
@@ -397,7 +397,7 @@ helm repo update
     helm install c7n/oauth-server \
         -f oauth-server.yaml \
         --name oauth-server \
-        --version 0.19.0 \
+        --version 0.19.2 \
         --namespace c7n-system
     ```
 
@@ -441,7 +441,7 @@ helm repo update
     helm install c7n/file-service \
         -f file-service.yaml \
         --name file-service \
-        --version 0.19.0 \
+        --version 0.19.2 \
         --namespace c7n-system
     ```
 
