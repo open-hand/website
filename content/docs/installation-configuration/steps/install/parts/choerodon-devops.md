@@ -56,7 +56,7 @@ helm repo update
         AGENT_CERTMANAGERURL: https://openchart.choerodon.com.cn/choerodon/infra/
         AGENT_REPOURL: https://openchart.choerodon.com.cn/choerodon/c7n/
         AGENT_SERVICEURL: ws://devops.example.choerodon.io/agent/
-        AGENT_VERSION: 0.18.0
+        AGENT_VERSION: 0.19.0
         EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
         SECURITY_IGNORED: /ci,/webhook,/v2/api-docs,/agent/**,/ws/**,/webhook/**
         SERVICES_GATEWAY_URL: http://api.example.choerodon.io
@@ -77,7 +77,6 @@ helm repo update
         SPRING_REDIS_DATABASE: 9
         SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
         TEMPLATE_URL: https://github.com/choerodon/choerodon-devops-templates.git
-        TEMPLATE_VERSION: 0.17.0
     ingress:
       enabled: true
       host: devops.example.choerodon.io
