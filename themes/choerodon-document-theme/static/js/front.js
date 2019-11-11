@@ -125,7 +125,7 @@ jQuery(document).ready(function () {
             var hover = $(".wechat-hover");
             var img = hover.children("img");
             var top = $(this).offset().top - parseInt(hover.css("height")) - 20;
-            var left = document.documentElement.clientWidth / 2 - parseInt(hover.css("width")) + parseInt($(this).css("margin-left"));
+            var left = document.documentElement.clientWidth / 2 - parseInt(hover.css("width")) + 2.5*parseInt($(this).css("margin-left"));
             img.attr("src",img.attr("data-src"));
             hover.css("display", "block").css("top", top / rem + "rem").css("left", left / rem + "rem").fadeIn("fast");
         }
@@ -148,7 +148,7 @@ jQuery(document).ready(function () {
             var hover = $(".wechat-group-hover");
             var img = hover.children("img");
             var top = $(this).offset().top - parseInt(hover.css("height")) - 20;
-            var left = $(this).offset().left - parseInt(hover.css("width")) / 2 + parseInt($(this).css("width")) / 2;
+            var left = document.documentElement.clientWidth / 2 - parseInt(hover.css("width")) + 2.5*parseInt($(this).css("margin-left"));
             img.attr("src",img.attr("data-src"));
             hover.css("display", "block").css("top", top / rem + "rem").css("left", left / rem + "rem").fadeIn("fast");
         }
