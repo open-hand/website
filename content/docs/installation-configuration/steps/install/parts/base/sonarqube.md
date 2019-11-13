@@ -31,6 +31,11 @@ helm repo update
 注意：本事例中 PostgreSql 数据库搭建仅为快速体验 SonarQube 而编写，由于使用了NFS存储故并不能保证其稳定运行或数据不丢失，您可以参照 PostgreSql 官网进行搭建。
 </blockquote>
 
+<blockquote class="warning">
+注意：当前choerodon版本为0.19.x时，SonarQube插件版本为sonar-auth-choerodonoauth-plugin-1.5-RELEASE.jar；
+当前choerodon版本为0.18.x及以下版本时，SonarQube插件版本为sonar-auth-choerodonoauth-plugin-1.4-RELEASE.jar；
+</blockquote>
+
 ```
 helm install c7n/sonarqube \
     --set persistence.enabled=true \
@@ -48,7 +53,7 @@ helm install c7n/sonarqube \
 
 ## 安装SoanrQube插件
 - 此步骤用于之前已经安装过SonarQube，只需安装插件的情况（如已经执行过上一步可跳过此步骤）
-- 进入SonarQube安装目录，下载https://file.choerodon.com.cn/choerodon-install/sonarqube/sonar-auth-choerodonoauth-plugin-1.4-RELEASE.jar 插件到\data\sonarqube\extensions\plugins目录
+- 进入SonarQube安装目录，下载https://file.choerodon.com.cn/choerodon-install/sonarqube/sonar-auth-choerodonoauth-plugin-1.5-RELEASE.jar 插件到\data\sonarqube\extensions\plugins目录
 - 重启SoanrQube服务
 
 ## 验证部署
