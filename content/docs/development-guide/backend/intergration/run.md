@@ -184,7 +184,7 @@ services:
     - SPRING_SLEUTH_STREAM_ENABLED=false
     - LOGGING_LEVEL=WARN
     - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8000/eureka/
-    - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/base_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/base_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
     - SPRING_DATASOURCE_USERNAME=choerodon
     - SPRING_DATASOURCE_PASSWORD=123456
     - CHOERODON_SAGA_CONSUMER_ENABLED=false
@@ -210,7 +210,7 @@ services:
     - SPRING_SLEUTH_STREAM_ENABLED=false
     - LOGGING_LEVEL=WARN
     - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8000/eureka/
-    - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
     - SPRING_DATASOURCE_USERNAME=choerodon
     - SPRING_DATASOURCE_PASSWORD=123456
     - CHOERODON_SWAGGER_CLIENT=client
@@ -239,7 +239,7 @@ services:
     - SPRING_SLEUTH_STREAM_ENABLED=false
     - LOGGING_LEVEL=WARN
     - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8000/eureka/
-    - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/base_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/base_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
     - SPRING_DATASOURCE_USERNAME=choerodon
     - SPRING_DATASOURCE_PASSWORD=123456
     - SPRINT_REDIS_HOST=redis
