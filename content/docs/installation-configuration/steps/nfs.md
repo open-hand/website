@@ -113,7 +113,7 @@ helm install c7n/nfs-client-provisioner \
     --set storageClass.name=nfs-provisioner \
     --set persistence.nfsServer=127.0.0.1 \(1)
     --set persistence.nfsPath=/u01/prod \(1)
-    --version 0.1.0 \
+    --version 0.1.1 \
     --name nfs-client-provisioner \
     --namespace kube-system
 {{< /annotation >}}

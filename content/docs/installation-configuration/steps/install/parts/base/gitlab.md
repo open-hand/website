@@ -39,7 +39,7 @@ helm install c7n/postgresql \
     --set initdbScripts.'init\.sql'='
         \\c gitlabhq_production;
         CREATE EXTENSION IF NOT EXISTS pg_trgm;' \
-    --version 3.18.4 \
+    --version 3.18.4-1 \
     --name gitlab-postgresql \
     --namespace c7n-system
 ```
@@ -61,7 +61,7 @@ helm install c7n/redis \
     --set persistence.enabled=true \
     --set persistence.existingClaim=gitlab-redis-pvc \
     --set service.enabled=true \
-    --version 0.2.0 \
+    --version 0.2.2 \
     --name gitlab-redis \
     --namespace c7n-system
 ```
@@ -112,7 +112,7 @@ helm install c7n/gitlab \
     --set service.enabled=true \
     --set service.ssh.nodePort=32222 \
     --set ingress.enabled=true \
-    --version 0.5.0 \
+    --version 0.5.2 \
     --name gitlab \
     --namespace c7n-system
 ```
@@ -184,7 +184,7 @@ helm install c7n/gitlab \
         --set env.config.CHOERODON_API_URL=http://api.example.choerodon.io \
         --set env.config.CHOERODON_CLIENT_ID=gitlab \
         --set env.config.CHOERODON_CLIENT_SECRET=secret \
-        --version 0.5.0 \
+        --version 0.5.2 \
         --namespace c7n-system
 
 ### 添加Gitlab Client

@@ -44,7 +44,7 @@ helm install c7n/sonarqube \
     --set ingress.enabled=true \
     --set ingress.'hosts[0]'=sonarqube.example.choerodon.io \
     --set plugins.'install[0]'=https://file.choerodon.com.cn/choerodon-install/sonarqube/sonar-auth-choerodonoauth-plugin-1.5.1-RELEASE.jar \
-    --version 0.15.0 \
+    --version 0.15.0-3 \
     --name sonarqube \
     --namespace c7n-system
 ```
@@ -130,8 +130,16 @@ helm install c7n/sonarqube \
 ```
 
 - 在.gitlab-ci.yml文件build阶段添加
-
-```- mvn --batch-mode  verify sonar:sonar  -Dsonar.host.url=$SONAR_URL -Dsonar.login=$SONAR_LOGIN -Dsonar.gitlab.project_id=$CI_PROJECT_PATH -Dsonar.gitlab.commit_sha=$CI_COMMIT_SHA -Dsonar.gitlab.ref_name=$CI_COMMIT_REF_NAME -Dsonar.analysis.serviceGroup=$GROUP_NAME -Dsonar.analysis.commitId=$CI_COMMIT_SHA -Dsonar.projectKey=${GROUP_NAME}:${PROJECT_NAME}```
+  
+        - >-
+          mvn --batch-mode  verify sonar:sonar
+          -Dsonar.host.url=$SONAR_URL -Dsonar.login=$SONAR_LOGIN
+          -Dsonar.gitlab.project_id=$CI_PROJECT_PATH
+          -Dsonar.gitlab.commit_sha=$CI_COMMIT_SHA
+          -Dsonar.gitlab.ref_name=$CI_COMMIT_REF_NAME
+          -Dsonar.analysis.serviceGroup=$GROUP_NAME
+          -Dsonar.analysis.commitId=$CI_COMMIT_SHA
+          -Dsonar.projectKey=${GROUP_NAME}:${PROJECT_NAME}
 
 - sonar.projectKey=${GROUP_NAME}:${PROJECT_NAME}不可更改；否则，在查看代码质量时将获取不到对应数据
 - GROUP_NAME和PROJECT_NAME是devops-service内置的环境变量， GROUP_NAME=当前项目所在组织编码-当前项目编码，PROJECT_NAME=当前应用编码
