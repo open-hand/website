@@ -63,11 +63,7 @@ helm repo update
         SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
         SERVICES_ATTACHMENT_URL: http://minio.example.choerodon.io
     preJob:
-      preConfig:
-        datasource:
-          password: password
-          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
-          username: choerodon
+      timeout: 300
       preInitDB:
         datasource:
           password: password
@@ -113,11 +109,7 @@ helm repo update
         SPRING_REDIS_DATABASE: 10
         SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
     preJob:
-      preConfig:
-        datasource:
-          password: password
-          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
-          username: choerodon
+      timeout: 300
       preInitDB:
         datasource:
           password: password
@@ -175,11 +167,7 @@ helm repo update
         SPRING_DATASOURCE_USERNAME: choerodon
         ELASTICSEARCH_IP: elasticsearch-kb.c7n-system:9200
     preJob:
-      preConfig:
-        datasource:
-          password: password
-          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
-          username: choerodon
+      timeout: 300
       preInitDB:
         datasource:
           password: password

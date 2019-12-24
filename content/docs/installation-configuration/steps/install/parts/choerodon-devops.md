@@ -81,11 +81,7 @@ helm repo update
       enabled: true
       host: devops.example.choerodon.io
     preJob:
-      preConfig:
-        datasource:
-          password: password
-          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
-          username: choerodon
+      timeout: 300
       preInitDB:
         datasource:
           password: password
@@ -133,11 +129,7 @@ helm repo update
         SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/gitlab_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
         SPRING_DATASOURCE_USERNAME: choerodon
     preJob:
-      preConfig:
-        datasource:
-          password: password
-          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
-          username: choerodon
+      timeout: 300
       preInitDB:
         datasource:
           password: password
@@ -182,11 +174,7 @@ helm repo update
         SPRING_REDIS_DATABASE: 8
         SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
     preJob:
-      preConfig:
-        datasource:
-          password: password
-          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
-          username: choerodon
+      timeout: 300
       preInitDB:
         datasource:
           password: password

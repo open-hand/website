@@ -80,7 +80,7 @@ helm repo update
     helm install c7n/go-register-server \
       -f register-server.yaml \
       --name register-server \
-      --version 0.20.0 \
+      --version 0.20.1 \
       --namespace c7n-system
     ```
 
@@ -104,7 +104,7 @@ helm repo update
             "status": "UP",
             ...
             "metadata": {
-                "VERSION": "0.20.0"
+                "VERSION": "0.20.1"
             },
             ...
             }
@@ -176,11 +176,7 @@ helm repo update
         SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
         SPRING_REDIS_PORT: 6379
     preJob:
-      preConfig:
-        datasource:
-          password: password
-          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
-          username: choerodon
+      timeout: 300
       preInitDB:
         datasource:
           password: password
@@ -218,11 +214,6 @@ helm repo update
     ```yaml
     preJob:
       timeout: 300
-      preConfig:
-        datasource:
-          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
-          username: choerodon
-          password: password
       preInitDB:
         datasource:
           url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/base_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
@@ -281,11 +272,7 @@ helm repo update
       enabled: true
       host: notify.example.choerodon.io
     preJob:
-      preConfig:
-        datasource:
-          password: password
-          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
-          username: choerodon
+      timeout: 300
       preInitDB:
         datasource:
           password: password
@@ -339,6 +326,7 @@ helm repo update
       enabled: true
       host: api.example.choerodon.io
     preJob:
+      timeout: 300
       preConfig:
         datasource:
           password: password
@@ -387,11 +375,7 @@ helm repo update
         SPRING_REDIS_DATABASE: 6
         SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
     preJob:
-      preConfig:
-        datasource:
-          password: password
-          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
-          username: choerodon
+      timeout: 300
     ```
 - 部署服务
     ```
@@ -430,11 +414,7 @@ helm repo update
         SPRING_CLOUD_CONFIG_ENABLED: true
         SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
     preJob:
-      preConfig:
-        datasource:
-          password: password
-          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
-          username: choerodon
+      timeout: 300
     ```
 - 部署服务
 
