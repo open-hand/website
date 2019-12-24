@@ -81,7 +81,7 @@ helm repo update
         --set env.persistence.runner-cache-pvc="/cache" \
         --set enabled_mount_host_docker_sock=true \
         --name runner \
-        --version 0.2.3 \
+        --version 0.2.4 \
         --namespace c7n-system
     ```
 
