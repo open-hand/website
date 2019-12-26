@@ -376,7 +376,7 @@ sudo ./install-ansible.sh
     ```bash
     kubectl run iperf-server \
         -it --quiet --rm --restart=Never \
-        --overrides='{"spec":{"nodeName":"指定客户端运行的节点"}}' \
+        --overrides='{"spec":{"nodeName":"指定服务端运行的节点"}}' \
         --image='registry.cn-hangzhou.aliyuncs.com/choerodon-tools/network-and-cluster-perfermance-test:0.1.0' \
         -- bash -c "sleep 3; ifconfig eth0; iperf -s -p 12345 -i 1 -M"
     ```
