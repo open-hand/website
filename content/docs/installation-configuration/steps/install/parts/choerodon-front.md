@@ -27,8 +27,6 @@ helm repo update
         HEADER_TITLE_NAME: Choerodon
         HTTP: http
         WEBSOCKET_SERVER: ws://notify.example.choerodon.io
-        COOKIE_SERVER:
-        CUSTOM_THEME_COLOR:
     ingress:
       enabled: true
       host: c7n.example.choerodon.io

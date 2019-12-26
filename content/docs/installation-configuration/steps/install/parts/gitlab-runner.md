@@ -95,9 +95,6 @@ helm repo update
     env.concurrent|可以同时进行的CI数量
     env.gitlabUrl|Gitlab地址
     env.runnerRegistrationToken|Runner注册token
-    env.environment.DOCKER_REGISTRY|Docker镜像仓库地址
-    env.environment.DOCKER_USER|Docker镜像仓库用户名
-    env.environment.DOCKER_PWD|Docker镜像仓库用户密码
     env.environment.CHOERODON_URL|Choerodon API地址
     env.persistence.runner-maven-pvc|持久化数据，此处`runner-maven-pvc`为PVC名称，值为要挂载到Pod的`/root/.m2`目录
     env.persistence.runner-cache-pvc|持久化数据，此处`runner-cache-pvc`为PVC名称，值为要挂载到Pod的`/cache`目录
