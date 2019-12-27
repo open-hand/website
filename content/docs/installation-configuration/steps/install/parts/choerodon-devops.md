@@ -94,7 +94,7 @@ helm repo update
     helm install c7n/devops-service \
         -f devops-service.yaml \
         --name devops-service \
-        --version 0.20.1 \
+        --version 0.20.2 \
         --namespace c7n-system
     ```
 
@@ -139,7 +139,7 @@ helm repo update
     helm install c7n/gitlab-service \
         -f gitlab-service.yaml \
         --name gitlab-service \
-        --version 0.20.0 \
+        --version 0.20.1 \
         --namespace c7n-system
     ```
 
