@@ -312,8 +312,8 @@ weight = 10
     # manager servcie
     mysqldump -u<username> -p<password> -h<host> --databases manager_service | gzip >$(date "+manager_service-%s.sql.gz")
 
-    # iam servcie
-    mysqldump -u<username> -p<password> -h<host> --databases iam_service | gzip >$(date "+iam_service-%s.sql.gz")
+    # base servcie
+    mysqldump -u<username> -p<password> -h<host> --databases base_service | gzip >$(date "+base_service-%s.sql.gz")
 
     # asgard service
     mysqldump -u<username> -p<password> -h<host> --databases asgard_service | gzip >$(date "+asgard_service-%s.sql.gz")
@@ -341,26 +341,9 @@ weight = 10
     # agile service
     mysqldump -u<username> -p<password> -h<host> --databases  agile_service | gzip >$(date "+agile_service-%s.sql.gz")
 
-    # state machine service
-    mysqldump -u<username> -p<password> -h<host> --databases  state_machine_service | gzip >$(date "+state_machine_service-%s.sql.gz")
-
-    # issue service
-    mysqldump -u<username> -p<password> -h<host> --databases  issue_service | gzip >$(date "+issue_service-%s.sql.gz")
-
-    # foundation service
-    mysqldump -u<username> -p<password> -h<host> --databases  foundation_service | gzip >$(date "+foundation_service-%s.sql.gz")
-    ```
-
-4. 测试管理数据库备份
-
-    ```bash
     # test manager service
     mysqldump -u<username> -p<password> -h<host> --databases  test_manager_service | gzip >$(date "+test_manager_service-%s.sql.gz")
-    ```
 
-5. 知识管理数据备份
-
-    ```bash
     # knowledgebase service
     mysqldump -u<username> -p<password> -h<host> --databases  knowledgebase-service | gzip >$(date "+knowledgebase-service-%s.sql.gz")
     ```
@@ -393,10 +376,10 @@ weight = 10
         helm get values notify-service > notify-service-helm-values.yaml
         ```
 
-    - iam servcie 配置备份
+    - base servcie 配置备份
 
       ```bash
-      helm get values iam-service > iam-server-helm-values.yaml
+      helm get values base-service > base-server-helm-values.yaml
       ```
 
     - api gateway 配置备份
@@ -445,33 +428,11 @@ weight = 10
         helm get values agile-service > agile-service-helm-values.yaml
         ```
 
-    - state machine service 配置备份
-
-        ```bash
-        helm get values state-machine-service > state-machine-service-helm-values.yaml
-        ```
-
-    - issue service 配置备份
-
-        ```bash
-        helm get values issue-service > issue-service-helm-values.yaml
-        ```
-
-    - foundation service 配置备份
-
-        ```bash
-        helm get values foundation-service  > foundation-service-helm-values.yaml
-        ```
-
-4. 测试管理组件与服务配置备份
-
     - test manager service 配置备份
 
         ```bash
         helm get values test-manager-service > test-manager-service-helm-values.yaml
         ```
-
-5. 知识管理组件与服务配置备份
 
     - knowledgebase service 配置备份
 
@@ -479,7 +440,7 @@ weight = 10
         helm get values knowledgebase-service > knowledgebase-service-helm-values.yaml
         ```
 
-6. 总前端配置备份
+4. 总前端配置备份
     - choerodon front 配置备份
 
         ```bash
@@ -599,8 +560,8 @@ weight = 10
     # manager servcie
     gunzip manager_service-<date>.sql.gz | mysql -u<username> -p<password> --databases manager_service
 
-    # iam servcie
-    gunzip iam_service-<date>.sql.gz | mysql -u<username> -p<password> --databases iam_service
+    # base servcie
+    gunzip base_service-<date>.sql.gz | mysql -u<username> -p<password> --databases base_service
 
     # asgard service
     gunzip asgard_service-<date>.sql.gz | mysql -u<username> -p<password> --databases asgard_service
@@ -628,26 +589,9 @@ weight = 10
     # agile service
     gunzip agile_service-<date>.sql.gz | mysql -u<username> -p<password> --databases agile_service
 
-    # state machine service
-    gunzip state_machine_service-<date>.sql.gz | mysql -u<username> -p<password> --databases state_machine_service
-
-    # issue service
-    gunzip issue_service-<date>.sql.gz | mysql -u<username> -p<password> --databases issue_service
-
-    # foundation service
-    gunzip foundation_service-<date>.sql.gz | mysql -u<username> -p<password> --databases foundation_service
-    ```
-
-4. 测试管理数据库恢复
-
-    ```bash
     # test manager service
     gunzip test_manager_service-<date>.sql.gz | mysql -u<username> -p<password> --databases test_manager_service
-    ```
 
-5. 知识管理数据恢复
-
-    ```bash
     # knowledgebase service
     gunzip knowledgebase-service-<date>.sql.gz | mysql -u<username> -p<password> --databases knowledgebase-service
     ```
@@ -680,10 +624,10 @@ weight = 10
         helm upgrade --install notify-service c7n/notify-service -f notify-service-helm-values.yaml
         ```
 
-    - iam servcie 配置恢复
+    - base servcie 配置恢复
 
       ```bash
-      helm upgrade --install iam-service c7n/iam-service -f iam-service-helm-values.yaml
+      helm upgrade --install base-service c7n/base-service -f base-service-helm-values.yaml
       ```
 
     - api gateway 配置恢复
@@ -732,33 +676,11 @@ weight = 10
         helm upgrade --install agile-service c7n/agile-service -f agile-service-helm-values.yaml
         ```
 
-    - state machine service 配置恢复
-
-        ```bash
-        helm upgrade --install state-machine-service c7n/state-machine-service -f state-machine-service-helm-values.yaml
-        ```
-
-    - issue service 配置恢复
-
-        ```bash
-        helm upgrade --install issue-service c7n/issue-service -f issue-service-helm-values.yaml
-        ```
-
-    - foundation service 配置恢复
-
-        ```bash
-        helm upgrade --install foundation-service c7n/foundation-service -f foundation-service-helm-values.yaml
-        ```
-
-4. 测试管理组件与服务配置恢复
-
     - test manager service 配置恢复
 
         ```bash
         helm upgrade --install test-manager-service c7n/test-manager-service -f test-manager-service-helm-values.yaml
         ```
-
-5. 知识管理组件与服务配置恢复
 
     - knowledgebase service 配置恢复
 
@@ -766,7 +688,7 @@ weight = 10
         helm upgrade --install knowledgebase-service c7n/knowledgebase-service -f knowledgebase-service-helm-values.yaml
         ```
 
-6. 总前端配置恢复
+4. 总前端配置恢复
     - choerodon front 配置恢复
 
         ```bash
