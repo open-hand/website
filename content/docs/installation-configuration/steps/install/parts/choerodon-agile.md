@@ -62,7 +62,7 @@ helm repo update
         SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
         SERVICES_ATTACHMENT_URL: http://minio.example.choerodon.io
     preJob:
-      timeout: 300
+      timeout: 1800
       preInitDB:
         datasource:
           password: password
@@ -108,7 +108,7 @@ helm repo update
         SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
         SERVICES_ATTACHMENT_URL: http://minio.example.choerodon.io
     preJob:
-      timeout: 300
+      timeout: 1800
       preInitDB:
         datasource:
           password: password
@@ -165,7 +165,7 @@ helm repo update
         SPRING_DATASOURCE_USERNAME: choerodon
         ELASTICSEARCH_IP: elasticsearch-kb.c7n-system:9200
     preJob:
-      timeout: 300
+      timeout: 1800
       preInitDB:
         datasource:
           password: password

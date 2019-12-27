@@ -29,7 +29,7 @@ weight = 5
 | Redis                    | 缓存数据库               | 4.0.11                       | 0.2.3     |
 | Mysql                    | 数据库                   | 5.7.23                       | 0.1.2     |
 | Harbor                   | 容器的镜像库             | v1.9.3                       | 1.2.3     |
-| Gitlab                   | 代码托管                 | 11.11.7-ce.0                 | 0.5.2     |
+| Gitlab                   | 代码托管                 | 11.11.7-ce.0                 | 0.5.3     |
 | Gitlab-Runner            | CI/CD 运行环境           | v11.11.4                     | 0.2.4     |
 | elasticsearch-kb         | 知识ES服务               | 7.2-elasticsearch-kb         | 0.20.0    |
 
@@ -53,4 +53,4 @@ weight = 5
 | agile service         | 敏捷管理       | 0.20.1 |
 | test manager service  | 测试管理服务   | 0.20.2 |
 | knowledgebase service | 知识服务       | 0.20.0 |
-| choerodon front       | Choerodon 前端 | 0.20.0 |
+| choerodon front       | Choerodon 前端 | 0.20.1 |

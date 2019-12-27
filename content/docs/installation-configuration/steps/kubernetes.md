@@ -59,10 +59,10 @@ sudo ./install-ansible.sh
     ;    第二个字段 ansible_user     为节点远程登录用户名
     ;    第三个字段 ansible_ssh_pass 为节点远程登录用户密码
     [all]
-    192.168.56.11 ansible_user=vagrant ansible_ssh_pass=vagrant
-    192.168.56.12 ansible_user=vagrant ansible_ssh_pass=vagrant
-    192.168.56.13 ansible_user=vagrant ansible_ssh_pass=vagrant
-    192.168.56.14 ansible_user=vagrant ansible_ssh_pass=vagrant
+    192.168.56.11 ansible_port=22 ansible_user="vagrant" ansible_ssh_pass="vagrant"
+    192.168.56.12 ansible_port=22 ansible_user="vagrant" ansible_ssh_pass="vagrant"
+    192.168.56.13 ansible_port=22 ansible_user="vagrant" ansible_ssh_pass="vagrant"
+    192.168.56.14 ansible_port=22 ansible_user="vagrant" ansible_ssh_pass="vagrant"
 
     ; 私有云：
     ;    VIP 负载模式：
@@ -145,6 +145,8 @@ sudo ./install-ansible.sh
     kubelet_root_dir="/var/lib/kubelet"
     ; docker容器存储目录
     docker_storage_dir="/var/lib/docker"
+    # Etcd 数据根目录
+    etcd_data_dir="/var/lib/etcd"
     ```
 
 ### 集群部署

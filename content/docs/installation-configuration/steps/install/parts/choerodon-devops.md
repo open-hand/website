@@ -80,7 +80,7 @@ helm repo update
       enabled: true
       host: devops.example.choerodon.io
     preJob:
-      timeout: 300
+      timeout: 1800
       preInitDB:
         datasource:
           password: password
@@ -127,7 +127,7 @@ helm repo update
         SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/gitlab_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
         SPRING_DATASOURCE_USERNAME: choerodon
     preJob:
-      timeout: 300
+      timeout: 1800
       preInitDB:
         datasource:
           password: password
@@ -171,7 +171,7 @@ helm repo update
         SPRING_REDIS_DATABASE: 8
         SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
     preJob:
-      timeout: 300
+      timeout: 1800
       preInitDB:
         datasource:
           password: password

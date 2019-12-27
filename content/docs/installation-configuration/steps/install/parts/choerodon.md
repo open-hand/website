@@ -175,7 +175,7 @@ helm repo update
         SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
         SPRING_REDIS_PORT: 6379
     preJob:
-      timeout: 300
+      timeout: 1800
       preInitDB:
         datasource:
           password: password
@@ -212,7 +212,7 @@ helm repo update
 - 编写参数配置文件 `base-service.yaml`
     ```yaml
     preJob:
-      timeout: 300
+      timeout: 1800
       preInitDB:
         datasource:
           url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/base_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
@@ -269,7 +269,7 @@ helm repo update
       enabled: true
       host: notify.example.choerodon.io
     preJob:
-      timeout: 300
+      timeout: 1800
       preInitDB:
         datasource:
           password: password
@@ -322,7 +322,7 @@ helm repo update
       enabled: true
       host: api.example.choerodon.io
     preJob:
-      timeout: 300
+      timeout: 1800
       preConfig:
         datasource:
           password: password
@@ -370,7 +370,7 @@ helm repo update
         SPRING_REDIS_DATABASE: 6
         SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
     preJob:
-      timeout: 300
+      timeout: 1800
     ```
 - 部署服务
     ```
@@ -408,7 +408,7 @@ helm repo update
         MINIO_SECRETKEY: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
         SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
     preJob:
-      timeout: 300
+      timeout: 1800
     ```
 - 部署服务
 
