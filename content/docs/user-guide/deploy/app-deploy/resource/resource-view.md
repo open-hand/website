@@ -38,7 +38,42 @@ weight = 2
 
 #### 3.1.1 创建操作
 
-##### 3.1.1.1 创建网络
+
+##### 3.1.1.1 手动部署
+
+![image](/docs/user-guide/deploy/app-deploy/resource/images/deploy.png)  
+
+1. 在树结构中点击进入实例列表页面，再点击顶部的`手动部署`按钮。
+
+2. 选择服务来源；  
+   - 项目应用服务：本项目下已有的应用服务；
+   - 共享应用：组织内其他项目共享出来的应用服务；
+  
+3. 选择服务；
+4. 选择需要部署的服务版本；
+   - 选择应用服务版本时，只会在下拉框中显示近40条版本以供选择。若想部署其他版本，请直接在下拉框中精确搜索对应的版本选中即可。
+
+5. 修改实例名称； 
+   - 选择应用服务后，会默认生成对应的实例名称，且该名称支持自定义。   
+
+6. 选择部署配置；（此处可以直接从已有的部署配置中进行选择并使用，或者直接在默认values的基础上进行修改）
+    - 若项目中暂时没有所选应用和环境的部署配置，此时编辑器中会出现默认的初始values文件，用户可在此基础上进行修改。
+    - 若选中一个部署配置，编辑器中会出现该部署配置中的配置信息，用户可直接使用，或者在此基础上进行修改。
+    - 部署values目前有四种显示格式：
+      - 新增：新增的参数行，显示绿色
+      - 修改：修改values值后，显示为黄色块
+      - 红色x: yaml格式错误的行，显示红色x
+      - 未改变：默认色
+      
+    <blockquote class="note"> 
+    在该编辑器模式中，yaml格式的校验是实时的，每次只会返回一个yaml格式错误，即使文件有多行报错。只有将上一个错误修改正确。 每修改一次部署values的值都会校验一次yaml格式，有错就会界面上用红色x提示，鼠标移到红色x上会显示具体的报错信息。yaml格式不正确不能点击下一步。但是当版本里面的values文件有yaml格式错误时，无法通过界面修改yaml格式错误，只能修改代码内的values文件并且生成新的版本，重新部署新的版本。
+    </blockquote>  
+
+7. 资源配置
+
+完成上述步骤后，此时点击部署，便能在目标环境中成功部署所选的应用服务。若要为此次部署生成的实例配置网络和域名，以便能通过外部网络访问到该实例，只需在同一页面中点击 `资源配置`展开详情页面直接配置即可。
+
+##### 3.1.1.2 创建网络
 
 ![image](/docs/user-guide/deploy/app-deploy/resource/images/resource-34.png)
  
@@ -86,7 +121,7 @@ weight = 2
             </blockquote>
  5. 点击 `创建`完成网络创建。
  
-##### 3.1.1.2 创建域名
+##### 3.1.1.3 创建域名
 
 ![image](/docs/user-guide/deploy/app-deploy/resource/images/resource-35.png)
 
@@ -106,7 +141,7 @@ weight = 2
 
 6. 域名创建成功后，将会出现在域名列表中，同时根据此域名就可以访问相应的服务。
 
-##### 3.1.1.3 创建证书
+##### 3.1.1.4 创建证书
 
 ![image](/docs/user-guide/deploy/app-deploy/resource/images/resource-36.png)
 
@@ -147,7 +182,7 @@ weight = 2
               
 4. 点击 `创建`完成证书的创建。
 
-##### 3.1.1.4 创建配置映射
+##### 3.1.1.5 创建配置映射
 
 ![image](/docs/user-guide/deploy/app-deploy/resource/images/resource-40.png)
 
@@ -166,7 +201,7 @@ weight = 2
 
     - 高级功能：您可粘贴多行“键=值”格式的字段至任何键框中，以便于批量输入键值对。
 
-##### 3.1.1.5 创建密文
+##### 3.1.1.6 创建密文
 
 ![image](/docs/user-guide/deploy/app-deploy/resource/images/resource-41.png)
  
@@ -183,7 +218,7 @@ weight = 2
 
     - 高级功能：您可粘贴多行“键=值”格式的字段至任何键框中，以便于批量输入键值对。
 
-##### 3.1.1.6 创建自定义资源
+##### 3.1.1.7 创建自定义资源
 
 ![image](/docs/user-guide/deploy/app-deploy/resource/images/resource-42.png)
  
@@ -194,6 +229,33 @@ weight = 2
      - 直接上传文件添加：支持直接上传本地的YAML文件进行添加。
 
 3. 点击 `创建`，完成对自定义资源的添加。
+
+
+##### 3.1.1.8 创建PVC
+1. 在PVC的列表界面，点击顶部的 `创建PVC` 按钮。右侧会弹出创建页面。
+
+    ![image](/docs/user-guide/deploy/app-deploy/resource/images/create-pvc.jpg)
+
+2. 输入PVC名称。
+    - PVC名称：限制为30字符，由小写字母开头，只能包含小写字母、数字、“.”和“-”；且在集群和项目下唯一。
+
+3. 选择访问模式。
+    - ReadWriteOnce：该卷能够以读写模式被加载到一个节点上。  
+
+    - ReadOnlyMany：该卷能够以只读模式加载到多个节点上。  
+    - ReadWriteMany：该卷能够以读写模式被多个节点同时加载。 
+
+4. 定义总量。  
+   - 此处存储容量得数值仅支持填写整数，且单位可选：Mi、Gi与Ti。
+
+5. 选择绑定的PV类型，目前支持选择NFS和HostPath类型的PV。  
+
+6. 选择绑定PV。此处可选的为满足上述要求的PV，即：访问模式相符、PV存储容量大于等于总量、PV类型相符。  
+ 
+   <blockquote class="note"> 
+    注意：此处仅能选择已为该项目分配权限的PV，且一个PVC只能选择一个PV进行绑定。
+   </blockquote>
+
  
 #### 3.1.2 修改操作
 
@@ -291,6 +353,10 @@ weight = 2
 
 -  或者在左侧的树结构中，点击某个自定义资源名称后面的![image](https://minio.choerodon.com.cn/knowledgebase-service/file_7671a4afc2b040c2b315cadbfa688727_blob.png)图标，选择 `删除`，同样可以对自定义资源进行删除。
 
+##### 3.1.2.6 删除PVC
+
+- 在列表中选择一个非处理中状态的PVC，点击后的![image](https://minio.choerodon.com.cn/knowledgebase-service/file_4db3cb6300ca47369bbf2512d2eabf3d_blob.png)图标，选择 `删除`，即可删除对应的PVC。
+
 ### 3.2 资源列表查看
 
 #### 3.2.1 实例列表
@@ -352,6 +418,24 @@ weight = 2
 - 资源类型：自定义资源的类型。
 - 更新时间：自定义资源最近的更新时间。
 
+#### 3.2.9 PVC列表
+
+![image](/docs/user-guide/deploy/app-deploy/resource/images/pvc-index.jpg)  
+
+
+PersistentVolumeClaim（PVC）是用户存储的请求。 它类似于pod。Pod消耗节点资源，PVC消耗存储资源。
+
+- PVC名称：包括了PVC的名称与状态
+    - 目前PVC存在以下4种状态：
+	  Pending：PVC未绑定PV时的状态，该状态的PVC不支持任何操作。  
+      Operating：指DevOps向Agent发消息过程中的状态。该状态的PVC不支持任何操作。
+	  Bound：表示该PVC已经与某个PV绑定。该状态的PVC支持删除操作。   
+      Terminating：指Agent解析后发消息回来时的状态。该状态的PVC不支持任何操作。  
+
+- 绑定PV：当前PVC绑定的PV。
+- 访问模式：即PVC支持的访问模式。  
+- 总量：即创建PVC时设置的总量。
+
 ## 4. 资源详情层
 
 ### 4.1 实例
@@ -375,11 +459,12 @@ weight = 2
 
 #### 4.1.2 实例事件
 
-![image](/docs/user-guide/deploy/app-deploy/resource/images/resource-56.png)
+![image](/docs/user-guide/deploy/app-deploy/resource/images/instance-command.jpg)
 
 实例事件标签页中包括了该实例所有的操作记录，同时还支持查看当前实例最近四个版本的job与deployments的事件及其对应的日志；主要用于开发或部署人员查看应用服务部署的进度、状态以及记录。
          
-> 鼠标移动到某个job模块时，在右上角会hover出该job的日志详情按钮，点击即可进入查看job日志。
+> - 鼠标移动到某个job模块时，在右上角会hover出该job的日志详情按钮，点击即可进入查看job日志。
+> - 在“生效”的操作后面，会有一个特殊的标签。
 
 #### 4.1.3 Pod详情
 
@@ -401,7 +486,10 @@ Pod详情页面主要用于查看和管理系统中的容器化实例，用户�
  
 3. 点击Pod名称后的![image](https://minio.choerodon.com.cn/knowledgebase-service/file_7671a4afc2b040c2b315cadbfa688727_blob.png)图标，选择 `运行命令`， 即可使用shell命令操作该容器。
 
-    ![image](/docs/user-guide/deploy/app-deploy/resource/images/resource-59.png)
+    ![image](/docs/user-guide/deploy/app-deploy/resource/images/resource-59.png)  
+
+
+4. 点击Pod名称后的![image](https://minio.choerodon.com.cn/knowledgebase-service/file_7671a4afc2b040c2b315cadbfa688727_blob.png)图标，选择 `删除Pod`， 即可关闭删除当前Pod，并且会在此基础上重启一个新的Pod。
 
 #### 4.1.3.2 Pod 状态
 

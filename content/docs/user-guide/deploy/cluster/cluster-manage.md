@@ -119,7 +119,7 @@ weight = 1
 
 对于之前版本已安装CertManager组件的集群，此处会直接展示出组件处于已安装的状态。若是新建的集群，则需在此处自主安装CertManager组件。
 
-<blockquote class="warning>
+<blockquote class="warning">
 只能在运行中状态的集群里管理组件！
 
 </blockquote>
