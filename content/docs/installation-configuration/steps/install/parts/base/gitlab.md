@@ -112,7 +112,7 @@ helm install c7n/gitlab \
     --set service.enabled=true \
     --set service.ssh.nodePort=32222 \
     --set ingress.enabled=true \
-    --version 0.5.2 \
+    --version 0.5.3 \
     --name gitlab \
     --namespace c7n-system
 ```
@@ -184,7 +184,7 @@ helm install c7n/gitlab \
         --set env.config.CHOERODON_API_URL=http://api.example.choerodon.io \
         --set env.config.CHOERODON_CLIENT_ID=gitlab \
         --set env.config.CHOERODON_CLIENT_SECRET=secret \
-        --version 0.5.2 \
+        --version 0.5.3 \
         --namespace c7n-system
 
 ### 添加Gitlab Client

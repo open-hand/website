@@ -80,7 +80,7 @@ helm repo update
     helm install c7n/go-register-server \
       -f register-server.yaml \
       --name register-server \
-      --version 0.20.1 \
+      --version 0.20.2 \
       --namespace c7n-system
     ```
 
@@ -104,7 +104,7 @@ helm repo update
             "status": "UP",
             ...
             "metadata": {
-                "VERSION": "0.20.1"
+                "VERSION": "0.20.2"
             },
             ...
             }
