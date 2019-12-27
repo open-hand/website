@@ -54,7 +54,6 @@ helm repo update
     env:
       open:
         EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
-        SPRING_CLOUD_CONFIG_ENABLED: true
         SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
         SPRING_DATASOURCE_PASSWORD: password
         SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/agile_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
@@ -101,7 +100,6 @@ helm repo update
     env:
       open:
         EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
-        SPRING_CLOUD_CONFIG_ENABLED: true
         SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
         SPRING_DATASOURCE_PASSWORD: password
         SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/test_manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
@@ -161,7 +159,6 @@ helm repo update
       open:
         EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
         SERVICES_ATTACHMENT_URL: http://minio.example.choerodon.io/knowledgebase-service/
-        SPRING_CLOUD_CONFIG_ENABLED: true
         SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
         SPRING_DATASOURCE_PASSWORD: password
         SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/knowledgebase_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai

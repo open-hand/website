@@ -167,7 +167,6 @@ helm repo update
     env:
       open:
         EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
-        SPRING_CLOUD_CONFIG_ENABLED: true
         SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
         SPRING_DATASOURCE_PASSWORD: password
         SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/asgard_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
@@ -221,7 +220,6 @@ helm repo update
           password: password
     env:
       open:
-        SPRING_CLOUD_CONFIG_ENABLED: true
         SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
         SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc/base_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
         SPRING_DATASOURCE_USERNAME: choerodon
@@ -261,7 +259,6 @@ helm repo update
     env:
       open:
         EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
-        SPRING_CLOUD_CONFIG_ENABLED: true
         SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
         SPRING_DATASOURCE_PASSWORD: password
         SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/notify_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
@@ -312,7 +309,6 @@ helm repo update
     env:
       open:
         EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
-        SPRING_CLOUD_CONFIG_ENABLED: true
         SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
         SPRING_DATASOURCE_PASSWORD: password
         SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/base_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
@@ -367,7 +363,6 @@ helm repo update
       open:
         CHOERODON_DEFAULT_REDIRECT_URL: http://c7n.example.choerodon.io
         EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
-        SPRING_CLOUD_CONFIG_ENABLED: true
         SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
         SPRING_DATASOURCE_PASSWORD: password
         SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/base_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
@@ -411,7 +406,6 @@ helm repo update
         MINIO_ENDPOINT: http://minio.example.choerodon.io
         MINIO_ACCESSKEY: AKIAIOSFODNN7EXAMPLE
         MINIO_SECRETKEY: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
-        SPRING_CLOUD_CONFIG_ENABLED: true
         SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
     preJob:
       timeout: 300

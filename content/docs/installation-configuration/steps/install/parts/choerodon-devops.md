@@ -69,7 +69,6 @@ helm repo update
         SERVICES_HARBOR_PASSWORD: Harbor12345
         SERVICES_HARBOR_USERNAME: admin
         SERVICES_HELM_URL: http://chart.example.choerodon.io
-        SPRING_CLOUD_CONFIG_ENABLED: true
         SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
         SPRING_DATASOURCE_PASSWORD: password
         SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/devops_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
@@ -123,7 +122,6 @@ helm repo update
         EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
         GITLAB_PRIVATETOKEN: Gitlab 中获取的 private token
         GITLAB_URL: http://gitlab.example.choerodon.io
-        SPRING_CLOUD_CONFIG_ENABLED: true
         SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
         SPRING_DATASOURCE_PASSWORD: password
         SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/gitlab_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
@@ -166,7 +164,6 @@ helm repo update
     env:
       open:
         EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
-        SPRING_CLOUD_CONFIG_ENABLED: true
         SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
         SPRING_DATASOURCE_PASSWORD: password
         SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/workflow_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
