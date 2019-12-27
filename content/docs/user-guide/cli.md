@@ -21,9 +21,7 @@ Choerodon CLI工具主要面向开发人员，支持使用命令行的方式来�
 需要去choerodon平台的组织下创建客户端，具体设置如下
 ![image](https://minio.choerodon.com.cn/knowledgebase-service/file_c0a606d4656d40ea8192bb5f9ae74401_blob.png)
 
-# 具体操作
-
-#### .c7n.yaml 配置文件
+## .c7n.yaml 配置文件
 
 ```
 Contexts:
@@ -62,7 +60,7 @@ CurrentContext: staging
 | Contexts [].User.UserName | 用户名 | 不用配置，用户登录后自动回写 |
 | CurrentContext | 当前命令行所处上下文 | 必须配置，与Contexts[].Name对应 |
 
-#### 登录
+## 登录
 
 使用c7nctl登录之前，必须在用户根目录下创建.c7n.yaml配置文件
 
@@ -85,7 +83,7 @@ CurrentContext: staging
 
 ![image](https://minio.choerodon.com.cn/knowledgebase-service/file_852a006ccf1c40fea8180d5f58a7e4de_blob.png)
 
-#### 登出
+## 登出
 
 ```
     ./c7nctl logout
@@ -94,7 +92,7 @@ CurrentContext: staging
 登出之后，会清空.c7n.yaml文件，登出之后进行命令操作会提示需要 登陆
 ![image](https://minio.choerodon.com.cn/knowledgebase-service/file_33f63e0a3c4643d2b95d8c99d70855a8_blob.png)
 
-#### 查询用户有权限的组织
+## 查询用户有权限的组织
 
 ```
     ./c7nctl get org
@@ -104,7 +102,7 @@ CurrentContext: staging
 
 ![image](https://minio.choerodon.com.cn/knowledgebase-service/file_1324dd29e9dc4e819ac689a96b97b351_blob.png)
 
-#### 修改上下文中用户默认的组织，默认的组织用于后续命令的默认组织
+## 修改上下文中用户默认的组织，默认的组织用于后续命令的默认组织
 
 ```
     ./c7nctl use org -o xxx
@@ -112,7 +110,7 @@ CurrentContext: staging
 
 ![image](https://minio.choerodon.com.cn/knowledgebase-service/file_2ebe2a7bb3c9400681ac94d46236e69c_blob.png)
 
-#### 查询用户有权限的项目
+## 查询用户有权限的项目
 
 ```
     ./c7nctl get proj
@@ -120,7 +118,7 @@ CurrentContext: staging
 
 ![image](https://minio.choerodon.com.cn/knowledgebase-service/file_a34765aebf7d4abebad457996e824c08_blob.png)
 
-#### 修改上下文中用户默认的项目，默认的项目用于后续命令的默认项目
+## 修改上下文中用户默认的项目，默认的项目用于后续命令的默认项目
 
 ```
     ./c7nctl use proj -p xxx
@@ -128,7 +126,7 @@ CurrentContext: staging
 
 ![image](https://minio.choerodon.com.cn/knowledgebase-service/file_94a3ee4a3b024a079433b0da4677bb0a_blob.png)
 
-#### 查询运维项目集群
+## 查询运维项目集群
 
 ```
     ./c7nctl get cluster -p xxx(-p 非必输)
@@ -136,22 +134,24 @@ CurrentContext: staging
 
 ![image](https://minio.choerodon.com.cn/knowledgebase-service/file_4237bb9303ec4d428453c7999f749683_blob.png)
 
-#### 创建运维项目集群
+## 创建运维项目集群
 
 ```
     ./c7nctl create cluster --name xxx --code xxx --description xxx  -p xxx(-p 非必输)
 ```
 ![image](https://minio.choerodon.com.cn/knowledgebase-service/file_fd243dffbd474b2383de80384564b386_blob.png)
 
-#### 查询集群节点
+## 查询集群节点
 
 ```
    ./c7nctl get node -c xxx -p xxx(-p 非必输)
+   
+   -c: 集群code
 ```
 
 ![image](https://minio.choerodon.com.cn/knowledgebase-service/file_377f01f49371415987c8dfe71ef9c0f0_blob.png)
 
-#### 查询项目应用服务
+## 查询项目应用服务
 
 ```
    ./c7nctl get app -p xxx(-p 非必输)
@@ -159,15 +159,17 @@ CurrentContext: staging
 
 ![image](https://minio.choerodon.com.cn/knowledgebase-service/file_dfcf90c3ef404b1eade695735af279b0_blob.png)
 
-#### 查询应用服务版本
+## 查询应用服务版本
 
 ```
-   ./c7nctl get app-version -a xxx -p xxx(-p 非必输)
+   ./c7nctl get app-version -c xxx -p xxx(-p 非必输)
+   
+   -c: 应用code
 ```
 
 ![image](https://minio.choerodon.com.cn/knowledgebase-service/file_eff2c4f57a674eaeb4e50e78a45ab460_blob.png)
 
-#### 创建项目应用服务
+## 创建项目应用服务
 
 ```
     ./c7nctl create app --name xxx --code xxx --type xxx --templateAppServiceId xxx  --templateAppServiceVersionId xxx(--templateAppServiceId --templateAppServiceVersionId 非必须)
@@ -175,12 +177,16 @@ CurrentContext: staging
 
 如果要从其他已经存在的应用进行引用，那么需要指定templateAppServiceId和templateAppServiceVersionId
 
-* templateAppServiceId:应用id
-* templateAppServiceVersionId:应用发布的版本id
 
+| 参数 | 解释 |
+| --- | --- |
+| env | 环境code |
+| type | 应用类型 normal或者test |
+| templateAppServiceId | 应用id |
+| templateAppServiceVersionId | 应用发布的版本id |
 ![image](https://minio.choerodon.com.cn/knowledgebase-service/file_1f51b92fac134ebd87f3afd3f87a0b68_blob.png)
 
-#### 查询环境列表
+## 查询环境列表
 
 ```
     ./c7nctl get env -p xxx(-p 非必输)
@@ -188,7 +194,7 @@ CurrentContext: staging
 
 ![image](https://minio.choerodon.com.cn/knowledgebase-service/file_248b353268ae437e80b9471208c1f7ec_blob.png)
 
-#### 创建环境
+## 创建环境
 
 ```
     ./c7nctl create env --name xxx --code xxx --cluster xxx --description(非必须) -p xxx(-p 非必输)
@@ -196,7 +202,7 @@ CurrentContext: staging
 
 ![image](https://minio.choerodon.com.cn/knowledgebase-service/file_7444efbd18f84d2b8453d0b104f72913_blob.png)
 
-#### 查询实例列表
+## 查询实例列表
 
 ```
     ./c7nctl get instance -e xxx -p xxx(-p 非必输)
@@ -204,16 +210,18 @@ CurrentContext: staging
 
 ![image](https://minio.choerodon.com.cn/knowledgebase-service/file_67b2cd45267d40f182fb8c072f351fa7_blob.png)
 
-#### 查询实例部署的value列表，并下载到本地
+## 查询实例部署的value列表，并下载到本地
 
 ```
     ./c7nctl get value -e xxx -p xxx(-p 非必输)
+    
+    保存路径是用户目录下的 c7nctl/value/
 ```
 
 ![image](https://minio.choerodon.com.cn/knowledgebase-service/file_11f267afdf554f6a86a78d116657a41e_blob.png)
 ![image](https://minio.choerodon.com.cn/knowledgebase-service/file_515f5ff547c8466cb11e37de4ff7b78d_blob.png)
 
-#### 创建实例
+## 创建实例
 
 ```
     ./c7nctl create instance --env xxx --appServiceId xxx --appServiceVersionId xxx --instanceName xxx --valueFile xxx -p xxx(-p 非必输)
@@ -225,9 +233,9 @@ CurrentContext: staging
 | instanceName | 实例名称 |
 | appServiceId | 应用ID |
 | appServiceVersionId | 应用实例版本ID |
-| valueFile | 部署配置文 |
+| valueFile | 部署配置文件，填写绝对路径 |
 
-#### 查询网络
+## 查询网络
 
 ```
     ./c7nctl get service --env xxx -p xxx(-p 非必输)
@@ -235,10 +243,10 @@ CurrentContext: staging
 
 ![image](https://minio.choerodon.com.cn/knowledgebase-service/file_9f2453b5d69d4dd5be88afe9d21b480c_blob.png)
 
-#### 创建网络
+## 创建网络
 
 ```
-    ./c7nctl create service --env xxx --file xxx -p xxx(-p 非必输)
+    ./c7nctl create service --env xxx --file xxx -p xxx (-p 非必输, file是绝对路径)
 ```
 
 ```
@@ -269,7 +277,7 @@ spec:
 
 ![image](https://minio.choerodon.com.cn/knowledgebase-service/file_22ea407784fa4a128fc9342f8b50d8bb_blob.png)
 
-#### 查询域名
+## 查询域名
 
 ```
    ./c7nctl get ingress --env xxxx
@@ -277,10 +285,10 @@ spec:
 
 ![image](https://minio.choerodon.com.cn/knowledgebase-service/file_35239cb9508341cebc12339328b012c2_blob.png)
 
-#### 创建域名
+## 创建域名
 
 ```
-    ./c7nctl create ingress --env xxx --file xxx -p xxx(-p 非必输)
+    ./c7nctl create ingress --env xxx --file xxx -p xxx (-p 非必输, file是绝对路径)
 ```
 
 ```
@@ -308,7 +316,7 @@ spec:
 
 ![image](https://minio.choerodon.com.cn/knowledgebase-service/file_9853edc35ab6457e8050284a067ce14a_blob.png)
 
-#### 查询证书
+## 查询证书
 
 ```
     ./c7nctl get cert  --env xxxx -p xxx(-p 非必输)
@@ -316,10 +324,10 @@ spec:
 
 ![image](https://minio.choerodon.com.cn/knowledgebase-service/file_efdfd87f70044a22a057d86547ef4f29_blob.png)
 
-#### 创建证书
+## 创建证书
 
 ```
-    ./c7nctl create cert --env xxx --file xxx -p xxx(-p 非必输)
+    ./c7nctl create cert --env xxx --file xxx -p xxx (-p 非必输, file是绝对路径)
 ```
 
 ```
@@ -372,7 +380,7 @@ spec:
 
 ![image](https://minio.choerodon.com.cn/knowledgebase-service/file_e6a173c52eb34735855a284660ba7dfc_blob.png)
 
-#### 查找配置映射
+## 查找配置映射
 
 ```
     ./c7nctl get cm  --env xxx -p xxx(-p 非必输)
@@ -380,10 +388,10 @@ spec:
 
 ![image](https://minio.choerodon.com.cn/knowledgebase-service/file_e8be6b74a79b40c094d32495ff647af7_blob.png)
 
-#### 创建配置映射
+## 创建配置映射
 
 ```
-    ./c7nctl create configMap --env xxx --file xxx -p xxx(-p 非必输)
+    ./c7nctl create cm --env xxx --file xxx -p xxx (-p 非必输, file是绝对路径)
 ```
 
 ```
@@ -397,7 +405,7 @@ metadata:
 
 ![image](https://minio.choerodon.com.cn/knowledgebase-service/file_dff77774145c4ad0951084b9744083be_blob.png)
 
-#### 查询密文
+## 查询密文
 
 ```
     ./c7nctl get secret  --env xxxx -p xxx(-p 非必输)
@@ -405,10 +413,10 @@ metadata:
 
 ![image](https://minio.choerodon.com.cn/knowledgebase-service/file_fd3d7c067e3d486ebb9f49e5395ea835_blob.png)
 
-#### 创建密文
+## 创建密文
 
 ```
-    ./c7nctl create secret --env xxx --file xxx -p xxx(-p 非必输)
+    ./c7nctl create secret --env xxx --file xxx -p xxx (-p 非必输, file是绝对路径)
 ```
 
 apiVersion: v1
@@ -431,7 +439,7 @@ stringData:
 
 ![image](https://minio.choerodon.com.cn/knowledgebase-service/file_daf4c7626c51415eb66db349a1d62077_blob.png)
 
-#### 查询自定义资源
+## 查询自定义资源
 
 ```
     ./c7nctl get custom --env xxxx -p xxx(-p 非必输)
@@ -439,44 +447,10 @@ stringData:
 
 ![image](https://minio.choerodon.com.cn/knowledgebase-service/file_8ac6677e64064f1e91c052b833e56a54_blob.png)
 
-#### 创建自定义资源
+## 创建自定义资源
 
 ```
-    ./c7nctl create custom --env xxx --file xxx -p xxx(-p 非必输)
-```
-
-```
-kind: PersistentVolumeClaim
-apiVersion: v1
-metadata:
-  name: pvc3-nfs-cli
-spec:
-  accessModes:
-    - ReadWriteOnce
-  resources:
-    requests:
-      storage: 2Gi
-  selector:
-    matchLabels:
-      app: nfs
-```
-
-![image](https://minio.choerodon.com.cn/knowledgebase-service/file_a938b5886fb441768eec48e9947eb9cd_blob.png)
-
-#### 查询PV
-
-```
-    ./c7nctl get pv
-```
-
-![image](https://minio.choerodon.com.cn/knowledgebase-service/file_9472a91f28754b6c801e4eaf6c000577_blob.png)
-
-#### 创建PV
-
-```
-    ./c7nctl ceate -c xxx -f xxx
-    -c:集群code
-    -f:pv文件
+    ./c7nctl create custom --env xxx --file xxx -p xxx (-p 非必输, file是绝对路径)
 ```
 
 ```
@@ -494,7 +468,38 @@ spec:
     server: 192.168.16.215
 ```
 
-#### 查询PVC
+![image](https://minio.choerodon.com.cn/knowledgebase-service/file_a938b5886fb441768eec48e9947eb9cd_blob.png)
+
+## 查询PV
+
+```
+    ./c7nctl get pv
+```
+
+![image](https://minio.choerodon.com.cn/knowledgebase-service/file_9472a91f28754b6c801e4eaf6c000577_blob.png)
+
+## 创建PV
+
+```
+    ./c7nctl ceate pv --clusterCode xxx --file xxx
+```
+
+```
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-12-18-023
+spec:
+  accessModes:
+  - ReadWriteMany
+  capacity:
+    storage: 1Gi
+  nfs:
+    path: /u01/staging
+    server: 192.168.16.215
+```
+
+## 查询PVC
 
 ```
     ./c7nctl get pvc --env xxx
@@ -502,13 +507,10 @@ spec:
 
 ![image](https://minio.choerodon.com.cn/knowledgebase-service/file_99603353f34b4797ad6991cd69b89fc2_blob.png)
 
-#### 创建PVC
+## 创建PVC
 
 ```
-    ./c7nctl create pvc -c xxx -e xxx -f xxx
-    -c:绑定pv所在集群code
-    -e:环境code
-    -f:pvc文件
+    ./c7nctl create pvc --clusterCode xxx -envCode xxx --file xxx (file是绝对路径)
 ```
 
 ```
