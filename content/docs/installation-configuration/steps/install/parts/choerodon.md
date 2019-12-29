@@ -235,7 +235,7 @@ helm repo update
     helm install c7n/base-service \
         -f base-service.yaml \
         --name base-service \
-        --version 0.20.0 \
+        --version 0.20.1 \
         --namespace c7n-system
     ```
 - 验证部署
@@ -284,7 +284,7 @@ helm repo update
     helm install c7n/notify-service \
         -f notify-service.yaml \
         --name notify-service \
-        --version 0.20.0 \
+        --version 0.20.1 \
         --namespace c7n-system
     ```
 
