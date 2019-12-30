@@ -12,6 +12,6 @@ weight = 2
 
 Choerodon 使用 `React` 作为前端应用框架，并且对前端的展示做了一定的封装和处理，能够让用户方便快捷地进行前端应用的开发和部署。
 
-同时为了使前端开发更加规范，合理进行，Choerodon为大家准备了前端组件`Choerodon UI`，了解详情请前往[Choerodon UI](http://ui.choerodon.io/docs/react/introduce-cn)。
+同时为了使前端开发更加规范，合理进行，Choerodon为大家准备了前端组件`Choerodon UI`，了解详情请前往[Choerodon UI](https://choerodon.github.io/choerodon-ui/index-cn)。
 
 {{< docdir >}}

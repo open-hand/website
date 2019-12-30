@@ -18,7 +18,7 @@ weight = 3
 
 点击任一测试用例，右侧会显示出用例详情页面，您可以在此添加、编辑、删除、复制和移动测试用例。
 
-![image](/docs/user-guide/test/store/image/IssueManage-06.png)
+![image](/docs/user-guide/test/image/IssueManage/IssueManage-06.png)
 
 1. 添加测试步骤：点击添加测试信息按钮，出现测试步骤表格行。
 2. 编辑测试步骤：在多出的一列测试步骤行中填写测试步骤、测试数据、预期结果，上传附件，点击小勾图标完成添加测试步骤。
@@ -30,43 +30,50 @@ weight = 3
 
 点击测试用例概要下方的`详情`，可查看和编辑该测试用例详情，如图所示。
 
-![image](/docs/user-guide/test/store/image/IssueManage-07.png)
+![image](/docs/user-guide/test/image/IssueManage/IssueManage-07.png)
 
 - 详情包括：状态、阶段名称、执行人、执行日期
 - 描述：在用例详情的描述中可以编辑用例的前置条件，角色等。
 - 附件：可以在此下载和上传用例所用的附件
 - 问题链接：可查看和该用例有关系的问题，可对用例添加和问题的关系
 
-### 2.3 评论测试用例
 
-点击测试用例概要下方的`评论`，可查看、添加、修改和删除评论，如图所示。
-
-![image](/docs/user-guide/test/store/image/IssueManage-08.png)
-
-### 2.4 查看测试用例记录
+### 2.3 查看测试用例记录
 
 点击测试用例概要下方的`记录`，可查看该测试用例活动日志，如图所示。
 
-![image](/docs/user-guide/test/store/image/IssueManage-09.png)
+![image](/docs/user-guide/test/image/IssueManage/IssueManage-08.png)
 
 ## 3. 测试用例树的结构
 
-用例库用测试用例树来分类测试用例，层级逻辑为所有版本>版本对应的状态>版本>文件夹。
+用例库用测试用例树来分类测试用例，您可以自定义测试用例文件夹的目录结构（最多可有9层目录结构）。
 
-点击文件夹右侧标识，可对该文件夹进行重命名或者删除操作。
+### 3.1 编辑文件夹
 
-![image](/docs/user-guide/test/store/image/IssueManage-10.png)
+点击文件夹右侧![三点](/docs/user-guide/manager-guide/image/more-vert.png)按钮标识，可对该文件夹进行重命名或者删除操作。
+
+![image](/docs/user-guide/test/image/IssueManage/IssueManage-09.png)
+
+### 3.2 添加子文件夹
+
+点击文件夹上添加文件夹按钮，填写文件夹名称，点击空白处或者回车即可向该文件夹添加子文件夹；
+
+<blockquote class="note">
+         文件夹下无用例时可添加子文件夹；
+      </blockquote>
+
+#### 3.3 添加一级目录
+
+点击操作栏`添加一级目录`，可以添加测试用例一级目录。
 
 ## 4. 查看文件夹对应测试用例
 
 点击测试用例树的对应项将展示其内部的测试用例。
 
-- 点击所有版本，加载所有测试用例
-- 点击版本状态，加载该状态下的版本内的测试用例
-- 点击单个版本，加载版本内测试用例
+- 点击单个目录，加载该目录下所有测试用例
 - 点击单个文件夹，加载文件夹内内测试用例
 
-## 5. 测试用例拖动
+## 5. 测试用例移动/复制
 
 测试用例可以进行拖动来改变文件夹。
 

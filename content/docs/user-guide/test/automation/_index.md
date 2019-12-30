@@ -16,7 +16,7 @@ Choerodon平台现在提供了三个测试应用的模板，分别是 mocha+chai
 
 并且为了方便对“测试数据”，“预期结果”这两个测试步骤的字段进行维护，我们对官方提供的可以在测试报告中加注释的方法进行了封装并进行数据提取，可以满足步骤信息的维护需求。
 
-![image](/docs/user-guide/test/automation/image/AutoTest-01.png)
+![image](/docs/user-guide/test/image/AutoTest/AutoTest-01.png)
 
 ## 2. 什么是自动化测试
 
