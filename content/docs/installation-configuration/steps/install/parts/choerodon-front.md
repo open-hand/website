@@ -39,7 +39,7 @@ helm repo update
         --set service.enabled=true \
         --set ingress.enabled=true \
         --name choerodon-front \
-        --version 0.18.8 \
+        --version 0.18.11 \
         --namespace c7n-system
     ```
 
