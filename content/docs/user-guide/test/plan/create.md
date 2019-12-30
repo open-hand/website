@@ -71,7 +71,6 @@ weight = 2
 
 点击左上角的`查看详情`，会跳出测试执行详细信息页面。
 
-![image](/docs/user-guide/test/execution/image/TestExecute-06.png)
 
 - 测试执行： 包含执行的状态、执行人、执行时间、描述、附件、关联缺陷等详细信息。
 
@@ -129,6 +128,5 @@ weight = 2
 
 ## 7. 阅读更多
 
-- [测试阶段](../test_stage)
-- [执行测试](../../execution/whatis)
+- [测试用例](../../store/whatisstore)
 - [自动化测试](../../automation)

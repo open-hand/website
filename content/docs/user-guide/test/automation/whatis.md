@@ -19,5 +19,4 @@ weight = 1
 ## 3. 阅读更多
 
 - [创建测试用例](../../store/create)
-- [创建测试循环](../../plan/create)
-- [如何执行测试](../../execution/howto-excute)
+- [创建测试计划](../../plan/create)

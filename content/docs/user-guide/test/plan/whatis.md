@@ -32,6 +32,5 @@ weight = 1
 
 ## 3. 阅读更多
 
-- [测试阶段](../test_stage)
-- [执行测试](../../execution/whatis)
+- [测试用例](../../store/whatisstore)
 - [自动化测试](../../automation)

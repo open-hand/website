@@ -76,4 +76,4 @@ Choerodon猪齿鱼提供了自动化测试功能，但目前版本支持 mocha +
 
 - [创建测试用例](../../store/create)
 - [创建测试循环](../../plan/create)
-- [如何执行测试](../../execution/howto-excute)
+
