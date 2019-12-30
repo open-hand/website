@@ -21,45 +21,29 @@ helm repo update
 
 ## 部署Minio
 
-### 创建minio所需PVC
+- 若需了解项目详情及各项参数含义，请移步 [helm/charts/minio](https://github.com/helm/charts/tree/master/stable/minio#minio)。
+- 编写参数配置文件 `minio.yaml`
 
-```shell
-helm install c7n/persistentvolumeclaim \
-    --set accessModes={ReadWriteOnce} \
-    --set requests.storage=5Gi \
-    --set storageClassName=nfs-provisioner \
-    --version 0.1.0 \
-    --name minio-pvc \
-    --namespace c7n-system
-```
+        mode: distributed
+        accessKey: "AKIAIOSFODNN7EXAMPLE"
+        secretKey: "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
+        persistence:
+          enabled: true
+          storageClass: nfs-provisioner
+        ingress:
+          enabled: true
+          path: /
+          hosts:
+          - minio.example.choerodon.io
 
-### 部署
-
-```shell
-helm install c7n/minio \
-    --set service.enabled=true \
-    --set persistence.enabled=true \
-    --set persistence.existingClaim=minio-pvc \
-    --set env.open.MINIO_ACCESS_KEY=admin \
-    --set env.open.MINIO_SECRET_KEY=password \
-    --set ingress.enabled=true \
-    --set ingress.hosts=minio.example.choerodon.io \
-    --set image.tag=RELEASE.2019-03-27T22-35-21Z \
-    --version 0.1.0 \
-    --name minio \
-    --namespace c7n-system
-```
-
-- 参数：
-
-    参数 | 含义
-    --- |  ---
-    persistence.enabled|是否启用持久化存储
-    persistence.existingClaim|PVC的名称
-    ingress.enabled|是否启用ingress
-    ingress.hosts|域名
-    env.open.MINIO_ACCESS_KEY|用户名
-    env.open.MINIO_SECRET_KEY|密码
+- 执行安装
+    ```shell
+    helm install c7n/minio \
+        -f minio.yaml \
+        --version 4.0.1 \
+        --name minio \
+        --namespace c7n-system
+    ```
 
 ## 验证部署
 

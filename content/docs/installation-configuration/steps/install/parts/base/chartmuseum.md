@@ -21,41 +21,29 @@ helm repo update
 
 ## 部署Chartmuseum
 
-### 创建PVC
-
-```bash
-helm install c7n/persistentvolumeclaim \
-    --set requests.storage=256Mi \
-    --set accessModes={ReadWriteMany} \
-    --set storageClassName=nfs-provisioner \
-    --version 0.1.0 \
-    --name chartmuseum-pvc \
-    --namespace c7n-system
-```
-
-- 参数解释：
-
-    | 参数 | 含义
-    | --- |  --- |
-    requests.storage|请求存储空间大小
-    accessModes|访问模式
-    storageClassName|存储类名称
-
-### 进行部署
 - 若需了解项目详情及各项参数含义，请移步 [helm/chartmuseum](https://github.com/helm/chartmuseum)。
-- 注意替换 `chart.example.choerodon.io` 为您实际的域名
+- 编写参数配置文件 `chartmuseum.yaml`
+
+        env:
+          open:
+            STORAGE: local
+            DISABLE_API: false
+            DEPTH: 2
+        persistence:
+          enabled: true
+          storageClass: nfs-provisioner
+        ingress:
+          enabled: true
+          hosts:
+          - name: chart.example.choerodon.io
+            path: /
+
 - 执行部署
   
     ```bash
     helm install c7n/chartmuseum \
-        --set service.enabled=true \
-        --set persistence.enabled=true \
-        --set persistence.existingClaim=chartmuseum-pvc \
-        --set ingress.enabled=true \
-        --set ingress.hosts=chart.example.choerodon.io \
-        --set env.open.DISABLE_API=false \
-        --set env.open.DEPTH=2 \
-        --version 1.6.1 \
+        -f chartmuseum.yaml \
+        --version 2.6.0 \
         --name chartmuseum \
         --namespace c7n-system
     ```

@@ -59,10 +59,10 @@ sudo ./install-ansible.sh
     ;    第二个字段 ansible_user     为节点远程登录用户名
     ;    第三个字段 ansible_ssh_pass 为节点远程登录用户密码
     [all]
-    192.168.56.11 ansible_user=vagrant ansible_ssh_pass=vagrant
-    192.168.56.12 ansible_user=vagrant ansible_ssh_pass=vagrant
-    192.168.56.13 ansible_user=vagrant ansible_ssh_pass=vagrant
-    192.168.56.14 ansible_user=vagrant ansible_ssh_pass=vagrant
+    192.168.56.11 ansible_port=22 ansible_user="vagrant" ansible_ssh_pass="vagrant"
+    192.168.56.12 ansible_port=22 ansible_user="vagrant" ansible_ssh_pass="vagrant"
+    192.168.56.13 ansible_port=22 ansible_user="vagrant" ansible_ssh_pass="vagrant"
+    192.168.56.14 ansible_port=22 ansible_user="vagrant" ansible_ssh_pass="vagrant"
 
     ; 私有云：
     ;    VIP 负载模式：
@@ -116,7 +116,7 @@ sudo ./install-ansible.sh
     ; 是否跳过节点物理资源校验，Master节点要求2c2g以上，Worker节点要求2c4g以上
     skip_verify_node=false
     ; kubernetes版本
-    kube_version="1.15.5"
+    kube_version="1.15.7"
     ; 负载均衡器
     ;   有 nginx、haproxy、envoy 和 slb 四个选项，默认使用 nginx；
     lb_mode="nginx"
@@ -145,6 +145,8 @@ sudo ./install-ansible.sh
     kubelet_root_dir="/var/lib/kubelet"
     ; docker容器存储目录
     docker_storage_dir="/var/lib/docker"
+    # Etcd 数据根目录
+    etcd_data_dir="/var/lib/etcd"
     ```
 
 ### 集群部署
@@ -376,7 +378,7 @@ sudo ./install-ansible.sh
     ```bash
     kubectl run iperf-server \
         -it --quiet --rm --restart=Never \
-        --overrides='{"spec":{"nodeName":"指定客户端运行的节点"}}' \
+        --overrides='{"spec":{"nodeName":"指定服务端运行的节点"}}' \
         --image='registry.cn-hangzhou.aliyuncs.com/choerodon-tools/network-and-cluster-perfermance-test:0.1.0' \
         -- bash -c "sleep 3; ifconfig eth0; iperf -s -p 12345 -i 1 -M"
     ```

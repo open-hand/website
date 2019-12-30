@@ -76,21 +76,18 @@ helm repo update
         --set env.concurrent=3 \
         --set env.gitlabUrl=http://gitlab.example.choerodon.io/ \
         --set env.runnerRegistrationToken=xwxobLNoPQUzyMt_4RGF \
-        --set env.environment.DOCKER_REGISTRY=registry.example.choerodon.io \
-        --set env.environment.DOCKER_USER=admin \
-        --set env.environment.DOCKER_PWD=Harbor12345 \
         --set env.environment.CHOERODON_URL=http://api.example.choerodon.io \
         --set env.persistence.runner-maven-pvc="/root/.m2" \
         --set env.persistence.runner-cache-pvc="/cache" \
         --set enabled_mount_host_docker_sock=true \
         --name runner \
-        --version 0.2.2 \
+        --version 0.2.4 \
         --namespace c7n-system
     ```
 
 - 参数：
     1. `env.environment.*`为CI时Pod的环境变量键值对，`*`就是环境变量名，等号后面的为该变量的值，这里例子中添加这几个环境变量建议配置，使用Choerodon管理的项目进行CI时会用到它们，若还需其他环境变量请自定义。
-    1. `env.persistence.*`为CI时Pod的挂载PVC与Pod内目录的键值对，`*`就是PVC的名称，等号后面的值为要挂载到Pod的哪个目录，这里注意一点用引号引起来。本例中我们新建了两个PVC即`runner-maven-pvc`、`runner-cache-pvc`分别挂载到`/root/.m2`和`/cache`目录中。
+    2. `env.persistence.*`为CI时Pod的挂载PVC与Pod内目录的键值对，`*`就是PVC的名称，等号后面的值为要挂载到Pod的哪个目录，这里注意一点用引号引起来。本例中我们新建了两个PVC即`runner-maven-pvc`、`runner-cache-pvc`分别挂载到`/root/.m2`和`/cache`目录中。
 
     参数 | 含义 
     --- |  --- 
@@ -98,9 +95,6 @@ helm repo update
     env.concurrent|可以同时进行的CI数量
     env.gitlabUrl|Gitlab地址
     env.runnerRegistrationToken|Runner注册token
-    env.environment.DOCKER_REGISTRY|Docker镜像仓库地址
-    env.environment.DOCKER_USER|Docker镜像仓库用户名
-    env.environment.DOCKER_PWD|Docker镜像仓库用户密码
     env.environment.CHOERODON_URL|Choerodon API地址
     env.persistence.runner-maven-pvc|持久化数据，此处`runner-maven-pvc`为PVC名称，值为要挂载到Pod的`/root/.m2`目录
     env.persistence.runner-cache-pvc|持久化数据，此处`runner-cache-pvc`为PVC名称，值为要挂载到Pod的`/cache`目录

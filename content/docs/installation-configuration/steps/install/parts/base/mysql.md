@@ -35,21 +35,32 @@ helm install c7n/persistentvolumeclaim \
 
 ### 部署mysql
 
-```shell
-helm install c7n/mysql \
-    --set persistence.enabled=true \
-    --set persistence.existingClaim=c7n-mysql-pvc \
-    --set env.MYSQL_ROOT_PASSWORD=password \
-    --set service.enabled=ture \
-    --set config.max_connections=500 \
-    --set config.max_allowed_packet=32M \
-    --set config.lower_case_table_names=1 \
-    --set config.character_set_server=utf8mb4 \
-    --set config.collation_server=utf8mb4_general_ci \
-    --version 0.1.0 \
-    --name c7n-mysql \
-    --namespace c7n-system
-```
+- 编写配置文件`mysql.yaml`
+
+    ```yaml
+    config:
+      character_set_server: utf8mb4
+      collation_server: utf8mb4_general_ci
+      lower_case_table_names: 1
+      max_allowed_packet: 32M
+      max_connections: 1500
+    env:
+      MYSQL_ROOT_PASSWORD: password
+    persistence:
+      enabled: true
+      existingClaim: c7n-mysql-pvc
+    service:
+      enabled: ture
+    ```
+
+- 执行安装
+    ```shell
+    helm install c7n/mysql \
+        -f mysql.yaml \
+        --version 0.1.2 \
+        --name c7n-mysql \
+        --namespace c7n-system
+    ```
 
 - 参数：
 

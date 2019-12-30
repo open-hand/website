@@ -54,24 +54,19 @@ helm repo update
     env:
       open:
         EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
-        SPRING_CLOUD_CONFIG_ENABLED: true
         SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
         SPRING_DATASOURCE_PASSWORD: password
-        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/agile_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
+        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/agile_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
         SPRING_DATASOURCE_USERNAME: choerodon
-        SPRING_REDIS_DATABASE: 13
+        SPRING_REDIS_DATABASE: 9
         SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
         SERVICES_ATTACHMENT_URL: http://minio.example.choerodon.io
     preJob:
-      preConfig:
-        datasource:
-          password: password
-          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
-          username: choerodon
+      timeout: 1800
       preInitDB:
         datasource:
           password: password
-          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/agile_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
+          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/agile_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
           username: choerodon
     ```
 
@@ -80,7 +75,7 @@ helm repo update
     helm install c7n/agile-service \
       -f agile-service.yaml \
       --name agile-service \
-      --version 0.19.2 \
+      --version 0.20.1 \
       --namespace c7n-system
     ```
 
@@ -105,23 +100,19 @@ helm repo update
     env:
       open:
         EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
-        SPRING_CLOUD_CONFIG_ENABLED: true
         SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
         SPRING_DATASOURCE_PASSWORD: password
-        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/test_manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
+        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/test_manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
         SPRING_DATASOURCE_USERNAME: choerodon
-        SPRING_REDIS_DATABASE: 14
+        SPRING_REDIS_DATABASE: 10
         SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
+        SERVICES_ATTACHMENT_URL: http://minio.example.choerodon.io
     preJob:
-      preConfig:
-        datasource:
-          password: password
-          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
-          username: choerodon
+      timeout: 1800
       preInitDB:
         datasource:
           password: password
-          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/test_manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
+          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/test_manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
           username: choerodon
     ```
 - 部署服务
@@ -129,7 +120,7 @@ helm repo update
     helm install c7n/test-manager-service \
       -f test-manager-service.yaml \
       --name test-manager-service \
-      --version 0.19.1 \
+      --version 0.20.2 \
       --namespace c7n-system
     ```
 
@@ -153,7 +144,7 @@ helm repo update
 - 安装 elasticsearch
   ```
   helm install c7n/elasticsearch-kb \
-    --version 0.19.0 \
+    --version 0.20.0 \
     --name elasticsearch-kb \
     --namespace c7n-system
   ```
@@ -168,22 +159,17 @@ helm repo update
       open:
         EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
         SERVICES_ATTACHMENT_URL: http://minio.example.choerodon.io/knowledgebase-service/
-        SPRING_CLOUD_CONFIG_ENABLED: true
         SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
         SPRING_DATASOURCE_PASSWORD: password
-        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/knowledgebase_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowMultiQueries=true
+        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/knowledgebase_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
         SPRING_DATASOURCE_USERNAME: choerodon
         ELASTICSEARCH_IP: elasticsearch-kb.c7n-system:9200
     preJob:
-      preConfig:
-        datasource:
-          password: password
-          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
-          username: choerodon
+      timeout: 1800
       preInitDB:
         datasource:
           password: password
-          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/knowledgebase_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
+          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/knowledgebase_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
           username: choerodon
     ```
 - 部署服务
@@ -191,7 +177,7 @@ helm repo update
     helm install c7n/knowledgebase-service \
       -f knowledgebase-service.yaml \
       --name knowledgebase-service \
-      --version 0.19.2 \
+      --version 0.20.0 \
       --namespace c7n-system
     ```
 

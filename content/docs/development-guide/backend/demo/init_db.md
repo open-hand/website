@@ -127,7 +127,7 @@ mvn org.apache.maven.plugins:maven-dependency-plugin:get \
  -Dtransitive=false
 
 #java -Dspring.datasource.url="jdbc:oracle:thin:@127.0.0.1:1521:xe" \
-java -Dspring.datasource.url="jdbc:mysql://localhost/todo_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
+java -Dspring.datasource.url="jdbc:mysql://localhost/todo_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai" \
  -Dspring.datasource.username=choerodon \
  -Dspring.datasource.password=123456 \
  -Ddata.drop=false -Ddata.init=true \
@@ -193,7 +193,7 @@ mysql> show tables;
 ``` yml
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/todo_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    url: jdbc:mysql://localhost:3306/todo_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
     username: choerodon
     password: 123456
 ```

@@ -105,7 +105,7 @@ mvn org.apache.maven.plugins:maven-dependency-plugin:get \
  -Dtransitive=false
 
 # init manager-service
-java -Dspring.datasource.url="jdbc:mysql://localhost:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
+java -Dspring.datasource.url="jdbc:mysql://localhost:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai" \
  -Dspring.datasource.username=choerodon \
  -Dspring.datasource.password=123456 \
  -Ddata.drop=false -Ddata.init=true \
@@ -113,7 +113,7 @@ java -Dspring.datasource.url="jdbc:mysql://localhost:3306/manager_service?useUni
  -jar ${TOOL_JAR_PATH}
  
 # init base-service
-java -Dspring.datasource.url="jdbc:mysql://localhost:3306/base_service?useUnicode=true&characterEncoding=utf-8&useSSL=false" \
+java -Dspring.datasource.url="jdbc:mysql://localhost:3306/base_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai" \
  -Dspring.datasource.username=choerodon \
  -Dspring.datasource.password=123456 \
  -Ddata.drop=false -Ddata.init=true \

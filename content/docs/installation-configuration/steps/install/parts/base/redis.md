@@ -40,13 +40,7 @@ helm install c7n/redis \
     --set persistence.enabled=true \
     --set persistence.existingClaim=c7n-redis-pvc \
     --set service.enabled=true \
-    --version 0.2.0 \
+    --version 0.2.2 \
     --name c7n-redis \
     --namespace c7n-system
 ```
-
-- 参数：
-
-    参数 | 含义
-    --- |  ---
-    service.enabled|是否启用service

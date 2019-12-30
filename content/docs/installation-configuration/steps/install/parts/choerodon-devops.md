@@ -56,7 +56,7 @@ helm repo update
         AGENT_CERTMANAGERURL: https://openchart.choerodon.com.cn/choerodon/infra/
         AGENT_REPOURL: https://openchart.choerodon.com.cn/choerodon/c7n/
         AGENT_SERVICEURL: ws://devops.example.choerodon.io/agent/
-        AGENT_VERSION: 0.19.2
+        AGENT_VERSION: 0.20.1
         EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
         SECURITY_IGNORED: /ci,/webhook,/v2/api-docs,/agent/**,/ws/**,/webhook/**
         SERVICES_GATEWAY_URL: http://api.example.choerodon.io
@@ -69,27 +69,22 @@ helm repo update
         SERVICES_HARBOR_PASSWORD: Harbor12345
         SERVICES_HARBOR_USERNAME: admin
         SERVICES_HELM_URL: http://chart.example.choerodon.io
-        SPRING_CLOUD_CONFIG_ENABLED: true
         SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
         SPRING_DATASOURCE_PASSWORD: password
-        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/devops_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
+        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/devops_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
         SPRING_DATASOURCE_USERNAME: choerodon
-        SPRING_REDIS_DATABASE: 9
+        SPRING_REDIS_DATABASE: 7
         SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
         TEMPLATE_URL: https://github.com/choerodon/choerodon-devops-templates.git
     ingress:
       enabled: true
       host: devops.example.choerodon.io
     preJob:
-      preConfig:
-        datasource:
-          password: password
-          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
-          username: choerodon
+      timeout: 1800
       preInitDB:
         datasource:
           password: password
-          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/devops_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
+          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/devops_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
           username: choerodon
     service:
       enabled: true
@@ -99,7 +94,7 @@ helm repo update
     helm install c7n/devops-service \
         -f devops-service.yaml \
         --name devops-service \
-        --version 0.19.9 \
+        --version 0.20.2 \
         --namespace c7n-system
     ```
 
@@ -127,21 +122,16 @@ helm repo update
         EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
         GITLAB_PRIVATETOKEN: Gitlab 中获取的 private token
         GITLAB_URL: http://gitlab.example.choerodon.io
-        SPRING_CLOUD_CONFIG_ENABLED: true
         SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
         SPRING_DATASOURCE_PASSWORD: password
-        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/gitlab_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
+        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/gitlab_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
         SPRING_DATASOURCE_USERNAME: choerodon
     preJob:
-      preConfig:
-        datasource:
-          password: password
-          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
-          username: choerodon
+      timeout: 1800
       preInitDB:
         datasource:
           password: password
-          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/gitlab_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
+          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/gitlab_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
           username: choerodon
     ```
 - 部署服务
@@ -149,7 +139,7 @@ helm repo update
     helm install c7n/gitlab-service \
         -f gitlab-service.yaml \
         --name gitlab-service \
-        --version 0.19.2 \
+        --version 0.20.1 \
         --namespace c7n-system
     ```
 
@@ -174,23 +164,18 @@ helm repo update
     env:
       open:
         EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
-        SPRING_CLOUD_CONFIG_ENABLED: true
         SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
         SPRING_DATASOURCE_PASSWORD: password
-        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/workflow_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
+        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/workflow_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
         SPRING_DATASOURCE_USERNAME: choerodon
-        SPRING_REDIS_DATABASE: 10
+        SPRING_REDIS_DATABASE: 8
         SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
     preJob:
-      preConfig:
-        datasource:
-          password: password
-          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
-          username: choerodon
+      timeout: 1800
       preInitDB:
         datasource:
           password: password
-          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/workflow_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
+          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/workflow_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
           username: choerodon
     ```
 - 部署服务
@@ -198,7 +183,7 @@ helm repo update
     helm install c7n/workflow-service \
         -f workflow-service.yaml \
         --name workflow-service \
-        --version 0.19.0 \
+        --version 0.20.0 \
         --namespace c7n-system
     ```
 
