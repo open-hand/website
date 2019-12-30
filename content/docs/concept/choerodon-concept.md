@@ -77,7 +77,7 @@ Choerodon 是将服务和应用构建在 Kubernetes 上，后端服务使用 Spr
 
 <img class="no-border" src="/docs/concept/image/deployment-icon.png"> [**部署**](../../user-guide/deploy)
 
-用户客户可以方便地使用部署功能管理各种使用Choerodon开发部署的应用服务，包括应用启停、状态监控，以及应用服务对应的版本控制、容器管理等，同时还包括应用服务涉及到的各种资源管理，例如网络、域名、数据库服务、缓存服务等。
+用户可以方便地使用部署功能管理各种使用Choerodon开发部署的应用服务，包括应用启停、状态监控，以及应用服务对应的版本控制、容器管理等，同时还包括应用服务涉及到的各种资源管理，例如网络、域名、数据库服务、缓存服务等。
 
 <img class="no-border" src="/docs/concept/image/operation-icon.png">[**运营**](../../user-guide/report)
 
