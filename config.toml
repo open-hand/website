@@ -120,15 +120,15 @@ paginate = 5
     pre = "<i class='iconfont'>&#xe600;</i>"
 
 	[[languages.zh.menu.main]]
-	        name = "社区"
-	        url  = "/zh/community/"
-	        weight = 4
-	        parent = "community"
+        name = "社区"
+        url  = "/zh/community/"
+        weight = 2
+        parent = "community"
 	[[languages.zh.menu.main]]
-	        name = "知识分享"
-	        url  = "/zh/knowledge-sharing"
-	        weight = 3
-	        parent = "community"
+        name = "知识分享"
+        url  = "/zh/knowledge-sharing"
+        weight = 1
+        parent = "community"
 
 [[languages.zh.menu.main]]
     name = "源码"
