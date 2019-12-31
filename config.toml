@@ -86,23 +86,10 @@ paginate = 5
         parent = "version"
 
     [[languages.en.menu.main]]
-    name = "v0.18"
-    url  = "http://v0-18.choerodon.io/en/"
-    weight = 5
-    parent = "version"
-
-    [[languages.en.menu.main]]
-    name = "v0.17"
-    url  = "http://v0-17.choerodon.io/en/"
-    weight = 4
-    parent = "version"
-
-    [[languages.en.menu.main]]
-    name = "v0.16"
-    url  = "http://v0-16.choerodon.io/en/"
-    weight = 3
-    parent = "version"
-
+        name = "latest"
+        url  = "http://choerodon.io/en/"
+        weight = 5
+        parent = "version"
 
 [[languages.zh.menu.main]]
     name = "文档"
@@ -166,24 +153,12 @@ paginate = 5
     [[languages.zh.menu.main]]
         name = "v0.19"
         url  = "http://v0-19.choerodon.io/zh/"
-        weight = 7
-        parent = "version"
-    [[languages.zh.menu.main]]
-        name = "v0.18"
-        url  = "http://v0-18.choerodon.io/zh/"
         weight = 6
         parent = "version"
-
     [[languages.zh.menu.main]]
-        name = "v0.17"
-        url  = "http://v0-17.choerodon.io/zh/"
+        name = "latest"
+        url  = "http://choerodon.io/zh/"
         weight = 5
-        parent = "version"
-
-    [[languages.zh.menu.main]]
-        name = "v0.16"
-        url  = "http://v0-16.choerodon.io/zh/"
-        weight = 4
         parent = "version"
 
 [params]
