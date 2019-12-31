@@ -46,7 +46,7 @@ weight = 2
 
 ### 3.2 资源列表层
 
-顾名思义，资源列表层（其中分别包括了实例、网络、域名、证书、配置映射、密文以及自定义资源的列表）中，展示了该环境中某类资源的总览列表。运维人员可在该层查看与管理对应的资源。
+顾名思义，资源列表层（其中分别包括了实例、网络、域名、证书、配置映射、密文、自定义资源以及PVC的列表）中，展示了该环境中某类资源的总览列表。运维人员可在该层查看与管理对应的资源。
 
 ![image](/docs/user-guide/deploy/app-deploy/resource/images/resource-06.png)
 
@@ -105,7 +105,11 @@ weight = 2
 
 自定义资源的详情界面展示了其中的Description。
 
-![image](/docs/user-guide/deploy/app-deploy/resource/images/resource-13.png)
+![image](/docs/user-guide/deploy/app-deploy/resource/images/resource-13.png)  
+
+#### 3.3.8 PVC  
+
+PersistentVolumeClaim（PVC）是用户存储的请求。 它类似于pod。Pod消耗节点资源，PVC消耗存储资源。
 
 ## 4. 阅读更多
 

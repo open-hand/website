@@ -6,37 +6,43 @@ weight = 1
 
 # 集群管理
 
+
 ## 1. 概述
 
 集群是用于运行k8s的托管群组。有了集群，我们就可以以此来统一调配资源，管理环境。此外，每个集群可以对组织下各个项目设置是否公开，配置后，只有被分配权限的项目中的环境才能连接到该集群。
+<blockquote class="warning"> 
 
-同时，自0.12.0版本后，CertManager的安装被集成到了agent里，agent会根据设置自行安装对应版本的CertManager。集群中安装了CrtManager后，便能在连接该集群的环境下正常进行申请证书的操作。
+注意：自0.19.0版本后，我们将`集群管理`模块从组织层迁到了项目层；同时，为了统一存放以往版本在组织中创建的集群，我们在本组织下新建了一个名为“默认运维项目”的项目，且只有组织管理员才有该项目的项目所有者权限。
+</blockquote>
+
 
 <blockquote class="note"> 
-只有项目所有者对集群页面有查看和编辑操作的权限。只能删除未连接且不含关联环境的集群。
+
+只有项目所有者对集群页面有查看和编辑操作的权限。
 </blockquote>
 
 通过此页面，您可以了解到如何创建、修改和删除集群，以及如何查看节点详情。
 
-![image](/docs/user-guide/deploy/cluster/image/cluster-management-01.png)
+![image](/docs/user-guide/deploy/cluster/image/cluster-management-01.jpg)
 
 ## 2. 创建集群
 
-![image](/docs/user-guide/deploy/cluster/image/cluster-management-02.png)
+![image](/docs/user-guide/deploy/cluster/image/cluster-management-02.png)  
 
-1. 点击左上方的 `创建集群`，右侧会弹出创建集群页面，输入相关信息，包括集群编码、集群名称和集群描述；
 
-    集群创建成功后，默认向该组织下所有项目公开，若想为所创集群配置特定的公开范围，需要在集群的权限管理页面进行设置。
+(1) 点击左上方的 `创建集群`，右侧会弹出创建集群页面，输入相关信息，包括集群编码、集群名称和集群描述；
 
-    - 集群编码：集群客户端的名称，限制为30个字符。
-        <blockquote class="note"> 
-        只能由小写字母、数字、”-“组成，且以小写字母开头，不能以”-“结尾
-        </blockquote>
-    - 集群名称：项目下集群的显示名称。限制为10个字符。
-    - 集群描述：环境的描述，限制为30字符。
+   > 集群创建成功后，默认向该组织下所有项目公开，若想为所创集群配置特定的公开范围，需要在集群的权限管理页面进行设置。
 
-2. 填写完成后，点击`创建`，界面会自动生成可执行的shell脚本命令，其中各个参数已经由后端服务自动生成。
-	``` 
+   - 集群编码：集群客户端的名称，限制为30个字符。  
+
+    > 只能由小写字母、数字、”-“组成，且以小写字母开头，不能以”-“结尾。
+   - 集群名称：项目下集群的显示名称。限制为10个字符。
+   - 集群描述：环境的描述，限制为30字符。  
+
+
+(2) 填写完成后，点击`创建`，界面会自动生成可执行的shell脚本命令，其中各个参数已经由后端服务自动生成。  
+
 	helm install --repo=http://chart.choerodon.com.cn/choerodon/c7ncd/ \
     --namespace=choerodon \
     --name=choerodon-cluster-agent-asdasd123 \
@@ -47,40 +53,38 @@ weight = 1
     --set config.choerodonId=asdasd123 \
     --set rbac.create=true \
     choerodon-cluster-agent
-	```	
 	
-	- helm: 在集群中的kubectl创建的命名空间内通过helm install部署一个集群客户端。参数有：
-
-	- repo: chart仓库地址，取值为部署持续交互时的环境变量`env.open.AGENT_REPOURL`
-	- name: release name，取值为集群编码
-	- version: chart version，取值为署持续交付时的环境变量`env.open.AGENT_VERSION`
-	- config: 环境变量
-	- connect:取值为部署持续交付时的环境变量`env.open.AGENT_SERVICEURL` 
-	- token：生成集群时自动生成
-	- clusterId: 集群的唯一性标识
-	- rbac.create: 用于控制kubectl权限     
-    - choerodon-agent: chart name
-
-
-3.  复制脚本命令至集群中运行，与平台建立连接。
     
-    - 运行前需要先初始化helm helm init ，helm repo update。
-    - helm 的版本必须与服务器上helm版本一致。
+- helm: 在集群中的kubectl创建的命名空间内通过helm install部署一个集群客户端。参数有：
+- repo: chart仓库地址，取值为部署持续交互时的环境变量`env.open.AGENT_REPOURL`
+- name: release name，取值为集群编码
+- version: chart version，取值为署持续交付时的环境变量`env.open.AGENT_VERSION`
+- config: 环境变量
+- connect:取值为部署持续交付时的环境变量`env.open.AGENT_SERVICEURL` 
+- token：生成集群时自动生成
+- clusterId: 集群的唯一性标识
+- rbac.create: 用于控制kubectl权限     
+- choerodon-agent: chart name
 
-4. 执行成功后回到集群管理界面，便可以看到之前创建好的集群状态变为连接状态。
+(3) 复制脚本命令至集群中运行，与平台建立连接。
+  
+   > - 运行前需要先初始化helm helm init ，helm repo update。
+   
+   > - helm 的版本必须与服务器上helm版本一致。
+
+(4) 执行成功后回到集群管理界面，便可以看到之前创建好的集群状态变为连接状态。
 
 ## 3. 管理集群
 
 在左侧的树结构中，点击![image](https://minio.choerodon.com.cn/knowledgebase-service/file_b53c0c1755864d7f9e3f7bb1f88b37fc_blob.png)标识，可选择 `修改集群`或者 `删除集群`。同时，对于未连接的集群，还可以选择 `激活集群`的选项。
 
-- 修改集群：此处仅支持修改集群的名称与描述
-- 删除集群：点击 `删除集群`，会弹出复制删除指令的提示框，当复制指令去k8s运行后，再回到平台点击“已执行，删除”，该集群将被彻底删除。 
+ - 修改集群：此处仅支持修改集群的名称与描述
+ - 删除集群：点击 `删除集群`，会弹出复制删除指令的提示框，当复制指令去k8s运行后，再回到平台点击“已执行，删除”，该集群将被彻底删除。   
+ - 激活集群：该操作仅用于未连接状态的集群。  
+   <blockquote class="note"> 只有未连接且无关联环境的集群才能被删除。
+   </blockquote>
 
-    <blockquote class="note"> 
-    只有未连接状态且其中不含关联环境的集群才能被删除！
-    </blockquote>
-
-- 激活集群：该操作仅用于未连接状态的集群。
+   
 
 ## 4. 查看集群详情
 
@@ -94,7 +98,7 @@ weight = 1
 
 点击 `权限分配`页签，便可查看到所选集群在组织内的公开范围，即拥有该集群权限的项目。
 
-![image](/docs/user-guide/deploy/cluster/image/cluster-management-04.png)
+![image](/docs/user-guide/deploy/cluster/image/cluster-management-04.jpg)
 
 点击导航栏上方的 `权限管理`，便可设置集群的公开范围，其中包括组织下所有项目与组织下特定项目。
 
@@ -102,9 +106,26 @@ weight = 1
 
 - 若选择 `组织下特定项目`，就表示只有被分配权限的项目下的环境才能连接到该集群。
 
-![image](/docs/user-guide/deploy/cluster/image/cluster-management-05.png)
+![image](/docs/user-guide/deploy/cluster/image/cluster-management-05.png)    
 
-## 6. 阅读更多
+
+## 6. 组件管理  
+
+点击 `组件管理`页签，便能对集群中的组件进行管理，目前支持CertManager组件的安装与卸载。  
+
+![image](/docs/user-guide/deploy/cluster/image/cluster-management-06.jpg)
+
+此处的CertManager组件用于在集群对应的环境下创建证书。若集群未安装CertManager组件，将不能在集群对应的环境下进行“创建证书”的操作。  
+
+对于之前版本已安装CertManager组件的集群，此处会直接展示出组件处于已安装的状态。若是新建的集群，则需在此处自主安装CertManager组件。
+
+<blockquote class="warning">
+只能在运行中状态的集群里管理组件！
+
+</blockquote>
+
+
+## 7. 阅读更多
 
 - [证书管理](../certif-manage)
 - [环境配置](../../env-config)
