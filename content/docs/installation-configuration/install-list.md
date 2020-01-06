@@ -45,7 +45,7 @@ weight = 5
 | api gateway           | 网关服务       | 0.20.0 |
 | oauth server          | 认证服务       | 0.20.0 |
 | file service          | 文件服务       | 0.20.0 |
-| notify service        | 通知服务       | 0.20.2 |
+| notify service        | 通知服务       | 0.20.3 |
 | asgard service        | 事务服务       | 0.20.0 |
 | gitlab service        | Gitlab 服务    | 0.20.1 |
 | devops service        | Devops 服务    | 0.20.3 |
