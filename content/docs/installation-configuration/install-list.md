@@ -39,7 +39,7 @@ weight = 5
 
 | 组件                  | 描述           | 版本   |
 | --------------------- | -------------- | ------ |
-| go register server    | 注册服务       | 0.20.1 |
+| go register server    | 注册服务       | 0.20.2 |
 | manager service       | 管理服务       | 0.20.0 |
 | base service          | 基础服务       | 0.20.1 |
 | api gateway           | 网关服务       | 0.20.0 |
@@ -48,9 +48,9 @@ weight = 5
 | notify service        | 通知服务       | 0.20.3 |
 | asgard service        | 事务服务       | 0.20.0 |
 | gitlab service        | Gitlab 服务    | 0.20.1 |
-| devops service        | Devops 服务    | 0.20.3 |
+| devops service        | Devops 服务    | 0.20.4 |
 | workflow service      | 工作流服务     | 0.20.0 |
 | agile service         | 敏捷管理       | 0.20.1 |
 | test manager service  | 测试管理服务   | 0.20.2 |
 | knowledgebase service | 知识服务       | 0.20.0 |
-| choerodon front       | Choerodon 前端 | 0.20.1 |
+| choerodon front       | Choerodon 前端 | 0.20.2 |

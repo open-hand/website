@@ -44,9 +44,6 @@ weight = 11
 
     # 敏捷管理
     kubectl scale deployment -n c7n-system --replicas=0 agile-service
-    kubectl scale deployment -n c7n-system --replicas=0 state-machine-service
-    kubectl scale deployment -n c7n-system --replicas=0 issue-service
-    kubectl scale deployment -n c7n-system --replicas=0 foundation-service
 
     # 测试管理
     kubectl scale deployment -n c7n-system --replicas=0 test-manager-service
@@ -95,9 +92,6 @@ kubectl scale deployment -n c7n-system --replicas=1 workflow-service
 
 # 敏捷管理
 kubectl scale deployment -n c7n-system --replicas=1 agile-service
-kubectl scale deployment -n c7n-system --replicas=1 state-machine-service
-kubectl scale deployment -n c7n-system --replicas=1 issue-service
-kubectl scale deployment -n c7n-system --replicas=1 foundation-service
 
 # 测试管理
 kubectl scale deployment -n c7n-system --replicas=1 test-manager-service
