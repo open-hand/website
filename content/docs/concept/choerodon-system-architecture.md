@@ -7,7 +7,7 @@ type = "docs"
 +++
 
 ## 技术架构
-![business_structure](/cimg/deploy-structure.png)
+![business_structure](/cimg/deploy-structure-1.png)
 
 #### 从总体技术架构上主要分为以下4个方面：
 
