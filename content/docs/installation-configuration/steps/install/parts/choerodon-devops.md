@@ -139,7 +139,7 @@ helm repo update
     helm install c7n/gitlab-service \
         -f gitlab-service.yaml \
         --name gitlab-service \
-        --version 0.20.1 \
+        --version 0.20.2 \
         --namespace c7n-system
     ```
 
