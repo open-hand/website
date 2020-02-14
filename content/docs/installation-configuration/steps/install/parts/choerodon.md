@@ -287,7 +287,7 @@ helm repo update
     helm install c7n/notify-service \
         -f notify-service.yaml \
         --name notify-service \
-          --version 0.20.3 \
+          --version 0.20.4 \
         --namespace c7n-system
     ```
 
