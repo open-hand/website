@@ -36,7 +36,6 @@ paginate = 5
 
 [[languages.en.menu.main]]
     name = "Community"
-    url  = "/en/community/"
     weight = 4
     identifier = "en-community"
     pre = "<i class='iconfont'>&#xe600;</i>"
@@ -114,7 +113,6 @@ paginate = 5
 
 [[languages.zh.menu.main]]
     name = "社区"
-    url  = "/zh/community/"
     weight = 4
     identifier = "community"
     pre = "<i class='iconfont'>&#xe600;</i>"
