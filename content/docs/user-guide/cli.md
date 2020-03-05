@@ -275,6 +275,8 @@ spec:
     test: app
 ```
 
+> 注意，创建Service的配置文件中需要两个注解，分别是choerodon.io/network-service-instances和choerodon.io/network-service-app，分别表示实例名称和应用名称
+
 ![image](https://minio.choerodon.com.cn/knowledgebase-service/file_22ea407784fa4a128fc9342f8b50d8bb_blob.png)
 
 ## 查询域名
@@ -313,6 +315,8 @@ spec:
     - 2223.c7nctl-test.com
     secretName: asdf
 ```
+
+> 创建域名的前提是有成功创建的Service，并且serviceName指定为成功创建的service的name
 
 ![image](https://minio.choerodon.com.cn/knowledgebase-service/file_9853edc35ab6457e8050284a067ce14a_blob.png)
 
