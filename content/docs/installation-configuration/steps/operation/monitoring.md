@@ -12,6 +12,13 @@ weight = 26
 - 磁盘: ssd或高速存储介质50G及以上
 - CPU: 2核2线程及以上
 
+安装要求：
+
+- Kubernetes 1.10+ with Beta APIs
+- Helm 2.12+ (If using Helm < 2.14, [see below for CRD workaround](#Helm-创建-crd-失败))
+
+基于 [prometheus-operator](https://github.com/helm/charts/tree/master/stable/prometheus-operator)添加了的监控仪表盘。
+
 ## 部署监控组件
 
 <blockquote class="note">
@@ -20,53 +27,89 @@ weight = 26
 
 ### 添加choerodon chart仓库
 
-```
+```bash
 helm repo add c7n https://openchart.choerodon.com.cn/choerodon/c7n/
 helm repo update
 ```
 
 ### 安装监控组件
 
-- 创建存储卷pv和pvc
+- 编写参数配置文件 `prometheus-operator-value.yaml`
 
-    ```bash
-    helm install c7n/persistentvolumeclaim \
-        --set accessModes={ReadWriteMany} \
-        --set requests.storage=50Gi \
-        --set storageClassName="nfs-provisioner" \
-        --version 0.1.0 \
-        --name monitoring-pvc \
-        --namespace monitoring
+    ```yaml
+    grafana:
+      adminPassword: password
+      ingress:
+        enabled: true
+        hosts:
+        - grafana.example.choerodon.io
+      persistence:
+        enabled: true
+        storageClassName: standard
+
+    prometheus:
+      ingress:
+        enabled: true
+        hosts:
+        - prometheus.example.com
+      prometheusSpec:
+        storageSpec:
+          volumeClaimTemplate:
+            spec:
+              storageClassName: standard
     ```
 
 - 安装监控
 
     ```bash
-    helm install c7n/choerodon-monitoring \
-        --set grafana.persistence.enabled=true \
-        --set grafana.persistence.existingClaim=monitoring-pvc \
-        --set grafana.ingress.enabled=true \
-        --set "grafana.ingress.hosts[0]"=grafana.example.choerodon.io \
-        --set alertmanager.persistence.enabled=true \
-        --set alertmanager.persistence.existingClaim=monitoring-pvc \
-        --set prometheus.persistence.enabled=true \
-        --set prometheus.persistence.existingClaim=monitoring-pvc \
-        --set prometheus.clusterName=your_cluster_name \
-        --name=choerodon-monitoring \
-        --version=0.7.2 \
+    helm install c7n/prometheus-operator \
+        -f prometheus-operator-value.yaml \
+        --name=prometheus-operator \
+        --version 8.5.8   \
         --namespace=monitoring
     ```
 
-    参数名 | 含义 
-    --- |  --- 
-    x.persistence.enabled|启用持久化存储
-    grafana.ingress.hosts[0]|配置grafana的域名
-    prometheus.clusterName|为了区分多集群指定一个集群名称，可以是任意字母组合
+    下面列出 Prometheus Operator 常用可配置的参数以及默认值，其他配置参考[官方文档](https://github.com/helm/charts/tree/master/stable/prometheus-operator#configuration)
 
-<blockquote class="note">
-执行之后需要一定的时间等待服务启动和自动导入grafana模板，首次登陆密码为 admin/admin， 登陆会提示修改密码，请同样使用 admin 作为新密码，等待dashboard有内容之后再修改为其他密码。
-</blockquote>
+    | 参数 | 描述 | 默认值 |
+    |------|------|-------|
+    | `grafana.adminPassword` | 登录grafana UI的管理员密码 | "prom-operator" |
+    | `grafana.defaultDashboardsEnabled` | 部署默认的 dashboards。这些使用 sidecar 加载的 | `true` |
+    | `grafana.ingress.enabled` | 是否启用 Grafana 的 Ingress | `false` |
+    | `grafana.ingress.hosts` | 设置 Grafana 的域名 | [] |
+
+    | `grafana.persistence` | grafana 存储定义 | {} |
+    | `grafana.grafana.ini` | Grafana的配置，需要配置`auth.generic_oauth`的 oauth2 认证 | {} |
+    | `prometheus.ingress.enabled`| 如果是 `ture`，创建 Prometheus Ingress | false |
+    | `prometheus.ingress.hosts` | Prometheus 域名 | [] |
+    | `prometheus.serviceMonitor.relabelings` | 实例收集的 `relabel_configs`，需要修改 `cluster` 标签的replacement 为目标集群名 |  |
+    | `prometheus.prometheusSpec.storageSpec` | storage Spec，用于指定如何使用存储 | {} |
+    | `prometheus.prometheusSpec.additionalScrapeConfigs` | additionalScrapeConfigs 允许指定其他 Prometheus 收集配置。收集配置会追加到 Prometheus Operator 生成的配置中。配置必须符合 Prometheus [官方文档](https://prometheus.io/docs/prometheus/latest/configuration/configuration/#scrape_config)中指定的格式。用户有责任确保它的有效性。 | {} |
 
 - 查看监控
 
     在浏览器中输入配置的grafana地址即可，更多信息参见[此处](../../../../user-guide/report/)。
+
+## 常见问题
+
+#### Helm 创建 crd 失败
+
+将 helm 升级到 2.14 + 可以避免这个问题。如果使用的helm无法升级，你应该安装采取下面的步骤来解决这个问题：由于helm 的 bug，它可能无法正常安装 chart 里面的五个 CRDs，导致安装这个chart失败。为了在解决这个问题必须保证在安装时这五个 CRDS 已经存在，并禁止创建它。
+
+1. 创建 CRDs
+
+```console
+kubectl apply -f https://raw.githubusercontent.com/coreos/prometheus-operator/master/example/prometheus-operator-crd/monitoring.coreos.com_alertmanagers.yaml
+kubectl apply -f https://raw.githubusercontent.com/coreos/prometheus-operator/master/example/prometheus-operator-crd/monitoring.coreos.com_prometheuses.yaml
+kubectl apply -f https://raw.githubusercontent.com/coreos/prometheus-operator/master/example/prometheus-operator-crd/monitoring.coreos.com_prometheusrules.yaml
+kubectl apply -f https://raw.githubusercontent.com/coreos/prometheus-operator/master/example/prometheus-operator-crd/monitoring.coreos.com_servicemonitors.yaml
+kubectl apply -f https://raw.githubusercontent.com/coreos/prometheus-operator/master/example/prometheus-operator-crd/monitoring.coreos.com_podmonitors.yaml
+```
+
+2. 等待 CRDs 创建完成，这可能需要一些时间。
+
+3. 安装时禁用 CRDs 创建 `prometheusOperator.createCustomResource=false`
+
+```console
+$ helm install --name my-release c7n/prometheus-operator --set prometheusOperator.createCustomResource=false --version 8.5.8
+```
