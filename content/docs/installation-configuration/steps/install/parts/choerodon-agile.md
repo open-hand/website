@@ -120,7 +120,7 @@ helm repo update
     helm install c7n/test-manager-service \
       -f test-manager-service.yaml \
       --name test-manager-service \
-      --version 0.21.0 \
+      --version 0.21.1 \
       --namespace c7n-system
     ```
 
@@ -171,6 +171,8 @@ helm repo update
           password: password
           url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/knowledgebase_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
           username: choerodon
+      preConfig:
+        updatePolicy: override  
     ```
 - 部署服务
     ``` 
