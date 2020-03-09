@@ -112,6 +112,54 @@ helm repo update
     }
     ```
 
+## 部署 base service
+
+- 若需了解项目详情及各项参数含义，请移步 [choerodon/base-service](https://github.com/choerodon/base-service)。
+
+- 编写参数配置文件 `base-service.yaml`
+    ```yaml
+    preJob:
+      timeout: 1800
+      preInitDB:
+        datasource:
+          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/base_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
+          username: choerodon
+          password: password
+           # 初始化数据库,更新数据的时候忽略的表或列
+           # 在excel中有默认值的表，在初始化更新表时不想恢复到默认值，可进行设置
+          exclusion: iam_user.hash_password,oauth_client.web_server_redirect_uri,oauth_ldap.server_address,oauth_ldap.object_class,iam_role.is_enabled,fd_organization.name
+    env:
+      open:
+        SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
+        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc/base_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
+        SPRING_DATASOURCE_USERNAME: choerodon
+        SPRING_DATASOURCE_PASSWORD: password
+        SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
+        SPRING_REDIS_PORT: 6379
+        SPRING_REDIS_DATABASE: 3
+        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
+        CHOERODON_GATEWAY_URL: http://api.example.choerodon.io
+    ```
+- 部署服务
+    ```shell
+    helm install c7n/base-service \
+        -f base-service.yaml \
+        --name base-service \
+        --version 0.21.0 \
+        --namespace c7n-system
+    ```
+- 验证部署
+  - 验证命令
+  
+    ```shell
+    curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=base-service -o jsonpath="{.items[0].status.podIP}"):8031/actuator/health | jq -r .status
+    ```
+  - 出现以下类似信息即为成功部署
+  
+    ```
+    UP
+    ```
+
 ## 部署 manager service
 
 - 若需了解项目详情及各项参数含义，请移步 [choerodon/manager-service](https://github.com/choerodon/manager-service)。
@@ -188,7 +236,7 @@ helm repo update
     helm install c7n/asgard-service \
         -f asgard-service.yaml \
         --name asgard-service \
-        --version 0.21.0 \
+        --version 0.21.1 \
         --namespace c7n-system
     ```
 
@@ -199,54 +247,6 @@ helm repo update
     curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=asgard-service -o jsonpath="{.items[0].status.podIP}"):18081/actuator/health | jq -r .status
     ```
 
-  - 出现以下类似信息即为成功部署
-  
-    ```
-    UP
-    ```
-
-## 部署 base service
-
-- 若需了解项目详情及各项参数含义，请移步 [choerodon/base-service](https://github.com/choerodon/base-service)。
-
-- 编写参数配置文件 `base-service.yaml`
-    ```yaml
-    preJob:
-      timeout: 1800
-      preInitDB:
-        datasource:
-          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/base_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
-          username: choerodon
-          password: password
-           # 初始化数据库,更新数据的时候忽略的表或列
-           # 在excel中有默认值的表，在初始化更新表时不想恢复到默认值，可进行设置
-          exclusion: iam_user.hash_password,oauth_client.web_server_redirect_uri,oauth_ldap.server_address,oauth_ldap.object_class,iam_role.is_enabled,fd_organization.name
-    env:
-      open:
-        SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
-        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc/base_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
-        SPRING_DATASOURCE_USERNAME: choerodon
-        SPRING_DATASOURCE_PASSWORD: password
-        SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
-        SPRING_REDIS_PORT: 6379
-        SPRING_REDIS_DATABASE: 3
-        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
-        CHOERODON_GATEWAY_URL: http://api.example.choerodon.io
-    ```
-- 部署服务
-    ```shell
-    helm install c7n/base-service \
-        -f base-service.yaml \
-        --name base-service \
-        --version 0.21.0 \
-        --namespace c7n-system
-    ```
-- 验证部署
-  - 验证命令
-  
-    ```shell
-    curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=base-service -o jsonpath="{.items[0].status.podIP}"):8031/actuator/health | jq -r .status
-    ```
   - 出现以下类似信息即为成功部署
   
     ```
@@ -365,6 +365,8 @@ helm repo update
     env:
       open:
         CHOERODON_DEFAULT_REDIRECT_URL: http://c7n.example.choerodon.io
+        CHOERODON_GATEWAY_URL: http://api.example.choerodon.io
+        CHOERODON_RESET_PASSWORD_RESETURLEXPIREMINUTES: 30
         EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
         SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
         SPRING_DATASOURCE_PASSWORD: password

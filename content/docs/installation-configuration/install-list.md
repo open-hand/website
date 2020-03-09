@@ -46,7 +46,7 @@ weight = 5
 | oauth server          | 认证服务       | 0.21.0 |
 | file service          | 文件服务       | 0.21.0 |
 | notify service        | 通知服务       | 0.21.0 |
-| asgard service        | 事务服务       | 0.21.0 |
+| asgard service        | 事务服务       | 0.21.1 |
 | gitlab service        | Gitlab 服务    | 0.21.0 |
 | devops service        | Devops 服务    | 0.21.0 |
 | workflow service      | 工作流服务     | 0.21.0 |
