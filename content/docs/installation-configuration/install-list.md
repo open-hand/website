@@ -31,7 +31,7 @@ weight = 5
 | Harbor                   | 容器的镜像库             | v1.9.3                       | 1.2.3     |
 | Gitlab                   | 代码托管                 | 11.11.7-ce.0                 | 0.5.3     |
 | Gitlab-Runner            | CI/CD 运行环境           | v11.11.4                     | 0.2.4     |
-| elasticsearch-kb         | 知识ES服务               | 7.2-elasticsearch-kb         | 0.20.0    |
+| elasticsearch-kb         | 知识ES服务               | 7.2-elasticsearch-kb         | 0.21.0    |
 
 ## Choerodon服务列表
 
@@ -39,18 +39,18 @@ weight = 5
 
 | 组件                  | 描述           | 版本   |
 | --------------------- | -------------- | ------ |
-| go register server    | 注册服务       | 0.20.2 |
-| manager service       | 管理服务       | 0.20.0 |
-| base service          | 基础服务       | 0.20.1 |
-| api gateway           | 网关服务       | 0.20.0 |
-| oauth server          | 认证服务       | 0.20.0 |
-| file service          | 文件服务       | 0.20.0 |
-| notify service        | 通知服务       | 0.20.4 |
-| asgard service        | 事务服务       | 0.20.0 |
-| gitlab service        | Gitlab 服务    | 0.20.1 |
-| devops service        | Devops 服务    | 0.20.8 |
-| workflow service      | 工作流服务     | 0.20.0 |
-| agile service         | 敏捷管理       | 0.20.1 |
-| test manager service  | 测试管理服务   | 0.20.2 |
-| knowledgebase service | 知识服务       | 0.20.0 |
-| choerodon front       | Choerodon 前端 | 0.20.5 |
+| go register server    | 注册服务       | 0.21.0 |
+| manager service       | 管理服务       | 0.21.0 |
+| base service          | 基础服务       | 0.21.0 |
+| api gateway           | 网关服务       | 0.21.0 |
+| oauth server          | 认证服务       | 0.21.0 |
+| file service          | 文件服务       | 0.21.0 |
+| notify service        | 通知服务       | 0.21.0 |
+| asgard service        | 事务服务       | 0.21.0 |
+| gitlab service        | Gitlab 服务    | 0.21.0 |
+| devops service        | Devops 服务    | 0.21.0 |
+| workflow service      | 工作流服务     | 0.21.0 |
+| agile service         | 敏捷管理       | 0.21.0 |
+| test manager service  | 测试管理服务   | 0.21.0 |
+| knowledgebase service | 知识服务       | 0.21.0 |
+| choerodon front       | Choerodon 前端 | 0.21.0 |

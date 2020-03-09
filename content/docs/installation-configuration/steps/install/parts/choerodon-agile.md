@@ -75,7 +75,7 @@ helm repo update
     helm install c7n/agile-service \
       -f agile-service.yaml \
       --name agile-service \
-      --version 0.20.1 \
+      --version 0.21.0 \
       --namespace c7n-system
     ```
 
@@ -120,7 +120,7 @@ helm repo update
     helm install c7n/test-manager-service \
       -f test-manager-service.yaml \
       --name test-manager-service \
-      --version 0.20.2 \
+      --version 0.21.0 \
       --namespace c7n-system
     ```
 
@@ -144,7 +144,7 @@ helm repo update
 - 安装 elasticsearch
   ```
   helm install c7n/elasticsearch-kb \
-    --version 0.20.0 \
+    --version 0.21.0 \
     --name elasticsearch-kb \
     --namespace c7n-system
   ```
@@ -177,7 +177,7 @@ helm repo update
     helm install c7n/knowledgebase-service \
       -f knowledgebase-service.yaml \
       --name knowledgebase-service \
-      --version 0.20.0 \
+      --version 0.21.0 \
       --namespace c7n-system
     ```
 

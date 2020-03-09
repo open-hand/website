@@ -80,7 +80,7 @@ helm repo update
     helm install c7n/go-register-server \
       -f register-server.yaml \
       --name register-server \
-      --version 0.20.2 \
+      --version 0.21.0 \
       --namespace c7n-system
     ```
 
@@ -104,7 +104,7 @@ helm repo update
             "status": "UP",
             ...
             "metadata": {
-                "VERSION": "0.20.2"
+                "VERSION": "0.21.0"
             },
             ...
             }
@@ -142,7 +142,7 @@ helm repo update
     helm install c7n/manager-service \
         -f manager-service.yaml \
         --name manager-service \
-        --version 0.20.0 \
+        --version 0.21.0 \
         --namespace c7n-system
     ```
 
@@ -188,7 +188,7 @@ helm repo update
     helm install c7n/asgard-service \
         -f asgard-service.yaml \
         --name asgard-service \
-        --version 0.20.0 \
+        --version 0.21.0 \
         --namespace c7n-system
     ```
 
@@ -238,7 +238,7 @@ helm repo update
     helm install c7n/base-service \
         -f base-service.yaml \
         --name base-service \
-        --version 0.20.1 \
+        --version 0.21.0 \
         --namespace c7n-system
     ```
 - 验证部署
@@ -287,7 +287,7 @@ helm repo update
     helm install c7n/notify-service \
         -f notify-service.yaml \
         --name notify-service \
-          --version 0.20.4 \
+          --version 0.21.0 \
         --namespace c7n-system
     ```
 
@@ -339,7 +339,7 @@ helm repo update
     helm install c7n/api-gateway \
         -f api-gateway.yaml \
         --name api-gateway \
-        --version 0.20.0 \
+        --version 0.21.0 \
         --namespace c7n-system
     ```
 
@@ -380,7 +380,7 @@ helm repo update
     helm install c7n/oauth-server \
         -f oauth-server.yaml \
         --name oauth-server \
-        --version 0.20.0 \
+        --version 0.21.0 \
         --namespace c7n-system
     ```
 
@@ -419,7 +419,7 @@ helm repo update
     helm install c7n/file-service \
         -f file-service.yaml \
         --name file-service \
-        --version 0.20.0 \
+        --version 0.21.0 \
         --namespace c7n-system
     ```
 

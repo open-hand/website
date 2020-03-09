@@ -56,7 +56,7 @@ helm repo update
         AGENT_CERTMANAGERURL: https://openchart.choerodon.com.cn/choerodon/infra/
         AGENT_REPOURL: https://openchart.choerodon.com.cn/choerodon/c7n/
         AGENT_SERVICEURL: ws://devops.example.choerodon.io/agent/
-        AGENT_VERSION: 0.20.2
+        AGENT_VERSION: 0.21.0
         EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
         SECURITY_IGNORED: /ci,/webhook,/v2/api-docs,/agent/**,/ws/**,/webhook/**
         SERVICES_GATEWAY_URL: http://api.example.choerodon.io
@@ -94,7 +94,7 @@ helm repo update
     helm install c7n/devops-service \
         -f devops-service.yaml \
         --name devops-service \
-        --version 0.20.8 \
+        --version 0.21.0 \
         --namespace c7n-system
     ```
 
@@ -139,7 +139,7 @@ helm repo update
     helm install c7n/gitlab-service \
         -f gitlab-service.yaml \
         --name gitlab-service \
-        --version 0.20.2 \
+        --version 0.21.0 \
         --namespace c7n-system
     ```
 
@@ -183,7 +183,7 @@ helm repo update
     helm install c7n/workflow-service \
         -f workflow-service.yaml \
         --name workflow-service \
-        --version 0.20.0 \
+        --version 0.21.0 \
         --namespace c7n-system
     ```
 

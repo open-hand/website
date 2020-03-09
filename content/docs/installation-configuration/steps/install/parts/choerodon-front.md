@@ -49,7 +49,7 @@ helm repo update
     helm install c7n/choerodon-front \
       -f choerodon-front.yaml \
       --name choerodon-front \
-      --version 0.20.5 \
+      --version 0.21.0 \
       --namespace c7n-system
     ```
 
