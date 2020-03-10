@@ -125,9 +125,6 @@ helm repo update
           url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/base_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
           username: choerodon
           password: password
-           # 初始化数据库,更新数据的时候忽略的表或列
-           # 在excel中有默认值的表，在初始化更新表时不想恢复到默认值，可进行设置
-          exclusion: iam_user.hash_password,oauth_client.web_server_redirect_uri,oauth_ldap.server_address,oauth_ldap.object_class,iam_role.is_enabled,fd_organization.name
     env:
       open:
         SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
