@@ -142,7 +142,7 @@ helm repo update
     helm install c7n/base-service \
         -f base-service.yaml \
         --name base-service \
-        --version 0.21.0 \
+        --version 0.21.1 \
         --namespace c7n-system
     ```
 - 验证部署

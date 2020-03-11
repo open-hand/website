@@ -32,7 +32,7 @@ helm repo update
 </blockquote>
 
 <blockquote class="warning">
-注意：当前choerodon版本为0.19.x时，SonarQube插件版本为sonar-auth-choerodonoauth-plugin-1.5.1-RELEASE.jar；
+注意：当前choerodon版本为0.19.x及以上版本时，SonarQube插件版本为sonar-auth-choerodonoauth-plugin-1.5.1-RELEASE.jar；
 当前choerodon版本为0.18.x及以下版本时，SonarQube插件版本为sonar-auth-choerodonoauth-plugin-1.4-RELEASE.jar；
 </blockquote>
 
