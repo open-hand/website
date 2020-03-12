@@ -1,6 +1,6 @@
 +++
-title = "第六步：安装监控及日志"
-description = "第六步：安装监控及日志"
+title = "第六步：安装监控及日志(可选)"
+description = "第六步：安装监控及日志(可选)"
 date = 2018-03-30T13:06:38+08:00
 draft = false
 weight = 27

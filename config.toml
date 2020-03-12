@@ -39,17 +39,15 @@ paginate = 5
     weight = 4
     identifier = "en-community"
     pre = "<i class='iconfont'>&#xe600;</i>"
-
     [[languages.en.menu.main]]
 	        name = "Community"
 	        url  = "/en/community/"
-	        weight = 4
+	        weight = 2
 	        parent = "en-community"
-
 	[[languages.en.menu.main]]
 	        name = "Knowledge-Sharing"
 	        url  = "/en/knowledge-sharing"
-	        weight = 3
+	        weight = 1
 	        parent = "en-community"
 
 [[languages.en.menu.main]]
@@ -72,29 +70,26 @@ paginate = 5
         parent = "source"
 
 [[languages.en.menu.main]]
-    name = "v0.20"
+    name = "v0.21"
     url  = "/en/"
     weight = 6
-    identifier = "version"
+    identifier = "en-version"
     pre = "<i class='iconfont'>&#xe600;</i>"
-
+    [[languages.en.menu.main]]
+        name = "v0.21"
+        url  = "http://v0-21.choerodon.io/en/"
+        weight = 3
+        parent = "en-version"
     [[languages.en.menu.main]]
         name = "v0.20"
         url  = "http://v0-20.choerodon.io/en/"
-        weight = 6
-        parent = "version"
-
+        weight = 2
+        parent = "en-version"
     [[languages.en.menu.main]]
         name = "v0.19"
         url  = "http://v0-19.choerodon.io/en/"
-        weight = 5
-        parent = "version"
-
-    [[languages.en.menu.main]]
-        name = "v0.18"
-        url  = "http://v0-18.choerodon.io/en/"
-        weight = 4
-        parent = "version"
+        weight = 1
+        parent = "en-version"
 
 [[languages.zh.menu.main]]
     name = "文档"
@@ -114,63 +109,58 @@ paginate = 5
 [[languages.zh.menu.main]]
     name = "社区"
     weight = 4
-    identifier = "community"
+    identifier = "zh-community"
     pre = "<i class='iconfont'>&#xe600;</i>"
-
 	[[languages.zh.menu.main]]
         name = "社区"
         url  = "/zh/community/"
         weight = 2
-        parent = "community"
+        parent = "zh-community"
 	[[languages.zh.menu.main]]
         name = "知识分享"
         url  = "/zh/knowledge-sharing"
         weight = 1
-        parent = "community"
+        parent = "zh-community"
 
 [[languages.zh.menu.main]]
     name = "源码"
     weight = 5
-    identifier = "source"
+    identifier = "zh-source"
     pre = "<i class='iconfont'>&#xe600;</i>"
-
     [[languages.zh.menu.main]]
         name = "GITHUB"
         post= true
         url  = "https://github.com/choerodon/choerodon"
         weight = 2
-        parent = "source"
+        parent = "zh-source"
     [[languages.zh.menu.main]]
         name = "GITEE"
         post= true
         url  = "https://gitee.com/choerodon/choerodon"
         weight = 1
-        parent = "source"
+        parent = "zh-source"
 
 [[languages.zh.menu.main]]
-    name = "v0.20"
+    name = "v0.21"
     url  = "/zh/"
     weight = 6
-    identifier = "version"
+    identifier = "zh-version"
     pre = "<i class='iconfont'>&#xe600;</i>"
-
+    [[languages.zh.menu.main]]
+        name = "v0.21"
+        url  = "http://v0-21.choerodon.io/zh/"
+        weight = 3
+        parent = "zh-version"
     [[languages.zh.menu.main]]
         name = "v0.20"
         url  = "http://v0-20.choerodon.io/zh/"
-        weight = 6
-        parent = "version"
-
+        weight = 2
+        parent = "zh-version"
     [[languages.zh.menu.main]]
         name = "v0.19"
         url  = "http://v0-19.choerodon.io/zh/"
-        weight = 5
-        parent = "version"
-
-    [[languages.zh.menu.main]]
-        name = "v0.18"
-        url  = "http://v0-18.choerodon.io/zh/"
-        weight = 4
-        parent = "version"
+        weight = 1
+        parent = "zh-version"
 
 [params]
     viewMorePostLink = "/blog/"
