@@ -31,25 +31,25 @@ weight = 10
 
     1. 根据系统下载所需版本  
 
-        ```bash
+        ```
         curl -L -o helm-v2.16.3-linux-amd64.tar.gz https://file.choerodon.com.cn/kubernetes-helm/v2.16.3/helm-v2.16.3-linux-amd64.tar.gz
         ```
 
     1. 解压压缩包（以linux-amd64为例）
 
-        ```bash
+        ```
         tar -zxvf helm-v2.16.3-linux-amd64.tar.gz
         ```
 
     1. 将文件移动到PATH目录中（以linux-amd64为例）
 
-        ```bash
+        ```
         sudo mv linux-amd64/helm /usr/bin/helm
         ```
 
     1. 初始化Helm
 
-        ```bash
+        ```
         helm init \
             --history-max=3 \
             --tiller-image=gcr.azk8s.cn/kubernetes-helm/tiller:v2.16.3 \

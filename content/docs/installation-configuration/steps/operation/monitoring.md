@@ -36,7 +36,7 @@ helm repo update
 
 - 编写参数配置文件 `prometheus-operator-value.yaml`
 
-    ```yaml
+    ```
     grafana:
       adminPassword: password
       ingress:

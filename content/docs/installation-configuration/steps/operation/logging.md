@@ -31,13 +31,13 @@ helm repo update
     - 假设SSD磁盘挂载到目录 `/ssd` 上
     - 编辑`/etc/exports`文件添加需要共享目录及参数
 
-        ``` bash
+        ```
         /ssd 192.168.1.1/16(rw,sync,insecure,no_subtree_check,no_root_squash)
         ```
 
 - 配置完成后，启动 NFS Server：
 
-    ``` bash
+    ```
     sudo systemctl enable nfs-server
     sudo systemctl start nfs-server
     ```
@@ -51,7 +51,7 @@ helm install c7n/nfs-client-provisioner \
     --set storageClass.provisioner=choerodon.io/ssd-nfs-client-provisioner \
     --set persistence.nfsServer=127.0.0.1 \(1)
     --set persistence.nfsPath=/ssd \(1)
-    --version 0.1.0 \
+    --version 0.1.1 \
     --name ssd \
     --namespace logging
 {{< /annotation >}}
@@ -64,7 +64,7 @@ helm install c7n/nfs-client-provisioner \
 
 - 安装Elasticsearch
 
-    ```bash
+    ```
     helm install c7n/elasticsearch \
          --name elasticsearch \
          --set data.persistence.storageClass=ssd,data.storage=20Gi \
@@ -78,7 +78,7 @@ helm install c7n/nfs-client-provisioner \
 
 - 安装日志收集服务
 
-    ```bash
+    ```
     helm install c7n/choerodon-logging \
         --set fluent-bit.es.host="elasticsearch.logging" \
         --version=0.8.2 \
@@ -88,7 +88,7 @@ helm install c7n/nfs-client-provisioner \
 
 - 安装kibana
 
-    ```bash
+    ```
     helm install c7n/kibana \
         --set elasticsearch.host="elasticsearch.logging" \
         --set service.enabled=true \

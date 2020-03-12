@@ -76,23 +76,24 @@ Harbor启动速度较慢请等待所有Pod都为Running后进行界面查看。
     kubectl edit deployment -n c7n-system harbor-harbor-core
     ```
 
-    - **删除**下面注释的内容
-        ```
-        ......
-        volumeMounts:
-        # - name: ca-download
-        #   mountPath: /etc/core/ca/ca.crt
-        #   subPath: ca.crt
-        ......
-        volumes:
-        # - name: ca-download
-        #   secret:
-        #     secretName: "harbor-harbor-ingress"
-        #     items:
-        #       - key: ca.crt
-        #         path: ca.crt
-        ......
-        ```
+- **删除**下面注释的内容
+
+    ```
+    ......
+    volumeMounts:
+    # - name: ca-download
+    #   mountPath: /etc/core/ca/ca.crt
+    #   subPath: ca.crt
+    ......
+    volumes:
+    # - name: ca-download
+    #   secret:
+    #     secretName: "harbor-harbor-ingress"
+    #     items:
+    #       - key: ca.crt
+    #         path: ca.crt
+    ......
+    ```
 
 ### 没有公网域名时使用自签名证书
 
@@ -106,5 +107,5 @@ Harbor启动速度较慢请等待所有Pod都为Running后进行界面查看。
 
 - 分发`ca.crt`证书文件
 
-    - 将得到的`ca.crt`证书文件拷贝至其他会使用到该Harbor的主机上
-    - 证书放置于`/etc/docker/certs.d/<Harbor域名>`目录下（eg. 若Harbor域名为registry.example.choerodon.io，则将`ca.crt`证书文件放于`/etc/docker/certs.d/registry.example.choerodon.io`目录下即可）
+  - 将得到的`ca.crt`证书文件拷贝至其他会使用到该Harbor的主机上
+  - 证书放置于`/etc/docker/certs.d/<Harbor域名>`目录下（eg. 若Harbor域名为registry.example.choerodon.io，则将`ca.crt`证书文件放于`/etc/docker/certs.d/registry.example.choerodon.io`目录下即可）

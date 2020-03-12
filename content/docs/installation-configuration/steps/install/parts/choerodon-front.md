@@ -18,7 +18,7 @@ helm repo update
 
 - 编写参数配置文件 `choerodon-front.yaml`
 
-    ```yaml
+    ```
     env:
       open:
         API_HOST: http://api.example.choerodon.io
@@ -47,7 +47,7 @@ helm repo update
 
 - 部署服务
 
-  ```shell
+  ```
   helm install c7n/choerodon-front \
     -f choerodon-front.yaml \
     --name choerodon-front \
@@ -59,7 +59,7 @@ helm repo update
   
   - 编写参数配置文件 `c7n-front-client.yaml`
   
-    ```yaml
+    ```
     env:
       MYSQL_HOST: c7n-mysql.c7n-system.svc
       MYSQL_PASS: password
@@ -71,7 +71,7 @@ helm repo update
 
   - 部署服务
 
-    ```shell
+    ```
     helm install c7n/mysql-client \
         -f c7n-front-client.yaml \
         --version 0.1.0 \
@@ -83,12 +83,12 @@ helm repo update
   
   - 验证命令
 
-    ```shell
+    ```
     curl $(kubectl get svc choerodon-front -o jsonpath="{.spec.clusterIP}" -n c7n-system):8080
     ```
 
   - 出现以下类似信息即为成功部署
 
-    ```html
+    ```
     <!DOCTYPE html><html><head><meta http-equiv="Content-type"content="text/html; charset=utf-8"><title>Choerodon</title><link rel="shortcut icon"href="favicon.ico"></head><body><div id="app"></div><script type="text/javascript"src="app/vendor_19e4b950.js"></script><script type="text/javascript"src="app/main_19e4b950.js"></script></body></html>
     ```

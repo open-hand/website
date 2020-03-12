@@ -23,6 +23,7 @@ weight = 10
 helm repo add c7n https://openchart.choerodon.com.cn/choerodon/c7n/
 helm repo update
 ```
+
 <blockquote class="warning">
 0.19以前的base-service的数据库为iam_service,0.19以后更名为base_service,对于配置文件中是使用iam_service还是base_service遵从一下标准：
 如果是新安装的版本，就使用base_service，如果是升级上来的版本，原版本数据库使用的是什么数据库名称，配置文件中就配置对应的数据库名称
@@ -31,7 +32,8 @@ helm repo update
 ## 创建数据库
 
 - 编写参数配置文件 `create-c7nfw-db.yaml`
-    ```yaml
+
+    ```
     env:
       MYSQL_HOST: c7n-mysql.c7n-system.svc
       MYSQL_PORT: "3306"
@@ -51,73 +53,78 @@ helm repo update
     ```
 
 - 执行安装
-    ```shell
-    helm install c7n/mysql-client \
+  
+  ```
+  helm install c7n/mysql-client \
       -f create-c7nfw-db.yaml \
       --version 0.1.0 \
       --name create-c7nfw-db \
       --namespace c7n-system
-    ```
+  ```
 
 ## 部署 register server
 
 - 若需了解项目详情及各项参数含义，请移步 [choerodon/go-register-server](https://github.com/choerodon/go-register-server)。
 
 - 编写参数配置文件 `register-server.yaml`
-    ```yaml
-    env:
-      open:
-        REGISTER_SERVICE_NAMESPACE: c7n-system
-    rbac:
-      create: true
-    service:
-      enabled: true
-      name: register-server
-    ```
+  
+  ```
+  env:
+    open:
+      REGISTER_SERVICE_NAMESPACE: c7n-system
+  rbac:
+    create: true
+  service:
+    enabled: true
+    name: register-server
+  ```
 
 - 执行安装
-    ```shell
-    helm install c7n/go-register-server \
-      -f register-server.yaml \
-      --name register-server \
-      --version 0.21.0 \
-      --namespace c7n-system
-    ```
+  
+  ```
+  helm install c7n/go-register-server \
+    -f register-server.yaml \
+    --name register-server \
+    --version 0.21.0 \
+    --namespace c7n-system
+  ```
 
 - 验证部署
   - 验证命令
   
-    ```shell
+    ```
     curl $(kubectl get svc register-server -o jsonpath="{.spec.clusterIP}" -n c7n-system):8000/eureka/apps
     ```
+
   - 出现以下类似信息即为成功部署
   
-    ```json
-    {
-        "name": "go-register-server",
-        "instance": [
-            {
-            "instanceId": "192.168.3.19:go-register-server:8000",
-            "hostName": "192.168.3.19",
-            "app": "go-register-server",
-            "ipAddr": "192.168.3.19",
-            "status": "UP",
-            ...
-            "metadata": {
-                "VERSION": "0.21.0"
-            },
-            ...
-            }
-        ]
-    }
-    ```
+      ```
+      {
+          "name": "go-register-server",
+          "instance": [
+              {
+              "instanceId": "192.168.3.19:go-register-server:8000",
+              "hostName": "192.168.3.19",
+              "app": "go-register-server",
+              "ipAddr": "192.168.3.19",
+              "status": "UP",
+              ...
+              "metadata": {
+                  "VERSION": "0.21.0"
+              },
+              ...
+              }
+          ]
+      }
+      ```
 
 ## 部署 base service
 
 - 若需了解项目详情及各项参数含义，请移步 [choerodon/base-service](https://github.com/choerodon/base-service)。
 
 - 编写参数配置文件 `base-service.yaml`
-    ```yaml
+
+    ```
     preJob:
       timeout: 1800
       preInitDB:
@@ -137,20 +144,24 @@ helm repo update
         EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
         CHOERODON_GATEWAY_URL: http://api.example.choerodon.io
     ```
+
 - 部署服务
-    ```shell
+
+    ```
     helm install c7n/base-service \
         -f base-service.yaml \
         --name base-service \
         --version 0.21.2 \
         --namespace c7n-system
     ```
+
 - 验证部署
   - 验证命令
   
-    ```shell
+    ```
     curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=base-service -o jsonpath="{.items[0].status.podIP}"):8031/actuator/health | jq -r .status
     ```
+
   - 出现以下类似信息即为成功部署
   
     ```
@@ -162,41 +173,45 @@ helm repo update
 - 若需了解项目详情及各项参数含义，请移步 [choerodon/manager-service](https://github.com/choerodon/manager-service)。
 
 - 编写参数配置文件 `manager-service.yaml`
-    ```yaml
-    env:
-      open:
-        CHOERODON_GATEWAY_DOMAIN: api.example.choerodon.io
-        CHOERODON_SWAGGER_OAUTH_URL: http://api.example.choerodon.io/oauth/oauth/authorize
-        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
-        SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
-        SPRING_DATASOURCE_PASSWORD: password
-        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
-        SPRING_DATASOURCE_USERNAME: choerodon
-        SPRING_REDIS_DATABASE: 1
-        SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
-        SPRING_REDIS_PORT: 6379
-    preJob:
-      preInitDB:
-        datasource:
-          password: password
-          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
-          username: choerodon
-    ```
+
+  ```
+  env:
+    open:
+      CHOERODON_GATEWAY_DOMAIN: api.example.choerodon.io
+      CHOERODON_SWAGGER_OAUTH_URL: http://api.example.choerodon.io/oauth/oauth/authorize
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
+      SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
+      SPRING_DATASOURCE_PASSWORD: password
+      SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
+      SPRING_DATASOURCE_USERNAME: choerodon
+      SPRING_REDIS_DATABASE: 1
+      SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
+      SPRING_REDIS_PORT: 6379
+  preJob:
+    preInitDB:
+      datasource:
+        password: password
+        url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
+        username: choerodon
+  ```
+
 - 部署服务
-    ```shell
-    helm install c7n/manager-service \
-        -f manager-service.yaml \
-        --name manager-service \
-        --version 0.21.0 \
-        --namespace c7n-system
-    ```
+
+  ```
+  helm install c7n/manager-service \
+      -f manager-service.yaml \
+      --name manager-service \
+      --version 0.21.0 \
+      --namespace c7n-system
+  ```
 
 - 验证部署
   - 验证命令
   
-    ```shell
+    ```
     curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=manager-service -o jsonpath="{.items[0].status.podIP}"):8964/actuator/health | jq -r .status
     ```
+
   - 出现以下类似信息即为成功部署
 
     ```
@@ -208,28 +223,30 @@ helm repo update
 - 若需了解项目详情及各项参数含义，请移步 [choerodon/asgard-service](https://github.com/choerodon/asgard-service)。
 
 - 编写参数配置文件 `asgard-service.yaml`
-    ```yaml
-    env:
-      open:
-        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
-        SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
-        SPRING_DATASOURCE_PASSWORD: password
-        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/asgard_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
-        SPRING_DATASOURCE_USERNAME: choerodon
-        SPRING_REDIS_DATABASE: 2
-        SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
-        SPRING_REDIS_PORT: 6379
-    preJob:
-      timeout: 1800
-      preInitDB:
-        datasource:
-          password: password
-          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/asgard_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
-          username: choerodon
-    ```
+  
+  ```
+  env:
+    open:
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
+      SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
+      SPRING_DATASOURCE_PASSWORD: password
+      SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/asgard_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
+      SPRING_DATASOURCE_USERNAME: choerodon
+      SPRING_REDIS_DATABASE: 2
+      SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
+      SPRING_REDIS_PORT: 6379
+  preJob:
+    timeout: 1800
+    preInitDB:
+      datasource:
+        password: password
+        url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/asgard_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
+        username: choerodon
+  ```
 
 - 部署服务
-    ```shell
+
+    ```
     helm install c7n/asgard-service \
         -f asgard-service.yaml \
         --name asgard-service \
@@ -238,9 +255,10 @@ helm repo update
     ```
 
 - 验证部署
+
   - 验证命令
   
-    ```shell
+    ```
     curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=asgard-service -o jsonpath="{.items[0].status.podIP}"):18081/actuator/health | jq -r .status
     ```
 
@@ -255,31 +273,34 @@ helm repo update
 - 若需了解项目详情及各项参数含义，请移步 [choerodon/notify-service](https://github.com/choerodon/notify-service)。
 
 - 编写参数配置文件 `notify-service.yaml`
-    ```yaml
-    env:
-      open:
-        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
-        SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
-        SPRING_DATASOURCE_PASSWORD: password
-        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/notify_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
-        SPRING_DATASOURCE_USERNAME: choerodon
-        SPRING_REDIS_DATABASE: 4
-        SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
-    ingress:
-      enabled: true
-      host: notify.example.choerodon.io
-    preJob:
-      timeout: 1800
-      preInitDB:
-        datasource:
-          password: password
-          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/notify_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
-          username: choerodon
-    service:
-      enabled: true
-      name: notify-service
-    ```
+  
+  ```
+  env:
+    open:
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
+      SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
+      SPRING_DATASOURCE_PASSWORD: password
+      SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/notify_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
+      SPRING_DATASOURCE_USERNAME: choerodon
+      SPRING_REDIS_DATABASE: 4
+      SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
+  ingress:
+    enabled: true
+    host: notify.example.choerodon.io
+  preJob:
+    timeout: 1800
+    preInitDB:
+      datasource:
+        password: password
+        url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/notify_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
+        username: choerodon
+  service:
+    enabled: true
+    name: notify-service
+  ```
+
 - 部署服务
+
     ```
     helm install c7n/notify-service \
         -f notify-service.yaml \
@@ -294,9 +315,10 @@ helm repo update
     ```
     curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=notify-service -o jsonpath="{.items[0].status.podIP}"):18086/actuator/health | jq -r .status
     ```
+
   - 出现以下类似信息即为成功部署
   
-    ```
+    ```text
     UP
     ```
 
@@ -305,6 +327,7 @@ helm repo update
 - 若需了解项目详情及各项参数含义，请移步 [choerodon/api-gateway](https://github.com/choerodon/api-gateway)。
 
 - 编写参数配置文件 `api-gateway.yaml`
+
     ```yaml
     env:
       open:
@@ -331,7 +354,9 @@ helm repo update
     service:
       enabled: true
     ```
+
 - 部署服务
+
     ```
     helm install c7n/api-gateway \
         -f api-gateway.yaml \

@@ -31,7 +31,7 @@ weight = 5
 
 ### 环境准备
 
-```console
+```
 # 安装 git 命令行
 sudo yum install git -y
 # 克隆本项目代码
@@ -195,7 +195,8 @@ sudo ./install-ansible.sh
 **测试说明**
 
 - 镜像中将以下核心代码进行封装成为 `curls` 命令，使用方式 `curls url [times]` ，例如 `curls choerodon.io 20` 则为访问 `choerodon.io` 20次并打印测试出的时间指标，命令默认访问 10 次。
-  ```bash
+
+  ```
   curl -o /dev/null -s -w '%{time_connect} %{time_starttransfer} %{time_total}' "choerodon.io"
   ```
 
@@ -209,7 +210,7 @@ sudo ./install-ansible.sh
 
 - 测试命令
 
-    ```bash
+    ```
     docker run -it --rm --net=host \
         registry.cn-hangzhou.aliyuncs.com/choerodon-tools/network-and-cluster-perfermance-test:0.1.0 \
         curls choerodon.io
@@ -237,7 +238,7 @@ sudo ./install-ansible.sh
 
 - 测试命令
 
-    ```bash
+    ```
     kubectl run curl-test \
         -it --quiet --rm --restart=Never \
         --image='registry.cn-hangzhou.aliyuncs.com/choerodon-tools/network-and-cluster-perfermance-test:0.1.0' \
@@ -284,7 +285,7 @@ sudo ./install-ansible.sh
 
 - 测试命令
 
-    ```bash
+    ```
     docker run -it --rm --net=host \
         registry.cn-hangzhou.aliyuncs.com/choerodon-tools/network-and-cluster-perfermance-test:0.1.0 \
         curls http://10.244.64.8/healthz
@@ -312,7 +313,7 @@ sudo ./install-ansible.sh
 
 - 测试命令
 
-    ```bash
+    ```
     kubectl run curl-test \
         -it --quiet --rm --restart=Never \
         --image='registry.cn-hangzhou.aliyuncs.com/choerodon-tools/network-and-cluster-perfermance-test:0.1.0' \
@@ -347,7 +348,7 @@ sudo ./install-ansible.sh
 
 - 服务端命令：
 
-    ```bash
+    ```
     docker run -it --rm --net=host \
         registry.cn-hangzhou.aliyuncs.com/choerodon-tools/network-and-cluster-perfermance-test:0.1.0 \
         iperf -s -p 12345 -i 1 -M
@@ -357,7 +358,7 @@ sudo ./install-ansible.sh
 
 - 客户端命令：
 
-    ```bash
+    ```
     docker run -it --rm --net=host \
         registry.cn-hangzhou.aliyuncs.com/choerodon-tools/network-and-cluster-perfermance-test:0.1.0 \
         iperf -c 服务端节点IP -p 12345 -i 1 -t 10 -w 20K
@@ -383,7 +384,7 @@ sudo ./install-ansible.sh
 
 - 服务端命令：
 
-    ```bash
+    ```
     kubectl run iperf-server \
         -it --quiet --rm --restart=Never \
         --overrides='{"spec":{"nodeName":"指定服务端运行的节点"}}' \

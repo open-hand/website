@@ -20,7 +20,8 @@ helm repo update
 ## 创建数据库
 
 - 编写参数配置文件 `create-c7ncd-db.yaml`
-    ```yaml
+
+    ```
     env:
       MYSQL_HOST: c7n-mysql.c7n-system.svc
       MYSQL_PORT: "3306"
@@ -38,7 +39,8 @@ helm repo update
     ```
 
 - 执行安装
-    ```shell
+  
+    ```
     helm install c7n/mysql-client \
       -f create-c7ncd-db.yaml \
       --version 0.1.0 \
@@ -50,26 +52,29 @@ helm repo update
 - 若需了解项目详情及各项参数含义，请移步 [choerodon/workflow-service](https://github.com/choerodon/workflow-service)。
 
 - 编写参数配置文件 `workflow-service.yaml`
-    ```yaml
-    env:
-      open:
-        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
-        SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
-        SPRING_DATASOURCE_PASSWORD: password
-        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/workflow_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
-        SPRING_DATASOURCE_USERNAME: choerodon
-        SPRING_REDIS_DATABASE: 8
-        SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
-    preJob:
-      timeout: 1800
-      preInitDB:
-        datasource:
-          password: password
-          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/workflow_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
-          username: choerodon
-    ```
+
+  ```
+  env:
+    open:
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
+      SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
+      SPRING_DATASOURCE_PASSWORD: password
+      SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/workflow_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
+      SPRING_DATASOURCE_USERNAME: choerodon
+      SPRING_REDIS_DATABASE: 8
+      SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
+  preJob:
+    timeout: 1800
+    preInitDB:
+      datasource:
+        password: password
+        url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/workflow_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
+        username: choerodon
+  ```
+
 - 部署服务
-    ``` 
+
+    ```
     helm install c7n/workflow-service \
         -f workflow-service.yaml \
         --name workflow-service \
@@ -78,6 +83,7 @@ helm repo update
     ```
 
 - 验证部署
+  
   - 验证命令
   
     ```
@@ -105,6 +111,7 @@ helm repo update
     ```
 
 - 部署服务
+
     ```
     helm install c7n/gitlab-service \
         -f gitlab-service.yaml \
@@ -114,6 +121,7 @@ helm repo update
     ```
 
 - 验证部署
+
   - 验证命令
   
     ```
@@ -130,6 +138,7 @@ helm repo update
 - 若需了解项目详情及各项参数含义，请移步 [choerodon/devops-service](https://github.com/choerodon/devops-service)。
 
 - 编写参数配置文件 `devops-service.yaml`
+
     ```yaml
     env:
       open:
@@ -166,8 +175,10 @@ helm repo update
     service:
       enabled: true
     ```
+
 - 部署服务
-    ``` 
+
+    ```
     helm install c7n/devops-service \
         -f devops-service.yaml \
         --name devops-service \
@@ -176,6 +187,7 @@ helm repo update
     ```
 
 - 验证部署
+
   - 验证命令
   
     ```

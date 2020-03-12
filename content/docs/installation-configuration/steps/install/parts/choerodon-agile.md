@@ -38,6 +38,7 @@ helm repo update
     ```
 
 - 执行安装
+
     ```shell
     helm install c7n/mysql-client \
       -f create-c7nagile-db.yaml \
@@ -71,7 +72,8 @@ helm repo update
     ```
 
 - 部署服务
-    ``` 
+
+    ```shell
     helm install c7n/agile-service \
       -f agile-service.yaml \
       --name agile-service \
@@ -80,6 +82,7 @@ helm repo update
     ```
 
 - 验证部署
+
   - 验证命令
 
     ```
@@ -96,7 +99,7 @@ helm repo update
 - 若需了解项目详情及各项参数含义，请移步 [choerodon/test-manager-service](https://github.com/choerodon/test-manager-service)。
 
 - 编写参数配置文件 `test-manager-service.yaml`
-    ```yaml
+    ```
     env:
       open:
         EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
@@ -115,8 +118,10 @@ helm repo update
           url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/test_manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
           username: choerodon
     ```
+
 - 部署服务
-    ``` 
+
+    ```
     helm install c7n/test-manager-service \
       -f test-manager-service.yaml \
       --name test-manager-service \
@@ -125,6 +130,7 @@ helm repo update
     ```
 
 - 验证部署
+
   - 验证命令
   
     ```
@@ -142,19 +148,21 @@ helm repo update
 - 若需了解项目详情及各项参数含义，请移步 [choerodon/elasticsearch-kb](https://github.com/choerodon/elasticsearch-kb)。
 
 - 安装 elasticsearch
-  ```
-  helm install c7n/elasticsearch-kb \
-    --version 0.21.0 \
-    --name elasticsearch-kb \
-    --namespace c7n-system
-  ```
+
+    ```
+    helm install c7n/elasticsearch-kb \
+      --version 0.21.0 \
+      --name elasticsearch-kb \
+      --namespace c7n-system
+    ```
 
 ## 部署 knowledgebase service
 
 - 若需了解项目详情及各项参数含义，请移步 [choerodon/knowledgebase-service](https://github.com/choerodon/knowledgebase-service)。
 
 - 编写参数配置文件 `knowledgebase-service.yaml`
-    ```yaml
+  
+    ```
     env:
       open:
         EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
@@ -174,7 +182,9 @@ helm repo update
       preConfig:
         updatePolicy: override  
     ```
+
 - 部署服务
+
     ``` 
     helm install c7n/knowledgebase-service \
       -f knowledgebase-service.yaml \
@@ -184,6 +194,7 @@ helm repo update
     ```
 
 - 验证部署
+
   - 验证命令
   
     ```

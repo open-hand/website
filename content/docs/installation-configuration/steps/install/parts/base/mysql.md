@@ -37,7 +37,7 @@ helm install c7n/persistentvolumeclaim \
 
 - 编写配置文件`mysql.yaml`
 
-    ```yaml
+    ```
     config:
       character_set_server: utf8mb4
       collation_server: utf8mb4_general_ci
@@ -55,13 +55,13 @@ helm install c7n/persistentvolumeclaim \
 
 - 执行安装
 
-    ```shell
-    helm install c7n/mysql \
-        -f mysql.yaml \
-        --version 0.1.3 \
-        --name c7n-mysql \
-        --namespace c7n-system
-    ```
+  ```
+  helm install c7n/mysql \
+      -f mysql.yaml \
+      --version 0.1.3 \
+      --name c7n-mysql \
+      --namespace c7n-system
+  ```
 
 - 参数：
 
