@@ -64,7 +64,7 @@ sudo ./install-ansible.sh
     192.168.56.12 ansible_port=22 ansible_user="vagrant" ansible_ssh_pass="vagrant"
     192.168.56.13 ansible_port=22 ansible_user="vagrant" ansible_ssh_pass="vagrant"
     192.168.56.14 ansible_port=22 ansible_user="vagrant" ansible_ssh_pass="vagrant"
-    
+
     ; 私有云：
     ;    VIP 负载模式：
     ;       也就是负载均衡器 + keepalived 模式，比如常用的 haproxy + keepalived。
@@ -85,39 +85,39 @@ sudo ./install-ansible.sh
     ;       修改 lb_kube_apiserver_port 为 slb 监听端口。
     ;    再次运行初始化集群脚本即可切换至 slb 模式。
     [lb]
-    
+
     ; 注意etcd集群必须是1,3,5,7...奇数个节点
     [etcd]
     192.168.56.11
     192.168.56.12
     192.168.56.13
-    
+
     [kube-master]
     192.168.56.11
     192.168.56.12
     192.168.56.13
-    
+
     [kube-worker]
     192.168.56.11
     192.168.56.12
     192.168.56.13
     192.168.56.14
-    
+
     ; 预留组，后续添加master节点使用
     [new-master]
-    
+
     ; 预留组，后续添加worker节点使用
     [new-worker]
-    
+
     ; 预留组，后续添加etcd节点使用
     [new-etcd]
-    
+
     ;-------------------------------------- 以下为基础信息配置 ------------------------------------;
     [all:vars]
     ; 是否跳过节点物理资源校验，Master节点要求2c2g以上，Worker节点要求2c4g以上
     skip_verify_node=false
     ; kubernetes版本
-    kube_version="1.15.7"
+    kube_version="1.16.7"
     ; 负载均衡器
     ;   有 nginx、haproxy、envoy 和 slb 四个选项，默认使用 nginx；
     lb_mode="nginx"
@@ -125,7 +125,7 @@ sudo ./install-ansible.sh
     ; lb_kube_apiserver_ip="192.168.56.15"
     ; 使用负载均衡后集群 apiserver port
     lb_kube_apiserver_port="8443"
-    
+
     ; 网段选择：pod 和 service 的网段不能与服务器网段重叠，
     ; 若有重叠请配置 `kube_pod_subnet` 和 `kube_service_subnet` 变量设置 pod 和 service 的网段，示例参考：
     ;    如果服务器网段为：10.0.0.1/8
@@ -141,10 +141,10 @@ sudo ./install-ansible.sh
     kube_pod_subnet="10.244.0.0/18"
     ; 集群service ip段
     kube_service_subnet="10.244.64.0/18"
-    
+
     ; 集群网络插件，目前支持flannel,calico,kube-ovn
     network_plugin="flannel"
-    
+
     ; 若服务器磁盘分为系统盘与数据盘，请修改以下路径至数据盘自定义的目录。
     ; Kubelet 根目录
     kubelet_root_dir="/var/lib/kubelet"
@@ -166,18 +166,21 @@ sudo ./install-ansible.sh
 | 允许     | 全部     | -1/-1       | 地址段访问 | 10.244.0.0/18 | 跨节点 Pod 之间互相访问 |
 
 - 部署集群：
+
   ```shell
   # 在项目根目录下执行
   ansible-playbook -i inventory.ini 90-init-cluster.yml
   ```
 
 - 查看等待 pod 的状态为 runnning：
+
   ```shell
   # 任意master节点下执行
   kubectl get po --all-namespaces -w
   ```
 
 - 如果部署失败，想要重置集群，执行：
+
   ```shell
   # 在项目根目录下执行
   ansible-playbook -i inventory.ini 99-reset-cluster.yml

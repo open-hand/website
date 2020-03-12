@@ -61,7 +61,7 @@ helm install c7n/redis \
     --set persistence.enabled=true \
     --set persistence.existingClaim=gitlab-redis-pvc \
     --set service.enabled=true \
-    --version 0.2.2 \
+    --version 0.2.4 \
     --name gitlab-redis \
     --namespace c7n-system
 ```

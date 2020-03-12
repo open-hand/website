@@ -66,10 +66,10 @@ helm install c7n/nfs-client-provisioner \
 
     ```bash
     helm install c7n/elasticsearch \
-         --version=1.13.2 \
          --name elasticsearch \
          --set data.persistence.storageClass=ssd,data.storage=20Gi \
          --set master.persistence.storageClass=ssd,data.storage=5Gi \
+         --version=1.13.2-1 \
          --namespace logging
     ```
 
@@ -80,10 +80,10 @@ helm install c7n/nfs-client-provisioner \
 
     ```bash
     helm install c7n/choerodon-logging \
-        --set fluent-bit.elasticsearch.host="elasticsearch.logging" \
+        --set fluent-bit.es.host="elasticsearch.logging" \
+        --version=0.8.2 \
         --name=choerodon-logging \
         --namespace=logging \
-        --version=0.8.0
     ```
 
 - 安装kibana
@@ -94,6 +94,7 @@ helm install c7n/nfs-client-provisioner \
         --set service.enabled=true \
         --set ingress.enabled=true \
         --set ingress.host=kibana.example.choerodon.io \
+        --version=0.8.1 \
         --namespace=logging \
         --name=kibana
     ```

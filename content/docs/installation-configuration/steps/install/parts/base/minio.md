@@ -14,7 +14,7 @@ weight = 25
 
 ## 添加choerodon chart仓库并同步
 
-```
+```shell
 helm repo add c7n https://openchart.choerodon.com.cn/choerodon/c7n/
 helm repo update
 ```
@@ -23,7 +23,8 @@ helm repo update
 
 - 若需了解项目详情及各项参数含义，请移步 [helm/charts/minio](https://github.com/helm/charts/tree/master/stable/minio#minio)。
 - 编写参数配置文件 `minio.yaml`
-
+  
+    ```yaml
         mode: distributed
         accessKey: "AKIAIOSFODNN7EXAMPLE"
         secretKey: "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
@@ -35,12 +36,14 @@ helm repo update
           path: /
           hosts:
           - minio.example.choerodon.io
+    ```
 
 - 执行安装
+
     ```shell
     helm install c7n/minio \
         -f minio.yaml \
-        --version 4.0.1 \
+        --version 5.0.4 \
         --name minio \
         --namespace c7n-system
     ```

@@ -14,7 +14,7 @@ weight = 35
 
 ## 添加choerodon chart仓库并同步
 
-```
+```shell
 helm repo add c7n https://openchart.choerodon.com.cn/choerodon/c7n/
 helm repo update
 ```
@@ -54,10 +54,11 @@ helm install c7n/persistentvolumeclaim \
     ```
 
 - 执行安装
+
     ```shell
     helm install c7n/mysql \
         -f mysql.yaml \
-        --version 0.1.2 \
+        --version 0.1.3 \
         --name c7n-mysql \
         --namespace c7n-system
     ```

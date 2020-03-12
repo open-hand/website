@@ -82,7 +82,7 @@ spec:
 - 更多关于c7nctl的配置请参考[此处](https://blog.vinkdong.com/c7nctl%E8%AF%A6%E8%A7%A3/)
 
 ```bash
-./c7nctl install -c config.yml --no-timeout --version=0.20
+./c7nctl install -c config.yml --no-timeout --version=0.21
 ```
 
 - 参数解释

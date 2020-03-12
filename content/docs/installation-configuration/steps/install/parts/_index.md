@@ -21,18 +21,19 @@ Choerodon采用Spring Cloud作为微服务框架，运行在Docker上，以Kuber
 ## 前置要求与约定
 
 - 硬件要求：
-    - 节点数量：3   
-    - 单节点内存信息：16G及以上
-    - 单节点处理器信息：4核4线程及以上
-    - 单节点硬盘：40G及以上（如使用NFS存储，NFS服务节点建议存储不小于512G）
-    <blockquote class="note">
-    只要现有节点内存与CPU总和大于上述节点要求即可。
-    </blockquote>
+  
+  - 节点数量：3
+  - 单节点内存信息：16G及以上
+  - 单节点处理器信息：4核4线程及以上
+  - 单节点硬盘：40G及以上（如使用NFS存储，NFS服务节点建议存储不小于512G）
+  <blockquote class="note">
+  只要现有节点内存与CPU总和大于上述节点要求即可。
+  </blockquote>
 
 - 软件要求：
-    - 系统版本：CentOS7.4及以上
-    - Kubernetes：1.10及以上
-    - Helm：2.10及以上(tiller版本请一定与helm版本一致)
+  - 系统版本：CentOS7.4及以上
+  - Kubernetes：1.10及以上
+  - Helm：2.10及以上(tiller版本请一定与helm版本一致)
 
 - 约定：部署教程以NFS类型的PV为例进行创建，所有非集群级对象都创建在`c7n-system`命名空间下。
 

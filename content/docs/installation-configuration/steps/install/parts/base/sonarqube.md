@@ -20,7 +20,7 @@ SonarQube并非猪齿鱼运行必要基础组件，你可以选择性进行安�
 
 ## 添加choerodon chart仓库并同步
 
-```
+```shell
 helm repo add c7n https://openchart.choerodon.com.cn/choerodon/c7n/
 helm repo update
 ```
@@ -36,7 +36,7 @@ helm repo update
 当前choerodon版本为0.18.x及以下版本时，SonarQube插件版本为sonar-auth-choerodonoauth-plugin-1.4-RELEASE.jar；
 </blockquote>
 
-```
+```shell
 helm install c7n/sonarqube \
     --set persistence.enabled=true \
     --set persistence.storageClass=nfs-provisioner \
@@ -78,7 +78,7 @@ helm install c7n/sonarqube \
 ### 添加Choerodon Client
 - 记得修改`http://sonarqube.example.choerodon.io`为实际的SonarQube地址
   
-    ```
+    ```shell
     helm install c7n/mysql-client \
         --set env.MYSQL_HOST=c7n-mysql.c7n-system.svc \
         --set env.MYSQL_PORT=3306 \
@@ -108,29 +108,30 @@ helm install c7n/sonarqube \
 - 使用管理员用户登录 SoanrQube
 - 配置默认新建项目为`Private`, 进入 `Administration` -> `Projects` -> `Management`
     ![](/docs/installation-configuration/image/sonarqube_1.png)
-   
+
 ### 配置认证插件
 - 使用管理员用户登录 SoanrQube
 - 进入 `Administration` -> `Configuration` ->`choerodon`
 - 更改 `Enabled` 为启用
 - 更改 `Choerodon url` 为当前使用的 `choerodon api getaway` 地址；默认地址为：`http://api.example.choerodon.io`
     ![](/docs/installation-configuration/image/sonarqube_4.png)
-    
+
 - 更改 `sonar url` 为当前使用的SonarQube实际地址
 - 退出登录，测试使用choerodon登录,出现如下界面
     ![](/docs/installation-configuration/image/sonarqube_5.png)
-    
+
 ## Choerodon应用关联SonarQube项目
 - 部署devops-service时添加SonarQube环境变量
 
-```
+```yaml
     SERVICES_SONARQUBE_URL: http://sonarqube.example.choerodon.io
     SERVICES_SONARQUBE_USERNAME: admin
     SERVICES_SONARQUBE_PASSWORD: admin
 ```
 
 - 在.gitlab-ci.yml文件build阶段添加
-  
+
+    ```yaml
         - >-
           mvn --batch-mode  verify sonar:sonar
           -Dsonar.host.url=$SONAR_URL -Dsonar.login=$SONAR_LOGIN
@@ -140,6 +141,7 @@ helm install c7n/sonarqube \
           -Dsonar.analysis.serviceGroup=$GROUP_NAME
           -Dsonar.analysis.commitId=$CI_COMMIT_SHA
           -Dsonar.projectKey=${GROUP_NAME}:${PROJECT_NAME}
+    ```
 
 - sonar.projectKey=${GROUP_NAME}:${PROJECT_NAME}不可更改；否则，在查看代码质量时将获取不到对应数据
 - GROUP_NAME和PROJECT_NAME是devops-service内置的环境变量， GROUP_NAME=当前项目所在组织编码-当前项目编码，PROJECT_NAME=当前应用编码

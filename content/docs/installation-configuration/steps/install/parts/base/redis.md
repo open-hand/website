@@ -16,7 +16,7 @@ weight = 30
 
 ## 添加choerodon chart仓库并同步
 
-```
+```shell
 helm repo add c7n https://openchart.choerodon.com.cn/choerodon/c7n/
 helm repo update
 ```
@@ -40,7 +40,7 @@ helm install c7n/redis \
     --set persistence.enabled=true \
     --set persistence.existingClaim=c7n-redis-pvc \
     --set service.enabled=true \
-    --version 0.2.2 \
+    --version 0.2.4 \
     --name c7n-redis \
     --namespace c7n-system
 ```

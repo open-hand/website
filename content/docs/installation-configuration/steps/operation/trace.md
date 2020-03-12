@@ -31,7 +31,7 @@ helm install c7n/skywalking \
     --set ui.service.enabled=true \
     --set ui.ingress.enabled=true \
     --set ui.ingress."hosts[0]"=skywalking.example.choerodon.io \
-    --version 6.5.0 \
+    --version 6.5.0-1 \
     --name skywalking \
     --namespace logging
 ```

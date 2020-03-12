@@ -77,7 +77,6 @@ helm repo update
     | `grafana.defaultDashboardsEnabled` | 部署默认的 dashboards。这些使用 sidecar 加载的 | `true` |
     | `grafana.ingress.enabled` | 是否启用 Grafana 的 Ingress | `false` |
     | `grafana.ingress.hosts` | 设置 Grafana 的域名 | [] |
-
     | `grafana.persistence` | grafana 存储定义 | {} |
     | `grafana.grafana.ini` | Grafana的配置，需要配置`auth.generic_oauth`的 oauth2 认证 | {} |
     | `prometheus.ingress.enabled`| 如果是 `ture`，创建 Prometheus Ingress | false |
@@ -94,22 +93,22 @@ helm repo update
 
 #### Helm 创建 crd 失败
 
-将 helm 升级到 2.14 + 可以避免这个问题。如果使用的helm无法升级，你应该安装采取下面的步骤来解决这个问题：由于helm 的 bug，它可能无法正常安装 chart 里面的五个 CRDs，导致安装这个chart失败。为了在解决这个问题必须保证在安装时这五个 CRDS 已经存在，并禁止创建它。
+将 helm 升级到 2.14 + 可以避免这个问题——由于helm 的 bug，它可能无法正常安装 chart 里面的五个 CRDs，导致安装 chart 失败。如果使用的helm无法升级，你应该安装采取下面的步骤来解决这个问题：为了在解决这个问题必须保证在安装时这五个 CRDS 已经存在，并禁止创建它。
 
 1. 创建 CRDs
 
-```console
-kubectl apply -f https://raw.githubusercontent.com/coreos/prometheus-operator/master/example/prometheus-operator-crd/monitoring.coreos.com_alertmanagers.yaml
-kubectl apply -f https://raw.githubusercontent.com/coreos/prometheus-operator/master/example/prometheus-operator-crd/monitoring.coreos.com_prometheuses.yaml
-kubectl apply -f https://raw.githubusercontent.com/coreos/prometheus-operator/master/example/prometheus-operator-crd/monitoring.coreos.com_prometheusrules.yaml
-kubectl apply -f https://raw.githubusercontent.com/coreos/prometheus-operator/master/example/prometheus-operator-crd/monitoring.coreos.com_servicemonitors.yaml
-kubectl apply -f https://raw.githubusercontent.com/coreos/prometheus-operator/master/example/prometheus-operator-crd/monitoring.coreos.com_podmonitors.yaml
-```
+    ```console
+    kubectl apply -f https://raw.githubusercontent.com/coreos/prometheus-operator/master/example/prometheus-operator-crd/monitoring.coreos.com_alertmanagers.yaml
+    kubectl apply -f https://raw.githubusercontent.com/coreos/prometheus-operator/master/example/prometheus-operator-crd/monitoring.coreos.com_prometheuses.yaml
+    kubectl apply -f https://raw.githubusercontent.com/coreos/prometheus-operator/master/example/prometheus-operator-crd/monitoring.coreos.com_prometheusrules.yaml
+    kubectl apply -f https://raw.githubusercontent.com/coreos/prometheus-operator/master/example/prometheus-operator-crd/monitoring.coreos.com_servicemonitors.yaml
+    kubectl apply -f https://raw.githubusercontent.com/coreos/prometheus-operator/master/example/prometheus-operator-crd/monitoring.coreos.com_podmonitors.yaml
+    ```
 
 2. 等待 CRDs 创建完成，这可能需要一些时间。
 
 3. 安装时禁用 CRDs 创建 `prometheusOperator.createCustomResource=false`
 
-```console
-$ helm install --name my-release c7n/prometheus-operator --set prometheusOperator.createCustomResource=false --version 8.5.8
-```
+    ```console
+    $ helm install --name my-release c7n/prometheus-operator --set prometheusOperator.createCustomResource=false --version 8.5.8
+    ```
