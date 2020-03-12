@@ -83,7 +83,7 @@ helm install c7n/nfs-client-provisioner \
         --set fluent-bit.es.host="elasticsearch.logging" \
         --version=0.8.2 \
         --name=choerodon-logging \
-        --namespace=logging \
+        --namespace=logging
     ```
 
 - 安装kibana

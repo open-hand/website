@@ -24,19 +24,21 @@ helm repo update
 - 若需了解项目详情及各项参数含义，请移步 [helm/chartmuseum](https://github.com/helm/chartmuseum)。
 - 编写参数配置文件 `chartmuseum.yaml`
 
-        env:
-          open:
-            STORAGE: local
-            DISABLE_API: false
-            DEPTH: 2
-        persistence:
-          enabled: true
-          storageClass: nfs-provisioner
-        ingress:
-          enabled: true
-          hosts:
-          - name: chart.example.choerodon.io
-            path: /
+    ```yaml
+    env:
+      open:
+        STORAGE: local
+        DISABLE_API: false
+        DEPTH: 2
+    persistence:
+      enabled: true
+      storageClass: nfs-provisioner
+    ingress:
+      enabled: true
+      hosts:
+      - name: chart.example.choerodon.io
+        path: /
+    ```
 
 - 执行部署
   
