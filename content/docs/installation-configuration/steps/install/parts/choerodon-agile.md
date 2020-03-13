@@ -77,7 +77,7 @@ helm repo update
     helm install c7n/agile-service \
       -f agile-service.yaml \
       --name agile-service \
-      --version 0.21.0 \
+      --version 0.21.1 \
       --namespace c7n-system
     ```
 
