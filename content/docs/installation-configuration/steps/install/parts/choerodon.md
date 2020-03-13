@@ -404,7 +404,7 @@ helm repo update
     helm install c7n/oauth-server \
         -f oauth-server.yaml \
         --name oauth-server \
-        --version 0.21.0 \
+        --version 0.21.1 \
         --namespace c7n-system
     ```
 

@@ -43,7 +43,7 @@ weight = 5
 | manager service       | 管理服务       | 0.21.0 |
 | base service          | 基础服务       | 0.21.2 |
 | api gateway           | 网关服务       | 0.21.0 |
-| oauth server          | 认证服务       | 0.21.0 |
+| oauth server          | 认证服务       | 0.21.1 |
 | file service          | 文件服务       | 0.21.0 |
 | notify service        | 通知服务       | 0.21.0 |
 | asgard service        | 事务服务       | 0.21.1 |

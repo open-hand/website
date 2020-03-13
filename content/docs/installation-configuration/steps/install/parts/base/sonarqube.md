@@ -32,7 +32,7 @@ helm repo update
 </blockquote>
 
 <blockquote class="warning">
-注意：当前choerodon版本为0.19.x及以上版本时，SonarQube插件版本为sonar-auth-choerodonoauth-plugin-1.5.1-RELEASE.jar；
+注意：当前choerodon版本为0.19.x及以上版本时，SonarQube插件版本为sonar-auth-choerodonoauth-plugin-1.5.2-RELEASE.jar；
 当前choerodon版本为0.18.x及以下版本时，SonarQube插件版本为sonar-auth-choerodonoauth-plugin-1.4-RELEASE.jar；
 </blockquote>
 
@@ -43,7 +43,7 @@ helm install c7n/sonarqube \
     --set postgresql.persistence.storageClass=nfs-provisioner \
     --set ingress.enabled=true \
     --set ingress.'hosts[0]'=sonarqube.example.choerodon.io \
-    --set plugins.'install[0]'=https://file.choerodon.com.cn/choerodon-install/sonarqube/sonar-auth-choerodonoauth-plugin-1.5.1-RELEASE.jar \
+    --set plugins.'install[0]'=https://file.choerodon.com.cn/choerodon-install/sonarqube/sonar-auth-choerodonoauth-plugin-1.5.2-RELEASE.jar \
     --version 0.15.0-3 \
     --name sonarqube \
     --namespace c7n-system
@@ -53,7 +53,7 @@ helm install c7n/sonarqube \
 
 ## 安装SoanrQube插件
 - 此步骤用于之前已经安装过SonarQube，只需安装插件的情况（如已经执行过上一步可跳过此步骤）
-- 进入SonarQube安装目录，下载https://file.choerodon.com.cn/choerodon-install/sonarqube/sonar-auth-choerodonoauth-plugin-1.5.1-RELEASE.jar 插件到\data\sonarqube\extensions\plugins目录
+- 进入SonarQube安装目录，下载https://file.choerodon.com.cn/choerodon-install/sonarqube/sonar-auth-choerodonoauth-plugin-1.5.2-RELEASE.jar 插件到\data\sonarqube\extensions\plugins目录
 - 重启SoanrQube服务
 
 ## 验证部署
