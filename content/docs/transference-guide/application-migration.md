@@ -286,7 +286,7 @@ choerodon.io/release: {{ .Release.Name | quote }}
 **第三步：编写deployment.yml文件**
 在 **templates**文件夹下创建一个名为 **deployment.yml**的文件，内容如下：
 ```
-apiVersion: apps/v1beta2
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ .Release.Name }}
