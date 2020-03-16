@@ -41,7 +41,7 @@ weight = 5
 | --------------------- | -------------- | ------ |
 | go register server    | 注册服务       | 0.21.0 |
 | manager service       | 管理服务       | 0.21.0 |
-| base service          | 基础服务       | 0.21.2 |
+| base service          | 基础服务       | 0.21.4 |
 | api gateway           | 网关服务       | 0.21.0 |
 | oauth server          | 认证服务       | 0.21.1 |
 | file service          | 文件服务       | 0.21.0 |
