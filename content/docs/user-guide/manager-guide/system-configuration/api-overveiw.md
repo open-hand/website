@@ -1,6 +1,6 @@
 +++
 title = "接口统计"
-weight = 15
+weight = 150
 description = "查看平台中api的调用情况"
 +++
 

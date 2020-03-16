@@ -1,6 +1,6 @@
 +++
 title = "微服务实例"
-weight = 13
+weight = 130
 description = "查看平台运行微服务下的实例以及实例详情 "
 +++
 

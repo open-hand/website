@@ -1,6 +1,6 @@
 +++
 title = "菜单统计"
-weight = 16
+weight = 160
 description = "统计系统的菜单点击量"
 +++
 

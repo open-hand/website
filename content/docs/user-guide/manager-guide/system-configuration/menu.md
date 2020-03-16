@@ -1,6 +1,6 @@
 +++
 title = "菜单管理"
-weight = 4
+weight = 40
 description = "用于配置平台菜单"
 +++
 
