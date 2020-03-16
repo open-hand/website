@@ -8,7 +8,7 @@ description = "用于总览平台中人数情况、事务执行情况、邮件�
 
 ## 1. 概述
 
-平台管理员能够通过平台管理-管理-平台概览的入口，来查看平台层的相关的信息。其中包括：平台中在线人数统计、平台总人数统计、事务执行情况、Choerodon邮件发送情况、系统公告以及平台层的操作记录。
+平台管理员能够通过"平台管理-管理-平台概览"的入口，来查看平台层的相关的信息。其中包括：平台中在线人数统计、平台总人数统计、事务执行情况、Choerodon邮件发送情况、系统公告以及平台层的操作记录。
 
 ## 2. 平台人数统计
 
@@ -24,11 +24,11 @@ description = "用于总览平台中人数情况、事务执行情况、邮件�
 
 ![image](/docs/user-guide/manager-guide/image/on-user.png)
 
-## 3 平台层操作记录流
+## 3. 平台层操作记录流
 
 平台层操作记录流展示了平台层中所有操作记录的信息，其中包括权限的分配，组织的创建停启用，事务实例的重试等操作信息。平台管理员也可以通过点击下方加载更多按钮查看更多操作记录。目前支持查看最近的300条记录。
 
-![image](/docs/user-guide/manager-guide/image/site-log.png)
+![image](/docs/user-guide/manager-guide/image/site-log.jpg)
 
 
 ## 4. 平台事务实例情况
@@ -52,3 +52,8 @@ description = "用于总览平台中人数情况、事务执行情况、邮件�
 
 ![image](/docs/user-guide/manager-guide/image/email-report.png)
 
+## 7. 更多操作  
+
+- [邮件日志详情](../email-log)    
+
+- [系统公告](../system-notice)

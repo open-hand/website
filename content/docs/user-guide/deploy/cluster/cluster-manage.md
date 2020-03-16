@@ -1,35 +1,35 @@
 +++
-- +++
-  title = "集群管理"
-  description = ""
-  weight = 1
-  +++
-
-  # 集群管理
+title = "集群管理"
+description = ""
+weight = 1
++++
 
 
-  ## 1. 概述
+# 集群管理
 
-  集群是用于运行k8s的托管群组，一个Choerodon集群对应为一个k8s集群。有了集群，我们就能以此来统一调配资源，管理环境。此外，每个集群可以对组织下各个项目设置是否公开，配置后，只有被分配权限的项目中的环境才能连接到该集群。
 
-  <blockquote class="warning"> 
+## 1. 概述
+
+集群是用于运行k8s的托管群组，一个Choerodon集群对应为一个k8s集群。有了集群，我们就能以此来统一调配资源，管理环境。此外，每个集群可以对组织下各个项目设置是否公开，配置后，只有被分配权限的项目中的环境才能连接到该集群。
+
+<blockquote class="warning"> 
 
   注意：自0.19.0版本后，我们将`集群管理`模块从组织层迁到了项目层；同时，为了统一存放以往版本在组织中创建的集群，我们在本组织下新建了一个名为“默认运维项目”的项目，且只有组织管理员才有该项目的项目所有者权限。
-  </blockquote>
+</blockquote>
 
 
-  <blockquote class="note"> 
+<blockquote class="note"> 
 
   只有项目所有者对集群页面有查看和编辑操作的权限。
-  </blockquote>
+</blockquote>
 
   通过此页面，您可以了解到如何创建、修改和删除集群，以及如何查看节点详情。
 
   ![image](/docs/user-guide/deploy/cluster/image/cluster-management-01.jpg)
 
-  ## 2. 创建集群
+## 2. 创建集群
 
-  ![image](/docs/user-guide/deploy/cluster/image/cluster-management-02.png)  
+ ![image](/docs/user-guide/deploy/cluster/image/cluster-management-02.png)  
 
 
   (1) 点击左上方的 `创建集群`，右侧会弹出创建集群页面，输入相关信息，包括集群编码、集群名称和集群描述；
@@ -77,7 +77,8 @@
 
   (4) 执行成功后回到集群管理界面，便可以看到之前创建好的集群状态变为连接状态。
 
-  ## 3. 管理集群
+  
+## 3. 管理集群
 
   在左侧的树结构中，点击![image](/docs/user-guide/deploy/cluster/image/cluster-management-11.jpg) 标识，可选择 `修改集群`或者 `删除集群`。同时，对于未连接的集群，还可以选择 `激活集群`的选项。
 
@@ -89,10 +90,11 @@
 
      
 
-  ## 4. 查看集群详情
+## 4. 查看集群详情
 
   在集群管理页面的树结构中，状态为运行中的集群会统一分布在树结构上部分，而状态为未连接的集群则聚集在树结构的下半部分。
-  在集群树结构中，每一个处于运行中状态的集群下方都会展示出该集群下部分节点的信息，点击某个节点名称，可以看到`资源分配`和`节点监控`页签。默认展示`资源分配`页签下的内容。
+  在集群树结构中，每一个处于运行中状态的集群下方都会展示出该集群下部分节点的信息，点击某个节点名称，可以看到`资源分配`和`节点监控`页签。默认展示`资源分配`页签下的内容。  
+  
   (1) 资源分配
   在`资源分配`页签下，可以看到该节点中的资源分配情况和其中的Pods详情。
   ![image](/docs/user-guide/deploy/cluster/image/cluster-management-12.jpg)  
@@ -105,7 +107,7 @@
    如何安装监控组件，请查看组件管理一节。登录相关操作，请查看集群监控一节。   
    </blockquote>  
 
-  ## 5. 集群权限分配
+## 5. 集群权限分配
 
   点击 `权限分配`页签，便可查看到所选集群在组织内的公开范围，即拥有该集群权限的项目。
 
@@ -120,7 +122,7 @@
   ![image](/docs/user-guide/deploy/cluster/image/cluster-management-05.png)  
 
 
-  ## 6. 健康检查  
+## 6. 健康检查  
 
   `健康检查`模块通过集成Polaris组件实现了集群的健康检查功能，支持检测出集群与环境中可能影响稳定性、可靠性、可伸缩性和安全性的配置问题。
 
@@ -152,13 +154,14 @@
   ![image](/docs/user-guide/deploy/cluster/image/cluster-management-10.jpg)  
 
 
-  ## 7. 组件管理  
+## 7. 组件管理  
 
   点击 `组件管理`页签，便能对集群中的组件进行管理，目前支持CertManager和监控组件的安装与卸载。  
 
   ![image](/docs/user-guide/deploy/cluster/image/cluster-management-14.jpg)  
   
-  (1) CertManager
+  (1) CertManager  
+
   此处的CertManager组件用于在集群对应的环境下创建证书。若集群未安装CertManager组件，将不能在集群对应的环境下进行“创建证书”的操作。  
 
   对于之前版本已安装CertManager组件的集群，此处会直接展示出组件处于已安装的状态。若是新建的集群，则需在此处自主安装CertManager组件。  
@@ -181,18 +184,22 @@
   只能在运行中状态的集群里管理组件！
   </blockquote>
 
-  ## 8.集群监控
-  `集群监控`模块主要包括三个组件：
-  - Prometheus：采集集群数据
-  - Alertmanager：提供报警功能
+## 8. 集群监控
+  `集群监控`模块主要包括三个组件：  
+
+  - Prometheus：负责采集集群数据  
+
+  - Alertmanager：负责提供报警功能  
+
   - Grafana：作为可视化界面展示监控数据。
 
-  安装监控组件后，只要成功登录Grafana，即可查看集群监控数据。
-  #### Grafana登录
+  安装监控组件后，只要成功登录Grafana，即可查看集群监控数据。  
+
+### Grafana登录
   Grafana集成了猪齿鱼Oauth三方登录，如果未登录或登录过期用户在点击`集群监控`页签时，会引导至登录页面，成功登录后，即可回到集群管理页面。
 
   <blockquote class="warning">
-  注意：此处登录是指用户登录猪齿鱼Oauth-Server认证中心。
+  此处登录是指用户登录猪齿鱼Oauth-Server认证中心。
   </blockquote>
 
   已登录用户，点击`集群监控`页签，即可看到Grafana登录页面。  
@@ -202,7 +209,7 @@
   (1) 使用猪齿鱼账号登录
   点击`Sign in with Choerodon`按钮即可使用猪齿鱼账号登录Grafana，进入集群监控页面。
 
-  <blockquote class="warning">
+  <blockquote class="note">
   只有`管理员`、`组织管理员`、`项目所有者`、以及拥有`GitLab.Owner`标签的自定义角色有权限查看集群监控，所以只有拥有上述角色的猪齿鱼账号才可以成功登录。
   </blockquote>
 
@@ -213,7 +220,7 @@
    ![image](/docs/user-guide/deploy/cluster/image/cluster-management-18.jpg) 
 
 
-  ## 9. 阅读更多
+## 9. 阅读更多
 
   - [证书管理](../certif-manage)
   - [环境配置](../../env-config)
