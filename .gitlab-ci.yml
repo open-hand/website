@@ -1,4 +1,4 @@
-image: registry.cn-shanghai.aliyuncs.com/choerodon-tools/cibase:0.9.0
+image: registry.cn-shanghai.aliyuncs.com/c7n/cibase:0.10.0
 
 stages:
 - docker_build
@@ -18,8 +18,9 @@ broken_link_check:
   - ${DOCKER_REGISTRY}/${CI_PROJECT_PATH}:${CI_BUILD_REF_NAME}
   stage: broken_link_check
   script:
-  - npm config set unsafe-perm true
-  - npm install broken-link-checker -g
+  - npm install cnpm -g --registry=https://r.npm.taobao.org
+  - cnpm config set unsafe-perm true
+  - cnpm install broken-link-checker -g
   - blc "http://localhost/zh/" -roe --exclude "http://localhost/en/"
 
 .auto_devops: &auto_devops |
