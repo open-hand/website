@@ -59,10 +59,33 @@ DevOps消息指的是项目下与DevOps模块（应用服务、代码管理以�
 </blockquote>
 
 
+## 5. webhook配置
+
+webhook配置是为了便于项目下将各个通知消息同步发送到钉钉、企业微信以及其他第三方消息通知渠道。
+
+### 添加webhook
+
+- 点击顶部操作栏的`创建Webhooks`按钮，打开创建侧开页。您可以在此处选择webhook名称、webhook类型、webhook地址，
+- webhook类型支持钉钉、企业微信、JSON三种类型。
+- 获取webhook地址：创建机器人或者点击机器人查看webhook地址。详细获取方法请查看第三方通知渠道的官方说明。
+- 钉钉加签密钥：webhook类型为钉钉，钉钉机器人安全设置为加签时，需填入机器人的密钥，否则不能发送消息。
+
+<blockquote class="note">     
+webhook类型为钉钉时，请注意钉钉机器人安全设置的要求。
+</blockquote>
+
+- 选择需要发送webhook推送的消息类型，系统会依照配置向第三方推送消息。
+
+- 点击`确定`，完成webhook的创建。
 
 
+<div style="background-color:AntiqueWhite;color:red;padding:25px 50px">
+    <p style="padding:0px;margin:0px;font-weight:bold">使用webhook的重要问题说明：</p>
+（1）webhook通过请求发送数据到你的应用后，就不再关注这些数据。也就是说如果你的应用存在问题，数据会丢失。许多webhook会处理回应，如果程序出现错误会重传数据。如果你的应用处理这个请求并且依然返回一个错误，你的应用就会收到重复数据。<br>
+（2）webhook会发出大量的请求，这样会造成你的应用阻塞。确保你的应用能处理这些请求。</div>
 
-## 5. 阅读更多
+
+## 6. 阅读更多
 
 - [接收设置](../../person/notify_setting/)
 - [消息服务](../../manager-guide/system-configuration/message/)
