@@ -1,6 +1,6 @@
 +++
 title = "安全"
-weight = 6
+weight = 7
 description = "用于对组织安全信息的设置"
 +++
 

@@ -1,6 +1,6 @@
 +++
 title = "通用"
-weight = 5
+weight = 6
 description = "用于对组织通用信息的设置"
 +++
 

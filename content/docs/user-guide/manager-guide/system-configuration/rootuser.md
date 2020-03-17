@@ -1,6 +1,6 @@
 +++
 title = "Root用户"
-weight = 1
+weight = 10
 description = "Root用户是最高权限管理员，可以管理平台及平台中所有组织和项目"
 +++
 

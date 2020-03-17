@@ -1,6 +1,6 @@
 +++
 title = "通用"
-weight = 9
+weight = 90
 description = "对系统外观进行自定义设置"
 +++
 

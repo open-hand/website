@@ -10,11 +10,11 @@ weight = 2
 
 资源视图支持部署运维人员从环境资源的维度来查看与管理与其相关的所有资源。资源视图以树结构为基础，分为：环境层、资源列表层和资源详情层三个层级。在这三个层级中，用户能分别看到每个层级对应的功能与详情。
 
-![image](/docs/user-guide/deploy/app-deploy/resource/images/resource-31.png)
+![image](/docs/user-guide/deploy/app-deploy/resource/images/resource-31.jpg)
 
 ## 2. 环境层
 
-在资源视图的环境层中，主要展示了当前环境中所有资源的数量以及其中Pod对于CPU和内存资源的用量排行。以便运维人员能实时掌控各种资源的状态。
+在资源视图的环境层中，主要展示了当前环境中所有资源的数量以及该环境对应的GitOps库的提交同步情况。以便运维人员能实时掌控各种资源的状态。
 
 <blockquote class="note"> 
 仅项目所有者和被分配环境权限的项目成员能在此处查看到该环境的资源信息。
@@ -26,11 +26,10 @@ weight = 2
 
 资源视图的环境层中展示了当前环境中实例、网络、域名、证书、配置映射、密文的数量。同时此处也显示了该环境下所有实例的状态。
 
-### 2.2 查看Pod的资源用量排行
+### 2.2 查看提交同步情况
+![image](/docs/user-guide/deploy/app-deploy/resource/images/resource-33.jpg)
 
-![image](/docs/user-guide/deploy/app-deploy/resource/images/resource-33.png)
-
-用户可在此查看当前环境中Pod的CPU用量和内存用量的排行。
+用户可在此查看当前环境对应的GitOps库的提交同步情况。
 
 ## 3. 资源列表层
 

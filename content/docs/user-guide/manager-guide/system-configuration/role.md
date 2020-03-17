@@ -88,21 +88,18 @@ description = "角色是一组特定权限的集合，通过给成员分配角�
 角色标签用于定义角色的特定逻辑的功能，需与代码开发结合。
 
 - project.owner：项目所有者。用户创建项目时会自动为其分配拥有该角色标签的角色。
-- organization.owner：组织所有者。用户创建组织时会自动为其分配拥有该角色标签的角色。
-- organization.gitlab.owner：组织层gitlab所有者。
-- project.gitlab.developer：项目层gitlab开发者。当给某用户在某项目下分配拥有该标签的角色后，平台会为该用户在gitlab对应的group下分配developer的角色。
-- project.gitlab.owner：项目层gitlab所有者。当给某用户在某项目下分配拥有该标签的角色后，平台会为该用户在gitlab对应的group下分配owner角色。
-- project.deploy.admin：项目层部署管理员。当给某用户在某项目下分配拥有该标签的角色后，该用户可在该项目下使用部署流水线的相关内容。
-- site.admin：全局层管理员。
+- organization.owner：组织所有者。若用户在创建组织层角色时，选择了该角色标签；那么之后当某个用户在成功创建组织时，便会被自动分配为该角色标签对应的所有角色。
+- site.admin：平台层管理员。  
 
-角色标签的作用说明：
+## 8. GitLab角色标签   
 
-    - project.owner：当用户创建项目时会自动为其分配拥有该角色标签的角色。如项目所有者。
-    - organization.owner：用户在创建角色的的时候选择此角色标签，当用户创建组织时会自动为其分配此角色标签下的角色。
-    - project.gitlab.owner：当给某用户在某项目下分配拥有该标签的角色后，平台会为该用户在gitlab对应的group下分配owner角色。
-    - project.gitlab.developer：当给某用户在某项目下分配拥有该标签的角色后，平台会为该用户在gitlab对应的group下分配developer的角色。
+GitLab角色标签目前仅用于创建项目层角色时选择；因为项目层中DevOps相关的大部分功能均会用到GitLab中的角色。因此，在创建项目层角色时，必须为该角色选择一个GitLab角色标签。  
 
-## 8. 阅读更多
+- project.gitlab.developer：对应为gitlab中的开发者角色。当给某用户在某项目下分配拥有该标签的角色后，平台会为该用户在gitlab对应的group下分配developer的角色。
+- project.gitlab.owner：对应为gitlab中的所有者角色。当给某用户在某项目下分配拥有该标签的角色后，平台会为该用户在gitlab对应的group下分配owner角色。
+
+
+## 9. 阅读更多
 
 - [如何使用Choerodon管理全平台的用户](../site-user)
 - [菜单管理](../menu)

@@ -2,7 +2,7 @@
 +++
 title = "仓库"
 description = "支持用户在组织下配置使用自定义的Docker仓库与Helm仓库"
-weight = 7
+weight = 8
 +++
 
 # 仓库

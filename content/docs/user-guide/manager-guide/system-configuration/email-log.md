@@ -1,6 +1,6 @@
 +++
 title = "邮件日志"
-weight = 8
+weight = 80
 description = "查看系统发送邮件的列表记录及状态"
 +++
 

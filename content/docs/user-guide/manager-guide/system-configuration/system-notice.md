@@ -1,6 +1,6 @@
 +++
 title = "系统公告"
-weight = 7
+weight = 70
 description = "用于设置系统公告"
 +++
 

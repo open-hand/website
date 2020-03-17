@@ -1,6 +1,6 @@
 +++
 title = "用户管理"
-weight = 2
+weight = 20
 description = "对平台中全部用户进行系统的管理"
 +++
 
