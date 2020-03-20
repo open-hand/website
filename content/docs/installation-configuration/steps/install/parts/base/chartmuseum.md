@@ -36,8 +36,8 @@ helm repo update
     ingress:
       enabled: true
       hosts:
-      - name: chart.example.choerodon.io
-        path: /
+        - name: chart.example.choerodon.io
+          path: /
     ```
 
 - 执行部署
