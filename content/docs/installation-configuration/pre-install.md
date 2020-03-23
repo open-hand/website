@@ -22,8 +22,8 @@ Choerodon采用Spring Cloud作为微服务框架，运行在Docker上，以Kuber
 
 ## 软件要求
 - 系统版本：CentOS7.4及以上
-- Kubernetes：1.10及以上，1.17以下
-- Helm：2.13及以上
+- Kubernetes：1.10及以上
+- Helm：2.16
 
 ## 网络要求
 - 各个服务器之间内网互通内网带宽建议1Gbps以上
