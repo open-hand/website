@@ -81,19 +81,13 @@ paginate = 5
     [[languages.en.menu.main]]
         name = "v0.20"
         url  = "http://v0-20.choerodon.io/en/"
-        weight = 6
+        weight = 2
         parent = "version"
 
     [[languages.en.menu.main]]
-        name = "v0.19"
-        url  = "http://v0-19.choerodon.io/en/"
-        weight = 5
-        parent = "version"
-
-    [[languages.en.menu.main]]
-        name = "v0.18"
-        url  = "http://v0-18.choerodon.io/en/"
-        weight = 4
+        name = "latest"
+        url  = "http://choerodon.io/en/"
+        weight = 1
         parent = "version"
 
 [[languages.zh.menu.main]]
@@ -154,22 +148,16 @@ paginate = 5
     identifier = "version"
     pre = "<i class='iconfont'>&#xe600;</i>"
 
-    [[languages.zh.menu.main]]
+    [[languages.en.menu.main]]
         name = "v0.20"
         url  = "http://v0-20.choerodon.io/zh/"
-        weight = 6
+        weight = 2
         parent = "version"
 
-    [[languages.zh.menu.main]]
-        name = "v0.19"
-        url  = "http://v0-19.choerodon.io/zh/"
-        weight = 5
-        parent = "version"
-
-    [[languages.zh.menu.main]]
-        name = "v0.18"
-        url  = "http://v0-18.choerodon.io/zh/"
-        weight = 4
+    [[languages.en.menu.main]]
+        name = "latest"
+        url  = "http://choerodon.io/zh/"
+        weight = 1
         parent = "version"
 
 [params]
