@@ -148,13 +148,13 @@ paginate = 5
     identifier = "version"
     pre = "<i class='iconfont'>&#xe600;</i>"
 
-    [[languages.en.menu.main]]
+    [[languages.zh.menu.main]]
         name = "v0.20"
         url  = "http://v0-20.choerodon.io/zh/"
         weight = 2
         parent = "version"
 
-    [[languages.en.menu.main]]
+    [[languages.zh.menu.main]]
         name = "latest"
         url  = "http://choerodon.io/zh/"
         weight = 1
