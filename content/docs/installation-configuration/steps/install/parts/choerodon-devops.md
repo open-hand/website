@@ -142,7 +142,7 @@ helm repo update
     ```yaml
     env:
       open:
-        AGENT_CERTMANAGERURL: https://openchart.choerodon.com.cn/choerodon/infra/
+        AGENT_CERTMANAGERURL: https://openchart.choerodon.com.cn/choerodon/c7n/
         AGENT_REPOURL: https://openchart.choerodon.com.cn/choerodon/c7n/
         AGENT_SERVICEURL: ws://devops.example.choerodon.io/agent/
         AGENT_VERSION: 0.21.1

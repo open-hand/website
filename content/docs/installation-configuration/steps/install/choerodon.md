@@ -51,7 +51,7 @@ spec:
       domain: minio.example.choerodon.io
       schema: http
     harbor:
-      domain: harbor.example.choerodon.io
+      domain: registry.example.choerodon.io
       schema: https
       username: admin    # harbor 默认用户名为admin，不能修改
     chartmuseum:
