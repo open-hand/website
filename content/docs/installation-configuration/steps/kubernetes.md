@@ -167,24 +167,24 @@ sudo ./install-ansible.sh
 
 - 部署集群：
 
-  ```shell
-  # 在项目根目录下执行
-  ansible-playbook -i inventory.ini 90-init-cluster.yml
-  ```
+    ```
+    # 在项目根目录下执行
+    ansible-playbook -i inventory.ini 90-init-cluster.yml
+    ```
 
 - 查看等待 pod 的状态为 runnning：
 
-  ```shell
-  # 任意master节点下执行
-  kubectl get po --all-namespaces -w
-  ```
+    ```
+    # 任意master节点下执行
+    kubectl get po --all-namespaces -w
+    ```
 
 - 如果部署失败，想要重置集群，执行：
 
-  ```shell
-  # 在项目根目录下执行
-  ansible-playbook -i inventory.ini 99-reset-cluster.yml
-  ```
+    ```
+    # 在项目根目录下执行
+    ansible-playbook -i inventory.ini 99-reset-cluster.yml
+    ```
 
 - 其他集群运维操作请查阅项目[使用指南](https://github.com/choerodon/kubeadm-ha#使用指南)
 
@@ -396,7 +396,7 @@ sudo ./install-ansible.sh
 
 - 客户端命令：
 
-    ```bash
+    ```
     kubectl run iperf-client \
         -it --quiet --rm --restart=Never \
         --overrides='{"spec":{"nodeName":"指定客户端运行的节点"}}' \
@@ -425,7 +425,7 @@ sudo ./install-ansible.sh
 
 - 服务端命令：
 
-    ```bash
+    ```
     docker run -it --rm --net=host \
         registry.cn-hangzhou.aliyuncs.com/choerodon-tools/network-and-cluster-perfermance-test:0.1.0 \
         iperf -s -p 12345 -i 1 -M
@@ -435,7 +435,7 @@ sudo ./install-ansible.sh
 
 - 客户端命令：
 
-    ```bash
+    ```
     kubectl run iperf-client \
         -it --quiet --rm --restart=Never \
         --overrides='{"spec":{"nodeName":"指定客户端运行的节点"}}' \
