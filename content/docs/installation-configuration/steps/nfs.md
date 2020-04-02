@@ -31,19 +31,19 @@ NFS 允许系统将其目录和文件共享给网络上的其他系统。通过 
 ### 配置nfs-server
 - 创建共享目录
 
-    ``` bash
+    ```
     mkdir -p /u01/prod
     ```
 
 - 编辑`/etc/exports`文件添加需要共享目录，每个目录的设置独占一行，编写格式如下：
 
-    ``` bash
+    ```
     NFS共享目录路径 客户机IP段(参数1,参数2,...,参数n)
     ```
 
 - 例如：
 
-    ``` bash
+    ```
     /u01 192.168.1.1/16(rw,sync,insecure,no_subtree_check,no_root_squash)
     ```
 
@@ -75,7 +75,7 @@ NFS 允许系统将其目录和文件共享给网络上的其他系统。通过 
 
 - 配置完成后，您可以在终端提示符后运行以下命令来启动 NFS 服务器：
 
-    ``` bash
+    ```
     sudo systemctl enable nfs-server
     sudo systemctl start nfs-server
     ```
@@ -84,7 +84,7 @@ NFS 允许系统将其目录和文件共享给网络上的其他系统。通过 
 
 - 到客户机上执行showmount命令进行检查
 
-    ```console
+    ```
     $ showmount -e <NFS服务器IP地址>
     Exports list on <NFS服务器IP地址>:
     /u01
@@ -122,58 +122,60 @@ helm install c7n/nfs-client-provisioner \
 
 - 新建`write-pod.yaml`文件，粘贴以下内容：
 
-        kind: Pod
-        apiVersion: v1
-        metadata:
-          name: write-pod
-        spec:
-          containers:
-          - name: write-pod
-            image: busybox
-            command:
-              - "/bin/sh"
-            args:
-              - "-c"
-              - "touch /mnt/SUCCESS && exit 0 || exit 1"
-            volumeMounts:
-              - name: nfs-pvc
-                mountPath: "/mnt"
-          restartPolicy: "Never"
-          volumes:
-            - name: nfs-pvc
-              persistentVolumeClaim:
-                claimName: myclaim
-        ---
-        kind: PersistentVolumeClaim
-        apiVersion: v1
-        metadata:
-          name: myclaim
-        spec:
-          accessModes:
-            - ReadWriteOnce
-          storageClassName: nfs-provisioner
-          resources:
-            requests:
-              storage: 1Mi
+    ```
+    kind: Pod
+    apiVersion: v1
+    metadata:
+      name: write-pod
+    spec:
+      containers:
+      - name: write-pod
+        image: busybox
+        command:
+          - "/bin/sh"
+        args:
+          - "-c"
+          - "touch /mnt/SUCCESS && exit 0 || exit 1"
+        volumeMounts:
+          - name: nfs-pvc
+            mountPath: "/mnt"
+      restartPolicy: "Never"
+      volumes:
+        - name: nfs-pvc
+          persistentVolumeClaim:
+            claimName: myclaim
+    ---
+    kind: PersistentVolumeClaim
+    apiVersion: v1
+    metadata:
+      name: myclaim
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      storageClassName: nfs-provisioner
+      resources:
+        requests:
+          storage: 1Mi
+      ```
 
 - 部署测试用例
 
-    ```yaml
+    ```
     kubectl apply -f write-pod.yaml
     ```
 
 - 验证是否正常
 
-    ```console
+    ```
     $ kubectl get po
     NAME                            READY     STATUS      RESTARTS   AGE
     write-pod                       0/1       Completed   0          8s
     ```
 
-      pod状态为`Completed`则为正常，若长时间为`ContainerCreating`状态则为不正常，请确认安装操作步骤是否正确。
+    pod状态为`Completed`则为正常，若长时间为`ContainerCreating`状态则为不正常，请确认安装操作步骤是否正确。
 
 - 清除测试用例
 
-    ```yaml
+    ```
     kubectl delete -f write-pod.yaml
     ```

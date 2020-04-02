@@ -61,7 +61,7 @@ weight = 10
 
 - 执行命令，出现以下信息即部署成功。
 
-    ```console
+    ```
     $ helm version
     Client: &version.Version{SemVer:"v2.16.3", GitCommit:"1ee0254c86d4ed6887327dabed7aa7da29d7eb0d", GitTreeState:"clean"}
     Server: &version.Version{SemVer:"v2.16.3", GitCommit:"1ee0254c86d4ed6887327dabed7aa7da29d7eb0d", GitTreeState:"clean"}
