@@ -23,157 +23,137 @@ helm repo update
 
 ## 部署Gitlab
 
-- 创建参数配置文件 `gitlab.yaml`
+### 部署数据库
 
-    <details open><summary>域名模式安装</summary>
+<blockquote class="warning">
+注意：本 PostgreSql 数据库搭建教程仅为快速体验Gitlab而编写，由于使用了NFS存储故并不能保证其稳定运行或数据不丢失，您可以参照 PostgreSql 官网进行搭建。
+</blockquote>
 
-    ```
-    core:
-      env:
-        GITLAB_HOST: api.example.choerodon.io
-        OAUTH_ENABLED: false
-        OAUTH_AUTO_SIGN_IN_WITH_PROVIDER: "oauth2_generic"
-        OAUTH_ALLOW_SSO: "'oauth2_generic'"
-        OAUTH_BLOCK_AUTO_CREATED_USERS: false
-        OAUTH_GENERIC_API_KEY: "gitlabhq"
-        OAUTH_GENERIC_APP_SECRET: "gitlabhq"
-        OAUTH_GENERIC_SITE: "http://api.example.choerodon.io"
-        OAUTH_GENERIC_USER_INFO_URL: "/oauth/api/user"
-        OAUTH_GENERIC_AUTHORIZE_URL: "/oauth/oauth/authorize"
-        OAUTH_GENERIC_TOKEN_URL: "/oauth/oauth/token"
-        OAUTH_GENERIC_ROOT_PATH: "'userAuthentication'\,'principal'"
-        OAUTH_GENERIC_ID_PATH: "'userAuthentication'\,'principal'\,'userId'"
-        OAUTH_GENERIC_USER_NICKNAME: "username"
-        OAUTH_GENERIC_USER_NAME: "usernmae"
-    imagePullPolicy: Always
-    redis:
-      internal:
-        password: password
-    persistence:
-      enabled: true
-      persistentVolumeClaim:
-        core:
-          storageClass: nfs-provisioner
-        redis:
-          storageClass: nfs-provisioner
-        database:
-          storageClass: nfs-provisioner
-    expost:
-      ingress:
-        host: "gitlab.example.cherodon.io"
-    database:
-      internal:
-        password: "changeit"
-    ```
+```shell
+helm install c7n/postgresql \
+    --set persistence.enabled=true \
+    --set persistence.storageClass=nfs-provisioner \
+    --set image.tag=9.6.11 \
+    --set postgresqlPassword=password \
+    --set postgresqlDatabase=gitlabhq_production \
+    --set initdbScripts.'init\.sql'='
+        \\c gitlabhq_production;
+        CREATE EXTENSION IF NOT EXISTS pg_trgm;' \
+    --version 3.18.4-1 \
+    --name gitlab-postgresql \
+    --namespace c7n-system
+```
 
-    </deatils>
-    <details><summary>nodePort模式安装</summary>
-    ```
-    core:
-      env:
-        GITLAB_HOST: "192.168.xx.xx"
-        OAUTH_ENABLED: false
-        OAUTH_AUTO_SIGN_IN_WITH_PROVIDER: "oauth2_generic"
-        OAUTH_ALLOW_SSO: "'oauth2_generic'"
-        OAUTH_BLOCK_AUTO_CREATED_USERS: false
-        OAUTH_GENERIC_API_KEY: "gitlabhq"
-        OAUTH_GENERIC_APP_SECRET: "gitlabhq"
-        OAUTH_GENERIC_SITE: "http://192.168.xx.xx:30100"
-        OAUTH_GENERIC_USER_INFO_URL: "/oauth/api/user"
-        OAUTH_GENERIC_AUTHORIZE_URL: "/oauth/oauth/authorize"
-        OAUTH_GENERIC_TOKEN_URL: "/oauth/oauth/token"
-        OAUTH_GENERIC_USER_NICKNAME: "username"
-        OAUTH_GENERIC_USER_NAME: "usernmae"
-    expose:
-      nodePort:
-        ports:
-          http:
-            nodePort: 30007
-          ssh:
-            nodePort: 30022
-      type: nodePort
-    imagePullPolicy: Always
-    redis:
-      internal:
-        password: password
-    persistence:
-      enabled: true
-      persistentVolumeClaim:
-        core:
-          storageClass: nfs-provisioner
-        redis:
-          storageClass: nfs-provisioner
-        database:
-          storageClass: nfs-provisioner
-    database:
-      internal:
-        password: "changeit"
-    ```
-    </deatils>
+### 部署gitlab所需Redis
 
-- 执行安装
+```shell
+helm install c7n/persistentvolumeclaim \
+    --set accessModes={ReadWriteOnce} \
+    --set requests.storage=256Mi \
+    --set storageClassName=nfs-provisioner \
+    --version 0.1.0 \
+    --name gitlab-redis-pvc \
+    --namespace c7n-system
+```
 
-    ```bash
-    helm install c7n/gitlab-ha \
-        -f gitlab.yaml \
-        --version 0.2.0 \
-        --name gitlab \
-        --namespace c7n-system
-    ```
+```shell
+helm install c7n/redis \
+    --set persistence.enabled=true \
+    --set persistence.existingClaim=gitlab-redis-pvc \
+    --set service.enabled=true \
+    --version 0.2.4 \
+    --name gitlab-redis \
+    --namespace c7n-system
+```
+
+### 创建gitlab所需PV和PVC
+
+```shell
+helm install c7n/persistentvolumeclaim \
+    --set accessModes={ReadWriteOnce} \
+    --set requests.storage=2Gi \
+    --set storageClassName=nfs-provisioner \
+    --version 0.1.0 \
+    --name gitlab-pvc \
+    --namespace c7n-system
+```
+
+### 部署gitlab
+
+```shell
+helm install c7n/gitlab \
+    --set persistence.enabled=true \
+    --set persistence.existingClaim=gitlab-pvc \
+    --set env.config.GITLAB_EXTERNAL_URL=http://gitlab.example.choerodon.io \
+    --set env.config.GITLAB_TIMEZONE=Asia/Shanghai \
+    --set env.config.CHOERODON_OMNIAUTH_ENABLED=false \
+    --set env.config.GITLAB_DEFAULT_CAN_CREATE_GROUP=true \
+    --set env.config.DB_ADAPTER=postgresql \
+    --set env.config.DB_HOST=gitlab-postgresql-postgresql.c7n-system.svc \
+    --set env.config.DB_PORT=5432 \
+    --set env.config.DB_USERNAME=postgres \
+    --set env.config.DB_PASSWORD=password \
+    --set env.config.DB_DATABASE=gitlabhq_production \
+    --set env.config.REDIS_HOST=gitlab-redis.c7n-system.svc \
+    --set env.config.SMTP_ENABLE=false \
+    --set env.config.SMTP_ADDRESS=smtp.mxhichina.com \
+    --set env.config.SMTP_PORT=465 \
+    --set env.config.SMTP_USER_NAME=git.sys@example.choerodon.io \
+    --set env.config.SMTP_PASSWORD=password \
+    --set env.config.SMTP_DOMAIN=smtp.mxhichina.com \
+    --set env.config.SMTP_AUTHENTICATION=login \
+    --set env.config.GITLAB_EMAIL_FROM=git.sys@example.choerodon.io \
+    --set env.config.SMTP_ENABLE_STARTTLS_AUTO=true \
+    --set env.config.SMTP_TLS=true \
+    --set env.config.PROMETHEUS_ENABLE=false \
+    --set env.config.NODE_EXPORTER_ENABLE=false \
+    --set env.config.UNICORN_WORKERS=3 \
+    --set env.config.UNICORN_TIMEOUT=60 \
+    --set service.enabled=true \
+    --set service.ssh.nodePort=32222 \
+    --set ingress.enabled=true \
+    --version 0.5.3 \
+    --name gitlab \
+    --namespace c7n-system
+```
 
 - 参数
 
-    | 参数 | 含义 | 默认值 |
-    | --- |  --- | --- |
-    | **Expose** | | |
-    | `expose.type` | 暴露服务的方式：`ingress`、`ClusterIP`、`LoadBalancer`或`nodePort` | `ingress` |
-    | `expose.tls.enabled` | 是否开启 TLS | `false` |
-    | `expose.ingress.host`| Gitlab 在 ingress 中的域名 | `gitlab.cluster.local` |
-    | `expose.ingress.annotations` | ingress 中使用的注解 |  |
-    | `expose.clusterIP.name` | ClusterIP 服务名 | `Release.Name-gitlab-core` |
-    | `expose.clusterIP.ports.ssh`| Gitlab 监听的 service SSH 端口 | `22` |
-    | `expose.clusterIP.ports.http` | Gitlab 监听的 service HTTP 端口 | `80` |
-    | `expose.nodePort.name` | NodePort 服务名 | `Release.Name-gitlab-core` |
-    | `expose.nodePort.ports.ssh.port` | Gitlab 监听的 service SSH 端口 | `22` |
-    | `expose.nodePort.ports.ssh.nodePort` | Gitlab 监听的 service SSH nodePort  | `30022` |
-    | `expose.nodePort.ports.http.port` | Gitlab 监听的 service HTTP 端口 | `80` |
-    | `expose.nodePort.ports.http.nodePort` | Gitlab 监听的 service HTTP nodePort  | `30007` |
-    | `expose.loadBalancer.name` | LoadBalancer 服务名 | `Release.Name-gitlab-core` |
-    | `expose.loadBalancer.ports.ssh` | Gitlab 监听的 SSH 端口 | `22` |
-    | `expose.loadBalancer.ports.http` |Gitlab 监听的 HTTP 端口   | `80` |
-    | **Persistence** | | |
-    | `persistence.enabled` | 是否开启持久化存储 | `persistence.enabled`  | `false` |
-    | `persistence.resourcePolicy` | 将它设置成 `keep` 避免 helm delete 时删掉 PVC。 | `keep` |
-    | `persistence.persistentVolumeClaim.core.existingClaim` | 使用已经绑定 PV 的PVC，你使用共享的 PVC 必须指定 `subPath` | |
-    | `persistence.persistentVolumeClaim.core.storageClass` | 指定 `storageClass` 提供数据卷。如果有默认的 `storageClass` 会直接使用它，设置 `-` 禁用动态配置 | |
-    | `persistence.persistentVolumeClaim.database.existingClaim` | 使用已经绑定 PV 的PVC，你使用共享的 PVC 必须指定 `subPath` | |
-    | `persistence.persistentVolumeClaim.database.storageClass` | 指定 `storageClass` 提供数据卷。如果有默认的 `storageClass` 会直接使用它，设置 `-` 禁用动态配置 | |
-    | `persistence.persistentVolumeClaim.redis.existingClaim` | 使用已经绑定 PV 的PVC，你使用共享的 PVC 必须指定 `subPath` | |
-    | `persistence.persistentVolumeClaim.redis.storageClass` | 指定 `storageClass` 提供数据卷。如果有默认的 `storageClass` 会直接使用它，设置 `-` 禁用动态配置 | |
-    | **General** | | |
-    | `imagePullPolicy` | 镜像拉取策略 | `IfNotPresent` |
-    | **Core** | | |
-    | `core.image.repository` | gitlab 镜像地址 | `registry.cn-shanghai.aliyuncs.com/c7n/docker-gitlab` |
-    | `core.image.tag` | 镜像 tag | `v11.11.7`|
-    | `core.env.GITLAB_HOST`| Gitlab 主机名 | `localhost` |
-    | `core.env.OAUTH_ENABLED` | 是否启用 oauth 认证 | `false` |
-    | `core.env.OAUTH_GENERIC_API_KEY` | oauth 客户端ID |  |
-    | `core.env.OAUTH_GENERIC_APP_SECRET` | oauth 客户端密钥 |  |
-    | `core.env.OAUTH_GENERIC_SITE` | Gitlab 域名 |  |
-    | **Database** | | |
-    | `database.type` | 如果使用外部数据库，设置为 `external` | `internal` |
-    | `database.internal.password` | 数据库密码| `changeit` |
-    | `database.external.adapter` | 外部数据库适配器 | `postgresql` |
-    | `database.external.host` | 外部数据主机名 | `192.168.0.1` |
-    | `database.external.port` | 外部数据库端口 | `5432` |
-    | `database.external.username` | 外部数据库用户 | |
-    | `database.external.password` | 外部数据库密码| |
-    | `database.external.databaseName` | Gitlab 数据的数据库 | `gitlabhq_production` |
-    | **Redis** | | |
-    | `redis.type` | 如果使用外部数据库，设置为 `external` | `internal` |
-    | `redis.internal.password` | Redis密码| |
-    | `redis.external.host` | 外部redis主机名 | `192.168.0.2` |
-    | `redis.external.port` | 外部redis端口 | `6379` |
+    参数 | 含义 
+    --- |  --- 
+    persistence.enabled|是否启用持久化存储
+    persistence.existingClaim|PVC的名称
+    env.config.GITLAB_EXTERNAL_URL|gitlab的域名
+    env.config.GITLAB_TIMEZONE|时区
+    env.config.GITLAB_DEFAULT_CAN_CREATE_GROUP|用户是否可以创建组 
+    env.config.CHOERODON_OMNIAUTH_ENABLED|是否开启第三方认证 
+    env.config.OMNIAUTH_BLOCK_AUTO_CREATED_USERS|是否自动创建用户 
+    env.config.CHOERODON_API_URL|choerodon的Api地址
+    env.config.CHOERODON_CLIENT_ID|在choerodon上申请的client id
+    env.config.DB_ADAPTER|数据库类型 
+    env.config.DB_HOST|数据库地址 
+    env.config.DB_PORT|数据库端口号 
+    env.config.DB_USERNAME|数据库用户名 
+    env.config.DB_PASSWORD|数据库用户密码 
+    env.config.REDIS_HOST|redis地址 
+    env.config.REDIS_PORT|redis端口号
+    env.config.SMTP_ENABLE|是否开启smtp，若为false，以下SMTP参数都不生效
+    env.config.SMTP_ADDRESS|smtp地址
+    env.config.SMTP_PORT|smtp端口号 
+    env.config.SMTP_USER_NAME|stmp用户
+    env.config.SMTP_PASSWORD|stmp用户密码 
+    env.config.SMTP_DOMAIN|smtp地址
+    env.config.SMTP_AUTHENTICATION|认证方式 
+    env.config.GITLAB_EMAIL_FROM|设置发件人email
+    env.config.SMTP_ENABLE_STARTTLS_AUTO|是否自动启用TLS 
+    env.config.SMTP_TLS|是否启用TLS 
+    env.config.PROMETHEUS_ENABLE|是否开启prometheus
+    env.config.NODE_EXPORTER_ENABLE|是否开启node_exporter_enable
+    env.config.UNICORN_WORKERS|unicorn workers的数量
+    env.config.UNICORN_TIMEOUT|设置unicorn workers进程的超时时间，单位秒
+    service.enabled|是否开启service
+    service.ssh.nodePort|ssh 服务 node port
+    ingress.enabled|是否开启ingress 
 
 ### 验证部署
 
@@ -196,13 +176,16 @@ helm repo update
 
 ### 更新Gitlab配置
 
-```
-helm upgrade gitlab c7n/gitlab-ha \
-    -f <(helm get values gitlab) \
-    --set env.config.OAUTH_ENABLED=true \
-    --version 0.2.0 \
-    --namespace c7n-system
-```
+    helm upgrade gitlab c7n/gitlab \
+        -f <(helm get values gitlab) \
+        --set env.config.CHOERODON_OMNIAUTH_ENABLED=true \
+        --set env.config.OMNIAUTH_AUTO_SIGN_IN_WITH_PROVIDER=oauth2_generic \
+        --set env.config.OMNIAUTH_BLOCK_AUTO_CREATED_USERS=false \
+        --set env.config.CHOERODON_API_URL=http://api.example.choerodon.io \
+        --set env.config.CHOERODON_CLIENT_ID=gitlab \
+        --set env.config.CHOERODON_CLIENT_SECRET=secret \
+        --version 0.5.3 \
+        --namespace c7n-system
 
 ### 添加Gitlab Client
 
@@ -212,7 +195,7 @@ helm upgrade gitlab c7n/gitlab-ha \
 </blockquote>
 
 - 在执行里面前请根据实际情况修改参数
-- 记得修改`http://gitlab.example.choerodon.io`的地址为实际的gitlab地址，以 nodePort 方式安装将其替换成 `192.168.xx.xx:30007`
+- 记得修改`http://gitlab.example.choerodon.io`的地址为实际的gitlab地址
 
     ```
     helm install c7n/mysql-client \
@@ -227,7 +210,7 @@ helm upgrade gitlab c7n/gitlab-ha \
             access_token_validity\,refresh_token_validity\,\
             additional_information\,auto_approve\,object_version_number\,\
             created_by\,creation_date\,last_updated_by\,last_update_date)\
-            VALUES('gitlabhq'\,1\,'default'\,'gitlabhq'\,'default'\,\
+            VALUES('gitlab'\,1\,'default'\,'secret'\,'default'\,\
             'password\,implicit\,client_credentials\,authorization_code\,refresh_token'\,\
             'http://gitlab.example.choerodon.io'\,3600\,3600\,'{}'\,'default'\,1\,0\,NOW()\,0\,NOW());" \
         --version 0.1.0 \
@@ -243,10 +226,10 @@ helm upgrade gitlab c7n/gitlab-ha \
 
     ```
     helm install c7n/postgresql-client \
-        --set env.PG_HOST=gitlabhq-gitlab-database.c7n-system.svc \
+        --set env.PG_HOST=gitlab-postgresql-postgresql.c7n-system.svc \
         --set env.PG_PORT=5432 \
-        --set env.PG_USER=gitlab \
-        --set env.PG_PASS=changeit \
+        --set env.PG_USER=postgres \
+        --set env.PG_PASS=password \
         --set env.PG_DBNAME=gitlabhq_production \
         --set env.SQL_SCRIPT="\
             INSERT INTO identities(extern_uid\, provider\, user_id\, created_at\, updated_at) \
