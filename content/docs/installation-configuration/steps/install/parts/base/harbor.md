@@ -23,24 +23,69 @@ helm repo update
 
 ## 部署Harbor
 
-```shell
-helm install c7n/harbor \
-    --set expose.ingress.hosts.core=registry.example.choerodon.io \
-    --set externalURL=https://registry.example.choerodon.io \
-    --set persistence.persistentVolumeClaim.registry.storageClass=nfs-provisioner \
-    --set persistence.persistentVolumeClaim.jobservice.storageClass=nfs-provisioner \
-    --set persistence.persistentVolumeClaim.database.storageClass=nfs-provisioner \
-    --set persistence.persistentVolumeClaim.redis.storageClass=nfs-provisioner \
-    --set chartmuseum.enabled=false \
-    --set clair.enabled=false \
-    --set notary.enabled=false \
-    --set harborAdminPassword=Harbor12345 \
+- 若需了解项目详情及各项参数含义，请移步 [Harbor Chart](https://github.com/goharbor/harbor-helm/tree/7dfc2a629a58e61c0d0a03f1d3b5ae29a7d720be#helm-chart-for-harbor)
+- 编写参数配置文件 `harbor.yaml`
+
+    <details open><summary>域名模式安装</summary>
+    ```yaml
+    expose:
+      ingress：
+        hosts:
+          core: registry.example.choerodon.io
+    externalURL: https://registry.example.choerodon.io
+    persistence:
+      persistentVolumeClaim:
+        registry:
+          storageClass: nfs-provisioner
+        jobservice:
+          storageClass: nfs-provisioner
+        database:
+          storageClass: nfs-provisioner
+        redis:
+          storageClass: nfs-provisioner
+    chartmuseum:
+      enabled: false
+    clair:
+      enabled: false
+    notary:
+      enabled: false
+    harborAdminPassword: Harbor12345
+    ```
+    </details>
+    <details><summary>nodePort模式安装</summary>
+    ```yaml
+    expose:
+      type: nodePort
+      tls:
+        commonName: "harbor"
+    persistence:
+      persistentVolumeClaim:
+        registry:
+          storageClass: nfs-provisioner
+        jobservice:
+          storageClass: nfs-provisioner
+        database:
+          storageClass: nfs-provisioner
+        redis:
+          storageClass: nfs-provisioner
+    chartmuseum:
+      enabled: false
+    clair:
+      enabled: false
+    notary:
+      enabled: false
+    harborAdminPassword: Harbor12345
+    ```
+    </details>
+- 执行安装
+
+  ```shell
+  helm install c7n/harbor \
+    -f harbor.yaml \
     --version 1.2.3 \
     --name harbor \
     --namespace c7n-system
-```
-
-- 更多参数及含义请参考[Harbor Chart](https://github.com/goharbor/harbor-helm/tree/7dfc2a629a58e61c0d0a03f1d3b5ae29a7d720be#helm-chart-for-harbor)
+  ```
 
 ## 验证部署
 
