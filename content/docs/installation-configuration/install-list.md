@@ -53,4 +53,4 @@ weight = 5
 | agile service         | 敏捷管理       | 0.21.1 |
 | test manager service  | 测试管理服务   | 0.21.1 |
 | knowledgebase service | 知识服务       | 0.21.0 |
-| choerodon front       | Choerodon 前端 | 0.21.2 |
+| choerodon front       | Choerodon 前端 | 0.21.3 |
