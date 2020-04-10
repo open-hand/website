@@ -58,6 +58,7 @@ helm repo update
       type: nodePort
       tls:
         commonName: "harbor"
+    externalURL: https://192.168.xx.xx:30003
     persistence:
       persistentVolumeClaim:
         registry:
@@ -154,3 +155,21 @@ Harbor启动速度较慢请等待所有Pod都为Running后进行界面查看。
 
   - 将得到的`ca.crt`证书文件拷贝至其他会使用到该Harbor的主机上
   - 证书放置于`/etc/docker/certs.d/<Harbor域名>`目录下（eg. 若Harbor域名为registry.example.choerodon.io，则将`ca.crt`证书文件放于`/etc/docker/certs.d/registry.example.choerodon.io`目录下即可）
+
+### NodePort 模式安装
+
+- 在所有会用到 Harbor 的主机上编辑`/etc/docker/daemon.json`文件，添加如下内容：
+
+    ```json
+    {
+      ...
+      "insecure-registries":["192.168.xx.xx:30003"]
+    }
+    ```
+
+- 重启docker 服务
+
+    ```
+    # systemctl daemon-reload
+    # systemctl restart docker
+    ```
