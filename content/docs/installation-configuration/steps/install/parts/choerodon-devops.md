@@ -182,7 +182,7 @@ helm repo update
     helm install c7n/devops-service \
         -f devops-service.yaml \
         --name devops-service \
-        --version 0.21.2 \
+        --version 0.21.3 \
         --namespace c7n-system
     ```
 
