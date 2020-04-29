@@ -101,7 +101,7 @@ Harbor启动速度较慢请等待所有Pod都为Running后进行界面查看。
 没有公网域名是无法申请证书的，故只能配置本地Docker信任Harbor自签名证书，此方法需将会使用到该Harbor的主机都进行自签名证书信任配置。
 </blockquote>
 
-- 访问 Harbor ，进入 library 项目，点击 `注册证书` 下载ca证书
+- 访问 Harbor ，进入 `配置管理` -> `系统设置` -> `镜像库根证书`，点击 `下载` 下载ca证书
 
     ![](/docs/installation-configuration/image/get-harbor-cert.png)
 
