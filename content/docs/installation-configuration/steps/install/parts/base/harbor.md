@@ -81,17 +81,14 @@ Harbor启动速度较慢请等待所有Pod都为Running后进行界面查看。
     ```
     ......
     volumeMounts:
-    # - name: ca-download
-    #   mountPath: /etc/core/ca/ca.crt
-    #   subPath: ca.crt
+    # - mountPath: /etc/core/ca
+    #   name: ca-download
     ......
     volumes:
     # - name: ca-download
     #   secret:
-    #     secretName: "harbor-harbor-ingress"
-    #     items:
-    #       - key: ca.crt
-    #         path: ca.crt
+    #     defaultMode: 420
+    #     secretName: harbor-harbor-ingress
     ......
     ```
 
