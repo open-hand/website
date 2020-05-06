@@ -17,7 +17,8 @@ weight = 3
 
 ## 创建新用户
 ### 操作示例
-组织管理员点击**管理中心**对组织层进行管理，在用户管理中可以通过**创建用户**和**导入用户**两种方法进行新用户创建。
+组织管理员点击**管理中心**对组织层进行管理，在用户管理中可以通过**创建用户**和**导入用户**两种方法进行新用户创建。Choerodon 支持 LDAP 直接导入用户，关于 LDAP 的具体信息，请查看[用户管理](https://choerodon.io/zh/docs/user-guide/manager-guide/manager-center/org-user/)。
+
 ![image](/docs/quick-start/image/user_1.png)
 
 - **创建用户**

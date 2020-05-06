@@ -182,7 +182,7 @@ gitlab中docker_build阶段日志也可查看相应版本。
 ![image](/docs/quick-start/devops/image/front-application-9.png)
 
 ## 部署应用服务
-提供可视化、一键式部署应用，支持并行部署和流水线无缝集成，实现部署环境标准化和部署过程自动化。更多相关信息以及详细操作步骤参考[部署一个应用](/zh/docs/user-guide/deploy/app-deploy/deploy/)。
+提供可视化、一键式部署应用，支持并行部署和流水线无缝集成，实现部署环境标准化和部署过程自动化。更多相关信息以及详细操作步骤参考[部署一个应用服务](/zh/docs/quick-start/devops/deploy-application/)。
 
 具体的操作步骤如下：
 

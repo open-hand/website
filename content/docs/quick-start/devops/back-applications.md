@@ -58,7 +58,7 @@ Choerodon 平台与 Gitlab 名词关系如下：
 
 **第一步：创建** *Feature* **分支**
 
-在 代码管理 -> 分支 界面，选择应用服务`猪齿鱼Todo服务`。点击创建分支，如果没有`issue`可选择，则先[创建问题](/zh/docs/user-guide/cooperation/work-lists/problem/)， 选择对应的issue。分支来源选择master，填写issue号，如feature-1。点击创建，即可创建一个分支。创建完分支之后，您就可以进行后续的本地开发。
+在 代码管理 -> 分支 界面，选择应用服务`猪齿鱼Todo服务`。点击创建分支，如果没有`issue`可选择，则先[创建问题](/zh/docs/quick-start/agile/problem/)， 选择对应的issue。分支来源选择master，填写issue号，如feature-1。点击创建，即可创建一个分支。创建完分支之后，您就可以进行后续的本地开发。
 
 例如，
 

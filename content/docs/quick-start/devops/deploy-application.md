@@ -33,7 +33,11 @@ weight = 6
 
     ![image](/docs/user-guide/deploy/app-deploy/images/deployment-operation-01.png)
 
+## 下一步
 
+- [知识库快速入门](../../../quick-start/knowledge/)
+- [敏捷快速入门](../../../quick-start/agile/)
+- [测试管理快速入门](../../../quick-start/test/)
 
 
 

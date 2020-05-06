@@ -51,7 +51,7 @@ weight = 1
 |||设置|无任何可操作权限。
 
 
-> Choerodon平台支持自定义角色，点击了解[如何自定义角色](../system-configuration/role)。
+> Choerodon平台支持自定义角色，点击了解[如何自定义角色](../../user-guide/manager-guide/system-configuration/role)。
 
 
 
