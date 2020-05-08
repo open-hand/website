@@ -14,7 +14,7 @@ Choerodon 代码仓库基于 Git 进行代码版本管理。本文档面向初�
 
     |账号|角色|职责|
     |---|---|---|
-    |admin|组织管理员|管理组织下的项目和成员（组织成员、项目管理员、项目成员）|
+    |admin|组织管理员|管理组织下的项目和成员（组织成员、项目所有者员、项目成员）|
 3. 已完成项目创建及团队成员建设。
 4. 配置 Git，包括下载安装、设置等。
 
@@ -28,27 +28,25 @@ Choerodon 代码仓库基于 Git 进行代码版本管理。本文档面向初�
 
 4. 最后，点击`创建`按钮，回到应用服务列表页面；当该应用服务状态变为`启用`时，则创建成功。
 
-![image](/docs/user-guide/development/code-manage/image/code-management-01.png)
+  ![image](/docs/user-guide/development/code-manage/image/code-management-01.png)
 
 ## 克隆代码仓库到本地
 ### 操作示例
 1. 路径：开发->代码管理；
 
-2. 通过应用服务选择器选中某个应用服务，点击应用服务下拉框右侧的`复制仓库地址`按钮，选择`复制SSH地址`或是`HTTPS的地址即可`。
+2. 通过应用服务选择器选中某个应用服务，点击应用服务下拉框右侧的`复制仓库地址`按钮，选择复制`SSH地址`或是`HTTPS地址`即可。
 
-![image](/docs/quick-start/devops/image/code-1.png)
 
- - **HTTPS的地址即可**
-     1. 选择“SSH”，复制地址;
-     2. 在 Git Bash 中输入克隆命令。
+     ![image](/docs/quick-start/devops/image/code-1.png)
+  
 
+3. 成功复制仓库地址后，在 Git Bash 中输入克隆命令。
+ 
          ```
-         git clone  换成你复制的仓库地址
+         git clone 复制的仓库地址
           ```
-     
-     3. 完成后就可以将github服务器上的仓库克隆到本地。
+    
 
- - **复制SSH地址** 
 
 
 ## 本地代码推送到仓库
