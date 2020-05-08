@@ -145,7 +145,7 @@ helm repo update
         AGENT_CERTMANAGERURL: https://openchart.choerodon.com.cn/choerodon/c7n/
         AGENT_REPOURL: https://openchart.choerodon.com.cn/choerodon/c7n/
         AGENT_SERVICEURL: ws://devops.example.choerodon.io/agent/
-        AGENT_VERSION: 0.21.3
+        AGENT_VERSION: 0.21.4
         EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
         SERVICES_GATEWAY_URL: http://api.example.choerodon.io
         SERVICES_GITLAB_PROJECTLIMIT: 100
@@ -182,7 +182,7 @@ helm repo update
     helm install c7n/devops-service \
         -f devops-service.yaml \
         --name devops-service \
-        --version 0.21.4 \
+        --version 0.21.5 \
         --namespace c7n-system
     ```
 
