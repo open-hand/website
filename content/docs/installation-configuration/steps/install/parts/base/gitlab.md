@@ -29,13 +29,13 @@ helm repo update
     ```
     core:
       env:
-        GITLAB_HOST: api.example.choerodon.io
         OAUTH_ENABLED: false
         OAUTH_AUTO_SIGN_IN_WITH_PROVIDER: "oauth2_generic"
         OAUTH_ALLOW_SSO: "'oauth2_generic'"
         OAUTH_BLOCK_AUTO_CREATED_USERS: false
         OAUTH_GENERIC_API_KEY: "gitlabhq"
         OAUTH_GENERIC_APP_SECRET: "gitlabhq"
+        # choerodon api 访问地址
         OAUTH_GENERIC_SITE: "http://api.example.choerodon.io"
         OAUTH_GENERIC_USER_INFO_URL: "/oauth/api/user"
         OAUTH_GENERIC_AUTHORIZE_URL: "/oauth/oauth/authorize"
@@ -44,7 +44,6 @@ helm repo update
         OAUTH_GENERIC_ID_PATH: "'userAuthentication','principal','userId'"
         OAUTH_GENERIC_USER_NICKNAME: "username"
         OAUTH_GENERIC_USER_NAME: "usernmae"
-    imagePullPolicy: Always
     redis:
       internal:
         password: password
@@ -70,6 +69,7 @@ helm repo update
     ```
     core:
       env:
+        # 任意节点 IP
         GITLAB_HOST: "192.168.xx.xx"
         OAUTH_ENABLED: false
         OAUTH_AUTO_SIGN_IN_WITH_PROVIDER: "oauth2_generic"
@@ -77,6 +77,7 @@ helm repo update
         OAUTH_BLOCK_AUTO_CREATED_USERS: false
         OAUTH_GENERIC_API_KEY: "gitlabhq"
         OAUTH_GENERIC_APP_SECRET: "gitlabhq"
+        # choerodon api 访问地址
         OAUTH_GENERIC_SITE: "http://192.168.xx.xx:30100"
         OAUTH_GENERIC_USER_INFO_URL: "/oauth/api/user"
         OAUTH_GENERIC_AUTHORIZE_URL: "/oauth/oauth/authorize"
@@ -86,14 +87,13 @@ helm repo update
         OAUTH_GENERIC_USER_NICKNAME: "username"
         OAUTH_GENERIC_USER_NAME: "usernmae"
     expose:
+      type: nodePort
       nodePort:
         ports:
           http:
             nodePort: 30007
           ssh:
             nodePort: 30022
-      type: nodePort
-    imagePullPolicy: Always
     redis:
       internal:
         password: password
@@ -117,7 +117,7 @@ helm repo update
     ```bash
     helm install c7n/gitlab-ha \
         -f gitlab.yaml \
-        --version 0.2.0 \
+        --version 0.2.2 \
         --name gitlab \
         --namespace c7n-system
     ```
@@ -201,7 +201,7 @@ helm repo update
 helm upgrade gitlab c7n/gitlab-ha \
     -f <(helm get values gitlab) \
     --set env.config.OAUTH_ENABLED=true \
-    --version 0.2.0 \
+    --version 0.2.2 \
     --namespace c7n-system
 ```
 
