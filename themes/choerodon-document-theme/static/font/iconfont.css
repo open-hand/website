@@ -235,6 +235,11 @@
   content: "\e607";
 }
 
+.icon-segmentfault:before {
+  content: "\e50d";
+}
+
+
 .icon-webcat-qun-footer:before {
   content: "\e63d";
 }
