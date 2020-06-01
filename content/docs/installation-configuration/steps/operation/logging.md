@@ -1,7 +1,7 @@
 +++
 title = "日志部署"
 description = "日志部署"
-weight = 26
+weight = 27
 +++
 
 ## 前置要求与约定
@@ -25,78 +25,79 @@ helm repo add c7n https://openchart.choerodon.com.cn/choerodon/c7n/
 helm repo update
 ```
 
-### 创建日志存储卷（绑定SSD磁盘）
-
-- 在有<span style="color: red">SSD磁盘</span>的主机上配置NFS Server
-    - 假设SSD磁盘挂载到目录 `/ssd` 上
-    - 编辑`/etc/exports`文件添加需要共享目录及参数
-
-        ```
-        /ssd 192.168.1.1/16(rw,sync,insecure,no_subtree_check,no_root_squash)
-        ```
-
-- 配置完成后，启动 NFS Server：
-
-    ```
-    sudo systemctl enable nfs-server
-    sudo systemctl start nfs-server
-    ```
-
-- 在可执行helm命令的主机上，使用helm命令安装`ssd-nfs-client-provisioner`
-{{< annotation shell "提供NFS服务的主机IP地址或域名" "NFS服务共享的目录">}}
-helm install c7n/nfs-client-provisioner \
-    --set rbac.create=true \
-    --set persistence.enabled=true \
-    --set storageClass.name=ssd \
-    --set storageClass.provisioner=choerodon.io/ssd-nfs-client-provisioner \
-    --set persistence.nfsServer=127.0.0.1 \(1)
-    --set persistence.nfsPath=/ssd \(1)
-    --version 0.1.1 \
-    --name ssd \
-    --namespace logging
-{{< /annotation >}}
-
-<blockquote class="note">
-更多详情可参考<a href="../../nfs" target="_blank">NFS动态存储卷</a>搭建
-</blockquote>
-
 ### 安装日志组件
 
-- 安装Elasticsearch
+- 编写参数配置文件 `loki.yaml`
 
+    ```yaml
+    config:
+      schema_config:
+        configs:
+        - from: 2020-05-15
+          store: boltdb
+          object_store: filesystem
+          schema: v11
+          index:
+            prefix: index_
+            # 7天
+            period: 168h
+      chunk_store_config:
+        # 需小于等于日志保留天数
+        max_look_back_period: 504h
+      table_manager:
+        retention_deletes_enabled: true
+        # 日志保留 21 天，需是 index.period 的倍数
+        retention_period: 504h
+    
+    persistence:
+      enabled: true
+      accessModes:
+      - ReadWriteOnce
+      size: 10Gi
+      storageClassName: ssd
     ```
-    helm install c7n/elasticsearch \
-         --name elasticsearch \
-         --set data.persistence.storageClass=ssd,data.storage=20Gi \
-         --set master.persistence.storageClass=ssd,data.storage=5Gi \
-         --version=1.13.2-1 \
-         --namespace logging
-    ```
 
-   有关elasticsearch chart的介绍可在此处查询[helm charts](https://github.com/helm/charts/tree/master/stable/elasticsearch)
-   elasticsearch启动速度与您的网络磁盘性能有关。
+- 安装 loki
 
-- 安装日志收集服务
-
-    ```
-    helm install c7n/choerodon-logging \
-        --set fluent-bit.es.host="elasticsearch.logging" \
-        --version=0.8.2 \
-        --name=choerodon-logging \
+    ```bash
+    helm install c7n/loki \
+        -f loki.yaml \
+        --name=loki \
+        --version 0.29.0 \
         --namespace=logging
     ```
 
-- 安装kibana
+- 编写参数配置文件 `promtail.yaml`
 
-    ```
-    helm install c7n/kibana \
-        --set elasticsearch.host="elasticsearch.logging" \
-        --set service.enabled=true \
-        --set ingress.enabled=true \
-        --set ingress.host=kibana.example.choerodon.io \
-        --version=0.8.1 \
-        --namespace=logging \
-        --name=kibana
+    ```yaml
+    loki:
+      serviceName: loki
+    volumeMounts:
+    - name: docker
+      mountPath: /var/lib/docker/containers
+      readOnly: true
+    - name: pods
+      mountPath: /var/log/pods
+      readOnly: true
     ```
 
-部署完成后打开kibana按照提示创建index即可查看相应的日志
+- 安装 promtail
+
+    ```bash
+    helm install c7n/promtail \
+        -f promtail.yaml \
+        --name=promtail \
+        --version 0.23.0 \
+        --namespace=logging
+    ```
+
+## 使用
+
+1. 访问搭建监控时部署的 Grafana。 如果这是您第一次登录 Grafana，默认情况下用户名为 `admin`，密码为 `password`。
+2. In Grafana, go to `Configuration` > `Data Sources` via the cog icon on the
+   left sidebar.
+3. 在 Grafana 中，通过左侧栏中的齿轮图标点击 `Configuration` > `Data Sources`。
+4. 点击 <kbd>+ Add data source</kbd> 按钮.
+5. 从列表中选择 Loki。
+6. `HTTP` > `URL` 字段应该是您的 Loki 服务器的地址。本例中地址为 `http://loki.logging:3100`。
+7. 要查看日志，请单击侧栏上的 <kbd>Explore</kbd> ，在左上角的下拉列表中选择 Loki 数据源，然后使用 <kbd>Log labels</kbd> 按钮选择日志流。

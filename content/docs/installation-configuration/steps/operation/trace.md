@@ -1,7 +1,7 @@
 +++
 title = "调用链部署"
 description = "调用链部署"
-weight = 26
+weight = 28
 +++
 
 ## 前置要求与约定
@@ -30,7 +30,7 @@ helm repo update
 helm install c7n/persistentvolumeclaim \
     --set accessModes={ReadWriteOnce} \
     --set requests.storage=2Gi \
-    --set storageClassName=nfs-provisioner \
+    --set storageClassName=ssd \
     --version 0.1.0 \
     --name skywalking-mysql-pvc \
     --namespace logging
@@ -59,13 +59,13 @@ helm install c7n/persistentvolumeclaim \
 
 - 执行安装
 
-  ```
-  helm install c7n/mysql \
-      -f skywalking-mysql.yaml \
-      --version 0.1.3 \
-      --name skywalking-mysql \
-      --namespace logging
-  ```
+    ```
+    helm install c7n/mysql \
+        -f skywalking-mysql.yaml \
+        --version 0.1.3 \
+        --name skywalking-mysql \
+        --namespace logging
+    ```
 
 
 ### 安装 skywalking

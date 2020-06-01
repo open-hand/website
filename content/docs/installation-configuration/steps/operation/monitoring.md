@@ -32,6 +32,41 @@ helm repo add c7n https://openchart.choerodon.com.cn/choerodon/c7n/
 helm repo update
 ```
 
+### 创建存储卷（绑定SSD磁盘）
+
+- 在有<span style="color: red">SSD磁盘</span>的主机上配置NFS Server
+    - 假设SSD磁盘挂载到目录 `/ssd` 上
+    - 编辑`/etc/exports`文件添加需要共享目录及参数
+
+        ```
+        /ssd 192.168.1.1/16(rw,sync,insecure,no_subtree_check,no_root_squash)
+        ```
+
+- 配置完成后，启动 NFS Server：
+
+    ```
+    sudo systemctl enable nfs-server
+    sudo systemctl start nfs-server
+    ```
+
+- 在可执行helm命令的主机上，使用helm命令安装`ssd-nfs-client-provisioner`
+{{< annotation shell "提供NFS服务的主机IP地址或域名" "NFS服务共享的目录">}}
+helm install c7n/nfs-client-provisioner \
+    --set rbac.create=true \
+    --set persistence.enabled=true \
+    --set storageClass.name=ssd \
+    --set storageClass.provisioner=choerodon.io/ssd-nfs-client-provisioner \
+    --set persistence.nfsServer=127.0.0.1 \(1)
+    --set persistence.nfsPath=/ssd \(1)
+    --version 0.1.1 \
+    --name ssd \
+    --namespace logging
+{{< /annotation >}}
+
+<blockquote class="note">
+更多详情可参考<a href="../../nfs" target="_blank">NFS动态存储卷</a>搭建
+</blockquote>
+
 ### 安装监控组件
 
 - 编写参数配置文件 `prometheus-operator-value.yaml`
@@ -45,7 +80,7 @@ helm repo update
         - grafana.example.choerodon.io
       persistence:
         enabled: true
-        storageClassName: standard
+        storageClassName: ssd
 
     prometheus:
       ingress:
@@ -56,7 +91,7 @@ helm repo update
         storageSpec:
           volumeClaimTemplate:
             spec:
-              storageClassName: standard
+              storageClassName: ssd
     ```
 
 - 安装监控
@@ -65,7 +100,7 @@ helm repo update
     helm install c7n/prometheus-operator \
         -f prometheus-operator-value.yaml \
         --name=prometheus-operator \
-        --version 8.5.8   \
+        --version 8.5.8 \
         --namespace=monitoring
     ```
 
