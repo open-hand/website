@@ -24,16 +24,11 @@ helm repo add c7n https://openchart.choerodon.com.cn/choerodon/c7n/
 helm repo update
 ```
 
-<blockquote class="warning">
-0.19以前的base-service的数据库为iam_service,0.19以后更名为base_service,对于配置文件中是使用iam_service还是base_service遵从一下标准：
-如果是新安装的版本，就使用base_service，如果是升级上来的版本，原版本数据库使用的是什么数据库名称，配置文件中就配置对应的数据库名称
-</blockquote>
-
 ## 创建数据库
 
 - 编写参数配置文件 `create-c7nfw-db.yaml`
 
-    ```
+    ```yaml
     env:
       MYSQL_HOST: c7n-mysql.c7n-system.svc
       MYSQL_PORT: "3306"
@@ -41,19 +36,23 @@ helm repo update
       MYSQL_PASS: password
       SQL_SCRIPT: |
         CREATE USER IF NOT EXISTS 'choerodon'@'%' IDENTIFIED BY 'password';
-        CREATE DATABASE IF NOT EXISTS base_service DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-        CREATE DATABASE IF NOT EXISTS manager_service DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+        CREATE DATABASE IF NOT EXISTS hzero_platform DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+        CREATE DATABASE IF NOT EXISTS hzero_message DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+        CREATE DATABASE IF NOT EXISTS hzero_file DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+        CREATE DATABASE IF NOT EXISTS hzero_monitor DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+        CREATE DATABASE IF NOT EXISTS hzero_admin DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
         CREATE DATABASE IF NOT EXISTS asgard_service DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-        CREATE DATABASE IF NOT EXISTS notify_service DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-        GRANT ALL PRIVILEGES ON base_service.* TO choerodon@'%';
-        GRANT ALL PRIVILEGES ON manager_service.* TO choerodon@'%';
+        GRANT ALL PRIVILEGES ON hzero_platform.* TO choerodon@'%';
+        GRANT ALL PRIVILEGES ON hzero_message.* TO choerodon@'%';
+        GRANT ALL PRIVILEGES ON hzero_file.* TO choerodon@'%';
+        GRANT ALL PRIVILEGES ON hzero_monitor.* TO choerodon@'%';
+        GRANT ALL PRIVILEGES ON hzero_admin.* TO choerodon@'%';
         GRANT ALL PRIVILEGES ON asgard_service.* TO choerodon@'%';
-        GRANT ALL PRIVILEGES ON notify_service.* TO choerodon@'%';
         FLUSH PRIVILEGES;
     ```
 
 - 执行安装
-  
+
   ```
   helm install c7n/mysql-client \
       -f create-c7nfw-db.yaml \
@@ -62,30 +61,26 @@ helm repo update
       --namespace c7n-system
   ```
 
-## 部署 register server
+## 部署 hzero register
 
-- 若需了解项目详情及各项参数含义，请移步 [choerodon/go-register-server](https://github.com/choerodon/go-register-server)。
+- 若需了解项目详情及各项参数含义，请移步 [choerodon/hzero-register](https://github.com/choerodon/hzero-register)。
 
-- 编写参数配置文件 `register-server.yaml`
+- 编写参数配置文件 `hzero-register.yaml`
   
-    ```
+    ```yaml
     env:
       open:
-        REGISTER_SERVICE_NAMESPACE: c7n-system
-    rbac:
-      create: true
-    service:
-      enabled: true
-      name: register-server
+        # 无其他额外设置，请勿修改
+        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://hzero-register.c7n-system:8000/eureka/
     ```
 
 - 执行安装
   
     ```
-    helm install c7n/go-register-server \
-      -f register-server.yaml \
-      --name register-server \
-      --version 0.21.0 \
+    helm install c7n/hzero-register \
+      -f hzero-register.yaml \
+      --name hzero-register \
+      --version 0.22.0 \
       --namespace c7n-system
     ```
 
@@ -93,96 +88,7 @@ helm repo update
   - 验证命令
   
     ```
-    curl $(kubectl get svc register-server -o jsonpath="{.spec.clusterIP}" -n c7n-system):8000/eureka/apps
-    ```
-
-  - 出现以下类似信息即为成功部署
-  
-    ```
-    {
-        "name": "go-register-server",
-        "instance": [
-            {
-            "instanceId": "192.168.3.19:go-register-server:8000",
-            "hostName": "192.168.3.19",
-            "app": "go-register-server",
-            "ipAddr": "192.168.3.19",
-            "status": "UP",
-            ...
-            "metadata": {
-                "VERSION": "0.21.0"
-            },
-            ...
-            }
-        ]
-    }
-    ```
-
-## 部署 base service
-
-- 若需了解项目详情及各项参数含义，请移步 [choerodon/base-service](https://github.com/choerodon/base-service)。
-
-- 编写参数配置文件 `base-service.yaml`
-    <details open><summary>域名模式安装</summary>
-    ```
-    preJob:
-      timeout: 1800
-      preInitDB:
-        datasource:
-          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/base_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
-          username: choerodon
-          password: password
-    env:
-      open:
-        SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
-        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc/base_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
-        SPRING_DATASOURCE_USERNAME: choerodon
-        SPRING_DATASOURCE_PASSWORD: password
-        SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
-        SPRING_REDIS_PORT: 6379
-        SPRING_REDIS_DATABASE: 3
-        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
-        CHOERODON_GATEWAY_URL: http://api.example.choerodon.io
-    ```
-    </details>
-    <details><summary>nodePort方式安装</summary>
-    ```
-    preJob:
-      timeout: 1800
-      preInitDB:
-        datasource:
-          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/base_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
-          username: choerodon
-          password: password
-    env:
-      open:
-        SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
-        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc/base_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
-        SPRING_DATASOURCE_USERNAME: choerodon
-        SPRING_DATASOURCE_PASSWORD: password
-        SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
-        SPRING_REDIS_PORT: 6379
-        SPRING_REDIS_DATABASE: 3
-        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
-        CHOERODON_GATEWAY_URL: 192.168.xx.xx:30100
-    ```
-    </datails>
-
-- 部署服务
-
-    ```
-    helm install c7n/base-service \
-        -f base-service.yaml \
-        --name base-service \
-        --version 0.21.5 \
-        --namespace c7n-system
-    ```
-
-- 验证部署
-  - 验证命令
-  
-    ```
-    curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=base-service -o jsonpath="{.items[0].status.podIP}"):8031/actuator/health | jq -r .status
+    curl -s $(kubectl get svc hzero-register -o jsonpath="{.spec.clusterIP}" -n c7n-system):8001/actuator/health | jq -r .status
     ```
 
   - 出现以下类似信息即为成功部署
@@ -191,193 +97,177 @@ helm repo update
     UP
     ```
 
-## 部署 manager service
+## 部署 hzero gateway
 
-- 若需了解项目详情及各项参数含义，请移步 [choerodon/manager-service](https://github.com/choerodon/manager-service)。
+- 若需了解项目详情及各项参数含义，请移步 [choerodon/hzero-gateway](https://github.com/choerodon/hzero-gateway)。
 
-- 编写参数配置文件 `manager-service.yaml`
-    <details open><summary>域名模式安装</summary>
-    ```
-    env:
-      open:
-        CHOERODON_GATEWAY_DOMAIN: api.example.choerodon.io
-        CHOERODON_SWAGGER_OAUTH_URL: http://api.example.choerodon.io/oauth/oauth/authorize
-        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
-        SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
-        SPRING_DATASOURCE_PASSWORD: password
-        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
-        SPRING_DATASOURCE_USERNAME: choerodon
-        SPRING_REDIS_DATABASE: 1
-        SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
-        SPRING_REDIS_PORT: 6379
-    preJob:
-      preInitDB:
-        datasource:
-          password: password
-          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
-          username: choerodon
-    ```
-    </details>
-    <details><summary>nodePort模式安装</summary>
-    ```
-    env:
-      open:
-        CHOERODON_GATEWAY_DOMAIN: 192.168.xx.xx:30100
-        CHOERODON_SWAGGER_OAUTH_URL: http://192.168.xx.xx:30100/oauth/oauth/authorize
-        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
-        SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
-        SPRING_DATASOURCE_PASSWORD: password
-        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
-        SPRING_DATASOURCE_USERNAME: choerodon
-        SPRING_REDIS_DATABASE: 1
-        SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
-        SPRING_REDIS_PORT: 6379
-    preJob:
-      preInitDB:
-        datasource:
-          password: password
-          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
-          username: choerodon
-    ```
-    </details>
-- 部署服务
+- 编写参数配置文件 `hzero-gateway.yaml`
 
-    ```
-    helm install c7n/manager-service \
-        -f manager-service.yaml \
-        --name manager-service \
-        --version 0.21.0 \
-        --namespace c7n-system
-    ```
-
-- 验证部署
-  - 验证命令
-  
-    ```
-    curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=manager-service -o jsonpath="{.items[0].status.podIP}"):8964/actuator/health | jq -r .status
-    ```
-
-  - 出现以下类似信息即为成功部署
-
-    ```
-    UP
-    ```
-
-## 部署 asgard service
-
-- 若需了解项目详情及各项参数含义，请移步 [choerodon/asgard-service](https://github.com/choerodon/asgard-service)。
-
-- 编写参数配置文件 `asgard-service.yaml`
-  
-    ```
-    env:
-      open:
-        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
-        SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
-        SPRING_DATASOURCE_PASSWORD: password
-        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/asgard_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
-        SPRING_DATASOURCE_USERNAME: choerodon
-        SPRING_REDIS_DATABASE: 2
-        SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
-        SPRING_REDIS_PORT: 6379
-    preJob:
-      timeout: 1800
-      preInitDB:
-        datasource:
-          password: password
-          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/asgard_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
-          username: choerodon
-    ```
-
-- 部署服务
-
-    ```
-    helm install c7n/asgard-service \
-        -f asgard-service.yaml \
-        --name asgard-service \
-        --version 0.21.1 \
-        --namespace c7n-system
-    ```
-
-- 验证部署
-
-  - 验证命令
-  
-    ```
-    curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=asgard-service -o jsonpath="{.items[0].status.podIP}"):18081/actuator/health | jq -r .status
-    ```
-
-  - 出现以下类似信息即为成功部署
-  
-    ```
-    UP
-    ```
-
-## 部署 notify service
-
-- 若需了解项目详情及各项参数含义，请移步 [choerodon/notify-service](https://github.com/choerodon/notify-service)。
-
-- 编写参数配置文件 `notify-service.yaml`
-    <details open><summary>域名模式安装</summary>
     ```yaml
     env:
       open:
-        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
-        SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
-        SPRING_DATASOURCE_PASSWORD: password
-        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/notify_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
-        SPRING_DATASOURCE_USERNAME: choerodon
+        SPRING_REDIS_HOST: c7n-redis.c7n-system
+        SPRING_REDIS_PORT: 6379
         SPRING_REDIS_DATABASE: 4
-        SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
+        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system:3306/hzero_platform?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
+        SPRING_DATASOURCE_USERNAME: choerodon
+        SPRING_DATASOURCE_PASSWORD: password
+        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://hzero-register.c7n-system:8000/eureka/
     ingress:
       enabled: true
-      host: notify.example.choerodon.io
-    preJob:
-      timeout: 1800
-      preInitDB:
-        datasource:
-          password: password
-          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/notify_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
-          username: choerodon
-    service:
-      enabled: true
-      name: notify-service
+      host: api.example.choerodon.io
     ```
-    </details>
-    <details><summary>nodePort模式安装</summary>
+
+- 部署服务
+
+    ```
+    helm install c7n/hzero-gateway \
+        -f hzero-gateway.yaml \
+        --name hzero-gateway \
+        --version 0.22.0 \
+        --namespace c7n-system
+    ```
+
+- 验证部署
+  - 验证命令
+  
+    ```
+    curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=hzero-gateway -o jsonpath="{.items[0].status.podIP}"):8081/actuator/health | jq -r .status
+    ```
+
+  - 出现以下类似信息即为成功部署
+  
+    ```
+    UP
+    ```
+
+## 部署 hzero oauth
+
+- 若需了解项目详情及各项参数含义，请移步 [choerodon/hzero-oauth](https://github.com/choerodon/hzero-oauth)。
+
+- 编写参数配置文件 `hzero-oauth.yaml`
+
     ```yaml
     env:
       open:
-        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
-        SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
-        SPRING_DATASOURCE_PASSWORD: password
-        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/notify_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
+        HZERO_OAUTH_LOGIN_ENABLE_HTTPS: true
+        HZERO_OAUTH_LOGIN_SUCCESS_URL: https://choerodon.com.cn
+        HZERO_OAUTH_LOGIN_DEFAULT_CLIENT_ID: choerodonparent
+        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://hzero-register.c7n-system:8000/eureka/
+        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system:3306/hzero_platform?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
         SPRING_DATASOURCE_USERNAME: choerodon
-        SPRING_REDIS_DATABASE: 4
-        SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
-    ingress:
-      enabled: false
+        SPRING_DATASOURCE_PASSWORD: password
+        SPRING_REDIS_HOST: c7n-redis.c7n-system
+        SPRING_REDIS_PORT: 6379
+        SPRING_REDIS_DATABASE: 3
+    ```
+
+- 部署服务
+
+    ```
+    helm install c7n/hzero-oauth \
+        -f hzero-oauth.yaml \
+        --name hzero-oauth \
+        --version 0.22.0 \
+        --namespace c7n-system
+    ```
+
+- 验证部署
+  - 验证命令
+  
+    ```
+    curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=hzero-oauth -o jsonpath="{.items[0].status.podIP}"):8021/actuator/health | jq -r .status
+    ```
+
+  - 出现以下类似信息即为成功部署
+
+    ```
+    UP
+    ```
+
+## 部署 hzero iam
+
+- 若需了解项目详情及各项参数含义，请移步 [choerodon/hzero-iam](https://github.com/choerodon/hzero-iam)。
+
+- 编写参数配置文件 `hzero-iam.yaml`
+  
+    ```yaml
     preJob:
-      timeout: 1800
       preInitDB:
         datasource:
-          password: password
-          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/notify_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
+          url: jdbc:mysql://c7n-mysql.c7n-system:3306/?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
           username: choerodon
-    service:
-      enabled: true
-      type: NodePort
-      name: notify-service
+          password: password
+    env:
+      open:
+        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://hzero-register.c7n-system:8000/eureka/
+        CHOERODON_GATEWAY_URL: https://api.choerodon.com.cn
+        SPRING_REDIS_HOST: c7n-redis.c7n-system
+        SPRING_REDIS_PORT: 6379
+        SPRING_REDIS_DATABASE: 1
+        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system:3306/hzero_platform?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
+        SPRING_DATASOURCE_USERNAME: choerodon
+        SPRING_DATASOURCE_PASSWORD: password
+        CHOERODON_PROJECT_INVITE_URL: https://choerodon.com.cn/#/iam/invite-user
+        CHOERODON_ORGANIZATION_LINK_COMPLETE: https://choerodon.com.cn/#/iam/register-organization
     ```
-    </details>
+
+- 部署服务
+
+    ```
+    helm install c7n/hzero-iam \
+        -f hzero-iam.yaml \
+        --name hzero-iam \
+        --version 0.22.0 \
+        --namespace c7n-system
+    ```
+
+- 验证部署
+
+  - 验证命令
+  
+    ```
+    curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=hzero-iam -o jsonpath="{.items[0].status.podIP}"):8031/actuator/health | jq -r .status
+    ```
+
+  - 出现以下类似信息即为成功部署
+  
+    ```
+    UP
+    ```
+
+## 部署 hzero platform
+
+- 若需了解项目详情及各项参数含义，请移步 [choerodon/hzero-platform](https://github.com/choerodon/hzero-platform)。
+
+- 编写参数配置文件 `hzero-platform.yaml`
+
+    ```yaml
+    preJob:
+      preInitDB:
+        datasource:
+          url: jdbc:mysql://c7n-mysql.c7n-system:3306/?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
+          username: choerodon
+          password: password
+    env:
+      open:
+        HZERO_PLATFORM_HTTP_PROTOCOL: https
+        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://hzero-register.c7n-system:8000/eureka/
+        SPRING_REDIS_HOST: c7n-redis.c7n-system
+        SPRING_REDIS_PORT: 6379
+        SPRING_REDIS_DATABASE: 1
+        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system:3306/hzero_platform?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
+        SPRING_DATASOURCE_USERNAME: choerodon
+        SPRING_DATASOURCE_PASSWORD: password
+    ```
 
 - 部署服务
 
     ```shell
-    helm install c7n/notify-service \
-        -f notify-service.yaml \
-        --name notify-service \
-          --version 0.21.1 \
+    helm install c7n/hzero-platform \
+        -f hzero-platform.yaml \
+        --name hzero-platform \
+          --version 0.22.0 \
         --namespace c7n-system
     ```
 
@@ -385,7 +275,7 @@ helm repo update
   - 验证命令
   
     ```
-    curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=notify-service -o jsonpath="{.items[0].status.podIP}"):18086/actuator/health | jq -r .status
+    curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=hzero-platform -o jsonpath="{.items[0].status.podIP}"):8101/actuator/health | jq -r .status
     ```
 
   - 出现以下类似信息即为成功部署
@@ -394,75 +284,37 @@ helm repo update
     UP
     ```
 
-## 部署 api gateway
+## 部署 hzero admin
 
-- 若需了解项目详情及各项参数含义，请移步 [choerodon/api-gateway](https://github.com/choerodon/api-gateway)。
+- 若需了解项目详情及各项参数含义，请移步 [choerodon/hzero-admin](https://github.com/choerodon/hzero-admin)。
 
-- 编写参数配置文件 `api-gateway.yaml`
-    <details open><summary>域名模式安装</summary>
-    ```yaml
-    env:
-      open:
-        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
-        SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
-        SPRING_DATASOURCE_PASSWORD: password
-        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/base_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
-        SPRING_DATASOURCE_USERNAME: choerodon
-        SPRING_REDIS_DATABASE: 1
-        SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
-        SPRING_REDIS_PORT: 6379
-        SPRING_CACHE_MULTI_L1_ENABLED: true
-        SPRING_CACHE_MULTI_L2_ENABLED: false
-    ingress:
-      enabled: true
-      host: api.example.choerodon.io
-    preJob:
-      timeout: 1800
-      preConfig:
-        datasource:
-          password: password
-          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
-          username: choerodon
-    service:
-      enabled: true
-    ```
-    </deatils>
-    <details><summary>nodePort方式部署</summary>
+- 编写参数配置文件 `hzero-admin.yaml`
 
     ```yaml
+    preJob:
+      preInitDB:
+        datasource:
+          url: jdbc:mysql://c7n-mysql.c7n-system:3306/?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
+          username: choerodon
+          password: password
     env:
       open:
-        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
-        SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
-        SPRING_DATASOURCE_PASSWORD: password
-        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/base_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
-        SPRING_DATASOURCE_USERNAME: choerodon
-        SPRING_REDIS_DATABASE: 1
-        SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
+        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://hzero-register.c7n-system:8000/eureka/
+        SPRING_REDIS_HOST: c7n-redis.c7n-system
         SPRING_REDIS_PORT: 6379
-        SPRING_CACHE_MULTI_L1_ENABLED: true
-        SPRING_CACHE_MULTI_L2_ENABLED: false
-    ingress:
-      enabled: false
-    preJob:
-      timeout: 1800
-      preConfig:
-        datasource:
-          password: password
-          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
-          username: choerodon
-    service:
-      enabled: true
-      type: NodePort
+        SPRING_REDIS_DATABASE: 1
+        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system:3306/hzero_admin?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
+        SPRING_DATASOURCE_USERNAME: choerodon
+        SPRING_DATASOURCE_PASSWORD: password
     ```
-    </details>
+
 - 部署服务
 
     ```
-    helm install c7n/api-gateway \
-        -f api-gateway.yaml \
-        --name api-gateway \
-        --version 0.21.0 \
+    helm install c7n/hzero-admin \
+        -f hzero-admin.yaml \
+        --name hzero-admin \
+        --version 0.22.0 \
         --namespace c7n-system
     ```
 
@@ -470,7 +322,7 @@ helm repo update
   - 验证命令
 
     ```
-    curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=api-gateway -o jsonpath="{.items[0].status.podIP}"):8081/actuator/health | jq -r .status
+    curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=hzero-admin -o jsonpath="{.items[0].status.podIP}"):8061/actuator/health | jq -r .status
     ```
 
   - 出现以下类似信息即为成功部署
@@ -479,54 +331,36 @@ helm repo update
     UP
     ```
 
-## 部署 oauth server
+## 部署 hzero asgard
 
-- 若需了解项目详情及各项参数含义，请移步 [choerodon/oauth-server](https://github.com/choerodon/oauth-server)。
+- 若需了解项目详情及各项参数含义，请移步 [choerodon/hzero-asgard](https://github.com/choerodon/hzero-asgard)。
 
-- 编写参数配置文件 `oauth-server.yaml`
+- 编写参数配置文件 `hzero-asgard.yaml`
 
-    <details open><summary>域名模式部署</summary>
     ```yaml
+    preJob:
+      preInitDB:
+        datasource:
+          url: jdbc:mysql://c7n-mysql.c7n-system:3306/?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
+          username: choerodon
+          password: password
     env:
       open:
-        CHOERODON_DEFAULT_REDIRECT_URL: http://c7n.example.choerodon.io
-        CHOERODON_GATEWAY_URL: http://api.example.choerodon.io
-        CHOERODON_RESET_PASSWORD_RESETURLEXPIREMINUTES: 30
-        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
-        SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
-        SPRING_DATASOURCE_PASSWORD: password
-        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/base_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
+        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://hzero-register.c7n-system:8000/eureka/
+        SPRING_REDIS_HOST: c7n-redis.c7n-system
+        SPRING_REDIS_PORT: 6379
+        SPRING_REDIS_DATABASE: 7
+        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system:3306/asgard_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
         SPRING_DATASOURCE_USERNAME: choerodon
-        SPRING_REDIS_DATABASE: 6
-        SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
-    preJob:
-      timeout: 1800
-    ```
-    <details><summary>nodePort模式部署</summary >
-    ```yaml
-    env:
-      open:
-        CHOERODON_DEFAULT_REDIRECT_URL: http://192.168.xx.xx:30118
-        CHOERODON_GATEWAY_URL: http://192.168.xx.xx:30100
-        CHOERODON_RESET_PASSWORD_RESETURLEXPIREMINUTES: 30
-        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
-        SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
         SPRING_DATASOURCE_PASSWORD: password
-        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/base_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
-        SPRING_DATASOURCE_USERNAME: choerodon
-        SPRING_REDIS_DATABASE: 6
-        SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
-    preJob:
-      timeout: 1800
     ```
-    </details>
 
 - 部署服务
     ```
-    helm install c7n/oauth-server \
-        -f oauth-server.yaml \
-        --name oauth-server \
-        --version 0.21.1 \
+    helm install c7n/hzero-asgard \
+        -f hzero-asgard.yaml \
+        --name hzero-asgard \
+        --version 0.22.0 \
         --namespace c7n-system
     ```
 
@@ -534,7 +368,7 @@ helm repo update
   - 验证命令
   
     ```
-    curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=oauth-server -o jsonpath="{.items[0].status.podIP}"):8021/actuator/health | jq -r .status
+    curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=hzero-asgard -o jsonpath="{.items[0].status.podIP}"):8041/actuator/health | jq -r .status
     ```
 
   - 出现以下类似信息即为成功部署
@@ -543,45 +377,36 @@ helm repo update
     UP
     ```
 
-## 部署 file service
+## 部署 hzero monitor
 
-- 若需了解项目详情及各项参数含义，请移步 [choerodon/file-service](https://github.com/choerodon/file-service)。
+- 若需了解项目详情及各项参数含义，请移步 [choerodon/hzero-monitor](https://github.com/choerodon/hzero-monitor)。
 
-- 编写参数配置文件 `file-service.yaml`
+- 编写参数配置文件 `hzero-monitor.yaml`
 
-    <details open><summary>域名模式安装</summary>
     ```yaml
+    preJob:
+      preInitDB:
+        datasource:
+          url: jdbc:mysql://c7n-mysql.c7n-system:3306/?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
+          username: choerodon
+          password: password
     env:
       open:
-        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
-        MINIO_ENDPOINT: http://minio.example.choerodon.io
-        MINIO_ACCESSKEY: AKIAIOSFODNN7EXAMPLE
-        MINIO_SECRETKEY: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
-        SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
-    preJob:
-      timeout: 1800
+        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://hzero-register.c7n-system:8000/eureka/
+        SPRING_REDIS_HOST: c7n-redis.c7n-system
+        SPRING_REDIS_PORT: 6379
+        SPRING_REDIS_DATABASE: 1
+        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system:3306/hzero_monitor?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
+        SPRING_DATASOURCE_USERNAME: choerodon
+        SPRING_DATASOURCE_PASSWORD: password
     ```
-    </details>
-    <details><summary>nodePort模式安装</summary>
-    ```yaml
-    env:
-      open:
-        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
-        MINIO_ENDPOINT: http://192.168.xx.xx:30006
-        MINIO_ACCESSKEY: AKIAIOSFODNN7EXAMPLE
-        MINIO_SECRETKEY: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
-        SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
-    preJob:
-      timeout: 1800
-    ```
-    </details>
+
 - 部署服务
-
     ```
-    helm install c7n/file-service \
-        -f file-service.yaml \
-        --name file-service \
-        --version 0.21.0 \
+    helm install c7n/hzero-monitor \
+        -f hzero-monitor.yaml \
+        --name hzero-monitor \
+        --version 0.22.0 \
         --namespace c7n-system
     ```
 
@@ -589,7 +414,107 @@ helm repo update
   - 验证命令
   
     ```
-    curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=file-service -o jsonpath="{.items[0].status.podIP}"):9091/actuator/health | jq -r .status
+    curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=hzero-monitor -o jsonpath="{.items[0].status.podIP}"):8261/actuator/health | jq -r .status
+    ```
+
+  - 出现以下类似信息即为成功部署
+  
+    ```
+    UP
+    ```
+
+## 部署 hzero file
+
+- 若需了解项目详情及各项参数含义，请移步 [choerodon/hzero-file](https://github.com/choerodon/hzero-file)。
+
+- 编写参数配置文件 `hzero-file.yaml`
+
+    ```yaml
+    preJob:
+      preInitDB:
+        datasource:
+          url: jdbc:mysql://c7n-mysql.c7n-system:3306/?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
+          username: choerodon
+          password: password
+    env:
+      open:
+        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://hzero-register.c7n-system:8000/eureka/
+        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system:3306/hzero_file?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
+        SPRING_DATASOURCE_USERNAME: choerodon
+        SPRING_DATASOURCE_PASSWORD: password
+        SPRING_REDIS_HOST: c7n-redis.c7n-system
+        SPRING_REDIS_PORT: 6379
+        SPRING_REDIS_DATABASE: 1
+        SPRING_SERVLET_MULTIPART_MAX_FILE_SIZE: 200MB
+        SPRING_SERVLET_MULTIPART_MAX_REQUEST_SIZE: 200MB
+        FILE_GATEWAY_URL: https://api.choerodon.com.cn/hfle
+    ```
+
+- 部署服务
+
+    ```
+    helm install c7n/hzero-file \
+        -f hzero-file.yaml \
+        --name hzero-file \
+        --version 0.22.0 \
+        --namespace c7n-system
+    ```
+
+- 验证部署
+  - 验证命令
+  
+    ```
+    curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=hzero-file -o jsonpath="{.items[0].status.podIP}"):8111/actuator/health | jq -r .status
+    ```
+
+  - 出现以下类似信息即为成功部署
+
+    ```
+    UP
+    ```
+
+## 部署 hzero message
+
+- 若需了解项目详情及各项参数含义，请移步 [choerodon/hzero-message](https://github.com/choerodon/hzero-message)。
+
+- 编写参数配置文件 `hzero-message.yaml`
+
+    ```yaml
+    preJob:
+      preInitDB:
+        datasource:
+          url: jdbc:mysql://c7n-mysql.c7n-system:3306/?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
+          username: choerodon
+          password: password
+    env:
+      open:
+        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://hzero-register.c7n-system:8000/eureka/
+        HZERO_WEBSOCKET_OAUTHURL: http://hzero-oauth/oauth/api/user
+        SPRING_REDIS_HOST: c7n-redis.c7n-system
+        SPRING_REDIS_PORT: 6379
+        SPRING_REDIS_DATABASE: 1
+        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system:3306/hzero_message?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
+        SPRING_DATASOURCE_USERNAME: choerodon
+        SPRING_DATASOURCE_PASSWORD: password
+    ingress:
+      enabled: true
+      host: notify.choerodon.com.cn
+    ```
+
+- 部署服务
+    ```
+    helm install c7n/hzero-message \
+        -f hzero-message.yaml \
+        --name hzero-message \
+        --version 0.22.0 \
+        --namespace c7n-system
+    ```
+
+- 验证部署
+  - 验证命令
+  
+    ```
+    curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=hzero-message -o jsonpath="{.items[0].status.podIP}"):8121/actuator/health | jq -r .status
     ```
 
   - 出现以下类似信息即为成功部署

@@ -29,7 +29,7 @@ helm repo update
     <details open><summary>域名模式安装</summary>
     ```yaml
     expose:
-      ingress：
+      ingress:
         hosts:
           core: registry.example.choerodon.io
     externalURL: https://registry.example.choerodon.io
