@@ -48,9 +48,12 @@ helm repo update
     ```
 
 ## 部署 agile service
+
 - 若需了解项目详情及各项参数含义，请移步 [choerodon/agile-service](https://github.com/choerodon/agile-service)。
 
 - 编写参数配置文件 `agile-service.yaml`
+
+    <details open><summary>域名模式安装<summary>
     ```yaml
     env:
       open:
@@ -70,6 +73,28 @@ helm repo update
           url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/agile_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
           username: choerodon
     ```
+    </details>
+    <details><summary>nodePort模式安装</summary>
+    ```yaml
+    env:
+      open:
+        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
+        SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
+        SPRING_DATASOURCE_PASSWORD: password
+        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/agile_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
+        SPRING_DATASOURCE_USERNAME: choerodon
+        SPRING_REDIS_DATABASE: 9
+        SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
+        SERVICES_ATTACHMENT_URL: http://192.168.xx.xx:30006
+    preJob:
+      timeout: 1800
+      preInitDB:
+        datasource:
+          password: password
+          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/agile_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
+          username: choerodon
+    ```
+    </details>
 
 - 部署服务
 
@@ -99,15 +124,17 @@ helm repo update
 - 若需了解项目详情及各项参数含义，请移步 [choerodon/test-manager-service](https://github.com/choerodon/test-manager-service)。
 
 - 编写参数配置文件 `test-manager-service.yaml`
-    ```
+
+    <details open><summary>域名模式安装<summary>
+    ```yaml
     env:
       open:
         EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
         SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
         SPRING_DATASOURCE_PASSWORD: password
-        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/test_manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
+        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/agile_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
         SPRING_DATASOURCE_USERNAME: choerodon
-        SPRING_REDIS_DATABASE: 10
+        SPRING_REDIS_DATABASE: 9
         SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
         SERVICES_ATTACHMENT_URL: http://minio.example.choerodon.io
     preJob:
@@ -115,9 +142,31 @@ helm repo update
       preInitDB:
         datasource:
           password: password
-          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/test_manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
+          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/agile_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
           username: choerodon
     ```
+    </details>
+    <details><summary>nodePort模式安装</summary>
+    ```yaml
+    env:
+      open:
+        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
+        SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
+        SPRING_DATASOURCE_PASSWORD: password
+        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/agile_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
+        SPRING_DATASOURCE_USERNAME: choerodon
+        SPRING_REDIS_DATABASE: 9
+        SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
+        SERVICES_ATTACHMENT_URL: http://192.168.xx.xx:30006
+    preJob:
+      timeout: 1800
+      preInitDB:
+        datasource:
+          password: password
+          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/agile_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
+          username: choerodon
+    ```
+    </details>
 
 - 部署服务
 
@@ -161,7 +210,7 @@ helm repo update
 - 若需了解项目详情及各项参数含义，请移步 [choerodon/knowledgebase-service](https://github.com/choerodon/knowledgebase-service)。
 
 - 编写参数配置文件 `knowledgebase-service.yaml`
-  
+    <details open> <summary>域名模式安装</summary>
     ```
     env:
       open:
@@ -182,6 +231,29 @@ helm repo update
       preConfig:
         updatePolicy: override  
     ```
+    </details>
+    <details><summary>nodePort模式安装</summary>
+    ```
+    env:
+      open:
+        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
+        SERVICES_ATTACHMENT_URL: http://192.168.xx.xx:30006/knowledgebase-service/
+        SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
+        SPRING_DATASOURCE_PASSWORD: password
+        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/knowledgebase_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
+        SPRING_DATASOURCE_USERNAME: choerodon
+        ELASTICSEARCH_IP: elasticsearch-kb.c7n-system:9200
+    preJob:
+      timeout: 1800
+      preInitDB:
+        datasource:
+          password: password
+          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/knowledgebase_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
+          username: choerodon
+      preConfig:
+        updatePolicy: override
+    ```
+    </details>
 
 - 部署服务
 

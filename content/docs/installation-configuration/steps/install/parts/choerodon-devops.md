@@ -53,24 +53,24 @@ helm repo update
 
 - 编写参数配置文件 `workflow-service.yaml`
 
-  ```
-  env:
-    open:
-      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
-      SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
-      SPRING_DATASOURCE_PASSWORD: password
-      SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/workflow_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
-      SPRING_DATASOURCE_USERNAME: choerodon
-      SPRING_REDIS_DATABASE: 8
-      SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
-  preJob:
-    timeout: 1800
-    preInitDB:
-      datasource:
-        password: password
-        url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/workflow_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
-        username: choerodon
-  ```
+    ```yaml
+    env:
+      open:
+        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
+        SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
+        SPRING_DATASOURCE_PASSWORD: password
+        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/workflow_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
+        SPRING_DATASOURCE_USERNAME: choerodon
+        SPRING_REDIS_DATABASE: 8
+        SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
+    preJob:
+      timeout: 1800
+      preInitDB:
+        datasource:
+          password: password
+          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/workflow_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
+          username: choerodon
+    ```
 
 - 部署服务
 
@@ -100,7 +100,7 @@ helm repo update
 - 若需了解项目详情及各项参数含义，请移步 [choerodon/gitlab-service](https://github.com/choerodon/gitlab-service)。
 - 如何获取 `GITLAB_PRIVATETOKEN` 请查看[这里](http://forum.choerodon.io/t/topic/1155/2)
 - 编写参数配置文件 `gitlab-service.yaml`
-
+    <details open><summary>域名模式安装</summary>
     ```yaml
     env:
       open:
@@ -109,6 +109,17 @@ helm repo update
         GITLAB_URL: http://gitlab.example.choerodon.io
         SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
     ```
+    </details>
+    <details><summary>nodePort模式安装</summary>
+    ```yaml
+    env:
+      open:
+        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
+        GITLAB_PRIVATETOKEN: Gitlab 中获取的 private token
+        GITLAB_URL: http://192.168.xx.xx:30007
+        SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
+    ```
+    </details>
 
 - 部署服务
 
@@ -138,7 +149,7 @@ helm repo update
 - 若需了解项目详情及各项参数含义，请移步 [choerodon/devops-service](https://github.com/choerodon/devops-service)。
 
 - 编写参数配置文件 `devops-service.yaml`
-
+    <details open><summary>域名模式安装</summary>
     ```yaml
     env:
       open:
@@ -175,6 +186,45 @@ helm repo update
     service:
       enabled: true
     ```
+    </details>
+    <details><summary>nodePort模式安装</summary>
+    ```yaml
+    env:
+      open:
+        AGENT_CERTMANAGERURL: https://openchart.choerodon.com.cn/choerodon/c7n/
+        AGENT_REPOURL: https://openchart.choerodon.com.cn/choerodon/c7n/
+        AGENT_SERVICEURL: ws://192.168.xx.xx:30106/agent/
+        AGENT_VERSION: 0.21.1
+        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
+        SERVICES_GATEWAY_URL: http://192.168.xx.xx:30100
+        SERVICES_GITLAB_PROJECTLIMIT: 100
+        SERVICES_GITLAB_SSHURL: 192.168.xx.xx:30022
+        SERVICES_GITLAB_URL: http://192.168.xx.xx:30007
+        SERVICES_HARBOR_BASEURL: https://192.168.xx.xx:30003
+        SERVICES_HARBOR_INSECURESKIPTLSVERIFY: true
+        SERVICES_HARBOR_PASSWORD: Harbor12345
+        SERVICES_HARBOR_USERNAME: admin
+        SERVICES_HELM_URL: http://192.168.xx.xx:30001
+        SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
+        SPRING_DATASOURCE_PASSWORD: password
+        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/devops_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
+        SPRING_DATASOURCE_USERNAME: choerodon
+        SPRING_REDIS_DATABASE: 7
+        SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
+    ingress:
+      enabled: false
+    preJob:
+      timeout: 1800
+      preInitDB:
+        datasource:
+          password: password
+          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/devops_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
+          username: choerodon
+    service:
+      enabled: true
+      type: NodePort
+    ```
+    </details>
 
 - 部署服务
 

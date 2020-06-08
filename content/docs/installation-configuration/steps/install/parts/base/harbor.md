@@ -23,24 +23,70 @@ helm repo update
 
 ## 部署Harbor
 
-```shell
-helm install c7n/harbor \
-    --set expose.ingress.hosts.core=registry.example.choerodon.io \
-    --set externalURL=https://registry.example.choerodon.io \
-    --set persistence.persistentVolumeClaim.registry.storageClass=nfs-provisioner \
-    --set persistence.persistentVolumeClaim.jobservice.storageClass=nfs-provisioner \
-    --set persistence.persistentVolumeClaim.database.storageClass=nfs-provisioner \
-    --set persistence.persistentVolumeClaim.redis.storageClass=nfs-provisioner \
-    --set chartmuseum.enabled=false \
-    --set clair.enabled=false \
-    --set notary.enabled=false \
-    --set harborAdminPassword=Harbor12345 \
+- 若需了解项目详情及各项参数含义，请移步 [Harbor Chart](https://github.com/goharbor/harbor-helm/tree/7dfc2a629a58e61c0d0a03f1d3b5ae29a7d720be#helm-chart-for-harbor)
+- 编写参数配置文件 `harbor.yaml`
+
+    <details open><summary>域名模式安装</summary>
+    ```yaml
+    expose:
+      ingress：
+        hosts:
+          core: registry.example.choerodon.io
+    externalURL: https://registry.example.choerodon.io
+    persistence:
+      persistentVolumeClaim:
+        registry:
+          storageClass: nfs-provisioner
+        jobservice:
+          storageClass: nfs-provisioner
+        database:
+          storageClass: nfs-provisioner
+        redis:
+          storageClass: nfs-provisioner
+    chartmuseum:
+      enabled: false
+    clair:
+      enabled: false
+    notary:
+      enabled: false
+    harborAdminPassword: Harbor12345
+    ```
+    </details>
+    <details><summary>nodePort模式安装</summary>
+    ```yaml
+    expose:
+      type: nodePort
+      tls:
+        commonName: "harbor"
+    externalURL: https://192.168.xx.xx:30003
+    persistence:
+      persistentVolumeClaim:
+        registry:
+          storageClass: nfs-provisioner
+        jobservice:
+          storageClass: nfs-provisioner
+        database:
+          storageClass: nfs-provisioner
+        redis:
+          storageClass: nfs-provisioner
+    chartmuseum:
+      enabled: false
+    clair:
+      enabled: false
+    notary:
+      enabled: false
+    harborAdminPassword: Harbor12345
+    ```
+    </details>
+- 执行安装
+
+  ```shell
+  helm install c7n/harbor \
+    -f harbor.yaml \
     --version 1.2.3 \
     --name harbor \
     --namespace c7n-system
-```
-
-- 更多参数及含义请参考[Harbor Chart](https://github.com/goharbor/harbor-helm/tree/7dfc2a629a58e61c0d0a03f1d3b5ae29a7d720be#helm-chart-for-harbor)
+  ```
 
 ## 验证部署
 
@@ -106,3 +152,21 @@ Harbor启动速度较慢请等待所有Pod都为Running后进行界面查看。
 
   - 将得到的`ca.crt`证书文件拷贝至其他会使用到该Harbor的主机上
   - 证书放置于`/etc/docker/certs.d/<Harbor域名>`目录下（eg. 若Harbor域名为registry.example.choerodon.io，则将`ca.crt`证书文件放于`/etc/docker/certs.d/registry.example.choerodon.io`目录下即可）
+
+### NodePort 模式安装
+
+- 在所有会用到 Harbor 的主机上编辑`/etc/docker/daemon.json`文件，添加如下内容：
+
+    ```json
+    {
+      ...
+      "insecure-registries":["192.168.xx.xx:30003"]
+    }
+    ```
+
+- 重启docker 服务
+
+    ```
+    # systemctl daemon-reload
+    # systemctl restart docker
+    ```

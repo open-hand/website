@@ -24,23 +24,42 @@ helm repo update
 - 若需了解项目详情及各项参数含义，请移步 [helm/charts/minio](https://github.com/helm/charts/tree/master/stable/minio#minio)。
 - 编写参数配置文件 `minio.yaml`
   
-    ```
+    <details open><summary>域名模式安装</summary>
+
+    ```yaml
     mode: distributed
     accessKey: "AKIAIOSFODNN7EXAMPLE"
     secretKey: "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
     persistence:
-        enabled: true
-        storageClass: nfs-provisioner
+      enabled: true
+      storageClass: nfs-provisioner
     ingress:
-        enabled: true
-        path: /
-        hosts:
-        - minio.example.choerodon.io
+      enabled: true
+      path: /
+      hosts:
+      - minio.example.choerodon.io
     ```
 
+    </details>
+
+    <details><summary>nodePort模式安装</summary>
+
+    ```yaml
+    mode: distributed
+    accessKey: "AKIAIOSFODNN7EXAMPLE"
+    secretKey: "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
+    persistence:
+      enabled: true
+      storageClass: nfs-provisioner
+    service:
+      type: NodePort
+      nodePort: 30006
+    ```
+
+    </details>
 - 执行安装
 
-    ```
+    ```shell
     helm install c7n/minio \
         -f minio.yaml \
         --version 5.0.4 \
