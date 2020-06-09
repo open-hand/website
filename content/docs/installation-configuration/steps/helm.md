@@ -16,15 +16,6 @@ weight = 10
 
 - [部署kubernetes集群](../kubernetes)使用的是Choerodon提供的文档进行部署的
 
-## 创建ServiceAccount
-
-- 在任意一个master节点执行以下命令
-
-    ```bash
-    kubectl create serviceaccount --namespace kube-system helm-tiller
-    kubectl create clusterrolebinding helm-tiller-cluster-rule --clusterrole=cluster-admin --serviceaccount=kube-system:helm-tiller
-    ```
-
 ## 部署客户端
 
 - 在任意一个master节点执行以下命令
@@ -32,13 +23,13 @@ weight = 10
     1. 根据系统下载所需版本  
 
         ```
-        curl -L -o helm-v2.16.3-linux-amd64.tar.gz https://file.choerodon.com.cn/kubernetes-helm/v2.16.3/helm-v2.16.3-linux-amd64.tar.gz
+        curl -L -o helm-v3.1.2-linux-amd64.tar.gz https://file.choerodon.com.cn/kubernetes-helm/v3.1.2/helm-v3.1.2-linux-amd64.tar.gz
         ```
 
     1. 解压压缩包（以linux-amd64为例）
 
         ```
-        tar -zxvf helm-v2.16.3-linux-amd64.tar.gz
+        tar -zxvf helm-v3.1.2-linux-amd64.tar.gz
         ```
 
     1. 将文件移动到PATH目录中（以linux-amd64为例）
@@ -47,22 +38,11 @@ weight = 10
         sudo mv linux-amd64/helm /usr/bin/helm
         ```
 
-    1. 初始化Helm
-
-        ```
-        helm init \
-            --history-max=3 \
-            --tiller-image=registry.aliyuncs.com/google_containers/tiller:v2.16.3 \
-            --stable-repo-url=https://mirror.azure.cn/kubernetes/charts/ \
-            --service-account=helm-tiller
-        ```
-
 ## 验证部署
 
 - 执行命令，出现以下信息即部署成功。
 
     ```
     $ helm version
-    Client: &version.Version{SemVer:"v2.16.3", GitCommit:"1ee0254c86d4ed6887327dabed7aa7da29d7eb0d", GitTreeState:"clean"}
-    Server: &version.Version{SemVer:"v2.16.3", GitCommit:"1ee0254c86d4ed6887327dabed7aa7da29d7eb0d", GitTreeState:"clean"}
+    version.BuildInfo{Version:"v3.1.2", GitCommit:"d878d4d45863e42fd5cff6743294a11d28a9abce", GitTreeState:"clean", GoVersion:"go1.13.8"}
     ```

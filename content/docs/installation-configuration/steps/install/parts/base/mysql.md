@@ -24,12 +24,11 @@ helm repo update
 ### 创建mysql所需PVC
 
 ```shell
-helm install c7n/persistentvolumeclaim \
+helm upgrade --install c7n-mysql-pvc c7n/persistentvolumeclaim \
     --set accessModes={ReadWriteOnce} \
     --set requests.storage=2Gi \
     --set storageClassName=nfs-provisioner \
     --version 0.1.0 \
-    --name c7n-mysql-pvc \
     --namespace c7n-system
 ```
 
@@ -56,10 +55,9 @@ helm install c7n/persistentvolumeclaim \
 - 执行安装
 
     ```shell
-    helm install c7n/mysql \
+    helm upgrade --install c7n-mysql c7n/mysql \
         -f mysql.yaml \
         --version 0.1.3 \
-        --name c7n-mysql \
         --namespace c7n-system
     ```
 

@@ -54,10 +54,9 @@ helm repo update
 - 执行安装
 
   ```
-  helm install c7n/mysql-client \
+  helm upgrade --install create-c7nfw-db c7n/mysql-client \
       -f create-c7nfw-db.yaml \
       --version 0.1.0 \
-      --name create-c7nfw-db \
       --namespace c7n-system
   ```
 
@@ -77,9 +76,8 @@ helm repo update
 - 执行安装
   
     ```
-    helm install c7n/hzero-register \
+    helm upgrade --install hzero-register c7n/hzero-register \
       -f hzero-register.yaml \
-      --name hzero-register \
       --version 0.22.0 \
       --namespace c7n-system
     ```
@@ -121,9 +119,8 @@ helm repo update
 - 部署服务
 
     ```
-    helm install c7n/hzero-gateway \
+    helm upgrade --install hzero-gateway c7n/hzero-gateway \
         -f hzero-gateway.yaml \
-        --name hzero-gateway \
         --version 0.22.0 \
         --namespace c7n-system
     ```
@@ -165,9 +162,8 @@ helm repo update
 - 部署服务
 
     ```
-    helm install c7n/hzero-oauth \
+    helm upgrade --install hzero-oauth c7n/hzero-oauth \
         -f hzero-oauth.yaml \
-        --name hzero-oauth \
         --version 0.22.0 \
         --namespace c7n-system
     ```
@@ -215,9 +211,8 @@ helm repo update
 - 部署服务
 
     ```
-    helm install c7n/hzero-iam \
+    helm upgrade --install hzero-iam c7n/hzero-iam \
         -f hzero-iam.yaml \
-        --name hzero-iam \
         --version 0.22.0 \
         --namespace c7n-system
     ```
@@ -264,10 +259,9 @@ helm repo update
 - 部署服务
 
     ```shell
-    helm install c7n/hzero-platform \
+    helm upgrade --install hzero-platform c7n/hzero-platform \
         -f hzero-platform.yaml \
-        --name hzero-platform \
-          --version 0.22.0 \
+        --version 0.22.0 \
         --namespace c7n-system
     ```
 
@@ -311,9 +305,8 @@ helm repo update
 - 部署服务
 
     ```
-    helm install c7n/hzero-admin \
+    helm upgrade --install hzero-admin c7n/hzero-admin \
         -f hzero-admin.yaml \
-        --name hzero-admin \
         --version 0.22.0 \
         --namespace c7n-system
     ```
@@ -357,9 +350,8 @@ helm repo update
 
 - 部署服务
     ```
-    helm install c7n/hzero-asgard \
+    helm upgrade --install hzero-asgard c7n/hzero-asgard \
         -f hzero-asgard.yaml \
-        --name hzero-asgard \
         --version 0.22.0 \
         --namespace c7n-system
     ```
@@ -403,9 +395,8 @@ helm repo update
 
 - 部署服务
     ```
-    helm install c7n/hzero-monitor \
+    helm upgrade --install hzero-monitor c7n/hzero-monitor \
         -f hzero-monitor.yaml \
-        --name hzero-monitor \
         --version 0.22.0 \
         --namespace c7n-system
     ```
@@ -453,9 +444,8 @@ helm repo update
 - 部署服务
 
     ```
-    helm install c7n/hzero-file \
+    helm upgrade --install hzero-file c7n/hzero-file \
         -f hzero-file.yaml \
-        --name hzero-file \
         --version 0.22.0 \
         --namespace c7n-system
     ```
@@ -503,9 +493,8 @@ helm repo update
 
 - 部署服务
     ```
-    helm install c7n/hzero-message \
+    helm upgrade --install hzero-message c7n/hzero-message \
         -f hzero-message.yaml \
-        --name hzero-message \
         --version 0.22.0 \
         --namespace c7n-system
     ```

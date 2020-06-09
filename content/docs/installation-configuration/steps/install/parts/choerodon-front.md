@@ -40,9 +40,8 @@ helm repo update
 - 部署服务
 
   ```
-  helm install c7n/choerodon-front \
+  helm upgrade --install choerodon-front c7n/choerodon-front \
     -f choerodon-front.yaml \
-    --name choerodon-front \
     --version 0.22.0 \
     --namespace c7n-system
   ```
@@ -79,9 +78,8 @@ helm repo update
 - 部署服务
 
   ```
-  helm install c7n/hzero-front \
+  helm upgrade --install hzero-front c7n/hzero-front \
     -f hzero-front.yaml \
-    --name hzero-front \
     --version 0.22.0 \
     --namespace c7n-system
   ```
@@ -116,9 +114,8 @@ helm repo update
 
     - 部署服务
         ```
-        helm install c7n/mysql-client \
+        helm upgrade --install c7n-front-client c7n/mysql-client \
             -f c7n-front-client.yaml \
             --version 0.1.0 \
-            --name c7n-front-client \
             --namespace c7n-system
         ```

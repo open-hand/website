@@ -115,10 +115,9 @@ helm repo update
 - 执行安装
 
     ```bash
-    helm install c7n/gitlab-ha \
+    helm upgrade --install gitlab c7n/gitlab-ha \
         -f gitlab.yaml \
         --version 0.2.2 \
-        --name gitlab \
         --namespace c7n-system
     ```
 
@@ -216,7 +215,7 @@ helm upgrade gitlab c7n/gitlab-ha \
 - 记得修改`http://gitlab.example.choerodon.io`的地址为实际的gitlab地址，以 nodePort 方式安装将其替换成 `http://192.168.xx.xx:30007`
 
     ```
-    helm install c7n/mysql-client \
+    helm upgrade --install gitlab-client c7n/mysql-client \
         --set env.MYSQL_HOST=c7n-mysql.c7n-system.svc \
         --set env.MYSQL_PORT=3306 \
         --set env.MYSQL_USER=root \
@@ -232,7 +231,6 @@ helm upgrade gitlab c7n/gitlab-ha \
             'password\,implicit\,client_credentials\,authorization_code\,refresh_token'\,\
             'http://gitlab.example.choerodon.io'\,3600\,3600\,'{}'\,'default'\,1\,0\,NOW()\,0\,NOW());" \
         --version 0.1.0 \
-        --name gitlab-client \
         --namespace c7n-system
     ```
 
@@ -243,7 +241,7 @@ helm upgrade gitlab c7n/gitlab-ha \
 - 执行下面语句进行关联:
 
     ```
-    helm install c7n/postgresql-client \
+    helm upgrade --install gitlab-user-identities c7n/postgresql-client \
         --set env.PG_HOST=gitlabhq-gitlab-database.c7n-system.svc \
         --set env.PG_PORT=5432 \
         --set env.PG_USER=gitlab \
@@ -253,7 +251,6 @@ helm upgrade gitlab c7n/gitlab-ha \
             INSERT INTO identities(extern_uid\, provider\, user_id\, created_at\, updated_at) \
             VALUES ('1'\, 'oauth2_generic'\, 1\, NOW()\, NOW());" \
         --version 0.1.0 \
-        --name gitlab-user-identities \
         --namespace c7n-system
     ```
 

@@ -107,14 +107,13 @@ helm repo update
 
 - 在任意一个master节点执行下面helm命令，安装`nfs-client-provisioner`
 {{< annotation shell "提供NFS服务的主机IP地址或域名" "NFS服务共享的目录">}}
-helm install c7n/nfs-client-provisioner \
+helm upgrade --install nfs-client-provisioner c7n/nfs-client-provisioner \
     --set rbac.create=true \
     --set persistence.enabled=true \
     --set storageClass.name=nfs-provisioner \
     --set persistence.nfsServer=127.0.0.1 \(1)
     --set persistence.nfsPath=/u01/prod \(1)
     --version 0.1.1 \
-    --name nfs-client-provisioner \
     --namespace kube-system
 {{< /annotation >}}
 

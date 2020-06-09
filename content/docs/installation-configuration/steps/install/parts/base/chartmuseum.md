@@ -65,11 +65,10 @@ helm repo update
 - 执行部署
   
     ```shell
-    helm install c7n/chartmuseum \
+    helm upgrade --install chartmuseum c7n/chartmuseum \
         -f chartmuseum.yaml \
         --version 2.6.0 \
-        --name chartmuseum \
-        --namespace c7n-system
+        --namespace infrastructure
     ```
 
 ## 验证部署

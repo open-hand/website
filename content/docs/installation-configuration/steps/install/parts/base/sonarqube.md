@@ -37,7 +37,7 @@ helm repo update
 </blockquote>
 
 ```
-helm install c7n/sonarqube \
+helm upgrade --install sonarqube c7n/sonarqube \
     --set persistence.enabled=true \
     --set persistence.storageClass=nfs-provisioner \
     --set postgresql.persistence.storageClass=nfs-provisioner \
@@ -45,7 +45,6 @@ helm install c7n/sonarqube \
     --set ingress.'hosts[0]'=sonarqube.example.choerodon.io \
     --set plugins.'install[0]'=https://file.choerodon.com.cn/choerodon-install/sonarqube/sonar-auth-choerodonoauth-plugin-1.5.2-RELEASE.jar \
     --version 0.15.0-3 \
-    --name sonarqube \
     --namespace c7n-system
 ```
 
@@ -79,7 +78,7 @@ helm install c7n/sonarqube \
 - 记得修改`http://sonarqube.example.choerodon.io`为实际的SonarQube地址
   
     ```
-    helm install c7n/mysql-client \
+    helm upgrade --install sonarqube-client c7n/mysql-client \
         --set env.MYSQL_HOST=c7n-mysql.c7n-system.svc \
         --set env.MYSQL_PORT=3306 \
         --set env.MYSQL_USER=root \
@@ -95,7 +94,6 @@ helm install c7n/sonarqube \
             'password\,implicit\,client_credentials\,authorization_code\,refresh_token'\,\
             'http://sonarqube.example.choerodon.io/oauth2/callback/choerodon'\,3600\,3600\,'{}'\,'default'\,1\,0\,NOW()\,0\,NOW());" \
         --version 0.1.0 \
-        --name sonarqube-client \
         --namespace c7n-system
     ```
 

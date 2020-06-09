@@ -60,10 +60,9 @@ helm repo update
 - 执行安装
 
     ```shell
-    helm install c7n/minio \
+    helm upgrade --install minio c7n/minio \
         -f minio.yaml \
         --version 5.0.4 \
-        --name minio \
         --namespace c7n-system
     ```
 

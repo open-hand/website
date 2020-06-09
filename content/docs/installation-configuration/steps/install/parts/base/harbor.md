@@ -81,10 +81,9 @@ helm repo update
 - 执行安装
 
   ```shell
-  helm install c7n/harbor \
+  helm upgrade --install harbor c7n/harbor \
     -f harbor.yaml \
     --version 1.2.3 \
-    --name harbor \
     --namespace c7n-system
   ```
 

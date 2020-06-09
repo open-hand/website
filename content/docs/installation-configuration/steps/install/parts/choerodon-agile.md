@@ -40,10 +40,9 @@ helm repo update
 - 执行安装
 
     ```shell
-    helm install c7n/mysql-client \
+    helm upgrade --install create-c7nagile-db c7n/mysql-client \
       -f create-c7nagile-db.yaml \
       --version 0.1.0 \
-      --name create-c7nagile-db \
       --namespace c7n-system
     ```
 
@@ -76,9 +75,8 @@ helm repo update
 - 部署服务
 
     ```shell
-    helm install c7n/agile-service \
+    helm upgrade --install agile-service c7n/agile-service \
       -f agile-service.yaml \
-      --name agile-service \
       --version 0.22.0 \
       --namespace c7n-system
     ```
@@ -125,9 +123,8 @@ helm repo update
 - 部署服务
 
     ```
-    helm install c7n/test-manager-service \
+    helm upgrade --install test-manager-service c7n/test-manager-service \
       -f test-manager-service.yaml \
-      --name test-manager-service \
       --version 0.22.0 \
       --namespace c7n-system
     ```
@@ -153,9 +150,8 @@ helm repo update
 - 安装 elasticsearch
 
     ```
-    helm install c7n/elasticsearch-kb \
+    helm upgrade --install elasticsearch-kb c7n/elasticsearch-kb \
       --version 0.21.0 \
-      --name elasticsearch-kb \
       --namespace c7n-system
     ```
 
@@ -188,9 +184,8 @@ helm repo update
 - 部署服务
 
     ``` 
-    helm install c7n/knowledgebase-service \
+    helm upgrade --install knowledgebase-service c7n/knowledgebase-service \
       -f knowledgebase-service.yaml \
-      --name knowledgebase-service \
       --version 0.22.0 \
       --namespace c7n-system
     ```
