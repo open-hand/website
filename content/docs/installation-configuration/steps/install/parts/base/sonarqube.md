@@ -69,33 +69,27 @@ helm upgrade --install sonarqube c7n/sonarqube \
   </ul>
 </blockquote>
 
-<blockquote class="warning">
-0.19以前的base-service的数据库为iam_service,0.19以后更名为base_service,对于配置文件中是使用iam_service还是base_service遵从一下标准：
-如果是新安装的版本，就使用base_service，如果是升级上来的版本，原版本数据库使用的是什么数据库名称，配置文件中就配置对应的数据库名称
-</blockquote>
-
 ### 添加Choerodon Client
-- 记得修改`http://sonarqube.example.choerodon.io`为实际的SonarQube地址
-  
+
+- 编写参数配置文件 `sonarqube-client.yaml`
+
+    ```yaml
+    env:
+      MYSQL_HOST: c7n-mysql.c7n-system.svc
+      MYSQL_PASS: password
+      MYSQL_PORT: 3306
+      MYSQL_USER: root
+      SQL_SCRIPT: |
+        INSERT INTO hzero_platform.oauth_client (name,organization_id,resource_ids,secret,scope,authorized_grant_types,web_server_redirect_uri,access_token_validity,refresh_token_validity,additional_information,auto_approve,object_version_number,created_by,creation_date,last_updated_by,last_update_date,enabled_flag,time_zone)VALUES('sonar',1,'default','sonarsonar','default','password,implicit,client_credentials,authorization_code,refresh_token','http://sonarqube.example.choerodon.io',3600,3600,'{}','default',1,0,NOW(),0,NOW(),1,'GMT+8');
     ```
-    helm upgrade --install sonarqube-client c7n/mysql-client \
-        --set env.MYSQL_HOST=c7n-mysql.c7n-system.svc \
-        --set env.MYSQL_PORT=3306 \
-        --set env.MYSQL_USER=root \
-        --set env.MYSQL_PASS=password \
-        --set env.SQL_SCRIPT="\
-            INSERT INTO base_service.oauth_client ( \
-            name\,organization_id\,resource_ids\,secret\,scope\,\
-            authorized_grant_types\,web_server_redirect_uri\,\
-            access_token_validity\,refresh_token_validity\,\
-            additional_information\,auto_approve\,object_version_number\,\
-            created_by\,creation_date\,last_updated_by\,last_update_date)\
-            VALUES('sonar'\,1\,'default'\,'sonarsonar'\,'default'\,\
-            'password\,implicit\,client_credentials\,authorization_code\,refresh_token'\,\
-            'http://sonarqube.example.choerodon.io/oauth2/callback/choerodon'\,3600\,3600\,'{}'\,'default'\,1\,0\,NOW()\,0\,NOW());" \
-        --version 0.1.0 \
-        --namespace c7n-system
-    ```
+
+    - 部署服务
+        ```
+        helm upgrade --install sonarqube-client c7n/mysql-client \
+            -f sonarqube-client.yaml \
+            --version 0.1.0 \
+            --namespace c7n-system
+        ```
 
 ### 配置用户权限
 
