@@ -25,7 +25,6 @@ helm repo update
 
 - 创建参数配置文件 `gitlab.yaml`
 
-    <details open><summary>域名模式安装</summary>
     ```
     core:
       env:
@@ -63,54 +62,6 @@ helm repo update
       internal:
         password: "changeit"
     ```
-
-    </deatils>
-    <details><summary>nodePort模式安装</summary>
-    ```
-    core:
-      env:
-        # 任意节点 IP
-        GITLAB_HOST: "192.168.xx.xx"
-        OAUTH_ENABLED: false
-        OAUTH_AUTO_SIGN_IN_WITH_PROVIDER: "oauth2_generic"
-        OAUTH_ALLOW_SSO: "'oauth2_generic'"
-        OAUTH_BLOCK_AUTO_CREATED_USERS: false
-        OAUTH_GENERIC_API_KEY: "gitlabhq"
-        OAUTH_GENERIC_APP_SECRET: "gitlabhq"
-        # choerodon api 访问地址
-        OAUTH_GENERIC_SITE: "http://192.168.xx.xx:30100"
-        OAUTH_GENERIC_USER_INFO_URL: "/oauth/api/user"
-        OAUTH_GENERIC_AUTHORIZE_URL: "/oauth/oauth/authorize"
-        OAUTH_GENERIC_TOKEN_URL: "/oauth/oauth/token"
-        OAUTH_GENERIC_ROOT_PATH: "'userAuthentication','principal'"
-        OAUTH_GENERIC_ID_PATH: "'userAuthentication','principal','userId'"
-        OAUTH_GENERIC_USER_NICKNAME: "username"
-        OAUTH_GENERIC_USER_NAME: "usernmae"
-    expose:
-      type: nodePort
-      nodePort:
-        ports:
-          http:
-            nodePort: 30007
-          ssh:
-            nodePort: 30022
-    redis:
-      internal:
-        password: password
-    persistence:
-      enabled: true
-      persistentVolumeClaim:
-        core:
-          storageClass: nfs-provisioner
-        redis:
-          storageClass: nfs-provisioner
-        database:
-          storageClass: nfs-provisioner
-    database:
-      internal:
-        password: "changeit"
-    ```
-    </deatils>
 
 - 执行安装
 

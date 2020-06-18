@@ -31,11 +31,6 @@ helm repo update
 注意：本事例中 PostgreSql 数据库搭建仅为快速体验 SonarQube 而编写，由于使用了NFS存储故并不能保证其稳定运行或数据不丢失，您可以参照 PostgreSql 官网进行搭建。
 </blockquote>
 
-<blockquote class="warning">
-注意：当前choerodon版本为0.19.x及以上版本时，SonarQube插件版本为sonar-auth-choerodonoauth-plugin-1.5.2-RELEASE.jar；
-当前choerodon版本为0.18.x及以下版本时，SonarQube插件版本为sonar-auth-choerodonoauth-plugin-1.4-RELEASE.jar；
-</blockquote>
-
 ```
 helm upgrade --install sonarqube c7n/sonarqube \
     --set persistence.enabled=true \
@@ -83,13 +78,14 @@ helm upgrade --install sonarqube c7n/sonarqube \
         INSERT INTO hzero_platform.oauth_client (name,organization_id,resource_ids,secret,scope,authorized_grant_types,web_server_redirect_uri,access_token_validity,refresh_token_validity,additional_information,auto_approve,object_version_number,created_by,creation_date,last_updated_by,last_update_date,enabled_flag,time_zone)VALUES('sonar',1,'default','sonarsonar','default','password,implicit,client_credentials,authorization_code,refresh_token','http://sonarqube.example.choerodon.io',3600,3600,'{}','default',1,0,NOW(),0,NOW(),1,'GMT+8');
     ```
 
-    - 部署服务
-        ```
-        helm upgrade --install sonarqube-client c7n/mysql-client \
-            -f sonarqube-client.yaml \
-            --version 0.1.0 \
-            --namespace c7n-system
-        ```
+- 部署服务
+  
+    ```
+    helm upgrade --install sonarqube-client c7n/mysql-client \
+        -f sonarqube-client.yaml \
+        --version 0.1.0 \
+        --namespace c7n-system
+    ```
 
 ### 配置用户权限
 

@@ -20,7 +20,7 @@ helm repo update
 ## 创建数据库
 
 - 编写参数配置文件 `create-c7nagile-db.yaml`
-    ```yaml
+    ```
     env:
       MYSQL_HOST: c7n-mysql.c7n-system.svc
       MYSQL_PORT: "3306"

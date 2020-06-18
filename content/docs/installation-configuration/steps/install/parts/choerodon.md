@@ -28,7 +28,7 @@ helm repo update
 
 - 编写参数配置文件 `create-c7nfw-db.yaml`
 
-    ```yaml
+    ```
     env:
       MYSQL_HOST: c7n-mysql.c7n-system.svc
       MYSQL_PORT: "3306"
