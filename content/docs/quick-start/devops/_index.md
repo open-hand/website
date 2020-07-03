@@ -1,5 +1,5 @@
 ﻿+++
-title = "7.DevOps流水线快速入门"
+title = "7.DevOps功能快速入门"
 weight = 7
 description = ""
 +++

@@ -1,12 +1,12 @@
 +++
-title = "7.4.集群管理"
+title = "7.4.创建集群"
 description = ""
 weight = 4
 +++
 
-# 集群管理
+# 创建集群
 ## 目标
-集群是用于运行k8s的托管群组。有了集群，我们就可以以此来统一调配资源，管理环境。本文档面向初次使用 Choerodon 猪齿鱼的用户，引导新手用户在 Choerodon 猪齿鱼创建集群。
+集群是用于运行k8s的托管群组，一个Choerodon集群对应为一个k8s集群。有了集群，我们才能以此来统一调配资源，管理环境。本文档旨在引导新手用户在 Choerodon 猪齿鱼平台中创建集群。
 
 ## 前置条件
 1. 已部署安装Choerodon 猪齿鱼，并使用默认的 admin 用户名和密码登录了 Choerodon 系统。
@@ -17,13 +17,13 @@ weight = 4
     |admin|组织管理员|管理组织下的项目和成员（组织成员、项目所有者员、项目成员）|
 3. 已完成项目创建及团队成员建设。
 
-## 创建集群
 ### 操作示例  
 
 1. 路径：部署->集群->集群管理；
+   ![image](/docs/quick-start/devops/image/create-cluster-1.png)
 
 2. 点击左上方的 `创建集群`，右侧会弹出创建集群页面，输入相关信息，包括集群编码、集群名称和集群描述；  
-   ![image](/docs/quick-start/devops/image/cluster-1.png)
+   ![image](/docs/quick-start/devops/image/create-cluster-2.png)
 
 3. 填写完成后，点击`创建`，界面会自动生成可执行的shell脚本命令，其中各个参数已经由后端服务自动生成。  
 
@@ -46,7 +46,8 @@ weight = 4
 
  - helm 的版本必须与服务器上helm版本一致。
 
-5. 执行成功后回到集群管理界面，便可以看到之前创建好的集群状态变为连接状态。
+5. 执行成功后回到集群管理界面，便可以看到之前创建好的集群状态变为连接状态。  
 
-## 下一步
-[环境配置](../../../quick-start/devops/environment-configuration)
+
+## 下一步  
+[创建一个环境](../../../quick-start/devops/create-environment)
