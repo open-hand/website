@@ -23,8 +23,9 @@ weight = 1
 
 **第一步：** 使用项目所有者的角色用户登录Choerodon系统（创建项目的人为项目所有者角色），如果想使用其它用户操作，请先给该用户在猪齿鱼研发项目下分配项目所有者角色，然后登录选择项目猪齿鱼研发。
 
-**第二步：** 路径：开发->应用服务；
-![image](/docs/quick-start/devops/image/create-applications-1.jpeg)
+**第二步：** 路径：开发->应用服务；  
+
+ ![image](/docs/quick-start/devops/image/create-applications-1.jpeg)
 
 
 **第三步：** 点击[导入应用服务](/zh/docs/user-guide/development/application-service/import/)，右侧会弹出操作页面，点击`从GitHub导入`，选择`系统预设模板`，应用模板选择`MicroService`模板，然后在页面中选择服务类型为`普通服务`，输入服务编码、服务名称。点击`导入`，即可创建一个应用服务，创建成功后，您可以进行后续的应用服务开发。
@@ -36,17 +37,18 @@ weight = 1
 * 应用服务名称: 猪齿鱼Todo服务
 * 应用服务模板: MicroService
 
-![image](/docs/quick-start/devops/image/create-applications-2.png)
+ ![image](/docs/quick-start/devops/image/create-applications-2.png)  
 
 **第四步：** 当应用服务表单提交之后，可点击项目下-应用服务菜单，查看到新建的应用服务，当应用服务的状态是启用时，表示应用服务创建成功。
 
-**第五步：** 在创建应用服务的同时，系统会对应在Gitlab中创建一个仓库，点击仓库地址，可以链接到应用服务对应在Gitlab的代码仓库。
+**第五步：** 在创建应用服务的同时，系统会对应在Gitlab中创建一个仓库，点击仓库地址，可以链接到应用服务对应在Gitlab的代码仓库。  
 
-![image](/docs/quick-start/devops/image/create-applications-3.png)  
+ ![image](/docs/quick-start/devops/image/create-applications-3.png)  
 
   
-进入仓库地址，gitlab仓库里会生成相应模板的相关文件。
-![image](/docs/quick-start/devops/image/create-applications-4.png) 
+进入仓库地址，gitlab仓库里会生成相应模板的相关文件。    
+
+ ![image](/docs/quick-start/devops/image/create-applications-4.png) 
 
 Choerodon 平台与 Gitlab 名词关系如下：
 
