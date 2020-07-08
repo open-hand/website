@@ -17,7 +17,7 @@ weight = 4
     |admin|组织管理员|管理组织下的项目和成员（组织成员、项目所有者员、项目成员）|
 3. 已完成项目创建及团队成员建设。
 
-### 操作示例  
+## 操作示例  
 
 1. 路径：部署->集群->集群管理；
    ![image](/docs/quick-start/devops/image/create-cluster-1.png)
