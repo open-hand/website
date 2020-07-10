@@ -23,3 +23,4 @@ weight = 3
 代码管理包含了与开发过程相关的一系列操作及流程，其中包括 [分支管理](./code-manage/manage-branch)、[合并请求](./code-manage/merge-request)、[持续集成](./code-manage/integration)、[标记](./code-manage/sign)以及[代码质量](./code-manage/code-quality)。
 
 了解如何用Choerodon代码管理模块进行开发，详情请查看[代码管理](./code-manage)。
+ 
