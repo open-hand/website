@@ -94,7 +94,7 @@ helm repo update
     env:
       open:
         EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://hzero-register.c7n-system:8000/eureka/
-        GITLAB_URL: https://code.choerodon.com.cn
+        GITLAB_URL: https://code.example.choerodon.io
         GITLAB_PRIVATETOKEN: YrAUZrvXDuqwcmDSzrJj
     ```
 
@@ -149,22 +149,22 @@ helm repo update
         SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system:3306/devops_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
         SPRING_DATASOURCE_USERNAME: choerodon
         SPRING_DATASOURCE_PASSWORD: password
-        SERVICES_GITLAB_URL: https://code.choerodon.com.cn/
-        SERVICES_GITLAB_SSHURL: code.choerodon.com.cn
+        SERVICES_GITLAB_URL: https://code.example.choerodon.io/
+        SERVICES_GITLAB_SSHURL: code.example.choerodon.io
         SERVICES_GITLAB_PROJECTLIMIT: 100
-        SERVICES_HELM_URL: http://chart.choerodon.com.cn
-        SERVICES_HARBOR_BASEURL: https://registry.choerodon.com.cn
+        SERVICES_HELM_URL: http://chart.example.choerodon.io
+        SERVICES_HARBOR_BASEURL: https://registry.example.choerodon.io
         SERVICES_HARBOR_USERNAME: choerodon
-        SERVICES_HARBOR_PASSWORD: wRtKPuD7QuVKh6OE
+        SERVICES_HARBOR_PASSWORD: password
         SERVICES_HARBOR_INSECURESKIPTLSVERIFY: true
-        SERVICES_GATEWAY_URL: https://api.choerodon.com.cn
-        AGENT_VERSION: 0.22.0
-        AGENT_SERVICEURL: wss://devops.service.choerodon.com.cn/websocket
-        AGENT_REPOURL: https://openchart.choerodon.com.cn/choerodon/c7n/
-        AGENT_CERTMANAGERURL: https://openchart.choerodon.com.cn/choerodon/c7n/
+        SERVICES_GATEWAY_URL: https://api.example.choerodon.io
+        AGENT_VERSION: 0.22.3
+        AGENT_SERVICEURL: wss://devops.service.example.choerodon.io/websocket
+        AGENT_REPOURL: https://openchart.example.choerodon.io/choerodon/c7n/
+        AGENT_CERTMANAGERURL: https://openchart.example.choerodon.io/choerodon/c7n/
     ingress:
       enabled: true
-      host: devops.service.choerodon.com.cn
+      host: devops.service.example.choerodon.io
     ```
 
 - 部署服务
