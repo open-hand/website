@@ -27,6 +27,12 @@ helm repo update
       open:
         BUILD_CLIENT_ID: choerodon
         BUILD_API_HOST: http://api.example.choerodon.io
+        BUILD_CUSTOMIZE_ICON_NAME: icon-font  
+        TOP_MENU_LABELS: HZERO_MENU
+        TOP_MENU_UNION_LABEL: true
+        BUILD_TOP_MENU_LABELS: HZERO_MENU
+        BUILD_TOP_MENU_UNION_LABEL: true
+        CUSTOMIZE_ICON_NAME: BUILD_CUSTOMIZE_ICON_NAME
     ```
 
 - 部署服务
