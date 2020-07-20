@@ -67,7 +67,7 @@ helm repo update
     ```
     helm upgrade --install workflow-service c7n/workflow-service \
         -f workflow-service.yaml \
-        --version 0.22.0 \
+        --version 0.22.1 \
         --namespace c7n-system
     ```
 
@@ -103,7 +103,7 @@ helm repo update
     ```
     helm upgrade --install gitlab-service c7n/gitlab-service \
         -f gitlab-service.yaml \
-        --version 0.22.0 \
+        --version 0.22.1 \
         --namespace c7n-system
     ```
 
@@ -133,6 +133,13 @@ helm repo update
           url: jdbc:mysql://c7n-mysql.c7n-system:3306/?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
           username: choerodon
           password: password
+        datasources:
+          # 多数据源初始化 初始化菜单数据
+          platform:
+             url: jdbc:mysql://c7n-mysql.c7n-system:3307/?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
+             username: username
+             password: password
+             driver: com.mysql.jdbc.Driver
     env:
       open:
         SPRING_REDIS_HOST: c7n-redis.c7n-system
@@ -165,7 +172,7 @@ helm repo update
     ```
     helm upgrade --install devops-service c7n/devops-service \
         -f devops-service.yaml \
-        --version 0.22.0 \
+        --version 0.22.3 \
         --namespace c7n-system
     ```
 

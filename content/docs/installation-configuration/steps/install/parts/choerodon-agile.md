@@ -59,6 +59,13 @@ helm repo update
           url: jdbc:mysql://c7n-mysql.c7n-system:3306/?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
           username: choerodon
           password: password
+        datasources:
+          # 多数据源初始化
+          platform:
+             url: jdbc:mysql://c7n-mysql.c7n-system:3307/?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
+             username: username
+             password: password
+             driver: com.mysql.jdbc.Driver
     env:
       open:
         SPRING_APPLICATION_NAME: agile-service
@@ -69,7 +76,7 @@ helm repo update
         SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system:3306/agile_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowMultiQueries=true&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
         SPRING_DATASOURCE_USERNAME: choerodon
         SPRING_DATASOURCE_PASSWORD: password
-        SERVICES_ATTACHMENT_URL: https://minio.choerodon.com.cn
+        SERVICES_ATTACHMENT_URL: https://minio.example.io.cn
     ```
 
 - 部署服务
@@ -107,6 +114,13 @@ helm repo update
           url: jdbc:mysql://c7n-mysql.c7n-system:3306/?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
           username: choerodon
           password: password
+        datasources:
+          # 多数据源初始化
+          platform:
+             url: jdbc:mysql://c7n-mysql.c7n-system:3307/?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
+             username: username
+             password: password
+             driver: com.mysql.jdbc.Driver
     env:
       open:
         SPRING_REDIS_HOST: c7n-redis.c7n-system
@@ -117,7 +131,7 @@ helm repo update
         SPRING_DATASOURCE_USERNAME: choerodon
         SPRING_DATASOURCE_PASSWORD: password
         CHOERODON_CLEANPERMISSION: false
-        SERVICES_ATTACHMENT_URL: https://minio.choerodon.com.cn
+        SERVICES_ATTACHMENT_URL: https://minio.example.io.cn
     ```
 
 - 部署服务
@@ -168,6 +182,13 @@ helm repo update
           url: jdbc:mysql://c7n-mysql.c7n-system:3306/?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
           username: choerodon
           password: password
+        datasources:
+          # 多数据源初始化 初始化菜单数据
+          platform:
+             url: jdbc:mysql://c7n-mysql.c7n-system:3307/?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
+             username: username
+             password: password
+             driver: com.mysql.jdbc.Driver
     env:
       open:
         SPRING_REDIS_HOST: c7n-redis.c7n-system
