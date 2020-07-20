@@ -151,7 +151,7 @@ helm repo update
 
     ```
     helm upgrade --install elasticsearch-kb c7n/elasticsearch-kb \
-      --version 0.22.0 \
+      --version 0.22.1 \
       --namespace c7n-system
     ```
 
