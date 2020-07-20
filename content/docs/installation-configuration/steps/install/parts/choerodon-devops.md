@@ -57,9 +57,6 @@ helm repo update
         SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system:3306/workflow_service?useUnicode=true&characterEncoding=utf-8&useSSL=false?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
         SPRING_DATASOURCE_USERNAME: choerodon
         SPRING_DATASOURCE_PASSWORD: password
-        SPRING_REDIS_HOST: c7n-redis.c7n-system
-        SPRING_REDIS_PORT: 6379
-        SPRING_REDIS_DATABASE: 9
     ```
 
 - 部署服务
