@@ -97,6 +97,57 @@ helm repo update
     UP
     ```
 
+## 部署 hzero platform
+
+- 若需了解项目详情及各项参数含义，请移步 [choerodon/hzero-platform](https://github.com/choerodon/hzero-platform)。
+
+- 编写参数配置文件 `hzero-platform.yaml`
+
+    ```yaml
+    preJob:
+      preInitDB:
+        datasource:
+          url: jdbc:mysql://c7n-mysql.c7n-system:3306/?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
+          username: choerodon
+          password: password
+          driver: com.mysql.jdbc.Driver
+    env:
+      open:
+        HZERO_PLATFORM_HTTP_PROTOCOL: http
+        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register.c7n-system:8000/eureka/
+        SPRING_REDIS_HOST: c7n-redis.c7n-system
+        SPRING_REDIS_PORT: 6379
+        # 此db不可更改
+        SPRING_REDIS_DATABASE: 1
+        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system:3306/hzero_platform?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
+        SPRING_DATASOURCE_USERNAME: choerodon
+        SPRING_DATASOURCE_PASSWORD: password
+    ```
+
+- 部署服务
+
+    ```shell
+    helm upgrade --install hzero-platform c7n/hzero-platform \
+        -f hzero-platform.yaml \
+        --version 0.22.1 \
+        --namespace c7n-system
+    ```
+
+- 验证部署
+  - 验证命令
+  
+    ```
+    curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=hzero-platform -o jsonpath="{.items[0].status.podIP}"):8101/actuator/health | jq -r .status
+    ```
+
+  - 出现以下类似信息即为成功部署
+  
+    ```text
+    UP
+    ```
+    
+
+
 ## 部署 hzero admin
 
 - 若需了解项目详情及各项参数含义，请移步 [choerodon/hzero-admin](https://github.com/choerodon/hzero-admin)。
@@ -257,7 +308,7 @@ helm repo update
         SPRING_REDIS_PORT: 6379
         # 此db不可更改
         SPRING_REDIS_DATABASE: 1
-        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system:3306/hzero_message?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
+        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system:3306/hzero_admin?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
         SPRING_DATASOURCE_USERNAME: choerodon
         SPRING_DATASOURCE_PASSWORD: password
     ```
@@ -370,56 +421,6 @@ helm repo update
   - 出现以下类似信息即为成功部署
 
     ```
-    UP
-    ```
-
-
-## 部署 hzero platform
-
-- 若需了解项目详情及各项参数含义，请移步 [choerodon/hzero-platform](https://github.com/choerodon/hzero-platform)。
-
-- 编写参数配置文件 `hzero-platform.yaml`
-
-    ```yaml
-    preJob:
-      preInitDB:
-        datasource:
-          url: jdbc:mysql://c7n-mysql.c7n-system:3306/?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
-          username: choerodon
-          password: password
-          driver: com.mysql.jdbc.Driver
-    env:
-      open:
-        HZERO_PLATFORM_HTTP_PROTOCOL: http
-        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register.c7n-system:8000/eureka/
-        SPRING_REDIS_HOST: c7n-redis.c7n-system
-        SPRING_REDIS_PORT: 6379
-        # 此db不可更改
-        SPRING_REDIS_DATABASE: 1
-        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system:3306/hzero_platform?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
-        SPRING_DATASOURCE_USERNAME: choerodon
-        SPRING_DATASOURCE_PASSWORD: password
-    ```
-
-- 部署服务
-
-    ```shell
-    helm upgrade --install hzero-platform c7n/hzero-platform \
-        -f hzero-platform.yaml \
-        --version 0.22.1 \
-        --namespace c7n-system
-    ```
-
-- 验证部署
-  - 验证命令
-  
-    ```
-    curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=hzero-platform -o jsonpath="{.items[0].status.podIP}"):8101/actuator/health | jq -r .status
-    ```
-
-  - 出现以下类似信息即为成功部署
-  
-    ```text
     UP
     ```
 
