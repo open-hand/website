@@ -131,9 +131,10 @@ helm repo update
           username: choerodon
           password: password
         datasources:
-          # 多数据源初始化 初始化菜单数据
+          # 多数据源初始化初始化菜单数据  
+          # 支持框架数据和devops进行分库 指定菜单初始化地址
           platform:
-             url: jdbc:mysql://c7n-mysql.c7n-system:3307/?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
+             url: jdbc:mysql://c7n-mysql.c7n-system:3306/?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
              username: username
              password: password
              driver: com.mysql.jdbc.Driver
