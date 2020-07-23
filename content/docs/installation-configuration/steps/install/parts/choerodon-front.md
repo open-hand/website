@@ -67,7 +67,7 @@ helm repo update
         HEADER_TITLE_NAME: Choerodon | 多云应用技术集成平台
         COOKIE_SERVER: http://app.example.choerodon.io
         TITLE_NAME: Choerodon | 多云应用技术集成平台
-        WEBSOCKET_SERVER: wss://notify.example.choerodon.io
+        WEBSOCKET_SERVER: ws://notify.example.choerodon.io
         FILE_SERVER: http://minio.example.choerodon.io
         HZERO_FRONT: http://hzero.example.choerodon.io
         DEVOPS_WEBSOCKET_SECRET_KEY: devops_ws
