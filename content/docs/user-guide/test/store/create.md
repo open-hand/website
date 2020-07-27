@@ -38,6 +38,10 @@ weight = 2
 
 填写完测试用例信息后，点击`创建`完成。
 
+<blockquote class="note">
+         可以使用tab键快速切换步骤单元格。
+      </blockquote>
+
 ## 4. 阅读更多
 
 - [管理测试用例](../manage)
