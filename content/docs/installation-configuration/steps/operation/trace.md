@@ -1,7 +1,7 @@
 +++
 title = "调用链部署"
 description = "调用链部署"
-weight = 26
+weight = 28
 +++
 
 ## 前置要求与约定
@@ -22,16 +22,77 @@ helm repo add c7n https://openchart.choerodon.com.cn/choerodon/c7n/
 helm repo update
 ```
 
-### 安装调用链
+### 部署Mysql
 
-```
-helm install c7n/skywalking \
-    --set oap.elasticsearch.host=elasticsearch.logging.svc:9200 \
-    --set oap.env.JAVA_OPTS="-Xms2048M -Xmx2048M" \
-    --set ui.service.enabled=true \
-    --set ui.ingress.enabled=true \
-    --set ui.ingress."hosts[0]"=skywalking.example.choerodon.io \
-    --version 6.5.1 \
-    --name skywalking \
+#### 创建mysql所需PVC
+
+```shell
+helm install c7n/persistentvolumeclaim \
+    --set accessModes={ReadWriteOnce} \
+    --set requests.storage=2Gi \
+    --set storageClassName=ssd \
+    --version 0.1.0 \
+    --name skywalking-mysql-pvc \
     --namespace logging
 ```
+
+#### 部署mysql
+
+- 编写配置文件`skywalking-mysql.yaml`
+
+    ```yaml
+    config:
+      character_set_server: utf8mb4
+      collation_server: utf8mb4_general_ci
+      lower_case_table_names: 1
+      max_allowed_packet: 32M
+      max_connections: 1500
+    env:
+      MYSQL_DATABASE: skywalking
+      MYSQL_ROOT_PASSWORD: password
+    persistence:
+      enabled: true
+      existingClaim: skywalking-mysql-pvc
+    service:
+      enabled: ture
+    ```
+
+- 执行安装
+
+    ```
+    helm install c7n/mysql \
+        -f skywalking-mysql.yaml \
+        --version 0.1.3 \
+        --name skywalking-mysql \
+        --namespace logging
+    ```
+
+
+### 安装 skywalking
+
+- 编写配置文件`skywalking.yaml`
+  
+    ```
+    mysqlClient:
+      env:
+        MYSQL_DATABASE: skywalking
+        MYSQL_HOST: skywalking-mysql
+        MYSQL_PASS: password
+        MYSQL_PORT: "3306"
+        MYSQL_USER: root
+    ui:
+      ingress:
+        enabled: true
+        hosts:
+        - skywalking.example.choerodon.io
+        path: /
+    ```
+
+- 执行安装
+    ```
+    helm install c7n/skywalking \
+        -f skywalking.yaml \
+        --version 6.6.0 \
+        --name skywalking \
+        --namespace logging
+    ```
