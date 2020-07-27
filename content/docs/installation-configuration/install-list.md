@@ -57,4 +57,4 @@ weight = 5
 | test manager service  | 测试管理服务     | 0.22.2 |
 | knowledgebase service | 知识服务        | 0.22.1 |
 | choerodon front       | Choerodon 前端  | 0.22.0 |
-| hzero front           | hzero 前端      | 0.22.0 |
+| hzero front           | hzero 前端      | 0.22.1 |

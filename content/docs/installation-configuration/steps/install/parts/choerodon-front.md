@@ -34,7 +34,7 @@ helm repo update
   ```
   helm upgrade --install hzero-front c7n/hzero-front \
     -f hzero-front.yaml \
-    --version 0.22.0 \
+    --version 0.22.1 \
     --namespace c7n-system
   ```
 
