@@ -6,8 +6,7 @@ weight = 28
 
 ## 前置要求与约定
 
-调用链作为独立的一部分，你可以选择安装或者不安装，如果选择安装需要安装Elasticseach数据库。如何安装请参考[此处](../logging),
-Choerodon从0.12版本开始支持Skywalking，如果您使用之前的版本请安装zipkin。
+- 本文日志收集安装的是开源软件 `skywalking`， 若需了解项目详情及各项参数含义，请移步 [skywalking](https://skywalking.apache.org/)。
 
 ## 部署调用链
 
