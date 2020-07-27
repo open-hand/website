@@ -1,6 +1,6 @@
 +++
-title = "第六步：安装监控及日志(可选)"
-description = "第六步：安装监控及日志(可选)"
+title = "第六步：安装监控及日志(实验性)"
+description = "第六步：安装监控及日志(实验性)"
 date = 2018-03-30T13:06:38+08:00
 draft = false
 weight = 27
@@ -12,7 +12,6 @@ weight = 27
 
 <blockquote class="warning">
   <ul>
-  <li>如果需要部署调用链，则必须先安装Elasticsearch</li>
   <li>部署下列服务需要额外的资源</li>
   <li>安装命令基于NFS存储进行部署，非NFS存储不能使用本教程命令</li>
   <li>请确认集群中每个节点都安装了nfs-utils，若未安装请进行<a href="../nfs/#客户端挂载nfs服务器共享目录" target="_blank">安装</a></li>
@@ -27,6 +26,3 @@ weight = 27
     - 内存信息：4G及以上
     - 磁盘: ssd或高速存储介质50G及以上(根据实际情况增加磁盘)
     - 节点数量：3+       
-    <blockquote class="note">
-    由于Elasticsearch大量的io操作，部署Elasticsearch时会将Elasticseach分别部署在不同的节点。即使某节点有很大的内存剩余也不会部署两个Elasticsearch到同一节点上。
-    </blockquote>
