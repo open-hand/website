@@ -95,9 +95,9 @@ weight = 4
 3. 选择您要修改的字段，并且输入对应的修改内容；
 4. 点击确定即可修改成功。
 
-
 <blockquote class="note">提示：无法修改的内容会自动跳过。例如：修改故事点时，任务类型的问题，没有此字段会自动跳过</blockquote>
 
+![image](/docs/user-guide/cooperation/work-lists/image/issue-01.gif)
 
 ## 8. 阅读更多
 
