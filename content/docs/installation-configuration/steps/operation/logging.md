@@ -23,6 +23,12 @@ helm repo update
 
 ### 安装日志组件
 
+- 创建命名空间
+ 
+    ```
+    kubectl create namespace logging
+    ```
+
 - 编写参数配置文件 `loki.yaml`
 
         config:

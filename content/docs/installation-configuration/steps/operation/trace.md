@@ -23,6 +23,12 @@ helm repo update
 
 ### 部署Mysql
 
+#### 创建命名空间
+ 
+```
+kubectl create namespace monitoring
+```
+
 #### 创建mysql所需PVC
 
 ```shell
@@ -31,7 +37,7 @@ helm upgrade --install skywalking-mysql-pvc c7n/persistentvolumeclaim \
     --set requests.storage=2Gi \
     --set storageClassName=ssd \
     --version 0.1.0 \
-    --namespace logging
+    --namespace monitoring
 ```
 
 #### 部署mysql
@@ -61,7 +67,7 @@ helm upgrade --install skywalking-mysql-pvc c7n/persistentvolumeclaim \
     helm upgrade --install skywalking-mysql c7n/mysql \
         -f skywalking-mysql.yaml \
         --version 0.1.3 \
-        --namespace logging
+        --namespace monitoring
     ```
 
 
@@ -90,5 +96,5 @@ helm upgrade --install skywalking-mysql-pvc c7n/persistentvolumeclaim \
     helm upgrade --install skywalking c7n/skywalking \
         -f skywalking.yaml \
         --version 6.6.0 \
-        --namespace logging
+        --namespace monitoring
     ```

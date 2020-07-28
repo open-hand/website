@@ -49,6 +49,12 @@ helm repo update
     sudo systemctl start nfs-server
     ```
 
+- 创建命名空间
+ 
+    ```
+    kubectl create namespace monitoring
+    ```
+
 - 在可执行helm命令的主机上，使用helm命令安装`ssd-nfs-client-provisioner`
 {{< annotation shell "提供NFS服务的主机IP地址或域名" "NFS服务共享的目录">}}
 helm upgrade --install ssd c7n/nfs-client-provisioner \
@@ -59,7 +65,7 @@ helm upgrade --install ssd c7n/nfs-client-provisioner \
     --set persistence.nfsServer=127.0.0.1 \(1)
     --set persistence.nfsPath=/ssd \(1)
     --version 0.1.1 \
-    --namespace logging
+    --namespace monitoring
 {{< /annotation >}}
 
 <blockquote class="note">
@@ -99,7 +105,7 @@ helm upgrade --install ssd c7n/nfs-client-provisioner \
     helm upgrade --install prometheus-operator c7n/prometheus-operator \
         -f prometheus-operator-value.yaml \
         --version 8.5.8 \
-        --namespace=monitoring
+        --namespace monitoring
     ```
 
     下面列出 Prometheus Operator 常用可配置的参数以及默认值，其他配置参考[官方文档](https://github.com/helm/charts/tree/master/stable/prometheus-operator#configuration)
