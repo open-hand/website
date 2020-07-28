@@ -121,41 +121,39 @@ helm upgrade --install nfs-client-provisioner c7n/nfs-client-provisioner \
 
 - 新建`write-pod.yaml`文件，粘贴以下内容：
 
-    ```
-    kind: Pod
-    apiVersion: v1
-    metadata:
-      name: write-pod
-    spec:
-      containers:
-      - name: write-pod
-        image: busybox
-        command:
-          - "/bin/sh"
-        args:
-          - "-c"
-          - "touch /mnt/SUCCESS && exit 0 || exit 1"
-        volumeMounts:
-          - name: nfs-pvc
-            mountPath: "/mnt"
-      restartPolicy: "Never"
-      volumes:
-        - name: nfs-pvc
-          persistentVolumeClaim:
-            claimName: myclaim
-    ---
-    kind: PersistentVolumeClaim
-    apiVersion: v1
-    metadata:
-      name: myclaim
-    spec:
-      accessModes:
-        - ReadWriteOnce
-      storageClassName: nfs-provisioner
-      resources:
-        requests:
-          storage: 1Mi
-      ```
+        kind: Pod
+        apiVersion: v1
+        metadata:
+          name: write-pod
+        spec:
+          containers:
+          - name: write-pod
+            image: busybox
+            command:
+              - "/bin/sh"
+            args:
+              - "-c"
+              - "touch /mnt/SUCCESS && exit 0 || exit 1"
+            volumeMounts:
+              - name: nfs-pvc
+                mountPath: "/mnt"
+          restartPolicy: "Never"
+          volumes:
+            - name: nfs-pvc
+              persistentVolumeClaim:
+                claimName: myclaim
+        ---
+        kind: PersistentVolumeClaim
+        apiVersion: v1
+        metadata:
+          name: myclaim
+        spec:
+          accessModes:
+            - ReadWriteOnce
+          storageClassName: nfs-provisioner
+          resources:
+            requests:
+              storage: 1Mi
 
 - 部署测试用例
 

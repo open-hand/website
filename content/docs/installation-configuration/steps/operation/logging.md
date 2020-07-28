@@ -23,6 +23,12 @@ helm repo update
 
 ### 安装日志组件
 
+- 创建命名空间
+ 
+    ```
+    kubectl create namespace logging
+    ```
+
 - 编写参数配置文件 `loki.yaml`
 
         config:
@@ -54,9 +60,8 @@ helm repo update
 - 安装 loki
 
     ```bash
-    helm install c7n/loki \
+    helm upgrade --install loki c7n/loki \
         -f loki.yaml \
-        --name=loki \
         --version 0.29.0 \
         --namespace=logging
     ```
@@ -76,9 +81,8 @@ helm repo update
 - 安装 promtail
 
     ```bash
-    helm install c7n/promtail \
+    helm upgrade --install promtail c7n/promtail \
         -f promtail.yaml \
-        --name=promtail \
         --version 0.23.0 \
         --namespace=logging
     ```

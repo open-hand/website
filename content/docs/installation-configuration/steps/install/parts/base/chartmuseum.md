@@ -40,13 +40,19 @@ helm repo update
           path: /
     ```
 
+- 创建命名空间
+ 
+    ```
+    kubectl create namespace c7n-system
+    ```
+
 - 执行部署
   
     ```shell
     helm upgrade --install chartmuseum c7n/chartmuseum \
         -f chartmuseum.yaml \
         --version 2.6.0 \
-        --namespace infrastructure
+        --namespace c7n-system
     ```
 
 ## 验证部署
