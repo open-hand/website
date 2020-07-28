@@ -26,12 +26,11 @@ helm repo update
 #### 创建mysql所需PVC
 
 ```shell
-helm install c7n/persistentvolumeclaim \
+helm upgrade --install skywalking-mysql-pvc c7n/persistentvolumeclaim \
     --set accessModes={ReadWriteOnce} \
     --set requests.storage=2Gi \
     --set storageClassName=ssd \
     --version 0.1.0 \
-    --name skywalking-mysql-pvc \
     --namespace logging
 ```
 
@@ -59,10 +58,9 @@ helm install c7n/persistentvolumeclaim \
 - 执行安装
 
     ```
-    helm install c7n/mysql \
+    helm upgrade --install skywalking-mysql c7n/mysql \
         -f skywalking-mysql.yaml \
         --version 0.1.3 \
-        --name skywalking-mysql \
         --namespace logging
     ```
 
@@ -89,9 +87,8 @@ helm install c7n/persistentvolumeclaim \
 
 - 执行安装
     ```
-    helm install c7n/skywalking \
+    helm upgrade --install skywalking c7n/skywalking \
         -f skywalking.yaml \
         --version 6.6.0 \
-        --name skywalking \
         --namespace logging
     ```

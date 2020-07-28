@@ -54,9 +54,8 @@ helm repo update
 - 安装 loki
 
     ```bash
-    helm install c7n/loki \
+    helm upgrade --install loki c7n/loki \
         -f loki.yaml \
-        --name=loki \
         --version 0.29.0 \
         --namespace=logging
     ```
@@ -76,9 +75,8 @@ helm repo update
 - 安装 promtail
 
     ```bash
-    helm install c7n/promtail \
+    helm upgrade --install promtail c7n/promtail \
         -f promtail.yaml \
-        --name=promtail \
         --version 0.23.0 \
         --namespace=logging
     ```
