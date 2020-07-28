@@ -1,7 +1,7 @@
 +++
 title = "史诗"
 description = ""
-weight = 3
+weight = 2
 +++
 
 # 史诗

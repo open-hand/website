@@ -1,7 +1,7 @@
 +++
 title = "用户故事"
 description = ""
-weight = 2
+weight = 1
 +++
 
 # 用户故事
