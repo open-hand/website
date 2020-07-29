@@ -35,9 +35,10 @@ Root 用户的相关操作仅由高权限角色操作，例如：平台管理员
 
 ## 4. 更多操作
 
-- [如何在Choerodon进行角色管理](../role)
-- [如何使用Choerodon管理全平台的用户](../site-user)
-- [菜单管理](../menu)
+- [组织中如何添加用户](../../manager-center/org-user)
+
+- [项目中如何添加团队成员](../../../cooperation/teammember)
+
 
 
 

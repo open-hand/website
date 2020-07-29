@@ -69,5 +69,5 @@ description = "对系统外观进行自定义设置"
 
 - [系统安全设置](../site-setting)
 - [通知配置](../message-config)
-- [菜单管理](../menu)
+
 

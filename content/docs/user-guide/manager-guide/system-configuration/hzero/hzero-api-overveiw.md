@@ -1,6 +1,6 @@
 +++
 title = "接口统计"
-weight = 150
+weight = 6
 description = "查看平台中api的调用情况"
 +++
 
@@ -29,6 +29,4 @@ description = "查看平台中api的调用情况"
 
 ## 5. 更多操作
 
-- [查看菜单统计](../menu-statistics)
-- [查看微服务实例](../instance)
-- [在Choerodon进行API调试](../api)
+- [查看菜单统计](../../menu-statistics)
