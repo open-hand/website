@@ -49,12 +49,6 @@ helm repo update
     sudo systemctl start nfs-server
     ```
 
-- 创建命名空间
- 
-    ```
-    kubectl create namespace monitoring
-    ```
-
 - 在可执行helm命令的主机上，使用helm命令安装`ssd-nfs-client-provisioner`
 {{< annotation shell "提供NFS服务的主机IP地址或域名" "NFS服务共享的目录">}}
 helm upgrade --install ssd c7n/nfs-client-provisioner \
@@ -65,6 +59,7 @@ helm upgrade --install ssd c7n/nfs-client-provisioner \
     --set persistence.nfsServer=127.0.0.1 \(1)
     --set persistence.nfsPath=/ssd \(1)
     --version 0.1.1 \
+    --create-namespace \
     --namespace monitoring
 {{< /annotation >}}
 
@@ -91,7 +86,7 @@ helm upgrade --install ssd c7n/nfs-client-provisioner \
       ingress:
         enabled: true
         hosts:
-        - prometheus.example.com
+        - prometheus.example.choerodon.io
       prometheusSpec:
         storageSpec:
           volumeClaimTemplate:
@@ -104,7 +99,8 @@ helm upgrade --install ssd c7n/nfs-client-provisioner \
     ```bash
     helm upgrade --install prometheus-operator c7n/prometheus-operator \
         -f prometheus-operator-value.yaml \
-        --version 8.5.8 \
+        --version 9.3.0 \
+        --create-namespace \
         --namespace monitoring
     ```
 
@@ -149,5 +145,5 @@ helm upgrade --install ssd c7n/nfs-client-provisioner \
 3. 安装时禁用 CRDs 创建 `prometheusOperator.createCustomResource=false`
 
     ```console
-    $ helm install --name my-release c7n/prometheus-operator --set prometheusOperator.createCustomResource=false --version 8.5.8
+    $ helm install --name my-release c7n/prometheus-operator --set prometheusOperator.createCustomResource=false --version 9.3.0
     ```

@@ -63,6 +63,7 @@ helm repo update
     helm upgrade --install loki c7n/loki \
         -f loki.yaml \
         --version 0.29.0 \
+        --create-namespace \
         --namespace=logging
     ```
 
@@ -84,16 +85,15 @@ helm repo update
     helm upgrade --install promtail c7n/promtail \
         -f promtail.yaml \
         --version 0.23.0 \
+        --create-namespace \
         --namespace=logging
     ```
 
 ## 使用
 
 1. 访问搭建监控时部署的 Grafana。 如果这是您第一次登录 Grafana，默认情况下用户名为 `admin`，密码为 `password`。
-2. In Grafana, go to `Configuration` > `Data Sources` via the cog icon on the
-   left sidebar.
-3. 在 Grafana 中，通过左侧栏中的齿轮图标点击 `Configuration` > `Data Sources`。
-4. 点击 <kbd>+ Add data source</kbd> 按钮.
-5. 从列表中选择 Loki。
-6. `HTTP` > `URL` 字段应该是您的 Loki 服务器的地址。本例中地址为 `http://loki.logging:3100`。
-7. 要查看日志，请单击侧栏上的 <kbd>Explore</kbd> ，在左上角的下拉列表中选择 Loki 数据源，然后使用 <kbd>Log labels</kbd> 按钮选择日志流。
+2. 在 Grafana 中，通过左侧栏中的齿轮图标点击 `Configuration` > `Data Sources`。
+3. 点击 <kbd>+ Add data source</kbd> 按钮.
+4. 从列表中选择 Loki。
+5. `HTTP` > `URL` 字段应该是您的 Loki 服务器的地址。本例中地址为 `http://loki.logging:3100`。
+6. 要查看日志，请单击侧栏上的 <kbd>Explore</kbd> ，在左上角的下拉列表中选择 Loki 数据源，然后使用 <kbd>Log labels</kbd> 按钮选择日志流。
