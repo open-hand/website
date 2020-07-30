@@ -68,6 +68,7 @@ helm repo update
     ```bash
     helm upgrade --install gitlab c7n/gitlab-ha \
         -f gitlab.yaml \
+        --create-namespace \
         --version 0.2.2 \
         --namespace c7n-system
     ```
@@ -149,8 +150,8 @@ helm repo update
 
 ```
 helm upgrade gitlab c7n/gitlab-ha \
-    -f <(helm get values gitlab) \
-    --set env.config.OAUTH_ENABLED=true \
+    -f <(helm get values gitlab -n c7n-system) \
+    --set core.env.OAUTH_ENABLED=true \
     --version 0.2.2 \
     --namespace c7n-system
 ```

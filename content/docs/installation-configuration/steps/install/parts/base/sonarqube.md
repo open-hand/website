@@ -39,6 +39,7 @@ helm upgrade --install sonarqube c7n/sonarqube \
     --set ingress.enabled=true \
     --set ingress.'hosts[0]'=sonarqube.example.choerodon.io \
     --set plugins.'install[0]'=https://file.choerodon.com.cn/choerodon-install/sonarqube/sonar-auth-choerodonoauth-plugin-1.5.2-RELEASE.jar \
+    --create-namespace \
     --version 0.15.0-3 \
     --namespace c7n-system
 ```
@@ -84,6 +85,7 @@ helm upgrade --install sonarqube c7n/sonarqube \
     helm upgrade --install sonarqube-client c7n/mysql-client \
         -f sonarqube-client.yaml \
         --version 0.1.0 \
+        --create-namespace \
         --namespace c7n-system
     ```
 

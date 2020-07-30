@@ -41,7 +41,8 @@ helm repo update
     ```shell
     helm upgrade --install minio c7n/minio \
         -f minio.yaml \
-        --version 5.0.4 \
+        --create-namespace \
+        --version 5.0.5 \
         --namespace c7n-system
     ```
 

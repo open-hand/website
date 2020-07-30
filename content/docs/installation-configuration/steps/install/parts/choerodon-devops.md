@@ -41,6 +41,7 @@ helm repo update
     ```
     helm upgrade --install create-c7ncd-db c7n/mysql-client \
       -f create-c7ncd-db.yaml \
+      --create-namespace \
       --version 0.1.0 \
       --namespace c7n-system
     ```
@@ -64,6 +65,7 @@ helm repo update
     ```
     helm upgrade --install workflow-service c7n/workflow-service \
         -f workflow-service.yaml \
+        --create-namespace \
         --version 0.22.1 \
         --namespace c7n-system
     ```
@@ -100,6 +102,7 @@ helm repo update
     ```
     helm upgrade --install gitlab-service c7n/gitlab-service \
         -f gitlab-service.yaml \
+        --create-namespace \
         --version 0.22.1 \
         --namespace c7n-system
     ```

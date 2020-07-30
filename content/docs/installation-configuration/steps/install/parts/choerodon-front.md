@@ -34,6 +34,7 @@ helm repo update
   ```
   helm upgrade --install hzero-front c7n/hzero-front \
     -f hzero-front.yaml \
+    --create-namespace \
     --version 0.22.1 \
     --namespace c7n-system
   ```
@@ -81,6 +82,7 @@ helm repo update
   ```
   helm upgrade --install choerodon-front c7n/choerodon-front \
     -f choerodon-front.yaml \
+    --create-namespace \
     --version 0.22.0 \
     --namespace c7n-system
   ```
@@ -117,6 +119,7 @@ helm repo update
     ```
     helm upgrade --install c7n-front-client c7n/mysql-client \
         -f c7n-front-client.yaml \
+        --create-namespace \
         --version 0.1.0 \
         --namespace c7n-system
     ```

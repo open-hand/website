@@ -56,6 +56,7 @@ helm repo update
   ```
   helm upgrade --install create-c7nfw-db c7n/mysql-client \
       -f create-c7nfw-db.yaml \
+      --create-namespace \
       --version 0.1.0 \
       --namespace c7n-system
   ```
@@ -80,6 +81,7 @@ helm repo update
     ```
     helm upgrade --install hzero-register c7n/hzero-register \
       -f hzero-register.yaml \
+      --create-namespace \
       --version 0.22.2 \
       --namespace c7n-system
     ```
@@ -129,6 +131,7 @@ helm repo update
     ```shell
     helm upgrade --install hzero-platform c7n/hzero-platform \
         -f hzero-platform.yaml \
+        --create-namespace \
         --version 0.22.1 \
         --namespace c7n-system
     ```
@@ -179,6 +182,7 @@ helm repo update
     ```
     helm upgrade --install hzero-admin c7n/hzero-admin \
         -f hzero-admin.yaml \
+        --create-namespace \
         --version 0.22.3 \
         --namespace c7n-system
     ```
@@ -228,6 +232,7 @@ helm repo update
     ```
     helm upgrade --install hzero-iam c7n/hzero-iam \
         -f hzero-iam.yaml \
+        --create-namespace \
         --version 0.22.1 \
         --namespace c7n-system
     ```
@@ -276,6 +281,7 @@ helm repo update
     ```
     helm upgrade --install hzero-asgard c7n/hzero-asgard \
         -f hzero-asgard.yaml \
+        --create-namespace \
         --version 0.22.4 \
         --namespace c7n-system
     ```
@@ -317,6 +323,7 @@ helm repo update
     ```
     helm upgrade --install hzero-swagger c7n/hzero-swagger \
         -f hzero-swagger.yaml \
+        --create-namespace \
         --version 0.22.1 \
         --namespace c7n-system
     ```
@@ -361,6 +368,7 @@ helm repo update
     ```
     helm upgrade --install hzero-gateway c7n/hzero-gateway \
         -f hzero-gateway.yaml \
+        --create-namespace \
         --version 0.22.4 \
         --namespace c7n-system
     ```
@@ -407,6 +415,7 @@ helm repo update
     ```
     helm upgrade --install hzero-oauth c7n/hzero-oauth \
         -f hzero-oauth.yaml \
+        --create-namespace \
         --version 0.22.2 \
         --namespace c7n-system
     ```
@@ -454,6 +463,7 @@ helm repo update
     ```
     helm upgrade --install hzero-monitor c7n/hzero-monitor \
         -f hzero-monitor.yaml \
+        --create-namespace \
         --version 0.22.4 \
         --namespace c7n-system
     ```
@@ -508,6 +518,7 @@ helm repo update
     ```
     helm upgrade --install hzero-file c7n/hzero-file \
         -f hzero-file.yaml \
+        --create-namespace \
         --version 0.22.4 \
         --namespace c7n-system
     ```
@@ -558,6 +569,7 @@ helm repo update
     ```
     helm upgrade --install hzero-message c7n/hzero-message \
         -f hzero-message.yaml \
+        --create-namespace \
         --version 0.22.6 \
         --namespace c7n-system
     ```

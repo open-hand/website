@@ -56,6 +56,7 @@ helm repo update
   ```shell
   helm upgrade --install harbor c7n/harbor \
     -f harbor.yaml \
+    ----create-namespace \
     --version 1.2.3 \
     --namespace c7n-system
   ```

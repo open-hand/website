@@ -28,6 +28,7 @@ helm upgrade --install c7n-redis-pvc c7n/persistentvolumeclaim \
     --set accessModes={ReadWriteOnce} \
     --set requests.storage=256Mi \
     --set storageClassName=nfs-provisioner \
+    --create-namespace \
     --version 0.1.0 \
     --namespace c7n-system
 ```
@@ -39,6 +40,7 @@ helm upgrade --install c7n-redis c7n/redis \
     --set persistence.enabled=true \
     --set persistence.existingClaim=c7n-redis-pvc \
     --set service.enabled=true \
+    --create-namespace \
     --version 0.2.4 \
     --namespace c7n-system
 ```
