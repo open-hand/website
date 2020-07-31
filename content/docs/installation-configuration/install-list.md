@@ -48,7 +48,7 @@ weight = 5
 | notify service        | 通知服务       | 0.21.1 |
 | asgard service        | 事务服务       | 0.21.1 |
 | gitlab service        | Gitlab 服务    | 0.21.0 |
-| devops service        | Devops 服务    | 0.21.7 |
+| devops service        | Devops 服务    | 0.21.8 |
 | workflow service      | 工作流服务     | 0.21.0 |
 | agile service         | 敏捷管理       | 0.21.1 |
 | test manager service  | 测试管理服务   | 0.21.1 |
