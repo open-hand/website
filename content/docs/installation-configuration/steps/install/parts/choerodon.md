@@ -124,6 +124,7 @@ helm repo update
         SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system:3306/hzero_platform?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
         SPRING_DATASOURCE_USERNAME: choerodon
         SPRING_DATASOURCE_PASSWORD: password
+        HZERO_EXPORT_COREPOOLSIZE: 1
     ```
 
 - 部署服务
@@ -225,6 +226,7 @@ helm repo update
         SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system:3306/hzero_platform?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
         SPRING_DATASOURCE_USERNAME: choerodon
         SPRING_DATASOURCE_PASSWORD: password
+        HZERO_EXPORT_COREPOOLSIZE: 1
     ```
 
 - 部署服务
