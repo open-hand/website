@@ -53,13 +53,13 @@ helm repo update
 
 - 执行安装
 
-  ```shell
-  helm upgrade --install harbor c7n/harbor \
-    -f harbor.yaml \
-    ----create-namespace \
-    --version 1.2.3 \
-    --namespace c7n-system
-  ```
+    ```shell
+    helm upgrade --install harbor c7n/harbor \
+        -f harbor.yaml \
+        --create-namespace \
+        --version 1.2.3 \
+        --namespace c7n-system
+    ```
 
 ## 验证部署
 

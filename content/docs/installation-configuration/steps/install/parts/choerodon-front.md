@@ -31,13 +31,13 @@ helm repo update
 
 - 部署服务
 
-  ```
-  helm upgrade --install hzero-front c7n/hzero-front \
-    -f hzero-front.yaml \
-    --create-namespace \
-    --version 0.22.1 \
-    --namespace c7n-system
-  ```
+    ```
+    helm upgrade --install hzero-front c7n/hzero-front \
+        -f hzero-front.yaml \
+        --create-namespace \
+        --version 0.22.1 \
+        --namespace c7n-system
+    ```
 
 - 验证部署
   
@@ -79,13 +79,13 @@ helm repo update
 
 - 部署服务
 
-  ```
-  helm upgrade --install choerodon-front c7n/choerodon-front \
-    -f choerodon-front.yaml \
-    --create-namespace \
-    --version 0.22.0 \
-    --namespace c7n-system
-  ```
+    ```
+    helm upgrade --install choerodon-front c7n/choerodon-front \
+        -f choerodon-front.yaml \
+        --create-namespace \
+        --version 0.22.0 \
+        --namespace c7n-system
+    ```
 
 - 验证部署
   
@@ -116,6 +116,7 @@ helm repo update
     ```
 
 - 部署服务
+
     ```
     helm upgrade --install c7n-front-client c7n/mysql-client \
         -f c7n-front-client.yaml \
@@ -123,5 +124,6 @@ helm repo update
         --version 0.1.0 \
         --namespace c7n-system
     ```
+
 ### 默认登录用户
 安装完成后，默认的管理员用户名密码为 [admin/Admin@123!]，可使用此用户密码登陆系统。安装完成后建议立即在个人中心修改默认密码。

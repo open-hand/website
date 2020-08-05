@@ -53,13 +53,13 @@ helm repo update
 
 - 执行安装
 
-  ```
-  helm upgrade --install create-c7nfw-db c7n/mysql-client \
-      -f create-c7nfw-db.yaml \
-      --create-namespace \
-      --version 0.1.0 \
-      --namespace c7n-system
-  ```
+    ```
+    helm upgrade --install create-c7nfw-db c7n/mysql-client \
+        -f create-c7nfw-db.yaml \
+        --create-namespace \
+        --version 0.1.0 \
+        --namespace c7n-system
+    ```
 
 ## 部署 hzero register
 
@@ -80,10 +80,10 @@ helm repo update
   
     ```
     helm upgrade --install hzero-register c7n/hzero-register \
-      -f hzero-register.yaml \
-      --create-namespace \
-      --version 0.22.2 \
-      --namespace c7n-system
+        -f hzero-register.yaml \
+        --create-namespace \
+        --version 0.22.2 \
+        --namespace c7n-system
     ```
 
 - 验证部署
@@ -116,7 +116,7 @@ helm repo update
     env:
       open:
         HZERO_PLATFORM_HTTP_PROTOCOL: http
-        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register.c7n-system:8000/eureka/
+        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://hzero-register.c7n-system:8000/eureka/
         SPRING_REDIS_HOST: c7n-redis.c7n-system
         SPRING_REDIS_PORT: 6379
         # 此db不可更改
@@ -124,6 +124,7 @@ helm repo update
         SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system:3306/hzero_platform?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
         SPRING_DATASOURCE_USERNAME: choerodon
         SPRING_DATASOURCE_PASSWORD: password
+        HZERO_EXPORT_COREPOOLSIZE: 1
     ```
 
 - 部署服务
@@ -166,7 +167,7 @@ helm repo update
           password: password
     env:
       open:
-        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register.c7n-system:8000/eureka/
+        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://hzero-register.c7n-system:8000/eureka/
         HZERO_AUTO_REFRESH_SWAGGER_ENABLE: true
         SPRING_REDIS_HOST: c7n-redis.c7n-system
         SPRING_REDIS_PORT: 6379
@@ -225,6 +226,7 @@ helm repo update
         SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system:3306/hzero_platform?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
         SPRING_DATASOURCE_USERNAME: choerodon
         SPRING_DATASOURCE_PASSWORD: password
+        HZERO_EXPORT_COREPOOLSIZE: 1
     ```
 
 - 部署服务
@@ -268,7 +270,7 @@ helm repo update
           driver: com.mysql.jdbc.Driver
     env:
       open:
-        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register.c7n-system:8000/eureka/
+        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://hzero-register.c7n-system:8000/eureka/
         SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
         SPRING_REDIS_PORT: 6379
         SPRING_REDIS_DATABASE: 7
@@ -308,7 +310,7 @@ helm repo update
     ```yaml
     env:
       open:
-        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register.c7n-system:8000/eureka/
+        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://hzero-register.c7n-system:8000/eureka/
         HZERO_OAUTH_URL: https://api.example.choerodon.io/oauth/oauth/authorize
         SPRING_REDIS_HOST: c7n-redis.c7n-system
         SPRING_REDIS_PORT: 6379
@@ -357,7 +359,7 @@ helm repo update
         SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system:3306/hzero_platform?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
         SPRING_DATASOURCE_USERNAME: choerodon
         SPRING_DATASOURCE_PASSWORD: password
-        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register.c7n-system:8000/eureka/
+        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://hzero-register.c7n-system:8000/eureka/
     ingress:
       enabled: true
       host: api.example.choerodon.io
@@ -393,7 +395,7 @@ helm repo update
 - 编写参数配置文件 `hzero-oauth.yaml`
 
     ```yaml
-      env:
+    env:
       open:
         # 如果使用https 该参数设置为true
         HZERO_OAUTH_LOGIN_ENABLE_HTTPS: false
@@ -449,7 +451,7 @@ helm repo update
           password: password
     env:
       open:
-        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register.c7n-system:8000/eureka/
+        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://hzero-register.c7n-system:8000/eureka/
         SPRING_REDIS_HOST: c7n-redis.c7n-system
         SPRING_REDIS_PORT: 6379
         # 此db不可更改
@@ -497,7 +499,7 @@ helm repo update
           driver: com.mysql.jdbc.Driver
     env:
       open:
-        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register.c7n-system:8000/eureka/
+        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://hzero-register.c7n-system:8000/eureka/
         MINIO_ACCESSKEY: accesskey
         MINIO_ENDPOINT: https://minio.example.choerodon.io
         MINIO_SECRETKEY: secretkey

@@ -138,7 +138,7 @@ helm repo update
           # 支持框架数据和devops进行分库 指定菜单初始化地址
           platform:
              url: jdbc:mysql://c7n-mysql.c7n-system:3306/?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
-             username: username
+             username: choerodon
              password: password
              driver: com.mysql.jdbc.Driver
     env:
@@ -150,8 +150,8 @@ helm repo update
         SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system:3306/devops_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
         SPRING_DATASOURCE_USERNAME: choerodon
         SPRING_DATASOURCE_PASSWORD: password
-        SERVICES_GITLAB_URL: https://code.example.choerodon.io/
-        SERVICES_GITLAB_SSHURL: code.example.choerodon.io
+        SERVICES_GITLAB_URL: https://gitlab.example.choerodon.io/
+        SERVICES_GITLAB_SSHURL: gitlab.example.choerodon.io
         SERVICES_GITLAB_PROJECTLIMIT: 100
         SERVICES_HELM_URL: http://chart.example.choerodon.io
         SERVICES_HARBOR_BASEURL: https://registry.example.choerodon.io
@@ -160,12 +160,12 @@ helm repo update
         SERVICES_HARBOR_INSECURESKIPTLSVERIFY: true
         SERVICES_GATEWAY_URL: https://api.example.choerodon.io
         AGENT_VERSION: 0.22.3
-        AGENT_SERVICEURL: wss://devops.service.example.choerodon.io/websocket
-        AGENT_REPOURL: https://openchart.example.choerodon.io/choerodon/c7n/
-        AGENT_CERTMANAGERURL: https://openchart.example.choerodon.io/choerodon/c7n/
+        AGENT_SERVICEURL: wss://devops.example.choerodon.io/websocket
+        AGENT_REPOURL: https://openchart.choerodon.com.cn/choerodon/c7n/
+        AGENT_CERTMANAGERURL: https://openchart.choerodon.com.cn/choerodon/c7n/on/c7n/
     ingress:
       enabled: true
-      host: devops.service.example.choerodon.io
+      host: devops.example.choerodon.io
     ```
 
 - 部署服务

@@ -57,7 +57,7 @@ helm repo update
           storageClass: nfs-provisioner
     expose:
       ingress:
-        host: "gitlab.example.cherodon.io"
+        host: "gitlab.example.choerodon.io"
     database:
       internal:
         password: "changeit"
@@ -150,17 +150,37 @@ helm repo update
 
 ```
 helm upgrade gitlab c7n/gitlab-ha \
-    -f <(helm get values gitlab -n c7n-system) \
     --set core.env.OAUTH_ENABLED=true \
     --version 0.2.2 \
+    --reuse-values \
+    --force \
     --namespace c7n-system
 ```
+<blockquote class="note">
+helm 3.2.x 使用上面的命令更新 Gitlab 配置会报错，如果使用使用 helm 3.2.x，请按照下面的步骤更新 Gitlab 配置。
+</blockquote>
+
+- 修改参数配置文件 gitlab.yaml
+
+    ```
+    core:
+      env:
+        OAUTH_ENABLED: true
+    ...
+    ```
+- 执行更新
+
+    ```bash
+    helm upgrade --install gitlab c7n/gitlab-ha \
+        -f gitlab.yaml \
+        --create-namespace \
+        --version 0.2.2 \
+        --namespace c7n-system
+    ```
 
 ### 添加Gitlab Client
 
-- 在执行里面前请根据实际情况修改参数
-- 记得修改`http://gitlab.example.choerodon.io`的地址为实际的gitlab地址，以 nodePort 方式安装将其替换成 `http://192.168.xx.xx:30007`
-
+- 在执行里面前请根据实际情况修改参数 `web_server_redirect_uri`
 - 编写参数配置文件 `gitlab-client.yaml`
   
     ```yaml
@@ -174,6 +194,7 @@ helm upgrade gitlab c7n/gitlab-ha \
     ```
 
 - 部署服务
+
     ```
     helm upgrade --install gitlab-client c7n/mysql-client \
         -f gitlab-client.yaml \

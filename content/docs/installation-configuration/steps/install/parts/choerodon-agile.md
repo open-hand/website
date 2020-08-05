@@ -65,7 +65,7 @@ helm repo update
           # 支持框架数据和agile进行分库 指定菜单初始化地址
           platform:
              url: jdbc:mysql://c7n-mysql.c7n-system:3306/?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
-             username: username
+             username: choerodon
              password: password
              driver: com.mysql.jdbc.Driver
     env:
@@ -78,7 +78,7 @@ helm repo update
         SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system:3306/agile_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowMultiQueries=true&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
         SPRING_DATASOURCE_USERNAME: choerodon
         SPRING_DATASOURCE_PASSWORD: password
-        SERVICES_ATTACHMENT_URL: https://minio.example.io.cn
+        SERVICES_ATTACHMENT_URL: https://minio.example.choerodon.io
     ```
 
 - 部署服务
@@ -122,7 +122,7 @@ helm repo update
           # 支持框架数据和agile进行分库 指定菜单初始化地址
           platform:
              url: jdbc:mysql://c7n-mysql.c7n-system:3306/?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
-             username: username
+             username: choerodon
              password: password
              driver: com.mysql.jdbc.Driver
     env:
@@ -135,7 +135,7 @@ helm repo update
         SPRING_DATASOURCE_USERNAME: choerodon
         SPRING_DATASOURCE_PASSWORD: password
         CHOERODON_CLEANPERMISSION: false
-        SERVICES_ATTACHMENT_URL: https://minio.example.io.cn
+        SERVICES_ATTACHMENT_URL: https://minio.example.choerodon.io
     ```
 
 - 部署服务
@@ -193,7 +193,7 @@ helm repo update
           # 支持框架数据和agile进行分库 指定菜单初始化地址
           platform:
              url: jdbc:mysql://c7n-mysql.c7n-system:3306/?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
-             username: username
+             username: choerodon
              password: password
              driver: com.mysql.jdbc.Driver
     env:
