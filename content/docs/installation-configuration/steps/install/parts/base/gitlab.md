@@ -60,7 +60,7 @@ helm repo update
         host: "gitlab.example.choerodon.io"
     database:
       internal:
-        password: "changeit"
+        password: "password"
     ```
 
 - 执行安装

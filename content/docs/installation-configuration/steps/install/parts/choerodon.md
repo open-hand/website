@@ -14,7 +14,7 @@ weight = 10
 - 如果您的主机性能或网络较差，建议您添加额外的参数以延长超时时间 `--set preJob.timeout=1000` ,其中1000表示1000秒后超时。
 
 <blockquote class="note">
-部署成功后Choerodon平台默认登录名为admin，默认密码为admin。
+部署成功后Choerodon平台默认登录名为admin，默认密码为Admin@123!。
 </blockquote>
 
 ## 添加Choerodon Chart仓库
@@ -71,9 +71,6 @@ helm repo update
     env:
       open:
         EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://hzero-register.c7n-system:8000/eureka/
-    ingress:
-      enabled: true
-      host: register.example.choerodon.io
     ```
 
 - 执行安装

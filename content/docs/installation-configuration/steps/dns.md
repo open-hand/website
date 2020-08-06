@@ -44,16 +44,3 @@ weight = 16
 ## 使用免费域名
 
 如果您不想注册域名，可以使用如nip.io提供的服务 具体详情可以进入[http://nip.io/](http://nip.io/)查看具体说明，需要注意的是此类域名一般未在中国大陆备案，根据政策法规，将无法使用中国大陆的公有云服务器。
-
-## nodePort 模式安装用到的端口
-
-| 服务 | 端口|
-|-----|-----|
-| chartmuseum | http: 30001 |
-| minio | http: 30002 |
-| harbor | http: 30002 https: 30003 |
-| gitlab | http: 30007 ssh: 30022 |
-| notify-service | ws: 30098 |
-| api-gateway | http: 30100 |
-| devops-service | ws: 30106 |
-| choerodon-front | http: 30118 |
