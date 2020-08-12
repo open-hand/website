@@ -34,16 +34,17 @@ weight = 1
 
   (1) 点击左上方的 `创建集群`，右侧会弹出创建集群页面，输入相关信息，包括集群编码、集群名称和集群描述；
 
-     > 集群创建成功后，默认向该组织下所有项目公开，若想为所创集群配置特定的公开范围，需要在集群的权限管理页面进行设置。
+  - 集群创建成功后，默认向该组织下所有项目公开，若想为所创集群配置特定的公开范围，需要在集群的权限管理页面进行设置。
+    - 集群编码：集群客户端的名称，限制为30个字符。  
 
-     - 集群编码：集群客户端的名称，限制为30个字符。  
-
-      > 只能由小写字母、数字、”-“组成，且以小写字母开头，不能以”-“结尾。
-     - 集群名称：项目下集群的显示名称。限制为10个字符。
-     - 集群描述：环境的描述，限制为30字符。  
+  - 只能由小写字母、数字、”-“组成，且以小写字母开头，不能以”-“结尾。
+    - 集群名称：项目下集群的显示名称。限制为10个字符。
+    - 集群描述：环境的描述，限制为30字符。  
 
 
-  (2) 填写完成后，点击`创建`，界面会自动生成可执行的shell脚本命令，其中各个参数已经由后端服务自动生成。  
+  (2) 填写完成后，点击`创建`，界面会自动生成可执行的shell脚本命令，其中各个参数已经由后端服务自动生成。    
+
+ 
 
   	helm install --repo=http://chart.choerodon.com.cn/choerodon/c7ncd/ \
   	--namespace=choerodon \
@@ -55,9 +56,7 @@ weight = 1
   	--set config.choerodonId=asdasd123 \
   	--set rbac.create=true \
   	choerodon-cluster-agent
-
-
-  ​    
+  
   - helm: 在集群中的kubectl创建的命名空间内通过helm install部署一个集群客户端。参数有：
   - repo: chart仓库地址，取值为部署持续交互时的环境变量`env.open.AGENT_REPOURL`
   - name: release name，取值为集群编码
@@ -69,11 +68,15 @@ weight = 1
   - rbac.create: 用于控制kubectl权限     
   - choerodon-agent: chart name
 
-  (3) 复制脚本命令至集群中运行，与平台建立连接。
+  (3) 复制脚本命令至集群中运行，与平台建立连接。        
 
-     > - 运行前需要先初始化helm helm init ，helm repo update。
+   <blockquote class="warning"> 
+   自Choerodon 0.22.0版本开始，C7N agent中helm组件已由`V2`升级至`V3`，进行以下操作前请确保集群中含有v3版本的helm指令。
+   </blockquote>
 
-     > - helm 的版本必须与服务器上helm版本一致。
+> - 运行前需要先初始化helm helm init ，helm repo update。
+>
+> - helm 的版本必须与服务器上helm版本一致。
 
   (4) 执行成功后回到集群管理界面，便可以看到之前创建好的集群状态变为连接状态。
 
@@ -150,7 +153,6 @@ weight = 1
   ![image](/docs/user-guide/deploy/cluster/image/cluster-management-09.jpg)    
 
   - 从“环境详情”的维度查看集群中所有环境（包括Choerodon平台环境与非Choerodon平台环境）中存在问题的配置项（`warning`与 `error`状态的配置项）。  
-
   ![image](/docs/user-guide/deploy/cluster/image/cluster-management-10.jpg)  
 
 
@@ -173,9 +175,10 @@ weight = 1
   ![image](/docs/user-guide/deploy/cluster/image/cluster-management-15.jpg)   
 
   需要输入的参数有：
-  - admin密码：Grafana组件admin账户的登录密码
-  - 域名地址：Grafana访问地址
-  - PrometheusPV、GrafanaPV和AlertManagerPV：对应组件需要使用到的PV,需要提前在PV管理中创建
+
+  - admin密码：Grafana组件admin账户的登录密码；
+  - 域名地址：Grafana访问地址；
+  - PrometheusPV、GrafanaPV和AlertManagerPV：对应组件需要使用到的PV,需要提前在PV管理中创建；
 
   安装成功后，监控组件状态变为`可用`。同时，提供`修改`与`卸载`操作。其中`修改`操作只支持修改域名地址。
   
