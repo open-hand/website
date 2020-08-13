@@ -23,7 +23,7 @@ weight = 5
 | kube-flannel             | kube-flannel             | v0.11.0-amd64                | -         |
 | kubernetes-dashboard     | kubernetes-dashboard     | v2.0.0-rc5                   | -         |
 | nginx-ingress-controller | nginx-ingress-controller | 0.29.0                       | -         |
-| Helm                     | Helm                     | 2.16.3                       | -         |
+| Helm                     | Helm                     | v3.2.4                       | -         |
 | Chartmuseum              | Kubernetes应用私有包仓库  | v0.11.0                      | 2.6.0     |
 | Minio                    | 对象存储服务              | RELEASE.2020-01-03T19-12-21Z | 4.0.1     |
 | Redis                    | 缓存数据库                | 4.0.11                       | 0.2.3     |

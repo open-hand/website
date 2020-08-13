@@ -9,7 +9,7 @@ weight = 18
 ## 前置条件
 
 - 成功安装kubernetes集群(1.10以上版本)
-- 成功安装helm(2.10及以上版本)
+- 成功安装helm(v3.2.4及以上版本)
 - 每个节点安装nfs-utils(Centos)或nfs-common(Debian/Ubuntu)
 - 安装nfs-provisioner或自有nfs服务
 - 正确解析域名到集群中

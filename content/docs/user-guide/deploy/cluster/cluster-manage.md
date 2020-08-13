@@ -73,7 +73,7 @@ weight = 1
 
   (3) 复制脚本命令至集群中运行，与平台建立连接。
      <blockquote class="warning"> 
-     自Choerodon 0.22.0版本开始，C7N agent中helm组件已由`V2`升级至`V3`，进行激活操作前请确保集群中helm指令为 v3.2.0 及以上版本。
+     自Choerodon 0.22.0版本开始，C7N agent中helm组件已由`V2`升级至`V3`，进行激活操作前请确保集群中helm指令为 v3.2.4 版本。
   若未达到要求版本，请先更新helm指令后再进行后续操作。
      </blockquote>
 
