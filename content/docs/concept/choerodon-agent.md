@@ -40,7 +40,7 @@ Choerodon Agent 和部署服务之间的交互采用 Command/response 模式，�
 
  - 轻量级
  
-      Choerodon Agent 基于 Go 语言实现，启动快速。占用内存小，消耗资源也很少，只需 Kubernetes 集群中部署相应版本的 tiller 后，通过 Helm 命令一键安装，此集群立即就可以加入猪齿鱼平台。
+      Choerodon Agent 基于 Go 语言实现，启动快速。占用内存小，消耗资源也很少，通过 Helm 命令一键安装，此集群立即就可以加入猪齿鱼平台。
 
  - 安全
  
