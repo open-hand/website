@@ -24,7 +24,7 @@ Choerodon Agent 安装所在的 Kubernetes 集群对于猪齿鱼持续交付部�
 ## 关键技术及架构
 
 Choerodon Agent 通过 WebSocket Client 与外部的猪齿鱼部署服务进行连接、执行命令等交互。内部通过 Helm 客户端与 Kubernetes 集群。
-内部的 tiller server 执行 Chart 安装删除等操作，并且通过 Kube Client 直接对 Kubernetes 各种资源对象进行操作，监听各资源对象的状态变更。
+Helm 客户端 直接执行 Chart 安装删除等操作，并且通过 Kube Client 直接对 Kubernetes 各种资源对象进行操作，监听各资源对象的状态变更。
 通过长连接及时通知部署服务。
 
  ![](/docs/concept/image/p1.png) 
