@@ -19,7 +19,7 @@ weight = 18
 如果您的主机没有配置kubernetes连接信息，则您需要到k8s服器中的master执行安装，如果您的主机已经配置了kubernetes的连接信息，并且可以正常执行`kubectl`命令，您可以在您的主机上执行安装，在安装之前您需要下载安装工具，目前支持Linux及MacOS:
 
 ```bash
-export VERSION=0.21.0
+export VERSION=0.22.0
 curl -L https://file.choerodon.com.cn/choerodon-install/c7nctl/${VERSION}/c7nctl-${VERSION}-`uname -s`-amd64.tar.gz | tar -xz && cd c7nctl-${VERSION}
 ```
 
@@ -32,9 +32,9 @@ vim config.yml
 粘贴以下内容，并将域名修改为你自己的域名
 
 ```yml
-version: 0.21
+version: 0.22
 metadata:
-  name: install-choerodon
+  name: resource-choerodon
   namespace: c7n-system  # 指定命名空间安装choerodon
 spec:
   persistence:
@@ -45,32 +45,34 @@ spec:
     gitlab:
       domain: gitlab.example.choerodon.io
       external: false
-      username: root     # gitlab 默认用户名为root，不能修改
       schema: http
     minio:
       domain: minio.example.choerodon.io
       schema: http
     harbor:
-      domain: registry.example.choerodon.io
+      domain: harbor.example.choerodon.io
       schema: https
       username: admin    # harbor 默认用户名为admin，不能修改
     chartmuseum:
       domain: chart.example.choerodon.io
       schema: http
-    api-gateway:
+    hzero-gateway:
       domain: api.example.choerodon.io
       schema: http
-    notify-service:
+    hzero-message:
       domain: notify.example.choerodon.io
       schema: ws
     devops-service:
       domain: devops.example.choerodon.io
       schema: ws
     choerodon-front:
-      domain: c7n.example.choerodon.io
+      domain: app.example.choerodon.io
       schema: http
       username: admin   # 前端 默认用户名为admin，暂不能修改
-      password: admin   # 前端 默认密码为admin，暂不能修改
+      password: Admin@123!   # 前端 默认密码为Admin@123!，暂不能修改
+    hzero-front:
+      domain: hzero.example.choerodon.io
+      schema: http
 ```
 
 ## 开始部署
@@ -82,7 +84,7 @@ spec:
 - 更多关于c7nctl的配置请参考[此处](https://blog.vinkdong.com/c7nctl%E8%AF%A6%E8%A7%A3/)
 
 ```bash
-./c7nctl install -c config.yml --no-timeout --version=0.21
+./c7nctl install c7n -c config.yml --version=0.22
 ```
 
 - 参数解释
@@ -94,8 +96,8 @@ spec:
 
 ## 后续步骤
 
-- 安装完成后您可以访问您配置的`choerodon-front`域名，默认用户名和密码都为admin
-- 登录一次Gitlab，第一次登录会提示设置root用户密码，随后会跳转到Choerodon认证，使用admin/admin登录即可，如果使用root/admin用户拉取代码用户名为root，密码为界面设置的密码，其他用户默认密码为`password`
+- 安装完成后您可以访问您配置的`choerodon-front`域名，默认用户名和密码为admin/Admin@123!
+- 登录一次Gitlab，第一次登录会提示设置root用户密码，随后会跳转到Choerodon认证，使用admin/Admin@123!登录即可，如果使用root/admin用户拉取代码用户名为root，密码为界面设置的密码，其他用户默认密码为`password`
 - [设置Harbor证书(必须设置)](../parts/base/harbor/#证书配置)
 - [安装Gitlab-Runner](../parts/gitlab-runner)
 
