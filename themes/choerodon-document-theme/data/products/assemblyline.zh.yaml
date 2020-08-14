@@ -1,5 +1,5 @@
 weight: 2 
-name: "开发"
+name: "代码开发"
 icon: "iconexploit-icon"
 iconColor: "#5D6FD4"
 description: "以DevOps理念为指引，结合精益看板和Gitlab的分支管理，提供持续集成的流水线，缩短应用服务开发周期，同时提高团队效率，高效频繁向测试团队或者用户交付软件新版本。"
@@ -8,16 +8,17 @@ language: zh
 
 childIcon1: "/img/home/exploit-1.svg"
 childTitle1: "应用服务"
-childDescription1: "管理应用下某项具体服务，包括创建、导入、删改、共享和权限分配等操作，关注应用具体的业务模块。"
+childDescription1: "管理应用下某项具体服务，关注应用具体的业务模块，支持将应用服务共享给组织内的其他项目，节省项目的开发周期。"
 
 childIcon2: "/img/home/exploit-2.svg"
 childTitle2: "代码托管"
-childDescription2: "集成Gitlab作为代码托管的仓库，方便代码的管理和维护，同时提供代码质量详情展示，以便实时了解应用服务中代码的健康程度"
+childDescription2: "集成Gitlab作为代码托管的仓库，方便代码的管理和维护，采用了 github-flow 作为分支管理策略的主体，帮助团队监理规范，同时智能检测代码质量，实时了解应用服务中代码的健康程度。"
 
-childIcon3: "/img/home/exploit-3.svg"
-childTitle3: "分支管理"
-childDescription3: "支持分支的提交、创建、修改等操作，处理合并请求的创建、查看、审核和合并等。"
+childIcon3: "/img/home/exploit-4.svg"
+childTitle3: "持续集成"
+childDescription3: "持续集成引擎，可查看单个提交的所有相关作业，并且快速通知作业是否通过或出现故障，便于用户能快速查看失败并修复它"
 
-childIcon4: "/img/home/exploit-4.svg"
-childTitle4: "持续集成"
-childDescription4: "持续集成引擎，可查看单个提交的所有相关作业，并且快速通知作业是否通过或出现故障，便于用户能快速查看失败并修复它"
+childIcon4: "/img/home/microservice-illustrator-3.svg"
+childTitle4: "CI流水线"
+childDescription4: "通过使用 GitLab CI 工具，实现了CI流程执行的自动化与CI任务编排的可视化。"
+
