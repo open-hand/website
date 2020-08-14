@@ -52,7 +52,7 @@ weight = 5
 | hzero message         | 消息服务       | 0.22.6 |
 | gitlab service        | 平台基础服务    | 0.22.1 |
 | devops service        | Devops 服务    | 0.22.3 |
-| workflow service      | 工作流服务      | 0.22.1 |
+| workflow service      | 工作流服务      | 0.22.2 |
 | agile service         | 敏捷管理        | 0.22.2 |
 | test manager service  | 测试管理服务     | 0.22.2 |
 | knowledgebase service | 知识服务        | 0.22.1 |

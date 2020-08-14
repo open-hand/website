@@ -66,7 +66,7 @@ helm repo update
     helm upgrade --install workflow-service c7n/workflow-service \
         -f workflow-service.yaml \
         --create-namespace \
-        --version 0.22.1 \
+        --version 0.22.2 \
         --namespace c7n-system
     ```
 
