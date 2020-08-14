@@ -2,22 +2,22 @@ weight: 3
 name: "测试"
 icon: "icontest-icon"
 iconColor: "#3371E3"
-description: "测试管理为用户提供敏捷化的持续测试工具，包括测试用例管理、测试循环、测试分析等，可以有效地提高软件测试的效率和质量，提高测试的灵活性和可视化水平，最终减少测试时间，让用户将主要精力放到软件功能构建上。"
+description: "测试管理为用户提供敏捷化的持续测试工具，包括测试用例管理、测试循环、测试分析等，可以有效地提高软件测试的效率和质量，提高测试的灵活性和可视化水平，最终减少测试时间，让用户将主要精力放到软件功能构建上"
 summary: "敏捷化的持续测试工具，可以有效地提高软件测试的效率和质量"
 language: en
 
 childIcon1: "/img/home/test-1.svg"
 childTitle1: "用例仓库"
-childDescription1: "敏捷化地管理测试用例，帮助团队沉淀测试记录和结果，实现随时追溯和量化考核。"
+childDescription1: "敏捷化地管理测试用例，帮助团队沉淀测试记录和结果，实现随时追溯和量化考核"
 
 childIcon2: "/img/home/test-2.svg"
 childTitle2: "测试计划"
-childDescription2: "系统地规划测试用例执行方案，以清晰的计划日历展示测试的执行情况。"
+childDescription2: "系统地规划测试用例执行方案，以清晰的计划日历展示测试的执行情况"
 
 childIcon3: "/img/home/test-3.svg"
 childTitle3: "执行测试"
-childDescription3: "执行测试计划，记录测试步骤结果，便于查看测试进度。"
+childDescription3: "执行测试计划，记录测试步骤结果，便于查看测试进度"
 
 childIcon4: "/img/home/test-4.svg"
 childTitle4: "自动化测试"
-childDescription4: "通过持续集成运行自动化测试脚本，根据测试报告自动生成测试用例及测试结果，实现测试自动化。"
+childDescription4: "通过持续集成运行自动化测试脚本，根据测试报告自动生成测试用例及测试结果，实现测试自动化"
