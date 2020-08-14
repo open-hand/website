@@ -1,23 +1,24 @@
 weight: 1
-name: "协作"
+name: "敏捷协作"
 icon: "iconcooperation-icon"
 iconColor: "#0EC5F0"
 description: "提供工作列表、故事地图、知识管理等协作工具，是贯穿开发、测试、部署的价值链，促进团队成员沟通交流，降低项目管理成本，提高沟通协作效率。"
-summary: "结合精益敏捷对业务需求、工作任务进行管理，打造高效协作生态。"
+summary: "结合精益敏捷和规模化敏捷SAFe对业务需求、产品迭代、在线文档、多项目并行开发进行管理，打造高效协作生态"
 language: zh
 
-childIcon1: "/img/home/cooperation-1.svg"
-childTitle1: "团队规划"
-childDescription1: "项目团队成员管理工具，清晰明确的权限划分，便捷的角色分配，更好地规划团队。"
 
-childIcon2: "/img/home/cooperation-2.svg"
-childTitle2: "需求规划"
-childDescription2: "借助用户故事地图梳理业务需求，支持对史诗、故事、任务的直观编排，以及丰富的界面化操作"
+childIcon1: "/img/home/cooperation-2.svg"
+childTitle1: "需求规划"
+childDescription1: "借助用户故事地图梳理业务需求，支持对史诗、故事、版本的直观编排，以及丰富的界面化操作"
 
-childIcon3: "/img/home/cooperation-3.svg"
-childTitle3: "迭代管理"
-childDescription3: "利用待办事项来规划冲刺，通过迭代计划看板可视化团队迭代周期，对故事进行追踪和管理，使工作进度或开发瓶颈一目了然。"
+childIcon2: "/img/home/cooperation-3.svg"
+childTitle2: "迭代管理"
+childDescription2: "利用待办事项来规划冲刺，通过迭代计划看板可视化管理团队迭代，对故事进行追踪和管理，使工作进度或开发瓶颈一目了然"
 
-childIcon4: "/img/home/cooperation-4.svg"
-childTitle4: "知识管理"
-childDescription4: "在线自定义内容编辑，集中管理开发过程中用户需求分析、产品设计等知识文档，项目成员实时共享，协作编辑。"
+childIcon3: "/img/home/cooperation-4.svg"
+childTitle3: "问题关联"
+childDescription3: "迭代中的问题深度关联知识库、开发和测试，实现问题的知识共享，以及开发进度和缺陷追踪，及时反馈迭代质量。"
+
+childIcon4: "/img/home/cooperation-1.svg"
+childTitle4: "多团队并行开发"
+childDescription4: "支持数百个团队和数千名开发人员的复杂开发环境，规划并跟踪多团队，将敏捷工作与组织战略目标联系起来。"

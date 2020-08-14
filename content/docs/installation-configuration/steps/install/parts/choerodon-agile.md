@@ -42,6 +42,7 @@ helm repo update
     ```shell
     helm upgrade --install create-c7nagile-db c7n/mysql-client \
       -f create-c7nagile-db.yaml \
+      --create-namespace \
       --version 0.1.0 \
       --namespace c7n-system
     ```
@@ -59,6 +60,14 @@ helm repo update
           url: jdbc:mysql://c7n-mysql.c7n-system:3306/?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
           username: choerodon
           password: password
+        datasources:
+          # 多数据源初始化
+          # 支持框架数据和agile进行分库 指定菜单初始化地址
+          platform:
+             url: jdbc:mysql://c7n-mysql.c7n-system:3306/?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
+             username: choerodon
+             password: password
+             driver: com.mysql.jdbc.Driver
     env:
       open:
         SPRING_APPLICATION_NAME: agile-service
@@ -69,7 +78,7 @@ helm repo update
         SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system:3306/agile_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowMultiQueries=true&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
         SPRING_DATASOURCE_USERNAME: choerodon
         SPRING_DATASOURCE_PASSWORD: password
-        SERVICES_ATTACHMENT_URL: https://minio.choerodon.com.cn
+        SERVICES_ATTACHMENT_URL: https://minio.example.choerodon.io
     ```
 
 - 部署服务
@@ -77,7 +86,8 @@ helm repo update
     ```shell
     helm upgrade --install agile-service c7n/agile-service \
       -f agile-service.yaml \
-      --version 0.22.0 \
+      --create-namespace \
+      --version 0.22.2 \
       --namespace c7n-system
     ```
 
@@ -107,6 +117,14 @@ helm repo update
           url: jdbc:mysql://c7n-mysql.c7n-system:3306/?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
           username: choerodon
           password: password
+        datasources:
+          # 多数据源初始化
+          # 支持框架数据和agile进行分库 指定菜单初始化地址
+          platform:
+             url: jdbc:mysql://c7n-mysql.c7n-system:3306/?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
+             username: choerodon
+             password: password
+             driver: com.mysql.jdbc.Driver
     env:
       open:
         SPRING_REDIS_HOST: c7n-redis.c7n-system
@@ -117,7 +135,7 @@ helm repo update
         SPRING_DATASOURCE_USERNAME: choerodon
         SPRING_DATASOURCE_PASSWORD: password
         CHOERODON_CLEANPERMISSION: false
-        SERVICES_ATTACHMENT_URL: https://minio.choerodon.com.cn
+        SERVICES_ATTACHMENT_URL: https://minio.example.choerodon.io
     ```
 
 - 部署服务
@@ -125,7 +143,8 @@ helm repo update
     ```
     helm upgrade --install test-manager-service c7n/test-manager-service \
       -f test-manager-service.yaml \
-      --version 0.22.0 \
+      --create-namespace \
+      --version 0.22.2 \
       --namespace c7n-system
     ```
 
@@ -151,7 +170,8 @@ helm repo update
 
     ```
     helm upgrade --install elasticsearch-kb c7n/elasticsearch-kb \
-      --version 0.21.0 \
+      --version 0.22.1 \
+      --create-namespace \
       --namespace c7n-system
     ```
 
@@ -168,6 +188,14 @@ helm repo update
           url: jdbc:mysql://c7n-mysql.c7n-system:3306/?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
           username: choerodon
           password: password
+        datasources:
+          # 多数据源初始化 初始化菜单数据
+          # 支持框架数据和agile进行分库 指定菜单初始化地址
+          platform:
+             url: jdbc:mysql://c7n-mysql.c7n-system:3306/?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
+             username: choerodon
+             password: password
+             driver: com.mysql.jdbc.Driver
     env:
       open:
         SPRING_REDIS_HOST: c7n-redis.c7n-system
@@ -177,7 +205,7 @@ helm repo update
         SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system:3306/knowledgebase_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
         SPRING_DATASOURCE_USERNAME: choerodon
         SPRING_DATASOURCE_PASSWORD: password
-        SERVICES_ATTACHMENT_URL: https://minio.choerodon.com.cn/knowledgebase-service/
+        SERVICES_ATTACHMENT_URL: https://minio.example.choerodon.io/knowledgebase-service/
         ELASTICSEARCH_IP: elasticsearch-kb:9200 
     ```
 
@@ -186,7 +214,8 @@ helm repo update
     ``` 
     helm upgrade --install knowledgebase-service c7n/knowledgebase-service \
       -f knowledgebase-service.yaml \
-      --version 0.22.0 \
+      --create-namespace \
+      --version 0.22.1 \
       --namespace c7n-system
     ```
 

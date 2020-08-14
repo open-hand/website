@@ -23,13 +23,13 @@ weight = 10
     1. 根据系统下载所需版本  
 
         ```
-        curl -L -o helm-v3.1.2-linux-amd64.tar.gz https://file.choerodon.com.cn/kubernetes-helm/v3.1.2/helm-v3.1.2-linux-amd64.tar.gz
+        curl -L -o helm-v3.2.4-linux-amd64.tar.gz https://file.choerodon.com.cn/kubernetes-helm/v3.2.4/helm-v3.2.4-linux-amd64.tar.gz
         ```
 
     1. 解压压缩包（以linux-amd64为例）
 
         ```
-        tar -zxvf helm-v3.1.2-linux-amd64.tar.gz
+        tar -zxvf helm-v3.2.4-linux-amd64.tar.gz
         ```
 
     1. 将文件移动到PATH目录中（以linux-amd64为例）
@@ -44,5 +44,5 @@ weight = 10
 
     ```
     $ helm version
-    version.BuildInfo{Version:"v3.1.2", GitCommit:"d878d4d45863e42fd5cff6743294a11d28a9abce", GitTreeState:"clean", GoVersion:"go1.13.8"}
+    version.BuildInfo{Version:"v3.2.4", GitCommit:"0ad800ef43d3b826f31a5ad8dfbb4fe05d143688", GitTreeState:"clean", GoVersion:"go1.13.12"}
     ```

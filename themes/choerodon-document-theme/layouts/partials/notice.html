@@ -2,7 +2,7 @@
 <div class="notice">
     {{ range (sort .Site.Data.event "weight") }}
     {{ if eq ($.Scratch.Get "language") .language }}
-    <a class="card" {{ if .href }} href='/{{ $.Scratch.Get "language" }}{{.href}}'{{ end }}>
+    <a class="card" {{ if .href }} href='/{{ $.Scratch.Get "language" }}{{.href}}'  {{ end }} {{ if .ahref }} href='{{.ahref}}' target="_blank" {{ end }}>
         <img src="{{ .homeImg }}" class="head dark"/>
         <img src="{{ .img }}" class="head light"/>
         <div class="text">

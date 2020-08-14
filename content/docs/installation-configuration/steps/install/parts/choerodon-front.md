@@ -31,12 +31,13 @@ helm repo update
 
 - 部署服务
 
-  ```
-  helm upgrade --install hzero-front c7n/hzero-front \
-    -f hzero-front.yaml \
-    --version 0.22.0 \
-    --namespace c7n-system
-  ```
+    ```
+    helm upgrade --install hzero-front c7n/hzero-front \
+        -f hzero-front.yaml \
+        --create-namespace \
+        --version 0.22.1 \
+        --namespace c7n-system
+    ```
 
 - 验证部署
   
@@ -67,7 +68,7 @@ helm repo update
         HEADER_TITLE_NAME: Choerodon | 多云应用技术集成平台
         COOKIE_SERVER: http://app.example.choerodon.io
         TITLE_NAME: Choerodon | 多云应用技术集成平台
-        WEBSOCKET_SERVER: wss://notify.example.choerodon.io
+        WEBSOCKET_SERVER: ws://notify.example.choerodon.io
         FILE_SERVER: http://minio.example.choerodon.io
         HZERO_FRONT: http://hzero.example.choerodon.io
         DEVOPS_WEBSOCKET_SECRET_KEY: devops_ws
@@ -78,12 +79,13 @@ helm repo update
 
 - 部署服务
 
-  ```
-  helm upgrade --install choerodon-front c7n/choerodon-front \
-    -f choerodon-front.yaml \
-    --version 0.22.0 \
-    --namespace c7n-system
-  ```
+    ```
+    helm upgrade --install choerodon-front c7n/choerodon-front \
+        -f choerodon-front.yaml \
+        --create-namespace \
+        --version 0.22.0 \
+        --namespace c7n-system
+    ```
 
 - 验证部署
   
@@ -110,13 +112,18 @@ helm repo update
       MYSQL_PORT: 3306
       MYSQL_USER: root
       SQL_SCRIPT: |
-        INSERT INTO hzero_platform.oauth_client (name,organization_id,resource_ids,secret,scope,authorized_grant_types,web_server_redirect_uri,access_token_validity,refresh_token_validity,additional_information,auto_approve,object_version_number,created_by,creation_date,last_updated_by,last_update_date,enabled_flag,time_zone)VALUES('choerodon',1,'default','secret','default','password,implicit,client_credentials,authorization_code,refresh_token','http://app.example.choerodon.io',3600,3600,'{}','default',1,0,NOW(),0,NOW(),1,'GMT+8');
+        INSERT INTO hzero_platform.oauth_client (name,organization_id,resource_ids,secret,scope,authorized_grant_types,web_server_redirect_uri,access_token_validity,refresh_token_validity,additional_information,auto_approve,object_version_number,created_by,creation_date,last_updated_by,last_update_date,enabled_flag,time_zone)VALUES('choerodon',1,'default','secret','default','password,implicit,client_credentials,authorization_code,refresh_token','http://app.example.choerodon.io,http://hzero.example.choerodon.io',86400,86400,'{}','default',1,0,NOW(),0,NOW(),1,'GMT+8');
     ```
 
 - 部署服务
+
     ```
     helm upgrade --install c7n-front-client c7n/mysql-client \
         -f c7n-front-client.yaml \
+        --create-namespace \
         --version 0.1.0 \
         --namespace c7n-system
     ```
+
+### 默认登录用户
+安装完成后，默认的管理员用户名密码为 [admin/Admin@123!]，可使用此用户密码登陆系统。安装完成后建议立即在个人中心修改默认密码。

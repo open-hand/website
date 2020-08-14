@@ -28,6 +28,7 @@ helm upgrade --install c7n-mysql-pvc c7n/persistentvolumeclaim \
     --set accessModes={ReadWriteOnce} \
     --set requests.storage=2Gi \
     --set storageClassName=nfs-provisioner \
+    --create-namespace \
     --version 0.1.0 \
     --namespace c7n-system
 ```
@@ -57,6 +58,7 @@ helm upgrade --install c7n-mysql-pvc c7n/persistentvolumeclaim \
     ```shell
     helm upgrade --install c7n-mysql c7n/mysql \
         -f mysql.yaml \
+        --create-namespace \
         --version 0.1.3 \
         --namespace c7n-system
     ```

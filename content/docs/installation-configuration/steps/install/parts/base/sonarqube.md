@@ -38,7 +38,8 @@ helm upgrade --install sonarqube c7n/sonarqube \
     --set postgresql.persistence.storageClass=nfs-provisioner \
     --set ingress.enabled=true \
     --set ingress.'hosts[0]'=sonarqube.example.choerodon.io \
-    --set plugins.'install[0]'=https://file.choerodon.com.cn/choerodon-install/sonarqube/sonar-auth-choerodonoauth-plugin-1.5.2-RELEASE.jar \
+    --set plugins.'install[0]'=https://file.choerodon.com.cn/choerodon-install/sonarqube/sonar-auth-choerodonoauth-plugin-1.5.3.RELEASE.jar \
+    --create-namespace \
     --version 0.15.0-3 \
     --namespace c7n-system
 ```
@@ -84,6 +85,7 @@ helm upgrade --install sonarqube c7n/sonarqube \
     helm upgrade --install sonarqube-client c7n/mysql-client \
         -f sonarqube-client.yaml \
         --version 0.1.0 \
+        --create-namespace \
         --namespace c7n-system
     ```
 
@@ -112,24 +114,43 @@ helm upgrade --install sonarqube c7n/sonarqube \
 
 - 部署devops-service时添加SonarQube环境变量
 
-    ```
+    ```yaml
     SERVICES_SONARQUBE_URL: http://sonarqube.example.choerodon.io
     SERVICES_SONARQUBE_USERNAME: admin
     SERVICES_SONARQUBE_PASSWORD: admin
     ```
 
-- 在.gitlab-ci.yml文件build阶段添加
+- Choerodon 应用关联 SonarQube 针对 maven 和非 maven 项目有不同的配置。
+    -  如果是 maven 项目可以在 .gitlab-ci.yml 文件 build 阶段添加
 
     ```
-        - >-
-          mvn --batch-mode  verify sonar:sonar
-          -Dsonar.host.url=$SONAR_URL -Dsonar.login=$SONAR_LOGIN
-          -Dsonar.gitlab.project_id=$CI_PROJECT_PATH
-          -Dsonar.gitlab.commit_sha=$CI_COMMIT_SHA
-          -Dsonar.gitlab.ref_name=$CI_COMMIT_REF_NAME
-          -Dsonar.analysis.serviceGroup=$GROUP_NAME
-          -Dsonar.analysis.commitId=$CI_COMMIT_SHA
-          -Dsonar.projectKey=${GROUP_NAME}:${PROJECT_NAME}
+    - >-
+        mvn --batch-mode  verify sonar:sonar
+        -Dsonar.host.url=$SONAR_URL -Dsonar.login=$SONAR_LOGIN
+        -Dsonar.gitlab.project_id=$CI_PROJECT_PATH
+        -Dsonar.gitlab.commit_sha=$CI_COMMIT_SHA
+        -Dsonar.gitlab.ref_name=$CI_COMMIT_REF_NAME
+        -Dsonar.analysis.serviceGroup=$GROUP_NAME
+        -Dsonar.analysis.commitId=$CI_COMMIT_SHA
+        -Dsonar.projectKey=${GROUP_NAME}:${PROJECT_NAME}
+    ```
+
+    - 其他项目可以使用 sonar-scanner，在 .gitlab-ci.yml 文件 build 阶段添加
+      
+        <blockquote class="note">
+        请确保 cibase 的镜像版本大于等于 0.10.0
+        </blockquote>
+
+    ```
+    - >-
+        sonar-scanner -Dsonar.host.url=$SONAR_URL -Dsonar.login=$SONAR_LOGIN
+        -Dsonar.gitlab.project_id=$CI_PROJECT_PATH
+        -Dsonar.gitlab.commit_sha=$CI_COMMIT_SHA
+        -Dsonar.gitlab.ref_name=$CI_COMMIT_REF_NAME
+        -Dsonar.analysis.serviceGroup=$GROUP_NAME
+        -Dsonar.analysis.commitId=$CI_COMMIT_SHA
+        -Dsonar.projectKey=${GROUP_NAME}:${PROJECT_NAME}
+        -Dsonar.sources=.
     ```
 
 - sonar.projectKey=${GROUP_NAME}:${PROJECT_NAME}不可更改；否则，在查看代码质量时将获取不到对应数据

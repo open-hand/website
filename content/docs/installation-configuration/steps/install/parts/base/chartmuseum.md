@@ -46,7 +46,8 @@ helm repo update
     helm upgrade --install chartmuseum c7n/chartmuseum \
         -f chartmuseum.yaml \
         --version 2.6.0 \
-        --namespace infrastructure
+        --create-namespace \
+        --namespace c7n-system
     ```
 
 ## 验证部署
