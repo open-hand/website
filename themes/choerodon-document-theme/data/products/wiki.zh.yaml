@@ -2,7 +2,7 @@ weight: 1
 name: "敏捷协作"
 icon: "iconcooperation-icon"
 iconColor: "#0EC5F0"
-description: "提供工作列表、故事地图、知识管理等协作工具，是贯穿开发、测试、部署的价值链，促进团队成员沟通交流，降低项目管理成本，提高沟通协作效率。"
+description: "提供工作列表、故事地图、知识管理等协作工具，是贯穿开发、测试、部署的价值链，促进团队成员沟通交流，降低项目管理成本，提高沟通协作效率"
 summary: "结合精益敏捷和规模化敏捷SAFe对业务需求、产品迭代、在线文档、多项目并行开发进行管理，打造高效协作生态"
 language: zh
 
@@ -17,8 +17,8 @@ childDescription2: "利用待办事项来规划冲刺，通过迭代计划看板
 
 childIcon3: "/img/home/cooperation-4.svg"
 childTitle3: "问题关联"
-childDescription3: "迭代中的问题深度关联知识库、开发和测试，实现问题的知识共享，以及开发进度和缺陷追踪，及时反馈迭代质量。"
+childDescription3: "迭代中的问题深度关联知识库、开发和测试，实现问题的知识共享，以及开发进度和缺陷追踪，及时反馈迭代质量"
 
 childIcon4: "/img/home/cooperation-1.svg"
 childTitle4: "多团队并行开发"
-childDescription4: "支持数百个团队和数千名开发人员的复杂开发环境，规划并跟踪多团队，将敏捷工作与组织战略目标联系起来。"
+childDescription4: "支持数百个团队和数千名开发人员的复杂开发环境，规划并跟踪多团队，将敏捷工作与组织战略目标联系起来"

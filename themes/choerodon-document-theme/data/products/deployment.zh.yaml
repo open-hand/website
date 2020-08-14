@@ -2,18 +2,18 @@ weight: 4
 name: "环境部署"
 icon: "icondeploy-icon"
 iconColor: "#7E60EA"
-description: "借助部署流水线，用户客户可以方便地管理各种使用Choerodon开发部署的应用服务，包括应用启停、状态监控，以及应用对应的版本控制、容器管理等，同时还包括应用涉及到的各种资源管理，例如网络、域名、数据库服务、缓存服务等。"
-summary: "应用启停，状态监控，容器管理，实现流水线式多环境一键部署。"
+description: "借助部署流水线，用户客户可以方便地管理各种使用Choerodon开发部署的应用服务，包括应用启停、状态监控，以及应用对应的版本控制、容器管理等，同时还包括应用涉及到的各种资源管理，例如网络、域名、数据库服务、缓存服务等"
+summary: "应用启停，状态监控，容器管理，实现流水线式多环境一键部署"
 language: zh
 
 childIcon1: "/img/home/deploy-1.svg"
 childTitle1: "应用部署"
-childDescription1: "提供了可视化与一键式的手动部署方式，并支持创建CD流水线来预置多个部署任务或人工卡点任务，从而实现了部署流程的自动化。"
+childDescription1: "提供了可视化与一键式的手动部署方式，并支持创建CD流水线来预置多个部署任务或人工卡点任务，从而实现了部署流程的自动化"
 
 childIcon2: "/img/home/deploy-2.svg"
 childTitle2: "环境配置"
-childDescription2: "支持灵活配置项目下所有的环境，可以查看GitOps日志、管理部署配置、分配权限和设置资源安全。"
+childDescription2: "支持灵活配置项目下所有的环境，可以查看GitOps日志、管理部署配置、分配权限和设置资源安全"
 
 childIcon3: "/img/home/deploy-3.svg"
 childTitle3: "集群"
-childDescription3: "用于运行K8S的托管群组，帮助用户在此统一调配资源和管理环境。"
+childDescription3: "用于运行K8S的托管群组，帮助用户在此统一调配资源和管理环境"
