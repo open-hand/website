@@ -49,7 +49,7 @@ weight = 5
 | hzero platform        | 事务服务       | 0.22.1 |
 | hzero monitor         | 监控审计服务    | 0.22.4 |
 | hzero file            | 文件服务       | 0.22.4 |
-| hzero message         | 消息服务       | 0.22.6 |
+| hzero message         | 消息服务       | 0.22.7 |
 | gitlab service        | 平台基础服务    | 0.22.1 |
 | devops service        | Devops 服务    | 0.22.4 |
 | workflow service      | 工作流服务      | 0.22.2 |
