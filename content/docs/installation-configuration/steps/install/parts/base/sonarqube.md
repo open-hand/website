@@ -48,7 +48,7 @@ helm upgrade --install sonarqube c7n/sonarqube \
 
 ## 安装SoanrQube插件
 - 此步骤用于之前已经安装过SonarQube，只需安装插件的情况（如已经执行过上一步可跳过此步骤）
-- 进入SonarQube安装目录，下载https://file.choerodon.com.cn/choerodon-install/sonarqube/sonar-auth-choerodonoauth-plugin-1.5.2-RELEASE.jar 插件到\data\sonarqube\extensions\plugins目录
+- 进入SonarQube安装目录，下载https://file.choerodon.com.cn/choerodon-install/sonarqube/sonar-auth-choerodonoauth-plugin-1.5.3.RELEASE.jar 插件到\data\sonarqube\extensions\plugins目录
 - 重启SoanrQube服务
 
 ## 验证部署
@@ -98,7 +98,11 @@ helm upgrade --install sonarqube c7n/sonarqube \
 - 使用管理员用户登录 SoanrQube
 - 配置默认新建项目为`Private`, 进入 `Administration` -> `Projects` -> `Management`
     ![](/docs/installation-configuration/image/sonarqube_1.png)
-
+    
+- 更改默认权限模板, 进入 `Administration` -> `Security` -> `Permission Templates` ,去掉 `sonar-users` 用户组所有权限
+    ![](/docs/installation-configuration/image/sonarqube_2.png)
+    ![](/docs/installation-configuration/image/sonarqube_3.png)
+    
 ### 配置认证插件
 - 使用管理员用户登录 SoanrQube
 - 进入 `Administration` -> `Configuration` ->`choerodon`
@@ -109,6 +113,9 @@ helm upgrade --install sonarqube c7n/sonarqube \
 - 更改 `sonar url` 为当前使用的SonarQube实际地址
 - 退出登录，测试使用choerodon登录,出现如下界面
     ![](/docs/installation-configuration/image/sonarqube_5.png)
+    
+- Choerodon权限与SonarQube权限为lazy分配，对于用户登录后在SonarQube没有权限的应用服务，从Choerodon代码质量详情界面，跳转登录到SonarQube即可。
+
 
 ## Choerodon应用关联SonarQube项目
 
