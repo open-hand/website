@@ -25,13 +25,13 @@ weight = 5
 | nginx-ingress-controller | nginx-ingress-controller | 0.29.0                       | -         |
 | Helm                     | Helm                     | v3.2.4                       | -         |
 | Chartmuseum              | Kubernetes应用私有包仓库  | v0.11.0                      | 2.6.0     |
-| Minio                    | 对象存储服务              | RELEASE.2020-01-03T19-12-21Z | 4.0.1     |
+| Minio                    | 对象存储服务              | RELEASE.2020-01-03T19-12-21Z | 5.0.5     |
 | Redis                    | 缓存数据库                | 4.0.11                       | 0.2.3     |
 | Mysql                    | 数据库                   | 5.7.23                       | 0.1.2     |
 | Harbor                   | 容器的镜像库              | v1.9.3                      | 1.2.3     |
 | Gitlab                   | 代码托管                 | 11.11.7-ce.0                 | 0.5.3     |
 | Gitlab-Runner            | CI/CD 运行环境           | v11.11.4                     | 0.2.4     |
-| elasticsearch-kb         | 知识ES服务               | 7.2-elasticsearch-kb         | 0.21.0    |
+| elasticsearch-kb         | 知识ES服务               | 7.2-elasticsearch-kb         | 0.22.1    |
 
 ## Choerodon服务列表
 
@@ -51,7 +51,7 @@ weight = 5
 | hzero file            | 文件服务       | 0.22.4 |
 | hzero message         | 消息服务       | 0.22.6 |
 | gitlab service        | 平台基础服务    | 0.22.1 |
-| devops service        | Devops 服务    | 0.22.3 |
+| devops service        | Devops 服务    | 0.22.4 |
 | workflow service      | 工作流服务      | 0.22.2 |
 | agile service         | 敏捷管理        | 0.22.2 |
 | test manager service  | 测试管理服务     | 0.22.2 |

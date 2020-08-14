@@ -43,6 +43,7 @@ helm repo update
         OAUTH_GENERIC_ID_PATH: "'userAuthentication','principal','userId'"
         OAUTH_GENERIC_USER_NICKNAME: "username"
         OAUTH_GENERIC_USER_NAME: "usernmae"
+        RACK_ATTACK_WHITELIST: 0.0.0.0/0
     redis:
       internal:
         password: password
@@ -112,6 +113,7 @@ helm repo update
     | `core.env.OAUTH_GENERIC_API_KEY` | oauth 客户端ID |  |
     | `core.env.OAUTH_GENERIC_APP_SECRET` | oauth 客户端密钥 |  |
     | `core.env.OAUTH_GENERIC_SITE` | Gitlab 域名 |  |
+    | `core.env.RACK_ATTACK_WHITELIST`| Gitlab 并发限制白名单| 0.0.0.0/0 |
     | **Database** | | |
     | `database.type` | 如果使用外部数据库，设置为 `external` | `internal` |
     | `database.internal.password` | 数据库密码| `changeit` |
@@ -150,6 +152,7 @@ helm repo update
 
 ```
 helm upgrade gitlab c7n/gitlab-ha \
+    -f <(helm get values gitlab -n c7n-system) \
     --set core.env.OAUTH_ENABLED=true \
     --version 0.2.2 \
     --reuse-values \

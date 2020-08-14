@@ -161,5 +161,6 @@ helm upgrade --install sonarqube c7n/sonarqube \
     ```
 
 - sonar.projectKey=${GROUP_NAME}:${PROJECT_NAME}不可更改；否则，在查看代码质量时将获取不到对应数据
+- sonar.sources 指定扫描代码的路径
 - GROUP_NAME和PROJECT_NAME是devops-service内置的环境变量， GROUP_NAME=当前项目所在组织编码-当前项目编码，PROJECT_NAME=当前应用编码
 - 如果手动创建SonarQube项目，项目命名规则为：当前项目所在组织编码-当前项目编码:当前应用编码
