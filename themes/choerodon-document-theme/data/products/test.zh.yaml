@@ -1,5 +1,5 @@
 weight: 3
-name: "测试"
+name: "测试管理"
 icon: "icontest-icon"
 iconColor: "#3371E3"
 description: "测试管理为用户提供敏捷化的持续测试工具，包括测试用例管理、测试循环、测试分析等，可以有效地提高软件测试的效率和质量，提高测试的灵活性和可视化水平，最终减少测试时间，让用户将主要精力放到软件功能构建上。"
@@ -8,15 +8,15 @@ language: zh
 
 childIcon1: "/img/home/test-1.svg"
 childTitle1: "用例仓库"
-childDescription1: "敏捷化地管理测试用例，帮助团队沉淀测试记录和结果，实现随时追溯和量化考核。"
+childDescription1: "采用树形结构敏捷化地管理测试用例，与用户故事一一对应，帮助团队沉淀测试记录，实现随时追溯和量化考核。"
 
 childIcon2: "/img/home/test-2.svg"
 childTitle2: "测试计划"
-childDescription2: "系统地规划测试用例执行方案，以清晰的计划日历展示测试的执行情况。"
+childDescription2: "系统地规划测试用例执行方案，以清晰的计划日历划分测试用例的执行进度，指派测试执行人，责任到人，提高测试效率，把控质量风险。"
 
 childIcon3: "/img/home/test-3.svg"
 childTitle3: "执行测试"
-childDescription3: "执行测试计划，记录测试步骤结果，便于查看测试进度。"
+childDescription3: "记录测试步骤结果，追踪状态变更，一键提bug关联测试执行，提高测试-敏捷-开发的信息交换流转。测试用例变更时，第一时间同步更新，响应需求变更。"
 
 childIcon4: "/img/home/test-4.svg"
 childTitle4: "自动化测试"

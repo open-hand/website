@@ -1,7 +1,7 @@
 +++
 title = "冲刺"
 description = ""
-weight = 4
+weight = 3
 +++
 
 # 冲刺

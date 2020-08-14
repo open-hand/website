@@ -20,7 +20,7 @@ helm repo update
 ## 创建数据库
 
 - 编写参数配置文件 `create-c7nagile-db.yaml`
-    ```yaml
+    ```
     env:
       MYSQL_HOST: c7n-mysql.c7n-system.svc
       MYSQL_PORT: "3306"
@@ -40,44 +40,54 @@ helm repo update
 - 执行安装
 
     ```shell
-    helm install c7n/mysql-client \
+    helm upgrade --install create-c7nagile-db c7n/mysql-client \
       -f create-c7nagile-db.yaml \
+      --create-namespace \
       --version 0.1.0 \
-      --name create-c7nagile-db \
       --namespace c7n-system
     ```
 
 ## 部署 agile service
+
 - 若需了解项目详情及各项参数含义，请移步 [choerodon/agile-service](https://github.com/choerodon/agile-service)。
 
 - 编写参数配置文件 `agile-service.yaml`
+
     ```yaml
-    env:
-      open:
-        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
-        SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
-        SPRING_DATASOURCE_PASSWORD: password
-        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/agile_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
-        SPRING_DATASOURCE_USERNAME: choerodon
-        SPRING_REDIS_DATABASE: 9
-        SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
-        SERVICES_ATTACHMENT_URL: http://minio.example.choerodon.io
     preJob:
-      timeout: 1800
       preInitDB:
         datasource:
-          password: password
-          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/agile_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
+          url: jdbc:mysql://c7n-mysql.c7n-system:3306/?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
           username: choerodon
+          password: password
+        datasources:
+          # 多数据源初始化
+          # 支持框架数据和agile进行分库 指定菜单初始化地址
+          platform:
+             url: jdbc:mysql://c7n-mysql.c7n-system:3306/?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
+             username: choerodon
+             password: password
+             driver: com.mysql.jdbc.Driver
+    env:
+      open:
+        SPRING_APPLICATION_NAME: agile-service
+        SPRING_REDIS_HOST: c7n-redis.c7n-system
+        SPRING_REDIS_PORT: 6379
+        SPRING_REDIS_DATABASE: 12
+        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://hzero-register.c7n-system:8000/eureka/
+        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system:3306/agile_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowMultiQueries=true&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
+        SPRING_DATASOURCE_USERNAME: choerodon
+        SPRING_DATASOURCE_PASSWORD: password
+        SERVICES_ATTACHMENT_URL: https://minio.example.choerodon.io
     ```
 
 - 部署服务
 
     ```shell
-    helm install c7n/agile-service \
+    helm upgrade --install agile-service c7n/agile-service \
       -f agile-service.yaml \
-      --name agile-service \
-      --version 0.21.1 \
+      --create-namespace \
+      --version 0.22.2 \
       --namespace c7n-system
     ```
 
@@ -99,33 +109,42 @@ helm repo update
 - 若需了解项目详情及各项参数含义，请移步 [choerodon/test-manager-service](https://github.com/choerodon/test-manager-service)。
 
 - 编写参数配置文件 `test-manager-service.yaml`
-    ```
-    env:
-      open:
-        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
-        SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
-        SPRING_DATASOURCE_PASSWORD: password
-        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/test_manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
-        SPRING_DATASOURCE_USERNAME: choerodon
-        SPRING_REDIS_DATABASE: 10
-        SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
-        SERVICES_ATTACHMENT_URL: http://minio.example.choerodon.io
+
+    ```yaml
     preJob:
-      timeout: 1800
       preInitDB:
         datasource:
-          password: password
-          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/test_manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
+          url: jdbc:mysql://c7n-mysql.c7n-system:3306/?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
           username: choerodon
+          password: password
+        datasources:
+          # 多数据源初始化
+          # 支持框架数据和agile进行分库 指定菜单初始化地址
+          platform:
+             url: jdbc:mysql://c7n-mysql.c7n-system:3306/?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
+             username: choerodon
+             password: password
+             driver: com.mysql.jdbc.Driver
+    env:
+      open:
+        SPRING_REDIS_HOST: c7n-redis.c7n-system
+        SPRING_REDIS_PORT: 6379
+        SPRING_REDIS_DATABASE: 13
+        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://hzero-register.c7n-system:8000/eureka/
+        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system:3306/test_manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
+        SPRING_DATASOURCE_USERNAME: choerodon
+        SPRING_DATASOURCE_PASSWORD: password
+        CHOERODON_CLEANPERMISSION: false
+        SERVICES_ATTACHMENT_URL: https://minio.example.choerodon.io
     ```
 
 - 部署服务
 
     ```
-    helm install c7n/test-manager-service \
+    helm upgrade --install test-manager-service c7n/test-manager-service \
       -f test-manager-service.yaml \
-      --name test-manager-service \
-      --version 0.21.1 \
+      --create-namespace \
+      --version 0.22.2 \
       --namespace c7n-system
     ```
 
@@ -150,9 +169,9 @@ helm repo update
 - 安装 elasticsearch
 
     ```
-    helm install c7n/elasticsearch-kb \
-      --version 0.21.0 \
-      --name elasticsearch-kb \
+    helm upgrade --install elasticsearch-kb c7n/elasticsearch-kb \
+      --version 0.22.1 \
+      --create-namespace \
       --namespace c7n-system
     ```
 
@@ -161,35 +180,42 @@ helm repo update
 - 若需了解项目详情及各项参数含义，请移步 [choerodon/knowledgebase-service](https://github.com/choerodon/knowledgebase-service)。
 
 - 编写参数配置文件 `knowledgebase-service.yaml`
-  
-    ```
-    env:
-      open:
-        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://register-server.c7n-system:8000/eureka/
-        SERVICES_ATTACHMENT_URL: http://minio.example.choerodon.io/knowledgebase-service/
-        SPRING_CLOUD_CONFIG_URI: http://register-server.c7n-system:8000/
-        SPRING_DATASOURCE_PASSWORD: password
-        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/knowledgebase_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
-        SPRING_DATASOURCE_USERNAME: choerodon
-        ELASTICSEARCH_IP: elasticsearch-kb.c7n-system:9200
+
+    ```yaml
     preJob:
-      timeout: 1800
       preInitDB:
         datasource:
-          password: password
-          url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/knowledgebase_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
+          url: jdbc:mysql://c7n-mysql.c7n-system:3306/?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
           username: choerodon
-      preConfig:
-        updatePolicy: override  
+          password: password
+        datasources:
+          # 多数据源初始化 初始化菜单数据
+          # 支持框架数据和agile进行分库 指定菜单初始化地址
+          platform:
+             url: jdbc:mysql://c7n-mysql.c7n-system:3306/?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
+             username: choerodon
+             password: password
+             driver: com.mysql.jdbc.Driver
+    env:
+      open:
+        SPRING_REDIS_HOST: c7n-redis.c7n-system
+        SPRING_REDIS_PORT: 6379
+        SPRING_REDIS_DATABASE: 14
+        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://hzero-register.c7n-system:8000/eureka/
+        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system:3306/knowledgebase_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
+        SPRING_DATASOURCE_USERNAME: choerodon
+        SPRING_DATASOURCE_PASSWORD: password
+        SERVICES_ATTACHMENT_URL: https://minio.example.choerodon.io/knowledgebase-service/
+        ELASTICSEARCH_IP: elasticsearch-kb:9200 
     ```
 
 - 部署服务
 
     ``` 
-    helm install c7n/knowledgebase-service \
+    helm upgrade --install knowledgebase-service c7n/knowledgebase-service \
       -f knowledgebase-service.yaml \
-      --name knowledgebase-service \
-      --version 0.21.0 \
+      --create-namespace \
+      --version 0.22.1 \
       --namespace c7n-system
     ```
 

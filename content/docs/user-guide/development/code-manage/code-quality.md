@@ -13,6 +13,7 @@ weight = 6
 <blockquote class="note">
 若所选应用服务未曾使用SonarQube进行代码质量的检测，则没有相关的代码质量详情。
 </blockquote>
+添加代码质量检查请参考[Choerodon应用关联SonarQube项目](../../../../installation-configuration/steps/install/parts/base/sonarqube)。
 
 ![image](/docs/user-guide/development/code-manage/image/code-management-10.png)
 

@@ -23,7 +23,7 @@ weight = 5
 | kube-flannel             | kube-flannel             | v0.11.0-amd64                | -         |
 | kubernetes-dashboard     | kubernetes-dashboard     | v2.0.0-rc5                   | -         |
 | nginx-ingress-controller | nginx-ingress-controller | 0.29.0                       | -         |
-| Helm                     | Helm                     | 2.16.3                       | -         |
+| Helm                     | Helm                     | v3.2.4                       | -         |
 | Chartmuseum              | Kubernetes应用私有包仓库  | v0.11.0                      | 2.6.0     |
 | Minio                    | 对象存储服务              | RELEASE.2020-01-03T19-12-21Z | 4.0.1     |
 | Redis                    | 缓存数据库                | 4.0.11                       | 0.2.3     |
@@ -39,18 +39,22 @@ weight = 5
 
 | 组件                  | 描述           | 版本   |
 | --------------------- | -------------- | ------ |
-| go register server    | 注册服务       | 0.21.0 |
-| manager service       | 管理服务       | 0.21.0 |
-| base service          | 基础服务       | 0.21.5 |
-| api gateway           | 网关服务       | 0.21.0 |
-| oauth server          | 认证服务       | 0.21.1 |
-| file service          | 文件服务       | 0.21.0 |
-| notify service        | 通知服务       | 0.21.1 |
-| asgard service        | 事务服务       | 0.21.1 |
-| gitlab service        | Gitlab 服务    | 0.21.0 |
-| devops service        | Devops 服务    | 0.21.6 |
-| workflow service      | 工作流服务     | 0.21.0 |
-| agile service         | 敏捷管理       | 0.21.1 |
-| test manager service  | 测试管理服务   | 0.21.1 |
-| knowledgebase service | 知识服务       | 0.21.0 |
-| choerodon front       | Choerodon 前端 | 0.21.3 |
+| hzero register        | 注册服务       | 0.22.2 |
+| hzero admin           | 平台治理服务    | 0.22.3 |
+| hzero iam             | IAM服务       | 0.22.1 |
+| hzero asgard          | 事务服务       | 0.22.4 |
+| hzero swagger         | swagger服务   | 0.22.1 |
+| hzero gateway         | 网关服务       | 0.22.4 |
+| hzero oauth           | 认证服务       | 0.22.2 |
+| hzero platform        | 事务服务       | 0.22.1 |
+| hzero monitor         | 监控审计服务    | 0.22.4 |
+| hzero file            | 文件服务       | 0.22.4 |
+| hzero message         | 消息服务       | 0.22.6 |
+| gitlab service        | 平台基础服务    | 0.22.1 |
+| devops service        | Devops 服务    | 0.22.3 |
+| workflow service      | 工作流服务      | 0.22.1 |
+| agile service         | 敏捷管理        | 0.22.2 |
+| test manager service  | 测试管理服务     | 0.22.2 |
+| knowledgebase service | 知识服务        | 0.22.1 |
+| choerodon front       | Choerodon 前端  | 0.22.0 |
+| hzero front           | hzero 前端      | 0.22.1 |

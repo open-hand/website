@@ -1,10 +1,10 @@
 weight: 1
-title: "票易通和Choerodon猪齿鱼团队技术交流"
-minTitle: "社区技术交流"
-description: "11月8日下午，票易通CIO李耿带领技术研发团队成员来到汉得研发中心，同Choerodon猪齿鱼社区核心研发团队进行了一场围绕Choerodon的技术交流。"
-minDescription: "11月8日下午票易通同社区核心研发团队进行了技术交流"
+title: "HAND技术产品交流"
+minTitle: "HAND技术产品交流"
+description: "HAND技术产品交流平台全新上线，源于技术，志在四海。"
+minDescription: "HAND技术产品交流平台全新上线，源于技术，志在四海"
 button: "了解详情"
 img: "/img/socials/event/crland.svg"
 homeImg: "/img/home/notice/live.svg"
-href: "/blog/xforceplus-community"
+ahref: "https://mp.weixin.qq.com/mp/homepage?__biz=MzI2MjUzODcwMA==&hid=2&sn=e2940adc17e08cc6ec31e08aa6694a75&scene=1&devicetype=Windows+10+x64&version=62090529&lang=zh_CN&nettype=WIFI&ascene=1&session_us=gh_3cf8aa3b14b4&pass_ticket=1ra3Tuz7pyeAnWaaFzDWv6%2BxxrKCOM0mxRZURMXyCgsNLkdzQH50F64oeE7A3Pl0&wx_header=1&uin=MTQwOTU3NTQ0MA%3D%3D&key=f5c6dee86269ad8dab56bda9be25cc4a6822bc5e093c3b8d43e5248b859952188eb61e6be6419b350f7202036abbd183103a98959f18a31bea871e8b2be13bafe9e60d42fdc81ad5709854ff52a71a9b"
 language: zh

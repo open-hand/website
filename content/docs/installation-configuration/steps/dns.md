@@ -7,7 +7,7 @@ weight = 16
 # 域名解析
 
 <div>
-<div>Choerodon安装和配置<span style="color: #ff0000;"><strong>必须</strong></span>使用域名，只有正确配置了域名解析才能进行安装和使用。</div>
+<div>Choerodon安装和配置<span style="color: #ff0000;"><strong>强烈建议</strong></span>使用域名，也可使用IP+nodePort的方式进行安装和使用（一键安装只支持域名模式）。</div>
 </div>
 
 ## 预备知识

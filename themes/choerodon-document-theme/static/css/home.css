@@ -297,6 +297,15 @@
   display: none;
 }
 
+.see-more-section .carousel-button .carousel-a {
+  height: 42px;
+}
+
+.see-more-section .carousel-button .carousel-a:hover {
+  color: #326DE6;
+}
+
+
 /* carousel.html end */
 /* product.html */
 .products-section{
@@ -461,6 +470,7 @@
   line-height: 1.75;
   margin-bottom: 0.20rem;
 }
+
 .see-more-section .col-md-12{
   display: flex;
   flex-direction: column;

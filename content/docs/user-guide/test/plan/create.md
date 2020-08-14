@@ -58,7 +58,7 @@ weight = 2
 
 源用例更新后，会提醒未选择自动同步的计划中相应的测试用例进行更新。您可以选择更新，也可以选择忽略当次更新。
 
-![image](/docs/user-guide/test/image/TestPlan/TestPlan-03.png)
+![image](/content/docs/user-guide/test/image/TestPlan/TestPlan-03.png)
 
 ## 3.6. 查看执行测试详情
 

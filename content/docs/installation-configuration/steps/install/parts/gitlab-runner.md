@@ -47,20 +47,18 @@ helm repo update
 - 创建缓存所需PV和PVC
 
     ```bash
-    helm install c7n/persistentvolumeclaim \
+    helm upgrade --install runner-maven-pvc c7n/persistentvolumeclaim \
         --set accessModes={ReadWriteMany} \
         --set requests.storage=5Gi \
         --set storageClassName="nfs-provisioner" \
         --version 0.1.0 \
-        --name runner-maven-pvc \
         --namespace c7n-system
 
-    helm install c7n/persistentvolumeclaim \
+    helm upgrade --install runner-cache-pvc c7n/persistentvolumeclaim \
         --set accessModes={ReadWriteMany} \
         --set requests.storage=5Gi \
         --set storageClassName="nfs-provisioner" \
         --version 0.1.0 \
-        --name runner-cache-pvc \
         --namespace c7n-system
     ```
 
@@ -71,7 +69,7 @@ helm repo update
     </blockquote>
 
     ```bash
-    helm install c7n/gitlab-runner \
+    helm upgrade --install runner c7n/gitlab-runner \
         --set rbac.create=true \
         --set env.concurrent=3 \
         --set env.gitlabUrl=http://gitlab.example.choerodon.io/ \
@@ -80,7 +78,6 @@ helm repo update
         --set env.persistence.runner-maven-pvc="/root/.m2" \
         --set env.persistence.runner-cache-pvc="/cache" \
         --set enabled_mount_host_docker_sock=true \
-        --name runner \
         --version 0.2.4 \
         --namespace c7n-system
     ```

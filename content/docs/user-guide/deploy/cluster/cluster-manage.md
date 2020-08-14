@@ -46,17 +46,21 @@ weight = 1
 
  
 
-  	helm install --repo=http://chart.choerodon.com.cn/choerodon/c7ncd/ \
-  	--namespace=choerodon \
-  	--name=choerodon-cluster-agent-asdasd123 \
-  	--version=2018.11.12-162515-master \
-  	--set config.connect=ws://devops-service-front.staging.saas.hand-china.com/agent/ \
-  	--set config.token=7f58f4cd-9ee0-4abd-9ca5-b2e667f2da59 \
-  	--set config.clusterId=14 \
-  	--set config.choerodonId=asdasd123 \
-  	--set rbac.create=true \
-  	choerodon-cluster-agent
-  
+  	helm upgrade --install --create-namespace \
+        choerodon-cluster-agent-test-cluster \
+        --repo=https://openchart.choerodon.com.cn/choerodon/c7n/ \
+        --namespace=choerodon \
+        --version=0.23.2 \
+        --set config.connect=wss://service.choerodon.com.cn/websocket \
+        --set config.token=81a64691-c31a-4b19-bfd2-c0aa10c8d50d \
+        --set config.email=operateuser@qq.com \
+        --set-string config.clusterId=81712320244796416 \
+        --set config.choerodonId=62a0c1fb \
+        --set rbac.create=true \
+        choerodon-cluster-agent
+
+
+  ​    
   - helm: 在集群中的kubectl创建的命名空间内通过helm install部署一个集群客户端。参数有：
   - repo: chart仓库地址，取值为部署持续交互时的环境变量`env.open.AGENT_REPOURL`
   - name: release name，取值为集群编码
@@ -68,15 +72,13 @@ weight = 1
   - rbac.create: 用于控制kubectl权限     
   - choerodon-agent: chart name
 
-  (3) 复制脚本命令至集群中运行，与平台建立连接。        
+  (3) 复制脚本命令至集群中运行，与平台建立连接。
+     <blockquote class="warning"> 
+     自Choerodon 0.22.0版本开始，C7N agent中helm组件已由`V2`升级至`V3`，进行激活操作前请确保集群中helm指令为 v3.2.4 版本。
+  若未达到要求版本，请先更新helm指令后再进行后续操作。
+     </blockquote>
 
-   <blockquote class="warning"> 
-   自Choerodon 0.22.0版本开始，C7N agent中helm组件已由`V2`升级至`V3`，进行以下操作前请确保集群中含有v3版本的helm指令。
-   </blockquote>
-
-> - 运行前需要先初始化helm helm init ，helm repo update。
->
-> - helm 的版本必须与服务器上helm版本一致。
+     > - helm 的版本必须是v3.2.0及以上。
 
   (4) 执行成功后回到集群管理界面，便可以看到之前创建好的集群状态变为连接状态。
 

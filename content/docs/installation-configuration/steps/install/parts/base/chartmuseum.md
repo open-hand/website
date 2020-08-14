@@ -24,7 +24,7 @@ helm repo update
 - 若需了解项目详情及各项参数含义，请移步 [helm/chartmuseum](https://github.com/helm/chartmuseum)。
 - 编写参数配置文件 `chartmuseum.yaml`
 
-    ```
+    ```yaml
     env:
       open:
         STORAGE: local
@@ -42,11 +42,11 @@ helm repo update
 
 - 执行部署
   
-    ```
-    helm install c7n/chartmuseum \
+    ```shell
+    helm upgrade --install chartmuseum c7n/chartmuseum \
         -f chartmuseum.yaml \
         --version 2.6.0 \
-        --name chartmuseum \
+        --create-namespace \
         --namespace c7n-system
     ```
 
