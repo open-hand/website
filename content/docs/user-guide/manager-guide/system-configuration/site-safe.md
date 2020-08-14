@@ -38,4 +38,3 @@ description = "对系统外的密码策略自定义设置"
 
 - [通用设置](../site-setting)
 - [通知配置](../message-config)
-- [菜单管理](../menu)

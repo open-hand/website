@@ -34,16 +34,17 @@ weight = 1
 
   (1) 点击左上方的 `创建集群`，右侧会弹出创建集群页面，输入相关信息，包括集群编码、集群名称和集群描述；
 
-     > 集群创建成功后，默认向该组织下所有项目公开，若想为所创集群配置特定的公开范围，需要在集群的权限管理页面进行设置。
+  - 集群创建成功后，默认向该组织下所有项目公开，若想为所创集群配置特定的公开范围，需要在集群的权限管理页面进行设置。
+    - 集群编码：集群客户端的名称，限制为30个字符。  
 
-     - 集群编码：集群客户端的名称，限制为30个字符。  
-
-      > 只能由小写字母、数字、”-“组成，且以小写字母开头，不能以”-“结尾。
-     - 集群名称：项目下集群的显示名称。限制为10个字符。
-     - 集群描述：环境的描述，限制为30字符。  
+  - 只能由小写字母、数字、”-“组成，且以小写字母开头，不能以”-“结尾。
+    - 集群名称：项目下集群的显示名称。限制为10个字符。
+    - 集群描述：环境的描述，限制为30字符。  
 
 
-  (2) 填写完成后，点击`创建`，界面会自动生成可执行的shell脚本命令，其中各个参数已经由后端服务自动生成。  
+  (2) 填写完成后，点击`创建`，界面会自动生成可执行的shell脚本命令，其中各个参数已经由后端服务自动生成。    
+
+ 
 
   	helm upgrade --install --create-namespace \
         choerodon-cluster-agent-test-cluster \
@@ -154,7 +155,6 @@ weight = 1
   ![image](/docs/user-guide/deploy/cluster/image/cluster-management-09.jpg)    
 
   - 从“环境详情”的维度查看集群中所有环境（包括Choerodon平台环境与非Choerodon平台环境）中存在问题的配置项（`warning`与 `error`状态的配置项）。  
-
   ![image](/docs/user-guide/deploy/cluster/image/cluster-management-10.jpg)  
 
 
@@ -177,9 +177,10 @@ weight = 1
   ![image](/docs/user-guide/deploy/cluster/image/cluster-management-15.jpg)   
 
   需要输入的参数有：
-  - admin密码：Grafana组件admin账户的登录密码
-  - 域名地址：Grafana访问地址
-  - PrometheusPV、GrafanaPV和AlertManagerPV：对应组件需要使用到的PV,需要提前在PV管理中创建
+
+  - admin密码：Grafana组件admin账户的登录密码；
+  - 域名地址：Grafana访问地址；
+  - PrometheusPV、GrafanaPV和AlertManagerPV：对应组件需要使用到的PV,需要提前在PV管理中创建；
 
   安装成功后，监控组件状态变为`可用`。同时，提供`修改`与`卸载`操作。其中`修改`操作只支持修改域名地址。
   

@@ -23,6 +23,6 @@ description = "统计系统的菜单点击量"
 
 ## 8. 更多操作
 
-- [查看接口统计](../api-overveiw)
-- [查看微服务实例](../instance)
-- [在Choerodon进行API调试](../api)
+- [查看接口统计](../hzero/hzero-api-overveiw)
+- [查看微服务实例](../hzero/hzero-instance)
+- [API调试](../hzero/hzero-api)

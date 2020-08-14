@@ -178,7 +178,7 @@ LDAP同步设置中包含了自动同步、手动同步以及同步记录三个�
 
 ## 11. 阅读更多
 
-- [如何在Choerodon进行角色管理](../../system-configuration/role)
+- [如何在Choerodon进行角色管理](../role)
 - [快速添加组织管理员](../org_admin)
 - [LDAP设置](../setting)
 

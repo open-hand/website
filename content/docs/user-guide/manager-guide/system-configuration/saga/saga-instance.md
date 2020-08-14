@@ -111,4 +111,4 @@ hover到事务实例的名称查看更多详情：
 
 - [事务定义](../saga-define)
 - [如何创建定时任务](../../job)
-- [在Choerodon进行API调试](../../api)
+- [API调试](../../hzero/hzero-api)

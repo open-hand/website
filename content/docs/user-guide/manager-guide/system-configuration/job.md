@@ -154,4 +154,3 @@ C|日历值。日期值是根据一个给定的日历计算出来的。在日期
 
 - [事务定义](../saga/saga-define)
 - [事务实例](../saga/saga-instance)
-- [在Choerodon进行API调试](../api)

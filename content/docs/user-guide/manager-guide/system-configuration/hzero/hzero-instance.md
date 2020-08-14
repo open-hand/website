@@ -1,6 +1,6 @@
 +++
 title = "微服务实例"
-weight = 130
+weight = 4
 description = "查看平台运行微服务下的实例以及实例详情 "
 +++
 
@@ -34,6 +34,5 @@ Choerodon 平台是由多个微服务构成的，每一个服务可以同时存�
 
 ## 3. 更多操作
 
-- [事务实例](../saga/saga-instance)
-- [如何创建定时任务](../job)
-- [在Choerodon进行API调试](../api)
+- [事务实例](../../saga/saga-instance)
+- [如何创建定时任务](../../job)

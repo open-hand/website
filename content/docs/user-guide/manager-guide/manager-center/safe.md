@@ -128,7 +128,7 @@ description = "用于对组织安全信息的设置"
 
 点击您要删除的客户端所在列的![三点](/docs/user-guide/manager-guide/image/more-vert.png)按钮，点击删除，即可删除客户端。
 
-## 更多操作
+## 4 更多操作
 - [管理组织下的用户](../org-user)
 - [组织下的ldap设置](../setting/#ldap)
 - [组织下的通用](../setting)
