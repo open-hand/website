@@ -189,7 +189,7 @@ helm repo update
   - 验证命令
 
     ```
-    curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=hzero-admin -o jsonpath="{.items[0].status.podIP}"):8061/actuator/health | jq -r .status
+    curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=hzero-admin -o jsonpath="{.items[0].status.podIP}"):8063/actuator/health | jq -r .status
     ```
 
   - 出现以下类似信息即为成功部署

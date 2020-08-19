@@ -93,7 +93,7 @@ helm repo update
     env:
       open:
         EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://hzero-register.c7n-system:8000/eureka/
-        GITLAB_URL: https://code.example.choerodon.io
+        GITLAB_URL: https://gitlab.example.choerodon.io
         GITLAB_PRIVATETOKEN: YrAUZrvXDuqwcmDSzrJj
     ```
 
