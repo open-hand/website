@@ -160,7 +160,7 @@ helm upgrade gitlab c7n/gitlab-ha \
     --namespace c7n-system
 ```
 <blockquote class="note">
-helm 3.2.x 使用上面的命令更新 Gitlab 配置会报错，如果使用使用 helm 3.2.x，请按照下面的步骤更新 Gitlab 配置。
+helm 3.2.x 使用上面的命令更新 Gitlab 配置会报错，如果使用 helm 3.2.x，请按照下面的步骤更新 Gitlab 配置。
 </blockquote>
 
 - 修改参数配置文件 gitlab.yaml
