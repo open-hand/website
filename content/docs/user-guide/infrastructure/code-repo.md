@@ -46,7 +46,7 @@ weight = 1
 ### 1. 概述
 
 权限分配是指对Gitlab的成员权限进行分配的操作。权限分配对应Gitlab对成员的新增、编辑、删除功能，只有分配了权限，用户才拥有对Gitlab的操作权限（例如git pull、git push等）。当对成员进行增删改时，会将权限同步至Gitlab
-![image](https://minio.choerodon.com.cn/knowledgebase-service/0/3c3b50d09856497db59e78c80279650e@blob.png)
+![image](/docs/user-guide/infrastructure/image/code-repo/auth01.png)
 
 > 注意：当用户手动去Gitlab修改对应的权限，将会导致两边的权限不一致。
 > 系统提供了2个机制解决权限不一致问题
@@ -60,7 +60,7 @@ weight = 1
 > 当添加的成员在应用服务中已存在，系统会将该成员的权限进行更新
 > 当添加出现异常导致添加失败时，系统会将该成员设置为**未同步**，表示该成员权限与Gitlab不一致。
 
-![image](https://minio.choerodon.com.cn/knowledgebase-service/0/4473ff3d0f364a4b9b10cf94f8ef8d6f@blob.png)
+![image](/docs/user-guide/infrastructure/image/code-repo/auth02.png)
 
 
 
@@ -68,7 +68,7 @@ weight = 1
 
 当用户想要加入某个应用服务时，可点击`权限申请`按钮进行权限申请，申请类型有2种：`新成员`和`权限变更`。当检测到当前申请人在选中应用服务中未分配过权限，则类型为新成员；反之，当检测到当前申请人在选中的应用服务中分配过权限，则类型为权限变更。
 权限申请提交后，需等待审批，具体见`权限审批`页面。
-![image](https://minio.choerodon.com.cn/knowledgebase-service/0/30f0b311750c4087ac9b0c14e6791860@blob.png)
+![image](/docs/user-guide/infrastructure/image/code-repo/auth03.png)
 
 ### 4. 导出权限
 
@@ -81,17 +81,17 @@ weight = 1
 #### 5.1 修改成员权限
 
 当点击具体`用户名`或`权限`时，可在侧弹窗中修改当前成员的权限
-![image](https://minio.choerodon.com.cn/knowledgebase-service/0/773d3195f560455785ed0d91d022a8e6@blob.png)
+![image](/docs/user-guide/infrastructure/image/code-repo/auth04.png)
 
 #### 5.2 删除成员权限
 
 当点击`删除`时，会将该成员的权限移除
-![image](https://minio.choerodon.com.cn/knowledgebase-service/0/7d92540940b7465483e3176b437ef2a0@blob.png)
+![image](/docs/user-guide/infrastructure/image/code-repo/auth05.png)
 
 #### 5.3 同步
 
 当出现`未同步`状态时，用户将不可以对该成员进行编辑，可以点击`同步`按钮，将Gitlab的权限同步至当前系统。解决系统与Gitlab权限不一致的问题
-![image](https://minio.choerodon.com.cn/knowledgebase-service/0/6853adda2b9a47f9a44022f3707a94b9@blob.png)
+![image](/docs/user-guide/infrastructure/image/code-repo/auth06.png)
 
 
 
@@ -107,7 +107,8 @@ weight = 1
 
 #### 1. 概述
 
-`权限审批`功能可以审批用户提交的`权限申请`。审批通过之后将会更改改成员的权限![image.png](https://cdn.nlark.com/yuque/0/2020/png/663100/1586497915613-5b5f5107-7ab9-47f3-b198-8b59023f13d7.png#align=left&display=inline&height=604&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1208&originWidth=2360&size=258932&status=done&style=none&width=1180)
+`权限审批`功能可以审批用户提交的`权限申请`。审批通过之后将会更改改成员的权限
+![image.png](/docs/user-guide/infrastructure/image/code-repo/auth-app-overview.png)
 
 #### 2. 审批
 
@@ -116,7 +117,7 @@ weight = 1
 - 选择是：填写该申请人的过期日期（可选，不填写表示不过期），点击确认后该成员申请的权限将添加到系统中，状态将变为通过
 - 选择否：填写拒绝原因，点击确认后，状态将变为不通过
 
-![image](https://minio.choerodon.com.cn/knowledgebase-service/0/88affd45536b45539c2ca3ed5fdc56d9@blob.png)
+![image](/docs/user-guide/infrastructure/image/code-repo/auth07.png)
 
 
 
@@ -131,12 +132,12 @@ weight = 1
 **字段说明**
 审计执行日期：显示上一次审计执行的日期
 差异数据总数：显示当前条件下的权限差异数据总数
-![image](https://minio.choerodon.com.cn/knowledgebase-service/0/7d7748c55c91414fa9f92a959bd037ac@blob.png)
+![image](/docs/user-guide/infrastructure/image/code-repo/auth08.png)
 
 ### 2. 修复
 
 `修复`功能用于将Gitlab权限修复为符合`总体规则`规范的权限。
-![image](https://minio.choerodon.com.cn/knowledgebase-service/0/3b93f9f07fc64333aee862d7aaad5c84@blob.png)
+![image](/docs/user-guide/infrastructure/image/code-repo/auth09.png)
 
 ## 6. 安全审计
 
@@ -146,12 +147,12 @@ weight = 1
 
 > 例：A成员在所有服务均拥有Gitlab权限，占比100%，权限过高，值得留意
 
-![image](https://minio.choerodon.com.cn/knowledgebase-service/0/ff52ecfca5e043d4acd735e08f1e1e31@blob.png)
+![image](/docs/user-guide/infrastructure/image/code-repo/auth10.png)
 
 ### 2. 查看成员权限
 
 点击具体`用户名`，在侧弹窗中会展示该成员在各个应用服务所拥有的权限。
-![image](https://minio.choerodon.com.cn/knowledgebase-service/0/1ef19f4ab972400895cc114c5782807f@blob.png)
+![image](/docs/user-guide/infrastructure/image/code-repo/auth11.png)
 
 ## 7. 保护分支/标记
 
@@ -166,7 +167,7 @@ weight = 1
 
 > 例如：当设置release分支的允许合并的权限为任何人均不允许，则任何人均无法合并分支到release
 
-![image](https://minio.choerodon.com.cn/knowledgebase-service/0/154206fff8504ec58d254706cba7a1ff@blob.png)
+![image](/docs/user-guide/infrastructure/image/code-repo/protect-branch01.png)
 
 ### 2. 保护分支
 
@@ -180,12 +181,12 @@ weight = 1
 - 是否允许合并：设置之后将保护该分支的`合并(merge)`权限
 - 是否允许推送：设置之后将保护该分支的`推送(push)`权限
 
-![image](https://minio.choerodon.com.cn/knowledgebase-service/0/0fe1554966344f28a86e95bbc6ac5af2@blob.png)
+![image](/docs/user-guide/infrastructure/image/code-repo/protect-branch02.png)
 
 #### 修改保护分支
 
 `修改保护分支`基本与添加类似，用于更改权限
-![image](https://minio.choerodon.com.cn/knowledgebase-service/0/2279d9952ff944e4b733b26ea7396eb9@blob.png)
+![image](/docs/user-guide/infrastructure/image/code-repo/protect-branch03.png)
 
 #### 取消保护
 
@@ -202,12 +203,12 @@ weight = 1
   - 手动输入要保护的标记名（可使用通配符*，例如：tag*，表示保护以tag开头的所有标记）
 - 是否允许创建：设置之后将保护该标记的`创建和更新`权限
 
-![image](https://minio.choerodon.com.cn/knowledgebase-service/0/2abbe2b006c9407595bb156e79f2a9cf@blob.png)
+![image](/docs/user-guide/infrastructure/image/code-repo/protect-tag01.png)
 
 #### 编辑保护标记
 
 `修改保护标记`基本与添加类似，用于更改权限
-![image](https://minio.choerodon.com.cn/knowledgebase-service/0/b7bf3a2308fa41e0a4742b4f5b00be89@blob.png)
+![image](/docs/user-guide/infrastructure/image/code-repo/protect-tag02.png)
 
 #### 取消保护
 
@@ -230,14 +231,14 @@ weight = 1
 - 同步成员
   - 触发条件：`同步`成功
 
-![image](https://minio.choerodon.com.cn/knowledgebase-service/0/1d59712823064eb38946aeef658dd4d9@blob.png)
+![image](/docs/user-guide/infrastructure/image/code-repo/operate-log01.png)
 
 ## 9. 总览
 
 ### 1. 概述
 
 `总览`界面展示当前项目各个应用服务的概况
-![image](https://minio.choerodon.com.cn/knowledgebase-service/0/267f99b8b06f4aa08cc2666c8c71c233@blob.png)
+![image](/docs/user-guide/infrastructure/image/code-repo/overview.png)
 
 ## 10. 管理指南
 
@@ -252,7 +253,7 @@ weight = 1
 ##### 2. 导出权限
 
 点击`导出权限`，可将当前查询条件下的列表导出为Excel
-![image](https://minio.choerodon.com.cn/knowledgebase-service/0/22f10292e1ee42bdabc9122135ea0325@blob.png)
+![image](/docs/user-guide/infrastructure/image/code-repo/auth-export.png)
 
 #### 权限审计
 
@@ -265,9 +266,4 @@ weight = 1
 ##### 1. 概述
 
 `操作日志`页面展示当前组织下所有项目的代码库权限操作日志
-![image](https://minio.choerodon.com.cn/knowledgebase-service/0/e035b0d334804a6bac61a8e2fb9dd2e3@blob.png)
-
-## 11. 阅读更多
-
-- [测试设置](../test)
-- [页面设置](../pages)
+![image](/docs/user-guide/infrastructure/image/code-repo/operate-log02.png)
