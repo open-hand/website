@@ -89,7 +89,7 @@ weight = 1
 6. 点击“镜像描述”可以修改描述信息
 7. 点击“删除”按钮可以删除镜像，以及该镜像的所有版本
 
-![image](/docs/user-guide/infrastructure/image/prod-repo/harborImage01.png)
+![image](/docs/user-guide/infrastructure/image/prod-repo/harborImage.png)
 
 ## 8. 镜像版本管理
 

@@ -16,5 +16,11 @@ weight = 7
 
 ## 3. 制品库管理
 
-文档库管理主要是对所属项目的制品库(maven、npm、docker)进行创建、权限维护、包列表引入、docker镜像管理、日志监控等，了解详情请查看[制品库管理](./prod-repo)。
+文档库管理主要是对所属项目的制品库(maven、npm、docker)进行创建、权限维护、包列表引入、docker镜像管理、日志监控等。了解详情请查看:
+
+[制品库管理(harbor)](./prod-repo-harbor)
+
+[制品库管理(maven)](./prod-repo-maven)
+
+[制品库管理(npm)](./prod-repo-npm)
 
