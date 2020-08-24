@@ -232,7 +232,7 @@ helm repo update
     helm upgrade --install hzero-iam c7n/hzero-iam \
         -f hzero-iam.yaml \
         --create-namespace \
-        --version 0.22.2 \
+        --version 0.22.3 \
         --namespace c7n-system
     ```
 
