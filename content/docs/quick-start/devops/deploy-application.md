@@ -30,7 +30,7 @@ weight = 6
   
     > 部署配置为可选项，若此处不选择，则会给出Charts包中默认的配置信息。  
 
-3. 根据实际的配置，配置部署应用服务所需的配置信息。替换掉一些参数文件值。在这里，请先`preJob.preConfig.enable`这个值改为`false`。
+3. 根据实际的配置，配置部署应用服务所需的配置信息。替换掉一些参数文件值。在这里，请先`preJob.preConfig.enable`和`preJob.preInitDb.enable`这个值改为`false`。
 
 4. 最后，点击`部署`。信息提交完成后，会自动跳转到实例信息界面，可以在相同菜单下的环境下看到正在部署中的实例。    
   ![image](/docs/quick-start/devops/image/back-applications-8.png)  
