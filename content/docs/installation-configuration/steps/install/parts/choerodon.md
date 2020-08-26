@@ -308,7 +308,7 @@ helm repo update
     env:
       open:
         EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://hzero-register.c7n-system:8000/eureka/
-        HZERO_OAUTH_URL: https://api.example.choerodon.io/oauth/oauth/authorize
+        HZERO_OAUTH_URL: http://api.example.choerodon.io/oauth/oauth/authorize
         SPRING_REDIS_HOST: c7n-redis.c7n-system
         SPRING_REDIS_PORT: 6379
         # 此db不可更改
@@ -498,7 +498,7 @@ helm repo update
       open:
         EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://hzero-register.c7n-system:8000/eureka/
         MINIO_ACCESSKEY: accesskey
-        MINIO_ENDPOINT: https://minio.example.choerodon.io
+        MINIO_ENDPOINT: http://minio.example.choerodon.io
         MINIO_SECRETKEY: secretkey
         SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system:3306/hzero_file?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
         SPRING_DATASOURCE_USERNAME: choerodon
@@ -509,7 +509,7 @@ helm repo update
         SPRING_REDIS_DATABASE: 1
         SPRING_SERVLET_MULTIPART_MAX_FILE_SIZE: 200MB
         SPRING_SERVLET_MULTIPART_MAX_REQUEST_SIZE: 200MB
-        FILE_GATEWAY_URL: https://api.example.choerodon.io/hfle
+        FILE_GATEWAY_URL: http://api.example.choerodon.io/hfle
     ```
 
 - 部署服务

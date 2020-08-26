@@ -93,7 +93,7 @@ helm repo update
     env:
       open:
         EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://hzero-register.c7n-system:8000/eureka/
-        GITLAB_URL: https://gitlab.example.choerodon.io
+        GITLAB_URL: http://gitlab.example.choerodon.io
         GITLAB_PRIVATETOKEN: YrAUZrvXDuqwcmDSzrJj
     ```
 
@@ -150,15 +150,15 @@ helm repo update
         SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system:3306/devops_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
         SPRING_DATASOURCE_USERNAME: choerodon
         SPRING_DATASOURCE_PASSWORD: password
-        SERVICES_GITLAB_URL: https://gitlab.example.choerodon.io/
-        SERVICES_GITLAB_SSHURL: gitlab.example.choerodon.io
+        SERVICES_GITLAB_URL: http://gitlab.example.choerodon.io/
+        SERVICES_GITLAB_SSHURL: gitlab.example.choerodon.io:30022
         SERVICES_GITLAB_PROJECTLIMIT: 100
         SERVICES_HELM_URL: http://chart.example.choerodon.io
         SERVICES_HARBOR_BASEURL: https://registry.example.choerodon.io
         SERVICES_HARBOR_USERNAME: choerodon
         SERVICES_HARBOR_PASSWORD: password
         SERVICES_HARBOR_INSECURESKIPTLSVERIFY: true
-        SERVICES_GATEWAY_URL: https://api.example.choerodon.io
+        SERVICES_GATEWAY_URL: http://api.example.choerodon.io
         AGENT_VERSION: 0.22.3
         AGENT_SERVICEURL: ws://devops.example.choerodon.io/websocket
         AGENT_REPOURL: https://openchart.choerodon.com.cn/choerodon/c7n/

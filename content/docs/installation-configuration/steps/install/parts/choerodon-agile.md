@@ -78,7 +78,7 @@ helm repo update
         SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system:3306/agile_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowMultiQueries=true&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
         SPRING_DATASOURCE_USERNAME: choerodon
         SPRING_DATASOURCE_PASSWORD: password
-        SERVICES_ATTACHMENT_URL: https://minio.example.choerodon.io
+        SERVICES_ATTACHMENT_URL: http://minio.example.choerodon.io
     ```
 
 - 部署服务
@@ -135,7 +135,7 @@ helm repo update
         SPRING_DATASOURCE_USERNAME: choerodon
         SPRING_DATASOURCE_PASSWORD: password
         CHOERODON_CLEANPERMISSION: false
-        SERVICES_ATTACHMENT_URL: https://minio.example.choerodon.io
+        SERVICES_ATTACHMENT_URL: http://minio.example.choerodon.io
     ```
 
 - 部署服务
@@ -205,7 +205,7 @@ helm repo update
         SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system:3306/knowledgebase_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
         SPRING_DATASOURCE_USERNAME: choerodon
         SPRING_DATASOURCE_PASSWORD: password
-        SERVICES_ATTACHMENT_URL: https://minio.example.choerodon.io/knowledgebase-service/
+        SERVICES_ATTACHMENT_URL: http://minio.example.choerodon.io/knowledgebase-service/
         ELASTICSEARCH_IP: elasticsearch-kb:9200 
     ```
 
