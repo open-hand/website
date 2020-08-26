@@ -38,6 +38,4 @@ weight = 3
 |||运营|能够查看全部报表。
 |||设置|无任何可操作权限。
 
-
-
-此外，Choerodon平台支持自定义角色，点击了解[如何自定义角色](../system-configuration/role)
+此外，Choerodon平台支持自定义角色，点击了解[如何自定义角色](../manager-guide/manager-center/role)
