@@ -71,17 +71,24 @@ persistence:
 
 - 编写参数配置文件 `promtail.yaml`
 
-```yaml
-loki:
-  serviceName: loki
-volumeMounts:
-- name: docker
-  mountPath: /var/lib/docker/containers
-  readOnly: true
-- name: pods
-  mountPath: /var/log/pods
-  readOnly: true
-```
+    ```yaml
+    loki:
+      serviceName: loki
+    volumeMounts:
+    - mountPath: /var/lib/docker/containers
+      name: docker
+      readOnly: true
+    - mountPath: /var/log/pods
+      name: pods
+      readOnly: true
+    volumes:
+    - hostPath:
+        path: /var/lib/docker/containers
+      name: docker
+    - hostPath:
+        path: /var/log/pods
+      name: pods
+    ```
 
 - 安装 promtail
 
