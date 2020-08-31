@@ -42,7 +42,7 @@ helm repo update
         OAUTH_GENERIC_ROOT_PATH: "'userAuthentication','principal'"
         OAUTH_GENERIC_ID_PATH: "'userAuthentication','principal','userId'"
         OAUTH_GENERIC_USER_NICKNAME: "username"
-        OAUTH_GENERIC_USER_NAME: "usernmae"
+        OAUTH_GENERIC_USER_NAME: "username"
         RACK_ATTACK_WHITELIST: 0.0.0.0/0
     redis:
       internal:
@@ -149,19 +149,6 @@ helm repo update
 </blockquote>
 
 ### 更新Gitlab配置
-
-```
-helm upgrade gitlab c7n/gitlab-ha \
-    -f <(helm get values gitlab -n c7n-system) \
-    --set core.env.OAUTH_ENABLED=true \
-    --version 0.2.2 \
-    --reuse-values \
-    --force \
-    --namespace c7n-system
-```
-<blockquote class="note">
-helm 3.2.x 使用上面的命令更新 Gitlab 配置会报错，如果使用 helm 3.2.x，请按照下面的步骤更新 Gitlab 配置。
-</blockquote>
 
 - 修改参数配置文件 gitlab.yaml
 

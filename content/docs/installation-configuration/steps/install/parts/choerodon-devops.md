@@ -55,7 +55,7 @@ helm repo update
     env:
       open:
         EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://hzero-register.c7n-system:8000/eureka/
-        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system:3306/workflow_service?useUnicode=true&characterEncoding=utf-8&useSSL=false?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
+        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system:3306/workflow_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
         SPRING_DATASOURCE_USERNAME: choerodon
         SPRING_DATASOURCE_PASSWORD: password
     ```
@@ -155,8 +155,8 @@ helm repo update
         SERVICES_GITLAB_PROJECTLIMIT: 100
         SERVICES_HELM_URL: http://chart.example.choerodon.io
         SERVICES_HARBOR_BASEURL: https://registry.example.choerodon.io
-        SERVICES_HARBOR_USERNAME: choerodon
-        SERVICES_HARBOR_PASSWORD: password
+        SERVICES_HARBOR_USERNAME: admin
+        SERVICES_HARBOR_PASSWORD: Harbor12345
         SERVICES_HARBOR_INSECURESKIPTLSVERIFY: true
         SERVICES_GATEWAY_URL: http://api.example.choerodon.io
         AGENT_VERSION: 0.22.3
