@@ -86,7 +86,7 @@ helm repo update
 
 ## 部署 gitlab service
 - 若需了解项目详情及各项参数含义，请移步 [choerodon/gitlab-service](https://github.com/choerodon/gitlab-service)。
-- 如何获取 `GITLAB_PRIVATETOKEN` 请查看[这里](http://forum.choerodon.io/t/topic/1155/2)
+- 如何获取 `GITLAB_PRIVATETOKEN` 请查看[这里](http://openforum.hand-china.com/t/topic/1155/2)
 - 编写参数配置文件 `gitlab-service.yaml`
 
     ```yaml

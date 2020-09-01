@@ -1,4 +1,4 @@
-var communitySite="http://forum.choerodon.io";
+var communitySite="https://openforum.hand-china.com";
 var listLength = 7;
 
 Date.prototype.Format = function (fmt) {
@@ -62,7 +62,7 @@ function getData(source) {
                 var userId = topics[index].posters[0].user_id;
                 for(var i=0; i<users.length; i++){
                     if(users[i].id===userId){
-                        icon="http://forum.choerodon.io/"+users[i].avatar_template.replace("{size}", "32");
+                        icon="https://openforum.hand-china.com/"+users[i].avatar_template.replace("{size}", "32");
                     }
                 }
                 var time=new Date(topics[index].bumped_at).getTime();
