@@ -46,7 +46,7 @@ weight = 5
 | hzero swagger         | swagger服务   | 0.22.1 |
 | hzero gateway         | 网关服务       | 0.22.4 |
 | hzero oauth           | 认证服务       | 0.22.2 |
-| hzero platform        | 事务服务       | 0.22.1 |
+| hzero platform        | 事务服务       | 0.22.2 |
 | hzero monitor         | 监控审计服务    | 0.22.4 |
 | hzero file            | 文件服务       | 0.22.4 |
 | hzero message         | 消息服务       | 0.22.8 |

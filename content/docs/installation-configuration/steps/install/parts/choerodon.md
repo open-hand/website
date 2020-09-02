@@ -130,7 +130,7 @@ helm repo update
     helm upgrade --install hzero-platform c7n/hzero-platform \
         -f hzero-platform.yaml \
         --create-namespace \
-        --version 0.22.1 \
+        --version 0.22.2 \
         --namespace c7n-system
     ```
 
