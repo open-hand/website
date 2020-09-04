@@ -569,7 +569,7 @@ helm repo update
     helm upgrade --install hzero-message c7n/hzero-message \
         -f hzero-message.yaml \
         --create-namespace \
-        --version 0.22.8 \
+        --version 0.22.9 \
         --namespace c7n-system
     ```
 
