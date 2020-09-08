@@ -14,7 +14,7 @@ weight = 4
 
 ## 报告安全漏洞
 
-请私下报告可疑的安全漏洞 `ganshanshan@gmail.com`，请不要公开创造可疑的安全漏洞问题。
+请私下报告可疑的安全漏洞 `choerodon@vip.hand-china.com`，请不要公开创造可疑的安全漏洞问题。
 
 ## 行为守则
 
@@ -28,4 +28,4 @@ weight = 4
 
 当个人代表项目或其社区时，本行为准则适用于项目空间和公共场所。
 
-可以通过电子邮件报告滥用，骚扰或其他不可接受行为的实例 `ganshanshan@gmail.com`。
+可以通过电子邮件报告滥用，骚扰或其他不可接受行为的实例 `choerodon@vip.hand-china.com`。
