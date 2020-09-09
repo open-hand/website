@@ -92,6 +92,9 @@ helm upgrade --install ssd c7n/nfs-client-provisioner \
           volumeClaimTemplate:
             spec:
               storageClassName: ssd
+              resources:
+                requests:
+                  storage: 20Gi
     ```
 
 - 安装监控
