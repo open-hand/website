@@ -396,7 +396,7 @@ helm repo update
       open:
         # 如果使用https 该参数设置为true
         HZERO_OAUTH_LOGIN_ENABLE_HTTPS: false
-        HZERO_OAUTH_LOGIN_SUCCESS_URL: http://example.choerodon.io
+        HZERO_OAUTH_LOGIN_SUCCESS_URL: http://app.example.choerodon.io
         HZERO_OAUTH_LOGIN_DEFAULT_CLIENT_ID: choerodon
         HZERO_GATEWAY_URL: http://api.example.choerodon.io
         EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://hzero-register.c7n-system:8000/eureka/
