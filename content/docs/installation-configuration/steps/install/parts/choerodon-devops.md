@@ -108,7 +108,7 @@ helm repo update
     helm upgrade --install gitlab-service c7n/gitlab-service \
         -f gitlab-service.yaml \
         --create-namespace \
-        --version 0.22.1 \
+        --version 0.23.0 \
         --namespace c7n-system
     ```
 
@@ -183,7 +183,7 @@ helm repo update
     ```
     helm upgrade --install devops-service c7n/devops-service \
         -f devops-service.yaml \
-        --version 0.22.7 \
+        --version 0.23.6 \
         --namespace c7n-system
     ```
 

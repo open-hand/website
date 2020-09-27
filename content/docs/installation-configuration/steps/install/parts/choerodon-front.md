@@ -15,7 +15,7 @@ helm repo update
 
 
 ## 部署 hzero front
-- 若需了解项目详情及各项参数含义，请移步 [choerodon/hzero-front](https://github.com/choerodon/hzero-front)。
+- 若需了解项目详情及各项参数含义，请移步 [open-hand/hzero-front](https://github.com/open-hand/hzero-front)。
 
 - 编写参数配置文件 `hzero-front.yaml`
 
@@ -25,8 +25,19 @@ helm repo update
       host: hzero.example.choerodon.io
     env:
       open:
+        BUILD_BASE_PATH: /
+        BUILD_PUBLIC_URL: /
         BUILD_CLIENT_ID: choerodon
-        BUILD_API_HOST: http://api.example.choerodon.io
+        BUILD_WEBSOCKET_HOST: ws://ws.hft.jajabjbj.top
+        BUILD_BPM_HOST: http://bpm.hft.jajabjbj.top
+        BUILD_API_HOST: https://api.example.choerodon.io
+        BUILD_CUSTOMIZE_ICON_NAME: icon-font
+        PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: true
+        BUILD_PLATFORM_VERSION: SAAS
+        IM_ENABLE: BUILD_IM_ENABLE
+        IM_WEBSOCKET_HOST: BUILD_IM_WEBSOCKET_HOST
+        TRACE_LOG_ENABLE: BUILD_TRACE_LOG_ENABLE
+        CUSTOMIZE_ICON_NAME: BUILD_CUSTOMIZE_ICON_NAME 
     ```
 
 - 部署服务
@@ -35,7 +46,7 @@ helm repo update
     helm upgrade --install hzero-front c7n/hzero-front \
         -f hzero-front.yaml \
         --create-namespace \
-        --version 0.22.1 \
+        --version 0.23.0 \
         --namespace c7n-system
     ```
 
@@ -54,7 +65,7 @@ helm repo update
         ```
 
 ## 部署 choerodon front
-- 若需了解项目详情及各项参数含义，请移步 [choerodon/choerodon-front](https://github.com/choerodon/choerodon-front)。
+- 若需了解项目详情及各项参数含义，请移步 [open-hand/choerodon-front](https://github.com/open-hand/choerodon-front)。
 
 - 编写参数配置文件 `choerodon-front.yaml`
 
@@ -72,6 +83,7 @@ helm repo update
         FILE_SERVER: http://minio.example.choerodon.io
         HZERO_FRONT: http://hzero.example.choerodon.io
         DEVOPS_WEBSOCKET_SECRET_KEY: devops_ws
+        outward: /knowledge/share,/iam/register-organization,/iam/invite-user,/agile/backlog-share
     ingress:
       enabled: true
       host: app.example.choerodon.io
@@ -83,7 +95,7 @@ helm repo update
     helm upgrade --install choerodon-front c7n/choerodon-front \
         -f choerodon-front.yaml \
         --create-namespace \
-        --version 0.22.1 \
+        --version 0.23.0 \
         --namespace c7n-system
     ```
 
