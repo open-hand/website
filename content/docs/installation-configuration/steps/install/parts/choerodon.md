@@ -61,25 +61,25 @@ helm repo update
         --namespace c7n-system
     ```
 
-## 部署 hzero register
+## 部署 choerodo register
 
-- 若需了解项目详情及各项参数含义，请移步 [choerodon/hzero-register](https://github.com/choerodon/hzero-register)。
+- 若需了解项目详情及各项参数含义，请移步 [open-hand/choerodon-register](https://github.com/open-hand/choerodon-register.git)。
 
-- 编写参数配置文件 `hzero-register.yaml`
+- 编写参数配置文件 `choerodon-register.yaml`
   
     ```yaml
     env:
       open:
-        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://hzero-register.c7n-system:8000/eureka/
+        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://choerodon-register.c7n-system:8000/eureka/
     ```
 
 - 执行安装
   
     ```
-    helm upgrade --install hzero-register c7n/hzero-register \
-        -f hzero-register.yaml \
+    helm upgrade --install choerodon-register c7n/choerodon-register \
+        -f choerodon-register.yaml \
         --create-namespace \
-        --version 0.22.2 \
+        --version 0.23.1 \
         --namespace c7n-system
     ```
 
@@ -87,7 +87,7 @@ helm repo update
   - 验证命令
   
     ```
-    curl -s $(kubectl get svc hzero-register -o jsonpath="{.spec.clusterIP}" -n c7n-system):8001/actuator/health | jq -r .status
+    curl -s $(kubectl get svc choerodon-register -o jsonpath="{.spec.clusterIP}" -n c7n-system):8001/actuator/health | jq -r .status
     ```
 
   - 出现以下类似信息即为成功部署
@@ -96,11 +96,11 @@ helm repo update
     UP
     ```
 
-## 部署 hzero platform
+## 部署 choerodon platform
 
-- 若需了解项目详情及各项参数含义，请移步 [choerodon/hzero-platform](https://github.com/choerodon/hzero-platform)。
+- 若需了解项目详情及各项参数含义，请移步 [open-hand/choerodon-platform](https://github.com/open-hand/choerodon-platform)。
 
-- 编写参数配置文件 `hzero-platform.yaml`
+- 编写参数配置文件 `choerodon-platform.yaml`
 
     ```yaml
     preJob:
@@ -113,7 +113,7 @@ helm repo update
     env:
       open:
         HZERO_PLATFORM_HTTP_PROTOCOL: http
-        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://hzero-register.c7n-system:8000/eureka/
+        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://choerodon-register.c7n-system:8000/eureka/
         SPRING_REDIS_HOST: c7n-redis.c7n-system
         SPRING_REDIS_PORT: 6379
         # 此db不可更改
@@ -127,10 +127,10 @@ helm repo update
 - 部署服务
 
     ```shell
-    helm upgrade --install hzero-platform c7n/hzero-platform \
-        -f hzero-platform.yaml \
+    helm upgrade --install choerodon-platform c7n/choerodon-platform \
+        -f choerodon-platform.yaml \
         --create-namespace \
-        --version 0.22.2 \
+        --version 0.23.4 \
         --namespace c7n-system
     ```
 
@@ -138,7 +138,7 @@ helm repo update
   - 验证命令
   
     ```
-    curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=hzero-platform -o jsonpath="{.items[0].status.podIP}"):8101/actuator/health | jq -r .status
+    curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=choerodon-platform -o jsonpath="{.items[0].status.podIP}"):8101/actuator/health | jq -r .status
     ```
 
   - 出现以下类似信息即为成功部署
@@ -149,11 +149,11 @@ helm repo update
     
 
 
-## 部署 hzero admin
+## 部署 choerodon admin
 
-- 若需了解项目详情及各项参数含义，请移步 [choerodon/hzero-admin](https://github.com/choerodon/hzero-admin)。
+- 若需了解项目详情及各项参数含义，请移步 [open-hand/choerodon-admin](https://github.com/open-hand/choerodon-admin)。
 
-- 编写参数配置文件 `hzero-admin.yaml`
+- 编写参数配置文件 `choerodon-admin.yaml`
 
     ```yaml
     preJob:
@@ -164,7 +164,7 @@ helm repo update
           password: password
     env:
       open:
-        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://hzero-register.c7n-system:8000/eureka/
+        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://choerodon-register.c7n-system:8000/eureka/
         HZERO_AUTO_REFRESH_SWAGGER_ENABLE: true
         SPRING_REDIS_HOST: c7n-redis.c7n-system
         SPRING_REDIS_PORT: 6379
@@ -178,10 +178,10 @@ helm repo update
 - 部署服务
 
     ```
-    helm upgrade --install hzero-admin c7n/hzero-admin \
-        -f hzero-admin.yaml \
+    helm upgrade --install choerodon-admin c7n/choerodon-admin \
+        -f choerodon-admin.yaml \
         --create-namespace \
-        --version 0.22.3 \
+        --version 0.23.1 \
         --namespace c7n-system
     ```
 
@@ -189,7 +189,7 @@ helm repo update
   - 验证命令
 
     ```
-    curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=hzero-admin -o jsonpath="{.items[0].status.podIP}"):8063/actuator/health | jq -r .status
+    curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=choerodon-admin -o jsonpath="{.items[0].status.podIP}"):8063/actuator/health | jq -r .status
     ```
 
   - 出现以下类似信息即为成功部署
@@ -198,11 +198,11 @@ helm repo update
     UP
     ```
 
-## 部署 hzero iam
+## 部署 choerodon iam
 
-- 若需了解项目详情及各项参数含义，请移步 [choerodon/hzero-iam](https://github.com/choerodon/hzero-iam)。
+- 若需了解项目详情及各项参数含义，请移步 [open-hand/choerodon-iam](https://github.com/open-hand/choerodon-iam)。
 
-- 编写参数配置文件 `hzero-iam.yaml`
+- 编写参数配置文件 `choerodon-iam.yaml`
   
     ```yaml
     preJob:
@@ -214,7 +214,7 @@ helm repo update
           driver: com.mysql.jdbc.Driver
     env:
       open:
-        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://hzero-register.c7n-system:8000/eureka/
+        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://choerodon-register.c7n-system:8000/eureka/
         CHOERODON_GATEWAY_URL: http://api.example.choerodon.io
         SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
         SPRING_REDIS_PORT: 6379
@@ -229,10 +229,10 @@ helm repo update
 - 部署服务
 
     ```
-    helm upgrade --install hzero-iam c7n/hzero-iam \
-        -f hzero-iam.yaml \
+    helm upgrade --install choerodon-iam c7n/choerodon-iam \
+        -f choerodon-iam.yaml \
         --create-namespace \
-        --version 0.22.4 \
+        --version 0.23.6 \
         --namespace c7n-system
     ```
 
@@ -241,7 +241,7 @@ helm repo update
   - 验证命令
   
     ```
-    curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=hzero-iam -o jsonpath="{.items[0].status.podIP}"):8031/actuator/health | jq -r .status
+    curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=choerodon-iam -o jsonpath="{.items[0].status.podIP}"):8031/actuator/health | jq -r .status
     ```
 
   - 出现以下类似信息即为成功部署
@@ -251,11 +251,11 @@ helm repo update
     ```
 
 
-## 部署 hzero asgard
+## 部署 choerodon asgard
 
-- 若需了解项目详情及各项参数含义，请移步 [choerodon/hzero-asgard](https://github.com/choerodon/hzero-asgard)。
+- 若需了解项目详情及各项参数含义，请移步 [open-hand/choerodon-asgard](https://github.com/open-hand/choerodon-asgard)。
 
-- 编写参数配置文件 `hzero-asgard.yaml`
+- 编写参数配置文件 `choerodon-asgard.yaml`
 
     ```yaml
     preJob:
@@ -267,7 +267,7 @@ helm repo update
           driver: com.mysql.jdbc.Driver
     env:
       open:
-        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://hzero-register.c7n-system:8000/eureka/
+        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://choerodon-register.c7n-system:8000/eureka/
         SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
         SPRING_REDIS_PORT: 6379
         SPRING_REDIS_DATABASE: 7
@@ -278,10 +278,10 @@ helm repo update
 
 - 部署服务
     ```
-    helm upgrade --install hzero-asgard c7n/hzero-asgard \
-        -f hzero-asgard.yaml \
+    helm upgrade --install choerodon-asgard c7n/choerodon-asgard \
+        -f choerodon-asgard.yaml \
         --create-namespace \
-        --version 0.22.4 \
+        --version 0.23.3 \
         --namespace c7n-system
     ```
 
@@ -289,7 +289,7 @@ helm repo update
   - 验证命令
   
     ```
-    curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=hzero-asgard -o jsonpath="{.items[0].status.podIP}"):8041/actuator/health | jq -r .status
+    curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=choerodon-asgard -o jsonpath="{.items[0].status.podIP}"):8041/actuator/health | jq -r .status
     ```
 
   - 出现以下类似信息即为成功部署
@@ -298,16 +298,16 @@ helm repo update
     UP
     ```    
     
-## 部署 hzero swagger
+## 部署 choerodon swagger
 
-- 若需了解项目详情及各项参数含义，请移步 [choerodon/hzero-swagger](https://github.com/choerodon/hzero-swagger)。
+- 若需了解项目详情及各项参数含义，请移步 [open-hand/choerodon-swagger](https://github.com/open-hand/choerodon-swagger)。
 
-- 编写参数配置文件 `hzero-swagger.yaml`
+- 编写参数配置文件 `choerodon-swagger.yaml`
 
     ```yaml
     env:
       open:
-        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://hzero-register.c7n-system:8000/eureka/
+        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://choerodon-register.c7n-system:8000/eureka/
         HZERO_OAUTH_URL: http://api.example.choerodon.io/oauth/oauth/authorize
         SPRING_REDIS_HOST: c7n-redis.c7n-system
         SPRING_REDIS_PORT: 6379
@@ -320,10 +320,10 @@ helm repo update
 
 - 部署服务
     ```
-    helm upgrade --install hzero-swagger c7n/hzero-swagger \
-        -f hzero-swagger.yaml \
+    helm upgrade --install choerodon-swagger c7n/choerodon-swagger \
+        -f choerodon-swagger.yaml \
         --create-namespace \
-        --version 0.22.1 \
+        --version 0.23.1 \
         --namespace c7n-system
     ```
 
@@ -331,7 +331,7 @@ helm repo update
   - 验证命令
   
     ```
-    curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=hzero-swagger -o jsonpath="{.items[0].status.podIP}"):8051/actuator/health | jq -r .status
+    curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=choerodon-swagger -o jsonpath="{.items[0].status.podIP}"):8051/actuator/health | jq -r .status
     ```
 
   - 出现以下类似信息即为成功部署
@@ -340,11 +340,11 @@ helm repo update
     UP
     ```
 
-## 部署 hzero gateway
+## 部署 choerodon gateway
 
-- 若需了解项目详情及各项参数含义，请移步 [choerodon/hzero-gateway](https://github.com/choerodon/hzero-gateway)。
+- 若需了解项目详情及各项参数含义，请移步 [open-hand/choerodon-gateway](https://github.com/open-hand/choerodon-gateway)。
 
-- 编写参数配置文件 `hzero-gateway.yaml`
+- 编写参数配置文件 `choerodon-gateway.yaml`
 
     ```yaml
    env:
@@ -356,7 +356,7 @@ helm repo update
         SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system:3306/hzero_platform?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
         SPRING_DATASOURCE_USERNAME: choerodon
         SPRING_DATASOURCE_PASSWORD: password
-        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://hzero-register.c7n-system:8000/eureka/
+        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://choerodon-register.c7n-system:8000/eureka/
     ingress:
       enabled: true
       host: api.example.choerodon.io
@@ -365,10 +365,10 @@ helm repo update
 - 部署服务
 
     ```
-    helm upgrade --install hzero-gateway c7n/hzero-gateway \
-        -f hzero-gateway.yaml \
+    helm upgrade --install choerodon-gateway c7n/choerodon-gateway \
+        -f choerodon-gateway.yaml \
         --create-namespace \
-        --version 0.22.4 \
+        --version 0.23.1 \
         --namespace c7n-system
     ```
 
@@ -376,7 +376,7 @@ helm repo update
   - 验证命令
   
     ```
-    curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=hzero-gateway -o jsonpath="{.items[0].status.podIP}"):8081/actuator/health | jq -r .status
+    curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=choerodon-gateway -o jsonpath="{.items[0].status.podIP}"):8081/actuator/health | jq -r .status
     ```
 
   - 出现以下类似信息即为成功部署
@@ -385,9 +385,9 @@ helm repo update
     UP
     ```
 
-## 部署 hzero oauth
+## 部署 choerodon oauth
 
-- 若需了解项目详情及各项参数含义，请移步 [choerodon/hzero-oauth](https://github.com/choerodon/hzero-oauth)。
+- 若需了解项目详情及各项参数含义，请移步 [open-hand/choerodon-oauth](https://github.com/open-hand/choerodon-oauth)。
 
 - 编写参数配置文件 `hzero-oauth.yaml`
 
@@ -399,7 +399,7 @@ helm repo update
         HZERO_OAUTH_LOGIN_SUCCESS_URL: http://app.example.choerodon.io
         HZERO_OAUTH_LOGIN_DEFAULT_CLIENT_ID: choerodon
         HZERO_GATEWAY_URL: http://api.example.choerodon.io
-        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://hzero-register.c7n-system:8000/eureka/
+        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://choerodon-register.c7n-system:8000/eureka/
         SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system:3306/hzero_platform?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
         SPRING_DATASOURCE_USERNAME: choerodon
         SPRING_DATASOURCE_PASSWORD: password
@@ -412,10 +412,10 @@ helm repo update
 - 部署服务
 
     ```
-    helm upgrade --install hzero-oauth c7n/hzero-oauth \
-        -f hzero-oauth.yaml \
+    helm upgrade --install choerodon-oauth c7n/choerodon-oauth \
+        -f choerodon-oauth.yaml \
         --create-namespace \
-        --version 0.22.2 \
+        --version 0.23.1 \
         --namespace c7n-system
     ```
 
@@ -423,7 +423,7 @@ helm repo update
   - 验证命令
   
     ```
-    curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=hzero-oauth -o jsonpath="{.items[0].status.podIP}"):8021/actuator/health | jq -r .status
+    curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=choerodon-oauth -o jsonpath="{.items[0].status.podIP}"):8021/actuator/health | jq -r .status
     ```
 
   - 出现以下类似信息即为成功部署
@@ -433,9 +433,9 @@ helm repo update
     ```
 
 
-## 部署 hzero monitor
+## 部署 choerodon monitor
 
-- 若需了解项目详情及各项参数含义，请移步 [choerodon/hzero-monitor](https://github.com/choerodon/hzero-monitor)。
+- 若需了解项目详情及各项参数含义，请移步 [open-hand/choerodon-monitor](https://github.com/open-hand/choerodon-monitor)。
 
 - 编写参数配置文件 `hzero-monitor.yaml`
 
@@ -448,7 +448,7 @@ helm repo update
           password: password
     env:
       open:
-        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://hzero-register.c7n-system:8000/eureka/
+        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://choerodon-register.c7n-system:8000/eureka/
         SPRING_REDIS_HOST: c7n-redis.c7n-system
         SPRING_REDIS_PORT: 6379
         # 此db不可更改
@@ -460,10 +460,10 @@ helm repo update
 
 - 部署服务
     ```
-    helm upgrade --install hzero-monitor c7n/hzero-monitor \
-        -f hzero-monitor.yaml \
+    helm upgrade --install choerodon-monitor c7n/choerodon-monitor \
+        -f choerodon-monitor.yaml \
         --create-namespace \
-        --version 0.22.4 \
+        --version 0.23.1 \
         --namespace c7n-system
     ```
 
@@ -471,7 +471,7 @@ helm repo update
   - 验证命令
   
     ```
-    curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=hzero-monitor -o jsonpath="{.items[0].status.podIP}"):8261/actuator/health | jq -r .status
+    curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=choerodon-monitor -o jsonpath="{.items[0].status.podIP}"):8261/actuator/health | jq -r .status
     ```
 
   - 出现以下类似信息即为成功部署
@@ -480,11 +480,11 @@ helm repo update
     UP
     ```
 
-## 部署 hzero file
+## 部署 choerodon file
 
-- 若需了解项目详情及各项参数含义，请移步 [choerodon/hzero-file](https://github.com/choerodon/hzero-file)。
+- 若需了解项目详情及各项参数含义，请移步 [open-hand/choerodon-file](https://github.com/open-hand/choerodon-file)。
 
-- 编写参数配置文件 `hzero-file.yaml`
+- 编写参数配置文件 `choerodon-file.yaml`
 
     ```yaml
     preJob:
@@ -496,7 +496,7 @@ helm repo update
           driver: com.mysql.jdbc.Driver
     env:
       open:
-        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://hzero-register.c7n-system:8000/eureka/
+        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://choerodon-register.c7n-system:8000/eureka/
         MINIO_ACCESSKEY: accesskey
         MINIO_ENDPOINT: http://minio.example.choerodon.io
         MINIO_SECRETKEY: secretkey
@@ -515,10 +515,10 @@ helm repo update
 - 部署服务
 
     ```
-    helm upgrade --install hzero-file c7n/hzero-file \
-        -f hzero-file.yaml \
+    helm upgrade --install choerodon-file c7n/choerodon-file \
+        -f choerodon-file.yaml \
         --create-namespace \
-        --version 0.22.4 \
+        --version 0.23.1 \
         --namespace c7n-system
     ```
 
@@ -526,7 +526,7 @@ helm repo update
   - 验证命令
   
     ```
-    curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=hzero-file -o jsonpath="{.items[0].status.podIP}"):8111/actuator/health | jq -r .status
+    curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=choerodon-file -o jsonpath="{.items[0].status.podIP}"):8111/actuator/health | jq -r .status
     ```
 
   - 出现以下类似信息即为成功部署
@@ -535,11 +535,11 @@ helm repo update
     UP
     ```
 
-## 部署 hzero message
+## 部署 choerodon message
 
-- 若需了解项目详情及各项参数含义，请移步 [choerodon/hzero-message](https://github.com/choerodon/hzero-message)。
+- 若需了解项目详情及各项参数含义，请移步 [open-hand/choerodon-message](https://github.com/open-hand/choerodon-message)。
 
-- 编写参数配置文件 `hzero-message.yaml`
+- 编写参数配置文件 `choerodon-message.yaml`
 
     ```yaml
     preJob:
@@ -550,8 +550,8 @@ helm repo update
           password: password
     env:
       open:
-        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://hzero-register.c7n-system:8000/eureka/
-        HZERO_WEBSOCKET_OAUTHURL: http://hzero-oauth/oauth/api/user
+        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://choerodon-register.c7n-system:8000/eureka/
+        HZERO_WEBSOCKET_OAUTHURL: http://choerodon-oauth/oauth/api/user
         SPRING_REDIS_HOST: c7n-redis.c7n-system
         SPRING_REDIS_PORT: 6379
         # 此db不可更改
@@ -566,10 +566,10 @@ helm repo update
 
 - 部署服务
     ```
-    helm upgrade --install hzero-message c7n/hzero-message \
-        -f hzero-message.yaml \
+    helm upgrade --install choerodon-message c7n/choerodon-message \
+        -f choerodon-message.yaml \
         --create-namespace \
-        --version 0.22.10 \
+        --version 0.23.6 \
         --namespace c7n-system
     ```
 
@@ -577,7 +577,7 @@ helm repo update
   - 验证命令
   
     ```
-    curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=hzero-message -o jsonpath="{.items[0].status.podIP}"):8121/actuator/health | jq -r .status
+    curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=choerodon-message -o jsonpath="{.items[0].status.podIP}"):8121/actuator/health | jq -r .status
     ```
 
   - 出现以下类似信息即为成功部署
