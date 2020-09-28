@@ -1,7 +1,7 @@
 +++
 title = "前端"
 description = "前端"
-weight = 70
+weight = 80
 +++
 
 # 部署前端
