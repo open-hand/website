@@ -41,8 +41,8 @@ helm repo update
 - 执行安装
   
     ```
-    helm upgrade --install create-c7ncd-db c7n/mysql-client \
-      -f create-c7ncd-db.yaml \
+    helm upgrade --install create-c7nrepo-db c7n/mysql-client \
+      -f create-c7nrepo-db.yaml \
       --create-namespace \
       --version 0.1.0 \
       --namespace c7n-system
@@ -115,8 +115,6 @@ helm repo update
     ```yaml
         env:
           open:
-            DES_ENCRYPT_DES_IV: HH9301ED
-            DES_ENCRYPT_DES_KEY: XZ3Uk9w73Po8DYDi8HFdZ5dpDAnbpTknWOdODiuDCE47uhNT5moFYsw1xYEQTaSkpUSXJLa7VcerZiXYOwiRo1kLRIkX4kw2UPlIt5cbHtXxIsJbeipgX5HerWoGeCpG
             EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://choerodon-register.c7n-system:8000/eureka/
             # devops的数据库 迁移数据使用 只会在0.23版本使用
             HARBOR_INIT_CUSTOM_REPO_PASSWORD: password
@@ -129,8 +127,6 @@ helm repo update
             HARBOR_BASE_URL: https://registry.example.choerodon.io
             HARBOR_PASSWORD: Harbor12345
             HARBOR_USER_NAME: admin
-            MANAGEMENT_SERVER_PORT: 7145
-            SERVER_PORT: 7144
             SPRING_DATASOURCE_PASSWORD: password
             SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system:3306/hrds_prod_repo?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
             SPRING_DATASOURCE_USERNAME: choerodon
