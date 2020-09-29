@@ -1,7 +1,7 @@
 +++
 title = "运营"
 description = "包含了辅助项目进行管理的各种报表，比如敏捷报表、DevOps报表、测试报表。"
-weight = 6
+weight = 9
 +++
 
 # 运营

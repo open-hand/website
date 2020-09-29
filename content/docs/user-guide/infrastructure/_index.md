@@ -1,7 +1,7 @@
 +++
 title = "基础"
 description = "支持对所属项目的代码库、文档库、制品库进行维护和权限管理。"
-weight = 7
+weight = 8
 +++
 
 # 设置
