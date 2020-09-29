@@ -35,7 +35,7 @@ Choerodon目前提供3种项目类型：
 1. 点击Choerodon平台顶部“项目”导航，进入项目列表。
 2. 点击“创建项目”按钮，系统会打开创建项目侧开页，如下图所示：
 
-    ![image](/docs/user-guide/image/projects-01.png)
+    ![image](/docs/user-guide/image/projects.png)
 
 3. 输入项目名称、编码，选择项目类型。
 
