@@ -21,27 +21,29 @@ description = "讲述了如何使用liquibase工具初始化数据"
 - groovy文件存放需要初始化的groovy脚本
 - init-data文件存放需要初始化的excel文件
 - `service-mapping.xml`初始化配置
-````
-<?xml version="1.0" encoding="UTF-8"?>
-<!--服务映射-->
-<services>
-    <schema-merge>
-        <!-- oracle merge是否默认安装到一个库下，若要分多个库，需设置 merge=false -->
-        <oracle merge="false" target-schema="" />
-        <mysql merge="false" target-schema="" />
-        <sqlserver merge="false" target-schema="" />
-        <postgresql merge="false" target-schema="" />
-    </schema-merge>
-     <!-- name和filename: 对应本地文件名，默认与安装目标库名一致;  schema: 安装目标库名 env:使用对应的数据源，非必填，多数据源初始化时需要用到 -->
-    <service name="hzero_platform" filename="hzero_platform" schema="hzero_platform" env="platform" description="平台服务"/>
-    <service name="devops_service" filename="devops_service" schema="devops_service" description="devops服务"/>
-</services>
-````
+  ```xml
+  <?xml version="1.0" encoding="UTF-8"?>
+  <!--服务映射-->
+  <services>
+      <schema-merge>
+          <!-- oracle merge是否默认安装到一个库下，若要分多个库，需设置 merge=false -->
+          <oracle merge="false" target-schema="" />
+          <mysql merge="false" target-schema="" />
+          <sqlserver merge="false" target-schema="" />
+          <postgresql merge="false" target-schema="" />
+      </schema-merge>
+       <!-- name和filename: 对应本地文件名，默认与安装目标库名一致;  schema: 安装目标库名 env:使用对应的数据源，非必填，多数据源初始化时需要用到 -->
+      <service name="hzero_platform" filename="hzero_platform" schema="hzero_platform" env="platform" description="平台服务"/>
+      <service name="devops_service" filename="devops_service" schema="devops_service" description="devops服务"/>
+  </services>
+  ```
+
 - 目录层级如下：
-    ![](/docs/development-guide/backend/framework/image/liquibase_1.png)
+    ![](/docs/development-guide/backend/image/liquibase_1.png)
 
 ### choerodon-tool-liquibase.jar包初始化脚本
-````
+
+```
 #!/usr/bin/env bash
 MAVEN_LOCAL_REPO=$(cd / && mvn help:evaluate -Dexpression=settings.localRepository -q -DforceStdout)
 TOOL_GROUP_ID=io.choerodon
@@ -61,8 +63,7 @@ java -Dspring.datasource.url="jdbc:mysql://localhost:3306/?serverTimezone=CTT&us
  -Dinstaller.jarPath=target/app.jar \
  -Dinstaller.jarPath.init=true \
  -jar ${TOOL_JAR_PATH}
- 
-````
+```
 
 - `-Dspring.datasource.url`： 数据源url **不需要指定数据库名会根据配置的数据库名初始化到对应的数据库**
 - `-Dspring.datasource.username`：数据库登陆用户
@@ -74,30 +75,29 @@ java -Dspring.datasource.url="jdbc:mysql://localhost:3306/?serverTimezone=CTT&us
 
 ### 多数据源初始化
 - 更改service-mapping.xml文件，对于需要多数据源初始化的服务，添加初始化数据源
-    ![](/docs/development-guide/backend/framework/image/liquibase_2.png)
+    ![](/docs/development-guide/backend/image/liquibase_2.png)
 
 - 执行liquibse工具的时候，添加数据源
-```
-# env=platform的数据源
--Dinstaller.datasources.platform.url="jdbc:mysql://localhost:3306/?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true" \
--Dinstaller.datasources.platform.username=root \
--Dinstaller.datasources.platform.password=root \
--Dinstaller.datasources.platform.driver-class-name=com.mysql.jdbc.Driver \
-
-# 默认数据源 必须配置
--Dspring.datasource.url="jdbc:mysql://localhost:3307/?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true" \
--Dspring.datasource.driver-class-name=com.mysql.jdbc.Driver \
--Dspring.datasource.username=root \
--Dspring.datasource.password=root \
--Dlogging.level.root=info \
--Dinstaller.mapping=mapping/service-mapping.xml \
--Dinstaller.jarPath=target/app.jar \
--jar ${TOOL_JAR_PATH}
-
-```
+    ```bash
+    # env=platform的数据源
+    -Dinstaller.datasources.platform.url="jdbc:mysql://localhost:3306/?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true" \
+    -Dinstaller.datasources.platform.username=root \
+    -Dinstaller.datasources.platform.password=root \
+    -Dinstaller.datasources.platform.driver-class-name=com.mysql.jdbc.Driver \
+    
+    # 默认数据源 必须配置
+    -Dspring.datasource.url="jdbc:mysql://localhost:3307/?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true" \
+    -Dspring.datasource.driver-class-name=com.mysql.jdbc.Driver \
+    -Dspring.datasource.username=root \
+    -Dspring.datasource.password=root \
+    -Dlogging.level.root=info \
+    -Dinstaller.mapping=mapping/service-mapping.xml \
+    -Dinstaller.jarPath=target/app.jar \
+    -jar ${TOOL_JAR_PATH}
+    ```
 
 ### 镜像初始化配置
-````
+```
  ## 初始化配置至配置服务及初始化本服务数据库
 preJob:
   # job 超时时间
@@ -121,7 +121,7 @@ preJob:
          username: username
          password: password
          driver: com.mysql.jdbc.Driver
-````
+```
 ### excel导入数据规范
 - 正式的数据从第二个 sheet 页开始,每页 从 D7 单元格开始有效
 - 同一个表的数据要连续,中间不能有空行
@@ -147,8 +147,6 @@ E9|相对引用当前页 E9 单元格
 $E$9	|绝对引用当前页 E9 单元格
 RESOURCE!E23	|引用 RESOURCE 页的 E23 单元格(相对)
 RESOURCE!$E$23	|引用 RESOURCE 页的 E23 单元格(绝对)
-
-	
 
 ### 注意事项
 ####  排除更新的excel中表和列
