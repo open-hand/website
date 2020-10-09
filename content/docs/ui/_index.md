@@ -10,12 +10,11 @@ Choerodon UI 基于 Material Design 体系精心设计，优雅美观，UED 不�
 
 # 官网地址
 
-官网：https://choerodon.github.io/choerodon-ui/zh
+官网：https://open-hand.github.io/choerodon-ui/zh
 
-国内镜像：https://choerodon.gitee.io/choerodon-ui/zh
+国内镜像：https://open-hand.gitee.io/choerodon-ui/zh
 
-Github: https://github.com/choerodon/choerodon-ui
-
+Github: https://github.com/open-hand/choerodon-ui
 
 ## 特性
 
