@@ -47,7 +47,7 @@ helm repo update
     ```
 
 ## 部署 workflow service
-- 若需了解项目详情及各项参数含义，请移步 [choerodon/workflow-service](https://github.com/choerodon/workflow-service)。
+- 若需了解项目详情及各项参数含义，请移步 [choerodon/workflow-service](https://github.com/open-hand/workflow-service)。
 
 - 编写参数配置文件 `workflow-service.yaml`
 
@@ -85,7 +85,7 @@ helm repo update
     ```
 
 ## 部署 gitlab service
-- 若需了解项目详情及各项参数含义，请移步 [choerodon/gitlab-service](https://github.com/choerodon/gitlab-service)。
+- 若需了解项目详情及各项参数含义，请移步 [choerodon/gitlab-service](https://github.com/open-hand/gitlab-service)。
 - 如何获取 `GITLAB_PRIVATETOKEN` 请查看[这里](http://openforum.hand-china.com/t/topic/1155/2)
 - 编写参数配置文件 `gitlab-service.yaml`
 
@@ -122,7 +122,7 @@ helm repo update
     ```
 
 ## 部署 devops service
-- 若需了解项目详情及各项参数含义，请移步 [choerodon/devops-service](https://github.com/choerodon/devops-service)。
+- 若需了解项目详情及各项参数含义，请移步 [choerodon/devops-service](https://github.com/open-hand/devops-service)。
 
 - 编写参数配置文件 `devops-service.yaml`
 

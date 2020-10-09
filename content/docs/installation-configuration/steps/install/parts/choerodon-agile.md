@@ -49,7 +49,7 @@ helm repo update
 
 ## 部署 agile service
 
-- 若需了解项目详情及各项参数含义，请移步 [choerodon/agile-service](https://github.com/choerodon/agile-service)。
+- 若需了解项目详情及各项参数含义，请移步 [choerodon/agile-service](https://github.com/open-hand/agile-service)。
 
 - 编写参数配置文件 `agile-service.yaml`
 
@@ -106,7 +106,7 @@ helm repo update
     ```
 
 ## 部署 test manager service
-- 若需了解项目详情及各项参数含义，请移步 [choerodon/test-manager-service](https://github.com/choerodon/test-manager-service)。
+- 若需了解项目详情及各项参数含义，请移步 [choerodon/test-manager-service](https://github.com/open-hand/test-manager-service)。
 
 - 编写参数配置文件 `test-manager-service.yaml`
 
@@ -164,7 +164,7 @@ helm repo update
 
 ## 安装 elasticsearch-kb
 
-- 若需了解项目详情及各项参数含义，请移步 [choerodon/elasticsearch-kb](https://github.com/choerodon/elasticsearch-kb)。
+- 若需了解项目详情及各项参数含义，请移步 [choerodon/elasticsearch-kb](https://github.com/open-hand/elasticsearch-kb)。
 
 - 安装 elasticsearch
 
@@ -177,7 +177,7 @@ helm repo update
 
 ## 部署 knowledgebase service
 
-- 若需了解项目详情及各项参数含义，请移步 [choerodon/knowledgebase-service](https://github.com/choerodon/knowledgebase-service)。
+- 若需了解项目详情及各项参数含义，请移步 [choerodon/knowledgebase-service](https://github.com/open-hand/knowledgebase-service)。
 
 - 编写参数配置文件 `knowledgebase-service.yaml`
 

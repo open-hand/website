@@ -10,7 +10,7 @@ weight = 4
 
 所有贡献均受以下 Choerodon许可协议的约束。
 
-请仔细阅读**[Choerodon许可协议](https://github.com/choerodon/choerodon/blob/master/LICENSE)**。
+请仔细阅读**[Choerodon许可协议](https://github.com/open-hand/choerodon/blob/master/LICENSE)**。
 
 ## 报告安全漏洞
 

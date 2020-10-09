@@ -63,7 +63,7 @@ helm repo update
 
 ## 部署 hzero register
 
-- 若需了解项目详情及各项参数含义，请移步 [choerodon/hzero-register](https://github.com/choerodon/hzero-register)。
+- 若需了解项目详情及各项参数含义，请移步 [choerodon/hzero-register](https://github.com/open-hand/hzero-register)。
 
 - 编写参数配置文件 `hzero-register.yaml`
   
@@ -98,7 +98,7 @@ helm repo update
 
 ## 部署 hzero platform
 
-- 若需了解项目详情及各项参数含义，请移步 [choerodon/hzero-platform](https://github.com/choerodon/hzero-platform)。
+- 若需了解项目详情及各项参数含义，请移步 [choerodon/hzero-platform](https://github.com/open-hand/hzero-platform)。
 
 - 编写参数配置文件 `hzero-platform.yaml`
 
@@ -151,7 +151,7 @@ helm repo update
 
 ## 部署 hzero admin
 
-- 若需了解项目详情及各项参数含义，请移步 [choerodon/hzero-admin](https://github.com/choerodon/hzero-admin)。
+- 若需了解项目详情及各项参数含义，请移步 [choerodon/hzero-admin](https://github.com/open-hand/hzero-admin)。
 
 - 编写参数配置文件 `hzero-admin.yaml`
 
@@ -200,7 +200,7 @@ helm repo update
 
 ## 部署 hzero iam
 
-- 若需了解项目详情及各项参数含义，请移步 [choerodon/hzero-iam](https://github.com/choerodon/hzero-iam)。
+- 若需了解项目详情及各项参数含义，请移步 [choerodon/hzero-iam](https://github.com/open-hand/hzero-iam)。
 
 - 编写参数配置文件 `hzero-iam.yaml`
   
@@ -253,7 +253,7 @@ helm repo update
 
 ## 部署 hzero asgard
 
-- 若需了解项目详情及各项参数含义，请移步 [choerodon/hzero-asgard](https://github.com/choerodon/hzero-asgard)。
+- 若需了解项目详情及各项参数含义，请移步 [choerodon/hzero-asgard](https://github.com/open-hand/hzero-asgard)。
 
 - 编写参数配置文件 `hzero-asgard.yaml`
 
@@ -300,7 +300,7 @@ helm repo update
     
 ## 部署 hzero swagger
 
-- 若需了解项目详情及各项参数含义，请移步 [choerodon/hzero-swagger](https://github.com/choerodon/hzero-swagger)。
+- 若需了解项目详情及各项参数含义，请移步 [choerodon/hzero-swagger](https://github.com/open-hand/hzero-swagger)。
 
 - 编写参数配置文件 `hzero-swagger.yaml`
 
@@ -342,7 +342,7 @@ helm repo update
 
 ## 部署 hzero gateway
 
-- 若需了解项目详情及各项参数含义，请移步 [choerodon/hzero-gateway](https://github.com/choerodon/hzero-gateway)。
+- 若需了解项目详情及各项参数含义，请移步 [choerodon/hzero-gateway](https://github.com/open-hand/hzero-gateway)。
 
 - 编写参数配置文件 `hzero-gateway.yaml`
 
@@ -387,7 +387,7 @@ helm repo update
 
 ## 部署 hzero oauth
 
-- 若需了解项目详情及各项参数含义，请移步 [choerodon/hzero-oauth](https://github.com/choerodon/hzero-oauth)。
+- 若需了解项目详情及各项参数含义，请移步 [choerodon/hzero-oauth](https://github.com/open-hand/hzero-oauth)。
 
 - 编写参数配置文件 `hzero-oauth.yaml`
 
@@ -435,7 +435,7 @@ helm repo update
 
 ## 部署 hzero monitor
 
-- 若需了解项目详情及各项参数含义，请移步 [choerodon/hzero-monitor](https://github.com/choerodon/hzero-monitor)。
+- 若需了解项目详情及各项参数含义，请移步 [choerodon/hzero-monitor](https://github.com/open-hand/hzero-monitor)。
 
 - 编写参数配置文件 `hzero-monitor.yaml`
 
@@ -482,7 +482,7 @@ helm repo update
 
 ## 部署 hzero file
 
-- 若需了解项目详情及各项参数含义，请移步 [choerodon/hzero-file](https://github.com/choerodon/hzero-file)。
+- 若需了解项目详情及各项参数含义，请移步 [choerodon/hzero-file](https://github.com/open-hand/hzero-file)。
 
 - 编写参数配置文件 `hzero-file.yaml`
 
@@ -537,7 +537,7 @@ helm repo update
 
 ## 部署 hzero message
 
-- 若需了解项目详情及各项参数含义，请移步 [choerodon/hzero-message](https://github.com/choerodon/hzero-message)。
+- 若需了解项目详情及各项参数含义，请移步 [choerodon/hzero-message](https://github.com/open-hand/hzero-message)。
 
 - 编写参数配置文件 `hzero-message.yaml`
 

@@ -15,7 +15,7 @@ helm repo update
 
 
 ## 部署 hzero front
-- 若需了解项目详情及各项参数含义，请移步 [choerodon/hzero-front](https://github.com/choerodon/hzero-front)。
+- 若需了解项目详情及各项参数含义，请移步 [choerodon/hzero-front](https://github.com/open-hand/hzero-front)。
 
 - 编写参数配置文件 `hzero-front.yaml`
 
@@ -54,7 +54,7 @@ helm repo update
         ```
 
 ## 部署 choerodon front
-- 若需了解项目详情及各项参数含义，请移步 [choerodon/choerodon-front](https://github.com/choerodon/choerodon-front)。
+- 若需了解项目详情及各项参数含义，请移步 [choerodon/choerodon-front](https://github.com/open-hand/choerodon-front)。
 
 - 编写参数配置文件 `choerodon-front.yaml`
 

@@ -73,7 +73,7 @@ class LoadMoreList extends React.Component {
           <List.Item actions={[<a>edit</a>, <a>more</a>]}>
             <List.Item.Meta
               avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
-              title={<a href="https://github.com/choerodon">{item.name.last}</a>}
+              title={<a href="https://github.com/open-hand">{item.name.last}</a>}
               description="Choerodon猪齿鱼是开源多云技术平台，是基于Kubernetes的容器编排和管理能力，整合DevOps工具链、微服务和移动应用框架，来帮助企业实现敏捷化的应用交付和自动化的运营管理，并提供IoT、支付、数据、智能洞察、企业应用市场等业务组件，来帮助企业聚焦于业务，加速数字化转型。"
             />
             <div>content</div>
@@ -157,7 +157,7 @@ class LoadMoreList extends React.Component {
           <List.Item actions={[<a>edit</a>, <a>more</a>]}>
             <List.Item.Meta
               avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
-              title={<a href="https://github.com/choerodon">{item.name.last}</a>}
+              title={<a href="https://github.com/open-hand">{item.name.last}</a>}
               description="Choerodon猪齿鱼是开源多云技术平台，是基于Kubernetes的容器编排和管理能力，整合DevOps工具链、微服务和移动应用框架，来帮助企业实现敏捷化的应用交付和自动化的运营管理，并提供IoT、支付、数据、智能洞察、企业应用市场等业务组件，来帮助企业聚焦于业务，加速数字化转型。"
             />
             <div>content</div>

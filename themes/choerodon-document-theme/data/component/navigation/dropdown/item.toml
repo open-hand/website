@@ -10,10 +10,10 @@ import { Menu, Dropdown, Icon } from 'choerodon-ui';
 const menu = (
   <Menu>
     <Menu.Item key="0">
-      <a target="_blank" rel="noopener noreferrer" href="https://github.com/choerodon">1st menu item</a>
+      <a target="_blank" rel="noopener noreferrer" href="https://github.com/open-hand">1st menu item</a>
     </Menu.Item>
     <Menu.Item key="1">
-      <a target="_blank" rel="noopener noreferrer" href="https://github.com/choerodon">2nd menu item</a>
+      <a target="_blank" rel="noopener noreferrer" href="https://github.com/open-hand">2nd menu item</a>
     </Menu.Item>
     <Menu.Divider />
     <Menu.Item key="3" disabled>3rd menu item（disabled）</Menu.Item>
@@ -35,10 +35,10 @@ const { Menu, Dropdown, Icon } = window['choerodon-ui'];
 const menu = (
   <Menu>
     <Menu.Item key="0">
-      <a target="_blank" rel="noopener noreferrer" href="https://github.com/choerodon">1st menu item</a>
+      <a target="_blank" rel="noopener noreferrer" href="https://github.com/open-hand">1st menu item</a>
     </Menu.Item>
     <Menu.Item key="1">
-      <a target="_blank" rel="noopener noreferrer" href="https://github.com/choerodon">2nd menu item</a>
+      <a target="_blank" rel="noopener noreferrer" href="https://github.com/open-hand">2nd menu item</a>
     </Menu.Item>
     <Menu.Divider />
     <Menu.Item key="3" disabled>3rd menu item（disabled）</Menu.Item>

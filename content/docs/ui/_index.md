@@ -14,7 +14,7 @@ Choerodon UI 基于 Material Design 体系精心设计，优雅美观，UED 不�
 
 国内镜像：https://choerodon.gitee.io/choerodon-ui/zh
 
-Github: https://github.com/choerodon/choerodon-ui
+Github: https://github.com/open-hand/choerodon-ui
 
 
 ## 特性
