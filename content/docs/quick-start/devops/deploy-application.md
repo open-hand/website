@@ -30,7 +30,7 @@ weight = 6
   
     > 部署配置为可选项，若此处不选择，则会给出Charts包中默认的配置信息。  
 
-3. 根据实际的配置，配置部署应用服务所需的配置信息。替换掉一些参数文件值。  
+3. 根据实际的配置，配置部署应用服务所需的配置信息。替换掉一些参数文件值。在这里，请先`preJob.preConfig.enable`和`preJob.preInitDb.enable`这个值改为`false`。
 
 4. 最后，点击`部署`。信息提交完成后，会自动跳转到实例信息界面，可以在相同菜单下的环境下看到正在部署中的实例。    
   ![image](/docs/quick-start/devops/image/back-applications-8.png)  
@@ -57,7 +57,8 @@ weight = 6
         
   ![image](/docs/quick-start/devops/image/deploy-3.png)   
 
-   c. 在网络的创建页面填入以下信息，例如：  
+   c. 在网络的创建页面填入以下信息，例如：
+     
     - 目标对象：选择实例  
     - 应用服务名称：猪齿鱼Todo服务  
     - 选择实例：choerodon-todo-service-1(此处选择为部署应用服务后产生的实例)  
@@ -79,20 +80,16 @@ weight = 6
         
   ![image](/docs/quick-start/devops/image/deploy-5.png)   
 
-   c. 在域名的创建页面填入以下信息，例如：  
+   c. 在域名的创建页面填入以下信息，例如：
+
     - 域名名称：c7n-todo-ingress  
     - 网络协议：普通协议  
     - 域名地址：c7n-todo.demo.example.com（请填写所属环境关联集群主机绑定的域名及其子域名地址）  
     - 路径：默认为根目录/，遵循Ant path的规范  
     - 网络: choerodon-todo-servie-s1s1（选择与实例关联的已创建的网络）  
-    - 端口: 80（此处端口为选择的网络的端口）     
-
-    
+    - 端口: 80（此处端口为选择的网络的端口）        
 
 `网络`和`域名`创建成功后，便可通过外部的域名地址访问到部署的应用服务了。
-
-    
-
 
 ## 下一步  
 [集群配置](../../../quick-start/devops/cluster-config)

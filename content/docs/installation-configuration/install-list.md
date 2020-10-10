@@ -41,17 +41,17 @@ weight = 5
 | --------------------- | -------------- | ------ |
 | hzero register        | 注册服务       | 0.22.2 |
 | hzero admin           | 平台治理服务    | 0.22.3 |
-| hzero iam             | IAM服务       | 0.22.2 |
+| hzero iam             | IAM服务       | 0.22.4 |
 | hzero asgard          | 事务服务       | 0.22.4 |
 | hzero swagger         | swagger服务   | 0.22.1 |
 | hzero gateway         | 网关服务       | 0.22.4 |
 | hzero oauth           | 认证服务       | 0.22.2 |
-| hzero platform        | 事务服务       | 0.22.1 |
+| hzero platform        | 平台服务       | 0.22.2 |
 | hzero monitor         | 监控审计服务    | 0.22.4 |
 | hzero file            | 文件服务       | 0.22.4 |
-| hzero message         | 消息服务       | 0.22.7 |
+| hzero message         | 消息服务       | 0.22.10 |
 | gitlab service        | 平台基础服务    | 0.22.1 |
-| devops service        | Devops 服务    | 0.22.4 |
+| devops service        | Devops 服务    | 0.22.7 |
 | workflow service      | 工作流服务      | 0.22.2 |
 | agile service         | 敏捷管理        | 0.22.2 |
 | test manager service  | 测试管理服务     | 0.22.2 |

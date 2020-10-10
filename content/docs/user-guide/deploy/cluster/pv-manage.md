@@ -20,7 +20,7 @@ PersistentVolume（PV）是集群中由管理员配置的一段网络存储。 �
 
 1. 点击菜单栏`创建PV`按钮，右侧会弹出创建页面。
 
-    ![image](/docs/user-guide/deploy/cluster/image/create-pv.jpg)
+    ![image](/docs/user-guide/deploy/cluster/image/create-pv.png)
 
 2. 选择集群。
     - 此处仅能选择该项目有权限的集群。

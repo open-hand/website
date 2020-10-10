@@ -1,4 +1,4 @@
-baseurl = "//v0-21.choerodon.io/"
+baseurl = "https://choerodon.io/"
 title = "猪齿鱼Choerodon | 开源多云应用敏捷全链路技术平台"
 theme = "choerodon-document-theme"
 # themesDir = "../.."
@@ -77,22 +77,22 @@ paginate = 5
     pre = "<i class='iconfont'>&#xe600;</i>"
     [[languages.en.menu.main]]
         name = "v0.19"
-        url  = "http://v0-19.choerodon.io/en/"
+        url  = "https://v0-19.choerodon.io/en/"
         weight = 12
         parent = "en-version"
     [[languages.en.menu.main]]
         name = "v0.20"
-        url  = "http://v0-20.choerodon.io/en/"
+        url  = "https://v0-20.choerodon.io/en/"
         weight = 13
         parent = "en-version"
     [[languages.en.menu.main]]
         name = "v0.21"
-        url  = "http://v0-21.choerodon.io/en/"
+        url  = "https://v0-21.choerodon.io/en/"
         weight = 14
         parent = "en-version"
     [[languages.en.menu.main]]
         name = "v0.22"
-        url  = "http://v0-22.choerodon.io/en/"
+        url  = "https://v0-22.choerodon.io/en/"
         weight = 15
         parent = "en-version"
 
@@ -153,22 +153,22 @@ paginate = 5
     pre = "<i class='iconfont'>&#xe600;</i>"
     [[languages.zh.menu.main]]
         name = "v0.19"
-        url  = "http://v0-19.choerodon.io/zh/"
+        url  = "https://v0-19.choerodon.io/zh/"
         weight = 26
         parent = "zh-version"
     [[languages.zh.menu.main]]
         name = "v0.20"
-        url  = "http://v0-20.choerodon.io/zh/"
+        url  = "https://v0-20.choerodon.io/zh/"
         weight = 27
         parent = "zh-version"
     [[languages.zh.menu.main]]
         name = "v0.21"
-        url  = "http://v0-21.choerodon.io/zh/"
+        url  = "https://v0-21.choerodon.io/zh/"
         weight = 28
         parent = "zh-version"
     [[languages.zh.menu.main]]
         name = "v0.22"
-        url  = "http://v0-22.choerodon.io/zh/"
+        url  = "https://v0-22.choerodon.io/zh/"
         weight = 29
         parent = "zh-version"
 

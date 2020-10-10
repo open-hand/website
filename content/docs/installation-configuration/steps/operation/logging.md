@@ -31,33 +31,31 @@ helm repo update
 
 - 编写参数配置文件 `loki.yaml`
 
-```yaml 
-config:
-  schema_config:
-    configs:
-    - from: 2020-05-15
-      store: boltdb
-      object_store: filesystem
-      schema: v11
-      index:
-        prefix: index_
-        # 7天
-        period: 168h
-  chunk_store_config:
-    # 需小于等于日志保留天数
-    max_look_back_period: 504h
-  table_manager:
-    retention_deletes_enabled: true
-    # 日志保留 21 天，需是 index.period 的倍数
-    retention_period: 504h
-
-persistence:
-  enabled: true
-  accessModes:
-  - ReadWriteOnce
-  size: 10Gi
-  storageClassName: ssd
-```
+        config:
+          schema_config:
+            configs:
+            - from: 2020-05-15
+              store: boltdb
+              object_store: filesystem
+              schema: v11
+              index:
+                prefix: index_
+                # 7天
+                period: 168h
+          chunk_store_config:
+            # 需小于等于日志保留天数
+            max_look_back_period: 504h
+          table_manager:
+            retention_deletes_enabled: true
+            # 日志保留 21 天，需是 index.period 的倍数
+            retention_period: 504h
+        
+        persistence:
+          enabled: true
+          accessModes:
+          - ReadWriteOnce
+          size: 10Gi
+          storageClassName: ssd
 
 - 安装 loki
 
@@ -71,17 +69,22 @@ persistence:
 
 - 编写参数配置文件 `promtail.yaml`
 
-```yaml
-loki:
-  serviceName: loki
-volumeMounts:
-- name: docker
-  mountPath: /var/lib/docker/containers
-  readOnly: true
-- name: pods
-  mountPath: /var/log/pods
-  readOnly: true
-```
+        loki:
+          serviceName: loki
+        volumeMounts:
+        - mountPath: /var/lib/docker/containers
+          name: docker
+          readOnly: true
+        - mountPath: /var/log/pods
+          name: pods
+          readOnly: true
+        volumes:
+        - hostPath:
+            path: /var/lib/docker/containers
+          name: docker
+        - hostPath:
+            path: /var/log/pods
+          name: pods
 
 - 安装 promtail
 

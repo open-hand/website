@@ -49,7 +49,7 @@ helm repo update
 
 ## 部署 agile service
 
-- 若需了解项目详情及各项参数含义，请移步 [choerodon/agile-service](https://github.com/choerodon/agile-service)。
+- 若需了解项目详情及各项参数含义，请移步 [open-hand/agile-service](https://github.com/open-hand/agile-service)。
 
 - 编写参数配置文件 `agile-service.yaml`
 
@@ -68,17 +68,25 @@ helm repo update
              username: choerodon
              password: password
              driver: com.mysql.jdbc.Driver
+          message:
+            url: jdbc:mysql://c7n-mysql.c7n-system:3306/?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
+           username: choerodon
+            password: password
+            driver: com.mysql.jdbc.Driver
     env:
       open:
-        SPRING_APPLICATION_NAME: agile-service
+        SKYWALKING_OPTS: -javaagent:/agent/skywalking-agent.jar -Dskywalking.agent.service_name=agile-service -Dskywalking.agent.sample_n_per_3_secs=12 -Dskywalking.collector.backend_service=skywalking-skywalking-oap.monitoring:11800
+
         SPRING_REDIS_HOST: c7n-redis.c7n-system
         SPRING_REDIS_PORT: 6379
         SPRING_REDIS_DATABASE: 12
-        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://hzero-register.c7n-system:8000/eureka/
+        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://choerodon-register.c7n-system:8000/eureka/
         SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system:3306/agile_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowMultiQueries=true&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
         SPRING_DATASOURCE_USERNAME: choerodon
         SPRING_DATASOURCE_PASSWORD: password
-        SERVICES_ATTACHMENT_URL: https://minio.example.choerodon.io
+        SERVICES_ATTACHMENT_URL: http://minio.example.choerodon.io
+        SERVICES_DOMAIN_URL: http://app.example.choerodon.io
+        SPRING_APPLICATION_NAME: agile-service
     ```
 
 - 部署服务
@@ -87,7 +95,7 @@ helm repo update
     helm upgrade --install agile-service c7n/agile-service \
       -f agile-service.yaml \
       --create-namespace \
-      --version 0.22.2 \
+      --version 0.23.6 \
       --namespace c7n-system
     ```
 
@@ -106,7 +114,7 @@ helm repo update
     ```
 
 ## 部署 test manager service
-- 若需了解项目详情及各项参数含义，请移步 [choerodon/test-manager-service](https://github.com/choerodon/test-manager-service)。
+- 若需了解项目详情及各项参数含义，请移步 [open-hand/test-manager-service](https://github.com/open-hand/test-manager-service)。
 
 - 编写参数配置文件 `test-manager-service.yaml`
 
@@ -127,15 +135,16 @@ helm repo update
              driver: com.mysql.jdbc.Driver
     env:
       open:
+        CHOERODON_CLEANPERMISSION: false
         SPRING_REDIS_HOST: c7n-redis.c7n-system
         SPRING_REDIS_PORT: 6379
         SPRING_REDIS_DATABASE: 13
-        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://hzero-register.c7n-system:8000/eureka/
+        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://choerodon-register.c7n-system:8000/eureka/
         SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system:3306/test_manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
         SPRING_DATASOURCE_USERNAME: choerodon
         SPRING_DATASOURCE_PASSWORD: password
         CHOERODON_CLEANPERMISSION: false
-        SERVICES_ATTACHMENT_URL: https://minio.example.choerodon.io
+        SERVICES_ATTACHMENT_URL: http://minio.example.choerodon.io
     ```
 
 - 部署服务
@@ -144,7 +153,7 @@ helm repo update
     helm upgrade --install test-manager-service c7n/test-manager-service \
       -f test-manager-service.yaml \
       --create-namespace \
-      --version 0.22.2 \
+      --version 0.23.2 \
       --namespace c7n-system
     ```
 
@@ -164,20 +173,20 @@ helm repo update
 
 ## 安装 elasticsearch-kb
 
-- 若需了解项目详情及各项参数含义，请移步 [choerodon/elasticsearch-kb](https://github.com/choerodon/elasticsearch-kb)。
+- 若需了解项目详情及各项参数含义，请移步 [open-hand/elasticsearch-kb](https://github.com/open-hand/elasticsearch-kb)。
 
 - 安装 elasticsearch
 
     ```
     helm upgrade --install elasticsearch-kb c7n/elasticsearch-kb \
-      --version 0.22.1 \
+      --version 0.23.0 \
       --create-namespace \
       --namespace c7n-system
     ```
 
 ## 部署 knowledgebase service
 
-- 若需了解项目详情及各项参数含义，请移步 [choerodon/knowledgebase-service](https://github.com/choerodon/knowledgebase-service)。
+- 若需了解项目详情及各项参数含义，请移步 [open-hand/knowledgebase-service](https://github.com/open-hand/knowledgebase-service)。
 
 - 编写参数配置文件 `knowledgebase-service.yaml`
 
@@ -201,11 +210,11 @@ helm repo update
         SPRING_REDIS_HOST: c7n-redis.c7n-system
         SPRING_REDIS_PORT: 6379
         SPRING_REDIS_DATABASE: 14
-        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://hzero-register.c7n-system:8000/eureka/
+        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://choerodon-register.c7n-system:8000/eureka/
         SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system:3306/knowledgebase_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
         SPRING_DATASOURCE_USERNAME: choerodon
         SPRING_DATASOURCE_PASSWORD: password
-        SERVICES_ATTACHMENT_URL: https://minio.example.choerodon.io/knowledgebase-service/
+        SERVICES_ATTACHMENT_URL: http://minio.example.choerodon.io/knowledgebase-service/
         ELASTICSEARCH_IP: elasticsearch-kb:9200 
     ```
 
@@ -215,7 +224,7 @@ helm repo update
     helm upgrade --install knowledgebase-service c7n/knowledgebase-service \
       -f knowledgebase-service.yaml \
       --create-namespace \
-      --version 0.22.1 \
+      --version 0.23.1 \
       --namespace c7n-system
     ```
 

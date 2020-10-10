@@ -47,15 +47,18 @@ helm repo update
     ```
 
 ## 部署 workflow service
-- 若需了解项目详情及各项参数含义，请移步 [choerodon/workflow-service](https://github.com/choerodon/workflow-service)。
+- 若需了解项目详情及各项参数含义，请移步 [open-hand/workflow-service](https://github.com/open-hand/workflow-service)。
 
 - 编写参数配置文件 `workflow-service.yaml`
 
     ```yaml
     env:
       open:
-        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://hzero-register.c7n-system:8000/eureka/
-        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system:3306/workflow_service?useUnicode=true&characterEncoding=utf-8&useSSL=false?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
+        # 不确定用途
+        SPRING_CLOUD_CONFIG_ENABLED: false
+
+        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://choerodon-register.c7n-system:8000/eureka/
+        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system:3306/workflow_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
         SPRING_DATASOURCE_USERNAME: choerodon
         SPRING_DATASOURCE_PASSWORD: password
     ```
@@ -66,7 +69,7 @@ helm repo update
     helm upgrade --install workflow-service c7n/workflow-service \
         -f workflow-service.yaml \
         --create-namespace \
-        --version 0.22.2 \
+        --version 0.23.1 \
         --namespace c7n-system
     ```
 
@@ -85,15 +88,17 @@ helm repo update
     ```
 
 ## 部署 gitlab service
-- 若需了解项目详情及各项参数含义，请移步 [choerodon/gitlab-service](https://github.com/choerodon/gitlab-service)。
-- 如何获取 `GITLAB_PRIVATETOKEN` 请查看[这里](http://forum.choerodon.io/t/topic/1155/2)
+- 若需了解项目详情及各项参数含义，请移步 [open-hand/gitlab-service](https://github.com/open-hand/gitlab-service)。
+- 如何获取 `GITLAB_PRIVATETOKEN` 请查看[这里](http://openforum.hand-china.com/t/topic/1155/2)
 - 编写参数配置文件 `gitlab-service.yaml`
 
     ```yaml
     env:
       open:
-        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://hzero-register.c7n-system:8000/eureka/
-        GITLAB_URL: https://code.example.choerodon.io
+        SPRING_CLOUD_CONFIG_ENABLED: false
+
+        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://choerodon-register.c7n-system:8000/eureka/
+        GITLAB_URL: http://gitlab.example.choerodon.io
         GITLAB_PRIVATETOKEN: YrAUZrvXDuqwcmDSzrJj
     ```
 
@@ -103,7 +108,7 @@ helm repo update
     helm upgrade --install gitlab-service c7n/gitlab-service \
         -f gitlab-service.yaml \
         --create-namespace \
-        --version 0.22.1 \
+        --version 0.23.0 \
         --namespace c7n-system
     ```
 
@@ -122,7 +127,7 @@ helm repo update
     ```
 
 ## 部署 devops service
-- 若需了解项目详情及各项参数含义，请移步 [choerodon/devops-service](https://github.com/choerodon/devops-service)。
+- 若需了解项目详情及各项参数含义，请移步 [open-hand/devops-service](https://github.com/open-hand/devops-service)。
 
 - 编写参数配置文件 `devops-service.yaml`
 
@@ -143,26 +148,31 @@ helm repo update
              driver: com.mysql.jdbc.Driver
     env:
       open:
+        SKYWALKING_OPTS: -javaagent:/agent/skywalking-agent.jar -Dskywalking.agent.service_name=devops-service  -Dskywalking.agent.sample_n_per_3_secs=12 -Dskywalking.collector.backend_service=skywalking-skywalking-oap.monitoring:11800
+
         SPRING_REDIS_HOST: c7n-redis.c7n-system
         SPRING_REDIS_PORT: 6379
         SPRING_REDIS_DATABASE: 9
-        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://hzero-register.c7n-system:8000/eureka/
+        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://choerodon-register.c7n-system:8000/eureka/
         SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system:3306/devops_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
         SPRING_DATASOURCE_USERNAME: choerodon
         SPRING_DATASOURCE_PASSWORD: password
-        SERVICES_GITLAB_URL: https://gitlab.example.choerodon.io/
-        SERVICES_GITLAB_SSHURL: gitlab.example.choerodon.io
+        SERVICES_GITLAB_URL: http://gitlab.example.choerodon.io/
+        SERVICES_GITLAB_SSHURL: gitlab.example.choerodon.io:30022
         SERVICES_GITLAB_PROJECTLIMIT: 100
         SERVICES_HELM_URL: http://chart.example.choerodon.io
         SERVICES_HARBOR_BASEURL: https://registry.example.choerodon.io
-        SERVICES_HARBOR_USERNAME: choerodon
-        SERVICES_HARBOR_PASSWORD: password
+        SERVICES_HARBOR_USERNAME: admin
+        SERVICES_HARBOR_PASSWORD: Harbor12345
         SERVICES_HARBOR_INSECURESKIPTLSVERIFY: true
-        SERVICES_GATEWAY_URL: https://api.example.choerodon.io
-        AGENT_VERSION: 0.22.3
+        SERVICES_GATEWAY_URL: http://api.example.choerodon.io
+        AGENT_VERSION: 0.23.2
         AGENT_SERVICEURL: ws://devops.example.choerodon.io/websocket
         AGENT_REPOURL: https://openchart.choerodon.com.cn/choerodon/c7n/
         AGENT_CERTMANAGERURL: https://openchart.choerodon.com.cn/choerodon/c7n/on/c7n/
+        SERVICES_SONARQUBE_PASSWORD: admin
+        SERVICES_SONARQUBE_URL: https://sonarqube.example.choerodon.io
+        SERVICES_SONARQUBE_USERNAME: admin
     ingress:
       enabled: true
       host: devops.example.choerodon.io
@@ -173,7 +183,7 @@ helm repo update
     ```
     helm upgrade --install devops-service c7n/devops-service \
         -f devops-service.yaml \
-        --version 0.22.4 \
+        --version 0.23.6 \
         --namespace c7n-system
     ```
 
