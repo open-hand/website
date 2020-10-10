@@ -30,7 +30,7 @@ helm repo update
         BUILD_CLIENT_ID: choerodon
         BUILD_WEBSOCKET_HOST: ws://ws.hft.jajabjbj.top
         BUILD_BPM_HOST: http://bpm.hft.jajabjbj.top
-        BUILD_API_HOST: https://api.example.choerodon.io
+        BUILD_API_HOST: http://api.example.choerodon.io
         BUILD_CUSTOMIZE_ICON_NAME: icon-font
         PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: true
         BUILD_PLATFORM_VERSION: SAAS
