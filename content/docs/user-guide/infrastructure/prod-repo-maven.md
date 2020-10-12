@@ -4,7 +4,7 @@ description = ""
 weight = 1
 +++
 
-# 通用
+# 制品库管理-Maven
 
 ## 1. 概述
 
