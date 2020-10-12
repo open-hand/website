@@ -8,7 +8,7 @@ weight = 70
 # 制品库部署
 
 <blockquote class="warning">
-在此之前，应该准备好Mysql、Harbor、Gitlab、Minio，Chartmuseum这些组件的信息。按以下搭建顺序进行搭建，请不要随意调整搭建顺序。
+在此之前，应该准备好Mysql、Harbor、Gitlab、Minio，Chartmuseum、Nexus这些组件的信息。按以下搭建顺序进行搭建，请不要随意调整搭建顺序。
 </blockquote>
 
 ## 添加choerodon chart仓库
@@ -133,6 +133,18 @@ helm repo update
             SPRING_REDIS_DATABASE: 0
             SPRING_REDIS_HOST: c7n-redis.c7n-system
             SPRING_REDIS_PORT: 6379
+            ##系统默认nexus服务地址
+            NEXUS_DEFAULT_BASE_URL: http://nexus.example.choerodon.io
+            #系统默认nexus服务，超级管理员用户
+            NEXUS_DEFAULT_USER_NAME: admin
+            #系统默认nexus服务，超级管理员用户密码
+            NEXUS_DEFAULT_PASSWORD: admin
+            #系统默认nexus服务，是否启用仓库级的匿名访问控制。 1:启用  0:不启用
+            NEXUS_DEFAULT_ENABLE_ANONYMOUS_FLAG: 0
+            #系统默认nexus服务，启用仓库级的匿名访问控制时需要配置该值(即enableAnonymousFlag==1时)。 nexus服务开启全局匿名访问时，配置的用户
+            NEXUS_DEFAULT_ANONYMOUS_USER: test
+            #系统默认nexus服务，启用仓库级的匿名访问控制时需要配置该值(即enableAnonymousFlag==1时)。 nexus服务开启全局匿名访问时，配置的用户对应的角色
+            NEXUS_DEFAULT_ANONYMOUS_ROLE: test
         preJob:
           image: registry.cn-shanghai.aliyuncs.com/c7n/dbtool:0.7.1
           preInitDB:
