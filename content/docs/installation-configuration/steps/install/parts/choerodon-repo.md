@@ -158,7 +158,7 @@ helm repo update
     helm upgrade --install prod-repo-service c7n/prod-repo-service \
         -f prod-repo-service.yaml \
         --create-namespace \
-        --version 0.22.1 \
+        --version 0.23.2 \
         --namespace c7n-system
     ```
 
