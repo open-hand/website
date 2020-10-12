@@ -76,7 +76,7 @@ helm upgrade --install sonarqube c7n/sonarqube \
       MYSQL_PORT: 3306
       MYSQL_USER: root
       SQL_SCRIPT: |
-        INSERT INTO hzero_platform.oauth_client (name,organization_id,resource_ids,secret,scope,authorized_grant_types,web_server_redirect_uri,access_token_validity,refresh_token_validity,additional_information,auto_approve,object_version_number,created_by,creation_date,last_updated_by,last_update_date,enabled_flag,time_zone)VALUES('sonar',1,'default','sonarsonar','default','password,implicit,client_credentials,authorization_code,refresh_token','http://sonarqube.example.choerodon.io',3600,3600,'{}','default',1,0,NOW(),0,NOW(),1,'GMT+8');
+        INSERT INTO hzero_platform.oauth_client (name,organization_id,resource_ids,secret,scope,authorized_grant_types,web_server_redirect_uri,access_token_validity,refresh_token_validity,additional_information,auto_approve,object_version_number,created_by,creation_date,last_updated_by,last_update_date,enabled_flag,time_zone)VALUES('sonar',1,'default','sonarsonar','default','password,implicit,client_credentials,authorization_code,refresh_token','http://sonarqube.example.choerodon.io/oauth2/callback/choerodon',3600,3600,'{}','default',1,0,NOW(),0,NOW(),1,'GMT+8');
     ```
 
 - 部署服务
