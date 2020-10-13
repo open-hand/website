@@ -51,7 +51,7 @@ weight = 5
 | hzero file            | 文件服务       | 0.22.4 |
 | hzero message         | 消息服务       | 0.22.10 |
 | gitlab service        | 平台基础服务    | 0.22.1 |
-| devops service        | Devops 服务    | 0.22.7 |
+| devops service        | Devops 服务    | 0.23.7 |
 | workflow service      | 工作流服务      | 0.22.2 |
 | agile service         | 敏捷管理        | 0.22.2 |
 | test manager service  | 测试管理服务     | 0.22.2 |

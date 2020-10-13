@@ -68,7 +68,7 @@ weight = 3
 
 ![enter description here](/docs/transference-guide/image/managepage-createpage.png)
 
-4.创建完成应用之后，Choerodon会在Gitlab中创建先关的代码库。
+4.创建完成应用之后，Choerodon会在Gitlab中创建相关的代码库。
 例如：[https://code.choerodon.com.cn/hand-rdc-halm/halm-dev](https://code.choerodon.com.cn/hand-rdc-halm/halm-dev)
 
 ![enter description here](/docs/transference-guide/image/managepage-code.png)
