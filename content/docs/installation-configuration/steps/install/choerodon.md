@@ -19,7 +19,7 @@ weight = 18
 如果您的主机没有配置kubernetes连接信息，则您需要到k8s服器中的master执行安装，如果您的主机已经配置了kubernetes的连接信息，并且可以正常执行`kubectl`命令，您可以在您的主机上执行安装，在安装之前您需要下载安装工具，目前支持Linux及MacOS:
 
 ```bash
-export VERSION=0.22.0
+export VERSION=0.23.0
 curl -L https://file.choerodon.com.cn/choerodon-install/c7nctl/${VERSION}/c7nctl-${VERSION}-`uname -s`-amd64.tar.gz | tar -xz && cd c7nctl-${VERSION}
 ```
 
@@ -32,7 +32,7 @@ vim config.yml
 粘贴以下内容，并将域名修改为你自己的域名
 
 ```yml
-version: 0.22
+version: 0.23
 metadata:
   name: resource-choerodon
   namespace: c7n-system  # 指定命名空间安装choerodon
@@ -40,38 +40,45 @@ spec:
   persistence:
     storageClassName: nfs-provisioner
   resources:
-    mysql:
+    c7n-mysql:
       external: false
     gitlab:
-      domain: gitlab.example.choerodon.io
+      domain: gitlab.c7n.yidaqiang.com
       external: false
+      #username: root     # gitlab 默认用户名为root，不能修改
       schema: http
     minio:
-      domain: minio.example.choerodon.io
+      domain: minio.c7n.yidaqiang.com
       schema: http
     harbor:
-      domain: harbor.example.choerodon.io
+      domain: harbor.c7n.yidaqiang.com
       schema: https
       username: admin    # harbor 默认用户名为admin，不能修改
     chartmuseum:
-      domain: chart.example.choerodon.io
+      domain: chart.c7n.yidaqiang.com
       schema: http
-    hzero-gateway:
-      domain: api.example.choerodon.io
+    sonatype-nexus:
+      domain: nexus.c7n.yidaqiang.com
       schema: http
-    hzero-message:
-      domain: notify.example.choerodon.io
+    sonarqube:
+      domain: sonarqube.c7n.yidaqiang.com
+      schema: http
+    choerodon-gateway:
+      domain: api.c7n.yidaqiang.com
+      schema: http
+    choerodon-message:
+      domain: notify.c7n.yidaqiang.com
       schema: ws
     devops-service:
-      domain: devops.example.choerodon.io
+      domain: devops.c7n.yidaqiang.com
       schema: ws
     choerodon-front:
-      domain: app.example.choerodon.io
+      domain: app.c7n.yidaqiang.com
       schema: http
       username: admin   # 前端 默认用户名为admin，暂不能修改
-      password: Admin@123!   # 前端 默认密码为Admin@123!，暂不能修改
+      password: Admin123!   # 前端 默认密码为admin，暂不能修改
     hzero-front:
-      domain: hzero.example.choerodon.io
+      domain: hzero.c7n.yidaqiang.com
       schema: http
 ```
 
@@ -84,7 +91,7 @@ spec:
 - 更多关于c7nctl的配置请参考[此处](https://blog.vinkdong.com/c7nctl%E8%AF%A6%E8%A7%A3/)
 
 ```bash
-./c7nctl install c7n -c config.yml --version=0.22
+./c7nctl install c7n -c config.yml --version=0.23
 ```
 
 - 参数解释

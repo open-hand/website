@@ -1,7 +1,7 @@
 +++
 title = "前端"
 description = "前端"
-weight = 80
+weight = 75
 +++
 
 # 部署前端
@@ -13,8 +13,7 @@ helm repo add c7n https://openchart.choerodon.com.cn/choerodon/c7n/
 helm repo update
 ```
 
-
-## 部署 hzero front
+## 部署 hzero front 
 - 若需了解项目详情及各项参数含义，请移步 [open-hand/hzero-front](https://github.com/open-hand/hzero-front)。
 
 - 编写参数配置文件 `hzero-front.yaml`
@@ -25,19 +24,8 @@ helm repo update
       host: hzero.example.choerodon.io
     env:
       open:
-        BUILD_BASE_PATH: /
-        BUILD_PUBLIC_URL: /
         BUILD_CLIENT_ID: choerodon
-        BUILD_WEBSOCKET_HOST: ws://ws.hft.jajabjbj.top
-        BUILD_BPM_HOST: http://bpm.hft.jajabjbj.top
         BUILD_API_HOST: http://api.example.choerodon.io
-        BUILD_CUSTOMIZE_ICON_NAME: icon-font
-        PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: true
-        BUILD_PLATFORM_VERSION: SAAS
-        IM_ENABLE: BUILD_IM_ENABLE
-        IM_WEBSOCKET_HOST: BUILD_IM_WEBSOCKET_HOST
-        TRACE_LOG_ENABLE: BUILD_TRACE_LOG_ENABLE
-        CUSTOMIZE_ICON_NAME: BUILD_CUSTOMIZE_ICON_NAME 
     ```
 
 - 部署服务
@@ -82,8 +70,7 @@ helm repo update
         WEBSOCKET_SERVER: ws://notify.example.choerodon.io
         FILE_SERVER: http://minio.example.choerodon.io
         HZERO_FRONT: http://hzero.example.choerodon.io
-        DEVOPS_WEBSOCKET_SECRET_KEY: devops_ws
-        outward: /knowledge/share,/iam/register-organization,/iam/invite-user,/agile/backlog-share
+        DEVOPS_WEBSOCKET_SECRET_KEY: exmaple
     ingress:
       enabled: true
       host: app.example.choerodon.io

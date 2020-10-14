@@ -39,22 +39,24 @@ weight = 5
 
 | 组件                  | 描述           | 版本   |
 | --------------------- | -------------- | ------ |
-| hzero register        | 注册服务       | 0.22.2 |
-| hzero admin           | 平台治理服务    | 0.22.3 |
-| hzero iam             | IAM服务       | 0.22.4 |
-| hzero asgard          | 事务服务       | 0.22.4 |
-| hzero swagger         | swagger服务   | 0.22.1 |
-| hzero gateway         | 网关服务       | 0.22.4 |
-| hzero oauth           | 认证服务       | 0.22.2 |
-| hzero platform        | 平台服务       | 0.22.2 |
-| hzero monitor         | 监控审计服务    | 0.22.4 |
-| hzero file            | 文件服务       | 0.22.4 |
-| hzero message         | 消息服务       | 0.22.10 |
-| gitlab service        | 平台基础服务    | 0.22.1 |
-| devops service        | Devops 服务    | 0.23.7 |
-| workflow service      | 工作流服务      | 0.22.2 |
-| agile service         | 敏捷管理        | 0.22.2 |
-| test manager service  | 测试管理服务     | 0.22.2 |
-| knowledgebase service | 知识服务        | 0.22.1 |
-| choerodon front       | Choerodon 前端  | 0.22.1 |
-| hzero front           | hzero 前端      | 0.22.1 |
+| choerodon-register    | 注册服务       | 0.23.1 |
+| choerodon-admin       | 平台治理服务    | 0.23.1 |
+| choerodon-iam         | IAM服务       | 0.23.6 |
+| choerodon-asgard      | 事务服务       | 0.23.3 |
+| choerodon-swagger     | swagger服务   | 0.23.1 |
+| choerodon-gateway     | 网关服务       | 0.23.1 |
+| choerodon-oauth       | 认证服务       | 0.23.1 |
+| choerodon-platform    | 平台服务       | 0.23.4 |
+| choerodon-monitor     | 监控审计服务    | 0.23.1 |
+| choerodon-file        | 文件服务       | 0.23.1 |
+| choerodon-message     | 消息服务       | 0.23.7 |
+| devops-service        | Devops 服务    | 0.23.7 |
+| gitlab-servcie        | 平台基础服务    | 0.23.1 |
+| workflow-service      | 工作流服务      | 0.23.2 |
+| agile-service         | 敏捷管理        | 0.23.6 |
+| test-manager-service  | 测试管理服务     | 0.23.2 |
+| knowledgebase-service | 知识服务        | 0.23.1 |
+| prod-repo-service     | 制品库服务      | 0.23.3 |
+| code-repo-service     | 代码管理服务     | 0.23.2 |
+| choerodon-front       | Choerodon 前端  | 0.23.0 |
+| hzero-front           | hzero 前端      | 0.23.0 |
