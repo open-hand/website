@@ -43,42 +43,42 @@ spec:
     c7n-mysql:
       external: false
     gitlab:
-      domain: gitlab.c7n.yidaqiang.com
+      domain: gitlab.example.choerodon.io
       external: false
       #username: root     # gitlab 默认用户名为root，不能修改
       schema: http
     minio:
-      domain: minio.c7n.yidaqiang.com
+      domain: minio.example.choerodon.io
       schema: http
     harbor:
-      domain: harbor.c7n.yidaqiang.com
+      domain: harbor.example.choerodon.io
       schema: https
       username: admin    # harbor 默认用户名为admin，不能修改
     chartmuseum:
-      domain: chart.c7n.yidaqiang.com
+      domain: chart.example.choerodon.io
       schema: http
     sonatype-nexus:
-      domain: nexus.c7n.yidaqiang.com
+      domain: nexus.example.choerodon.io
       schema: http
     sonarqube:
-      domain: sonarqube.c7n.yidaqiang.com
+      domain: sonarqube.example.choerodon.io
       schema: http
     choerodon-gateway:
-      domain: api.c7n.yidaqiang.com
+      domain: api.example.choerodon.io
       schema: http
     choerodon-message:
-      domain: notify.c7n.yidaqiang.com
+      domain: notify.example.choerodon.io
       schema: ws
     devops-service:
-      domain: devops.c7n.yidaqiang.com
+      domain: devops.example.choerodon.io
       schema: ws
     choerodon-front:
-      domain: app.c7n.yidaqiang.com
+      domain: app.example.choerodon.io
       schema: http
       username: admin   # 前端 默认用户名为admin，暂不能修改
       password: Admin123!   # 前端 默认密码为admin，暂不能修改
     hzero-front:
-      domain: hzero.c7n.yidaqiang.com
+      domain: hzero.example.choerodon.io
       schema: http
 ```
 
