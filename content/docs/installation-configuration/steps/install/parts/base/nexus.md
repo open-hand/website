@@ -57,7 +57,7 @@ helm repo update
 ## 验证部署
 
 <blockquote class="note">
-Harbor启动速度较慢请等待所有Pod都为Running后进行界面查看。
+Nexus启动速度较慢请等待所有Pod都为Running后进行界面查看。
 </blockquote>
 
 - 访问设置的域名出现以下界面即部署成功

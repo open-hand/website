@@ -28,7 +28,8 @@ weight = 5
 | Minio                    | 对象存储服务              | RELEASE.2020-01-03T19-12-21Z | 5.0.5     |
 | Redis                    | 缓存数据库                | 4.0.11                       | 0.2.3     |
 | Mysql                    | 数据库                   | 5.7.23                       | 0.1.2     |
-| Harbor                   | 容器的镜像库              | v1.9.3                      | 1.2.3     |
+| Harbor                   | 容器的镜像库              | v1.9.3                       | 1.2.3     |
+| Nexus                    | 制品库                   | 3.25.1                       | 3.0.0     |
 | Gitlab                   | 代码托管                 | 11.11.7-ce.0                 | 0.5.3     |
 | Gitlab-Runner            | CI/CD 运行环境           | v11.11.4                     | 0.2.4     |
 | elasticsearch-kb         | 知识ES服务               | 7.2-elasticsearch-kb         | 0.22.1    |
