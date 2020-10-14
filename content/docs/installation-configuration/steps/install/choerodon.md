@@ -19,7 +19,7 @@ weight = 18
 如果您的主机没有配置kubernetes连接信息，则您需要到k8s服器中的master执行安装，如果您的主机已经配置了kubernetes的连接信息，并且可以正常执行`kubectl`命令，您可以在您的主机上执行安装，在安装之前您需要下载安装工具，目前支持Linux及MacOS:
 
 ```bash
-export VERSION=0.22.0
+export VERSION=0.22.1
 curl -L https://file.choerodon.com.cn/choerodon-install/c7nctl/${VERSION}/c7nctl-${VERSION}-`uname -s`-amd64.tar.gz | tar -xz && cd c7nctl-${VERSION}
 ```
 
@@ -40,7 +40,7 @@ spec:
   persistence:
     storageClassName: nfs-provisioner
   resources:
-    mysql:
+    c7n-mysql:
       external: false
     gitlab:
       domain: gitlab.example.choerodon.io
@@ -53,6 +53,9 @@ spec:
       domain: harbor.example.choerodon.io
       schema: https
       username: admin    # harbor 默认用户名为admin，不能修改
+    sonarqube: 
+      domain: sonarqube.example.choerodon.io
+      schema: http
     chartmuseum:
       domain: chart.example.choerodon.io
       schema: http
