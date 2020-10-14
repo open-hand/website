@@ -83,7 +83,6 @@ helm repo update
         SPRING_DATASOURCE_USERNAME: choerodon
         SPRING_DATASOURCE_PASSWORD: password
         SERVICES_ATTACHMENT_URL: http://minio.example.choerodon.io
-        SERVICES_DOMAIN_URL: http://app.example.choerodon.io
         SPRING_APPLICATION_NAME: agile-service
     ```
 
