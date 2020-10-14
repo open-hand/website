@@ -70,7 +70,7 @@ paginate = 5
         parent = "source"
 
 [[languages.en.menu.main]]
-    name = "v0.22"
+    name = "v0.23"
     url  = "/en/"
     weight = 10
     identifier = "en-version"
@@ -146,7 +146,7 @@ paginate = 5
         parent = "zh-source"
 
 [[languages.zh.menu.main]]
-    name = "v0.22"
+    name = "v0.23"
     url  = "/zh/"
     weight = 24
     identifier = "zh-version"
