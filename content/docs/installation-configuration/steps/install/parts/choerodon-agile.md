@@ -75,8 +75,6 @@ helm repo update
             driver: com.mysql.jdbc.Driver
     env:
       open:
-        SKYWALKING_OPTS: -javaagent:/agent/skywalking-agent.jar -Dskywalking.agent.service_name=agile-service -Dskywalking.agent.sample_n_per_3_secs=12 -Dskywalking.collector.backend_service=skywalking-skywalking-oap.monitoring:11800
-
         SPRING_REDIS_HOST: c7n-redis.c7n-system
         SPRING_REDIS_PORT: 6379
         SPRING_REDIS_DATABASE: 12
@@ -135,7 +133,6 @@ helm repo update
              driver: com.mysql.jdbc.Driver
     env:
       open:
-        CHOERODON_CLEANPERMISSION: false
         SPRING_REDIS_HOST: c7n-redis.c7n-system
         SPRING_REDIS_PORT: 6379
         SPRING_REDIS_DATABASE: 13

@@ -1,6 +1,6 @@
 +++
-title = "制品库服务部署"
-description = "制品库服务部署"
+title = "制品库部署"
+description = "制品库部署"
 weight = 70
 +++
 
@@ -54,26 +54,13 @@ helm repo update
 - 编写参数配置文件 `code-repo-service.yaml`
 
     ```yaml
-    env:
-      open:
-        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://choerodon-register.c7n-system:8000/eureka/
-        GITLAB_PRIVATETOKEN: YrAUZrvXDuqwcmDSz
-        GITLAB_URL: http://gitlab.example.choerodon.io
-        SPRING_DATASOURCE_PASSWORD: password
-        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system:3306/hrds_code_repo?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
-        SPRING_DATASOURCE_USERNAME: choerodon
-        SPRING_REDIS_DATABASE: 0
-        SPRING_REDIS_HOST: c7n-redis.c7n-system
-        SPRING_REDIS_PORT: 6379
     preJob:
-      image: registry.cn-shanghai.aliyuncs.com/c7n/dbtool:0.7.2
       preInitDB:
         datasource:
           driver: com.mysql.jdbc.Driver
           password: password
           url: jdbc:mysql://c7n-mysql.c7n-system:3306/?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
           username: choerodon
-        enabled: true
         datasources:
           # 初始化菜单数据
           platform:
@@ -81,7 +68,17 @@ helm repo update
             username: choerodon
             password: password
             driver: com.mysql.jdbc.Driver
-      timeout: 1200
+    env:
+      open:
+        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://choerodon-register.c7n-system:8000/eureka/
+        GITLAB_PRIVATETOKEN: xxxxxxxxxxxxxx
+        GITLAB_URL: http://gitlab.example.choerodon.io
+        SPRING_DATASOURCE_PASSWORD: password
+        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system:3306/hrds_code_repo?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
+        SPRING_DATASOURCE_USERNAME: choerodon
+        SPRING_REDIS_DATABASE: 0
+        SPRING_REDIS_HOST: c7n-redis.c7n-system
+        SPRING_REDIS_PORT: 6379
     ```
 
 - 部署服务
