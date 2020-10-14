@@ -13,10 +13,10 @@ helm repo add c7n https://openchart.choerodon.com.cn/choerodon/c7n/
 helm repo update
 ```
 
-## 部署 choerodon front hzero
-- 若需了解项目详情及各项参数含义，请移步 [open-hand/choerodon-front-hzero](https://github.com/open-hand/choerodon-front-hzero)。
+## 部署 hzero front 
+- 若需了解项目详情及各项参数含义，请移步 [open-hand/hzero-front](https://github.com/open-hand/hzero-front)。
 
-- 编写参数配置文件 `choerodon-front-hzero.yaml`
+- 编写参数配置文件 `hzero-front.yaml`
 
     ```yaml
     ingress:
@@ -31,8 +31,8 @@ helm repo update
 - 部署服务
 
     ```
-    helm upgrade --install choerodon-front-hzero c7n/choerodon-front-hzero \
-        -f choerodon-front-hzero.yaml \
+    helm upgrade --install hzero-front c7n/hzero-front \
+        -f hzero-front.yaml \
         --create-namespace \
         --version 0.23.0 \
         --namespace c7n-system

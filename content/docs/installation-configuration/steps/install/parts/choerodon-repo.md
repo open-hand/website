@@ -50,7 +50,7 @@ helm repo update
 
 ## 部署 code repo service
 - 若需了解项目详情及各项参数含义，请移步 [open-hand/code-repo-service](https://github.com/open-hand/code-repo-service)。
-
+- 如何获取 `GITLAB_PRIVATETOKEN` 请查看[这里](http://openforum.hand-china.com/t/topic/1155/2)
 - 编写参数配置文件 `code-repo-service.yaml`
 
     ```yaml
@@ -87,7 +87,7 @@ helm repo update
     helm upgrade --install code-repo-service c7n/code-repo-service \
         -f code-repo-service.yaml \
         --create-namespace \
-        --version 0.23.1 \
+        --version 0.23.2 \
         --namespace c7n-system
     ```
 
@@ -110,55 +110,53 @@ helm repo update
 - 编写参数配置文件 `prod-repo-service.yaml`
 
     ```yaml
-        env:
-          open:
-            EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://choerodon-register.c7n-system:8000/eureka/
-            # devops的数据库 迁移数据使用 只会在0.23版本使用
-            HARBOR_INIT_CUSTOM_REPO_PASSWORD: password
-            HARBOR_INIT_CUSTOM_REPO_URL: jdbc:mysql://c7n-mysql.c7n-system:3306/devops_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
-            HARBOR_INIT_CUSTOM_REPO_USERNAME: choerodon
-            # platform的数据库 迁移数据使用 只会在0.23版本使用
-            HARBOR_INIT_DEFAULT_REPO_PASSWORD: Uc9Cw6gDyJPL
-            HARBOR_INIT_DEFAULT_REPO_URL: jdbc:mysql://c7n-mysql.c7n-system:3306/hzero_platform?useUnicode=true&characterEncoding=utf-8&useSSL=false
-            HARBOR_INIT_DEFAULT_REPO_USERNAME: choerodon
-            HARBOR_BASE_URL: https://registry.example.choerodon.io
-            HARBOR_PASSWORD: Harbor12345
-            HARBOR_USER_NAME: admin
-            SPRING_DATASOURCE_PASSWORD: password
-            SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system:3306/hrds_prod_repo?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
-            SPRING_DATASOURCE_USERNAME: choerodon
-            SPRING_REDIS_DATABASE: 0
-            SPRING_REDIS_HOST: c7n-redis.c7n-system
-            SPRING_REDIS_PORT: 6379
-            ##系统默认nexus服务地址
-            NEXUS_DEFAULT_BASE_URL: http://nexus.example.choerodon.io
-            #系统默认nexus服务，超级管理员用户
-            NEXUS_DEFAULT_USER_NAME: admin
-            #系统默认nexus服务，超级管理员用户密码
-            NEXUS_DEFAULT_PASSWORD: admin
-            #系统默认nexus服务，是否启用仓库级的匿名访问控制。 1:启用  0:不启用
-            NEXUS_DEFAULT_ENABLE_ANONYMOUS_FLAG: 0
-            #系统默认nexus服务，启用仓库级的匿名访问控制时需要配置该值(即enableAnonymousFlag==1时)。 nexus服务开启全局匿名访问时，配置的用户
-            NEXUS_DEFAULT_ANONYMOUS_USER: test
-            #系统默认nexus服务，启用仓库级的匿名访问控制时需要配置该值(即enableAnonymousFlag==1时)。 nexus服务开启全局匿名访问时，配置的用户对应的角色
-            NEXUS_DEFAULT_ANONYMOUS_ROLE: test
-        preJob:
-          image: registry.cn-shanghai.aliyuncs.com/c7n/dbtool:0.7.1
-          preInitDB:
-            datasource:
-              driver: com.mysql.jdbc.Driver
-              password: password
-              url: jdbc:mysql://c7n-mysql.c7n-system:3306/?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
-              username: choerodon
-            datasources:
-              # 多数据源初始化
-              platform:
-                url: jdbc:mysql://c7n-mysql.c7n-system:3306/?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
-                username: choerodon
-                password: password
-                driver: com.mysql.jdbc.Driver
-            enabled: true
-          timeout: 1200
+    preJob:
+      preInitDB:
+        datasource:
+          driver: com.mysql.jdbc.Driver
+          password: password
+          url: jdbc:mysql://c7n-mysql.c7n-system:3306/?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
+          username: choerodon
+        datasources:
+          # 多数据源初始化
+          platform:
+            url: jdbc:mysql://c7n-mysql.c7n-system:3306/?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
+            username: choerodon
+            password: password
+            driver: com.mysql.jdbc.Driver
+    env:
+      open:
+        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://choerodon-register.c7n-system:8000/eureka/
+        # devops的数据库 迁移数据使用 只会在0.23版本使用
+        HARBOR_INIT_CUSTOM_REPO_PASSWORD: password
+        HARBOR_INIT_CUSTOM_REPO_URL: jdbc:mysql://c7n-mysql.c7n-system:3306/devops_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
+        HARBOR_INIT_CUSTOM_REPO_USERNAME: choerodon
+        # platform的数据库 迁移数据使用 只会在0.23版本使用
+        HARBOR_INIT_DEFAULT_REPO_PASSWORD: Uc9Cw6gDyJPL
+        HARBOR_INIT_DEFAULT_REPO_URL: jdbc:mysql://c7n-mysql.c7n-system:3306/hzero_platform?useUnicode=true&characterEncoding=utf-8&useSSL=false
+        HARBOR_INIT_DEFAULT_REPO_USERNAME: choerodon
+        HARBOR_BASE_URL: https://registry.example.choerodon.io
+        HARBOR_PASSWORD: Harbor12345
+        HARBOR_USER_NAME: admin
+        SPRING_DATASOURCE_PASSWORD: password
+        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system:3306/hrds_prod_repo?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
+        SPRING_DATASOURCE_USERNAME: choerodon
+        SPRING_REDIS_DATABASE: 0
+        SPRING_REDIS_HOST: c7n-redis.c7n-system
+        SPRING_REDIS_PORT: 6379
+        ##系统默认nexus服务地址
+        NEXUS_DEFAULT_BASE_URL: http://nexus.example.choerodon.io
+        #系统默认nexus服务，超级管理员用户
+        NEXUS_DEFAULT_USER_NAME: admin
+        #系统默认nexus服务，超级管理员用户密码
+        NEXUS_DEFAULT_PASSWORD: admin
+        #系统默认nexus服务，是否启用仓库级的匿名访问控制。 1:启用  0:不启用
+        NEXUS_DEFAULT_ENABLE_ANONYMOUS_FLAG: 0
+        #系统默认nexus服务，启用仓库级的匿名访问控制时需要配置该值(即enableAnonymousFlag==1时)。 nexus服务开启全局匿名访问时，配置的用户
+        NEXUS_DEFAULT_ANONYMOUS_USER: test
+        #系统默认nexus服务，启用仓库级的匿名访问控制时需要配置该值(即enableAnonymousFlag==1时)。 nexus服务开启全局匿名访问时，配置的用户对应的角色
+        NEXUS_DEFAULT_ANONYMOUS_ROLE: test
+
     ```
 
 - 部署服务
@@ -167,7 +165,7 @@ helm repo update
     helm upgrade --install prod-repo-service c7n/prod-repo-service \
         -f prod-repo-service.yaml \
         --create-namespace \
-        --version 0.23.2 \
+        --version 0.23.3 \
         --namespace c7n-system
     ```
 
