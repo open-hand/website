@@ -163,7 +163,31 @@ helm repo update
             enabled: true
           timeout: 1200
     ```
+- 其它配置 <br/>
+    上述变量配置中：NEXUS_DEFAULT_ENABLE_ANONYMOUS_FLAG(是否启用仓库级的匿名访问控制)、NEXUS_DEFAULT_ANONYMOUS_USER、NEXUS_DEFAULT_ANONYMOUS_ROLE这几个变量的配置。
+  当NEXUS_DEFAULT_ENABLE_ANONYMOUS_FLAG配置为1（启用时），还需要做以下配置，若配置为0（不启用），可以不做以下配置
+  - 说明<br/>
+  nexus服务上开启匿名访问，是全局生效的。nexus3版本及其以上，如果服务上允许匿名访问，默认有一个匿名访问用户，但这个用户拥有所有仓库的访问权限，故需要更改此处设置
 
+    ![image](./image/anonymous.jpg)
+
+  - 配置 <br/>
+    - 创建一个用户匿名访问的角色，如：test-anonymous。将允许匿名访问仓库的read、browse权限给到这个用户
+    ![image](./image/role.jpg)
+    - 创建一个用户，将上述角色赋予这个用户,如 test-anonymous-user。并将匿名访问的用户设置为该新建的用户
+    ![image](./image/user.jpg) <br/>
+    <br/>
+    ![image](./image/anonymous.png)
+    
+    - 如上在nexus服务配置后，上述变量配置值配置为：
+      ```
+      #系统默认nexus服务，是否启用仓库级的匿名访问控制。 1:启用  0:不启用
+      NEXUS_DEFAULT_ENABLE_ANONYMOUS_FLAG: 1
+      #系统默认nexus服务，启用仓库级的匿名访问控制时需要配置该值(即enableAnonymousFlag==1时)。 nexus服务开启全局匿名访问时，配置的用户
+      NEXUS_DEFAULT_ANONYMOUS_USER: test-anonymous-user
+      #系统默认nexus服务，启用仓库级的匿名访问控制时需要配置该值(即enableAnonymousFlag==1时)。 nexus服务开启全局匿名访问时，配置的用户对应的角色
+      NEXUS_DEFAULT_ANONYMOUS_ROLE: test-anonymous
+      ```
 - 部署服务
 
     ```
