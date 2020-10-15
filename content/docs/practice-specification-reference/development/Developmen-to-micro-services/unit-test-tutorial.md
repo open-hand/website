@@ -328,6 +328,7 @@ data:
 ![](/docs/practice-specification-reference/development/Developmen-to-micro-services/image/unit-test-folder.png)
 
 - application.yaml
+
 ```
 spring:
   datasource:
@@ -362,6 +363,7 @@ logging:
     root: error
 
 ```
+
 上面的是基础的应用配置，针对不同的项目环境，可以进行相应调整。
 ## 4.3 编写测试代码
 测试controller时，我们需要对服务器进行REST调用测试。
@@ -371,7 +373,7 @@ logging:
 
 ### 示例1：第一个单元测试demo
 
-源码： 
+源码：
 UserController
 
 ```
