@@ -77,7 +77,7 @@ spec:
       schema: http
       username: admin   # 前端 默认用户名为admin，暂不能修改
       password: Admin123!   # 前端 默认密码为admin，暂不能修改
-    hzero-front:
+    choerodon-front-hzero:
       domain: hzero.example.choerodon.io
       schema: http
 ```

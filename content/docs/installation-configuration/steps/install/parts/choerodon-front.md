@@ -13,10 +13,10 @@ helm repo add c7n https://openchart.choerodon.com.cn/choerodon/c7n/
 helm repo update
 ```
 
-## 部署 hzero front 
-- 若需了解项目详情及各项参数含义，请移步 [open-hand/hzero-front](https://github.com/open-hand/hzero-front)。
+## 部署 choerodon front hzero
+- 若需了解项目详情及各项参数含义，请移步 [open-hand/choerodon-front-hzero](https://github.com/open-hand/choerodon-front-hzero)。
 
-- 编写参数配置文件 `hzero-front.yaml`
+- 编写参数配置文件 `choerodon-front-hzero.yaml`
 
     ```yaml
     ingress:
@@ -31,10 +31,10 @@ helm repo update
 - 部署服务
 
     ```
-    helm upgrade --install hzero-front c7n/hzero-front \
-        -f hzero-front.yaml \
+    helm upgrade --install choerodon-front-hzero c7n/choerodon-front-hzero \
+        -f choerodon-front-hzero.yaml \
         --create-namespace \
-        --version 0.23.0 \
+        --version 0.23.1 \
         --namespace c7n-system
     ```
 
@@ -43,7 +43,7 @@ helm repo update
     - 验证命令
 
         ```
-        curl $(kubectl get svc hzero-front -o jsonpath="{.spec.clusterIP}" -n c7n-system):80
+        curl $(kubectl get svc choerodon-front-hzero -o jsonpath="{.spec.clusterIP}" -n c7n-system):80
         ```
 
     - 出现以下类似信息即为成功部署
