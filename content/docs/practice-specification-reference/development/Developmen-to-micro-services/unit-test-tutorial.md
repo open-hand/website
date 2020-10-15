@@ -11,24 +11,36 @@ home = true
 ## 1.1 SpringBootTest注解说明
 ### @SpringBootTest
 用于构建测试环境上下文，默认情况下，SpringBootTest不会构建一个web环境，可以使用webEnvironment参数指定想要构建的测试环境。可选值如下：
+
 - MOCK(默认)：构建一个虚拟的web环境
+
 - RANDOM_PORT：使用随机的端口号构建一个真实的web环境
+
 - DEFINED_PORT：根据配置文件指定的端口号构建一个web环境
+
 - NONE：构建一个非web环境
+
 我们测试的时候希望模拟一个真实的web环境，选择了RANDOM_PORT
+
 ### @Import
+
 用于导入配置类
+
 ### @TestConfiguration
+
 标注是用于单元测试的配置类
 > spring test会缓存上下文，如果不同的测试类使用的是相同的上下文，那么上下文只会加载一次。所以，如果使用了@Import注解导入配置类，那么每个测试类都应该导入了相同的配置类，保证使用同一个上下文。
 
 更多内容，请学习[spring boot test](https://docs.spring.io/spring-boot/docs/2.0.6.RELEASE/reference/html/boot-features-testing.html)
 
 ## 1.2 spock基础知识
+
 Spock框架是基于Groovy语言的测试框架，Groovy与Java具备良好的互操作性，因此可以在Spring Boot项目中使用该框架写优雅、高效以及DSL化的测试用例。因为基于Groovy, 使得Spock 可以更容易地写出表达能力更强的测试用例。又因为它内置了Junit Runner, 所以Spock兼容大部分的IDE，测试工具，和持续集成服务器。
 
 ### Specification
+
 Specification类包含了很多编写用于单元测试的方法。编写测试代码时，我们先创建一个测试类，继承自Specification。
+
 ```
 class CiControllerSpec extends Specification {
   // fields
@@ -37,6 +49,7 @@ class CiControllerSpec extends Specification {
   // helper methods
 }
 ```
+
 ###  定义变量
 ```
 def obj = new ClassUnderSpecification()
@@ -108,6 +121,7 @@ jdbc:h2:tcp://<server>[:<port>]/[<path>]<databaseName>
 ```
 更多内容，请参考[database_url](https://h2database.com/html/features.html#database_url)
 ## 2.2 连接参数说明
+
 - DB_CLOSE_DELAY：要求最后一个正在连接的连接断开后，不要关闭数据库
 - MODE=MySQL：兼容模式，H2兼容多种数据库，该值可以为：DB2、Derby、HSQLDB、MSSQLServer、MySQL、Oracle、PostgreSQL
 - AUTO_RECONNECT=TRUE：连接丢失后自动重新连接
@@ -131,14 +145,17 @@ spring:
     username: sa
 ```
 url相关参数说明：
+
 - jdbc:h2:mem:testdb: 创建一个名为testdb的内存数据库
 - DB_CLOSE_DELAY=-1： 程序结束后销毁数据库
 - MODE=Mysql： 使用mysql兼容模式
 - TRACE_LEVEL_SYSTEM_OUT=1： 过多的日志信息会降低运行速度，所以这里设置日志级别为error
 ## 2.5 数据初始化
+
 因为项目中使用liquibase + groovy来初始化数据。 在测试中也可以使用同样的方式初始化数据，只需要在测试代码中进行如下配置即可：
 
 application.yaml文件中添加初始化数据路径
+
 ```
 # liquibase初始化配置
 data:
