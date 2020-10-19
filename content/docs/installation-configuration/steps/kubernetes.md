@@ -165,14 +165,6 @@ sudo ./install-ansible.sh
 | 允许     | TCP      | 30000/32767 | 地址段访问 | 0.0.0.0/0     | NodePort 访问集群       |
 | 允许     | 全部     | -1/-1       | 地址段访问 | 10.244.0.0/18 | 跨节点 Pod 之间互相访问 |
 
-- 升级内核：
-
-    ```
-    # 在项目根目录下执行
-    ansible-playbook -i inventory.ini 00-kernel.yml
-    # 重启服务器
-    reboot -f
-    ```
 - 部署集群：
 
     ```
