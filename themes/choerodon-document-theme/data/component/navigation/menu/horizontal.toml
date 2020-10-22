@@ -44,7 +44,7 @@ class App extends React.Component {
           </MenuItemGroup>
         </SubMenu>
         <Menu.Item key="alipay">
-          <a href="https://github.com/choerodon" target="_blank" rel="noopener noreferrer">Navigation Four - Link</a>
+          <a href="https://github.com/open-hand" target="_blank" rel="noopener noreferrer">Navigation Four - Link</a>
         </Menu.Item>
       </Menu>
     );
@@ -95,7 +95,7 @@ class App extends React.Component {
           </MenuItemGroup>
         </SubMenu>
         <Menu.Item key="alipay">
-          <a href="https://github.com/choerodon" target="_blank" rel="noopener noreferrer">Navigation Four - Link</a>
+          <a href="https://github.com/open-hand" target="_blank" rel="noopener noreferrer">Navigation Four - Link</a>
         </Menu.Item>
       </Menu>
     );

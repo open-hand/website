@@ -290,4 +290,4 @@ public AsgardUser iamCreateUser(String data) {
 
 * 当消息实例锁不为空时，查询消息实例是否为拉取的消费端实例，是则允许拉取不是则不允许拉取该条消息。
 
-更多有关的信息可以从[`asgard-service`](https://github.com/choerodon/asgard-service)获取。
+更多有关的信息可以从[`asgard-service`](https://github.com/open-hand/asgard-service)获取。

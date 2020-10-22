@@ -1,4 +1,4 @@
-baseurl = "https://choerodon.io/"
+baseurl = "https://v0-22.choerodon.io/"
 title = "猪齿鱼Choerodon | 开源多云应用敏捷全链路技术平台"
 theme = "choerodon-document-theme"
 # themesDir = "../.."
@@ -59,7 +59,7 @@ paginate = 5
     [[languages.en.menu.main]]
         name = "GITHUB"
         post= true
-        url  = "https://github.com/choerodon/choerodon"
+        url  = "https://github.com/open-hand/choerodon"
         weight = 8
         parent = "source"
     [[languages.en.menu.main]]
@@ -135,7 +135,7 @@ paginate = 5
     [[languages.zh.menu.main]]
         name = "GITHUB"
         post= true
-        url  = "https://github.com/choerodon/choerodon"
+        url  = "https://github.com/open-hand/choerodon"
         weight = 22
         parent = "zh-source"
     [[languages.zh.menu.main]]

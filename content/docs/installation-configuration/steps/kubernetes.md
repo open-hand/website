@@ -35,7 +35,7 @@ weight = 5
 # 安装 git 命令行
 sudo yum install git -y
 # 克隆本项目代码
-git clone https://github.com/choerodon/kubeadm-ha.git
+git clone https://github.com/open-hand/kubeadm-ha.git
 # 进入项目目录
 cd kubeadm-ha
 # 安装 ansible 环境
@@ -186,7 +186,7 @@ sudo ./install-ansible.sh
     ansible-playbook -i inventory.ini 99-reset-cluster.yml
     ```
 
-- 其他集群运维操作请查阅项目[使用指南](https://github.com/choerodon/kubeadm-ha#使用指南)
+- 其他集群运维操作请查阅项目[使用指南](https://github.com/open-hand/kubeadm-ha#使用指南)
 
 ## 集群网络测试
 

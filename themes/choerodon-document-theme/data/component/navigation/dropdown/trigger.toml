@@ -10,10 +10,10 @@ import { Menu, Dropdown, Icon, Button } from 'choerodon-ui';
 const menu = (
   <Menu>
     <Menu.Item key="0">
-      <a href="https://github.com/choerodon">1st menu item</a>
+      <a href="https://github.com/open-hand">1st menu item</a>
     </Menu.Item>
     <Menu.Item key="1">
-      <a href="https://github.com/choerodon">2nd menu item</a>
+      <a href="https://github.com/open-hand">2nd menu item</a>
     </Menu.Item>
     <Menu.Divider />
     <Menu.Item key="3">3rd menu item</Menu.Item>
@@ -40,10 +40,10 @@ const { Menu, Dropdown, Icon, Button } = window['choerodon-ui'];
 const menu = (
   <Menu>
     <Menu.Item key="0">
-      <a href="https://github.com/choerodon">1st menu item</a>
+      <a href="https://github.com/open-hand">1st menu item</a>
     </Menu.Item>
     <Menu.Item key="1">
-      <a href="https://github.com/choerodon">2nd menu item</a>
+      <a href="https://github.com/open-hand">2nd menu item</a>
     </Menu.Item>
     <Menu.Divider />
     <Menu.Item key="3">3rd menu item</Menu.Item>

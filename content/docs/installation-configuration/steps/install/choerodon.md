@@ -54,6 +54,9 @@ spec:
       domain: harbor.example.choerodon.io
       schema: https
       username: admin    # harbor 默认用户名为admin，不能修改
+    sonarqube: 
+      domain: sonarqube.example.choerodon.io
+      schema: http
     chartmuseum:
       domain: chart.example.choerodon.io
       schema: http

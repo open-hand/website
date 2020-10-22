@@ -1,16 +1,20 @@
 +++
-title = "后端开发手册"
-description = "介绍基于开发的基本工具与其具体安装配置。通过此章节，用户可完成基本开发环境的搭建"
-weight = 3
-
+title = "框架功能"
+description = ""
+weight = 4
+type = "docs"
 +++
 
+## 前置条件
+
+首先保证环境已经安装正确，详见 [**开发环境搭建**](../develop-env/)
+
 ## 介绍
-  
-本页面介绍了使用Choerodon 微服务开发框架，来开发一个简单的微服务。包含了本地开发环境搭建，开发Demo程序，测试与集成。每个模块都包含了其主要功能、操作流程及其他注意事项。
+
+本小节介绍了框架的一些基础组件，并且对如何使用这些组件进行了详细的介绍。
 
 ## 功能
 
-- [**开发环境搭建**](../../development-guide/backend/develop-env) 讲述了如何在本地搭建开发环境，以支撑我们在本地进行微服务开发。
-- [**开发Demo程序**](../../development-guide/backend/demo) 讲述了如何创建一个简单的项目，实现记录待办事项的功能。
-- [**测试与集成**](../../development-guide/backend/intergration) 讲述了将demo 集成到Choerodon 平台中，并进行接口测试。
+- [**使用Saga**](./saga) 讲述了如何在本地搭建开发环境，以支撑我们在本地进行微服务开发。
+- [**使用任务调度**](./job) 讲述了如何在Choerodon平台上自定义定时任务。
+- [**liquibase初始化工具**](./liquibase) 讲述了如何使用liquibase工具初始化数据。

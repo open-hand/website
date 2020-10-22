@@ -10,13 +10,13 @@ import { Menu, Dropdown, Button } from 'choerodon-ui';
 const menu = (
   <Menu>
     <Menu.Item>
-      <a target="_blank" rel="noopener noreferrer" href="https://github.com/choerodon">1st menu item</a>
+      <a target="_blank" rel="noopener noreferrer" href="https://github.com/open-hand">1st menu item</a>
     </Menu.Item>
     <Menu.Item>
-      <a target="_blank" rel="noopener noreferrer" href="https://github.com/choerodon">2nd menu item</a>
+      <a target="_blank" rel="noopener noreferrer" href="https://github.com/open-hand">2nd menu item</a>
     </Menu.Item>
     <Menu.Item>
-      <a target="_blank" rel="noopener noreferrer" href="https://github.com/choerodon">3rd menu item</a>
+      <a target="_blank" rel="noopener noreferrer" href="https://github.com/open-hand">3rd menu item</a>
     </Menu.Item>
   </Menu>
 );
@@ -52,13 +52,13 @@ const { Menu, Dropdown, Button } = window['choerodon-ui'];
 const menu = (
   <Menu>
     <Menu.Item>
-      <a target="_blank" rel="noopener noreferrer" href="https://github.com/choerodon">1st menu item</a>
+      <a target="_blank" rel="noopener noreferrer" href="https://github.com/open-hand">1st menu item</a>
     </Menu.Item>
     <Menu.Item>
-      <a target="_blank" rel="noopener noreferrer" href="https://github.com/choerodon">2nd menu item</a>
+      <a target="_blank" rel="noopener noreferrer" href="https://github.com/open-hand">2nd menu item</a>
     </Menu.Item>
     <Menu.Item>
-      <a target="_blank" rel="noopener noreferrer" href="https://github.com/choerodon">3rd menu item</a>
+      <a target="_blank" rel="noopener noreferrer" href="https://github.com/open-hand">3rd menu item</a>
     </Menu.Item>
   </Menu>
 );
