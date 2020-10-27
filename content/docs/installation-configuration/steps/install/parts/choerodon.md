@@ -368,7 +368,7 @@ helm repo update
     helm upgrade --install choerodon-gateway c7n/choerodon-gateway \
         -f choerodon-gateway.yaml \
         --create-namespace \
-        --version 0.23.1 \
+        --version 0.23.2 \
         --namespace c7n-system
     ```
 
