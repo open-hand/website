@@ -281,7 +281,7 @@ helm repo update
     helm upgrade --install choerodon-asgard c7n/choerodon-asgard \
         -f choerodon-asgard.yaml \
         --create-namespace \
-        --version 0.23.5 \
+        --version 0.23.6 \
         --namespace c7n-system
     ```
 

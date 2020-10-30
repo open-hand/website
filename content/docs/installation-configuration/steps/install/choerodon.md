@@ -19,8 +19,9 @@ weight = 18
 如果您的主机没有配置kubernetes连接信息，则您需要到k8s服器中的master执行安装，如果您的主机已经配置了kubernetes的连接信息，并且可以正常执行`kubectl`命令，您可以在您的主机上执行安装，在安装之前您需要下载安装工具，目前支持Linux及MacOS:
 
 ```bash
-export VERSION=0.23.0
-curl -L https://file.choerodon.com.cn/choerodon-install/c7nctl/${VERSION}/c7nctl-${VERSION}-`uname -s`-amd64.tar.gz | tar -xz && cd c7nctl-${VERSION}
+curl -fsSL -o get_c7nctl.sh https://gitee.com/open-hand/c7nctl/raw/0.23/scripts/get-c7nctl.sh
+chmod 700 get_c7nctl.sh
+./get_c7nctl.sh
 ```
 
 ## 创建并编辑配置文件
@@ -40,58 +41,39 @@ spec:
   persistence:
     storageClassName: nfs-provisioner
   resources:
-    c7n-mysql:
-      external: false
     gitlab:
       domain: gitlab.example.choerodon.io
-      external: false
-      #username: root     # gitlab 默认用户名为root，不能修改
-      schema: http
     minio:
       domain: minio.example.choerodon.io
-      schema: http
     harbor:
       domain: harbor.example.choerodon.io
-      schema: https
-      username: admin    # harbor 默认用户名为admin，不能修改
-    sonarqube: 
-      domain: sonarqube.example.choerodon.io
-      schema: http
     chartmuseum:
       domain: chart.example.choerodon.io
-      schema: http
     sonatype-nexus:
       domain: nexus.example.choerodon.io
-      schema: http
     sonarqube:
       domain: sonarqube.example.choerodon.io
-      schema: http
     choerodon-gateway:
       domain: api.example.choerodon.io
-      schema: http
     choerodon-message:
       domain: notify.example.choerodon.io
-      schema: ws
     devops-service:
       domain: devops.example.choerodon.io
-      schema: ws
-    choerodon-front:
-      domain: app.example.choerodon.io
-      schema: http
-      username: admin   # 前端 默认用户名为admin，暂不能修改
-      password: Admin123!   # 前端 默认密码为admin，暂不能修改
     choerodon-front-hzero:
       domain: hzero.example.choerodon.io
-      schema: http
+    choerodon-front:
+      domain: app.example.choerodon.io
 ```
 
 ## 开始部署
 
 - 在安装过程中，会提示设置某些组件用户名及密码，注意保存
+
 - 如果安装失败，根据提示操作后，再次执行命令即可
+
 - 如果安装api-gateway失败请重新执行一次安装命令
+
 - 执行部署命令，<b style="color:red">安装过程中如果遇到问题，请先查看本文最后一节关于常见问题的介绍</b>，如果未能解决你的问题，可以到[论坛](//openforum.hand-china.com)中提问。
-- 更多关于c7nctl的配置请参考[此处](https://blog.vinkdong.com/c7nctl%E8%AF%A6%E8%A7%A3/)
 
 ```bash
 ./c7nctl install c7n -c config.yml --version=0.23
@@ -99,16 +81,29 @@ spec:
 
 - 参数解释
 
-| 参数 | 作用 | 说明
-| --- | --- |  ---
-| --no-timeout | 取消默认任务等待超时| 微服务安装时需要执行初始化任务，默认超时时长为300秒，添加此参数将超时时长设置为24小时
-| --debug | 输出调试信息 |
+| 参数 | 说明 |
+| --- |  --- |
+| \-\-debug | 输出 debug 级别的日志 |
+| \-\-config | 设置安装的配置文件 |
+| \-\-namespace |  指定安装的的 namespace，默认为 c7n-system |
+| \-\-version | 设置安装的猪齿鱼版本 |
+| \-\-resource-path | 设置安装资源的路径，用于离线安装 |
+| \-\-prefix | 安装资源的前缀 |
+| \-\-thin-mode | 最小资源占用安装,需要服务总配置为 6C32G，仅推荐用于测试体验安装 |
+| \-\-client-only | 模拟安装，仅输出安装配置 |
+| \-\-chart-repo | chart 仓库地址 |
+| \-\-image-repo | 设置所有helm实例的镜像仓库 |
 
 ## 后续步骤
 
 - 安装完成后您可以访问您配置的`choerodon-front`域名，默认用户名和密码为admin/Admin@123!
-- 登录一次Gitlab，第一次登录会提示设置root用户密码，随后会跳转到Choerodon认证，使用admin/Admin@123!登录即可，如果使用root/admin用户拉取代码用户名为root，密码为界面设置的密码，其他用户默认密码为`password`
+
+- 登录一次Gitlab，第一次登录会提示设置root用户密码，随后会跳转到Choerodon认证，使用admin/Admin@123!登录即可，如果使用root/admin用户拉取代码用户名为root，密码为界面设置的密码，其他用户创建后会通过站内信通知Gitlab密码
+
 - [设置Harbor证书(必须设置)](../parts/base/harbor/#证书配置)
+
+- [Nexus 匿名用户设置(可选)](../parts/base/choerodon-repo/)
+
 - [安装Gitlab-Runner](../parts/gitlab-runner)
 
 ## 常见问题
