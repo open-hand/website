@@ -25,32 +25,28 @@ helm repo update
 - 创建参数配置文件 `sonatype-nexus.yaml`
 
     ```yaml
-    persistence:
-      storageClass: "nfs-provisioner"
-    nexusProxy:
-      env:
-        nexusHttpHost: nexus.example.choerodon.io
     ingress:
       enabled: true
       tls:
         enabled: false
-    deployment:
-      initContainers:
-        - name: fmp-volume-permission
-          image: busybox
-          imagePullPolicy: IfNotPresent
-          command: ['sh', '-c', 'mkdir -p /nexus-data/etc  && echo "nexus.scripts.allowCreation=true" > /nexus-data/etc/nexus.properties && cat /nexus-data/etc/nexus.properties' ]
-          volumeMounts:
-            - name: sonatype-nexus-data
-              mountPath: /nexus-data
+    initAdminPassword:
+      enabled: true
+      password: admin123
+    nexusProxy:
+      enabled: false
+      env:
+        nexusHttpHost: nexus.example.choerodon.io
+    persistence:
+      storageClass: nfs-provisioner
     ```
+
 - 执行安装
 
     ```bash
     helm upgrade --install sonatype-nexus c7n/sonatype-nexus \
         -f sonatype-nexus.yaml \
         --create-namespace \
-        --version 3.0.0 \
+        --version 3.4.0 \
         --namespace c7n-system
     ```
 
