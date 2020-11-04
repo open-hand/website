@@ -59,5 +59,5 @@ weight = 5
 | knowledgebase-service | 知识服务        | 0.23.1 |
 | prod-repo-service     | 制品库服务      | 0.23.3 |
 | code-repo-service     | 代码管理服务     | 0.23.2 |
-| choerodon-front       | Choerodon 前端  | 0.23.0 |
+| choerodon-front       | Choerodon 前端  | 0.23.1 |
 | hzero-front           | hzero 前端      | 0.23.0 |
