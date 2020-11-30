@@ -130,7 +130,7 @@ helm repo update
     helm upgrade --install choerodon-platform c7n/choerodon-platform \
         -f choerodon-platform.yaml \
         --create-namespace \
-        --version 0.23.4 \
+        --version 0.23.5 \
         --namespace c7n-system
     ```
 
@@ -281,7 +281,7 @@ helm repo update
     helm upgrade --install choerodon-asgard c7n/choerodon-asgard \
         -f choerodon-asgard.yaml \
         --create-namespace \
-        --version 0.23.6 \
+        --version 0.23.7 \
         --namespace c7n-system
     ```
 
@@ -463,7 +463,7 @@ helm repo update
     helm upgrade --install choerodon-monitor c7n/choerodon-monitor \
         -f choerodon-monitor.yaml \
         --create-namespace \
-        --version 0.23.1 \
+        --version 0.23.2 \
         --namespace c7n-system
     ```
 
@@ -569,7 +569,7 @@ helm repo update
     helm upgrade --install choerodon-message c7n/choerodon-message \
         -f choerodon-message.yaml \
         --create-namespace \
-        --version 0.23.7 \
+        --version 0.23.8 \
         --namespace c7n-system
     ```
 

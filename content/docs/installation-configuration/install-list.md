@@ -47,17 +47,17 @@ weight = 5
 | choerodon-swagger     | swagger服务   | 0.23.1 |
 | choerodon-gateway     | 网关服务       | 0.23.2 |
 | choerodon-oauth       | 认证服务       | 0.23.1 |
-| choerodon-platform    | 平台服务       | 0.23.4 |
-| choerodon-monitor     | 监控审计服务    | 0.23.1 |
+| choerodon-platform    | 平台服务       | 0.23.5 |
+| choerodon-monitor     | 监控审计服务    | 0.23.2 |
 | choerodon-file        | 文件服务       | 0.23.1 |
-| choerodon-message     | 消息服务       | 0.23.7 |
+| choerodon-message     | 消息服务       | 0.23.8 |
 | devops-service        | Devops 服务    | 0.23.8 |
 | gitlab-servcie        | 平台基础服务    | 0.23.1 |
-| workflow-service      | 工作流服务      | 0.23.2 |
-| agile-service         | 敏捷管理        | 0.23.6 |
-| test-manager-service  | 测试管理服务     | 0.23.2 |
+| workflow-service      | 工作流服务      | 0.23.3 |
+| agile-service         | 敏捷管理        | 0.23.7 |
+| test-manager-service  | 测试管理服务     | 0.23.3 |
 | knowledgebase-service | 知识服务        | 0.23.1 |
-| prod-repo-service     | 制品库服务      | 0.23.3 |
+| prod-repo-service     | 制品库服务      | 0.23.6 |
 | code-repo-service     | 代码管理服务     | 0.23.2 |
 | choerodon-front       | Choerodon 前端  | 0.23.1 |
-| hzero-front           | hzero 前端      | 0.23.0 |
+| choerodon-front-hzero | hzero 前端      | 0.23.1 |
