@@ -97,18 +97,18 @@ kubectl scale deployment -n c7n-system --replicas=1 sonarqube-sonarqube
 kubectl scale deployment -n c7n-system --replicas=1 sonatype-nexus
 
 # 微服务开发框架
-kubectl scale deployment -n c7n-system --replicas=0 choerodon-register
-kubectl scale deployment -n c7n-system --replicas=0 choerodon-platform
-kubectl scale deployment -n c7n-system --replicas=0 choerodon-admin
-kubectl scale deployment -n c7n-system --replicas=0 choerodon-asgard
-kubectl scale deployment -n c7n-system --replicas=0 choerodon-iam
-kubectl scale deployment -n c7n-system --replicas=0 choerodon-gateway
-kubectl scale deployment -n c7n-system --replicas=0 choerodon-oauth
-kubectl scale deployment -n c7n-system --replicas=0 choerodon-message
-kubectl scale deployment -n c7n-system --replicas=0 choerodon-monitor
-kubectl scale deployment -n c7n-system --replicas=0 choerodon-swagger
-kubectl scale deployment -n c7n-system --replicas=0 choerodon-file
-kubectl scale deployment -n c7n-system --replicas=0 choerodon-monitor
+kubectl scale deployment -n c7n-system --replicas=1 choerodon-register
+kubectl scale deployment -n c7n-system --replicas=1 choerodon-platform
+kubectl scale deployment -n c7n-system --replicas=1 choerodon-admin
+kubectl scale deployment -n c7n-system --replicas=1 choerodon-asgard
+kubectl scale deployment -n c7n-system --replicas=1 choerodon-iam
+kubectl scale deployment -n c7n-system --replicas=1 choerodon-gateway
+kubectl scale deployment -n c7n-system --replicas=1 choerodon-oauth
+kubectl scale deployment -n c7n-system --replicas=1 choerodon-message
+kubectl scale deployment -n c7n-system --replicas=1 choerodon-monitor
+kubectl scale deployment -n c7n-system --replicas=1 choerodon-swagger
+kubectl scale deployment -n c7n-system --replicas=1 choerodon-file
+kubectl scale deployment -n c7n-system --replicas=1 choerodon-monitor
 
 # 持续交付
 kubectl scale deployment -n c7n-system --replicas=1 devops-service
@@ -122,10 +122,10 @@ kubectl scale deployment -n c7n-system --replicas=1 agile-service
 kubectl scale deployment -n c7n-system --replicas=1 test-manager-service
 
 # 知识管理
-kubectl scale deployment -n c7n-system --replicas=0 elasticsearch-kb
+kubectl scale deployment -n c7n-system --replicas=1 elasticsearch-kb
 kubectl scale deployment -n c7n-system --replicas=1 knowledgebase-service
 
 # 总前端
 kubectl scale deployment -n c7n-system --replicas=1 choerodon-front
-kubectl scale deployment -n c7n-system --replicas=0  choerodon-front-hzero
+kubectl scale deployment -n c7n-system --replicas=1  choerodon-front-hzero
 ```
