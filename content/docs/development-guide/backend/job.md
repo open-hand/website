@@ -6,11 +6,12 @@ description = "讲述了如何在choerodon平台上自定义定时任务"
 
 ## 前置条件
 
-在开始使用定时任务之前，要确保服务的choerodon-starters依赖在`0.6.3.RELEASE`版本及之上，推荐最新版`0.12.0.RELEASE`。
+在开始使用定时任务之前，要确保服务的choerodon-starters依赖在`0.6.3.RELEASE`版本及之上，推荐最新版`0.17.0.RELEASE`。
 
 ## 介绍
 
-定时任务基于`quartz`的数据库模式，位于`asgard-service`，消费端依赖于`choerodon-starter-asgard`。在页面上手动创建定时任务，定时任务支持简单定时任务和cron表达式定时任务，并指定消费端的特定方法去消费。如果下一次定时任务被触发，而上一条定时任务未被消费端执行，则该定时任务状态设置为失败。
+定时任务基于`quartz`的数据库模式，位于`choerodon-asgard`，消费端依赖于`choerodon-starter-asgard`。在页面上手动创建定时任务，定时任务支持简单定时任务和cron表达式定时任务，并指定消费端的特定方法去消费。如果下一次定时任务被触发，而上一条定时任务未被消费端执行，则该定时任务状态设置为失败。
+
 
 ## 使用
 
@@ -35,12 +36,79 @@ choerodon:
       poll-interval-ms: 1000 # 拉取间隔，默认1000毫秒
 ```
 
-### 添加消费端方法
+## @JobTask定义一个可执行程序
 
-- @JobTask注解的方法参数必须为Map<String, Object>。
-- @JobParam为执行参数, 类型需要为String，Integer，Long，Double，Boolean之一，如果没有设置默认值则创建定时任务时必须指定方法参数。
-- @JobTask注解的方法返回值为Map<String, Object>或者为void。如果返回值为void则传入的参数为前端传入，不会改变；如果为Map<String, Object>，则下一次的执行参数为上一次执行的返回值，可以动态改变。
-    
+### @JobTask参数
+```java
+public @interface JobTask {
+
+    /**
+     * 最大重试次数
+     *
+     * @return 最大重试次数
+     */
+    int maxRetryCount() default 1;
+
+    /**
+     * 方法执行参数
+     *
+     * @return 方法执行参数
+     */
+    JobParam[] params() default {};
+
+    /**
+     * 事务超时时间(秒)。默认永不超时。
+     *
+     * @return 事务超时时间(秒)
+     */
+    int transactionTimeout() default -1;
+
+    /**
+     * 是否为只读事务
+     *
+     * @return 是否为只读事务
+     */
+    boolean transactionReadOnly() default false;
+
+    /**
+     * 事务的隔离级别
+     *
+     * @return 事务的隔离级别
+     */
+    Isolation transactionIsolation() default Isolation.DEFAULT;
+
+
+    /**
+     * 所用的事务管理器的bean名
+     *
+     * @return 所用的事务管理器的bean名
+     */
+    String transactionManager() default "";
+
+    /**
+     * 方法编码
+     *
+     * @return 方法编码
+     */
+    String code();
+
+    /**
+     * 方法描述
+     *
+     * @return 方法描述
+     */
+    String description() default "";
+
+    /**
+     * 方法层级
+     *
+     * @return 方法层级
+     */
+    ResourceLevel level() default ResourceLevel.SITE;
+}
+```
+
+### @JobTask使用
 ```java
 @Component
 public class Task {
@@ -63,10 +131,15 @@ public class Task {
 }
 ```
 
+### 注意事项
+- @JobTask注解的方法参数必须为Map<String, Object>。
+- @JobParam为执行参数, 类型需要为String，Integer，Long，Double，Boolean之一，如果没有设置默认值则创建定时任务时必须指定方法参数。
+- @JobTask注解的方法返回值为Map<String, Object>或者为void。如果返回值为void则传入的参数为前端传入，不会改变；如果为Map<String, Object>，则下一次的执行参数为上一次执行的返回值，可以动态改变。
+  
 ### 创建定时任务
 在前端页面的`任务调度` --> `任务明细` --> `创建任务`，填入任务执行参数以及扫描到的服务执行方法后创建任务。
 
-## @TimedTask定时任务
+## @TimedTask定义定时任务
 `@JobTask`只是定义一个可执行程序，具体触发时间要在前端页面创建定时任务，而@TimedTask注解可以定义一个带有触发时间的可执行程序，无需在页面创建
 
 ### @TimedTask参数

@@ -7,7 +7,7 @@ description = "讲述了Choerodon平台上的数据一致性支持"
 
 ## 前置条件
 
-在开始使用`Saga`之前，要确保服务的`choerodon-starters-asgard`依赖在`0.6.3.RELEASE`版本及之上, 推荐最新版`0.12.0.RELEASE`。同时需要对`Saga` 有一定的了解。可以参考[Choerodon猪齿鱼平台中的微服务数据一致性解决方案](https://mp.weixin.qq.com/s?__biz=MzU4OTQ3NTQ0OQ==&mid=2247483880&idx=1&sn=f6f94cf64f0e91f460325011f5c8f152&chksm=fdcdbafecaba33e80b22e062724a3775ad3f9349c0503fc2241ba9df5c798e207bfd2305d98f&scene=0#rd)。
+在开始使用`Saga`之前，要确保服务的`choerodon-starters-asgard`依赖在`0.6.3.RELEASE`版本及之上, 推荐最新版`0.17.0.RELEASE`。同时需要对`Saga` 有一定的了解。可以参考[Choerodon猪齿鱼平台中的微服务数据一致性解决方案](https://mp.weixin.qq.com/s?__biz=MzU4OTQ3NTQ0OQ==&mid=2247483880&idx=1&sn=f6f94cf64f0e91f460325011f5c8f152&chksm=fdcdbafecaba33e80b22e062724a3775ad3f9349c0503fc2241ba9df5c798e207bfd2305d98f&scene=0#rd)。
 
 ## 介绍
 
@@ -94,6 +94,7 @@ choerodon:
 `outputSchema` | 通过json字符串手动指定输出参数。比如{"name":"wang","age":23}
 `transactionIsolation` | 事务的隔离级别
 `transactionManager` | 使用的事务管理器
+`failureCallbackMethod` | 所有重试执行失败，最后的回调方法 参数格式：calssName.method
 
 
 在一个`Saga` 定义中。上一个`SagaTask`的输出是下一个的输入，当`seq`相同时，则并行执行，并行的任务输出的结果`json`进行一个合并，作为下一个次序的输入。
@@ -290,4 +291,4 @@ public AsgardUser iamCreateUser(String data) {
 
 * 当消息实例锁不为空时，查询消息实例是否为拉取的消费端实例，是则允许拉取不是则不允许拉取该条消息。
 
-更多有关的信息可以从[`asgard-service`](https://github.com/open-hand/asgard-service)获取。
+更多有关的信息可以从[`choerodon-asgard`](https://github.com/open-hand/choerodon-asgard)获取。
