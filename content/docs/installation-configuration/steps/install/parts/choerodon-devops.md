@@ -154,10 +154,6 @@ helm repo update
         SERVICES_GITLAB_SSHURL: gitlab.example.choerodon.io:30022
         SERVICES_GITLAB_PROJECTLIMIT: 100
         SERVICES_HELM_URL: http://chart.example.choerodon.io
-        SERVICES_HARBOR_BASEURL: https://registry.example.choerodon.io
-        SERVICES_HARBOR_USERNAME: admin
-        SERVICES_HARBOR_PASSWORD: Harbor12345
-        SERVICES_HARBOR_INSECURESKIPTLSVERIFY: true
         SERVICES_GATEWAY_URL: http://api.example.choerodon.io
         AGENT_VERSION: 0.23.7
         AGENT_SERVICEURL: ws://devops.example.choerodon.io/websocket
