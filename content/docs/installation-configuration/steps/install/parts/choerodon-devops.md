@@ -162,6 +162,7 @@ helm repo update
         SERVICES_SONARQUBE_PASSWORD: admin
         SERVICES_SONARQUBE_URL: https://sonarqube.example.choerodon.io
         SERVICES_SONARQUBE_USERNAME: admin
+        DEVOPS_ANSIBLE_IMAGE: registry.cn-shanghai.aliyuncs.com/c7n/kubeadm-ha:0.1.3
     ingress:
       enabled: true
       host: devops.example.choerodon.io
