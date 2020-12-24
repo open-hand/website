@@ -155,7 +155,7 @@ helm repo update
         SERVICES_GITLAB_PROJECTLIMIT: 100
         SERVICES_HELM_URL: http://chart.example.choerodon.io
         SERVICES_GATEWAY_URL: http://api.example.choerodon.io
-        AGENT_VERSION: 0.23.7
+        AGENT_VERSION: 0.24.0
         AGENT_SERVICEURL: ws://devops.example.choerodon.io/websocket
         AGENT_REPOURL: https://openchart.choerodon.com.cn/choerodon/c7n/
         AGENT_CERTMANAGERURL: https://openchart.choerodon.com.cn/choerodon/c7n/on/c7n/
