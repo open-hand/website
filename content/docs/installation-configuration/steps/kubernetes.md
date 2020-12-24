@@ -117,7 +117,9 @@ sudo ./install-ansible.sh
     ; 是否跳过节点物理资源校验，Master节点要求2c2g以上，Worker节点要求2c4g以上
     skip_verify_node=false
     ; kubernetes版本
-    kube_version="1.16.8"
+    kube_version="1.18.14"
+    ; 容器运行时类型，可选项：containerd，docker；默认 containerd
+    container_manager="containerd"
     ; 负载均衡器
     ;   有 nginx、haproxy、envoy 和 slb 四个选项，默认使用 nginx；
     lb_mode="nginx"
@@ -137,12 +139,18 @@ sudo ./install-ansible.sh
     ;    如果服务器网段为：192.168.0.1/16
     ;       pod 网段可设置为：10.244.0.0/18
     ;       service 网段可设置为 10.244.64.0/18
-    ; 集群pod ip段
+    ; 集群pod ip段，默认掩码位 18 即 16384 个ip
     kube_pod_subnet="10.244.0.0/18"
     ; 集群service ip段
     kube_service_subnet="10.244.64.0/18"
+    ; 分配给节点的 pod 子网掩码位，默认为 24 即 256 个ip，故使用这些默认值可以纳管 16384/256=64 个节点。
+    kube_network_node_prefix="24"
 
-    ; 集群网络插件，目前支持flannel,calico,kube-ovn
+    ; node节点最大 pod 数。数量与分配给节点的 pod 子网有关，ip 数应大于 pod 数。
+    ; https://cloud.google.com/kubernetes-engine/docs/how-to/flexible-pod-cidr
+    kube_max_pods="110"
+
+    ; 集群网络插件，目前支持flannel,calico
     network_plugin="flannel"
 
     ; 若服务器磁盘分为系统盘与数据盘，请修改以下路径至数据盘自定义的目录。
@@ -150,6 +158,8 @@ sudo ./install-ansible.sh
     kubelet_root_dir="/var/lib/kubelet"
     ; docker容器存储目录
     docker_storage_dir="/var/lib/docker"
+    ; containerd容器存储目录
+    containerd_storage_dir="/var/lib/containerd"
     ; Etcd 数据根目录
     etcd_data_dir="/var/lib/etcd"
     ```
