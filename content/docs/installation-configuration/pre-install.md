@@ -43,8 +43,8 @@ Choerodon采用Spring Cloud作为微服务框架，运行在Docker上，以Kuber
 | 协议              | 方向 | 端口范围    | 使用者                       | 用途                |
 | tcp               | 入站 | 80          | ingress-controller           | All                 |
 | tcp               | 入站 | 443         | ingress-controller           | All                 |
-| tcp               | 入站 | 30080       | ingress-controller           | All                 |
-| tcp               | 入站 | 30443       | ingress-controller           | All                 |
+| tcp               | 入站 | 9000        | ingress-controller           | Self                |
+| tcp               | 入站 | 10254       | ingress-controller           | Self                |
 | TCP               | 入站 | 10248,10250 | KubeletAPI                   | Self,Controlplane   |
 | TCP               | 入站 | 30000-32767 | NodePort Services*           | All                 |
 | TCP               | 入站 | 10256       | kube-proxy                   | 健康检查            |
@@ -56,11 +56,6 @@ Choerodon采用Spring Cloud作为微服务框架，运行在Docker上，以Kuber
 | 协议              | 方向 | 端口范围    | 使用者                       | 用途                |
 | TCP               | 双向 | 179         | Calico networking(BGP)       | 收发封装数据包      |
 | TCP               | 双向 | 5473        | Calico networking with Typha | 收发封装数据包      |
-| **Kube-ovn**      |      |             |                              |                     |
-| 协议              | 方向 | 端口范围    | 使用者                       | 用途                |
-| udp               | 双向 | 6081        | kube-ovn                     | 收发封装数据包      |
-| tcp               | 入站 | 6641        | ovsdb-server                 | 数据存储            |
-| tcp               | 入站 | 6642        | ovsdb-server                 | 数据存储            |
 | **load-balancer** |      |             |                              |                     |
 | 协议              | 方向 | 端口范围    | 使用者                       | 用途                |
 | tcp               | 入站 | 8443        | nginx,haproxy,envoy          | lb kube-apiserver   |
