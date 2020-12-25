@@ -70,7 +70,7 @@ helm repo update
              driver: com.mysql.jdbc.Driver
           message:
             url: jdbc:mysql://c7n-mysql.c7n-system:3306/?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
-           username: choerodon
+            username: choerodon
             password: password
             driver: com.mysql.jdbc.Driver
     env:
