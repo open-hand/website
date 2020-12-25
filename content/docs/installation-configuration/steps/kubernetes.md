@@ -112,6 +112,18 @@ sudo ./install-ansible.sh
     ; 预留组，后续添加etcd节点使用
     [new-etcd]
 
+    ; 预留组，后续删除worker角色使用
+    [del-worker]
+
+    ; 预留组，后续删除master角色使用
+    [del-master]
+
+    ; 预留组，后续删除etcd角色使用
+    [del-etcd]
+
+    ; 预留组，后续删除节点使用
+    [del-node]
+    
     ;-------------------------------------- 以下为基础信息配置 ------------------------------------;
     [all:vars]
     ; 是否跳过节点物理资源校验，Master节点要求2c2g以上，Worker节点要求2c4g以上
