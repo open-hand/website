@@ -45,7 +45,7 @@ sudo ./install-ansible.sh
 ### 配置 ansible inventory 文件
 
 - 项目 `example` 文件夹下提供了 6 个 ansible inventory 示例文件，请按需求进行选择并修改。
-- 拷贝项目下的 `example/hosts.m-master.ip.ini` 文件至项目根目录下，命名为 `inventory.ini`，修改各服务器的 IP 地址、用户名、密码，并维护好各服务器与角色的关系。
+- 拷贝项目下的 `example/hosts.m-master.ip.ini` 文件至项目根目录下，命名为 `inventory.ini`，修改kubernetes部署版本为 `1.16.15`、各服务器的 IP 地址、用户名、密码，并维护好各服务器与角色的关系。
     <blockquote class="warning">
     </br>请使用服务器内网 IP 作为 ansible 目标服务器 IP，请勿使用服务器公网 IP。
     </br>该用户必须是具有 root 权限的用户，但并非要求一定是 root 用户，其他具有 root 权限的用户也可以。
@@ -117,7 +117,7 @@ sudo ./install-ansible.sh
     ; 是否跳过节点物理资源校验，Master节点要求2c2g以上，Worker节点要求2c4g以上
     skip_verify_node=false
     ; kubernetes版本
-    kube_version="1.18.14"
+    kube_version="1.16.15"
     ; 容器运行时类型，可选项：containerd，docker；默认 containerd
     container_manager="containerd"
     ; 负载均衡器
