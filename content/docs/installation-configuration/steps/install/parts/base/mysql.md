@@ -21,18 +21,6 @@ helm repo update
 
 ## 部署Mysql
 
-### 创建mysql所需PVC
-
-```shell
-helm upgrade --install c7n-mysql-pvc c7n/persistentvolumeclaim \
-    --set accessModes={ReadWriteOnce} \
-    --set requests.storage=2Gi \
-    --set storageClassName=nfs-provisioner \
-    --create-namespace \
-    --version 0.1.0 \
-    --namespace c7n-system
-```
-
 ### 部署mysql
 
 - 编写配置文件`mysql.yaml`
@@ -48,7 +36,7 @@ helm upgrade --install c7n-mysql-pvc c7n/persistentvolumeclaim \
       MYSQL_ROOT_PASSWORD: password
     persistence:
       enabled: true
-      existingClaim: c7n-mysql-pvc
+      storageClass: nfs-provisioner
     service:
       enabled: ture
     ```
@@ -68,7 +56,7 @@ helm upgrade --install c7n-mysql-pvc c7n/persistentvolumeclaim \
     参数 | 含义
     --- |  ---
     persistence.enabled|是否启用持久化存储
-    persistence.existingClaim|PVC的名称
+    persistence.storageClass|storageClass的名称
     persistence.subPath|设置将数据存储到的子目录
     env.open.MYSQL_ROOT_PASSWORD|设置数据库root用户密码
     env.open.MYSQL_DATABASE|初始化创建的数据库名称

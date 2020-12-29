@@ -14,6 +14,7 @@ helm repo update
 ```
 
 ## 部署 choerodon front hzero
+
 - 若需了解项目详情及各项参数含义，请移步 [open-hand/choerodon-front-hzero](https://github.com/open-hand/choerodon-front-hzero)。
 
 - 编写参数配置文件 `choerodon-front-hzero.yaml`
@@ -34,7 +35,7 @@ helm repo update
     helm upgrade --install choerodon-front-hzero c7n/choerodon-front-hzero \
         -f choerodon-front-hzero.yaml \
         --create-namespace \
-        --version 0.23.1 \
+        --version 0.24.0 \
         --namespace c7n-system
     ```
 
@@ -53,6 +54,7 @@ helm repo update
         ```
 
 ## 部署 choerodon front
+
 - 若需了解项目详情及各项参数含义，请移步 [open-hand/choerodon-front](https://github.com/open-hand/choerodon-front)。
 
 - 编写参数配置文件 `choerodon-front.yaml`
@@ -70,7 +72,7 @@ helm repo update
         WEBSOCKET_SERVER: ws://notify.example.choerodon.io
         FILE_SERVER: http://minio.example.choerodon.io
         HZERO_FRONT: http://hzero.example.choerodon.io
-        DEVOPS_WEBSOCKET_SECRET_KEY: exmaple
+        DEVOPS_WEBSOCKET_SECRET_KEY: devops_ws
     ingress:
       enabled: true
       host: app.example.choerodon.io
@@ -82,7 +84,7 @@ helm repo update
     helm upgrade --install choerodon-front c7n/choerodon-front \
         -f choerodon-front.yaml \
         --create-namespace \
-        --version 0.23.1 \
+        --version 0.24.0 \
         --namespace c7n-system
     ```
 

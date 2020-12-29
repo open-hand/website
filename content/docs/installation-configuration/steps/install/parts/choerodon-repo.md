@@ -87,7 +87,7 @@ helm repo update
     helm upgrade --install code-repo-service c7n/code-repo-service \
         -f code-repo-service.yaml \
         --create-namespace \
-        --version 0.23.2 \
+        --version 0.24.0 \
         --namespace c7n-system
     ```
 
@@ -127,14 +127,6 @@ helm repo update
     env:
       open:
         EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://choerodon-register.c7n-system:8000/eureka/
-        # devops的数据库 迁移数据使用 只会在0.23版本使用
-        HARBOR_INIT_CUSTOM_REPO_PASSWORD: password
-        HARBOR_INIT_CUSTOM_REPO_URL: jdbc:mysql://c7n-mysql.c7n-system:3306/devops_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
-        HARBOR_INIT_CUSTOM_REPO_USERNAME: choerodon
-        # platform的数据库 迁移数据使用 只会在0.23版本使用
-        HARBOR_INIT_DEFAULT_REPO_PASSWORD: Uc9Cw6gDyJPL
-        HARBOR_INIT_DEFAULT_REPO_URL: jdbc:mysql://c7n-mysql.c7n-system:3306/hzero_platform?useUnicode=true&characterEncoding=utf-8&useSSL=false
-        HARBOR_INIT_DEFAULT_REPO_USERNAME: choerodon
         HARBOR_BASE_URL: https://registry.example.choerodon.io
         HARBOR_PASSWORD: Harbor12345
         HARBOR_USER_NAME: admin
@@ -149,14 +141,13 @@ helm repo update
         #系统默认nexus服务，超级管理员用户
         NEXUS_DEFAULT_USER_NAME: admin
         #系统默认nexus服务，超级管理员用户密码
-        NEXUS_DEFAULT_PASSWORD: admin
+        NEXUS_DEFAULT_PASSWORD: admin123
         #系统默认nexus服务，是否启用仓库级的匿名访问控制。 1:启用  0:不启用
         NEXUS_DEFAULT_ENABLE_ANONYMOUS_FLAG: 0
         #系统默认nexus服务，启用仓库级的匿名访问控制时需要配置该值(即enableAnonymousFlag==1时)。 nexus服务开启全局匿名访问时，配置的用户
         NEXUS_DEFAULT_ANONYMOUS_USER: test-anonymous-user
         #系统默认nexus服务，启用仓库级的匿名访问控制时需要配置该值(即enableAnonymousFlag==1时)。 nexus服务开启全局匿名访问时，配置的用户对应的角色
         NEXUS_DEFAULT_ANONYMOUS_ROLE: test-anonymous
-
     ```
 - 其它配置 <br/>
     上述变量配置中：NEXUS_DEFAULT_ENABLE_ANONYMOUS_FLAG(是否启用仓库级的匿名访问控制)、NEXUS_DEFAULT_ANONYMOUS_USER、NEXUS_DEFAULT_ANONYMOUS_ROLE这几个变量的配置。
@@ -189,7 +180,7 @@ helm repo update
     helm upgrade --install prod-repo-service c7n/prod-repo-service \
         -f prod-repo-service.yaml \
         --create-namespace \
-        --version 0.23.6 \
+        --version 0.24.0 \
         --namespace c7n-system
     ```
 

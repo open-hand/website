@@ -79,7 +79,7 @@ helm repo update
     helm upgrade --install choerodon-register c7n/choerodon-register \
         -f choerodon-register.yaml \
         --create-namespace \
-        --version 0.23.1 \
+        --version 0.24.0 \
         --namespace c7n-system
     ```
 
@@ -130,7 +130,7 @@ helm repo update
     helm upgrade --install choerodon-platform c7n/choerodon-platform \
         -f choerodon-platform.yaml \
         --create-namespace \
-        --version 0.23.5 \
+        --version 0.24.0 \
         --namespace c7n-system
     ```
 
@@ -166,6 +166,8 @@ helm repo update
       open:
         EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://choerodon-register.c7n-system:8000/eureka/
         HZERO_AUTO_REFRESH_SWAGGER_ENABLE: true
+        # 服务启动时，是否同步父子角色权限
+        CHOERODON_ROLE_PERMISSION_ASYNC: false
         SPRING_REDIS_HOST: c7n-redis.c7n-system
         SPRING_REDIS_PORT: 6379
         # 此db不可更改
@@ -181,7 +183,7 @@ helm repo update
     helm upgrade --install choerodon-admin c7n/choerodon-admin \
         -f choerodon-admin.yaml \
         --create-namespace \
-        --version 0.23.1 \
+        --version 0.24.0 \
         --namespace c7n-system
     ```
 
@@ -232,7 +234,7 @@ helm repo update
     helm upgrade --install choerodon-iam c7n/choerodon-iam \
         -f choerodon-iam.yaml \
         --create-namespace \
-        --version 0.23.14 \
+        --version 0.24.1\
         --namespace c7n-system
     ```
 
@@ -281,7 +283,7 @@ helm repo update
     helm upgrade --install choerodon-asgard c7n/choerodon-asgard \
         -f choerodon-asgard.yaml \
         --create-namespace \
-        --version 0.23.7 \
+        --version 0.24.0 \
         --namespace c7n-system
     ```
 
@@ -323,7 +325,7 @@ helm repo update
     helm upgrade --install choerodon-swagger c7n/choerodon-swagger \
         -f choerodon-swagger.yaml \
         --create-namespace \
-        --version 0.23.1 \
+        --version 0.24.0 \
         --namespace c7n-system
     ```
 
@@ -368,7 +370,7 @@ helm repo update
     helm upgrade --install choerodon-gateway c7n/choerodon-gateway \
         -f choerodon-gateway.yaml \
         --create-namespace \
-        --version 0.23.2 \
+        --version 0.24.0 \
         --namespace c7n-system
     ```
 
@@ -399,6 +401,7 @@ helm repo update
         HZERO_OAUTH_LOGIN_SUCCESS_URL: http://app.example.choerodon.io
         HZERO_OAUTH_LOGIN_DEFAULT_CLIENT_ID: choerodon
         HZERO_GATEWAY_URL: http://api.example.choerodon.io
+        HZERO_OAUTH_BASE_URL: http://api.example.choerodon.io/oauth
         EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://choerodon-register.c7n-system:8000/eureka/
         SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system:3306/hzero_platform?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
         SPRING_DATASOURCE_USERNAME: choerodon
@@ -415,7 +418,7 @@ helm repo update
     helm upgrade --install choerodon-oauth c7n/choerodon-oauth \
         -f choerodon-oauth.yaml \
         --create-namespace \
-        --version 0.23.1 \
+        --version 0.24.0 \
         --namespace c7n-system
     ```
 
@@ -463,7 +466,7 @@ helm repo update
     helm upgrade --install choerodon-monitor c7n/choerodon-monitor \
         -f choerodon-monitor.yaml \
         --create-namespace \
-        --version 0.23.2 \
+        --version 0.24.0 \
         --namespace c7n-system
     ```
 
@@ -518,7 +521,7 @@ helm repo update
     helm upgrade --install choerodon-file c7n/choerodon-file \
         -f choerodon-file.yaml \
         --create-namespace \
-        --version 0.23.1 \
+        --version 0.24.0 \
         --namespace c7n-system
     ```
 
@@ -569,7 +572,7 @@ helm repo update
     helm upgrade --install choerodon-message c7n/choerodon-message \
         -f choerodon-message.yaml \
         --create-namespace \
-        --version 0.23.8 \
+        --version 0.24.0 \
         --namespace c7n-system
     ```
 

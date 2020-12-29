@@ -207,7 +207,7 @@ helm repo update
         --set env.PG_DBNAME=gitlabhq_production \
         --set env.SQL_SCRIPT="\
             INSERT INTO identities(extern_uid\, provider\, user_id\, created_at\, updated_at) \
-            VALUES ('1'\, 'oauth2_generic'\, 1\, NOW()\, NOW());" \
+            VALUES ('2'\, 'oauth2_generic'\, 1\, NOW()\, NOW());" \
         --version 0.1.0 \
         --namespace c7n-system
     ```

@@ -28,8 +28,12 @@ helm repo update
     env:
       open:
         STORAGE: local
-        DISABLE_API: false
+        AUTH_ANONYMOUS_GET: "true"
+        DISABLE_API: "false"
         DEPTH: 2
+      secret:
+        BASIC_AUTH_PASS: password
+        BASIC_AUTH_USER: choerodon
     persistence:
       enabled: true
       storageClass: nfs-provisioner
@@ -46,7 +50,7 @@ helm repo update
     helm upgrade --install chartmuseum c7n/chartmuseum \
         -f chartmuseum.yaml \
         --create-namespace \
-        --version 2.6.0 \
+        --version 2.15.0 \
         --create-namespace \
         --namespace c7n-system
     ```

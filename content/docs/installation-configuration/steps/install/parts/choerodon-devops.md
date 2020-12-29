@@ -66,7 +66,7 @@ helm repo update
     helm upgrade --install workflow-service c7n/workflow-service \
         -f workflow-service.yaml \
         --create-namespace \
-        --version 0.23.3 \
+        --version 0.24.0 \
         --namespace c7n-system
     ```
 
@@ -103,7 +103,7 @@ helm repo update
     helm upgrade --install gitlab-service c7n/gitlab-service \
         -f gitlab-service.yaml \
         --create-namespace \
-        --version 0.23.1 \
+        --version 0.24.0 \
         --namespace c7n-system
     ```
 
@@ -154,15 +154,20 @@ helm repo update
         SERVICES_GITLAB_SSHURL: gitlab.example.choerodon.io:30022
         SERVICES_GITLAB_PROJECTLIMIT: 100
         SERVICES_HELM_URL: http://chart.example.choerodon.io
+        SERVICES_HELM_USERNAME: choerodon
+        SERVICES_HELM_PASSWORD: password
+        SERVICES_HARBOR_BASEURL: https://registry.example.choerodon.io
+        SERVICES_HARBOR_USERNAME: admin
+        SERVICES_HARBOR_PASSWORD: Harbor12345
+        SERVICES_HARBOR_INSECURESKIPTLSVERIFY: true
+        SERVICES_SONARQUBE_URL: https://sonarqube.example.choerodon.io
+        SERVICES_SONARQUBE_PASSWORD: admin
+        SERVICES_SONARQUBE_USERNAME: admin
         SERVICES_GATEWAY_URL: http://api.example.choerodon.io
         AGENT_VERSION: 0.24.0
         AGENT_SERVICEURL: ws://devops.example.choerodon.io/websocket
         AGENT_REPOURL: https://openchart.choerodon.com.cn/choerodon/c7n/
         AGENT_CERTMANAGERURL: https://openchart.choerodon.com.cn/choerodon/c7n/on/c7n/
-        SERVICES_SONARQUBE_PASSWORD: admin
-        SERVICES_SONARQUBE_URL: https://sonarqube.example.choerodon.io
-        SERVICES_SONARQUBE_USERNAME: admin
-        DEVOPS_ANSIBLE_IMAGE: registry.cn-shanghai.aliyuncs.com/c7n/kubeadm-ha:0.1.3
     ingress:
       enabled: true
       host: devops.example.choerodon.io
@@ -173,7 +178,7 @@ helm repo update
     ```
     helm upgrade --install devops-service c7n/devops-service \
         -f devops-service.yaml \
-        --version 0.24.0 \
+        --version 0.24.1 \
         --namespace c7n-system
     ```
 
