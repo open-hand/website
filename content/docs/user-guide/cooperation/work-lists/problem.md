@@ -14,11 +14,11 @@ weight = 4
 
 方法一：点击页面上方创建问题按钮可以进行详细问题创建
 
-![image](/docs/user-guide/cooperation/work-lists/image/work-list-04.png)  
+![image](../image/work-list-04.png)  
  
 方法二：点击列表中的`创建问题`按钮可进行问题快速创建，快速创建问题后，在问题列表单击问题，弹出编辑问题页面如图，可对问题详情进行进一步的编辑。
 
-![image](/docs/user-guide/cooperation/work-lists/image/work-list-05.png)
+![image](../image/work-list-05.png)
 
 * 概要：问题的标题
 * 优化级：表示问题需要优化的级别，包括高、中、低三个级别
@@ -35,7 +35,7 @@ weight = 4
 
 点击列表中的问题概要，会弹出问题详情页面。
 
-![image](/docs/user-guide/cooperation/work-lists/image/work-list-06.png)
+![image](../image/work-list-06.png)
 
 * 详情：显示该问题的详细信息，包括问题描述、附件、各个字段内容等
 * 评论：记录显示该问题的评论信息
@@ -50,18 +50,18 @@ weight = 4
 
 1.在问题管理页面上方的点击`导入问题`，打开导入问题页面，点击`下载模板`下载导入模板。
 
-![image](/docs/user-guide/cooperation/work-lists/image/work-list-07.png) 
+![image](../image/work-list-07.png) 
 
 2.将问题按格式填写在excel文件中后，在导入问题页面点击`导入问题`将问题导入到问题管理中，导入过程中可以点击`取消上传`按钮对上传问题进行取消。如下图：  
   
-![image](/docs/user-guide/cooperation/work-lists/image/work-list-08.png)
+![image](../image/work-list-08.png)
 
 ## 5. 导出问题
 
 您可以将issue导出问题列表到excel文件，这将有助于用户导出所需的问题列表，方便查看问题信息。
 在问题管理页面上方的点击`导出问题`，选择导出字段模式，即可生成问题Excel文件。
 
-![image](/docs/user-guide/cooperation/work-lists/image/work-list-09.png)
+![image](../image/work-list-09.png)
 
 
 ## 6. 筛选问题
@@ -97,9 +97,13 @@ weight = 4
 
 <blockquote class="note">提示：无法修改的内容会自动跳过。例如：修改故事点时，任务类型的问题，没有此字段会自动跳过</blockquote>
 
-![image](/docs/user-guide/cooperation/work-lists/image/issue-01.gif)
+![image](../image/issue01.gif)
 
-## 8. 阅读更多
+## 8. 关注问题项
+
+您可以点击问题项概要旁的星星标记关注问题项，再次点击即可取消关注。
+![image](../image/issue-01.png)
+## 9. 阅读更多
 
 - [创建故事](../user-story)
 - [创建冲刺](../sprint)
