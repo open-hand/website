@@ -391,7 +391,7 @@ helm repo update
 
 - 若需了解项目详情及各项参数含义，请移步 [open-hand/choerodon-oauth](https://github.com/open-hand/choerodon-oauth)。
 
-- 编写参数配置文件 `hzero-oauth.yaml`
+- 编写参数配置文件 `choerodon-oauth.yaml`
 
     ```yaml
     env:
