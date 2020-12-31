@@ -418,7 +418,7 @@ helm repo update
     helm upgrade --install choerodon-oauth c7n/choerodon-oauth \
         -f choerodon-oauth.yaml \
         --create-namespace \
-        --version 0.24.0 \
+        --version 0.24.1 \
         --namespace c7n-system
     ```
 

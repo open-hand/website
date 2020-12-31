@@ -21,8 +21,6 @@ helm repo update
 
 ## 部署Mysql
 
-### 部署mysql
-
 - 编写配置文件`mysql.yaml`
 
     ```yaml
