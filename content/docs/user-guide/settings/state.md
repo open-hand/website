@@ -17,7 +17,7 @@ weight = 4
 ## 2. 状态
 
 状态页面中，可以对状态进行添加、删除操作:
-![enter description here](../image/state-01.png "issue-state-list")
+![enter description here](/docs/user-guide/settings/image/state-01.png "issue-state-list")
 
 1. 点击`创建状态`按钮，打开`创建状态`页面，输入状态名称,选择状态阶段，选择应用到的问题类型，设置是否为初始状态，设置是否转换到所有状态后可完成添加。 
 
@@ -26,7 +26,7 @@ weight = 4
         初始状态是指问题项创建成功后的起始状态。
 </blockquote>
 
-![enter description here](../image/state-02.png "issue-state-list")
+![enter description here](/docs/user-guide/settings/image/state-02.png "issue-state-list")
 
 2. 编辑状态：您需要到组织层`管理中心-设置-问题-状态机`进行修改。
 3. 删除状态： 点击此图标可删除列表中的状态。  
@@ -38,7 +38,7 @@ weight = 4
 ## 3. 状态与流转
 
 根据实际需要配置状态的流转方向。状态机状态的流转状态配置好后，在看板中拖动问题可流转的状态，会根据当前类型的状态显示可流转的状态。
-![enter description here](../image/state-03.png "issue-state-list")
+![enter description here](/docs/user-guide/settings/image/state-03.png "issue-state-list")
 
 1. 进入`状态机`页面，点击`状态与流转`标签页，进入状态与流转配置页。
 
@@ -53,7 +53,7 @@ weight = 4
 
 依赖状态流转进行的高级设置。在状态流转的基础上，引入流转条件限制、父子级状态联动、状态变更的后续动作，以满足项目开发过程中对问题项流转的权限要求和自动化管理。
 
-![enter description here](../image/state-04.png "issue-state-list")
+![enter description here](/docs/user-guide/settings/image/state-04.png "issue-state-list")
 
 ### 4.1 设置流转条件
 
