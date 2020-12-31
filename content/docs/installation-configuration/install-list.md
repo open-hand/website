@@ -32,7 +32,7 @@ weight = 5
 | Nexus                    | 制品库                    | 3.25.1                       | 3.0.0     |
 | Gitlab                   | 代码托管                  | 11.11.7-ce.0                 | 0.5.3     |
 | Gitlab-Runner            | CI/CD 运行环境            | v11.11.4                     | 0.2.4     |
-| elasticsearch-kb         | 知识ES服务                | 7.9-elasticsearch-kb         | 0.22.1    |
+| elasticsearch-kb         | 知识ES服务                | 7.9.2-elasticsearch-kb         | 0.24.0    |
 
 ## Choerodon服务列表
 
