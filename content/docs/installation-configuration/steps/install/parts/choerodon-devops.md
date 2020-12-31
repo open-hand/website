@@ -164,6 +164,7 @@ helm repo update
         AGENT_SERVICEURL: ws://devops.example.choerodon.io/websocket
         AGENT_REPOURL: https://openchart.choerodon.com.cn/choerodon/c7n/
         AGENT_CERTMANAGERURL: https://openchart.choerodon.com.cn/choerodon/c7n/on/c7n/
+        DEVOPS_ANSIBLE_IMAGE: registry.cn-shanghai.aliyuncs.com/c7n/kubeadm-ha:0.1.3
     ingress:
       enabled: true
       host: devops.example.choerodon.io
