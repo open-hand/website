@@ -57,7 +57,7 @@ weight = 5
 | agile-service         | 敏捷管理        | 0.24.1 |
 | test-manager-service  | 测试管理服务     | 0.24.1 |
 | knowledgebase-service | 知识服务        | 0.24.0 |
-| prod-repo-service     | 制品库服务      | 0.24.0 |
+| prod-repo-service     | 制品库服务      | 0.24.1 |
 | code-repo-service     | 代码管理服务     | 0.24.0 |
 | choerodon-front       | Choerodon 前端  | 0.24.0 |
 | choerodon-front-hzero | hzero 前端      | 0.24.0 |
