@@ -13,7 +13,7 @@ weight = 5
 
 | 组件                      | 描述                      | 服务版本                     | Chart版本 |
 | ------------------------ | ------------------------ | ---------------------------- | --------- |
-| containerd               | containerd               | -                            | -         |
+| containerd               | containerd               | 1.3.7-1                      | -         |
 | kube-proxy               | kube-proxy               | v1.16.15                      | -         |
 | kube-apiserver           | kube-apiserver           | v1.16.15                      | -         |
 | kube-controller-manager  | kube-controller-manager  | v1.16.15                      | -         |
@@ -32,7 +32,7 @@ weight = 5
 | Nexus                    | 制品库                    | 3.25.1                       | 3.0.0     |
 | Gitlab                   | 代码托管                  | 11.11.7-ce.0                 | 0.5.3     |
 | Gitlab-Runner            | CI/CD 运行环境            | v11.11.4                     | 0.2.4     |
-| elasticsearch-kb         | 知识ES服务                | 7.9-elasticsearch-kb         | 0.22.1    |
+| elasticsearch-kb         | 知识ES服务                | 7.9.2-elasticsearch-kb         | 0.24.0    |
 
 ## Choerodon服务列表
 
@@ -40,25 +40,24 @@ weight = 5
 
 | 组件                  | 描述           | 版本   |
 | --------------------- | -------------- | ------ |
-| choerodon-register    | 注册服务       | 0.23.1 |
-| choerodon-admin       | 平台治理服务    | 0.23.1 |
-| choerodon-iam         | IAM服务       | 0.23.14 |
-| choerodon-asgard      | 事务服务       | 0.23.7 |
-| choerodon-swagger     | swagger服务   | 0.23.1 |
-| choerodon-gateway     | 网关服务       | 0.23.2 |
-| choerodon-oauth       | 认证服务       | 0.23.1 |
-| choerodon-platform    | 平台服务       | 0.23.5 |
-| choerodon-monitor     | 监控审计服务    | 0.23.2 |
-| choerodon-file        | 文件服务       | 0.23.1 |
-| choerodon-message     | 消息服务       | 0.23.8 |
-| devops-service        | Devops 服务    | 0.24.0 |
-| gitlab-servcie        | 平台基础服务    | 0.23.1 |
-| workflow-service      | 工作流服务      | 0.23.3 |
-| agile-service         | 敏捷管理        | 0.23.7 |
-| test-manager-service  | 测试管理服务     | 0.23.3 |
-| knowledgebase-service | 知识服务        | 0.23.1 |
-| prod-repo-service     | 制品库服务      | 0.23.6 |
-| code-repo-service     | 代码管理服务     | 0.23.2 |
-| choerodon-front       | Choerodon 前端  | 0.23.1 |
-| choerodon-front-hzero | hzero 前端      | 0.23.1 |
-
+| choerodon-register    | 注册服务       | 0.24.0 |
+| choerodon-admin       | 平台治理服务    | 0.24.0 |
+| choerodon-iam         | IAM服务       | 0.24.1 |
+| choerodon-asgard      | 事务服务       | 0.24.0 |
+| choerodon-swagger     | swagger服务   | 0.24.0 |
+| choerodon-gateway     | 网关服务       | 0.24.0 |
+| choerodon-oauth       | 认证服务       | 0.24.1 |
+| choerodon-platform    | 平台服务       | 0.24.0 |
+| choerodon-monitor     | 监控审计服务    | 0.24.0 |
+| choerodon-file        | 文件服务       | 0.24.0 |
+| choerodon-message     | 消息服务       | 0.24.0 |
+| devops-service        | Devops 服务    | 0.24.1 |
+| gitlab-servcie        | 平台基础服务    | 0.24.0 |
+| workflow-service      | 工作流服务      | 0.24.0 |
+| agile-service         | 敏捷管理        | 0.24.1 |
+| test-manager-service  | 测试管理服务     | 0.24.1 |
+| knowledgebase-service | 知识服务        | 0.24.0 |
+| prod-repo-service     | 制品库服务      | 0.24.1 |
+| code-repo-service     | 代码管理服务     | 0.24.0 |
+| choerodon-front       | Choerodon 前端  | 0.24.0 |
+| choerodon-front-hzero | hzero 前端      | 0.24.0 |

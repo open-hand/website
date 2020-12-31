@@ -87,7 +87,7 @@ helm repo update
     helm upgrade --install code-repo-service c7n/code-repo-service \
         -f code-repo-service.yaml \
         --create-namespace \
-        --version 0.24.0 \
+        --version 0.24.1 \
         --namespace c7n-system
     ```
 
@@ -148,6 +148,14 @@ helm repo update
         NEXUS_DEFAULT_ANONYMOUS_USER: test-anonymous-user
         #系统默认nexus服务，启用仓库级的匿名访问控制时需要配置该值(即enableAnonymousFlag==1时)。 nexus服务开启全局匿名访问时，配置的用户对应的角色
         NEXUS_DEFAULT_ANONYMOUS_ROLE: test-anonymous
+        # 过滤器拦截的uri前缀
+        NEXUS_PROXY_URIPREFIX: /v1/nexus/proxy
+        # 过滤器拦截的servlet 地址
+        NEXUS_PROXY_SERVLETURI: /v1/nexus/proxy/*
+        #api网关地址
+        SERVICES_GATEWAY_URL: http://api.example.com
+        # 网关路由
+        SERVICE_ROUTE: /rdupm
     ```
 - 其它配置 <br/>
     上述变量配置中：NEXUS_DEFAULT_ENABLE_ANONYMOUS_FLAG(是否启用仓库级的匿名访问控制)、NEXUS_DEFAULT_ANONYMOUS_USER、NEXUS_DEFAULT_ANONYMOUS_ROLE这几个变量的配置。
@@ -180,7 +188,7 @@ helm repo update
     helm upgrade --install prod-repo-service c7n/prod-repo-service \
         -f prod-repo-service.yaml \
         --create-namespace \
-        --version 0.24.0 \
+        --version 0.24.1 \
         --namespace c7n-system
     ```
 

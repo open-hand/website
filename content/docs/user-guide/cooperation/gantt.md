@@ -25,7 +25,7 @@ weight = 6
 - 通过甘特图顶部的高级筛选，您可以灵活的筛选你关注的问题项。
 - 点击左侧问题列表的概要或者点击右侧时间线条，您可以直接进入问题详情编辑。
 
-![image](../image/gantt-01.png)
+![image](/docs/user-guide/cooperation/image/gantt-01.png)
 
  > **色块说明：**  
  >线条的黄、蓝、绿分别对应问题待处理、处理中、已完成的状态色。  
@@ -47,7 +47,7 @@ weight = 6
 
 ### 3.3 快捷定位任务持续时间
 
-- 当问题项的持续时间不在当前实现范围内，您可以点击![image](../image/gantt-02.png)按钮直接定位到问题的持续时间。
+- 当问题项的持续时间不在当前实现范围内，您可以点击![image](/docs/user-guide/cooperation/image/gantt-02.png)按钮直接定位到问题的持续时间。
 
 ### 4. 阅读更多
 

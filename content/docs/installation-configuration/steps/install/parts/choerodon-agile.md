@@ -149,7 +149,7 @@ helm repo update
     helm upgrade --install test-manager-service c7n/test-manager-service \
       -f test-manager-service.yaml \
       --create-namespace \
-      --version 0.24.0 \
+      --version 0.24.1 \
       --namespace c7n-system
     ```
 

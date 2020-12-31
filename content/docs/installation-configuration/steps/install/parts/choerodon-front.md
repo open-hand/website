@@ -27,6 +27,7 @@ helm repo update
       open:
         BUILD_CLIENT_ID: choerodon
         BUILD_API_HOST: http://api.example.choerodon.io
+        BUILD_WEBSOCKET_HOST: http://api.example.choerodon.io/hpfm/sock-js
     ```
 
 - 部署服务

@@ -156,10 +156,6 @@ helm repo update
         SERVICES_HELM_URL: http://chart.example.choerodon.io
         SERVICES_HELM_USERNAME: choerodon
         SERVICES_HELM_PASSWORD: password
-        SERVICES_HARBOR_BASEURL: https://registry.example.choerodon.io
-        SERVICES_HARBOR_USERNAME: admin
-        SERVICES_HARBOR_PASSWORD: Harbor12345
-        SERVICES_HARBOR_INSECURESKIPTLSVERIFY: true
         SERVICES_SONARQUBE_URL: https://sonarqube.example.choerodon.io
         SERVICES_SONARQUBE_PASSWORD: admin
         SERVICES_SONARQUBE_USERNAME: admin
@@ -168,6 +164,7 @@ helm repo update
         AGENT_SERVICEURL: ws://devops.example.choerodon.io/websocket
         AGENT_REPOURL: https://openchart.choerodon.com.cn/choerodon/c7n/
         AGENT_CERTMANAGERURL: https://openchart.choerodon.com.cn/choerodon/c7n/on/c7n/
+        DEVOPS_ANSIBLE_IMAGE: registry.cn-shanghai.aliyuncs.com/c7n/kubeadm-ha:0.1.3
     ingress:
       enabled: true
       host: devops.example.choerodon.io
