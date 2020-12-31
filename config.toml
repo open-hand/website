@@ -166,8 +166,8 @@ paginate = 5
         weight = 28
         parent = "zh-version"
     [[languages.zh.menu.main]]
-        name = "v0.20"
-        url  = "https://v0-20.choerodon.io/zh/"
+        name = "v0.24"
+        url  = "https://v0-24.choerodon.io/zh/"
         weight = 29
         parent = "zh-version"
 
