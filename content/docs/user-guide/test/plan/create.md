@@ -21,7 +21,7 @@ weight = 2
 - 选择导入范围：你可以选择导入全部用例，或者自选部分用例导入到测试计划中。
 - 自动同步：选择源用例更改后是否自动同步到测试计划的相关用例；
 
-![image](../../image/TestPlan/TestPlan-02.png)
+![image](/docs/user-guide/test/image/TestPlan/TestPlan-02.png)
 
 ## 3.编辑测试计划
 
@@ -40,7 +40,7 @@ weight = 2
 
 ### 3.3 编辑文件夹
 
-点击文件夹右侧![三点](../../../manager-guide/image/more-vert.png)按钮标识，选择重命名或者删除，可对该文件夹进行重命名或者删除操作。
+点击文件夹右侧![三点](/docs/user-guide/manager-guide/image/more-vert.png)按钮标识，选择重命名或者删除，可对该文件夹进行重命名或者删除操作。
 
 <blockquote class="note">
     删除文件夹后，文件夹下的测试执行将一并被删除。
@@ -48,7 +48,7 @@ weight = 2
 
 ## 3.4 导入用例
 
-- 点击文件夹右侧![三点](../../../manager-guide/image/more-vert.png)按钮标识，选择导入用例，即可打开导入用例侧开页。
+- 点击文件夹右侧![三点](/docs/user-guide/manager-guide/image/more-vert.png)按钮标识，选择导入用例，即可打开导入用例侧开页。
 
 - 勾选您要添加到此文件夹的测试用例。（已添加的测试用例不能再次添加）
 
@@ -58,7 +58,7 @@ weight = 2
 
 源用例更新后，会提醒未选择自动同步的计划中相应的测试用例进行更新。您可以选择更新，也可以选择忽略当次更新。
 
-![image](../../image/TestPlan/TestPlan-03.png)
+![image](/docs/user-guide/test/image/TestPlan/TestPlan-03.png)
 
 ## 3.6. 查看执行测试详情
 
@@ -107,29 +107,31 @@ weight = 2
 
 
 
-## 6. 复制计划
+## 7. 复制计划
 
 项目成员可以对本页中的测试计划进行复制，减少不同迭代中的重复测试再次创建。
 
-- 点击计划右侧![三点](../../../manager-guide/image/more-vert.png)按钮标识，选择复制，即可复制此计划。
+- 点击计划右侧![三点](/docs/user-guide/manager-guide/image/more-vert.png)按钮标识，选择复制，即可复制此计划。
 
 - 新复制的计划默认名称为“源计划的名称-副本”，且新计划的状态为未开始。
 
 - 新复制的计划的用例及用例步骤的状态全部重置为未执行。
 
-## 7. 删除计划
+## 8. 查看测试报告
 
-点击计划右侧![三点](../../../manager-guide/image/more-vert.png)按钮标识，选择删除，即可删除此计划。
+- 选择某个进行中或已完成的测试计划，点击操作栏的`计划报告`按钮，即可查看该测试计划的测试报告。测试报告包括计划的执行情况，关联问题项的测试情况，以及测试过程中产生的缺陷列表。
+![image](/docs/user-guide/test/plan/image/testplan-05.png)
+
+## 9. 删除计划
+
+点击计划右侧![三点](/docs/user-guide/manager-guide/image/more-vert.png)按钮标识，选择删除，即可删除此计划。
 
 <blockquote class="warning">
 删除计划后，计划下的测试用例及测试状态也将被删除。
 </blockquote>
 
-## 8. 查看测试报告
 
-- 选择某个进行中或已完成的测试计划，点击操作栏的`计划报告`按钮，即可查看该测试计划的测试报告。测试报告包括计划的执行情况，关联问题项的测试情况，以及测试过程中产生的缺陷列表。
-![image](../image/testplan-05.png)
-## 7. 阅读更多
+## 10. 阅读更多
 
 - [测试用例](../../store/whatisstore)
 - [自动化测试](../../automation)

@@ -14,7 +14,7 @@ weight = 2
 
 ## 2. 字段列表
 
-![image](../image/pages-01.png) 
+![image](/docs/user-guide/settings/image/pages-01.png) 
 
 字段列表页面看到所有的可编辑字段方案，在此页面您能对当前层级下的字段方案进行编辑，列表显示内容包含字段名称、显示范围、字段来源、字段类型、必填项，如图：
 
@@ -23,7 +23,7 @@ weight = 2
 
 ### 2.1 创建字段
 
-![image](../image/pages-02.png)
+![image](/docs/user-guide/settings/image/pages-02.png)
 
 点击导航栏上方的`创建字段`按钮，会跳出创建字段页面，填写编码、名称、字段类型、问题类型、默认值，添加字段值后，即可创建新字段，如图：
 
@@ -35,7 +35,7 @@ weight = 2
 
 点击字段名称后的![image](https://minio.choerodon.com.cn/knowledgebase-service/file_b53c0c1755864d7f9e3f7bb1f88b37fc_blob.png)标识，选择删除会跳出删除字段提示框提醒当前字段使用情况。
 
-![image](../image/page-03.png)
+![image](/docs/user-guide/settings/image/page-03.png)
 
 > 删除字段后，此字段将会从所有使用问题中删除，并且字段数据会清空。
 
@@ -48,7 +48,7 @@ weight = 2
     我这么做的原因是<开发的价值>。
 
 
-![image](../image/pages-03.png)
+![image](/docs/user-guide/settings/image/pages-03.png)
 
 <blockquote class="note">注1：系统默认显示字段不能进行显示编辑。</blockquote>
 

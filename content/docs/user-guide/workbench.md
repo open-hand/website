@@ -23,7 +23,7 @@ weight = 3
 
 ## 3.我的事项
 
-![image](/docs/user-guide/image/workspace-issue.png)     
+![image](/docs/user-guide/image/workspace-issue-01.png)     
 
 `所有待办`模块展示了该用户在对应星标项目（没选择星标项目时，即为所有项目）下`未完成`的问题。点击对应问题后，即可进入对应项目查看该问题的详情。      
 
