@@ -97,12 +97,13 @@ weight = 4
 
 <blockquote class="note">提示：无法修改的内容会自动跳过。例如：修改故事点时，任务类型的问题，没有此字段会自动跳过</blockquote>
 
-![image](../image/issue01.gif)
+![image](/docs/user-guide/cooperation/work-lists/image/issue01.gif)
 
 ## 8. 关注问题项
 
 您可以点击问题项概要旁的星星标记关注问题项，再次点击即可取消关注。
-![image](../image/issue-01.png)
+
+![image](/docs/user-guide/cooperation/work-lists/image/issue-01.png)
 ## 9. 阅读更多
 
 - [创建故事](../user-story)

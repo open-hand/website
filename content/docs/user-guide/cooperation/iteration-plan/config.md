@@ -79,9 +79,7 @@ weight = 3
 
     ![image](/docs/user-guide/cooperation/iteration-plan/image/scrumboard-18.png)
 
-2. 输入状态名称与类别
-
-    如果状态存在于组织层的状态列表中，就会自动识别出类别，点击确定即可创建一个新的状态。
+2. 进入状态机页面创建状态。
 
 3. 新建的状态会放在未对应区域中，需要自己拖动到指定的列中。
 

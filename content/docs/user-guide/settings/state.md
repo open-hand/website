@@ -22,9 +22,14 @@ weight = 4
 1. 点击`创建状态`按钮，打开`创建状态`页面，输入状态名称,选择状态阶段，选择应用到的问题类型，设置是否为初始状态，设置是否转换到所有状态后可完成添加。 
 
 <blockquote class="note">
-        创建的状态都必须处于待处理、处理中、完成三个阶段中。
+        创建的状态都必须处于待处理、处理中、完成三个阶段中。   
         初始状态是指问题项创建成功后的起始状态。
 </blockquote>
+
+<blockquote class="note">
+        如果状态存在于组织层的状态列表中，就会自动识别出类别，点击确定即可创建一个新的状态。
+</blockquote>
+
 
 ![enter description here](/docs/user-guide/settings/image/state-02.png "issue-state-list")
 
