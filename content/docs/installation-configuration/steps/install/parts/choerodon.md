@@ -299,6 +299,57 @@ helm repo update
     ```
     UP
     ```    
+ 
+ ## 部署 choerodon message
+ 
+ - 若需了解项目详情及各项参数含义，请移步 [open-hand/choerodon-message](https://github.com/open-hand/choerodon-message)。
+ 
+ - 编写参数配置文件 `choerodon-message.yaml`
+ 
+     ```yaml
+     preJob:
+       preInitDB:
+         datasource:
+           url: jdbc:mysql://c7n-mysql.c7n-system:3306/?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
+           username: choerodon
+           password: password
+     env:
+       open:
+         EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://choerodon-register.c7n-system:8000/eureka/
+         HZERO_WEBSOCKET_OAUTHURL: http://choerodon-oauth/oauth/api/user
+         SPRING_REDIS_HOST: c7n-redis.c7n-system
+         SPRING_REDIS_PORT: 6379
+         # 此db不可更改
+         SPRING_REDIS_DATABASE: 1
+         SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system:3306/hzero_message?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
+         SPRING_DATASOURCE_USERNAME: choerodon
+         SPRING_DATASOURCE_PASSWORD: password
+     ingress:
+       enabled: true
+       host: notify.example.choerodon.io
+     ```
+ 
+ - 部署服务
+     ```
+     helm upgrade --install choerodon-message c7n/choerodon-message \
+         -f choerodon-message.yaml \
+         --create-namespace \
+         --version 0.24.0 \
+         --namespace c7n-system
+     ```
+ 
+ - 验证部署
+   - 验证命令
+   
+     ```
+     curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=choerodon-message -o jsonpath="{.items[0].status.podIP}"):8121/actuator/health | jq -r .status
+     ```
+ 
+   - 出现以下类似信息即为成功部署
+   
+     ```
+     UP
+     ```
     
 ## 部署 choerodon swagger
 
@@ -534,57 +585,6 @@ helm repo update
 
   - 出现以下类似信息即为成功部署
 
-    ```
-    UP
-    ```
-
-## 部署 choerodon message
-
-- 若需了解项目详情及各项参数含义，请移步 [open-hand/choerodon-message](https://github.com/open-hand/choerodon-message)。
-
-- 编写参数配置文件 `choerodon-message.yaml`
-
-    ```yaml
-    preJob:
-      preInitDB:
-        datasource:
-          url: jdbc:mysql://c7n-mysql.c7n-system:3306/?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
-          username: choerodon
-          password: password
-    env:
-      open:
-        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://choerodon-register.c7n-system:8000/eureka/
-        HZERO_WEBSOCKET_OAUTHURL: http://choerodon-oauth/oauth/api/user
-        SPRING_REDIS_HOST: c7n-redis.c7n-system
-        SPRING_REDIS_PORT: 6379
-        # 此db不可更改
-        SPRING_REDIS_DATABASE: 1
-        SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system:3306/hzero_message?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
-        SPRING_DATASOURCE_USERNAME: choerodon
-        SPRING_DATASOURCE_PASSWORD: password
-    ingress:
-      enabled: true
-      host: notify.example.choerodon.io
-    ```
-
-- 部署服务
-    ```
-    helm upgrade --install choerodon-message c7n/choerodon-message \
-        -f choerodon-message.yaml \
-        --create-namespace \
-        --version 0.24.0 \
-        --namespace c7n-system
-    ```
-
-- 验证部署
-  - 验证命令
-  
-    ```
-    curl -s $(kubectl get po -n c7n-system -l choerodon.io/release=choerodon-message -o jsonpath="{.items[0].status.podIP}"):8121/actuator/health | jq -r .status
-    ```
-
-  - 出现以下类似信息即为成功部署
-  
     ```
     UP
     ```
