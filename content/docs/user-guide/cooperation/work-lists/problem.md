@@ -103,6 +103,8 @@ weight = 4
 
 您可以点击问题项概要旁的星星标记关注问题项，再次点击即可取消关注。
 
+> 关注的问题项可在**工作台**的**我的事项**中查看，并且在**迭代计划**中也可以查看星标问题。
+
 ![image](/docs/user-guide/cooperation/work-lists/image/issue-01.png)
 ## 9. 阅读更多
 
