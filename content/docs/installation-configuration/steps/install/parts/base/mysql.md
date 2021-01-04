@@ -45,7 +45,7 @@ helm repo update
     helm upgrade --install c7n-mysql c7n/mysql \
         -f mysql.yaml \
         --create-namespace \
-        --version 0.1.3 \
+        --version 0.1.4 \
         --namespace c7n-system
     ```
 
