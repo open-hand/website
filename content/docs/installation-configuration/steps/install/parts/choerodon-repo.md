@@ -153,7 +153,7 @@ helm repo update
         # 过滤器拦截的servlet 地址
         NEXUS_PROXY_SERVLETURI: /v1/nexus/proxy/*
         #api网关地址
-        SERVICES_GATEWAY_URL: http://api.example.com
+        SERVICES_GATEWAY_URL: http://api.example.choerodon.io
         # 网关路由
         SERVICE_ROUTE: /rdupm
     ```
