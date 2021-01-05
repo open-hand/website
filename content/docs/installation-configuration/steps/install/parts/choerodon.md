@@ -300,7 +300,7 @@ helm repo update
     UP
     ```    
  
- ## 部署 choerodon message
+## 部署 choerodon message
  
  - 若需了解项目详情及各项参数含义，请移步 [open-hand/choerodon-message](https://github.com/open-hand/choerodon-message)。
  
