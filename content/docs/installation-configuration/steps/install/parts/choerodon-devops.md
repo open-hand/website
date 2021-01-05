@@ -86,7 +86,7 @@ helm repo update
 
 ## 部署 gitlab service
 - 若需了解项目详情及各项参数含义，请移步 [open-hand/gitlab-service](https://github.com/open-hand/gitlab-service)。
-- 如何获取 `GITLAB_PRIVATETOKEN` 请查看[这里](http://openforum.hand-china.com/t/topic/1155/2)
+- 如何获取 `GITLAB_PRIVATETOKEN` 请查看[这里](https://choerodon.com.cn/#/knowledge/share/90ee2a93698b69a5)
 - 编写参数配置文件 `gitlab-service.yaml`
 
     ```yaml
@@ -163,7 +163,7 @@ helm repo update
         AGENT_VERSION: 0.24.0
         AGENT_SERVICEURL: ws://devops.example.choerodon.io/websocket
         AGENT_REPOURL: https://openchart.choerodon.com.cn/choerodon/c7n/
-        AGENT_CERTMANAGERURL: https://openchart.choerodon.com.cn/choerodon/c7n/on/c7n/
+        AGENT_CERTMANAGERURL: https://openchart.choerodon.com.cn/choerodon/c7n/
         DEVOPS_ANSIBLE_IMAGE: registry.cn-shanghai.aliyuncs.com/c7n/kubeadm-ha:0.1.3
     ingress:
       enabled: true
