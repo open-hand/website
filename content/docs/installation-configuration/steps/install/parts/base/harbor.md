@@ -114,34 +114,25 @@ Harbor启动速度较慢请等待所有Pod都为Running后进行界面查看。
 ### 没有公网域名时使用自签名证书
 
 <blockquote class="warning">
-没有公网域名是无法申请证书的，故只能配置本地Docker信任Harbor自签名证书，此方法需将会使用到该Harbor的主机都进行自签名证书信任配置。
+没有公网域名是无法申请证书的，故只能配置本地容器运行时信任Harbor自签名证书，此方法需将会使用到该Harbor的主机都进行自签名证书信任配置。
 </blockquote>
 
-- 访问 Harbor ，进入 `配置管理` -> `系统设置` -> `镜像库根证书`，点击 `下载` 下载ca证书
+- 访问 Harbor ，进入 `配置管理` -> `系统设置` -> `镜像库根证书`，点击 `下载` 下载ca证书，并重命名为 `registry.example.choerodon.io.crt`
 
     ![](/docs/installation-configuration/image/get-harbor-cert.png)
 
-- 分发`ca.crt`证书文件
+- 分发 `registry.example.choerodon.io.crt` 证书文件
+  - 将得到的 `registry.example.choerodon.io.crt` 证书文件拷贝至其他会使用到该 Harbor 的主机上
 
-  - 将得到的`ca.crt`证书文件拷贝至其他会使用到该Harbor的主机上
-  - 证书放置于`/etc/docker/certs.d/<Harbor域名>`目录下（eg. 若Harbor域名为registry.example.choerodon.io，则将`ca.crt`证书文件放于`/etc/docker/certs.d/registry.example.choerodon.io`目录下即可）
-
-<!-- 
-### NodePort 模式安装
-
-- 在所有会用到 Harbor 的主机上编辑`/etc/docker/daemon.json`文件，添加如下内容：
-
-    ```json
-    {
-      ...
-      "insecure-registries":["192.168.xx.xx:30003"]
-    }
-    ```
-
-- 重启docker 服务
-
-    ```
-    # systemctl daemon-reload
-    # systemctl restart docker
-    ``` 
--->
+  - 配置信任harbor证书
+      - Ubuntu:
+        ```
+        cp registry.example.choerodon.io.crt /usr/local/share/ca-certificates/registry.example.choerodon.io.crt
+        update-ca-certificates
+        ```
+    
+      - CentOS:
+        ```
+        cp registry.example.choerodon.io.crt /etc/pki/ca-trust/source/anchors/yourdomain.com.crt
+        update-ca-trust
+        ```
