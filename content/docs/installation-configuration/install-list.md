@@ -51,7 +51,7 @@ weight = 5
 | choerodon-monitor     | 监控审计服务    | 0.23.2 |
 | choerodon-file        | 文件服务       | 0.23.1 |
 | choerodon-message     | 消息服务       | 0.23.8 |
-| devops-service        | Devops 服务    | 0.23.9 |
+| devops-service        | Devops 服务    | 0.23.13 |
 | gitlab-servcie        | 平台基础服务    | 0.23.1 |
 | workflow-service      | 工作流服务      | 0.23.3 |
 | agile-service         | 敏捷管理        | 0.23.7 |
