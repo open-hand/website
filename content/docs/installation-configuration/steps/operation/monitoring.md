@@ -148,5 +148,5 @@ helm upgrade --install ssd c7n/nfs-client-provisioner \
 3. 安装时禁用 CRDs 创建 `prometheusOperator.createCustomResource=false`
 
     ```console
-    $ helm install --name my-release c7n/prometheus-operator --set prometheusOperator.createCustomResource=false --version 9.3.0
+    $ helm install my-release c7n/prometheus-operator --set prometheusOperator.createCustomResource=false --version 9.3.0
     ```
