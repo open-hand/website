@@ -160,7 +160,7 @@ helm repo update
         SERVICES_SONARQUBE_PASSWORD: admin
         SERVICES_SONARQUBE_USERNAME: admin
         SERVICES_GATEWAY_URL: http://api.example.choerodon.io
-        AGENT_VERSION: 0.24.0
+        AGENT_VERSION: 0.24.1
         AGENT_SERVICEURL: ws://devops.example.choerodon.io/websocket
         AGENT_REPOURL: https://openchart.choerodon.com.cn/choerodon/c7n/
         AGENT_CERTMANAGERURL: https://openchart.choerodon.com.cn/choerodon/c7n/
@@ -175,7 +175,7 @@ helm repo update
     ```
     helm upgrade --install devops-service c7n/devops-service \
         -f devops-service.yaml \
-        --version 0.24.2 \
+        --version 0.24.3 \
         --namespace c7n-system
     ```
 
