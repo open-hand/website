@@ -39,7 +39,7 @@ git clone https://github.com/open-hand/kubeadm-ha.git
 # 进入项目目录
 cd kubeadm-ha
 # 安装 ansible 环境
-sudo ./install-ansible.sh
+sudo ./ansible/install.sh
 ```
 
 ### 配置 ansible inventory 文件
