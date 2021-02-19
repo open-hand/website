@@ -159,7 +159,7 @@ helm repo update
         SERVICES_HARBOR_PASSWORD: Harbor12345
         SERVICES_HARBOR_INSECURESKIPTLSVERIFY: true
         SERVICES_GATEWAY_URL: http://api.example.choerodon.io
-        AGENT_VERSION: 0.22.3
+        AGENT_VERSION: 0.22.6
         AGENT_SERVICEURL: ws://devops.example.choerodon.io/websocket
         AGENT_REPOURL: https://openchart.choerodon.com.cn/choerodon/c7n/
         AGENT_CERTMANAGERURL: https://openchart.choerodon.com.cn/choerodon/c7n/on/c7n/
