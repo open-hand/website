@@ -41,7 +41,7 @@ weight = 5
 | --------------------- | -------------- | ------ |
 | hzero register        | 注册服务       | 0.22.2 |
 | hzero admin           | 平台治理服务    | 0.22.3 |
-| hzero iam             | IAM服务       | 0.22.4 |
+| hzero iam             | IAM服务       | 0.22.5 |
 | hzero asgard          | 事务服务       | 0.22.4 |
 | hzero swagger         | swagger服务   | 0.22.1 |
 | hzero gateway         | 网关服务       | 0.22.4 |
