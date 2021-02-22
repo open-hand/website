@@ -10,7 +10,7 @@ weight = 2
 
 本页面介绍了组织层的管理中心，组织下的项目、用户、客户端的管理需进入到一个特定的组织进行组织层的操作。
 
-- 在全局层界面中，点击`管理中心`按钮→ ![管理按钮](/docs/user-guide/manager-guide/image/management_button.png) 进入全局管理界面。
+- 在全局层界面中，点击`管理中心`按钮→ ![管理按钮](/docs/user-guide/manager-guide/image/management_button.png) 进入组织管理界面。
 
 
 {{< docdir >}}
