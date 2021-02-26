@@ -14,7 +14,7 @@ SonarQube并非猪齿鱼运行必要基础组件，你可以选择性进行安�
 
 如果你不知道SonarQube是做什么的，那么请参考下面链接（包括但不限于）进行学习：
 
-- [SonarQube](https://docs.sonarqube.org/7.6/)
+- [SonarQube](https://docs.sonarqube.org/7.9/)
 
 ## 仓库设置
 
@@ -31,24 +31,41 @@ helm repo update
 注意：本事例中 PostgreSql 数据库搭建仅为快速体验 SonarQube 而编写，由于使用了NFS存储故并不能保证其稳定运行或数据不丢失，您可以参照 PostgreSql 官网进行搭建。
 </blockquote>
 
-```
-helm upgrade --install sonarqube c7n/sonarqube \
-    --set persistence.enabled=true \
-    --set persistence.storageClass=nfs-provisioner \
-    --set postgresql.persistence.storageClass=nfs-provisioner \
-    --set ingress.enabled=true \
-    --set ingress.'hosts[0]'=sonarqube.example.choerodon.io \
-    --set plugins.'install[0]'=https://file.choerodon.com.cn/choerodon-install/sonarqube/sonar-auth-choerodonoauth-plugin-1.5.3.RELEASE.jar \
-    --create-namespace \
-    --version 0.15.0-3 \
-    --namespace c7n-system
-```
+- 创建参数配置文件 `sonarqube.yaml`
+
+    ```
+    ingress:
+      enabled: true
+      hosts:
+        - name: sonarqube.example.choerodon.io
+          path: /
+    persistence:
+      enabled: true
+      storageClass: nfs-provisioner
+    plugins:
+      install:
+        - https://file.choerodon.com.cn/choerodon-install/sonarqube/sonar-auth-choerodonoauth-plugin-1.5.4.RELEASE.jar
+    postgresql:
+      persistence:
+        enabled: true
+        storageClass: nfs-provisioner
+    ```
+
+- 执行安装
+  
+    ```bash
+    helm upgrade --install sonarqube c7n/sonarqube \
+        -f sonarqube.yaml \
+        --create-namespace \
+        --version 4.0.1 \
+        --namespace c7n-system
+    ```
 
 - 更多参数及含义请参考[SonarQube Chart](https://github.com/helm/charts/tree/155659de436be352b0e8fd12d4954d82c62c7068/stable/sonarqube#sonarqube)
 
 ## 安装SoanrQube插件
 - 此步骤用于之前已经安装过SonarQube，只需安装插件的情况（如已经执行过上一步可跳过此步骤）
-- 进入SonarQube安装目录，下载https://file.choerodon.com.cn/choerodon-install/sonarqube/sonar-auth-choerodonoauth-plugin-1.5.3.RELEASE.jar 插件到\data\sonarqube\extensions\plugins目录
+- 进入SonarQube安装目录，下载https://file.choerodon.com.cn/choerodon-install/sonarqube/sonar-auth-choerodonoauth-plugin-1.5.4.RELEASE.jar 插件到\data\sonarqube\extensions\plugins目录
 - 重启SoanrQube服务
 
 ## 验证部署

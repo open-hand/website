@@ -210,6 +210,7 @@ sudo ./ansible/install.sh
 
 - 其他集群运维操作请查阅项目[使用指南](https://github.com/open-hand/kubeadm-ha#使用指南)
 
+<!-- 
 ## 集群网络测试
 
 ### 集群访问公网测试
@@ -479,4 +480,4 @@ sudo ./ansible/install.sh
     [  3]  8.0- 9.0 sec   217 MBytes  1.82 Gbits/sec
     [  3]  9.0-10.0 sec   236 MBytes  1.98 Gbits/sec
     [  3]  0.0-10.0 sec  2.37 GBytes  2.04 Gbits/sec
-    ```
+    ``` -->
