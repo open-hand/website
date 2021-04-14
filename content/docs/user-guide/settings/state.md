@@ -12,12 +12,14 @@ weight = 4
 
 ## 1. 概要
 
-问题项状态是敏捷状态机的重要组成部分，状态机由状态和步骤构成。工作项状态表示某个需求当前处于什么阶段；执行步骤可将当前需求流转至下一状态。配置状态机可通过项目设置中的`状态机`进行。此外，也可以在迭代计划的[看板配置](../../cooperation/iteration-plan/config)中设置。项目可以根据项目的实际需求来自定义状态流转。
+问题项状态是敏捷状态机的重要组成部分，状态机由状态和步骤构成。工作项状态表示某个需求当前处于什么阶段；执行步骤可将当前需求流转至下一状态。配置状态机可通过项目设置中的`状态机`进行。此外，也可以在迭代计划的**看板配置**中设置。项目可以根据项目的实际需求来自定义状态流转。
 
 ## 2. 状态
 
 状态页面中，可以对状态进行添加、删除操作:
-![enter description here](/docs/user-guide/settings/image/state-01.png "issue-state-list")
+
+<img src="https://file.open.hand-china.com/hsop-doc/doc_classify/0/83085e6f2bb74a56bd4a995501439868@image.png" alt="" width="auto" height="auto" />
+
 
 1. 点击`创建状态`按钮，打开`创建状态`页面，输入状态名称,选择状态阶段，选择应用到的问题类型，设置是否为初始状态，设置是否转换到所有状态后可完成添加。 
 
@@ -30,8 +32,8 @@ weight = 4
         如果状态存在于组织层的状态列表中，就会自动识别出类别，点击确定即可创建一个新的状态。
 </blockquote>
 
+<img src="https://file.open.hand-china.com/hsop-doc/doc_classify/0/6e311707ca8642789117e882055fc87e@image.png" alt="" width="auto" height="auto" />
 
-![enter description here](/docs/user-guide/settings/image/state-02.png "issue-state-list")
 
 2. 编辑状态：您需要到组织层`管理中心-设置-问题-状态机`进行修改。
 3. 删除状态： 点击此图标可删除列表中的状态。  
@@ -43,13 +45,17 @@ weight = 4
 ## 3. 状态与流转
 
 根据实际需要配置状态的流转方向。状态机状态的流转状态配置好后，在看板中拖动问题可流转的状态，会根据当前类型的状态显示可流转的状态。
-![enter description here](/docs/user-guide/settings/image/state-03.png "issue-state-list")
+
+<img src="https://file.open.hand-china.com/hsop-doc/doc_classify/0/42b393d48dc4404381f3e172785469db@image.png" alt="" width="auto" height="auto" />
+
 
 1. 进入`状态机`页面，点击`状态与流转`标签页，进入状态与流转配置页。
 
 2. 根据项目的实际流程来勾选问题状态的可流转状态。
 
-3. 点击保存即可生效。
+3. 您可以拖动状态的上下顺序来改变选择状态时的显示顺序。
+
+4. 点击保存即可生效。
 
 除此之外，您也可以在此添加、删除状态，或者设置问题项的初始状态。
 
@@ -58,7 +64,9 @@ weight = 4
 
 依赖状态流转进行的高级设置。在状态流转的基础上，引入流转条件限制、父子级状态联动、状态变更的后续动作，以满足项目开发过程中对问题项流转的权限要求和自动化管理。
 
-![enter description here](/docs/user-guide/settings/image/state-04.png "issue-state-list")
+
+<img src="https://file.open.hand-china.com/hsop-doc/doc_classify/0/8aa7090205a04dbb9aae5a617eded36c@image.png" alt="" width="auto" height="auto" />
+
 
 ### 4.1 设置流转条件
 

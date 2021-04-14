@@ -10,15 +10,22 @@ weight = 4
 
 问题是项目的基石，是在成员在项目中通过各自的工作流进行的工作，一个问题可以代表一个史诗，一个故事，一个缺陷，一个任务等。问题能被单独分配给某个项目成员，并且设置跟踪的子任务。
 
-## 2. 问题创建
+## 2. 查看所有问题列表
+
+在这里您可以查看项目的所有问题项，并且进行筛选、编辑、导入、导出一系列操作。问题列表支持两种查看视图：
+
+1. 列表视图：以平铺形式查看问题项；
+2. 树形视图：以父子级树形结构查看问题项。
+
+## 3. 问题创建
 
 方法一：点击页面上方创建问题按钮可以进行详细问题创建
 
-![image](/docs/user-guide/cooperation/work-lists/image/work-list-04.png)  
+<img src="http://file.open.hand-china.com/hsop-doc/doc_classify/0/20420b1896aa4a2995707213b22691b1/image.png" alt="" width="300" height="auto" >
  
 方法二：点击列表中的`创建问题`按钮可进行问题快速创建，快速创建问题后，在问题列表单击问题，弹出编辑问题页面如图，可对问题详情进行进一步的编辑。
 
-![image](/docs/user-guide/cooperation/work-lists/image/work-list-05.png)
+<img src="http://file.open.hand-china.com/hsop-doc/doc_classify/0/a6ca212829974da9a288e293d87f6c04/image.png" alt="" width="350" height="auto" >
 
 * 概要：问题的标题
 * 优化级：表示问题需要优化的级别，包括高、中、低三个级别
@@ -31,40 +38,67 @@ weight = 4
 * 版本：问题修复的版本，点击可选择已有版本
 * 添加关系:可以在创建问题的时候将创建的问题和其他问题相关联
 
-## 3. 编辑问题
+## 4. 编辑问题
 
 点击列表中的问题概要，会弹出问题详情页面。
 
-![image](/docs/user-guide/cooperation/work-lists/image/work-list-06.png)
+<img src="http://file.open.hand-china.com/hsop-doc/doc_classify/0/b66ea92ec13943f8b4cfd3738d27ec8f/image.png" alt="" width="300" height="auto" >
 
 * 详情：显示该问题的详细信息，包括问题描述、附件、各个字段内容等
+
+<blockquote class="note">注：用户可上传多个小于30M的附件。</blockquote>
+
 * 评论：记录显示该问题的评论信息
 * 记录：记录工作日志及操作历史
 * 开发：关联Git分支操作
 
-<blockquote class="note">注：用户可上传多个小于30M的附件。</blockquote>
+点击右上角的按钮<img src="https://file.open.hand-china.com/hsop-doc/doc_classify/0/0ab0a4ab75884910a234e834e89c8c3d@image.png" alt="" width="20" height="auto" />，可以进行登记工作日志、创建子任务、创建缺陷、复制问题、创建分支、分配问题、修改父级、移动、删除问题等操作。
 
-## 4. 导入问题
+<blockquote class="note">注意：移动问题项是您可以将问题项移动到其他您有权限的项目。移动时需要重新选择问题类型、版本、模板等字段值，此外由于项目之间自定义字段不兼容，将彻底丢失这部分信息</blockquote>
+
+<img src="https://file.open.hand-china.com/hsop-image/doc_classify/0/92ee5033428a42dba103da53e8fae5c2@移动.gif" alt="移动.gif" width="auto" height="auto" />
+
+## 5. 导入问题
 
 您可以将issue从excel文件导入到问题列表中，这将有助于用户导入整理的问题需求
 
-1.在问题管理页面上方的点击`导入问题`，打开导入问题页面，点击`下载模板`下载导入模板。
+1. 在问题管理页面上方的点击`导入问题`，打开导入问题页面。
 
-![image](/docs/user-guide/cooperation/work-lists/image/work-list-07.png) 
+2. 您可以通过勾选模板字段，定义配置问题模板中需包含的字段。如果这是您的常用模板，点击下方`保存为常用模板`按钮即可保存。之后您只需直接选择常用模板，点击`下载模板`，即可下载问题模板。
 
-2.将问题按格式填写在excel文件中后，在导入问题页面点击`导入问题`将问题导入到问题管理中，导入过程中可以点击`取消上传`按钮对上传问题进行取消。如下图：  
-  
-![image](/docs/user-guide/cooperation/work-lists/image/work-list-08.png)
 
-## 5. 导出问题
+<img src="https://file.open.hand-china.com/hsop-doc/doc_classify/0/9c99a03a6a0b4c6c8840eedba0d7bf93@image.png" alt="" width="250" height="auto" />
+
+3. 点击`下载模板`，下载您配置的问题模板。
+
+4. 按照导入模板的要求来填写需要导入的任务信息
+
+<img src="https://file.open.hand-china.com/hsop-doc/doc_classify/0/26372bf48db54479bc375ec11632a1d4@image.png" alt="" width="auto" height="auto" />
+
+<blockquote class="note">注意：如果您设置了必填字段，在导入时候将不生效。如果您设置了字段的默认值，导入时将自动填充默认值。</blockquote>
+
+
+
+5. 将问题项按格式填写在excel文件中后，在导入问题页面点击`导入`将问题导入到问题管理中，导入过程中可以点击`关闭`按钮继续进行其他操作，不会影响导入问题的进程。如下图：
+
+<img src="https://file.open.hand-china.com/hsop-doc/doc_classify/0/d89ad5c59a254a0796957ed7632d2e53@image.png" alt="" width="250" height="auto" />
+
+<blockquote class="note">注意：如果数据格式都正确，界面会提示文件解析成功，否则将会反馈失败文件，您可以将导入失败的问题项修改正确，重新导入。</blockquote>
+
+
+## 6. 导出问题
 
 您可以将issue导出问题列表到excel文件，这将有助于用户导出所需的问题列表，方便查看问题信息。
-在问题管理页面上方的点击`导出问题`，选择导出字段模式，即可生成问题Excel文件。
 
-![image](/docs/user-guide/cooperation/work-lists/image/work-list-09.png)
+-  在问题管理页面上方的点击`导出问题`，您可以筛选出您您需要导出的问题，选择导出字段，点击`导出`按钮，即可生成问题Excel文件。点击下载即可下载您需要的问题列表。
+
+- 您也可以将模板字段保存为常用模板，后续可以直接选择模板，不需要再次勾选导出字段。
 
 
-## 6. 筛选问题
+<img src="https://file.open.hand-china.com/hsop-doc/doc_classify/0/9c37843720084f0cb75d8b7a923610cd@image.png" alt="" width="250" height="auto" />
+
+
+## 7. 筛选问题
 
 所有问题支持多种方式的搜索方式：
 
@@ -86,7 +120,7 @@ weight = 4
     - Q：如何添加自己的常用搜索条件？
     - A：您可以点击`保存筛选`，保存您常用的筛选条件，下次使用可以直接在快速筛选中选择。
 
-## 7. 批量修改
+## 8. 批量修改
 
 您可以勾选您要修改的问题，批量修改问题的属性字段，支持批量修改的字段包含预定义字段和自定义字段。
 
@@ -95,17 +129,11 @@ weight = 4
 3. 选择您要修改的字段，并且输入对应的修改内容；
 4. 点击确定即可修改成功。
 
+<img src="https://file.open.hand-china.com/hsop-image/doc_classify/0/24a14eb1c33a4b718a374de00567bcce@issue01.gif" alt="issue01.gif" width="auto" height="auto" />
+
+
 <blockquote class="note">提示：无法修改的内容会自动跳过。例如：修改故事点时，任务类型的问题，没有此字段会自动跳过</blockquote>
 
-![image](/docs/user-guide/cooperation/work-lists/image/issue01.gif)
-
-## 8. 关注问题项
-
-您可以点击问题项概要旁的星星标记关注问题项，再次点击即可取消关注。
-
-> 关注的问题项可在**工作台**的**我的事项**中查看，并且在**迭代计划**中也可以查看星标问题。
-
-![image](/docs/user-guide/cooperation/work-lists/image/issue-01.png)
 ## 9. 阅读更多
 
 - [创建故事](../user-story)

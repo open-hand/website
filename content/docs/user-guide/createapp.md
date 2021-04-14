@@ -39,7 +39,7 @@ Choerodon目前提供3种项目类型：
 
 3. 输入项目名称、编码，选择项目类型。
 
-    ![image](/docs/user-guide/image/projects-02.png)
+    <img src="https://file.open.hand-china.com/hsop-doc/doc_classify/0/2bfc102748504bf1bc712bcaf72e1aad@image.png" alt="" width="auto" height="auto" />
 
 4. 点击“确定”，完成项目创建。  
 
