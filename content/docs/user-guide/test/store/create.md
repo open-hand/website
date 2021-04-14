@@ -14,33 +14,30 @@ weight = 2
 
 ## 2. 快速创建测试用例
 
-点击测试用例列表下部的`创建用例`按钮可进行测试用例快速创建，单击输入测试用例概要。
+- 点击测试用例列表下部的`创建用例`按钮可进行测试用例快速创建，单击输入测试用例概要。
+<img src="http://file.open.hand-china.com/hsop-doc/doc_classify/0/6cad20348b654ddeba26eb86996671f9/image.png" alt="" width="auto" height="auto" >
 
-![image](/docs/user-guide/test/image/IssueManage/IssueManage-03.png)
-
-快速创建测试用例后，系统会自动打开测试详情页，可对测试用例详情进一步编辑。
+- 快速创建测试用例后，系统会自动打开测试详情页，可对测试用例详情进一步编辑。
 
 ## 3. 详细创建测试用例
 
 点击页面顶端的`创建用例`按钮，进行测试用例详细创建，会弹出创建测试用例详情页面。
-
-![image](/docs/user-guide/test/image/IssueManage/IssueManage-04.png)
+<img src="http://file.open.hand-china.com/hsop-doc/doc_classify/0/a1b9edd9f3e84970943b0a5318356609/image.png" alt="" width="auto" height="auto" >
 
 在创建用例详情页面中填写具体信息，包括：测试用例概要、所在目录、用例描述、附件、测试步骤。其中“* ”为必填内容。
 
-![image](/docs/user-guide/test/image/IssueManage/IssueManage-05.png)
+
+<img src="https://file.open.hand-china.com/hsop-doc/doc_classify/0/3f22f58ec3004bdfadcdb53c6cd88da2@image.png" alt="" width="300" height="auto" />
+
 
 - 概要：测试用例的概要（用户自行填写，上限44字）。
 - 目录：测试用例当前所归属的文件目录，只有最底层的子文件夹可以添加用例。
-- 用例描述：在文本框中对问题进行描述，编辑功能支持加粗、划线、标记链接等复杂样式，可以保留复杂样式的复制粘贴，并可以直接粘贴截屏图片。
-- 附件：下载时直接点击对应的文件即可完成下载（用户可上传多个小于30M的附件）。
+- 优先级：测试用例的优先级，您可以选择高、中、低。
+- 前置条件：说明执行用例需要达到的前置条件，编辑功能支持加粗、划线、标记链接等复杂样式，可以保留复杂样式的复制粘贴，并可以直接粘贴截屏图片。
+- 附件：下载时直接点击对应的文件即可完成下载（用户可上传多个小于30m的附件）。
 - 测试步骤：输入测试用例的测试步骤、测试数据、预期结果。（测试步骤和预期结果是必填项。）
 
 填写完测试用例信息后，点击`创建`完成。
-
-<blockquote class="note">
-         可以使用tab键快速切换步骤单元格。
-      </blockquote>
 
 ## 4. 阅读更多
 

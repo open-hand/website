@@ -14,7 +14,7 @@ weight = 3
 
 模块是项目的一部分，通过模块可以将项目的问题分成比史诗更小的一部分，但是模块是独立于史诗存在的，可以跨域多个版本和史诗，每一个模块都可以划分对应的负责人，在配置后，可以将项目中的问题归类到对应的模块中，比如将一个开发项目分为前端模块和后端模块
 
-![image](/docs/user-guide/settings/image/component-01.png)
+<img src="http://file.open.hand-china.com/hsop-doc/doc_classify/0/3223ccf5bedd4f238cfa142bfb9141ed/image.png" alt="" width="auto" height="auto" >
 
 模块管理下可以看到项目下所有的模块展示列表，用户可在右上角自行配置勾选列表所要显示的字段，列表展示字段如下：
 
@@ -22,18 +22,17 @@ weight = 3
 - 问题： 当前模块所关联的问题数量
 - 负责人： 默认负责人姓名
 - 模块描述： 模块的描述  
+- 模块顺序：问题项选择模块时，选项的显示顺序。
 - 默认经办人： 系统默认初始化一个经办人——即模块负责人
 
 ### 2.1 创建模块
 
-点击导航栏上方的`创建模块`按钮，右侧会滑出创建模块的页面，输入模块名称（必输）、模块描述（可选）、默认经办人（必输），点击确定即可创建一个新的模块。
-
-![image](/docs/user-guide/settings/image/component-02.png)
+- 点击导航栏上方的`创建模块`按钮，右侧会滑出创建模块的页面，输入模块名称（必输）、模块描述（可选）、默认经办人（必输），点击确定即可创建一个新的模块。
+<img src="http://file.open.hand-china.com/hsop-doc/doc_classify/0/dbf90391a6404175806a467db9ddd20d/image.png" alt="" width="auto" height="auto" >
 
 ### 2.2 编辑和删除模块
 
-点击`模块名称`可以编辑该模块，点击![image](https://minio.choerodon.com.cn/knowledgebase-service/file_b53c0c1755864d7f9e3f7bb1f88b37fc_blob.png)标识，可以选择删除该模块。
-
+- 点击`模块名称`可以编辑该模块，点击<img src="http://file.open.hand-china.com/hsop-doc/doc_classify/0/4c6c14a7d4b641578a601cf41710f9e1/image.png" alt="" width="auto" height="auto" >标识，可以选择删除该模块。
 删除模块会考虑两种情况：
 
 - 如果模块未关联任何问题，则可以选择直接删除
@@ -47,15 +46,14 @@ weight = 3
 
 > 目前的快速筛选只应用在问题（issue）中，且只会在所有问题中显示。
 
-![image](/docs/user-guide/settings/image/component-03.png)
+<img src="http://file.open.hand-china.com/hsop-doc/doc_classify/0/773b68a2dbb245748d0b18368386d651/image.png" alt="" width="auto" height="auto" >
 
 ### 3.1 创建快速筛选
 
 1. 点击导航栏上方的`创建快速筛选`按钮
 
 2. 在弹出的创建框中输入名称（必输）、筛选条件（包括属性、关系、值，可支持多个条件共同搜索）、关系（若有多个筛选条件，需要添加此关系）、描述（可选项）
-
-    ![image](/docs/user-guide/settings/image/component-04.png)
+<img src="http://file.open.hand-china.com/hsop-doc/doc_classify/0/5fb486a50a164d4cbaf0b3f1ffdab1ae/image.png" alt="" width="auto" height="auto" >
 
     目前支持的快速筛选属性有：
 
@@ -83,7 +81,7 @@ weight = 3
 
 ### 3.2 修改和删除快速筛选
 
-点击筛选名称可以编辑该筛选，点击![image](https://minio.choerodon.com.cn/knowledgebase-service/file_b53c0c1755864d7f9e3f7bb1f88b37fc_blob.png)标识，可以选择删除该筛选。
+点击筛选名称可以编辑该筛选，点击![image](http://file.open.hand-china.com/hsop-doc/doc_classify/0/63827a69d8654b139b1fd12b7d90b4ff/file_b53c0c1755864d7f9e3f7bb1f88b37fc_blob.png)标识，可以选择删除该筛选。
 
 - 选择修改，在弹出的修改快速筛选弹窗中可以对名称、筛选条件、关系及描述进行修改。
 - 选择删除，删除后将无法使用该快速筛选。
@@ -95,20 +93,22 @@ weight = 3
 
 系统内置链接包含: 阻塞(两个问题互斥)、关联、复制，除此之外用户还可以设置功能自定义链接类型。
 
-![image](/docs/user-guide/settings/image/component-06.png)
+<img src="http://file.open.hand-china.com/hsop-doc/doc_classify/0/0f3c50fd90a94f919359cb07a198de27/image.png" alt="" width="auto" height="auto" >
 
 ### 4.1 创建链接
 
 点击导航栏上方的`创建链接`，会跳出创建页面，填写名称、链出描述和链入描述。
 
-![image](/docs/user-guide/settings/image/component-07.png)
+<img src="http://file.open.hand-china.com/hsop-doc/doc_classify/0/31fb1bc602bf43098e7087e6c008f80d/image.png" alt="" width="auto" height="auto" >
 
 ### 4.2 修改和删除链接
 
-点击链接名称可以编辑连接，点击![image](https://minio.choerodon.com.cn/knowledgebase-service/file_b53c0c1755864d7f9e3f7bb1f88b37fc_blob.png)标识，可以选择删除链接。
+- 点击链接名称可以编辑连接，点击<img src="http://file.open.hand-china.com/hsop-doc/doc_classify/0/6fbf4f829e7949c6a75593803926fad6/image.png" alt="" width="auto" height="auto" >标识，可以选择删除链接。
 
 - 点击名称，可以在弹出的修改问题连接框中修改链接名称、链出描述、链入描述。
 - 点击删除按钮后，需选择是否关联到其他连接， 若选择不关联到别的连接，则删除后相关联的任务都会消失。
+
+
 
 ## 5. 阅读更多 
 
