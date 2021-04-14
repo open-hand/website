@@ -1,6 +1,6 @@
 +++
 title = "webhook日志"
-weight = 80
+weight = 1
 description = "查看系统发送webhook的列表记录及状态"
 +++
 

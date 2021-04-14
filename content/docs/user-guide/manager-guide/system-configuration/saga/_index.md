@@ -1,7 +1,7 @@
 +++
 title = "事务管理"
 description = "全局事务用于实现分布式环境下高性能事务一致性"
-weight = 5
+weight = 3
 +++
 
 # 使用 Choerodon 进行事务管理

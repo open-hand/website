@@ -1,6 +1,6 @@
 +++
 title = "安全"
-weight = 100
+weight = 1
 description = "对系统外的密码策略自定义设置"
 +++
 
