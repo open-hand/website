@@ -1,6 +1,6 @@
 +++
 title = "通知配置"
-weight = 120
+weight = 4
 description = "对平台所使用的发件邮箱服务器和短信服务器信息进行管理 "
 +++
 

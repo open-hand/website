@@ -1,6 +1,6 @@
 +++
 title = "任务管理"
-weight = 60
+weight = 4
 description = "用于对平台中任务的管理"
 +++
 
