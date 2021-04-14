@@ -298,23 +298,23 @@ helm repo update
   
     ```
     UP
-    ```    
- 
+    ```
+
 ## 部署 choerodon message
- 
+
  - 若需了解项目详情及各项参数含义，请移步 [open-hand/choerodon-message](https://github.com/open-hand/choerodon-message)。
- 
+
  - 编写参数配置文件 `choerodon-message.yaml`
- 
-     ```yaml
-     preJob:
-       preInitDB:
-         datasource:
-           url: jdbc:mysql://c7n-mysql.c7n-system:3306/?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
-           username: choerodon
-           password: password
-     env:
-       open:
+
+    ```yaml
+    preJob:
+      preInitDB:
+        datasource:
+          url: jdbc:mysql://c7n-mysql.c7n-system:3306/?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
+          username: choerodon
+          password: password
+    env:
+      open:
          EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://choerodon-register.c7n-system:8000/eureka/
          HZERO_WEBSOCKET_OAUTHURL: http://choerodon-oauth/oauth/api/user
          SPRING_REDIS_HOST: c7n-redis.c7n-system
@@ -324,10 +324,10 @@ helm repo update
          SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system:3306/hzero_message?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
          SPRING_DATASOURCE_USERNAME: choerodon
          SPRING_DATASOURCE_PASSWORD: password
-     ingress:
-       enabled: true
-       host: notify.example.choerodon.io
-     ```
+    ingress:
+      enabled: true
+      host: notify.example.choerodon.io
+    ```
  
  - 部署服务
      ```

@@ -129,3 +129,6 @@ helm repo update
 
 ### 默认登录用户
 安装完成后，默认的管理员用户名密码为 [admin/Admin@123!]，可使用此用户密码登陆系统。安装完成后建议立即在个人中心修改默认密码。
+
+### 刷新组织角色权限
+使用admin用户token，调用`https://api.example.com./iam/choerodon/v1/permission/role_permission_async`,PUT方式。
