@@ -146,8 +146,8 @@ helm repo update
         CHOERODON_GATEWAY_URL: http://app.example.choerodon.io
     choerodonTestAgent:
       image:
-        repository: registry.hand-china.com/hzero-c7ncd/choerodon-test-agent
-        tag: 0.25.0-alpha.1
+        repository: registry.cn-shanghai.aliyuncs.com/c7n/choerodon-test-agent
+        tag: 0.25.0
         pullPolicy: IfNotPresent
     ```
 
