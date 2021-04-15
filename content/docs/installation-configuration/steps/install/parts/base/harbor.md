@@ -42,6 +42,8 @@ helm repo update
           storageClass: nfs-provisioner
         redis:
           storageClass: nfs-provisioner
+        trivy:
+          storageClass: nfs-provisioner
     chartmuseum:
       enabled: false
     clair:
@@ -57,7 +59,7 @@ helm repo update
     helm upgrade --install harbor c7n/harbor \
         -f harbor.yaml \
         --create-namespace \
-        --version 1.2.3 \
+        --version 1.5.4 \
         --namespace c7n-system
     ```
 

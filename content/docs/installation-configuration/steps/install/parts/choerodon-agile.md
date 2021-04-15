@@ -20,6 +20,7 @@ helm repo update
 ## 创建数据库
 
 - 编写参数配置文件 `create-c7nagile-db.yaml`
+
     ```
     env:
       MYSQL_HOST: c7n-mysql.c7n-system.svc
@@ -92,7 +93,7 @@ helm repo update
     helm upgrade --install agile-service c7n/agile-service \
       -f agile-service.yaml \
       --create-namespace \
-      --version 0.24.1 \
+      --version 0.25.1 \
       --namespace c7n-system
     ```
 
@@ -111,6 +112,7 @@ helm repo update
     ```
 
 ## 部署 test manager service
+
 - 若需了解项目详情及各项参数含义，请移步 [open-hand/test-manager-service](https://github.com/open-hand/test-manager-service)。
 
 - 编写参数配置文件 `test-manager-service.yaml`
@@ -141,6 +143,12 @@ helm repo update
         SPRING_DATASOURCE_PASSWORD: password
         CHOERODON_CLEANPERMISSION: false
         SERVICES_ATTACHMENT_URL: http://minio.example.choerodon.io
+        CHOERODON_GATEWAY_URL: http://app.example.choerodon.io
+    choerodonTestAgent:
+      image:
+        repository: registry.hand-china.com/hzero-c7ncd/choerodon-test-agent
+        tag: 0.25.0-alpha.1
+        pullPolicy: IfNotPresent
     ```
 
 - 部署服务
@@ -149,7 +157,7 @@ helm repo update
     helm upgrade --install test-manager-service c7n/test-manager-service \
       -f test-manager-service.yaml \
       --create-namespace \
-      --version 0.24.1 \
+      --version 0.25.0 \
       --namespace c7n-system
     ```
 
@@ -175,7 +183,7 @@ helm repo update
 
     ```
     helm upgrade --install elasticsearch-kb c7n/elasticsearch-kb \
-      --version 0.24.0 \
+      --version 0.25.0 \
       --create-namespace \
       --namespace c7n-system
     ```
@@ -220,7 +228,7 @@ helm repo update
     helm upgrade --install knowledgebase-service c7n/knowledgebase-service \
       -f knowledgebase-service.yaml \
       --create-namespace \
-      --version 0.24.0 \
+      --version 0.25.0 \
       --namespace c7n-system
     ```
 

@@ -28,11 +28,11 @@ weight = 5
 | Minio                    | 对象存储服务               | RELEASE.2020-01-03T19-12-21Z | 5.0.5     |
 | Redis                    | 缓存数据库                 | 4.0.11                       | 0.2.3     |
 | Mysql                    | 数据库                    | 5.7.23                       | 0.1.2     |
-| Harbor                   | 容器的镜像库               | v1.9.3                       | 1.2.3     |
+| Harbor                   | 容器的镜像库               | v2.1.4                       | 1.5.4     |
 | Nexus                    | 制品库                    | 3.25.1                       | 3.0.0     |
 | Gitlab                   | 代码托管                  | 11.11.7-ce.0                 | 0.5.3     |
 | Gitlab-Runner            | CI/CD 运行环境            | v11.11.4                     | 0.2.4     |
-| elasticsearch-kb         | 知识ES服务                | 7.9.2-elasticsearch-kb         | 0.24.0    |
+| elasticsearch-kb         | 知识ES服务                | 7.9.2-elasticsearch-kb       | 0.25.0    |
 
 ## Choerodon服务列表
 
@@ -40,24 +40,24 @@ weight = 5
 
 | 组件                  | 描述           | 版本   |
 | --------------------- | -------------- | ------ |
-| choerodon-register    | 注册服务       | 0.24.0 |
-| choerodon-admin       | 平台治理服务    | 0.24.0 |
-| choerodon-iam         | IAM服务       | 0.24.1 |
-| choerodon-asgard      | 事务服务       | 0.24.0 |
-| choerodon-swagger     | swagger服务   | 0.24.0 |
-| choerodon-gateway     | 网关服务       | 0.24.0 |
-| choerodon-oauth       | 认证服务       | 0.24.1 |
-| choerodon-platform    | 平台服务       | 0.24.0 |
-| choerodon-monitor     | 监控审计服务    | 0.24.0 |
-| choerodon-file        | 文件服务       | 0.24.0 |
-| choerodon-message     | 消息服务       | 0.24.1 |
-| devops-service        | Devops 服务    | 0.24.8 |
-| gitlab-servcie        | 平台基础服务    | 0.24.0 |
-| workflow-service      | 工作流服务      | 0.24.0 |
-| agile-service         | 敏捷管理        | 0.24.1 |
-| test-manager-service  | 测试管理服务     | 0.24.1 |
-| knowledgebase-service | 知识服务        | 0.24.0 |
-| prod-repo-service     | 制品库服务      | 0.24.1 |
-| code-repo-service     | 代码管理服务     | 0.24.1 |
-| choerodon-front       | Choerodon 前端  | 0.24.0 |
-| choerodon-front-hzero | hzero 前端      | 0.24.0 |
+| choerodon-register    | 注册服务       | 0.25.1 |
+| choerodon-admin       | 平台治理服务    | 0.25.0 |
+| choerodon-iam         | IAM服务       | 0.25.1 |
+| choerodon-asgard      | 事务服务       | 0.25.0 |
+| choerodon-swagger     | swagger服务   | 0.25.0 |
+| choerodon-gateway     | 网关服务       | 0.25.1 |
+| choerodon-oauth       | 认证服务       | 0.25.0 |
+| choerodon-platform    | 平台服务       | 0.25.0 |
+| choerodon-monitor     | 监控审计服务    | 0.25.0 |
+| choerodon-file        | 文件服务       | 0.25.0 |
+| choerodon-message     | 消息服务       | 0.25.0 |
+| devops-service        | Devops 服务    | 0.25.2 |
+| gitlab-servcie        | 平台基础服务    | 0.25.0 |
+| workflow-service      | 工作流服务      | 0.25.1 |
+| agile-service         | 敏捷管理        | 0.25.1 |
+| test-manager-service  | 测试管理服务     | 0.25.0 |
+| knowledgebase-service | 知识服务        | 0.25.0 |
+| prod-repo-service     | 制品库服务      | 0.25.1 |
+| code-repo-service     | 代码管理服务     | 0.25.0 |
+| choerodon-front       | Choerodon 前端  | 0.25.0 |
+| choerodon-front-hzero | hzero 前端      | 0.25.0 |

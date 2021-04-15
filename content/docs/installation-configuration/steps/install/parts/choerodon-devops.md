@@ -52,12 +52,35 @@ helm repo update
 - 编写参数配置文件 `workflow-service.yaml`
 
     ```yaml
+    preJob:
+      preInitDB:
+        datasource:
+          url: jdbc:mysql://c7n-mysql.c7n-system:3306/?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
+          username: choerodon
+          password: password
+        datasources:
+          # 多数据源初始化初始化菜单数据  
+          # 支持框架数据和devops进行分库 指定菜单初始化地址
+          platform:
+             url: jdbc:mysql://c7n-mysql.c7n-system:3306/?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
+             username: choerodon
+             password: password
+             driver: com.mysql.jdbc.Driver
+          message:
+             url: jdbc:mysql://c7n-mysql.c7n-system:3306/?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
+             username: choerodon
+             password: password
+             driver: com.mysql.jdbc.Driver
     env:
       open:
         EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://choerodon-register.c7n-system:8000/eureka/
         SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system:3306/workflow_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
         SPRING_DATASOURCE_USERNAME: choerodon
         SPRING_DATASOURCE_PASSWORD: password
+        SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
+        SPRING_REDIS_PORT: 6379
+        SPRING_REDIS_DATABASE: 10
+        HWKF_WEB_DOMAIN_NAME: http://app.example.choerodon.io
     ```
 
 - 部署服务
@@ -66,7 +89,7 @@ helm repo update
     helm upgrade --install workflow-service c7n/workflow-service \
         -f workflow-service.yaml \
         --create-namespace \
-        --version 0.24.0 \
+        --version 0.25.1 \
         --namespace c7n-system
     ```
 
@@ -103,7 +126,7 @@ helm repo update
     helm upgrade --install gitlab-service c7n/gitlab-service \
         -f gitlab-service.yaml \
         --create-namespace \
-        --version 0.24.0 \
+        --version 0.25.0 \
         --namespace c7n-system
     ```
 
@@ -141,6 +164,11 @@ helm repo update
              username: choerodon
              password: password
              driver: com.mysql.jdbc.Driver
+          message:
+             url: jdbc:mysql://c7n-mysql.c7n-system:3306/?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
+             username: choerodon
+             password: password
+             driver: com.mysql.jdbc.Driver
     env:
       open:
         SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
@@ -160,7 +188,7 @@ helm repo update
         SERVICES_SONARQUBE_PASSWORD: admin
         SERVICES_SONARQUBE_USERNAME: admin
         SERVICES_GATEWAY_URL: http://api.example.choerodon.io
-        AGENT_VERSION: 0.24.3
+        AGENT_VERSION: 0.25.1
         AGENT_SERVICEURL: ws://devops.example.choerodon.io/websocket
         AGENT_REPOURL: https://openchart.choerodon.com.cn/choerodon/c7n/
         AGENT_CERTMANAGERURL: https://openchart.choerodon.com.cn/choerodon/c7n/
@@ -175,7 +203,7 @@ helm repo update
     ```
     helm upgrade --install devops-service c7n/devops-service \
         -f devops-service.yaml \
-        --version 0.24.8 \
+        --version 0.25.2 \
         --namespace c7n-system
     ```
 

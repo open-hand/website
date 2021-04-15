@@ -87,7 +87,7 @@ helm repo update
     helm upgrade --install code-repo-service c7n/code-repo-service \
         -f code-repo-service.yaml \
         --create-namespace \
-        --version 0.24.1 \
+        --version 0.25.0 \
         --namespace c7n-system
     ```
 
@@ -130,6 +130,7 @@ helm repo update
         HARBOR_BASE_URL: https://registry.example.choerodon.io
         HARBOR_PASSWORD: Harbor12345
         HARBOR_USER_NAME: admin
+        HARBOR_API_VERSION: v2
         SPRING_DATASOURCE_PASSWORD: password
         SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system:3306/hrds_prod_repo?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
         SPRING_DATASOURCE_USERNAME: choerodon
@@ -157,6 +158,7 @@ helm repo update
         # 网关路由
         SERVICE_ROUTE: /rdupm
     ```
+
 - 其它配置 <br/>
     上述变量配置中：NEXUS_DEFAULT_ENABLE_ANONYMOUS_FLAG(是否启用仓库级的匿名访问控制)、NEXUS_DEFAULT_ANONYMOUS_USER、NEXUS_DEFAULT_ANONYMOUS_ROLE这几个变量的配置。
   当NEXUS_DEFAULT_ENABLE_ANONYMOUS_FLAG配置为1（启用时），还需要做以下配置，若配置为0（不启用），可以不做以下配置
@@ -172,7 +174,7 @@ helm repo update
     ![image](/docs/installation-configuration/steps/install/parts/image/user.jpg) <br/>
     <br/>
     ![image](/docs/installation-configuration/steps/install/parts/image/anonymous.png)
-    
+
     - 如上在nexus服务配置后，上述变量配置值配置为：
       ```
       #系统默认nexus服务，是否启用仓库级的匿名访问控制。 1:启用  0:不启用
@@ -182,13 +184,14 @@ helm repo update
       #系统默认nexus服务，启用仓库级的匿名访问控制时需要配置该值(即enableAnonymousFlag==1时)。 nexus服务开启全局匿名访问时，配置的用户对应的角色
       NEXUS_DEFAULT_ANONYMOUS_ROLE: test-anonymous
       ```
+
 - 部署服务
 
     ```
     helm upgrade --install prod-repo-service c7n/prod-repo-service \
         -f prod-repo-service.yaml \
         --create-namespace \
-        --version 0.24.1 \
+        --version 0.25.1 \
         --namespace c7n-system
     ```
 

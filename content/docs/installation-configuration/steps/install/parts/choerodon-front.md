@@ -36,7 +36,7 @@ helm repo update
     helm upgrade --install choerodon-front-hzero c7n/choerodon-front-hzero \
         -f choerodon-front-hzero.yaml \
         --create-namespace \
-        --version 0.24.0 \
+        --version 0.25.0 \
         --namespace c7n-system
     ```
 
@@ -85,7 +85,7 @@ helm repo update
     helm upgrade --install choerodon-front c7n/choerodon-front \
         -f choerodon-front.yaml \
         --create-namespace \
-        --version 0.24.0 \
+        --version 0.25.0 \
         --namespace c7n-system
     ```
 

@@ -19,7 +19,7 @@ weight = 18
 如果您的主机没有配置kubernetes连接信息，则您需要到k8s服器中的master执行安装，如果您的主机已经配置了kubernetes的连接信息，并且可以正常执行`kubectl`命令，您可以在您的主机上执行安装，在安装之前您需要下载安装工具，目前支持Linux及MacOS:
 
 ```bash
-curl -fsSL -o get_c7nctl.sh https://gitee.com/open-hand/c7nctl/raw/0.24/scripts/get-c7nctl.sh
+curl -fsSL -o get_c7nctl.sh https://gitee.com/open-hand/c7nctl/raw/0.25/scripts/get-c7nctl.sh
 chmod 700 get_c7nctl.sh
 ./get_c7nctl.sh
 ```
@@ -33,7 +33,7 @@ vim config.yml
 粘贴以下内容，并将域名修改为你自己的域名
 
 ```yml
-version: 0.24
+version: 0.25
 metadata:
   name: resource-choerodon
   namespace: c7n-system  # 指定命名空间安装choerodon
@@ -71,12 +71,10 @@ spec:
 
 - 如果安装失败，根据提示操作后，再次执行命令即可
 
-- 如果安装api-gateway失败请重新执行一次安装命令
-
 - 执行部署命令，<b style="color:red">安装过程中如果遇到问题，请先查看本文最后一节关于常见问题的介绍</b>，如果未能解决你的问题，可以到[论坛](//openforum.hand-china.com)中提问。
 
 ```bash
-./c7nctl install c7n -c config.yml --version=0.24
+./c7nctl install c7n -c config.yml --version=0.25
 ```
 
 - 参数解释

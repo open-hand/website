@@ -19,7 +19,7 @@ Gitlab Runner，用于代码提交后自动进行代码测试、构建服务的�
 如你使用一键部署安装的猪齿鱼，在同一集群中可以使用下面命令一键部署Gitlab-Runner。
 
 ```bash
-./c7nctl install runner -c config.yml --version 0.24
+./c7nctl install runner -c config.yml --version 0.25
 ```
 
 ## 方式二：手动安装Runner

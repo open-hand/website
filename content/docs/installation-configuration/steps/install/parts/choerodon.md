@@ -79,7 +79,7 @@ helm repo update
     helm upgrade --install choerodon-register c7n/choerodon-register \
         -f choerodon-register.yaml \
         --create-namespace \
-        --version 0.24.0 \
+        --version 0.25.1 \
         --namespace c7n-system
     ```
 
@@ -130,7 +130,7 @@ helm repo update
     helm upgrade --install choerodon-platform c7n/choerodon-platform \
         -f choerodon-platform.yaml \
         --create-namespace \
-        --version 0.24.0 \
+        --version 0.25.0 \
         --namespace c7n-system
     ```
 
@@ -146,8 +146,6 @@ helm repo update
     ```text
     UP
     ```
-    
-
 
 ## 部署 choerodon admin
 
@@ -183,7 +181,7 @@ helm repo update
     helm upgrade --install choerodon-admin c7n/choerodon-admin \
         -f choerodon-admin.yaml \
         --create-namespace \
-        --version 0.24.0 \
+        --version 0.25.0 \
         --namespace c7n-system
     ```
 
@@ -234,7 +232,7 @@ helm repo update
     helm upgrade --install choerodon-iam c7n/choerodon-iam \
         -f choerodon-iam.yaml \
         --create-namespace \
-        --version 0.24.1\
+        --version 0.25.2 \
         --namespace c7n-system
     ```
 
@@ -283,7 +281,7 @@ helm repo update
     helm upgrade --install choerodon-asgard c7n/choerodon-asgard \
         -f choerodon-asgard.yaml \
         --create-namespace \
-        --version 0.24.0 \
+        --version 0.25.0 \
         --namespace c7n-system
     ```
 
@@ -330,13 +328,14 @@ helm repo update
     ```
  
  - 部署服务
-     ```
-     helm upgrade --install choerodon-message c7n/choerodon-message \
-         -f choerodon-message.yaml \
-         --create-namespace \
-         --version 0.24.0 \
-         --namespace c7n-system
-     ```
+
+    ```
+    helm upgrade --install choerodon-message c7n/choerodon-message \
+        -f choerodon-message.yaml \
+        --create-namespace \
+        --version 0.25.0 \
+        --namespace c7n-system
+    ```
  
  - 验证部署
    - 验证命令
@@ -376,7 +375,7 @@ helm repo update
     helm upgrade --install choerodon-swagger c7n/choerodon-swagger \
         -f choerodon-swagger.yaml \
         --create-namespace \
-        --version 0.24.0 \
+        --version 0.25.0 \
         --namespace c7n-system
     ```
 
@@ -421,7 +420,7 @@ helm repo update
     helm upgrade --install choerodon-gateway c7n/choerodon-gateway \
         -f choerodon-gateway.yaml \
         --create-namespace \
-        --version 0.24.0 \
+        --version 0.25.1 \
         --namespace c7n-system
     ```
 
@@ -469,7 +468,7 @@ helm repo update
     helm upgrade --install choerodon-oauth c7n/choerodon-oauth \
         -f choerodon-oauth.yaml \
         --create-namespace \
-        --version 0.24.1 \
+        --version 0.25.0 \
         --namespace c7n-system
     ```
 
@@ -517,7 +516,7 @@ helm repo update
     helm upgrade --install choerodon-monitor c7n/choerodon-monitor \
         -f choerodon-monitor.yaml \
         --create-namespace \
-        --version 0.24.0 \
+        --version 0.25.0 \
         --namespace c7n-system
     ```
 
@@ -572,7 +571,7 @@ helm repo update
     helm upgrade --install choerodon-file c7n/choerodon-file \
         -f choerodon-file.yaml \
         --create-namespace \
-        --version 0.24.0 \
+        --version 0.25.0 \
         --namespace c7n-system
     ```
 
