@@ -143,7 +143,7 @@ helm repo update
         SPRING_DATASOURCE_PASSWORD: password
         CHOERODON_CLEANPERMISSION: false
         SERVICES_ATTACHMENT_URL: http://minio.example.choerodon.io
-        CHOERODON_GATEWAY_URL: http://app.example.choerodon.io
+        SERVICES_FRONT_URL: http://app.example.choerodon.io
     ```
 
 - 部署服务
