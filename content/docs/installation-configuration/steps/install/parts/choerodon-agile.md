@@ -144,11 +144,6 @@ helm repo update
         CHOERODON_CLEANPERMISSION: false
         SERVICES_ATTACHMENT_URL: http://minio.example.choerodon.io
         CHOERODON_GATEWAY_URL: http://app.example.choerodon.io
-    choerodonTestAgent:
-      image:
-        repository: registry.cn-shanghai.aliyuncs.com/c7n/choerodon-test-agent
-        tag: 0.25.0
-        pullPolicy: IfNotPresent
     ```
 
 - 部署服务
