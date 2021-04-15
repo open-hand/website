@@ -1,4 +1,4 @@
-baseurl = "https://choerodon.io/"
+baseurl = "https://v0-24.choerodon.io/"
 title = "猪齿鱼Choerodon | 开源全价值链多云敏捷协作平台"
 theme = "choerodon-document-theme"
 # themesDir = "../.."
@@ -70,31 +70,32 @@ paginate = 5
         parent = "source"
 
 [[languages.en.menu.main]]
-    name = "v0.24"
+    name = "v0.25"
     url  = "/en/"
     weight = 10
     identifier = "en-version"
     pre = "<i class='iconfont'>&#xe600;</i>"
     [[languages.en.menu.main]]
-        name = "v0.21"
-        url  = "https://v0-21.choerodon.io/en/"
-        weight = 12
-        parent = "en-version"
-    [[languages.en.menu.main]]
         name = "v0.22"
         url  = "https://v0-22.choerodon.io/en/"
-        weight = 13
+        weight = 12
         parent = "en-version"
     [[languages.en.menu.main]]
         name = "v0.23"
         url  = "https://v0-23.choerodon.io/en/"
-        weight = 14
+        weight = 13
         parent = "en-version"
     [[languages.en.menu.main]]
         name = "v0.24"
         url  = "https://v0-24.choerodon.io/en/"
+        weight = 14
+        parent = "en-version"
+    [[languages.en.menu.main]]
+        name = "v0.25"
+        url  = "https://v0-25.choerodon.io/en/"
         weight = 15
         parent = "en-version"
+
 [[languages.zh.menu.main]]
     name = "文档"
     url  = "/zh/docs/"
@@ -145,29 +146,29 @@ paginate = 5
         parent = "zh-source"
 
 [[languages.zh.menu.main]]
-    name = "v0.24"
+    name = "v0.25"
     url  = "/zh/"
     weight = 24
     identifier = "zh-version"
     pre = "<i class='iconfont'>&#xe600;</i>"
     [[languages.zh.menu.main]]
-        name = "v0.21"
-        url  = "https://v0-21.choerodon.io/zh/"
-        weight = 26
-        parent = "zh-version"
-    [[languages.zh.menu.main]]
         name = "v0.22"
         url  = "https://v0-22.choerodon.io/zh/"
-        weight = 27
+        weight = 26
         parent = "zh-version"
     [[languages.zh.menu.main]]
         name = "v0.23"
         url  = "https://v0-23.choerodon.io/zh/"
-        weight = 28
+        weight = 27
         parent = "zh-version"
     [[languages.zh.menu.main]]
         name = "v0.24"
         url  = "https://v0-24.choerodon.io/zh/"
+        weight = 28
+        parent = "zh-version"
+    [[languages.zh.menu.main]]
+        name = "v0.25"
+        url  = "https://v0-25.choerodon.io/zh/"
         weight = 29
         parent = "zh-version"
 
