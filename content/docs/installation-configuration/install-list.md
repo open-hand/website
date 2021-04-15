@@ -42,7 +42,7 @@ weight = 5
 | --------- | --------------------- | -------------- | ------ |
 | 框架服务    | choerodon-register    | 注册服务        | 0.25.1 |
 | 框架服务    | choerodon-admin       | 平台治理服务     | 0.25.0 |
-| 框架服务    | choerodon-iam         | IAM服务        | 0.25.2 |
+| 框架服务    | choerodon-iam         | IAM服务        | 0.25.3 |
 | 框架服务    | choerodon-asgard      | 事务服务        | 0.25.0 |
 | 框架服务    | choerodon-swagger     | swagger服务    | 0.25.0 |
 | 框架服务    | choerodon-gateway     | 网关服务        | 0.25.1 |
