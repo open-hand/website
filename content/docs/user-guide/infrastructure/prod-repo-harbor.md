@@ -44,25 +44,48 @@ weight = 1
     1. 为当前用户创建制品库账号，登录名为猪齿鱼登录名，生成默认随机密码（个人信息>个人设置>制品库设置TAB可查看）
     2. 默认分配最高级权限（项目管理员角色，后续不可删除也不可更新）。
     
-![image](/docs/user-guide/infrastructure/image/prod-repo/createHarborRepo01.png)
 
-## 4. 修改镜像仓库
+<img src="https://file.open.hand-china.com/hsop-image/doc_classify/0/e0c7694f2dce488cade708718670bc53/createHarborRepo01.png" alt="createHarborRepo01.png" width="auto" height="auto" />
+
+## 4. 创建自定义镜像仓库
+1. 点击Choerodon平台顶部“项目”导航，进入项目列表；
+2. 点击项目名称进入项目，点击菜单“基础>制品库管理”，进入制品库管理页面；
+3. 点击“创建制品库”按钮，会弹出“创建制品库”；
+4. 选择制品库类型为“Docker”；
+5. 选择仓库来源为“自定义仓库”；
+    - 填写自定义仓库信息：
+        1. 仓库名称：自定义仓库名称；
+        2. 镜像地址：自定义仓库镜像地址；
+        3. 登录名：自定义仓库用户名；
+        4. 密码：自定义仓库用户密码；
+        5. 邮箱：自定义仓库用户邮箱；
+        6. 描述：仓库描述；
+        7. 是否共享：共享仓库一般用作取代默认镜像仓库（项目下唯一），即新建的应用服务会默认关联到此共享仓库，已关联到默认仓库的应用服务也会改到该仓库下，适用于项目下已有常用的镜像仓库，且无需再次新建；普通的自定义仓库适用于某些特定的应用服务需要关联已有的镜像仓库
+
+6. 点击测试连接，提示成功，表示成功连接上自定义仓库；提示失败，表示自定义仓库信息填写错误
+7. 连接测试成功后，点击确定即可创建自定义仓库
+<img src="https://file.open.hand-china.com/hsop-doc/doc_classify/0/b48a8b544a384eaa9006239ef1107b7a@image.png" alt="" width="auto" height="auto" />
+
+
+## 5. 修改镜像仓库
 
 1. 点击Choerodon平台顶部“项目”导航，进入项目列表
 2. 点击项目名称进入项目，点击菜单“基础>制品库管理”，进入制品库管理页面
 3. 点击制品库右侧的“三个点”按钮，会弹出三个按钮
 4. 点击"修改配置"，弹出窗口，输入信息即可
 
-![image](/docs/user-guide/infrastructure/image/prod-repo/updateHarborRepo01.png)
 
-## 5. 删除镜像仓库
+<img src="https://file.open.hand-china.com/hsop-image/doc_classify/0/643cbf33712b42309970096fef4e71d3/updateHarborRepo01.png" alt="updateHarborRepo01.png" width="auto" height="auto" />
+
+
+## 6. 删除镜像仓库
 
 1. 点击Choerodon平台顶部“项目”导航，进入项目列表
 2. 点击项目名称进入项目，点击菜单“基础>制品库管理”，进入制品库管理页面
 3. 点击制品库右侧的“三个点”按钮，会弹出三个按钮
 4. 点击"删除"按钮。只有镜像数为0时，才可以删除镜像仓库
 
-## 6. 查看镜像仓库详情
+## 7. 查看镜像仓库详情
 
 1. 点击Choerodon平台顶部“项目”导航，进入项目列表
 2. 点击项目名称进入项目，点击菜单“基础>制品库管理”，进入制品库管理页面
@@ -73,9 +96,11 @@ weight = 1
     - 部署安全：自动扫描镜像、阻止潜在漏洞镜像
     - CVE白名单：漏洞编号
 
-![image](/docs/user-guide/infrastructure/image/prod-repo/harborDetail01.png)
 
-## 7. 镜像列表管理
+<img src="https://file.open.hand-china.com/hsop-image/doc_classify/0/a69de6fa99964ef7bf34e7a629fa046b/harborDetail01.png" alt="harborDetail01.png" width="auto" height="auto" />
+
+
+## 8. 镜像列表管理
 
 1. 点击Choerodon平台顶部“项目”导航，进入项目列表
 2. 点击项目名称进入项目，点击菜单“基础>制品库管理”，进入制品库管理页面
@@ -91,28 +116,36 @@ weight = 1
 6. 点击“镜像描述”可以修改描述信息
 7. 点击“删除”按钮可以删除镜像，以及该镜像的所有版本
 
-![image](/docs/user-guide/infrastructure/image/prod-repo/harborImage.png)
 
-## 8. 镜像版本管理
+<img src="https://file.open.hand-china.com/hsop-image/doc_classify/0/50b4ce0d755449f2819ced639575d044/harborImage.png" alt="harborImage.png" width="auto" height="auto" />
+
+
+## 9. 镜像版本管理
 
 1. 点击Choerodon平台顶部“项目”导航，进入项目列表
 2. 点击项目名称进入项目，点击菜单“基础>制品库管理”，进入制品库管理页面
 3. 点击镜像仓库名称，进入详情页
 4. 点击"镜像列表"TAB
 5. 点击"镜像名称"可以看到镜像版本详情
-    - 版本号
-    - 大小
-    - Docker版本
-    - OS/ARCH
     - 摘要
-    - 推送人
+    - 扫描状态
+    - 安全扫描结果
+	- 大小
+    - OS/ARCH
     - 最新推送时间
-    - 拉取时间
-6. 点击镜像版本的“更多符号”，可以看到“版本拉取指引”、“构建日志”、“删除”
+    - 最近拉取时间		
+6. 点击摘要右侧的角标图标，即可展开查看到下面所有的镜像版本；包括版本号、最近推送时间、最近拉取时间以及推送者。
+6. 点击摘要后面的“三点图标”，可以看到“摘要拉取指引”、“构建日志”、“删除”
 7. 点击"构建日志"，可以查询镜像版本的构建详情
-8. 点击"删除"，可以删除当前镜像版本
+8. 点击"删除"，可以删除当前镜像版本		
+10. 勾选对应摘要前面的勾选框，勾选后，点击下方的`扫描`按钮，即可扫描对应的摘要，此处支持批量扫描
+11. 扫描成功后，对应摘要的状态为：已完成，并且能在列表中看到此次的安全扫描结果：总计漏洞与可修复的漏洞；hover后将显示出：漏洞的严重度，以及各个程度的漏洞的数量。
 
-![image](/docs/user-guide/infrastructure/image/prod-repo/harborTag.png)
+
+
+<img src="https://file.open.hand-china.com/hsop-doc/doc_classify/0/9cbda6a9fff147469d5f348c0e6c6917@image.png" alt="" width="auto" height="auto" />
+
+
 
 9. 镜像版本复制
     - 点击Choerodon平台顶部“管理中心”导航，进入组织层
@@ -125,9 +158,11 @@ weight = 1
         3. 目标镜像版本号
         4. 点击确定即可。镜像版本就会复制到另一个镜像仓库中。
         
-![image](/docs/user-guide/infrastructure/image/prod-repo/harborTagCopy.png)
 
-## 9. 权限管理
+<img src="https://file.open.hand-china.com/hsop-image/doc_classify/0/1f67d5f8ee2c4525b888443aec797687/harborTagCopy.png" alt="harborTagCopy.png" width="auto" height="auto" />
+
+
+## 10. 权限管理
 
 1. 点击Choerodon平台顶部“项目”导航，进入项目列表
 2. 点击项目名称进入项目，点击菜单“基础>制品库管理”，进入制品库管理页面
@@ -145,9 +180,11 @@ weight = 1
   - 开发人员：pull、push
   - 访客：pull
 
-![image](/docs/user-guide/infrastructure/image/prod-repo/harborAuth.png)
 
-## 10. 操作日志
+<img src="https://file.open.hand-china.com/hsop-image/doc_classify/0/35d3769db49840f8ac4e40e4d190dacb/harborAuth.png" alt="harborAuth.png" width="auto" height="auto" />
+
+
+## 11. 操作日志
 
 1. 点击Choerodon平台顶部“项目”导航，进入项目列表
 2. 点击项目名称进入项目，点击菜单“基础>制品库管理”，进入制品库管理页面
@@ -157,11 +194,13 @@ weight = 1
     - 镜像操作记录：可以查看who在when拉取、上传、删除了镜像
 `操作者是harbor-ui表示，该镜像是由组织管理员复制出来的`
 
-![image](/docs/user-guide/infrastructure/image/prod-repo/harborLog01.png)
 
-![image](/docs/user-guide/infrastructure/image/prod-repo/harborLog02.png)
+<img src="https://file.open.hand-china.com/hsop-image/doc_classify/0/4d95f1aca23a4e428379b1e856ceef8f/harborLog01.png" alt="harborLog01.png" width="auto" height="auto" />
 
-## 11. 资源分配
+<img src="https://file.open.hand-china.com/hsop-image/doc_classify/0/1c4a5b38cff94e89921798eddf259cef/harborLog02.png" alt="harborLog02.png" width="auto" height="auto" />
+
+
+## 12. 资源分配
 
 1. 点击Choerodon平台顶部“管理中心”导航，进入组织层
 2. 点击菜单“基础>制品库管理”，进入制品库管理页面
@@ -174,4 +213,6 @@ weight = 1
     - 存储单位：MB、GB、TB。
 5. 局部资源分配:点击镜像你仓库条目上的“资源分配”按钮，可以只对特定仓库进行资源分配
 
-![image](/docs/user-guide/infrastructure/image/prod-repo/harborZy01.png)
+
+<img src="https://file.open.hand-china.com/hsop-image/doc_classify/0/951e7b898dba475bb961155e8e679f41/harborZy01.png" alt="harborZy01.png" width="auto" height="auto" />
+
