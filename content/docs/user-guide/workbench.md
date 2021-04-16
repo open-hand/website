@@ -9,11 +9,12 @@ weight = 3
 
 ## 1.概览
 工作台作为个人工作的快速入口，用于集中查看所有项目或某个星标项目下“与我相关”的`待办问题`、`待审核任务`、`快速链接`、`文档`、最近使用的`应用服务`以及`环境`。
-![image](/docs/user-guide/image/all.png)  
+<img src="https://file.open.hand-china.com/hsop-image/doc_classify/0/3aa86dc194664b88a6066e38b239db2b/all.png" alt="all.png" width="auto" height="auto" />
+
 
 ## 2.星标项目
 
-![image](/docs/user-guide/image/star-proj.png)  
+<img src="https://file.open.hand-china.com/hsop-image/doc_classify/0/3f19415afe40442d8268cb6eef578075/star-proj.png" alt="star-proj.png" width="auto" height="auto" />
 
 用户可在`项目管理`页面将常用的项目添加为星标项目，以便在工作台中能快速查看到该项目下“与我相关”的信息或者快速进入星标项目。      
 
@@ -21,22 +22,18 @@ weight = 3
 
 点击星标项目卡片中的 `→` 图标，即可直接进入此项目。
 
-## 3.我的事项
+## 3.待办事项
 
-![image](/docs/user-guide/image/workspace-issue-01.png)     
+<img src="https://file.open.hand-china.com/hsop-doc/doc_classify/0/536b92c6a5b94a009f0daf713f504b9a@image.png" alt="" width="auto" height="auto" />
 
-`所有待办`模块展示了该用户在对应星标项目（没选择星标项目时，即为所有项目）下`未完成`的问题。点击对应问题后，即可进入对应项目查看该问题的详情。      
+`待办问题`模块展示了该用户在对应星标项目（没选择星标项目时，即为所有项目）下当前进行的冲刺中`未完成`的问题。    
+点击对应问题后，即可进入对应项目查看该问题的详情。      
 
-`我的关注`模块展示了在对应星标项目（没选择星标项目时，即为所有项目）下`添加星标`的问题。点击对应问题后，即可进入对应项目查看该问题的详情。 
-
-`已提缺陷`模块展示了在对应星标项目（没选择星标项目时，即为所有项目）下我在当前迭代`提出`的缺陷。点击对应缺陷后，即可进入对应项目查看该缺陷的详情。
-
-`待修复缺陷`模块展示了在对应星标项目（没选择星标项目时，即为所有项目）下我在当前迭代`尚未解决`的缺陷。点击对应缺陷后，即可进入对应项目查看该缺陷的详情。
 
 ## 4.待审核
 
 
-![image](/docs/user-guide/image/uncheck.png)    
+<img src="https://file.open.hand-china.com/hsop-image/doc_classify/0/e15ee48c92fd4005836a7f2ece5daf52/uncheck.png" alt="uncheck.png" width="auto" height="auto" />
 
 `待审核`模块展示了该用户在对应星标项目（没选择星标项目时，即为所有项目）下`待我审核`的合并请求和流水线人工审核任务。    
 点击对应任务后的`详情`按钮，即可跳转前往查看待审核任务的详情。 
@@ -44,7 +41,7 @@ weight = 3
 
 ## 5.快速链接   
 
-![image](/docs/user-guide/image/link.png)   
+<img src="https://file.open.hand-china.com/hsop-image/doc_classify/0/fbc9a2bde1fd42d0a016a10b9a135809/link.png" alt="link.png" width="auto" height="auto" />
 
 `快速链接`功能用于维护项目和个人的其他站外链接，
 
@@ -54,7 +51,9 @@ weight = 3
 点击链接地址后，会新开标签页跳转至链接对应的目标页面。        
 
 （2）创建快速链接   
-![image](/docs/user-guide/image/link-1.png)   
+
+<img src="https://file.open.hand-china.com/hsop-image/doc_classify/0/449bd97a29b24b0299c5cf8c3117dbf1/link-1.png" alt="link-1.png" width="auto" height="auto" />
+
 
 点击`快速链接`模块右上角的创建按钮后，右侧会弹出创建快速链接的界面。    
 
@@ -90,17 +89,34 @@ weight = 3
 
 ## 6.文档
 
-![image](/docs/user-guide/image/docs.png)    
+<img src="https://file.open.hand-china.com/hsop-image/doc_classify/0/4c165413848a45bb97eefcac76f0f191/docs.png" alt="docs.png" width="auto" height="auto" />
+
 
 `文档`模块展示了用户所在组织以及对应星标项目（没选择星标项目时，即为所有项目）下最近更新的文档动态，并支持点击进入各个文档查看详情。此外还支持查看用户个人创建的文档。
 
 
 ## 7.应用服务与环境
 
-![image](/docs/user-guide/image/app-env.png)    
+<img src="https://file.open.hand-china.com/hsop-image/doc_classify/0/5ed0f966ba8b4f818d4a9fe57d6f1815/app-env.png" alt="app-env.png" width="auto" height="auto" />
+
 
 `应用服务与环境`模块展示了对应星标项目（未选择星标项目时，即为用户所在的所有项目）下用户近7天使用操作过的应用服务与环境。并且支持用户点击进入应用服务对应的代码仓库以及最近使用的环境的资源界面。
 
+## 8. 缺陷
+
+## 9. 我的关注
+
+
+<img src="https://file.open.hand-china.com/hsop-doc/doc_classify/0/5957696bd3a443abb1ce61f8f456d754@image.png" alt="" width="auto" height="auto" />
+
+
+## 10. 我报告的
+
+## 11. 我经手的
+
+## 12. 我执行的用例
+
+## 13. 我的工作流
 
 ## 8.更多操作  
 
