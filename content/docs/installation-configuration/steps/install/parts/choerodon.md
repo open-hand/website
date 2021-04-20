@@ -232,7 +232,7 @@ helm repo update
     helm upgrade --install choerodon-iam c7n/choerodon-iam \
         -f choerodon-iam.yaml \
         --create-namespace \
-        --version 0.25.4 \
+        --version 0.25.5 \
         --namespace c7n-system
     ```
 
