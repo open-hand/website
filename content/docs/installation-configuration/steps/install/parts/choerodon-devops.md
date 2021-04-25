@@ -188,7 +188,7 @@ helm repo update
         SERVICES_SONARQUBE_PASSWORD: admin
         SERVICES_SONARQUBE_USERNAME: admin
         SERVICES_GATEWAY_URL: http://api.example.choerodon.io
-        AGENT_VERSION: 0.25.1
+        AGENT_VERSION: 0.25.2
         AGENT_SERVICEURL: ws://devops.example.choerodon.io/websocket
         AGENT_REPOURL: https://openchart.choerodon.com.cn/choerodon/c7n/
         AGENT_CERTMANAGERURL: https://openchart.choerodon.com.cn/choerodon/c7n/
