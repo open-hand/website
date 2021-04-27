@@ -47,6 +47,7 @@ helm repo update
     ```
 
 ## 部署 workflow service
+
 - 若需了解项目详情及各项参数含义，请移步 [open-hand/workflow-service](https://github.com/open-hand/workflow-service)。
 
 - 编写参数配置文件 `workflow-service.yaml`
@@ -79,8 +80,14 @@ helm repo update
         SPRING_DATASOURCE_PASSWORD: password
         SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
         SPRING_REDIS_PORT: 6379
-        SPRING_REDIS_DATABASE: 10
+        # 不可以修改 REDIS DB
+        SPRING_REDIS_DATABASE: 1
         HWKF_WEB_DOMAIN_NAME: http://app.example.choerodon.io
+    resources:
+      limits:
+        memory: 3Gi
+      requests:
+        memory: 3Gi
     ```
 
 - 部署服务
@@ -89,7 +96,7 @@ helm repo update
     helm upgrade --install workflow-service c7n/workflow-service \
         -f workflow-service.yaml \
         --create-namespace \
-        --version 0.25.1 \
+        --version 0.25.2 \
         --namespace c7n-system
     ```
 
@@ -108,6 +115,7 @@ helm repo update
     ```
 
 ## 部署 gitlab service
+
 - 若需了解项目详情及各项参数含义，请移步 [open-hand/gitlab-service](https://github.com/open-hand/gitlab-service)。
 - 如何获取 `GITLAB_PRIVATETOKEN` 请查看[这里](https://choerodon.com.cn/#/knowledge/share/90ee2a93698b69a5)
 - 编写参数配置文件 `gitlab-service.yaml`
