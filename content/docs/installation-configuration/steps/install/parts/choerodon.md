@@ -571,7 +571,7 @@ helm repo update
     helm upgrade --install choerodon-file c7n/choerodon-file \
         -f choerodon-file.yaml \
         --create-namespace \
-        --version 0.25.2 \
+        --version 0.25.3 \
         --namespace c7n-system
     ```
 
