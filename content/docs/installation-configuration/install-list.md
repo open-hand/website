@@ -50,7 +50,7 @@ weight = 5
 | 框架服务    | choerodon-platform    | 平台服务        | 0.25.1 |
 | 框架服务    | choerodon-monitor     | 监控审计服务     | 0.25.0 |
 | 框架服务    | choerodon-file        | 文件服务        | 0.25.3 |
-| 框架服务    | choerodon-message     | 消息服务        | 0.25.1 |
+| 框架服务    | choerodon-message     | 消息服务        | 0.25.2 |
 | Devops流程 | devops-service        | Devops 服务    | 0.25.3 |
 | Devops流程 | gitlab-servcie        | 平台基础服务     | 0.25.0 |
 | Devops流程 | workflow-service      | 工作流服务      | 0.25.2 |

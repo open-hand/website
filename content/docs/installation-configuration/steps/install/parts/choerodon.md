@@ -333,7 +333,7 @@ helm repo update
     helm upgrade --install choerodon-message c7n/choerodon-message \
         -f choerodon-message.yaml \
         --create-namespace \
-        --version 0.25.1 \
+        --version 0.25.2 \
         --namespace c7n-system
     ```
  
