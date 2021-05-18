@@ -43,7 +43,6 @@ helm repo update
         OAUTH_GENERIC_ID_PATH: "'userAuthentication','principal','userId'"
         OAUTH_GENERIC_USER_NICKNAME: "username"
         OAUTH_GENERIC_USER_NAME: "username"
-        RACK_ATTACK_WHITELIST: 0.0.0.0/0
     redis:
       internal:
         password: password
@@ -70,7 +69,7 @@ helm repo update
     helm upgrade --install gitlab c7n/gitlab-ha \
         -f gitlab.yaml \
         --create-namespace \
-        --version 0.2.2 \
+        --version 0.2.3 \
         --namespace c7n-system
     ```
 
@@ -164,7 +163,7 @@ helm repo update
     helm upgrade --install gitlab c7n/gitlab-ha \
         -f gitlab.yaml \
         --create-namespace \
-        --version 0.2.2 \
+        --version 0.2.3 \
         --namespace c7n-system
     ```
 
