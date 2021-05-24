@@ -87,7 +87,7 @@ helm repo update
     helm upgrade --install code-repo-service c7n/code-repo-service \
         -f code-repo-service.yaml \
         --create-namespace \
-        --version 0.25.1 \
+        --version 0.25.2 \
         --namespace c7n-system
     ```
 
@@ -191,7 +191,7 @@ helm repo update
     helm upgrade --install prod-repo-service c7n/prod-repo-service \
         -f prod-repo-service.yaml \
         --create-namespace \
-        --version 0.25.3 \
+        --version 0.25.5 \
         --namespace c7n-system
     ```
 

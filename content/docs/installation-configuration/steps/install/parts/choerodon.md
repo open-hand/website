@@ -232,7 +232,7 @@ helm repo update
     helm upgrade --install choerodon-iam c7n/choerodon-iam \
         -f choerodon-iam.yaml \
         --create-namespace \
-        --version 0.25.5 \
+        --version 0.25.7 \
         --namespace c7n-system
     ```
 
@@ -420,7 +420,7 @@ helm repo update
     helm upgrade --install choerodon-gateway c7n/choerodon-gateway \
         -f choerodon-gateway.yaml \
         --create-namespace \
-        --version 0.25.1 \
+        --version 0.25.2 \
         --namespace c7n-system
     ```
 
@@ -468,7 +468,7 @@ helm repo update
     helm upgrade --install choerodon-oauth c7n/choerodon-oauth \
         -f choerodon-oauth.yaml \
         --create-namespace \
-        --version 0.25.2 \
+        --version 0.25.5 \
         --namespace c7n-system
     ```
 
@@ -571,7 +571,7 @@ helm repo update
     helm upgrade --install choerodon-file c7n/choerodon-file \
         -f choerodon-file.yaml \
         --create-namespace \
-        --version 0.25.3 \
+        --version 0.25.7 \
         --namespace c7n-system
     ```
 

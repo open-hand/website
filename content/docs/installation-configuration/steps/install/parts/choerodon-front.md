@@ -85,7 +85,7 @@ helm repo update
     helm upgrade --install choerodon-front c7n/choerodon-front \
         -f choerodon-front.yaml \
         --create-namespace \
-        --version 0.25.2 \
+        --version 0.25.4 \
         --namespace c7n-system
     ```
 

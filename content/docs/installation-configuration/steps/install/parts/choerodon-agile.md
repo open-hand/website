@@ -93,7 +93,7 @@ helm repo update
     helm upgrade --install agile-service c7n/agile-service \
       -f agile-service.yaml \
       --create-namespace \
-      --version 0.25.3 \
+      --version 0.25.5 \
       --namespace c7n-system
     ```
 
@@ -152,7 +152,7 @@ helm repo update
     helm upgrade --install test-manager-service c7n/test-manager-service \
       -f test-manager-service.yaml \
       --create-namespace \
-      --version 0.25.2 \
+      --version 0.25.4 \
       --namespace c7n-system
     ```
 
