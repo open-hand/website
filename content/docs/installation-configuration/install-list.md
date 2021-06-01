@@ -50,14 +50,14 @@ weight = 5
 | 框架服务    | choerodon-platform    | 平台服务        | 0.25.1 |
 | 框架服务    | choerodon-monitor     | 监控审计服务     | 0.25.0 |
 | 框架服务    | choerodon-file        | 文件服务        | 0.25.7 |
-| 框架服务    | choerodon-message     | 消息服务        | 0.25.2 |
+| 框架服务    | choerodon-message     | 消息服务        | 0.25.3 |
 | Devops流程 | devops-service        | Devops 服务    | 0.25.5 |
 | Devops流程 | gitlab-servcie        | 平台基础服务     | 0.25.0 |
 | Devops流程 | workflow-service      | 工作流服务      | 0.25.2 |
 | 敏捷管理    | agile-service         | 敏捷管理        | 0.25.5 |
 | 测试管理    | test-manager-service  | 测试管理服务     | 0.25.4 |
 | 知识管理    | knowledgebase-service | 知识服务（需安装Devops流程、敏捷管理、测试管理至少一个模块）| 0.25.0 |
-| Devops流程 | prod-repo-service     | 制品库服务（可选）| 0.25.5 |
-| Devops流程 | code-repo-service     | 代码管理服务（可选）| 0.25.2 |
+| Devops流程 | prod-repo-service     | 制品库服务（可选）| 0.25.6 |
+| Devops流程 | code-repo-service     | 代码管理服务（可选）| 0.25.3 |
 | 框架服务    | choerodon-front       | Choerodon 前端  | 0.25.4 |
 | 框架服务    | choerodon-front-hzero | hzero 前端      | 0.25.0 |
