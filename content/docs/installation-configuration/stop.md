@@ -125,6 +125,10 @@ kubectl scale deployment -n c7n-system --replicas=1 test-manager-service
 kubectl scale deployment -n c7n-system --replicas=1 elasticsearch-kb
 kubectl scale deployment -n c7n-system --replicas=1 knowledgebase-service
 
+# 制品库
+kubectl scale deployment -n c7n-system --replicas=1 code-repo-service
+kubectl scale deployment -n c7n-system --replicas=1 prod-repo-service
+
 # 总前端
 kubectl scale deployment -n c7n-system --replicas=1 choerodon-front
 kubectl scale deployment -n c7n-system --replicas=1  choerodon-front-hzero
