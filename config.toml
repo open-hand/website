@@ -21,7 +21,7 @@ paginate = 5
 # Main menu
 [[languages.en.menu.main]]
     name = "Docs"
-    url  = "/en/docs/"
+    url  = "https://open.hand-china.com/document-center/doc/product/10003/10426?docVersion=1.0&doc_id=125686&doc_code=1723"
     weight = 1
 
 [[languages.en.menu.main]]
@@ -98,7 +98,7 @@ paginate = 5
 
 [[languages.zh.menu.main]]
     name = "文档"
-    url  = "/zh/docs/"
+    url  = "https://open.hand-china.com/document-center/doc/product/10003/10426?docVersion=1.0&doc_id=125686&doc_code=1723"
     weight = 15
 
 [[languages.zh.menu.main]]
