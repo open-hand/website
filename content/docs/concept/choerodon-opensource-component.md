@@ -95,7 +95,7 @@ Choerodon 采用主流的 Git 和 Gitlab 作为代码的管理和托管工具，
 
 - **Maven**：Maven 项目对象模型(POM)，可以通过一小段描述信息来管理项目的构建，报告和文档的软件项目管理工具。
 
-- **React**：React 是一个用于构建用户界面的 JAVASCRIPT 库，主要用于构建UI，很多人认为 React 是 MVC 中的 V（视图），拥有较高的性能，代码逻辑非常简单，越来越多的人已开始关注和使用它。
+- **Choerodon UI Pro**：Choerodon UI Pro 自研 DataSet 数据源，基于 DataSet 结合组件，实现数据驱动，符合低代码理念，专为中后台企业项目提高开发效率而生。
 
 ### 构建
 
