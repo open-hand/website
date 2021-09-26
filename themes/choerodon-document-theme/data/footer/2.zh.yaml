@@ -6,10 +6,10 @@ children:
     url: ""
   2:
     name: "汉得信息"
-    url: ""
+    url: "/zh/case-studies/hand/"
   3:
     name: "华润置地"
-    url: ""
+    url: "/zh/case-studies/crland/"
   4:
     name: "某大型跨国集团"
     url: ""

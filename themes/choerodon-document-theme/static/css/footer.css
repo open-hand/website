@@ -29,6 +29,7 @@
   line-height: .28rem;
   display: block;
   margin-bottom: .04rem;
+  cursor: pointer;
 }
 
 .footer .footer-content .footer-connect {

@@ -30,7 +30,7 @@
               {{ range .Children.ByWeight }}
                 <div class="sub-menus-product-plan-list-item">
                   <img src="/img/nav/{{ .Identifier }}.svg" />
-                  <span>{{ .Name }}</span>
+                  <span class="footer-nav-item-link-span" data-id="function-tabs-{{ .Identifier }}">{{ .Name }}</span>
                 </div>
               {{ end }}
             </div>

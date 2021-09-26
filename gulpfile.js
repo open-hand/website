@@ -15,7 +15,7 @@ var staticPath = 'themes/choerodon-document-theme/static';
 var publicImg = "public/img";
 var imgSrc = publicImg + "/**/*";
 
-var home_css = ['style.choerodon.css','footer.css','home.css','notice.css'];
+var home_css = ['style.choerodon.css','footer.css','home.css','notice.css', 'problem.css', 'function.css', 'service.css', 'cases.css', 'resources.css'];
 var docs_css = ['style.choerodon.css','footer.css','docs.css'];
 var blogs_css = ['style.choerodon.css','footer.css','blog-list.css'];
 var cases_css = ['style.choerodon.css','footer.css','case-studies.css'];

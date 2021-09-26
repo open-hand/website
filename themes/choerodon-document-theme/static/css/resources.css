@@ -4,40 +4,44 @@
   color: #0D224A;
 }
 
-.common-resources-section-title {
+.common-resources-section .common-resources-section-title {
   font-size: .24rem;
   font-weight: 500;
   flex-shrink: 0;
 }
 
-.common-resources-section-item {
+.common-resources-section .common-resources-section-item {
   margin-left: 1rem;
 }
 
-.common-resources-section-item:nth-child(2) {
+.common-resources-section .common-resources-section-item:nth-child(2) {
   margin-left: .88rem;
 }
 
-.common-resources-section-item-title {
+.common-resources-section .common-resources-section-item-title {
   font-size: .20rem;
 }
 
-.common-resources-section-item-title img {
+.common-resources-section .common-resources-section-item-title img {
   width: .26rem;
   height: .26rem;
   margin-right: .1rem;
 }
 
-.common-resources-section-item-des {
+.common-resources-section .common-resources-section-item-des {
   font-size: .14rem;
   color: rgba(13,34,74,0.80);
   line-height: .22rem;
   margin: .18rem 0 .2rem;
 }
 
-.common-resources-section-item-link {
+.common-resources-section .common-resources-section-item-link {
   font-size: .16rem;
   color: #326DE6;
   letter-spacing: 0.75px;
   font-weight: 500;
+}
+
+.common-resources-section .common-resources-section-item-link:hover {
+  color: #326DE6;
 }

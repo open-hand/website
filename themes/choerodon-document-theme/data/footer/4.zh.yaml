@@ -3,7 +3,7 @@ name: "开源中心"
 children:
   1:
     name: "焱牛开放平台"
-    url: ""
+    url: "https://open.hand-china.com/home"
   2:
     name: "GITEE"
     url: "https://gitee.com/choerodon/choerodon"
