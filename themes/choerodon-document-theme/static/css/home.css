@@ -437,7 +437,8 @@ body {
   padding: 0;
 }
 .carousels-section .button,
-.see-more-section .button{
+.cases-section .button,
+.see-more-section .button {
   justify-content: center;
   font-size: 0.16rem;
   border-radius: 0.06rem;
@@ -452,6 +453,7 @@ body {
   align-items: center;
 }
 .carousels-section .button:hover,
+.cases-section .button:hover,
 .see-more-section .button:hover {
   opacity: 0.9;
 }

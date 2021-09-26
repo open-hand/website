@@ -36,10 +36,14 @@
   height: .32rem;
   line-height: .32rem;
   color: #fff !important;
-  background: #326DE6;
+  background: #326DE6 !important;
   border-radius: 2px;
-
   text-align: center;
+}
+
+.fixed-nav .trybtn a:hover {
+  color: #fff !important;
+  background: #326DE6 !important;
 }
 
 .top-white-nav .trybtn a {
