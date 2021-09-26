@@ -1,4 +1,4 @@
-baseurl = "https://choerodon.io/"
+baseurl = "https://latest.choerodon.io/"
 title = "猪齿鱼Choerodon | 开源全价值链多云敏捷协作平台"
 theme = "choerodon-document-theme"
 # themesDir = "../.."
