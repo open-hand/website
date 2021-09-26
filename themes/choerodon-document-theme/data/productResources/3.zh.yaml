@@ -1,0 +1,6 @@
+weight: 3
+name: "开源中心"
+description: "下载开源版源码，即刻在项目中开始应用。"
+url: "https://github.com/open-hand/choerodon"
+image: "/img/resources/source.svg"
+language: zh

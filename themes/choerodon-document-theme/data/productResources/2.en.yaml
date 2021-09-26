@@ -1,0 +1,6 @@
+weight: 2
+name: "博客"
+description: "猪齿鱼产品和技术相关的动态，第一时间掌握。"
+url: "/en/blog/"
+image: "/img/resources/blog.svg"
+language: en

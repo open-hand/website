@@ -9,7 +9,7 @@
 }
 
 .trybtn {
-  padding-left: .12rem;
+  padding-left: .3rem;
 }
 
 .trybtn a {
@@ -33,10 +33,11 @@
 
 .fixed-nav .trybtn a {
   display: block;
-  height: .3rem;
-  line-height: .3rem;
-  color: #3371E3;
-  border: .01rem solid #3371E3;
+  height: .32rem;
+  line-height: .32rem;
+  color: #fff !important;
+  background: #326DE6;
+  border-radius: 2px;
 
   text-align: center;
 }
@@ -185,7 +186,7 @@
   color: white;
   font-weight: normal;
   padding: 0;
-  margin: 0.22rem 0.15rem;
+  margin: 0.22rem 0.2rem;
 }
 
 .navbar ul.nav > li > a.active-page {
@@ -196,7 +197,8 @@
 
 .top-white-nav ul.nav > li > a,
 .fixed-nav ul.nav > li > a {
-  color: #333333;
+  color: #0D224A;
+  font-weight: 500;
 }
 
 .navbar ul.nav > li.active > a,
@@ -981,6 +983,55 @@ p {
 .header-nav a {
   font-size: 0.16rem;
   margin-top: 0.15rem;
+}
+
+.sub-menus-product-plan {
+  padding: .3rem;
+  width: 7rem;
+  left: -2rem;
+}
+
+.sub-menus-product-plan .sub-menus-product-plan-list {
+  display: flex;
+  margin-bottom: .4rem;
+  justify-content: space-between;
+}
+
+.sub-menus-product-plan .sub-menus-product-plan-list .sub-menus-product-plan-list-item {
+  font-size: .16rem;
+  color: #0D224A;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.sub-menus-product-plan .sub-menus-product-plan-list .sub-menus-product-plan-list-item span:hover {
+  color: #326DE6;
+}
+
+.sub-menus-product-plan .sub-menus-product-plan-list .sub-menus-product-plan-list-item img {
+  width: .28rem;
+  height: .28rem;
+  margin-right: .08rem;
+}
+
+.sub-menus-product-plan .sub-menus-product-plan-label {
+  font-size: .15rem;
+  color: #0D224A;
+  font-weight: 500;
+  padding-left: .08rem;
+  border-left: 3px solid #326DE6;
+  margin-bottom: .18rem;
+}
+
+.sub-menus-product-plan .yellow {
+  border-left: 3px solid #FFD666;
+}
+
+.sub-menus-product-plan .sub-menus-product-plan-text {
+  font-size: .16rem;
+  color: #0D224A;
+  font-weight: 500;
+  white-space: break-spaces;
 }
 
 /* general banner end */

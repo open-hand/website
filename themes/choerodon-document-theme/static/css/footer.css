@@ -1,79 +1,86 @@
 .footer {
-    background: url(/img/banner.svg) no-repeat bottom #303030;
-    padding: 0;
-    color: #999999;
-    width: 100%;
-    text-align: center;
-    background-position-y: -30px;
+  background: #091C3E;
+  color: #fff;
+  width: 100%;
 }
 
-.footer .footer-nav {
-  padding: 0.3rem 0;
+.footer .footer-content {
+  padding: .68rem 1.3rem .45rem;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 }
 
-.footer .footer-nav a {
-  font-size: 0.24rem;
-  color: #FFFFFF;
-  font-weight: 300;
-  display: inline-block;
-  line-height: 1.16;
-  margin-left: 0.82rem;
+.footer .footer-content .footer-nav {
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+  margin-right: .9rem;
 }
 
-.footer .footer-nav a:first-child {
-  margin-left: 0;
+.footer .footer-content .footer-nav .footer-nav-item .footer-nav-item-title {
+  font-size: .2rem;
+  line-height: .28rem;
+  margin-bottom: .18rem;
 }
 
-.footer .footer-nav a:hover {
-  color: #fff
+.footer .footer-content .footer-nav .footer-nav-item .footer-nav-item-link .footer-nav-item-link-text {
+  font-size: .14rem;
+  color: #E5E7F6;
+  line-height: .28rem;
+  display: block;
+  margin-bottom: .04rem;
 }
 
-.footer .social .social-single{
-    margin: 0 0 0 .2rem;
+.footer .footer-content .footer-connect {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: .25rem;
 }
 
-.footer .social i {
-    font-size: 50px;
-    background-color: #FFFFFF;
-    border-radius: 6px;
-    color: #3371E3;
+.footer .footer-content .footer-connect .footer-connect-text {
+  margin-bottom: .2rem;
 }
 
-.footer .social i:hover{
-    background-color: #3371E3;
-    color:#FFFFFF;
+.footer .footer-content .footer-connect .footer-connect-text img {
+  width: .24rem;
+  height: .24rem;
+  margin-right: .12rem;
 }
 
-.footer .social .social-single:first-child {
-    margin: 0;
+.footer .footer-content .footer-connect .footer-connect-img {
+  display: flex;
+  margin-top: .1rem;
+  justify-content: space-between;
 }
 
-.footer .wechat-group-hover,
-.footer .wechat-hover {
-    display: none;
-    position: absolute;
-    width: 1rem;
-    height: 1.2rem;
-    background-color: transparent;
-}
-.footer .wechat-hover img,
-.footer .wechat-group-hover img{
-    width: 100%;
-    height: 100%;
+.footer .footer-content .footer-connect .footer-connect-img .footer-connect-img-item {
+  margin-right: .8rem;
 }
 
-.footer .load-img [data-loader='circle']{
-    margin: 0.375rem;
+.footer .footer-content .footer-connect .footer-connect-img img {
+  width: 1.24rem;
+  height: 1.24rem;
+}
+
+.footer .footer-content .footer-connect p {
+  font-size: .14rem;
+  color: #E5E7F6;
 }
 
 .footer .copy-right {
-    font-size: 0.12rem;
-    color: #FFFFFF;
-    padding: 0.3rem 0;
-    line-height: 1.5;
+  border-top: 1px solid #384E7F;
+  padding: .2rem 1.3rem;
+  font-size: .14rem;
+  color: #C3CAF3;
+  line-height: .2rem;
+  display: flex;
+  align-items: center;
 }
+
+.footer .copy-right span {
+  padding-left: .4rem;
+}
+
 
 @media(max-width:767px) {
     .footer .footer-nav {

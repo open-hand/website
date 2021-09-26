@@ -1,0 +1,17 @@
+weight: 2
+name: "典型案例"
+children:
+  1:
+    name: "联合汽车电子"
+    url: ""
+  2:
+    name: "汉得信息"
+    url: ""
+  3:
+    name: "华润置地"
+    url: ""
+  4:
+    name: "某大型跨国集团"
+    url: ""
+language: zh
+

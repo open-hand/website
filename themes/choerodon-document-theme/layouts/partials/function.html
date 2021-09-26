@@ -1,0 +1,26 @@
+{{ $.Scratch.Set "language" .Site.Language.Lang }}
+<section id="function-modules-section" class="function-modules-section">
+  <h4>
+    {{ i18n "Six functional modules fully meet the needs of project management" }}
+  </h4>
+  <div class="function-modules-section-content">
+    <div class="function-modules-section-tabs">
+      {{ range $index, $element := sort .Site.Data.functionModules "weight" }}
+      {{ if eq ($.Scratch.Get "language") $element.language }}
+      <div class="function-modules-section-tabs-item {{ if gt $index 1 }} normal {{ end }}" id="{{ $element.id }}">
+        {{ $element.name }}
+      </div>
+      {{ end }}
+      {{ end }}
+    </div>
+    {{ range $index, $element := sort .Site.Data.functionModules "weight" }}
+    {{ if eq ($.Scratch.Get "language") $element.language }}
+    <div id="{{ $element.id }}-detail" class="function-modules-section-detail {{ if gt $index 1}} none {{ else }} block {{ end }}">
+      <h5>{{ $element.name }}</h5>
+      <p>{{ $element.description }}</p>
+      <img {{ if lt $index 2}} src = "{{ $element.img }}"{{ end }} data-src="{{ $element.img }}"/>
+    </div>
+    {{ end }}
+    {{ end }}
+  </div>
+</section>

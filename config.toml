@@ -20,39 +20,23 @@ paginate = 5
 [menu]
 # Main menu
 [[languages.en.menu.main]]
-    name = "Docs"
+    name = "Product And Solutions"
     url  = "https://open.hand-china.com/document-center/doc/product/10003/10426?docVersion=1.0&doc_id=125686&doc_code=1723"
     weight = 1
 
 [[languages.en.menu.main]]
-    name = "Blog"
+    name = "Typical Case"
     url  = "/en/blog/"
     weight = 2
 
 [[languages.en.menu.main]]
-    name = "Case Studies"
+    name = "Services And Resources"
     url  = "/en/case-studies/"
     weight = 3
 
 [[languages.en.menu.main]]
-    name = "Community"
+    name = "Open Source Center"
     weight = 4
-    identifier = "en-community"
-    pre = "<i class='iconfont'>&#xe600;</i>"
-    [[languages.en.menu.main]]
-	        name = "Community"
-	        url  = "/en/community/"
-	        weight = 5
-	        parent = "en-community"
-	[[languages.en.menu.main]]
-	        name = "Knowledge-Sharing"
-	        url  = "/en/knowledge-sharing"
-	        weight = 6
-	        parent = "en-community"
-
-[[languages.en.menu.main]]
-    name = "SourceCode"
-    weight = 7
     identifier = "source"
     pre = "<i class='iconfont'>&#xe600;</i>"
 
@@ -60,116 +44,113 @@ paginate = 5
         name = "GITHUB"
         post= true
         url  = "https://github.com/open-hand/choerodon"
-        weight = 8
+        weight = 5
         parent = "source"
     [[languages.en.menu.main]]
         name = "GITEE"
         post= true
         url  = "https://gitee.com/choerodon/choerodon"
-        weight = 9
+        weight = 6
         parent = "source"
 
 [[languages.en.menu.main]]
-    name = "v1.0"
-    url  = "/en/"
-    weight = 10
-    identifier = "en-version"
+    name = "About Us"
+    weight = 7
+    identifier = "en-community"
     pre = "<i class='iconfont'>&#xe600;</i>"
     [[languages.en.menu.main]]
-        name = "v0.23"
-        url  = "https://v0-23.choerodon.io/en/"
-        weight = 12
-        parent = "en-version"
-    [[languages.en.menu.main]]
-        name = "v0.24"
-        url  = "https://v0-24.choerodon.io/en/"
-        weight = 13
-        parent = "en-version"
-    [[languages.en.menu.main]]
-        name = "v0.25"
-        url  = "https://v0-25.choerodon.io/en/"
-        weight = 14
-        parent = "en-version"
-    [[languages.en.menu.main]]
-        name = "v1.0"
-        url  = "https://v1-0.choerodon.io/en/"
-        weight = 15
-        parent = "en-version"
+	        name = "Community"
+	        url  = "/en/community/"
+	        weight = 8
+	        parent = "en-community"
+	[[languages.en.menu.main]]
+	        name = "Knowledge-Sharing"
+	        url  = "/en/knowledge-sharing"
+	        weight = 9
+	        parent = "en-community"
 
 [[languages.zh.menu.main]]
-    name = "文档"
-    url  = "https://open.hand-china.com/document-center/doc/product/10003/10426?docVersion=1.0&doc_id=125686&doc_code=1723"
+    name = "产品与解决方案"
+    identifier = "product-plan"
+    pre = "<i class='iconfont'>&#xe600;</i>"
     weight = 15
+    [[languages.zh.menu.main]]
+        name = "协作"
+        url  = "https://v0-23.choerodon.io/zh/"
+        weight = 1
+        parent = "product-plan"
+        identifier = "cooperation"
+    [[languages.zh.menu.main]]
+        name = "项目群"
+        url  = "https://v0-23.choerodon.io/zh/"
+        weight = 2
+        parent = "product-plan"
+        identifier = "program"
+    [[languages.zh.menu.main]]
+        name = "开发"
+        url  = "https://v0-23.choerodon.io/zh/"
+        weight = 3
+        parent = "product-plan"
+        identifier = "develop"
+    [[languages.zh.menu.main]]
+        name = "部署"
+        url  = "https://v0-23.choerodon.io/zh/"
+        weight = 4
+        parent = "product-plan"
+        identifier = "deploy"
+    [[languages.zh.menu.main]]
+        name = "测试"
+        url  = "https://v0-23.choerodon.io/zh/"
+        weight = 5
+        parent = "product-plan"
+        identifier = "test"
+    [[languages.zh.menu.main]]
+        name = "容器"
+        url  = "https://v0-23.choerodon.io/zh/"
+        weight = 6
+        parent = "product-plan"
+        identifier = "container"
 
 [[languages.zh.menu.main]]
-    name = "博客"
-    url  = "/zh/blog/"
+    name = "典型案例"
+    url  = "/zh/case-studies/"
     weight = 16
 
 [[languages.zh.menu.main]]
-    name = "案例"
+    name = "服务和资源"
     url  = "/zh/case-studies/"
     weight = 17
 
 [[languages.zh.menu.main]]
-    name = "社区"
+    name = "开源中心"
     weight = 18
-    identifier = "zh-community"
-    pre = "<i class='iconfont'>&#xe600;</i>"
-	[[languages.zh.menu.main]]
-        name = "知识分享"
-        url  = "/zh/knowledge-sharing"
-        weight = 19
-        parent = "zh-community"
-	[[languages.zh.menu.main]]
-        name = "社区"
-        url  = "/zh/community/"
-        weight = 20
-        parent = "zh-community"
-
-[[languages.zh.menu.main]]
-    name = "源码"
-    weight = 21
+    url = "https://open.hand-china.com/open-source/choerodon"
     identifier = "zh-source"
-    pre = "<i class='iconfont'>&#xe600;</i>"
-    [[languages.zh.menu.main]]
-        name = "GITHUB"
-        post= true
-        url  = "https://github.com/open-hand/choerodon"
-        weight = 22
-        parent = "zh-source"
-    [[languages.zh.menu.main]]
-        name = "GITEE"
-        post= true
-        url  = "https://gitee.com/choerodon/choerodon"
-        weight = 23
-        parent = "zh-source"
 
 [[languages.zh.menu.main]]
-    name = "v1.0"
-    url  = "/zh/"
-    weight = 24
+    name = "关于我们"
+    weight = 21
     identifier = "zh-version"
     pre = "<i class='iconfont'>&#xe600;</i>"
     [[languages.zh.menu.main]]
-        name = "v0.23"
+        name = "加入我们"
         url  = "https://v0-23.choerodon.io/zh/"
-        weight = 26
+        weight = 25
         parent = "zh-version"
     [[languages.zh.menu.main]]
-        name = "v0.24"
-        url  = "https://v0-24.choerodon.io/zh/"
-        weight = 27
+        name = "联系我们"
+        url  = "https://v0-23.choerodon.io/zh/"
+        weight = 24
         parent = "zh-version"
     [[languages.zh.menu.main]]
-        name = "v0.25"
-        url  = "https://v0-25.choerodon.io/zh/"
-        weight = 28
+        name = "品牌故事"
+        url  = "https://v0-23.choerodon.io/zh/"
+        weight = 23
         parent = "zh-version"
     [[languages.zh.menu.main]]
-        name = "v1.0"
-        url  = "https://v1-0.choerodon.io/zh/"
-        weight = 29
+        name = "关于猪齿鱼"
+        url  = "https://v0-23.choerodon.io/zh/"
+        weight = 22
         parent = "zh-version"
 
 [params]

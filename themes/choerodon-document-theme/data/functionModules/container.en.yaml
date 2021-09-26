@@ -1,0 +1,5 @@
+weight: 6
+name: "容器"
+description: "集成Kubernetes实现对环境资源的统一管理与监控，提供高度弹性可伸缩的管理能力，支持容器化应用的生命周期管理。"
+img: "/img/home/function/cooperation.png"
+language: en

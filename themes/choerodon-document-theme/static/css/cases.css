@@ -1,0 +1,94 @@
+.cases-section {
+  padding: 0 1.7rem .9rem;
+}
+.cases-section .cases-section-title {
+  font-size: .24rem;
+  font-weight: 500;
+  color: #0D224A;
+  margin-bottom: .4rem;
+}
+.cases-section-detail {
+  width: 100%;
+  color: #fff;
+  font-weight: 500;
+}
+
+.cases-section-detail-mask {
+  background: rgba(0, 37, 112, 0.56);
+  padding: .56rem .72rem .6rem;
+}
+
+.cases-section-detail .uae {
+  background: url("../img/cases/uae.png") no-repeat;
+  background-size: cover;
+}
+.cases-section-detail .hand {
+  background: url("../img/cases/hand.png") no-repeat;
+  background-size: cover;
+}
+.cases-section-detail .crland {
+  background: url("../img/cases/crland.png") no-repeat;
+  background-size: cover;
+}
+.cases-section-detail .lmg {
+  background: url("../img/cases/lmg.png") no-repeat;
+  background-size: cover;
+}
+
+.cases-section-detail .cases-section-icon {
+  margin-right: .12rem;
+  margin-top: -0.2rem;
+}
+
+.cases-section-detail .cases-section-des {
+  font-size: .2rem;
+  letter-spacing: 0;
+  line-height: .30rem;
+}
+
+.cases-section-detail .cases-section-author {
+  font-size: .16rem;
+  letter-spacing: 0;
+  margin-top: .02rem;
+}
+
+.cases-section-detail .cases-section-detail-btn {
+  background: #FFFFFF;
+  border-radius: 6px;
+  font-size: .16rem;
+  font-weight: 500;
+  color: #326DE6;
+  margin-top: .6rem;
+}
+
+.cases-section-content {
+  display: flex;
+  justify-content: space-between;
+  margin-top: .4rem;
+}
+
+.cases-section-content-item {
+  border-radius: 2px;
+  height: .7rem;
+  text-align: center;
+  line-height: .7rem;
+  width: 2.65rem;
+  background: #FFFFFF;
+  box-shadow: 0 0 6px 0 rgba(5,34,94,0.20);
+  cursor: pointer;
+}
+
+.cases-section-content .normal {
+  background: #F6F7F8;
+  box-shadow: none;
+}
+
+.cases-section-content-item span {
+  font-size: .24rem;
+  color: #326DE6;
+  font-weight: 500;
+}
+
+.cases-section-content .normal span {
+  color: #808080;
+}

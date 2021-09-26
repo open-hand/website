@@ -1,10 +1,10 @@
 weight: 2
-title: "HAND开源中心"
-minTitle: "HAND开源中心"
-description: "汉得重磅推出一款企业级、开源免费的、微服务架构的技术中台—HZERO"
-minDescription: "汉得重磅推出一款企业级、开源免费的、微服务架构的技术中台—HZERO"
+title: "与 Jira 的功能对比"
+minTitle: "与 Jira 的功能对比"
+description: "猪齿鱼和Jira的六大功能点详细对比，快速get适合您项目的功能点"
+minDescription: "猪齿鱼和Jira的六大功能点详细对比，快速get适合您项目的功能点"
 button: "了解详情"
 img: "/img/socials/event/devops_international_summit.svg"
 homeImg: "/img/home/notice/devops_international_summit.svg"
-ahref : "http://open.hand-china.com/open-source"
+ahref : "https://mp.weixin.qq.com/s/bWAeFn48QiKiL04kp6dt6A"
 language: en

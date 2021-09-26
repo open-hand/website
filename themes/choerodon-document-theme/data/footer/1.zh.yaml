@@ -1,0 +1,25 @@
+weight: 1
+name: "产品功能"
+children:
+  1:
+    name: "协作"
+    dataId: "function-tabs-cooperation"
+    image: "/img/nav/cooperation.svg"
+  2:
+    name: "项目群"
+    dataId: "function-tabs-program"
+    image: "/img/nav/program.svg"
+  3:
+    name: "开发"
+    dataId: "function-tabs-develop"
+    image: "/img/nav/develop.svg"
+  4:
+    name: "部署"
+    dataId: "function-tabs-deploy"
+    image: "/img/nav/deploy.svg"
+  5:
+    name: "容器"
+    dataId: "function-tabs-container"
+    image: "/img/nav/container.svg"
+language: zh
+

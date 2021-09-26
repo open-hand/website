@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60px" height="48px" viewBox="0 0 60 48" version="1.1">
+  <title>任务流转已选中</title>
+  <g id="首页" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="首页-菜单下拉列表-上下" transform="translate(-1012.000000, -467.000000)">
+      <g id="热门信息" transform="translate(0.000000, 353.000000)">
+        <g id="任务流转已选中" transform="translate(1012.000000, 114.000000)">
+          <rect id="矩形" x="0" y="0" width="60" height="48"></rect>
+          <g id="编组-6" transform="translate(4.000000, 3.000000)" fill="#FFFFFF" stroke="#979797" stroke-width="0.8">
+            <rect id="矩形" x="0.4" y="0.4" width="51.2" height="41.2" rx="2"></rect>
+          </g>
+          <g id="编组-9" transform="translate(10.000000, 7.000000)">
+            <rect id="矩形" stroke="#979797" stroke-width="0.8" fill="#F5F5F5" x="0.4" y="0.4" width="17.2" height="29.2"></rect>
+            <g id="编组-7" transform="translate(2.000000, 3.000000)">
+              <rect id="矩形" fill="#FFFFFF" x="0" y="0" width="14" height="8" rx="1"></rect>
+              <rect id="矩形" fill="#D8D8D8" x="5" y="2" width="8" height="1"></rect>
+              <rect id="矩形备份-3" fill="#F5F5F5" x="5" y="4" width="6" height="1"></rect>
+              <circle id="椭圆形" fill="#D8D8D8" cx="2.5" cy="3.5" r="1.5"></circle>
+            </g>
+            <rect id="矩形" fill="#FFFFFF" x="2" y="13" width="14" height="8" rx="1"></rect>
+            <rect id="矩形备份-2" stroke="#979797" stroke-width="0.8" fill="#F5F5F5" x="22.4" y="0.4" width="17.2" height="33.2"></rect>
+            <g id="编组-7备份" transform="translate(24.000000, 3.000000)">
+              <rect id="矩形" fill="#FFFFFF" x="0" y="0" width="14" height="8" rx="1"></rect>
+              <rect id="矩形" fill="#D8D8D8" x="5" y="2" width="8" height="1"></rect>
+              <rect id="矩形备份-3" fill="#F5F5F5" x="5" y="4" width="6" height="1"></rect>
+              <circle id="椭圆形" fill="#D8D8D8" cx="2.5" cy="3.5" r="1.5"></circle>
+            </g>
+            <g id="编组-7备份-2" transform="translate(24.000000, 13.000000)">
+              <rect id="矩形" fill="#FFFFFF" x="0" y="0" width="14" height="8" rx="1"></rect>
+              <rect id="矩形" fill="#D8D8D8" x="5" y="2" width="8" height="1"></rect>
+              <rect id="矩形备份-3" fill="#F5F5F5" x="5" y="4" width="6" height="1"></rect>
+              <circle id="椭圆形" fill="#D8D8D8" cx="2.5" cy="3.5" r="1.5"></circle>
+            </g>
+            <rect id="矩形" fill="#C2D7FF" x="24" y="23" width="14" height="8" rx="1"></rect>
+            <path d="M4,18 C6.43135417,15 9.64703126,14.8333333 13.6470313,17.5 C19.6470313,21.5 25.4920096,22 27.5456221,26" id="路径-3" stroke="#6694EF" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1"></path>
+            <g id="编组-7备份-4" transform="translate(13.000000, 17.000000)">
+              <rect id="矩形" fill="#FFD666" x="0" y="0" width="18" height="9" rx="1"></rect>
+              <rect id="矩形" fill="#FFFFFF" x="6" y="2" width="10" height="1"></rect>
+              <rect id="矩形备份-3" fill="#FFFFFF" x="6" y="4" width="6" height="1"></rect>
+              <rect id="矩形备份-4" fill="#FFFFFF" x="6" y="6" width="8" height="1"></rect>
+              <circle id="椭圆形" fill="#FFFFFF" cx="3.5" cy="3.5" r="1.5"></circle>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

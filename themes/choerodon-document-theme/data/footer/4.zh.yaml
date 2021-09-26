@@ -1,0 +1,14 @@
+weight: 4
+name: "开源中心"
+children:
+  1:
+    name: "焱牛开放平台"
+    url: ""
+  2:
+    name: "GITEE"
+    url: "https://gitee.com/choerodon/choerodon"
+  3:
+    name: "GITHUB"
+    url: "https://github.com/open-hand/choerodon"
+language: zh
+

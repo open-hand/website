@@ -1,0 +1,38 @@
+{{ if gt (len .Site.Data.cases) 0 }}
+<section class="cases-section">
+  <div class="cases-section-title text-center">
+    {{ i18n "cases" }}
+  </div>
+  {{ range $index, $element := sort .Site.Data.cases "weight" }}
+    {{ if eq ($.Scratch.Get "language") $element.language }}
+    <div id="cases-{{ $element.weight }}-detail" class="cases-section-detail {{ if gt $index 1}} none {{ else }} block {{ end }}">
+      <div class="cases-section-detail-background {{ $element.classname }}">
+        <div class="cases-section-detail-mask">
+          <div>
+            <img class="cases-section-icon" src="/img/cases/quotation.svg" />
+            <span class="cases-section-des">{{ $element.description }}</span>
+          </div>
+          <p class="cases-section-author text-right">————{{ $element.author }}</p>
+          <div class="text-center">
+            <a href="{{ $element.url }}" class="cases-section-detail-btn btn button">{{ i18n "view case" }}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{ end }}
+  {{ end }}
+  <div class="cases-section-content">
+    {{ range $index, $element := sort .Site.Data.cases "weight" }}
+      {{ if eq ($.Scratch.Get "language") $element.language }}
+        <div id="cases-{{ $element.weight }}" class="cases-section-content-item {{ $element.classname }} {{ if gt $index 1 }} normal {{ end }}">
+          {{ if $element.image }}
+            <img id="cases-{{ $element.weight }}-item-img" class="cases-section-content-item-img" {{ if gt $index 1}} src = "{{ $element.image }}" {{ else }} src = "{{ $element.imageSelect }}" {{ end }} data-src1="{{ $element.image }}" data-src2="{{ $element.imageSelect }}" />
+          {{ else }}
+            <span>{{ $element.name }}</span>
+          {{ end }}
+        </div>
+        {{ end }}
+    {{ end }}
+  </div>
+</section>
+{{ end }}

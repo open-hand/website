@@ -8,10 +8,10 @@
 
 # 首页
 - id: enterprise digital services platform
-  translation: '开源全价值链多云敏捷协作平台'
+  translation: '猪齿鱼 全场景效能平台'
 
 - id: scrum application delivery and automated operations management
-  translation: '敏捷化的应用交付和自动化的运营管理'
+  translation: '传递体系化方法论，提供协作、测试、DevOps及容器工具，让团队效能更快更强更稳定'
 
 - id: quick start
   translation: '快速开始'
@@ -39,6 +39,54 @@
 
 - id: case
   translation: '案例'
+
+- id: free trial
+  translation: '免费试用'
+
+- id: Focus on solving the four major problems of R&D management
+  translation: '专注解决研发管理四大难题'
+
+- id: R&D management problems
+  translation: '研发管理难题'
+
+- id: Main highlights
+  translation: '猪齿鱼主要亮点'
+
+- id: Six functional modules fully meet the needs of project management
+  translation: '六大功能模块 全面满足项目管理需求'
+
+- id: experience now
+  translation: '立即体验 猪齿鱼全场景效能平台'
+
+- id: service system
+  translation: '服务体系'
+
+- id: service system description
+  translation: '高效的服务响应，多样化的支持计划，构建方法论、工具产品和技术服务三位一体的服务体系'
+
+- id: service system des1
+  translation: '专业全面的服务体系'
+
+- id: service system des2
+  translation: '为您的项目管理保驾护航'
+
+- id: learn service detail
+  translation: '了解服务详情'
+
+- id: cases
+  translation: '典型案例'
+
+- id: view case
+  translation: '查看案例'
+
+- id: common product resource
+  translation: '常用产品资源'
+
+- id: follow the public account
+  translation: '关注“四海汉得”公众号'
+
+- id: add WeChart
+  translation: '添加“猪齿鱼小助手”微信'
 # 首页 结束
 
 # 博客

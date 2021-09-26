@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="28px" height="28px" viewBox="0 0 28 28" version="1.1">
+  <title>容器</title>
+  <g id="首页" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="首页-菜单下拉列表-上下" transform="translate(-983.000000, -132.000000)">
+      <g id="编组-5" transform="translate(358.000000, 64.000000)">
+        <g id="容器" transform="translate(625.000000, 68.000000)">
+          <rect id="矩形" x="0" y="0" width="28" height="28"></rect>
+          <g id="delete_sweep_black_24dp" transform="translate(3.000000, 4.000000)">
+            <polygon id="路径" fill="#326DE6" opacity="0.3" points="5.02373188 0 16.8985507 0 17.8122283 2.05552536 4.11005435 2.05552536"></polygon>
+            <polygon id="路径" fill="#326DE6" opacity="0.8" points="2.28369565 3.42554348 19.6365942 3.42554348 20.5502717 5.48007246 1.37001812 5.48007246"></polygon>
+            <polygon id="路径" stroke="#326DE6" stroke-width="2" points="21.9202899 18.1257246 21.9202899 8.53559783 15.0701993 8.53559783 13.7001812 11.2756341 8.2201087 11.2756341 6.85009058 8.53559783 0 8.53559783 0 18.1247283 12.0521739 18.1247283"></polygon>
+            <polygon id="路径" fill="#326DE6" opacity="0.3" points="7.53460145 7.90561594 14.3896739 7.90561594 13.7021739 9.27563406 8.21512681 9.27563406"></polygon>
+            <polygon id="路径" fill="#326DE6" opacity="0.3" points="5.46213768 14.4889493 16.4621377 14.4889493 16.4621377 15.8589674 5.46213768 15.8589674"></polygon>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

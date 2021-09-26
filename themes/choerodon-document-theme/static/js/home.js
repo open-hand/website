@@ -10,7 +10,22 @@ jQuery(document).ready(function () {
         detail.toggleClass("none block");
     });
 
-    // 案例详情图片加载等待
+    // 六大功能模块tab标签点击
+    $(".function-modules-section-tabs-item").click(function () {
+        $('.function-modules-section-tabs-item').addClass('normal');
+        $(this).removeClass('normal');
+        $('.function-modules-section-detail').removeClass("block");
+        $('.function-modules-section-detail').addClass("none");
+        var t = $(this).attr('id');
+        var detail=$('#' + t + '-detail');
+        if (!detail.attr('src')) {
+          detail.attr("src",detail.attr("data-src"));
+          detail.removeClass("none");
+          detail.addClass("block");
+        }
+    });
+
+  // 案例详情图片加载等待
     $('.product-child>img').on('load', function() {
         $(this).parent(".product-child").children("[data-loader='circle']").attr("data-loader","");
     });
@@ -23,4 +38,22 @@ jQuery(document).ready(function () {
         $(this).children().children('.title').css("display", "none");
         $(this).children().children('.content').css("display", "none");
     });
+
+    // footer 产品功能锚点跳转
+    $('.footer-nav-item-link-span').click(function () {
+      document.getElementById("function-modules-section").scrollIntoView({
+        behavior: 'smooth',
+      });
+      $('.function-modules-section-tabs-item').addClass('normal');
+      var itemId = $(this).attr('data-id');
+      $('#' + itemId).removeClass('normal');
+      $('.function-modules-section-detail').removeClass("block");
+      $('.function-modules-section-detail').addClass("none");
+      var detail=$('#' + itemId + '-detail');
+      if (!detail.attr('src')) {
+        detail.attr("src",detail.attr("data-src"));
+        detail.removeClass("none");
+        detail.addClass("block");
+      }
+    })
 });

@@ -1,0 +1,68 @@
+.service-system-section {
+  background: #F7F7F7;
+  padding: .6rem 0 .94rem;
+}
+
+.service-system-section h4 {
+  font-size: .24rem;
+  color: #0D224A;
+  text-align: center;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+}
+
+.service-system-section p {
+  font-size: .16rem;
+  color: #0D224A;
+  text-align: center;
+  font-weight: 500;
+  margin: .3rem 0 .5rem;
+  padding: 0;
+}
+
+.service-system-section-content {
+  width: 8.37rem;
+  background: url("../img/home/service.png") no-repeat;
+  background-size: cover;
+  text-align: center;
+  margin: 0 auto;
+  height: 5.38rem;
+  position: relative;
+}
+
+.service-system-section-content-wrap {
+  width: 3.35rem;
+  height: 1.17rem;
+  line-height: 1.17rem;
+  border-radius: 1.675rem / 0.585rem;
+  border: 1px dashed #326DE6;
+  position: absolute;
+  top: calc(50% - 0.585rem);
+  left: calc(50% - 1.675rem);
+  padding-top: .25rem;
+}
+.service-system-section-content-text {
+  font-size: .20rem;
+  line-height: .28rem;
+  color: #326DE6;
+  letter-spacing: 1.8px;
+  text-align: center;
+}
+
+.service-system-section-btn {
+  margin: .66rem auto 0;
+  border-radius: 4px;
+  padding: .2rem .63rem;
+  background: #326DE6;
+  color: #fff;
+  width: max-content;
+}
+
+.service-system-section-btn a {
+  color: #fff;
+}
+
+.service-system-section-btn a img {
+  margin-left: .06rem;
+}

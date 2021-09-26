@@ -1,5 +1,5 @@
 <div
-    class='navbar {{ if or (in .URL "blog") (in .URL "categories") (in .URL "tags") (and (in .URL "case-studies") (eq .Name "案例")) (and (in .URL "case-studies") (eq .Name "Case Studies")) (in .URL "docs") }} top-white-nav {{ end }} top-nav'
+    class='navbar {{ if or (in .URL "blog") (in .URL "categories") (in .URL "tags") (and (in .URL "case-studies") (eq .Name "案例")) (and (in .URL "case-studies") (eq .Name "Case Studies")) (in .URL "docs") }} top-white-nav {{ end }} fixed-nav'
     role="navigation" id="navbar">
   {{ if in .URL "docs" }}
   <div class="navbar-left-buttons">
@@ -21,29 +21,47 @@
   <div class="navbar-collapse collapse" id="navigation">
     <ul class="nav navbar-nav navbar-right">
       {{ range .Site.Menus.main }}
-      {{ if .HasChildren }}
-      <li class='haschildren'>
-        {{ if .URL }}
-        <a {{ if .Post }} target="_blank" {{ end }} href="{{ .URL }}">{{ .Name }} {{ .Pre }}</a>
-        {{ else }}
-        <a>{{ .Name }} {{ .Pre }}</a>
-        {{ end }}
-        <ul class="sub-menus none">
-          {{ range .Children.ByWeight.Reverse }}
-          <li>
-            <a {{ if .Post }} target="_blank" {{ end }} href="{{ .URL }}">{{ .Name }} </a>
-          </li>
-          {{ end }}
-        </ul>
-      </li>
+      {{ if eq .Identifier "product-plan"}}
+        <li class='haschildren'>
+          <a>{{ .Name }} {{ .Pre }}</a>
+          <ul class="sub-menus-product-plan sub-menus none">
+            <div class="sub-menus-product-plan-label">产品介绍</div>
+            <div class="sub-menus-product-plan-list">
+              {{ range .Children.ByWeight }}
+                <div class="sub-menus-product-plan-list-item">
+                  <img src="/img/nav/{{ .Identifier }}.svg" />
+                  <span>{{ .Name }}</span>
+                </div>
+              {{ end }}
+            </div>
+            <div class="sub-menus-product-plan-label yellow">解决方案</div>
+            <p class="sub-menus-product-plan-text">企业级轻咨询规划、产品架构和研发 体系构建等解决方案，请致电 400 168 4263 转 81072 了解详情</p>
+          </ul>
+        </li>
       {{ else }}
-      <li>
-        <a {{ if .Post }} target="_blank" {{ end }} href="{{ .URL }}">{{ .Name }}</a>
-      </li>
+        {{ if .HasChildren }}
+          <li class='haschildren'>
+            {{ if .URL }}
+            <a {{ if .Post }} target="_blank" {{ end }} href="{{ .URL }}">{{ .Name }} {{ .Pre }}</a>
+            {{ else }}
+            <a>{{ .Name }} {{ .Pre }}</a>
+            {{ end }}
+            <ul class="sub-menus none">
+              {{ range .Children.ByWeight }}
+              <li>
+                <a {{ if .Post }} target="_blank" {{ end }} href="{{ .URL }}">{{ .Name }} </a>
+              </li>
+              {{ end }}
+            </ul>
+          </li>
+        {{ else }}
+          <li>
+            <a {{ if .Post }} target="_blank" {{ end }} href="{{ .URL }}">{{ .Name }}</a>
+          </li>
+        {{ end }}
       {{ end }}
       {{ end }}
-      <li class="loginbtn"><a href="{{.Site.Params.signinhref}}" target="_blank" class="btn button">{{ i18n "sign in"}}</a></li>
-      <li class="trybtn"><a href="{{.Site.Params.tryhref}}" target="_blank">{{ i18n "sign up"}}</a></li>
+      <li class="trybtn"><a href="{{.Site.Params.tryhref}}" target="_blank">{{ i18n "free trial"}}</a></li>
     </ul>
   </div>
   <div class="global-language">

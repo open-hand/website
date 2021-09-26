@@ -1,6 +1,17 @@
 @import url("style.choerodon.css");
 @import url("footer.css");
 @import url("notice.css");
+@import url("problem.css");
+@import url("function.css");
+@import url("service.css");
+@import url("cases.css");
+@import url("resources.css");
+
+body {
+    font-family: 'PingFang SC', 'Monospaced Number', 'Chinese Quote', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 400;
+}
+
 .no-active{
   font-size: 0.2rem;
   width: 10.60rem;
@@ -15,11 +26,6 @@
   background: #ffffff;
 }
 /* abstracts */
-.abstracts-section{
-  padding: 0;
-  margin-top: 0.4rem;
-  margin-bottom: 0.5rem;
-}
 .no-active-section,
 .targets-section,
 .products-section,
@@ -31,9 +37,18 @@
   flex-wrap: wrap;
 }
 
+.abstracts-section {
+  flex-direction: column;
+  padding: 0;
+  margin: .4rem .46rem .6rem;
+}
+
 .abstracts-section .abstract-section-content{
-  width: 6.79rem;
-  margin-right: 0.868rem;
+  margin:  0 1.14rem;
+  font-size: 18px;
+  color: #0D224A;
+  text-align: left;
+  line-height: 36px;
 }
 
 .abstracts-section h3 {
@@ -57,8 +72,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 1.76rem;
-  width: 2.95rem;
+  width: 100%;
 }
 .abstract-section-img img{
   width: 100%
@@ -199,65 +213,6 @@
   z-index: 999;
   left: 0;
 }
-.see-more-section {
-  background:linear-gradient(-180deg, #003DAC,#3371E3);
-  background:-webkit-linear-gradient(-180deg, #003DAC,#3371E3);
-  background:-moz-linear-gradient(-180deg, #003DAC,#3371E3);
-  background:-o-linear-gradient(-180deg, #003DAC,#3371E3);
-  background:-ms-linear-gradient(-180deg, #003DAC,#3371E3);
-
-}
-.see-more-section .svg{
-  background: url(../img/see-more.svg) no-repeat left center;
-  position: absolute;
-  left: 1.89rem;
-  opacity: 0.93;
-  width: 6.63rem;
-  height: 2.1rem;
-  align-self: center;
-}
-
-.see-more-section .content{
-  margin-left: 9.76rem;
-  z-index: 998;
-}
-
-
-.see-more-section .more-icon{
-  background: url(../img/home/video-icon.svg) no-repeat center;
-  height: 0.3rem;
-  width: 0.2rem;
-}
-.see-more-section .icon-text{
-  font-size: 0.16rem;
-  line-height: 2.5;
-  color: #326DE6;
-  margin-right: 0.1rem;
-}
-.carousels-section .button{
-  display: inline-flex;
-  line-height: 2.5;
-  color: #326DE6;
-  padding: 0;
-}
-.carousels-section .button,
-.see-more-section .button{
-  justify-content: center;
-  font-size: 0.16rem;
-  border-radius: 0.06rem;
-  width: 1.44rem;
-  background-color: #FAFAFA;
-  font-weight: 600;
-}
-.see-more-section .button{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-.carousels-section .button:hover,
-.see-more-section .button:hover {
-  opacity: 0.9;
-}
 /* carousel.html */
 .carousels-section {
   padding-top: 1rem;
@@ -266,6 +221,7 @@
   background:url(../img/banner.svg)no-repeat,-moz-linear-gradient(0deg, #003DAC,#3371E3);
   background:url(../img/banner.svg)no-repeat,-o-linear-gradient(0deg, #003DAC,#3371E3);
   background:url(../img/banner.svg)no-repeat,-ms-linear-gradient(0deg, #003DAC,#3371E3);
+  margin-top: .6rem;
 }
 .carousels-section .carousel-box-flex{
   display: flex;
@@ -274,24 +230,23 @@
 }
 .carousels-section .carousel-box-flex h3 {
   font-size: 0.36rem;
-  line-height: 1.22;
+  line-height: 0.44rem;
   margin-bottom: 0;
   color: #ffffff;
   margin-top: 0;
-  font-weight: 300;
+  font-weight: 400;
   /*letter-spacing: 2px;*/
 }
 .carousels-section .carousel-box-flex p {
   font-size: 0.16rem;
-  line-height: 1.75;
+  line-height: 0.28rem;
   color: #ffffff;
-  margin-bottom: 0;
-  font-weight: 300;
+  font-weight: 400;
   margin-top: 0.20rem;
   margin-bottom: 0.20rem;
 }
 .carousels-section .carousel-box-flex .carousel-button{
-  margin-bottom: 0.8rem;
+  margin-bottom: 1rem;
 }
 .carousels-section .carousel-box-flex .carousel-button a:nth-child(2){
   display: none;
@@ -299,6 +254,7 @@
 
 .see-more-section .carousel-button .carousel-a {
   height: 42px;
+  margin: 0 auto;
 }
 
 .see-more-section .carousel-button .carousel-a:hover {
@@ -444,11 +400,60 @@
 /* product.html end */
 /* see_more.html */
 .see-more-section{
-  height: 2.63rem;
+  margin-bottom: 0.7rem;
+  padding: .7rem 0 .58rem;
+}
+
+.see-more-section {
+  /*background:linear-gradient(-180deg, #003DAC,#3371E3);*/
+  /*background:-webkit-linear-gradient(-180deg, #003DAC,#3371E3);*/
+  /*background:-moz-linear-gradient(-180deg, #003DAC,#3371E3);*/
+  /*background:-o-linear-gradient(-180deg, #003DAC,#3371E3);*/
+  /*background:-ms-linear-gradient(-180deg, #003DAC,#3371E3);*/
+  background: url(../img/home/experience.svg) no-repeat center;
+  background-size: cover;
+
+}
+
+.see-more-section .content{
+  text-align: center;
+}
+
+.see-more-section .more-icon{
+  background: url(../img/home/video-icon.svg) no-repeat center;
+  height: 0.3rem;
+  width: 0.2rem;
+}
+.see-more-section .icon-text{
+  font-size: 0.16rem;
+  line-height: 2.5;
+  color: #326DE6;
+  margin-right: 0.1rem;
+}
+.carousels-section .button{
+  display: inline-flex;
+  line-height: 2.5;
+  color: #326DE6;
   padding: 0;
-  display: -webkit-flex; /* Safari */
-  position: relative;
-  margin-bottom: 0.4rem;
+}
+.carousels-section .button,
+.see-more-section .button{
+  justify-content: center;
+  font-size: 0.16rem;
+  border-radius: 0.06rem;
+  width: 1.44rem;
+  background-color: #FAFAFA;
+  font-weight: 500;
+  color: #326de6;
+}
+.see-more-section .button{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.carousels-section .button:hover,
+.see-more-section .button:hover {
+  opacity: 0.9;
 }
 
 .see-more-section a{
@@ -460,24 +465,9 @@
   font-weight: 400;
   font-size: 0.36rem;
   color: #FFFFFF;
-  margin-bottom: 0.2rem;
-  line-height: 1.22;
-  margin-top: 0.5rem;
-}
-.see-more-section .lead{
-  font-size: 0.16rem;
-  color: #ffffff;
-  line-height: 1.75;
-  margin-bottom: 0.20rem;
-}
-
-.see-more-section .col-md-12{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: left;
-  padding: 0;
+  margin-bottom: 0.3rem;
+  line-height: .44rem;
+  margin-top: 0;
 }
 /* see_more.html end */
 /* clients.html */

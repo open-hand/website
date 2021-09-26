@@ -1,10 +1,10 @@
 weight: 1
-title: "HAND技术产品交流"
-minTitle: "HAND技术产品交流"
-description: "HAND技术产品交流平台全新上线，源于技术，志在四海。"
-minDescription: "HAND技术产品交流平台全新上线，源于技术，志在四海"
+title: "猪齿鱼SaaS版本重磅发布"
+minTitle: "猪齿鱼SaaS版本重磅发布"
+description: "快速了解SaaS版功能，选择最适合您的企业服务方案"
+minDescription: "快速了解SaaS版功能，选择最适合您的企业服务方案"
 button: "了解详情"
 img: "/img/socials/event/crland.svg"
-homeImg: "/img/home/notice/live.svg"
-ahref: "https://mp.weixin.qq.com/mp/homepage?__biz=MzI2MjUzODcwMA==&hid=2&sn=e2940adc17e08cc6ec31e08aa6694a75&scene=1&devicetype=Windows+10+x64&version=62090529&lang=zh_CN&nettype=WIFI&ascene=1&session_us=gh_3cf8aa3b14b4&pass_ticket=1ra3Tuz7pyeAnWaaFzDWv6%2BxxrKCOM0mxRZURMXyCgsNLkdzQH50F64oeE7A3Pl0&wx_header=1&uin=MTQwOTU3NTQ0MA%3D%3D&key=f5c6dee86269ad8dab56bda9be25cc4a6822bc5e093c3b8d43e5248b859952188eb61e6be6419b350f7202036abbd183103a98959f18a31bea871e8b2be13bafe9e60d42fdc81ad5709854ff52a71a9b"
+homeImg: "/img/home/notice/release.svg"
+ahref: "/blog/c7n-saas/"
 language: en

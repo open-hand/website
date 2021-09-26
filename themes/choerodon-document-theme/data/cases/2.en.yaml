@@ -1,0 +1,8 @@
+weight: 2
+name: "HAND"
+image: "/img/cases/hand-img1.png"
+imageSelect: "/img/cases/hand-img2.png"
+url: "case-studies/hand/"
+description: "Shorten our development cycle and deliver faster"
+classname: "hand"
+language: en

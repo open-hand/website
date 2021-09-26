@@ -1,0 +1,6 @@
+weight: 3
+name: "开发"
+description: "包括集成Git Lab的代码统一管理能力、支持多种类型的制品库管理能力、集成 CI与CD的自动化流水线、内建的代码扫描与质量分析，全流程跟进开发过程。"
+img: "/img/home/function/cooperation.png"
+id: "function-tabs-develop"
+language: zh

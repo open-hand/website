@@ -1,4 +1,4 @@
 weight: 1
-description: <h3>Choerodon猪齿鱼</a>开源全价值链多云敏捷协作平台，是基于开源技术Kubernetes，Istio，knative，Gitlab，Spring Cloud来实现本地和云端环境的集成，实现企业多云/混合云应用环境的一致性。平台通过提供精益敏捷、持续交付、容器环境、微服务、DevOps等能力来帮助组织团队来完成软件的生命周期管理，从而更快、更频繁地交付更稳定的软件。</h3><p>Choerodon猪齿鱼建立在<a href="case-studies">多家大型企业应用</a>实践的经验基础上，结合社区最佳的创意和实践。</p>
-image: '/img/home/choerodon_illustrator.svg'
+description: 猪齿鱼Choerodon全场景研发效能平台，提供体系化方法论和协作、测试、DevOps及容器工具，帮助企业拉通需求、 设计、开发、部署、测试和运营流程，一站式提高研发管理效率和质量。从敏捷方法论引入、DevOps落地方案设计到实操工具使用，从单项目管理到复杂项目群管理，猪齿鱼全面满足项目管理需求，贯穿研发全流程，助力项目更高质量的交付，让团队效能更快更强更稳定。
+image: '/img/home/architecture.png'
 language: zh

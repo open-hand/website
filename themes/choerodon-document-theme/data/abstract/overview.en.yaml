@@ -1,4 +1,4 @@
 weight: 1
-description: <h3>Choerodon</a> is an open source enterprise service platform based on container orchestration and management capabilities of Kubernetes. It integrates the tool chain of DevOps, microservices, and mobile application framework to help companies achieve scrum application delivery and automated operations management, and provide business components such as IoT, payment, data, smart insight, and enterprise application market to help companies focus on business and accelerate digital transformation.</h3><p>Choerodon is based on the experience of <a href="case-studies">many large-scale enterprise application</a> practices, combining the best ideas and practices of the community.</p>
+description: 猪齿鱼Choerodon全场景研发效能平台，提供体系化方法论和协作、测试、DevOps及容器工具，帮助企业拉通需求、 设计、开发、部署、测试和运营流程，一站式提高研发管理效率和质量。从敏捷方法论引入、DevOps落地方案设计到实操工具使用，从单项目管理到复杂项目群管理，猪齿鱼全面满足项目管理需求，贯穿研发全流程，助力项目更高质量的交付，让团队效能更快更强更稳定。
 image: "/img/home/choerodon_illustrator.svg"
 language: en

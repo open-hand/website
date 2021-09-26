@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="28px" height="28px" viewBox="0 0 28 28" version="1.1">
+  <title>项目群</title>
+  <g id="首页" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="首页-菜单下拉列表-上下" transform="translate(-505.000000, -132.000000)">
+      <g id="编组-5" transform="translate(358.000000, 64.000000)">
+        <g id="项目群" transform="translate(147.000000, 68.000000)">
+          <rect id="矩形" x="0" y="0" width="28" height="28"></rect>
+          <g id="编组" transform="translate(4.000000, 4.000000)">
+            <rect id="矩形" stroke="#326DE6" stroke-width="2" opacity="0.6" x="4.77272727" y="0" width="16.2272727" height="16.2272727"></rect>
+            <rect id="矩形" stroke="#326DE6" stroke-width="2" fill="#FFFFFF" x="0" y="3.81818182" width="16.2272727" height="16.2272727"></rect>
+            <polygon id="路径" fill="#326DE6" fill-rule="nonzero" opacity="0.3" points="11.5723779 8.40518875 11.5723779 10.0143841 6.04076869 10.0143841 6.04076869 8.40518875"></polygon>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

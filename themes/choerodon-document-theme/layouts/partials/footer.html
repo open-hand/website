@@ -1,25 +1,50 @@
 <footer id="footer" class="footer">
+  <div class="footer-content">
     <nav class="footer-nav">
-        {{ range .Site.Menus.main }}
-            {{ if or (eq .Identifier "github")  (eq .Identifier "version") }}
-                {{ else }}
-                <a href="{{ .URL }}">{{ .Name }}</a>
-            {{ end }}
-        {{ end }}
-    </nav>
-    <div class="social">
-        <a href="https://github.com/open-hand/" target="_blank" class="social-single"><i class="iconfont icon-github-footer"></i></a>
-        <i class="iconfont icon-wechat-footer social-single"></i>
-        <div class="wechat-hover load-img">
-            <div data-loader='circle'></div>
-            <img data-src="/img/footer/wechat-hand.png"/>
+      {{ range .Site.Data.footer }}
+      {{ if eq ($.Scratch.Get "language") .language }}
+      <div class="footer-nav-item">
+        <div class="footer-nav-item-title">
+          {{ .name }}
         </div>
-        <a href="https://openforum.hand-china.com/" target="_blank" class="social-single"><i class="iconfont icon-forum-footer"></i></a>
+        <div class="footer-nav-item-link">
+          {{ range $index, $element := .children }}
+          {{ if $element.url }}
+            <a class="footer-nav-item-link-text" href="{{ $element.url }}">{{ $element.name }}</a>
+          {{ else }}
+            <span class=" footer-nav-item-link-text footer-nav-item-link-span" data-id="{{ $element.dataId }}">
+              {{ $element.name }}
+            </span>
+          {{ end }}
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+      {{ end }}
+    </nav>
+    <div class="footer-connect">
+      <div class="footer-connect-text">
+        <img src="/img/footer/phone.svg" />
+        <span>400 168 4263 转 81072</span>
+      </div>
+      <div class="footer-connect-text">
+        <img src="/img/footer/email.svg" />
+        <span>zhuchiyu@vip.hand-china.com</span>
+      </div>
+      <div class="footer-connect-img">
+        <div class="text-center footer-connect-img-item">
+          <img src="/img/footer/hand.png" />
+          <p>{{ i18n "follow the public account" }}</p>
+        </div>
+        <div class="text-center">
+          <img src="/img/footer/hand.png" />
+          <p>{{ i18n "add WeChart" }}</p>
+        </div>
+      </div>
     </div>
-    <div class="copy-right" class="center">
-        Copyright &copy; The Choerodon Author. All rights reserved.
-    </div>
-    <div id="big-img" class="black-big-img">
-        <img src="" alt="">
-    </div>
+  </div>
+  <div class="copy-right">
+    <img src="/img/footer/choerodon-log.png" />
+    <span>Copyright &copy; The Choerodon Author. All rights reserved.</span>
+  </div>
 </footer>

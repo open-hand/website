@@ -1,0 +1,25 @@
+{{ $.Scratch.Set "language" .Site.Language.Lang }}
+<section class="common-resources-section">
+  <div class="common-resources-section-title">
+    {{ i18n "common product resource" }}
+  </div>
+  {{ range .Site.Data.productResources }}
+  {{ if eq ($.Scratch.Get "language") .language }}
+    <div class="common-resources-section-item">
+      <div class="common-resources-section-item-title">
+        <img src="{{ .image }}" />
+        <span>{{ .name }}</span>
+      </div>
+      <p class="common-resources-section-item-des">
+        {{ .description }}
+      </p>
+      <div>
+        <a href="{{ .url }}" class="common-resources-section-item-link">
+          <span>{{ .name }}</span>
+          <img src="/img/home/arrow-blue.svg" />
+        </a>
+      </div>
+    </div>
+  {{ end }}
+  {{ end }}
+</section>
