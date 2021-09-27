@@ -4,6 +4,15 @@
 
 - id: navToggle
   translation: '切换导航'
+
+- id: product description
+  translation: '产品介绍'
+
+- id: solution
+  translation: '解决方案'
+
+- id: solution description
+  translation: '企业级轻咨询规划、产品架构设计和研发体系构建等解决方案，请致电 400 168 4263 转 81072'
 # 导航栏 结束
 
 # 首页
@@ -182,3 +191,33 @@
 - id: zother
   translation: '其他类'
 # 知识分享页面结束
+
+# 关于猪齿鱼页面
+- id: about choerodon
+  translation: '关于猪齿鱼'
+
+- id: about choerodon description1
+  translation: '猪齿鱼 Choerodon 于2015年由国内领先的IT咨询公司“汉得信息”（股票代码：300170）自研推出，作为内部管理工具帮助汉得有序管理超过8000+交付项目及300+研发项目。'
+
+- id: about choerodon description2
+  translation: '2018年5月，本着开源开放、共创共享的精神，猪齿鱼面向广大研发人员推出开源版本。目前，猪齿鱼的注册租户数已超过1000家，并以每年40%的速度快速增长。'
+
+- id: about choerodon description3
+  translation: '承袭汉得信息20多年的企业信息化服务经验和对研发管理需求的深入理解，猪齿鱼更懂项目管理和研发需求，产品的多组织协同、大规模敏捷、自动化测试、自动化部署、容器云等功能备受用户认可，在数百家头部客户中有成功应用。'
+
+- id: about choerodon description4
+  translation: '2021年，猪齿鱼的成熟度和稳定度更上层楼，重磅发布SaaS版V1.0，强劲助力团队效能的更快更强更稳定。'
+
+- id: brand story
+  translation: '品牌故事'
+
+- id: brand story description1
+  translation: '猪齿鱼是世界上最聪明的鱼，被誉为“海里的爱因斯坦“，它是唯一会使用工具的鱼。'
+
+- id: brand story description2
+  translation: '猪齿鱼非常喜欢吃蛤蜊，它用腮或鱼鳍来制造水流冲开泥沙，找到蛤蜊后用牙齿叼住，通过不断击打礁石来打破蛤蜊的外壳吃到肉。'
+
+- id: brand story description3
+  translation: '我们使用“猪齿鱼”来命名这款全场景研发效能平台，是希望这款像猪齿鱼一样聪明和高效的产品，能够帮助团队更快更稳更简单的交付高质量产品，帮助企业提升数字化管理水平，打造可持续发展的核心竞争力，也为推动企业数字化贡献力量。'
+
+# 关于猪齿鱼页面结束

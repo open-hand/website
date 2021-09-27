@@ -1,9 +1,9 @@
 weight: 3
-name: "华润置地"
-image: "/img/cases/crland-img1.png"
-imageSelect: "/img/cases/crland-img2.png"
+name: "某投资开发运营商"
+#image: "/img/cases/crland-img1.png"
+#imageSelect: "/img/cases/crland-img2.png"
 url: "case-studies/crland/"
 description: "部署周期从数周减少到几分钟，应用交付的效率提高了10 倍，重要的运营支出减少，对我们的业务非常有帮助，节省了很多时间，开发人员很开心有这样的转变。"
-author: "华润置地项目总监"
+author: "某投资开发运营商项目总监"
 classname: "crland"
 language: zh

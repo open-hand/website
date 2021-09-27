@@ -18,6 +18,10 @@ children:
     dataId: "function-tabs-deploy"
     image: "/img/nav/deploy.svg"
   5:
+    name: "测试"
+    dataId: "function-tabs-test"
+    image: "/img/nav/test.svg"
+  6:
     name: "容器"
     dataId: "function-tabs-container"
     image: "/img/nav/container.svg"

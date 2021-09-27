@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="28px" height="28px" viewBox="0 0 28 28" version="1.1">
-  <title>项目群</title>
-  <g id="首页" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-    <g id="首页-菜单下拉列表-上下" transform="translate(-505.000000, -132.000000)">
-      <g id="编组-5" transform="translate(358.000000, 64.000000)">
-        <g id="项目群" transform="translate(147.000000, 68.000000)">
-          <rect id="矩形" x="0" y="0" width="28" height="28"></rect>
-          <g id="编组" transform="translate(4.000000, 4.000000)">
-            <rect id="矩形" stroke="#326DE6" stroke-width="2" opacity="0.6" x="4.77272727" y="0" width="16.2272727" height="16.2272727"></rect>
-            <rect id="矩形" stroke="#326DE6" stroke-width="2" fill="#FFFFFF" x="0" y="3.81818182" width="16.2272727" height="16.2272727"></rect>
-            <polygon id="路径" fill="#326DE6" fill-rule="nonzero" opacity="0.3" points="11.5723779 8.40518875 11.5723779 10.0143841 6.04076869 10.0143841 6.04076869 8.40518875"></polygon>
-          </g>
+<svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>项目群</title>
+    <g id="首页" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="首页-菜单下拉列表-上下" transform="translate(-505.000000, -132.000000)">
+            <g id="编组-5" transform="translate(358.000000, 64.000000)">
+                <g id="项目群" transform="translate(147.000000, 68.000000)">
+                    <rect id="矩形" x="0" y="0" width="28" height="28"></rect>
+                    <g id="编组-2">
+                        <rect id="矩形" x="0" y="0" width="28" height="28"></rect>
+                        <g id="编组" transform="translate(3.818182, 3.818182)">
+                            <path d="M21.6363636,0 L4.33884298,0 L4.33884298,17.2975207 L21.6363636,17.2975207 L21.6363636,0 Z M19.0909091,2.54545455 L19.0909091,14.7509091 L6.88418182,14.7509091 L6.88418182,2.54545455 L19.0909091,2.54545455 Z" id="矩形" fill="#326DE6" fill-rule="nonzero" opacity="0.3"></path>
+                            <rect id="矩形" fill="#FFFFFF" x="0" y="3.81818182" width="16.5454545" height="16.5454545"></rect>
+                            <path d="M17.2975207,3.47107438 L0,3.47107438 L0,20.768595 L17.2975207,20.768595 L17.2975207,3.47107438 Z M14.7509091,6.01618182 L14.7509091,18.2229091 L2.54545455,18.2229091 L2.54545455,6.01618182 L14.7509091,6.01618182 Z" id="矩形" fill="#326DE6" fill-rule="nonzero"></path>
+                            <polygon id="路径" fill="#326DE6" fill-rule="nonzero" opacity="0.3" points="11.7930708 8.91380795 11.7930708 10.3767129 6.76433517 10.3767129 6.76433517 8.91380795"></polygon>
+                        </g>
+                    </g>
+                </g>
+            </g>
         </g>
-      </g>
     </g>
-  </g>
 </svg>

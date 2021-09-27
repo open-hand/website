@@ -8,14 +8,21 @@
     <div id="cases-{{ $element.weight }}-detail" class="cases-section-detail {{ if gt $index 1}} none {{ else }} block {{ end }}">
       <div class="cases-section-detail-background {{ $element.classname }}">
         <div class="cases-section-detail-mask">
-          <div>
-            <img class="cases-section-icon" src="/img/cases/quotation.svg" />
-            <span class="cases-section-des">{{ $element.description }}</span>
+          <div class="cases-section-detail-text-wrap">
+            <div>
+              <img class="cases-section-icon-left" src="/img/cases/quotation-left.svg" />
+            </div>
+            <div>
+              <span class="cases-section-des">{{ $element.description }}</span>
+              <img class="cases-section-icon-right" src="/img/cases/quotation-right.svg" />
+            </div>
           </div>
-          <p class="cases-section-author text-right">————{{ $element.author }}</p>
-          <div class="text-center">
-            <a href="{{ $element.url }}" class="cases-section-detail-btn btn button carousel-a">{{ i18n "view case" }}</a>
-          </div>
+          <p class="cases-section-author text-right">—— {{ $element.author }}</p>
+          {{ if $element.url }}
+            <div class="text-center">
+              <a href="{{ $element.url }}" class="cases-section-detail-btn btn button carousel-a">{{ i18n "view case" }}</a>
+            </div>
+          {{ end }}
         </div>
       </div>
     </div>

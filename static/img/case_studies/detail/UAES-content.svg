@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1046px" height="718px" viewBox="0 0 1046 718" version="1.1">
+  <title>解决方案</title>
+  <defs>
+    <filter x="-2.0%" y="-2.9%" width="103.9%" height="105.8%" id="filter-1">
+      <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+      <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+      <feColorMatrix values="0 0 0 0 0   0 0 0 0 0.130404118   0 0 0 0 0.397843071  0 0 0 0.101262019 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+      <feMerge>
+        <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+        <feMergeNode in="SourceGraphic"></feMergeNode>
+      </feMerge>
+    </filter>
+    <polygon id="path-2" points="0 2.87517241 2.66396761 0.379310345 14 11 2.66396761 21.6206897 0 19.1248276 8.65317139 11"></polygon>
+    <linearGradient x1="10.950419%" y1="50%" x2="74.2727799%" y2="50%" id="linearGradient-4">
+      <stop stop-color="#8499FF" stop-opacity="0" offset="0%"></stop>
+      <stop stop-color="#2E6DFF" offset="100%"></stop>
+    </linearGradient>
+    <polygon id="path-5" points="0 2.87517241 2.66396761 0.379310345 14 11 2.66396761 21.6206897 0 19.1248276 8.65317139 11"></polygon>
+    <polygon id="path-7" points="0 2.87517241 2.66396761 0.379310345 14 11 2.66396761 21.6206897 0 19.1248276 8.65317139 11"></polygon>
+    <polygon id="path-9" points="-2.6811886e-14 1.13686838e-13 13.5773041 1.95399252e-14 40 26.9491525 13.5773041 53 0 53 26.5055374 26.9491525"></polygon>
+    <polygon id="path-11" points="-2.6811886e-14 1.13686838e-13 13.5773041 1.95399252e-14 40 26.9491525 13.5773041 53 0 53 26.5055374 26.9491525"></polygon>
+    <polygon id="path-13" points="-2.6811886e-14 1.13686838e-13 13.5773041 1.95399252e-14 40 26.9491525 13.5773041 53 0 53 26.5055374 26.9491525"></polygon>
+    <polygon id="path-15" points="0 2.87517241 2.66396761 0.379310345 14 11 2.66396761 21.6206897 0 19.1248276 8.65317139 11"></polygon>
+    <polygon id="path-17" points="0 2.87517241 2.66396761 0.379310345 14 11 2.66396761 21.6206897 0 19.1248276 8.65317139 11"></polygon>
+    <polygon id="path-19" points="0 2.87517241 2.66396761 0.379310345 14 11 2.66396761 21.6206897 0 19.1248276 8.65317139 11"></polygon>
+    <polygon id="path-21" points="0 2.87517241 2.66396761 0.379310345 14 11 2.66396761 21.6206897 0 19.1248276 8.65317139 11"></polygon>
+    <polygon id="path-23" points="-2.6811886e-14 1.13686838e-13 13.5773041 1.95399252e-14 40 26.9491525 13.5773041 53 0 53 26.5055374 26.9491525"></polygon>
+    <polygon id="path-25" points="-2.6811886e-14 1.13686838e-13 13.5773041 1.95399252e-14 40 26.9491525 13.5773041 53 0 53 26.5055374 26.9491525"></polygon>
+    <polygon id="path-27" points="-2.6811886e-14 1.13686838e-13 13.5773041 1.95399252e-14 40 26.9491525 13.5773041 53 0 53 26.5055374 26.9491525"></polygon>
+  </defs>
+  <g id="案例详情" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="联合汽车电子" transform="translate(-181.000000, -934.000000)">
+      <g id="解决方案" filter="url(#filter-1)" transform="translate(196.000000, 949.000000)">
+        <rect id="矩形" fill="#FFFFFF" x="0" y="0" width="1016" height="688"></rect>
+        <g id="编组-2" transform="translate(20.000000, 20.000000)">
+          <rect id="矩形" fill="#EDF3FF" x="0" y="0" width="180" height="52"></rect>
+          <text id="知识管理" font-family="PingFangSC-Medium, PingFang SC" font-size="18" font-weight="400" fill="#235ACA">
+            <tspan x="54" y="33">知识管理</tspan>
+          </text>
+        </g>
+        <g id="编组-2备份-3" transform="translate(20.000000, 616.000000)">
+          <rect id="矩形" fill="#EDF3FF" x="0" y="0" width="976" height="52"></rect>
+          <text id="所使用的工具：猪齿鱼-Choerodon" font-family="PingFangSC-Medium, PingFang SC" font-size="18" font-weight="400" fill="#235ACA">
+            <tspan x="282" y="33">所使用的工具：猪齿鱼 Choerodon 全场景效能平台</tspan>
+          </text>
+        </g>
+        <g id="编组-3" transform="translate(418.000000, 20.000000)">
+          <rect id="矩形备份" fill="#EDF3FF" x="0" y="0" width="180" height="52"></rect>
+          <g id="编组-2备份" transform="translate(54.000000, 14.000000)" fill="#235ACA" font-family="PingFangSC-Medium, PingFang SC" font-size="18" font-weight="400">
+            <text id="培训管理">
+              <tspan x="0" y="19">培训管理</tspan>
+            </text>
+          </g>
+        </g>
+        <g id="编组-4" transform="translate(816.000000, 20.000000)">
+          <rect id="矩形备份-2" fill="#EDF3FF" x="0" y="0" width="180" height="52"></rect>
+          <g id="编组-2备份-2" transform="translate(54.000000, 13.000000)" fill="#235ACA" font-family="PingFangSC-Medium, PingFang SC" font-size="18" font-weight="400">
+            <text id="资源管理">
+              <tspan x="0" y="19">资源管理</tspan>
+            </text>
+          </g>
+        </g>
+        <g id="ic/chevron_right备份-10" transform="translate(508.000000, 84.000000) rotate(-270.000000) translate(-508.000000, -84.000000) translate(501.000000, 73.000000)">
+          <mask id="mask-3" fill="white">
+            <use xlink:href="#path-2"></use>
+          </mask>
+          <g id="路径" fill-rule="nonzero"></g>
+          <g id="🎨-Color" mask="url(#mask-3)" fill="url(#linearGradient-4)">
+            <g transform="translate(-10.500000, -6.068966)" id="形状">
+              <rect x="0" y="0" width="35" height="33.3793103"></rect>
+            </g>
+          </g>
+        </g>
+        <g id="ic/chevron_right备份-12" transform="translate(906.000000, 84.000000) rotate(-270.000000) translate(-906.000000, -84.000000) translate(899.000000, 73.000000)">
+          <mask id="mask-6" fill="white">
+            <use xlink:href="#path-5"></use>
+          </mask>
+          <g id="路径" fill-rule="nonzero"></g>
+          <g id="🎨-Color" mask="url(#mask-6)" fill="url(#linearGradient-4)">
+            <g transform="translate(-10.500000, -6.068966)" id="形状">
+              <rect x="0" y="0" width="35" height="33.3793103"></rect>
+            </g>
+          </g>
+        </g>
+        <g id="ic/chevron_right备份-11" transform="translate(110.000000, 84.000000) rotate(-270.000000) translate(-110.000000, -84.000000) translate(103.000000, 73.000000)">
+          <mask id="mask-8" fill="white">
+            <use xlink:href="#path-7"></use>
+          </mask>
+          <g id="路径" fill-rule="nonzero"></g>
+          <g id="🎨-Color" mask="url(#mask-8)" fill="url(#linearGradient-4)">
+            <g transform="translate(-10.500000, -6.068966)" id="形状">
+              <rect x="0" y="0" width="35" height="33.3793103"></rect>
+            </g>
+          </g>
+        </g>
+        <rect id="矩形" fill="#EDF3FF" x="20" y="96" width="976" height="500"></rect>
+        <g id="编组-9" transform="translate(110.000000, 116.000000)">
+          <rect id="矩形" fill="#4B8AFF" x="0" y="0" width="866" height="42"></rect>
+          <text id="DevOps" font-family="PingFangSC-Medium, PingFang SC" font-size="18" font-weight="400" fill="#FFFFFF">
+            <tspan x="399" y="28">DevOps</tspan>
+          </text>
+        </g>
+        <g id="编组-9备份" transform="translate(110.000000, 446.000000)">
+          <rect id="矩形" fill="#00B5AE" x="0" y="0" width="270" height="60"></rect>
+          <text id="蓝图设计阶段" font-family="PingFangSC-Medium, PingFang SC" font-size="18" font-weight="400" fill="#FFFFFF">
+            <tspan x="81" y="37">蓝图设计阶段</tspan>
+          </text>
+        </g>
+        <g id="编组-9备份-3" transform="translate(50.000000, 363.000000)">
+          <polygon id="矩形" fill="#00B5AE" points="0 163 6.66477248 163 32.4048114 163 926 163 926 205 0 205"></polygon>
+          <polygon id="矩形" fill="#00B5AE" points="0 41.8944444 15 18 30 41.8944444 30 205 0 205"></polygon>
+          <polygon id="矩形备份-7" fill="#00B5AE" transform="translate(896.000000, 73.500000) scale(1, -1) translate(-896.000000, -73.500000) " points="881 18.7833333 896 0 911 18.7833333 911 147 881 147"></polygon>
+          <text id="持续交付" font-family="PingFangSC-Medium, PingFang SC" font-size="18" font-weight="400" fill="#FFFFFF">
+            <tspan x="422" y="191">持续交付</tspan>
+          </text>
+        </g>
+        <g id="编组-9备份-2" transform="translate(390.000000, 446.000000)">
+          <rect id="矩形" fill="#00B5AE" x="0" y="0" width="518" height="60"></rect>
+          <text id="系统实现与上线" font-family="PingFangSC-Medium, PingFang SC" font-size="18" font-weight="400" fill="#FFFFFF">
+            <tspan x="196" y="37">系统实现与上线</tspan>
+          </text>
+        </g>
+        <text id="Quick-HAND" font-family="PingFangSC-Medium, PingFang SC" font-size="24" font-weight="400" fill="#0D224A">
+          <tspan x="170" y="413">Quick-HAND</tspan>
+        </text>
+        <polygon id="矩形备份-3" fill="#4B8AFF" points="110 172 873 172 906 198.5 873 225 110 225"></polygon>
+        <polygon id="矩形备份-5" fill="#4B8AFF" points="110 235 873 235 906 261.5 873 288 110 288"></polygon>
+        <g id="编组-8" transform="translate(225.000000, 302.000000)">
+          <polygon id="矩形备份-6" fill="#124FC0" points="0 0 665.293865 0 681 12.5 665.293865 25 0 25"></polygon>
+          <text id="配置管理" font-family="PingFangSC-Medium, PingFang SC" font-size="14" font-weight="400" fill="#FFFFFF">
+            <tspan x="352" y="18">配置管理</tspan>
+          </text>
+        </g>
+        <g id="编组-8备份" transform="translate(110.000000, 337.000000)">
+          <polygon id="矩形备份-6" fill="#124FC0" points="0 0 777.64158 0 796 12.5 777.64158 25 0 25"></polygon>
+          <text id="变更管理" font-family="PingFangSC-Medium, PingFang SC" font-size="14" font-weight="400" fill="#FFFFFF">
+            <tspan x="370" y="18">变更管理</tspan>
+          </text>
+        </g>
+        <g id="编组-8备份-2" transform="translate(621.000000, 372.000000)">
+          <polygon id="矩形备份-6" fill="#124FC0" points="0 0 268.697291 0 285 12.5 268.697291 25 0 25"></polygon>
+          <text id="发布&amp;部署管理" font-family="PingFangSC-Medium, PingFang SC" font-size="14" font-weight="400" fill="#FFFFFF">
+            <tspan x="95" y="18">发布&amp;部署管理</tspan>
+          </text>
+        </g>
+        <g id="编组-8备份-3" transform="translate(484.000000, 407.000000)">
+          <polygon id="矩形备份-6" fill="#124FC0" points="0 0 397.86055 0 422 12.5 397.86055 25 0 25"></polygon>
+          <text id="验证&amp;测试" font-family="PingFangSC-Medium, PingFang SC" font-size="14" font-weight="400" fill="#FFFFFF">
+            <tspan x="178" y="18">验证&amp;测试</tspan>
+          </text>
+        </g>
+        <g id="ic/chevron_right备份-13" transform="translate(373.000000, 172.000000)">
+          <mask id="mask-10" fill="white">
+            <use xlink:href="#path-9"></use>
+          </mask>
+          <g id="路径" fill-rule="nonzero"></g>
+          <g id="🎨-Color" mask="url(#mask-10)" fill="#FFFFFF">
+            <g transform="translate(-25.000000, -17.000000)" id="形状">
+              <rect x="0" y="0" width="100" height="84.3553223"></rect>
+            </g>
+          </g>
+        </g>
+        <g id="ic/chevron_right备份-13" transform="translate(206.000000, 235.000000)">
+          <mask id="mask-12" fill="white">
+            <use xlink:href="#path-11"></use>
+          </mask>
+          <g id="路径" fill-rule="nonzero"></g>
+          <g id="🎨-Color" mask="url(#mask-12)" fill="#FFFFFF">
+            <g transform="translate(-25.000000, -17.000000)" id="形状">
+              <rect x="0" y="0" width="100" height="84.3553223"></rect>
+            </g>
+          </g>
+        </g>
+        <g id="ic/chevron_right备份-14" transform="translate(342.000000, 235.000000)">
+          <mask id="mask-14" fill="white">
+            <use xlink:href="#path-13"></use>
+          </mask>
+          <g id="路径" fill-rule="nonzero"></g>
+          <g id="🎨-Color" mask="url(#mask-14)" fill="#FFFFFF">
+            <g transform="translate(-25.000000, -17.000000)" id="形状">
+              <rect x="0" y="0" width="100" height="84.3553223"></rect>
+            </g>
+          </g>
+        </g>
+        <g id="ic/chevron_right备份-10" transform="translate(699.000000, 516.000000) rotate(-270.000000) translate(-699.000000, -516.000000) translate(692.000000, 505.000000)">
+          <mask id="mask-16" fill="white">
+            <use xlink:href="#path-15"></use>
+          </mask>
+          <g id="路径" fill-rule="nonzero"></g>
+          <g id="🎨-Color" mask="url(#mask-16)" fill="url(#linearGradient-4)">
+            <g transform="translate(-10.500000, -6.068966)" id="形状">
+              <rect x="0" y="0" width="35" height="33.3793103"></rect>
+            </g>
+          </g>
+        </g>
+        <g id="ic/chevron_right备份-10" transform="translate(228.000000, 516.000000) rotate(-270.000000) translate(-228.000000, -516.000000) translate(221.000000, 505.000000)">
+          <mask id="mask-18" fill="white">
+            <use xlink:href="#path-17"></use>
+          </mask>
+          <g id="路径" fill-rule="nonzero"></g>
+          <g id="🎨-Color" mask="url(#mask-18)" fill="url(#linearGradient-4)">
+            <g transform="translate(-10.500000, -6.068966)" id="形状">
+              <rect x="0" y="0" width="35" height="33.3793103"></rect>
+            </g>
+          </g>
+        </g>
+        <g id="ic/chevron_right备份-10" transform="translate(298.000000, 516.000000) scale(1, -1) rotate(-270.000000) translate(-298.000000, -516.000000) translate(291.000000, 505.000000)">
+          <mask id="mask-20" fill="white">
+            <use xlink:href="#path-19"></use>
+          </mask>
+          <g id="路径" fill-rule="nonzero"></g>
+          <g id="🎨-Color" mask="url(#mask-20)" fill="url(#linearGradient-4)">
+            <g transform="translate(-10.500000, -6.068966)" id="形状">
+              <rect x="0" y="0" width="35" height="33.3793103"></rect>
+            </g>
+          </g>
+        </g>
+        <g id="ic/chevron_right备份-10" transform="translate(609.000000, 516.000000) scale(1, -1) rotate(-270.000000) translate(-609.000000, -516.000000) translate(602.000000, 505.000000)">
+          <mask id="mask-22" fill="white">
+            <use xlink:href="#path-21"></use>
+          </mask>
+          <g id="路径" fill-rule="nonzero"></g>
+          <g id="🎨-Color" mask="url(#mask-22)" fill="url(#linearGradient-4)">
+            <g transform="translate(-10.500000, -6.068966)" id="形状">
+              <rect x="0" y="0" width="35" height="33.3793103"></rect>
+            </g>
+          </g>
+        </g>
+        <g id="ic/chevron_right备份-15" transform="translate(478.000000, 235.000000)">
+          <mask id="mask-24" fill="white">
+            <use xlink:href="#path-23"></use>
+          </mask>
+          <g id="路径" fill-rule="nonzero"></g>
+          <g id="🎨-Color" mask="url(#mask-24)" fill="#FFFFFF">
+            <g transform="translate(-25.000000, -17.000000)" id="形状">
+              <rect x="0" y="0" width="100" height="84.3553223"></rect>
+            </g>
+          </g>
+        </g>
+        <g id="ic/chevron_right备份-16" transform="translate(614.000000, 235.000000)">
+          <mask id="mask-26" fill="white">
+            <use xlink:href="#path-25"></use>
+          </mask>
+          <g id="路径" fill-rule="nonzero"></g>
+          <g id="🎨-Color" mask="url(#mask-26)" fill="#FFFFFF">
+            <g transform="translate(-25.000000, -17.000000)" id="形状">
+              <rect x="0" y="0" width="100" height="84.3553223"></rect>
+            </g>
+          </g>
+        </g>
+        <g id="ic/chevron_right备份-17" transform="translate(750.000000, 235.000000)">
+          <mask id="mask-28" fill="white">
+            <use xlink:href="#path-27"></use>
+          </mask>
+          <g id="路径" fill-rule="nonzero"></g>
+          <g id="🎨-Color" mask="url(#mask-28)" fill="#FFFFFF">
+            <g transform="translate(-25.000000, -17.000000)" id="形状">
+              <rect x="0" y="0" width="100" height="84.3553223"></rect>
+            </g>
+          </g>
+        </g>
+        <text id="敏捷开发" font-family="PingFangSC-Medium, PingFang SC" font-size="18" font-weight="400" fill="#FFFFFF">
+          <tspan x="207" y="205">敏捷开发</tspan>
+        </text>
+        <text id="计划" font-family="PingFangSC-Medium, PingFang SC" font-size="18" font-weight="400" fill="#FFFFFF">
+          <tspan x="140" y="268">计划</tspan>
+        </text>
+        <text id="开发" font-family="PingFangSC-Medium, PingFang SC" font-size="18" font-weight="400" fill="#FFFFFF">
+          <tspan x="276" y="268">开发</tspan>
+        </text>
+        <text id="构建" font-family="PingFangSC-Medium, PingFang SC" font-size="18" font-weight="400" fill="#FFFFFF">
+          <tspan x="412" y="268">构建</tspan>
+        </text>
+        <text id="测试" font-family="PingFangSC-Medium, PingFang SC" font-size="18" font-weight="400" fill="#FFFFFF">
+          <tspan x="548" y="268">测试</tspan>
+        </text>
+        <text id="发布" font-family="PingFangSC-Medium, PingFang SC" font-size="18" font-weight="400" fill="#FFFFFF">
+          <tspan x="684" y="268">发布</tspan>
+        </text>
+        <text id="部署" font-family="PingFangSC-Medium, PingFang SC" font-size="18" font-weight="400" fill="#FFFFFF">
+          <tspan x="820" y="268">部署</tspan>
+        </text>
+        <text id="持续交付" font-family="PingFangSC-Medium, PingFang SC" font-size="16" font-weight="400" fill="#FFFFFF">
+          <tspan x="623" y="192">持续交付</tspan>
+        </text>
+        <g id="编组-6" transform="translate(494.000000, 202.000000)">
+          <polygon id="矩形" fill="#FFC072" points="-1.42108547e-14 0 133 0 146.820796 10 133 20 -1.42108547e-14 20"></polygon>
+          <text id="持续集成" font-family="PingFangSC-Regular, PingFang SC" font-size="13" font-weight="normal" fill="#FFFFFF">
+            <tspan x="47" y="15">持续集成</tspan>
+          </text>
+        </g>
+        <g id="编组-7" transform="translate(655.000000, 202.000000)">
+          <polygon id="矩形备份-4" fill="#FFC072" points="-1.42108547e-14 0 133 0 146.820796 10 133 20 -1.42108547e-14 20"></polygon>
+          <text id="持续部署" font-family="PingFangSC-Regular, PingFang SC" font-size="13" font-weight="normal" fill="#FFFFFF">
+            <tspan x="47" y="15">持续部署</tspan>
+          </text>
+        </g>
+        <g id="编组-5" transform="translate(40.000000, 116.000000)">
+          <rect id="矩形" fill="#00B5AE" x="0" y="0" width="60" height="254"></rect>
+          <text id="项-目-准-备-阶-段" font-family="PingFangSC-Medium, PingFang SC" font-size="18" font-weight="400" fill="#FFFFFF">
+            <tspan x="21" y="71">项</tspan>
+            <tspan x="21" y="96">目</tspan>
+            <tspan x="21" y="121">准</tspan>
+            <tspan x="21" y="146">备</tspan>
+            <tspan x="21" y="171">阶</tspan>
+            <tspan x="21" y="196">段</tspan>
+          </text>
+        </g>
+        <g id="编组-5备份" transform="translate(916.000000, 172.000000)">
+          <rect id="矩形" fill="#00B5AE" x="0" y="0" width="60" height="200"></rect>
+          <text id="上-线-运-维" font-family="PingFangSC-Medium, PingFang SC" font-size="18" font-weight="400" fill="#FFFFFF">
+            <tspan x="21" y="69">上</tspan>
+            <tspan x="21" y="94">线</tspan>
+            <tspan x="21" y="119">运</tspan>
+            <tspan x="21" y="144">维</tspan>
+          </text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

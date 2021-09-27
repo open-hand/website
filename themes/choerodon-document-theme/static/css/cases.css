@@ -11,6 +11,7 @@
   width: 100%;
   color: #fff;
   font-weight: 500;
+  transition: background 0.5s ease-in 1s,color 0.3s ease-out 1s;
 }
 
 .cases-section-detail-mask {
@@ -40,10 +41,22 @@
   margin-top: -0.2rem;
 }
 
+.cases-section-detail .cases-section-detail-text-wrap {
+  display: flex;
+}
+
+.cases-section-detail .cases-section-icon-left {
+  margin-right: .12rem;
+}
+
+.cases-section-detail .cases-section-icon-right {
+  margin-top: -0.25rem;
+}
+
 .cases-section-detail .cases-section-des {
   font-size: .2rem;
   letter-spacing: 0;
-  line-height: .30rem;
+  line-height: .40rem;
 }
 
 .cases-section-detail .cases-section-author {
@@ -59,6 +72,7 @@
   font-weight: 500;
   color: #326DE6;
   margin-top: .6rem;
+  height: .4rem;
 }
 
 .cases-section-content {
@@ -86,6 +100,11 @@
 .cases-section-content-item span {
   font-size: .24rem;
   color: #326DE6;
+  font-weight: 500;
+}
+.cases-section-content-item.crland span {
+  font-size: .24rem;
+  color: #FAB02E;
   font-weight: 500;
 }
 

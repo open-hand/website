@@ -1,7 +1,7 @@
 weight: 3
 name: "Crland"
-image: "/img/cases/crland-img1.jpg"
-imageSelect: "/img/cases/crland-img2.jpg"
+#image: "/img/cases/crland-img1.jpg"
+#imageSelect: "/img/cases/crland-img2.jpg"
 url: "case-studies/crland/"
 description: "Improve delivery efficiency and reduce important operating expenses"
 classname: "crland"

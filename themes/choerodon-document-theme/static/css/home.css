@@ -75,7 +75,7 @@ body {
   width: 100%;
 }
 .abstract-section-img img{
-  width: 100%
+  height: 8.05rem;
 }
 
 /* targets */
@@ -221,7 +221,7 @@ body {
   background:url(../img/banner.svg)no-repeat,-moz-linear-gradient(0deg, #003DAC,#3371E3);
   background:url(../img/banner.svg)no-repeat,-o-linear-gradient(0deg, #003DAC,#3371E3);
   background:url(../img/banner.svg)no-repeat,-ms-linear-gradient(0deg, #003DAC,#3371E3);
-  margin-top: .6rem;
+  margin-top: .7rem;
 }
 .carousels-section .carousel-box-flex{
   display: flex;
@@ -253,7 +253,7 @@ body {
 }
 
 .see-more-section .carousel-button .carousel-a {
-  height: 42px;
+  height: .4rem;
   margin: 0 auto;
 }
 
@@ -410,7 +410,7 @@ body {
   /*background:-moz-linear-gradient(-180deg, #003DAC,#3371E3);*/
   /*background:-o-linear-gradient(-180deg, #003DAC,#3371E3);*/
   /*background:-ms-linear-gradient(-180deg, #003DAC,#3371E3);*/
-  background: url(../img/home/experience.svg) no-repeat center;
+  background: url(../img/home/experience.png) no-repeat center;
   background-size: cover;
 
 }

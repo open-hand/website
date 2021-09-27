@@ -8,7 +8,7 @@
   color: #0D224A;
   text-align: center;
   font-weight: 500;
-  margin: 0;
+  margin: 0 0 .82rem;
   padding: 0;
 }
 
@@ -53,14 +53,17 @@
 .service-system-section-btn {
   margin: .66rem auto 0;
   border-radius: 4px;
-  padding: .2rem .63rem;
+  padding: .2rem 0;
   background: #326DE6;
   color: #fff;
-  width: max-content;
+  width: 2.84rem;
+  text-align: center;
 }
 
 .service-system-section-btn a {
   color: #fff;
+  font-weight: 500;
+  font-size: .2rem;
 }
 
 .service-system-section-btn a img {

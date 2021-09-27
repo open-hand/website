@@ -1,0 +1,82 @@
+@import url("style.choerodon.css");
+@import url("footer.css");
+
+.about-choerodon {
+  margin-top: .6rem;
+}
+
+.about-choerodon .about-choerodon-banner {
+  background: url("../img/about-choerodon/banner.svg") no-repeat;
+  background-size: 125%;
+  padding: .68rem 2.35rem 1rem;
+  color: #0D224A;
+}
+
+.about-choerodon .about-choerodon-banner h5 {
+  font-size: .36rem;
+  margin-bottom: .3rem;
+}
+
+.about-choerodon .about-choerodon-banner p {
+  font-size: .16rem;
+  margin: 0 0 .25rem;
+}
+
+.about-choerodon .brand-story {
+  padding: 1rem 1.6rem;
+  color: #0D224A;
+}
+
+.about-choerodon .brand-story .brand-story-mask {
+  background: rgba(0, 37, 112, 0.51);
+  padding: .8rem 1.75rem;
+}
+
+.about-choerodon .brand-story h6 {
+  font-size: .24rem;
+  font-weight: 500;
+  margin-bottom: .4rem;
+}
+
+.about-choerodon .brand-story .brand-story-description {
+  background: url("../img/about-choerodon/story.png") no-repeat;
+  background-size: contain;
+  font-size: .14rem;
+  color: #FFFFFF;
+}
+
+.about-choerodon .brand-story .brand-story-description p {
+  font-size: .14rem;
+  color: #FFFFFF;
+  margin-bottom: .25rem;
+}
+
+.about-choerodon .about-choerodon-data {
+  background: #FFFFFF;
+  box-shadow: 0 2px 4px 0 rgba(24,56,122,0.17);
+  border-radius: 10px;
+  margin-top: .65rem;
+  display: flex;
+  justify-content: center;
+}
+
+.about-choerodon .about-choerodon-data .about-choerodon-data-item {
+  padding: .25rem .54rem;
+  border-right: 1px solid #C3D2F1;
+  color: #0D224A;
+}
+
+.about-choerodon .about-choerodon-data .about-choerodon-data-item:last-child {
+  border-right: none;
+}
+
+.about-choerodon .about-choerodon-data .about-choerodon-data-item .about-choerodon-data-item-value {
+  font-size: .32rem;
+  color: #326DE6;
+  font-weight: 500;
+}
+
+.about-choerodon .about-choerodon-data .about-choerodon-data-item .about-choerodon-data-item-label {
+  font-size: .16rem;
+  margin-top: .14rem;
+}

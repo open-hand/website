@@ -1,5 +1,5 @@
 baseurl = "https://latest.choerodon.io/"
-title = "猪齿鱼Choerodon | 开源全价值链多云敏捷协作平台"
+title = "猪齿鱼Choerodon | 全场景效能平台"
 theme = "choerodon-document-theme"
 # themesDir = "../.."
 # Site language. Available translations in the theme's `/i18n` directory.
@@ -113,6 +113,7 @@ paginate = 5
 
 [[languages.zh.menu.main]]
     name = "典型案例"
+    post = true
     url  = "/zh/case-studies/"
     weight = 16
 
@@ -125,6 +126,7 @@ paginate = 5
     name = "开源中心"
     weight = 18
     url = "https://open.hand-china.com/open-source/choerodon"
+    post = true
     identifier = "zh-source"
 
 [[languages.zh.menu.main]]
@@ -144,12 +146,12 @@ paginate = 5
         parent = "zh-version"
     [[languages.zh.menu.main]]
         name = "品牌故事"
-        url  = "https://v0-23.choerodon.io/zh/"
+        url  = "/zh/about-choerodon"
         weight = 23
         parent = "zh-version"
     [[languages.zh.menu.main]]
         name = "关于猪齿鱼"
-        url  = "https://v0-23.choerodon.io/zh/"
+        url  = "/zh/about-choerodon"
         weight = 22
         parent = "zh-version"
 

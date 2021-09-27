@@ -6,5 +6,5 @@ minDescription: "快速了解SaaS版功能，选择最适合您的企业服务�
 button: "了解详情"
 img: "/img/socials/event/version.svg"
 homeImg: "/img/home/notice/version.svg"
-href: "/blog/c7n-saas/"
+ahref: "/zh/blog/c7n-saas/"
 language: zh

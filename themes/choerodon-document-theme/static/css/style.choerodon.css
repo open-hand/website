@@ -1,15 +1,16 @@
 /* 导航栏 */
 /* 子菜单 */
 .loginbtn {
-  padding-left: 0.5rem;
+  padding-left: 0.35rem;
 }
 
 .loginbtn a {
   border: none !important;
+  color: #326DE6 !important;
 }
 
 .trybtn {
-  padding-left: .3rem;
+  padding-left: .04rem;
 }
 
 .trybtn a {
@@ -102,6 +103,10 @@
 .top-white-nav .sub-menus li a,
 .fixed-nav .sub-menus li a {
   color: #333333;
+}
+.fixed-nav .sub-menus li a:hover {
+  color: #326DE6;
+  opacity: 1;
 }
 
 /* 子菜单结束 */
@@ -335,7 +340,7 @@ fieldset[disabled] .btn-template-main.active {
 }
 
 .navbar .navbar-brand .nav-logo {
-  height: 0.3rem;
+  height: 0.46rem;
 }
 
 .navbar-toggle {
@@ -365,7 +370,7 @@ fieldset[disabled] .btn-template-main.active {
 }
 
 .navbar .navbar-brand {
-  padding: 0.15rem 0.15rem;
+  padding: 0.12rem 0.15rem;
   height: 100%;
   display: table-cell;
   width: 1.73rem;
@@ -430,7 +435,7 @@ fieldset[disabled] .btn-template-main.active {
 
 .top-white-nav .navbar-brand .nav-logo,
 .fixed-nav .navbar-brand .nav-logo {
-  background: url(/img/nav/choerodon_logo_fixed.svg) no-repeat center;
+  background: url(/img/nav/choerodon_logo2.svg) no-repeat center;
   background-size: 100%;
 }
 
@@ -439,10 +444,12 @@ fieldset[disabled] .btn-template-main.active {
   color: white;
 }
 
-.top-white-nav ul.nav > li > a:hover,
-.fixed-nav ul.nav > li > a:hover {
+.top-white-nav ul.nav > li > a:hover {
   opacity: 0.7;
   color: #333333;
+}
+.fixed-nav ul.nav > li > a:hover {
+  color: #326DE6;
 }
 
 .navbar-left-buttons {
@@ -476,7 +483,7 @@ fieldset[disabled] .btn-template-main.active {
 }
 
 .navbar {
-  min-height: 0.6rem;
+  min-height: 0.7rem;
   position: fixed;
   width: 100%;
   top: 0;
@@ -1006,6 +1013,8 @@ p {
   color: #0D224A;
   font-weight: 500;
   cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
 .sub-menus-product-plan .sub-menus-product-plan-list .sub-menus-product-plan-list-item span:hover {

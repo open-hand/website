@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    {{ partial "head.html" . }}
+    <link href="/css/about-choerodon.css" rel="stylesheet">
+    <header id="header">
+        {{ partial "nav.html" . }}
+    </header>
+  <body>
+    <div>
+      <div id="content" class="about-choerodon">
+        <section class="about-choerodon-banner">
+          <h5 class="text-center">{{ i18n "about choerodon" }}</h5>
+          <p>{{ i18n "about choerodon description1"}}</p>
+          <p>{{ i18n "about choerodon description2"}}</p>
+          <p>{{ i18n "about choerodon description3"}}</p>
+          <p>{{ i18n "about choerodon description4"}}</p>
+        </section>
+        <section class="about-choerodon-data">
+          {{ range $index, $element := sort .Site.Data.aboutChoerodon.choerodonData "weight"  }}
+          {{ if eq ($.Scratch.Get "language") $element.language }}
+            <div class="about-choerodon-data-item">
+              <div class="about-choerodon-data-item-value">{{ $element.value }}</div>
+              <p class="about-choerodon-data-item-label">{{ $element.name }}</p>
+            </div>
+          {{ end }}
+          {{ end }}
+        </section>
+        <section class="brand-story">
+          <h6 class="text-center">{{ i18n "brand story" }}</h6>
+          <div class="brand-story-description">
+            <div class="brand-story-mask">
+              <p>{{ i18n "about choerodon description1"}}</p>
+              <p>{{ i18n "about choerodon description2"}}</p>
+              <p>{{ i18n "about choerodon description3"}}</p>
+            </div>
+          </div>
+        </section>
+      </div>
+      {{ partial "footer.html" . }}
+    </div>
+
+    {{ partial "scripts.html" . }}
+    {{ range .Site.Data.static.community.js }}
+        <script src="{{ . }}"></script>
+    {{ end }}
+  </body>
+</html>

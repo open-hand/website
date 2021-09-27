@@ -10,7 +10,7 @@
         <div class="footer-nav-item-link">
           {{ range $index, $element := .children }}
           {{ if $element.url }}
-            <a class="footer-nav-item-link-text" href="{{ $element.url }}">{{ $element.name }}</a>
+            <a class="footer-nav-item-link-text" href="{{ $element.url }}" target="_blank">{{ $element.name }}</a>
           {{ else }}
             <span class="footer-nav-item-link-text footer-nav-item-link-span" data-id="{{ $element.dataId }}">
               {{ $element.name }}

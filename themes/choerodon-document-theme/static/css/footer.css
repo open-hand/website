@@ -50,12 +50,12 @@
 
 .footer .footer-content .footer-connect .footer-connect-img {
   display: flex;
-  margin-top: .1rem;
+  padding-top: .1rem;
   justify-content: space-between;
 }
 
 .footer .footer-content .footer-connect .footer-connect-img .footer-connect-img-item {
-  margin-right: .8rem;
+  margin-right: .56rem;
 }
 
 .footer .footer-content .footer-connect .footer-connect-img img {
@@ -80,6 +80,10 @@
 
 .footer .copy-right span {
   padding-left: .4rem;
+}
+
+.footer .copy-right img {
+  width: 1.28rem;
 }
 
 

@@ -71,6 +71,9 @@
   flex-direction: column;
   justify-content: center;
   margin-right: 0.6rem;
+  text-align: center;
+  font-size: .24rem;
+  color: #326DE6;
 }
 
 .case-study .case-list-logo img {
@@ -155,6 +158,10 @@
   padding: 0 0.15rem;
   display: flex;
   align-items: center;
+  font-size: .18rem;
+  color: #326DE6;
+  text-align: center;
+  font-weight: 500;
 }
 .case-studies-detail-head .text-nav .text-nav-icon img {
   width: 1.2rem;
@@ -251,6 +258,10 @@
 
 .case-studies-detail .fullcol p + p {
   margin-top: 0.3rem;
+}
+
+.case-studies-detail ul {
+  padding-inline-start: 20px;
 }
 
 @media (max-width: 767px) {

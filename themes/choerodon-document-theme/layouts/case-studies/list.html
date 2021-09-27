@@ -18,7 +18,13 @@
                 {{ range $paginator.Pages }}
                 <div class="mo-padding">
                     <div class="case-study">
-                        <a {{ if .Params.unfinshed }} {{ else }} href="{{ .RelPermalink }}" {{ end }} class="case-list-logo"><img src="{{ .Params.banner }}"></a>
+                        <a {{ if .Params.unfinshed }} {{ else }} href="{{ .RelPermalink }}" {{ end }} class="case-list-logo">
+                          {{ if .Params.banner }}
+                            <img src="{{ .Params.banner }}">
+                          {{ else }}
+                            {{ .Params.title }}
+                          {{ end }}
+                        </a>
                         <div class="case-list-content">
                             <h3>{{ .Params.title }}</h3>
                             <p class="summary">{{ .Params.summary }}</p>

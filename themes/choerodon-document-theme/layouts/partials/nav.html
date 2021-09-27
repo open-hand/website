@@ -25,7 +25,9 @@
         <li class='haschildren'>
           <a>{{ .Name }} {{ .Pre }}</a>
           <ul class="sub-menus-product-plan sub-menus none">
-            <div class="sub-menus-product-plan-label">产品介绍</div>
+            <div class="sub-menus-product-plan-label">
+              {{ i18n "product description" }}
+            </div>
             <div class="sub-menus-product-plan-list">
               {{ range .Children.ByWeight }}
                 <div class="sub-menus-product-plan-list-item">
@@ -34,8 +36,8 @@
                 </div>
               {{ end }}
             </div>
-            <div class="sub-menus-product-plan-label yellow">解决方案</div>
-            <p class="sub-menus-product-plan-text">企业级轻咨询规划、产品架构和研发 体系构建等解决方案，请致电 400 168 4263 转 81072 了解详情</p>
+            <div class="sub-menus-product-plan-label yellow">{{ i18n "solution" }}</div>
+            <p class="sub-menus-product-plan-text">{{ i18n "solution description" }}</p>
           </ul>
         </li>
       {{ else }}
@@ -61,6 +63,7 @@
         {{ end }}
       {{ end }}
       {{ end }}
+      <li class="loginbtn"><a href="{{.Site.Params.signinhref }}" target="_blank" class="btn button">{{ i18n "sign in"}}</a></li>
       <li class="trybtn"><a href="{{.Site.Params.tryhref}}" target="_blank">{{ i18n "free trial"}}</a></li>
     </ul>
   </div>

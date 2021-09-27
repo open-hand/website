@@ -35,10 +35,11 @@
 
 .problem-section-title {
   font-size: .16rem;
+  font-weight: 500;
 }
 
 .problem-section-description {
-  font-size: .14rem;
+  font-size: .13rem;
   color: rgba(255,255,255,0.80);
   margin-top: .12rem;
   width: 80%;

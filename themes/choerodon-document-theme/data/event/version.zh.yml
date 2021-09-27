@@ -1,10 +1,10 @@
 weight: 3
 title: "研发项目如何配置看板的任务流转"
 minTitle: "研发项目如何配置看板的任务流转"
-description: "Choerodon在华润置地的落地实践案例分享直播"
-minDescription: "Choerodon在华润置地的落地实践案例分享直播"
+description: "看板管理引入「状态机」功能，帮助团队专注研发流程，提升研发效率"
+minDescription: "看板管理引入「状态机」功能，帮助团队专注研发流程，提升研发效率"
 button: "了解详情"
 img: "/img/socials/event/kanban.svg"
 homeImg: "/img/home/notice/kanban.svg"
-ahref: "/blog/kanban-configure/"
+ahref: "/zh/blog/kanban-configure/"
 language: "zh"

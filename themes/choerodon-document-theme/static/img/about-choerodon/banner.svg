@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1440px" height="573px" viewBox="0 0 1440 573" version="1.1">
+  <title>banner</title>
+  <defs>
+    <rect id="path-1" x="0" y="-6.82121026e-13" width="1440" height="573"></rect>
+  </defs>
+  <g id="关于我们" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="banner" transform="translate(0.000000, 0.000000)">
+      <g id="椭圆形-+-椭圆形备份-蒙版">
+        <mask id="mask-2" fill="white">
+          <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="蒙版" fill="#F0F4FB" xlink:href="#path-1"></use>
+        <ellipse id="椭圆形" stroke="#FFFFFF" stroke-width="90" mask="url(#mask-2)" cx="0.5" cy="325.5" rx="136.5" ry="136"></ellipse>
+        <circle id="椭圆形备份" stroke="#FFFFFF" stroke-width="140" mask="url(#mask-2)" transform="translate(1258.000000, 24.000000) rotate(11.000000) translate(-1258.000000, -24.000000) " cx="1258" cy="24" r="341"></circle>
+      </g>
+      <circle id="椭圆形" fill="#BCD2FF" opacity="0.178551962" cx="1070" cy="139" r="4"></circle>
+      <circle id="椭圆形" fill="#BCD2FF" opacity="0.524368641" cx="222" cy="176" r="4"></circle>
+      <circle id="椭圆形" fill="#BCD2FF" cx="490" cy="549" r="4"></circle>
+      <circle id="椭圆形备份-3" fill="#BCD2FF" opacity="0.197152071" cx="385" cy="68" r="4"></circle>
+      <circle id="椭圆形" fill="#BCD2FF" opacity="0.315225291" cx="310" cy="339" r="4"></circle>
+      <circle id="椭圆形" fill="#BCD2FF" opacity="0.545535065" cx="603" cy="313" r="4"></circle>
+      <circle id="椭圆形" fill="#BCD2FF" cx="250" cy="499" r="4"></circle>
+      <circle id="椭圆形" fill="#BCD2FF" cx="810" cy="479" r="4"></circle>
+      <circle id="椭圆形" fill="#BCD2FF" cx="1210" cy="529" r="4"></circle>
+      <circle id="椭圆形" fill="#BCD2FF" cx="60" cy="329" r="4"></circle>
+      <circle id="椭圆形备份-2" fill="#BCD2FF" cx="1393" cy="230" r="4"></circle>
+    </g>
+  </g>
+</svg>
