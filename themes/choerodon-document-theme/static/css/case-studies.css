@@ -155,13 +155,14 @@
   width: 1.5rem;
   height: 1.5rem;
   border-radius: 0.2rem;
-  padding: 0 0.15rem;
+  padding: 0 0.1rem;
   display: flex;
   align-items: center;
   font-size: .18rem;
   color: #326DE6;
   text-align: center;
   font-weight: 500;
+  justify-content: center;
 }
 .case-studies-detail-head .text-nav .text-nav-icon img {
   width: 1.2rem;

@@ -15,16 +15,7 @@
           <p>{{ i18n "about choerodon description3"}}</p>
           <p>{{ i18n "about choerodon description4"}}</p>
         </section>
-        <section class="about-choerodon-data">
-          {{ range $index, $element := sort .Site.Data.aboutChoerodon.choerodonData "weight"  }}
-          {{ if eq ($.Scratch.Get "language") $element.language }}
-            <div class="about-choerodon-data-item">
-              <div class="about-choerodon-data-item-value">{{ $element.value }}</div>
-              <p class="about-choerodon-data-item-label">{{ $element.name }}</p>
-            </div>
-          {{ end }}
-          {{ end }}
-        </section>
+        {{ partial "about_choerodon_data.html" . }}
         <section class="brand-story">
           <h6 class="text-center">{{ i18n "brand story" }}</h6>
           <div class="brand-story-description">
