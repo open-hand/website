@@ -69,6 +69,7 @@ paginate = 5
 	        weight = 9
 	        parent = "en-community"
 
+# 顶部导航栏菜单
 [[languages.zh.menu.main]]
     name = "产品与解决方案"
     identifier = "product-plan"
@@ -76,37 +77,31 @@ paginate = 5
     weight = 15
     [[languages.zh.menu.main]]
         name = "协作"
-        url  = "https://v0-23.choerodon.io/zh/"
         weight = 1
         parent = "product-plan"
         identifier = "cooperation"
     [[languages.zh.menu.main]]
         name = "项目群"
-        url  = "https://v0-23.choerodon.io/zh/"
         weight = 2
         parent = "product-plan"
         identifier = "program"
     [[languages.zh.menu.main]]
         name = "开发"
-        url  = "https://v0-23.choerodon.io/zh/"
         weight = 3
         parent = "product-plan"
         identifier = "develop"
     [[languages.zh.menu.main]]
         name = "部署"
-        url  = "https://v0-23.choerodon.io/zh/"
         weight = 4
         parent = "product-plan"
         identifier = "deploy"
     [[languages.zh.menu.main]]
         name = "测试"
-        url  = "https://v0-23.choerodon.io/zh/"
         weight = 5
         parent = "product-plan"
         identifier = "test"
     [[languages.zh.menu.main]]
         name = "容器"
-        url  = "https://v0-23.choerodon.io/zh/"
         weight = 6
         parent = "product-plan"
         identifier = "container"
@@ -136,20 +131,143 @@ paginate = 5
     pre = "<i class='iconfont'>&#xe600;</i>"
     [[languages.zh.menu.main]]
         name = "加入我们"
-        url  = "https://v0-23.choerodon.io/zh/"
         weight = 25
         parent = "zh-version"
     [[languages.zh.menu.main]]
         name = "联系我们"
-        url  = "https://v0-23.choerodon.io/zh/"
         weight = 24
         parent = "zh-version"
     [[languages.zh.menu.main]]
         name = "品牌故事"
-        url  = "/zh/about-choerodon"
         weight = 23
         parent = "zh-version"
     [[languages.zh.menu.main]]
+        name = "关于猪齿鱼"
+        weight = 22
+        parent = "zh-version"
+
+# footer部分的菜单
+[[languages.zh.menu.footer]]
+    name = "产品功能"
+    identifier = "product-plan"
+    weight = 15
+    [[languages.zh.menu.footer]]
+        name = "协作"
+        weight = 1
+        parent = "product-plan"
+        identifier = "cooperation"
+    [[languages.zh.menu.footer]]
+        name = "项目群"
+        weight = 2
+        parent = "product-plan"
+        identifier = "program"
+    [[languages.zh.menu.footer]]
+        name = "开发"
+        weight = 3
+        parent = "product-plan"
+        identifier = "develop"
+    [[languages.zh.menu.footer]]
+        name = "部署"
+        weight = 4
+        parent = "product-plan"
+        identifier = "deploy"
+    [[languages.zh.menu.footer]]
+        name = "测试"
+        weight = 5
+        parent = "product-plan"
+        identifier = "test"
+    [[languages.zh.menu.footer]]
+        name = "容器"
+        weight = 6
+        parent = "product-plan"
+        identifier = "container"
+
+[[languages.zh.menu.footer]]
+    name = "典型案例"
+    post = true
+    weight = 16
+    identifier = "zh-cases"
+    [[languages.zh.menu.footer]]
+        name = "联合汽车电子"
+        url  = "/zh/case-studies/uaes/"
+        weight = 1
+        parent = "zh-cases"
+    [[languages.zh.menu.footer]]
+        name = "汉得信息"
+        url  = "/zh/case-studies/hand/"
+        weight = 2
+        parent = "zh-cases"
+    [[languages.zh.menu.footer]]
+        name = "某投资开发运营商"
+        url  = "/zh/case-studies/crland/"
+        weight = 3
+        parent = "zh-cases"
+    [[languages.zh.menu.footer]]
+        name = "某大型跨国集团"
+        url  = "/zh/case-studies/multinationalgroup/"
+        weight = 4
+        parent = "zh-cases"
+
+[[languages.zh.menu.footer]]
+    name = "服务和资源"
+    weight = 17
+    identifier = 'zh-services'
+    [[languages.zh.menu.footer]]
+        name = "服务体系"
+        weight = 1
+        parent = "zh-services"
+    [[languages.zh.menu.footer]]
+        name = "博客"
+        url  = "/zh/blog/"
+        weight = 2
+        parent = "zh-services"
+    [[languages.zh.menu.footer]]
+        name = "文档"
+        url  = "https://open.hand-china.com/document-center/doc/product/10003/10426?docVersion=1.0&doc_id=125686&doc_code=1723"
+        weight = 3
+        parent = "zh-services"
+
+[[languages.zh.menu.footer]]
+    name = "开源中心"
+    weight = 18
+    post = true
+    identifier = "zh-source"
+    [[languages.zh.menu.footer]]
+        name = "焱牛开放平台"
+        url  = "https://open.hand-china.com/home"
+        weight = 1
+        parent = "zh-source"
+    [[languages.zh.menu.footer]]
+        name = "GITEE"
+        url  = "https://gitee.com/choerodon/choerodon"
+        weight = 2
+        parent = "zh-source"
+    [[languages.zh.menu.footer]]
+        name = "GITHUB"
+        url  = "https://github.com/open-hand/choerodon"
+        weight = 3
+        parent = "zh-source"
+
+[[languages.zh.menu.footer]]
+    name = "关于我们"
+    weight = 21
+    identifier = "zh-version"
+    [[languages.zh.menu.footer]]
+        name = "加入我们"
+        url  = "https://v0-23.choerodon.io/zh/"
+        weight = 25
+        parent = "zh-version"
+    [[languages.zh.menu.footer]]
+        name = "联系我们"
+        url  = "https://v0-23.choerodon.io/zh/"
+        weight = 24
+        parent = "zh-version"
+    [[languages.zh.menu.footer]]
+        name = "品牌故事"
+        url  = "/zh/about-choerodon"
+        weight = 23
+        parent = "zh-version"
+    [[languages.zh.menu.footer]]
         name = "关于猪齿鱼"
         url  = "/zh/about-choerodon"
         weight = 22

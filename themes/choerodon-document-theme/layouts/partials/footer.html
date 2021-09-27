@@ -1,25 +1,25 @@
 <footer id="footer" class="footer">
   <div class="footer-content">
     <nav class="footer-nav">
-      {{ range .Site.Data.footer }}
-      {{ if eq ($.Scratch.Get "language") .language }}
+      {{ range .Site.Menus.footer }}
       <div class="footer-nav-item">
         <div class="footer-nav-item-title">
-          {{ .name }}
+          {{ .Name }}
         </div>
         <div class="footer-nav-item-link">
-          {{ range $index, $element := .children }}
-          {{ if $element.url }}
-            <a class="footer-nav-item-link-text" href="{{ $element.url }}" target="_blank">{{ $element.name }}</a>
+          {{ if .HasChildren }}
+          {{ range .Children.ByWeight }}
+          {{ if .URL }}
+            <a class="footer-nav-item-link-text" href="{{ .URL }}" target="_blank">{{ .Name }}</a>
           {{ else }}
-            <span class="footer-nav-item-link-text footer-nav-item-link-span" data-id="{{ $element.dataId }}">
-              {{ $element.name }}
+            <span class="footer-nav-item-link-text footer-nav-item-link-span" data-id="function-tabs-{{ .Identifier }}">
+              {{ .Name }}
             </span>
+          {{ end }}
           {{ end }}
           {{ end }}
         </div>
       </div>
-      {{ end }}
       {{ end }}
     </nav>
     <div class="footer-connect">
