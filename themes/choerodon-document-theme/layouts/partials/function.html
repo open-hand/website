@@ -18,7 +18,7 @@
     <div id="{{ $element.id }}-detail" class="function-modules-section-detail {{ if gt $index 1}} none {{ else }} block {{ end }}">
       <h5>{{ $element.name }}</h5>
       <p>{{ $element.description }}</p>
-      <img {{ if lt $index 2}} src = "{{ $element.img }}"{{ end }} data-src="{{ $element.img }}"/>
+      <img id="{{ $element.id }}-detail-img" src = "{{ $element.img }}" data-src="{{ $element.img }}"/>
     </div>
     {{ end }}
     {{ end }}

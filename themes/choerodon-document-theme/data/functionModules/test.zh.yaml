@@ -1,6 +1,6 @@
 weight: 5
 name: "测试"
 description: "包括测试用例管理、测试计划管理、测试执行管理、缺陷管理、测试报告管理，支持手工测试并提供API测试、性能测试、流量回归测试、UI测试等自动化测试能力，测试任务还可嵌入开发流 水线，持续测试有效保障产品质量。"
-img: "/img/home/function/cooperation.png"
+img: "/img/home/function/test.png"
 id: "function-tabs-test"
 language: zh

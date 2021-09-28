@@ -1,5 +1,5 @@
 weight: 4
 name: "部署"
 description: "包括集群管理、环境管理、资源管理，支持集群与环境的统一管理和集中分配，支持自动化部署流水线与一键式的手工部署，高效灵活地支撑产品运维。"
-img: "/img/home/function/cooperation.png"
+img: "/img/home/function/deploy.png"
 language: en

@@ -1,6 +1,6 @@
 weight: 2
 name: "项目群"
 description: "包括对多团队的需求管理、跨团队的产品开发路线图、团队间的任务依赖关系管理，以可视化的看板和日历跟踪跨团队的协同。"
-img: "/img/home/function/cooperation.png"
+img: "/img/home/function/program.png"
 id: "function-tabs-program"
 language: zh

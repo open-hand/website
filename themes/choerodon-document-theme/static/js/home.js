@@ -18,11 +18,12 @@ jQuery(document).ready(function () {
         $('.function-modules-section-detail').addClass("none");
         var t = $(this).attr('id');
         var detail=$('#' + t + '-detail');
-        if (!detail.attr('src')) {
-          detail.attr("src",detail.attr("data-src"));
-          detail.removeClass("none");
-          detail.addClass("block");
-        }
+        detail.removeClass("none");
+        detail.addClass("block");
+        // var detailImg=$('#' + t + '-detail-img');
+        // if (!detailImg.attr('src')) {
+        //   detailImg.attr("src",detailImg.attr("data-src"));
+        // }
     });
 
   // 案例详情图片加载等待
