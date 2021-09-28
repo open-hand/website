@@ -1,0 +1,9 @@
+weight: 1
+name: "业务类"
+image: "/img/join-us/content1.svg"
+children:
+  1:
+    title: "产品经理方向"
+  2:
+    title: "业务架构师"
+language: zh

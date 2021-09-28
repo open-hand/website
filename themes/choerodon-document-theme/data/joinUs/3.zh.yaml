@@ -1,0 +1,11 @@
+weight: 3
+name: "技术开发类"
+image: "/img/join-us/content3.svg"
+children:
+  1:
+    title: "WEB前端开发工程师"
+  2:
+    title: "JAVA后端开发工程师"
+  3:
+    title: "容器云架构师"
+language: zh

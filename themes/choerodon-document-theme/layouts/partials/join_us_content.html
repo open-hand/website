@@ -1,0 +1,18 @@
+{{ $.Scratch.Set "language" .Site.Language.Lang }}
+<section class="join-us-content">
+  {{ range .Site.Data.joinUs  }}
+  {{ if eq ($.Scratch.Get "language") .language }}
+  <div class="join-us-content-item">
+    <img src="{{ .image }}" />
+    <div>
+      <h5>{{ .name }}</h5>
+      <ul>
+        {{ range .children  }}
+        <li>{{ .title }}</li>
+        {{ end }}
+      </ul>
+    </div>
+  </div>
+  {{ end }}
+  {{ end }}
+</section>

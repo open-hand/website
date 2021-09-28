@@ -1,0 +1,37 @@
+@import url("style.choerodon.css");
+@import url("footer.css");
+
+.join-us {
+  margin-top: .7rem;
+}
+
+.join-us .join-us-header {
+  background: url("../img/join-us/banner.png") no-repeat;
+  background-size: 100% 100%;
+  padding: 1.1rem 0 2.22rem;
+}
+
+.join-us .join-us-header h5 {
+  font-size: .36rem;
+  color: #0D224A;
+  line-height: .5rem;
+  font-weight: 400;
+  margin: 0;
+}
+
+.join-us .join-us-header p {
+  font-size: .16rem;
+  color: #0D224A;
+  line-height: .22rem;
+  font-weight: 400;
+  margin: .2rem 0 0;
+}
+
+.join-us .join-us-content .join-us-content-item {
+  margin: .8rem auto 0;
+  width: 9.7rem;
+}
+
+.join-us .join-us-content .join-us-content-item img {
+  width: 100%;
+}

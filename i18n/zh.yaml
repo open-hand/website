@@ -252,3 +252,11 @@
 - id: product comminicate
   translation: '产品交流'
 # 联系我们页面结束
+
+# 加入我们页面开始
+- id: join us
+  translation: '加入我们'
+
+- id: join us des
+  translation: '期待携手有识之士，共创未来，共同引领企业数字化变革'
+# 加入我们页面介绍

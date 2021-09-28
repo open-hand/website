@@ -1,0 +1,11 @@
+weight: 2
+name: "技术研发类"
+image: "/img/join-us/content2.svg"
+children:
+  1:
+    title: "WEB前端研发工程师"
+  2:
+    title: "JAVA后端研发工程师"
+  3:
+    title: "自动化测试工程师"
+language: zh
