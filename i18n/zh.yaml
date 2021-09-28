@@ -236,4 +236,16 @@
 
 - id: connect us des
   translation: '了解猪齿鱼如何帮您一站式提高管理效率和质量，让团队效能更快更强更稳定'
+
+- id: connect us
+  translation: '联系我们'
+
+- id: product purchase and business consulting
+  translation: '产品购买及商务咨询'
+
+- id: suggestions
+  translation: '投诉建议'
+
+- id: follow us
+  translation: '关注我们'
 # 联系我们页面结束

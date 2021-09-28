@@ -1,4 +1,5 @@
 jQuery(document).ready(function () {
+
   function numAutoPlus(targetEle) {
     // 动画时长(毫秒数)
     // 也可以将需要的参数写在dom上如：[data-XXX]
@@ -13,10 +14,10 @@ jQuery(document).ready(function () {
     let count = 0;
     // 初始值
     let initNum = 0;
-    let timer = setInterval(function() {
+    let aboutChoerodonTimer = setInterval(function() {
       count = count + step;
       if (!count || count >= finalNum) {
-        clearInterval(timer);
+        clearInterval(aboutChoerodonTimer);
         count = finalNum
       }
       // t未发生改变的话就直接返回
@@ -29,10 +30,14 @@ jQuery(document).ready(function () {
     }, 30)
 
   }
-  var items = $(".about-choerodon-data-item-value");
-  if (items.length) {
-    Array.from(items).forEach(function (item) {
-      numAutoPlus(item);
-    });
+
+  function getStart() {
+    var items = $(".about-choerodon-data-item-value");
+    if (items.length) {
+      Array.from(items).forEach(function (item) {
+        numAutoPlus(item);
+      });
+    }
   }
+  getStart();
 });
