@@ -1,0 +1,64 @@
+@import url("style.choerodon.css");
+@import url("footer.css");
+
+.connect-us {
+  margin-top: .7rem;
+}
+
+.connect-us .connect-us-header {
+  background: url("../img/connect-us/header.png") no-repeat;
+  background-size: 100% 100%;
+  padding: 1.08rem 1.02rem;
+}
+
+.connect-us .connect-us-header h5 {
+  line-height: .5rem;
+  font-size: .36rem;
+  color: #0D224A;
+  font-weight: 400;
+}
+
+.connect-us .connect-us-header p {
+  font-size: .16rem;
+  color: #0D224A;
+  line-height: .22rem;
+  font-weight: 400;
+  margin: .2rem 0 0;
+}
+
+.connect-us .connect-us-banner {
+  background: url("../img/connect-us/banner.png") no-repeat;
+  background-size: 100% 100%;
+  height: 2.68rem;
+}
+
+.connect-us .connect-us-banner .connect-us-method {
+  padding: .5rem .44rem .38rem;
+  background-color: #fff;
+  width: max-content;
+}
+
+.connect-us .connect-us-banner .connect-us-method h6 {
+  font-size: .2rem;
+  color: #0D224A;
+  line-height: .28rem;
+  margin: 0 0 .2rem;
+  font-weight: 500;
+}
+
+.connect-us .connect-us-banner .connect-us-method .connect-us-method-icon {
+  width: .24rem;
+  height: .24rem;
+  margin-right: .1rem;
+}
+
+.connect-us .connect-us-banner .connect-us-method p {
+  font-size: .16rem;
+  color: #0D224A;
+  line-height: .22rem;
+  font-weight: 500;
+}
+
+.connect-us .connect-us-banner .connect-us-method p:hover {
+  color: #326DE6;
+}

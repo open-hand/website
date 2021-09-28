@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    {{ partial "head.html" . }}
+    <link href="/css/connect-us.css" rel="stylesheet">
+    <header id="header">
+        {{ partial "nav.html" . }}
+    </header>
+  <body>
+    <div>
+      <div id="content" class="connect-us">
+        <section class="connect-us-header">
+          <h5>{{ i18n "connect us" }}</h5>
+          <p>{{ i18n "connect us des"}}</p>
+        </section>
+        <section class="connect-us-banner">
+          <div class="connect-us-method">
+            <h6>产品购买及商务咨询</h6>
+            <h6>投诉建议</h6>
+            <h6>关注我们</h6>
+          </div>
+        </section>
+      </div>
+      {{ partial "footer.html" . }}
+    </div>
+
+    {{ partial "scripts.html" . }}
+    {{ range .Site.Data.static.aboutChoerodon.js }}
+        <script src="{{ . }}"></script>
+    {{ end }}
+  </body>
+</html>

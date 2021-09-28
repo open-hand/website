@@ -518,7 +518,8 @@ fieldset[disabled] .btn-template-main.active {
   box-shadow: 0 0.02rem 0.06rem rgba(0, 0, 0, .1);
 }
 
-.fixed-nav.top-white-nav {
+.fixed-nav,
+.top-white-nav {
   background-color: #ffffff;
 }
 
