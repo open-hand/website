@@ -109,11 +109,14 @@
 }
 
 /* 案例详情页 */
+.case-studies-detail {
+  margin-top: .7rem;
+}
 .case-studies-detail-head .text-nav {
   color: white;
   align-items: center;
   width: 100%;
-  padding: 0.8rem 2.04rem 0.5rem 2.04rem;
+  padding: 0.3rem 2.04rem;
 }
 
 .case-studies-detail-head .text-nav p {
@@ -124,7 +127,7 @@
   font-size: 0.16rem;
   color: rgba(255, 255, 255, 0.70);
   text-align: left;
-  line-height: 1.5;
+  line-height: .24rem;
   width: 100%;
 }
 

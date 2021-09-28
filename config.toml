@@ -108,7 +108,6 @@ paginate = 5
 
 [[languages.zh.menu.main]]
     name = "典型案例"
-    post = true
     url  = "/zh/case-studies/"
     weight = 16
 
