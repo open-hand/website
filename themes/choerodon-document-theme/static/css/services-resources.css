@@ -1,0 +1,33 @@
+@import url("style.choerodon.css");
+@import url("footer.css");
+
+.services-resources {
+  margin-top: .7rem;
+}
+
+.services-resources .services-resources-header {
+  padding: .6rem 0;
+}
+
+.services-resources .services-resources-header h5 {
+  font-size: 40px;
+  color: #0D224A;
+  letter-spacing: 3.33px;
+  line-height: .56rem;
+  font-weight: 400;
+  margin: 0;
+}
+
+.services-resources .services-resources-header .services-resources-banner {
+  width: 100%;
+  margin: .5rem 0 .6rem;
+}
+
+.services-resources .services-resources-header p {
+  font-size: .20rem;
+  color: #0D224A;
+  letter-spacing: 1.5px;
+  line-height: .34rem;
+  font-weight: 400;
+  padding: 0 1.6rem;
+}

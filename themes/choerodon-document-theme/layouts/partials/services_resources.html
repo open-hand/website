@@ -1,0 +1,11 @@
+{{ $.Scratch.Set "language" .Site.Language.Lang }}
+<section class="about-choerodon-data">
+  {{ range .Site.Data.aboutChoerodon  }}
+  {{ if eq ($.Scratch.Get "language") .language }}
+  <div class="about-choerodon-data-item">
+    <div class="about-choerodon-data-item-value">{{ .value }}</div>
+    <p class="about-choerodon-data-item-label">{{ .name }}</p>
+  </div>
+  {{ end }}
+  {{ end }}
+</section>

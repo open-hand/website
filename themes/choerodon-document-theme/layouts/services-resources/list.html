@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    {{ partial "head.html" . }}
+    <link href="/css/services-resources.css" rel="stylesheet">
+    <header id="header">
+        {{ partial "nav.html" . }}
+    </header>
+  <body>
+    <div>
+      <div id="content" class="services-resources">
+        <div class="services-resources-header">
+          <h5 class="text-center">{{ i18n "services and resources" }}</h5>
+          <img class="services-resources-banner" src="/img/services-resources/banner.png" />
+          <p>{{ i18n "services and resources des" }}</p>
+        </div>
+        {{ partial "services_resources.html" . }}
+      </div>
+      {{ partial "footer.html" . }}
+    </div>
+
+    {{ partial "scripts.html" . }}
+    {{ range .Site.Data.static.community.js }}
+        <script src="{{ . }}"></script>
+    {{ end }}
+  </body>
+</html>

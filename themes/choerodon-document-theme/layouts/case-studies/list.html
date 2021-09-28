@@ -16,7 +16,7 @@
             <div class="case-studies-content-box-mobile">
                 {{ $paginator := .Paginate (where .Data.Pages "Type" "case-studies") }}
                 {{ range $paginator.Pages }}
-                <div class="mo-padding">
+                <div class="mo-padding {{  .Params.classname }}">
                     <div class="case-study">
                         <a {{ if .Params.unfinshed }} {{ else }} href="{{ .RelPermalink }}" {{ end }} class="case-list-logo">
                           {{ if .Params.banner }}
