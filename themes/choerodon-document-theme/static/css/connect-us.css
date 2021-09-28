@@ -34,12 +34,13 @@
 }
 
 .connect-us .connect-us-banner .connect-us-method {
-  padding: .5rem .44rem .38rem;
+  padding: .5rem 0 .38rem .44rem;
   background-color: #fff;
   width: max-content;
   position: absolute;
-  right: 2.05rem;
-  top: -2.56rem;
+  right: 1.65rem;
+  top: -2.06rem;
+  width: 4.78rem;
 }
 
 .connect-us .connect-us-banner .connect-us-method h6 {
