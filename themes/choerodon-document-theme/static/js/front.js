@@ -41,43 +41,43 @@ jQuery('.navbar-collapse .haschildren').hover(function (e) {
 // 判断滚动结束后渲染导航栏
 var topValue = $(window).scrollTop(),// 上次滚动条到顶部的距离
     interval = null;// 定时器
-// document.onscroll = function () {
-//     if (interval == null)// 未发起时，启动定时器，1秒1执行
-//
-//         interval = setInterval("isScrolling()", 100);
-//     topValue = document.documentElement.scrollTop;
-// }
-// function isScrolling() {
-//     // 判断此刻到顶部的距离是否和1秒前的距离相等
-//     if (document.documentElement.scrollTop == topValue) {
-//         // 首页导航栏变换
-//         if (navStatusTop) {
-//             if ($(window).scrollTop() != 0) {
-//                 $('#navbar').removeClass("top-nav");
-//                 $('#navbar').addClass("fixed-nav");
-//                 navStatusTop = false;
-//             }
-//         } else {
-//             if ($(window).scrollTop() == 0 && ("true" != $('.navbar-buttons button').attr("aria-expanded") && $(".navbar-left-buttons button.open").length != 1)) {
-//                 $('#navbar').removeClass("fixed-nav");
-//                 $('#navbar').addClass("top-nav");
-//                 navStatusTop = true;
-//             }
-//         }
-//         clearInterval(interval);
-//         interval = null;
-//     }
-// }
+document.onscroll = function () {
+    if (interval == null)// 未发起时，启动定时器，1秒1执行
+
+        interval = setInterval("isScrolling()", 100);
+    topValue = document.documentElement.scrollTop;
+}
+function isScrolling() {
+    // 判断此刻到顶部的距离是否和1秒前的距离相等
+    if (document.documentElement.scrollTop == topValue) {
+        // 首页导航栏变换
+        if (navStatusTop) {
+            if ($(window).scrollTop() != 0) {
+                $('#navbar').removeClass("top-nav");
+                $('#navbar').addClass("fixed-nav");
+                navStatusTop = false;
+            }
+        } else {
+            if ($(window).scrollTop() == 0 && ("true" != $('.navbar-buttons button').attr("aria-expanded") && $(".navbar-left-buttons button.open").length != 1)) {
+                $('#navbar').removeClass("fixed-nav");
+                $('#navbar').addClass("top-nav");
+                navStatusTop = true;
+            }
+        }
+        clearInterval(interval);
+        interval = null;
+    }
+}
 // 初始化页面渲染导航栏
-// if ($(window).scrollTop() == 0) {
-//     var navStatusTop = true;
-//     $('#navbar').removeClass("fixed-nav");
-//     $('#navbar').addClass("top-nav");
-// } else {
-//     var navStatusTop = false;
-//     $('#navbar').removeClass("top-nav");
-//     $('#navbar').addClass("fixed-nav");
-// }
+if ($(window).scrollTop() == 0) {
+    var navStatusTop = true;
+    $('#navbar').removeClass("fixed-nav");
+    $('#navbar').addClass("top-nav");
+} else {
+    var navStatusTop = false;
+    $('#navbar').removeClass("top-nav");
+    $('#navbar').addClass("fixed-nav");
+}
 // 导航栏动态渲染结束
 
 // 导航栏

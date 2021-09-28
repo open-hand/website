@@ -9,13 +9,17 @@
   color: #326DE6 !important;
 }
 
+.loginbtn a:hover {
+  opacity: 0.6;
+}
+
 .trybtn {
   padding-left: .04rem;
 }
 
 .trybtn a {
   display: block;
-  margin: 0.15rem 0 !important;
+  margin: 0.18rem 0 !important;
   padding: 0 0.15rem  !important;
   font-size: .16rem;
   text-decoration: none;
@@ -32,10 +36,11 @@
   text-align: center;
 }
 
+.top-white-nav .trybtn a,
 .fixed-nav .trybtn a {
   display: block;
-  height: .32rem;
-  line-height: .32rem;
+  height: .34rem;
+  line-height: .34rem;
   color: #fff !important;
   background: #326DE6 !important;
   border-radius: 2px;
@@ -47,16 +52,15 @@
   background: #326DE6 !important;
 }
 
-.top-white-nav .trybtn a {
-  display: block;
-  padding: 0 0.15rem !important;
-  height: .3rem;
-  line-height: .3rem;
-  color: #3371E3;
-  border: .01rem solid #3371E3;
-  text-align: center;
-
-}
+/*.top-white-nav .trybtn a {*/
+/*  display: block;*/
+/*  padding: 0 0.15rem !important;*/
+/*  height: .3rem;*/
+/*  line-height: .3rem;*/
+/*  color: #3371E3;*/
+/*  border: .01rem solid #3371E3;*/
+/*  text-align: center;*/
+/*}*/
 
 .top-nav .trybtn a:hover, .fixed-nav .trybtn a:hover, .top-white-nav .trybtn a:hover {
   opacity: 0.7;
@@ -102,8 +106,9 @@
 
 .top-white-nav .sub-menus li a,
 .fixed-nav .sub-menus li a {
-  color: #333333;
+  color: #0d224a;
 }
+.top-white-nav .sub-menus li a:hover,
 .fixed-nav .sub-menus li a:hover {
   color: #326DE6;
   opacity: 1;
@@ -195,7 +200,7 @@
   color: white;
   font-weight: normal;
   padding: 0;
-  margin: 0.22rem 0.2rem;
+  margin: 0.27rem 0.2rem;
 }
 
 .navbar ul.nav > li > a.active-page {
@@ -444,10 +449,7 @@ fieldset[disabled] .btn-template-main.active {
   color: white;
 }
 
-.top-white-nav ul.nav > li > a:hover {
-  opacity: 0.7;
-  color: #333333;
-}
+.top-white-nav ul.nav > li > a:hover,
 .fixed-nav ul.nav > li > a:hover {
   color: #326DE6;
 }
@@ -507,7 +509,6 @@ fieldset[disabled] .btn-template-main.active {
   border: none;
 }
 
-.top-white-nav,
 .fixed-nav {
   background-color: #ffffff;
   border-bottom: 1px solid #DADADA;

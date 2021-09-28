@@ -5,51 +5,56 @@
   </h4>
   <div class="problem-section-main">
     <div class="problem-section-problem">
-      <h4>
-        {{ i18n "R&D management problems" }}
-      </h4>
-      <div class="problem-section-problem-content">
-        {{ range $index, $element := sort .Site.Data.problem "weight" }}
-        {{ if eq ($.Scratch.Get "language") $element.language }}
-        <div class="problem-section-item">
-          <div class="problem-section-problem-index">
-            {{ $element.weight }}
-          </div>
-          <div>
-            <div class = "problem-section-title">
-              {{ $element.title }}
+      <div class="problem-section-problem-border">
+        <h4>
+          {{ i18n "R&D management problems" }}
+        </h4>
+        <div class="problem-section-problem-content">
+          {{ range $index, $element := sort .Site.Data.problem "weight" }}
+          {{ if eq ($.Scratch.Get "language") $element.language }}
+          <div class="problem-section-item">
+            <div class="problem-section-problem-index">
+              {{ $element.weight }}
             </div>
-            <div class="problem-section-description">
-              {{ $element.description }}
+            <div>
+              <div class = "problem-section-title">
+                {{ $element.title }}
+              </div>
+              <div class="problem-section-description">
+                {{ $element.description }}
+              </div>
             </div>
           </div>
+          {{ end }}
+          {{ end }}
         </div>
-        {{ end }}
-        {{ end }}
       </div>
     </div>
+
     <div class="problem-section-highlights">
-      <h4>
-        {{ i18n "Main highlights" }}
-      </h4>
-      <div class="problem-section-highlights-content">
-        {{ range $index, $element := sort .Site.Data.highlights "weight" }}
-        {{ if eq ($.Scratch.Get "language") $element.language }}
-        <div class="problem-section-item">
-          <div class="problem-section-highlights-index">
-            {{ $element.weight }}
-          </div>
-          <div>
-            <div class = "problem-section-title">
-              {{ $element.title }}
+      <div class="problem-section-highlights-border">
+        <h4>
+          {{ i18n "Main highlights" }}
+        </h4>
+        <div class="problem-section-highlights-content">
+          {{ range $index, $element := sort .Site.Data.highlights "weight" }}
+          {{ if eq ($.Scratch.Get "language") $element.language }}
+          <div class="problem-section-item">
+            <div class="problem-section-highlights-index">
+              {{ $element.weight }}
             </div>
-            <div class="problem-section-description">
-              {{ $element.description }}
+            <div>
+              <div class = "problem-section-title">
+                {{ $element.title }}
+              </div>
+              <div class="problem-section-description">
+                {{ $element.description }}
+              </div>
             </div>
           </div>
+          {{ end }}
+          {{ end }}
         </div>
-        {{ end }}
-        {{ end }}
       </div>
     </div>
   </div>

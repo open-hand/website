@@ -446,6 +446,7 @@ body {
   background-color: #FAFAFA;
   font-weight: 500;
   color: #326de6;
+  border: none;
 }
 .see-more-section .button{
   display: flex;
