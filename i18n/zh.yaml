@@ -259,4 +259,13 @@
 
 - id: join us des
   translation: '期待携手有识之士，共创未来，共同引领企业数字化变革'
+
+- id: online application pc
+  translation: 'PC端网申'
+
+- id: online application phone
+  translation: '移动端网申'
+
+- id: online application phone des
+  translation: '关注微信公众号“汉得招聘”'
 # 加入我们页面介绍

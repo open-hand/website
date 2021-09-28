@@ -4,13 +4,16 @@
   {{ if eq ($.Scratch.Get "language") .language }}
   <div class="join-us-content-item">
     <img src="{{ .image }}" />
-    <div>
-      <h5>{{ .name }}</h5>
-      <ul>
+    <div class="join-us-content-item-text {{ if eq .weight 2 }} join-us-content-item-text-right {{ end }} {{ if eq .weight 3 }} join-us-content-item-text-last {{ end }}">
+      <h6>{{ .name }}</h6>
+      <div class="join-us-content-item-text-list">
         {{ range .children  }}
-        <li>{{ .title }}</li>
+        <div  class="join-us-content-item-text-list-item">
+          <span class="join-us-content-item-text-list-dot"></span>
+          <span class="join-us-content-item-text-list-title">{{ .title }}</span>
+        </div>
         {{ end }}
-      </ul>
+      </div>
     </div>
   </div>
   {{ end }}

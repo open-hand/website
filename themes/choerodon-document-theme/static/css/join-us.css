@@ -30,8 +30,133 @@
 .join-us .join-us-content .join-us-content-item {
   margin: .8rem auto 0;
   width: 9.7rem;
+  position: relative;
 }
 
 .join-us .join-us-content .join-us-content-item img {
   width: 100%;
+}
+
+.join-us .join-us-content .join-us-content-item h6 {
+  font-size: .2rem;
+  color: #326DE6;
+  line-height: .28rem;
+  margin: 0 0 .28rem;
+}
+
+.join-us .join-us-content .join-us-content-item .join-us-content-item-text {
+  position: absolute;
+  top: 1.9rem;
+  left: 55%;
+}
+
+.join-us .join-us-content .join-us-content-item .join-us-content-item-text-right {
+  position: absolute;
+  top: 1.09rem;
+  left: 1.1rem;
+  width: 50%;
+}
+
+.join-us .join-us-content .join-us-content-item .join-us-content-item-text-last {
+  position: absolute;
+  top: 1.79rem;
+  left: 4.38rem;
+}
+
+.join-us .join-us-content .join-us-content-item .join-us-content-item-text-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.join-us .join-us-content .join-us-content-item .join-us-content-item-text-list .join-us-content-item-text-list-title {
+  font-size: .16rem;
+  line-height: .22rem;
+  font-weight: 500;
+  color: #0D224A;
+}
+
+.join-us .join-us-content .join-us-content-item .join-us-content-item-text-list .join-us-content-item-text-list-item {
+  display: flex;
+  align-items: center;
+  margin-right: .3rem;
+  margin-bottom: .2rem;
+}
+
+.join-us .join-us-content .join-us-content-item .join-us-content-item-text-list .join-us-content-item-text-list-dot {
+  border-radius: 50%;
+  width: 6px;
+  height: 6px;
+  line-height: .22rem;
+  background: #0D224A;
+  margin-right: .1rem;
+}
+
+.join-us .join-us-connect {
+  margin-top: 1.18rem;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.join-us .join-us-connect .join-us-connect-item {
+  border-radius: 7px;
+  width: 3.42rem;
+  padding: .2rem 0 .2rem .58rem;
+  color: #FFFFFF;
+}
+
+.join-us .join-us-connect .join-us-connect-item1 {
+  background: #FFAC8E;
+  margin-right: .3rem;
+}
+
+.join-us .join-us-connect .join-us-connect-item2 {
+  background: #95B2FA;
+  position: relative;
+}
+
+.join-us .join-us-connect .join-us-connect-item h6 {
+  font-size: .20rem;
+  line-height: .28rem;
+  font-weight: 500;
+  color: #fff;
+  margin: 0;
+}
+
+.join-us .join-us-connect .join-us-connect-item p {
+  font-size: .16rem;
+  line-height: .22rem;
+  font-weight: 500;
+  color: #fff;
+  margin: .1rem 0 0;
+}
+
+.join-us .join-us-connect .join-us-connect-item .join-us-connect-item-code {
+  position: absolute;
+  right: -1.5rem;
+  top: -.26rem;
+  display: none;
+}
+
+.join-us .join-us-connect .join-us-connect-item .join-us-connect-item-code img {
+  width: 1.26rem;
+  height: 1.26rem;
+  background: #6899FF;
+  border-radius: 2px;
+  padding: .08rem;
+}
+
+.join-us .join-us-connect .join-us-connect-item .join-us-connect-item-arrow {
+  transform: rotate(-90deg);
+  position: relative;
+  border: 8px solid transparent;
+  border-bottom: 8px solid #6899FF;
+  width: 0;
+  height: 0;
+  left: -.14rem;
+  top: .7rem;
+}
+
+.join-us .join-us-connect .join-us-connect-item2:hover .join-us-connect-item-code {
+  display: block;
 }

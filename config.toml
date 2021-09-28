@@ -130,6 +130,7 @@ paginate = 5
     pre = "<i class='iconfont'>&#xe600;</i>"
     [[languages.zh.menu.main]]
         name = "加入我们"
+        url = "/zh/join-us/"
         weight = 25
         parent = "zh-version"
     [[languages.zh.menu.main]]
@@ -257,6 +258,7 @@ paginate = 5
     identifier = "zh-version"
     [[languages.zh.menu.footer]]
         name = "加入我们"
+        url = "/zh/join-us/"
         weight = 25
         parent = "zh-version"
     [[languages.zh.menu.footer]]
