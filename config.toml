@@ -114,7 +114,7 @@ paginate = 5
 
 [[languages.zh.menu.main]]
     name = "服务和资源"
-    url  = "/zh/case-studies/"
+    url = "/zh/services-resources/"
     weight = 17
 
 [[languages.zh.menu.main]]
@@ -216,6 +216,7 @@ paginate = 5
     identifier = 'zh-services'
     [[languages.zh.menu.footer]]
         name = "服务体系"
+        url = "/zh/services-resources/"
         weight = 1
         parent = "zh-services"
     [[languages.zh.menu.footer]]

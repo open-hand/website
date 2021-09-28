@@ -31,3 +31,36 @@
   font-weight: 400;
   padding: 0 1.6rem;
 }
+
+.services-resources .services-resources-content {
+  background: #F6F7F9;
+  padding: 1rem 2.19rem .2rem;
+}
+
+.services-resources .services-resources-content .services-resources-content-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: .8rem;
+}
+
+.services-resources .services-resources-content .services-resources-content-item img {
+  width: .8rem;
+  height: .98rem;
+  margin-right: .58rem;
+}
+
+.services-resources .services-resources-content .services-resources-content-item h6 {
+  font-size: .18rem;
+  color: #0D224A;
+  letter-spacing: 1.5px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.services-resources .services-resources-content .services-resources-content-item p {
+  font-size: .16rem;
+  color: rgba(13,34,74,0.86);
+  letter-spacing: 1.33px;
+  font-weight: 400;
+  margin: .18rem 0 0;
+}

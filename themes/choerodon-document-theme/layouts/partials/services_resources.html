@@ -1,10 +1,13 @@
 {{ $.Scratch.Set "language" .Site.Language.Lang }}
-<section class="about-choerodon-data">
-  {{ range .Site.Data.aboutChoerodon  }}
+<section class="services-resources-content">
+  {{ range .Site.Data.servicesResources  }}
   {{ if eq ($.Scratch.Get "language") .language }}
-  <div class="about-choerodon-data-item">
-    <div class="about-choerodon-data-item-value">{{ .value }}</div>
-    <p class="about-choerodon-data-item-label">{{ .name }}</p>
+  <div class="services-resources-content-item">
+    <img src="{{ .image }}" />
+    <div>
+      <h6 class="services-resources-content-item-title">{{ .name }}</h6>
+      <p class="aservices-resources-content-item-des">{{ .description }}</p>
+    </div>
   </div>
   {{ end }}
   {{ end }}

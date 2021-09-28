@@ -1,4 +1,4 @@
 +++
-title = "案例"
+title = "典型案例"
 description = ""
 +++
