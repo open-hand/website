@@ -8,7 +8,7 @@
 .connect-us .connect-us-header {
   background: url("../img/connect-us/header.png") no-repeat;
   background-size: 100% 100%;
-  padding: 1.08rem 1.02rem;
+  padding: 1.08rem 1.02rem 1.13rem;
 }
 
 .connect-us .connect-us-header h5 {
@@ -36,9 +36,11 @@
 .connect-us .connect-us-banner .connect-us-method {
   padding: .5rem 0 .38rem .44rem;
   background-color: #fff;
+  box-shadow: 0 0 21px 0 rgba(0,27,82,0.20);
+  border-radius: 8px;
   position: absolute;
   right: 1.65rem;
-  top: -2.06rem;
+  top: -2.65rem;
   width: 4.78rem;
 }
 
@@ -78,5 +80,58 @@
 }
 
 .connect-us .connect-us-banner .connect-us-method p:hover {
+  color: #326DE6;
+}
+
+.connect-us .connect-us-product {
+  background: url("../img/connect-us/background.png") no-repeat;
+  background-size: 100% 100%;
+  padding: .6rem 2.58rem .76rem;
+  display: flex;
+}
+
+.connect-us .connect-us-product .connect-us-product-content {
+  margin-right: .24rem;
+}
+
+.connect-us .connect-us-product h6 {
+  font-size: .24rem;
+  color: #0D224A;
+  font-weight: 500;
+  line-height: .33rem;
+  margin: 0 0 .4rem;
+}
+
+.connect-us .connect-us-product .connect-us-product-item img {
+  width: .5rem;
+  height: .54rem;
+  margin-right: .18rem;
+}
+
+.connect-us .connect-us-product .connect-us-product-item {
+  background: #FFFFFF;
+  border-radius: 8px;
+  padding: .36rem .3rem;
+  margin-bottom: .24rem;
+  display: flex;
+  align-items: center;
+}
+
+.connect-us .connect-us-product .connect-us-product-item p {
+  font-size: .14rem;
+  color: rgba(13,34,74,0.68);
+  line-height: .2rem;
+  margin: 0 0 .06rem;
+  font-weight: 500;
+}
+
+.connect-us .connect-us-product .connect-us-product-item a {
+  font-size: .16rem;
+  color: #0D224A;
+  line-height: .22rem;
+  font-weight: 500;
+}
+
+.connect-us .connect-us-product .connect-us-product-item a:hover {
   color: #326DE6;
 }

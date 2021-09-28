@@ -135,6 +135,7 @@ paginate = 5
     [[languages.zh.menu.main]]
         name = "联系我们"
         weight = 24
+        url = "/zh/connect-us/"
         parent = "zh-version"
     [[languages.zh.menu.main]]
         name = "品牌故事"
@@ -256,12 +257,11 @@ paginate = 5
     identifier = "zh-version"
     [[languages.zh.menu.footer]]
         name = "加入我们"
-        url  = "https://v0-23.choerodon.io/zh/"
         weight = 25
         parent = "zh-version"
     [[languages.zh.menu.footer]]
         name = "联系我们"
-        url  = "https://v0-23.choerodon.io/zh/"
+        url  = "/zh/connect-us/"
         weight = 24
         parent = "zh-version"
     [[languages.zh.menu.footer]]

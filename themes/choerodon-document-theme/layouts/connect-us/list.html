@@ -39,12 +39,13 @@
             </div>
           </div>
         </section>
+        {{ partial "connect_us_comminicate.html" . }}
       </div>
       {{ partial "footer.html" . }}
     </div>
 
     {{ partial "scripts.html" . }}
-    {{ range .Site.Data.static.aboutChoerodon.js }}
+    {{ range .Site.Data.static.community.js }}
         <script src="{{ . }}"></script>
     {{ end }}
   </body>

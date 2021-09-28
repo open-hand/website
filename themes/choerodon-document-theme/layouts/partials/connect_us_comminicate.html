@@ -1,0 +1,30 @@
+{{ $.Scratch.Set "language" .Site.Language.Lang }}
+<section class="connect-us-product">
+  <div class="connect-us-product-content">
+    <h6>{{ i18n "product comminicate" }}</h6>
+    {{ range .Site.Data.connectUs  }}
+    {{ if and (eq ($.Scratch.Get "language") .language) (lt (.weight) 3 ) }}
+    <div class="connect-us-product-item">
+      <img src="{{ .image }}" />
+      <div>
+        <p>{{ .name }}</p>
+        <a href="{{ .url }}" target="_blank">{{ .url }}</a>
+      </div>
+    </div>
+    {{ end }}
+    {{ end }}
+  </div>
+  <div>
+    {{ range .Site.Data.connectUs  }}
+    {{ if and (eq ($.Scratch.Get "language") .language) (gt (.weight) 2 ) }}
+    <div class="connect-us-product-item">
+      <img src="{{ .image }}" />
+      <div>
+        <p>{{ .name }}</p>
+        <a href="{{ .url }}" target="_blank">{{ .url }}</a>
+      </div>
+    </div>
+    {{ end }}
+    {{ end }}
+  </div>
+</section>
