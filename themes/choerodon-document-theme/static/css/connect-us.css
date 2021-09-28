@@ -118,10 +118,11 @@
 .connect-us .connect-us-product .connect-us-product-item {
   background: #FFFFFF;
   border-radius: 8px;
-  padding: .36rem .3rem;
+  padding: .36rem 0 .36rem .3rem;
   margin-bottom: .24rem;
   display: flex;
   align-items: center;
+  width: 4.5rem;
 }
 
 .connect-us .connect-us-product .connect-us-product-item p {
