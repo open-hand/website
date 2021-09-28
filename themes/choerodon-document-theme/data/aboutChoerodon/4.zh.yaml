@@ -1,4 +1,5 @@
 weight: 4
 name: "租户数量年增长"
-value: "40%"
+value: 40
+suffix: "%"
 language: zh
