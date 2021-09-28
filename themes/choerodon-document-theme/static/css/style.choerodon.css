@@ -511,7 +511,7 @@ fieldset[disabled] .btn-template-main.active {
 
 .fixed-nav {
   background-color: #ffffff;
-  border-bottom: 1px solid #DADADA;
+  /*border-bottom: 1px solid #DADADA;*/
 }
 
 .fixed-nav {

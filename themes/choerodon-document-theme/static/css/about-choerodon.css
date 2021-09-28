@@ -8,7 +8,7 @@
 .about-choerodon .about-choerodon-banner {
   background: url("../img/about-choerodon/banner.png") no-repeat;
   background-size: 100% 100%;
-  padding: .68rem 2.35rem 1rem;
+  padding: .68rem 2.35rem 1.22rem;
   color: #0D224A;
 }
 
@@ -17,11 +17,12 @@
   margin-bottom: .3rem;
   line-height: .5rem;
   font-weight: 400;
+  color: #0D224A;
 }
 
 .about-choerodon .about-choerodon-banner p {
   font-size: .16rem;
-  margin: 0 0 .25rem;
+  margin: 0 0 .2rem;
 }
 
 .about-choerodon .brand-story {
@@ -31,7 +32,7 @@
 
 .about-choerodon .brand-story .brand-story-mask {
   background: rgba(0, 37, 112, 0.51);
-  padding: .8rem 1.75rem .55rem;
+  padding: .8rem .88rem .55rem;
 }
 
 .about-choerodon .brand-story h6 {
@@ -39,6 +40,7 @@
   font-weight: 500;
   margin-bottom: .4rem;
   line-height: .33rem;
+  color: #0D224A;
 }
 
 .about-choerodon .brand-story .brand-story-description {
@@ -51,7 +53,12 @@
 .about-choerodon .brand-story .brand-story-description p {
   font-size: .14rem;
   color: #FFFFFF;
-  margin: 0 0 .25rem;
+  margin: 0 0 .16rem;
+  line-height: .24rem;
+}
+
+.about-choerodon .brand-story .brand-story-description p:last-child {
+  margin: 0;
 }
 
 .about-choerodon .about-choerodon-data {

@@ -42,11 +42,15 @@
   font-weight: 500;
 }
 
+.common-resources-section .common-resources-section-item-link img {
+  transition: transform 0.3s ease-in-out;
+}
+
 .common-resources-section .common-resources-section-item-link:hover {
   color: #326DE6;
   opacity: 0.6;
 }
 
 .common-resources-section .common-resources-section-item-link:hover img {
-  margin-left: .04rem;
+  transform: translateX(4px);
 }
