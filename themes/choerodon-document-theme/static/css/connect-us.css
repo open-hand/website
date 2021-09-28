@@ -59,6 +59,7 @@
 .connect-us .connect-us-banner .connect-us-method .connect-us-method-item {
   display: flex;
   margin-bottom: .24rem;
+  position: relative;
 }
 
 .connect-us .connect-us-banner .connect-us-method .connect-us-method-item:last-child {
@@ -71,7 +72,8 @@
   margin-right: .1rem;
 }
 
-.connect-us .connect-us-banner .connect-us-method p {
+.connect-us .connect-us-banner .connect-us-method p,
+.connect-us .connect-us-banner .connect-us-method a {
   font-size: .16rem;
   color: #0D224A;
   line-height: .22rem;
@@ -79,8 +81,13 @@
   margin: 0;
 }
 
-.connect-us .connect-us-banner .connect-us-method p:hover {
+.connect-us .connect-us-banner .connect-us-method .connect-us-method-item a,
+.connect-us .connect-us-banner .connect-us-method .connect-us-method-item:hover p {
   color: #326DE6;
+}
+
+.connect-us .connect-us-banner .connect-us-method .connect-us-method-item-nohover:hover p {
+  color: #0D224A;
 }
 
 .connect-us .connect-us-product {
@@ -134,4 +141,38 @@
 
 .connect-us .connect-us-product .connect-us-product-item a:hover {
   color: #326DE6;
+}
+
+.connect-us .connect-us-banner .connect-us-method .content-us-method-code {
+  position: absolute;
+  left: 2.2rem;
+  top: -0.52rem;
+  display: none;
+}
+
+.connect-us .connect-us-banner .connect-us-method .content-us-method-code img {
+  width: 1rem;
+  height: 1rem;
+  background: #6899FF;
+  border-radius: 2px;
+  padding: .06rem;
+}
+
+.connect-us .connect-us-banner .connect-us-method .content-us-method-code .content-us-method-code-arrow {
+  transform: rotate(-90deg);
+  position: relative;
+  border: 6px solid transparent;
+  border-bottom: 6px solid #6899FF;
+  width: 0;
+  height: 0;
+  left: -0.1rem;
+  top: .56rem;
+}
+
+.connect-us .connect-us-banner .connect-us-method .content-us-method-code-hand {
+  left: 2.04rem;
+}
+
+.connect-us .connect-us-banner .connect-us-method .connect-us-method-item:hover .content-us-method-code {
+  display: block;
 }
