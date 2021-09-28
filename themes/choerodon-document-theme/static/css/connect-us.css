@@ -36,7 +36,6 @@
 .connect-us .connect-us-banner .connect-us-method {
   padding: .5rem 0 .38rem .44rem;
   background-color: #fff;
-  width: max-content;
   position: absolute;
   right: 1.65rem;
   top: -2.06rem;
@@ -58,6 +57,10 @@
 .connect-us .connect-us-banner .connect-us-method .connect-us-method-item {
   display: flex;
   margin-bottom: .24rem;
+}
+
+.connect-us .connect-us-banner .connect-us-method .connect-us-method-item:last-child {
+  margin-bottom: 0;
 }
 
 .connect-us .connect-us-banner .connect-us-method .connect-us-method-icon {

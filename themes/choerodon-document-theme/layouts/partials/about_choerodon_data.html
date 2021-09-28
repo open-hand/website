@@ -4,7 +4,9 @@
   {{ if eq ($.Scratch.Get "language") .language }}
   <div class="about-choerodon-data-item">
     <div>
-      <span class="about-choerodon-data-item-value" data-value="{{ .value }}">0</span>
+      <span class="about-choerodon-data-item-value" data-value="{{ .value }}">
+        {{ .value }}
+      </span>
       <span class="about-choerodon-data-item-suffix">{{ .suffix }}</span>
     </div>
     <p class="about-choerodon-data-item-label">{{ .name }}</p>
