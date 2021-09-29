@@ -1018,7 +1018,9 @@ p {
   cursor: pointer;
   display: flex;
   align-items: center;
-  padding: .02rem .16rem;
+  padding: .02rem;
+  width: 1rem;
+  justify-content: center;
 }
 
 .sub-menus-product-plan .sub-menus-product-plan-list .sub-menus-product-plan-list-item:hover {
