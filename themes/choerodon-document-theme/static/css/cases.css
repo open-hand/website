@@ -11,7 +11,8 @@
   width: 100%;
   color: #fff;
   font-weight: 500;
-  transition: background 0.5s ease-in 1s,color 0.3s ease-out 1s;
+  flex-shrink: 0;
+  left: 0;
 }
 
 .cases-section-detail-mask {
@@ -106,4 +107,23 @@
   font-size: .2rem;
   color: #FAB02E;
   font-weight: 500;
+}
+
+.cases-section .cases-section-detail-list {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+}
+
+.cases-section .cases-section-detail-list .cases-section-detail-none {
+  opacity: 0;
+  z-index: 0;
+}
+
+.cases-section .cases-section-detail-list .cases-section-detail-block {
+  opacity: 1;
+  z-index: 1;
+  position: absolute;
+  /*transition: all 1s ease 0s;*/
+  left: 0;
 }

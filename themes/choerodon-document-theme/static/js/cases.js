@@ -12,8 +12,8 @@ jQuery(document).ready(function () {
     //     }
     //   });
     // }
-    $('.cases-section-detail').removeClass("block");
-    $('.cases-section-detail').addClass("none");
+    $('.cases-section-detail').removeClass("cases-section-detail-block");
+    $('.cases-section-detail').addClass("cases-section-detail-none");
     var t = $(this).attr('id');
     // var img = $('#' + t + '-item-img');
     var detail = $('#' + t + '-detail');
@@ -21,8 +21,8 @@ jQuery(document).ready(function () {
     //   img.attr("src",img.attr("data-src2"));
     // }
     if (detail) {
-      detail.removeClass("none");
-      detail.addClass("block");
+      detail.removeClass("cases-section-detail-none");
+      detail.addClass("cases-section-detail-block");
     }
   });
 });

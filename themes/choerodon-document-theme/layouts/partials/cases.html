@@ -3,9 +3,10 @@
   <div class="cases-section-title text-center">
     {{ i18n "cases" }}
   </div>
+  <div class="cases-section-detail-list">
   {{ range $index, $element := sort .Site.Data.cases "weight" }}
     {{ if eq ($.Scratch.Get "language") $element.language }}
-    <div id="cases-{{ $element.weight }}-detail" class="cases-section-detail {{ if gt $index 1}} none {{ else }} block {{ end }}">
+    <div id="cases-{{ $element.weight }}-detail" class="cases-section-detail {{ if gt $index 1}} cases-section-detail-none {{ else }} cases-section-detail-block {{ end }}">
       <div class="cases-section-detail-background {{ $element.classname }}">
         <div class="cases-section-detail-mask">
           <div class="cases-section-detail-text-wrap">
@@ -28,6 +29,7 @@
     </div>
     {{ end }}
   {{ end }}
+  </div>
   <div class="cases-section-content">
     {{ range $index, $element := sort .Site.Data.cases "weight" }}
       {{ if eq ($.Scratch.Get "language") $element.language }}
