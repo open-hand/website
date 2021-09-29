@@ -30,9 +30,9 @@
             </div>
             <div class="sub-menus-product-plan-list">
               {{ range .Children.ByWeight }}
-                <div class="sub-menus-product-plan-list-item">
+                <div class="sub-menus-product-plan-list-item footer-nav-item-link-span" data-id="function-tabs-{{ .Identifier }}">
                   <img src="/img/nav/{{ .Identifier }}.svg" />
-                  <span class="footer-nav-item-link-span" data-id="function-tabs-{{ .Identifier }}">{{ .Name }}</span>
+                  <span>{{ .Name }}</span>
                 </div>
               {{ end }}
             </div>
