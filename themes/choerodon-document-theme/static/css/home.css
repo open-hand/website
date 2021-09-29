@@ -222,6 +222,7 @@ body {
   background:url(../img/banner.svg)no-repeat,-o-linear-gradient(0deg, #003DAC,#3371E3);
   background:url(../img/banner.svg)no-repeat,-ms-linear-gradient(0deg, #003DAC,#3371E3);
   margin-top: .7rem;
+  background-size: 100% 100%;
 }
 .carousels-section .carousel-box-flex{
   display: flex;

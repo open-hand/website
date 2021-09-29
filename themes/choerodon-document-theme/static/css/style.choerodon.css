@@ -1018,9 +1018,15 @@ p {
   cursor: pointer;
   display: flex;
   align-items: center;
+  padding: .02rem .16rem;
 }
 
-.sub-menus-product-plan .sub-menus-product-plan-list .sub-menus-product-plan-list-item span:hover {
+.sub-menus-product-plan .sub-menus-product-plan-list .sub-menus-product-plan-list-item:hover {
+  border-radius: 3px;
+  background: #E4EDFF;
+}
+
+.sub-menus-product-plan .sub-menus-product-plan-list .sub-menus-product-plan-list-item:hover span {
   color: #326DE6;
 }
 
