@@ -16,12 +16,12 @@
 
 .problem-section-problem {
   width: 50%;
-  padding: .1rem 0 .1rem .13rem;
+  padding: .13rem 0 .13rem .13rem;
 }
 
 .problem-section-highlights {
   width: 60%;
-  padding: .1rem .13rem .1rem 0;
+  padding: .13rem .13rem .13rem 0;
 }
 
 .problem-section-main,
@@ -93,7 +93,7 @@
   background-size: calc(100% + .8rem);
   margin-left: -1.22rem;
   margin-top: -.18rem;
-  padding-top: calc(0.1rem + 0.18rem);
+  padding-top: calc(0.13rem + 0.18rem);
 }
 
 .problem-section-highlights-index {

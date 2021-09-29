@@ -1,6 +1,6 @@
 .service-system-section {
   background: #F7F7F7;
-  padding: .6rem 0 .94rem;
+  padding: .8rem 0 .94rem;
 }
 
 .service-system-section h4 {
@@ -8,7 +8,7 @@
   color: #0D224A;
   text-align: center;
   font-weight: 500;
-  margin: 0 0 .82rem;
+  margin: 0 0 .5rem;
   padding: 0;
 }
 
@@ -48,15 +48,23 @@
   color: #326DE6;
   letter-spacing: 1.8px;
   text-align: center;
+  font-weight: 500;
+}
+
+.service-system-section-content-text:first-child {
+  margin-bottom: .05rem;
 }
 
 .service-system-section-btn {
-  margin: .66rem auto 0;
+  margin: .5rem auto 0;
   border-radius: 4px;
-  padding: .2rem 0 .2rem .62rem;
   background: #326DE6;
   color: #fff;
-  width: 2.84rem;
+  width: 1.8rem;
+  height: .46rem;
+  line-height: .46rem;
+  line-height: .46rem;
+  text-align: center;
 }
 
 .service-system-section-btn:hover {
@@ -70,7 +78,7 @@
 .service-system-section-btn a {
   color: #fff;
   font-weight: 500;
-  font-size: .2rem;
+  font-size: .16rem;
 }
 
 .service-system-section-btn a img {
