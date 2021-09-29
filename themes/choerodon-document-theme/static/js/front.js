@@ -237,7 +237,6 @@ jQuery(document).ready(function () {
 
 jQuery(document).ready(function () {
   // 导航栏、footer 产品功能锚点跳转
-  console.log(window.location);
   $('.footer-nav-item-link-span').click(function () {
     if (window.location.pathname !== '/zh/' && window.location.pathname !== '/en/') {
       window.location.href = window.location.origin + '/zh/#function-modules-section';
