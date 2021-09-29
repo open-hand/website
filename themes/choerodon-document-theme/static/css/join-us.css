@@ -60,7 +60,7 @@
 .join-us .join-us-content .join-us-content-item .join-us-content-item-text-last {
   position: absolute;
   top: 1.79rem;
-  left: 4.38rem;
+  left: 4.3rem;
 }
 
 .join-us .join-us-content .join-us-content-item .join-us-content-item-text-list {
@@ -105,9 +105,14 @@
   color: #FFFFFF;
 }
 
+.join-us .join-us-connect .join-us-connect-item:hover {
+  box-shadow: 0 0 19px 0 rgba(147,165,255,0.28);
+}
+
 .join-us .join-us-connect .join-us-connect-item1 {
   background: #FFAC8E;
   margin-right: .3rem;
+  cursor: pointer;
 }
 
 .join-us .join-us-connect .join-us-connect-item2 {
@@ -131,9 +136,14 @@
   margin: .1rem 0 0;
 }
 
+.join-us .join-us-connect .join-us-connect-item1:hover p {
+  text-decoration: underline;
+}
+
+
 .join-us .join-us-connect .join-us-connect-item .join-us-connect-item-code {
   position: absolute;
-  right: -1.5rem;
+  right: -1.4rem;
   top: -.26rem;
   display: none;
 }
@@ -153,7 +163,7 @@
   border-bottom: 8px solid #6899FF;
   width: 0;
   height: 0;
-  left: -.14rem;
+  left: -.16rem;
   top: .7rem;
 }
 

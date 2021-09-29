@@ -75,17 +75,13 @@
 .connect-us .connect-us-banner .connect-us-method p,
 .connect-us .connect-us-banner .connect-us-method a {
   font-size: .16rem;
-  color: #0D224A;
+  color: #326DE6;
   line-height: .22rem;
   font-weight: 500;
   margin: 0;
 }
 
-.connect-us .connect-us-banner .connect-us-method .connect-us-method-item a,
-.connect-us .connect-us-banner .connect-us-method .connect-us-method-item:hover p {
-  color: #326DE6;
-}
-
+.connect-us .connect-us-banner .connect-us-method .connect-us-method-item-nohover p,
 .connect-us .connect-us-banner .connect-us-method .connect-us-method-item-nohover:hover p {
   color: #0D224A;
 }
@@ -123,24 +119,30 @@
   display: flex;
   align-items: center;
   width: 4.5rem;
+  cursor: pointer;
 }
 
-.connect-us .connect-us-product .connect-us-product-item p {
+.connect-us .connect-us-product .connect-us-product-item:hover {
+  box-shadow: 0 0 26px 0 rgba(0,48,146,0.21);
+}
+
+.connect-us .connect-us-product .connect-us-product-item .connect-us-product-item-label {
   font-size: .14rem;
   color: rgba(13,34,74,0.68);
   line-height: .2rem;
   margin: 0 0 .06rem;
   font-weight: 500;
+  display: block;
 }
 
-.connect-us .connect-us-product .connect-us-product-item a {
+.connect-us .connect-us-product .connect-us-product-item .connect-us-product-item-url {
   font-size: .16rem;
   color: #0D224A;
   line-height: .22rem;
   font-weight: 500;
 }
 
-.connect-us .connect-us-product .connect-us-product-item a:hover {
+.connect-us .connect-us-product .connect-us-product-item:hover .connect-us-product-item-url {
   color: #326DE6;
 }
 

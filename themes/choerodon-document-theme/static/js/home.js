@@ -39,22 +39,4 @@ jQuery(document).ready(function () {
         $(this).children().children('.title').css("display", "none");
         $(this).children().children('.content').css("display", "none");
     });
-
-    // footer 产品功能锚点跳转
-    $('.footer-nav-item-link-span').click(function () {
-      document.getElementById("function-modules-section").scrollIntoView({
-        behavior: 'smooth',
-      });
-      $('.function-modules-section-tabs-item').addClass('normal');
-      var itemId = $(this).attr('data-id');
-      $('#' + itemId).removeClass('normal');
-      $('.function-modules-section-detail').removeClass("block");
-      $('.function-modules-section-detail').addClass("none");
-      var detail=$('#' + itemId + '-detail');
-      if (!detail.attr('src')) {
-        detail.attr("src",detail.attr("data-src"));
-        detail.removeClass("none");
-        detail.addClass("block");
-      }
-    })
 });

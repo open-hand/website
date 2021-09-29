@@ -234,3 +234,28 @@ jQuery(document).ready(function () {
     });
   }
 });
+
+jQuery(document).ready(function () {
+  // 导航栏、footer 产品功能锚点跳转
+  console.log(window.location);
+  $('.footer-nav-item-link-span').click(function () {
+    if (window.location.pathname !== '/zh/' && window.location.pathname !== '/en/') {
+      window.location.href = window.location.origin + '/zh/#function-modules-section';
+    } else {
+      document.getElementById("function-modules-section").scrollIntoView({
+        behavior: 'smooth',
+      });
+      $('.function-modules-section-tabs-item').addClass('normal');
+      var itemId = $(this).attr('data-id');
+      $('#' + itemId).removeClass('normal');
+      $('.function-modules-section-detail').removeClass("block");
+      $('.function-modules-section-detail').addClass("none");
+      var detail=$('#' + itemId + '-detail');
+      if (!detail.attr('src')) {
+        detail.attr("src",detail.attr("data-src"));
+        detail.removeClass("none");
+        detail.addClass("block");
+      }
+    }
+  })
+});

@@ -1,5 +1,5 @@
 weight: 3
 name: "注册租户数"
-value: 1000
+value: "1000"
 suffix: "+"
 language: zh

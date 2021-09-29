@@ -141,7 +141,7 @@ paginate = 5
     [[languages.zh.menu.main]]
         name = "品牌故事"
         weight = 23
-        url  = "/zh/about-choerodon/"
+        url  = "/zh/about-choerodon/#brand-story"
         parent = "zh-version"
     [[languages.zh.menu.main]]
         name = "关于猪齿鱼"
@@ -268,7 +268,7 @@ paginate = 5
         parent = "zh-version"
     [[languages.zh.menu.footer]]
         name = "品牌故事"
-        url  = "/zh/about-choerodon/"
+        url  = "/zh/about-choerodon/#brand-story"
         weight = 23
         parent = "zh-version"
     [[languages.zh.menu.footer]]

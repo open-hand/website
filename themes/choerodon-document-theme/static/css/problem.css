@@ -85,6 +85,7 @@
   color: #FFFFFF;
   background: #687183;
   margin-right: .1rem;
+  flex-shrink: 0;
 }
 
 .problem-section-highlights{
@@ -104,6 +105,7 @@
   color: #FFFFFF;
   background: #326DE6;
   margin-right: .1rem;
+  flex-shrink: 0;
 }
 
 .problem-section-problem h4 {

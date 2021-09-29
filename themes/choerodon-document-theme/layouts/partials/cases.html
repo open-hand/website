@@ -20,7 +20,7 @@
           <p class="cases-section-author text-right">—— {{ $element.author }}</p>
           {{ if $element.url }}
             <div class="text-center">
-              <a href="{{ $element.url }}" class="cases-section-detail-btn btn button carousel-a">{{ i18n "view case" }}</a>
+              <a href="{{ $element.url }}" target="_blank" class="cases-section-detail-btn btn button carousel-a">{{ i18n "view case" }}</a>
             </div>
           {{ end }}
         </div>
@@ -33,7 +33,7 @@
       {{ if eq ($.Scratch.Get "language") $element.language }}
         <div id="cases-{{ $element.weight }}" class="cases-section-content-item {{ $element.classname }} {{ if gt $index 1 }} normal {{ end }}">
           {{ if $element.image }}
-            <img id="cases-{{ $element.weight }}-item-img" class="cases-section-content-item-img" {{ if gt $index 1}} src = "{{ $element.image }}" {{ else }} src = "{{ $element.imageSelect }}" {{ end }} data-src1="{{ $element.image }}" data-src2="{{ $element.imageSelect }}" />
+            <img id="cases-{{ $element.weight }}-item-img" class="cases-section-content-item-img" src = "{{ $element.imageSelect }}" data-src1="{{ $element.image }}" data-src2="{{ $element.imageSelect }}" />
           {{ else }}
             <span>{{ $element.name }}</span>
           {{ end }}
