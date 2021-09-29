@@ -54,3 +54,25 @@
 .common-resources-section .common-resources-section-item-link:hover img {
   transform: translateX(4px);
 }
+
+@media (max-width: 767px) {
+  .common-resources-section {
+    flex-direction: column;
+    padding: .6rem .1rem .6rem .3rem;
+  }
+
+  .common-resources-section .common-resources-section-item,
+  .common-resources-section .common-resources-section-item:nth-child(2) {
+    margin-left: 0;
+    margin-bottom: .2rem;
+  }
+
+  .common-resources-section .common-resources-section-title {
+    margin-bottom: .4rem;
+    text-align: center;
+  }
+
+  .common-resources-section .common-resources-section-item-des {
+    margin: .09rem 0 .1rem;
+  }
+}

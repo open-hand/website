@@ -121,3 +121,36 @@
   margin-bottom: .4rem;
   color: #fff;
 }
+
+@media (max-width: 767px) {
+  .problem-section-main {
+    flex-direction: column;
+  }
+
+  .problem-section-problem,
+  .problem-section-highlights {
+    width: 100%;
+    padding: .13rem;
+  }
+
+  .problem-section-highlights {
+    margin: .2rem 0 0;
+    background: rgba(0, 0, 0, 0.8);
+  }
+
+  .problem-section-problem .problem-section-problem-border {
+    padding: .64rem .1rem;
+    border-right: 1px solid #3D82FF;
+  }
+
+  .problem-section-highlights .problem-section-highlights-border {
+    padding: .64rem .1rem;
+    border-left: 1px solid #3D82FF;
+  }
+
+  .problem-section-problem-content {
+    margin: 0;
+    grid-column-gap: .2rem;
+    grid-row-gap: .4rem;
+  }
+}

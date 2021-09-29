@@ -85,3 +85,35 @@
   margin-left: .06rem;
   transition: transform 0.3s ease-in-out;
 }
+
+@media (max-width: 767px) {
+  .service-system-section {
+    padding: .6rem .1rem;
+  }
+
+  .service-system-section-content {
+    width: 100%;
+    background-size: contain;
+    height: 2.69rem;
+  }
+
+  .service-system-section-content-wrap {
+    border: none;
+    padding-top: .05rem;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .service-system-section-content-text {
+    font-size: .16rem;
+    line-height: .2rem;
+  }
+
+  .service-system-section-content-text:first-child {
+    margin-bottom: 0;
+  }
+
+  .service-system-section-btn {
+    margin-top: .2rem;
+  }
+}

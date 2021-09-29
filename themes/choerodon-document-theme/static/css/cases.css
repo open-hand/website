@@ -127,3 +127,23 @@
   /*transition: all 1s ease 0s;*/
   left: 0;
 }
+
+@media (max-width: 767px) {
+  .cases-section {
+    padding: .6rem .1rem;
+  }
+
+  .cases-section-detail-mask {
+    padding: .56rem .2rem;
+  }
+
+  .cases-section-content {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: .2rem;
+  }
+
+  .cases-section-content-item {
+    margin-bottom: .2rem;
+  }
+}

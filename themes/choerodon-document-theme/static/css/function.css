@@ -55,3 +55,35 @@
 .function-modules-section-detail img {
   width: 100%;
 }
+
+@media (max-width: 767px) {
+  .function-modules-section {
+    padding: .6rem .1rem;
+  }
+
+  .function-modules-section-content {
+    flex-direction: column;
+  }
+
+  .function-modules-section-tabs-item {
+    padding: .04rem;
+    border-right: none;
+    border-bottom: 2px solid #326DE6;
+    margin-bottom: 0;
+  }
+
+  .function-modules-section-tabs {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #EAEAEA;
+  }
+
+  .function-modules-section-detail {
+    border-left: none;
+    padding: .3rem .1rem 0;
+  }
+
+  .function-modules-section-tabs .normal {
+    border-bottom: none;
+  }
+}

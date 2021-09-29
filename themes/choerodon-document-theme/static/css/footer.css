@@ -95,7 +95,7 @@
         font-size: 0.18rem;
         color: #FFFFFF;
         font-weight: 300;
-        margin-left: 0.25rem;
+        /*margin-left: 0.25rem;*/
     }
     .footer .social a {
         width: 0.5rem;
@@ -106,4 +106,20 @@
         font-size: 0.12rem;
         padding: 0.6rem 0 0.3rem 0;
     }
+
+  .footer .footer-content {
+    padding: .4rem .1rem;
+    flex-direction: column;
+  }
+
+  .footer .footer-content .footer-nav {
+    margin: 0;
+    padding-top: 0;
+    flex-wrap: wrap;
+    justify-content: start;
+  }
+
+  .footer .footer-content .footer-nav .footer-nav-item {
+    width: 33.33%;
+  }
 }

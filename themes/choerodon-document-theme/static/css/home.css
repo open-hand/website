@@ -520,12 +520,12 @@ body {
   .abstracts-section{
     align-items: center;
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     margin: 0.7rem auto 0 auto;
   }
   .abstracts-section .abstract-section-content{
     width: 100%;
-    margin-right: 0;
+    margin: 0;
   }
   .abstracts-section .abstract-section-content h3{
     font-size: 0.16rem;
@@ -537,8 +537,6 @@ body {
     line-height: 1.5;
   }
   .abstracts-section .abstract-section-img{
-    height: 1.02rem;
-    width: 1.7rem;
     margin-bottom: 0.35rem;
   }
   .targets-section{
@@ -757,4 +755,8 @@ body {
     border-radius: .02rem;
   }
 
+  .abstract-section-img img {
+    height: 3rem;
+    width: 100%;
+  }
 }
