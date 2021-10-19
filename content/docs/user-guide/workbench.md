@@ -4,7 +4,6 @@ description = "用于快速集中查看个人相关的待办问题、待审核�
 weight = 3
 +++
 
-
 # 工作台      
 
 ## 1.概览
@@ -104,19 +103,35 @@ weight = 3
 
 ## 8. 缺陷
 
+
+<img src="https://file.open.hand-china.com/hsop-doc/doc_classify/0/17c41a3088164edcac00a54ea59b60a1@image.png" alt="" width="auto" height="auto" />
+
+`缺陷`模块展示了您在当前组织下该用户在对应星标项目（没选择星标项目时，即为所有项目）下当前进行的冲刺提出的缺陷和待您修复的缺陷。
+
+
 ## 9. 我的关注
 
+<img src="https://file.open.hand-china.com/hsop-doc/doc_classify/0/e91d8558631d4502a72bd55e05c05466@image.png" alt="" width="auto" height="auto" />
 
-<img src="https://file.open.hand-china.com/hsop-doc/doc_classify/0/5957696bd3a443abb1ce61f8f456d754@image.png" alt="" width="auto" height="auto" />
+`我的关注`模块展示了您在当前组织下该用户在对应星标项目（没选择星标项目时，即为所有项目）下星标关注的问题项。
 
+<img src="https://file.open.hand-china.com/hsop-image/doc_classify/0/3c9544a8230a4f78b60f22de2baf3016@issue-01.png" alt="issue-01.png" width="300" height="auto" />
 
 ## 10. 我报告的
 
+`我报告的`模块展示了您在当前组织下该用户在对应星标项目（没选择星标项目时，即为所有项目）下当前进行的冲刺报告人是您的问题项。
+
 ## 11. 我经手的
+
+`我经手的`模块展示了您在当前组织下该用户在对应星标项目（没选择星标项目时，即为所有项目）下当前进行的冲刺您经办过的问题项。
 
 ## 12. 我执行的用例
 
+`我执行的用例`模块展示了您在当前组织下该用户在对应星标项目（没选择星标项目时，即为所有项目）下当前进行的测试计划中指派给您执行的用例。
+
 ## 13. 我的工作流
+
+`我的工作流`模块展示了您在当前组织下（项目配置工作流后）您需要审批的需求、抄送给您的工作流，以及你参与过和您发起的需求审批。
 
 ## 8.更多操作  
 
