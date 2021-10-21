@@ -16,15 +16,15 @@
       <title>{{ .Title }}</title>
   {{ end }}
   {{ if .Keywords }}
-  <meta name="keywords" content="{{ delimit .Keywords ", " }}">
+  <meta name="keywords" content="{{ delimit .Keywords ", " }}" id="keywords">
   {{ else if .Site.Params.DefaultKeywords }}
-  <meta name="keywords" content="{{ delimit .Site.Params.DefaultKeywords ", " }}">	
+  <meta name="keywords" content="{{ delimit .Site.Params.DefaultKeywords ", " }}" id="keywords">
   {{ end }}
 
   {{ if .Description }}
-  <meta name="description" content="{{ .Description }}">
+  <meta name="description" content="{{ .Description }}" id="description">
   {{ else if .Site.Params.DefaultDescription }}
-  <meta name="description" content="{{ .Site.Params.DefaultDescription }}">	
+  <meta name="description" content="{{ .Site.Params.DefaultDescription }}" id="description">
   {{ end }}
 
   <!-- iconfont -->

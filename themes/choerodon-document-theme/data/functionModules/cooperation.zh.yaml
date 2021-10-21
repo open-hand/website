@@ -3,4 +3,5 @@ name: "协作"
 description: "包括贯穿产品全生命周期的需求管理，由待办事项、看板和史诗、故事、任务组成的项目管理能力，强大的知识管理平台和文档库，可视化、透明化支撑团队异地协同和跨项目协同。"
 img: "/img/home/function/cooperation.png"
 id: "function-tabs-cooperation"
+alt: "猪齿鱼协作功能"
 language: zh

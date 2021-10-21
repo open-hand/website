@@ -26,7 +26,7 @@
 }
 
 .about-choerodon .brand-story {
-  padding: 1rem 1.6rem;
+  padding: 1rem 2.35rem;
   color: #0D224A;
 }
 
@@ -44,17 +44,28 @@
 }
 
 .about-choerodon .brand-story .brand-story-description {
-  background: url("../img/about-choerodon/story.png") no-repeat;
-  background-size: 100% 100%;
-  font-size: .14rem;
-  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  background: #FFFFFF;
+  box-shadow: 0 0 14px 0 rgba(0,27,82,0.10);
+  border-radius: 10px;
+}
+
+.about-choerodon .brand-story .brand-story-description .brand-story-description-img {
+  width: 3.42rem;
+  height: 3.36rem;
+}
+
+.about-choerodon .brand-story .brand-story-description .brand-story-description-text {
+  padding: 0 .44rem 0 .3rem;
 }
 
 .about-choerodon .brand-story .brand-story-description p {
-  font-size: .14rem;
-  color: #FFFFFF;
-  margin: 0 0 .16rem;
-  line-height: .24rem;
+  font-size: .16rem;
+  color: #0D224A;
+  margin: 0 0 .34rem;
+  line-height: .28rem;
+  font-weight: 500;
 }
 
 .about-choerodon .brand-story .brand-story-description p:last-child {

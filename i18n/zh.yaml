@@ -141,7 +141,7 @@
 
 # 案例
 - id: they are using choerodon
-  translation: '他们正在使用猪齿鱼'
+  translation: '各行业企业正在使用猪齿鱼'
 
 - id: to accelerate business remodeling
   translation: '加速业务重塑'
@@ -150,7 +150,7 @@
   translation: '和数字化转型'
 
 - id: choerodon has increased the agility of the enterprise
-  translation: '猪齿鱼Choerodon正在帮助他们提高企业信息化系统对市场和需求反应的敏捷度'
+  translation: '猪齿鱼 Choerodon 帮助企业落地数字化转型战略，提升信息化系统对市场和需求的反应敏捷度'
 
 - id: readmore
   translation: '查看详情'
@@ -212,13 +212,13 @@
   translation: '品牌故事'
 
 - id: brand story description1
-  translation: '猪齿鱼是世界上最聪明的鱼，被誉为“海里的爱因斯坦“，它是唯一会使用工具的鱼。'
+  translation: '猪齿鱼是世界上最聪明的鱼，被誉为“海里的爱因斯坦”，它是唯一会使用工具的鱼。'
 
 - id: brand story description2
   translation: '猪齿鱼非常喜欢吃蛤蜊，它用腮或鳍制造水流冲开泥沙，找到蛤蜊后用牙齿叼住，通过不断击打礁石来打破蛤蜊的外壳吃到肉。'
 
 - id: brand story description3
-  translation: '我们使用“猪齿鱼”来命名这款全场景研发效能平台，是希望这款像猪齿鱼一样聪明和高效的产品，能够帮助团队更快更稳更简单的交付高质量产品，帮助企业提升数字化管理水平，打造可持续发展的核心竞争力，也为推动企业数字化贡献力量。'
+  translation: '我们使用“猪齿鱼”来命名这款全场景效能平台，是希望这款像猪齿鱼一样聪明和高效的产品，能够帮助团队效能更快更强更稳定，帮助企业提升数字化管理水平，打造可持续发展的核心竞争力，也为推动企业数字化贡献力量。'
 
 # 关于猪齿鱼页面结束
 
@@ -241,7 +241,7 @@
   translation: '联系我们'
 
 - id: product purchase and business consulting
-  translation: '产品购买及商务咨询'
+  translation: '“猪齿鱼产品”购买及商务咨询'
 
 - id: suggestions
   translation: '投诉建议'

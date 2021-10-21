@@ -23,12 +23,18 @@
 
 .service-system-section-content {
   width: 8.37rem;
-  background: url("../img/home/service.png") no-repeat;
-  background-size: cover;
   text-align: center;
   margin: 0 auto;
   height: 5.38rem;
   position: relative;
+}
+
+.service-system-section-content-img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .service-system-section-content-wrap {

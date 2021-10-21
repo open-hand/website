@@ -1,5 +1,8 @@
 ---
-title: 某投资开发运营商
+title: 地产行业研发管理 – 使用猪齿鱼提升部署和交付效能 – 猪齿鱼案例 - 猪齿鱼官网
+pageTitle: 某投资开发运营商
+description: 使用猪齿鱼将部署周期从数周减少到几分钟，应用交付的效率提高了10倍，减少了重要的运营支出
+keywords: ["猪齿鱼案例","Choerodon","DevOps管理案例","运维一体化","自动化测试","自动化部署","容器技术"]
 date: "2018-01-01"
 type: "case-studies"
 classname: "crland"

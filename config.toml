@@ -1,5 +1,5 @@
 baseurl = "https://choerodon.io/"
-title = "猪齿鱼Choerodon | 全场景效能平台"
+title = "猪齿鱼Choerodon官网 - 全场景效能平台"
 theme = "choerodon-document-theme"
 # themesDir = "../.."
 # Site language. Available translations in the theme's `/i18n` directory.
@@ -284,7 +284,7 @@ paginate = 5
     signinhref = "https://choerodon.com.cn"
     ajaxhref = "https://share.choerodon.com.cn/topic/apply"
     praisenumber ="https://share.choerodon.com.cn/video/query"
-    defaultKeywords = ["devops"]
-    defaultDescription = ""
+    defaultKeywords = ["猪齿鱼","Choerodon","汉得","方法论","敏捷开发","DevOps","项目管理","项目群管理","看板","迭代","容器","研发方法论","研发管理软件","团队协作工具","项目协同管理","SaaS","自动化测试","持续交付","自动化部署流水线","大规模敏捷","用户故事地图","云原生","研发架构","研发效能","数字化转型"]
+    defaultDescription = "猪齿鱼提供体系化方法论和协作、测试、DevOps及容器工具，帮助企业拉通需求、设计、开发、部署、测试和运营流程，从团队协同到DevOps工具链、从平台工具到体系化方法论全面满足协同管理与工程效率需求，贯穿端到端全流程，助力团队效能更快更强更稳定"
     # Format dates with Go's time formatting
     date_format = "2006-01-02"

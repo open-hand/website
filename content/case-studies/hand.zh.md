@@ -1,5 +1,8 @@
 ---
-title: 汉得信息
+title: 汉得信息 – 使用猪齿鱼实现DevOps转型 – 猪齿鱼案例 - 猪齿鱼官网
+pageTitle: 汉得信息
+description: 汉得信息使用猪齿鱼全场景效能平台实现DevOps转型，缩短开发周期，加快迭代速度，减少运维负担，真正实现开发运维一体化
+keywords: ["猪齿鱼案例","Choerodon","汉得信息","DevOps转型","数字化转型","快速交付案例","快速迭代","开发运维一体化"]
 date: "2017-12-01"
 type: "case-studies"
 banner: "/img/case_studies/hand.png"

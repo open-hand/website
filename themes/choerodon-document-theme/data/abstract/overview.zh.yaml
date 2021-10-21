@@ -1,4 +1,5 @@
 weight: 1
 description: 猪齿鱼Choerodon全场景效能平台，提供体系化方法论和协作、测试、DevOps及容器工具，帮助企业拉通需求、设计、开发、部署、测试和运营流程，一站式提高管理效率和质量。从团队协同到DevOps工具链、从平台工具到体系化方法论，猪齿鱼全面满足协同管理与工程效率需求，贯穿端到端全流程，助力团队效能更快更强更稳定。
 image: '/img/home/architecture.png'
+alt: 猪齿鱼效能平台架构图
 language: zh

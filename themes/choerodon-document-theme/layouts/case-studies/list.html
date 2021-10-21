@@ -22,11 +22,11 @@
                           {{ if .Params.banner }}
                             <img src="{{ .Params.banner }}">
                           {{ else }}
-                            {{ .Params.title }}
+                            {{ .Params.pageTitle }}
                           {{ end }}
                         </a>
                         <div class="case-list-content">
-                            <h3>{{ .Params.title }}</h3>
+                            <h3>{{ .Params.pageTitle }}</h3>
                             <p class="summary">{{ .Params.summary }}</p>
                             <a class="button"  {{ if .Params.unfinshed }} {{ else }} href="{{ .RelPermalink }}" {{ end }}>
                                 <span>{{ i18n "readmore"}}</span>

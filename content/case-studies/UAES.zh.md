@@ -1,5 +1,8 @@
 ---
-title: 联合汽车电子
+title: 联合汽车电子 – 使用猪齿鱼实现快速交付 – 猪齿鱼案例 - 猪齿鱼官网
+keywords: ["猪齿鱼","Choerodon","敏捷交付案例","方法论","快速开发","DevOps","敏捷管理规范","快速交付","供应商开发规范"]
+description: 联合汽车电子使用猪齿鱼实现产品的快速交付，高效管理开发过程，打破传统的瀑布式开发模式，形成敏捷管理规范、DevOps规范、供应商开发规范
+pageTitle: 联合汽车电子
 date: "2018-01-01"
 type: "case-studies"
 banner: "/img/case_studies/UAES.png"
