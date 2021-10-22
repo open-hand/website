@@ -1,5 +1,5 @@
 .cases-section {
-  padding: 0 1.7rem .9rem;
+  padding: 1rem 1.7rem .9rem;
 }
 .cases-section .cases-section-title {
   font-size: .24rem;
@@ -98,15 +98,24 @@
   box-shadow: none;
 }
 
-.cases-section-content-item span {
-  font-size: .2rem;
+.cases-section-content-item .cases-section-content-item-name {
+  font-size: .22rem;
   color: #326DE6;
   font-weight: 500;
+  line-height: .24rem;
 }
-.cases-section-content-item.crland span {
-  font-size: .2rem;
-  color: #FAB02E;
+.cases-section-content-item .cases-section-content-item-name2 {
+  font-size: .14rem;
+  color: #326DE6;
+  opacity: 0.8;
+  margin-top: .04rem;
+  display: block;
+  line-height: .2rem;
   font-weight: 500;
+}
+.cases-section-content-item.crland {
+  line-height: normal;
+  padding-top: .12rem;
 }
 
 .cases-section .cases-section-detail-list {

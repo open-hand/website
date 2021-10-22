@@ -6,6 +6,8 @@
 @import url("service.css");
 @import url("cases.css");
 @import url("resources.css");
+@import url("carousels.css");
+@import url("users-logo.css");
 
 body {
   font-family: 'PingFang SC', 'Monospaced Number', 'Chinese Quote', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -214,55 +216,13 @@ body {
   left: 0;
 }
 /* carousel.html */
-.carousels-section {
-  padding-top: 1rem;
-  background:url(../img/banner.svg)no-repeat,linear-gradient(0deg, #003DAC,#3371E3);
-  background:url(../img/banner.svg)no-repeat,-webkit-linear-gradient(0deg, #003DAC,#3371E3);
-  background:url(../img/banner.svg)no-repeat,-moz-linear-gradient(0deg, #003DAC,#3371E3);
-  background:url(../img/banner.svg)no-repeat,-o-linear-gradient(0deg, #003DAC,#3371E3);
-  background:url(../img/banner.svg)no-repeat,-ms-linear-gradient(0deg, #003DAC,#3371E3);
-  margin-top: .7rem;
-  background-size: 100% 100%;
-}
-.carousels-section .carousel-box-flex{
-  display: flex;
-  text-align: center;
-  flex-direction: column;
-}
-.carousels-section .carousel-box-flex h3 {
-  font-size: 0.36rem;
-  line-height: 0.44rem;
-  margin-bottom: 0;
-  color: #ffffff;
-  margin-top: 0;
-  font-weight: 400;
-  /*letter-spacing: 2px;*/
-}
-.carousels-section .carousel-box-flex p {
-  font-size: 0.16rem;
-  line-height: 0.28rem;
-  color: #ffffff;
-  font-weight: 400;
-  margin-top: 0.20rem;
-  margin-bottom: 0.20rem;
-}
-.carousels-section .carousel-box-flex .carousel-button{
-  margin-bottom: 1rem;
-}
-.carousels-section .carousel-box-flex .carousel-button a:nth-child(2){
-  display: none;
-}
-
 .see-more-section .carousel-button .carousel-a {
   height: .4rem;
   margin: 0 auto;
 }
-
 .see-more-section .carousel-button .carousel-a:hover {
   color: #326DE6;
 }
-
-
 /* carousel.html end */
 /* product.html */
 .products-section{
@@ -401,7 +361,6 @@ body {
 /* product.html end */
 /* see_more.html */
 .see-more-section{
-  margin-bottom: 0.7rem;
   padding: .7rem 0 .58rem;
 }
 
@@ -431,13 +390,6 @@ body {
   color: #326DE6;
   margin-right: 0.1rem;
 }
-.carousels-section .button{
-  display: inline-flex;
-  line-height: 2.5;
-  color: #326DE6;
-  padding: 0;
-}
-.carousels-section .button,
 .cases-section .button,
 .see-more-section .button {
   justify-content: center;
@@ -454,7 +406,6 @@ body {
   flex-direction: row;
   align-items: center;
 }
-.carousels-section .button:hover,
 .cases-section .button:hover,
 .see-more-section .button:hover {
   opacity: 0.9;

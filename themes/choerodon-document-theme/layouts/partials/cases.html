@@ -37,7 +37,10 @@
           {{ if $element.image }}
             <img id="cases-{{ $element.weight }}-item-img" class="cases-section-content-item-img" src = "{{ $element.imageSelect }}" data-src1="{{ $element.image }}" data-src2="{{ $element.imageSelect }}" />
           {{ else }}
-            <span>{{ $element.name }}</span>
+            <span class="cases-section-content-item-name">{{ $element.name }}</span>
+            {{ if $element.name2 }}
+              <span class="cases-section-content-item-name2">{{ $element.name2 }}</span>
+            {{ end }}
           {{ end }}
         </div>
         {{ end }}
