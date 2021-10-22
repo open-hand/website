@@ -200,8 +200,7 @@
   font-size: 0.16rem;
   color: white;
   font-weight: normal;
-  padding: 0;
-  margin: 0.27rem 0.2rem;
+  padding: 0.27rem 0.2rem;
 }
 
 .navbar ul.nav > li > a.active-page {
@@ -445,13 +444,13 @@ fieldset[disabled] .btn-template-main.active {
   background-size: 100%;
 }
 
-.top-nav ul.nav > li > a:hover {
-  opacity: 0.7;
-  color: white;
-}
+/*.top-nav ul.nav > li > a:hover {*/
+/*  opacity: 0.7;*/
+/*  color: white;*/
+/*}*/
 
-.top-white-nav ul.nav > li > a:hover,
-.fixed-nav ul.nav > li > a:hover {
+.top-white-nav ul.nav > li:hover > a,
+.fixed-nav ul.nav > li:hover > a {
   color: #326DE6;
 }
 
