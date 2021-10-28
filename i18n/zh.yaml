@@ -17,7 +17,7 @@
 
 # 首页
 - id: enterprise digital services platform
-  translation: '猪齿鱼 全场景效能平台'
+  translation: '猪齿鱼 数智化效能平台'
 
 - id: scrum application delivery and automated operations management
   translation: '传递体系化方法论，提供协作、测试、DevOps及容器工具，让团队效能更快更强更稳定'
@@ -206,13 +206,13 @@
   translation: '猪齿鱼 Choerodon 于2015年由国内领先的IT咨询公司“汉得信息”（股票代码：300170）自研推出，作为内部管理工具帮助汉得有序管理超过8000+交付项目及300+研发项目。'
 
 - id: about choerodon description2
-  translation: '2018年5月，本着开源开放、共创共享的精神，猪齿鱼面向广大研发人员推出开源版本。目前，猪齿鱼的注册租户数已超过1000家，并以每年40%的速度快速增长。'
+  translation: '2018年5月，本着开源开放、共创共享的精神，猪齿鱼面向广大研发人员推出开源版本，将部分功能开源给研发人员使用。目前，猪齿鱼的注册租户数已超过1000家，并以每年40%的速度快速增长。'
 
 - id: about choerodon description3
-  translation: '承袭汉得信息20多年的企业信息化服务经验和对研发管理需求的深入理解，猪齿鱼更懂项目管理和研发需求，产品的多组织协同、大规模敏捷、自动化测试、自动化部署、容器云等功能备受用户认可，在数百家头部客户中有成功应用。'
+  translation: '承袭汉得信息20多年的企业信息化服务经验和对企业数智化建设的深入理解，猪齿鱼更懂项目管理和研发需求，产品的多组织协同、大规模敏捷、自动化测试、自动化部署、容器云等功能备受用户认可，在数百家头部客户中有成功应用。'
 
 - id: about choerodon description4
-  translation: '2021年，猪齿鱼的成熟度和稳定度更上层楼，重磅发布SaaS版V1.0，强劲助力团队效能的更快更强更稳定。'
+  translation: '2021年，猪齿鱼的成熟度和稳定度更上层楼，重磅发布SaaS版V1.0，强劲助力团队效能的更快更强更稳定，助推各行业企业数智化转型升级。'
 
 - id: brand story
   translation: '品牌故事'
