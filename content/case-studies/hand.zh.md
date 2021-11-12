@@ -7,7 +7,7 @@ date: "2017-12-01"
 type: "case-studies"
 banner: "/img/case_studies/hand.png"
 summary: "猪齿鱼确实在很大程度上缩短了开发周期，加快了迭代的速度， 大大减少了开发运维人员的负担，真正实现了开发运维一体化"
-weight: 2
+weight: 3
 ---
 
 <section class="case-studies-detail-head">

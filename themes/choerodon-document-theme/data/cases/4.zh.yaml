@@ -1,7 +1,9 @@
-weight: 4
-name: "某大型跨国集团"
+weight: 2
+name: "三一集团"
+image: "/img/cases/sany.png"
+imageSelect: "/img/cases/sany.png"
 url: "case-studies/multinationalgroup/"
-description: "猪齿鱼促进软件开发效率及质量提升，帮助我们现有软件的开发过程向标准化、自动化、高效化的“流水线模式”转型。"
-author: "某大型跨国集团研发总监"
+description: "经过全面的对比以后，我们选择了猪齿鱼Choerodon来搭建DevOps平台，该平台也成为三一技术中台的重要组成部分，为三一的软件能力提升打下了坚实的技术基础，发挥了重要的积极作用。"
+author: "三一集团流程信息化总部总监 吕青海"
 classname: "lmg"
 language: zh

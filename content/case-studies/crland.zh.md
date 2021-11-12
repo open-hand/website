@@ -8,7 +8,7 @@ type: "case-studies"
 classname: "crland"
 summary: "
 部署周期从数周减少到几分钟，应用交付的效率提高了10 倍，重要的运营支出减少，对我们的业务非常有帮助，节省了很多时间，开发人员很开心有这样的转变"
-weight: 3
+weight: 4
 ---
 
 <section class="case-studies-detail-head">
