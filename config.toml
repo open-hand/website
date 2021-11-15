@@ -198,17 +198,17 @@ paginate = 5
     [[languages.zh.menu.footer]]
         name = "汉得信息"
         url  = "/zh/case-studies/hand/"
-        weight = 2
+        weight = 3
         parent = "zh-cases"
     [[languages.zh.menu.footer]]
         name = "某投资开发运营商"
         url  = "/zh/case-studies/crland/"
-        weight = 3
+        weight = 4
         parent = "zh-cases"
     [[languages.zh.menu.footer]]
-        name = "某大型跨国集团"
+        name = "三一集团"
         url  = "/zh/case-studies/multinationalgroup/"
-        weight = 4
+        weight = 2
         parent = "zh-cases"
 
 [[languages.zh.menu.footer]]
